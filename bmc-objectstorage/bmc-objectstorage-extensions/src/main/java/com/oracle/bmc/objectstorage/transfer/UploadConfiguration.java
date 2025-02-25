@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.objectstorage.transfer;
@@ -11,14 +11,14 @@ import com.oracle.bmc.util.internal.Validate;
 
 /**
  * The configuration for the {@code UploadManager}.  For more information, please refer to the online documentation
- * found <a href="https://docs.cloud.oracle.com/iaas/Content/Object/Tasks/usingmultipartuploads.htm">here</a>.
+ * found <a href="https://docs.oracle.com/iaas/Content/Object/Tasks/usingmultipartuploads.htm">here</a>.
  */
 public class UploadConfiguration {
     private static final org.slf4j.Logger LOG =
             org.slf4j.LoggerFactory.getLogger(UploadConfiguration.class);
     /*
      * Max supported sizes are specified @
-     * https://docs.cloud.oracle.com/iaas/Content/Object/Tasks/usingmultipartuploads.htm
+     * https://docs.oracle.com/iaas/Content/Object/Tasks/usingmultipartuploads.htm
      */
     public static final int MAXIMUM_NUM_ALLOWED_PARTS = 10000;
     public static final long MINIMUM_ALLOWED_LENGTH_PER_PART_MB = 1L; // 1 MiB

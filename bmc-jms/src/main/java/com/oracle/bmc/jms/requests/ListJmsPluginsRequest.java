@@ -1,24 +1,24 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.jms.requests;
 
 import com.oracle.bmc.jms.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/ListJmsPluginsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListJmsPluginsRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/ListJmsPluginsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListJmsPluginsRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
 public class ListJmsPluginsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
      *
      */
     private String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
      *
      */
     public String getCompartmentId() {
@@ -38,12 +38,12 @@ public class ListJmsPluginsRequest extends com.oracle.bmc.requests.BmcRequest<ja
         return compartmentIdInSubtree;
     }
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the JmsPlugin.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the JmsPlugin.
      */
     private String id;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the JmsPlugin.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the JmsPlugin.
      */
     public String getId() {
         return id;
@@ -60,12 +60,12 @@ public class ListJmsPluginsRequest extends com.oracle.bmc.requests.BmcRequest<ja
         return fleetId;
     }
     /**
-     * The ManagementAgent (OMA) or Instance (OCA) [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) that identifies the Agent.
+     * The ManagementAgent (OMA) or Instance (OCA) [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that identifies the Agent.
      */
     private String agentId;
 
     /**
-     * The ManagementAgent (OMA) or Instance (OCA) [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) that identifies the Agent.
+     * The ManagementAgent (OMA) or Instance (OCA) [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that identifies the Agent.
      */
     public String getAgentId() {
         return agentId;
@@ -91,6 +91,17 @@ public class ListJmsPluginsRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     public com.oracle.bmc.jms.model.JmsPluginAvailabilityStatus getAvailabilityStatus() {
         return availabilityStatus;
+    }
+    /**
+     * Filter JmsPlugin with agent type.
+     */
+    private com.oracle.bmc.jms.model.AgentType agentType;
+
+    /**
+     * Filter JmsPlugin with agent type.
+     */
+    public com.oracle.bmc.jms.model.AgentType getAgentType() {
+        return agentType;
     }
     /**
      * If present, only plugins with a registration time before this parameter are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
@@ -197,13 +208,13 @@ public class ListJmsPluginsRequest extends com.oracle.bmc.requests.BmcRequest<ja
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
          *
          */
         private String compartmentId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
          *
          * @param compartmentId the value to set
          * @return this builder instance
@@ -231,12 +242,12 @@ public class ListJmsPluginsRequest extends com.oracle.bmc.requests.BmcRequest<ja
         }
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the JmsPlugin.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the JmsPlugin.
          */
         private String id = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the JmsPlugin.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the JmsPlugin.
          * @param id the value to set
          * @return this builder instance
          */
@@ -261,12 +272,12 @@ public class ListJmsPluginsRequest extends com.oracle.bmc.requests.BmcRequest<ja
         }
 
         /**
-         * The ManagementAgent (OMA) or Instance (OCA) [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) that identifies the Agent.
+         * The ManagementAgent (OMA) or Instance (OCA) [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that identifies the Agent.
          */
         private String agentId = null;
 
         /**
-         * The ManagementAgent (OMA) or Instance (OCA) [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) that identifies the Agent.
+         * The ManagementAgent (OMA) or Instance (OCA) [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that identifies the Agent.
          * @param agentId the value to set
          * @return this builder instance
          */
@@ -304,6 +315,21 @@ public class ListJmsPluginsRequest extends com.oracle.bmc.requests.BmcRequest<ja
         public Builder availabilityStatus(
                 com.oracle.bmc.jms.model.JmsPluginAvailabilityStatus availabilityStatus) {
             this.availabilityStatus = availabilityStatus;
+            return this;
+        }
+
+        /**
+         * Filter JmsPlugin with agent type.
+         */
+        private com.oracle.bmc.jms.model.AgentType agentType = null;
+
+        /**
+         * Filter JmsPlugin with agent type.
+         * @param agentType the value to set
+         * @return this builder instance
+         */
+        public Builder agentType(com.oracle.bmc.jms.model.AgentType agentType) {
+            this.agentType = agentType;
             return this;
         }
 
@@ -471,6 +497,7 @@ public class ListJmsPluginsRequest extends com.oracle.bmc.requests.BmcRequest<ja
             agentId(o.getAgentId());
             lifecycleState(o.getLifecycleState());
             availabilityStatus(o.getAvailabilityStatus());
+            agentType(o.getAgentType());
             timeRegisteredLessThanOrEqualTo(o.getTimeRegisteredLessThanOrEqualTo());
             timeLastSeenLessThanOrEqualTo(o.getTimeLastSeenLessThanOrEqualTo());
             limit(o.getLimit());
@@ -518,6 +545,7 @@ public class ListJmsPluginsRequest extends com.oracle.bmc.requests.BmcRequest<ja
             request.agentId = agentId;
             request.lifecycleState = lifecycleState;
             request.availabilityStatus = availabilityStatus;
+            request.agentType = agentType;
             request.timeRegisteredLessThanOrEqualTo = timeRegisteredLessThanOrEqualTo;
             request.timeLastSeenLessThanOrEqualTo = timeLastSeenLessThanOrEqualTo;
             request.limit = limit;
@@ -527,7 +555,7 @@ public class ListJmsPluginsRequest extends com.oracle.bmc.requests.BmcRequest<ja
             request.hostnameContains = hostnameContains;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListJmsPluginsRequest(compartmentId, compartmentIdInSubtree, id, fleetId, agentId, lifecycleState, availabilityStatus, timeRegisteredLessThanOrEqualTo, timeLastSeenLessThanOrEqualTo, limit, page, sortOrder, sortBy, hostnameContains, opcRequestId);
+            // new ListJmsPluginsRequest(compartmentId, compartmentIdInSubtree, id, fleetId, agentId, lifecycleState, availabilityStatus, agentType, timeRegisteredLessThanOrEqualTo, timeLastSeenLessThanOrEqualTo, limit, page, sortOrder, sortBy, hostnameContains, opcRequestId);
         }
     }
 
@@ -544,6 +572,7 @@ public class ListJmsPluginsRequest extends com.oracle.bmc.requests.BmcRequest<ja
                 .agentId(agentId)
                 .lifecycleState(lifecycleState)
                 .availabilityStatus(availabilityStatus)
+                .agentType(agentType)
                 .timeRegisteredLessThanOrEqualTo(timeRegisteredLessThanOrEqualTo)
                 .timeLastSeenLessThanOrEqualTo(timeLastSeenLessThanOrEqualTo)
                 .limit(limit)
@@ -574,6 +603,7 @@ public class ListJmsPluginsRequest extends com.oracle.bmc.requests.BmcRequest<ja
         sb.append(",agentId=").append(String.valueOf(this.agentId));
         sb.append(",lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(",availabilityStatus=").append(String.valueOf(this.availabilityStatus));
+        sb.append(",agentType=").append(String.valueOf(this.agentType));
         sb.append(",timeRegisteredLessThanOrEqualTo=")
                 .append(String.valueOf(this.timeRegisteredLessThanOrEqualTo));
         sb.append(",timeLastSeenLessThanOrEqualTo=")
@@ -607,6 +637,7 @@ public class ListJmsPluginsRequest extends com.oracle.bmc.requests.BmcRequest<ja
                 && java.util.Objects.equals(this.agentId, other.agentId)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.availabilityStatus, other.availabilityStatus)
+                && java.util.Objects.equals(this.agentType, other.agentType)
                 && java.util.Objects.equals(
                         this.timeRegisteredLessThanOrEqualTo, other.timeRegisteredLessThanOrEqualTo)
                 && java.util.Objects.equals(
@@ -642,6 +673,7 @@ public class ListJmsPluginsRequest extends com.oracle.bmc.requests.BmcRequest<ja
                         + (this.availabilityStatus == null
                                 ? 43
                                 : this.availabilityStatus.hashCode());
+        result = (result * PRIME) + (this.agentType == null ? 43 : this.agentType.hashCode());
         result =
                 (result * PRIME)
                         + (this.timeRegisteredLessThanOrEqualTo == null

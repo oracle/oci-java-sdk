@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.servicemesh;
@@ -67,7 +67,7 @@ public interface ServiceMesh extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicemesh/CancelWorkRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CancelWorkRequest API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicemesh/CancelWorkRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CancelWorkRequest API.
      */
     CancelWorkRequestResponse cancelWorkRequest(CancelWorkRequestRequest request);
 
@@ -79,7 +79,7 @@ public interface ServiceMesh extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicemesh/ChangeAccessPolicyCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeAccessPolicyCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicemesh/ChangeAccessPolicyCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeAccessPolicyCompartment API.
      */
     ChangeAccessPolicyCompartmentResponse changeAccessPolicyCompartment(
             ChangeAccessPolicyCompartmentRequest request);
@@ -92,7 +92,7 @@ public interface ServiceMesh extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicemesh/ChangeIngressGatewayCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeIngressGatewayCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicemesh/ChangeIngressGatewayCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeIngressGatewayCompartment API.
      */
     ChangeIngressGatewayCompartmentResponse changeIngressGatewayCompartment(
             ChangeIngressGatewayCompartmentRequest request);
@@ -105,7 +105,7 @@ public interface ServiceMesh extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicemesh/ChangeIngressGatewayRouteTableCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeIngressGatewayRouteTableCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicemesh/ChangeIngressGatewayRouteTableCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeIngressGatewayRouteTableCompartment API.
      */
     ChangeIngressGatewayRouteTableCompartmentResponse changeIngressGatewayRouteTableCompartment(
             ChangeIngressGatewayRouteTableCompartmentRequest request);
@@ -118,7 +118,7 @@ public interface ServiceMesh extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicemesh/ChangeMeshCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeMeshCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicemesh/ChangeMeshCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeMeshCompartment API.
      */
     ChangeMeshCompartmentResponse changeMeshCompartment(ChangeMeshCompartmentRequest request);
 
@@ -130,7 +130,7 @@ public interface ServiceMesh extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicemesh/ChangeVirtualDeploymentCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeVirtualDeploymentCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicemesh/ChangeVirtualDeploymentCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeVirtualDeploymentCompartment API.
      */
     ChangeVirtualDeploymentCompartmentResponse changeVirtualDeploymentCompartment(
             ChangeVirtualDeploymentCompartmentRequest request);
@@ -143,7 +143,7 @@ public interface ServiceMesh extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicemesh/ChangeVirtualServiceCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeVirtualServiceCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicemesh/ChangeVirtualServiceCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeVirtualServiceCompartment API.
      */
     ChangeVirtualServiceCompartmentResponse changeVirtualServiceCompartment(
             ChangeVirtualServiceCompartmentRequest request);
@@ -156,7 +156,7 @@ public interface ServiceMesh extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicemesh/ChangeVirtualServiceRouteTableCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeVirtualServiceRouteTableCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicemesh/ChangeVirtualServiceRouteTableCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeVirtualServiceRouteTableCompartment API.
      */
     ChangeVirtualServiceRouteTableCompartmentResponse changeVirtualServiceRouteTableCompartment(
             ChangeVirtualServiceRouteTableCompartmentRequest request);
@@ -170,7 +170,7 @@ public interface ServiceMesh extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicemesh/CreateAccessPolicyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateAccessPolicy API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicemesh/CreateAccessPolicyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateAccessPolicy API.
      */
     CreateAccessPolicyResponse createAccessPolicy(CreateAccessPolicyRequest request);
 
@@ -183,7 +183,7 @@ public interface ServiceMesh extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicemesh/CreateIngressGatewayExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateIngressGateway API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicemesh/CreateIngressGatewayExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateIngressGateway API.
      */
     CreateIngressGatewayResponse createIngressGateway(CreateIngressGatewayRequest request);
 
@@ -196,7 +196,7 @@ public interface ServiceMesh extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicemesh/CreateIngressGatewayRouteTableExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateIngressGatewayRouteTable API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicemesh/CreateIngressGatewayRouteTableExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateIngressGatewayRouteTable API.
      */
     CreateIngressGatewayRouteTableResponse createIngressGatewayRouteTable(
             CreateIngressGatewayRouteTableRequest request);
@@ -210,7 +210,7 @@ public interface ServiceMesh extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicemesh/CreateMeshExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateMesh API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicemesh/CreateMeshExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateMesh API.
      */
     CreateMeshResponse createMesh(CreateMeshRequest request);
 
@@ -223,7 +223,7 @@ public interface ServiceMesh extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicemesh/CreateVirtualDeploymentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateVirtualDeployment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicemesh/CreateVirtualDeploymentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateVirtualDeployment API.
      */
     CreateVirtualDeploymentResponse createVirtualDeployment(CreateVirtualDeploymentRequest request);
 
@@ -236,7 +236,7 @@ public interface ServiceMesh extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicemesh/CreateVirtualServiceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateVirtualService API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicemesh/CreateVirtualServiceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateVirtualService API.
      */
     CreateVirtualServiceResponse createVirtualService(CreateVirtualServiceRequest request);
 
@@ -249,7 +249,7 @@ public interface ServiceMesh extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicemesh/CreateVirtualServiceRouteTableExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateVirtualServiceRouteTable API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicemesh/CreateVirtualServiceRouteTableExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateVirtualServiceRouteTable API.
      */
     CreateVirtualServiceRouteTableResponse createVirtualServiceRouteTable(
             CreateVirtualServiceRouteTableRequest request);
@@ -262,7 +262,7 @@ public interface ServiceMesh extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicemesh/DeleteAccessPolicyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteAccessPolicy API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicemesh/DeleteAccessPolicyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteAccessPolicy API.
      */
     DeleteAccessPolicyResponse deleteAccessPolicy(DeleteAccessPolicyRequest request);
 
@@ -274,7 +274,7 @@ public interface ServiceMesh extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicemesh/DeleteIngressGatewayExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteIngressGateway API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicemesh/DeleteIngressGatewayExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteIngressGateway API.
      */
     DeleteIngressGatewayResponse deleteIngressGateway(DeleteIngressGatewayRequest request);
 
@@ -286,7 +286,7 @@ public interface ServiceMesh extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicemesh/DeleteIngressGatewayRouteTableExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteIngressGatewayRouteTable API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicemesh/DeleteIngressGatewayRouteTableExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteIngressGatewayRouteTable API.
      */
     DeleteIngressGatewayRouteTableResponse deleteIngressGatewayRouteTable(
             DeleteIngressGatewayRouteTableRequest request);
@@ -299,7 +299,7 @@ public interface ServiceMesh extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicemesh/DeleteMeshExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteMesh API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicemesh/DeleteMeshExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteMesh API.
      */
     DeleteMeshResponse deleteMesh(DeleteMeshRequest request);
 
@@ -311,7 +311,7 @@ public interface ServiceMesh extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicemesh/DeleteVirtualDeploymentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteVirtualDeployment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicemesh/DeleteVirtualDeploymentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteVirtualDeployment API.
      */
     DeleteVirtualDeploymentResponse deleteVirtualDeployment(DeleteVirtualDeploymentRequest request);
 
@@ -323,7 +323,7 @@ public interface ServiceMesh extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicemesh/DeleteVirtualServiceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteVirtualService API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicemesh/DeleteVirtualServiceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteVirtualService API.
      */
     DeleteVirtualServiceResponse deleteVirtualService(DeleteVirtualServiceRequest request);
 
@@ -335,7 +335,7 @@ public interface ServiceMesh extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicemesh/DeleteVirtualServiceRouteTableExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteVirtualServiceRouteTable API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicemesh/DeleteVirtualServiceRouteTableExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteVirtualServiceRouteTable API.
      */
     DeleteVirtualServiceRouteTableResponse deleteVirtualServiceRouteTable(
             DeleteVirtualServiceRouteTableRequest request);
@@ -348,7 +348,7 @@ public interface ServiceMesh extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicemesh/GetAccessPolicyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetAccessPolicy API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicemesh/GetAccessPolicyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetAccessPolicy API.
      */
     GetAccessPolicyResponse getAccessPolicy(GetAccessPolicyRequest request);
 
@@ -360,7 +360,7 @@ public interface ServiceMesh extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicemesh/GetIngressGatewayExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetIngressGateway API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicemesh/GetIngressGatewayExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetIngressGateway API.
      */
     GetIngressGatewayResponse getIngressGateway(GetIngressGatewayRequest request);
 
@@ -372,7 +372,7 @@ public interface ServiceMesh extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicemesh/GetIngressGatewayRouteTableExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetIngressGatewayRouteTable API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicemesh/GetIngressGatewayRouteTableExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetIngressGatewayRouteTable API.
      */
     GetIngressGatewayRouteTableResponse getIngressGatewayRouteTable(
             GetIngressGatewayRouteTableRequest request);
@@ -385,7 +385,7 @@ public interface ServiceMesh extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicemesh/GetMeshExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetMesh API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicemesh/GetMeshExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetMesh API.
      */
     GetMeshResponse getMesh(GetMeshRequest request);
 
@@ -398,7 +398,7 @@ public interface ServiceMesh extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicemesh/GetProxyDetailsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetProxyDetails API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicemesh/GetProxyDetailsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetProxyDetails API.
      */
     GetProxyDetailsResponse getProxyDetails(GetProxyDetailsRequest request);
 
@@ -410,7 +410,7 @@ public interface ServiceMesh extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicemesh/GetVirtualDeploymentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetVirtualDeployment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicemesh/GetVirtualDeploymentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetVirtualDeployment API.
      */
     GetVirtualDeploymentResponse getVirtualDeployment(GetVirtualDeploymentRequest request);
 
@@ -422,7 +422,7 @@ public interface ServiceMesh extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicemesh/GetVirtualServiceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetVirtualService API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicemesh/GetVirtualServiceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetVirtualService API.
      */
     GetVirtualServiceResponse getVirtualService(GetVirtualServiceRequest request);
 
@@ -434,7 +434,7 @@ public interface ServiceMesh extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicemesh/GetVirtualServiceRouteTableExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetVirtualServiceRouteTable API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicemesh/GetVirtualServiceRouteTableExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetVirtualServiceRouteTable API.
      */
     GetVirtualServiceRouteTableResponse getVirtualServiceRouteTable(
             GetVirtualServiceRouteTableRequest request);
@@ -447,7 +447,7 @@ public interface ServiceMesh extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicemesh/GetWorkRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetWorkRequest API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicemesh/GetWorkRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetWorkRequest API.
      */
     GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request);
 
@@ -460,7 +460,7 @@ public interface ServiceMesh extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicemesh/ListAccessPoliciesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListAccessPolicies API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicemesh/ListAccessPoliciesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListAccessPolicies API.
      */
     ListAccessPoliciesResponse listAccessPolicies(ListAccessPoliciesRequest request);
 
@@ -473,7 +473,7 @@ public interface ServiceMesh extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicemesh/ListIngressGatewayRouteTablesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListIngressGatewayRouteTables API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicemesh/ListIngressGatewayRouteTablesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListIngressGatewayRouteTables API.
      */
     ListIngressGatewayRouteTablesResponse listIngressGatewayRouteTables(
             ListIngressGatewayRouteTablesRequest request);
@@ -487,7 +487,7 @@ public interface ServiceMesh extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicemesh/ListIngressGatewaysExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListIngressGateways API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicemesh/ListIngressGatewaysExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListIngressGateways API.
      */
     ListIngressGatewaysResponse listIngressGateways(ListIngressGatewaysRequest request);
 
@@ -500,7 +500,7 @@ public interface ServiceMesh extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicemesh/ListMeshesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListMeshes API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicemesh/ListMeshesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListMeshes API.
      */
     ListMeshesResponse listMeshes(ListMeshesRequest request);
 
@@ -513,7 +513,7 @@ public interface ServiceMesh extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicemesh/ListVirtualDeploymentsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListVirtualDeployments API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicemesh/ListVirtualDeploymentsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListVirtualDeployments API.
      */
     ListVirtualDeploymentsResponse listVirtualDeployments(ListVirtualDeploymentsRequest request);
 
@@ -526,7 +526,7 @@ public interface ServiceMesh extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicemesh/ListVirtualServiceRouteTablesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListVirtualServiceRouteTables API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicemesh/ListVirtualServiceRouteTablesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListVirtualServiceRouteTables API.
      */
     ListVirtualServiceRouteTablesResponse listVirtualServiceRouteTables(
             ListVirtualServiceRouteTablesRequest request);
@@ -540,7 +540,7 @@ public interface ServiceMesh extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicemesh/ListVirtualServicesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListVirtualServices API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicemesh/ListVirtualServicesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListVirtualServices API.
      */
     ListVirtualServicesResponse listVirtualServices(ListVirtualServicesRequest request);
 
@@ -553,7 +553,7 @@ public interface ServiceMesh extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicemesh/ListWorkRequestErrorsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequestErrors API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicemesh/ListWorkRequestErrorsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequestErrors API.
      */
     ListWorkRequestErrorsResponse listWorkRequestErrors(ListWorkRequestErrorsRequest request);
 
@@ -566,7 +566,7 @@ public interface ServiceMesh extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicemesh/ListWorkRequestLogsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequestLogs API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicemesh/ListWorkRequestLogsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequestLogs API.
      */
     ListWorkRequestLogsResponse listWorkRequestLogs(ListWorkRequestLogsRequest request);
 
@@ -579,7 +579,7 @@ public interface ServiceMesh extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicemesh/ListWorkRequestsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequests API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicemesh/ListWorkRequestsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequests API.
      */
     ListWorkRequestsResponse listWorkRequests(ListWorkRequestsRequest request);
 
@@ -591,7 +591,7 @@ public interface ServiceMesh extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicemesh/UpdateAccessPolicyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateAccessPolicy API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicemesh/UpdateAccessPolicyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateAccessPolicy API.
      */
     UpdateAccessPolicyResponse updateAccessPolicy(UpdateAccessPolicyRequest request);
 
@@ -603,7 +603,7 @@ public interface ServiceMesh extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicemesh/UpdateIngressGatewayExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateIngressGateway API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicemesh/UpdateIngressGatewayExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateIngressGateway API.
      */
     UpdateIngressGatewayResponse updateIngressGateway(UpdateIngressGatewayRequest request);
 
@@ -615,7 +615,7 @@ public interface ServiceMesh extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicemesh/UpdateIngressGatewayRouteTableExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateIngressGatewayRouteTable API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicemesh/UpdateIngressGatewayRouteTableExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateIngressGatewayRouteTable API.
      */
     UpdateIngressGatewayRouteTableResponse updateIngressGatewayRouteTable(
             UpdateIngressGatewayRouteTableRequest request);
@@ -628,7 +628,7 @@ public interface ServiceMesh extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicemesh/UpdateMeshExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateMesh API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicemesh/UpdateMeshExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateMesh API.
      */
     UpdateMeshResponse updateMesh(UpdateMeshRequest request);
 
@@ -640,7 +640,7 @@ public interface ServiceMesh extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicemesh/UpdateVirtualDeploymentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateVirtualDeployment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicemesh/UpdateVirtualDeploymentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateVirtualDeployment API.
      */
     UpdateVirtualDeploymentResponse updateVirtualDeployment(UpdateVirtualDeploymentRequest request);
 
@@ -652,7 +652,7 @@ public interface ServiceMesh extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicemesh/UpdateVirtualServiceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateVirtualService API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicemesh/UpdateVirtualServiceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateVirtualService API.
      */
     UpdateVirtualServiceResponse updateVirtualService(UpdateVirtualServiceRequest request);
 
@@ -664,7 +664,7 @@ public interface ServiceMesh extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicemesh/UpdateVirtualServiceRouteTableExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateVirtualServiceRouteTable API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicemesh/UpdateVirtualServiceRouteTableExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateVirtualServiceRouteTable API.
      */
     UpdateVirtualServiceRouteTableResponse updateVirtualServiceRouteTable(
             UpdateVirtualServiceRouteTableRequest request);

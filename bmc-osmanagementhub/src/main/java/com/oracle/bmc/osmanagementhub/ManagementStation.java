@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.osmanagementhub;
@@ -9,7 +9,7 @@ import com.oracle.bmc.osmanagementhub.responses.*;
 
 /**
  * Use the OS Management Hub API to manage and monitor updates and patches for instances in OCI, your private data center, or 3rd-party clouds.
- * For more information, see [Overview of OS Management Hub](https://docs.cloud.oracle.com/iaas/osmh/doc/overview.htm).
+ * For more information, see [Overview of OS Management Hub](https://docs.oracle.com/iaas/osmh/doc/overview.htm).
  *
  * This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by default if no circuit breaker configuration is defined by the user.
  */
@@ -69,13 +69,13 @@ public interface ManagementStation extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/ChangeManagementStationCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeManagementStationCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/ChangeManagementStationCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeManagementStationCompartment API.
      */
     ChangeManagementStationCompartmentResponse changeManagementStationCompartment(
             ChangeManagementStationCompartmentRequest request);
 
     /**
-     * Create a management station. You must provide proxy and mirror configuration information.
+     * Creates a management station using the proxy and mirror configuration information provided.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -83,12 +83,14 @@ public interface ManagementStation extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/CreateManagementStationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateManagementStation API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/CreateManagementStationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateManagementStation API.
      */
     CreateManagementStationResponse createManagementStation(CreateManagementStationRequest request);
 
     /**
-     * Deletes a management station.
+     * Deletes a management station. You can't delete a station if there are resources associated with the station
+     * (such as instances using the station or profiles associated with the station). Switch stations and edit profiles
+     * as needed before deleting the station.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -96,12 +98,12 @@ public interface ManagementStation extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/DeleteManagementStationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteManagementStation API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/DeleteManagementStationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteManagementStation API.
      */
     DeleteManagementStationResponse deleteManagementStation(DeleteManagementStationRequest request);
 
     /**
-     * Gets information about the specified management station.
+     * Returns information about the specified management station.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -109,12 +111,13 @@ public interface ManagementStation extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/GetManagementStationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetManagementStation API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/GetManagementStationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetManagementStation API.
      */
     GetManagementStationResponse getManagementStation(GetManagementStationRequest request);
 
     /**
-     * Lists management stations in a compartment.
+     * Lists management stations within the specified compartment. Filter the list against a variety of criteria
+     * including but not limited to name, status, and location.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -122,7 +125,7 @@ public interface ManagementStation extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/ListManagementStationsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListManagementStations API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/ListManagementStationsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListManagementStations API.
      */
     ListManagementStationsResponse listManagementStations(ListManagementStationsRequest request);
 
@@ -135,12 +138,12 @@ public interface ManagementStation extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/ListMirrorsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListMirrors API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/ListMirrorsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListMirrors API.
      */
     ListMirrorsResponse listMirrors(ListMirrorsRequest request);
 
     /**
-     * Refreshes the list of software sources mirrored by the management station to support the associated instances.
+     * Refreshes the list of software sources mirrored by the management station.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -148,13 +151,13 @@ public interface ManagementStation extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/RefreshManagementStationConfigExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RefreshManagementStationConfig API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/RefreshManagementStationConfigExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RefreshManagementStationConfig API.
      */
     RefreshManagementStationConfigResponse refreshManagementStationConfig(
             RefreshManagementStationConfigRequest request);
 
     /**
-     * Synchronize the specified software sources mirrors on the management station.
+     * Synchronize the specified software sources mirrored on the management station.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -162,7 +165,7 @@ public interface ManagementStation extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/SynchronizeMirrorsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use SynchronizeMirrors API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/SynchronizeMirrorsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use SynchronizeMirrors API.
      */
     SynchronizeMirrorsResponse synchronizeMirrors(SynchronizeMirrorsRequest request);
 
@@ -175,7 +178,7 @@ public interface ManagementStation extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/SynchronizeSingleMirrorsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use SynchronizeSingleMirrors API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/SynchronizeSingleMirrorsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use SynchronizeSingleMirrors API.
      */
     SynchronizeSingleMirrorsResponse synchronizeSingleMirrors(
             SynchronizeSingleMirrorsRequest request);
@@ -189,7 +192,7 @@ public interface ManagementStation extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/UpdateManagementStationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateManagementStation API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/UpdateManagementStationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateManagementStation API.
      */
     UpdateManagementStationResponse updateManagementStation(UpdateManagementStationRequest request);
 

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.loadbalancer;
@@ -9,7 +9,7 @@ import com.oracle.bmc.loadbalancer.responses.*;
 
 /**
  * API for the Load Balancing service. Use this API to manage load balancers, backend sets, and related items. For more
- * information, see [Overview of Load Balancing](https://docs.cloud.oracle.com/iaas/Content/Balance/Concepts/balanceoverview.htm).
+ * information, see [Overview of Load Balancing](https://docs.oracle.com/iaas/Content/Balance/Concepts/balanceoverview.htm).
  *
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
@@ -62,7 +62,7 @@ public interface LoadBalancerAsync extends AutoCloseable {
 
     /**
      * Moves a load balancer into a different compartment within the same tenancy. For information about moving resources
-     * between compartments, see [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * between compartments, see [Moving Resources to a Different Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
      *
      * @param request The request object containing the details to send
@@ -128,7 +128,7 @@ public interface LoadBalancerAsync extends AutoCloseable {
 
     /**
      * Adds a hostname resource to the specified load balancer. For more information, see
-     * [Managing Request Routing](https://docs.cloud.oracle.com/Content/Balance/Tasks/managingrequest.htm).
+     * [Managing Request Routing](https://docs.oracle.com/iaas/Content/Balance/Tasks/managingrequest.htm).
      *
      *
      * @param request The request object containing the details to send
@@ -160,18 +160,18 @@ public interface LoadBalancerAsync extends AutoCloseable {
 
     /**
      * Creates a new load balancer in the specified compartment. For general information about load balancers,
-     * see [Overview of the Load Balancing Service](https://docs.cloud.oracle.com/Content/Balance/Concepts/balanceoverview.htm).
+     * see [Overview of the Load Balancing Service](https://docs.oracle.com/iaas/Content/Balance/Concepts/balanceoverview.htm).
      * <p>
      * For the purposes of access control, you must provide the OCID of the compartment where you want
      * the load balancer to reside. Notice that the load balancer doesn't have to be in the same compartment as the VCN
      * or backend set. If you're not sure which compartment to use, put the load balancer in the same compartment as the VCN.
      * For information about access control and compartments, see
-     * [Overview of the IAM Service](https://docs.cloud.oracle.com/Content/Identity/Concepts/overview.htm).
+     * [Overview of the IAM Service](https://docs.oracle.com/iaas/Content/Identity/Concepts/overview.htm).
      * <p>
      * You must specify a display name for the load balancer. It does not have to be unique, and you can change it.
      * <p>
      * For information about Availability Domains, see
-     * [Regions and Availability Domains](https://docs.cloud.oracle.com/Content/General/Concepts/regions.htm).
+     * [Regions and Availability Domains](https://docs.oracle.com/iaas/Content/General/Concepts/regions.htm).
      * To get a list of Availability Domains, use the `ListAvailabilityDomains` operation
      * in the Identity and Access Management Service API.
      * <p>
@@ -179,7 +179,7 @@ public interface LoadBalancerAsync extends AutoCloseable {
      * unique ID called an Oracle Cloud Identifier (OCID). When you create a resource, you can find its OCID
      * in the response. You can also retrieve a resource's OCID by using a List API operation on that resource type,
      * or by viewing the resource in the Console. Fore more information, see
-     * [Resource Identifiers](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * [Resource Identifiers](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * <p>
      * After you send your request, the new object's state will temporarily be PROVISIONING. Before using the
      * object, first make sure its state has changed to RUNNING.
@@ -203,7 +203,7 @@ public interface LoadBalancerAsync extends AutoCloseable {
 
     /**
      * Adds a path route set to a load balancer. For more information, see
-     * [Managing Request Routing](https://docs.cloud.oracle.com/Content/Balance/Tasks/managingrequest.htm).
+     * [Managing Request Routing](https://docs.oracle.com/iaas/Content/Balance/Tasks/managingrequest.htm).
      *
      *
      * @param request The request object containing the details to send
@@ -221,7 +221,7 @@ public interface LoadBalancerAsync extends AutoCloseable {
 
     /**
      * Adds a routing policy to a load balancer. For more information, see
-     * [Managing Request Routing](https://docs.cloud.oracle.com/Content/Balance/Tasks/managingrequest.htm).
+     * [Managing Request Routing](https://docs.oracle.com/iaas/Content/Balance/Tasks/managingrequest.htm).
      *
      *
      * @param request The request object containing the details to send
@@ -239,7 +239,7 @@ public interface LoadBalancerAsync extends AutoCloseable {
 
     /**
      * Creates a new rule set associated with the specified load balancer. For more information, see
-     * [Managing Rule Sets](https://docs.cloud.oracle.com/Content/Balance/Tasks/managingrulesets.htm).
+     * [Managing Rule Sets](https://docs.oracle.com/iaas/Content/Balance/Tasks/managingrulesets.htm).
      *
      *
      * @param request The request object containing the details to send

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.mediaservices;
@@ -10,7 +10,7 @@ import com.oracle.bmc.mediaservices.responses.*;
 /**
  * Media Services (includes Media Flow and Media Streams) is a fully managed service for processing media (video) source content. Use Media Flow and Media Streams to transcode and package digital video using configurable workflows and stream video outputs.
  *
- * Use the Media Services API to configure media workflows and run Media Flow jobs, create distribution channels, ingest assets, create Preview URLs and play assets. For more information, see [Media Flow](https://docs.cloud.oracle.com/iaas/Content/dms-mediaflow/home.htm) and [Media Streams](https://docs.cloud.oracle.com/iaas/Content/dms-mediastream/home.htm).
+ * Use the Media Services API to configure media workflows and run Media Flow jobs, create distribution channels, ingest assets, create Preview URLs and play assets. For more information, see [Media Flow](https://docs.oracle.com/iaas/Content/dms-mediaflow/home.htm) and [Media Streams](https://docs.oracle.com/iaas/Content/dms-mediastream/home.htm).
  *
  * This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by default if no circuit breaker configuration is defined by the user.
  */
@@ -71,7 +71,7 @@ public interface MediaServices extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/AddMediaAssetLockExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AddMediaAssetLock API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/AddMediaAssetLockExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AddMediaAssetLock API.
      */
     AddMediaAssetLockResponse addMediaAssetLock(AddMediaAssetLockRequest request);
 
@@ -84,7 +84,7 @@ public interface MediaServices extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/AddMediaWorkflowConfigurationLockExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AddMediaWorkflowConfigurationLock API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/AddMediaWorkflowConfigurationLockExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AddMediaWorkflowConfigurationLock API.
      */
     AddMediaWorkflowConfigurationLockResponse addMediaWorkflowConfigurationLock(
             AddMediaWorkflowConfigurationLockRequest request);
@@ -98,7 +98,7 @@ public interface MediaServices extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/AddMediaWorkflowJobLockExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AddMediaWorkflowJobLock API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/AddMediaWorkflowJobLockExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AddMediaWorkflowJobLock API.
      */
     AddMediaWorkflowJobLockResponse addMediaWorkflowJobLock(AddMediaWorkflowJobLockRequest request);
 
@@ -111,7 +111,7 @@ public interface MediaServices extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/AddMediaWorkflowLockExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AddMediaWorkflowLock API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/AddMediaWorkflowLockExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AddMediaWorkflowLock API.
      */
     AddMediaWorkflowLockResponse addMediaWorkflowLock(AddMediaWorkflowLockRequest request);
 
@@ -124,7 +124,7 @@ public interface MediaServices extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/AddStreamCdnConfigLockExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AddStreamCdnConfigLock API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/AddStreamCdnConfigLockExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AddStreamCdnConfigLock API.
      */
     AddStreamCdnConfigLockResponse addStreamCdnConfigLock(AddStreamCdnConfigLockRequest request);
 
@@ -137,7 +137,7 @@ public interface MediaServices extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/AddStreamDistributionChannelLockExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AddStreamDistributionChannelLock API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/AddStreamDistributionChannelLockExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AddStreamDistributionChannelLock API.
      */
     AddStreamDistributionChannelLockResponse addStreamDistributionChannelLock(
             AddStreamDistributionChannelLockRequest request);
@@ -151,7 +151,7 @@ public interface MediaServices extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/AddStreamPackagingConfigLockExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AddStreamPackagingConfigLock API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/AddStreamPackagingConfigLockExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AddStreamPackagingConfigLock API.
      */
     AddStreamPackagingConfigLockResponse addStreamPackagingConfigLock(
             AddStreamPackagingConfigLockRequest request);
@@ -164,7 +164,7 @@ public interface MediaServices extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/ChangeMediaAssetCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeMediaAssetCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/ChangeMediaAssetCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeMediaAssetCompartment API.
      */
     ChangeMediaAssetCompartmentResponse changeMediaAssetCompartment(
             ChangeMediaAssetCompartmentRequest request);
@@ -177,7 +177,7 @@ public interface MediaServices extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/ChangeMediaWorkflowCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeMediaWorkflowCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/ChangeMediaWorkflowCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeMediaWorkflowCompartment API.
      */
     ChangeMediaWorkflowCompartmentResponse changeMediaWorkflowCompartment(
             ChangeMediaWorkflowCompartmentRequest request);
@@ -190,7 +190,7 @@ public interface MediaServices extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/ChangeMediaWorkflowConfigurationCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeMediaWorkflowConfigurationCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/ChangeMediaWorkflowConfigurationCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeMediaWorkflowConfigurationCompartment API.
      */
     ChangeMediaWorkflowConfigurationCompartmentResponse changeMediaWorkflowConfigurationCompartment(
             ChangeMediaWorkflowConfigurationCompartmentRequest request);
@@ -203,7 +203,7 @@ public interface MediaServices extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/ChangeMediaWorkflowJobCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeMediaWorkflowJobCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/ChangeMediaWorkflowJobCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeMediaWorkflowJobCompartment API.
      */
     ChangeMediaWorkflowJobCompartmentResponse changeMediaWorkflowJobCompartment(
             ChangeMediaWorkflowJobCompartmentRequest request);
@@ -216,7 +216,7 @@ public interface MediaServices extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/ChangeStreamDistributionChannelCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeStreamDistributionChannelCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/ChangeStreamDistributionChannelCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeStreamDistributionChannelCompartment API.
      */
     ChangeStreamDistributionChannelCompartmentResponse changeStreamDistributionChannelCompartment(
             ChangeStreamDistributionChannelCompartmentRequest request);
@@ -230,7 +230,7 @@ public interface MediaServices extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/CreateMediaAssetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateMediaAsset API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/CreateMediaAssetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateMediaAsset API.
      */
     CreateMediaAssetResponse createMediaAsset(CreateMediaAssetRequest request);
 
@@ -243,7 +243,7 @@ public interface MediaServices extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/CreateMediaWorkflowExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateMediaWorkflow API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/CreateMediaWorkflowExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateMediaWorkflow API.
      */
     CreateMediaWorkflowResponse createMediaWorkflow(CreateMediaWorkflowRequest request);
 
@@ -256,7 +256,7 @@ public interface MediaServices extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/CreateMediaWorkflowConfigurationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateMediaWorkflowConfiguration API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/CreateMediaWorkflowConfigurationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateMediaWorkflowConfiguration API.
      */
     CreateMediaWorkflowConfigurationResponse createMediaWorkflowConfiguration(
             CreateMediaWorkflowConfigurationRequest request);
@@ -269,7 +269,7 @@ public interface MediaServices extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/CreateMediaWorkflowJobExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateMediaWorkflowJob API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/CreateMediaWorkflowJobExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateMediaWorkflowJob API.
      */
     CreateMediaWorkflowJobResponse createMediaWorkflowJob(CreateMediaWorkflowJobRequest request);
 
@@ -282,7 +282,7 @@ public interface MediaServices extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/CreateStreamCdnConfigExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateStreamCdnConfig API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/CreateStreamCdnConfigExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateStreamCdnConfig API.
      */
     CreateStreamCdnConfigResponse createStreamCdnConfig(CreateStreamCdnConfigRequest request);
 
@@ -295,7 +295,7 @@ public interface MediaServices extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/CreateStreamDistributionChannelExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateStreamDistributionChannel API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/CreateStreamDistributionChannelExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateStreamDistributionChannel API.
      */
     CreateStreamDistributionChannelResponse createStreamDistributionChannel(
             CreateStreamDistributionChannelRequest request);
@@ -309,7 +309,7 @@ public interface MediaServices extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/CreateStreamPackagingConfigExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateStreamPackagingConfig API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/CreateStreamPackagingConfigExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateStreamPackagingConfig API.
      */
     CreateStreamPackagingConfigResponse createStreamPackagingConfig(
             CreateStreamPackagingConfigRequest request);
@@ -322,7 +322,7 @@ public interface MediaServices extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/DeleteMediaAssetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteMediaAsset API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/DeleteMediaAssetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteMediaAsset API.
      */
     DeleteMediaAssetResponse deleteMediaAsset(DeleteMediaAssetRequest request);
 
@@ -334,7 +334,7 @@ public interface MediaServices extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/DeleteMediaAssetDistributionChannelAttachmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteMediaAssetDistributionChannelAttachment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/DeleteMediaAssetDistributionChannelAttachmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteMediaAssetDistributionChannelAttachment API.
      */
     DeleteMediaAssetDistributionChannelAttachmentResponse
             deleteMediaAssetDistributionChannelAttachment(
@@ -348,7 +348,7 @@ public interface MediaServices extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/DeleteMediaWorkflowExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteMediaWorkflow API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/DeleteMediaWorkflowExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteMediaWorkflow API.
      */
     DeleteMediaWorkflowResponse deleteMediaWorkflow(DeleteMediaWorkflowRequest request);
 
@@ -360,7 +360,7 @@ public interface MediaServices extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/DeleteMediaWorkflowConfigurationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteMediaWorkflowConfiguration API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/DeleteMediaWorkflowConfigurationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteMediaWorkflowConfiguration API.
      */
     DeleteMediaWorkflowConfigurationResponse deleteMediaWorkflowConfiguration(
             DeleteMediaWorkflowConfigurationRequest request);
@@ -373,7 +373,7 @@ public interface MediaServices extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/DeleteMediaWorkflowJobExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteMediaWorkflowJob API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/DeleteMediaWorkflowJobExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteMediaWorkflowJob API.
      */
     DeleteMediaWorkflowJobResponse deleteMediaWorkflowJob(DeleteMediaWorkflowJobRequest request);
 
@@ -385,7 +385,7 @@ public interface MediaServices extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/DeleteStreamCdnConfigExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteStreamCdnConfig API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/DeleteStreamCdnConfigExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteStreamCdnConfig API.
      */
     DeleteStreamCdnConfigResponse deleteStreamCdnConfig(DeleteStreamCdnConfigRequest request);
 
@@ -397,7 +397,7 @@ public interface MediaServices extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/DeleteStreamDistributionChannelExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteStreamDistributionChannel API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/DeleteStreamDistributionChannelExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteStreamDistributionChannel API.
      */
     DeleteStreamDistributionChannelResponse deleteStreamDistributionChannel(
             DeleteStreamDistributionChannelRequest request);
@@ -410,7 +410,7 @@ public interface MediaServices extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/DeleteStreamPackagingConfigExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteStreamPackagingConfig API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/DeleteStreamPackagingConfigExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteStreamPackagingConfig API.
      */
     DeleteStreamPackagingConfigResponse deleteStreamPackagingConfig(
             DeleteStreamPackagingConfigRequest request);
@@ -423,7 +423,7 @@ public interface MediaServices extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/GetMediaAssetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetMediaAsset API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/GetMediaAssetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetMediaAsset API.
      */
     GetMediaAssetResponse getMediaAsset(GetMediaAssetRequest request);
 
@@ -435,7 +435,7 @@ public interface MediaServices extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/GetMediaAssetDistributionChannelAttachmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetMediaAssetDistributionChannelAttachment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/GetMediaAssetDistributionChannelAttachmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetMediaAssetDistributionChannelAttachment API.
      */
     GetMediaAssetDistributionChannelAttachmentResponse getMediaAssetDistributionChannelAttachment(
             GetMediaAssetDistributionChannelAttachmentRequest request);
@@ -448,7 +448,7 @@ public interface MediaServices extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/GetMediaWorkflowExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetMediaWorkflow API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/GetMediaWorkflowExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetMediaWorkflow API.
      */
     GetMediaWorkflowResponse getMediaWorkflow(GetMediaWorkflowRequest request);
 
@@ -460,7 +460,7 @@ public interface MediaServices extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/GetMediaWorkflowConfigurationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetMediaWorkflowConfiguration API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/GetMediaWorkflowConfigurationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetMediaWorkflowConfiguration API.
      */
     GetMediaWorkflowConfigurationResponse getMediaWorkflowConfiguration(
             GetMediaWorkflowConfigurationRequest request);
@@ -473,7 +473,7 @@ public interface MediaServices extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/GetMediaWorkflowJobExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetMediaWorkflowJob API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/GetMediaWorkflowJobExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetMediaWorkflowJob API.
      */
     GetMediaWorkflowJobResponse getMediaWorkflowJob(GetMediaWorkflowJobRequest request);
 
@@ -485,7 +485,7 @@ public interface MediaServices extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/GetStreamCdnConfigExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetStreamCdnConfig API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/GetStreamCdnConfigExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetStreamCdnConfig API.
      */
     GetStreamCdnConfigResponse getStreamCdnConfig(GetStreamCdnConfigRequest request);
 
@@ -497,7 +497,7 @@ public interface MediaServices extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/GetStreamDistributionChannelExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetStreamDistributionChannel API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/GetStreamDistributionChannelExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetStreamDistributionChannel API.
      */
     GetStreamDistributionChannelResponse getStreamDistributionChannel(
             GetStreamDistributionChannelRequest request);
@@ -510,7 +510,7 @@ public interface MediaServices extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/GetStreamPackagingConfigExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetStreamPackagingConfig API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/GetStreamPackagingConfigExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetStreamPackagingConfig API.
      */
     GetStreamPackagingConfigResponse getStreamPackagingConfig(
             GetStreamPackagingConfigRequest request);
@@ -523,7 +523,7 @@ public interface MediaServices extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/IngestStreamDistributionChannelExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use IngestStreamDistributionChannel API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/IngestStreamDistributionChannelExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use IngestStreamDistributionChannel API.
      */
     IngestStreamDistributionChannelResponse ingestStreamDistributionChannel(
             IngestStreamDistributionChannelRequest request);
@@ -536,7 +536,7 @@ public interface MediaServices extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/ListMediaAssetDistributionChannelAttachmentsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListMediaAssetDistributionChannelAttachments API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/ListMediaAssetDistributionChannelAttachmentsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListMediaAssetDistributionChannelAttachments API.
      */
     ListMediaAssetDistributionChannelAttachmentsResponse
             listMediaAssetDistributionChannelAttachments(
@@ -551,7 +551,7 @@ public interface MediaServices extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/ListMediaAssetsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListMediaAssets API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/ListMediaAssetsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListMediaAssets API.
      */
     ListMediaAssetsResponse listMediaAssets(ListMediaAssetsRequest request);
 
@@ -564,7 +564,7 @@ public interface MediaServices extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/ListMediaWorkflowConfigurationsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListMediaWorkflowConfigurations API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/ListMediaWorkflowConfigurationsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListMediaWorkflowConfigurations API.
      */
     ListMediaWorkflowConfigurationsResponse listMediaWorkflowConfigurations(
             ListMediaWorkflowConfigurationsRequest request);
@@ -577,7 +577,7 @@ public interface MediaServices extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/ListMediaWorkflowJobsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListMediaWorkflowJobs API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/ListMediaWorkflowJobsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListMediaWorkflowJobs API.
      */
     ListMediaWorkflowJobsResponse listMediaWorkflowJobs(ListMediaWorkflowJobsRequest request);
 
@@ -590,7 +590,7 @@ public interface MediaServices extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/ListMediaWorkflowTaskDeclarationsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListMediaWorkflowTaskDeclarations API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/ListMediaWorkflowTaskDeclarationsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListMediaWorkflowTaskDeclarations API.
      */
     ListMediaWorkflowTaskDeclarationsResponse listMediaWorkflowTaskDeclarations(
             ListMediaWorkflowTaskDeclarationsRequest request);
@@ -603,7 +603,7 @@ public interface MediaServices extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/ListMediaWorkflowsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListMediaWorkflows API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/ListMediaWorkflowsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListMediaWorkflows API.
      */
     ListMediaWorkflowsResponse listMediaWorkflows(ListMediaWorkflowsRequest request);
 
@@ -615,7 +615,7 @@ public interface MediaServices extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/ListStreamCdnConfigsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListStreamCdnConfigs API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/ListStreamCdnConfigsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListStreamCdnConfigs API.
      */
     ListStreamCdnConfigsResponse listStreamCdnConfigs(ListStreamCdnConfigsRequest request);
 
@@ -627,7 +627,7 @@ public interface MediaServices extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/ListStreamDistributionChannelsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListStreamDistributionChannels API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/ListStreamDistributionChannelsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListStreamDistributionChannels API.
      */
     ListStreamDistributionChannelsResponse listStreamDistributionChannels(
             ListStreamDistributionChannelsRequest request);
@@ -640,7 +640,7 @@ public interface MediaServices extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/ListStreamPackagingConfigsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListStreamPackagingConfigs API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/ListStreamPackagingConfigsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListStreamPackagingConfigs API.
      */
     ListStreamPackagingConfigsResponse listStreamPackagingConfigs(
             ListStreamPackagingConfigsRequest request);
@@ -654,7 +654,7 @@ public interface MediaServices extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/ListSystemMediaWorkflowsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSystemMediaWorkflows API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/ListSystemMediaWorkflowsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSystemMediaWorkflows API.
      */
     ListSystemMediaWorkflowsResponse listSystemMediaWorkflows(
             ListSystemMediaWorkflowsRequest request);
@@ -668,7 +668,7 @@ public interface MediaServices extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/RemoveMediaAssetLockExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RemoveMediaAssetLock API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/RemoveMediaAssetLockExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RemoveMediaAssetLock API.
      */
     RemoveMediaAssetLockResponse removeMediaAssetLock(RemoveMediaAssetLockRequest request);
 
@@ -681,7 +681,7 @@ public interface MediaServices extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/RemoveMediaWorkflowConfigurationLockExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RemoveMediaWorkflowConfigurationLock API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/RemoveMediaWorkflowConfigurationLockExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RemoveMediaWorkflowConfigurationLock API.
      */
     RemoveMediaWorkflowConfigurationLockResponse removeMediaWorkflowConfigurationLock(
             RemoveMediaWorkflowConfigurationLockRequest request);
@@ -695,7 +695,7 @@ public interface MediaServices extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/RemoveMediaWorkflowJobLockExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RemoveMediaWorkflowJobLock API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/RemoveMediaWorkflowJobLockExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RemoveMediaWorkflowJobLock API.
      */
     RemoveMediaWorkflowJobLockResponse removeMediaWorkflowJobLock(
             RemoveMediaWorkflowJobLockRequest request);
@@ -709,7 +709,7 @@ public interface MediaServices extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/RemoveMediaWorkflowLockExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RemoveMediaWorkflowLock API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/RemoveMediaWorkflowLockExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RemoveMediaWorkflowLock API.
      */
     RemoveMediaWorkflowLockResponse removeMediaWorkflowLock(RemoveMediaWorkflowLockRequest request);
 
@@ -722,7 +722,7 @@ public interface MediaServices extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/RemoveStreamCdnConfigLockExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RemoveStreamCdnConfigLock API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/RemoveStreamCdnConfigLockExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RemoveStreamCdnConfigLock API.
      */
     RemoveStreamCdnConfigLockResponse removeStreamCdnConfigLock(
             RemoveStreamCdnConfigLockRequest request);
@@ -736,7 +736,7 @@ public interface MediaServices extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/RemoveStreamDistributionChannelLockExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RemoveStreamDistributionChannelLock API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/RemoveStreamDistributionChannelLockExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RemoveStreamDistributionChannelLock API.
      */
     RemoveStreamDistributionChannelLockResponse removeStreamDistributionChannelLock(
             RemoveStreamDistributionChannelLockRequest request);
@@ -750,7 +750,7 @@ public interface MediaServices extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/RemoveStreamPackagingConfigLockExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RemoveStreamPackagingConfigLock API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/RemoveStreamPackagingConfigLockExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RemoveStreamPackagingConfigLock API.
      */
     RemoveStreamPackagingConfigLockResponse removeStreamPackagingConfigLock(
             RemoveStreamPackagingConfigLockRequest request);
@@ -763,7 +763,7 @@ public interface MediaServices extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/UpdateMediaAssetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateMediaAsset API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/UpdateMediaAssetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateMediaAsset API.
      */
     UpdateMediaAssetResponse updateMediaAsset(UpdateMediaAssetRequest request);
 
@@ -775,7 +775,7 @@ public interface MediaServices extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/UpdateMediaWorkflowExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateMediaWorkflow API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/UpdateMediaWorkflowExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateMediaWorkflow API.
      */
     UpdateMediaWorkflowResponse updateMediaWorkflow(UpdateMediaWorkflowRequest request);
 
@@ -787,7 +787,7 @@ public interface MediaServices extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/UpdateMediaWorkflowConfigurationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateMediaWorkflowConfiguration API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/UpdateMediaWorkflowConfigurationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateMediaWorkflowConfiguration API.
      */
     UpdateMediaWorkflowConfigurationResponse updateMediaWorkflowConfiguration(
             UpdateMediaWorkflowConfigurationRequest request);
@@ -800,7 +800,7 @@ public interface MediaServices extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/UpdateMediaWorkflowJobExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateMediaWorkflowJob API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/UpdateMediaWorkflowJobExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateMediaWorkflowJob API.
      */
     UpdateMediaWorkflowJobResponse updateMediaWorkflowJob(UpdateMediaWorkflowJobRequest request);
 
@@ -812,7 +812,7 @@ public interface MediaServices extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/UpdateStreamCdnConfigExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateStreamCdnConfig API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/UpdateStreamCdnConfigExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateStreamCdnConfig API.
      */
     UpdateStreamCdnConfigResponse updateStreamCdnConfig(UpdateStreamCdnConfigRequest request);
 
@@ -824,7 +824,7 @@ public interface MediaServices extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/UpdateStreamDistributionChannelExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateStreamDistributionChannel API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/UpdateStreamDistributionChannelExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateStreamDistributionChannel API.
      */
     UpdateStreamDistributionChannelResponse updateStreamDistributionChannel(
             UpdateStreamDistributionChannelRequest request);
@@ -837,7 +837,7 @@ public interface MediaServices extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/UpdateStreamPackagingConfigExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateStreamPackagingConfig API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/UpdateStreamPackagingConfigExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateStreamPackagingConfig API.
      */
     UpdateStreamPackagingConfigResponse updateStreamPackagingConfig(
             UpdateStreamPackagingConfigRequest request);

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.opensearch.model;
@@ -30,6 +30,11 @@ public final class UpdateOpensearchClusterDetails
         "securityMode",
         "securityMasterUserName",
         "securityMasterUserPasswordHash",
+        "securitySamlConfig",
+        "backupPolicy",
+        "reverseConnectionEndpointCustomerIps",
+        "outboundClusterConfig",
+        "maintenanceDetails",
         "freeformTags",
         "definedTags"
     })
@@ -39,6 +44,11 @@ public final class UpdateOpensearchClusterDetails
             SecurityMode securityMode,
             String securityMasterUserName,
             String securityMasterUserPasswordHash,
+            SecuritySamlConfig securitySamlConfig,
+            BackupPolicy backupPolicy,
+            java.util.List<String> reverseConnectionEndpointCustomerIps,
+            OutboundClusterConfig outboundClusterConfig,
+            UpdateMaintenanceDetails maintenanceDetails,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
@@ -47,6 +57,11 @@ public final class UpdateOpensearchClusterDetails
         this.securityMode = securityMode;
         this.securityMasterUserName = securityMasterUserName;
         this.securityMasterUserPasswordHash = securityMasterUserPasswordHash;
+        this.securitySamlConfig = securitySamlConfig;
+        this.backupPolicy = backupPolicy;
+        this.reverseConnectionEndpointCustomerIps = reverseConnectionEndpointCustomerIps;
+        this.outboundClusterConfig = outboundClusterConfig;
+        this.maintenanceDetails = maintenanceDetails;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
     }
@@ -126,6 +141,59 @@ public final class UpdateOpensearchClusterDetails
             this.__explicitlySet__.add("securityMasterUserPasswordHash");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("securitySamlConfig")
+        private SecuritySamlConfig securitySamlConfig;
+
+        public Builder securitySamlConfig(SecuritySamlConfig securitySamlConfig) {
+            this.securitySamlConfig = securitySamlConfig;
+            this.__explicitlySet__.add("securitySamlConfig");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("backupPolicy")
+        private BackupPolicy backupPolicy;
+
+        public Builder backupPolicy(BackupPolicy backupPolicy) {
+            this.backupPolicy = backupPolicy;
+            this.__explicitlySet__.add("backupPolicy");
+            return this;
+        }
+        /**
+         * The customer IP addresses of the endpoint in customer VCN
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("reverseConnectionEndpointCustomerIps")
+        private java.util.List<String> reverseConnectionEndpointCustomerIps;
+
+        /**
+         * The customer IP addresses of the endpoint in customer VCN
+         * @param reverseConnectionEndpointCustomerIps the value to set
+         * @return this builder
+         **/
+        public Builder reverseConnectionEndpointCustomerIps(
+                java.util.List<String> reverseConnectionEndpointCustomerIps) {
+            this.reverseConnectionEndpointCustomerIps = reverseConnectionEndpointCustomerIps;
+            this.__explicitlySet__.add("reverseConnectionEndpointCustomerIps");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("outboundClusterConfig")
+        private OutboundClusterConfig outboundClusterConfig;
+
+        public Builder outboundClusterConfig(OutboundClusterConfig outboundClusterConfig) {
+            this.outboundClusterConfig = outboundClusterConfig;
+            this.__explicitlySet__.add("outboundClusterConfig");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("maintenanceDetails")
+        private UpdateMaintenanceDetails maintenanceDetails;
+
+        public Builder maintenanceDetails(UpdateMaintenanceDetails maintenanceDetails) {
+            this.maintenanceDetails = maintenanceDetails;
+            this.__explicitlySet__.add("maintenanceDetails");
+            return this;
+        }
         /**
          * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
          * Example: {@code {"bar-key": "value"}}
@@ -179,6 +247,11 @@ public final class UpdateOpensearchClusterDetails
                             this.securityMode,
                             this.securityMasterUserName,
                             this.securityMasterUserPasswordHash,
+                            this.securitySamlConfig,
+                            this.backupPolicy,
+                            this.reverseConnectionEndpointCustomerIps,
+                            this.outboundClusterConfig,
+                            this.maintenanceDetails,
                             this.freeformTags,
                             this.definedTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -203,6 +276,22 @@ public final class UpdateOpensearchClusterDetails
             }
             if (model.wasPropertyExplicitlySet("securityMasterUserPasswordHash")) {
                 this.securityMasterUserPasswordHash(model.getSecurityMasterUserPasswordHash());
+            }
+            if (model.wasPropertyExplicitlySet("securitySamlConfig")) {
+                this.securitySamlConfig(model.getSecuritySamlConfig());
+            }
+            if (model.wasPropertyExplicitlySet("backupPolicy")) {
+                this.backupPolicy(model.getBackupPolicy());
+            }
+            if (model.wasPropertyExplicitlySet("reverseConnectionEndpointCustomerIps")) {
+                this.reverseConnectionEndpointCustomerIps(
+                        model.getReverseConnectionEndpointCustomerIps());
+            }
+            if (model.wasPropertyExplicitlySet("outboundClusterConfig")) {
+                this.outboundClusterConfig(model.getOutboundClusterConfig());
+            }
+            if (model.wasPropertyExplicitlySet("maintenanceDetails")) {
+                this.maintenanceDetails(model.getMaintenanceDetails());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -288,6 +377,48 @@ public final class UpdateOpensearchClusterDetails
         return securityMasterUserPasswordHash;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("securitySamlConfig")
+    private final SecuritySamlConfig securitySamlConfig;
+
+    public SecuritySamlConfig getSecuritySamlConfig() {
+        return securitySamlConfig;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("backupPolicy")
+    private final BackupPolicy backupPolicy;
+
+    public BackupPolicy getBackupPolicy() {
+        return backupPolicy;
+    }
+
+    /**
+     * The customer IP addresses of the endpoint in customer VCN
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("reverseConnectionEndpointCustomerIps")
+    private final java.util.List<String> reverseConnectionEndpointCustomerIps;
+
+    /**
+     * The customer IP addresses of the endpoint in customer VCN
+     * @return the value
+     **/
+    public java.util.List<String> getReverseConnectionEndpointCustomerIps() {
+        return reverseConnectionEndpointCustomerIps;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("outboundClusterConfig")
+    private final OutboundClusterConfig outboundClusterConfig;
+
+    public OutboundClusterConfig getOutboundClusterConfig() {
+        return outboundClusterConfig;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("maintenanceDetails")
+    private final UpdateMaintenanceDetails maintenanceDetails;
+
+    public UpdateMaintenanceDetails getMaintenanceDetails() {
+        return maintenanceDetails;
+    }
+
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
      * Example: {@code {"bar-key": "value"}}
@@ -344,6 +475,12 @@ public final class UpdateOpensearchClusterDetails
         sb.append(", securityMasterUserName=").append(String.valueOf(this.securityMasterUserName));
         sb.append(", securityMasterUserPasswordHash=")
                 .append(String.valueOf(this.securityMasterUserPasswordHash));
+        sb.append(", securitySamlConfig=").append(String.valueOf(this.securitySamlConfig));
+        sb.append(", backupPolicy=").append(String.valueOf(this.backupPolicy));
+        sb.append(", reverseConnectionEndpointCustomerIps=")
+                .append(String.valueOf(this.reverseConnectionEndpointCustomerIps));
+        sb.append(", outboundClusterConfig=").append(String.valueOf(this.outboundClusterConfig));
+        sb.append(", maintenanceDetails=").append(String.valueOf(this.maintenanceDetails));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
@@ -367,6 +504,13 @@ public final class UpdateOpensearchClusterDetails
                         this.securityMasterUserName, other.securityMasterUserName)
                 && java.util.Objects.equals(
                         this.securityMasterUserPasswordHash, other.securityMasterUserPasswordHash)
+                && java.util.Objects.equals(this.securitySamlConfig, other.securitySamlConfig)
+                && java.util.Objects.equals(this.backupPolicy, other.backupPolicy)
+                && java.util.Objects.equals(
+                        this.reverseConnectionEndpointCustomerIps,
+                        other.reverseConnectionEndpointCustomerIps)
+                && java.util.Objects.equals(this.outboundClusterConfig, other.outboundClusterConfig)
+                && java.util.Objects.equals(this.maintenanceDetails, other.maintenanceDetails)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
@@ -391,6 +535,27 @@ public final class UpdateOpensearchClusterDetails
                         + (this.securityMasterUserPasswordHash == null
                                 ? 43
                                 : this.securityMasterUserPasswordHash.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.securitySamlConfig == null
+                                ? 43
+                                : this.securitySamlConfig.hashCode());
+        result = (result * PRIME) + (this.backupPolicy == null ? 43 : this.backupPolicy.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.reverseConnectionEndpointCustomerIps == null
+                                ? 43
+                                : this.reverseConnectionEndpointCustomerIps.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.outboundClusterConfig == null
+                                ? 43
+                                : this.outboundClusterConfig.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.maintenanceDetails == null
+                                ? 43
+                                : this.maintenanceDetails.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();

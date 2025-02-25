@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.computecloudatcustomer;
@@ -9,7 +9,7 @@ import com.oracle.bmc.computecloudatcustomer.responses.*;
 
 /**
  * Use the Compute Cloud@Customer API to manage Compute Cloud@Customer infrastructures and upgrade schedules.
- * For more information see [Compute Cloud@Customer documentation](https://docs.cloud.oracle.com/iaas/compute-cloud-at-customer/home.htm).
+ * For more information see [Compute Cloud@Customer documentation](https://docs.oracle.com/iaas/compute-cloud-at-customer/home.htm).
  *
  * This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by default if no circuit breaker configuration is defined by the user.
  */
@@ -70,14 +70,14 @@ public interface ComputeCloudAtCustomer extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/computecloudatcustomer/ChangeCccInfrastructureCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeCccInfrastructureCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/computecloudatcustomer/ChangeCccInfrastructureCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeCccInfrastructureCompartment API.
      */
     ChangeCccInfrastructureCompartmentResponse changeCccInfrastructureCompartment(
             ChangeCccInfrastructureCompartmentRequest request);
 
     /**
      * Moves a Compute Cloud@Customer upgrade schedule from one compartment to another using the
-     * specified [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * specified [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -85,7 +85,7 @@ public interface ComputeCloudAtCustomer extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/computecloudatcustomer/ChangeCccUpgradeScheduleCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeCccUpgradeScheduleCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/computecloudatcustomer/ChangeCccUpgradeScheduleCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeCccUpgradeScheduleCompartment API.
      */
     ChangeCccUpgradeScheduleCompartmentResponse changeCccUpgradeScheduleCompartment(
             ChangeCccUpgradeScheduleCompartmentRequest request);
@@ -100,7 +100,7 @@ public interface ComputeCloudAtCustomer extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/computecloudatcustomer/CreateCccInfrastructureExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateCccInfrastructure API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/computecloudatcustomer/CreateCccInfrastructureExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateCccInfrastructure API.
      */
     CreateCccInfrastructureResponse createCccInfrastructure(CreateCccInfrastructureRequest request);
 
@@ -113,14 +113,14 @@ public interface ComputeCloudAtCustomer extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/computecloudatcustomer/CreateCccUpgradeScheduleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateCccUpgradeSchedule API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/computecloudatcustomer/CreateCccUpgradeScheduleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateCccUpgradeSchedule API.
      */
     CreateCccUpgradeScheduleResponse createCccUpgradeSchedule(
             CreateCccUpgradeScheduleRequest request);
 
     /**
      * Deletes a Compute Cloud@Customer infrastructure resource specified by the resource
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -128,13 +128,13 @@ public interface ComputeCloudAtCustomer extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/computecloudatcustomer/DeleteCccInfrastructureExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteCccInfrastructure API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/computecloudatcustomer/DeleteCccInfrastructureExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteCccInfrastructure API.
      */
     DeleteCccInfrastructureResponse deleteCccInfrastructure(DeleteCccInfrastructureRequest request);
 
     /**
      * Deletes a Compute Cloud@Customer upgrade schedule by the specified
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -142,14 +142,14 @@ public interface ComputeCloudAtCustomer extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/computecloudatcustomer/DeleteCccUpgradeScheduleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteCccUpgradeSchedule API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/computecloudatcustomer/DeleteCccUpgradeScheduleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteCccUpgradeSchedule API.
      */
     DeleteCccUpgradeScheduleResponse deleteCccUpgradeSchedule(
             DeleteCccUpgradeScheduleRequest request);
 
     /**
      * Gets a Compute Cloud@Customer infrastructure using the infrastructure
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -157,13 +157,13 @@ public interface ComputeCloudAtCustomer extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/computecloudatcustomer/GetCccInfrastructureExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetCccInfrastructure API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/computecloudatcustomer/GetCccInfrastructureExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetCccInfrastructure API.
      */
     GetCccInfrastructureResponse getCccInfrastructure(GetCccInfrastructureRequest request);
 
     /**
      * Gets a Compute Cloud@Customer upgrade schedule by the specified
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -171,7 +171,7 @@ public interface ComputeCloudAtCustomer extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/computecloudatcustomer/GetCccUpgradeScheduleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetCccUpgradeSchedule API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/computecloudatcustomer/GetCccUpgradeScheduleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetCccUpgradeSchedule API.
      */
     GetCccUpgradeScheduleResponse getCccUpgradeSchedule(GetCccUpgradeScheduleRequest request);
 
@@ -184,7 +184,7 @@ public interface ComputeCloudAtCustomer extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/computecloudatcustomer/ListCccInfrastructuresExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListCccInfrastructures API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/computecloudatcustomer/ListCccInfrastructuresExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListCccInfrastructures API.
      */
     ListCccInfrastructuresResponse listCccInfrastructures(ListCccInfrastructuresRequest request);
 
@@ -197,7 +197,7 @@ public interface ComputeCloudAtCustomer extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/computecloudatcustomer/ListCccUpgradeSchedulesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListCccUpgradeSchedules API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/computecloudatcustomer/ListCccUpgradeSchedulesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListCccUpgradeSchedules API.
      */
     ListCccUpgradeSchedulesResponse listCccUpgradeSchedules(ListCccUpgradeSchedulesRequest request);
 
@@ -209,7 +209,7 @@ public interface ComputeCloudAtCustomer extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/computecloudatcustomer/UpdateCccInfrastructureExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateCccInfrastructure API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/computecloudatcustomer/UpdateCccInfrastructureExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateCccInfrastructure API.
      */
     UpdateCccInfrastructureResponse updateCccInfrastructure(UpdateCccInfrastructureRequest request);
 
@@ -221,7 +221,7 @@ public interface ComputeCloudAtCustomer extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/computecloudatcustomer/UpdateCccUpgradeScheduleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateCccUpgradeSchedule API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/computecloudatcustomer/UpdateCccUpgradeScheduleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateCccUpgradeSchedule API.
      */
     UpdateCccUpgradeScheduleResponse updateCccUpgradeSchedule(
             UpdateCccUpgradeScheduleRequest request);

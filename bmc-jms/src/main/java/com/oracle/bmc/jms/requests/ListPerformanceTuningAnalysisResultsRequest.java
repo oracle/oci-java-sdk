@@ -1,24 +1,24 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.jms.requests;
 
 import com.oracle.bmc.jms.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/ListPerformanceTuningAnalysisResultsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListPerformanceTuningAnalysisResultsRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/ListPerformanceTuningAnalysisResultsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListPerformanceTuningAnalysisResultsRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
 public class ListPerformanceTuningAnalysisResultsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Fleet.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
      */
     private String fleetId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Fleet.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
      */
     public String getFleetId() {
         return fleetId;
@@ -46,12 +46,23 @@ public class ListPerformanceTuningAnalysisResultsRequest
         return applicationId;
     }
     /**
-     * The host [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the managed instance.
+     * The name of the application.
+     */
+    private String applicationName;
+
+    /**
+     * The name of the application.
+     */
+    public String getApplicationName() {
+        return applicationName;
+    }
+    /**
+     * The host [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
      */
     private String hostName;
 
     /**
-     * The host [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the managed instance.
+     * The host [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
      */
     public String getHostName() {
         return hostName;
@@ -150,12 +161,12 @@ public class ListPerformanceTuningAnalysisResultsRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Fleet.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
          */
         private String fleetId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Fleet.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
          * @param fleetId the value to set
          * @return this builder instance
          */
@@ -195,12 +206,27 @@ public class ListPerformanceTuningAnalysisResultsRequest
         }
 
         /**
-         * The host [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the managed instance.
+         * The name of the application.
+         */
+        private String applicationName = null;
+
+        /**
+         * The name of the application.
+         * @param applicationName the value to set
+         * @return this builder instance
+         */
+        public Builder applicationName(String applicationName) {
+            this.applicationName = applicationName;
+            return this;
+        }
+
+        /**
+         * The host [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
          */
         private String hostName = null;
 
         /**
-         * The host [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the managed instance.
+         * The host [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
          * @param hostName the value to set
          * @return this builder instance
          */
@@ -354,6 +380,7 @@ public class ListPerformanceTuningAnalysisResultsRequest
             fleetId(o.getFleetId());
             managedInstanceId(o.getManagedInstanceId());
             applicationId(o.getApplicationId());
+            applicationName(o.getApplicationName());
             hostName(o.getHostName());
             timeStart(o.getTimeStart());
             timeEnd(o.getTimeEnd());
@@ -398,6 +425,7 @@ public class ListPerformanceTuningAnalysisResultsRequest
             request.fleetId = fleetId;
             request.managedInstanceId = managedInstanceId;
             request.applicationId = applicationId;
+            request.applicationName = applicationName;
             request.hostName = hostName;
             request.timeStart = timeStart;
             request.timeEnd = timeEnd;
@@ -407,7 +435,7 @@ public class ListPerformanceTuningAnalysisResultsRequest
             request.sortBy = sortBy;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListPerformanceTuningAnalysisResultsRequest(fleetId, managedInstanceId, applicationId, hostName, timeStart, timeEnd, limit, page, sortOrder, sortBy, opcRequestId);
+            // new ListPerformanceTuningAnalysisResultsRequest(fleetId, managedInstanceId, applicationId, applicationName, hostName, timeStart, timeEnd, limit, page, sortOrder, sortBy, opcRequestId);
         }
     }
 
@@ -420,6 +448,7 @@ public class ListPerformanceTuningAnalysisResultsRequest
                 .fleetId(fleetId)
                 .managedInstanceId(managedInstanceId)
                 .applicationId(applicationId)
+                .applicationName(applicationName)
                 .hostName(hostName)
                 .timeStart(timeStart)
                 .timeEnd(timeEnd)
@@ -446,6 +475,7 @@ public class ListPerformanceTuningAnalysisResultsRequest
         sb.append(",fleetId=").append(String.valueOf(this.fleetId));
         sb.append(",managedInstanceId=").append(String.valueOf(this.managedInstanceId));
         sb.append(",applicationId=").append(String.valueOf(this.applicationId));
+        sb.append(",applicationName=").append(String.valueOf(this.applicationName));
         sb.append(",hostName=").append(String.valueOf(this.hostName));
         sb.append(",timeStart=").append(String.valueOf(this.timeStart));
         sb.append(",timeEnd=").append(String.valueOf(this.timeEnd));
@@ -473,6 +503,7 @@ public class ListPerformanceTuningAnalysisResultsRequest
                 && java.util.Objects.equals(this.fleetId, other.fleetId)
                 && java.util.Objects.equals(this.managedInstanceId, other.managedInstanceId)
                 && java.util.Objects.equals(this.applicationId, other.applicationId)
+                && java.util.Objects.equals(this.applicationName, other.applicationName)
                 && java.util.Objects.equals(this.hostName, other.hostName)
                 && java.util.Objects.equals(this.timeStart, other.timeStart)
                 && java.util.Objects.equals(this.timeEnd, other.timeEnd)
@@ -494,6 +525,9 @@ public class ListPerformanceTuningAnalysisResultsRequest
         result =
                 (result * PRIME)
                         + (this.applicationId == null ? 43 : this.applicationId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.applicationName == null ? 43 : this.applicationName.hashCode());
         result = (result * PRIME) + (this.hostName == null ? 43 : this.hostName.hashCode());
         result = (result * PRIME) + (this.timeStart == null ? 43 : this.timeStart.hashCode());
         result = (result * PRIME) + (this.timeEnd == null ? 43 : this.timeEnd.hashCode());

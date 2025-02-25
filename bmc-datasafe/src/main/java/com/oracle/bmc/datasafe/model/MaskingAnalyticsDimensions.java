@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datasafe.model;
@@ -48,13 +48,13 @@ public final class MaskingAnalyticsDimensions
             return this;
         }
         /**
-         * The OCID of the masking policy..
+         * The OCID of the masking policy.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("policyId")
         private String policyId;
 
         /**
-         * The OCID of the masking policy..
+         * The OCID of the masking policy.
          * @param policyId the value to set
          * @return this builder
          **/
@@ -114,13 +114,13 @@ public final class MaskingAnalyticsDimensions
     }
 
     /**
-     * The OCID of the masking policy..
+     * The OCID of the masking policy.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("policyId")
     private final String policyId;
 
     /**
-     * The OCID of the masking policy..
+     * The OCID of the masking policy.
      * @return the value
      **/
     public String getPolicyId() {

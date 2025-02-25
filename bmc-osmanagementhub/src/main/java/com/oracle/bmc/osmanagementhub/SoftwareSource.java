@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.osmanagementhub;
@@ -9,7 +9,7 @@ import com.oracle.bmc.osmanagementhub.responses.*;
 
 /**
  * Use the OS Management Hub API to manage and monitor updates and patches for instances in OCI, your private data center, or 3rd-party clouds.
- * For more information, see [Overview of OS Management Hub](https://docs.cloud.oracle.com/iaas/osmh/doc/overview.htm).
+ * For more information, see [Overview of OS Management Hub](https://docs.oracle.com/iaas/osmh/doc/overview.htm).
  *
  * This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by default if no circuit breaker configuration is defined by the user.
  */
@@ -64,6 +64,10 @@ public interface SoftwareSource extends AutoCloseable {
     /**
      * Adds packages to a software source. This operation can only be done for custom and versioned custom software sources that are not created using filters.
      * For a versioned custom software source, you can only add packages when the source is created. Once content is added to a versioned custom software source, it is immutable.
+     * Packages can be of the format:
+     *   * name (for example: git). If isLatestContentOnly is true, only the latest version of the package will be added, otherwise all versions of the package will be added.
+     *   * name-version-release.architecture (for example: git-2.43.5-1.el8_10.x86_64)
+     *   * name-epoch:version-release.architecture (for example: git-0:2.43.5-1.el8_10.x86_64)
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -71,7 +75,7 @@ public interface SoftwareSource extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/AddPackagesToSoftwareSourceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AddPackagesToSoftwareSource API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/AddPackagesToSoftwareSourceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AddPackagesToSoftwareSource API.
      */
     AddPackagesToSoftwareSourceResponse addPackagesToSoftwareSource(
             AddPackagesToSoftwareSourceRequest request);
@@ -85,14 +89,14 @@ public interface SoftwareSource extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/ChangeAvailabilityOfSoftwareSourcesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeAvailabilityOfSoftwareSources API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/ChangeAvailabilityOfSoftwareSourcesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeAvailabilityOfSoftwareSources API.
      */
     ChangeAvailabilityOfSoftwareSourcesResponse changeAvailabilityOfSoftwareSources(
             ChangeAvailabilityOfSoftwareSourcesRequest request);
 
     /**
      * Moves the specified software sources to a different compartment within the same tenancy.
-     * For information about moving resources between compartments, see [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * For information about moving resources between compartments, see [Moving Resources to a Different Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -100,7 +104,7 @@ public interface SoftwareSource extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/ChangeSoftwareSourceCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeSoftwareSourceCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/ChangeSoftwareSourceCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeSoftwareSourceCompartment API.
      */
     ChangeSoftwareSourceCompartmentResponse changeSoftwareSourceCompartment(
             ChangeSoftwareSourceCompartmentRequest request);
@@ -114,12 +118,12 @@ public interface SoftwareSource extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/CreateEntitlementExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateEntitlement API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/CreateEntitlementExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateEntitlement API.
      */
     CreateEntitlementResponse createEntitlement(CreateEntitlementRequest request);
 
     /**
-     * Creates a new versioned or custom software source.
+     * Creates a new software source.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -127,7 +131,7 @@ public interface SoftwareSource extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/CreateSoftwareSourceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateSoftwareSource API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/CreateSoftwareSourceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateSoftwareSource API.
      */
     CreateSoftwareSourceResponse createSoftwareSource(CreateSoftwareSourceRequest request);
 
@@ -139,7 +143,7 @@ public interface SoftwareSource extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/DeleteSoftwareSourceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteSoftwareSource API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/DeleteSoftwareSourceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteSoftwareSource API.
      */
     DeleteSoftwareSourceResponse deleteSoftwareSource(DeleteSoftwareSourceRequest request);
 
@@ -152,7 +156,7 @@ public interface SoftwareSource extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/GetErratumExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetErratum API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/GetErratumExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetErratum API.
      */
     GetErratumResponse getErratum(GetErratumRequest request);
 
@@ -165,7 +169,7 @@ public interface SoftwareSource extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/GetModuleStreamExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetModuleStream API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/GetModuleStreamExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetModuleStream API.
      */
     GetModuleStreamResponse getModuleStream(GetModuleStreamRequest request);
 
@@ -178,7 +182,7 @@ public interface SoftwareSource extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/GetModuleStreamProfileExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetModuleStreamProfile API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/GetModuleStreamProfileExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetModuleStreamProfile API.
      */
     GetModuleStreamProfileResponse getModuleStreamProfile(GetModuleStreamProfileRequest request);
 
@@ -191,7 +195,7 @@ public interface SoftwareSource extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/GetPackageGroupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetPackageGroup API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/GetPackageGroupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetPackageGroup API.
      */
     GetPackageGroupResponse getPackageGroup(GetPackageGroupRequest request);
 
@@ -204,19 +208,19 @@ public interface SoftwareSource extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/GetSoftwarePackageExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetSoftwarePackage API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/GetSoftwarePackageExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetSoftwarePackage API.
      */
     GetSoftwarePackageResponse getSoftwarePackage(GetSoftwarePackageRequest request);
 
     /**
-     * Returns information about the specified software package based on its fully qualified name.
+     * Returns information about the specified software package based on its fully qualified name (NVRA or NEVRA).
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/GetSoftwarePackageByNameExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetSoftwarePackageByName API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/GetSoftwarePackageByNameExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetSoftwarePackageByName API.
      */
     GetSoftwarePackageByNameResponse getSoftwarePackageByName(
             GetSoftwarePackageByNameRequest request);
@@ -229,9 +233,23 @@ public interface SoftwareSource extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/GetSoftwareSourceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetSoftwareSource API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/GetSoftwareSourceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetSoftwareSource API.
      */
     GetSoftwareSourceResponse getSoftwareSource(GetSoftwareSourceRequest request);
+
+    /**
+     * Returns an archive containing the list of packages in the software source.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/GetSoftwareSourceManifestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetSoftwareSourceManifest API.
+     */
+    GetSoftwareSourceManifestResponse getSoftwareSourceManifest(
+            GetSoftwareSourceManifestRequest request);
 
     /**
      * Lists software packages available through the OS Management Hub service.  Filter the list against a variety of criteria
@@ -243,12 +261,27 @@ public interface SoftwareSource extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/ListAllSoftwarePackagesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListAllSoftwarePackages API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/ListAllSoftwarePackagesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListAllSoftwarePackages API.
      */
     ListAllSoftwarePackagesResponse listAllSoftwarePackages(ListAllSoftwarePackagesRequest request);
 
     /**
-     * Lists entitlements in the specified tenancy [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Filter the list against a variety of criteria including but
+     * Lists software packages that are available to be added to a custom software source of type MANIFEST.  Filter the list against a variety of criteria
+     * including but not limited to its name.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/ListAvailableSoftwarePackagesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListAvailableSoftwarePackages API.
+     */
+    ListAvailableSoftwarePackagesResponse listAvailableSoftwarePackages(
+            ListAvailableSoftwarePackagesRequest request);
+
+    /**
+     * Lists entitlements in the specified tenancy [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Filter the list against a variety of criteria including but
      * not limited to its Customer Support Identifier (CSI), and vendor name.
      *
      * @param request The request object containing the details to send
@@ -257,7 +290,7 @@ public interface SoftwareSource extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/ListEntitlementsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListEntitlements API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/ListEntitlementsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListEntitlements API.
      */
     ListEntitlementsResponse listEntitlements(ListEntitlementsRequest request);
 
@@ -271,12 +304,12 @@ public interface SoftwareSource extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/ListErrataExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListErrata API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/ListErrataExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListErrata API.
      */
     ListErrataResponse listErrata(ListErrataRequest request);
 
     /**
-     * Lists module stream profiles from the specified software source [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Filter the list against a variety of
+     * Lists module stream profiles from the specified software source [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Filter the list against a variety of
      * criteria including but not limited to its module name, stream name, and profile name.
      *
      * @param request The request object containing the details to send
@@ -285,13 +318,13 @@ public interface SoftwareSource extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/ListModuleStreamProfilesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListModuleStreamProfiles API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/ListModuleStreamProfilesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListModuleStreamProfiles API.
      */
     ListModuleStreamProfilesResponse listModuleStreamProfiles(
             ListModuleStreamProfilesRequest request);
 
     /**
-     * Lists module streams from the specified software source [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * Lists module streams from the specified software source [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * Filter the list against a variety of criteria including but not limited to its module name and (stream) name.
      *
      * @param request The request object containing the details to send
@@ -300,12 +333,12 @@ public interface SoftwareSource extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/ListModuleStreamsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListModuleStreams API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/ListModuleStreamsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListModuleStreams API.
      */
     ListModuleStreamsResponse listModuleStreams(ListModuleStreamsRequest request);
 
     /**
-     * Lists package groups that are associated with the specified software source [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Filter the list against a
+     * Lists package groups that are associated with the specified software source [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Filter the list against a
      * variety of criteria including but not limited to its name, and package group type.
      *
      * @param request The request object containing the details to send
@@ -314,7 +347,7 @@ public interface SoftwareSource extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/ListPackageGroupsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListPackageGroups API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/ListPackageGroupsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListPackageGroups API.
      */
     ListPackageGroupsResponse listPackageGroups(ListPackageGroupsRequest request);
 
@@ -328,7 +361,7 @@ public interface SoftwareSource extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/ListSoftwarePackageSoftwareSourcesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSoftwarePackageSoftwareSources API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/ListSoftwarePackageSoftwareSourcesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSoftwarePackageSoftwareSources API.
      */
     ListSoftwarePackageSoftwareSourcesResponse listSoftwarePackageSoftwareSources(
             ListSoftwarePackageSoftwareSourcesRequest request);
@@ -343,7 +376,7 @@ public interface SoftwareSource extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/ListSoftwarePackagesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSoftwarePackages API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/ListSoftwarePackagesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSoftwarePackages API.
      */
     ListSoftwarePackagesResponse listSoftwarePackages(ListSoftwarePackagesRequest request);
 
@@ -357,13 +390,13 @@ public interface SoftwareSource extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/ListSoftwareSourceVendorsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSoftwareSourceVendors API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/ListSoftwareSourceVendorsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSoftwareSourceVendors API.
      */
     ListSoftwareSourceVendorsResponse listSoftwareSourceVendors(
             ListSoftwareSourceVendorsRequest request);
 
     /**
-     * Lists software sources that match the specified tenancy or software source [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Filter the list against a
+     * Lists software sources that match the specified tenancy or software source [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Filter the list against a
      * variety of criteria including but not limited to its name, status, architecture, and OS family.
      *
      * @param request The request object containing the details to send
@@ -372,9 +405,45 @@ public interface SoftwareSource extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/ListSoftwareSourcesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSoftwareSources API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/ListSoftwareSourcesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSoftwareSources API.
      */
     ListSoftwareSourcesResponse listSoftwareSources(ListSoftwareSourcesRequest request);
+
+    /**
+     * Removes packages from a software source. This operation can only be done for custom software sources that are not created using filters.
+     * Packages can be of the format:
+     *   * name (for example: git). This removes all versions of the package.
+     *   * name-version-release.architecture (for example: git-2.43.5-1.el8_10.x86_64)
+     *   * name-epoch:version-release.architecture (for example: git-0:2.43.5-1.el8_10.x86_64)
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/RemovePackagesFromSoftwareSourceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RemovePackagesFromSoftwareSource API.
+     */
+    RemovePackagesFromSoftwareSourceResponse removePackagesFromSoftwareSource(
+            RemovePackagesFromSoftwareSourceRequest request);
+
+    /**
+     * Replaces packages in a software source with the provided list of packages. This operation can only be done for custom software sources that are not created using filters.
+     * Packages can be of the format:
+     *  * name (for example: git). If isLatestContentOnly is true, only the latest version of the package will be added, otherwise all versions of the package will be added.
+     *  * name-version-release.architecture (for example: git-2.43.5-1.el8_10.x86_64)
+     *  * name-epoch:version-release.architecture (for example: git-0:2.43.5-1.el8_10.x86_64)
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/ReplacePackagesInSoftwareSourceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ReplacePackagesInSoftwareSource API.
+     */
+    ReplacePackagesInSoftwareSourceResponse replacePackagesInSoftwareSource(
+            ReplacePackagesInSoftwareSourceRequest request);
 
     /**
      * Returns a list of module streams from the specified software sources. Filter the list against a variety of
@@ -386,7 +455,7 @@ public interface SoftwareSource extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/SearchSoftwareSourceModuleStreamsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use SearchSoftwareSourceModuleStreams API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/SearchSoftwareSourceModuleStreamsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use SearchSoftwareSourceModuleStreams API.
      */
     SearchSoftwareSourceModuleStreamsResponse searchSoftwareSourceModuleStreams(
             SearchSoftwareSourceModuleStreamsRequest request);
@@ -401,7 +470,7 @@ public interface SoftwareSource extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/SearchSoftwareSourceModulesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use SearchSoftwareSourceModules API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/SearchSoftwareSourceModulesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use SearchSoftwareSourceModules API.
      */
     SearchSoftwareSourceModulesResponse searchSoftwareSourceModules(
             SearchSoftwareSourceModulesRequest request);
@@ -416,10 +485,23 @@ public interface SoftwareSource extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/SearchSoftwareSourcePackageGroupsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use SearchSoftwareSourcePackageGroups API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/SearchSoftwareSourcePackageGroupsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use SearchSoftwareSourcePackageGroups API.
      */
     SearchSoftwareSourcePackageGroupsResponse searchSoftwareSourcePackageGroups(
             SearchSoftwareSourcePackageGroupsRequest request);
+
+    /**
+     * Regenerates metadata for the specified custom software source.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/SoftwareSourceGenerateMetadataExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use SoftwareSourceGenerateMetadata API.
+     */
+    SoftwareSourceGenerateMetadataResponse softwareSourceGenerateMetadata(
+            SoftwareSourceGenerateMetadataRequest request);
 
     /**
      * Updates the specified software source's details, including but not limited to name, description, and tags.
@@ -430,9 +512,50 @@ public interface SoftwareSource extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/UpdateSoftwareSourceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateSoftwareSource API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/UpdateSoftwareSourceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateSoftwareSource API.
      */
     UpdateSoftwareSourceResponse updateSoftwareSource(UpdateSoftwareSourceRequest request);
+
+    /**
+     * Updates the package list document for the software source.
+     *
+     *
+     * Note: This operation consumes a stream.
+     *
+     * If the stream supports {@link java.io.InputStream#mark(int)} and {@link java.io.InputStream#reset()}, when a retry is
+     * necessary, the stream is reset so it starts at the beginning (or whatever the stream's position was at the time this
+     * operation is called}.
+     *
+     * Note this means that if the caller has used {@link java.io.InputStream#mark(int)} before, then the mark
+     * will not be the same anymore after this operation, and a subsequent call to {@link java.io.InputStream#reset()} by
+     * the caller will reset the stream not to the caller's mark, but to the position the stream was in when this operation
+     * was called.
+     *
+     * If the stream is a {@link java.io.FileInputStream}, and the stream's {@link java.nio.channels.FileChannel} position
+     * can be changed (like for a regular file), the stream will be wrapped in such a way that it does provide
+     * support for {@link java.io.InputStream#mark(int)} and {@link java.io.InputStream#reset()}. Then the same procedure as
+     * above is followed. If the stream's {@link java.nio.channels.FileChannel} position cannot be changed (like for a
+     * named pipe), then the stream's contents will be buffered in memory, as described below.
+     *
+     * If the stream does not support {@link java.io.InputStream#mark(int)} and {@link java.io.InputStream#reset()}, then
+     * the stream is wrapped in a {@link java.io.BufferedInputStream}, which means the entire contents may
+     * be buffered in memory. Then the same procedure as above is followed.
+     *
+     * The contents of the stream, except when the stream is a {@link java.io.FileInputStream} whose
+     * {@link java.nio.channels.FileChannel} position can be changed, should be less than 2 GiB in size if retries are used.
+     * This is because streams 2 GiB in size or larger do no guarantee that mark-and-reset can be performed. If the stream
+     * is larger, do not use built-in retries and manage retries yourself.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/UpdateSoftwareSourceManifestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateSoftwareSourceManifest API.
+     */
+    UpdateSoftwareSourceManifestResponse updateSoftwareSourceManifest(
+            UpdateSoftwareSourceManifestRequest request);
 
     /**
      * Gets the pre-configured waiters available for resources for this service.

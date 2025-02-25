@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.desktops;
@@ -68,7 +68,7 @@ public interface DesktopService extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/desktops/CancelWorkRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CancelWorkRequest API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/desktops/CancelWorkRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CancelWorkRequest API.
      */
     CancelWorkRequestResponse cancelWorkRequest(CancelWorkRequestRequest request);
 
@@ -81,7 +81,7 @@ public interface DesktopService extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/desktops/ChangeDesktopPoolCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeDesktopPoolCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/desktops/ChangeDesktopPoolCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeDesktopPoolCompartment API.
      */
     ChangeDesktopPoolCompartmentResponse changeDesktopPoolCompartment(
             ChangeDesktopPoolCompartmentRequest request);
@@ -94,7 +94,7 @@ public interface DesktopService extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/desktops/CreateDesktopPoolExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateDesktopPool API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/desktops/CreateDesktopPoolExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateDesktopPool API.
      */
     CreateDesktopPoolResponse createDesktopPool(CreateDesktopPoolRequest request);
 
@@ -107,7 +107,7 @@ public interface DesktopService extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/desktops/DeleteDesktopExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteDesktop API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/desktops/DeleteDesktopExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteDesktop API.
      */
     DeleteDesktopResponse deleteDesktop(DeleteDesktopRequest request);
 
@@ -120,7 +120,7 @@ public interface DesktopService extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/desktops/DeleteDesktopPoolExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteDesktopPool API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/desktops/DeleteDesktopPoolExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteDesktopPool API.
      */
     DeleteDesktopPoolResponse deleteDesktopPool(DeleteDesktopPoolRequest request);
 
@@ -132,7 +132,7 @@ public interface DesktopService extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/desktops/GetDesktopExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetDesktop API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/desktops/GetDesktopExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetDesktop API.
      */
     GetDesktopResponse getDesktop(GetDesktopRequest request);
 
@@ -145,7 +145,7 @@ public interface DesktopService extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/desktops/GetDesktopPoolExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetDesktopPool API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/desktops/GetDesktopPoolExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetDesktopPool API.
      */
     GetDesktopPoolResponse getDesktopPool(GetDesktopPoolRequest request);
 
@@ -157,7 +157,7 @@ public interface DesktopService extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/desktops/GetWorkRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetWorkRequest API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/desktops/GetWorkRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetWorkRequest API.
      */
     GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request);
 
@@ -170,7 +170,7 @@ public interface DesktopService extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/desktops/ListDesktopPoolDesktopsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDesktopPoolDesktops API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/desktops/ListDesktopPoolDesktopsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDesktopPoolDesktops API.
      */
     ListDesktopPoolDesktopsResponse listDesktopPoolDesktops(ListDesktopPoolDesktopsRequest request);
 
@@ -183,7 +183,7 @@ public interface DesktopService extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/desktops/ListDesktopPoolVolumesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDesktopPoolVolumes API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/desktops/ListDesktopPoolVolumesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDesktopPoolVolumes API.
      */
     ListDesktopPoolVolumesResponse listDesktopPoolVolumes(ListDesktopPoolVolumesRequest request);
 
@@ -196,7 +196,7 @@ public interface DesktopService extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/desktops/ListDesktopPoolsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDesktopPools API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/desktops/ListDesktopPoolsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDesktopPools API.
      */
     ListDesktopPoolsResponse listDesktopPools(ListDesktopPoolsRequest request);
 
@@ -209,7 +209,7 @@ public interface DesktopService extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/desktops/ListDesktopsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDesktops API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/desktops/ListDesktopsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDesktops API.
      */
     ListDesktopsResponse listDesktops(ListDesktopsRequest request);
 
@@ -221,7 +221,7 @@ public interface DesktopService extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/desktops/ListWorkRequestErrorsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequestErrors API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/desktops/ListWorkRequestErrorsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequestErrors API.
      */
     ListWorkRequestErrorsResponse listWorkRequestErrors(ListWorkRequestErrorsRequest request);
 
@@ -234,7 +234,7 @@ public interface DesktopService extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/desktops/ListWorkRequestLogsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequestLogs API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/desktops/ListWorkRequestLogsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequestLogs API.
      */
     ListWorkRequestLogsResponse listWorkRequestLogs(ListWorkRequestLogsRequest request);
 
@@ -246,7 +246,7 @@ public interface DesktopService extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/desktops/ListWorkRequestsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequests API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/desktops/ListWorkRequestsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequests API.
      */
     ListWorkRequestsResponse listWorkRequests(ListWorkRequestsRequest request);
 
@@ -258,7 +258,7 @@ public interface DesktopService extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/desktops/StartDesktopExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use StartDesktop API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/desktops/StartDesktopExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use StartDesktop API.
      */
     StartDesktopResponse startDesktop(StartDesktopRequest request);
 
@@ -271,7 +271,7 @@ public interface DesktopService extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/desktops/StartDesktopPoolExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use StartDesktopPool API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/desktops/StartDesktopPoolExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use StartDesktopPool API.
      */
     StartDesktopPoolResponse startDesktopPool(StartDesktopPoolRequest request);
 
@@ -284,7 +284,7 @@ public interface DesktopService extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/desktops/StopDesktopExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use StopDesktop API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/desktops/StopDesktopExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use StopDesktop API.
      */
     StopDesktopResponse stopDesktop(StopDesktopRequest request);
 
@@ -297,7 +297,7 @@ public interface DesktopService extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/desktops/StopDesktopPoolExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use StopDesktopPool API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/desktops/StopDesktopPoolExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use StopDesktopPool API.
      */
     StopDesktopPoolResponse stopDesktopPool(StopDesktopPoolRequest request);
 
@@ -309,7 +309,7 @@ public interface DesktopService extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/desktops/UpdateDesktopExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateDesktop API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/desktops/UpdateDesktopExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateDesktop API.
      */
     UpdateDesktopResponse updateDesktop(UpdateDesktopRequest request);
 
@@ -322,7 +322,7 @@ public interface DesktopService extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/desktops/UpdateDesktopPoolExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateDesktopPool API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/desktops/UpdateDesktopPoolExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateDesktopPool API.
      */
     UpdateDesktopPoolResponse updateDesktopPool(UpdateDesktopPoolRequest request);
 

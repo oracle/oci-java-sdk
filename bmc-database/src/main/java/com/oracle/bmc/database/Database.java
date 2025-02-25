@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database;
@@ -8,7 +8,7 @@ import com.oracle.bmc.database.requests.*;
 import com.oracle.bmc.database.responses.*;
 
 /**
- * The API for the Database Service. Use this API to manage resources such as databases and DB Systems. For more information, see [Overview of the Database Service](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/databaseoverview.htm).
+ * The API for the Database Service. Use this API to manage resources such as databases and DB Systems. For more information, see [Overview of the Database Service](https://docs.oracle.com/iaas/Content/Database/Concepts/databaseoverview.htm).
  *
  * This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by default if no circuit breaker configuration is defined by the user.
  */
@@ -69,7 +69,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ActivateExadataInfrastructureExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ActivateExadataInfrastructure API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ActivateExadataInfrastructureExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ActivateExadataInfrastructure API.
      */
     ActivateExadataInfrastructureResponse activateExadataInfrastructure(
             ActivateExadataInfrastructureRequest request);
@@ -83,7 +83,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/AddStorageCapacityCloudExadataInfrastructureExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AddStorageCapacityCloudExadataInfrastructure API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/AddStorageCapacityCloudExadataInfrastructureExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AddStorageCapacityCloudExadataInfrastructure API.
      */
     AddStorageCapacityCloudExadataInfrastructureResponse
             addStorageCapacityCloudExadataInfrastructure(
@@ -98,7 +98,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/AddStorageCapacityExadataInfrastructureExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AddStorageCapacityExadataInfrastructure API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/AddStorageCapacityExadataInfrastructureExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AddStorageCapacityExadataInfrastructure API.
      */
     AddStorageCapacityExadataInfrastructureResponse addStorageCapacityExadataInfrastructure(
             AddStorageCapacityExadataInfrastructureRequest request);
@@ -112,7 +112,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/AddVirtualMachineToCloudVmClusterExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AddVirtualMachineToCloudVmCluster API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/AddVirtualMachineToCloudVmClusterExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AddVirtualMachineToCloudVmCluster API.
      */
     AddVirtualMachineToCloudVmClusterResponse addVirtualMachineToCloudVmCluster(
             AddVirtualMachineToCloudVmClusterRequest request);
@@ -126,7 +126,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/AddVirtualMachineToVmClusterExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AddVirtualMachineToVmCluster API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/AddVirtualMachineToVmClusterExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AddVirtualMachineToVmCluster API.
      */
     AddVirtualMachineToVmClusterResponse addVirtualMachineToVmCluster(
             AddVirtualMachineToVmClusterRequest request);
@@ -140,7 +140,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/AutonomousDatabaseManualRefreshExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AutonomousDatabaseManualRefresh API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/AutonomousDatabaseManualRefreshExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AutonomousDatabaseManualRefresh API.
      */
     AutonomousDatabaseManualRefreshResponse autonomousDatabaseManualRefresh(
             AutonomousDatabaseManualRefreshRequest request);
@@ -153,7 +153,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/CancelBackupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CancelBackup API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/CancelBackupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CancelBackup API.
      */
     CancelBackupResponse cancelBackup(CancelBackupRequest request);
 
@@ -166,7 +166,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/CancelExecutionWindowExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CancelExecutionWindow API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/CancelExecutionWindowExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CancelExecutionWindow API.
      */
     CancelExecutionWindowResponse cancelExecutionWindow(CancelExecutionWindowRequest request);
 
@@ -179,7 +179,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/CascadingDeleteSchedulingPlanExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CascadingDeleteSchedulingPlan API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/CascadingDeleteSchedulingPlanExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CascadingDeleteSchedulingPlan API.
      */
     CascadingDeleteSchedulingPlanResponse cascadingDeleteSchedulingPlan(
             CascadingDeleteSchedulingPlanRequest request);
@@ -187,7 +187,7 @@ public interface Database extends AutoCloseable {
     /**
      * Move the Autonomous Container Database and its dependent resources to the specified compartment.
      * For more information about moving Autonomous Container Databases, see
-     * [Moving Database Resources to a Different Compartment](https://docs.cloud.oracle.com/Content/Database/Concepts/databaseoverview.htm#moveRes).
+     * [Moving Database Resources to a Different Compartment](https://docs.oracle.com/iaas/Content/Database/Concepts/databaseoverview.htm#moveRes).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -195,7 +195,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ChangeAutonomousContainerDatabaseCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeAutonomousContainerDatabaseCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ChangeAutonomousContainerDatabaseCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeAutonomousContainerDatabaseCompartment API.
      */
     ChangeAutonomousContainerDatabaseCompartmentResponse
             changeAutonomousContainerDatabaseCompartment(
@@ -204,7 +204,7 @@ public interface Database extends AutoCloseable {
     /**
      * Move the Autonomous Database and its dependent resources to the specified compartment.
      * For more information about moving Autonomous Databases, see
-     * [Moving Database Resources to a Different Compartment](https://docs.cloud.oracle.com/Content/Database/Concepts/databaseoverview.htm#moveRes).
+     * [Moving Database Resources to a Different Compartment](https://docs.oracle.com/iaas/Content/Database/Concepts/databaseoverview.htm#moveRes).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -212,7 +212,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ChangeAutonomousDatabaseCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeAutonomousDatabaseCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ChangeAutonomousDatabaseCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeAutonomousDatabaseCompartment API.
      */
     ChangeAutonomousDatabaseCompartmentResponse changeAutonomousDatabaseCompartment(
             ChangeAutonomousDatabaseCompartmentRequest request);
@@ -226,7 +226,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ChangeAutonomousDatabaseSoftwareImageCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeAutonomousDatabaseSoftwareImageCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ChangeAutonomousDatabaseSoftwareImageCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeAutonomousDatabaseSoftwareImageCompartment API.
      */
     ChangeAutonomousDatabaseSoftwareImageCompartmentResponse
             changeAutonomousDatabaseSoftwareImageCompartment(
@@ -241,7 +241,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ChangeAutonomousDatabaseSubscriptionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeAutonomousDatabaseSubscription API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ChangeAutonomousDatabaseSubscriptionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeAutonomousDatabaseSubscription API.
      */
     ChangeAutonomousDatabaseSubscriptionResponse changeAutonomousDatabaseSubscription(
             ChangeAutonomousDatabaseSubscriptionRequest request);
@@ -249,7 +249,7 @@ public interface Database extends AutoCloseable {
     /**
      * **Deprecated.** Use the {@link #changeCloudExadataInfrastructureCompartment(ChangeCloudExadataInfrastructureCompartmentRequest) changeCloudExadataInfrastructureCompartment} operation to move an Exadata infrastructure resource to a different compartment and  {@link #changeCloudAutonomousVmClusterCompartment(ChangeCloudAutonomousVmClusterCompartmentRequest) changeCloudAutonomousVmClusterCompartment} operation to move an Autonomous Exadata VM cluster to a different compartment.
      * For more information, see
-     * [Moving Database Resources to a Different Compartment](https://docs.cloud.oracle.com/Content/Database/Concepts/databaseoverview.htm#moveRes).
+     * [Moving Database Resources to a Different Compartment](https://docs.oracle.com/iaas/Content/Database/Concepts/databaseoverview.htm#moveRes).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -257,7 +257,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ChangeAutonomousExadataInfrastructureCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeAutonomousExadataInfrastructureCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ChangeAutonomousExadataInfrastructureCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeAutonomousExadataInfrastructureCompartment API.
      */
     ChangeAutonomousExadataInfrastructureCompartmentResponse
             changeAutonomousExadataInfrastructureCompartment(
@@ -272,7 +272,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ChangeAutonomousVmClusterCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeAutonomousVmClusterCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ChangeAutonomousVmClusterCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeAutonomousVmClusterCompartment API.
      */
     ChangeAutonomousVmClusterCompartmentResponse changeAutonomousVmClusterCompartment(
             ChangeAutonomousVmClusterCompartmentRequest request);
@@ -280,7 +280,7 @@ public interface Database extends AutoCloseable {
     /**
      * Move the backup destination and its dependent resources to the specified compartment.
      * For more information, see
-     * [Moving Database Resources to a Different Compartment](https://docs.cloud.oracle.com/Content/Database/Concepts/databaseoverview.htm#moveRes).
+     * [Moving Database Resources to a Different Compartment](https://docs.oracle.com/iaas/Content/Database/Concepts/databaseoverview.htm#moveRes).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -288,7 +288,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ChangeBackupDestinationCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeBackupDestinationCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ChangeBackupDestinationCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeBackupDestinationCompartment API.
      */
     ChangeBackupDestinationCompartmentResponse changeBackupDestinationCompartment(
             ChangeBackupDestinationCompartmentRequest request);
@@ -302,13 +302,13 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ChangeCloudAutonomousVmClusterCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeCloudAutonomousVmClusterCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ChangeCloudAutonomousVmClusterCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeCloudAutonomousVmClusterCompartment API.
      */
     ChangeCloudAutonomousVmClusterCompartmentResponse changeCloudAutonomousVmClusterCompartment(
             ChangeCloudAutonomousVmClusterCompartmentRequest request);
 
     /**
-     * Moves a cloud Exadata infrastructure resource and its dependent resources to another compartment. Applies to Exadata Cloud Service instances and Autonomous Database on dedicated Exadata infrastructure only.For more information about moving resources to a different compartment, see [Moving Database Resources to a Different Compartment](https://docs.cloud.oracle.com/Content/Database/Concepts/databaseoverview.htm#moveRes).
+     * Moves a cloud Exadata infrastructure resource and its dependent resources to another compartment. Applies to Exadata Cloud Service instances and Autonomous Database on dedicated Exadata infrastructure only.For more information about moving resources to a different compartment, see [Moving Database Resources to a Different Compartment](https://docs.oracle.com/iaas/Content/Database/Concepts/databaseoverview.htm#moveRes).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -316,7 +316,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ChangeCloudExadataInfrastructureCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeCloudExadataInfrastructureCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ChangeCloudExadataInfrastructureCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeCloudExadataInfrastructureCompartment API.
      */
     ChangeCloudExadataInfrastructureCompartmentResponse changeCloudExadataInfrastructureCompartment(
             ChangeCloudExadataInfrastructureCompartmentRequest request);
@@ -330,7 +330,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ChangeCloudExadataInfrastructureSubscriptionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeCloudExadataInfrastructureSubscription API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ChangeCloudExadataInfrastructureSubscriptionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeCloudExadataInfrastructureSubscription API.
      */
     ChangeCloudExadataInfrastructureSubscriptionResponse
             changeCloudExadataInfrastructureSubscription(
@@ -345,7 +345,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ChangeCloudVmClusterCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeCloudVmClusterCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ChangeCloudVmClusterCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeCloudVmClusterCompartment API.
      */
     ChangeCloudVmClusterCompartmentResponse changeCloudVmClusterCompartment(
             ChangeCloudVmClusterCompartmentRequest request);
@@ -359,7 +359,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ChangeCloudVmClusterSubscriptionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeCloudVmClusterSubscription API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ChangeCloudVmClusterSubscriptionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeCloudVmClusterSubscription API.
      */
     ChangeCloudVmClusterSubscriptionResponse changeCloudVmClusterSubscription(
             ChangeCloudVmClusterSubscriptionRequest request);
@@ -367,7 +367,7 @@ public interface Database extends AutoCloseable {
     /**
      * Move the Database Software Image and its dependent resources to the specified compartment.
      * For more information about moving Databse Software Images, see
-     * [Moving Database Resources to a Different Compartment](https://docs.cloud.oracle.com/Content/Database/Concepts/databaseoverview.htm#moveRes).
+     * [Moving Database Resources to a Different Compartment](https://docs.oracle.com/iaas/Content/Database/Concepts/databaseoverview.htm#moveRes).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -375,7 +375,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ChangeDatabaseSoftwareImageCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeDatabaseSoftwareImageCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ChangeDatabaseSoftwareImageCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeDatabaseSoftwareImageCompartment API.
      */
     ChangeDatabaseSoftwareImageCompartmentResponse changeDatabaseSoftwareImageCompartment(
             ChangeDatabaseSoftwareImageCompartmentRequest request);
@@ -391,14 +391,14 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ChangeDataguardRoleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeDataguardRole API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ChangeDataguardRoleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeDataguardRole API.
      */
     ChangeDataguardRoleResponse changeDataguardRole(ChangeDataguardRoleRequest request);
 
     /**
      * Moves the DB system and its dependent resources to the specified compartment.
      * For more information about moving DB systems, see
-     * [Moving Database Resources to a Different Compartment](https://docs.cloud.oracle.com/Content/Database/Concepts/databaseoverview.htm#moveRes).
+     * [Moving Database Resources to a Different Compartment](https://docs.oracle.com/iaas/Content/Database/Concepts/databaseoverview.htm#moveRes).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -406,7 +406,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ChangeDbSystemCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeDbSystemCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ChangeDbSystemCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeDbSystemCompartment API.
      */
     ChangeDbSystemCompartmentResponse changeDbSystemCompartment(
             ChangeDbSystemCompartmentRequest request);
@@ -419,10 +419,23 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ChangeDisasterRecoveryConfigurationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeDisasterRecoveryConfiguration API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ChangeDisasterRecoveryConfigurationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeDisasterRecoveryConfiguration API.
      */
     ChangeDisasterRecoveryConfigurationResponse changeDisasterRecoveryConfiguration(
             ChangeDisasterRecoveryConfigurationRequest request);
+
+    /**
+     * Update the encryption key management location for the database
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ChangeEncryptionKeyLocationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeEncryptionKeyLocation API.
+     */
+    ChangeEncryptionKeyLocationResponse changeEncryptionKeyLocation(
+            ChangeEncryptionKeyLocationRequest request);
 
     /**
      * Moves an Exadata infrastructure resource and its dependent resources to another compartment. Applies to Exadata Cloud@Customer instances only.
@@ -434,7 +447,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ChangeExadataInfrastructureCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeExadataInfrastructureCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ChangeExadataInfrastructureCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeExadataInfrastructureCompartment API.
      */
     ChangeExadataInfrastructureCompartmentResponse changeExadataInfrastructureCompartment(
             ChangeExadataInfrastructureCompartmentRequest request);
@@ -448,7 +461,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ChangeExadbVmClusterCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeExadbVmClusterCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ChangeExadbVmClusterCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeExadbVmClusterCompartment API.
      */
     ChangeExadbVmClusterCompartmentResponse changeExadbVmClusterCompartment(
             ChangeExadbVmClusterCompartmentRequest request);
@@ -462,7 +475,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ChangeExascaleDbStorageVaultCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeExascaleDbStorageVaultCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ChangeExascaleDbStorageVaultCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeExascaleDbStorageVaultCompartment API.
      */
     ChangeExascaleDbStorageVaultCompartmentResponse changeExascaleDbStorageVaultCompartment(
             ChangeExascaleDbStorageVaultCompartmentRequest request);
@@ -471,7 +484,7 @@ public interface Database extends AutoCloseable {
      * Move the {@link #createExternalContainerDatabaseDetails(CreateExternalContainerDatabaseDetailsRequest) createExternalContainerDatabaseDetails}
      * and its dependent resources to the specified compartment.
      * For more information about moving external container databases, see
-     * [Moving Database Resources to a Different Compartment](https://docs.cloud.oracle.com/Content/Database/Concepts/databaseoverview.htm#moveRes).
+     * [Moving Database Resources to a Different Compartment](https://docs.oracle.com/iaas/Content/Database/Concepts/databaseoverview.htm#moveRes).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -479,7 +492,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ChangeExternalContainerDatabaseCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeExternalContainerDatabaseCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ChangeExternalContainerDatabaseCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeExternalContainerDatabaseCompartment API.
      */
     ChangeExternalContainerDatabaseCompartmentResponse changeExternalContainerDatabaseCompartment(
             ChangeExternalContainerDatabaseCompartmentRequest request);
@@ -487,7 +500,7 @@ public interface Database extends AutoCloseable {
     /**
      * Move the external non-container database and its dependent resources to the specified compartment.
      * For more information about moving external non-container databases, see
-     * [Moving Database Resources to a Different Compartment](https://docs.cloud.oracle.com/Content/Database/Concepts/databaseoverview.htm#moveRes).
+     * [Moving Database Resources to a Different Compartment](https://docs.oracle.com/iaas/Content/Database/Concepts/databaseoverview.htm#moveRes).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -495,7 +508,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ChangeExternalNonContainerDatabaseCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeExternalNonContainerDatabaseCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ChangeExternalNonContainerDatabaseCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeExternalNonContainerDatabaseCompartment API.
      */
     ChangeExternalNonContainerDatabaseCompartmentResponse
             changeExternalNonContainerDatabaseCompartment(
@@ -505,7 +518,7 @@ public interface Database extends AutoCloseable {
      * Move the {@link #createExternalPluggableDatabaseDetails(CreateExternalPluggableDatabaseDetailsRequest) createExternalPluggableDatabaseDetails} and
      * its dependent resources to the specified compartment.
      * For more information about moving external pluggable databases, see
-     * [Moving Database Resources to a Different Compartment](https://docs.cloud.oracle.com/Content/Database/Concepts/databaseoverview.htm#moveRes).
+     * [Moving Database Resources to a Different Compartment](https://docs.oracle.com/iaas/Content/Database/Concepts/databaseoverview.htm#moveRes).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -513,7 +526,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ChangeExternalPluggableDatabaseCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeExternalPluggableDatabaseCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ChangeExternalPluggableDatabaseCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeExternalPluggableDatabaseCompartment API.
      */
     ChangeExternalPluggableDatabaseCompartmentResponse changeExternalPluggableDatabaseCompartment(
             ChangeExternalPluggableDatabaseCompartmentRequest request);
@@ -521,7 +534,7 @@ public interface Database extends AutoCloseable {
     /**
      * Move the key store resource to the specified compartment.
      * For more information about moving key stores, see
-     * [Moving Database Resources to a Different Compartment](https://docs.cloud.oracle.com/Content/Database/Concepts/databaseoverview.htm#moveRes).
+     * [Moving Database Resources to a Different Compartment](https://docs.oracle.com/iaas/Content/Database/Concepts/databaseoverview.htm#moveRes).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -529,7 +542,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ChangeKeyStoreCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeKeyStoreCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ChangeKeyStoreCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeKeyStoreCompartment API.
      */
     ChangeKeyStoreCompartmentResponse changeKeyStoreCompartment(
             ChangeKeyStoreCompartmentRequest request);
@@ -542,7 +555,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ChangeKeyStoreTypeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeKeyStoreType API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ChangeKeyStoreTypeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeKeyStoreType API.
      */
     ChangeKeyStoreTypeResponse changeKeyStoreType(ChangeKeyStoreTypeRequest request);
 
@@ -555,7 +568,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ChangeOneoffPatchCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeOneoffPatchCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ChangeOneoffPatchCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeOneoffPatchCompartment API.
      */
     ChangeOneoffPatchCompartmentResponse changeOneoffPatchCompartment(
             ChangeOneoffPatchCompartmentRequest request);
@@ -569,7 +582,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ChangeSchedulingPlanCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeSchedulingPlanCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ChangeSchedulingPlanCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeSchedulingPlanCompartment API.
      */
     ChangeSchedulingPlanCompartmentResponse changeSchedulingPlanCompartment(
             ChangeSchedulingPlanCompartmentRequest request);
@@ -583,7 +596,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ChangeSchedulingPolicyCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeSchedulingPolicyCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ChangeSchedulingPolicyCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeSchedulingPolicyCompartment API.
      */
     ChangeSchedulingPolicyCompartmentResponse changeSchedulingPolicyCompartment(
             ChangeSchedulingPolicyCompartmentRequest request);
@@ -598,7 +611,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ChangeVmClusterCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeVmClusterCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ChangeVmClusterCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeVmClusterCompartment API.
      */
     ChangeVmClusterCompartmentResponse changeVmClusterCompartment(
             ChangeVmClusterCompartmentRequest request);
@@ -613,7 +626,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/CheckExternalDatabaseConnectorConnectionStatusExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CheckExternalDatabaseConnectorConnectionStatus API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/CheckExternalDatabaseConnectorConnectionStatusExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CheckExternalDatabaseConnectorConnectionStatus API.
      */
     CheckExternalDatabaseConnectorConnectionStatusResponse
             checkExternalDatabaseConnectorConnectionStatus(
@@ -622,7 +635,7 @@ public interface Database extends AutoCloseable {
     /**
      * Changes the status of the standalone backup resource to `ACTIVE` after the backup is created from the on-premises database and placed in Oracle Cloud Infrastructure Object Storage.
      * <p>
-     **Note:** This API is used by an Oracle Cloud Infrastructure Python script that is packaged with the Oracle Cloud Infrastructure CLI. Oracle recommends that you use the script instead using the API directly. See [Migrating an On-Premises Database to Oracle Cloud Infrastructure by Creating a Backup in the Cloud](https://docs.cloud.oracle.com/Content/Database/Tasks/mig-onprembackup.htm) for more information.
+     **Note:** This API is used by an Oracle Cloud Infrastructure Python script that is packaged with the Oracle Cloud Infrastructure CLI. Oracle recommends that you use the script instead using the API directly. See [Migrating an On-Premises Database to Oracle Cloud Infrastructure by Creating a Backup in the Cloud](https://docs.oracle.com/iaas/Content/Database/Tasks/mig-onprembackup.htm) for more information.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -630,13 +643,13 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/CompleteExternalBackupJobExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CompleteExternalBackupJob API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/CompleteExternalBackupJobExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CompleteExternalBackupJob API.
      */
     CompleteExternalBackupJobResponse completeExternalBackupJob(
             CompleteExternalBackupJobRequest request);
 
     /**
-     * Configures the Autonomous Database Vault service [key](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+     * Configures the Autonomous Database Vault service [key](https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -644,7 +657,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ConfigureAutonomousDatabaseVaultKeyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ConfigureAutonomousDatabaseVaultKey API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ConfigureAutonomousDatabaseVaultKeyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ConfigureAutonomousDatabaseVaultKey API.
      */
     ConfigureAutonomousDatabaseVaultKeyResponse configureAutonomousDatabaseVaultKey(
             ConfigureAutonomousDatabaseVaultKeyRequest request);
@@ -658,7 +671,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ConfigureExascaleExadataInfrastructureExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ConfigureExascaleExadataInfrastructure API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ConfigureExascaleExadataInfrastructureExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ConfigureExascaleExadataInfrastructure API.
      */
     ConfigureExascaleExadataInfrastructureResponse configureExascaleExadataInfrastructure(
             ConfigureExascaleExadataInfrastructureRequest request);
@@ -671,7 +684,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ConfigureSaasAdminUserExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ConfigureSaasAdminUser API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ConfigureSaasAdminUserExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ConfigureSaasAdminUser API.
      */
     ConfigureSaasAdminUserResponse configureSaasAdminUser(ConfigureSaasAdminUserRequest request);
 
@@ -685,7 +698,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ConfirmKeyStoreDetailsAreCorrectExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ConfirmKeyStoreDetailsAreCorrect API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ConfirmKeyStoreDetailsAreCorrectExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ConfirmKeyStoreDetailsAreCorrect API.
      */
     ConfirmKeyStoreDetailsAreCorrectResponse confirmKeyStoreDetailsAreCorrect(
             ConfirmKeyStoreDetailsAreCorrectRequest request);
@@ -699,7 +712,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ConvertToPdbExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ConvertToPdb API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ConvertToPdbExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ConvertToPdb API.
      */
     ConvertToPdbResponse convertToPdb(ConvertToPdbRequest request);
 
@@ -713,10 +726,27 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ConvertToRegularPluggableDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ConvertToRegularPluggableDatabase API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ConvertToRegularPluggableDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ConvertToRegularPluggableDatabase API.
      */
     ConvertToRegularPluggableDatabaseResponse convertToRegularPluggableDatabase(
             ConvertToRegularPluggableDatabaseRequest request);
+
+    /**
+     * Disassociate the standby database identified by the `databaseId` parameter from existing Data Guard group.
+     * <p>
+     * Convert the standby to a standalone database.
+     * <p>
+     * This operation should be performed on respective standby database.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ConvertToStandaloneExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ConvertToStandalone API.
+     */
+    ConvertToStandaloneResponse convertToStandalone(ConvertToStandaloneRequest request);
 
     /**
      * Creates a new application virtual IP (VIP) address in the specified cloud VM cluster based on the request parameters you provide.
@@ -727,7 +757,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/CreateApplicationVipExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateApplicationVip API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/CreateApplicationVipExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateApplicationVip API.
      */
     CreateApplicationVipResponse createApplicationVip(CreateApplicationVipRequest request);
 
@@ -740,20 +770,20 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/CreateAutonomousContainerDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateAutonomousContainerDatabase API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/CreateAutonomousContainerDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateAutonomousContainerDatabase API.
      */
     CreateAutonomousContainerDatabaseResponse createAutonomousContainerDatabase(
             CreateAutonomousContainerDatabaseRequest request);
 
     /**
      * Create a new Autonomous Data Guard association. An Autonomous Data Guard association represents the replication relationship between the
-     * specified Autonomous Container database and a peer Autonomous Container database. For more information, see [Using Oracle Data Guard](https://docs.cloud.oracle.com/Content/Database/Tasks/usingdataguard.htm).
+     * specified Autonomous Container database and a peer Autonomous Container database. For more information, see [Using Oracle Data Guard](https://docs.oracle.com/iaas/Content/Database/Tasks/usingdataguard.htm).
      * <p>
      * All Oracle Cloud Infrastructure resources, including Data Guard associations, get an Oracle-assigned, unique ID
      * called an Oracle Cloud Identifier (OCID). When you create a resource, you can find its OCID in the response.
      * You can also retrieve a resource's OCID by using a List API operation on that resource type, or by viewing the
      * resource in the Console. For more information, see
-     * [Resource Identifiers](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * [Resource Identifiers](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -761,7 +791,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/CreateAutonomousContainerDatabaseDataguardAssociationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateAutonomousContainerDatabaseDataguardAssociation API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/CreateAutonomousContainerDatabaseDataguardAssociationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateAutonomousContainerDatabaseDataguardAssociation API.
      */
     CreateAutonomousContainerDatabaseDataguardAssociationResponse
             createAutonomousContainerDatabaseDataguardAssociation(
@@ -776,7 +806,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/CreateAutonomousDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateAutonomousDatabase API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/CreateAutonomousDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateAutonomousDatabase API.
      */
     CreateAutonomousDatabaseResponse createAutonomousDatabase(
             CreateAutonomousDatabaseRequest request);
@@ -790,7 +820,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/CreateAutonomousDatabaseBackupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateAutonomousDatabaseBackup API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/CreateAutonomousDatabaseBackupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateAutonomousDatabaseBackup API.
      */
     CreateAutonomousDatabaseBackupResponse createAutonomousDatabaseBackup(
             CreateAutonomousDatabaseBackupRequest request);
@@ -804,7 +834,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/CreateAutonomousDatabaseSoftwareImageExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateAutonomousDatabaseSoftwareImage API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/CreateAutonomousDatabaseSoftwareImageExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateAutonomousDatabaseSoftwareImage API.
      */
     CreateAutonomousDatabaseSoftwareImageResponse createAutonomousDatabaseSoftwareImage(
             CreateAutonomousDatabaseSoftwareImageRequest request);
@@ -818,7 +848,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/CreateAutonomousVmClusterExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateAutonomousVmCluster API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/CreateAutonomousVmClusterExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateAutonomousVmCluster API.
      */
     CreateAutonomousVmClusterResponse createAutonomousVmCluster(
             CreateAutonomousVmClusterRequest request);
@@ -832,7 +862,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/CreateBackupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateBackup API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/CreateBackupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateBackup API.
      */
     CreateBackupResponse createBackup(CreateBackupRequest request);
 
@@ -845,7 +875,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/CreateBackupDestinationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateBackupDestination API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/CreateBackupDestinationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateBackupDestination API.
      */
     CreateBackupDestinationResponse createBackupDestination(CreateBackupDestinationRequest request);
 
@@ -858,13 +888,13 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/CreateCloudAutonomousVmClusterExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateCloudAutonomousVmCluster API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/CreateCloudAutonomousVmClusterExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateCloudAutonomousVmCluster API.
      */
     CreateCloudAutonomousVmClusterResponse createCloudAutonomousVmCluster(
             CreateCloudAutonomousVmClusterRequest request);
 
     /**
-     * Creates a cloud Exadata infrastructure resource. This resource is used to create either an [Exadata Cloud Service](https://docs.cloud.oracle.com/Content/Database/Concepts/exaoverview.htm) instance or an Autonomous Database on dedicated Exadata infrastructure.
+     * Creates a cloud Exadata infrastructure resource. This resource is used to create either an [Exadata Cloud Service](https://docs.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm) instance or an Autonomous Database on dedicated Exadata infrastructure.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -872,7 +902,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/CreateCloudExadataInfrastructureExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateCloudExadataInfrastructure API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/CreateCloudExadataInfrastructureExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateCloudExadataInfrastructure API.
      */
     CreateCloudExadataInfrastructureResponse createCloudExadataInfrastructure(
             CreateCloudExadataInfrastructureRequest request);
@@ -886,7 +916,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/CreateCloudVmClusterExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateCloudVmCluster API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/CreateCloudVmClusterExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateCloudVmCluster API.
      */
     CreateCloudVmClusterResponse createCloudVmCluster(CreateCloudVmClusterRequest request);
 
@@ -901,7 +931,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/CreateConsoleConnectionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateConsoleConnection API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/CreateConsoleConnectionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateConsoleConnection API.
      */
     CreateConsoleConnectionResponse createConsoleConnection(CreateConsoleConnectionRequest request);
 
@@ -914,19 +944,19 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/CreateConsoleHistoryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateConsoleHistory API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/CreateConsoleHistoryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateConsoleHistory API.
      */
     CreateConsoleHistoryResponse createConsoleHistory(CreateConsoleHistoryRequest request);
 
     /**
      * Creates a new Data Guard association.  A Data Guard association represents the replication relationship between the
-     * specified database and a peer database. For more information, see [Using Oracle Data Guard](https://docs.cloud.oracle.com/Content/Database/Tasks/usingdataguard.htm).
+     * specified database and a peer database. For more information, see [Using Oracle Data Guard](https://docs.oracle.com/iaas/Content/Database/Tasks/usingdataguard.htm).
      * <p>
      * All Oracle Cloud Infrastructure resources, including Data Guard associations, get an Oracle-assigned, unique ID
      * called an Oracle Cloud Identifier (OCID). When you create a resource, you can find its OCID in the response.
      * You can also retrieve a resource's OCID by using a List API operation on that resource type, or by viewing the
      * resource in the Console. For more information, see
-     * [Resource Identifiers](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * [Resource Identifiers](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -934,7 +964,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/CreateDataGuardAssociationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateDataGuardAssociation API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/CreateDataGuardAssociationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateDataGuardAssociation API.
      */
     CreateDataGuardAssociationResponse createDataGuardAssociation(
             CreateDataGuardAssociationRequest request);
@@ -948,7 +978,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/CreateDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateDatabase API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/CreateDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateDatabase API.
      */
     CreateDatabaseResponse createDatabase(CreateDatabaseRequest request);
 
@@ -961,7 +991,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/CreateDatabaseSoftwareImageExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateDatabaseSoftwareImage API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/CreateDatabaseSoftwareImageExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateDatabaseSoftwareImage API.
      */
     CreateDatabaseSoftwareImageResponse createDatabaseSoftwareImage(
             CreateDatabaseSoftwareImageRequest request);
@@ -975,7 +1005,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/CreateDbHomeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateDbHome API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/CreateDbHomeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateDbHome API.
      */
     CreateDbHomeResponse createDbHome(CreateDbHomeRequest request);
 
@@ -989,7 +1019,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/CreateExadataInfrastructureExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateExadataInfrastructure API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/CreateExadataInfrastructureExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateExadataInfrastructure API.
      */
     CreateExadataInfrastructureResponse createExadataInfrastructure(
             CreateExadataInfrastructureRequest request);
@@ -1003,7 +1033,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/CreateExadbVmClusterExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateExadbVmCluster API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/CreateExadbVmClusterExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateExadbVmCluster API.
      */
     CreateExadbVmClusterResponse createExadbVmCluster(CreateExadbVmClusterRequest request);
 
@@ -1016,7 +1046,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/CreateExascaleDbStorageVaultExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateExascaleDbStorageVault API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/CreateExascaleDbStorageVaultExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateExascaleDbStorageVault API.
      */
     CreateExascaleDbStorageVaultResponse createExascaleDbStorageVault(
             CreateExascaleDbStorageVaultRequest request);
@@ -1030,7 +1060,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/CreateExecutionActionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateExecutionAction API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/CreateExecutionActionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateExecutionAction API.
      */
     CreateExecutionActionResponse createExecutionAction(CreateExecutionActionRequest request);
 
@@ -1043,14 +1073,14 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/CreateExecutionWindowExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateExecutionWindow API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/CreateExecutionWindowExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateExecutionWindow API.
      */
     CreateExecutionWindowResponse createExecutionWindow(CreateExecutionWindowRequest request);
 
     /**
      * Creates a new backup resource and returns the information the caller needs to back up an on-premises Oracle Database to Oracle Cloud Infrastructure.
      * <p>
-     **Note:** This API is used by an Oracle Cloud Infrastructure Python script that is packaged with the Oracle Cloud Infrastructure CLI. Oracle recommends that you use the script instead using the API directly. See [Migrating an On-Premises Database to Oracle Cloud Infrastructure by Creating a Backup in the Cloud](https://docs.cloud.oracle.com/Content/Database/Tasks/mig-onprembackup.htm) for more information.
+     **Note:** This API is used by an Oracle Cloud Infrastructure Python script that is packaged with the Oracle Cloud Infrastructure CLI. Oracle recommends that you use the script instead using the API directly. See [Migrating an On-Premises Database to Oracle Cloud Infrastructure by Creating a Backup in the Cloud](https://docs.oracle.com/iaas/Content/Database/Tasks/mig-onprembackup.htm) for more information.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1058,7 +1088,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/CreateExternalBackupJobExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateExternalBackupJob API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/CreateExternalBackupJobExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateExternalBackupJob API.
      */
     CreateExternalBackupJobResponse createExternalBackupJob(CreateExternalBackupJobRequest request);
 
@@ -1070,7 +1100,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/CreateExternalContainerDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateExternalContainerDatabase API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/CreateExternalContainerDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateExternalContainerDatabase API.
      */
     CreateExternalContainerDatabaseResponse createExternalContainerDatabase(
             CreateExternalContainerDatabaseRequest request);
@@ -1083,7 +1113,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/CreateExternalDatabaseConnectorExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateExternalDatabaseConnector API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/CreateExternalDatabaseConnectorExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateExternalDatabaseConnector API.
      */
     CreateExternalDatabaseConnectorResponse createExternalDatabaseConnector(
             CreateExternalDatabaseConnectorRequest request);
@@ -1097,7 +1127,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/CreateExternalNonContainerDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateExternalNonContainerDatabase API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/CreateExternalNonContainerDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateExternalNonContainerDatabase API.
      */
     CreateExternalNonContainerDatabaseResponse createExternalNonContainerDatabase(
             CreateExternalNonContainerDatabaseRequest request);
@@ -1112,7 +1142,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/CreateExternalPluggableDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateExternalPluggableDatabase API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/CreateExternalPluggableDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateExternalPluggableDatabase API.
      */
     CreateExternalPluggableDatabaseResponse createExternalPluggableDatabase(
             CreateExternalPluggableDatabaseRequest request);
@@ -1126,7 +1156,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/CreateKeyStoreExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateKeyStore API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/CreateKeyStoreExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateKeyStore API.
      */
     CreateKeyStoreResponse createKeyStore(CreateKeyStoreRequest request);
 
@@ -1142,7 +1172,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/CreateMaintenanceRunExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateMaintenanceRun API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/CreateMaintenanceRunExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateMaintenanceRun API.
      */
     CreateMaintenanceRunResponse createMaintenanceRun(CreateMaintenanceRunRequest request);
 
@@ -1155,7 +1185,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/CreateOneoffPatchExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateOneoffPatch API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/CreateOneoffPatchExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateOneoffPatch API.
      */
     CreateOneoffPatchResponse createOneoffPatch(CreateOneoffPatchRequest request);
 
@@ -1170,7 +1200,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/CreatePluggableDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreatePluggableDatabase API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/CreatePluggableDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreatePluggableDatabase API.
      */
     CreatePluggableDatabaseResponse createPluggableDatabase(CreatePluggableDatabaseRequest request);
 
@@ -1183,7 +1213,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/CreateScheduledActionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateScheduledAction API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/CreateScheduledActionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateScheduledAction API.
      */
     CreateScheduledActionResponse createScheduledAction(CreateScheduledActionRequest request);
 
@@ -1196,7 +1226,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/CreateSchedulingPlanExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateSchedulingPlan API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/CreateSchedulingPlanExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateSchedulingPlan API.
      */
     CreateSchedulingPlanResponse createSchedulingPlan(CreateSchedulingPlanRequest request);
 
@@ -1209,7 +1239,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/CreateSchedulingPolicyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateSchedulingPolicy API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/CreateSchedulingPolicyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateSchedulingPolicy API.
      */
     CreateSchedulingPolicyResponse createSchedulingPolicy(CreateSchedulingPolicyRequest request);
 
@@ -1222,7 +1252,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/CreateSchedulingWindowExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateSchedulingWindow API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/CreateSchedulingWindowExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateSchedulingWindow API.
      */
     CreateSchedulingWindowResponse createSchedulingWindow(CreateSchedulingWindowRequest request);
 
@@ -1235,7 +1265,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/CreateVmClusterExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateVmCluster API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/CreateVmClusterExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateVmCluster API.
      */
     CreateVmClusterResponse createVmCluster(CreateVmClusterRequest request);
 
@@ -1249,7 +1279,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/CreateVmClusterNetworkExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateVmClusterNetwork API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/CreateVmClusterNetworkExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateVmClusterNetwork API.
      */
     CreateVmClusterNetworkResponse createVmClusterNetwork(CreateVmClusterNetworkRequest request);
 
@@ -1274,7 +1304,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DbNodeActionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DbNodeAction API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DbNodeActionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DbNodeAction API.
      */
     DbNodeActionResponse dbNodeAction(DbNodeActionRequest request);
 
@@ -1287,7 +1317,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DeleteApplicationVipExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteApplicationVip API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DeleteApplicationVipExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteApplicationVip API.
      */
     DeleteApplicationVipResponse deleteApplicationVip(DeleteApplicationVipRequest request);
 
@@ -1300,7 +1330,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DeleteAutonomousDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteAutonomousDatabase API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DeleteAutonomousDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteAutonomousDatabase API.
      */
     DeleteAutonomousDatabaseResponse deleteAutonomousDatabase(
             DeleteAutonomousDatabaseRequest request);
@@ -1313,7 +1343,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DeleteAutonomousDatabaseBackupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteAutonomousDatabaseBackup API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DeleteAutonomousDatabaseBackupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteAutonomousDatabaseBackup API.
      */
     DeleteAutonomousDatabaseBackupResponse deleteAutonomousDatabaseBackup(
             DeleteAutonomousDatabaseBackupRequest request);
@@ -1326,7 +1356,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DeleteAutonomousDatabaseSoftwareImageExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteAutonomousDatabaseSoftwareImage API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DeleteAutonomousDatabaseSoftwareImageExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteAutonomousDatabaseSoftwareImage API.
      */
     DeleteAutonomousDatabaseSoftwareImageResponse deleteAutonomousDatabaseSoftwareImage(
             DeleteAutonomousDatabaseSoftwareImageRequest request);
@@ -1340,7 +1370,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DeleteAutonomousVmClusterExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteAutonomousVmCluster API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DeleteAutonomousVmClusterExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteAutonomousVmCluster API.
      */
     DeleteAutonomousVmClusterResponse deleteAutonomousVmCluster(
             DeleteAutonomousVmClusterRequest request);
@@ -1353,7 +1383,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DeleteBackupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteBackup API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DeleteBackupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteBackup API.
      */
     DeleteBackupResponse deleteBackup(DeleteBackupRequest request);
 
@@ -1366,7 +1396,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DeleteBackupDestinationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteBackupDestination API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DeleteBackupDestinationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteBackupDestination API.
      */
     DeleteBackupDestinationResponse deleteBackupDestination(DeleteBackupDestinationRequest request);
 
@@ -1379,7 +1409,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DeleteCloudAutonomousVmClusterExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteCloudAutonomousVmCluster API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DeleteCloudAutonomousVmClusterExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteCloudAutonomousVmCluster API.
      */
     DeleteCloudAutonomousVmClusterResponse deleteCloudAutonomousVmCluster(
             DeleteCloudAutonomousVmClusterRequest request);
@@ -1393,7 +1423,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DeleteCloudExadataInfrastructureExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteCloudExadataInfrastructure API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DeleteCloudExadataInfrastructureExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteCloudExadataInfrastructure API.
      */
     DeleteCloudExadataInfrastructureResponse deleteCloudExadataInfrastructure(
             DeleteCloudExadataInfrastructureRequest request);
@@ -1407,7 +1437,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DeleteCloudVmClusterExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteCloudVmCluster API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DeleteCloudVmClusterExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteCloudVmCluster API.
      */
     DeleteCloudVmClusterResponse deleteCloudVmCluster(DeleteCloudVmClusterRequest request);
 
@@ -1419,7 +1449,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DeleteConsoleConnectionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteConsoleConnection API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DeleteConsoleConnectionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteConsoleConnection API.
      */
     DeleteConsoleConnectionResponse deleteConsoleConnection(DeleteConsoleConnectionRequest request);
 
@@ -1432,7 +1462,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DeleteConsoleHistoryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteConsoleHistory API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DeleteConsoleHistoryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteConsoleHistory API.
      */
     DeleteConsoleHistoryResponse deleteConsoleHistory(DeleteConsoleHistoryRequest request);
 
@@ -1447,7 +1477,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DeleteDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteDatabase API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DeleteDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteDatabase API.
      */
     DeleteDatabaseResponse deleteDatabase(DeleteDatabaseRequest request);
 
@@ -1459,7 +1489,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DeleteDatabaseSoftwareImageExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteDatabaseSoftwareImage API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DeleteDatabaseSoftwareImageExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteDatabaseSoftwareImage API.
      */
     DeleteDatabaseSoftwareImageResponse deleteDatabaseSoftwareImage(
             DeleteDatabaseSoftwareImageRequest request);
@@ -1475,7 +1505,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DeleteDbHomeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteDbHome API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DeleteDbHomeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteDbHome API.
      */
     DeleteDbHomeResponse deleteDbHome(DeleteDbHomeRequest request);
 
@@ -1488,7 +1518,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DeleteExadataInfrastructureExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteExadataInfrastructure API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DeleteExadataInfrastructureExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteExadataInfrastructure API.
      */
     DeleteExadataInfrastructureResponse deleteExadataInfrastructure(
             DeleteExadataInfrastructureRequest request);
@@ -1502,7 +1532,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DeleteExadbVmClusterExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteExadbVmCluster API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DeleteExadbVmClusterExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteExadbVmCluster API.
      */
     DeleteExadbVmClusterResponse deleteExadbVmCluster(DeleteExadbVmClusterRequest request);
 
@@ -1515,7 +1545,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DeleteExascaleDbStorageVaultExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteExascaleDbStorageVault API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DeleteExascaleDbStorageVaultExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteExascaleDbStorageVault API.
      */
     DeleteExascaleDbStorageVaultResponse deleteExascaleDbStorageVault(
             DeleteExascaleDbStorageVaultRequest request);
@@ -1529,7 +1559,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DeleteExecutionActionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteExecutionAction API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DeleteExecutionActionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteExecutionAction API.
      */
     DeleteExecutionActionResponse deleteExecutionAction(DeleteExecutionActionRequest request);
 
@@ -1542,7 +1572,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DeleteExecutionWindowExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteExecutionWindow API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DeleteExecutionWindowExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteExecutionWindow API.
      */
     DeleteExecutionWindowResponse deleteExecutionWindow(DeleteExecutionWindowRequest request);
 
@@ -1557,7 +1587,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DeleteExternalContainerDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteExternalContainerDatabase API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DeleteExternalContainerDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteExternalContainerDatabase API.
      */
     DeleteExternalContainerDatabaseResponse deleteExternalContainerDatabase(
             DeleteExternalContainerDatabaseRequest request);
@@ -1573,7 +1603,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DeleteExternalDatabaseConnectorExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteExternalDatabaseConnector API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DeleteExternalDatabaseConnectorExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteExternalDatabaseConnector API.
      */
     DeleteExternalDatabaseConnectorResponse deleteExternalDatabaseConnector(
             DeleteExternalDatabaseConnectorRequest request);
@@ -1587,7 +1617,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DeleteExternalNonContainerDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteExternalNonContainerDatabase API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DeleteExternalNonContainerDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteExternalNonContainerDatabase API.
      */
     DeleteExternalNonContainerDatabaseResponse deleteExternalNonContainerDatabase(
             DeleteExternalNonContainerDatabaseRequest request);
@@ -1602,7 +1632,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DeleteExternalPluggableDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteExternalPluggableDatabase API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DeleteExternalPluggableDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteExternalPluggableDatabase API.
      */
     DeleteExternalPluggableDatabaseResponse deleteExternalPluggableDatabase(
             DeleteExternalPluggableDatabaseRequest request);
@@ -1616,7 +1646,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DeleteKeyStoreExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteKeyStore API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DeleteKeyStoreExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteKeyStore API.
      */
     DeleteKeyStoreResponse deleteKeyStore(DeleteKeyStoreRequest request);
 
@@ -1629,7 +1659,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DeleteOneoffPatchExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteOneoffPatch API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DeleteOneoffPatchExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteOneoffPatch API.
      */
     DeleteOneoffPatchResponse deleteOneoffPatch(DeleteOneoffPatchRequest request);
 
@@ -1641,7 +1671,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DeletePluggableDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeletePluggableDatabase API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DeletePluggableDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeletePluggableDatabase API.
      */
     DeletePluggableDatabaseResponse deletePluggableDatabase(DeletePluggableDatabaseRequest request);
 
@@ -1654,7 +1684,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DeleteScheduledActionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteScheduledAction API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DeleteScheduledActionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteScheduledAction API.
      */
     DeleteScheduledActionResponse deleteScheduledAction(DeleteScheduledActionRequest request);
 
@@ -1667,7 +1697,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DeleteSchedulingPlanExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteSchedulingPlan API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DeleteSchedulingPlanExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteSchedulingPlan API.
      */
     DeleteSchedulingPlanResponse deleteSchedulingPlan(DeleteSchedulingPlanRequest request);
 
@@ -1680,7 +1710,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DeleteSchedulingPolicyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteSchedulingPolicy API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DeleteSchedulingPolicyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteSchedulingPolicy API.
      */
     DeleteSchedulingPolicyResponse deleteSchedulingPolicy(DeleteSchedulingPolicyRequest request);
 
@@ -1693,7 +1723,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DeleteSchedulingWindowExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteSchedulingWindow API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DeleteSchedulingWindowExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteSchedulingWindow API.
      */
     DeleteSchedulingWindowResponse deleteSchedulingWindow(DeleteSchedulingWindowRequest request);
 
@@ -1706,7 +1736,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DeleteVmClusterExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteVmCluster API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DeleteVmClusterExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteVmCluster API.
      */
     DeleteVmClusterResponse deleteVmCluster(DeleteVmClusterRequest request);
 
@@ -1720,7 +1750,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DeleteVmClusterNetworkExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteVmClusterNetwork API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DeleteVmClusterNetworkExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteVmClusterNetwork API.
      */
     DeleteVmClusterNetworkResponse deleteVmClusterNetwork(DeleteVmClusterNetworkRequest request);
 
@@ -1733,7 +1763,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DeregisterAutonomousDatabaseDataSafeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeregisterAutonomousDatabaseDataSafe API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DeregisterAutonomousDatabaseDataSafeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeregisterAutonomousDatabaseDataSafe API.
      */
     DeregisterAutonomousDatabaseDataSafeResponse deregisterAutonomousDatabaseDataSafe(
             DeregisterAutonomousDatabaseDataSafeRequest request);
@@ -1747,7 +1777,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DisableAutonomousDatabaseManagementExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DisableAutonomousDatabaseManagement API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DisableAutonomousDatabaseManagementExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DisableAutonomousDatabaseManagement API.
      */
     DisableAutonomousDatabaseManagementResponse disableAutonomousDatabaseManagement(
             DisableAutonomousDatabaseManagementRequest request);
@@ -1761,7 +1791,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DisableAutonomousDatabaseOperationsInsightsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DisableAutonomousDatabaseOperationsInsights API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DisableAutonomousDatabaseOperationsInsightsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DisableAutonomousDatabaseOperationsInsights API.
      */
     DisableAutonomousDatabaseOperationsInsightsResponse disableAutonomousDatabaseOperationsInsights(
             DisableAutonomousDatabaseOperationsInsightsRequest request);
@@ -1775,7 +1805,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DisableDatabaseManagementExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DisableDatabaseManagement API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DisableDatabaseManagementExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DisableDatabaseManagement API.
      */
     DisableDatabaseManagementResponse disableDatabaseManagement(
             DisableDatabaseManagementRequest request);
@@ -1789,7 +1819,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DisableExternalContainerDatabaseDatabaseManagementExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DisableExternalContainerDatabaseDatabaseManagement API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DisableExternalContainerDatabaseDatabaseManagementExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DisableExternalContainerDatabaseDatabaseManagement API.
      */
     DisableExternalContainerDatabaseDatabaseManagementResponse
             disableExternalContainerDatabaseDatabaseManagement(
@@ -1804,7 +1834,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DisableExternalContainerDatabaseStackMonitoringExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DisableExternalContainerDatabaseStackMonitoring API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DisableExternalContainerDatabaseStackMonitoringExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DisableExternalContainerDatabaseStackMonitoring API.
      */
     DisableExternalContainerDatabaseStackMonitoringResponse
             disableExternalContainerDatabaseStackMonitoring(
@@ -1813,7 +1843,7 @@ public interface Database extends AutoCloseable {
     /**
      * Disable Database Management Service for the external non-container database.
      * For more information about the Database Management Service, see
-     * [Database Management Service](https://docs.cloud.oracle.com/Content/ExternalDatabase/Concepts/databasemanagementservice.htm).
+     * [Database Management Service](https://docs.oracle.com/iaas/Content/ExternalDatabase/Concepts/databasemanagementservice.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1821,7 +1851,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DisableExternalNonContainerDatabaseDatabaseManagementExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DisableExternalNonContainerDatabaseDatabaseManagement API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DisableExternalNonContainerDatabaseDatabaseManagementExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DisableExternalNonContainerDatabaseDatabaseManagement API.
      */
     DisableExternalNonContainerDatabaseDatabaseManagementResponse
             disableExternalNonContainerDatabaseDatabaseManagement(
@@ -1836,7 +1866,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DisableExternalNonContainerDatabaseOperationsInsightsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DisableExternalNonContainerDatabaseOperationsInsights API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DisableExternalNonContainerDatabaseOperationsInsightsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DisableExternalNonContainerDatabaseOperationsInsights API.
      */
     DisableExternalNonContainerDatabaseOperationsInsightsResponse
             disableExternalNonContainerDatabaseOperationsInsights(
@@ -1851,7 +1881,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DisableExternalNonContainerDatabaseStackMonitoringExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DisableExternalNonContainerDatabaseStackMonitoring API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DisableExternalNonContainerDatabaseStackMonitoringExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DisableExternalNonContainerDatabaseStackMonitoring API.
      */
     DisableExternalNonContainerDatabaseStackMonitoringResponse
             disableExternalNonContainerDatabaseStackMonitoring(
@@ -1860,7 +1890,7 @@ public interface Database extends AutoCloseable {
     /**
      * Disable Database Management Service for the external pluggable database.
      * For more information about the Database Management Service, see
-     * [Database Management Service](https://docs.cloud.oracle.com/Content/ExternalDatabase/Concepts/databasemanagementservice.htm).
+     * [Database Management Service](https://docs.oracle.com/iaas/Content/ExternalDatabase/Concepts/databasemanagementservice.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1868,7 +1898,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DisableExternalPluggableDatabaseDatabaseManagementExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DisableExternalPluggableDatabaseDatabaseManagement API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DisableExternalPluggableDatabaseDatabaseManagementExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DisableExternalPluggableDatabaseDatabaseManagement API.
      */
     DisableExternalPluggableDatabaseDatabaseManagementResponse
             disableExternalPluggableDatabaseDatabaseManagement(
@@ -1883,7 +1913,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DisableExternalPluggableDatabaseOperationsInsightsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DisableExternalPluggableDatabaseOperationsInsights API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DisableExternalPluggableDatabaseOperationsInsightsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DisableExternalPluggableDatabaseOperationsInsights API.
      */
     DisableExternalPluggableDatabaseOperationsInsightsResponse
             disableExternalPluggableDatabaseOperationsInsights(
@@ -1898,7 +1928,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DisableExternalPluggableDatabaseStackMonitoringExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DisableExternalPluggableDatabaseStackMonitoring API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DisableExternalPluggableDatabaseStackMonitoringExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DisableExternalPluggableDatabaseStackMonitoring API.
      */
     DisableExternalPluggableDatabaseStackMonitoringResponse
             disableExternalPluggableDatabaseStackMonitoring(
@@ -1913,7 +1943,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DisablePluggableDatabaseManagementExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DisablePluggableDatabaseManagement API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DisablePluggableDatabaseManagementExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DisablePluggableDatabaseManagement API.
      */
     DisablePluggableDatabaseManagementResponse disablePluggableDatabaseManagement(
             DisablePluggableDatabaseManagementRequest request);
@@ -1927,7 +1957,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DownloadExadataInfrastructureConfigFileExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DownloadExadataInfrastructureConfigFile API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DownloadExadataInfrastructureConfigFileExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DownloadExadataInfrastructureConfigFile API.
      */
     DownloadExadataInfrastructureConfigFileResponse downloadExadataInfrastructureConfigFile(
             DownloadExadataInfrastructureConfigFileRequest request);
@@ -1941,7 +1971,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DownloadOneoffPatchExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DownloadOneoffPatch API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DownloadOneoffPatchExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DownloadOneoffPatch API.
      */
     DownloadOneoffPatchResponse downloadOneoffPatch(DownloadOneoffPatchRequest request);
 
@@ -1954,7 +1984,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DownloadValidationReportExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DownloadValidationReport API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DownloadValidationReportExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DownloadValidationReport API.
      */
     DownloadValidationReportResponse downloadValidationReport(
             DownloadValidationReportRequest request);
@@ -1968,7 +1998,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DownloadVmClusterNetworkConfigFileExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DownloadVmClusterNetworkConfigFile API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DownloadVmClusterNetworkConfigFileExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DownloadVmClusterNetworkConfigFile API.
      */
     DownloadVmClusterNetworkConfigFileResponse downloadVmClusterNetworkConfigFile(
             DownloadVmClusterNetworkConfigFileRequest request);
@@ -1982,7 +2012,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/EnableAutonomousDatabaseManagementExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use EnableAutonomousDatabaseManagement API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/EnableAutonomousDatabaseManagementExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use EnableAutonomousDatabaseManagement API.
      */
     EnableAutonomousDatabaseManagementResponse enableAutonomousDatabaseManagement(
             EnableAutonomousDatabaseManagementRequest request);
@@ -1996,7 +2026,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/EnableAutonomousDatabaseOperationsInsightsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use EnableAutonomousDatabaseOperationsInsights API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/EnableAutonomousDatabaseOperationsInsightsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use EnableAutonomousDatabaseOperationsInsights API.
      */
     EnableAutonomousDatabaseOperationsInsightsResponse enableAutonomousDatabaseOperationsInsights(
             EnableAutonomousDatabaseOperationsInsightsRequest request);
@@ -2009,7 +2039,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/EnableDatabaseManagementExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use EnableDatabaseManagement API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/EnableDatabaseManagementExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use EnableDatabaseManagement API.
      */
     EnableDatabaseManagementResponse enableDatabaseManagement(
             EnableDatabaseManagementRequest request);
@@ -2017,7 +2047,7 @@ public interface Database extends AutoCloseable {
     /**
      * Enables Database Management Service for the external container database.
      * For more information about the Database Management Service, see
-     * [Database Management Service](https://docs.cloud.oracle.com/Content/ExternalDatabase/Concepts/databasemanagementservice.htm).
+     * [Database Management Service](https://docs.oracle.com/iaas/Content/ExternalDatabase/Concepts/databasemanagementservice.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -2025,7 +2055,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/EnableExternalContainerDatabaseDatabaseManagementExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use EnableExternalContainerDatabaseDatabaseManagement API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/EnableExternalContainerDatabaseDatabaseManagementExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use EnableExternalContainerDatabaseDatabaseManagement API.
      */
     EnableExternalContainerDatabaseDatabaseManagementResponse
             enableExternalContainerDatabaseDatabaseManagement(
@@ -2040,7 +2070,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/EnableExternalContainerDatabaseStackMonitoringExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use EnableExternalContainerDatabaseStackMonitoring API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/EnableExternalContainerDatabaseStackMonitoringExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use EnableExternalContainerDatabaseStackMonitoring API.
      */
     EnableExternalContainerDatabaseStackMonitoringResponse
             enableExternalContainerDatabaseStackMonitoring(
@@ -2049,7 +2079,7 @@ public interface Database extends AutoCloseable {
     /**
      * Enable Database Management Service for the external non-container database.
      * For more information about the Database Management Service, see
-     * [Database Management Service](https://docs.cloud.oracle.com/Content/ExternalDatabase/Concepts/databasemanagementservice.htm).
+     * [Database Management Service](https://docs.oracle.com/iaas/Content/ExternalDatabase/Concepts/databasemanagementservice.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -2057,7 +2087,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/EnableExternalNonContainerDatabaseDatabaseManagementExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use EnableExternalNonContainerDatabaseDatabaseManagement API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/EnableExternalNonContainerDatabaseDatabaseManagementExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use EnableExternalNonContainerDatabaseDatabaseManagement API.
      */
     EnableExternalNonContainerDatabaseDatabaseManagementResponse
             enableExternalNonContainerDatabaseDatabaseManagement(
@@ -2072,7 +2102,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/EnableExternalNonContainerDatabaseOperationsInsightsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use EnableExternalNonContainerDatabaseOperationsInsights API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/EnableExternalNonContainerDatabaseOperationsInsightsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use EnableExternalNonContainerDatabaseOperationsInsights API.
      */
     EnableExternalNonContainerDatabaseOperationsInsightsResponse
             enableExternalNonContainerDatabaseOperationsInsights(
@@ -2087,7 +2117,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/EnableExternalNonContainerDatabaseStackMonitoringExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use EnableExternalNonContainerDatabaseStackMonitoring API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/EnableExternalNonContainerDatabaseStackMonitoringExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use EnableExternalNonContainerDatabaseStackMonitoring API.
      */
     EnableExternalNonContainerDatabaseStackMonitoringResponse
             enableExternalNonContainerDatabaseStackMonitoring(
@@ -2096,7 +2126,7 @@ public interface Database extends AutoCloseable {
     /**
      * Enable Database Management Service for the external pluggable database.
      * For more information about the Database Management Service, see
-     * [Database Management Service](https://docs.cloud.oracle.com/Content/ExternalDatabase/Concepts/databasemanagementservice.htm).
+     * [Database Management Service](https://docs.oracle.com/iaas/Content/ExternalDatabase/Concepts/databasemanagementservice.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -2104,7 +2134,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/EnableExternalPluggableDatabaseDatabaseManagementExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use EnableExternalPluggableDatabaseDatabaseManagement API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/EnableExternalPluggableDatabaseDatabaseManagementExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use EnableExternalPluggableDatabaseDatabaseManagement API.
      */
     EnableExternalPluggableDatabaseDatabaseManagementResponse
             enableExternalPluggableDatabaseDatabaseManagement(
@@ -2119,7 +2149,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/EnableExternalPluggableDatabaseOperationsInsightsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use EnableExternalPluggableDatabaseOperationsInsights API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/EnableExternalPluggableDatabaseOperationsInsightsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use EnableExternalPluggableDatabaseOperationsInsights API.
      */
     EnableExternalPluggableDatabaseOperationsInsightsResponse
             enableExternalPluggableDatabaseOperationsInsights(
@@ -2134,7 +2164,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/EnableExternalPluggableDatabaseStackMonitoringExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use EnableExternalPluggableDatabaseStackMonitoring API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/EnableExternalPluggableDatabaseStackMonitoringExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use EnableExternalPluggableDatabaseStackMonitoring API.
      */
     EnableExternalPluggableDatabaseStackMonitoringResponse
             enableExternalPluggableDatabaseStackMonitoring(
@@ -2148,7 +2178,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/EnablePluggableDatabaseManagementExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use EnablePluggableDatabaseManagement API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/EnablePluggableDatabaseManagementExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use EnablePluggableDatabaseManagement API.
      */
     EnablePluggableDatabaseManagementResponse enablePluggableDatabaseManagement(
             EnablePluggableDatabaseManagementRequest request);
@@ -2167,7 +2197,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/FailOverAutonomousDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use FailOverAutonomousDatabase API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/FailOverAutonomousDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use FailOverAutonomousDatabase API.
      */
     FailOverAutonomousDatabaseResponse failOverAutonomousDatabase(
             FailOverAutonomousDatabaseRequest request);
@@ -2183,11 +2213,30 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/FailoverAutonomousContainerDatabaseDataguardAssociationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use FailoverAutonomousContainerDatabaseDataguardAssociation API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/FailoverAutonomousContainerDatabaseDataguardAssociationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use FailoverAutonomousContainerDatabaseDataguardAssociation API.
      */
     FailoverAutonomousContainerDatabaseDataguardAssociationResponse
             failoverAutonomousContainerDatabaseDataguardAssociation(
                     FailoverAutonomousContainerDatabaseDataguardAssociationRequest request);
+
+    /**
+     * Performs a failover to transition the standby database identified by the `databaseId` path parameter into the
+     * primary role after the existing primary database fails or becomes unreachable.
+     * <p>
+     * A failover might result in data loss depending on the protection mode in effect at the time of the primary
+     * database failure.
+     * <p>
+     * This operation should be performed on respective standby database.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/FailoverDataGuardExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use FailoverDataGuard API.
+     */
+    FailoverDataGuardResponse failoverDataGuard(FailoverDataGuardRequest request);
 
     /**
      * Performs a failover to transition the standby database identified by the `databaseId` parameter into the
@@ -2202,7 +2251,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/FailoverDataGuardAssociationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use FailoverDataGuardAssociation API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/FailoverDataGuardAssociationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use FailoverDataGuardAssociation API.
      */
     FailoverDataGuardAssociationResponse failoverDataGuardAssociation(
             FailoverDataGuardAssociationRequest request);
@@ -2216,7 +2265,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GenerateAutonomousDatabaseWalletExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GenerateAutonomousDatabaseWallet API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GenerateAutonomousDatabaseWalletExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GenerateAutonomousDatabaseWallet API.
      */
     GenerateAutonomousDatabaseWalletResponse generateAutonomousDatabaseWallet(
             GenerateAutonomousDatabaseWalletRequest request);
@@ -2230,7 +2279,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GenerateRecommendedVmClusterNetworkExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GenerateRecommendedVmClusterNetwork API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GenerateRecommendedVmClusterNetworkExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GenerateRecommendedVmClusterNetwork API.
      */
     GenerateRecommendedVmClusterNetworkResponse generateRecommendedVmClusterNetwork(
             GenerateRecommendedVmClusterNetworkRequest request);
@@ -2243,7 +2292,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetApplicationVipExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetApplicationVip API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetApplicationVipExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetApplicationVip API.
      */
     GetApplicationVipResponse getApplicationVip(GetApplicationVipRequest request);
 
@@ -2255,7 +2304,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetAutonomousContainerDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetAutonomousContainerDatabase API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetAutonomousContainerDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetAutonomousContainerDatabase API.
      */
     GetAutonomousContainerDatabaseResponse getAutonomousContainerDatabase(
             GetAutonomousContainerDatabaseRequest request);
@@ -2269,7 +2318,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetAutonomousContainerDatabaseDataguardAssociationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetAutonomousContainerDatabaseDataguardAssociation API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetAutonomousContainerDatabaseDataguardAssociationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetAutonomousContainerDatabaseDataguardAssociation API.
      */
     GetAutonomousContainerDatabaseDataguardAssociationResponse
             getAutonomousContainerDatabaseDataguardAssociation(
@@ -2284,7 +2333,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetAutonomousContainerDatabaseResourceUsageExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetAutonomousContainerDatabaseResourceUsage API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetAutonomousContainerDatabaseResourceUsageExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetAutonomousContainerDatabaseResourceUsage API.
      */
     GetAutonomousContainerDatabaseResourceUsageResponse getAutonomousContainerDatabaseResourceUsage(
             GetAutonomousContainerDatabaseResourceUsageRequest request);
@@ -2298,7 +2347,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetAutonomousDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetAutonomousDatabase API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetAutonomousDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetAutonomousDatabase API.
      */
     GetAutonomousDatabaseResponse getAutonomousDatabase(GetAutonomousDatabaseRequest request);
 
@@ -2310,7 +2359,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetAutonomousDatabaseBackupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetAutonomousDatabaseBackup API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetAutonomousDatabaseBackupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetAutonomousDatabaseBackup API.
      */
     GetAutonomousDatabaseBackupResponse getAutonomousDatabaseBackup(
             GetAutonomousDatabaseBackupRequest request);
@@ -2324,7 +2373,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetAutonomousDatabaseDataguardAssociationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetAutonomousDatabaseDataguardAssociation API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetAutonomousDatabaseDataguardAssociationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetAutonomousDatabaseDataguardAssociation API.
      */
     GetAutonomousDatabaseDataguardAssociationResponse getAutonomousDatabaseDataguardAssociation(
             GetAutonomousDatabaseDataguardAssociationRequest request);
@@ -2338,7 +2387,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetAutonomousDatabaseRegionalWalletExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetAutonomousDatabaseRegionalWallet API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetAutonomousDatabaseRegionalWalletExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetAutonomousDatabaseRegionalWallet API.
      */
     GetAutonomousDatabaseRegionalWalletResponse getAutonomousDatabaseRegionalWallet(
             GetAutonomousDatabaseRegionalWalletRequest request);
@@ -2351,7 +2400,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetAutonomousDatabaseSoftwareImageExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetAutonomousDatabaseSoftwareImage API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetAutonomousDatabaseSoftwareImageExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetAutonomousDatabaseSoftwareImage API.
      */
     GetAutonomousDatabaseSoftwareImageResponse getAutonomousDatabaseSoftwareImage(
             GetAutonomousDatabaseSoftwareImageRequest request);
@@ -2365,7 +2414,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetAutonomousDatabaseWalletExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetAutonomousDatabaseWallet API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetAutonomousDatabaseWalletExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetAutonomousDatabaseWallet API.
      */
     GetAutonomousDatabaseWalletResponse getAutonomousDatabaseWallet(
             GetAutonomousDatabaseWalletRequest request);
@@ -2379,7 +2428,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetAutonomousExadataInfrastructureExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetAutonomousExadataInfrastructure API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetAutonomousExadataInfrastructureExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetAutonomousExadataInfrastructure API.
      */
     GetAutonomousExadataInfrastructureResponse getAutonomousExadataInfrastructure(
             GetAutonomousExadataInfrastructureRequest request);
@@ -2392,7 +2441,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetAutonomousPatchExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetAutonomousPatch API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetAutonomousPatchExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetAutonomousPatch API.
      */
     GetAutonomousPatchResponse getAutonomousPatch(GetAutonomousPatchRequest request);
 
@@ -2405,7 +2454,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetAutonomousVirtualMachineExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetAutonomousVirtualMachine API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetAutonomousVirtualMachineExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetAutonomousVirtualMachine API.
      */
     GetAutonomousVirtualMachineResponse getAutonomousVirtualMachine(
             GetAutonomousVirtualMachineRequest request);
@@ -2419,7 +2468,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetAutonomousVmClusterExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetAutonomousVmCluster API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetAutonomousVmClusterExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetAutonomousVmCluster API.
      */
     GetAutonomousVmClusterResponse getAutonomousVmCluster(GetAutonomousVmClusterRequest request);
 
@@ -2432,7 +2481,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetAutonomousVmClusterResourceUsageExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetAutonomousVmClusterResourceUsage API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetAutonomousVmClusterResourceUsageExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetAutonomousVmClusterResourceUsage API.
      */
     GetAutonomousVmClusterResourceUsageResponse getAutonomousVmClusterResourceUsage(
             GetAutonomousVmClusterResourceUsageRequest request);
@@ -2445,7 +2494,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetBackupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetBackup API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetBackupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetBackup API.
      */
     GetBackupResponse getBackup(GetBackupRequest request);
 
@@ -2458,7 +2507,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetBackupDestinationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetBackupDestination API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetBackupDestinationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetBackupDestination API.
      */
     GetBackupDestinationResponse getBackupDestination(GetBackupDestinationRequest request);
 
@@ -2471,7 +2520,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetCloudAutonomousVmClusterExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetCloudAutonomousVmCluster API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetCloudAutonomousVmClusterExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetCloudAutonomousVmCluster API.
      */
     GetCloudAutonomousVmClusterResponse getCloudAutonomousVmCluster(
             GetCloudAutonomousVmClusterRequest request);
@@ -2485,7 +2534,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetCloudAutonomousVmClusterResourceUsageExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetCloudAutonomousVmClusterResourceUsage API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetCloudAutonomousVmClusterResourceUsageExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetCloudAutonomousVmClusterResourceUsage API.
      */
     GetCloudAutonomousVmClusterResourceUsageResponse getCloudAutonomousVmClusterResourceUsage(
             GetCloudAutonomousVmClusterResourceUsageRequest request);
@@ -2499,7 +2548,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetCloudExadataInfrastructureExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetCloudExadataInfrastructure API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetCloudExadataInfrastructureExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetCloudExadataInfrastructure API.
      */
     GetCloudExadataInfrastructureResponse getCloudExadataInfrastructure(
             GetCloudExadataInfrastructureRequest request);
@@ -2513,7 +2562,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetCloudExadataInfrastructureUnallocatedResourcesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetCloudExadataInfrastructureUnallocatedResources API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetCloudExadataInfrastructureUnallocatedResourcesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetCloudExadataInfrastructureUnallocatedResources API.
      */
     GetCloudExadataInfrastructureUnallocatedResourcesResponse
             getCloudExadataInfrastructureUnallocatedResources(
@@ -2528,7 +2577,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetCloudVmClusterExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetCloudVmCluster API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetCloudVmClusterExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetCloudVmCluster API.
      */
     GetCloudVmClusterResponse getCloudVmCluster(GetCloudVmClusterRequest request);
 
@@ -2542,7 +2591,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetCloudVmClusterIormConfigExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetCloudVmClusterIormConfig API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetCloudVmClusterIormConfigExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetCloudVmClusterIormConfig API.
      */
     GetCloudVmClusterIormConfigResponse getCloudVmClusterIormConfig(
             GetCloudVmClusterIormConfigRequest request);
@@ -2556,7 +2605,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetCloudVmClusterUpdateExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetCloudVmClusterUpdate API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetCloudVmClusterUpdateExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetCloudVmClusterUpdate API.
      */
     GetCloudVmClusterUpdateResponse getCloudVmClusterUpdate(GetCloudVmClusterUpdateRequest request);
 
@@ -2569,7 +2618,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetCloudVmClusterUpdateHistoryEntryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetCloudVmClusterUpdateHistoryEntry API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetCloudVmClusterUpdateHistoryEntryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetCloudVmClusterUpdateHistoryEntry API.
      */
     GetCloudVmClusterUpdateHistoryEntryResponse getCloudVmClusterUpdateHistoryEntry(
             GetCloudVmClusterUpdateHistoryEntryRequest request);
@@ -2582,7 +2631,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetConsoleConnectionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetConsoleConnection API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetConsoleConnectionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetConsoleConnection API.
      */
     GetConsoleConnectionResponse getConsoleConnection(GetConsoleConnectionRequest request);
 
@@ -2595,7 +2644,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetConsoleHistoryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetConsoleHistory API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetConsoleHistoryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetConsoleHistory API.
      */
     GetConsoleHistoryResponse getConsoleHistory(GetConsoleHistoryRequest request);
 
@@ -2608,7 +2657,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetConsoleHistoryContentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetConsoleHistoryContent API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetConsoleHistoryContentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetConsoleHistoryContent API.
      */
     GetConsoleHistoryContentResponse getConsoleHistoryContent(
             GetConsoleHistoryContentRequest request);
@@ -2622,7 +2671,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetDataGuardAssociationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetDataGuardAssociation API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetDataGuardAssociationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetDataGuardAssociation API.
      */
     GetDataGuardAssociationResponse getDataGuardAssociation(GetDataGuardAssociationRequest request);
 
@@ -2634,7 +2683,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetDatabase API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetDatabase API.
      */
     GetDatabaseResponse getDatabase(GetDatabaseRequest request);
 
@@ -2646,7 +2695,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetDatabaseSoftwareImageExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetDatabaseSoftwareImage API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetDatabaseSoftwareImageExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetDatabaseSoftwareImage API.
      */
     GetDatabaseSoftwareImageResponse getDatabaseSoftwareImage(
             GetDatabaseSoftwareImageRequest request);
@@ -2660,7 +2709,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetDatabaseUpgradeHistoryEntryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetDatabaseUpgradeHistoryEntry API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetDatabaseUpgradeHistoryEntryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetDatabaseUpgradeHistoryEntry API.
      */
     GetDatabaseUpgradeHistoryEntryResponse getDatabaseUpgradeHistoryEntry(
             GetDatabaseUpgradeHistoryEntryRequest request);
@@ -2673,7 +2722,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetDbHomeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetDbHome API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetDbHomeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetDbHome API.
      */
     GetDbHomeResponse getDbHome(GetDbHomeRequest request);
 
@@ -2686,7 +2735,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetDbHomePatchExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetDbHomePatch API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetDbHomePatchExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetDbHomePatch API.
      */
     GetDbHomePatchResponse getDbHomePatch(GetDbHomePatchRequest request);
 
@@ -2699,7 +2748,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetDbHomePatchHistoryEntryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetDbHomePatchHistoryEntry API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetDbHomePatchHistoryEntryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetDbHomePatchHistoryEntry API.
      */
     GetDbHomePatchHistoryEntryResponse getDbHomePatchHistoryEntry(
             GetDbHomePatchHistoryEntryRequest request);
@@ -2712,7 +2761,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetDbNodeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetDbNode API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetDbNodeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetDbNode API.
      */
     GetDbNodeResponse getDbNode(GetDbNodeRequest request);
 
@@ -2725,16 +2774,16 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetDbServerExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetDbServer API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetDbServerExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetDbServer API.
      */
     GetDbServerResponse getDbServer(GetDbServerRequest request);
 
     /**
      * Gets information about the specified DB system.
      * <p>
-     **Note:** Deprecated for Exadata Cloud Service systems. Use the [new resource model APIs](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model) instead.
+     **Note:** Deprecated for Exadata Cloud Service systems. Use the [new resource model APIs](https://docs.oracle.com/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model) instead.
      * <p>
-     * For Exadata Cloud Service instances, support for this API will end on May 15th, 2021. See [Switching an Exadata DB System to the New Resource Model and APIs](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem_topic-resource_model_conversion.htm) for details on converting existing Exadata DB systems to the new resource model.
+     * For Exadata Cloud Service instances, support for this API will end on May 15th, 2021. See [Switching an Exadata DB System to the New Resource Model and APIs](https://docs.oracle.com/iaas/Content/Database/Concepts/exaflexsystem_topic-resource_model_conversion.htm) for details on converting existing Exadata DB systems to the new resource model.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -2742,7 +2791,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetDbSystemExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetDbSystem API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetDbSystemExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetDbSystem API.
      */
     GetDbSystemResponse getDbSystem(GetDbSystemRequest request);
 
@@ -2755,7 +2804,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetDbSystemPatchExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetDbSystemPatch API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetDbSystemPatchExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetDbSystemPatch API.
      */
     GetDbSystemPatchResponse getDbSystemPatch(GetDbSystemPatchRequest request);
 
@@ -2768,7 +2817,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetDbSystemPatchHistoryEntryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetDbSystemPatchHistoryEntry API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetDbSystemPatchHistoryEntryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetDbSystemPatchHistoryEntry API.
      */
     GetDbSystemPatchHistoryEntryResponse getDbSystemPatchHistoryEntry(
             GetDbSystemPatchHistoryEntryRequest request);
@@ -2782,7 +2831,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetDbSystemUpgradeHistoryEntryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetDbSystemUpgradeHistoryEntry API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetDbSystemUpgradeHistoryEntryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetDbSystemUpgradeHistoryEntry API.
      */
     GetDbSystemUpgradeHistoryEntryResponse getDbSystemUpgradeHistoryEntry(
             GetDbSystemUpgradeHistoryEntryRequest request);
@@ -2797,7 +2846,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetExadataInfrastructureExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetExadataInfrastructure API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetExadataInfrastructureExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetExadataInfrastructure API.
      */
     GetExadataInfrastructureResponse getExadataInfrastructure(
             GetExadataInfrastructureRequest request);
@@ -2811,7 +2860,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetExadataInfrastructureOcpusExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetExadataInfrastructureOcpus API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetExadataInfrastructureOcpusExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetExadataInfrastructureOcpus API.
      */
     GetExadataInfrastructureOcpusResponse getExadataInfrastructureOcpus(
             GetExadataInfrastructureOcpusRequest request);
@@ -2825,7 +2874,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetExadataInfrastructureUnAllocatedResourcesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetExadataInfrastructureUnAllocatedResources API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetExadataInfrastructureUnAllocatedResourcesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetExadataInfrastructureUnAllocatedResources API.
      */
     GetExadataInfrastructureUnAllocatedResourcesResponse
             getExadataInfrastructureUnAllocatedResources(
@@ -2835,9 +2884,9 @@ public interface Database extends AutoCloseable {
      * Gets the IORM configuration settings for the specified cloud Exadata DB system.
      * All Exadata service instances have default IORM settings.
      * <p>
-     **Note:** Deprecated for Exadata Cloud Service systems. Use the [new resource model APIs](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model) instead.
+     **Note:** Deprecated for Exadata Cloud Service systems. Use the [new resource model APIs](https://docs.oracle.com/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model) instead.
      * <p>
-     * For Exadata Cloud Service instances, support for this API will end on May 15th, 2021. See [Switching an Exadata DB System to the New Resource Model and APIs](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem_topic-resource_model_conversion.htm) for details on converting existing Exadata DB systems to the new resource model.
+     * For Exadata Cloud Service instances, support for this API will end on May 15th, 2021. See [Switching an Exadata DB System to the New Resource Model and APIs](https://docs.oracle.com/iaas/Content/Database/Concepts/exaflexsystem_topic-resource_model_conversion.htm) for details on converting existing Exadata DB systems to the new resource model.
      * <p>
      * The {@link #getCloudVmClusterIormConfig(GetCloudVmClusterIormConfigRequest) getCloudVmClusterIormConfig} API is used for this operation with Exadata systems using the
      * new resource model.
@@ -2848,7 +2897,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetExadataIormConfigExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetExadataIormConfig API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetExadataIormConfigExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetExadataIormConfig API.
      */
     GetExadataIormConfigResponse getExadataIormConfig(GetExadataIormConfigRequest request);
 
@@ -2861,7 +2910,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetExadbVmClusterExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetExadbVmCluster API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetExadbVmClusterExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetExadbVmCluster API.
      */
     GetExadbVmClusterResponse getExadbVmCluster(GetExadbVmClusterRequest request);
 
@@ -2874,7 +2923,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetExadbVmClusterUpdateExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetExadbVmClusterUpdate API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetExadbVmClusterUpdateExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetExadbVmClusterUpdate API.
      */
     GetExadbVmClusterUpdateResponse getExadbVmClusterUpdate(GetExadbVmClusterUpdateRequest request);
 
@@ -2887,7 +2936,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetExadbVmClusterUpdateHistoryEntryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetExadbVmClusterUpdateHistoryEntry API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetExadbVmClusterUpdateHistoryEntryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetExadbVmClusterUpdateHistoryEntry API.
      */
     GetExadbVmClusterUpdateHistoryEntryResponse getExadbVmClusterUpdateHistoryEntry(
             GetExadbVmClusterUpdateHistoryEntryRequest request);
@@ -2901,7 +2950,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetExascaleDbStorageVaultExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetExascaleDbStorageVault API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetExascaleDbStorageVaultExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetExascaleDbStorageVault API.
      */
     GetExascaleDbStorageVaultResponse getExascaleDbStorageVault(
             GetExascaleDbStorageVaultRequest request);
@@ -2915,7 +2964,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetExecutionActionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetExecutionAction API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetExecutionActionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetExecutionAction API.
      */
     GetExecutionActionResponse getExecutionAction(GetExecutionActionRequest request);
 
@@ -2928,14 +2977,14 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetExecutionWindowExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetExecutionWindow API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetExecutionWindowExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetExecutionWindow API.
      */
     GetExecutionWindowResponse getExecutionWindow(GetExecutionWindowRequest request);
 
     /**
      * Gets information about the specified external backup job.
      * <p>
-     **Note:** This API is used by an Oracle Cloud Infrastructure Python script that is packaged with the Oracle Cloud Infrastructure CLI. Oracle recommends that you use the script instead using the API directly. See [Migrating an On-Premises Database to Oracle Cloud Infrastructure by Creating a Backup in the Cloud](https://docs.cloud.oracle.com/Content/Database/Tasks/mig-onprembackup.htm) for more information.
+     **Note:** This API is used by an Oracle Cloud Infrastructure Python script that is packaged with the Oracle Cloud Infrastructure CLI. Oracle recommends that you use the script instead using the API directly. See [Migrating an On-Premises Database to Oracle Cloud Infrastructure by Creating a Backup in the Cloud](https://docs.oracle.com/iaas/Content/Database/Tasks/mig-onprembackup.htm) for more information.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -2943,7 +2992,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetExternalBackupJobExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetExternalBackupJob API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetExternalBackupJobExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetExternalBackupJob API.
      */
     GetExternalBackupJobResponse getExternalBackupJob(GetExternalBackupJobRequest request);
 
@@ -2955,7 +3004,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetExternalContainerDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetExternalContainerDatabase API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetExternalContainerDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetExternalContainerDatabase API.
      */
     GetExternalContainerDatabaseResponse getExternalContainerDatabase(
             GetExternalContainerDatabaseRequest request);
@@ -2968,7 +3017,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetExternalDatabaseConnectorExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetExternalDatabaseConnector API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetExternalDatabaseConnectorExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetExternalDatabaseConnector API.
      */
     GetExternalDatabaseConnectorResponse getExternalDatabaseConnector(
             GetExternalDatabaseConnectorRequest request);
@@ -2981,7 +3030,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetExternalNonContainerDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetExternalNonContainerDatabase API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetExternalNonContainerDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetExternalNonContainerDatabase API.
      */
     GetExternalNonContainerDatabaseResponse getExternalNonContainerDatabase(
             GetExternalNonContainerDatabaseRequest request);
@@ -2996,7 +3045,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetExternalPluggableDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetExternalPluggableDatabase API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetExternalPluggableDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetExternalPluggableDatabase API.
      */
     GetExternalPluggableDatabaseResponse getExternalPluggableDatabase(
             GetExternalPluggableDatabaseRequest request);
@@ -3011,7 +3060,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetInfrastructureTargetVersionsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetInfrastructureTargetVersions API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetInfrastructureTargetVersionsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetInfrastructureTargetVersions API.
      */
     GetInfrastructureTargetVersionsResponse getInfrastructureTargetVersions(
             GetInfrastructureTargetVersionsRequest request);
@@ -3025,7 +3074,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetKeyStoreExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetKeyStore API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetKeyStoreExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetKeyStore API.
      */
     GetKeyStoreResponse getKeyStore(GetKeyStoreRequest request);
 
@@ -3037,7 +3086,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetMaintenanceRunExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetMaintenanceRun API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetMaintenanceRunExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetMaintenanceRun API.
      */
     GetMaintenanceRunResponse getMaintenanceRun(GetMaintenanceRunRequest request);
 
@@ -3049,7 +3098,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetMaintenanceRunHistoryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetMaintenanceRunHistory API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetMaintenanceRunHistoryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetMaintenanceRunHistory API.
      */
     GetMaintenanceRunHistoryResponse getMaintenanceRunHistory(
             GetMaintenanceRunHistoryRequest request);
@@ -3063,7 +3112,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetOneoffPatchExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetOneoffPatch API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetOneoffPatchExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetOneoffPatch API.
      */
     GetOneoffPatchResponse getOneoffPatch(GetOneoffPatchRequest request);
 
@@ -3076,7 +3125,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetPdbConversionHistoryEntryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetPdbConversionHistoryEntry API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetPdbConversionHistoryEntryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetPdbConversionHistoryEntry API.
      */
     GetPdbConversionHistoryEntryResponse getPdbConversionHistoryEntry(
             GetPdbConversionHistoryEntryRequest request);
@@ -3089,7 +3138,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetPluggableDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetPluggableDatabase API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetPluggableDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetPluggableDatabase API.
      */
     GetPluggableDatabaseResponse getPluggableDatabase(GetPluggableDatabaseRequest request);
 
@@ -3102,7 +3151,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetScheduledActionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetScheduledAction API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetScheduledActionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetScheduledAction API.
      */
     GetScheduledActionResponse getScheduledAction(GetScheduledActionRequest request);
 
@@ -3115,7 +3164,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetSchedulingPlanExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetSchedulingPlan API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetSchedulingPlanExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetSchedulingPlan API.
      */
     GetSchedulingPlanResponse getSchedulingPlan(GetSchedulingPlanRequest request);
 
@@ -3128,7 +3177,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetSchedulingPolicyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetSchedulingPolicy API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetSchedulingPolicyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetSchedulingPolicy API.
      */
     GetSchedulingPolicyResponse getSchedulingPolicy(GetSchedulingPolicyRequest request);
 
@@ -3141,7 +3190,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetSchedulingWindowExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetSchedulingWindow API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetSchedulingWindowExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetSchedulingWindow API.
      */
     GetSchedulingWindowResponse getSchedulingWindow(GetSchedulingWindowRequest request);
 
@@ -3154,7 +3203,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetVmClusterExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetVmCluster API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetVmClusterExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetVmCluster API.
      */
     GetVmClusterResponse getVmCluster(GetVmClusterRequest request);
 
@@ -3168,7 +3217,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetVmClusterNetworkExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetVmClusterNetwork API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetVmClusterNetworkExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetVmClusterNetwork API.
      */
     GetVmClusterNetworkResponse getVmClusterNetwork(GetVmClusterNetworkRequest request);
 
@@ -3181,7 +3230,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetVmClusterPatchExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetVmClusterPatch API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetVmClusterPatchExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetVmClusterPatch API.
      */
     GetVmClusterPatchResponse getVmClusterPatch(GetVmClusterPatchRequest request);
 
@@ -3194,7 +3243,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetVmClusterPatchHistoryEntryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetVmClusterPatchHistoryEntry API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetVmClusterPatchHistoryEntryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetVmClusterPatchHistoryEntry API.
      */
     GetVmClusterPatchHistoryEntryResponse getVmClusterPatchHistoryEntry(
             GetVmClusterPatchHistoryEntryRequest request);
@@ -3208,7 +3257,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetVmClusterUpdateExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetVmClusterUpdate API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetVmClusterUpdateExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetVmClusterUpdate API.
      */
     GetVmClusterUpdateResponse getVmClusterUpdate(GetVmClusterUpdateRequest request);
 
@@ -3221,7 +3270,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetVmClusterUpdateHistoryEntryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetVmClusterUpdateHistoryEntry API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetVmClusterUpdateHistoryEntryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetVmClusterUpdateHistoryEntry API.
      */
     GetVmClusterUpdateHistoryEntryResponse getVmClusterUpdateHistoryEntry(
             GetVmClusterUpdateHistoryEntryRequest request);
@@ -3235,7 +3284,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/LaunchAutonomousExadataInfrastructureExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use LaunchAutonomousExadataInfrastructure API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/LaunchAutonomousExadataInfrastructureExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use LaunchAutonomousExadataInfrastructure API.
      */
     LaunchAutonomousExadataInfrastructureResponse launchAutonomousExadataInfrastructure(
             LaunchAutonomousExadataInfrastructureRequest request);
@@ -3245,11 +3294,11 @@ public interface Database extends AutoCloseable {
      * Database edition that you specify applies to all the databases on that DB system. The selected edition cannot be changed.
      * <p>
      * An initial database is created on the DB system based on the request parameters you provide and some default
-     * options. For detailed information about default options, see [Bare metal and virtual machine DB system default options.](https://docs.cloud.oracle.com/Content/Database/Tasks/creatingDBsystem.htm#Default)
+     * options. For detailed information about default options, see [Bare metal and virtual machine DB system default options.](https://docs.oracle.com/iaas/Content/Database/Tasks/creatingDBsystem.htm#Default)
      * <p>
-     **Note:** Deprecated for Exadata Cloud Service systems. Use the [new resource model APIs](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model) instead.
+     **Note:** Deprecated for Exadata Cloud Service systems. Use the [new resource model APIs](https://docs.oracle.com/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model) instead.
      * <p>
-     * For Exadata Cloud Service instances, support for this API will end on May 15th, 2021. See [Switching an Exadata DB System to the New Resource Model and APIs](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem_topic-resource_model_conversion.htm) for details on converting existing Exadata DB systems to the new resource model.
+     * For Exadata Cloud Service instances, support for this API will end on May 15th, 2021. See [Switching an Exadata DB System to the New Resource Model and APIs](https://docs.oracle.com/iaas/Content/Database/Concepts/exaflexsystem_topic-resource_model_conversion.htm) for details on converting existing Exadata DB systems to the new resource model.
      * <p>
      * Use the {@link #createCloudExadataInfrastructure(CreateCloudExadataInfrastructureRequest) createCloudExadataInfrastructure} and {@link #createCloudVmCluster(CreateCloudVmClusterRequest) createCloudVmCluster} APIs to provision a new Exadata Cloud Service instance.
      *
@@ -3259,7 +3308,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/LaunchDbSystemExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use LaunchDbSystem API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/LaunchDbSystemExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use LaunchDbSystem API.
      */
     LaunchDbSystemResponse launchDbSystem(LaunchDbSystemRequest request);
 
@@ -3272,7 +3321,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListApplicationVipsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListApplicationVips API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListApplicationVipsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListApplicationVips API.
      */
     ListApplicationVipsResponse listApplicationVips(ListApplicationVipsRequest request);
 
@@ -3285,7 +3334,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListAutonomousContainerDatabaseDataguardAssociationsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListAutonomousContainerDatabaseDataguardAssociations API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListAutonomousContainerDatabaseDataguardAssociationsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListAutonomousContainerDatabaseDataguardAssociations API.
      */
     ListAutonomousContainerDatabaseDataguardAssociationsResponse
             listAutonomousContainerDatabaseDataguardAssociations(
@@ -3299,7 +3348,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListAutonomousContainerDatabaseVersionsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListAutonomousContainerDatabaseVersions API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListAutonomousContainerDatabaseVersionsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListAutonomousContainerDatabaseVersions API.
      */
     ListAutonomousContainerDatabaseVersionsResponse listAutonomousContainerDatabaseVersions(
             ListAutonomousContainerDatabaseVersionsRequest request);
@@ -3313,7 +3362,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListAutonomousContainerDatabasesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListAutonomousContainerDatabases API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListAutonomousContainerDatabasesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListAutonomousContainerDatabases API.
      */
     ListAutonomousContainerDatabasesResponse listAutonomousContainerDatabases(
             ListAutonomousContainerDatabasesRequest request);
@@ -3327,7 +3376,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListAutonomousDatabaseBackupsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListAutonomousDatabaseBackups API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListAutonomousDatabaseBackupsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListAutonomousDatabaseBackups API.
      */
     ListAutonomousDatabaseBackupsResponse listAutonomousDatabaseBackups(
             ListAutonomousDatabaseBackupsRequest request);
@@ -3340,7 +3389,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListAutonomousDatabaseCharacterSetsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListAutonomousDatabaseCharacterSets API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListAutonomousDatabaseCharacterSetsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListAutonomousDatabaseCharacterSets API.
      */
     ListAutonomousDatabaseCharacterSetsResponse listAutonomousDatabaseCharacterSets(
             ListAutonomousDatabaseCharacterSetsRequest request);
@@ -3354,7 +3403,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListAutonomousDatabaseClonesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListAutonomousDatabaseClones API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListAutonomousDatabaseClonesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListAutonomousDatabaseClones API.
      */
     ListAutonomousDatabaseClonesResponse listAutonomousDatabaseClones(
             ListAutonomousDatabaseClonesRequest request);
@@ -3368,7 +3417,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListAutonomousDatabaseDataguardAssociationsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListAutonomousDatabaseDataguardAssociations API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListAutonomousDatabaseDataguardAssociationsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListAutonomousDatabaseDataguardAssociations API.
      */
     ListAutonomousDatabaseDataguardAssociationsResponse listAutonomousDatabaseDataguardAssociations(
             ListAutonomousDatabaseDataguardAssociationsRequest request);
@@ -3382,7 +3431,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListAutonomousDatabasePeersExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListAutonomousDatabasePeers API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListAutonomousDatabasePeersExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListAutonomousDatabasePeers API.
      */
     ListAutonomousDatabasePeersResponse listAutonomousDatabasePeers(
             ListAutonomousDatabasePeersRequest request);
@@ -3396,7 +3445,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListAutonomousDatabaseRefreshableClonesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListAutonomousDatabaseRefreshableClones API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListAutonomousDatabaseRefreshableClonesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListAutonomousDatabaseRefreshableClones API.
      */
     ListAutonomousDatabaseRefreshableClonesResponse listAutonomousDatabaseRefreshableClones(
             ListAutonomousDatabaseRefreshableClonesRequest request);
@@ -3410,7 +3459,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListAutonomousDatabaseSoftwareImagesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListAutonomousDatabaseSoftwareImages API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListAutonomousDatabaseSoftwareImagesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListAutonomousDatabaseSoftwareImages API.
      */
     ListAutonomousDatabaseSoftwareImagesResponse listAutonomousDatabaseSoftwareImages(
             ListAutonomousDatabaseSoftwareImagesRequest request);
@@ -3424,7 +3473,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListAutonomousDatabasesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListAutonomousDatabases API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListAutonomousDatabasesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListAutonomousDatabases API.
      */
     ListAutonomousDatabasesResponse listAutonomousDatabases(ListAutonomousDatabasesRequest request);
 
@@ -3438,7 +3487,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListAutonomousDbPreviewVersionsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListAutonomousDbPreviewVersions API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListAutonomousDbPreviewVersionsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListAutonomousDbPreviewVersions API.
      */
     ListAutonomousDbPreviewVersionsResponse listAutonomousDbPreviewVersions(
             ListAutonomousDbPreviewVersionsRequest request);
@@ -3451,7 +3500,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListAutonomousDbVersionsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListAutonomousDbVersions API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListAutonomousDbVersionsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListAutonomousDbVersions API.
      */
     ListAutonomousDbVersionsResponse listAutonomousDbVersions(
             ListAutonomousDbVersionsRequest request);
@@ -3465,7 +3514,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListAutonomousExadataInfrastructureShapesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListAutonomousExadataInfrastructureShapes API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListAutonomousExadataInfrastructureShapesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListAutonomousExadataInfrastructureShapes API.
      */
     ListAutonomousExadataInfrastructureShapesResponse listAutonomousExadataInfrastructureShapes(
             ListAutonomousExadataInfrastructureShapesRequest request);
@@ -3479,7 +3528,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListAutonomousExadataInfrastructuresExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListAutonomousExadataInfrastructures API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListAutonomousExadataInfrastructuresExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListAutonomousExadataInfrastructures API.
      */
     ListAutonomousExadataInfrastructuresResponse listAutonomousExadataInfrastructures(
             ListAutonomousExadataInfrastructuresRequest request);
@@ -3493,7 +3542,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListAutonomousVirtualMachinesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListAutonomousVirtualMachines API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListAutonomousVirtualMachinesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListAutonomousVirtualMachines API.
      */
     ListAutonomousVirtualMachinesResponse listAutonomousVirtualMachines(
             ListAutonomousVirtualMachinesRequest request);
@@ -3507,7 +3556,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListAutonomousVmClusterAcdResourceUsageExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListAutonomousVmClusterAcdResourceUsage API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListAutonomousVmClusterAcdResourceUsageExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListAutonomousVmClusterAcdResourceUsage API.
      */
     ListAutonomousVmClusterAcdResourceUsageResponse listAutonomousVmClusterAcdResourceUsage(
             ListAutonomousVmClusterAcdResourceUsageRequest request);
@@ -3521,7 +3570,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListAutonomousVmClustersExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListAutonomousVmClusters API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListAutonomousVmClustersExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListAutonomousVmClusters API.
      */
     ListAutonomousVmClustersResponse listAutonomousVmClusters(
             ListAutonomousVmClustersRequest request);
@@ -3535,7 +3584,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListBackupDestinationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListBackupDestination API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListBackupDestinationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListBackupDestination API.
      */
     ListBackupDestinationResponse listBackupDestination(ListBackupDestinationRequest request);
 
@@ -3548,7 +3597,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListBackupsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListBackups API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListBackupsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListBackups API.
      */
     ListBackupsResponse listBackups(ListBackupsRequest request);
 
@@ -3562,7 +3611,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListCloudAutonomousVmClusterAcdResourceUsageExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListCloudAutonomousVmClusterAcdResourceUsage API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListCloudAutonomousVmClusterAcdResourceUsageExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListCloudAutonomousVmClusterAcdResourceUsage API.
      */
     ListCloudAutonomousVmClusterAcdResourceUsageResponse
             listCloudAutonomousVmClusterAcdResourceUsage(
@@ -3577,7 +3626,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListCloudAutonomousVmClustersExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListCloudAutonomousVmClusters API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListCloudAutonomousVmClustersExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListCloudAutonomousVmClusters API.
      */
     ListCloudAutonomousVmClustersResponse listCloudAutonomousVmClusters(
             ListCloudAutonomousVmClustersRequest request);
@@ -3591,7 +3640,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListCloudExadataInfrastructuresExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListCloudExadataInfrastructures API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListCloudExadataInfrastructuresExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListCloudExadataInfrastructures API.
      */
     ListCloudExadataInfrastructuresResponse listCloudExadataInfrastructures(
             ListCloudExadataInfrastructuresRequest request);
@@ -3605,7 +3654,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListCloudVmClusterUpdateHistoryEntriesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListCloudVmClusterUpdateHistoryEntries API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListCloudVmClusterUpdateHistoryEntriesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListCloudVmClusterUpdateHistoryEntries API.
      */
     ListCloudVmClusterUpdateHistoryEntriesResponse listCloudVmClusterUpdateHistoryEntries(
             ListCloudVmClusterUpdateHistoryEntriesRequest request);
@@ -3619,7 +3668,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListCloudVmClusterUpdatesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListCloudVmClusterUpdates API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListCloudVmClusterUpdatesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListCloudVmClusterUpdates API.
      */
     ListCloudVmClusterUpdatesResponse listCloudVmClusterUpdates(
             ListCloudVmClusterUpdatesRequest request);
@@ -3633,7 +3682,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListCloudVmClustersExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListCloudVmClusters API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListCloudVmClustersExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListCloudVmClusters API.
      */
     ListCloudVmClustersResponse listCloudVmClusters(ListCloudVmClustersRequest request);
 
@@ -3646,7 +3695,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListConsoleConnectionsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListConsoleConnections API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListConsoleConnectionsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListConsoleConnections API.
      */
     ListConsoleConnectionsResponse listConsoleConnections(ListConsoleConnectionsRequest request);
 
@@ -3659,7 +3708,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListConsoleHistoriesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListConsoleHistories API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListConsoleHistoriesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListConsoleHistories API.
      */
     ListConsoleHistoriesResponse listConsoleHistories(ListConsoleHistoriesRequest request);
 
@@ -3672,7 +3721,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListContainerDatabasePatchesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListContainerDatabasePatches API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListContainerDatabasePatchesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListContainerDatabasePatches API.
      */
     ListContainerDatabasePatchesResponse listContainerDatabasePatches(
             ListContainerDatabasePatchesRequest request);
@@ -3686,7 +3735,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListDataGuardAssociationsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDataGuardAssociations API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListDataGuardAssociationsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDataGuardAssociations API.
      */
     ListDataGuardAssociationsResponse listDataGuardAssociations(
             ListDataGuardAssociationsRequest request);
@@ -3700,7 +3749,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListDatabaseSoftwareImagesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDatabaseSoftwareImages API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListDatabaseSoftwareImagesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDatabaseSoftwareImages API.
      */
     ListDatabaseSoftwareImagesResponse listDatabaseSoftwareImages(
             ListDatabaseSoftwareImagesRequest request);
@@ -3714,7 +3763,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListDatabaseUpgradeHistoryEntriesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDatabaseUpgradeHistoryEntries API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListDatabaseUpgradeHistoryEntriesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDatabaseUpgradeHistoryEntries API.
      */
     ListDatabaseUpgradeHistoryEntriesResponse listDatabaseUpgradeHistoryEntries(
             ListDatabaseUpgradeHistoryEntriesRequest request);
@@ -3728,7 +3777,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListDatabasesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDatabases API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListDatabasesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDatabases API.
      */
     ListDatabasesResponse listDatabases(ListDatabasesRequest request);
 
@@ -3741,7 +3790,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListDbHomePatchHistoryEntriesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDbHomePatchHistoryEntries API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListDbHomePatchHistoryEntriesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDbHomePatchHistoryEntries API.
      */
     ListDbHomePatchHistoryEntriesResponse listDbHomePatchHistoryEntries(
             ListDbHomePatchHistoryEntriesRequest request);
@@ -3755,7 +3804,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListDbHomePatchesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDbHomePatches API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListDbHomePatchesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDbHomePatches API.
      */
     ListDbHomePatchesResponse listDbHomePatches(ListDbHomePatchesRequest request);
 
@@ -3768,7 +3817,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListDbHomesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDbHomes API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListDbHomesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDbHomes API.
      */
     ListDbHomesResponse listDbHomes(ListDbHomesRequest request);
 
@@ -3781,7 +3830,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListDbNodesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDbNodes API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListDbNodesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDbNodes API.
      */
     ListDbNodesResponse listDbNodes(ListDbNodesRequest request);
 
@@ -3794,7 +3843,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListDbServersExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDbServers API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListDbServersExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDbServers API.
      */
     ListDbServersResponse listDbServers(ListDbServersRequest request);
 
@@ -3807,7 +3856,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListDbSystemComputePerformancesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDbSystemComputePerformances API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListDbSystemComputePerformancesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDbSystemComputePerformances API.
      */
     ListDbSystemComputePerformancesResponse listDbSystemComputePerformances(
             ListDbSystemComputePerformancesRequest request);
@@ -3821,7 +3870,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListDbSystemPatchHistoryEntriesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDbSystemPatchHistoryEntries API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListDbSystemPatchHistoryEntriesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDbSystemPatchHistoryEntries API.
      */
     ListDbSystemPatchHistoryEntriesResponse listDbSystemPatchHistoryEntries(
             ListDbSystemPatchHistoryEntriesRequest request);
@@ -3835,7 +3884,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListDbSystemPatchesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDbSystemPatches API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListDbSystemPatchesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDbSystemPatches API.
      */
     ListDbSystemPatchesResponse listDbSystemPatches(ListDbSystemPatchesRequest request);
 
@@ -3847,7 +3896,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListDbSystemShapesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDbSystemShapes API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListDbSystemShapesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDbSystemShapes API.
      */
     ListDbSystemShapesResponse listDbSystemShapes(ListDbSystemShapesRequest request);
 
@@ -3860,7 +3909,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListDbSystemStoragePerformancesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDbSystemStoragePerformances API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListDbSystemStoragePerformancesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDbSystemStoragePerformances API.
      */
     ListDbSystemStoragePerformancesResponse listDbSystemStoragePerformances(
             ListDbSystemStoragePerformancesRequest request);
@@ -3874,7 +3923,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListDbSystemUpgradeHistoryEntriesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDbSystemUpgradeHistoryEntries API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListDbSystemUpgradeHistoryEntriesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDbSystemUpgradeHistoryEntries API.
      */
     ListDbSystemUpgradeHistoryEntriesResponse listDbSystemUpgradeHistoryEntries(
             ListDbSystemUpgradeHistoryEntriesRequest request);
@@ -3882,9 +3931,9 @@ public interface Database extends AutoCloseable {
     /**
      * Lists the DB systems in the specified compartment. You can specify a `backupId` to list only the DB systems that support creating a database using this backup in this compartment.
      * <p>
-     **Note:** Deprecated for Exadata Cloud Service systems. Use the [new resource model APIs](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model) instead.
+     **Note:** Deprecated for Exadata Cloud Service systems. Use the [new resource model APIs](https://docs.oracle.com/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model) instead.
      * <p>
-     * For Exadata Cloud Service instances, support for this API will end on May 15th, 2021. See [Switching an Exadata DB System to the New Resource Model and APIs](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem_topic-resource_model_conversion.htm) for details on converting existing Exadata DB systems to the new resource model.
+     * For Exadata Cloud Service instances, support for this API will end on May 15th, 2021. See [Switching an Exadata DB System to the New Resource Model and APIs](https://docs.oracle.com/iaas/Content/Database/Concepts/exaflexsystem_topic-resource_model_conversion.htm) for details on converting existing Exadata DB systems to the new resource model.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -3892,7 +3941,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListDbSystemsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDbSystems API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListDbSystemsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDbSystems API.
      */
     ListDbSystemsResponse listDbSystems(ListDbSystemsRequest request);
 
@@ -3904,7 +3953,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListDbVersionsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDbVersions API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListDbVersionsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDbVersions API.
      */
     ListDbVersionsResponse listDbVersions(ListDbVersionsRequest request);
 
@@ -3918,7 +3967,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListExadataInfrastructuresExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListExadataInfrastructures API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListExadataInfrastructuresExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListExadataInfrastructures API.
      */
     ListExadataInfrastructuresResponse listExadataInfrastructures(
             ListExadataInfrastructuresRequest request);
@@ -3932,7 +3981,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListExadbVmClusterUpdateHistoryEntriesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListExadbVmClusterUpdateHistoryEntries API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListExadbVmClusterUpdateHistoryEntriesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListExadbVmClusterUpdateHistoryEntries API.
      */
     ListExadbVmClusterUpdateHistoryEntriesResponse listExadbVmClusterUpdateHistoryEntries(
             ListExadbVmClusterUpdateHistoryEntriesRequest request);
@@ -3946,7 +3995,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListExadbVmClusterUpdatesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListExadbVmClusterUpdates API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListExadbVmClusterUpdatesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListExadbVmClusterUpdates API.
      */
     ListExadbVmClusterUpdatesResponse listExadbVmClusterUpdates(
             ListExadbVmClusterUpdatesRequest request);
@@ -3960,7 +4009,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListExadbVmClustersExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListExadbVmClusters API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListExadbVmClustersExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListExadbVmClusters API.
      */
     ListExadbVmClustersResponse listExadbVmClusters(ListExadbVmClustersRequest request);
 
@@ -3973,7 +4022,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListExascaleDbStorageVaultsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListExascaleDbStorageVaults API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListExascaleDbStorageVaultsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListExascaleDbStorageVaults API.
      */
     ListExascaleDbStorageVaultsResponse listExascaleDbStorageVaults(
             ListExascaleDbStorageVaultsRequest request);
@@ -3987,7 +4036,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListExecutionActionsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListExecutionActions API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListExecutionActionsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListExecutionActions API.
      */
     ListExecutionActionsResponse listExecutionActions(ListExecutionActionsRequest request);
 
@@ -4000,7 +4049,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListExecutionWindowsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListExecutionWindows API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListExecutionWindowsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListExecutionWindows API.
      */
     ListExecutionWindowsResponse listExecutionWindows(ListExecutionWindowsRequest request);
 
@@ -4013,7 +4062,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListExternalContainerDatabasesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListExternalContainerDatabases API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListExternalContainerDatabasesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListExternalContainerDatabases API.
      */
     ListExternalContainerDatabasesResponse listExternalContainerDatabases(
             ListExternalContainerDatabasesRequest request);
@@ -4027,7 +4076,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListExternalDatabaseConnectorsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListExternalDatabaseConnectors API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListExternalDatabaseConnectorsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListExternalDatabaseConnectors API.
      */
     ListExternalDatabaseConnectorsResponse listExternalDatabaseConnectors(
             ListExternalDatabaseConnectorsRequest request);
@@ -4041,7 +4090,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListExternalNonContainerDatabasesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListExternalNonContainerDatabases API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListExternalNonContainerDatabasesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListExternalNonContainerDatabases API.
      */
     ListExternalNonContainerDatabasesResponse listExternalNonContainerDatabases(
             ListExternalNonContainerDatabasesRequest request);
@@ -4056,7 +4105,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListExternalPluggableDatabasesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListExternalPluggableDatabases API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListExternalPluggableDatabasesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListExternalPluggableDatabases API.
      */
     ListExternalPluggableDatabasesResponse listExternalPluggableDatabases(
             ListExternalPluggableDatabasesRequest request);
@@ -4069,7 +4118,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListFlexComponentsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListFlexComponents API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListFlexComponentsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListFlexComponents API.
      */
     ListFlexComponentsResponse listFlexComponents(ListFlexComponentsRequest request);
 
@@ -4081,7 +4130,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListGiVersionMinorVersionsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListGiVersionMinorVersions API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListGiVersionMinorVersionsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListGiVersionMinorVersions API.
      */
     ListGiVersionMinorVersionsResponse listGiVersionMinorVersions(
             ListGiVersionMinorVersionsRequest request);
@@ -4094,7 +4143,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListGiVersionsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListGiVersions API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListGiVersionsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListGiVersions API.
      */
     ListGiVersionsResponse listGiVersions(ListGiVersionsRequest request);
 
@@ -4107,7 +4156,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListKeyStoresExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListKeyStores API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListKeyStoresExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListKeyStores API.
      */
     ListKeyStoresResponse listKeyStores(ListKeyStoresRequest request);
 
@@ -4120,7 +4169,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListMaintenanceRunHistoryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListMaintenanceRunHistory API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListMaintenanceRunHistoryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListMaintenanceRunHistory API.
      */
     ListMaintenanceRunHistoryResponse listMaintenanceRunHistory(
             ListMaintenanceRunHistoryRequest request);
@@ -4134,7 +4183,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListMaintenanceRunsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListMaintenanceRuns API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListMaintenanceRunsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListMaintenanceRuns API.
      */
     ListMaintenanceRunsResponse listMaintenanceRuns(ListMaintenanceRunsRequest request);
 
@@ -4147,7 +4196,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListOneoffPatchesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListOneoffPatches API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListOneoffPatchesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListOneoffPatches API.
      */
     ListOneoffPatchesResponse listOneoffPatches(ListOneoffPatchesRequest request);
 
@@ -4160,7 +4209,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListParamsForActionTypeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListParamsForActionType API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListParamsForActionTypeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListParamsForActionType API.
      */
     ListParamsForActionTypeResponse listParamsForActionType(ListParamsForActionTypeRequest request);
 
@@ -4173,7 +4222,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListPdbConversionHistoryEntriesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListPdbConversionHistoryEntries API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListPdbConversionHistoryEntriesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListPdbConversionHistoryEntries API.
      */
     ListPdbConversionHistoryEntriesResponse listPdbConversionHistoryEntries(
             ListPdbConversionHistoryEntriesRequest request);
@@ -4187,7 +4236,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListPluggableDatabasesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListPluggableDatabases API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListPluggableDatabasesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListPluggableDatabases API.
      */
     ListPluggableDatabasesResponse listPluggableDatabases(ListPluggableDatabasesRequest request);
 
@@ -4200,7 +4249,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListRecommendedScheduledActionsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListRecommendedScheduledActions API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListRecommendedScheduledActionsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListRecommendedScheduledActions API.
      */
     ListRecommendedScheduledActionsResponse listRecommendedScheduledActions(
             ListRecommendedScheduledActionsRequest request);
@@ -4214,7 +4263,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListScheduledActionsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListScheduledActions API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListScheduledActionsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListScheduledActions API.
      */
     ListScheduledActionsResponse listScheduledActions(ListScheduledActionsRequest request);
 
@@ -4227,7 +4276,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListSchedulingPlansExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSchedulingPlans API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListSchedulingPlansExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSchedulingPlans API.
      */
     ListSchedulingPlansResponse listSchedulingPlans(ListSchedulingPlansRequest request);
 
@@ -4240,7 +4289,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListSchedulingPoliciesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSchedulingPolicies API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListSchedulingPoliciesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSchedulingPolicies API.
      */
     ListSchedulingPoliciesResponse listSchedulingPolicies(ListSchedulingPoliciesRequest request);
 
@@ -4253,7 +4302,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListSchedulingWindowsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSchedulingWindows API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListSchedulingWindowsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSchedulingWindows API.
      */
     ListSchedulingWindowsResponse listSchedulingWindows(ListSchedulingWindowsRequest request);
 
@@ -4265,7 +4314,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListSystemVersionsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSystemVersions API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListSystemVersionsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSystemVersions API.
      */
     ListSystemVersionsResponse listSystemVersions(ListSystemVersionsRequest request);
 
@@ -4278,7 +4327,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListVmClusterNetworksExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListVmClusterNetworks API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListVmClusterNetworksExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListVmClusterNetworks API.
      */
     ListVmClusterNetworksResponse listVmClusterNetworks(ListVmClusterNetworksRequest request);
 
@@ -4291,7 +4340,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListVmClusterPatchHistoryEntriesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListVmClusterPatchHistoryEntries API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListVmClusterPatchHistoryEntriesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListVmClusterPatchHistoryEntries API.
      */
     ListVmClusterPatchHistoryEntriesResponse listVmClusterPatchHistoryEntries(
             ListVmClusterPatchHistoryEntriesRequest request);
@@ -4305,7 +4354,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListVmClusterPatchesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListVmClusterPatches API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListVmClusterPatchesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListVmClusterPatches API.
      */
     ListVmClusterPatchesResponse listVmClusterPatches(ListVmClusterPatchesRequest request);
 
@@ -4318,7 +4367,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListVmClusterUpdateHistoryEntriesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListVmClusterUpdateHistoryEntries API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListVmClusterUpdateHistoryEntriesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListVmClusterUpdateHistoryEntries API.
      */
     ListVmClusterUpdateHistoryEntriesResponse listVmClusterUpdateHistoryEntries(
             ListVmClusterUpdateHistoryEntriesRequest request);
@@ -4332,7 +4381,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListVmClusterUpdatesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListVmClusterUpdates API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListVmClusterUpdatesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListVmClusterUpdates API.
      */
     ListVmClusterUpdatesResponse listVmClusterUpdates(ListVmClusterUpdatesRequest request);
 
@@ -4346,7 +4395,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListVmClustersExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListVmClusters API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListVmClustersExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListVmClusters API.
      */
     ListVmClustersResponse listVmClusters(ListVmClustersRequest request);
 
@@ -4360,13 +4409,30 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/LocalClonePluggableDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use LocalClonePluggableDatabase API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/LocalClonePluggableDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use LocalClonePluggableDatabase API.
      */
     LocalClonePluggableDatabaseResponse localClonePluggableDatabase(
             LocalClonePluggableDatabaseRequest request);
 
     /**
-     * Migrates the Exadata DB system to the new [Exadata resource model](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model).
+     * Migrates the existing Data Guard association to new Data Guard model to support multiple standby databases functionality.
+     * <p>
+     * This operation should always be performed on primary.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/MigrateDataGuardAssociationToMultiDataGuardsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use MigrateDataGuardAssociationToMultiDataGuards API.
+     */
+    MigrateDataGuardAssociationToMultiDataGuardsResponse
+            migrateDataGuardAssociationToMultiDataGuards(
+                    MigrateDataGuardAssociationToMultiDataGuardsRequest request);
+
+    /**
+     * Migrates the Exadata DB system to the new [Exadata resource model](https://docs.oracle.com/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model).
      * All related resources will be migrated.
      *
      * @param request The request object containing the details to send
@@ -4375,20 +4441,20 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/MigrateExadataDbSystemResourceModelExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use MigrateExadataDbSystemResourceModel API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/MigrateExadataDbSystemResourceModelExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use MigrateExadataDbSystemResourceModel API.
      */
     MigrateExadataDbSystemResourceModelResponse migrateExadataDbSystemResourceModel(
             MigrateExadataDbSystemResourceModelRequest request);
 
     /**
-     * Changes encryption key management from customer-managed, using the [Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm), to Oracle-managed.
+     * Changes encryption key management from customer-managed, using the [Vault service](https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm), to Oracle-managed.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/MigrateVaultKeyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use MigrateVaultKey API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/MigrateVaultKeyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use MigrateVaultKey API.
      */
     MigrateVaultKeyResponse migrateVaultKey(MigrateVaultKeyRequest request);
 
@@ -4400,7 +4466,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ModifyDatabaseManagementExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ModifyDatabaseManagement API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ModifyDatabaseManagementExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ModifyDatabaseManagement API.
      */
     ModifyDatabaseManagementResponse modifyDatabaseManagement(
             ModifyDatabaseManagementRequest request);
@@ -4413,7 +4479,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ModifyPluggableDatabaseManagementExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ModifyPluggableDatabaseManagement API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ModifyPluggableDatabaseManagementExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ModifyPluggableDatabaseManagement API.
      */
     ModifyPluggableDatabaseManagementResponse modifyPluggableDatabaseManagement(
             ModifyPluggableDatabaseManagementRequest request);
@@ -4427,7 +4493,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/MoveExecutionActionMemberExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use MoveExecutionActionMember API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/MoveExecutionActionMemberExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use MoveExecutionActionMember API.
      */
     MoveExecutionActionMemberResponse moveExecutionActionMember(
             MoveExecutionActionMemberRequest request);
@@ -4441,7 +4507,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/RefreshPluggableDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RefreshPluggableDatabase API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/RefreshPluggableDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RefreshPluggableDatabase API.
      */
     RefreshPluggableDatabaseResponse refreshPluggableDatabase(
             RefreshPluggableDatabaseRequest request);
@@ -4455,7 +4521,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/RegisterAutonomousDatabaseDataSafeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RegisterAutonomousDatabaseDataSafe API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/RegisterAutonomousDatabaseDataSafeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RegisterAutonomousDatabaseDataSafe API.
      */
     RegisterAutonomousDatabaseDataSafeResponse registerAutonomousDatabaseDataSafe(
             RegisterAutonomousDatabaseDataSafeRequest request);
@@ -4469,11 +4535,26 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ReinstateAutonomousContainerDatabaseDataguardAssociationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ReinstateAutonomousContainerDatabaseDataguardAssociation API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ReinstateAutonomousContainerDatabaseDataguardAssociationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ReinstateAutonomousContainerDatabaseDataguardAssociation API.
      */
     ReinstateAutonomousContainerDatabaseDataguardAssociationResponse
             reinstateAutonomousContainerDatabaseDataguardAssociation(
                     ReinstateAutonomousContainerDatabaseDataguardAssociationRequest request);
+
+    /**
+     * Reinstates the database identified by the `databaseId` parameter into the standby role in a Data Guard association.
+     * <p>
+     * This operation should be performed on disabled standby database.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ReinstateDataGuardExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ReinstateDataGuard API.
+     */
+    ReinstateDataGuardResponse reinstateDataGuard(ReinstateDataGuardRequest request);
 
     /**
      * Reinstates the database identified by the `databaseId` parameter into the standby role in a Data Guard association.
@@ -4484,7 +4565,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ReinstateDataGuardAssociationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ReinstateDataGuardAssociation API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ReinstateDataGuardAssociationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ReinstateDataGuardAssociation API.
      */
     ReinstateDataGuardAssociationResponse reinstateDataGuardAssociation(
             ReinstateDataGuardAssociationRequest request);
@@ -4500,7 +4581,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/RemoteClonePluggableDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RemoteClonePluggableDatabase API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/RemoteClonePluggableDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RemoteClonePluggableDatabase API.
      */
     RemoteClonePluggableDatabaseResponse remoteClonePluggableDatabase(
             RemoteClonePluggableDatabaseRequest request);
@@ -4514,7 +4595,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/RemoveVirtualMachineFromCloudVmClusterExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RemoveVirtualMachineFromCloudVmCluster API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/RemoveVirtualMachineFromCloudVmClusterExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RemoveVirtualMachineFromCloudVmCluster API.
      */
     RemoveVirtualMachineFromCloudVmClusterResponse removeVirtualMachineFromCloudVmCluster(
             RemoveVirtualMachineFromCloudVmClusterRequest request);
@@ -4528,7 +4609,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/RemoveVirtualMachineFromExadbVmClusterExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RemoveVirtualMachineFromExadbVmCluster API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/RemoveVirtualMachineFromExadbVmClusterExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RemoveVirtualMachineFromExadbVmCluster API.
      */
     RemoveVirtualMachineFromExadbVmClusterResponse removeVirtualMachineFromExadbVmCluster(
             RemoveVirtualMachineFromExadbVmClusterRequest request);
@@ -4542,7 +4623,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/RemoveVirtualMachineFromVmClusterExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RemoveVirtualMachineFromVmCluster API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/RemoveVirtualMachineFromVmClusterExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RemoveVirtualMachineFromVmCluster API.
      */
     RemoveVirtualMachineFromVmClusterResponse removeVirtualMachineFromVmCluster(
             RemoveVirtualMachineFromVmClusterRequest request);
@@ -4556,7 +4637,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ReorderExecutionActionsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ReorderExecutionActions API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ReorderExecutionActionsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ReorderExecutionActions API.
      */
     ReorderExecutionActionsResponse reorderExecutionActions(ReorderExecutionActionsRequest request);
 
@@ -4569,7 +4650,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ReorderScheduledActionsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ReorderScheduledActions API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ReorderScheduledActionsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ReorderScheduledActions API.
      */
     ReorderScheduledActionsResponse reorderScheduledActions(ReorderScheduledActionsRequest request);
 
@@ -4583,7 +4664,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ResizeVmClusterNetworkExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ResizeVmClusterNetwork API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ResizeVmClusterNetworkExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ResizeVmClusterNetwork API.
      */
     ResizeVmClusterNetworkResponse resizeVmClusterNetwork(ResizeVmClusterNetworkRequest request);
 
@@ -4595,7 +4676,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ResourcePoolShapesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ResourcePoolShapes API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ResourcePoolShapesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ResourcePoolShapes API.
      */
     ResourcePoolShapesResponse resourcePoolShapes(ResourcePoolShapesRequest request);
 
@@ -4608,7 +4689,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/RestartAutonomousContainerDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RestartAutonomousContainerDatabase API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/RestartAutonomousContainerDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RestartAutonomousContainerDatabase API.
      */
     RestartAutonomousContainerDatabaseResponse restartAutonomousContainerDatabase(
             RestartAutonomousContainerDatabaseRequest request);
@@ -4622,7 +4703,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/RestartAutonomousDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RestartAutonomousDatabase API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/RestartAutonomousDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RestartAutonomousDatabase API.
      */
     RestartAutonomousDatabaseResponse restartAutonomousDatabase(
             RestartAutonomousDatabaseRequest request);
@@ -4636,7 +4717,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/RestoreAutonomousDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RestoreAutonomousDatabase API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/RestoreAutonomousDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RestoreAutonomousDatabase API.
      */
     RestoreAutonomousDatabaseResponse restoreAutonomousDatabase(
             RestoreAutonomousDatabaseRequest request);
@@ -4650,33 +4731,33 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/RestoreDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RestoreDatabase API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/RestoreDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RestoreDatabase API.
      */
     RestoreDatabaseResponse restoreDatabase(RestoreDatabaseRequest request);
 
     /**
-     * Creates a new version of an existing [Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) key.
+     * Creates a new version of an existing [Vault service](https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) key.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/RotateAutonomousContainerDatabaseEncryptionKeyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RotateAutonomousContainerDatabaseEncryptionKey API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/RotateAutonomousContainerDatabaseEncryptionKeyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RotateAutonomousContainerDatabaseEncryptionKey API.
      */
     RotateAutonomousContainerDatabaseEncryptionKeyResponse
             rotateAutonomousContainerDatabaseEncryptionKey(
                     RotateAutonomousContainerDatabaseEncryptionKeyRequest request);
 
     /**
-     * Rotate existing AutonomousDatabase [Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) key.
+     * Rotate existing AutonomousDatabase [Vault service](https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) key.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/RotateAutonomousDatabaseEncryptionKeyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RotateAutonomousDatabaseEncryptionKey API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/RotateAutonomousDatabaseEncryptionKeyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RotateAutonomousDatabaseEncryptionKey API.
      */
     RotateAutonomousDatabaseEncryptionKeyResponse rotateAutonomousDatabaseEncryptionKey(
             RotateAutonomousDatabaseEncryptionKeyRequest request);
@@ -4690,7 +4771,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/RotateAutonomousVmClusterOrdsCertsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RotateAutonomousVmClusterOrdsCerts API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/RotateAutonomousVmClusterOrdsCertsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RotateAutonomousVmClusterOrdsCerts API.
      */
     RotateAutonomousVmClusterOrdsCertsResponse rotateAutonomousVmClusterOrdsCerts(
             RotateAutonomousVmClusterOrdsCertsRequest request);
@@ -4704,7 +4785,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/RotateAutonomousVmClusterSslCertsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RotateAutonomousVmClusterSslCerts API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/RotateAutonomousVmClusterSslCertsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RotateAutonomousVmClusterSslCerts API.
      */
     RotateAutonomousVmClusterSslCertsResponse rotateAutonomousVmClusterSslCerts(
             RotateAutonomousVmClusterSslCertsRequest request);
@@ -4718,7 +4799,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/RotateCloudAutonomousVmClusterOrdsCertsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RotateCloudAutonomousVmClusterOrdsCerts API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/RotateCloudAutonomousVmClusterOrdsCertsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RotateCloudAutonomousVmClusterOrdsCerts API.
      */
     RotateCloudAutonomousVmClusterOrdsCertsResponse rotateCloudAutonomousVmClusterOrdsCerts(
             RotateCloudAutonomousVmClusterOrdsCertsRequest request);
@@ -4732,7 +4813,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/RotateCloudAutonomousVmClusterSslCertsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RotateCloudAutonomousVmClusterSslCerts API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/RotateCloudAutonomousVmClusterSslCertsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RotateCloudAutonomousVmClusterSslCerts API.
      */
     RotateCloudAutonomousVmClusterSslCertsResponse rotateCloudAutonomousVmClusterSslCerts(
             RotateCloudAutonomousVmClusterSslCertsRequest request);
@@ -4746,7 +4827,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/RotateOrdsCertsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RotateOrdsCerts API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/RotateOrdsCertsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RotateOrdsCerts API.
      */
     RotateOrdsCertsResponse rotateOrdsCerts(RotateOrdsCertsRequest request);
 
@@ -4758,7 +4839,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/RotatePluggableDatabaseEncryptionKeyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RotatePluggableDatabaseEncryptionKey API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/RotatePluggableDatabaseEncryptionKeyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RotatePluggableDatabaseEncryptionKey API.
      */
     RotatePluggableDatabaseEncryptionKeyResponse rotatePluggableDatabaseEncryptionKey(
             RotatePluggableDatabaseEncryptionKeyRequest request);
@@ -4772,19 +4853,19 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/RotateSslCertsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RotateSslCerts API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/RotateSslCertsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RotateSslCerts API.
      */
     RotateSslCertsResponse rotateSslCerts(RotateSslCertsRequest request);
 
     /**
-     * Creates a new version of an existing [Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) key.
+     * Creates a new version of an existing [Vault service](https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) key.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/RotateVaultKeyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RotateVaultKey API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/RotateVaultKeyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RotateVaultKey API.
      */
     RotateVaultKeyResponse rotateVaultKey(RotateVaultKeyRequest request);
 
@@ -4796,7 +4877,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/SaasAdminUserStatusExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use SaasAdminUserStatus API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/SaasAdminUserStatusExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use SaasAdminUserStatus API.
      */
     SaasAdminUserStatusResponse saasAdminUserStatus(SaasAdminUserStatusRequest request);
 
@@ -4810,33 +4891,33 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ScanExternalContainerDatabasePluggableDatabasesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ScanExternalContainerDatabasePluggableDatabases API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ScanExternalContainerDatabasePluggableDatabasesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ScanExternalContainerDatabasePluggableDatabases API.
      */
     ScanExternalContainerDatabasePluggableDatabasesResponse
             scanExternalContainerDatabasePluggableDatabases(
                     ScanExternalContainerDatabasePluggableDatabasesRequest request);
 
     /**
-     * Sets a new version of an existing [Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) key.
+     * Sets a new version of an existing [Vault service](https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) key.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/SetDbKeyVersionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use SetDbKeyVersion API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/SetDbKeyVersionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use SetDbKeyVersion API.
      */
     SetDbKeyVersionResponse setDbKeyVersion(SetDbKeyVersionRequest request);
 
     /**
-     * Sets a new version of an existing [Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) key.
+     * Sets a new version of an existing [Vault service](https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) key.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/SetPdbKeyVersionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use SetPdbKeyVersion API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/SetPdbKeyVersionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use SetPdbKeyVersion API.
      */
     SetPdbKeyVersionResponse setPdbKeyVersion(SetPdbKeyVersionRequest request);
 
@@ -4849,7 +4930,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ShrinkAutonomousDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ShrinkAutonomousDatabase API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ShrinkAutonomousDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ShrinkAutonomousDatabase API.
      */
     ShrinkAutonomousDatabaseResponse shrinkAutonomousDatabase(
             ShrinkAutonomousDatabaseRequest request);
@@ -4863,7 +4944,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/StartAutonomousDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use StartAutonomousDatabase API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/StartAutonomousDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use StartAutonomousDatabase API.
      */
     StartAutonomousDatabaseResponse startAutonomousDatabase(StartAutonomousDatabaseRequest request);
 
@@ -4875,7 +4956,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/StartPluggableDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use StartPluggableDatabase API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/StartPluggableDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use StartPluggableDatabase API.
      */
     StartPluggableDatabaseResponse startPluggableDatabase(StartPluggableDatabaseRequest request);
 
@@ -4888,7 +4969,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/StopAutonomousDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use StopAutonomousDatabase API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/StopAutonomousDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use StopAutonomousDatabase API.
      */
     StopAutonomousDatabaseResponse stopAutonomousDatabase(StopAutonomousDatabaseRequest request);
 
@@ -4900,9 +4981,27 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/StopPluggableDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use StopPluggableDatabase API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/StopPluggableDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use StopPluggableDatabase API.
      */
     StopPluggableDatabaseResponse stopPluggableDatabase(StopPluggableDatabaseRequest request);
+
+    /**
+     * Performs a switchover to transition primary database of this Data Guard association into a standby role. The
+     * standby database associated with the `dataGuardAssociationId` assumes the primary database role.
+     * <p>
+     * A switchover guarantees no data loss.
+     * <p>
+     * This operation should be performed on respective standby database.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/SwitchOverDataGuardExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use SwitchOverDataGuard API.
+     */
+    SwitchOverDataGuardResponse switchOverDataGuard(SwitchOverDataGuardRequest request);
 
     /**
      * Switches over the primary Autonomous Container Database of an Autonomous Data Guard peer association to standby role. The standby Autonomous Container Database associated with autonomousContainerDatabaseDataguardAssociationId assumes the primary Autonomous Container Database role.
@@ -4915,7 +5014,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/SwitchoverAutonomousContainerDatabaseDataguardAssociationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use SwitchoverAutonomousContainerDatabaseDataguardAssociation API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/SwitchoverAutonomousContainerDatabaseDataguardAssociationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use SwitchoverAutonomousContainerDatabaseDataguardAssociation API.
      */
     SwitchoverAutonomousContainerDatabaseDataguardAssociationResponse
             switchoverAutonomousContainerDatabaseDataguardAssociation(
@@ -4935,7 +5034,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/SwitchoverAutonomousDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use SwitchoverAutonomousDatabase API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/SwitchoverAutonomousDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use SwitchoverAutonomousDatabase API.
      */
     SwitchoverAutonomousDatabaseResponse switchoverAutonomousDatabase(
             SwitchoverAutonomousDatabaseRequest request);
@@ -4952,7 +5051,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/SwitchoverDataGuardAssociationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use SwitchoverDataGuardAssociation API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/SwitchoverDataGuardAssociationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use SwitchoverDataGuardAssociation API.
      */
     SwitchoverDataGuardAssociationResponse switchoverDataGuardAssociation(
             SwitchoverDataGuardAssociationRequest request);
@@ -4965,7 +5064,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/TerminateAutonomousContainerDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use TerminateAutonomousContainerDatabase API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/TerminateAutonomousContainerDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use TerminateAutonomousContainerDatabase API.
      */
     TerminateAutonomousContainerDatabaseResponse terminateAutonomousContainerDatabase(
             TerminateAutonomousContainerDatabaseRequest request);
@@ -4979,7 +5078,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/TerminateAutonomousExadataInfrastructureExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use TerminateAutonomousExadataInfrastructure API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/TerminateAutonomousExadataInfrastructureExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use TerminateAutonomousExadataInfrastructure API.
      */
     TerminateAutonomousExadataInfrastructureResponse terminateAutonomousExadataInfrastructure(
             TerminateAutonomousExadataInfrastructureRequest request);
@@ -4987,9 +5086,9 @@ public interface Database extends AutoCloseable {
     /**
      * Terminates a DB system and permanently deletes it and any databases running on it, and any storage volumes attached to it. The database data is local to the DB system and will be lost when the system is terminated. Oracle recommends that you back up any data in the DB system prior to terminating it.
      * <p>
-     **Note:** Deprecated for Exadata Cloud Service systems. Use the [new resource model APIs](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model) instead.
+     **Note:** Deprecated for Exadata Cloud Service systems. Use the [new resource model APIs](https://docs.oracle.com/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model) instead.
      * <p>
-     * For Exadata Cloud Service instances, support for this API will end on May 15th, 2021. See [Switching an Exadata DB System to the New Resource Model and APIs](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem_topic-resource_model_conversion.htm) for details on converting existing Exadata DB systems to the new resource model.
+     * For Exadata Cloud Service instances, support for this API will end on May 15th, 2021. See [Switching an Exadata DB System to the New Resource Model and APIs](https://docs.oracle.com/iaas/Content/Database/Concepts/exaflexsystem_topic-resource_model_conversion.htm) for details on converting existing Exadata DB systems to the new resource model.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -4997,7 +5096,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/TerminateDbSystemExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use TerminateDbSystem API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/TerminateDbSystemExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use TerminateDbSystem API.
      */
     TerminateDbSystemResponse terminateDbSystem(TerminateDbSystemRequest request);
 
@@ -5009,7 +5108,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdateAutonomousContainerDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateAutonomousContainerDatabase API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdateAutonomousContainerDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateAutonomousContainerDatabase API.
      */
     UpdateAutonomousContainerDatabaseResponse updateAutonomousContainerDatabase(
             UpdateAutonomousContainerDatabaseRequest request);
@@ -5023,7 +5122,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdateAutonomousContainerDatabaseDataguardAssociationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateAutonomousContainerDatabaseDataguardAssociation API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdateAutonomousContainerDatabaseDataguardAssociationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateAutonomousContainerDatabaseDataguardAssociation API.
      */
     UpdateAutonomousContainerDatabaseDataguardAssociationResponse
             updateAutonomousContainerDatabaseDataguardAssociation(
@@ -5038,7 +5137,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdateAutonomousDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateAutonomousDatabase API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdateAutonomousDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateAutonomousDatabase API.
      */
     UpdateAutonomousDatabaseResponse updateAutonomousDatabase(
             UpdateAutonomousDatabaseRequest request);
@@ -5052,7 +5151,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdateAutonomousDatabaseBackupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateAutonomousDatabaseBackup API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdateAutonomousDatabaseBackupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateAutonomousDatabaseBackup API.
      */
     UpdateAutonomousDatabaseBackupResponse updateAutonomousDatabaseBackup(
             UpdateAutonomousDatabaseBackupRequest request);
@@ -5066,7 +5165,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdateAutonomousDatabaseRegionalWalletExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateAutonomousDatabaseRegionalWallet API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdateAutonomousDatabaseRegionalWalletExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateAutonomousDatabaseRegionalWallet API.
      */
     UpdateAutonomousDatabaseRegionalWalletResponse updateAutonomousDatabaseRegionalWallet(
             UpdateAutonomousDatabaseRegionalWalletRequest request);
@@ -5079,7 +5178,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdateAutonomousDatabaseSoftwareImageExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateAutonomousDatabaseSoftwareImage API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdateAutonomousDatabaseSoftwareImageExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateAutonomousDatabaseSoftwareImage API.
      */
     UpdateAutonomousDatabaseSoftwareImageResponse updateAutonomousDatabaseSoftwareImage(
             UpdateAutonomousDatabaseSoftwareImageRequest request);
@@ -5093,7 +5192,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdateAutonomousDatabaseWalletExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateAutonomousDatabaseWallet API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdateAutonomousDatabaseWalletExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateAutonomousDatabaseWallet API.
      */
     UpdateAutonomousDatabaseWalletResponse updateAutonomousDatabaseWallet(
             UpdateAutonomousDatabaseWalletRequest request);
@@ -5107,7 +5206,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdateAutonomousExadataInfrastructureExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateAutonomousExadataInfrastructure API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdateAutonomousExadataInfrastructureExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateAutonomousExadataInfrastructure API.
      */
     UpdateAutonomousExadataInfrastructureResponse updateAutonomousExadataInfrastructure(
             UpdateAutonomousExadataInfrastructureRequest request);
@@ -5121,7 +5220,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdateAutonomousVmClusterExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateAutonomousVmCluster API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdateAutonomousVmClusterExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateAutonomousVmCluster API.
      */
     UpdateAutonomousVmClusterResponse updateAutonomousVmCluster(
             UpdateAutonomousVmClusterRequest request);
@@ -5137,7 +5236,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdateBackupDestinationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateBackupDestination API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdateBackupDestinationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateBackupDestination API.
      */
     UpdateBackupDestinationResponse updateBackupDestination(UpdateBackupDestinationRequest request);
 
@@ -5150,7 +5249,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdateCloudAutonomousVmClusterExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateCloudAutonomousVmCluster API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdateCloudAutonomousVmClusterExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateCloudAutonomousVmCluster API.
      */
     UpdateCloudAutonomousVmClusterResponse updateCloudAutonomousVmCluster(
             UpdateCloudAutonomousVmClusterRequest request);
@@ -5164,7 +5263,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdateCloudExadataInfrastructureExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateCloudExadataInfrastructure API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdateCloudExadataInfrastructureExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateCloudExadataInfrastructure API.
      */
     UpdateCloudExadataInfrastructureResponse updateCloudExadataInfrastructure(
             UpdateCloudExadataInfrastructureRequest request);
@@ -5178,7 +5277,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdateCloudVmClusterExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateCloudVmCluster API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdateCloudVmClusterExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateCloudVmCluster API.
      */
     UpdateCloudVmClusterResponse updateCloudVmCluster(UpdateCloudVmClusterRequest request);
 
@@ -5191,7 +5290,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdateCloudVmClusterIormConfigExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateCloudVmClusterIormConfig API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdateCloudVmClusterIormConfigExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateCloudVmClusterIormConfig API.
      */
     UpdateCloudVmClusterIormConfigResponse updateCloudVmClusterIormConfig(
             UpdateCloudVmClusterIormConfigRequest request);
@@ -5204,7 +5303,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdateConsoleConnectionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateConsoleConnection API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdateConsoleConnectionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateConsoleConnection API.
      */
     UpdateConsoleConnectionResponse updateConsoleConnection(UpdateConsoleConnectionRequest request);
 
@@ -5217,9 +5316,23 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdateConsoleHistoryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateConsoleHistory API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdateConsoleHistoryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateConsoleHistory API.
      */
     UpdateConsoleHistoryResponse updateConsoleHistory(UpdateConsoleHistoryRequest request);
+
+    /**
+     * Update an existing Data Guard member. A Data Guard member represents the replication relationship between the
+     * specified database and a standby database. For more information, see [Using Oracle Data Guard](https://docs.oracle.com/iaas/Content/Database/Tasks/usingdataguard.htm).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdateDataGuardExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateDataGuard API.
+     */
+    UpdateDataGuardResponse updateDataGuard(UpdateDataGuardRequest request);
 
     /**
      * Updates the Data Guard association the specified database. This API can be used to change the `protectionMode` and `transportType` of the Data Guard association.
@@ -5230,7 +5343,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdateDataGuardAssociationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateDataGuardAssociation API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdateDataGuardAssociationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateDataGuardAssociation API.
      */
     UpdateDataGuardAssociationResponse updateDataGuardAssociation(
             UpdateDataGuardAssociationRequest request);
@@ -5244,7 +5357,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdateDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateDatabase API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdateDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateDatabase API.
      */
     UpdateDatabaseResponse updateDatabase(UpdateDatabaseRequest request);
 
@@ -5256,7 +5369,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdateDatabaseSoftwareImageExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateDatabaseSoftwareImage API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdateDatabaseSoftwareImageExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateDatabaseSoftwareImage API.
      */
     UpdateDatabaseSoftwareImageResponse updateDatabaseSoftwareImage(
             UpdateDatabaseSoftwareImageRequest request);
@@ -5269,7 +5382,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdateDbHomeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateDbHome API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdateDbHomeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateDbHome API.
      */
     UpdateDbHomeResponse updateDbHome(UpdateDbHomeRequest request);
 
@@ -5281,16 +5394,16 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdateDbNodeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateDbNode API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdateDbNodeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateDbNode API.
      */
     UpdateDbNodeResponse updateDbNode(UpdateDbNodeRequest request);
 
     /**
      * Updates the properties of the specified DB system.
      * <p>
-     **Note:** Deprecated for Exadata Cloud Service systems. Use the [new resource model APIs](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model) instead.
+     **Note:** Deprecated for Exadata Cloud Service systems. Use the [new resource model APIs](https://docs.oracle.com/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model) instead.
      * <p>
-     * For Exadata Cloud Service instances, support for this API will end on May 15th, 2021. See [Switching an Exadata DB System to the New Resource Model and APIs](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem_topic-resource_model_conversion.htm) for details on converting existing Exadata DB systems to the new resource model.
+     * For Exadata Cloud Service instances, support for this API will end on May 15th, 2021. See [Switching an Exadata DB System to the New Resource Model and APIs](https://docs.oracle.com/iaas/Content/Database/Concepts/exaflexsystem_topic-resource_model_conversion.htm) for details on converting existing Exadata DB systems to the new resource model.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -5298,7 +5411,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdateDbSystemExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateDbSystem API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdateDbSystemExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateDbSystem API.
      */
     UpdateDbSystemResponse updateDbSystem(UpdateDbSystemRequest request);
 
@@ -5312,7 +5425,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdateExadataInfrastructureExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateExadataInfrastructure API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdateExadataInfrastructureExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateExadataInfrastructure API.
      */
     UpdateExadataInfrastructureResponse updateExadataInfrastructure(
             UpdateExadataInfrastructureRequest request);
@@ -5320,9 +5433,9 @@ public interface Database extends AutoCloseable {
     /**
      * Updates IORM settings for the specified Exadata DB system.
      * <p>
-     **Note:** Deprecated for Exadata Cloud Service systems. Use the [new resource model APIs](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model) instead.
+     **Note:** Deprecated for Exadata Cloud Service systems. Use the [new resource model APIs](https://docs.oracle.com/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model) instead.
      * <p>
-     * For Exadata Cloud Service instances, support for this API will end on May 15th, 2021. See [Switching an Exadata DB System to the New Resource Model and APIs](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem_topic-resource_model_conversion.htm) for details on converting existing Exadata DB systems to the new resource model.
+     * For Exadata Cloud Service instances, support for this API will end on May 15th, 2021. See [Switching an Exadata DB System to the New Resource Model and APIs](https://docs.oracle.com/iaas/Content/Database/Concepts/exaflexsystem_topic-resource_model_conversion.htm) for details on converting existing Exadata DB systems to the new resource model.
      * <p>
      * The {@link #updateCloudVmClusterIormConfig(UpdateCloudVmClusterIormConfigRequest) updateCloudVmClusterIormConfig} API is used for Exadata systems using the
      * new resource model.
@@ -5333,7 +5446,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdateExadataIormConfigExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateExadataIormConfig API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdateExadataIormConfigExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateExadataIormConfig API.
      */
     UpdateExadataIormConfigResponse updateExadataIormConfig(UpdateExadataIormConfigRequest request);
 
@@ -5346,7 +5459,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdateExadbVmClusterExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateExadbVmCluster API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdateExadbVmClusterExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateExadbVmCluster API.
      */
     UpdateExadbVmClusterResponse updateExadbVmCluster(UpdateExadbVmClusterRequest request);
 
@@ -5359,7 +5472,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdateExascaleDbStorageVaultExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateExascaleDbStorageVault API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdateExascaleDbStorageVaultExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateExascaleDbStorageVault API.
      */
     UpdateExascaleDbStorageVaultResponse updateExascaleDbStorageVault(
             UpdateExascaleDbStorageVaultRequest request);
@@ -5373,7 +5486,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdateExecutionActionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateExecutionAction API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdateExecutionActionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateExecutionAction API.
      */
     UpdateExecutionActionResponse updateExecutionAction(UpdateExecutionActionRequest request);
 
@@ -5386,7 +5499,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdateExecutionWindowExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateExecutionWindow API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdateExecutionWindowExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateExecutionWindow API.
      */
     UpdateExecutionWindowResponse updateExecutionWindow(UpdateExecutionWindowRequest request);
 
@@ -5401,7 +5514,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdateExternalContainerDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateExternalContainerDatabase API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdateExternalContainerDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateExternalContainerDatabase API.
      */
     UpdateExternalContainerDatabaseResponse updateExternalContainerDatabase(
             UpdateExternalContainerDatabaseRequest request);
@@ -5414,7 +5527,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdateExternalDatabaseConnectorExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateExternalDatabaseConnector API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdateExternalDatabaseConnectorExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateExternalDatabaseConnector API.
      */
     UpdateExternalDatabaseConnectorResponse updateExternalDatabaseConnector(
             UpdateExternalDatabaseConnectorRequest request);
@@ -5427,7 +5540,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdateExternalNonContainerDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateExternalNonContainerDatabase API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdateExternalNonContainerDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateExternalNonContainerDatabase API.
      */
     UpdateExternalNonContainerDatabaseResponse updateExternalNonContainerDatabase(
             UpdateExternalNonContainerDatabaseRequest request);
@@ -5443,7 +5556,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdateExternalPluggableDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateExternalPluggableDatabase API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdateExternalPluggableDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateExternalPluggableDatabase API.
      */
     UpdateExternalPluggableDatabaseResponse updateExternalPluggableDatabase(
             UpdateExternalPluggableDatabaseRequest request);
@@ -5457,7 +5570,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdateKeyStoreExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateKeyStore API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdateKeyStoreExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateKeyStore API.
      */
     UpdateKeyStoreResponse updateKeyStore(UpdateKeyStoreRequest request);
 
@@ -5469,7 +5582,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdateMaintenanceRunExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateMaintenanceRun API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdateMaintenanceRunExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateMaintenanceRun API.
      */
     UpdateMaintenanceRunResponse updateMaintenanceRun(UpdateMaintenanceRunRequest request);
 
@@ -5482,7 +5595,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdateOneoffPatchExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateOneoffPatch API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdateOneoffPatchExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateOneoffPatch API.
      */
     UpdateOneoffPatchResponse updateOneoffPatch(UpdateOneoffPatchRequest request);
 
@@ -5494,7 +5607,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdatePluggableDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdatePluggableDatabase API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdatePluggableDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdatePluggableDatabase API.
      */
     UpdatePluggableDatabaseResponse updatePluggableDatabase(UpdatePluggableDatabaseRequest request);
 
@@ -5507,7 +5620,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdateScheduledActionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateScheduledAction API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdateScheduledActionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateScheduledAction API.
      */
     UpdateScheduledActionResponse updateScheduledAction(UpdateScheduledActionRequest request);
 
@@ -5520,7 +5633,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdateSchedulingPolicyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateSchedulingPolicy API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdateSchedulingPolicyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateSchedulingPolicy API.
      */
     UpdateSchedulingPolicyResponse updateSchedulingPolicy(UpdateSchedulingPolicyRequest request);
 
@@ -5533,7 +5646,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdateSchedulingWindowExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateSchedulingWindow API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdateSchedulingWindowExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateSchedulingWindow API.
      */
     UpdateSchedulingWindowResponse updateSchedulingWindow(UpdateSchedulingWindowRequest request);
 
@@ -5546,7 +5659,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdateVmClusterExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateVmCluster API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdateVmClusterExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateVmCluster API.
      */
     UpdateVmClusterResponse updateVmCluster(UpdateVmClusterRequest request);
 
@@ -5560,7 +5673,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdateVmClusterNetworkExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateVmClusterNetwork API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdateVmClusterNetworkExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateVmClusterNetwork API.
      */
     UpdateVmClusterNetworkResponse updateVmClusterNetwork(UpdateVmClusterNetworkRequest request);
 
@@ -5573,7 +5686,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpgradeDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpgradeDatabase API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpgradeDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpgradeDatabase API.
      */
     UpgradeDatabaseResponse upgradeDatabase(UpgradeDatabaseRequest request);
 
@@ -5586,7 +5699,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpgradeDbSystemExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpgradeDbSystem API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpgradeDbSystemExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpgradeDbSystem API.
      */
     UpgradeDbSystemResponse upgradeDbSystem(UpgradeDbSystemRequest request);
 
@@ -5599,7 +5712,7 @@ public interface Database extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ValidateVmClusterNetworkExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ValidateVmClusterNetwork API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ValidateVmClusterNetworkExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ValidateVmClusterNetwork API.
      */
     ValidateVmClusterNetworkResponse validateVmClusterNetwork(
             ValidateVmClusterNetworkRequest request);

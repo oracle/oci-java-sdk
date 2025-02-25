@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.servicecatalog;
@@ -67,7 +67,7 @@ public interface ServiceCatalog extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicecatalog/BulkReplaceServiceCatalogAssociationsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use BulkReplaceServiceCatalogAssociations API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicecatalog/BulkReplaceServiceCatalogAssociationsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use BulkReplaceServiceCatalogAssociations API.
      */
     BulkReplaceServiceCatalogAssociationsResponse bulkReplaceServiceCatalogAssociations(
             BulkReplaceServiceCatalogAssociationsRequest request);
@@ -80,7 +80,7 @@ public interface ServiceCatalog extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicecatalog/ChangePrivateApplicationCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangePrivateApplicationCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicecatalog/ChangePrivateApplicationCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangePrivateApplicationCompartment API.
      */
     ChangePrivateApplicationCompartmentResponse changePrivateApplicationCompartment(
             ChangePrivateApplicationCompartmentRequest request);
@@ -93,7 +93,7 @@ public interface ServiceCatalog extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicecatalog/ChangeServiceCatalogCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeServiceCatalogCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicecatalog/ChangeServiceCatalogCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeServiceCatalogCompartment API.
      */
     ChangeServiceCatalogCompartmentResponse changeServiceCatalogCompartment(
             ChangeServiceCatalogCompartmentRequest request);
@@ -106,7 +106,7 @@ public interface ServiceCatalog extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicecatalog/CreatePrivateApplicationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreatePrivateApplication API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicecatalog/CreatePrivateApplicationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreatePrivateApplication API.
      */
     CreatePrivateApplicationResponse createPrivateApplication(
             CreatePrivateApplicationRequest request);
@@ -119,7 +119,7 @@ public interface ServiceCatalog extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicecatalog/CreateServiceCatalogExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateServiceCatalog API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicecatalog/CreateServiceCatalogExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateServiceCatalog API.
      */
     CreateServiceCatalogResponse createServiceCatalog(CreateServiceCatalogRequest request);
 
@@ -131,7 +131,7 @@ public interface ServiceCatalog extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicecatalog/CreateServiceCatalogAssociationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateServiceCatalogAssociation API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicecatalog/CreateServiceCatalogAssociationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateServiceCatalogAssociation API.
      */
     CreateServiceCatalogAssociationResponse createServiceCatalogAssociation(
             CreateServiceCatalogAssociationRequest request);
@@ -144,7 +144,7 @@ public interface ServiceCatalog extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicecatalog/DeletePrivateApplicationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeletePrivateApplication API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicecatalog/DeletePrivateApplicationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeletePrivateApplication API.
      */
     DeletePrivateApplicationResponse deletePrivateApplication(
             DeletePrivateApplicationRequest request);
@@ -157,7 +157,7 @@ public interface ServiceCatalog extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicecatalog/DeleteServiceCatalogExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteServiceCatalog API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicecatalog/DeleteServiceCatalogExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteServiceCatalog API.
      */
     DeleteServiceCatalogResponse deleteServiceCatalog(DeleteServiceCatalogRequest request);
 
@@ -169,7 +169,7 @@ public interface ServiceCatalog extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicecatalog/DeleteServiceCatalogAssociationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteServiceCatalogAssociation API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicecatalog/DeleteServiceCatalogAssociationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteServiceCatalogAssociation API.
      */
     DeleteServiceCatalogAssociationResponse deleteServiceCatalogAssociation(
             DeleteServiceCatalogAssociationRequest request);
@@ -182,7 +182,7 @@ public interface ServiceCatalog extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicecatalog/GetPrivateApplicationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetPrivateApplication API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicecatalog/GetPrivateApplicationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetPrivateApplication API.
      */
     GetPrivateApplicationResponse getPrivateApplication(GetPrivateApplicationRequest request);
 
@@ -194,7 +194,7 @@ public interface ServiceCatalog extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicecatalog/GetPrivateApplicationActionDownloadLogoExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetPrivateApplicationActionDownloadLogo API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicecatalog/GetPrivateApplicationActionDownloadLogoExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetPrivateApplicationActionDownloadLogo API.
      */
     GetPrivateApplicationActionDownloadLogoResponse getPrivateApplicationActionDownloadLogo(
             GetPrivateApplicationActionDownloadLogoRequest request);
@@ -207,7 +207,7 @@ public interface ServiceCatalog extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicecatalog/GetPrivateApplicationPackageExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetPrivateApplicationPackage API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicecatalog/GetPrivateApplicationPackageExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetPrivateApplicationPackage API.
      */
     GetPrivateApplicationPackageResponse getPrivateApplicationPackage(
             GetPrivateApplicationPackageRequest request);
@@ -220,7 +220,7 @@ public interface ServiceCatalog extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicecatalog/GetPrivateApplicationPackageActionDownloadConfigExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetPrivateApplicationPackageActionDownloadConfig API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicecatalog/GetPrivateApplicationPackageActionDownloadConfigExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetPrivateApplicationPackageActionDownloadConfig API.
      */
     GetPrivateApplicationPackageActionDownloadConfigResponse
             getPrivateApplicationPackageActionDownloadConfig(
@@ -234,7 +234,7 @@ public interface ServiceCatalog extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicecatalog/GetServiceCatalogExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetServiceCatalog API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicecatalog/GetServiceCatalogExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetServiceCatalog API.
      */
     GetServiceCatalogResponse getServiceCatalog(GetServiceCatalogRequest request);
 
@@ -246,7 +246,7 @@ public interface ServiceCatalog extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicecatalog/GetServiceCatalogAssociationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetServiceCatalogAssociation API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicecatalog/GetServiceCatalogAssociationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetServiceCatalogAssociation API.
      */
     GetServiceCatalogAssociationResponse getServiceCatalogAssociation(
             GetServiceCatalogAssociationRequest request);
@@ -259,7 +259,7 @@ public interface ServiceCatalog extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicecatalog/GetWorkRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetWorkRequest API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicecatalog/GetWorkRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetWorkRequest API.
      */
     GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request);
 
@@ -274,7 +274,7 @@ public interface ServiceCatalog extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicecatalog/ListApplicationsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListApplications API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicecatalog/ListApplicationsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListApplications API.
      */
     ListApplicationsResponse listApplications(ListApplicationsRequest request);
 
@@ -286,7 +286,7 @@ public interface ServiceCatalog extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicecatalog/ListPrivateApplicationPackagesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListPrivateApplicationPackages API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicecatalog/ListPrivateApplicationPackagesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListPrivateApplicationPackages API.
      */
     ListPrivateApplicationPackagesResponse listPrivateApplicationPackages(
             ListPrivateApplicationPackagesRequest request);
@@ -299,7 +299,7 @@ public interface ServiceCatalog extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicecatalog/ListPrivateApplicationsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListPrivateApplications API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicecatalog/ListPrivateApplicationsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListPrivateApplications API.
      */
     ListPrivateApplicationsResponse listPrivateApplications(ListPrivateApplicationsRequest request);
 
@@ -311,7 +311,7 @@ public interface ServiceCatalog extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicecatalog/ListServiceCatalogAssociationsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListServiceCatalogAssociations API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicecatalog/ListServiceCatalogAssociationsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListServiceCatalogAssociations API.
      */
     ListServiceCatalogAssociationsResponse listServiceCatalogAssociations(
             ListServiceCatalogAssociationsRequest request);
@@ -324,7 +324,7 @@ public interface ServiceCatalog extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicecatalog/ListServiceCatalogsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListServiceCatalogs API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicecatalog/ListServiceCatalogsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListServiceCatalogs API.
      */
     ListServiceCatalogsResponse listServiceCatalogs(ListServiceCatalogsRequest request);
 
@@ -337,7 +337,7 @@ public interface ServiceCatalog extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicecatalog/ListWorkRequestErrorsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequestErrors API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicecatalog/ListWorkRequestErrorsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequestErrors API.
      */
     ListWorkRequestErrorsResponse listWorkRequestErrors(ListWorkRequestErrorsRequest request);
 
@@ -350,7 +350,7 @@ public interface ServiceCatalog extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicecatalog/ListWorkRequestLogsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequestLogs API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicecatalog/ListWorkRequestLogsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequestLogs API.
      */
     ListWorkRequestLogsResponse listWorkRequestLogs(ListWorkRequestLogsRequest request);
 
@@ -363,7 +363,7 @@ public interface ServiceCatalog extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicecatalog/ListWorkRequestsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequests API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicecatalog/ListWorkRequestsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequests API.
      */
     ListWorkRequestsResponse listWorkRequests(ListWorkRequestsRequest request);
 
@@ -375,7 +375,7 @@ public interface ServiceCatalog extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicecatalog/UpdatePrivateApplicationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdatePrivateApplication API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicecatalog/UpdatePrivateApplicationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdatePrivateApplication API.
      */
     UpdatePrivateApplicationResponse updatePrivateApplication(
             UpdatePrivateApplicationRequest request);
@@ -388,7 +388,7 @@ public interface ServiceCatalog extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicecatalog/UpdateServiceCatalogExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateServiceCatalog API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicecatalog/UpdateServiceCatalogExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateServiceCatalog API.
      */
     UpdateServiceCatalogResponse updateServiceCatalog(UpdateServiceCatalogRequest request);
 

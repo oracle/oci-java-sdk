@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.zpr;
@@ -561,7 +561,10 @@ public class ZprClient implements Zpr {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Zpr", "CreateConfiguration", ib.getRequestUri().toString(), "");
+                        "Zpr",
+                        "CreateConfiguration",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/zero-trust-packet-routing/20240301/Configuration/CreateConfiguration");
         java.util.function.Function<javax.ws.rs.core.Response, CreateConfigurationResponse>
                 transformer =
                         CreateConfigurationConverter.fromResponse(
@@ -600,7 +603,10 @@ public class ZprClient implements Zpr {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Zpr", "CreateZprPolicy", ib.getRequestUri().toString(), "");
+                        "Zpr",
+                        "CreateZprPolicy",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/zero-trust-packet-routing/20240301/ZprPolicy/CreateZprPolicy");
         java.util.function.Function<javax.ws.rs.core.Response, CreateZprPolicyResponse>
                 transformer =
                         CreateZprPolicyConverter.fromResponse(
@@ -638,7 +644,10 @@ public class ZprClient implements Zpr {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Zpr", "DeleteZprPolicy", ib.getRequestUri().toString(), "");
+                        "Zpr",
+                        "DeleteZprPolicy",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/zero-trust-packet-routing/20240301/ZprPolicy/DeleteZprPolicy");
         java.util.function.Function<javax.ws.rs.core.Response, DeleteZprPolicyResponse>
                 transformer =
                         DeleteZprPolicyConverter.fromResponse(
@@ -673,7 +682,10 @@ public class ZprClient implements Zpr {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Zpr", "GetConfiguration", ib.getRequestUri().toString(), "");
+                        "Zpr",
+                        "GetConfiguration",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/zero-trust-packet-routing/20240301/Configuration/GetConfiguration");
         java.util.function.Function<javax.ws.rs.core.Response, GetConfigurationResponse>
                 transformer =
                         GetConfigurationConverter.fromResponse(
@@ -708,7 +720,10 @@ public class ZprClient implements Zpr {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Zpr", "GetZprConfigurationWorkRequest", ib.getRequestUri().toString(), "");
+                        "Zpr",
+                        "GetZprConfigurationWorkRequest",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/zero-trust-packet-routing/20240301/WorkRequest/GetZprConfigurationWorkRequest");
         java.util.function.Function<
                         javax.ws.rs.core.Response, GetZprConfigurationWorkRequestResponse>
                 transformer =
@@ -743,7 +758,10 @@ public class ZprClient implements Zpr {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Zpr", "GetZprPolicy", ib.getRequestUri().toString(), "");
+                        "Zpr",
+                        "GetZprPolicy",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/zero-trust-packet-routing/20240301/ZprPolicy/GetZprPolicy");
         java.util.function.Function<javax.ws.rs.core.Response, GetZprPolicyResponse> transformer =
                 GetZprPolicyConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -776,7 +794,10 @@ public class ZprClient implements Zpr {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Zpr", "GetZprPolicyWorkRequest", ib.getRequestUri().toString(), "");
+                        "Zpr",
+                        "GetZprPolicyWorkRequest",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/zero-trust-packet-routing/20240301/WorkRequest/GetZprPolicyWorkRequest");
         java.util.function.Function<javax.ws.rs.core.Response, GetZprPolicyWorkRequestResponse>
                 transformer =
                         GetZprPolicyWorkRequestConverter.fromResponse(
@@ -815,7 +836,7 @@ public class ZprClient implements Zpr {
                         "Zpr",
                         "ListZprConfigurationWorkRequestErrors",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/zero-trust-packet-routing/20240301/WorkRequestError/ListZprConfigurationWorkRequestErrors");
         java.util.function.Function<
                         javax.ws.rs.core.Response, ListZprConfigurationWorkRequestErrorsResponse>
                 transformer =
@@ -855,7 +876,7 @@ public class ZprClient implements Zpr {
                         "Zpr",
                         "ListZprConfigurationWorkRequestLogs",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/zero-trust-packet-routing/20240301/WorkRequestLogEntry/ListZprConfigurationWorkRequestLogs");
         java.util.function.Function<
                         javax.ws.rs.core.Response, ListZprConfigurationWorkRequestLogsResponse>
                 transformer =
@@ -894,7 +915,7 @@ public class ZprClient implements Zpr {
                         "Zpr",
                         "ListZprConfigurationWorkRequests",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/zero-trust-packet-routing/20240301/WorkRequest/ListZprConfigurationWorkRequests");
         java.util.function.Function<
                         javax.ws.rs.core.Response, ListZprConfigurationWorkRequestsResponse>
                 transformer =
@@ -929,7 +950,10 @@ public class ZprClient implements Zpr {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Zpr", "ListZprPolicies", ib.getRequestUri().toString(), "");
+                        "Zpr",
+                        "ListZprPolicies",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/zero-trust-packet-routing/20240301/ZprPolicyCollection/ListZprPolicies");
         java.util.function.Function<javax.ws.rs.core.Response, ListZprPoliciesResponse>
                 transformer =
                         ListZprPoliciesConverter.fromResponse(
@@ -964,7 +988,10 @@ public class ZprClient implements Zpr {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Zpr", "ListZprPolicyWorkRequestErrors", ib.getRequestUri().toString(), "");
+                        "Zpr",
+                        "ListZprPolicyWorkRequestErrors",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/zero-trust-packet-routing/20240301/WorkRequestError/ListZprPolicyWorkRequestErrors");
         java.util.function.Function<
                         javax.ws.rs.core.Response, ListZprPolicyWorkRequestErrorsResponse>
                 transformer =
@@ -1000,7 +1027,10 @@ public class ZprClient implements Zpr {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Zpr", "ListZprPolicyWorkRequestLogs", ib.getRequestUri().toString(), "");
+                        "Zpr",
+                        "ListZprPolicyWorkRequestLogs",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/zero-trust-packet-routing/20240301/WorkRequestLogEntry/ListZprPolicyWorkRequestLogs");
         java.util.function.Function<javax.ws.rs.core.Response, ListZprPolicyWorkRequestLogsResponse>
                 transformer =
                         ListZprPolicyWorkRequestLogsConverter.fromResponse(
@@ -1035,7 +1065,10 @@ public class ZprClient implements Zpr {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Zpr", "ListZprPolicyWorkRequests", ib.getRequestUri().toString(), "");
+                        "Zpr",
+                        "ListZprPolicyWorkRequests",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/zero-trust-packet-routing/20240301/WorkRequest/ListZprPolicyWorkRequests");
         java.util.function.Function<javax.ws.rs.core.Response, ListZprPolicyWorkRequestsResponse>
                 transformer =
                         ListZprPolicyWorkRequestsConverter.fromResponse(
@@ -1070,7 +1103,10 @@ public class ZprClient implements Zpr {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Zpr", "UpdateZprPolicy", ib.getRequestUri().toString(), "");
+                        "Zpr",
+                        "UpdateZprPolicy",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/zero-trust-packet-routing/20240301/ZprPolicy/UpdateZprPolicy");
         java.util.function.Function<javax.ws.rs.core.Response, UpdateZprPolicyResponse>
                 transformer =
                         UpdateZprPolicyConverter.fromResponse(

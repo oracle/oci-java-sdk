@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.loggingsearch.model;
@@ -75,7 +75,7 @@ public final class SearchLogsDetails extends com.oracle.bmc.http.internal.Explic
         /**
          * Query corresponding to the search operation. This query is parsed and validated before execution and
          * should follow the specification. For more information on the query language specification, see
-         * [Logging Query Language Specification](https://docs.cloud.oracle.com/Content/Logging/Reference/query_language_specification.htm).
+         * [Logging Query Language Specification](https://docs.oracle.com/iaas/Content/Logging/Reference/query_language_specification.htm).
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("searchQuery")
@@ -84,7 +84,7 @@ public final class SearchLogsDetails extends com.oracle.bmc.http.internal.Explic
         /**
          * Query corresponding to the search operation. This query is parsed and validated before execution and
          * should follow the specification. For more information on the query language specification, see
-         * [Logging Query Language Specification](https://docs.cloud.oracle.com/Content/Logging/Reference/query_language_specification.htm).
+         * [Logging Query Language Specification](https://docs.oracle.com/iaas/Content/Logging/Reference/query_language_specification.htm).
          *
          * @param searchQuery the value to set
          * @return this builder
@@ -190,7 +190,7 @@ public final class SearchLogsDetails extends com.oracle.bmc.http.internal.Explic
     /**
      * Query corresponding to the search operation. This query is parsed and validated before execution and
      * should follow the specification. For more information on the query language specification, see
-     * [Logging Query Language Specification](https://docs.cloud.oracle.com/Content/Logging/Reference/query_language_specification.htm).
+     * [Logging Query Language Specification](https://docs.oracle.com/iaas/Content/Logging/Reference/query_language_specification.htm).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("searchQuery")
@@ -199,7 +199,7 @@ public final class SearchLogsDetails extends com.oracle.bmc.http.internal.Explic
     /**
      * Query corresponding to the search operation. This query is parsed and validated before execution and
      * should follow the specification. For more information on the query language specification, see
-     * [Logging Query Language Specification](https://docs.cloud.oracle.com/Content/Logging/Reference/query_language_specification.htm).
+     * [Logging Query Language Specification](https://docs.oracle.com/iaas/Content/Logging/Reference/query_language_specification.htm).
      *
      * @return the value
      **/

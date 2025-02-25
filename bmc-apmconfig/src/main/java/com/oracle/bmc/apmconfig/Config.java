@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.apmconfig;
@@ -69,7 +69,7 @@ public interface Config extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmconfig/CreateConfigExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateConfig API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmconfig/CreateConfigExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateConfig API.
      */
     CreateConfigResponse createConfig(CreateConfigRequest request);
 
@@ -81,7 +81,7 @@ public interface Config extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmconfig/DeleteConfigExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteConfig API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmconfig/DeleteConfigExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteConfig API.
      */
     DeleteConfigResponse deleteConfig(DeleteConfigRequest request);
 
@@ -93,7 +93,7 @@ public interface Config extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmconfig/GetConfigExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetConfig API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmconfig/GetConfigExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetConfig API.
      */
     GetConfigResponse getConfig(GetConfigRequest request);
 
@@ -105,7 +105,7 @@ public interface Config extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmconfig/ListConfigsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListConfigs API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmconfig/ListConfigsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListConfigs API.
      */
     ListConfigsResponse listConfigs(ListConfigsRequest request);
 
@@ -117,7 +117,7 @@ public interface Config extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmconfig/RetrieveNamespaceMetricsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RetrieveNamespaceMetrics API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmconfig/RetrieveNamespaceMetricsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RetrieveNamespaceMetrics API.
      */
     RetrieveNamespaceMetricsResponse retrieveNamespaceMetrics(
             RetrieveNamespaceMetricsRequest request);
@@ -130,7 +130,7 @@ public interface Config extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmconfig/RetrieveNamespacesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RetrieveNamespaces API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmconfig/RetrieveNamespacesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RetrieveNamespaces API.
      */
     RetrieveNamespacesResponse retrieveNamespaces(RetrieveNamespacesRequest request);
 
@@ -144,7 +144,7 @@ public interface Config extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmconfig/TestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use Test API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmconfig/TestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use Test API.
      */
     TestResponse test(TestRequest request);
 
@@ -156,7 +156,7 @@ public interface Config extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmconfig/UpdateConfigExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateConfig API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmconfig/UpdateConfigExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateConfig API.
      */
     UpdateConfigResponse updateConfig(UpdateConfigRequest request);
 
@@ -170,7 +170,7 @@ public interface Config extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmconfig/ValidateSpanFilterPatternExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ValidateSpanFilterPattern API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmconfig/ValidateSpanFilterPatternExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ValidateSpanFilterPattern API.
      */
     ValidateSpanFilterPatternResponse validateSpanFilterPattern(
             ValidateSpanFilterPatternRequest request);

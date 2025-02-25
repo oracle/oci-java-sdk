@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.identity.model;
@@ -31,7 +31,7 @@ public final class CreateRegionSubscriptionDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The regions's key. See [Regions and Availability Domains](https://docs.cloud.oracle.com/Content/General/Concepts/regions.htm) for
+         * The regions's key. See [Regions and Availability Domains](https://docs.oracle.com/iaas/Content/General/Concepts/regions.htm) for
          * the full list of supported 3-letter region codes.
          * <p>
          * Example: {@code PHX}
@@ -41,7 +41,7 @@ public final class CreateRegionSubscriptionDetails
         private String regionKey;
 
         /**
-         * The regions's key. See [Regions and Availability Domains](https://docs.cloud.oracle.com/Content/General/Concepts/regions.htm) for
+         * The regions's key. See [Regions and Availability Domains](https://docs.oracle.com/iaas/Content/General/Concepts/regions.htm) for
          * the full list of supported 3-letter region codes.
          * <p>
          * Example: {@code PHX}
@@ -88,7 +88,7 @@ public final class CreateRegionSubscriptionDetails
     }
 
     /**
-     * The regions's key. See [Regions and Availability Domains](https://docs.cloud.oracle.com/Content/General/Concepts/regions.htm) for
+     * The regions's key. See [Regions and Availability Domains](https://docs.oracle.com/iaas/Content/General/Concepts/regions.htm) for
      * the full list of supported 3-letter region codes.
      * <p>
      * Example: {@code PHX}
@@ -98,7 +98,7 @@ public final class CreateRegionSubscriptionDetails
     private final String regionKey;
 
     /**
-     * The regions's key. See [Regions and Availability Domains](https://docs.cloud.oracle.com/Content/General/Concepts/regions.htm) for
+     * The regions's key. See [Regions and Availability Domains](https://docs.oracle.com/iaas/Content/General/Concepts/regions.htm) for
      * the full list of supported 3-letter region codes.
      * <p>
      * Example: {@code PHX}

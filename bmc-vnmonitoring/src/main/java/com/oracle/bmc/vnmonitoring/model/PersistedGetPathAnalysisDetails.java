@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.vnmonitoring.model;
@@ -29,14 +29,14 @@ public final class PersistedGetPathAnalysisDetails extends GetPathAnalysisDetail
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the {@code PathAnalyzerTest} resource.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the {@code PathAnalyzerTest} resource.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("pathAnalyzerTestId")
         private String pathAnalyzerTestId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the {@code PathAnalyzerTest} resource.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the {@code PathAnalyzerTest} resource.
          *
          * @param pathAnalyzerTestId the value to set
          * @return this builder
@@ -86,14 +86,14 @@ public final class PersistedGetPathAnalysisDetails extends GetPathAnalysisDetail
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the {@code PathAnalyzerTest} resource.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the {@code PathAnalyzerTest} resource.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("pathAnalyzerTestId")
     private final String pathAnalyzerTestId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the {@code PathAnalyzerTest} resource.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the {@code PathAnalyzerTest} resource.
      *
      * @return the value
      **/

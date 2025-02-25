@@ -1,15 +1,15 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.resourcemanager.model;
 
 /**
  * Location information about custom Terraform providers for a stack.
- * For more information, see [Custom Providers](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#features__custom-providers).
+ * For more information, see [Custom Providers](https://docs.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#features__custom-providers).
  * Note: Older stacks must be explicitly updated to use Terraform Registry ({@code isThirdPartyProviderExperienceEnabled=true}).
  * See {@link #updateStack(UpdateStackRequest) updateStack}. For more information, see
- * [Using Terraform Registry with Older Stacks](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/update-stack-tf-reg.htm).
+ * [Using Terraform Registry with Older Stacks](https://docs.oracle.com/iaas/Content/ResourceManager/Tasks/update-stack-tf-reg.htm).
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -39,7 +39,7 @@ public final class CustomTerraformProvider
     public static class Builder {
         /**
          * The name of the region that contains the bucket you want.
-         * For information about regions, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
+         * For information about regions, see [Regions and Availability Domains](https://docs.oracle.com/iaas/Content/General/Concepts/regions.htm).
          * Example: {@code us-phoenix-1}
          *
          **/
@@ -48,7 +48,7 @@ public final class CustomTerraformProvider
 
         /**
          * The name of the region that contains the bucket you want.
-         * For information about regions, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
+         * For information about regions, see [Regions and Availability Domains](https://docs.oracle.com/iaas/Content/General/Concepts/regions.htm).
          * Example: {@code us-phoenix-1}
          *
          * @param region the value to set
@@ -61,7 +61,7 @@ public final class CustomTerraformProvider
         }
         /**
          * The Object Storage namespace that contains the bucket you want.
-         * For information about Object Storage namespaces, see [Understanding Object Storage Namespaces](https://docs.cloud.oracle.com/iaas/Content/Object/Tasks/understandingnamespaces.htm).
+         * For information about Object Storage namespaces, see [Understanding Object Storage Namespaces](https://docs.oracle.com/iaas/Content/Object/Tasks/understandingnamespaces.htm).
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("namespace")
@@ -69,7 +69,7 @@ public final class CustomTerraformProvider
 
         /**
          * The Object Storage namespace that contains the bucket you want.
-         * For information about Object Storage namespaces, see [Understanding Object Storage Namespaces](https://docs.cloud.oracle.com/iaas/Content/Object/Tasks/understandingnamespaces.htm).
+         * For information about Object Storage namespaces, see [Understanding Object Storage Namespaces](https://docs.oracle.com/iaas/Content/Object/Tasks/understandingnamespaces.htm).
          *
          * @param namespace the value to set
          * @return this builder
@@ -81,7 +81,7 @@ public final class CustomTerraformProvider
         }
         /**
          * The name of the bucket that contains the binary files for the custom Terraform providers.
-         * For information about buckets, see [Managing Buckets](https://docs.cloud.oracle.com/iaas/Content/Object/Tasks/managingbuckets.htm).
+         * For information about buckets, see [Managing Buckets](https://docs.oracle.com/iaas/Content/Object/Tasks/managingbuckets.htm).
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("bucketName")
@@ -89,7 +89,7 @@ public final class CustomTerraformProvider
 
         /**
          * The name of the bucket that contains the binary files for the custom Terraform providers.
-         * For information about buckets, see [Managing Buckets](https://docs.cloud.oracle.com/iaas/Content/Object/Tasks/managingbuckets.htm).
+         * For information about buckets, see [Managing Buckets](https://docs.oracle.com/iaas/Content/Object/Tasks/managingbuckets.htm).
          *
          * @param bucketName the value to set
          * @return this builder
@@ -140,7 +140,7 @@ public final class CustomTerraformProvider
 
     /**
      * The name of the region that contains the bucket you want.
-     * For information about regions, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
+     * For information about regions, see [Regions and Availability Domains](https://docs.oracle.com/iaas/Content/General/Concepts/regions.htm).
      * Example: {@code us-phoenix-1}
      *
      **/
@@ -149,7 +149,7 @@ public final class CustomTerraformProvider
 
     /**
      * The name of the region that contains the bucket you want.
-     * For information about regions, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
+     * For information about regions, see [Regions and Availability Domains](https://docs.oracle.com/iaas/Content/General/Concepts/regions.htm).
      * Example: {@code us-phoenix-1}
      *
      * @return the value
@@ -160,7 +160,7 @@ public final class CustomTerraformProvider
 
     /**
      * The Object Storage namespace that contains the bucket you want.
-     * For information about Object Storage namespaces, see [Understanding Object Storage Namespaces](https://docs.cloud.oracle.com/iaas/Content/Object/Tasks/understandingnamespaces.htm).
+     * For information about Object Storage namespaces, see [Understanding Object Storage Namespaces](https://docs.oracle.com/iaas/Content/Object/Tasks/understandingnamespaces.htm).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("namespace")
@@ -168,7 +168,7 @@ public final class CustomTerraformProvider
 
     /**
      * The Object Storage namespace that contains the bucket you want.
-     * For information about Object Storage namespaces, see [Understanding Object Storage Namespaces](https://docs.cloud.oracle.com/iaas/Content/Object/Tasks/understandingnamespaces.htm).
+     * For information about Object Storage namespaces, see [Understanding Object Storage Namespaces](https://docs.oracle.com/iaas/Content/Object/Tasks/understandingnamespaces.htm).
      *
      * @return the value
      **/
@@ -178,7 +178,7 @@ public final class CustomTerraformProvider
 
     /**
      * The name of the bucket that contains the binary files for the custom Terraform providers.
-     * For information about buckets, see [Managing Buckets](https://docs.cloud.oracle.com/iaas/Content/Object/Tasks/managingbuckets.htm).
+     * For information about buckets, see [Managing Buckets](https://docs.oracle.com/iaas/Content/Object/Tasks/managingbuckets.htm).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("bucketName")
@@ -186,7 +186,7 @@ public final class CustomTerraformProvider
 
     /**
      * The name of the bucket that contains the binary files for the custom Terraform providers.
-     * For information about buckets, see [Managing Buckets](https://docs.cloud.oracle.com/iaas/Content/Object/Tasks/managingbuckets.htm).
+     * For information about buckets, see [Managing Buckets](https://docs.oracle.com/iaas/Content/Object/Tasks/managingbuckets.htm).
      *
      * @return the value
      **/

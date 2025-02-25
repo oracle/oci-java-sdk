@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.osmanagementhub.model;
@@ -22,22 +22,24 @@ package com.oracle.bmc.osmanagementhub.model;
 public final class AddPackagesToSoftwareSourceDetails
         extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"packages"})
-    public AddPackagesToSoftwareSourceDetails(java.util.List<String> packages) {
+    @java.beans.ConstructorProperties({"packages", "isContinueOnMissingPackages"})
+    public AddPackagesToSoftwareSourceDetails(
+            java.util.List<String> packages, Boolean isContinueOnMissingPackages) {
         super();
         this.packages = packages;
+        this.isContinueOnMissingPackages = isContinueOnMissingPackages;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * List of packages specified by the full package name (NEVRA.rpm).
+         * List of packages specified by the name of the package (N) or the full package name (NVRA or NEVRA).
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("packages")
         private java.util.List<String> packages;
 
         /**
-         * List of packages specified by the full package name (NEVRA.rpm).
+         * List of packages specified by the name of the package (N) or the full package name (NVRA or NEVRA).
          * @param packages the value to set
          * @return this builder
          **/
@@ -46,13 +48,30 @@ public final class AddPackagesToSoftwareSourceDetails
             this.__explicitlySet__.add("packages");
             return this;
         }
+        /**
+         * Indicates whether the service should generate a custom software source when the package list contains invalid values. When set to true, the service ignores any invalid packages and generates the custom software source with using the valid packages.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isContinueOnMissingPackages")
+        private Boolean isContinueOnMissingPackages;
+
+        /**
+         * Indicates whether the service should generate a custom software source when the package list contains invalid values. When set to true, the service ignores any invalid packages and generates the custom software source with using the valid packages.
+         * @param isContinueOnMissingPackages the value to set
+         * @return this builder
+         **/
+        public Builder isContinueOnMissingPackages(Boolean isContinueOnMissingPackages) {
+            this.isContinueOnMissingPackages = isContinueOnMissingPackages;
+            this.__explicitlySet__.add("isContinueOnMissingPackages");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public AddPackagesToSoftwareSourceDetails build() {
             AddPackagesToSoftwareSourceDetails model =
-                    new AddPackagesToSoftwareSourceDetails(this.packages);
+                    new AddPackagesToSoftwareSourceDetails(
+                            this.packages, this.isContinueOnMissingPackages);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -63,6 +82,9 @@ public final class AddPackagesToSoftwareSourceDetails
         public Builder copy(AddPackagesToSoftwareSourceDetails model) {
             if (model.wasPropertyExplicitlySet("packages")) {
                 this.packages(model.getPackages());
+            }
+            if (model.wasPropertyExplicitlySet("isContinueOnMissingPackages")) {
+                this.isContinueOnMissingPackages(model.getIsContinueOnMissingPackages());
             }
             return this;
         }
@@ -80,17 +102,31 @@ public final class AddPackagesToSoftwareSourceDetails
     }
 
     /**
-     * List of packages specified by the full package name (NEVRA.rpm).
+     * List of packages specified by the name of the package (N) or the full package name (NVRA or NEVRA).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("packages")
     private final java.util.List<String> packages;
 
     /**
-     * List of packages specified by the full package name (NEVRA.rpm).
+     * List of packages specified by the name of the package (N) or the full package name (NVRA or NEVRA).
      * @return the value
      **/
     public java.util.List<String> getPackages() {
         return packages;
+    }
+
+    /**
+     * Indicates whether the service should generate a custom software source when the package list contains invalid values. When set to true, the service ignores any invalid packages and generates the custom software source with using the valid packages.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isContinueOnMissingPackages")
+    private final Boolean isContinueOnMissingPackages;
+
+    /**
+     * Indicates whether the service should generate a custom software source when the package list contains invalid values. When set to true, the service ignores any invalid packages and generates the custom software source with using the valid packages.
+     * @return the value
+     **/
+    public Boolean getIsContinueOnMissingPackages() {
+        return isContinueOnMissingPackages;
     }
 
     @Override
@@ -108,6 +144,8 @@ public final class AddPackagesToSoftwareSourceDetails
         sb.append("AddPackagesToSoftwareSourceDetails(");
         sb.append("super=").append(super.toString());
         sb.append("packages=").append(String.valueOf(this.packages));
+        sb.append(", isContinueOnMissingPackages=")
+                .append(String.valueOf(this.isContinueOnMissingPackages));
         sb.append(")");
         return sb.toString();
     }
@@ -122,7 +160,10 @@ public final class AddPackagesToSoftwareSourceDetails
         }
 
         AddPackagesToSoftwareSourceDetails other = (AddPackagesToSoftwareSourceDetails) o;
-        return java.util.Objects.equals(this.packages, other.packages) && super.equals(other);
+        return java.util.Objects.equals(this.packages, other.packages)
+                && java.util.Objects.equals(
+                        this.isContinueOnMissingPackages, other.isContinueOnMissingPackages)
+                && super.equals(other);
     }
 
     @Override
@@ -130,6 +171,11 @@ public final class AddPackagesToSoftwareSourceDetails
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.packages == null ? 43 : this.packages.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isContinueOnMissingPackages == null
+                                ? 43
+                                : this.isContinueOnMissingPackages.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

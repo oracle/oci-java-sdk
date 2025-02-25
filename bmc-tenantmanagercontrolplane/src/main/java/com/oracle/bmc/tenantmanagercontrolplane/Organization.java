@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.tenantmanagercontrolplane;
@@ -8,7 +8,7 @@ import com.oracle.bmc.tenantmanagercontrolplane.requests.*;
 import com.oracle.bmc.tenantmanagercontrolplane.responses.*;
 
 /**
- * Use the Organizations API to consolidate multiple OCI tenancies into an organization, and centrally manage your tenancies and organization resources. For more information, see [Organization Management Overview](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/organization_management_overview.htm).
+ * Use the Organizations API to consolidate multiple OCI tenancies into an organization, and centrally manage your tenancies and organization resources. For more information, see [Organization Management Overview](https://docs.oracle.com/iaas/Content/General/Concepts/organization_management_overview.htm).
  * This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by default if no circuit breaker configuration is defined by the user.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230401")
@@ -67,7 +67,7 @@ public interface Organization extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/tenantmanagercontrolplane/ApproveOrganizationTenancyForTransferExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ApproveOrganizationTenancyForTransfer API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/tenantmanagercontrolplane/ApproveOrganizationTenancyForTransferExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ApproveOrganizationTenancyForTransfer API.
      */
     ApproveOrganizationTenancyForTransferResponse approveOrganizationTenancyForTransfer(
             ApproveOrganizationTenancyForTransferRequest request);
@@ -80,7 +80,7 @@ public interface Organization extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/tenantmanagercontrolplane/CreateChildTenancyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateChildTenancy API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/tenantmanagercontrolplane/CreateChildTenancyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateChildTenancy API.
      */
     CreateChildTenancyResponse createChildTenancy(CreateChildTenancyRequest request);
 
@@ -92,7 +92,7 @@ public interface Organization extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/tenantmanagercontrolplane/DeleteOrganizationTenancyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteOrganizationTenancy API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/tenantmanagercontrolplane/DeleteOrganizationTenancyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteOrganizationTenancy API.
      */
     DeleteOrganizationTenancyResponse deleteOrganizationTenancy(
             DeleteOrganizationTenancyRequest request);
@@ -105,7 +105,7 @@ public interface Organization extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/tenantmanagercontrolplane/GetOrganizationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetOrganization API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/tenantmanagercontrolplane/GetOrganizationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetOrganization API.
      */
     GetOrganizationResponse getOrganization(GetOrganizationRequest request);
 
@@ -117,7 +117,7 @@ public interface Organization extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/tenantmanagercontrolplane/GetOrganizationTenancyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetOrganizationTenancy API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/tenantmanagercontrolplane/GetOrganizationTenancyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetOrganizationTenancy API.
      */
     GetOrganizationTenancyResponse getOrganizationTenancy(GetOrganizationTenancyRequest request);
 
@@ -129,7 +129,7 @@ public interface Organization extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/tenantmanagercontrolplane/ListOrganizationTenanciesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListOrganizationTenancies API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/tenantmanagercontrolplane/ListOrganizationTenanciesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListOrganizationTenancies API.
      */
     ListOrganizationTenanciesResponse listOrganizationTenancies(
             ListOrganizationTenanciesRequest request);
@@ -142,7 +142,7 @@ public interface Organization extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/tenantmanagercontrolplane/ListOrganizationsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListOrganizations API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/tenantmanagercontrolplane/ListOrganizationsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListOrganizations API.
      */
     ListOrganizationsResponse listOrganizations(ListOrganizationsRequest request);
 
@@ -154,7 +154,7 @@ public interface Organization extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/tenantmanagercontrolplane/RestoreOrganizationTenancyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RestoreOrganizationTenancy API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/tenantmanagercontrolplane/RestoreOrganizationTenancyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RestoreOrganizationTenancy API.
      */
     RestoreOrganizationTenancyResponse restoreOrganizationTenancy(
             RestoreOrganizationTenancyRequest request);
@@ -167,7 +167,7 @@ public interface Organization extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/tenantmanagercontrolplane/UnapproveOrganizationTenancyForTransferExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UnapproveOrganizationTenancyForTransfer API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/tenantmanagercontrolplane/UnapproveOrganizationTenancyForTransferExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UnapproveOrganizationTenancyForTransfer API.
      */
     UnapproveOrganizationTenancyForTransferResponse unapproveOrganizationTenancyForTransfer(
             UnapproveOrganizationTenancyForTransferRequest request);
@@ -180,7 +180,7 @@ public interface Organization extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/tenantmanagercontrolplane/UpdateOrganizationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateOrganization API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/tenantmanagercontrolplane/UpdateOrganizationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateOrganization API.
      */
     UpdateOrganizationResponse updateOrganization(UpdateOrganizationRequest request);
 

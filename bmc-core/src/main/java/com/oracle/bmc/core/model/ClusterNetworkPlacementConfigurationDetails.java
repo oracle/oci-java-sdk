@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core.model;
@@ -84,7 +84,7 @@ public final class ClusterNetworkPlacementConfigurationDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet to place instances. This field is deprecated.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet to place instances. This field is deprecated.
          * Use {@code primaryVnicSubnets} instead to set VNIC data for instances in the pool.
          *
          **/
@@ -92,7 +92,7 @@ public final class ClusterNetworkPlacementConfigurationDetails
         private String primarySubnetId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet to place instances. This field is deprecated.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet to place instances. This field is deprecated.
          * Use {@code primaryVnicSubnets} instead to set VNIC data for instances in the pool.
          *
          * @param primarySubnetId the value to set
@@ -263,7 +263,7 @@ public final class ClusterNetworkPlacementConfigurationDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet to place instances. This field is deprecated.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet to place instances. This field is deprecated.
      * Use {@code primaryVnicSubnets} instead to set VNIC data for instances in the pool.
      *
      **/
@@ -271,7 +271,7 @@ public final class ClusterNetworkPlacementConfigurationDetails
     private final String primarySubnetId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet to place instances. This field is deprecated.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet to place instances. This field is deprecated.
      * Use {@code primaryVnicSubnets} instead to set VNIC data for instances in the pool.
      *
      * @return the value

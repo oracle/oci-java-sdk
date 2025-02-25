@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.osmanagementhub.model;
 
 /**
- * Indicates whether the service should create the software source from a list of packages provided by the user.
+ * Provides summary information for a custom software source.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -205,6 +205,22 @@ public final class CustomSoftwareSourceSummary extends SoftwareSourceSummary {
             this.__explicitlySet__.add("vendorSoftwareSources");
             return this;
         }
+        /**
+         * Identifies how the custom software source was created.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("softwareSourceSubType")
+        private SoftwareSourceSubType softwareSourceSubType;
+
+        /**
+         * Identifies how the custom software source was created.
+         * @param softwareSourceSubType the value to set
+         * @return this builder
+         **/
+        public Builder softwareSourceSubType(SoftwareSourceSubType softwareSourceSubType) {
+            this.softwareSourceSubType = softwareSourceSubType;
+            this.__explicitlySet__.add("softwareSourceSubType");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -230,7 +246,8 @@ public final class CustomSoftwareSourceSummary extends SoftwareSourceSummary {
                             this.freeformTags,
                             this.definedTags,
                             this.systemTags,
-                            this.vendorSoftwareSources);
+                            this.vendorSoftwareSources,
+                            this.softwareSourceSubType);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -296,6 +313,9 @@ public final class CustomSoftwareSourceSummary extends SoftwareSourceSummary {
             if (model.wasPropertyExplicitlySet("vendorSoftwareSources")) {
                 this.vendorSoftwareSources(model.getVendorSoftwareSources());
             }
+            if (model.wasPropertyExplicitlySet("softwareSourceSubType")) {
+                this.softwareSourceSubType(model.getSoftwareSourceSubType());
+            }
             return this;
         }
     }
@@ -331,7 +351,8 @@ public final class CustomSoftwareSourceSummary extends SoftwareSourceSummary {
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags,
-            java.util.List<Id> vendorSoftwareSources) {
+            java.util.List<Id> vendorSoftwareSources,
+            SoftwareSourceSubType softwareSourceSubType) {
         super(
                 id,
                 compartmentId,
@@ -352,6 +373,7 @@ public final class CustomSoftwareSourceSummary extends SoftwareSourceSummary {
                 definedTags,
                 systemTags);
         this.vendorSoftwareSources = vendorSoftwareSources;
+        this.softwareSourceSubType = softwareSourceSubType;
     }
 
     /**
@@ -366,6 +388,20 @@ public final class CustomSoftwareSourceSummary extends SoftwareSourceSummary {
      **/
     public java.util.List<Id> getVendorSoftwareSources() {
         return vendorSoftwareSources;
+    }
+
+    /**
+     * Identifies how the custom software source was created.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("softwareSourceSubType")
+    private final SoftwareSourceSubType softwareSourceSubType;
+
+    /**
+     * Identifies how the custom software source was created.
+     * @return the value
+     **/
+    public SoftwareSourceSubType getSoftwareSourceSubType() {
+        return softwareSourceSubType;
     }
 
     @Override
@@ -383,6 +419,7 @@ public final class CustomSoftwareSourceSummary extends SoftwareSourceSummary {
         sb.append("CustomSoftwareSourceSummary(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", vendorSoftwareSources=").append(String.valueOf(this.vendorSoftwareSources));
+        sb.append(", softwareSourceSubType=").append(String.valueOf(this.softwareSourceSubType));
         sb.append(")");
         return sb.toString();
     }
@@ -398,6 +435,7 @@ public final class CustomSoftwareSourceSummary extends SoftwareSourceSummary {
 
         CustomSoftwareSourceSummary other = (CustomSoftwareSourceSummary) o;
         return java.util.Objects.equals(this.vendorSoftwareSources, other.vendorSoftwareSources)
+                && java.util.Objects.equals(this.softwareSourceSubType, other.softwareSourceSubType)
                 && super.equals(other);
     }
 
@@ -410,6 +448,11 @@ public final class CustomSoftwareSourceSummary extends SoftwareSourceSummary {
                         + (this.vendorSoftwareSources == null
                                 ? 43
                                 : this.vendorSoftwareSources.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.softwareSourceSubType == null
+                                ? 43
+                                : this.softwareSourceSubType.hashCode());
         return result;
     }
 }

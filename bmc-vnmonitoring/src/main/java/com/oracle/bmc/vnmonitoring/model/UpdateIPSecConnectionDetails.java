@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.vnmonitoring.model;
@@ -115,7 +115,7 @@ public final class UpdateIPSecConnectionDetails
          * to the value for {@code cpeLocalIdentifierType}.
          * <p>
          * For information about why you'd provide this value, see
-         * [If Your CPE Is Behind a NAT Device](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/overviewIPsec.htm#nat).
+         * [If Your CPE Is Behind a NAT Device](https://docs.oracle.com/iaas/Content/Network/Tasks/overviewIPsec.htm#nat).
          * <p>
          * Example IP address: {@code 10.0.3.3}
          * <p>
@@ -131,7 +131,7 @@ public final class UpdateIPSecConnectionDetails
          * to the value for {@code cpeLocalIdentifierType}.
          * <p>
          * For information about why you'd provide this value, see
-         * [If Your CPE Is Behind a NAT Device](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/overviewIPsec.htm#nat).
+         * [If Your CPE Is Behind a NAT Device](https://docs.oracle.com/iaas/Content/Network/Tasks/overviewIPsec.htm#nat).
          * <p>
          * Example IP address: {@code 10.0.3.3}
          * <p>
@@ -170,7 +170,7 @@ public final class UpdateIPSecConnectionDetails
          * static routes. A static route's CIDR must not be a multicast address or class E address.
          * The CIDR can be either IPv4 or IPv6.
          * IPv6 addressing is supported for all commercial and government regions.
-         * See [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+         * See [IPv6 Addresses](https://docs.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
          * <p>
          * Example: {@code 10.0.1.0/24}
          * <p>
@@ -185,7 +185,7 @@ public final class UpdateIPSecConnectionDetails
          * static routes. A static route's CIDR must not be a multicast address or class E address.
          * The CIDR can be either IPv4 or IPv6.
          * IPv6 addressing is supported for all commercial and government regions.
-         * See [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+         * See [IPv6 Addresses](https://docs.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
          * <p>
          * Example: {@code 10.0.1.0/24}
          * <p>
@@ -313,7 +313,7 @@ public final class UpdateIPSecConnectionDetails
      * to the value for {@code cpeLocalIdentifierType}.
      * <p>
      * For information about why you'd provide this value, see
-     * [If Your CPE Is Behind a NAT Device](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/overviewIPsec.htm#nat).
+     * [If Your CPE Is Behind a NAT Device](https://docs.oracle.com/iaas/Content/Network/Tasks/overviewIPsec.htm#nat).
      * <p>
      * Example IP address: {@code 10.0.3.3}
      * <p>
@@ -329,7 +329,7 @@ public final class UpdateIPSecConnectionDetails
      * to the value for {@code cpeLocalIdentifierType}.
      * <p>
      * For information about why you'd provide this value, see
-     * [If Your CPE Is Behind a NAT Device](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/overviewIPsec.htm#nat).
+     * [If Your CPE Is Behind a NAT Device](https://docs.oracle.com/iaas/Content/Network/Tasks/overviewIPsec.htm#nat).
      * <p>
      * Example IP address: {@code 10.0.3.3}
      * <p>
@@ -401,7 +401,7 @@ public final class UpdateIPSecConnectionDetails
      * static routes. A static route's CIDR must not be a multicast address or class E address.
      * The CIDR can be either IPv4 or IPv6.
      * IPv6 addressing is supported for all commercial and government regions.
-     * See [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+     * See [IPv6 Addresses](https://docs.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
      * <p>
      * Example: {@code 10.0.1.0/24}
      * <p>
@@ -416,7 +416,7 @@ public final class UpdateIPSecConnectionDetails
      * static routes. A static route's CIDR must not be a multicast address or class E address.
      * The CIDR can be either IPv4 or IPv6.
      * IPv6 addressing is supported for all commercial and government regions.
-     * See [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+     * See [IPv6 Addresses](https://docs.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
      * <p>
      * Example: {@code 10.0.1.0/24}
      * <p>

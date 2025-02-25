@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.mysql.model;
@@ -10,7 +10,7 @@ package com.oracle.bmc.mysql.model;
  * To use any of the API operations, you must be authorized in an IAM
  * policy. If you're not authorized, talk to an administrator. If you're an
  * administrator who needs to write policies to give users access, see
- * [Getting Started with Policies](https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm).
+ * [Getting Started with Policies](https://docs.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -42,6 +42,7 @@ public final class BackupSummary extends com.oracle.bmc.http.internal.Explicitly
         "shapeName",
         "freeformTags",
         "definedTags",
+        "systemTags",
         "immediateSourceBackupId",
         "originalSourceBackupId",
         "timeCopyCreated",
@@ -64,6 +65,7 @@ public final class BackupSummary extends com.oracle.bmc.http.internal.Explicitly
             String shapeName,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.Map<String, java.util.Map<String, Object>> systemTags,
             String immediateSourceBackupId,
             String originalSourceBackupId,
             java.util.Date timeCopyCreated,
@@ -85,6 +87,7 @@ public final class BackupSummary extends com.oracle.bmc.http.internal.Explicitly
         this.shapeName = shapeName;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
+        this.systemTags = systemTags;
         this.immediateSourceBackupId = immediateSourceBackupId;
         this.originalSourceBackupId = originalSourceBackupId;
         this.timeCopyCreated = timeCopyCreated;
@@ -359,6 +362,26 @@ public final class BackupSummary extends com.oracle.bmc.http.internal.Explicitly
             return this;
         }
         /**
+         * Usage of system tag keys. These predefined keys are scoped to namespaces.
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+        private java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+        /**
+         * Usage of system tag keys. These predefined keys are scoped to namespaces.
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         *
+         * @param systemTags the value to set
+         * @return this builder
+         **/
+        public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+            this.systemTags = systemTags;
+            this.__explicitlySet__.add("systemTags");
+            return this;
+        }
+        /**
          * The OCID of the immediate source DB system backup from which this DB system backup was copied.
          *
          **/
@@ -444,6 +467,7 @@ public final class BackupSummary extends com.oracle.bmc.http.internal.Explicitly
                             this.shapeName,
                             this.freeformTags,
                             this.definedTags,
+                            this.systemTags,
                             this.immediateSourceBackupId,
                             this.originalSourceBackupId,
                             this.timeCopyCreated,
@@ -503,6 +527,9 @@ public final class BackupSummary extends com.oracle.bmc.http.internal.Explicitly
             }
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("systemTags")) {
+                this.systemTags(model.getSystemTags());
             }
             if (model.wasPropertyExplicitlySet("immediateSourceBackupId")) {
                 this.immediateSourceBackupId(model.getImmediateSourceBackupId());
@@ -764,6 +791,24 @@ public final class BackupSummary extends com.oracle.bmc.http.internal.Explicitly
     }
 
     /**
+     * Usage of system tag keys. These predefined keys are scoped to namespaces.
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+    private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+    /**
+     * Usage of system tag keys. These predefined keys are scoped to namespaces.
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     *
+     * @return the value
+     **/
+    public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
+        return systemTags;
+    }
+
+    /**
      * The OCID of the immediate source DB system backup from which this DB system backup was copied.
      *
      **/
@@ -848,6 +893,7 @@ public final class BackupSummary extends com.oracle.bmc.http.internal.Explicitly
         sb.append(", shapeName=").append(String.valueOf(this.shapeName));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", systemTags=").append(String.valueOf(this.systemTags));
         sb.append(", immediateSourceBackupId=")
                 .append(String.valueOf(this.immediateSourceBackupId));
         sb.append(", originalSourceBackupId=").append(String.valueOf(this.originalSourceBackupId));
@@ -884,6 +930,7 @@ public final class BackupSummary extends com.oracle.bmc.http.internal.Explicitly
                 && java.util.Objects.equals(this.shapeName, other.shapeName)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.systemTags, other.systemTags)
                 && java.util.Objects.equals(
                         this.immediateSourceBackupId, other.immediateSourceBackupId)
                 && java.util.Objects.equals(
@@ -926,6 +973,7 @@ public final class BackupSummary extends com.oracle.bmc.http.internal.Explicitly
         result = (result * PRIME) + (this.shapeName == null ? 43 : this.shapeName.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
         result =
                 (result * PRIME)
                         + (this.immediateSourceBackupId == null

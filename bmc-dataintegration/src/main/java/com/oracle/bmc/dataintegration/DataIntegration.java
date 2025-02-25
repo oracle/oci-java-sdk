@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.dataintegration;
@@ -68,7 +68,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/ChangeCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/ChangeCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeCompartment API.
      */
     ChangeCompartmentResponse changeCompartment(ChangeCompartmentRequest request);
 
@@ -81,7 +81,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/ChangeDisApplicationCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeDisApplicationCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/ChangeDisApplicationCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeDisApplicationCompartment API.
      */
     ChangeDisApplicationCompartmentResponse changeDisApplicationCompartment(
             ChangeDisApplicationCompartmentRequest request);
@@ -95,7 +95,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/CreateApplicationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateApplication API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/CreateApplicationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateApplication API.
      */
     CreateApplicationResponse createApplication(CreateApplicationRequest request);
 
@@ -107,7 +107,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/CreateApplicationDetailedDescriptionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateApplicationDetailedDescription API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/CreateApplicationDetailedDescriptionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateApplicationDetailedDescription API.
      */
     CreateApplicationDetailedDescriptionResponse createApplicationDetailedDescription(
             CreateApplicationDetailedDescriptionRequest request);
@@ -120,7 +120,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/CreateConnectionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateConnection API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/CreateConnectionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateConnection API.
      */
     CreateConnectionResponse createConnection(CreateConnectionRequest request);
 
@@ -132,7 +132,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/CreateConnectionValidationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateConnectionValidation API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/CreateConnectionValidationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateConnectionValidation API.
      */
     CreateConnectionValidationResponse createConnectionValidation(
             CreateConnectionValidationRequest request);
@@ -146,7 +146,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/CreateCopyObjectRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateCopyObjectRequest API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/CreateCopyObjectRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateCopyObjectRequest API.
      */
     CreateCopyObjectRequestResponse createCopyObjectRequest(CreateCopyObjectRequestRequest request);
 
@@ -158,7 +158,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/CreateDataAssetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateDataAsset API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/CreateDataAssetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateDataAsset API.
      */
     CreateDataAssetResponse createDataAsset(CreateDataAssetRequest request);
 
@@ -171,7 +171,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/CreateDataFlowExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateDataFlow API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/CreateDataFlowExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateDataFlow API.
      */
     CreateDataFlowResponse createDataFlow(CreateDataFlowRequest request);
 
@@ -184,7 +184,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/CreateDataFlowValidationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateDataFlowValidation API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/CreateDataFlowValidationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateDataFlowValidation API.
      */
     CreateDataFlowValidationResponse createDataFlowValidation(
             CreateDataFlowValidationRequest request);
@@ -198,7 +198,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/CreateDisApplicationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateDisApplication API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/CreateDisApplicationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateDisApplication API.
      */
     CreateDisApplicationResponse createDisApplication(CreateDisApplicationRequest request);
 
@@ -210,7 +210,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/CreateDisApplicationDetailedDescriptionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateDisApplicationDetailedDescription API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/CreateDisApplicationDetailedDescriptionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateDisApplicationDetailedDescription API.
      */
     CreateDisApplicationDetailedDescriptionResponse createDisApplicationDetailedDescription(
             CreateDisApplicationDetailedDescriptionRequest request);
@@ -223,7 +223,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/CreateEntityShapeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateEntityShape API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/CreateEntityShapeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateEntityShape API.
      */
     CreateEntityShapeResponse createEntityShape(CreateEntityShapeRequest request);
 
@@ -235,7 +235,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/CreateExportRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateExportRequest API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/CreateExportRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateExportRequest API.
      */
     CreateExportRequestResponse createExportRequest(CreateExportRequestRequest request);
 
@@ -247,7 +247,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/CreateExternalPublicationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateExternalPublication API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/CreateExternalPublicationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateExternalPublication API.
      */
     CreateExternalPublicationResponse createExternalPublication(
             CreateExternalPublicationRequest request);
@@ -260,7 +260,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/CreateExternalPublicationValidationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateExternalPublicationValidation API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/CreateExternalPublicationValidationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateExternalPublicationValidation API.
      */
     CreateExternalPublicationValidationResponse createExternalPublicationValidation(
             CreateExternalPublicationValidationRequest request);
@@ -275,7 +275,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/CreateFolderExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateFolder API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/CreateFolderExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateFolder API.
      */
     CreateFolderResponse createFolder(CreateFolderRequest request);
 
@@ -289,7 +289,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/CreateFunctionLibraryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateFunctionLibrary API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/CreateFunctionLibraryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateFunctionLibrary API.
      */
     CreateFunctionLibraryResponse createFunctionLibrary(CreateFunctionLibraryRequest request);
 
@@ -301,7 +301,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/CreateImportRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateImportRequest API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/CreateImportRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateImportRequest API.
      */
     CreateImportRequestResponse createImportRequest(CreateImportRequestRequest request);
 
@@ -313,7 +313,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/CreatePatchExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreatePatch API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/CreatePatchExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreatePatch API.
      */
     CreatePatchResponse createPatch(CreatePatchRequest request);
 
@@ -326,7 +326,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/CreatePipelineExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreatePipeline API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/CreatePipelineExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreatePipeline API.
      */
     CreatePipelineResponse createPipeline(CreatePipelineRequest request);
 
@@ -339,7 +339,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/CreatePipelineValidationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreatePipelineValidation API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/CreatePipelineValidationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreatePipelineValidation API.
      */
     CreatePipelineValidationResponse createPipelineValidation(
             CreatePipelineValidationRequest request);
@@ -353,7 +353,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/CreateProjectExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateProject API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/CreateProjectExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateProject API.
      */
     CreateProjectResponse createProject(CreateProjectRequest request);
 
@@ -365,7 +365,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/CreateScheduleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateSchedule API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/CreateScheduleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateSchedule API.
      */
     CreateScheduleResponse createSchedule(CreateScheduleRequest request);
 
@@ -378,7 +378,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/CreateTaskExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateTask API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/CreateTaskExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateTask API.
      */
     CreateTaskResponse createTask(CreateTaskRequest request);
 
@@ -390,7 +390,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/CreateTaskRunExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateTaskRun API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/CreateTaskRunExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateTaskRun API.
      */
     CreateTaskRunResponse createTaskRun(CreateTaskRunRequest request);
 
@@ -402,7 +402,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/CreateTaskScheduleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateTaskSchedule API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/CreateTaskScheduleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateTaskSchedule API.
      */
     CreateTaskScheduleResponse createTaskSchedule(CreateTaskScheduleRequest request);
 
@@ -414,7 +414,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/CreateTaskValidationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateTaskValidation API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/CreateTaskValidationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateTaskValidation API.
      */
     CreateTaskValidationResponse createTaskValidation(CreateTaskValidationRequest request);
 
@@ -427,7 +427,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/CreateUserDefinedFunctionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateUserDefinedFunction API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/CreateUserDefinedFunctionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateUserDefinedFunction API.
      */
     CreateUserDefinedFunctionResponse createUserDefinedFunction(
             CreateUserDefinedFunctionRequest request);
@@ -441,7 +441,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/CreateUserDefinedFunctionValidationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateUserDefinedFunctionValidation API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/CreateUserDefinedFunctionValidationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateUserDefinedFunctionValidation API.
      */
     CreateUserDefinedFunctionValidationResponse createUserDefinedFunctionValidation(
             CreateUserDefinedFunctionValidationRequest request);
@@ -455,7 +455,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/CreateWorkspaceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateWorkspace API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/CreateWorkspaceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateWorkspace API.
      */
     CreateWorkspaceResponse createWorkspace(CreateWorkspaceRequest request);
 
@@ -467,7 +467,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/DeleteApplicationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteApplication API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/DeleteApplicationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteApplication API.
      */
     DeleteApplicationResponse deleteApplication(DeleteApplicationRequest request);
 
@@ -479,7 +479,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/DeleteApplicationDetailedDescriptionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteApplicationDetailedDescription API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/DeleteApplicationDetailedDescriptionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteApplicationDetailedDescription API.
      */
     DeleteApplicationDetailedDescriptionResponse deleteApplicationDetailedDescription(
             DeleteApplicationDetailedDescriptionRequest request);
@@ -492,7 +492,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/DeleteConnectionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteConnection API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/DeleteConnectionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteConnection API.
      */
     DeleteConnectionResponse deleteConnection(DeleteConnectionRequest request);
 
@@ -504,7 +504,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/DeleteConnectionValidationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteConnectionValidation API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/DeleteConnectionValidationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteConnectionValidation API.
      */
     DeleteConnectionValidationResponse deleteConnectionValidation(
             DeleteConnectionValidationRequest request);
@@ -517,7 +517,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/DeleteCopyObjectRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteCopyObjectRequest API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/DeleteCopyObjectRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteCopyObjectRequest API.
      */
     DeleteCopyObjectRequestResponse deleteCopyObjectRequest(DeleteCopyObjectRequestRequest request);
 
@@ -529,7 +529,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/DeleteDataAssetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteDataAsset API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/DeleteDataAssetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteDataAsset API.
      */
     DeleteDataAssetResponse deleteDataAsset(DeleteDataAssetRequest request);
 
@@ -541,7 +541,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/DeleteDataFlowExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteDataFlow API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/DeleteDataFlowExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteDataFlow API.
      */
     DeleteDataFlowResponse deleteDataFlow(DeleteDataFlowRequest request);
 
@@ -553,7 +553,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/DeleteDataFlowValidationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteDataFlowValidation API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/DeleteDataFlowValidationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteDataFlowValidation API.
      */
     DeleteDataFlowValidationResponse deleteDataFlowValidation(
             DeleteDataFlowValidationRequest request);
@@ -566,7 +566,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/DeleteDisApplicationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteDisApplication API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/DeleteDisApplicationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteDisApplication API.
      */
     DeleteDisApplicationResponse deleteDisApplication(DeleteDisApplicationRequest request);
 
@@ -578,7 +578,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/DeleteDisApplicationDetailedDescriptionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteDisApplicationDetailedDescription API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/DeleteDisApplicationDetailedDescriptionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteDisApplicationDetailedDescription API.
      */
     DeleteDisApplicationDetailedDescriptionResponse deleteDisApplicationDetailedDescription(
             DeleteDisApplicationDetailedDescriptionRequest request);
@@ -592,7 +592,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/DeleteExportRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteExportRequest API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/DeleteExportRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteExportRequest API.
      */
     DeleteExportRequestResponse deleteExportRequest(DeleteExportRequestRequest request);
 
@@ -604,7 +604,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/DeleteExternalPublicationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteExternalPublication API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/DeleteExternalPublicationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteExternalPublication API.
      */
     DeleteExternalPublicationResponse deleteExternalPublication(
             DeleteExternalPublicationRequest request);
@@ -618,7 +618,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/DeleteExternalPublicationValidationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteExternalPublicationValidation API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/DeleteExternalPublicationValidationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteExternalPublicationValidation API.
      */
     DeleteExternalPublicationValidationResponse deleteExternalPublicationValidation(
             DeleteExternalPublicationValidationRequest request);
@@ -631,7 +631,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/DeleteFolderExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteFolder API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/DeleteFolderExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteFolder API.
      */
     DeleteFolderResponse deleteFolder(DeleteFolderRequest request);
 
@@ -643,7 +643,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/DeleteFunctionLibraryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteFunctionLibrary API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/DeleteFunctionLibraryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteFunctionLibrary API.
      */
     DeleteFunctionLibraryResponse deleteFunctionLibrary(DeleteFunctionLibraryRequest request);
 
@@ -656,7 +656,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/DeleteImportRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteImportRequest API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/DeleteImportRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteImportRequest API.
      */
     DeleteImportRequestResponse deleteImportRequest(DeleteImportRequestRequest request);
 
@@ -668,7 +668,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/DeletePatchExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeletePatch API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/DeletePatchExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeletePatch API.
      */
     DeletePatchResponse deletePatch(DeletePatchRequest request);
 
@@ -680,7 +680,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/DeletePipelineExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeletePipeline API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/DeletePipelineExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeletePipeline API.
      */
     DeletePipelineResponse deletePipeline(DeletePipelineRequest request);
 
@@ -692,7 +692,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/DeletePipelineValidationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeletePipelineValidation API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/DeletePipelineValidationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeletePipelineValidation API.
      */
     DeletePipelineValidationResponse deletePipelineValidation(
             DeletePipelineValidationRequest request);
@@ -705,7 +705,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/DeleteProjectExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteProject API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/DeleteProjectExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteProject API.
      */
     DeleteProjectResponse deleteProject(DeleteProjectRequest request);
 
@@ -717,7 +717,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/DeleteScheduleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteSchedule API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/DeleteScheduleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteSchedule API.
      */
     DeleteScheduleResponse deleteSchedule(DeleteScheduleRequest request);
 
@@ -729,7 +729,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/DeleteTaskExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteTask API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/DeleteTaskExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteTask API.
      */
     DeleteTaskResponse deleteTask(DeleteTaskRequest request);
 
@@ -741,7 +741,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/DeleteTaskRunExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteTaskRun API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/DeleteTaskRunExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteTaskRun API.
      */
     DeleteTaskRunResponse deleteTaskRun(DeleteTaskRunRequest request);
 
@@ -753,7 +753,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/DeleteTaskScheduleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteTaskSchedule API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/DeleteTaskScheduleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteTaskSchedule API.
      */
     DeleteTaskScheduleResponse deleteTaskSchedule(DeleteTaskScheduleRequest request);
 
@@ -766,7 +766,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/DeleteTaskValidationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteTaskValidation API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/DeleteTaskValidationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteTaskValidation API.
      */
     DeleteTaskValidationResponse deleteTaskValidation(DeleteTaskValidationRequest request);
 
@@ -778,7 +778,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/DeleteUserDefinedFunctionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteUserDefinedFunction API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/DeleteUserDefinedFunctionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteUserDefinedFunction API.
      */
     DeleteUserDefinedFunctionResponse deleteUserDefinedFunction(
             DeleteUserDefinedFunctionRequest request);
@@ -791,7 +791,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/DeleteUserDefinedFunctionValidationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteUserDefinedFunctionValidation API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/DeleteUserDefinedFunctionValidationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteUserDefinedFunctionValidation API.
      */
     DeleteUserDefinedFunctionValidationResponse deleteUserDefinedFunctionValidation(
             DeleteUserDefinedFunctionValidationRequest request);
@@ -804,7 +804,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/DeleteWorkspaceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteWorkspace API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/DeleteWorkspaceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteWorkspace API.
      */
     DeleteWorkspaceResponse deleteWorkspace(DeleteWorkspaceRequest request);
 
@@ -816,7 +816,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/GetApplicationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetApplication API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/GetApplicationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetApplication API.
      */
     GetApplicationResponse getApplication(GetApplicationRequest request);
 
@@ -828,7 +828,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/GetApplicationDetailedDescriptionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetApplicationDetailedDescription API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/GetApplicationDetailedDescriptionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetApplicationDetailedDescription API.
      */
     GetApplicationDetailedDescriptionResponse getApplicationDetailedDescription(
             GetApplicationDetailedDescriptionRequest request);
@@ -842,7 +842,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/GetCompositeStateExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetCompositeState API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/GetCompositeStateExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetCompositeState API.
      */
     GetCompositeStateResponse getCompositeState(GetCompositeStateRequest request);
 
@@ -854,7 +854,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/GetConnectionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetConnection API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/GetConnectionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetConnection API.
      */
     GetConnectionResponse getConnection(GetConnectionRequest request);
 
@@ -866,7 +866,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/GetConnectionValidationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetConnectionValidation API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/GetConnectionValidationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetConnectionValidation API.
      */
     GetConnectionValidationResponse getConnectionValidation(GetConnectionValidationRequest request);
 
@@ -879,7 +879,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/GetCopyObjectRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetCopyObjectRequest API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/GetCopyObjectRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetCopyObjectRequest API.
      */
     GetCopyObjectRequestResponse getCopyObjectRequest(GetCopyObjectRequestRequest request);
 
@@ -893,7 +893,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/GetCountStatisticExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetCountStatistic API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/GetCountStatisticExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetCountStatistic API.
      */
     GetCountStatisticResponse getCountStatistic(GetCountStatisticRequest request);
 
@@ -905,7 +905,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/GetDataAssetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetDataAsset API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/GetDataAssetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetDataAsset API.
      */
     GetDataAssetResponse getDataAsset(GetDataAssetRequest request);
 
@@ -917,7 +917,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/GetDataEntityExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetDataEntity API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/GetDataEntityExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetDataEntity API.
      */
     GetDataEntityResponse getDataEntity(GetDataEntityRequest request);
 
@@ -929,7 +929,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/GetDataFlowExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetDataFlow API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/GetDataFlowExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetDataFlow API.
      */
     GetDataFlowResponse getDataFlow(GetDataFlowRequest request);
 
@@ -941,7 +941,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/GetDataFlowValidationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetDataFlowValidation API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/GetDataFlowValidationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetDataFlowValidation API.
      */
     GetDataFlowValidationResponse getDataFlowValidation(GetDataFlowValidationRequest request);
 
@@ -953,7 +953,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/GetDependentObjectExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetDependentObject API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/GetDependentObjectExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetDependentObject API.
      */
     GetDependentObjectResponse getDependentObject(GetDependentObjectRequest request);
 
@@ -965,7 +965,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/GetDisApplicationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetDisApplication API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/GetDisApplicationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetDisApplication API.
      */
     GetDisApplicationResponse getDisApplication(GetDisApplicationRequest request);
 
@@ -977,7 +977,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/GetDisApplicationDetailedDescriptionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetDisApplicationDetailedDescription API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/GetDisApplicationDetailedDescriptionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetDisApplicationDetailedDescription API.
      */
     GetDisApplicationDetailedDescriptionResponse getDisApplicationDetailedDescription(
             GetDisApplicationDetailedDescriptionRequest request);
@@ -991,7 +991,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/GetExportRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetExportRequest API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/GetExportRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetExportRequest API.
      */
     GetExportRequestResponse getExportRequest(GetExportRequestRequest request);
 
@@ -1003,7 +1003,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/GetExternalPublicationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetExternalPublication API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/GetExternalPublicationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetExternalPublication API.
      */
     GetExternalPublicationResponse getExternalPublication(GetExternalPublicationRequest request);
 
@@ -1015,7 +1015,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/GetExternalPublicationValidationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetExternalPublicationValidation API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/GetExternalPublicationValidationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetExternalPublicationValidation API.
      */
     GetExternalPublicationValidationResponse getExternalPublicationValidation(
             GetExternalPublicationValidationRequest request);
@@ -1028,7 +1028,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/GetFolderExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetFolder API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/GetFolderExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetFolder API.
      */
     GetFolderResponse getFolder(GetFolderRequest request);
 
@@ -1040,7 +1040,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/GetFunctionLibraryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetFunctionLibrary API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/GetFunctionLibraryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetFunctionLibrary API.
      */
     GetFunctionLibraryResponse getFunctionLibrary(GetFunctionLibraryRequest request);
 
@@ -1053,7 +1053,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/GetImportRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetImportRequest API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/GetImportRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetImportRequest API.
      */
     GetImportRequestResponse getImportRequest(GetImportRequestRequest request);
 
@@ -1065,7 +1065,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/GetPatchExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetPatch API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/GetPatchExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetPatch API.
      */
     GetPatchResponse getPatch(GetPatchRequest request);
 
@@ -1077,7 +1077,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/GetPipelineExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetPipeline API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/GetPipelineExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetPipeline API.
      */
     GetPipelineResponse getPipeline(GetPipelineRequest request);
 
@@ -1089,7 +1089,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/GetPipelineValidationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetPipelineValidation API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/GetPipelineValidationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetPipelineValidation API.
      */
     GetPipelineValidationResponse getPipelineValidation(GetPipelineValidationRequest request);
 
@@ -1101,7 +1101,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/GetProjectExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetProject API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/GetProjectExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetProject API.
      */
     GetProjectResponse getProject(GetProjectRequest request);
 
@@ -1113,7 +1113,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/GetPublishedObjectExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetPublishedObject API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/GetPublishedObjectExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetPublishedObject API.
      */
     GetPublishedObjectResponse getPublishedObject(GetPublishedObjectRequest request);
 
@@ -1125,7 +1125,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/GetReferenceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetReference API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/GetReferenceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetReference API.
      */
     GetReferenceResponse getReference(GetReferenceRequest request);
 
@@ -1137,7 +1137,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/GetRuntimeOperatorExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetRuntimeOperator API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/GetRuntimeOperatorExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetRuntimeOperator API.
      */
     GetRuntimeOperatorResponse getRuntimeOperator(GetRuntimeOperatorRequest request);
 
@@ -1149,7 +1149,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/GetRuntimePipelineExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetRuntimePipeline API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/GetRuntimePipelineExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetRuntimePipeline API.
      */
     GetRuntimePipelineResponse getRuntimePipeline(GetRuntimePipelineRequest request);
 
@@ -1161,7 +1161,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/GetScheduleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetSchedule API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/GetScheduleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetSchedule API.
      */
     GetScheduleResponse getSchedule(GetScheduleRequest request);
 
@@ -1173,7 +1173,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/GetSchemaExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetSchema API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/GetSchemaExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetSchema API.
      */
     GetSchemaResponse getSchema(GetSchemaRequest request);
 
@@ -1185,7 +1185,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/GetTaskExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetTask API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/GetTaskExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetTask API.
      */
     GetTaskResponse getTask(GetTaskRequest request);
 
@@ -1197,7 +1197,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/GetTaskRunExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetTaskRun API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/GetTaskRunExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetTaskRun API.
      */
     GetTaskRunResponse getTaskRun(GetTaskRunRequest request);
 
@@ -1209,7 +1209,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/GetTaskScheduleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetTaskSchedule API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/GetTaskScheduleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetTaskSchedule API.
      */
     GetTaskScheduleResponse getTaskSchedule(GetTaskScheduleRequest request);
 
@@ -1222,7 +1222,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/GetTaskValidationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetTaskValidation API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/GetTaskValidationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetTaskValidation API.
      */
     GetTaskValidationResponse getTaskValidation(GetTaskValidationRequest request);
 
@@ -1234,7 +1234,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/GetTemplateExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetTemplate API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/GetTemplateExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetTemplate API.
      */
     GetTemplateResponse getTemplate(GetTemplateRequest request);
 
@@ -1246,7 +1246,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/GetUserDefinedFunctionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetUserDefinedFunction API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/GetUserDefinedFunctionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetUserDefinedFunction API.
      */
     GetUserDefinedFunctionResponse getUserDefinedFunction(GetUserDefinedFunctionRequest request);
 
@@ -1258,7 +1258,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/GetUserDefinedFunctionValidationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetUserDefinedFunctionValidation API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/GetUserDefinedFunctionValidationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetUserDefinedFunctionValidation API.
      */
     GetUserDefinedFunctionValidationResponse getUserDefinedFunctionValidation(
             GetUserDefinedFunctionValidationRequest request);
@@ -1271,7 +1271,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/GetWorkRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetWorkRequest API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/GetWorkRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetWorkRequest API.
      */
     GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request);
 
@@ -1283,7 +1283,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/GetWorkspaceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetWorkspace API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/GetWorkspaceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetWorkspace API.
      */
     GetWorkspaceResponse getWorkspace(GetWorkspaceRequest request);
 
@@ -1295,7 +1295,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/ListApplicationsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListApplications API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/ListApplicationsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListApplications API.
      */
     ListApplicationsResponse listApplications(ListApplicationsRequest request);
 
@@ -1307,7 +1307,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/ListConnectionValidationsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListConnectionValidations API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/ListConnectionValidationsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListConnectionValidations API.
      */
     ListConnectionValidationsResponse listConnectionValidations(
             ListConnectionValidationsRequest request);
@@ -1320,7 +1320,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/ListConnectionsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListConnections API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/ListConnectionsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListConnections API.
      */
     ListConnectionsResponse listConnections(ListConnectionsRequest request);
 
@@ -1333,7 +1333,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/ListCopyObjectRequestsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListCopyObjectRequests API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/ListCopyObjectRequestsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListCopyObjectRequests API.
      */
     ListCopyObjectRequestsResponse listCopyObjectRequests(ListCopyObjectRequestsRequest request);
 
@@ -1346,7 +1346,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/ListDataAssetsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDataAssets API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/ListDataAssetsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDataAssets API.
      */
     ListDataAssetsResponse listDataAssets(ListDataAssetsRequest request);
 
@@ -1359,7 +1359,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/ListDataEntitiesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDataEntities API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/ListDataEntitiesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDataEntities API.
      */
     ListDataEntitiesResponse listDataEntities(ListDataEntitiesRequest request);
 
@@ -1371,7 +1371,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/ListDataFlowValidationsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDataFlowValidations API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/ListDataFlowValidationsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDataFlowValidations API.
      */
     ListDataFlowValidationsResponse listDataFlowValidations(ListDataFlowValidationsRequest request);
 
@@ -1384,7 +1384,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/ListDataFlowsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDataFlows API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/ListDataFlowsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDataFlows API.
      */
     ListDataFlowsResponse listDataFlows(ListDataFlowsRequest request);
 
@@ -1396,7 +1396,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/ListDependentObjectsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDependentObjects API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/ListDependentObjectsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDependentObjects API.
      */
     ListDependentObjectsResponse listDependentObjects(ListDependentObjectsRequest request);
 
@@ -1409,7 +1409,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/ListDisApplicationTaskRunLineagesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDisApplicationTaskRunLineages API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/ListDisApplicationTaskRunLineagesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDisApplicationTaskRunLineages API.
      */
     ListDisApplicationTaskRunLineagesResponse listDisApplicationTaskRunLineages(
             ListDisApplicationTaskRunLineagesRequest request);
@@ -1422,7 +1422,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/ListDisApplicationsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDisApplications API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/ListDisApplicationsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDisApplications API.
      */
     ListDisApplicationsResponse listDisApplications(ListDisApplicationsRequest request);
 
@@ -1435,7 +1435,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/ListExportRequestsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListExportRequests API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/ListExportRequestsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListExportRequests API.
      */
     ListExportRequestsResponse listExportRequests(ListExportRequestsRequest request);
 
@@ -1448,7 +1448,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/ListExternalPublicationValidationsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListExternalPublicationValidations API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/ListExternalPublicationValidationsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListExternalPublicationValidations API.
      */
     ListExternalPublicationValidationsResponse listExternalPublicationValidations(
             ListExternalPublicationValidationsRequest request);
@@ -1461,7 +1461,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/ListExternalPublicationsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListExternalPublications API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/ListExternalPublicationsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListExternalPublications API.
      */
     ListExternalPublicationsResponse listExternalPublications(
             ListExternalPublicationsRequest request);
@@ -1475,7 +1475,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/ListFoldersExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListFolders API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/ListFoldersExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListFolders API.
      */
     ListFoldersResponse listFolders(ListFoldersRequest request);
 
@@ -1488,7 +1488,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/ListFunctionLibrariesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListFunctionLibraries API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/ListFunctionLibrariesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListFunctionLibraries API.
      */
     ListFunctionLibrariesResponse listFunctionLibraries(ListFunctionLibrariesRequest request);
 
@@ -1501,7 +1501,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/ListImportRequestsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListImportRequests API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/ListImportRequestsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListImportRequests API.
      */
     ListImportRequestsResponse listImportRequests(ListImportRequestsRequest request);
 
@@ -1513,7 +1513,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/ListPatchChangesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListPatchChanges API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/ListPatchChangesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListPatchChanges API.
      */
     ListPatchChangesResponse listPatchChanges(ListPatchChangesRequest request);
 
@@ -1525,7 +1525,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/ListPatchesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListPatches API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/ListPatchesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListPatches API.
      */
     ListPatchesResponse listPatches(ListPatchesRequest request);
 
@@ -1537,7 +1537,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/ListPipelineValidationsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListPipelineValidations API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/ListPipelineValidationsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListPipelineValidations API.
      */
     ListPipelineValidationsResponse listPipelineValidations(ListPipelineValidationsRequest request);
 
@@ -1550,7 +1550,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/ListPipelinesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListPipelines API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/ListPipelinesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListPipelines API.
      */
     ListPipelinesResponse listPipelines(ListPipelinesRequest request);
 
@@ -1563,7 +1563,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/ListProjectsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListProjects API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/ListProjectsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListProjects API.
      */
     ListProjectsResponse listProjects(ListProjectsRequest request);
 
@@ -1575,7 +1575,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/ListPublishedObjectsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListPublishedObjects API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/ListPublishedObjectsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListPublishedObjects API.
      */
     ListPublishedObjectsResponse listPublishedObjects(ListPublishedObjectsRequest request);
 
@@ -1587,7 +1587,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/ListReferencesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListReferences API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/ListReferencesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListReferences API.
      */
     ListReferencesResponse listReferences(ListReferencesRequest request);
 
@@ -1600,7 +1600,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/ListRuntimeOperatorsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListRuntimeOperators API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/ListRuntimeOperatorsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListRuntimeOperators API.
      */
     ListRuntimeOperatorsResponse listRuntimeOperators(ListRuntimeOperatorsRequest request);
 
@@ -1613,7 +1613,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/ListRuntimePipelinesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListRuntimePipelines API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/ListRuntimePipelinesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListRuntimePipelines API.
      */
     ListRuntimePipelinesResponse listRuntimePipelines(ListRuntimePipelinesRequest request);
 
@@ -1626,7 +1626,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/ListSchedulesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSchedules API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/ListSchedulesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSchedules API.
      */
     ListSchedulesResponse listSchedules(ListSchedulesRequest request);
 
@@ -1638,7 +1638,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/ListSchemasExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSchemas API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/ListSchemasExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSchemas API.
      */
     ListSchemasResponse listSchemas(ListSchemasRequest request);
 
@@ -1651,7 +1651,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/ListTaskRunLineagesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListTaskRunLineages API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/ListTaskRunLineagesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListTaskRunLineages API.
      */
     ListTaskRunLineagesResponse listTaskRunLineages(ListTaskRunLineagesRequest request);
 
@@ -1663,7 +1663,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/ListTaskRunLogsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListTaskRunLogs API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/ListTaskRunLogsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListTaskRunLogs API.
      */
     ListTaskRunLogsResponse listTaskRunLogs(ListTaskRunLogsRequest request);
 
@@ -1675,7 +1675,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/ListTaskRunsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListTaskRuns API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/ListTaskRunsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListTaskRuns API.
      */
     ListTaskRunsResponse listTaskRuns(ListTaskRunsRequest request);
 
@@ -1688,7 +1688,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/ListTaskSchedulesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListTaskSchedules API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/ListTaskSchedulesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListTaskSchedules API.
      */
     ListTaskSchedulesResponse listTaskSchedules(ListTaskSchedulesRequest request);
 
@@ -1701,7 +1701,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/ListTaskValidationsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListTaskValidations API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/ListTaskValidationsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListTaskValidations API.
      */
     ListTaskValidationsResponse listTaskValidations(ListTaskValidationsRequest request);
 
@@ -1714,7 +1714,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/ListTasksExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListTasks API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/ListTasksExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListTasks API.
      */
     ListTasksResponse listTasks(ListTasksRequest request);
 
@@ -1726,7 +1726,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/ListTemplatesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListTemplates API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/ListTemplatesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListTemplates API.
      */
     ListTemplatesResponse listTemplates(ListTemplatesRequest request);
 
@@ -1738,7 +1738,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/ListUserDefinedFunctionValidationsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListUserDefinedFunctionValidations API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/ListUserDefinedFunctionValidationsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListUserDefinedFunctionValidations API.
      */
     ListUserDefinedFunctionValidationsResponse listUserDefinedFunctionValidations(
             ListUserDefinedFunctionValidationsRequest request);
@@ -1752,7 +1752,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/ListUserDefinedFunctionsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListUserDefinedFunctions API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/ListUserDefinedFunctionsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListUserDefinedFunctions API.
      */
     ListUserDefinedFunctionsResponse listUserDefinedFunctions(
             ListUserDefinedFunctionsRequest request);
@@ -1766,7 +1766,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/ListWorkRequestErrorsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequestErrors API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/ListWorkRequestErrorsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequestErrors API.
      */
     ListWorkRequestErrorsResponse listWorkRequestErrors(ListWorkRequestErrorsRequest request);
 
@@ -1779,7 +1779,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/ListWorkRequestLogsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequestLogs API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/ListWorkRequestLogsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequestLogs API.
      */
     ListWorkRequestLogsResponse listWorkRequestLogs(ListWorkRequestLogsRequest request);
 
@@ -1792,7 +1792,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/ListWorkRequestsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequests API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/ListWorkRequestsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequests API.
      */
     ListWorkRequestsResponse listWorkRequests(ListWorkRequestsRequest request);
 
@@ -1805,7 +1805,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/ListWorkspacesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkspaces API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/ListWorkspacesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkspaces API.
      */
     ListWorkspacesResponse listWorkspaces(ListWorkspacesRequest request);
 
@@ -1818,7 +1818,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/StartWorkspaceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use StartWorkspace API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/StartWorkspaceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use StartWorkspace API.
      */
     StartWorkspaceResponse startWorkspace(StartWorkspaceRequest request);
 
@@ -1831,7 +1831,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/StopWorkspaceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use StopWorkspace API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/StopWorkspaceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use StopWorkspace API.
      */
     StopWorkspaceResponse stopWorkspace(StopWorkspaceRequest request);
 
@@ -1843,7 +1843,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/UpdateApplicationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateApplication API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/UpdateApplicationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateApplication API.
      */
     UpdateApplicationResponse updateApplication(UpdateApplicationRequest request);
 
@@ -1855,7 +1855,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/UpdateApplicationDetailedDescriptionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateApplicationDetailedDescription API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/UpdateApplicationDetailedDescriptionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateApplicationDetailedDescription API.
      */
     UpdateApplicationDetailedDescriptionResponse updateApplicationDetailedDescription(
             UpdateApplicationDetailedDescriptionRequest request);
@@ -1868,7 +1868,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/UpdateConnectionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateConnection API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/UpdateConnectionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateConnection API.
      */
     UpdateConnectionResponse updateConnection(UpdateConnectionRequest request);
 
@@ -1880,7 +1880,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/UpdateCopyObjectRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateCopyObjectRequest API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/UpdateCopyObjectRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateCopyObjectRequest API.
      */
     UpdateCopyObjectRequestResponse updateCopyObjectRequest(UpdateCopyObjectRequestRequest request);
 
@@ -1892,7 +1892,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/UpdateDataAssetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateDataAsset API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/UpdateDataAssetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateDataAsset API.
      */
     UpdateDataAssetResponse updateDataAsset(UpdateDataAssetRequest request);
 
@@ -1904,7 +1904,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/UpdateDataFlowExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateDataFlow API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/UpdateDataFlowExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateDataFlow API.
      */
     UpdateDataFlowResponse updateDataFlow(UpdateDataFlowRequest request);
 
@@ -1916,7 +1916,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/UpdateDisApplicationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateDisApplication API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/UpdateDisApplicationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateDisApplication API.
      */
     UpdateDisApplicationResponse updateDisApplication(UpdateDisApplicationRequest request);
 
@@ -1928,7 +1928,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/UpdateDisApplicationDetailedDescriptionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateDisApplicationDetailedDescription API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/UpdateDisApplicationDetailedDescriptionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateDisApplicationDetailedDescription API.
      */
     UpdateDisApplicationDetailedDescriptionResponse updateDisApplicationDetailedDescription(
             UpdateDisApplicationDetailedDescriptionRequest request);
@@ -1941,7 +1941,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/UpdateExportRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateExportRequest API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/UpdateExportRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateExportRequest API.
      */
     UpdateExportRequestResponse updateExportRequest(UpdateExportRequestRequest request);
 
@@ -1953,7 +1953,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/UpdateExternalPublicationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateExternalPublication API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/UpdateExternalPublicationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateExternalPublication API.
      */
     UpdateExternalPublicationResponse updateExternalPublication(
             UpdateExternalPublicationRequest request);
@@ -1966,7 +1966,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/UpdateFolderExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateFolder API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/UpdateFolderExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateFolder API.
      */
     UpdateFolderResponse updateFolder(UpdateFolderRequest request);
 
@@ -1978,7 +1978,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/UpdateFunctionLibraryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateFunctionLibrary API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/UpdateFunctionLibraryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateFunctionLibrary API.
      */
     UpdateFunctionLibraryResponse updateFunctionLibrary(UpdateFunctionLibraryRequest request);
 
@@ -1990,7 +1990,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/UpdateImportRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateImportRequest API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/UpdateImportRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateImportRequest API.
      */
     UpdateImportRequestResponse updateImportRequest(UpdateImportRequestRequest request);
 
@@ -2002,7 +2002,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/UpdatePipelineExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdatePipeline API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/UpdatePipelineExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdatePipeline API.
      */
     UpdatePipelineResponse updatePipeline(UpdatePipelineRequest request);
 
@@ -2014,7 +2014,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/UpdateProjectExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateProject API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/UpdateProjectExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateProject API.
      */
     UpdateProjectResponse updateProject(UpdateProjectRequest request);
 
@@ -2026,7 +2026,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/UpdateReferenceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateReference API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/UpdateReferenceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateReference API.
      */
     UpdateReferenceResponse updateReference(UpdateReferenceRequest request);
 
@@ -2038,7 +2038,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/UpdateScheduleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateSchedule API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/UpdateScheduleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateSchedule API.
      */
     UpdateScheduleResponse updateSchedule(UpdateScheduleRequest request);
 
@@ -2050,7 +2050,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/UpdateTaskExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateTask API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/UpdateTaskExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateTask API.
      */
     UpdateTaskResponse updateTask(UpdateTaskRequest request);
 
@@ -2062,7 +2062,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/UpdateTaskRunExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateTaskRun API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/UpdateTaskRunExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateTaskRun API.
      */
     UpdateTaskRunResponse updateTaskRun(UpdateTaskRunRequest request);
 
@@ -2074,7 +2074,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/UpdateTaskScheduleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateTaskSchedule API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/UpdateTaskScheduleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateTaskSchedule API.
      */
     UpdateTaskScheduleResponse updateTaskSchedule(UpdateTaskScheduleRequest request);
 
@@ -2086,7 +2086,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/UpdateUserDefinedFunctionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateUserDefinedFunction API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/UpdateUserDefinedFunctionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateUserDefinedFunction API.
      */
     UpdateUserDefinedFunctionResponse updateUserDefinedFunction(
             UpdateUserDefinedFunctionRequest request);
@@ -2099,7 +2099,7 @@ public interface DataIntegration extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/UpdateWorkspaceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateWorkspace API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/UpdateWorkspaceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateWorkspace API.
      */
     UpdateWorkspaceResponse updateWorkspace(UpdateWorkspaceRequest request);
 

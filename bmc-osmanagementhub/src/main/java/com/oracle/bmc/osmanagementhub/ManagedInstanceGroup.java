@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.osmanagementhub;
@@ -9,7 +9,7 @@ import com.oracle.bmc.osmanagementhub.responses.*;
 
 /**
  * Use the OS Management Hub API to manage and monitor updates and patches for instances in OCI, your private data center, or 3rd-party clouds.
- * For more information, see [Overview of OS Management Hub](https://docs.cloud.oracle.com/iaas/osmh/doc/overview.htm).
+ * For more information, see [Overview of OS Management Hub](https://docs.oracle.com/iaas/osmh/doc/overview.htm).
  *
  * This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by default if no circuit breaker configuration is defined by the user.
  */
@@ -70,7 +70,7 @@ public interface ManagedInstanceGroup extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/AttachManagedInstancesToManagedInstanceGroupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AttachManagedInstancesToManagedInstanceGroup API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/AttachManagedInstancesToManagedInstanceGroupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AttachManagedInstancesToManagedInstanceGroup API.
      */
     AttachManagedInstancesToManagedInstanceGroupResponse
             attachManagedInstancesToManagedInstanceGroup(
@@ -85,13 +85,13 @@ public interface ManagedInstanceGroup extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/AttachSoftwareSourcesToManagedInstanceGroupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AttachSoftwareSourcesToManagedInstanceGroup API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/AttachSoftwareSourcesToManagedInstanceGroupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AttachSoftwareSourcesToManagedInstanceGroup API.
      */
     AttachSoftwareSourcesToManagedInstanceGroupResponse attachSoftwareSourcesToManagedInstanceGroup(
             AttachSoftwareSourcesToManagedInstanceGroupRequest request);
 
     /**
-     * Moves the specified managed instance group to a different compartment within the same tenancy. For information about moving resources between compartments, see [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * Moves the specified managed instance group to a different compartment within the same tenancy. For information about moving resources between compartments, see [Moving Resources to a Different Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -99,7 +99,7 @@ public interface ManagedInstanceGroup extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/ChangeManagedInstanceGroupCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeManagedInstanceGroupCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/ChangeManagedInstanceGroupCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeManagedInstanceGroupCompartment API.
      */
     ChangeManagedInstanceGroupCompartmentResponse changeManagedInstanceGroupCompartment(
             ChangeManagedInstanceGroupCompartmentRequest request);
@@ -113,7 +113,7 @@ public interface ManagedInstanceGroup extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/CreateManagedInstanceGroupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateManagedInstanceGroup API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/CreateManagedInstanceGroupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateManagedInstanceGroup API.
      */
     CreateManagedInstanceGroupResponse createManagedInstanceGroup(
             CreateManagedInstanceGroupRequest request);
@@ -126,7 +126,7 @@ public interface ManagedInstanceGroup extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/DeleteManagedInstanceGroupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteManagedInstanceGroup API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/DeleteManagedInstanceGroupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteManagedInstanceGroup API.
      */
     DeleteManagedInstanceGroupResponse deleteManagedInstanceGroup(
             DeleteManagedInstanceGroupRequest request);
@@ -140,7 +140,7 @@ public interface ManagedInstanceGroup extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/DetachManagedInstancesFromManagedInstanceGroupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DetachManagedInstancesFromManagedInstanceGroup API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/DetachManagedInstancesFromManagedInstanceGroupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DetachManagedInstancesFromManagedInstanceGroup API.
      */
     DetachManagedInstancesFromManagedInstanceGroupResponse
             detachManagedInstancesFromManagedInstanceGroup(
@@ -155,7 +155,7 @@ public interface ManagedInstanceGroup extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/DetachSoftwareSourcesFromManagedInstanceGroupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DetachSoftwareSourcesFromManagedInstanceGroup API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/DetachSoftwareSourcesFromManagedInstanceGroupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DetachSoftwareSourcesFromManagedInstanceGroup API.
      */
     DetachSoftwareSourcesFromManagedInstanceGroupResponse
             detachSoftwareSourcesFromManagedInstanceGroup(
@@ -170,7 +170,7 @@ public interface ManagedInstanceGroup extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/DisableModuleStreamOnManagedInstanceGroupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DisableModuleStreamOnManagedInstanceGroup API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/DisableModuleStreamOnManagedInstanceGroupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DisableModuleStreamOnManagedInstanceGroup API.
      */
     DisableModuleStreamOnManagedInstanceGroupResponse disableModuleStreamOnManagedInstanceGroup(
             DisableModuleStreamOnManagedInstanceGroupRequest request);
@@ -184,7 +184,7 @@ public interface ManagedInstanceGroup extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/EnableModuleStreamOnManagedInstanceGroupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use EnableModuleStreamOnManagedInstanceGroup API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/EnableModuleStreamOnManagedInstanceGroupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use EnableModuleStreamOnManagedInstanceGroup API.
      */
     EnableModuleStreamOnManagedInstanceGroupResponse enableModuleStreamOnManagedInstanceGroup(
             EnableModuleStreamOnManagedInstanceGroupRequest request);
@@ -197,7 +197,7 @@ public interface ManagedInstanceGroup extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/GetManagedInstanceGroupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetManagedInstanceGroup API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/GetManagedInstanceGroupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetManagedInstanceGroup API.
      */
     GetManagedInstanceGroupResponse getManagedInstanceGroup(GetManagedInstanceGroupRequest request);
 
@@ -210,7 +210,7 @@ public interface ManagedInstanceGroup extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/InstallModuleStreamProfileOnManagedInstanceGroupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use InstallModuleStreamProfileOnManagedInstanceGroup API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/InstallModuleStreamProfileOnManagedInstanceGroupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use InstallModuleStreamProfileOnManagedInstanceGroup API.
      */
     InstallModuleStreamProfileOnManagedInstanceGroupResponse
             installModuleStreamProfileOnManagedInstanceGroup(
@@ -225,7 +225,7 @@ public interface ManagedInstanceGroup extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/InstallPackagesOnManagedInstanceGroupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use InstallPackagesOnManagedInstanceGroup API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/InstallPackagesOnManagedInstanceGroupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use InstallPackagesOnManagedInstanceGroup API.
      */
     InstallPackagesOnManagedInstanceGroupResponse installPackagesOnManagedInstanceGroup(
             InstallPackagesOnManagedInstanceGroupRequest request);
@@ -239,7 +239,7 @@ public interface ManagedInstanceGroup extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/InstallWindowsUpdatesOnManagedInstanceGroupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use InstallWindowsUpdatesOnManagedInstanceGroup API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/InstallWindowsUpdatesOnManagedInstanceGroupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use InstallWindowsUpdatesOnManagedInstanceGroup API.
      */
     InstallWindowsUpdatesOnManagedInstanceGroupResponse installWindowsUpdatesOnManagedInstanceGroup(
             InstallWindowsUpdatesOnManagedInstanceGroupRequest request);
@@ -253,7 +253,7 @@ public interface ManagedInstanceGroup extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/ListManagedInstanceGroupAvailableModulesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListManagedInstanceGroupAvailableModules API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/ListManagedInstanceGroupAvailableModulesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListManagedInstanceGroupAvailableModules API.
      */
     ListManagedInstanceGroupAvailableModulesResponse listManagedInstanceGroupAvailableModules(
             ListManagedInstanceGroupAvailableModulesRequest request);
@@ -268,7 +268,7 @@ public interface ManagedInstanceGroup extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/ListManagedInstanceGroupAvailablePackagesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListManagedInstanceGroupAvailablePackages API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/ListManagedInstanceGroupAvailablePackagesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListManagedInstanceGroupAvailablePackages API.
      */
     ListManagedInstanceGroupAvailablePackagesResponse listManagedInstanceGroupAvailablePackages(
             ListManagedInstanceGroupAvailablePackagesRequest request);
@@ -282,7 +282,7 @@ public interface ManagedInstanceGroup extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/ListManagedInstanceGroupAvailableSoftwareSourcesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListManagedInstanceGroupAvailableSoftwareSources API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/ListManagedInstanceGroupAvailableSoftwareSourcesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListManagedInstanceGroupAvailableSoftwareSources API.
      */
     ListManagedInstanceGroupAvailableSoftwareSourcesResponse
             listManagedInstanceGroupAvailableSoftwareSources(
@@ -298,7 +298,7 @@ public interface ManagedInstanceGroup extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/ListManagedInstanceGroupInstalledPackagesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListManagedInstanceGroupInstalledPackages API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/ListManagedInstanceGroupInstalledPackagesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListManagedInstanceGroupInstalledPackages API.
      */
     ListManagedInstanceGroupInstalledPackagesResponse listManagedInstanceGroupInstalledPackages(
             ListManagedInstanceGroupInstalledPackagesRequest request);
@@ -332,13 +332,13 @@ public interface ManagedInstanceGroup extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/ListManagedInstanceGroupModulesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListManagedInstanceGroupModules API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/ListManagedInstanceGroupModulesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListManagedInstanceGroupModules API.
      */
     ListManagedInstanceGroupModulesResponse listManagedInstanceGroupModules(
             ListManagedInstanceGroupModulesRequest request);
 
     /**
-     * Lists managed instance groups that match the specified compartment or managed instance group [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Filter the list against a variety of criteria including but not limited to name, status, architecture, and OS family.
+     * Lists managed instance groups that match the specified compartment or managed instance group [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Filter the list against a variety of criteria including but not limited to name, status, architecture, and OS family.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -346,7 +346,7 @@ public interface ManagedInstanceGroup extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/ListManagedInstanceGroupsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListManagedInstanceGroups API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/ListManagedInstanceGroupsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListManagedInstanceGroups API.
      */
     ListManagedInstanceGroupsResponse listManagedInstanceGroups(
             ListManagedInstanceGroupsRequest request);
@@ -361,10 +361,24 @@ public interface ManagedInstanceGroup extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/ManageModuleStreamsOnManagedInstanceGroupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ManageModuleStreamsOnManagedInstanceGroup API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/ManageModuleStreamsOnManagedInstanceGroupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ManageModuleStreamsOnManagedInstanceGroup API.
      */
     ManageModuleStreamsOnManagedInstanceGroupResponse manageModuleStreamsOnManagedInstanceGroup(
             ManageModuleStreamsOnManagedInstanceGroupRequest request);
+
+    /**
+     * Reboots all managed instances in the specified group.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/RebootManagedInstanceGroupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RebootManagedInstanceGroup API.
+     */
+    RebootManagedInstanceGroupResponse rebootManagedInstanceGroup(
+            RebootManagedInstanceGroupRequest request);
 
     /**
      * Removes a profile for a module stream that is installed on a managed instance group. Providing the module stream name (without specifying a profile name) removes all profiles that have been installed for the module stream.
@@ -375,7 +389,7 @@ public interface ManagedInstanceGroup extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/RemoveModuleStreamProfileFromManagedInstanceGroupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RemoveModuleStreamProfileFromManagedInstanceGroup API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/RemoveModuleStreamProfileFromManagedInstanceGroupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RemoveModuleStreamProfileFromManagedInstanceGroup API.
      */
     RemoveModuleStreamProfileFromManagedInstanceGroupResponse
             removeModuleStreamProfileFromManagedInstanceGroup(
@@ -390,7 +404,7 @@ public interface ManagedInstanceGroup extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/RemovePackagesFromManagedInstanceGroupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RemovePackagesFromManagedInstanceGroup API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/RemovePackagesFromManagedInstanceGroupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RemovePackagesFromManagedInstanceGroup API.
      */
     RemovePackagesFromManagedInstanceGroupResponse removePackagesFromManagedInstanceGroup(
             RemovePackagesFromManagedInstanceGroupRequest request);
@@ -407,7 +421,7 @@ public interface ManagedInstanceGroup extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/SwitchModuleStreamOnManagedInstanceGroupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use SwitchModuleStreamOnManagedInstanceGroup API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/SwitchModuleStreamOnManagedInstanceGroupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use SwitchModuleStreamOnManagedInstanceGroup API.
      */
     SwitchModuleStreamOnManagedInstanceGroupResponse switchModuleStreamOnManagedInstanceGroup(
             SwitchModuleStreamOnManagedInstanceGroupRequest request);
@@ -421,7 +435,7 @@ public interface ManagedInstanceGroup extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/UpdateAllPackagesOnManagedInstanceGroupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateAllPackagesOnManagedInstanceGroup API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/UpdateAllPackagesOnManagedInstanceGroupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateAllPackagesOnManagedInstanceGroup API.
      */
     UpdateAllPackagesOnManagedInstanceGroupResponse updateAllPackagesOnManagedInstanceGroup(
             UpdateAllPackagesOnManagedInstanceGroupRequest request);
@@ -434,7 +448,7 @@ public interface ManagedInstanceGroup extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/UpdateManagedInstanceGroupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateManagedInstanceGroup API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/UpdateManagedInstanceGroupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateManagedInstanceGroup API.
      */
     UpdateManagedInstanceGroupResponse updateManagedInstanceGroup(
             UpdateManagedInstanceGroupRequest request);

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.budget;
@@ -8,7 +8,7 @@ import com.oracle.bmc.budget.requests.*;
 import com.oracle.bmc.budget.responses.*;
 
 /**
- * Use the Budgets API to manage budgets and budget alerts. For more information, see [Budgets Overview](https://docs.cloud.oracle.com/iaas/Content/Billing/Concepts/budgetsoverview.htm).
+ * Use the Budgets API to manage budgets and budget alerts. For more information, see [Budgets Overview](https://docs.oracle.com/iaas/Content/Billing/Concepts/budgetsoverview.htm).
  * This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by default if no circuit breaker configuration is defined by the user.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190111")
@@ -68,7 +68,7 @@ public interface Budget extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/budget/CreateAlertRuleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateAlertRule API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/budget/CreateAlertRuleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateAlertRule API.
      */
     CreateAlertRuleResponse createAlertRule(CreateAlertRuleRequest request);
 
@@ -81,7 +81,7 @@ public interface Budget extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/budget/CreateBudgetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateBudget API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/budget/CreateBudgetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateBudget API.
      */
     CreateBudgetResponse createBudget(CreateBudgetRequest request);
 
@@ -93,7 +93,7 @@ public interface Budget extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/budget/DeleteAlertRuleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteAlertRule API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/budget/DeleteAlertRuleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteAlertRule API.
      */
     DeleteAlertRuleResponse deleteAlertRule(DeleteAlertRuleRequest request);
 
@@ -105,7 +105,7 @@ public interface Budget extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/budget/DeleteBudgetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteBudget API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/budget/DeleteBudgetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteBudget API.
      */
     DeleteBudgetResponse deleteBudget(DeleteBudgetRequest request);
 
@@ -117,7 +117,7 @@ public interface Budget extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/budget/GetAlertRuleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetAlertRule API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/budget/GetAlertRuleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetAlertRule API.
      */
     GetAlertRuleResponse getAlertRule(GetAlertRuleRequest request);
 
@@ -129,7 +129,7 @@ public interface Budget extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/budget/GetBudgetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetBudget API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/budget/GetBudgetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetBudget API.
      */
     GetBudgetResponse getBudget(GetBudgetRequest request);
 
@@ -142,7 +142,7 @@ public interface Budget extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/budget/ListAlertRulesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListAlertRules API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/budget/ListAlertRulesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListAlertRules API.
      */
     ListAlertRulesResponse listAlertRules(ListAlertRulesRequest request);
 
@@ -161,7 +161,7 @@ public interface Budget extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/budget/ListBudgetsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListBudgets API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/budget/ListBudgetsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListBudgets API.
      */
     ListBudgetsResponse listBudgets(ListBudgetsRequest request);
 
@@ -173,7 +173,7 @@ public interface Budget extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/budget/UpdateAlertRuleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateAlertRule API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/budget/UpdateAlertRuleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateAlertRule API.
      */
     UpdateAlertRuleResponse updateAlertRule(UpdateAlertRuleRequest request);
 
@@ -185,7 +185,7 @@ public interface Budget extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/budget/UpdateBudgetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateBudget API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/budget/UpdateBudgetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateBudget API.
      */
     UpdateBudgetResponse updateBudget(UpdateBudgetRequest request);
 

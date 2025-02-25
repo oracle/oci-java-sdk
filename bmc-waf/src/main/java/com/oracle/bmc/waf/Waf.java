@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.waf;
@@ -71,7 +71,7 @@ public interface Waf extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waf/ChangeNetworkAddressListCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeNetworkAddressListCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waf/ChangeNetworkAddressListCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeNetworkAddressListCompartment API.
      */
     ChangeNetworkAddressListCompartmentResponse changeNetworkAddressListCompartment(
             ChangeNetworkAddressListCompartmentRequest request);
@@ -86,7 +86,7 @@ public interface Waf extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waf/ChangeWebAppFirewallCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeWebAppFirewallCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waf/ChangeWebAppFirewallCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeWebAppFirewallCompartment API.
      */
     ChangeWebAppFirewallCompartmentResponse changeWebAppFirewallCompartment(
             ChangeWebAppFirewallCompartmentRequest request);
@@ -101,7 +101,7 @@ public interface Waf extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waf/ChangeWebAppFirewallPolicyCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeWebAppFirewallPolicyCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waf/ChangeWebAppFirewallPolicyCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeWebAppFirewallPolicyCompartment API.
      */
     ChangeWebAppFirewallPolicyCompartmentResponse changeWebAppFirewallPolicyCompartment(
             ChangeWebAppFirewallPolicyCompartmentRequest request);
@@ -115,7 +115,7 @@ public interface Waf extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waf/CreateNetworkAddressListExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateNetworkAddressList API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waf/CreateNetworkAddressListExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateNetworkAddressList API.
      */
     CreateNetworkAddressListResponse createNetworkAddressList(
             CreateNetworkAddressListRequest request);
@@ -129,7 +129,7 @@ public interface Waf extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waf/CreateWebAppFirewallExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateWebAppFirewall API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waf/CreateWebAppFirewallExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateWebAppFirewall API.
      */
     CreateWebAppFirewallResponse createWebAppFirewall(CreateWebAppFirewallRequest request);
 
@@ -142,7 +142,7 @@ public interface Waf extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waf/CreateWebAppFirewallPolicyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateWebAppFirewallPolicy API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waf/CreateWebAppFirewallPolicyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateWebAppFirewallPolicy API.
      */
     CreateWebAppFirewallPolicyResponse createWebAppFirewallPolicy(
             CreateWebAppFirewallPolicyRequest request);
@@ -155,7 +155,7 @@ public interface Waf extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waf/DeleteNetworkAddressListExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteNetworkAddressList API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waf/DeleteNetworkAddressListExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteNetworkAddressList API.
      */
     DeleteNetworkAddressListResponse deleteNetworkAddressList(
             DeleteNetworkAddressListRequest request);
@@ -168,7 +168,7 @@ public interface Waf extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waf/DeleteWebAppFirewallExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteWebAppFirewall API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waf/DeleteWebAppFirewallExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteWebAppFirewall API.
      */
     DeleteWebAppFirewallResponse deleteWebAppFirewall(DeleteWebAppFirewallRequest request);
 
@@ -180,7 +180,7 @@ public interface Waf extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waf/DeleteWebAppFirewallPolicyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteWebAppFirewallPolicy API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waf/DeleteWebAppFirewallPolicyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteWebAppFirewallPolicy API.
      */
     DeleteWebAppFirewallPolicyResponse deleteWebAppFirewallPolicy(
             DeleteWebAppFirewallPolicyRequest request);
@@ -193,7 +193,7 @@ public interface Waf extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waf/GetNetworkAddressListExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetNetworkAddressList API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waf/GetNetworkAddressListExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetNetworkAddressList API.
      */
     GetNetworkAddressListResponse getNetworkAddressList(GetNetworkAddressListRequest request);
 
@@ -205,7 +205,7 @@ public interface Waf extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waf/GetWebAppFirewallExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetWebAppFirewall API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waf/GetWebAppFirewallExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetWebAppFirewall API.
      */
     GetWebAppFirewallResponse getWebAppFirewall(GetWebAppFirewallRequest request);
 
@@ -217,7 +217,7 @@ public interface Waf extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waf/GetWebAppFirewallPolicyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetWebAppFirewallPolicy API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waf/GetWebAppFirewallPolicyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetWebAppFirewallPolicy API.
      */
     GetWebAppFirewallPolicyResponse getWebAppFirewallPolicy(GetWebAppFirewallPolicyRequest request);
 
@@ -229,7 +229,7 @@ public interface Waf extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waf/GetWorkRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetWorkRequest API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waf/GetWorkRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetWorkRequest API.
      */
     GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request);
 
@@ -242,7 +242,7 @@ public interface Waf extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waf/ListNetworkAddressListsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListNetworkAddressLists API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waf/ListNetworkAddressListsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListNetworkAddressLists API.
      */
     ListNetworkAddressListsResponse listNetworkAddressLists(ListNetworkAddressListsRequest request);
 
@@ -255,7 +255,7 @@ public interface Waf extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waf/ListProtectionCapabilitiesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListProtectionCapabilities API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waf/ListProtectionCapabilitiesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListProtectionCapabilities API.
      */
     ListProtectionCapabilitiesResponse listProtectionCapabilities(
             ListProtectionCapabilitiesRequest request);
@@ -269,7 +269,7 @@ public interface Waf extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waf/ListProtectionCapabilityGroupTagsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListProtectionCapabilityGroupTags API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waf/ListProtectionCapabilityGroupTagsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListProtectionCapabilityGroupTags API.
      */
     ListProtectionCapabilityGroupTagsResponse listProtectionCapabilityGroupTags(
             ListProtectionCapabilityGroupTagsRequest request);
@@ -283,7 +283,7 @@ public interface Waf extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waf/ListWebAppFirewallPoliciesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWebAppFirewallPolicies API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waf/ListWebAppFirewallPoliciesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWebAppFirewallPolicies API.
      */
     ListWebAppFirewallPoliciesResponse listWebAppFirewallPolicies(
             ListWebAppFirewallPoliciesRequest request);
@@ -297,7 +297,7 @@ public interface Waf extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waf/ListWebAppFirewallsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWebAppFirewalls API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waf/ListWebAppFirewallsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWebAppFirewalls API.
      */
     ListWebAppFirewallsResponse listWebAppFirewalls(ListWebAppFirewallsRequest request);
 
@@ -310,7 +310,7 @@ public interface Waf extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waf/ListWorkRequestErrorsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequestErrors API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waf/ListWorkRequestErrorsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequestErrors API.
      */
     ListWorkRequestErrorsResponse listWorkRequestErrors(ListWorkRequestErrorsRequest request);
 
@@ -323,7 +323,7 @@ public interface Waf extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waf/ListWorkRequestLogsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequestLogs API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waf/ListWorkRequestLogsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequestLogs API.
      */
     ListWorkRequestLogsResponse listWorkRequestLogs(ListWorkRequestLogsRequest request);
 
@@ -336,7 +336,7 @@ public interface Waf extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waf/ListWorkRequestsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequests API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waf/ListWorkRequestsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequests API.
      */
     ListWorkRequestsResponse listWorkRequests(ListWorkRequestsRequest request);
 
@@ -348,7 +348,7 @@ public interface Waf extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waf/UpdateNetworkAddressListExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateNetworkAddressList API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waf/UpdateNetworkAddressListExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateNetworkAddressList API.
      */
     UpdateNetworkAddressListResponse updateNetworkAddressList(
             UpdateNetworkAddressListRequest request);
@@ -361,7 +361,7 @@ public interface Waf extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waf/UpdateWebAppFirewallExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateWebAppFirewall API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waf/UpdateWebAppFirewallExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateWebAppFirewall API.
      */
     UpdateWebAppFirewallResponse updateWebAppFirewall(UpdateWebAppFirewallRequest request);
 
@@ -373,7 +373,7 @@ public interface Waf extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waf/UpdateWebAppFirewallPolicyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateWebAppFirewallPolicy API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waf/UpdateWebAppFirewallPolicyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateWebAppFirewallPolicy API.
      */
     UpdateWebAppFirewallPolicyResponse updateWebAppFirewallPolicy(
             UpdateWebAppFirewallPolicyRequest request);

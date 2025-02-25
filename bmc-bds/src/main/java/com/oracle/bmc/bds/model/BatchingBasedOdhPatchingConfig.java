@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.bds.model;
@@ -59,6 +59,22 @@ public final class BatchingBasedOdhPatchingConfig extends OdhPatchingConfig {
             this.__explicitlySet__.add("waitTimeBetweenBatchInSeconds");
             return this;
         }
+        /**
+         * Acceptable number of failed-to-be-patched nodes in each batch. The maximum number of failed-to-patch nodes cannot exceed 20% of the number of non-utility and non-master nodes.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("toleranceThresholdPerBatch")
+        private Integer toleranceThresholdPerBatch;
+
+        /**
+         * Acceptable number of failed-to-be-patched nodes in each batch. The maximum number of failed-to-patch nodes cannot exceed 20% of the number of non-utility and non-master nodes.
+         * @param toleranceThresholdPerBatch the value to set
+         * @return this builder
+         **/
+        public Builder toleranceThresholdPerBatch(Integer toleranceThresholdPerBatch) {
+            this.toleranceThresholdPerBatch = toleranceThresholdPerBatch;
+            this.__explicitlySet__.add("toleranceThresholdPerBatch");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -66,7 +82,9 @@ public final class BatchingBasedOdhPatchingConfig extends OdhPatchingConfig {
         public BatchingBasedOdhPatchingConfig build() {
             BatchingBasedOdhPatchingConfig model =
                     new BatchingBasedOdhPatchingConfig(
-                            this.batchSize, this.waitTimeBetweenBatchInSeconds);
+                            this.batchSize,
+                            this.waitTimeBetweenBatchInSeconds,
+                            this.toleranceThresholdPerBatch);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -80,6 +98,9 @@ public final class BatchingBasedOdhPatchingConfig extends OdhPatchingConfig {
             }
             if (model.wasPropertyExplicitlySet("waitTimeBetweenBatchInSeconds")) {
                 this.waitTimeBetweenBatchInSeconds(model.getWaitTimeBetweenBatchInSeconds());
+            }
+            if (model.wasPropertyExplicitlySet("toleranceThresholdPerBatch")) {
+                this.toleranceThresholdPerBatch(model.getToleranceThresholdPerBatch());
             }
             return this;
         }
@@ -98,10 +119,13 @@ public final class BatchingBasedOdhPatchingConfig extends OdhPatchingConfig {
 
     @Deprecated
     public BatchingBasedOdhPatchingConfig(
-            Integer batchSize, Integer waitTimeBetweenBatchInSeconds) {
+            Integer batchSize,
+            Integer waitTimeBetweenBatchInSeconds,
+            Integer toleranceThresholdPerBatch) {
         super();
         this.batchSize = batchSize;
         this.waitTimeBetweenBatchInSeconds = waitTimeBetweenBatchInSeconds;
+        this.toleranceThresholdPerBatch = toleranceThresholdPerBatch;
     }
 
     /**
@@ -132,6 +156,20 @@ public final class BatchingBasedOdhPatchingConfig extends OdhPatchingConfig {
         return waitTimeBetweenBatchInSeconds;
     }
 
+    /**
+     * Acceptable number of failed-to-be-patched nodes in each batch. The maximum number of failed-to-patch nodes cannot exceed 20% of the number of non-utility and non-master nodes.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("toleranceThresholdPerBatch")
+    private final Integer toleranceThresholdPerBatch;
+
+    /**
+     * Acceptable number of failed-to-be-patched nodes in each batch. The maximum number of failed-to-patch nodes cannot exceed 20% of the number of non-utility and non-master nodes.
+     * @return the value
+     **/
+    public Integer getToleranceThresholdPerBatch() {
+        return toleranceThresholdPerBatch;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -149,6 +187,8 @@ public final class BatchingBasedOdhPatchingConfig extends OdhPatchingConfig {
         sb.append(", batchSize=").append(String.valueOf(this.batchSize));
         sb.append(", waitTimeBetweenBatchInSeconds=")
                 .append(String.valueOf(this.waitTimeBetweenBatchInSeconds));
+        sb.append(", toleranceThresholdPerBatch=")
+                .append(String.valueOf(this.toleranceThresholdPerBatch));
         sb.append(")");
         return sb.toString();
     }
@@ -166,6 +206,8 @@ public final class BatchingBasedOdhPatchingConfig extends OdhPatchingConfig {
         return java.util.Objects.equals(this.batchSize, other.batchSize)
                 && java.util.Objects.equals(
                         this.waitTimeBetweenBatchInSeconds, other.waitTimeBetweenBatchInSeconds)
+                && java.util.Objects.equals(
+                        this.toleranceThresholdPerBatch, other.toleranceThresholdPerBatch)
                 && super.equals(other);
     }
 
@@ -179,6 +221,11 @@ public final class BatchingBasedOdhPatchingConfig extends OdhPatchingConfig {
                         + (this.waitTimeBetweenBatchInSeconds == null
                                 ? 43
                                 : this.waitTimeBetweenBatchInSeconds.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.toleranceThresholdPerBatch == null
+                                ? 43
+                                : this.toleranceThresholdPerBatch.hashCode());
         return result;
     }
 }

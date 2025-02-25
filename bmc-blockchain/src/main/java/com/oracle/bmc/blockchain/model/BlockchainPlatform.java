@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.blockchain.model;
@@ -265,13 +265,13 @@ public final class BlockchainPlatform extends com.oracle.bmc.http.internal.Expli
             return this;
         }
         /**
-         * Compute shape - STANDARD or ENTERPRISE_SMALL or ENTERPRISE_MEDIUM or ENTERPRISE_LARGE or ENTERPRISE_EXTRA_LARGE or ENTERPRISE_CUSTOM
+         * Compute shape - STANDARD or ENTERPRISE_SMALL or ENTERPRISE_MEDIUM or ENTERPRISE_LARGE or ENTERPRISE_EXTRA_LARGE or ENTERPRISE_CUSTOM or DIGITAL_ASSETS_MEDIUM or DIGITAL_ASSETS_LARGE or DIGITAL_ASSETS_EXTRA_LARGE
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("computeShape")
         private ComputeShape computeShape;
 
         /**
-         * Compute shape - STANDARD or ENTERPRISE_SMALL or ENTERPRISE_MEDIUM or ENTERPRISE_LARGE or ENTERPRISE_EXTRA_LARGE or ENTERPRISE_CUSTOM
+         * Compute shape - STANDARD or ENTERPRISE_SMALL or ENTERPRISE_MEDIUM or ENTERPRISE_LARGE or ENTERPRISE_EXTRA_LARGE or ENTERPRISE_CUSTOM or DIGITAL_ASSETS_MEDIUM or DIGITAL_ASSETS_LARGE or DIGITAL_ASSETS_EXTRA_LARGE
          * @param computeShape the value to set
          * @return this builder
          **/
@@ -819,7 +819,7 @@ public final class BlockchainPlatform extends com.oracle.bmc.http.internal.Expli
     }
 
     /**
-     * Compute shape - STANDARD or ENTERPRISE_SMALL or ENTERPRISE_MEDIUM or ENTERPRISE_LARGE or ENTERPRISE_EXTRA_LARGE or ENTERPRISE_CUSTOM
+     * Compute shape - STANDARD or ENTERPRISE_SMALL or ENTERPRISE_MEDIUM or ENTERPRISE_LARGE or ENTERPRISE_EXTRA_LARGE or ENTERPRISE_CUSTOM or DIGITAL_ASSETS_MEDIUM or DIGITAL_ASSETS_LARGE or DIGITAL_ASSETS_EXTRA_LARGE
      **/
     public enum ComputeShape {
         Standard("STANDARD"),
@@ -828,6 +828,9 @@ public final class BlockchainPlatform extends com.oracle.bmc.http.internal.Expli
         EnterpriseLarge("ENTERPRISE_LARGE"),
         EnterpriseExtraLarge("ENTERPRISE_EXTRA_LARGE"),
         EnterpriseCustom("ENTERPRISE_CUSTOM"),
+        DigitalAssetsMedium("DIGITAL_ASSETS_MEDIUM"),
+        DigitalAssetsLarge("DIGITAL_ASSETS_LARGE"),
+        DigitalAssetsExtraLarge("DIGITAL_ASSETS_EXTRA_LARGE"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this
@@ -871,13 +874,13 @@ public final class BlockchainPlatform extends com.oracle.bmc.http.internal.Expli
         }
     };
     /**
-     * Compute shape - STANDARD or ENTERPRISE_SMALL or ENTERPRISE_MEDIUM or ENTERPRISE_LARGE or ENTERPRISE_EXTRA_LARGE or ENTERPRISE_CUSTOM
+     * Compute shape - STANDARD or ENTERPRISE_SMALL or ENTERPRISE_MEDIUM or ENTERPRISE_LARGE or ENTERPRISE_EXTRA_LARGE or ENTERPRISE_CUSTOM or DIGITAL_ASSETS_MEDIUM or DIGITAL_ASSETS_LARGE or DIGITAL_ASSETS_EXTRA_LARGE
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("computeShape")
     private final ComputeShape computeShape;
 
     /**
-     * Compute shape - STANDARD or ENTERPRISE_SMALL or ENTERPRISE_MEDIUM or ENTERPRISE_LARGE or ENTERPRISE_EXTRA_LARGE or ENTERPRISE_CUSTOM
+     * Compute shape - STANDARD or ENTERPRISE_SMALL or ENTERPRISE_MEDIUM or ENTERPRISE_LARGE or ENTERPRISE_EXTRA_LARGE or ENTERPRISE_CUSTOM or DIGITAL_ASSETS_MEDIUM or DIGITAL_ASSETS_LARGE or DIGITAL_ASSETS_EXTRA_LARGE
      * @return the value
      **/
     public ComputeShape getComputeShape() {

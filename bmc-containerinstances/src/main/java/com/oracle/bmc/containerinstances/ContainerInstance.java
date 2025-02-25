@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.containerinstances;
@@ -67,7 +67,7 @@ public interface ContainerInstance extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/containerinstances/ChangeContainerInstanceCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeContainerInstanceCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/containerinstances/ChangeContainerInstanceCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeContainerInstanceCompartment API.
      */
     ChangeContainerInstanceCompartmentResponse changeContainerInstanceCompartment(
             ChangeContainerInstanceCompartmentRequest request);
@@ -81,7 +81,7 @@ public interface ContainerInstance extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/containerinstances/CreateContainerInstanceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateContainerInstance API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/containerinstances/CreateContainerInstanceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateContainerInstance API.
      */
     CreateContainerInstanceResponse createContainerInstance(CreateContainerInstanceRequest request);
 
@@ -93,7 +93,7 @@ public interface ContainerInstance extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/containerinstances/DeleteContainerInstanceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteContainerInstance API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/containerinstances/DeleteContainerInstanceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteContainerInstance API.
      */
     DeleteContainerInstanceResponse deleteContainerInstance(DeleteContainerInstanceRequest request);
 
@@ -105,7 +105,7 @@ public interface ContainerInstance extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/containerinstances/GetContainerExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetContainer API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/containerinstances/GetContainerExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetContainer API.
      */
     GetContainerResponse getContainer(GetContainerRequest request);
 
@@ -117,7 +117,7 @@ public interface ContainerInstance extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/containerinstances/GetContainerInstanceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetContainerInstance API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/containerinstances/GetContainerInstanceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetContainerInstance API.
      */
     GetContainerInstanceResponse getContainerInstance(GetContainerInstanceRequest request);
 
@@ -129,7 +129,7 @@ public interface ContainerInstance extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/containerinstances/GetWorkRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetWorkRequest API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/containerinstances/GetWorkRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetWorkRequest API.
      */
     GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request);
 
@@ -141,7 +141,7 @@ public interface ContainerInstance extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/containerinstances/ListContainerInstanceShapesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListContainerInstanceShapes API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/containerinstances/ListContainerInstanceShapesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListContainerInstanceShapes API.
      */
     ListContainerInstanceShapesResponse listContainerInstanceShapes(
             ListContainerInstanceShapesRequest request);
@@ -155,7 +155,7 @@ public interface ContainerInstance extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/containerinstances/ListContainerInstancesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListContainerInstances API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/containerinstances/ListContainerInstancesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListContainerInstances API.
      */
     ListContainerInstancesResponse listContainerInstances(ListContainerInstancesRequest request);
 
@@ -168,7 +168,7 @@ public interface ContainerInstance extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/containerinstances/ListContainersExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListContainers API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/containerinstances/ListContainersExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListContainers API.
      */
     ListContainersResponse listContainers(ListContainersRequest request);
 
@@ -181,7 +181,7 @@ public interface ContainerInstance extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/containerinstances/ListWorkRequestErrorsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequestErrors API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/containerinstances/ListWorkRequestErrorsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequestErrors API.
      */
     ListWorkRequestErrorsResponse listWorkRequestErrors(ListWorkRequestErrorsRequest request);
 
@@ -194,7 +194,7 @@ public interface ContainerInstance extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/containerinstances/ListWorkRequestLogsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequestLogs API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/containerinstances/ListWorkRequestLogsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequestLogs API.
      */
     ListWorkRequestLogsResponse listWorkRequestLogs(ListWorkRequestLogsRequest request);
 
@@ -207,7 +207,7 @@ public interface ContainerInstance extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/containerinstances/ListWorkRequestsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequests API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/containerinstances/ListWorkRequestsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequests API.
      */
     ListWorkRequestsResponse listWorkRequests(ListWorkRequestsRequest request);
 
@@ -219,7 +219,7 @@ public interface ContainerInstance extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/containerinstances/RestartContainerInstanceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RestartContainerInstance API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/containerinstances/RestartContainerInstanceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RestartContainerInstance API.
      */
     RestartContainerInstanceResponse restartContainerInstance(
             RestartContainerInstanceRequest request);
@@ -233,7 +233,7 @@ public interface ContainerInstance extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/containerinstances/RetrieveLogsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RetrieveLogs API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/containerinstances/RetrieveLogsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RetrieveLogs API.
      */
     RetrieveLogsResponse retrieveLogs(RetrieveLogsRequest request);
 
@@ -245,7 +245,7 @@ public interface ContainerInstance extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/containerinstances/StartContainerInstanceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use StartContainerInstance API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/containerinstances/StartContainerInstanceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use StartContainerInstance API.
      */
     StartContainerInstanceResponse startContainerInstance(StartContainerInstanceRequest request);
 
@@ -257,7 +257,7 @@ public interface ContainerInstance extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/containerinstances/StopContainerInstanceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use StopContainerInstance API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/containerinstances/StopContainerInstanceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use StopContainerInstance API.
      */
     StopContainerInstanceResponse stopContainerInstance(StopContainerInstanceRequest request);
 
@@ -269,7 +269,7 @@ public interface ContainerInstance extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/containerinstances/UpdateContainerExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateContainer API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/containerinstances/UpdateContainerExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateContainer API.
      */
     UpdateContainerResponse updateContainer(UpdateContainerRequest request);
 
@@ -281,7 +281,7 @@ public interface ContainerInstance extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/containerinstances/UpdateContainerInstanceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateContainerInstance API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/containerinstances/UpdateContainerInstanceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateContainerInstance API.
      */
     UpdateContainerInstanceResponse updateContainerInstance(UpdateContainerInstanceRequest request);
 

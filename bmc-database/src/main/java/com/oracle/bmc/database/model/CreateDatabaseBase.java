@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
@@ -30,6 +30,10 @@ package com.oracle.bmc.database.model;
         name = "NONE"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = CreateStandByDatabaseDetails.class,
+        name = "DATAGUARD"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = CreateDatabaseFromBackup.class,
         name = "DB_BACKUP"
     )
@@ -48,13 +52,13 @@ public class CreateDatabaseBase extends com.oracle.bmc.http.internal.ExplicitlyS
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Database Home.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbHomeId")
     private final String dbHomeId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Database Home.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
      * @return the value
      **/
     public String getDbHomeId() {
@@ -168,12 +172,14 @@ public class CreateDatabaseBase extends com.oracle.bmc.http.internal.ExplicitlyS
      * The source of the database:
      * Use {@code NONE} for creating a new database.
      * Use {@code DB_BACKUP} for creating a new database by restoring from a backup.
+     * Use {@code DATAGUARD} for creating a new STANDBY database for a Data Guard setup..
      * The default is {@code NONE}.
      *
      **/
     public enum Source {
         None("NONE"),
         DbBackup("DB_BACKUP"),
+        Dataguard("DATAGUARD"),
         ;
 
         private final String value;

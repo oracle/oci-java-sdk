@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.monitoring.model;
@@ -7,7 +7,7 @@ package com.oracle.bmc.monitoring.model;
 /**
  * The set of aggregated data returned for a metric.
  * For information about metrics, see
- * [Metrics Overview](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#MetricsOverview).
+ * [Metrics Overview](https://docs.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#MetricsOverview).
  * <p>
  * Limits information for returned data follows.
  * <p>
@@ -22,7 +22,7 @@ package com.oracle.bmc.monitoring.model;
  * Metric streams cannot be aggregated across metric groups.
  * A metric group is the combination of a given metric, metric namespace, and tenancy for the purpose of determining limits.
  * For more information about metric-related concepts, see
- * [Monitoring Concepts](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#concepts).
+ * [Monitoring Concepts](https://docs.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#concepts).
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -118,7 +118,7 @@ public final class MetricData extends com.oracle.bmc.http.internal.ExplicitlySet
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the
          * resources that the aggregated data was returned from.
          *
          **/
@@ -126,7 +126,7 @@ public final class MetricData extends com.oracle.bmc.http.internal.ExplicitlySet
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the
          * resources that the aggregated data was returned from.
          *
          * @param compartmentId the value to set
@@ -363,7 +363,7 @@ public final class MetricData extends com.oracle.bmc.http.internal.ExplicitlySet
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the
      * resources that the aggregated data was returned from.
      *
      **/
@@ -371,7 +371,7 @@ public final class MetricData extends com.oracle.bmc.http.internal.ExplicitlySet
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the
      * resources that the aggregated data was returned from.
      *
      * @return the value

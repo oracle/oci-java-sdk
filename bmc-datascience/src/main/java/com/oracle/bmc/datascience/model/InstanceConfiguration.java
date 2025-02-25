@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datascience.model;
@@ -25,16 +25,19 @@ public final class InstanceConfiguration
     @java.beans.ConstructorProperties({
         "instanceShapeName",
         "modelDeploymentInstanceShapeConfigDetails",
-        "subnetId"
+        "subnetId",
+        "privateEndpointId"
     })
     public InstanceConfiguration(
             String instanceShapeName,
             ModelDeploymentInstanceShapeConfigDetails modelDeploymentInstanceShapeConfigDetails,
-            String subnetId) {
+            String subnetId,
+            String privateEndpointId) {
         super();
         this.instanceShapeName = instanceShapeName;
         this.modelDeploymentInstanceShapeConfigDetails = modelDeploymentInstanceShapeConfigDetails;
         this.subnetId = subnetId;
+        this.privateEndpointId = privateEndpointId;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -68,14 +71,14 @@ public final class InstanceConfiguration
             return this;
         }
         /**
-         * A model deployment instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT/SGW gateway for egress.
+         * A model deployment instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT/SGW gateway for egress.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
         private String subnetId;
 
         /**
-         * A model deployment instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT/SGW gateway for egress.
+         * A model deployment instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT/SGW gateway for egress.
          *
          * @param subnetId the value to set
          * @return this builder
@@ -83,6 +86,24 @@ public final class InstanceConfiguration
         public Builder subnetId(String subnetId) {
             this.subnetId = subnetId;
             this.__explicitlySet__.add("subnetId");
+            return this;
+        }
+        /**
+         * The OCID of a Data Science private endpoint.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("privateEndpointId")
+        private String privateEndpointId;
+
+        /**
+         * The OCID of a Data Science private endpoint.
+         *
+         * @param privateEndpointId the value to set
+         * @return this builder
+         **/
+        public Builder privateEndpointId(String privateEndpointId) {
+            this.privateEndpointId = privateEndpointId;
+            this.__explicitlySet__.add("privateEndpointId");
             return this;
         }
 
@@ -94,7 +115,8 @@ public final class InstanceConfiguration
                     new InstanceConfiguration(
                             this.instanceShapeName,
                             this.modelDeploymentInstanceShapeConfigDetails,
-                            this.subnetId);
+                            this.subnetId,
+                            this.privateEndpointId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -112,6 +134,9 @@ public final class InstanceConfiguration
             }
             if (model.wasPropertyExplicitlySet("subnetId")) {
                 this.subnetId(model.getSubnetId());
+            }
+            if (model.wasPropertyExplicitlySet("privateEndpointId")) {
+                this.privateEndpointId(model.getPrivateEndpointId());
             }
             return this;
         }
@@ -152,19 +177,35 @@ public final class InstanceConfiguration
     }
 
     /**
-     * A model deployment instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT/SGW gateway for egress.
+     * A model deployment instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT/SGW gateway for egress.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
     private final String subnetId;
 
     /**
-     * A model deployment instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT/SGW gateway for egress.
+     * A model deployment instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT/SGW gateway for egress.
      *
      * @return the value
      **/
     public String getSubnetId() {
         return subnetId;
+    }
+
+    /**
+     * The OCID of a Data Science private endpoint.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("privateEndpointId")
+    private final String privateEndpointId;
+
+    /**
+     * The OCID of a Data Science private endpoint.
+     *
+     * @return the value
+     **/
+    public String getPrivateEndpointId() {
+        return privateEndpointId;
     }
 
     @Override
@@ -185,6 +226,7 @@ public final class InstanceConfiguration
         sb.append(", modelDeploymentInstanceShapeConfigDetails=")
                 .append(String.valueOf(this.modelDeploymentInstanceShapeConfigDetails));
         sb.append(", subnetId=").append(String.valueOf(this.subnetId));
+        sb.append(", privateEndpointId=").append(String.valueOf(this.privateEndpointId));
         sb.append(")");
         return sb.toString();
     }
@@ -204,6 +246,7 @@ public final class InstanceConfiguration
                         this.modelDeploymentInstanceShapeConfigDetails,
                         other.modelDeploymentInstanceShapeConfigDetails)
                 && java.util.Objects.equals(this.subnetId, other.subnetId)
+                && java.util.Objects.equals(this.privateEndpointId, other.privateEndpointId)
                 && super.equals(other);
     }
 
@@ -220,6 +263,9 @@ public final class InstanceConfiguration
                                 ? 43
                                 : this.modelDeploymentInstanceShapeConfigDetails.hashCode());
         result = (result * PRIME) + (this.subnetId == null ? 43 : this.subnetId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.privateEndpointId == null ? 43 : this.privateEndpointId.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

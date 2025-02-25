@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.artifacts;
@@ -8,7 +8,7 @@ import com.oracle.bmc.artifacts.requests.*;
 import com.oracle.bmc.artifacts.responses.*;
 
 /**
- * API covering the Artifacts and [Registry](https://docs.cloud.oracle.com/iaas/Content/Registry/Concepts/registryoverview.htm) services.
+ * API covering the Artifacts and [Registry](https://docs.oracle.com/iaas/Content/Registry/Concepts/registryoverview.htm) services.
  * Use this API to manage resources such as generic artifacts and container images.
  *
  * This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by default if no circuit breaker configuration is defined by the user.
@@ -64,7 +64,7 @@ public interface Artifacts extends AutoCloseable {
     /**
      * Moves a container repository into a different compartment within the same tenancy. For information about moving
      * resources between compartments, see
-     * [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * [Moving Resources to a Different Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -72,7 +72,7 @@ public interface Artifacts extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/artifacts/ChangeContainerRepositoryCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeContainerRepositoryCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/artifacts/ChangeContainerRepositoryCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeContainerRepositoryCompartment API.
      */
     ChangeContainerRepositoryCompartmentResponse changeContainerRepositoryCompartment(
             ChangeContainerRepositoryCompartmentRequest request);
@@ -80,7 +80,7 @@ public interface Artifacts extends AutoCloseable {
     /**
      * Moves a repository into a different compartment within the same tenancy. For information about moving
      * resources between compartments, see
-     * [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * [Moving Resources to a Different Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -88,7 +88,7 @@ public interface Artifacts extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/artifacts/ChangeRepositoryCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeRepositoryCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/artifacts/ChangeRepositoryCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeRepositoryCompartment API.
      */
     ChangeRepositoryCompartmentResponse changeRepositoryCompartment(
             ChangeRepositoryCompartmentRequest request);
@@ -101,7 +101,7 @@ public interface Artifacts extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/artifacts/CreateContainerImageSignatureExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateContainerImageSignature API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/artifacts/CreateContainerImageSignatureExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateContainerImageSignature API.
      */
     CreateContainerImageSignatureResponse createContainerImageSignature(
             CreateContainerImageSignatureRequest request);
@@ -114,7 +114,7 @@ public interface Artifacts extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/artifacts/CreateContainerRepositoryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateContainerRepository API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/artifacts/CreateContainerRepositoryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateContainerRepository API.
      */
     CreateContainerRepositoryResponse createContainerRepository(
             CreateContainerRepositoryRequest request);
@@ -127,7 +127,7 @@ public interface Artifacts extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/artifacts/CreateRepositoryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateRepository API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/artifacts/CreateRepositoryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateRepository API.
      */
     CreateRepositoryResponse createRepository(CreateRepositoryRequest request);
 
@@ -139,7 +139,7 @@ public interface Artifacts extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/artifacts/DeleteContainerImageExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteContainerImage API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/artifacts/DeleteContainerImageExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteContainerImage API.
      */
     DeleteContainerImageResponse deleteContainerImage(DeleteContainerImageRequest request);
 
@@ -151,7 +151,7 @@ public interface Artifacts extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/artifacts/DeleteContainerImageSignatureExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteContainerImageSignature API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/artifacts/DeleteContainerImageSignatureExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteContainerImageSignature API.
      */
     DeleteContainerImageSignatureResponse deleteContainerImageSignature(
             DeleteContainerImageSignatureRequest request);
@@ -164,20 +164,20 @@ public interface Artifacts extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/artifacts/DeleteContainerRepositoryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteContainerRepository API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/artifacts/DeleteContainerRepositoryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteContainerRepository API.
      */
     DeleteContainerRepositoryResponse deleteContainerRepository(
             DeleteContainerRepositoryRequest request);
 
     /**
-     * Deletes an artifact with a specified [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * Deletes an artifact with a specified [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/artifacts/DeleteGenericArtifactExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteGenericArtifact API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/artifacts/DeleteGenericArtifactExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteGenericArtifact API.
      */
     DeleteGenericArtifactResponse deleteGenericArtifact(DeleteGenericArtifactRequest request);
 
@@ -189,7 +189,7 @@ public interface Artifacts extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/artifacts/DeleteGenericArtifactByPathExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteGenericArtifactByPath API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/artifacts/DeleteGenericArtifactByPathExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteGenericArtifactByPath API.
      */
     DeleteGenericArtifactByPathResponse deleteGenericArtifactByPath(
             DeleteGenericArtifactByPathRequest request);
@@ -202,7 +202,7 @@ public interface Artifacts extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/artifacts/DeleteRepositoryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteRepository API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/artifacts/DeleteRepositoryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteRepository API.
      */
     DeleteRepositoryResponse deleteRepository(DeleteRepositoryRequest request);
 
@@ -214,7 +214,7 @@ public interface Artifacts extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/artifacts/GetContainerConfigurationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetContainerConfiguration API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/artifacts/GetContainerConfigurationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetContainerConfiguration API.
      */
     GetContainerConfigurationResponse getContainerConfiguration(
             GetContainerConfigurationRequest request);
@@ -227,7 +227,7 @@ public interface Artifacts extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/artifacts/GetContainerImageExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetContainerImage API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/artifacts/GetContainerImageExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetContainerImage API.
      */
     GetContainerImageResponse getContainerImage(GetContainerImageRequest request);
 
@@ -239,7 +239,7 @@ public interface Artifacts extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/artifacts/GetContainerImageSignatureExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetContainerImageSignature API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/artifacts/GetContainerImageSignatureExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetContainerImageSignature API.
      */
     GetContainerImageSignatureResponse getContainerImageSignature(
             GetContainerImageSignatureRequest request);
@@ -252,19 +252,19 @@ public interface Artifacts extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/artifacts/GetContainerRepositoryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetContainerRepository API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/artifacts/GetContainerRepositoryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetContainerRepository API.
      */
     GetContainerRepositoryResponse getContainerRepository(GetContainerRepositoryRequest request);
 
     /**
-     * Gets information about an artifact with a specified [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * Gets information about an artifact with a specified [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/artifacts/GetGenericArtifactExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetGenericArtifact API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/artifacts/GetGenericArtifactExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetGenericArtifact API.
      */
     GetGenericArtifactResponse getGenericArtifact(GetGenericArtifactRequest request);
 
@@ -276,7 +276,7 @@ public interface Artifacts extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/artifacts/GetGenericArtifactByPathExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetGenericArtifactByPath API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/artifacts/GetGenericArtifactByPathExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetGenericArtifactByPath API.
      */
     GetGenericArtifactByPathResponse getGenericArtifactByPath(
             GetGenericArtifactByPathRequest request);
@@ -289,7 +289,7 @@ public interface Artifacts extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/artifacts/GetRepositoryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetRepository API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/artifacts/GetRepositoryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetRepository API.
      */
     GetRepositoryResponse getRepository(GetRepositoryRequest request);
 
@@ -301,7 +301,7 @@ public interface Artifacts extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/artifacts/ListContainerImageSignaturesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListContainerImageSignatures API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/artifacts/ListContainerImageSignaturesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListContainerImageSignatures API.
      */
     ListContainerImageSignaturesResponse listContainerImageSignatures(
             ListContainerImageSignaturesRequest request);
@@ -314,7 +314,7 @@ public interface Artifacts extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/artifacts/ListContainerImagesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListContainerImages API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/artifacts/ListContainerImagesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListContainerImages API.
      */
     ListContainerImagesResponse listContainerImages(ListContainerImagesRequest request);
 
@@ -326,7 +326,7 @@ public interface Artifacts extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/artifacts/ListContainerRepositoriesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListContainerRepositories API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/artifacts/ListContainerRepositoriesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListContainerRepositories API.
      */
     ListContainerRepositoriesResponse listContainerRepositories(
             ListContainerRepositoriesRequest request);
@@ -339,7 +339,7 @@ public interface Artifacts extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/artifacts/ListGenericArtifactsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListGenericArtifacts API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/artifacts/ListGenericArtifactsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListGenericArtifacts API.
      */
     ListGenericArtifactsResponse listGenericArtifacts(ListGenericArtifactsRequest request);
 
@@ -351,7 +351,7 @@ public interface Artifacts extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/artifacts/ListRepositoriesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListRepositories API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/artifacts/ListRepositoriesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListRepositories API.
      */
     ListRepositoriesResponse listRepositories(ListRepositoriesRequest request);
 
@@ -363,7 +363,7 @@ public interface Artifacts extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/artifacts/RemoveContainerVersionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RemoveContainerVersion API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/artifacts/RemoveContainerVersionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RemoveContainerVersion API.
      */
     RemoveContainerVersionResponse removeContainerVersion(RemoveContainerVersionRequest request);
 
@@ -375,7 +375,7 @@ public interface Artifacts extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/artifacts/RestoreContainerImageExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RestoreContainerImage API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/artifacts/RestoreContainerImageExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RestoreContainerImage API.
      */
     RestoreContainerImageResponse restoreContainerImage(RestoreContainerImageRequest request);
 
@@ -387,7 +387,7 @@ public interface Artifacts extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/artifacts/UpdateContainerConfigurationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateContainerConfiguration API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/artifacts/UpdateContainerConfigurationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateContainerConfiguration API.
      */
     UpdateContainerConfigurationResponse updateContainerConfiguration(
             UpdateContainerConfigurationRequest request);
@@ -400,7 +400,7 @@ public interface Artifacts extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/artifacts/UpdateContainerImageExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateContainerImage API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/artifacts/UpdateContainerImageExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateContainerImage API.
      */
     UpdateContainerImageResponse updateContainerImage(UpdateContainerImageRequest request);
 
@@ -412,7 +412,7 @@ public interface Artifacts extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/artifacts/UpdateContainerImageSignatureExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateContainerImageSignature API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/artifacts/UpdateContainerImageSignatureExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateContainerImageSignature API.
      */
     UpdateContainerImageSignatureResponse updateContainerImageSignature(
             UpdateContainerImageSignatureRequest request);
@@ -425,20 +425,20 @@ public interface Artifacts extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/artifacts/UpdateContainerRepositoryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateContainerRepository API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/artifacts/UpdateContainerRepositoryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateContainerRepository API.
      */
     UpdateContainerRepositoryResponse updateContainerRepository(
             UpdateContainerRepositoryRequest request);
 
     /**
-     * Updates the artifact with the specified [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). You can only update the tags of an artifact.
+     * Updates the artifact with the specified [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). You can only update the tags of an artifact.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/artifacts/UpdateGenericArtifactExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateGenericArtifact API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/artifacts/UpdateGenericArtifactExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateGenericArtifact API.
      */
     UpdateGenericArtifactResponse updateGenericArtifact(UpdateGenericArtifactRequest request);
 
@@ -450,7 +450,7 @@ public interface Artifacts extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/artifacts/UpdateGenericArtifactByPathExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateGenericArtifactByPath API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/artifacts/UpdateGenericArtifactByPathExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateGenericArtifactByPath API.
      */
     UpdateGenericArtifactByPathResponse updateGenericArtifactByPath(
             UpdateGenericArtifactByPathRequest request);
@@ -463,7 +463,7 @@ public interface Artifacts extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/artifacts/UpdateRepositoryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateRepository API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/artifacts/UpdateRepositoryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateRepository API.
      */
     UpdateRepositoryResponse updateRepository(UpdateRepositoryRequest request);
 

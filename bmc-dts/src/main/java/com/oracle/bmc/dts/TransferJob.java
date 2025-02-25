@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.dts;
@@ -67,7 +67,7 @@ public interface TransferJob extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dts/ChangeTransferJobCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeTransferJobCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dts/ChangeTransferJobCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeTransferJobCompartment API.
      */
     ChangeTransferJobCompartmentResponse changeTransferJobCompartment(
             ChangeTransferJobCompartmentRequest request);
@@ -80,7 +80,7 @@ public interface TransferJob extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dts/CreateTransferJobExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateTransferJob API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dts/CreateTransferJobExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateTransferJob API.
      */
     CreateTransferJobResponse createTransferJob(CreateTransferJobRequest request);
 
@@ -92,7 +92,7 @@ public interface TransferJob extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dts/DeleteTransferJobExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteTransferJob API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dts/DeleteTransferJobExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteTransferJob API.
      */
     DeleteTransferJobResponse deleteTransferJob(DeleteTransferJobRequest request);
 
@@ -104,7 +104,7 @@ public interface TransferJob extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dts/GetTransferJobExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetTransferJob API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dts/GetTransferJobExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetTransferJob API.
      */
     GetTransferJobResponse getTransferJob(GetTransferJobRequest request);
 
@@ -116,7 +116,7 @@ public interface TransferJob extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dts/ListTransferJobsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListTransferJobs API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dts/ListTransferJobsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListTransferJobs API.
      */
     ListTransferJobsResponse listTransferJobs(ListTransferJobsRequest request);
 
@@ -128,7 +128,7 @@ public interface TransferJob extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dts/UpdateTransferJobExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateTransferJob API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dts/UpdateTransferJobExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateTransferJob API.
      */
     UpdateTransferJobResponse updateTransferJob(UpdateTransferJobRequest request);
 

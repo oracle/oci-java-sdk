@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.networkloadbalancer.model;
@@ -34,7 +34,7 @@ public final class UpdateNetworkSecurityGroupsDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * An array of network security group [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) associated with the network load
+         * An array of network security group [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the network load
          * balancer.
          * <p>
          * During the creation of the network load balancer, the service adds the new network load balancer to the specified network security groups.
@@ -51,7 +51,7 @@ public final class UpdateNetworkSecurityGroupsDetails
         private java.util.List<String> networkSecurityGroupIds;
 
         /**
-         * An array of network security group [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) associated with the network load
+         * An array of network security group [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the network load
          * balancer.
          * <p>
          * During the creation of the network load balancer, the service adds the new network load balancer to the specified network security groups.
@@ -105,7 +105,7 @@ public final class UpdateNetworkSecurityGroupsDetails
     }
 
     /**
-     * An array of network security group [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) associated with the network load
+     * An array of network security group [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the network load
      * balancer.
      * <p>
      * During the creation of the network load balancer, the service adds the new network load balancer to the specified network security groups.
@@ -122,7 +122,7 @@ public final class UpdateNetworkSecurityGroupsDetails
     private final java.util.List<String> networkSecurityGroupIds;
 
     /**
-     * An array of network security group [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) associated with the network load
+     * An array of network security group [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the network load
      * balancer.
      * <p>
      * During the creation of the network load balancer, the service adds the new network load balancer to the specified network security groups.

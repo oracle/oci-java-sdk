@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core.model;
@@ -49,13 +49,13 @@ public final class GetIpInventoryVcnOverlapDetails
             return this;
         }
         /**
-         * The list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartments.
+         * The list of [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartments.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentList")
         private java.util.List<String> compartmentList;
 
         /**
-         * The list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartments.
+         * The list of [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartments.
          * @param compartmentList the value to set
          * @return this builder
          **/
@@ -115,13 +115,13 @@ public final class GetIpInventoryVcnOverlapDetails
     }
 
     /**
-     * The list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartments.
+     * The list of [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartments.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentList")
     private final java.util.List<String> compartmentList;
 
     /**
-     * The list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartments.
+     * The list of [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartments.
      * @return the value
      **/
     public java.util.List<String> getCompartmentList() {

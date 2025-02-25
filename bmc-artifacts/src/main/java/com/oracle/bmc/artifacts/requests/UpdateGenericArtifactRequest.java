@@ -1,12 +1,12 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.artifacts.requests;
 
 import com.oracle.bmc.artifacts.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/artifacts/UpdateGenericArtifactExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateGenericArtifactRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/artifacts/UpdateGenericArtifactExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateGenericArtifactRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class UpdateGenericArtifactRequest
@@ -14,7 +14,7 @@ public class UpdateGenericArtifactRequest
                 com.oracle.bmc.artifacts.model.UpdateGenericArtifactDetails> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the artifact.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the artifact.
      * <p>
      * Example: {@code ocid1.genericartifact.oc1..exampleuniqueID}
      *
@@ -22,7 +22,7 @@ public class UpdateGenericArtifactRequest
     private String artifactId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the artifact.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the artifact.
      * <p>
      * Example: {@code ocid1.genericartifact.oc1..exampleuniqueID}
      *
@@ -31,13 +31,13 @@ public class UpdateGenericArtifactRequest
         return artifactId;
     }
     /**
-     * Updates the artifact with the specified [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). You can only update the tags of an artifact.
+     * Updates the artifact with the specified [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). You can only update the tags of an artifact.
      */
     private com.oracle.bmc.artifacts.model.UpdateGenericArtifactDetails
             updateGenericArtifactDetails;
 
     /**
-     * Updates the artifact with the specified [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). You can only update the tags of an artifact.
+     * Updates the artifact with the specified [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). You can only update the tags of an artifact.
      */
     public com.oracle.bmc.artifacts.model.UpdateGenericArtifactDetails
             getUpdateGenericArtifactDetails() {
@@ -95,7 +95,7 @@ public class UpdateGenericArtifactRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the artifact.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the artifact.
          * <p>
          * Example: {@code ocid1.genericartifact.oc1..exampleuniqueID}
          *
@@ -103,7 +103,7 @@ public class UpdateGenericArtifactRequest
         private String artifactId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the artifact.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the artifact.
          * <p>
          * Example: {@code ocid1.genericartifact.oc1..exampleuniqueID}
          *
@@ -116,13 +116,13 @@ public class UpdateGenericArtifactRequest
         }
 
         /**
-         * Updates the artifact with the specified [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). You can only update the tags of an artifact.
+         * Updates the artifact with the specified [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). You can only update the tags of an artifact.
          */
         private com.oracle.bmc.artifacts.model.UpdateGenericArtifactDetails
                 updateGenericArtifactDetails = null;
 
         /**
-         * Updates the artifact with the specified [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). You can only update the tags of an artifact.
+         * Updates the artifact with the specified [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). You can only update the tags of an artifact.
          * @param updateGenericArtifactDetails the value to set
          * @return this builder instance
          */

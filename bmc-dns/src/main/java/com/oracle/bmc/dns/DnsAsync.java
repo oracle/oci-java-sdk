@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.dns;
@@ -9,7 +9,7 @@ import com.oracle.bmc.dns.responses.*;
 
 /**
  * API for the DNS service. Use this API to manage DNS zones, records, and other DNS resources.
- * For more information, see [Overview of the DNS Service](https://docs.cloud.oracle.com/iaas/Content/DNS/Concepts/dnszonemanagement.htm).
+ * For more information, see [Overview of the DNS Service](https://docs.oracle.com/iaas/Content/DNS/Concepts/dnszonemanagement.htm).
  *
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180115")
@@ -178,7 +178,7 @@ public interface DnsAsync extends AutoCloseable {
 
     /**
      * Creates a new steering policy in the specified compartment. For more information on
-     * creating policies with templates, see [Traffic Management API Guide](https://docs.cloud.oracle.com/iaas/Content/TrafficManagement/Concepts/trafficmanagementapi.htm).
+     * creating policies with templates, see [Traffic Management API Guide](https://docs.oracle.com/iaas/Content/TrafficManagement/Concepts/trafficmanagementapi.htm).
      *
      *
      * @param request The request object containing the details to send
@@ -860,7 +860,7 @@ public interface DnsAsync extends AutoCloseable {
      * the new key to establish a chain of trust. To avoid a service disruption, remove the old DS record as soon
      * as its TTL (time to live) expires.
      * <p>
-     * For more information, see [DNSSEC](https://docs.cloud.oracle.com/iaas/Content/DNS/Concepts/dnssec.htm).
+     * For more information, see [DNSSEC](https://docs.oracle.com/iaas/Content/DNS/Concepts/dnssec.htm).
      *
      *
      * @param request The request object containing the details to send
@@ -881,7 +881,7 @@ public interface DnsAsync extends AutoCloseable {
      * that replaces an existing \"predecessor\" key version.
      * **Note:** A new key-signing key (KSK) version is inert until you update the parent zone DS records.
      * <p>
-     * For more information, see the [DNSSEC](https://docs.cloud.oracle.com/iaas/Content/DNS/Concepts/dnssec.htm) documentation.
+     * For more information, see the [DNSSEC](https://docs.oracle.com/iaas/Content/DNS/Concepts/dnssec.htm) documentation.
      *
      *
      * @param request The request object containing the details to send
@@ -1041,7 +1041,7 @@ public interface DnsAsync extends AutoCloseable {
      * Updates the zone with the specified information.
      * <p>
      * Global secondary zones may have their external masters updated. For more information about secondary
-     * zones, see [Manage DNS Service Zone](https://docs.cloud.oracle.com/iaas/Content/DNS/Tasks/managingdnszones.htm). When the zone name
+     * zones, see [Manage DNS Service Zone](https://docs.oracle.com/iaas/Content/DNS/Tasks/managingdnszones.htm). When the zone name
      * is provided as a path parameter and `PRIVATE` is used for the scope query parameter then the viewId
      * query parameter is required.
      *

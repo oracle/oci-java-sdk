@@ -1,12 +1,12 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.osmanagementhub.requests;
 
 import com.oracle.bmc.osmanagementhub.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/ListProfilesExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListProfilesRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/ListProfilesExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListProfilesRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
 public class ListProfilesRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
@@ -56,12 +56,12 @@ public class ListProfilesRequest extends com.oracle.bmc.requests.BmcRequest<java
         return profileType;
     }
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the registration profile. A filter used to return the specified profile.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the registration profile. A filter used to return the specified profile.
      */
     private String profileId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the registration profile. A filter used to return the specified profile.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the registration profile. A filter used to return the specified profile.
      */
     public String getProfileId() {
         return profileId;
@@ -102,13 +102,13 @@ public class ListProfilesRequest extends com.oracle.bmc.requests.BmcRequest<java
         return registrationType;
     }
     /**
-     * A boolean variable that is used to list only the default profile resources.
+     * A filter to return only default profiles.
      *
      */
     private Boolean isDefaultProfile;
 
     /**
-     * A boolean variable that is used to list only the default profile resources.
+     * A filter to return only default profiles.
      *
      */
     public Boolean getIsDefaultProfile() {
@@ -128,6 +128,47 @@ public class ListProfilesRequest extends com.oracle.bmc.requests.BmcRequest<java
         return isServiceProvidedProfile;
     }
     /**
+     * A filter to return resources that are associated with the specified management
+     * station [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     *
+     */
+    private java.util.List<String> managementStation;
+
+    /**
+     * A filter to return resources that are associated with the specified management
+     * station [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     *
+     */
+    public java.util.List<String> getManagementStation() {
+        return managementStation;
+    }
+    /**
+     * A filter to return resources that aren't associated with the specified management
+     * station [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     *
+     */
+    private java.util.List<String> managementStationNotEqualTo;
+
+    /**
+     * A filter to return resources that aren't associated with the specified management
+     * station [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     *
+     */
+    public java.util.List<String> getManagementStationNotEqualTo() {
+        return managementStationNotEqualTo;
+    }
+    /**
+     * The version of the registration profile.
+     */
+    private String profileVersion;
+
+    /**
+     * The version of the registration profile.
+     */
+    public String getProfileVersion() {
+        return profileVersion;
+    }
+    /**
      * A filter to return only resources that match the given vendor name.
      */
     private com.oracle.bmc.osmanagementhub.model.VendorName vendorName;
@@ -140,7 +181,7 @@ public class ListProfilesRequest extends com.oracle.bmc.requests.BmcRequest<java
     }
     /**
      * For list pagination. The maximum number of results per page, or items to return in a paginated "List" call.
-     * For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For important details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      * <p>
      * Example: {@code 50}
      *
@@ -149,7 +190,7 @@ public class ListProfilesRequest extends com.oracle.bmc.requests.BmcRequest<java
 
     /**
      * For list pagination. The maximum number of results per page, or items to return in a paginated "List" call.
-     * For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For important details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      * <p>
      * Example: {@code 50}
      *
@@ -159,7 +200,7 @@ public class ListProfilesRequest extends com.oracle.bmc.requests.BmcRequest<java
     }
     /**
      * For list pagination. The value of the {@code opc-next-page} response header from the previous "List" call.
-     * For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For important details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      * <p>
      * Example: {@code 3}
      *
@@ -168,7 +209,7 @@ public class ListProfilesRequest extends com.oracle.bmc.requests.BmcRequest<java
 
     /**
      * For list pagination. The value of the {@code opc-next-page} response header from the previous "List" call.
-     * For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For important details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      * <p>
      * Example: {@code 3}
      *
@@ -353,12 +394,12 @@ public class ListProfilesRequest extends com.oracle.bmc.requests.BmcRequest<java
         }
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the registration profile. A filter used to return the specified profile.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the registration profile. A filter used to return the specified profile.
          */
         private String profileId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the registration profile. A filter used to return the specified profile.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the registration profile. A filter used to return the specified profile.
          * @param profileId the value to set
          * @return this builder instance
          */
@@ -426,13 +467,13 @@ public class ListProfilesRequest extends com.oracle.bmc.requests.BmcRequest<java
         }
 
         /**
-         * A boolean variable that is used to list only the default profile resources.
+         * A filter to return only default profiles.
          *
          */
         private Boolean isDefaultProfile = null;
 
         /**
-         * A boolean variable that is used to list only the default profile resources.
+         * A filter to return only default profiles.
          *
          * @param isDefaultProfile the value to set
          * @return this builder instance
@@ -460,6 +501,82 @@ public class ListProfilesRequest extends com.oracle.bmc.requests.BmcRequest<java
         }
 
         /**
+         * A filter to return resources that are associated with the specified management
+         * station [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         *
+         */
+        private java.util.List<String> managementStation = null;
+
+        /**
+         * A filter to return resources that are associated with the specified management
+         * station [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         *
+         * @param managementStation the value to set
+         * @return this builder instance
+         */
+        public Builder managementStation(java.util.List<String> managementStation) {
+            this.managementStation = managementStation;
+            return this;
+        }
+
+        /**
+         * Singular setter. A filter to return resources that are associated with the specified management
+         * station [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         *
+         * @param singularValue the singular value to set
+         * @return this builder instance
+         */
+        public Builder managementStation(String singularValue) {
+            return this.managementStation(java.util.Arrays.asList(singularValue));
+        }
+
+        /**
+         * A filter to return resources that aren't associated with the specified management
+         * station [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         *
+         */
+        private java.util.List<String> managementStationNotEqualTo = null;
+
+        /**
+         * A filter to return resources that aren't associated with the specified management
+         * station [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         *
+         * @param managementStationNotEqualTo the value to set
+         * @return this builder instance
+         */
+        public Builder managementStationNotEqualTo(
+                java.util.List<String> managementStationNotEqualTo) {
+            this.managementStationNotEqualTo = managementStationNotEqualTo;
+            return this;
+        }
+
+        /**
+         * Singular setter. A filter to return resources that aren't associated with the specified management
+         * station [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         *
+         * @param singularValue the singular value to set
+         * @return this builder instance
+         */
+        public Builder managementStationNotEqualTo(String singularValue) {
+            return this.managementStationNotEqualTo(java.util.Arrays.asList(singularValue));
+        }
+
+        /**
+         * The version of the registration profile.
+         */
+        private String profileVersion = null;
+
+        /**
+         * The version of the registration profile.
+         * @param profileVersion the value to set
+         * @return this builder instance
+         */
+        public Builder profileVersion(String profileVersion) {
+            this.profileVersion = profileVersion;
+            return this;
+        }
+
+        /**
          * A filter to return only resources that match the given vendor name.
          */
         private com.oracle.bmc.osmanagementhub.model.VendorName vendorName = null;
@@ -476,7 +593,7 @@ public class ListProfilesRequest extends com.oracle.bmc.requests.BmcRequest<java
 
         /**
          * For list pagination. The maximum number of results per page, or items to return in a paginated "List" call.
-         * For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For important details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          * <p>
          * Example: {@code 50}
          *
@@ -485,7 +602,7 @@ public class ListProfilesRequest extends com.oracle.bmc.requests.BmcRequest<java
 
         /**
          * For list pagination. The maximum number of results per page, or items to return in a paginated "List" call.
-         * For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For important details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          * <p>
          * Example: {@code 50}
          *
@@ -499,7 +616,7 @@ public class ListProfilesRequest extends com.oracle.bmc.requests.BmcRequest<java
 
         /**
          * For list pagination. The value of the {@code opc-next-page} response header from the previous "List" call.
-         * For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For important details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          * <p>
          * Example: {@code 3}
          *
@@ -508,7 +625,7 @@ public class ListProfilesRequest extends com.oracle.bmc.requests.BmcRequest<java
 
         /**
          * For list pagination. The value of the {@code opc-next-page} response header from the previous "List" call.
-         * For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For important details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          * <p>
          * Example: {@code 3}
          *
@@ -625,6 +742,9 @@ public class ListProfilesRequest extends com.oracle.bmc.requests.BmcRequest<java
             registrationType(o.getRegistrationType());
             isDefaultProfile(o.getIsDefaultProfile());
             isServiceProvidedProfile(o.getIsServiceProvidedProfile());
+            managementStation(o.getManagementStation());
+            managementStationNotEqualTo(o.getManagementStationNotEqualTo());
+            profileVersion(o.getProfileVersion());
             vendorName(o.getVendorName());
             limit(o.getLimit());
             page(o.getPage());
@@ -674,6 +794,9 @@ public class ListProfilesRequest extends com.oracle.bmc.requests.BmcRequest<java
             request.registrationType = registrationType;
             request.isDefaultProfile = isDefaultProfile;
             request.isServiceProvidedProfile = isServiceProvidedProfile;
+            request.managementStation = managementStation;
+            request.managementStationNotEqualTo = managementStationNotEqualTo;
+            request.profileVersion = profileVersion;
             request.vendorName = vendorName;
             request.limit = limit;
             request.page = page;
@@ -682,7 +805,7 @@ public class ListProfilesRequest extends com.oracle.bmc.requests.BmcRequest<java
             request.sortBy = sortBy;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListProfilesRequest(compartmentId, displayName, displayNameContains, profileType, profileId, osFamily, archType, registrationType, isDefaultProfile, isServiceProvidedProfile, vendorName, limit, page, lifecycleState, sortOrder, sortBy, opcRequestId);
+            // new ListProfilesRequest(compartmentId, displayName, displayNameContains, profileType, profileId, osFamily, archType, registrationType, isDefaultProfile, isServiceProvidedProfile, managementStation, managementStationNotEqualTo, profileVersion, vendorName, limit, page, lifecycleState, sortOrder, sortBy, opcRequestId);
         }
     }
 
@@ -702,6 +825,9 @@ public class ListProfilesRequest extends com.oracle.bmc.requests.BmcRequest<java
                 .registrationType(registrationType)
                 .isDefaultProfile(isDefaultProfile)
                 .isServiceProvidedProfile(isServiceProvidedProfile)
+                .managementStation(managementStation)
+                .managementStationNotEqualTo(managementStationNotEqualTo)
+                .profileVersion(profileVersion)
                 .vendorName(vendorName)
                 .limit(limit)
                 .page(page)
@@ -735,6 +861,10 @@ public class ListProfilesRequest extends com.oracle.bmc.requests.BmcRequest<java
         sb.append(",isDefaultProfile=").append(String.valueOf(this.isDefaultProfile));
         sb.append(",isServiceProvidedProfile=")
                 .append(String.valueOf(this.isServiceProvidedProfile));
+        sb.append(",managementStation=").append(String.valueOf(this.managementStation));
+        sb.append(",managementStationNotEqualTo=")
+                .append(String.valueOf(this.managementStationNotEqualTo));
+        sb.append(",profileVersion=").append(String.valueOf(this.profileVersion));
         sb.append(",vendorName=").append(String.valueOf(this.vendorName));
         sb.append(",limit=").append(String.valueOf(this.limit));
         sb.append(",page=").append(String.valueOf(this.page));
@@ -768,6 +898,10 @@ public class ListProfilesRequest extends com.oracle.bmc.requests.BmcRequest<java
                 && java.util.Objects.equals(this.isDefaultProfile, other.isDefaultProfile)
                 && java.util.Objects.equals(
                         this.isServiceProvidedProfile, other.isServiceProvidedProfile)
+                && java.util.Objects.equals(this.managementStation, other.managementStation)
+                && java.util.Objects.equals(
+                        this.managementStationNotEqualTo, other.managementStationNotEqualTo)
+                && java.util.Objects.equals(this.profileVersion, other.profileVersion)
                 && java.util.Objects.equals(this.vendorName, other.vendorName)
                 && java.util.Objects.equals(this.limit, other.limit)
                 && java.util.Objects.equals(this.page, other.page)
@@ -805,6 +939,17 @@ public class ListProfilesRequest extends com.oracle.bmc.requests.BmcRequest<java
                         + (this.isServiceProvidedProfile == null
                                 ? 43
                                 : this.isServiceProvidedProfile.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.managementStation == null ? 43 : this.managementStation.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.managementStationNotEqualTo == null
+                                ? 43
+                                : this.managementStationNotEqualTo.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.profileVersion == null ? 43 : this.profileVersion.hashCode());
         result = (result * PRIME) + (this.vendorName == null ? 43 : this.vendorName.hashCode());
         result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
         result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());

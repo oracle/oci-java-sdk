@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.waas.model;
@@ -63,13 +63,13 @@ public final class Whitelist extends com.oracle.bmc.http.internal.ExplicitlySetB
             return this;
         }
         /**
-         * A list of [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of IP address lists to include in the whitelist.
+         * A list of [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of IP address lists to include in the whitelist.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("addressLists")
         private java.util.List<String> addressLists;
 
         /**
-         * A list of [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of IP address lists to include in the whitelist.
+         * A list of [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of IP address lists to include in the whitelist.
          * @param addressLists the value to set
          * @return this builder
          **/
@@ -145,13 +145,13 @@ public final class Whitelist extends com.oracle.bmc.http.internal.ExplicitlySetB
     }
 
     /**
-     * A list of [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of IP address lists to include in the whitelist.
+     * A list of [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of IP address lists to include in the whitelist.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("addressLists")
     private final java.util.List<String> addressLists;
 
     /**
-     * A list of [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of IP address lists to include in the whitelist.
+     * A list of [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of IP address lists to include in the whitelist.
      * @return the value
      **/
     public java.util.List<String> getAddressLists() {

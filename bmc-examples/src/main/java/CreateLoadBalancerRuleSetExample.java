@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 import com.oracle.bmc.ConfigFileReader;
@@ -39,7 +39,7 @@ import java.util.HashMap;
 
 public class CreateLoadBalancerRuleSetExample {
     /**
-     * Please refer to https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/latest/RuleSet/CreateRuleSet
+     * Please refer to https://docs.oracle.com/iaas/api/#/en/loadbalancer/latest/RuleSet/CreateRuleSet
      * for information about using the API to create a rule set.
      * This example requires an existing LoadBalancer and it will do the following
      * 1) Create new rule set.

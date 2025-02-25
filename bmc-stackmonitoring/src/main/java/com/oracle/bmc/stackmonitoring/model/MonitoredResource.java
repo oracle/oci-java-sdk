@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.stackmonitoring.model;
@@ -102,14 +102,14 @@ public final class MonitoredResource extends com.oracle.bmc.http.internal.Explic
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Monitored resource identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * Monitored resource identifier [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * Monitored resource identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * Monitored resource identifier [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          * @param id the value to set
          * @return this builder
@@ -170,14 +170,14 @@ public final class MonitoredResource extends com.oracle.bmc.http.internal.Explic
             return this;
         }
         /**
-         * Compartment Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * Compartment Identifier [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * Compartment Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * Compartment Identifier [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -188,14 +188,14 @@ public final class MonitoredResource extends com.oracle.bmc.http.internal.Explic
             return this;
         }
         /**
-         * Tenancy Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * Tenancy Identifier [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("tenantId")
         private String tenantId;
 
         /**
-         * Tenancy Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * Tenancy Identifier [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          * @param tenantId the value to set
          * @return this builder
@@ -222,7 +222,7 @@ public final class MonitoredResource extends com.oracle.bmc.http.internal.Explic
             return this;
         }
         /**
-         * The external resource identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * The external resource identifier [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          * External resource is any OCI resource which is not a Stack Monitoring service resource.
          * Currently supports only following resource types - Container database, non-container database,
          * pluggable database and OCI compute instance.
@@ -232,7 +232,7 @@ public final class MonitoredResource extends com.oracle.bmc.http.internal.Explic
         private String externalId;
 
         /**
-         * The external resource identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * The external resource identifier [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          * External resource is any OCI resource which is not a Stack Monitoring service resource.
          * Currently supports only following resource types - Container database, non-container database,
          * pluggable database and OCI compute instance.
@@ -246,13 +246,13 @@ public final class MonitoredResource extends com.oracle.bmc.http.internal.Explic
             return this;
         }
         /**
-         * Management Agent Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * Management Agent Identifier [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("managementAgentId")
         private String managementAgentId;
 
         /**
-         * Management Agent Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * Management Agent Identifier [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          * @param managementAgentId the value to set
          * @return this builder
          **/
@@ -614,14 +614,14 @@ public final class MonitoredResource extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
-     * Monitored resource identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * Monitored resource identifier [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * Monitored resource identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * Monitored resource identifier [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      * @return the value
      **/
@@ -674,14 +674,14 @@ public final class MonitoredResource extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
-     * Compartment Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * Compartment Identifier [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * Compartment Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * Compartment Identifier [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      * @return the value
      **/
@@ -690,14 +690,14 @@ public final class MonitoredResource extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
-     * Tenancy Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * Tenancy Identifier [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("tenantId")
     private final String tenantId;
 
     /**
-     * Tenancy Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * Tenancy Identifier [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      * @return the value
      **/
@@ -720,7 +720,7 @@ public final class MonitoredResource extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
-     * The external resource identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * The external resource identifier [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * External resource is any OCI resource which is not a Stack Monitoring service resource.
      * Currently supports only following resource types - Container database, non-container database,
      * pluggable database and OCI compute instance.
@@ -730,7 +730,7 @@ public final class MonitoredResource extends com.oracle.bmc.http.internal.Explic
     private final String externalId;
 
     /**
-     * The external resource identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * The external resource identifier [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * External resource is any OCI resource which is not a Stack Monitoring service resource.
      * Currently supports only following resource types - Container database, non-container database,
      * pluggable database and OCI compute instance.
@@ -742,13 +742,13 @@ public final class MonitoredResource extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
-     * Management Agent Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * Management Agent Identifier [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("managementAgentId")
     private final String managementAgentId;
 
     /**
-     * Management Agent Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * Management Agent Identifier [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * @return the value
      **/
     public String getManagementAgentId() {

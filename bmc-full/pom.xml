@@ -4,19 +4,19 @@
   <parent>
     <groupId>com.oracle.oci.sdk</groupId>
     <artifactId>oci-java-sdk</artifactId>
-    <version>2.79.0</version>
+    <version>2.81.0</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
   <artifactId>oci-java-sdk-full</artifactId>
   <name>Oracle Cloud Infrastructure SDK - Full SDK</name>
   <description>This project contains the complete SDK distribution used for Oracle Cloud Infrastructure</description>
-  <url>https://docs.cloud.oracle.com/Content/API/SDKDocs/javasdk.htm</url>
+  <url>https://docs.oracle.com/iaas/Content/API/SDKDocs/javasdk.htm</url>
   <dependencyManagement>
     <dependencies>
       <dependency>
         <groupId>com.oracle.oci.sdk</groupId>
         <artifactId>oci-java-sdk-bom</artifactId>
-        <version>2.79.0</version>
+        <version>2.81.0</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -618,6 +618,10 @@
     <dependency>
       <groupId>com.oracle.oci.sdk</groupId>
       <artifactId>oci-java-sdk-zpr</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.oracle.oci.sdk</groupId>
+      <artifactId>oci-java-sdk-dblm</artifactId>
     </dependency>
   </dependencies>
 </project>

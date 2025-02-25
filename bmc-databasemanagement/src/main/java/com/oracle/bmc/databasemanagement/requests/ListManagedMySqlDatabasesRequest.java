@@ -1,24 +1,24 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.databasemanagement.requests;
 
 import com.oracle.bmc.databasemanagement.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/ListManagedMySqlDatabasesExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListManagedMySqlDatabasesRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/ListManagedMySqlDatabasesExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListManagedMySqlDatabasesRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 public class ListManagedMySqlDatabasesRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
     private String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
     public String getCompartmentId() {
         return compartmentId;
@@ -59,6 +59,17 @@ public class ListManagedMySqlDatabasesRequest
      */
     public Integer getLimit() {
         return limit;
+    }
+    /**
+     * The parameter to filter by MySQL database type. Allowed values are EXTERNAL or MDS.
+     */
+    private com.oracle.bmc.databasemanagement.model.MySqlType filterByMySqlDatabaseTypeParam;
+
+    /**
+     * The parameter to filter by MySQL database type. Allowed values are EXTERNAL or MDS.
+     */
+    public com.oracle.bmc.databasemanagement.model.MySqlType getFilterByMySqlDatabaseTypeParam() {
+        return filterByMySqlDatabaseTypeParam;
     }
     /**
      * The field to sort information by. Only one sortOrder can be used. The default sort order
@@ -136,12 +147,12 @@ public class ListManagedMySqlDatabasesRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
          */
         private String compartmentId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
          * @param compartmentId the value to set
          * @return this builder instance
          */
@@ -196,6 +207,23 @@ public class ListManagedMySqlDatabasesRequest
          */
         public Builder limit(Integer limit) {
             this.limit = limit;
+            return this;
+        }
+
+        /**
+         * The parameter to filter by MySQL database type. Allowed values are EXTERNAL or MDS.
+         */
+        private com.oracle.bmc.databasemanagement.model.MySqlType filterByMySqlDatabaseTypeParam =
+                null;
+
+        /**
+         * The parameter to filter by MySQL database type. Allowed values are EXTERNAL or MDS.
+         * @param filterByMySqlDatabaseTypeParam the value to set
+         * @return this builder instance
+         */
+        public Builder filterByMySqlDatabaseTypeParam(
+                com.oracle.bmc.databasemanagement.model.MySqlType filterByMySqlDatabaseTypeParam) {
+            this.filterByMySqlDatabaseTypeParam = filterByMySqlDatabaseTypeParam;
             return this;
         }
 
@@ -267,6 +295,7 @@ public class ListManagedMySqlDatabasesRequest
             opcRequestId(o.getOpcRequestId());
             page(o.getPage());
             limit(o.getLimit());
+            filterByMySqlDatabaseTypeParam(o.getFilterByMySqlDatabaseTypeParam());
             sortBy(o.getSortBy());
             sortOrder(o.getSortOrder());
             invocationCallback(o.getInvocationCallback());
@@ -305,10 +334,11 @@ public class ListManagedMySqlDatabasesRequest
             request.opcRequestId = opcRequestId;
             request.page = page;
             request.limit = limit;
+            request.filterByMySqlDatabaseTypeParam = filterByMySqlDatabaseTypeParam;
             request.sortBy = sortBy;
             request.sortOrder = sortOrder;
             return request;
-            // new ListManagedMySqlDatabasesRequest(compartmentId, opcRequestId, page, limit, sortBy, sortOrder);
+            // new ListManagedMySqlDatabasesRequest(compartmentId, opcRequestId, page, limit, filterByMySqlDatabaseTypeParam, sortBy, sortOrder);
         }
     }
 
@@ -322,6 +352,7 @@ public class ListManagedMySqlDatabasesRequest
                 .opcRequestId(opcRequestId)
                 .page(page)
                 .limit(limit)
+                .filterByMySqlDatabaseTypeParam(filterByMySqlDatabaseTypeParam)
                 .sortBy(sortBy)
                 .sortOrder(sortOrder);
     }
@@ -343,6 +374,8 @@ public class ListManagedMySqlDatabasesRequest
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(",page=").append(String.valueOf(this.page));
         sb.append(",limit=").append(String.valueOf(this.limit));
+        sb.append(",filterByMySqlDatabaseTypeParam=")
+                .append(String.valueOf(this.filterByMySqlDatabaseTypeParam));
         sb.append(",sortBy=").append(String.valueOf(this.sortBy));
         sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
         sb.append(")");
@@ -364,6 +397,8 @@ public class ListManagedMySqlDatabasesRequest
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
                 && java.util.Objects.equals(this.page, other.page)
                 && java.util.Objects.equals(this.limit, other.limit)
+                && java.util.Objects.equals(
+                        this.filterByMySqlDatabaseTypeParam, other.filterByMySqlDatabaseTypeParam)
                 && java.util.Objects.equals(this.sortBy, other.sortBy)
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder);
     }
@@ -378,6 +413,11 @@ public class ListManagedMySqlDatabasesRequest
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
         result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.filterByMySqlDatabaseTypeParam == null
+                                ? 43
+                                : this.filterByMySqlDatabaseTypeParam.hashCode());
         result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
         result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());
         return result;

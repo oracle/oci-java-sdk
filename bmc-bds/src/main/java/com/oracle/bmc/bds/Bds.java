@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.bds;
@@ -69,10 +69,36 @@ public interface Bds extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/ActivateBdsMetastoreConfigurationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ActivateBdsMetastoreConfiguration API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/ActivateBdsMetastoreConfigurationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ActivateBdsMetastoreConfiguration API.
      */
     ActivateBdsMetastoreConfigurationResponse activateBdsMetastoreConfiguration(
             ActivateBdsMetastoreConfigurationRequest request);
+
+    /**
+     * Activate IAM user sync configuration for the given identity configuration
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/ActivateIamUserSyncConfigurationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ActivateIamUserSyncConfiguration API.
+     */
+    ActivateIamUserSyncConfigurationResponse activateIamUserSyncConfiguration(
+            ActivateIamUserSyncConfigurationRequest request);
+
+    /**
+     * Activate UPST configuration for the given identity configuration
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/ActivateUpstConfigurationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ActivateUpstConfiguration API.
+     */
+    ActivateUpstConfigurationResponse activateUpstConfiguration(
+            ActivateUpstConfigurationRequest request);
 
     /**
      * Add an autoscale configuration to the cluster.
@@ -83,7 +109,7 @@ public interface Bds extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/AddAutoScalingConfigurationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AddAutoScalingConfiguration API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/AddAutoScalingConfigurationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AddAutoScalingConfiguration API.
      */
     AddAutoScalingConfigurationResponse addAutoScalingConfiguration(
             AddAutoScalingConfigurationRequest request);
@@ -97,7 +123,7 @@ public interface Bds extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/AddBlockStorageExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AddBlockStorage API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/AddBlockStorageExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AddBlockStorage API.
      */
     AddBlockStorageResponse addBlockStorage(AddBlockStorageRequest request);
 
@@ -110,7 +136,7 @@ public interface Bds extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/AddCloudSqlExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AddCloudSql API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/AddCloudSqlExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AddCloudSql API.
      */
     AddCloudSqlResponse addCloudSql(AddCloudSqlRequest request);
 
@@ -123,7 +149,7 @@ public interface Bds extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/AddKafkaExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AddKafka API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/AddKafkaExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AddKafka API.
      */
     AddKafkaResponse addKafka(AddKafkaRequest request);
 
@@ -136,7 +162,7 @@ public interface Bds extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/AddMasterNodesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AddMasterNodes API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/AddMasterNodesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AddMasterNodes API.
      */
     AddMasterNodesResponse addMasterNodes(AddMasterNodesRequest request);
 
@@ -149,7 +175,7 @@ public interface Bds extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/AddUtilityNodesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AddUtilityNodes API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/AddUtilityNodesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AddUtilityNodes API.
      */
     AddUtilityNodesResponse addUtilityNodes(AddUtilityNodesRequest request);
 
@@ -162,7 +188,7 @@ public interface Bds extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/AddWorkerNodesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AddWorkerNodes API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/AddWorkerNodesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AddWorkerNodes API.
      */
     AddWorkerNodesResponse addWorkerNodes(AddWorkerNodesRequest request);
 
@@ -175,7 +201,7 @@ public interface Bds extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/BackupNodeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use BackupNode API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/BackupNodeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use BackupNode API.
      */
     BackupNodeResponse backupNode(BackupNodeRequest request);
 
@@ -188,7 +214,7 @@ public interface Bds extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/CertificateServiceInfoExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CertificateServiceInfo API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/CertificateServiceInfoExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CertificateServiceInfo API.
      */
     CertificateServiceInfoResponse certificateServiceInfo(CertificateServiceInfoRequest request);
 
@@ -201,7 +227,7 @@ public interface Bds extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/ChangeBdsInstanceCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeBdsInstanceCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/ChangeBdsInstanceCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeBdsInstanceCompartment API.
      */
     ChangeBdsInstanceCompartmentResponse changeBdsInstanceCompartment(
             ChangeBdsInstanceCompartmentRequest request);
@@ -215,7 +241,7 @@ public interface Bds extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/ChangeShapeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeShape API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/ChangeShapeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeShape API.
      */
     ChangeShapeResponse changeShape(ChangeShapeRequest request);
 
@@ -228,7 +254,7 @@ public interface Bds extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/CreateBdsApiKeyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateBdsApiKey API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/CreateBdsApiKeyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateBdsApiKey API.
      */
     CreateBdsApiKeyResponse createBdsApiKey(CreateBdsApiKeyRequest request);
 
@@ -241,7 +267,7 @@ public interface Bds extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/CreateBdsInstanceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateBdsInstance API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/CreateBdsInstanceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateBdsInstance API.
      */
     CreateBdsInstanceResponse createBdsInstance(CreateBdsInstanceRequest request);
 
@@ -254,10 +280,23 @@ public interface Bds extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/CreateBdsMetastoreConfigurationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateBdsMetastoreConfiguration API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/CreateBdsMetastoreConfigurationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateBdsMetastoreConfiguration API.
      */
     CreateBdsMetastoreConfigurationResponse createBdsMetastoreConfiguration(
             CreateBdsMetastoreConfigurationRequest request);
+
+    /**
+     * Create an identity configuration for the cluster
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/CreateIdentityConfigurationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateIdentityConfiguration API.
+     */
+    CreateIdentityConfigurationResponse createIdentityConfiguration(
+            CreateIdentityConfigurationRequest request);
 
     /**
      * Add a node volume backup configuration to the cluster for an indicated node type or node.
@@ -268,7 +307,7 @@ public interface Bds extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/CreateNodeBackupConfigurationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateNodeBackupConfiguration API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/CreateNodeBackupConfigurationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateNodeBackupConfiguration API.
      */
     CreateNodeBackupConfigurationResponse createNodeBackupConfiguration(
             CreateNodeBackupConfigurationRequest request);
@@ -282,7 +321,7 @@ public interface Bds extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/CreateNodeReplaceConfigurationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateNodeReplaceConfiguration API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/CreateNodeReplaceConfigurationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateNodeReplaceConfiguration API.
      */
     CreateNodeReplaceConfigurationResponse createNodeReplaceConfiguration(
             CreateNodeReplaceConfigurationRequest request);
@@ -296,10 +335,36 @@ public interface Bds extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/CreateResourcePrincipalConfigurationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateResourcePrincipalConfiguration API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/CreateResourcePrincipalConfigurationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateResourcePrincipalConfiguration API.
      */
     CreateResourcePrincipalConfigurationResponse createResourcePrincipalConfiguration(
             CreateResourcePrincipalConfigurationRequest request);
+
+    /**
+     * Deactivate the IAM user sync configuration.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/DeactivateIamUserSyncConfigurationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeactivateIamUserSyncConfiguration API.
+     */
+    DeactivateIamUserSyncConfigurationResponse deactivateIamUserSyncConfiguration(
+            DeactivateIamUserSyncConfigurationRequest request);
+
+    /**
+     * Deactivate the UPST configuration represented by the provided ID.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/DeactivateUpstConfigurationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeactivateUpstConfiguration API.
+     */
+    DeactivateUpstConfigurationResponse deactivateUpstConfiguration(
+            DeactivateUpstConfigurationRequest request);
 
     /**
      * Deletes the user's API key represented by the provided ID.
@@ -309,7 +374,7 @@ public interface Bds extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/DeleteBdsApiKeyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteBdsApiKey API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/DeleteBdsApiKeyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteBdsApiKey API.
      */
     DeleteBdsApiKeyResponse deleteBdsApiKey(DeleteBdsApiKeyRequest request);
 
@@ -321,7 +386,7 @@ public interface Bds extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/DeleteBdsInstanceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteBdsInstance API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/DeleteBdsInstanceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteBdsInstance API.
      */
     DeleteBdsInstanceResponse deleteBdsInstance(DeleteBdsInstanceRequest request);
 
@@ -333,10 +398,23 @@ public interface Bds extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/DeleteBdsMetastoreConfigurationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteBdsMetastoreConfiguration API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/DeleteBdsMetastoreConfigurationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteBdsMetastoreConfiguration API.
      */
     DeleteBdsMetastoreConfigurationResponse deleteBdsMetastoreConfiguration(
             DeleteBdsMetastoreConfigurationRequest request);
+
+    /**
+     * Delete the identity configuration represented by the provided ID. Deletion is only allowed if this identity configuration is not associated with any active IAM user sync configuration or UPST configuration.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/DeleteIdentityConfigurationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteIdentityConfiguration API.
+     */
+    DeleteIdentityConfigurationResponse deleteIdentityConfiguration(
+            DeleteIdentityConfigurationRequest request);
 
     /**
      * Delete the NodeBackup represented by the provided ID.
@@ -346,7 +424,7 @@ public interface Bds extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/DeleteNodeBackupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteNodeBackup API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/DeleteNodeBackupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteNodeBackup API.
      */
     DeleteNodeBackupResponse deleteNodeBackup(DeleteNodeBackupRequest request);
 
@@ -358,7 +436,7 @@ public interface Bds extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/DeleteNodeBackupConfigurationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteNodeBackupConfiguration API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/DeleteNodeBackupConfigurationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteNodeBackupConfiguration API.
      */
     DeleteNodeBackupConfigurationResponse deleteNodeBackupConfiguration(
             DeleteNodeBackupConfigurationRequest request);
@@ -372,7 +450,7 @@ public interface Bds extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/DisableCertificateExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DisableCertificate API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/DisableCertificateExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DisableCertificate API.
      */
     DisableCertificateResponse disableCertificate(DisableCertificateRequest request);
 
@@ -385,7 +463,7 @@ public interface Bds extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/EnableCertificateExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use EnableCertificate API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/EnableCertificateExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use EnableCertificate API.
      */
     EnableCertificateResponse enableCertificate(EnableCertificateRequest request);
 
@@ -398,7 +476,7 @@ public interface Bds extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/ExecuteBootstrapScriptExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ExecuteBootstrapScript API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/ExecuteBootstrapScriptExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ExecuteBootstrapScript API.
      */
     ExecuteBootstrapScriptResponse executeBootstrapScript(ExecuteBootstrapScriptRequest request);
 
@@ -411,7 +489,7 @@ public interface Bds extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/ForceRefreshResourcePrincipalExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ForceRefreshResourcePrincipal API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/ForceRefreshResourcePrincipalExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ForceRefreshResourcePrincipal API.
      */
     ForceRefreshResourcePrincipalResponse forceRefreshResourcePrincipal(
             ForceRefreshResourcePrincipalRequest request);
@@ -425,7 +503,7 @@ public interface Bds extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/GetAutoScalingConfigurationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetAutoScalingConfiguration API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/GetAutoScalingConfigurationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetAutoScalingConfiguration API.
      */
     GetAutoScalingConfigurationResponse getAutoScalingConfiguration(
             GetAutoScalingConfigurationRequest request);
@@ -438,7 +516,7 @@ public interface Bds extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/GetBdsApiKeyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetBdsApiKey API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/GetBdsApiKeyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetBdsApiKey API.
      */
     GetBdsApiKeyResponse getBdsApiKey(GetBdsApiKeyRequest request);
 
@@ -450,7 +528,7 @@ public interface Bds extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/GetBdsInstanceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetBdsInstance API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/GetBdsInstanceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetBdsInstance API.
      */
     GetBdsInstanceResponse getBdsInstance(GetBdsInstanceRequest request);
 
@@ -462,10 +540,23 @@ public interface Bds extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/GetBdsMetastoreConfigurationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetBdsMetastoreConfiguration API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/GetBdsMetastoreConfigurationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetBdsMetastoreConfiguration API.
      */
     GetBdsMetastoreConfigurationResponse getBdsMetastoreConfiguration(
             GetBdsMetastoreConfigurationRequest request);
+
+    /**
+     * Get details of one identity config on the cluster
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/GetIdentityConfigurationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetIdentityConfiguration API.
+     */
+    GetIdentityConfigurationResponse getIdentityConfiguration(
+            GetIdentityConfigurationRequest request);
 
     /**
      * Returns details of NodeBackup identified by the given ID.
@@ -476,7 +567,7 @@ public interface Bds extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/GetNodeBackupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetNodeBackup API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/GetNodeBackupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetNodeBackup API.
      */
     GetNodeBackupResponse getNodeBackup(GetNodeBackupRequest request);
 
@@ -489,7 +580,7 @@ public interface Bds extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/GetNodeBackupConfigurationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetNodeBackupConfiguration API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/GetNodeBackupConfigurationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetNodeBackupConfiguration API.
      */
     GetNodeBackupConfigurationResponse getNodeBackupConfiguration(
             GetNodeBackupConfigurationRequest request);
@@ -503,7 +594,7 @@ public interface Bds extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/GetNodeReplaceConfigurationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetNodeReplaceConfiguration API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/GetNodeReplaceConfigurationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetNodeReplaceConfiguration API.
      */
     GetNodeReplaceConfigurationResponse getNodeReplaceConfiguration(
             GetNodeReplaceConfigurationRequest request);
@@ -516,7 +607,7 @@ public interface Bds extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/GetOsPatchDetailsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetOsPatchDetails API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/GetOsPatchDetailsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetOsPatchDetails API.
      */
     GetOsPatchDetailsResponse getOsPatchDetails(GetOsPatchDetailsRequest request);
 
@@ -529,7 +620,7 @@ public interface Bds extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/GetResourcePrincipalConfigurationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetResourcePrincipalConfiguration API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/GetResourcePrincipalConfigurationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetResourcePrincipalConfiguration API.
      */
     GetResourcePrincipalConfigurationResponse getResourcePrincipalConfiguration(
             GetResourcePrincipalConfigurationRequest request);
@@ -542,7 +633,7 @@ public interface Bds extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/GetWorkRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetWorkRequest API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/GetWorkRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetWorkRequest API.
      */
     GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request);
 
@@ -555,7 +646,7 @@ public interface Bds extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/InstallOsPatchExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use InstallOsPatch API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/InstallOsPatchExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use InstallOsPatch API.
      */
     InstallOsPatchResponse installOsPatch(InstallOsPatchRequest request);
 
@@ -568,7 +659,7 @@ public interface Bds extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/InstallPatchExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use InstallPatch API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/InstallPatchExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use InstallPatch API.
      */
     InstallPatchResponse installPatch(InstallPatchRequest request);
 
@@ -581,7 +672,7 @@ public interface Bds extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/ListAutoScalingConfigurationsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListAutoScalingConfigurations API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/ListAutoScalingConfigurationsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListAutoScalingConfigurations API.
      */
     ListAutoScalingConfigurationsResponse listAutoScalingConfigurations(
             ListAutoScalingConfigurationsRequest request);
@@ -595,9 +686,22 @@ public interface Bds extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/ListBdsApiKeysExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListBdsApiKeys API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/ListBdsApiKeysExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListBdsApiKeys API.
      */
     ListBdsApiKeysResponse listBdsApiKeys(ListBdsApiKeysRequest request);
+
+    /**
+     * Returns a list of cluster versions with associated odh and bds versions.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/ListBdsClusterVersionsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListBdsClusterVersions API.
+     */
+    ListBdsClusterVersionsResponse listBdsClusterVersions(ListBdsClusterVersionsRequest request);
 
     /**
      * Returns a list of all Big Data Service clusters in a compartment.
@@ -608,7 +712,7 @@ public interface Bds extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/ListBdsInstancesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListBdsInstances API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/ListBdsInstancesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListBdsInstances API.
      */
     ListBdsInstancesResponse listBdsInstances(ListBdsInstancesRequest request);
 
@@ -621,10 +725,24 @@ public interface Bds extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/ListBdsMetastoreConfigurationsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListBdsMetastoreConfigurations API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/ListBdsMetastoreConfigurationsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListBdsMetastoreConfigurations API.
      */
     ListBdsMetastoreConfigurationsResponse listBdsMetastoreConfigurations(
             ListBdsMetastoreConfigurationsRequest request);
+
+    /**
+     * Returns a list of all identity configurations associated with this Big Data Service cluster.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/ListIdentityConfigurationsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListIdentityConfigurations API.
+     */
+    ListIdentityConfigurationsResponse listIdentityConfigurations(
+            ListIdentityConfigurationsRequest request);
 
     /**
      * Returns information about the NodeBackupConfigurations.
@@ -635,7 +753,7 @@ public interface Bds extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/ListNodeBackupConfigurationsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListNodeBackupConfigurations API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/ListNodeBackupConfigurationsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListNodeBackupConfigurations API.
      */
     ListNodeBackupConfigurationsResponse listNodeBackupConfigurations(
             ListNodeBackupConfigurationsRequest request);
@@ -649,7 +767,7 @@ public interface Bds extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/ListNodeBackupsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListNodeBackups API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/ListNodeBackupsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListNodeBackups API.
      */
     ListNodeBackupsResponse listNodeBackups(ListNodeBackupsRequest request);
 
@@ -662,7 +780,7 @@ public interface Bds extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/ListNodeReplaceConfigurationsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListNodeReplaceConfigurations API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/ListNodeReplaceConfigurationsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListNodeReplaceConfigurations API.
      */
     ListNodeReplaceConfigurationsResponse listNodeReplaceConfigurations(
             ListNodeReplaceConfigurationsRequest request);
@@ -675,7 +793,7 @@ public interface Bds extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/ListOsPatchesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListOsPatches API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/ListOsPatchesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListOsPatches API.
      */
     ListOsPatchesResponse listOsPatches(ListOsPatchesRequest request);
 
@@ -688,7 +806,7 @@ public interface Bds extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/ListPatchHistoriesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListPatchHistories API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/ListPatchHistoriesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListPatchHistories API.
      */
     ListPatchHistoriesResponse listPatchHistories(ListPatchHistoriesRequest request);
 
@@ -701,7 +819,7 @@ public interface Bds extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/ListPatchesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListPatches API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/ListPatchesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListPatches API.
      */
     ListPatchesResponse listPatches(ListPatchesRequest request);
 
@@ -714,7 +832,7 @@ public interface Bds extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/ListResourcePrincipalConfigurationsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListResourcePrincipalConfigurations API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/ListResourcePrincipalConfigurationsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListResourcePrincipalConfigurations API.
      */
     ListResourcePrincipalConfigurationsResponse listResourcePrincipalConfigurations(
             ListResourcePrincipalConfigurationsRequest request);
@@ -728,7 +846,7 @@ public interface Bds extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/ListWorkRequestErrorsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequestErrors API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/ListWorkRequestErrorsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequestErrors API.
      */
     ListWorkRequestErrorsResponse listWorkRequestErrors(ListWorkRequestErrorsRequest request);
 
@@ -741,7 +859,7 @@ public interface Bds extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/ListWorkRequestLogsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequestLogs API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/ListWorkRequestLogsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequestLogs API.
      */
     ListWorkRequestLogsResponse listWorkRequestLogs(ListWorkRequestLogsRequest request);
 
@@ -754,9 +872,35 @@ public interface Bds extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/ListWorkRequestsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequests API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/ListWorkRequestsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequests API.
      */
     ListWorkRequestsResponse listWorkRequests(ListWorkRequestsRequest request);
+
+    /**
+     * Refresh confidential application for the given identity configuration in case of any update to the confidential application (e.g. regenerated client secret)
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/RefreshConfidentialApplicationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RefreshConfidentialApplication API.
+     */
+    RefreshConfidentialApplicationResponse refreshConfidentialApplication(
+            RefreshConfidentialApplicationRequest request);
+
+    /**
+     * Refresh token exchange kerberos principal keytab for the UPST enabled identity configuration
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/RefreshUpstTokenExchangeKeytabExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RefreshUpstTokenExchangeKeytab API.
+     */
+    RefreshUpstTokenExchangeKeytabResponse refreshUpstTokenExchangeKeytab(
+            RefreshUpstTokenExchangeKeytabRequest request);
 
     /**
      * Deletes an autoscale configuration.
@@ -767,7 +911,7 @@ public interface Bds extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/RemoveAutoScalingConfigurationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RemoveAutoScalingConfiguration API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/RemoveAutoScalingConfigurationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RemoveAutoScalingConfiguration API.
      */
     RemoveAutoScalingConfigurationResponse removeAutoScalingConfiguration(
             RemoveAutoScalingConfigurationRequest request);
@@ -781,7 +925,7 @@ public interface Bds extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/RemoveCloudSqlExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RemoveCloudSql API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/RemoveCloudSqlExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RemoveCloudSql API.
      */
     RemoveCloudSqlResponse removeCloudSql(RemoveCloudSqlRequest request);
 
@@ -794,7 +938,7 @@ public interface Bds extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/RemoveKafkaExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RemoveKafka API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/RemoveKafkaExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RemoveKafka API.
      */
     RemoveKafkaResponse removeKafka(RemoveKafkaRequest request);
 
@@ -807,7 +951,7 @@ public interface Bds extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/RemoveNodeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RemoveNode API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/RemoveNodeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RemoveNode API.
      */
     RemoveNodeResponse removeNode(RemoveNodeRequest request);
 
@@ -820,7 +964,7 @@ public interface Bds extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/RemoveNodeReplaceConfigurationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RemoveNodeReplaceConfiguration API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/RemoveNodeReplaceConfigurationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RemoveNodeReplaceConfiguration API.
      */
     RemoveNodeReplaceConfigurationResponse removeNodeReplaceConfiguration(
             RemoveNodeReplaceConfigurationRequest request);
@@ -834,7 +978,7 @@ public interface Bds extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/RemoveResourcePrincipalConfigurationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RemoveResourcePrincipalConfiguration API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/RemoveResourcePrincipalConfigurationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RemoveResourcePrincipalConfiguration API.
      */
     RemoveResourcePrincipalConfigurationResponse removeResourcePrincipalConfiguration(
             RemoveResourcePrincipalConfigurationRequest request);
@@ -848,7 +992,7 @@ public interface Bds extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/RenewCertificateExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RenewCertificate API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/RenewCertificateExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RenewCertificate API.
      */
     RenewCertificateResponse renewCertificate(RenewCertificateRequest request);
 
@@ -861,7 +1005,7 @@ public interface Bds extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/ReplaceNodeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ReplaceNode API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/ReplaceNodeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ReplaceNode API.
      */
     ReplaceNodeResponse replaceNode(ReplaceNodeRequest request);
 
@@ -874,7 +1018,7 @@ public interface Bds extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/RestartNodeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RestartNode API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/RestartNodeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RestartNode API.
      */
     RestartNodeResponse restartNode(RestartNodeRequest request);
 
@@ -887,7 +1031,7 @@ public interface Bds extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/StartBdsInstanceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use StartBdsInstance API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/StartBdsInstanceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use StartBdsInstance API.
      */
     StartBdsInstanceResponse startBdsInstance(StartBdsInstanceRequest request);
 
@@ -900,7 +1044,7 @@ public interface Bds extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/StopBdsInstanceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use StopBdsInstance API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/StopBdsInstanceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use StopBdsInstance API.
      */
     StopBdsInstanceResponse stopBdsInstance(StopBdsInstanceRequest request);
 
@@ -913,7 +1057,7 @@ public interface Bds extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/TestBdsMetastoreConfigurationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use TestBdsMetastoreConfiguration API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/TestBdsMetastoreConfigurationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use TestBdsMetastoreConfiguration API.
      */
     TestBdsMetastoreConfigurationResponse testBdsMetastoreConfiguration(
             TestBdsMetastoreConfigurationRequest request);
@@ -926,7 +1070,7 @@ public interface Bds extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/TestBdsObjectStorageConnectionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use TestBdsObjectStorageConnection API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/TestBdsObjectStorageConnectionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use TestBdsObjectStorageConnection API.
      */
     TestBdsObjectStorageConnectionResponse testBdsObjectStorageConnection(
             TestBdsObjectStorageConnectionRequest request);
@@ -940,7 +1084,7 @@ public interface Bds extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/UpdateAutoScalingConfigurationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateAutoScalingConfiguration API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/UpdateAutoScalingConfigurationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateAutoScalingConfiguration API.
      */
     UpdateAutoScalingConfigurationResponse updateAutoScalingConfiguration(
             UpdateAutoScalingConfigurationRequest request);
@@ -953,7 +1097,7 @@ public interface Bds extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/UpdateBdsInstanceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateBdsInstance API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/UpdateBdsInstanceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateBdsInstance API.
      */
     UpdateBdsInstanceResponse updateBdsInstance(UpdateBdsInstanceRequest request);
 
@@ -965,10 +1109,23 @@ public interface Bds extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/UpdateBdsMetastoreConfigurationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateBdsMetastoreConfiguration API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/UpdateBdsMetastoreConfigurationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateBdsMetastoreConfiguration API.
      */
     UpdateBdsMetastoreConfigurationResponse updateBdsMetastoreConfiguration(
             UpdateBdsMetastoreConfigurationRequest request);
+
+    /**
+     * Update the IAM user sync and UPST configuration for the specified identity configuration
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/UpdateIdentityConfigurationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateIdentityConfiguration API.
+     */
+    UpdateIdentityConfigurationResponse updateIdentityConfiguration(
+            UpdateIdentityConfigurationRequest request);
 
     /**
      * Updates fields on NodeBackupConfiguration, including the name, the schedule.
@@ -979,7 +1136,7 @@ public interface Bds extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/UpdateNodeBackupConfigurationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateNodeBackupConfiguration API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/UpdateNodeBackupConfigurationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateNodeBackupConfiguration API.
      */
     UpdateNodeBackupConfigurationResponse updateNodeBackupConfiguration(
             UpdateNodeBackupConfigurationRequest request);
@@ -993,7 +1150,7 @@ public interface Bds extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/UpdateNodeReplaceConfigurationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateNodeReplaceConfiguration API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/UpdateNodeReplaceConfigurationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateNodeReplaceConfiguration API.
      */
     UpdateNodeReplaceConfigurationResponse updateNodeReplaceConfiguration(
             UpdateNodeReplaceConfigurationRequest request);
@@ -1007,7 +1164,7 @@ public interface Bds extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/UpdateResourcePrincipalConfigurationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateResourcePrincipalConfiguration API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/UpdateResourcePrincipalConfigurationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateResourcePrincipalConfiguration API.
      */
     UpdateResourcePrincipalConfigurationResponse updateResourcePrincipalConfiguration(
             UpdateResourcePrincipalConfigurationRequest request);

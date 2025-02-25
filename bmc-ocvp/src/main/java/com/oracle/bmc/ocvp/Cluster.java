@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.ocvp;
@@ -9,7 +9,7 @@ import com.oracle.bmc.ocvp.responses.*;
 
 /**
  * Use the Oracle Cloud VMware API to create SDDCs and manage ESXi hosts and software.
- * For more information, see [Oracle Cloud VMware Solution](https://docs.cloud.oracle.com/iaas/Content/VMware/Concepts/ocvsoverview.htm).
+ * For more information, see [Oracle Cloud VMware Solution](https://docs.oracle.com/iaas/Content/VMware/Concepts/ocvsoverview.htm).
  *
  * This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by default if no circuit breaker configuration is defined by the user.
  */
@@ -67,7 +67,7 @@ public interface Cluster extends AutoCloseable {
      * Use the {@link WorkRequest} operations to track the
      * creation of the Cluster.
      * <p>
-     **Important:** You must configure the Cluster's networking resources with the security rules detailed in [Security Rules for Oracle Cloud VMware Solution SDDCs](https://docs.cloud.oracle.com/iaas/Content/VMware/Reference/ocvssecurityrules.htm). Otherwise, provisioning the SDDC will fail. The rules are based on the requirements set by VMware.
+     **Important:** You must configure the Cluster's networking resources with the security rules detailed in [Security Rules for Oracle Cloud VMware Solution SDDCs](https://docs.oracle.com/iaas/Content/VMware/Reference/ocvssecurityrules.htm). Otherwise, provisioning the SDDC will fail. The rules are based on the requirements set by VMware.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -75,7 +75,7 @@ public interface Cluster extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ocvp/CreateClusterExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateCluster API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ocvp/CreateClusterExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateCluster API.
      */
     CreateClusterResponse createCluster(CreateClusterRequest request);
 
@@ -93,7 +93,7 @@ public interface Cluster extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ocvp/DeleteClusterExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteCluster API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ocvp/DeleteClusterExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteCluster API.
      */
     DeleteClusterResponse deleteCluster(DeleteClusterRequest request);
 
@@ -105,7 +105,7 @@ public interface Cluster extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ocvp/GetClusterExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetCluster API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ocvp/GetClusterExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetCluster API.
      */
     GetClusterResponse getCluster(GetClusterRequest request);
 
@@ -118,7 +118,7 @@ public interface Cluster extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ocvp/ListClustersExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListClusters API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ocvp/ListClustersExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListClusters API.
      */
     ListClustersResponse listClusters(ListClustersRequest request);
 
@@ -135,7 +135,7 @@ public interface Cluster extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ocvp/UpdateClusterExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateCluster API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ocvp/UpdateClusterExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateCluster API.
      */
     UpdateClusterResponse updateCluster(UpdateClusterRequest request);
 

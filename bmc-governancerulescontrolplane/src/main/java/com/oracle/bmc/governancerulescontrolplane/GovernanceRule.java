@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.governancerulescontrolplane;
@@ -68,7 +68,7 @@ public interface GovernanceRule extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/governancerulescontrolplane/CreateGovernanceRuleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateGovernanceRule API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/governancerulescontrolplane/CreateGovernanceRuleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateGovernanceRule API.
      */
     CreateGovernanceRuleResponse createGovernanceRule(CreateGovernanceRuleRequest request);
 
@@ -81,7 +81,7 @@ public interface GovernanceRule extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/governancerulescontrolplane/CreateInclusionCriterionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateInclusionCriterion API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/governancerulescontrolplane/CreateInclusionCriterionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateInclusionCriterion API.
      */
     CreateInclusionCriterionResponse createInclusionCriterion(
             CreateInclusionCriterionRequest request);
@@ -94,7 +94,7 @@ public interface GovernanceRule extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/governancerulescontrolplane/DeleteGovernanceRuleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteGovernanceRule API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/governancerulescontrolplane/DeleteGovernanceRuleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteGovernanceRule API.
      */
     DeleteGovernanceRuleResponse deleteGovernanceRule(DeleteGovernanceRuleRequest request);
 
@@ -106,7 +106,7 @@ public interface GovernanceRule extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/governancerulescontrolplane/DeleteInclusionCriterionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteInclusionCriterion API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/governancerulescontrolplane/DeleteInclusionCriterionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteInclusionCriterion API.
      */
     DeleteInclusionCriterionResponse deleteInclusionCriterion(
             DeleteInclusionCriterionRequest request);
@@ -119,7 +119,7 @@ public interface GovernanceRule extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/governancerulescontrolplane/GetEnforcedGovernanceRuleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetEnforcedGovernanceRule API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/governancerulescontrolplane/GetEnforcedGovernanceRuleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetEnforcedGovernanceRule API.
      */
     GetEnforcedGovernanceRuleResponse getEnforcedGovernanceRule(
             GetEnforcedGovernanceRuleRequest request);
@@ -132,7 +132,7 @@ public interface GovernanceRule extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/governancerulescontrolplane/GetGovernanceRuleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetGovernanceRule API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/governancerulescontrolplane/GetGovernanceRuleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetGovernanceRule API.
      */
     GetGovernanceRuleResponse getGovernanceRule(GetGovernanceRuleRequest request);
 
@@ -144,7 +144,7 @@ public interface GovernanceRule extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/governancerulescontrolplane/GetInclusionCriterionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetInclusionCriterion API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/governancerulescontrolplane/GetInclusionCriterionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetInclusionCriterion API.
      */
     GetInclusionCriterionResponse getInclusionCriterion(GetInclusionCriterionRequest request);
 
@@ -156,7 +156,7 @@ public interface GovernanceRule extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/governancerulescontrolplane/GetTenancyAttachmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetTenancyAttachment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/governancerulescontrolplane/GetTenancyAttachmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetTenancyAttachment API.
      */
     GetTenancyAttachmentResponse getTenancyAttachment(GetTenancyAttachmentRequest request);
 
@@ -170,7 +170,7 @@ public interface GovernanceRule extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/governancerulescontrolplane/ListEnforcedGovernanceRulesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListEnforcedGovernanceRules API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/governancerulescontrolplane/ListEnforcedGovernanceRulesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListEnforcedGovernanceRules API.
      */
     ListEnforcedGovernanceRulesResponse listEnforcedGovernanceRules(
             ListEnforcedGovernanceRulesRequest request);
@@ -185,7 +185,7 @@ public interface GovernanceRule extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/governancerulescontrolplane/ListGovernanceRulesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListGovernanceRules API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/governancerulescontrolplane/ListGovernanceRulesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListGovernanceRules API.
      */
     ListGovernanceRulesResponse listGovernanceRules(ListGovernanceRulesRequest request);
 
@@ -199,7 +199,7 @@ public interface GovernanceRule extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/governancerulescontrolplane/ListInclusionCriteriaExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListInclusionCriteria API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/governancerulescontrolplane/ListInclusionCriteriaExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListInclusionCriteria API.
      */
     ListInclusionCriteriaResponse listInclusionCriteria(ListInclusionCriteriaRequest request);
 
@@ -213,7 +213,7 @@ public interface GovernanceRule extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/governancerulescontrolplane/ListTenancyAttachmentsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListTenancyAttachments API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/governancerulescontrolplane/ListTenancyAttachmentsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListTenancyAttachments API.
      */
     ListTenancyAttachmentsResponse listTenancyAttachments(ListTenancyAttachmentsRequest request);
 
@@ -228,7 +228,7 @@ public interface GovernanceRule extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/governancerulescontrolplane/RetryGovernanceRuleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RetryGovernanceRule API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/governancerulescontrolplane/RetryGovernanceRuleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RetryGovernanceRule API.
      */
     RetryGovernanceRuleResponse retryGovernanceRule(RetryGovernanceRuleRequest request);
 
@@ -242,7 +242,7 @@ public interface GovernanceRule extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/governancerulescontrolplane/RetryTenancyAttachmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RetryTenancyAttachment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/governancerulescontrolplane/RetryTenancyAttachmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RetryTenancyAttachment API.
      */
     RetryTenancyAttachmentResponse retryTenancyAttachment(RetryTenancyAttachmentRequest request);
 
@@ -254,7 +254,7 @@ public interface GovernanceRule extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/governancerulescontrolplane/UpdateGovernanceRuleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateGovernanceRule API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/governancerulescontrolplane/UpdateGovernanceRuleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateGovernanceRule API.
      */
     UpdateGovernanceRuleResponse updateGovernanceRule(UpdateGovernanceRuleRequest request);
 

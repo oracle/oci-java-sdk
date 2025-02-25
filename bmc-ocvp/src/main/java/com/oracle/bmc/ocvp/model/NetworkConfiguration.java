@@ -1,12 +1,12 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.ocvp.model;
 
 /**
  * The network configurations used by Cluster, including
- * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the management subnet and VLANs.
+ * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management subnet and VLANs.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -65,7 +65,7 @@ public final class NetworkConfiguration extends com.oracle.bmc.http.internal.Exp
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the management subnet used
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management subnet used
          * to provision the Cluster.
          *
          **/
@@ -73,7 +73,7 @@ public final class NetworkConfiguration extends com.oracle.bmc.http.internal.Exp
         private String provisioningSubnetId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the management subnet used
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management subnet used
          * to provision the Cluster.
          *
          * @param provisioningSubnetId the value to set
@@ -85,7 +85,7 @@ public final class NetworkConfiguration extends com.oracle.bmc.http.internal.Exp
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC
          * for the vSphere component of the VMware environment. This VLAN is a mandatory attribute
          * for Management Cluster.
          * <p>
@@ -105,7 +105,7 @@ public final class NetworkConfiguration extends com.oracle.bmc.http.internal.Exp
         private String vsphereVlanId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC
          * for the vSphere component of the VMware environment. This VLAN is a mandatory attribute
          * for Management Cluster.
          * <p>
@@ -129,7 +129,7 @@ public final class NetworkConfiguration extends com.oracle.bmc.http.internal.Exp
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster
          * for the vMotion component of the VMware environment.
          * <p>
          * This attribute is not guaranteed to reflect the vMotion VLAN
@@ -148,7 +148,7 @@ public final class NetworkConfiguration extends com.oracle.bmc.http.internal.Exp
         private String vmotionVlanId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster
          * for the vMotion component of the VMware environment.
          * <p>
          * This attribute is not guaranteed to reflect the vMotion VLAN
@@ -171,7 +171,7 @@ public final class NetworkConfiguration extends com.oracle.bmc.http.internal.Exp
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster
          * for the vSAN component of the VMware environment.
          * <p>
          * This attribute is not guaranteed to reflect the vSAN VLAN
@@ -190,7 +190,7 @@ public final class NetworkConfiguration extends com.oracle.bmc.http.internal.Exp
         private String vsanVlanId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster
          * for the vSAN component of the VMware environment.
          * <p>
          * This attribute is not guaranteed to reflect the vSAN VLAN
@@ -213,7 +213,7 @@ public final class NetworkConfiguration extends com.oracle.bmc.http.internal.Exp
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster
          * for the NSX VTEP component of the VMware environment.
          * <p>
          * This attribute is not guaranteed to reflect the NSX VTEP VLAN
@@ -232,7 +232,7 @@ public final class NetworkConfiguration extends com.oracle.bmc.http.internal.Exp
         private String nsxVTepVlanId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster
          * for the NSX VTEP component of the VMware environment.
          * <p>
          * This attribute is not guaranteed to reflect the NSX VTEP VLAN
@@ -255,7 +255,7 @@ public final class NetworkConfiguration extends com.oracle.bmc.http.internal.Exp
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster
          * for the NSX Edge VTEP component of the VMware environment.
          * <p>
          * This attribute is not guaranteed to reflect the NSX Edge VTEP VLAN
@@ -274,7 +274,7 @@ public final class NetworkConfiguration extends com.oracle.bmc.http.internal.Exp
         private String nsxEdgeVTepVlanId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster
          * for the NSX Edge VTEP component of the VMware environment.
          * <p>
          * This attribute is not guaranteed to reflect the NSX Edge VTEP VLAN
@@ -297,7 +297,7 @@ public final class NetworkConfiguration extends com.oracle.bmc.http.internal.Exp
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC
          * for the NSX Edge Uplink 1 component of the VMware environment. This VLAN is a mandatory
          * attribute for Management Cluster.
          * <p>
@@ -317,7 +317,7 @@ public final class NetworkConfiguration extends com.oracle.bmc.http.internal.Exp
         private String nsxEdgeUplink1VlanId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC
          * for the NSX Edge Uplink 1 component of the VMware environment. This VLAN is a mandatory
          * attribute for Management Cluster.
          * <p>
@@ -341,7 +341,7 @@ public final class NetworkConfiguration extends com.oracle.bmc.http.internal.Exp
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC
          * for the NSX Edge Uplink 2 component of the VMware environment. This VLAN is a mandatory
          * attribute for Management Cluster.
          * <p>
@@ -361,7 +361,7 @@ public final class NetworkConfiguration extends com.oracle.bmc.http.internal.Exp
         private String nsxEdgeUplink2VlanId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC
          * for the NSX Edge Uplink 2 component of the VMware environment. This VLAN is a mandatory
          * attribute for Management Cluster.
          * <p>
@@ -385,7 +385,7 @@ public final class NetworkConfiguration extends com.oracle.bmc.http.internal.Exp
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster
          * for the vSphere Replication component of the VMware environment.
          *
          **/
@@ -393,7 +393,7 @@ public final class NetworkConfiguration extends com.oracle.bmc.http.internal.Exp
         private String replicationVlanId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster
          * for the vSphere Replication component of the VMware environment.
          *
          * @param replicationVlanId the value to set
@@ -405,7 +405,7 @@ public final class NetworkConfiguration extends com.oracle.bmc.http.internal.Exp
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster
          * for the Provisioning component of the VMware environment.
          *
          **/
@@ -413,7 +413,7 @@ public final class NetworkConfiguration extends com.oracle.bmc.http.internal.Exp
         private String provisioningVlanId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster
          * for the Provisioning component of the VMware environment.
          *
          * @param provisioningVlanId the value to set
@@ -425,7 +425,7 @@ public final class NetworkConfiguration extends com.oracle.bmc.http.internal.Exp
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC
          * for the HCX component of the VMware environment. This VLAN is a mandatory attribute
          * for Management Cluster when HCX is enabled.
          * <p>
@@ -445,7 +445,7 @@ public final class NetworkConfiguration extends com.oracle.bmc.http.internal.Exp
         private String hcxVlanId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC
          * for the HCX component of the VMware environment. This VLAN is a mandatory attribute
          * for Management Cluster when HCX is enabled.
          * <p>
@@ -543,7 +543,7 @@ public final class NetworkConfiguration extends com.oracle.bmc.http.internal.Exp
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the management subnet used
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management subnet used
      * to provision the Cluster.
      *
      **/
@@ -551,7 +551,7 @@ public final class NetworkConfiguration extends com.oracle.bmc.http.internal.Exp
     private final String provisioningSubnetId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the management subnet used
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management subnet used
      * to provision the Cluster.
      *
      * @return the value
@@ -561,7 +561,7 @@ public final class NetworkConfiguration extends com.oracle.bmc.http.internal.Exp
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC
      * for the vSphere component of the VMware environment. This VLAN is a mandatory attribute
      * for Management Cluster.
      * <p>
@@ -581,7 +581,7 @@ public final class NetworkConfiguration extends com.oracle.bmc.http.internal.Exp
     private final String vsphereVlanId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC
      * for the vSphere component of the VMware environment. This VLAN is a mandatory attribute
      * for Management Cluster.
      * <p>
@@ -603,7 +603,7 @@ public final class NetworkConfiguration extends com.oracle.bmc.http.internal.Exp
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster
      * for the vMotion component of the VMware environment.
      * <p>
      * This attribute is not guaranteed to reflect the vMotion VLAN
@@ -622,7 +622,7 @@ public final class NetworkConfiguration extends com.oracle.bmc.http.internal.Exp
     private final String vmotionVlanId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster
      * for the vMotion component of the VMware environment.
      * <p>
      * This attribute is not guaranteed to reflect the vMotion VLAN
@@ -643,7 +643,7 @@ public final class NetworkConfiguration extends com.oracle.bmc.http.internal.Exp
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster
      * for the vSAN component of the VMware environment.
      * <p>
      * This attribute is not guaranteed to reflect the vSAN VLAN
@@ -662,7 +662,7 @@ public final class NetworkConfiguration extends com.oracle.bmc.http.internal.Exp
     private final String vsanVlanId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster
      * for the vSAN component of the VMware environment.
      * <p>
      * This attribute is not guaranteed to reflect the vSAN VLAN
@@ -683,7 +683,7 @@ public final class NetworkConfiguration extends com.oracle.bmc.http.internal.Exp
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster
      * for the NSX VTEP component of the VMware environment.
      * <p>
      * This attribute is not guaranteed to reflect the NSX VTEP VLAN
@@ -702,7 +702,7 @@ public final class NetworkConfiguration extends com.oracle.bmc.http.internal.Exp
     private final String nsxVTepVlanId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster
      * for the NSX VTEP component of the VMware environment.
      * <p>
      * This attribute is not guaranteed to reflect the NSX VTEP VLAN
@@ -723,7 +723,7 @@ public final class NetworkConfiguration extends com.oracle.bmc.http.internal.Exp
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster
      * for the NSX Edge VTEP component of the VMware environment.
      * <p>
      * This attribute is not guaranteed to reflect the NSX Edge VTEP VLAN
@@ -742,7 +742,7 @@ public final class NetworkConfiguration extends com.oracle.bmc.http.internal.Exp
     private final String nsxEdgeVTepVlanId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster
      * for the NSX Edge VTEP component of the VMware environment.
      * <p>
      * This attribute is not guaranteed to reflect the NSX Edge VTEP VLAN
@@ -763,7 +763,7 @@ public final class NetworkConfiguration extends com.oracle.bmc.http.internal.Exp
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC
      * for the NSX Edge Uplink 1 component of the VMware environment. This VLAN is a mandatory
      * attribute for Management Cluster.
      * <p>
@@ -783,7 +783,7 @@ public final class NetworkConfiguration extends com.oracle.bmc.http.internal.Exp
     private final String nsxEdgeUplink1VlanId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC
      * for the NSX Edge Uplink 1 component of the VMware environment. This VLAN is a mandatory
      * attribute for Management Cluster.
      * <p>
@@ -805,7 +805,7 @@ public final class NetworkConfiguration extends com.oracle.bmc.http.internal.Exp
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC
      * for the NSX Edge Uplink 2 component of the VMware environment. This VLAN is a mandatory
      * attribute for Management Cluster.
      * <p>
@@ -825,7 +825,7 @@ public final class NetworkConfiguration extends com.oracle.bmc.http.internal.Exp
     private final String nsxEdgeUplink2VlanId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC
      * for the NSX Edge Uplink 2 component of the VMware environment. This VLAN is a mandatory
      * attribute for Management Cluster.
      * <p>
@@ -847,7 +847,7 @@ public final class NetworkConfiguration extends com.oracle.bmc.http.internal.Exp
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster
      * for the vSphere Replication component of the VMware environment.
      *
      **/
@@ -855,7 +855,7 @@ public final class NetworkConfiguration extends com.oracle.bmc.http.internal.Exp
     private final String replicationVlanId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster
      * for the vSphere Replication component of the VMware environment.
      *
      * @return the value
@@ -865,7 +865,7 @@ public final class NetworkConfiguration extends com.oracle.bmc.http.internal.Exp
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster
      * for the Provisioning component of the VMware environment.
      *
      **/
@@ -873,7 +873,7 @@ public final class NetworkConfiguration extends com.oracle.bmc.http.internal.Exp
     private final String provisioningVlanId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster
      * for the Provisioning component of the VMware environment.
      *
      * @return the value
@@ -883,7 +883,7 @@ public final class NetworkConfiguration extends com.oracle.bmc.http.internal.Exp
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC
      * for the HCX component of the VMware environment. This VLAN is a mandatory attribute
      * for Management Cluster when HCX is enabled.
      * <p>
@@ -903,7 +903,7 @@ public final class NetworkConfiguration extends com.oracle.bmc.http.internal.Exp
     private final String hcxVlanId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC
      * for the HCX component of the VMware environment. This VLAN is a mandatory attribute
      * for Management Cluster when HCX is enabled.
      * <p>

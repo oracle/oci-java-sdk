@@ -1,12 +1,12 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datasafe.requests;
 
 import com.oracle.bmc.datasafe.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/ListUserAnalyticsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListUserAnalyticsRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/ListUserAnalyticsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListUserAnalyticsRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 public class ListUserAnalyticsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
@@ -97,12 +97,12 @@ public class ListUserAnalyticsRequest extends com.oracle.bmc.requests.BmcRequest
         return accessLevel;
     }
     /**
-     * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private Integer limit;
 
     /**
-     * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     public Integer getLimit() {
         return limit;
@@ -270,12 +270,42 @@ public class ListUserAnalyticsRequest extends com.oracle.bmc.requests.BmcRequest
         return timePasswordLastChangedLessThan;
     }
     /**
-     * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * A filter to return users whose password expiry date in the database is greater than or equal to the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * **Example:** 2016-12-19T16:39:57.600Z
+     *
+     */
+    private java.util.Date timePasswordExpiryGreaterThanOrEqualTo;
+
+    /**
+     * A filter to return users whose password expiry date in the database is greater than or equal to the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * **Example:** 2016-12-19T16:39:57.600Z
+     *
+     */
+    public java.util.Date getTimePasswordExpiryGreaterThanOrEqualTo() {
+        return timePasswordExpiryGreaterThanOrEqualTo;
+    }
+    /**
+     * A filter to return users whose password expiry date in the database is less than the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * **Example:** 2016-12-19T16:39:57.600Z
+     *
+     */
+    private java.util.Date timePasswordExpiryLessThan;
+
+    /**
+     * A filter to return users whose password expiry date in the database is less than the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * **Example:** 2016-12-19T16:39:57.600Z
+     *
+     */
+    public java.util.Date getTimePasswordExpiryLessThan() {
+        return timePasswordExpiryLessThan;
+    }
+    /**
+     * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private String page;
 
     /**
-     * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     public String getPage() {
         return page;
@@ -460,12 +490,12 @@ public class ListUserAnalyticsRequest extends com.oracle.bmc.requests.BmcRequest
         }
 
         /**
-         * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private Integer limit = null;
 
         /**
-         * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
          * @param limit the value to set
          * @return this builder instance
          */
@@ -690,12 +720,51 @@ public class ListUserAnalyticsRequest extends com.oracle.bmc.requests.BmcRequest
         }
 
         /**
-         * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * A filter to return users whose password expiry date in the database is greater than or equal to the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * **Example:** 2016-12-19T16:39:57.600Z
+         *
+         */
+        private java.util.Date timePasswordExpiryGreaterThanOrEqualTo = null;
+
+        /**
+         * A filter to return users whose password expiry date in the database is greater than or equal to the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * **Example:** 2016-12-19T16:39:57.600Z
+         *
+         * @param timePasswordExpiryGreaterThanOrEqualTo the value to set
+         * @return this builder instance
+         */
+        public Builder timePasswordExpiryGreaterThanOrEqualTo(
+                java.util.Date timePasswordExpiryGreaterThanOrEqualTo) {
+            this.timePasswordExpiryGreaterThanOrEqualTo = timePasswordExpiryGreaterThanOrEqualTo;
+            return this;
+        }
+
+        /**
+         * A filter to return users whose password expiry date in the database is less than the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * **Example:** 2016-12-19T16:39:57.600Z
+         *
+         */
+        private java.util.Date timePasswordExpiryLessThan = null;
+
+        /**
+         * A filter to return users whose password expiry date in the database is less than the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * **Example:** 2016-12-19T16:39:57.600Z
+         *
+         * @param timePasswordExpiryLessThan the value to set
+         * @return this builder instance
+         */
+        public Builder timePasswordExpiryLessThan(java.util.Date timePasswordExpiryLessThan) {
+            this.timePasswordExpiryLessThan = timePasswordExpiryLessThan;
+            return this;
+        }
+
+        /**
+         * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private String page = null;
 
         /**
-         * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
          * @param page the value to set
          * @return this builder instance
          */
@@ -796,6 +865,8 @@ public class ListUserAnalyticsRequest extends com.oracle.bmc.requests.BmcRequest
             timePasswordLastChangedGreaterThanOrEqualTo(
                     o.getTimePasswordLastChangedGreaterThanOrEqualTo());
             timePasswordLastChangedLessThan(o.getTimePasswordLastChangedLessThan());
+            timePasswordExpiryGreaterThanOrEqualTo(o.getTimePasswordExpiryGreaterThanOrEqualTo());
+            timePasswordExpiryLessThan(o.getTimePasswordExpiryLessThan());
             page(o.getPage());
             sortOrder(o.getSortOrder());
             sortBy(o.getSortBy());
@@ -849,12 +920,14 @@ public class ListUserAnalyticsRequest extends com.oracle.bmc.requests.BmcRequest
             request.timePasswordLastChangedGreaterThanOrEqualTo =
                     timePasswordLastChangedGreaterThanOrEqualTo;
             request.timePasswordLastChangedLessThan = timePasswordLastChangedLessThan;
+            request.timePasswordExpiryGreaterThanOrEqualTo = timePasswordExpiryGreaterThanOrEqualTo;
+            request.timePasswordExpiryLessThan = timePasswordExpiryLessThan;
             request.page = page;
             request.sortOrder = sortOrder;
             request.sortBy = sortBy;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListUserAnalyticsRequest(userAssessmentId, compartmentIdInSubtree, accessLevel, limit, userCategory, userKey, accountStatus, authenticationType, userName, targetId, timeLastLoginGreaterThanOrEqualTo, timeLastLoginLessThan, timeUserCreatedGreaterThanOrEqualTo, timeUserCreatedLessThan, timePasswordLastChangedGreaterThanOrEqualTo, timePasswordLastChangedLessThan, page, sortOrder, sortBy, opcRequestId);
+            // new ListUserAnalyticsRequest(userAssessmentId, compartmentIdInSubtree, accessLevel, limit, userCategory, userKey, accountStatus, authenticationType, userName, targetId, timeLastLoginGreaterThanOrEqualTo, timeLastLoginLessThan, timeUserCreatedGreaterThanOrEqualTo, timeUserCreatedLessThan, timePasswordLastChangedGreaterThanOrEqualTo, timePasswordLastChangedLessThan, timePasswordExpiryGreaterThanOrEqualTo, timePasswordExpiryLessThan, page, sortOrder, sortBy, opcRequestId);
         }
     }
 
@@ -881,6 +954,8 @@ public class ListUserAnalyticsRequest extends com.oracle.bmc.requests.BmcRequest
                 .timePasswordLastChangedGreaterThanOrEqualTo(
                         timePasswordLastChangedGreaterThanOrEqualTo)
                 .timePasswordLastChangedLessThan(timePasswordLastChangedLessThan)
+                .timePasswordExpiryGreaterThanOrEqualTo(timePasswordExpiryGreaterThanOrEqualTo)
+                .timePasswordExpiryLessThan(timePasswordExpiryLessThan)
                 .page(page)
                 .sortOrder(sortOrder)
                 .sortBy(sortBy)
@@ -920,6 +995,10 @@ public class ListUserAnalyticsRequest extends com.oracle.bmc.requests.BmcRequest
                 .append(String.valueOf(this.timePasswordLastChangedGreaterThanOrEqualTo));
         sb.append(",timePasswordLastChangedLessThan=")
                 .append(String.valueOf(this.timePasswordLastChangedLessThan));
+        sb.append(",timePasswordExpiryGreaterThanOrEqualTo=")
+                .append(String.valueOf(this.timePasswordExpiryGreaterThanOrEqualTo));
+        sb.append(",timePasswordExpiryLessThan=")
+                .append(String.valueOf(this.timePasswordExpiryLessThan));
         sb.append(",page=").append(String.valueOf(this.page));
         sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
         sb.append(",sortBy=").append(String.valueOf(this.sortBy));
@@ -964,6 +1043,11 @@ public class ListUserAnalyticsRequest extends com.oracle.bmc.requests.BmcRequest
                         other.timePasswordLastChangedGreaterThanOrEqualTo)
                 && java.util.Objects.equals(
                         this.timePasswordLastChangedLessThan, other.timePasswordLastChangedLessThan)
+                && java.util.Objects.equals(
+                        this.timePasswordExpiryGreaterThanOrEqualTo,
+                        other.timePasswordExpiryGreaterThanOrEqualTo)
+                && java.util.Objects.equals(
+                        this.timePasswordExpiryLessThan, other.timePasswordExpiryLessThan)
                 && java.util.Objects.equals(this.page, other.page)
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder)
                 && java.util.Objects.equals(this.sortBy, other.sortBy)
@@ -1026,6 +1110,16 @@ public class ListUserAnalyticsRequest extends com.oracle.bmc.requests.BmcRequest
                         + (this.timePasswordLastChangedLessThan == null
                                 ? 43
                                 : this.timePasswordLastChangedLessThan.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timePasswordExpiryGreaterThanOrEqualTo == null
+                                ? 43
+                                : this.timePasswordExpiryGreaterThanOrEqualTo.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timePasswordExpiryLessThan == null
+                                ? 43
+                                : this.timePasswordExpiryLessThan.hashCode());
         result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
         result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());
         result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());

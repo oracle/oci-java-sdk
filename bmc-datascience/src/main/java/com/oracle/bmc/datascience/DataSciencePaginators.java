@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datascience;
@@ -31,6 +31,116 @@ public class DataSciencePaginators {
 
     public DataSciencePaginators(DataScience client) {
         this.client = client;
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listContainers operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListContainersResponse> listContainersResponseIterator(
+            final ListContainersRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListContainersRequest.Builder, ListContainersRequest, ListContainersResponse>(
+                new java.util.function.Supplier<ListContainersRequest.Builder>() {
+                    @Override
+                    public ListContainersRequest.Builder get() {
+                        return ListContainersRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListContainersResponse, String>() {
+                    @Override
+                    public String apply(ListContainersResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListContainersRequest.Builder>,
+                        ListContainersRequest>() {
+                    @Override
+                    public ListContainersRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListContainersRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<ListContainersRequest, ListContainersResponse>() {
+                    @Override
+                    public ListContainersResponse apply(ListContainersRequest request) {
+                        return client.listContainers(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.datascience.model.ContainerSummary} objects
+     * contained in responses from the listContainers operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.datascience.model.ContainerSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.datascience.model.ContainerSummary> listContainersRecordIterator(
+            final ListContainersRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListContainersRequest.Builder, ListContainersRequest, ListContainersResponse,
+                com.oracle.bmc.datascience.model.ContainerSummary>(
+                new java.util.function.Supplier<ListContainersRequest.Builder>() {
+                    @Override
+                    public ListContainersRequest.Builder get() {
+                        return ListContainersRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListContainersResponse, String>() {
+                    @Override
+                    public String apply(ListContainersResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListContainersRequest.Builder>,
+                        ListContainersRequest>() {
+                    @Override
+                    public ListContainersRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListContainersRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<ListContainersRequest, ListContainersResponse>() {
+                    @Override
+                    public ListContainersResponse apply(ListContainersRequest request) {
+                        return client.listContainers(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListContainersResponse,
+                        java.util.List<com.oracle.bmc.datascience.model.ContainerSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.datascience.model.ContainerSummary> apply(
+                            ListContainersResponse response) {
+                        return response.getItems();
+                    }
+                });
     }
 
     /**
@@ -1621,6 +1731,116 @@ public class DataSciencePaginators {
                     @Override
                     public java.util.List<com.oracle.bmc.datascience.model.ProjectSummary> apply(
                             ListProjectsResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listSchedules operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListSchedulesResponse> listSchedulesResponseIterator(
+            final ListSchedulesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListSchedulesRequest.Builder, ListSchedulesRequest, ListSchedulesResponse>(
+                new java.util.function.Supplier<ListSchedulesRequest.Builder>() {
+                    @Override
+                    public ListSchedulesRequest.Builder get() {
+                        return ListSchedulesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListSchedulesResponse, String>() {
+                    @Override
+                    public String apply(ListSchedulesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListSchedulesRequest.Builder>,
+                        ListSchedulesRequest>() {
+                    @Override
+                    public ListSchedulesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListSchedulesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<ListSchedulesRequest, ListSchedulesResponse>() {
+                    @Override
+                    public ListSchedulesResponse apply(ListSchedulesRequest request) {
+                        return client.listSchedules(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.datascience.model.ScheduleSummary} objects
+     * contained in responses from the listSchedules operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.datascience.model.ScheduleSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.datascience.model.ScheduleSummary> listSchedulesRecordIterator(
+            final ListSchedulesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListSchedulesRequest.Builder, ListSchedulesRequest, ListSchedulesResponse,
+                com.oracle.bmc.datascience.model.ScheduleSummary>(
+                new java.util.function.Supplier<ListSchedulesRequest.Builder>() {
+                    @Override
+                    public ListSchedulesRequest.Builder get() {
+                        return ListSchedulesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListSchedulesResponse, String>() {
+                    @Override
+                    public String apply(ListSchedulesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListSchedulesRequest.Builder>,
+                        ListSchedulesRequest>() {
+                    @Override
+                    public ListSchedulesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListSchedulesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<ListSchedulesRequest, ListSchedulesResponse>() {
+                    @Override
+                    public ListSchedulesResponse apply(ListSchedulesRequest request) {
+                        return client.listSchedules(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListSchedulesResponse,
+                        java.util.List<com.oracle.bmc.datascience.model.ScheduleSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.datascience.model.ScheduleSummary> apply(
+                            ListSchedulesResponse response) {
                         return response.getItems();
                     }
                 });

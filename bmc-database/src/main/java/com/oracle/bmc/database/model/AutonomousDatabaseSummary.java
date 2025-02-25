@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
@@ -65,6 +65,7 @@ public final class AutonomousDatabaseSummary
         "infrastructureType",
         "isDedicated",
         "autonomousContainerDatabaseId",
+        "isBackupRetentionLocked",
         "timeUndeleted",
         "timeCreated",
         "displayName",
@@ -99,6 +100,7 @@ public final class AutonomousDatabaseSummary
         "databaseManagementStatus",
         "timeMaintenanceBegin",
         "timeMaintenanceEnd",
+        "maintenanceTargetComponent",
         "isRefreshableClone",
         "timeOfLastRefresh",
         "timeOfLastRefreshPoint",
@@ -148,7 +150,8 @@ public final class AutonomousDatabaseSummary
         "remoteDisasterRecoveryConfiguration",
         "netServicesArchitecture",
         "availabilityDomain",
-        "clusterPlacementGroupId"
+        "clusterPlacementGroupId",
+        "cloneTableSpaceList"
     })
     public AutonomousDatabaseSummary(
             String id,
@@ -190,6 +193,7 @@ public final class AutonomousDatabaseSummary
             InfrastructureType infrastructureType,
             Boolean isDedicated,
             String autonomousContainerDatabaseId,
+            Boolean isBackupRetentionLocked,
             java.util.Date timeUndeleted,
             java.util.Date timeCreated,
             String displayName,
@@ -224,6 +228,7 @@ public final class AutonomousDatabaseSummary
             DatabaseManagementStatus databaseManagementStatus,
             java.util.Date timeMaintenanceBegin,
             java.util.Date timeMaintenanceEnd,
+            String maintenanceTargetComponent,
             Boolean isRefreshableClone,
             java.util.Date timeOfLastRefresh,
             java.util.Date timeOfLastRefreshPoint,
@@ -273,7 +278,8 @@ public final class AutonomousDatabaseSummary
             DisasterRecoveryConfiguration remoteDisasterRecoveryConfiguration,
             NetServicesArchitecture netServicesArchitecture,
             String availabilityDomain,
-            String clusterPlacementGroupId) {
+            String clusterPlacementGroupId,
+            java.util.List<Integer> cloneTableSpaceList) {
         super();
         this.id = id;
         this.compartmentId = compartmentId;
@@ -314,6 +320,7 @@ public final class AutonomousDatabaseSummary
         this.infrastructureType = infrastructureType;
         this.isDedicated = isDedicated;
         this.autonomousContainerDatabaseId = autonomousContainerDatabaseId;
+        this.isBackupRetentionLocked = isBackupRetentionLocked;
         this.timeUndeleted = timeUndeleted;
         this.timeCreated = timeCreated;
         this.displayName = displayName;
@@ -348,6 +355,7 @@ public final class AutonomousDatabaseSummary
         this.databaseManagementStatus = databaseManagementStatus;
         this.timeMaintenanceBegin = timeMaintenanceBegin;
         this.timeMaintenanceEnd = timeMaintenanceEnd;
+        this.maintenanceTargetComponent = maintenanceTargetComponent;
         this.isRefreshableClone = isRefreshableClone;
         this.timeOfLastRefresh = timeOfLastRefresh;
         this.timeOfLastRefreshPoint = timeOfLastRefreshPoint;
@@ -398,18 +406,19 @@ public final class AutonomousDatabaseSummary
         this.netServicesArchitecture = netServicesArchitecture;
         this.availabilityDomain = availabilityDomain;
         this.clusterPlacementGroupId = clusterPlacementGroupId;
+        this.cloneTableSpaceList = cloneTableSpaceList;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Autonomous Database.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Autonomous Database.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database.
          * @param id the value to set
          * @return this builder
          **/
@@ -419,13 +428,13 @@ public final class AutonomousDatabaseSummary
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
          * @param compartmentId the value to set
          * @return this builder
          **/
@@ -435,13 +444,13 @@ public final class AutonomousDatabaseSummary
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
         private String subscriptionId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
          * @param subscriptionId the value to set
          * @return this builder
          **/
@@ -499,13 +508,13 @@ public final class AutonomousDatabaseSummary
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and {@code secretId} are required for Customer Managed Keys.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and {@code secretId} are required for Customer Managed Keys.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("vaultId")
         private String vaultId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and {@code secretId} are required for Customer Managed Keys.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and {@code secretId} are required for Customer Managed Keys.
          * @param vaultId the value to set
          * @return this builder
          **/
@@ -697,7 +706,7 @@ public final class AutonomousDatabaseSummary
         }
         /**
          * System tags for this resource. Each key is predefined and scoped to a namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
@@ -705,7 +714,7 @@ public final class AutonomousDatabaseSummary
 
         /**
          * System tags for this resource. Each key is predefined and scoped to a namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * @param systemTags the value to set
          * @return this builder
@@ -1076,19 +1085,35 @@ public final class AutonomousDatabaseSummary
             return this;
         }
         /**
-         * The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm). Used only by Autonomous Database on Dedicated Exadata Infrastructure.
+         * The Autonomous Container Database [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Used only by Autonomous Database on Dedicated Exadata Infrastructure.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("autonomousContainerDatabaseId")
         private String autonomousContainerDatabaseId;
 
         /**
-         * The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm). Used only by Autonomous Database on Dedicated Exadata Infrastructure.
+         * The Autonomous Container Database [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Used only by Autonomous Database on Dedicated Exadata Infrastructure.
          * @param autonomousContainerDatabaseId the value to set
          * @return this builder
          **/
         public Builder autonomousContainerDatabaseId(String autonomousContainerDatabaseId) {
             this.autonomousContainerDatabaseId = autonomousContainerDatabaseId;
             this.__explicitlySet__.add("autonomousContainerDatabaseId");
+            return this;
+        }
+        /**
+         * Indicates if the Autonomous Database is backup retention locked.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isBackupRetentionLocked")
+        private Boolean isBackupRetentionLocked;
+
+        /**
+         * Indicates if the Autonomous Database is backup retention locked.
+         * @param isBackupRetentionLocked the value to set
+         * @return this builder
+         **/
+        public Builder isBackupRetentionLocked(Boolean isBackupRetentionLocked) {
+            this.isBackupRetentionLocked = isBackupRetentionLocked;
+            this.__explicitlySet__.add("isBackupRetentionLocked");
             return this;
         }
         /**
@@ -1260,7 +1285,7 @@ public final class AutonomousDatabaseSummary
         }
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * <p>
          * Example: {@code {"Department": "Finance"}}
          *
@@ -1270,7 +1295,7 @@ public final class AutonomousDatabaseSummary
 
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * <p>
          * Example: {@code {"Department": "Finance"}}
          *
@@ -1284,7 +1309,7 @@ public final class AutonomousDatabaseSummary
         }
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -1292,7 +1317,7 @@ public final class AutonomousDatabaseSummary
 
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * @param definedTags the value to set
          * @return this builder
@@ -1305,7 +1330,7 @@ public final class AutonomousDatabaseSummary
         }
         /**
          * Security Attributes for this resource. Each key is predefined and scoped to a namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
          *
          **/
@@ -1314,7 +1339,7 @@ public final class AutonomousDatabaseSummary
 
         /**
          * Security Attributes for this resource. Each key is predefined and scoped to a namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
          *
          * @param securityAttributes the value to set
@@ -1327,7 +1352,7 @@ public final class AutonomousDatabaseSummary
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the subnet the resource is associated with.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the resource is associated with.
          * <p>
          **Subnet Restrictions:**
          * - For bare metal DB systems and for single node virtual machine DB systems, do not use a subnet that overlaps with 192.168.16.16/28.
@@ -1343,7 +1368,7 @@ public final class AutonomousDatabaseSummary
         private String subnetId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the subnet the resource is associated with.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the resource is associated with.
          * <p>
          **Subnet Restrictions:**
          * - For bare metal DB systems and for single node virtual machine DB systems, do not use a subnet that overlaps with 192.168.16.16/28.
@@ -1363,7 +1388,7 @@ public final class AutonomousDatabaseSummary
             return this;
         }
         /**
-         * The list of [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm).
+         * The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
          * **NsgIds restrictions:**
          * - A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
          *
@@ -1372,7 +1397,7 @@ public final class AutonomousDatabaseSummary
         private java.util.List<String> nsgIds;
 
         /**
-         * The list of [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm).
+         * The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
          * **NsgIds restrictions:**
          * - A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
          *
@@ -1793,6 +1818,22 @@ public final class AutonomousDatabaseSummary
             return this;
         }
         /**
+         * The component chosen for maintenance.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("maintenanceTargetComponent")
+        private String maintenanceTargetComponent;
+
+        /**
+         * The component chosen for maintenance.
+         * @param maintenanceTargetComponent the value to set
+         * @return this builder
+         **/
+        public Builder maintenanceTargetComponent(String maintenanceTargetComponent) {
+            this.maintenanceTargetComponent = maintenanceTargetComponent;
+            this.__explicitlySet__.add("maintenanceTargetComponent");
+            return this;
+        }
+        /**
          * Indicates if the Autonomous Database is a refreshable clone.
          * <p>
          * This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
@@ -1917,13 +1958,13 @@ public final class AutonomousDatabaseSummary
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the source Autonomous Database that was cloned to create the current Autonomous Database.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous Database that was cloned to create the current Autonomous Database.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourceId")
         private String sourceId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the source Autonomous Database that was cloned to create the current Autonomous Database.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous Database that was cloned to create the current Autonomous Database.
          * @param sourceId the value to set
          * @return this builder
          **/
@@ -2114,13 +2155,13 @@ public final class AutonomousDatabaseSummary
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("keyStoreId")
         private String keyStoreId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
          * @param keyStoreId the value to set
          * @return this builder
          **/
@@ -2348,13 +2389,13 @@ public final class AutonomousDatabaseSummary
             return this;
         }
         /**
-         * The unique identifier for leader autonomous database OCID [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * The unique identifier for leader autonomous database OCID [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourcePoolLeaderId")
         private String resourcePoolLeaderId;
 
         /**
-         * The unique identifier for leader autonomous database OCID [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * The unique identifier for leader autonomous database OCID [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          * @param resourcePoolLeaderId the value to set
          * @return this builder
          **/
@@ -2651,19 +2692,35 @@ public final class AutonomousDatabaseSummary
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Autonomous Serverless Database.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Autonomous Serverless Database.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("clusterPlacementGroupId")
         private String clusterPlacementGroupId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Autonomous Serverless Database.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Autonomous Serverless Database.
          * @param clusterPlacementGroupId the value to set
          * @return this builder
          **/
         public Builder clusterPlacementGroupId(String clusterPlacementGroupId) {
             this.clusterPlacementGroupId = clusterPlacementGroupId;
             this.__explicitlySet__.add("clusterPlacementGroupId");
+            return this;
+        }
+        /**
+         * A list of the source Autonomous Database's table space number(s) used to create this partial clone from the backup.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("cloneTableSpaceList")
+        private java.util.List<Integer> cloneTableSpaceList;
+
+        /**
+         * A list of the source Autonomous Database's table space number(s) used to create this partial clone from the backup.
+         * @param cloneTableSpaceList the value to set
+         * @return this builder
+         **/
+        public Builder cloneTableSpaceList(java.util.List<Integer> cloneTableSpaceList) {
+            this.cloneTableSpaceList = cloneTableSpaceList;
+            this.__explicitlySet__.add("cloneTableSpaceList");
             return this;
         }
 
@@ -2712,6 +2769,7 @@ public final class AutonomousDatabaseSummary
                             this.infrastructureType,
                             this.isDedicated,
                             this.autonomousContainerDatabaseId,
+                            this.isBackupRetentionLocked,
                             this.timeUndeleted,
                             this.timeCreated,
                             this.displayName,
@@ -2746,6 +2804,7 @@ public final class AutonomousDatabaseSummary
                             this.databaseManagementStatus,
                             this.timeMaintenanceBegin,
                             this.timeMaintenanceEnd,
+                            this.maintenanceTargetComponent,
                             this.isRefreshableClone,
                             this.timeOfLastRefresh,
                             this.timeOfLastRefreshPoint,
@@ -2795,7 +2854,8 @@ public final class AutonomousDatabaseSummary
                             this.remoteDisasterRecoveryConfiguration,
                             this.netServicesArchitecture,
                             this.availabilityDomain,
-                            this.clusterPlacementGroupId);
+                            this.clusterPlacementGroupId,
+                            this.cloneTableSpaceList);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -2924,6 +2984,9 @@ public final class AutonomousDatabaseSummary
             if (model.wasPropertyExplicitlySet("autonomousContainerDatabaseId")) {
                 this.autonomousContainerDatabaseId(model.getAutonomousContainerDatabaseId());
             }
+            if (model.wasPropertyExplicitlySet("isBackupRetentionLocked")) {
+                this.isBackupRetentionLocked(model.getIsBackupRetentionLocked());
+            }
             if (model.wasPropertyExplicitlySet("timeUndeleted")) {
                 this.timeUndeleted(model.getTimeUndeleted());
             }
@@ -3025,6 +3088,9 @@ public final class AutonomousDatabaseSummary
             }
             if (model.wasPropertyExplicitlySet("timeMaintenanceEnd")) {
                 this.timeMaintenanceEnd(model.getTimeMaintenanceEnd());
+            }
+            if (model.wasPropertyExplicitlySet("maintenanceTargetComponent")) {
+                this.maintenanceTargetComponent(model.getMaintenanceTargetComponent());
             }
             if (model.wasPropertyExplicitlySet("isRefreshableClone")) {
                 this.isRefreshableClone(model.getIsRefreshableClone());
@@ -3178,6 +3244,9 @@ public final class AutonomousDatabaseSummary
             if (model.wasPropertyExplicitlySet("clusterPlacementGroupId")) {
                 this.clusterPlacementGroupId(model.getClusterPlacementGroupId());
             }
+            if (model.wasPropertyExplicitlySet("cloneTableSpaceList")) {
+                this.cloneTableSpaceList(model.getCloneTableSpaceList());
+            }
             return this;
         }
     }
@@ -3194,13 +3263,13 @@ public final class AutonomousDatabaseSummary
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Autonomous Database.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Autonomous Database.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database.
      * @return the value
      **/
     public String getId() {
@@ -3208,13 +3277,13 @@ public final class AutonomousDatabaseSummary
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * @return the value
      **/
     public String getCompartmentId() {
@@ -3222,13 +3291,13 @@ public final class AutonomousDatabaseSummary
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
     private final String subscriptionId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
      * @return the value
      **/
     public String getSubscriptionId() {
@@ -3345,13 +3414,13 @@ public final class AutonomousDatabaseSummary
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and {@code secretId} are required for Customer Managed Keys.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and {@code secretId} are required for Customer Managed Keys.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vaultId")
     private final String vaultId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and {@code secretId} are required for Customer Managed Keys.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and {@code secretId} are required for Customer Managed Keys.
      * @return the value
      **/
     public String getVaultId() {
@@ -3518,7 +3587,7 @@ public final class AutonomousDatabaseSummary
 
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
@@ -3526,7 +3595,7 @@ public final class AutonomousDatabaseSummary
 
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * @return the value
      **/
@@ -3949,17 +4018,31 @@ public final class AutonomousDatabaseSummary
     }
 
     /**
-     * The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm). Used only by Autonomous Database on Dedicated Exadata Infrastructure.
+     * The Autonomous Container Database [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Used only by Autonomous Database on Dedicated Exadata Infrastructure.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("autonomousContainerDatabaseId")
     private final String autonomousContainerDatabaseId;
 
     /**
-     * The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm). Used only by Autonomous Database on Dedicated Exadata Infrastructure.
+     * The Autonomous Container Database [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Used only by Autonomous Database on Dedicated Exadata Infrastructure.
      * @return the value
      **/
     public String getAutonomousContainerDatabaseId() {
         return autonomousContainerDatabaseId;
+    }
+
+    /**
+     * Indicates if the Autonomous Database is backup retention locked.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isBackupRetentionLocked")
+    private final Boolean isBackupRetentionLocked;
+
+    /**
+     * Indicates if the Autonomous Database is backup retention locked.
+     * @return the value
+     **/
+    public Boolean getIsBackupRetentionLocked() {
+        return isBackupRetentionLocked;
     }
 
     /**
@@ -4165,7 +4248,7 @@ public final class AutonomousDatabaseSummary
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
      * Example: {@code {"Department": "Finance"}}
      *
@@ -4175,7 +4258,7 @@ public final class AutonomousDatabaseSummary
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
      * Example: {@code {"Department": "Finance"}}
      *
@@ -4187,7 +4270,7 @@ public final class AutonomousDatabaseSummary
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -4195,7 +4278,7 @@ public final class AutonomousDatabaseSummary
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * @return the value
      **/
@@ -4205,7 +4288,7 @@ public final class AutonomousDatabaseSummary
 
     /**
      * Security Attributes for this resource. Each key is predefined and scoped to a namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
      *
      **/
@@ -4214,7 +4297,7 @@ public final class AutonomousDatabaseSummary
 
     /**
      * Security Attributes for this resource. Each key is predefined and scoped to a namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
      *
      * @return the value
@@ -4224,7 +4307,7 @@ public final class AutonomousDatabaseSummary
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the subnet the resource is associated with.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the resource is associated with.
      * <p>
      **Subnet Restrictions:**
      * - For bare metal DB systems and for single node virtual machine DB systems, do not use a subnet that overlaps with 192.168.16.16/28.
@@ -4240,7 +4323,7 @@ public final class AutonomousDatabaseSummary
     private final String subnetId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the subnet the resource is associated with.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the resource is associated with.
      * <p>
      **Subnet Restrictions:**
      * - For bare metal DB systems and for single node virtual machine DB systems, do not use a subnet that overlaps with 192.168.16.16/28.
@@ -4258,7 +4341,7 @@ public final class AutonomousDatabaseSummary
     }
 
     /**
-     * The list of [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm).
+     * The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
      * **NsgIds restrictions:**
      * - A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
      *
@@ -4267,7 +4350,7 @@ public final class AutonomousDatabaseSummary
     private final java.util.List<String> nsgIds;
 
     /**
-     * The list of [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm).
+     * The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
      * **NsgIds restrictions:**
      * - A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
      *
@@ -4861,6 +4944,20 @@ public final class AutonomousDatabaseSummary
     }
 
     /**
+     * The component chosen for maintenance.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("maintenanceTargetComponent")
+    private final String maintenanceTargetComponent;
+
+    /**
+     * The component chosen for maintenance.
+     * @return the value
+     **/
+    public String getMaintenanceTargetComponent() {
+        return maintenanceTargetComponent;
+    }
+
+    /**
      * Indicates if the Autonomous Database is a refreshable clone.
      * <p>
      * This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
@@ -5118,13 +5215,13 @@ public final class AutonomousDatabaseSummary
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the source Autonomous Database that was cloned to create the current Autonomous Database.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous Database that was cloned to create the current Autonomous Database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceId")
     private final String sourceId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the source Autonomous Database that was cloned to create the current Autonomous Database.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous Database that was cloned to create the current Autonomous Database.
      * @return the value
      **/
     public String getSourceId() {
@@ -5392,13 +5489,13 @@ public final class AutonomousDatabaseSummary
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("keyStoreId")
     private final String keyStoreId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
      * @return the value
      **/
     public String getKeyStoreId() {
@@ -5649,13 +5746,13 @@ public final class AutonomousDatabaseSummary
     }
 
     /**
-     * The unique identifier for leader autonomous database OCID [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * The unique identifier for leader autonomous database OCID [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourcePoolLeaderId")
     private final String resourcePoolLeaderId;
 
     /**
-     * The unique identifier for leader autonomous database OCID [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * The unique identifier for leader autonomous database OCID [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * @return the value
      **/
     public String getResourcePoolLeaderId() {
@@ -6108,17 +6205,31 @@ public final class AutonomousDatabaseSummary
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Autonomous Serverless Database.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Autonomous Serverless Database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("clusterPlacementGroupId")
     private final String clusterPlacementGroupId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Autonomous Serverless Database.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Autonomous Serverless Database.
      * @return the value
      **/
     public String getClusterPlacementGroupId() {
         return clusterPlacementGroupId;
+    }
+
+    /**
+     * A list of the source Autonomous Database's table space number(s) used to create this partial clone from the backup.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("cloneTableSpaceList")
+    private final java.util.List<Integer> cloneTableSpaceList;
+
+    /**
+     * A list of the source Autonomous Database's table space number(s) used to create this partial clone from the backup.
+     * @return the value
+     **/
+    public java.util.List<Integer> getCloneTableSpaceList() {
+        return cloneTableSpaceList;
     }
 
     @Override
@@ -6184,6 +6295,8 @@ public final class AutonomousDatabaseSummary
         sb.append(", isDedicated=").append(String.valueOf(this.isDedicated));
         sb.append(", autonomousContainerDatabaseId=")
                 .append(String.valueOf(this.autonomousContainerDatabaseId));
+        sb.append(", isBackupRetentionLocked=")
+                .append(String.valueOf(this.isBackupRetentionLocked));
         sb.append(", timeUndeleted=").append(String.valueOf(this.timeUndeleted));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
@@ -6222,6 +6335,8 @@ public final class AutonomousDatabaseSummary
                 .append(String.valueOf(this.databaseManagementStatus));
         sb.append(", timeMaintenanceBegin=").append(String.valueOf(this.timeMaintenanceBegin));
         sb.append(", timeMaintenanceEnd=").append(String.valueOf(this.timeMaintenanceEnd));
+        sb.append(", maintenanceTargetComponent=")
+                .append(String.valueOf(this.maintenanceTargetComponent));
         sb.append(", isRefreshableClone=").append(String.valueOf(this.isRefreshableClone));
         sb.append(", timeOfLastRefresh=").append(String.valueOf(this.timeOfLastRefresh));
         sb.append(", timeOfLastRefreshPoint=").append(String.valueOf(this.timeOfLastRefreshPoint));
@@ -6295,6 +6410,7 @@ public final class AutonomousDatabaseSummary
         sb.append(", availabilityDomain=").append(String.valueOf(this.availabilityDomain));
         sb.append(", clusterPlacementGroupId=")
                 .append(String.valueOf(this.clusterPlacementGroupId));
+        sb.append(", cloneTableSpaceList=").append(String.valueOf(this.cloneTableSpaceList));
         sb.append(")");
         return sb.toString();
     }
@@ -6363,6 +6479,8 @@ public final class AutonomousDatabaseSummary
                 && java.util.Objects.equals(this.isDedicated, other.isDedicated)
                 && java.util.Objects.equals(
                         this.autonomousContainerDatabaseId, other.autonomousContainerDatabaseId)
+                && java.util.Objects.equals(
+                        this.isBackupRetentionLocked, other.isBackupRetentionLocked)
                 && java.util.Objects.equals(this.timeUndeleted, other.timeUndeleted)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.displayName, other.displayName)
@@ -6402,6 +6520,8 @@ public final class AutonomousDatabaseSummary
                         this.databaseManagementStatus, other.databaseManagementStatus)
                 && java.util.Objects.equals(this.timeMaintenanceBegin, other.timeMaintenanceBegin)
                 && java.util.Objects.equals(this.timeMaintenanceEnd, other.timeMaintenanceEnd)
+                && java.util.Objects.equals(
+                        this.maintenanceTargetComponent, other.maintenanceTargetComponent)
                 && java.util.Objects.equals(this.isRefreshableClone, other.isRefreshableClone)
                 && java.util.Objects.equals(this.timeOfLastRefresh, other.timeOfLastRefresh)
                 && java.util.Objects.equals(
@@ -6479,6 +6599,7 @@ public final class AutonomousDatabaseSummary
                 && java.util.Objects.equals(this.availabilityDomain, other.availabilityDomain)
                 && java.util.Objects.equals(
                         this.clusterPlacementGroupId, other.clusterPlacementGroupId)
+                && java.util.Objects.equals(this.cloneTableSpaceList, other.cloneTableSpaceList)
                 && super.equals(other);
     }
 
@@ -6611,6 +6732,11 @@ public final class AutonomousDatabaseSummary
                                 : this.autonomousContainerDatabaseId.hashCode());
         result =
                 (result * PRIME)
+                        + (this.isBackupRetentionLocked == null
+                                ? 43
+                                : this.isBackupRetentionLocked.hashCode());
+        result =
+                (result * PRIME)
                         + (this.timeUndeleted == null ? 43 : this.timeUndeleted.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
@@ -6713,6 +6839,11 @@ public final class AutonomousDatabaseSummary
                         + (this.timeMaintenanceEnd == null
                                 ? 43
                                 : this.timeMaintenanceEnd.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.maintenanceTargetComponent == null
+                                ? 43
+                                : this.maintenanceTargetComponent.hashCode());
         result =
                 (result * PRIME)
                         + (this.isRefreshableClone == null
@@ -6921,6 +7052,11 @@ public final class AutonomousDatabaseSummary
                         + (this.clusterPlacementGroupId == null
                                 ? 43
                                 : this.clusterPlacementGroupId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.cloneTableSpaceList == null
+                                ? 43
+                                : this.cloneTableSpaceList.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

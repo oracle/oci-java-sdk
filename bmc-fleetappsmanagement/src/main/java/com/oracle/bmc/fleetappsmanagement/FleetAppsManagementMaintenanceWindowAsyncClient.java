@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.fleetappsmanagement;
@@ -477,7 +477,7 @@ public class FleetAppsManagementMaintenanceWindowAsyncClient
                         "FleetAppsManagementMaintenanceWindow",
                         "CreateMaintenanceWindow",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/MaintenanceWindow/CreateMaintenanceWindow");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, CreateMaintenanceWindowResponse>
                 transformer =
@@ -530,7 +530,7 @@ public class FleetAppsManagementMaintenanceWindowAsyncClient
                         "FleetAppsManagementMaintenanceWindow",
                         "DeleteMaintenanceWindow",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/MaintenanceWindow/DeleteMaintenanceWindow");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, DeleteMaintenanceWindowResponse>
                 transformer =
@@ -578,7 +578,7 @@ public class FleetAppsManagementMaintenanceWindowAsyncClient
                         "FleetAppsManagementMaintenanceWindow",
                         "GetMaintenanceWindow",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/MaintenanceWindow/GetMaintenanceWindow");
         final java.util.function.Function<javax.ws.rs.core.Response, GetMaintenanceWindowResponse>
                 transformer =
                         GetMaintenanceWindowConverter.fromResponse(
@@ -625,7 +625,7 @@ public class FleetAppsManagementMaintenanceWindowAsyncClient
                         "FleetAppsManagementMaintenanceWindow",
                         "ListMaintenanceWindows",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/MaintenanceWindowCollection/ListMaintenanceWindows");
         final java.util.function.Function<javax.ws.rs.core.Response, ListMaintenanceWindowsResponse>
                 transformer =
                         ListMaintenanceWindowsConverter.fromResponse(
@@ -672,7 +672,7 @@ public class FleetAppsManagementMaintenanceWindowAsyncClient
                         "FleetAppsManagementMaintenanceWindow",
                         "UpdateMaintenanceWindow",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/MaintenanceWindow/UpdateMaintenanceWindow");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, UpdateMaintenanceWindowResponse>
                 transformer =

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.limits;
@@ -67,7 +67,7 @@ public interface Quotas extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/limits/AddQuotaLockExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AddQuotaLock API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/limits/AddQuotaLockExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AddQuotaLock API.
      */
     AddQuotaLockResponse addQuotaLock(AddQuotaLockRequest request);
 
@@ -79,7 +79,7 @@ public interface Quotas extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/limits/CreateQuotaExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateQuota API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/limits/CreateQuotaExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateQuota API.
      */
     CreateQuotaResponse createQuota(CreateQuotaRequest request);
 
@@ -91,7 +91,7 @@ public interface Quotas extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/limits/DeleteQuotaExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteQuota API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/limits/DeleteQuotaExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteQuota API.
      */
     DeleteQuotaResponse deleteQuota(DeleteQuotaRequest request);
 
@@ -103,7 +103,7 @@ public interface Quotas extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/limits/GetQuotaExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetQuota API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/limits/GetQuotaExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetQuota API.
      */
     GetQuotaResponse getQuota(GetQuotaRequest request);
 
@@ -115,7 +115,7 @@ public interface Quotas extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/limits/ListQuotasExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListQuotas API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/limits/ListQuotasExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListQuotas API.
      */
     ListQuotasResponse listQuotas(ListQuotasRequest request);
 
@@ -127,7 +127,7 @@ public interface Quotas extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/limits/RemoveQuotaLockExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RemoveQuotaLock API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/limits/RemoveQuotaLockExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RemoveQuotaLock API.
      */
     RemoveQuotaLockResponse removeQuotaLock(RemoveQuotaLockRequest request);
 
@@ -139,7 +139,7 @@ public interface Quotas extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/limits/UpdateQuotaExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateQuota API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/limits/UpdateQuotaExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateQuota API.
      */
     UpdateQuotaResponse updateQuota(UpdateQuotaRequest request);
 

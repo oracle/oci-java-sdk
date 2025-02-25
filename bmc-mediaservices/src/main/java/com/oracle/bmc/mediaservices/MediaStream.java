@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.mediaservices;
@@ -10,7 +10,7 @@ import com.oracle.bmc.mediaservices.responses.*;
 /**
  * Media Services (includes Media Flow and Media Streams) is a fully managed service for processing media (video) source content. Use Media Flow and Media Streams to transcode and package digital video using configurable workflows and stream video outputs.
  *
- * Use the Media Services API to configure media workflows and run Media Flow jobs, create distribution channels, ingest assets, create Preview URLs and play assets. For more information, see [Media Flow](https://docs.cloud.oracle.com/iaas/Content/dms-mediaflow/home.htm) and [Media Streams](https://docs.cloud.oracle.com/iaas/Content/dms-mediastream/home.htm).
+ * Use the Media Services API to configure media workflows and run Media Flow jobs, create distribution channels, ingest assets, create Preview URLs and play assets. For more information, see [Media Flow](https://docs.oracle.com/iaas/Content/dms-mediaflow/home.htm) and [Media Streams](https://docs.oracle.com/iaas/Content/dms-mediastream/home.htm).
  *
  * This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by default if no circuit breaker configuration is defined by the user.
  */
@@ -70,7 +70,7 @@ public interface MediaStream extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/GeneratePlaylistExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GeneratePlaylist API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/GeneratePlaylistExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GeneratePlaylist API.
      */
     GeneratePlaylistResponse generatePlaylist(GeneratePlaylistRequest request);
 
@@ -82,7 +82,7 @@ public interface MediaStream extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/GenerateSessionTokenExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GenerateSessionToken API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/GenerateSessionTokenExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GenerateSessionToken API.
      */
     GenerateSessionTokenResponse generateSessionToken(GenerateSessionTokenRequest request);
 }

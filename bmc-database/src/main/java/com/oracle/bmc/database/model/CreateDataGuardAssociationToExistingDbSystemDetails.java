@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
@@ -49,6 +49,16 @@ public final class CreateDataGuardAssociationToExistingDbSystemDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("sourceEncryptionKeyLocationDetails")
+        private EncryptionKeyLocationDetails sourceEncryptionKeyLocationDetails;
+
+        public Builder sourceEncryptionKeyLocationDetails(
+                EncryptionKeyLocationDetails sourceEncryptionKeyLocationDetails) {
+            this.sourceEncryptionKeyLocationDetails = sourceEncryptionKeyLocationDetails;
+            this.__explicitlySet__.add("sourceEncryptionKeyLocationDetails");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("protectionMode")
         private ProtectionMode protectionMode;
 
@@ -94,7 +104,7 @@ public final class CreateDataGuardAssociationToExistingDbSystemDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the DB system in which to create the standby database.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system in which to create the standby database.
          * You must supply this value if creationType is {@code ExistingDbSystem}.
          *
          **/
@@ -102,7 +112,7 @@ public final class CreateDataGuardAssociationToExistingDbSystemDetails
         private String peerDbSystemId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the DB system in which to create the standby database.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system in which to create the standby database.
          * You must supply this value if creationType is {@code ExistingDbSystem}.
          *
          * @param peerDbSystemId the value to set
@@ -114,7 +124,7 @@ public final class CreateDataGuardAssociationToExistingDbSystemDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the DB home in which to create the standby database.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB home in which to create the standby database.
          * You must supply this value to create standby database with an existing DB home
          *
          **/
@@ -122,7 +132,7 @@ public final class CreateDataGuardAssociationToExistingDbSystemDetails
         private String peerDbHomeId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the DB home in which to create the standby database.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB home in which to create the standby database.
          * You must supply this value to create standby database with an existing DB home
          *
          * @param peerDbHomeId the value to set
@@ -142,6 +152,7 @@ public final class CreateDataGuardAssociationToExistingDbSystemDetails
                     new CreateDataGuardAssociationToExistingDbSystemDetails(
                             this.databaseSoftwareImageId,
                             this.databaseAdminPassword,
+                            this.sourceEncryptionKeyLocationDetails,
                             this.protectionMode,
                             this.transportType,
                             this.isActiveDataGuardEnabled,
@@ -162,6 +173,10 @@ public final class CreateDataGuardAssociationToExistingDbSystemDetails
             }
             if (model.wasPropertyExplicitlySet("databaseAdminPassword")) {
                 this.databaseAdminPassword(model.getDatabaseAdminPassword());
+            }
+            if (model.wasPropertyExplicitlySet("sourceEncryptionKeyLocationDetails")) {
+                this.sourceEncryptionKeyLocationDetails(
+                        model.getSourceEncryptionKeyLocationDetails());
             }
             if (model.wasPropertyExplicitlySet("protectionMode")) {
                 this.protectionMode(model.getProtectionMode());
@@ -203,6 +218,7 @@ public final class CreateDataGuardAssociationToExistingDbSystemDetails
     public CreateDataGuardAssociationToExistingDbSystemDetails(
             String databaseSoftwareImageId,
             String databaseAdminPassword,
+            EncryptionKeyLocationDetails sourceEncryptionKeyLocationDetails,
             ProtectionMode protectionMode,
             TransportType transportType,
             Boolean isActiveDataGuardEnabled,
@@ -213,6 +229,7 @@ public final class CreateDataGuardAssociationToExistingDbSystemDetails
         super(
                 databaseSoftwareImageId,
                 databaseAdminPassword,
+                sourceEncryptionKeyLocationDetails,
                 protectionMode,
                 transportType,
                 isActiveDataGuardEnabled,
@@ -223,7 +240,7 @@ public final class CreateDataGuardAssociationToExistingDbSystemDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the DB system in which to create the standby database.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system in which to create the standby database.
      * You must supply this value if creationType is {@code ExistingDbSystem}.
      *
      **/
@@ -231,7 +248,7 @@ public final class CreateDataGuardAssociationToExistingDbSystemDetails
     private final String peerDbSystemId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the DB system in which to create the standby database.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system in which to create the standby database.
      * You must supply this value if creationType is {@code ExistingDbSystem}.
      *
      * @return the value
@@ -241,7 +258,7 @@ public final class CreateDataGuardAssociationToExistingDbSystemDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the DB home in which to create the standby database.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB home in which to create the standby database.
      * You must supply this value to create standby database with an existing DB home
      *
      **/
@@ -249,7 +266,7 @@ public final class CreateDataGuardAssociationToExistingDbSystemDetails
     private final String peerDbHomeId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the DB home in which to create the standby database.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB home in which to create the standby database.
      * You must supply this value to create standby database with an existing DB home
      *
      * @return the value

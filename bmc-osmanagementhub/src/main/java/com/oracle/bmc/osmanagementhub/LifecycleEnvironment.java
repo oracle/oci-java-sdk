@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.osmanagementhub;
@@ -9,7 +9,7 @@ import com.oracle.bmc.osmanagementhub.responses.*;
 
 /**
  * Use the OS Management Hub API to manage and monitor updates and patches for instances in OCI, your private data center, or 3rd-party clouds.
- * For more information, see [Overview of OS Management Hub](https://docs.cloud.oracle.com/iaas/osmh/doc/overview.htm).
+ * For more information, see [Overview of OS Management Hub](https://docs.oracle.com/iaas/osmh/doc/overview.htm).
  *
  * This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by default if no circuit breaker configuration is defined by the user.
  */
@@ -70,13 +70,13 @@ public interface LifecycleEnvironment extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/AttachManagedInstancesToLifecycleStageExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AttachManagedInstancesToLifecycleStage API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/AttachManagedInstancesToLifecycleStageExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AttachManagedInstancesToLifecycleStage API.
      */
     AttachManagedInstancesToLifecycleStageResponse attachManagedInstancesToLifecycleStage(
             AttachManagedInstancesToLifecycleStageRequest request);
 
     /**
-     * Moves a lifecycle environment into a different compartment within the same tenancy. For information about moving resources between compartments, see [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * Moves a lifecycle environment into a different compartment within the same tenancy. For information about moving resources between compartments, see [Moving Resources to a Different Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -84,7 +84,7 @@ public interface LifecycleEnvironment extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/ChangeLifecycleEnvironmentCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeLifecycleEnvironmentCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/ChangeLifecycleEnvironmentCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeLifecycleEnvironmentCompartment API.
      */
     ChangeLifecycleEnvironmentCompartmentResponse changeLifecycleEnvironmentCompartment(
             ChangeLifecycleEnvironmentCompartmentRequest request);
@@ -98,7 +98,7 @@ public interface LifecycleEnvironment extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/CreateLifecycleEnvironmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateLifecycleEnvironment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/CreateLifecycleEnvironmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateLifecycleEnvironment API.
      */
     CreateLifecycleEnvironmentResponse createLifecycleEnvironment(
             CreateLifecycleEnvironmentRequest request);
@@ -112,7 +112,7 @@ public interface LifecycleEnvironment extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/DeleteLifecycleEnvironmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteLifecycleEnvironment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/DeleteLifecycleEnvironmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteLifecycleEnvironment API.
      */
     DeleteLifecycleEnvironmentResponse deleteLifecycleEnvironment(
             DeleteLifecycleEnvironmentRequest request);
@@ -126,7 +126,7 @@ public interface LifecycleEnvironment extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/DetachManagedInstancesFromLifecycleStageExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DetachManagedInstancesFromLifecycleStage API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/DetachManagedInstancesFromLifecycleStageExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DetachManagedInstancesFromLifecycleStage API.
      */
     DetachManagedInstancesFromLifecycleStageResponse detachManagedInstancesFromLifecycleStage(
             DetachManagedInstancesFromLifecycleStageRequest request);
@@ -139,7 +139,7 @@ public interface LifecycleEnvironment extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/GetLifecycleEnvironmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetLifecycleEnvironment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/GetLifecycleEnvironmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetLifecycleEnvironment API.
      */
     GetLifecycleEnvironmentResponse getLifecycleEnvironment(GetLifecycleEnvironmentRequest request);
 
@@ -152,7 +152,7 @@ public interface LifecycleEnvironment extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/GetLifecycleStageExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetLifecycleStage API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/GetLifecycleStageExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetLifecycleStage API.
      */
     GetLifecycleStageResponse getLifecycleStage(GetLifecycleStageRequest request);
 
@@ -166,7 +166,7 @@ public interface LifecycleEnvironment extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/ListLifecycleEnvironmentsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListLifecycleEnvironments API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/ListLifecycleEnvironmentsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListLifecycleEnvironments API.
      */
     ListLifecycleEnvironmentsResponse listLifecycleEnvironments(
             ListLifecycleEnvironmentsRequest request);
@@ -181,13 +181,13 @@ public interface LifecycleEnvironment extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/ListLifecycleStageInstalledPackagesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListLifecycleStageInstalledPackages API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/ListLifecycleStageInstalledPackagesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListLifecycleStageInstalledPackages API.
      */
     ListLifecycleStageInstalledPackagesResponse listLifecycleStageInstalledPackages(
             ListLifecycleStageInstalledPackagesRequest request);
 
     /**
-     * Lists lifecycle stages that match the specified compartment or lifecycle stage [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Filter the list against
+     * Lists lifecycle stages that match the specified compartment or lifecycle stage [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Filter the list against
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -195,7 +195,7 @@ public interface LifecycleEnvironment extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/ListLifecycleStagesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListLifecycleStages API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/ListLifecycleStagesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListLifecycleStages API.
      */
     ListLifecycleStagesResponse listLifecycleStages(ListLifecycleStagesRequest request);
 
@@ -210,10 +210,23 @@ public interface LifecycleEnvironment extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/PromoteSoftwareSourceToLifecycleStageExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use PromoteSoftwareSourceToLifecycleStage API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/PromoteSoftwareSourceToLifecycleStageExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use PromoteSoftwareSourceToLifecycleStage API.
      */
     PromoteSoftwareSourceToLifecycleStageResponse promoteSoftwareSourceToLifecycleStage(
             PromoteSoftwareSourceToLifecycleStageRequest request);
+
+    /**
+     * Reboots all managed instances in the specified lifecycle stage.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/RebootLifecycleStageExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RebootLifecycleStage API.
+     */
+    RebootLifecycleStageResponse rebootLifecycleStage(RebootLifecycleStageRequest request);
 
     /**
      * Updates the specified lifecycle environment's name, description, stages, or tags.
@@ -223,7 +236,7 @@ public interface LifecycleEnvironment extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/UpdateLifecycleEnvironmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateLifecycleEnvironment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/UpdateLifecycleEnvironmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateLifecycleEnvironment API.
      */
     UpdateLifecycleEnvironmentResponse updateLifecycleEnvironment(
             UpdateLifecycleEnvironmentRequest request);

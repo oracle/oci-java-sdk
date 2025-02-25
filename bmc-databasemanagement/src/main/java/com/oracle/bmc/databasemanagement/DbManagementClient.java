@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.databasemanagement;
@@ -1198,6 +1198,51 @@ public class DbManagementClient implements DbManagement {
     }
 
     @Override
+    public CheckExternalMySqlDatabaseConnectorConnectionStatusResponse
+            checkExternalMySqlDatabaseConnectorConnectionStatus(
+                    CheckExternalMySqlDatabaseConnectorConnectionStatusRequest request) {
+        LOG.trace("Called checkExternalMySqlDatabaseConnectorConnectionStatus");
+        final CheckExternalMySqlDatabaseConnectorConnectionStatusRequest interceptedRequest =
+                CheckExternalMySqlDatabaseConnectorConnectionStatusConverter.interceptRequest(
+                        request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CheckExternalMySqlDatabaseConnectorConnectionStatusConverter.fromRequest(
+                        client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "CheckExternalMySqlDatabaseConnectorConnectionStatus",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalMySqlDatabaseConnector/CheckExternalMySqlDatabaseConnectorConnectionStatus");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response,
+                        CheckExternalMySqlDatabaseConnectorConnectionStatusResponse>
+                transformer =
+                        CheckExternalMySqlDatabaseConnectorConnectionStatusConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public ConfigureAutomaticCaptureFiltersResponse configureAutomaticCaptureFilters(
             ConfigureAutomaticCaptureFiltersRequest request) {
         LOG.trace("Called configureAutomaticCaptureFilters");
@@ -1550,6 +1595,96 @@ public class DbManagementClient implements DbManagement {
                                                 ib,
                                                 retriedRequest
                                                         .getCreateExternalExadataStorageConnectorDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public CreateExternalMySqlDatabaseResponse createExternalMySqlDatabase(
+            CreateExternalMySqlDatabaseRequest request) {
+        LOG.trace("Called createExternalMySqlDatabase");
+        final CreateExternalMySqlDatabaseRequest interceptedRequest =
+                CreateExternalMySqlDatabaseConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateExternalMySqlDatabaseConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "CreateExternalMySqlDatabase",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalMySqlDatabase/CreateExternalMySqlDatabase");
+        java.util.function.Function<javax.ws.rs.core.Response, CreateExternalMySqlDatabaseResponse>
+                transformer =
+                        CreateExternalMySqlDatabaseConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getCreateExternalMySqlDatabaseDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public CreateExternalMySqlDatabaseConnectorResponse createExternalMySqlDatabaseConnector(
+            CreateExternalMySqlDatabaseConnectorRequest request) {
+        LOG.trace("Called createExternalMySqlDatabaseConnector");
+        final CreateExternalMySqlDatabaseConnectorRequest interceptedRequest =
+                CreateExternalMySqlDatabaseConnectorConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateExternalMySqlDatabaseConnectorConverter.fromRequest(
+                        client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "CreateExternalMySqlDatabaseConnector",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalMySqlDatabaseConnector/CreateExternalMySqlDatabaseConnector");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, CreateExternalMySqlDatabaseConnectorResponse>
+                transformer =
+                        CreateExternalMySqlDatabaseConnectorConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getCreateExternalMySqlDatabaseConnectorDetails(),
                                                 retriedRequest);
                                 return transformer.apply(response);
                             });
@@ -1948,6 +2083,86 @@ public class DbManagementClient implements DbManagement {
                         javax.ws.rs.core.Response, DeleteExternalExadataStorageConnectorResponse>
                 transformer =
                         DeleteExternalExadataStorageConnectorConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public DeleteExternalMySqlDatabaseResponse deleteExternalMySqlDatabase(
+            DeleteExternalMySqlDatabaseRequest request) {
+        LOG.trace("Called deleteExternalMySqlDatabase");
+        final DeleteExternalMySqlDatabaseRequest interceptedRequest =
+                DeleteExternalMySqlDatabaseConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteExternalMySqlDatabaseConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "DeleteExternalMySqlDatabase",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalMySqlDatabase/DeleteExternalMySqlDatabase");
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteExternalMySqlDatabaseResponse>
+                transformer =
+                        DeleteExternalMySqlDatabaseConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public DeleteExternalMySqlDatabaseConnectorResponse deleteExternalMySqlDatabaseConnector(
+            DeleteExternalMySqlDatabaseConnectorRequest request) {
+        LOG.trace("Called deleteExternalMySqlDatabaseConnector");
+        final DeleteExternalMySqlDatabaseConnectorRequest interceptedRequest =
+                DeleteExternalMySqlDatabaseConnectorConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteExternalMySqlDatabaseConnectorConverter.fromRequest(
+                        client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "DeleteExternalMySqlDatabaseConnector",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalMySqlDatabaseConnector/DeleteExternalMySqlDatabaseConnector");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, DeleteExternalMySqlDatabaseConnectorResponse>
+                transformer =
+                        DeleteExternalMySqlDatabaseConnectorConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -2461,6 +2676,48 @@ public class DbManagementClient implements DbManagement {
                         DisableExternalExadataInfrastructureManagementResponse>
                 transformer =
                         DisableExternalExadataInfrastructureManagementConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public DisableExternalMySqlDatabaseManagementResponse disableExternalMySqlDatabaseManagement(
+            DisableExternalMySqlDatabaseManagementRequest request) {
+        LOG.trace("Called disableExternalMySqlDatabaseManagement");
+        final DisableExternalMySqlDatabaseManagementRequest interceptedRequest =
+                DisableExternalMySqlDatabaseManagementConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DisableExternalMySqlDatabaseManagementConverter.fromRequest(
+                        client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "DisableExternalMySqlDatabaseManagement",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalMySqlDatabase/DisableExternalMySqlDatabaseManagement");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, DisableExternalMySqlDatabaseManagementResponse>
+                transformer =
+                        DisableExternalMySqlDatabaseManagementConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -3214,6 +3471,52 @@ public class DbManagementClient implements DbManagement {
     }
 
     @Override
+    public EnableExternalMySqlDatabaseManagementResponse enableExternalMySqlDatabaseManagement(
+            EnableExternalMySqlDatabaseManagementRequest request) {
+        LOG.trace("Called enableExternalMySqlDatabaseManagement");
+        final EnableExternalMySqlDatabaseManagementRequest interceptedRequest =
+                EnableExternalMySqlDatabaseManagementConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                EnableExternalMySqlDatabaseManagementConverter.fromRequest(
+                        client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "EnableExternalMySqlDatabaseManagement",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalMySqlDatabase/EnableExternalMySqlDatabaseManagement");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, EnableExternalMySqlDatabaseManagementResponse>
+                transformer =
+                        EnableExternalMySqlDatabaseManagementConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getEnableExternalDatabaseManagementDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public EnableExternalNonContainerDatabaseManagementFeatureResponse
             enableExternalNonContainerDatabaseManagementFeature(
                     EnableExternalNonContainerDatabaseManagementFeatureRequest request) {
@@ -3599,6 +3902,123 @@ public class DbManagementClient implements DbManagement {
     }
 
     @Override
+    public GetDatabaseFleetBackupMetricsResponse getDatabaseFleetBackupMetrics(
+            GetDatabaseFleetBackupMetricsRequest request) {
+        LOG.trace("Called getDatabaseFleetBackupMetrics");
+        final GetDatabaseFleetBackupMetricsRequest interceptedRequest =
+                GetDatabaseFleetBackupMetricsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetDatabaseFleetBackupMetricsConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "GetDatabaseFleetBackupMetrics",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/DatabaseFleetBackupMetrics/GetDatabaseFleetBackupMetrics");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, GetDatabaseFleetBackupMetricsResponse>
+                transformer =
+                        GetDatabaseFleetBackupMetricsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public GetDatabaseFleetDataguardMetricsResponse getDatabaseFleetDataguardMetrics(
+            GetDatabaseFleetDataguardMetricsRequest request) {
+        LOG.trace("Called getDatabaseFleetDataguardMetrics");
+        final GetDatabaseFleetDataguardMetricsRequest interceptedRequest =
+                GetDatabaseFleetDataguardMetricsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetDatabaseFleetDataguardMetricsConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "GetDatabaseFleetDataguardMetrics",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/DatabaseFleetDataguardMetrics/GetDatabaseFleetDataguardMetrics");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, GetDatabaseFleetDataguardMetricsResponse>
+                transformer =
+                        GetDatabaseFleetDataguardMetricsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public GetDatabaseFleetHaOverviewMetricsResponse getDatabaseFleetHaOverviewMetrics(
+            GetDatabaseFleetHaOverviewMetricsRequest request) {
+        LOG.trace("Called getDatabaseFleetHaOverviewMetrics");
+        final GetDatabaseFleetHaOverviewMetricsRequest interceptedRequest =
+                GetDatabaseFleetHaOverviewMetricsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetDatabaseFleetHaOverviewMetricsConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "GetDatabaseFleetHaOverviewMetrics",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/DatabaseFleetHaOverviewMetrics/GetDatabaseFleetHaOverviewMetrics");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, GetDatabaseFleetHaOverviewMetricsResponse>
+                transformer =
+                        GetDatabaseFleetHaOverviewMetricsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public GetDatabaseFleetHealthMetricsResponse getDatabaseFleetHealthMetrics(
             GetDatabaseFleetHealthMetricsRequest request) {
         LOG.trace("Called getDatabaseFleetHealthMetrics");
@@ -3621,6 +4041,44 @@ public class DbManagementClient implements DbManagement {
                         javax.ws.rs.core.Response, GetDatabaseFleetHealthMetricsResponse>
                 transformer =
                         GetDatabaseFleetHealthMetricsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public GetDatabaseHaBackupDetailsResponse getDatabaseHaBackupDetails(
+            GetDatabaseHaBackupDetailsRequest request) {
+        LOG.trace("Called getDatabaseHaBackupDetails");
+        final GetDatabaseHaBackupDetailsRequest interceptedRequest =
+                GetDatabaseHaBackupDetailsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetDatabaseHaBackupDetailsConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "GetDatabaseHaBackupDetails",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/DatabaseHaBackupDetails/GetDatabaseHaBackupDetails");
+        java.util.function.Function<javax.ws.rs.core.Response, GetDatabaseHaBackupDetailsResponse>
+                transformer =
+                        GetDatabaseHaBackupDetailsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -4303,6 +4761,83 @@ public class DbManagementClient implements DbManagement {
         java.util.function.Function<javax.ws.rs.core.Response, GetExternalListenerResponse>
                 transformer =
                         GetExternalListenerConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public GetExternalMySqlDatabaseResponse getExternalMySqlDatabase(
+            GetExternalMySqlDatabaseRequest request) {
+        LOG.trace("Called getExternalMySqlDatabase");
+        final GetExternalMySqlDatabaseRequest interceptedRequest =
+                GetExternalMySqlDatabaseConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetExternalMySqlDatabaseConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "GetExternalMySqlDatabase",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalMySqlDatabase/GetExternalMySqlDatabase");
+        java.util.function.Function<javax.ws.rs.core.Response, GetExternalMySqlDatabaseResponse>
+                transformer =
+                        GetExternalMySqlDatabaseConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public GetExternalMySqlDatabaseConnectorResponse getExternalMySqlDatabaseConnector(
+            GetExternalMySqlDatabaseConnectorRequest request) {
+        LOG.trace("Called getExternalMySqlDatabaseConnector");
+        final GetExternalMySqlDatabaseConnectorRequest interceptedRequest =
+                GetExternalMySqlDatabaseConnectorConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetExternalMySqlDatabaseConnectorConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "GetExternalMySqlDatabaseConnector",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalMySqlDatabase/GetExternalMySqlDatabaseConnector");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, GetExternalMySqlDatabaseConnectorResponse>
+                transformer =
+                        GetExternalMySqlDatabaseConnectorConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -6095,6 +6630,44 @@ public class DbManagementClient implements DbManagement {
     }
 
     @Override
+    public ListExternalMySqlDatabasesResponse listExternalMySqlDatabases(
+            ListExternalMySqlDatabasesRequest request) {
+        LOG.trace("Called listExternalMySqlDatabases");
+        final ListExternalMySqlDatabasesRequest interceptedRequest =
+                ListExternalMySqlDatabasesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListExternalMySqlDatabasesConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "ListExternalMySqlDatabases",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalMySqlDatabaseCollection/ListExternalMySqlDatabases");
+        java.util.function.Function<javax.ws.rs.core.Response, ListExternalMySqlDatabasesResponse>
+                transformer =
+                        ListExternalMySqlDatabasesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public ListJobExecutionsResponse listJobExecutions(ListJobExecutionsRequest request) {
         LOG.trace("Called listJobExecutions");
         final ListJobExecutionsRequest interceptedRequest =
@@ -6259,6 +6832,44 @@ public class DbManagementClient implements DbManagement {
         java.util.function.Function<javax.ws.rs.core.Response, ListManagedDatabasesResponse>
                 transformer =
                         ListManagedDatabasesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListMySqlDatabaseConnectorsResponse listMySqlDatabaseConnectors(
+            ListMySqlDatabaseConnectorsRequest request) {
+        LOG.trace("Called listMySqlDatabaseConnectors");
+        final ListMySqlDatabaseConnectorsRequest interceptedRequest =
+                ListMySqlDatabaseConnectorsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListMySqlDatabaseConnectorsConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "ListMySqlDatabaseConnectors",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/MySqlConnectorCollection/ListMySqlDatabaseConnectors");
+        java.util.function.Function<javax.ws.rs.core.Response, ListMySqlDatabaseConnectorsResponse>
+                transformer =
+                        ListMySqlDatabaseConnectorsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -8869,6 +9480,94 @@ public class DbManagementClient implements DbManagement {
                                         client.put(
                                                 ib,
                                                 retriedRequest.getUpdateExternalListenerDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public UpdateExternalMysqlDatabaseResponse updateExternalMysqlDatabase(
+            UpdateExternalMysqlDatabaseRequest request) {
+        LOG.trace("Called updateExternalMysqlDatabase");
+        final UpdateExternalMysqlDatabaseRequest interceptedRequest =
+                UpdateExternalMysqlDatabaseConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateExternalMysqlDatabaseConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "UpdateExternalMysqlDatabase",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalMySqlDatabase/UpdateExternalMysqlDatabase");
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateExternalMysqlDatabaseResponse>
+                transformer =
+                        UpdateExternalMysqlDatabaseConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest
+                                                        .getUpdateExternalMySqlDatabaseDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public UpdateExternalMysqlDatabaseConnectorResponse updateExternalMysqlDatabaseConnector(
+            UpdateExternalMysqlDatabaseConnectorRequest request) {
+        LOG.trace("Called updateExternalMysqlDatabaseConnector");
+        final UpdateExternalMysqlDatabaseConnectorRequest interceptedRequest =
+                UpdateExternalMysqlDatabaseConnectorConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateExternalMysqlDatabaseConnectorConverter.fromRequest(
+                        client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "UpdateExternalMysqlDatabaseConnector",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalMySqlDatabaseConnector/UpdateExternalMysqlDatabaseConnector");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, UpdateExternalMysqlDatabaseConnectorResponse>
+                transformer =
+                        UpdateExternalMysqlDatabaseConnectorConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest
+                                                        .getUpdateExternalMySqlDatabaseConnectorDetails(),
                                                 retriedRequest);
                                 return transformer.apply(response);
                             });

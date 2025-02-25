@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.marketplacepublisher;
@@ -68,7 +68,7 @@ public interface Offer extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/CreateOfferExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateOffer API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/CreateOfferExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateOffer API.
      */
     CreateOfferResponse createOffer(CreateOfferRequest request);
 
@@ -80,7 +80,7 @@ public interface Offer extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/DeleteOfferExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteOffer API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/DeleteOfferExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteOffer API.
      */
     DeleteOfferResponse deleteOffer(DeleteOfferRequest request);
 
@@ -92,7 +92,7 @@ public interface Offer extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/GetOfferExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetOffer API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/GetOfferExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetOffer API.
      */
     GetOfferResponse getOffer(GetOfferRequest request);
 
@@ -104,7 +104,7 @@ public interface Offer extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/GetOfferInternalDetailExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetOfferInternalDetail API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/GetOfferInternalDetailExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetOfferInternalDetail API.
      */
     GetOfferInternalDetailResponse getOfferInternalDetail(GetOfferInternalDetailRequest request);
 
@@ -117,7 +117,7 @@ public interface Offer extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/ListOffersExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListOffers API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/ListOffersExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListOffers API.
      */
     ListOffersResponse listOffers(ListOffersRequest request);
 
@@ -129,7 +129,7 @@ public interface Offer extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/UpdateOfferExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateOffer API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/UpdateOfferExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateOffer API.
      */
     UpdateOfferResponse updateOffer(UpdateOfferRequest request);
 

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 import com.oracle.bmc.ConfigFileReader;
@@ -43,7 +43,7 @@ import java.util.concurrent.TimeUnit;
  * <p>
  * The sample relies on the correct IAM policies already being in place for a given compartment ID.
  * For more information, please refer to the
- * <a href="https://docs.cloud.oracle.com/Content/Network/Tasks/remoteVCNpeering.htm">Remote VCN
+ * <a href="https://docs.oracle.com/iaas/Content/Network/Tasks/remoteVCNpeering.htm">Remote VCN
  * Peering</a> documentation that is found on the Oracle Cloud Infrastructure developer portal.
  * <p>
  * The order of operations and waiting for the appropriate states is important. Each VCN can be set up

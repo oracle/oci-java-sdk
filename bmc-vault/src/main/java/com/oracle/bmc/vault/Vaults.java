@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.vault;
@@ -8,7 +8,7 @@ import com.oracle.bmc.vault.requests.*;
 import com.oracle.bmc.vault.responses.*;
 
 /**
- * Use the Secret Management API to manage secrets and secret versions. For more information, see [Managing Secrets](https://docs.cloud.oracle.com/Content/KeyManagement/Tasks/managingsecrets.htm).
+ * Use the Secret Management API to manage secrets and secret versions. For more information, see [Managing Secrets](https://docs.oracle.com/iaas/Content/KeyManagement/Tasks/managingsecrets.htm).
  * This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by default if no circuit breaker configuration is defined by the user.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180608")
@@ -70,7 +70,7 @@ public interface Vaults extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/vault/CancelSecretDeletionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CancelSecretDeletion API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/vault/CancelSecretDeletionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CancelSecretDeletion API.
      */
     CancelSecretDeletionResponse cancelSecretDeletion(CancelSecretDeletionRequest request);
 
@@ -85,7 +85,7 @@ public interface Vaults extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/vault/CancelSecretRotationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CancelSecretRotation API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/vault/CancelSecretRotationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CancelSecretRotation API.
      */
     CancelSecretRotationResponse cancelSecretRotation(CancelSecretRotationRequest request);
 
@@ -97,14 +97,14 @@ public interface Vaults extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/vault/CancelSecretVersionDeletionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CancelSecretVersionDeletion API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/vault/CancelSecretVersionDeletionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CancelSecretVersionDeletion API.
      */
     CancelSecretVersionDeletionResponse cancelSecretVersionDeletion(
             CancelSecretVersionDeletionRequest request);
 
     /**
      * Moves a secret into a different compartment within the same tenancy. For information about
-     * moving resources between compartments, see [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * moving resources between compartments, see [Moving Resources to a Different Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      * <p>
      * When provided, if-match is checked against the ETag values of the secret.
      *
@@ -114,7 +114,7 @@ public interface Vaults extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/vault/ChangeSecretCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeSecretCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/vault/ChangeSecretCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeSecretCompartment API.
      */
     ChangeSecretCompartmentResponse changeSecretCompartment(ChangeSecretCompartmentRequest request);
 
@@ -129,7 +129,7 @@ public interface Vaults extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/vault/CreateSecretExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateSecret API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/vault/CreateSecretExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateSecret API.
      */
     CreateSecretResponse createSecret(CreateSecretRequest request);
 
@@ -141,7 +141,7 @@ public interface Vaults extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/vault/GetSecretExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetSecret API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/vault/GetSecretExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetSecret API.
      */
     GetSecretResponse getSecret(GetSecretRequest request);
 
@@ -154,7 +154,7 @@ public interface Vaults extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/vault/GetSecretVersionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetSecretVersion API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/vault/GetSecretVersionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetSecretVersion API.
      */
     GetSecretVersionResponse getSecretVersion(GetSecretVersionRequest request);
 
@@ -166,7 +166,7 @@ public interface Vaults extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/vault/ListSecretVersionsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSecretVersions API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/vault/ListSecretVersionsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSecretVersions API.
      */
     ListSecretVersionsResponse listSecretVersions(ListSecretVersionsRequest request);
 
@@ -178,7 +178,7 @@ public interface Vaults extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/vault/ListSecretsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSecrets API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/vault/ListSecretsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSecrets API.
      */
     ListSecretsResponse listSecrets(ListSecretsRequest request);
 
@@ -191,7 +191,7 @@ public interface Vaults extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/vault/RotateSecretExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RotateSecret API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/vault/RotateSecretExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RotateSecret API.
      */
     RotateSecretResponse rotateSecret(RotateSecretRequest request);
 
@@ -205,7 +205,7 @@ public interface Vaults extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/vault/ScheduleSecretDeletionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ScheduleSecretDeletion API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/vault/ScheduleSecretDeletionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ScheduleSecretDeletion API.
      */
     ScheduleSecretDeletionResponse scheduleSecretDeletion(ScheduleSecretDeletionRequest request);
 
@@ -219,7 +219,7 @@ public interface Vaults extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/vault/ScheduleSecretVersionDeletionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ScheduleSecretVersionDeletion API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/vault/ScheduleSecretVersionDeletionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ScheduleSecretVersionDeletion API.
      */
     ScheduleSecretVersionDeletionResponse scheduleSecretVersionDeletion(
             ScheduleSecretVersionDeletionRequest request);
@@ -238,7 +238,7 @@ public interface Vaults extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/vault/UpdateSecretExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateSecret API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/vault/UpdateSecretExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateSecret API.
      */
     UpdateSecretResponse updateSecret(UpdateSecretRequest request);
 

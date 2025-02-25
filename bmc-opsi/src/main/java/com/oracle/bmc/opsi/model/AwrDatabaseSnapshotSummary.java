@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.opsi.model;
@@ -52,7 +52,7 @@ public final class AwrDatabaseSnapshotSummary
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Internal ID of the database. The internal ID of the database is not the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * Internal ID of the database. The internal ID of the database is not the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          * It can be retrieved from the following endpoint:
          * /awrHubs/{awrHubId}/awrDatabases
          *
@@ -61,7 +61,7 @@ public final class AwrDatabaseSnapshotSummary
         private String awrSourceDatabaseIdentifier;
 
         /**
-         * Internal ID of the database. The internal ID of the database is not the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * Internal ID of the database. The internal ID of the database is not the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          * It can be retrieved from the following endpoint:
          * /awrHubs/{awrHubId}/awrDatabases
          *
@@ -138,7 +138,7 @@ public final class AwrDatabaseSnapshotSummary
             return this;
         }
         /**
-         * The ID of the snapshot. The snapshot identifier is not the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * The ID of the snapshot. The snapshot identifier is not the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          * It can be retrieved from the following endpoint:
          * /awrHubs/{awrHubId}/awrDbSnapshots
          *
@@ -147,7 +147,7 @@ public final class AwrDatabaseSnapshotSummary
         private Integer snapshotIdentifier;
 
         /**
-         * The ID of the snapshot. The snapshot identifier is not the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * The ID of the snapshot. The snapshot identifier is not the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          * It can be retrieved from the following endpoint:
          * /awrHubs/{awrHubId}/awrDbSnapshots
          *
@@ -234,7 +234,7 @@ public final class AwrDatabaseSnapshotSummary
     }
 
     /**
-     * Internal ID of the database. The internal ID of the database is not the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * Internal ID of the database. The internal ID of the database is not the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * It can be retrieved from the following endpoint:
      * /awrHubs/{awrHubId}/awrDatabases
      *
@@ -243,7 +243,7 @@ public final class AwrDatabaseSnapshotSummary
     private final String awrSourceDatabaseIdentifier;
 
     /**
-     * Internal ID of the database. The internal ID of the database is not the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * Internal ID of the database. The internal ID of the database is not the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * It can be retrieved from the following endpoint:
      * /awrHubs/{awrHubId}/awrDatabases
      *
@@ -310,7 +310,7 @@ public final class AwrDatabaseSnapshotSummary
     }
 
     /**
-     * The ID of the snapshot. The snapshot identifier is not the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * The ID of the snapshot. The snapshot identifier is not the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * It can be retrieved from the following endpoint:
      * /awrHubs/{awrHubId}/awrDbSnapshots
      *
@@ -319,7 +319,7 @@ public final class AwrDatabaseSnapshotSummary
     private final Integer snapshotIdentifier;
 
     /**
-     * The ID of the snapshot. The snapshot identifier is not the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * The ID of the snapshot. The snapshot identifier is not the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * It can be retrieved from the following endpoint:
      * /awrHubs/{awrHubId}/awrDbSnapshots
      *

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.goldengate.model;
@@ -194,6 +194,7 @@ public final class UpdateMicrosoftSqlserverConnectionDetails extends UpdateConne
         }
         /**
          * The password Oracle GoldenGate uses to connect the associated Microsoft SQL Server.
+         * Deprecated: This field is deprecated and replaced by "passwordSecretId". This field will be removed after February 15 2026.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("password")
@@ -201,6 +202,7 @@ public final class UpdateMicrosoftSqlserverConnectionDetails extends UpdateConne
 
         /**
          * The password Oracle GoldenGate uses to connect the associated Microsoft SQL Server.
+         * Deprecated: This field is deprecated and replaced by "passwordSecretId". This field will be removed after February 15 2026.
          *
          * @param password the value to set
          * @return this builder
@@ -211,7 +213,7 @@ public final class UpdateMicrosoftSqlserverConnectionDetails extends UpdateConne
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret that stores the password Oracle GoldenGate uses to connect the associated Microsoft SQL Server.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password Oracle GoldenGate uses to connect the associated Microsoft SQL Server.
          * Note: When provided, 'password' field must not be provided.
          *
          **/
@@ -219,7 +221,7 @@ public final class UpdateMicrosoftSqlserverConnectionDetails extends UpdateConne
         private String passwordSecretId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret that stores the password Oracle GoldenGate uses to connect the associated Microsoft SQL Server.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password Oracle GoldenGate uses to connect the associated Microsoft SQL Server.
          * Note: When provided, 'password' field must not be provided.
          *
          * @param passwordSecretId the value to set
@@ -566,6 +568,7 @@ public final class UpdateMicrosoftSqlserverConnectionDetails extends UpdateConne
 
     /**
      * The password Oracle GoldenGate uses to connect the associated Microsoft SQL Server.
+     * Deprecated: This field is deprecated and replaced by "passwordSecretId". This field will be removed after February 15 2026.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("password")
@@ -573,6 +576,7 @@ public final class UpdateMicrosoftSqlserverConnectionDetails extends UpdateConne
 
     /**
      * The password Oracle GoldenGate uses to connect the associated Microsoft SQL Server.
+     * Deprecated: This field is deprecated and replaced by "passwordSecretId". This field will be removed after February 15 2026.
      *
      * @return the value
      **/
@@ -581,7 +585,7 @@ public final class UpdateMicrosoftSqlserverConnectionDetails extends UpdateConne
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret that stores the password Oracle GoldenGate uses to connect the associated Microsoft SQL Server.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password Oracle GoldenGate uses to connect the associated Microsoft SQL Server.
      * Note: When provided, 'password' field must not be provided.
      *
      **/
@@ -589,7 +593,7 @@ public final class UpdateMicrosoftSqlserverConnectionDetails extends UpdateConne
     private final String passwordSecretId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret that stores the password Oracle GoldenGate uses to connect the associated Microsoft SQL Server.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password Oracle GoldenGate uses to connect the associated Microsoft SQL Server.
      * Note: When provided, 'password' field must not be provided.
      *
      * @return the value

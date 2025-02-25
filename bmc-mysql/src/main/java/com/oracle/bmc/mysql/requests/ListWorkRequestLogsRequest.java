@@ -1,12 +1,12 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.mysql.requests;
 
 import com.oracle.bmc.mysql.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/ListWorkRequestLogsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListWorkRequestLogsRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/ListWorkRequestLogsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListWorkRequestLogsRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190415")
 public class ListWorkRequestLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
@@ -41,14 +41,14 @@ public class ListWorkRequestLogsRequest extends com.oracle.bmc.requests.BmcReque
     }
     /**
      * The maximum number of items to return in a paginated list call. For information about pagination, see
-     * [List Pagination](https://docs.cloud.oracle.com/#API/Concepts/usingapi.htm#List_Pagination).
+     * [List Pagination](https://docs.oracle.com/iaas/#API/Concepts/usingapi.htm#List_Pagination).
      *
      */
     private Integer limit;
 
     /**
      * The maximum number of items to return in a paginated list call. For information about pagination, see
-     * [List Pagination](https://docs.cloud.oracle.com/#API/Concepts/usingapi.htm#List_Pagination).
+     * [List Pagination](https://docs.oracle.com/iaas/#API/Concepts/usingapi.htm#List_Pagination).
      *
      */
     public Integer getLimit() {
@@ -57,7 +57,7 @@ public class ListWorkRequestLogsRequest extends com.oracle.bmc.requests.BmcReque
     /**
      * The value of the {@code opc-next-page} or {@code opc-prev-page} response header from
      * the previous list call. For information about pagination, see [List
-     * Pagination](https://docs.cloud.oracle.com/#API/Concepts/usingapi.htm#List_Pagination).
+     * Pagination](https://docs.oracle.com/iaas/#API/Concepts/usingapi.htm#List_Pagination).
      *
      */
     private String page;
@@ -65,7 +65,7 @@ public class ListWorkRequestLogsRequest extends com.oracle.bmc.requests.BmcReque
     /**
      * The value of the {@code opc-next-page} or {@code opc-prev-page} response header from
      * the previous list call. For information about pagination, see [List
-     * Pagination](https://docs.cloud.oracle.com/#API/Concepts/usingapi.htm#List_Pagination).
+     * Pagination](https://docs.oracle.com/iaas/#API/Concepts/usingapi.htm#List_Pagination).
      *
      */
     public String getPage() {
@@ -117,14 +117,14 @@ public class ListWorkRequestLogsRequest extends com.oracle.bmc.requests.BmcReque
 
         /**
          * The maximum number of items to return in a paginated list call. For information about pagination, see
-         * [List Pagination](https://docs.cloud.oracle.com/#API/Concepts/usingapi.htm#List_Pagination).
+         * [List Pagination](https://docs.oracle.com/iaas/#API/Concepts/usingapi.htm#List_Pagination).
          *
          */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return in a paginated list call. For information about pagination, see
-         * [List Pagination](https://docs.cloud.oracle.com/#API/Concepts/usingapi.htm#List_Pagination).
+         * [List Pagination](https://docs.oracle.com/iaas/#API/Concepts/usingapi.htm#List_Pagination).
          *
          * @param limit the value to set
          * @return this builder instance
@@ -137,7 +137,7 @@ public class ListWorkRequestLogsRequest extends com.oracle.bmc.requests.BmcReque
         /**
          * The value of the {@code opc-next-page} or {@code opc-prev-page} response header from
          * the previous list call. For information about pagination, see [List
-         * Pagination](https://docs.cloud.oracle.com/#API/Concepts/usingapi.htm#List_Pagination).
+         * Pagination](https://docs.oracle.com/iaas/#API/Concepts/usingapi.htm#List_Pagination).
          *
          */
         private String page = null;
@@ -145,7 +145,7 @@ public class ListWorkRequestLogsRequest extends com.oracle.bmc.requests.BmcReque
         /**
          * The value of the {@code opc-next-page} or {@code opc-prev-page} response header from
          * the previous list call. For information about pagination, see [List
-         * Pagination](https://docs.cloud.oracle.com/#API/Concepts/usingapi.htm#List_Pagination).
+         * Pagination](https://docs.oracle.com/iaas/#API/Concepts/usingapi.htm#List_Pagination).
          *
          * @param page the value to set
          * @return this builder instance

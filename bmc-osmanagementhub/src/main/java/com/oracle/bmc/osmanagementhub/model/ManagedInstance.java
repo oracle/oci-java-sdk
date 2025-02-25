@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.osmanagementhub.model;
@@ -36,6 +36,7 @@ public final class ManagedInstance extends com.oracle.bmc.http.internal.Explicit
         "osFamily",
         "status",
         "profile",
+        "profileVersion",
         "isManagementStation",
         "primaryManagementStationId",
         "secondaryManagementStationId",
@@ -57,7 +58,8 @@ public final class ManagedInstance extends com.oracle.bmc.http.internal.Explicit
         "timeUpdated",
         "notificationTopicId",
         "autonomousSettings",
-        "isManagedByAutonomousLinux"
+        "isManagedByAutonomousLinux",
+        "agentVersion"
     })
     public ManagedInstance(
             String id,
@@ -76,6 +78,7 @@ public final class ManagedInstance extends com.oracle.bmc.http.internal.Explicit
             OsFamily osFamily,
             ManagedInstanceStatus status,
             String profile,
+            String profileVersion,
             Boolean isManagementStation,
             String primaryManagementStationId,
             String secondaryManagementStationId,
@@ -97,7 +100,8 @@ public final class ManagedInstance extends com.oracle.bmc.http.internal.Explicit
             java.util.Date timeUpdated,
             String notificationTopicId,
             AutonomousSettings autonomousSettings,
-            Boolean isManagedByAutonomousLinux) {
+            Boolean isManagedByAutonomousLinux,
+            String agentVersion) {
         super();
         this.id = id;
         this.displayName = displayName;
@@ -115,6 +119,7 @@ public final class ManagedInstance extends com.oracle.bmc.http.internal.Explicit
         this.osFamily = osFamily;
         this.status = status;
         this.profile = profile;
+        this.profileVersion = profileVersion;
         this.isManagementStation = isManagementStation;
         this.primaryManagementStationId = primaryManagementStationId;
         this.secondaryManagementStationId = secondaryManagementStationId;
@@ -137,19 +142,20 @@ public final class ManagedInstance extends com.oracle.bmc.http.internal.Explicit
         this.notificationTopicId = notificationTopicId;
         this.autonomousSettings = autonomousSettings;
         this.isManagedByAutonomousLinux = isManagedByAutonomousLinux;
+        this.agentVersion = agentVersion;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
          *
          * @param id the value to set
          * @return this builder
@@ -192,14 +198,14 @@ public final class ManagedInstance extends com.oracle.bmc.http.internal.Explicit
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy that the managed instance resides in.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy that the managed instance resides in.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("tenancyId")
         private String tenancyId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy that the managed instance resides in.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy that the managed instance resides in.
          *
          * @param tenancyId the value to set
          * @return this builder
@@ -210,14 +216,14 @@ public final class ManagedInstance extends com.oracle.bmc.http.internal.Explicit
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the managed instance.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the managed instance.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the managed instance.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the managed instance.
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -408,6 +414,22 @@ public final class ManagedInstance extends com.oracle.bmc.http.internal.Explicit
             return this;
         }
         /**
+         * The version of the profile that was used to register this instance with the service.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("profileVersion")
+        private String profileVersion;
+
+        /**
+         * The version of the profile that was used to register this instance with the service.
+         * @param profileVersion the value to set
+         * @return this builder
+         **/
+        public Builder profileVersion(String profileVersion) {
+            this.profileVersion = profileVersion;
+            this.__explicitlySet__.add("profileVersion");
+            return this;
+        }
+        /**
          * Indicates whether this managed instance is acting as an on-premises management station.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("isManagementStation")
@@ -424,14 +446,14 @@ public final class ManagedInstance extends com.oracle.bmc.http.internal.Explicit
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station for the instance to use as primary management station.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station for the instance to use as primary management station.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("primaryManagementStationId")
         private String primaryManagementStationId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station for the instance to use as primary management station.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station for the instance to use as primary management station.
          *
          * @param primaryManagementStationId the value to set
          * @return this builder
@@ -442,14 +464,14 @@ public final class ManagedInstance extends com.oracle.bmc.http.internal.Explicit
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station for the instance to use as secondary managment station.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station for the instance to use as secondary management station.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("secondaryManagementStationId")
         private String secondaryManagementStationId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station for the instance to use as secondary managment station.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station for the instance to use as secondary management station.
          *
          * @param secondaryManagementStationId the value to set
          * @return this builder
@@ -699,14 +721,14 @@ public final class ManagedInstance extends com.oracle.bmc.http.internal.Explicit
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Oracle Notifications service (ONS) topic. ONS is the channel used to send notifications to the customer.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Oracle Notifications service (ONS) topic. ONS is the channel used to send notifications to the customer.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("notificationTopicId")
         private String notificationTopicId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Oracle Notifications service (ONS) topic. ONS is the channel used to send notifications to the customer.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Oracle Notifications service (ONS) topic. ONS is the channel used to send notifications to the customer.
          *
          * @param notificationTopicId the value to set
          * @return this builder
@@ -741,6 +763,22 @@ public final class ManagedInstance extends com.oracle.bmc.http.internal.Explicit
             this.__explicitlySet__.add("isManagedByAutonomousLinux");
             return this;
         }
+        /**
+         * The version of osmh-agent running on the managed instance
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("agentVersion")
+        private String agentVersion;
+
+        /**
+         * The version of osmh-agent running on the managed instance
+         * @param agentVersion the value to set
+         * @return this builder
+         **/
+        public Builder agentVersion(String agentVersion) {
+            this.agentVersion = agentVersion;
+            this.__explicitlySet__.add("agentVersion");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -764,6 +802,7 @@ public final class ManagedInstance extends com.oracle.bmc.http.internal.Explicit
                             this.osFamily,
                             this.status,
                             this.profile,
+                            this.profileVersion,
                             this.isManagementStation,
                             this.primaryManagementStationId,
                             this.secondaryManagementStationId,
@@ -785,7 +824,8 @@ public final class ManagedInstance extends com.oracle.bmc.http.internal.Explicit
                             this.timeUpdated,
                             this.notificationTopicId,
                             this.autonomousSettings,
-                            this.isManagedByAutonomousLinux);
+                            this.isManagedByAutonomousLinux,
+                            this.agentVersion);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -841,6 +881,9 @@ public final class ManagedInstance extends com.oracle.bmc.http.internal.Explicit
             }
             if (model.wasPropertyExplicitlySet("profile")) {
                 this.profile(model.getProfile());
+            }
+            if (model.wasPropertyExplicitlySet("profileVersion")) {
+                this.profileVersion(model.getProfileVersion());
             }
             if (model.wasPropertyExplicitlySet("isManagementStation")) {
                 this.isManagementStation(model.getIsManagementStation());
@@ -908,6 +951,9 @@ public final class ManagedInstance extends com.oracle.bmc.http.internal.Explicit
             if (model.wasPropertyExplicitlySet("isManagedByAutonomousLinux")) {
                 this.isManagedByAutonomousLinux(model.getIsManagedByAutonomousLinux());
             }
+            if (model.wasPropertyExplicitlySet("agentVersion")) {
+                this.agentVersion(model.getAgentVersion());
+            }
             return this;
         }
     }
@@ -924,14 +970,14 @@ public final class ManagedInstance extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
      *
      * @return the value
      **/
@@ -968,14 +1014,14 @@ public final class ManagedInstance extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy that the managed instance resides in.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy that the managed instance resides in.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("tenancyId")
     private final String tenancyId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy that the managed instance resides in.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy that the managed instance resides in.
      *
      * @return the value
      **/
@@ -984,14 +1030,14 @@ public final class ManagedInstance extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the managed instance.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the managed instance.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the managed instance.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the managed instance.
      *
      * @return the value
      **/
@@ -1158,6 +1204,20 @@ public final class ManagedInstance extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
+     * The version of the profile that was used to register this instance with the service.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("profileVersion")
+    private final String profileVersion;
+
+    /**
+     * The version of the profile that was used to register this instance with the service.
+     * @return the value
+     **/
+    public String getProfileVersion() {
+        return profileVersion;
+    }
+
+    /**
      * Indicates whether this managed instance is acting as an on-premises management station.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isManagementStation")
@@ -1172,14 +1232,14 @@ public final class ManagedInstance extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station for the instance to use as primary management station.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station for the instance to use as primary management station.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("primaryManagementStationId")
     private final String primaryManagementStationId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station for the instance to use as primary management station.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station for the instance to use as primary management station.
      *
      * @return the value
      **/
@@ -1188,14 +1248,14 @@ public final class ManagedInstance extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station for the instance to use as secondary managment station.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station for the instance to use as secondary management station.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("secondaryManagementStationId")
     private final String secondaryManagementStationId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station for the instance to use as secondary managment station.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station for the instance to use as secondary management station.
      *
      * @return the value
      **/
@@ -1411,14 +1471,14 @@ public final class ManagedInstance extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Oracle Notifications service (ONS) topic. ONS is the channel used to send notifications to the customer.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Oracle Notifications service (ONS) topic. ONS is the channel used to send notifications to the customer.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("notificationTopicId")
     private final String notificationTopicId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Oracle Notifications service (ONS) topic. ONS is the channel used to send notifications to the customer.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Oracle Notifications service (ONS) topic. ONS is the channel used to send notifications to the customer.
      *
      * @return the value
      **/
@@ -1445,6 +1505,20 @@ public final class ManagedInstance extends com.oracle.bmc.http.internal.Explicit
      **/
     public Boolean getIsManagedByAutonomousLinux() {
         return isManagedByAutonomousLinux;
+    }
+
+    /**
+     * The version of osmh-agent running on the managed instance
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("agentVersion")
+    private final String agentVersion;
+
+    /**
+     * The version of osmh-agent running on the managed instance
+     * @return the value
+     **/
+    public String getAgentVersion() {
+        return agentVersion;
     }
 
     @Override
@@ -1478,6 +1552,7 @@ public final class ManagedInstance extends com.oracle.bmc.http.internal.Explicit
         sb.append(", osFamily=").append(String.valueOf(this.osFamily));
         sb.append(", status=").append(String.valueOf(this.status));
         sb.append(", profile=").append(String.valueOf(this.profile));
+        sb.append(", profileVersion=").append(String.valueOf(this.profileVersion));
         sb.append(", isManagementStation=").append(String.valueOf(this.isManagementStation));
         sb.append(", primaryManagementStationId=")
                 .append(String.valueOf(this.primaryManagementStationId));
@@ -1506,6 +1581,7 @@ public final class ManagedInstance extends com.oracle.bmc.http.internal.Explicit
         sb.append(", autonomousSettings=").append(String.valueOf(this.autonomousSettings));
         sb.append(", isManagedByAutonomousLinux=")
                 .append(String.valueOf(this.isManagedByAutonomousLinux));
+        sb.append(", agentVersion=").append(String.valueOf(this.agentVersion));
         sb.append(")");
         return sb.toString();
     }
@@ -1537,6 +1613,7 @@ public final class ManagedInstance extends com.oracle.bmc.http.internal.Explicit
                 && java.util.Objects.equals(this.osFamily, other.osFamily)
                 && java.util.Objects.equals(this.status, other.status)
                 && java.util.Objects.equals(this.profile, other.profile)
+                && java.util.Objects.equals(this.profileVersion, other.profileVersion)
                 && java.util.Objects.equals(this.isManagementStation, other.isManagementStation)
                 && java.util.Objects.equals(
                         this.primaryManagementStationId, other.primaryManagementStationId)
@@ -1565,6 +1642,7 @@ public final class ManagedInstance extends com.oracle.bmc.http.internal.Explicit
                 && java.util.Objects.equals(this.autonomousSettings, other.autonomousSettings)
                 && java.util.Objects.equals(
                         this.isManagedByAutonomousLinux, other.isManagedByAutonomousLinux)
+                && java.util.Objects.equals(this.agentVersion, other.agentVersion)
                 && super.equals(other);
     }
 
@@ -1598,6 +1676,9 @@ public final class ManagedInstance extends com.oracle.bmc.http.internal.Explicit
         result = (result * PRIME) + (this.osFamily == null ? 43 : this.osFamily.hashCode());
         result = (result * PRIME) + (this.status == null ? 43 : this.status.hashCode());
         result = (result * PRIME) + (this.profile == null ? 43 : this.profile.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.profileVersion == null ? 43 : this.profileVersion.hashCode());
         result =
                 (result * PRIME)
                         + (this.isManagementStation == null
@@ -1686,6 +1767,7 @@ public final class ManagedInstance extends com.oracle.bmc.http.internal.Explicit
                         + (this.isManagedByAutonomousLinux == null
                                 ? 43
                                 : this.isManagedByAutonomousLinux.hashCode());
+        result = (result * PRIME) + (this.agentVersion == null ? 43 : this.agentVersion.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

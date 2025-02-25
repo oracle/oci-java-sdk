@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.goldengate.model;
@@ -216,6 +216,7 @@ public final class CreateKafkaSchemaRegistryConnectionDetails extends CreateConn
         /**
          * The password to access Schema Registry using basic authentication.
          * This value is injected into 'schema.registry.basic.auth.user.info=user:password' configuration property.
+         * Deprecated: This field is deprecated and replaced by "passwordSecretId". This field will be removed after February 15 2026.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("password")
@@ -224,6 +225,7 @@ public final class CreateKafkaSchemaRegistryConnectionDetails extends CreateConn
         /**
          * The password to access Schema Registry using basic authentication.
          * This value is injected into 'schema.registry.basic.auth.user.info=user:password' configuration property.
+         * Deprecated: This field is deprecated and replaced by "passwordSecretId". This field will be removed after February 15 2026.
          *
          * @param password the value to set
          * @return this builder
@@ -234,7 +236,7 @@ public final class CreateKafkaSchemaRegistryConnectionDetails extends CreateConn
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret where the Kafka Schema Registry password is stored,
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Kafka Schema Registry password is stored,
          * The password to access Schema Registry using basic authentication.
          * This value is injected into 'schema.registry.basic.auth.user.info=user:password' configuration property.
          * Note: When provided, 'password' field must not be provided.
@@ -244,7 +246,7 @@ public final class CreateKafkaSchemaRegistryConnectionDetails extends CreateConn
         private String passwordSecretId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret where the Kafka Schema Registry password is stored,
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Kafka Schema Registry password is stored,
          * The password to access Schema Registry using basic authentication.
          * This value is injected into 'schema.registry.basic.auth.user.info=user:password' configuration property.
          * Note: When provided, 'password' field must not be provided.
@@ -259,6 +261,7 @@ public final class CreateKafkaSchemaRegistryConnectionDetails extends CreateConn
         }
         /**
          * The base64 encoded content of the TrustStore file.
+         * Deprecated: This field is deprecated and replaced by "trustStoreSecretId". This field will be removed after February 15 2026.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("trustStore")
@@ -266,6 +269,7 @@ public final class CreateKafkaSchemaRegistryConnectionDetails extends CreateConn
 
         /**
          * The base64 encoded content of the TrustStore file.
+         * Deprecated: This field is deprecated and replaced by "trustStoreSecretId". This field will be removed after February 15 2026.
          *
          * @param trustStore the value to set
          * @return this builder
@@ -276,7 +280,7 @@ public final class CreateKafkaSchemaRegistryConnectionDetails extends CreateConn
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret that stores the content of the TrustStore file.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the content of the TrustStore file.
          * Note: When provided, 'trustStore' field must not be provided.
          *
          **/
@@ -284,7 +288,7 @@ public final class CreateKafkaSchemaRegistryConnectionDetails extends CreateConn
         private String trustStoreSecretId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret that stores the content of the TrustStore file.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the content of the TrustStore file.
          * Note: When provided, 'trustStore' field must not be provided.
          *
          * @param trustStoreSecretId the value to set
@@ -297,6 +301,7 @@ public final class CreateKafkaSchemaRegistryConnectionDetails extends CreateConn
         }
         /**
          * The TrustStore password.
+         * Deprecated: This field is deprecated and replaced by "trustStorePasswordSecretId". This field will be removed after February 15 2026.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("trustStorePassword")
@@ -304,6 +309,7 @@ public final class CreateKafkaSchemaRegistryConnectionDetails extends CreateConn
 
         /**
          * The TrustStore password.
+         * Deprecated: This field is deprecated and replaced by "trustStorePasswordSecretId". This field will be removed after February 15 2026.
          *
          * @param trustStorePassword the value to set
          * @return this builder
@@ -314,7 +320,7 @@ public final class CreateKafkaSchemaRegistryConnectionDetails extends CreateConn
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl TrustStore password is stored.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl TrustStore password is stored.
          * Note: When provided, 'trustStorePassword' field must not be provided.
          *
          **/
@@ -322,7 +328,7 @@ public final class CreateKafkaSchemaRegistryConnectionDetails extends CreateConn
         private String trustStorePasswordSecretId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl TrustStore password is stored.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl TrustStore password is stored.
          * Note: When provided, 'trustStorePassword' field must not be provided.
          *
          * @param trustStorePasswordSecretId the value to set
@@ -335,6 +341,7 @@ public final class CreateKafkaSchemaRegistryConnectionDetails extends CreateConn
         }
         /**
          * The base64 encoded content of the KeyStore file.
+         * Deprecated: This field is deprecated and replaced by "keyStoreSecretId". This field will be removed after February 15 2026.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("keyStore")
@@ -342,6 +349,7 @@ public final class CreateKafkaSchemaRegistryConnectionDetails extends CreateConn
 
         /**
          * The base64 encoded content of the KeyStore file.
+         * Deprecated: This field is deprecated and replaced by "keyStoreSecretId". This field will be removed after February 15 2026.
          *
          * @param keyStore the value to set
          * @return this builder
@@ -352,7 +360,7 @@ public final class CreateKafkaSchemaRegistryConnectionDetails extends CreateConn
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret that stores the content of the KeyStore file.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the content of the KeyStore file.
          * Note: When provided, 'keyStore' field must not be provided.
          *
          **/
@@ -360,7 +368,7 @@ public final class CreateKafkaSchemaRegistryConnectionDetails extends CreateConn
         private String keyStoreSecretId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret that stores the content of the KeyStore file.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the content of the KeyStore file.
          * Note: When provided, 'keyStore' field must not be provided.
          *
          * @param keyStoreSecretId the value to set
@@ -373,6 +381,7 @@ public final class CreateKafkaSchemaRegistryConnectionDetails extends CreateConn
         }
         /**
          * The KeyStore password.
+         * Deprecated: This field is deprecated and replaced by "keyStorePasswordSecretId". This field will be removed after February 15 2026.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("keyStorePassword")
@@ -380,6 +389,7 @@ public final class CreateKafkaSchemaRegistryConnectionDetails extends CreateConn
 
         /**
          * The KeyStore password.
+         * Deprecated: This field is deprecated and replaced by "keyStorePasswordSecretId". This field will be removed after February 15 2026.
          *
          * @param keyStorePassword the value to set
          * @return this builder
@@ -390,7 +400,7 @@ public final class CreateKafkaSchemaRegistryConnectionDetails extends CreateConn
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl KeyStore password is stored.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl KeyStore password is stored.
          * Note: When provided, 'keyStorePassword' field must not be provided.
          *
          **/
@@ -398,7 +408,7 @@ public final class CreateKafkaSchemaRegistryConnectionDetails extends CreateConn
         private String keyStorePasswordSecretId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl KeyStore password is stored.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl KeyStore password is stored.
          * Note: When provided, 'keyStorePassword' field must not be provided.
          *
          * @param keyStorePasswordSecretId the value to set
@@ -412,6 +422,7 @@ public final class CreateKafkaSchemaRegistryConnectionDetails extends CreateConn
         /**
          * The password for the cert inside the KeyStore.
          * In case it differs from the KeyStore password, it should be provided.
+         * Deprecated: This field is deprecated and replaced by "sslKeyPasswordSecretId". This field will be removed after February 15 2026.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("sslKeyPassword")
@@ -420,6 +431,7 @@ public final class CreateKafkaSchemaRegistryConnectionDetails extends CreateConn
         /**
          * The password for the cert inside the KeyStore.
          * In case it differs from the KeyStore password, it should be provided.
+         * Deprecated: This field is deprecated and replaced by "sslKeyPasswordSecretId". This field will be removed after February 15 2026.
          *
          * @param sslKeyPassword the value to set
          * @return this builder
@@ -430,7 +442,7 @@ public final class CreateKafkaSchemaRegistryConnectionDetails extends CreateConn
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret that stores the password for the cert inside the KeyStore.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password for the cert inside the KeyStore.
          * In case it differs from the KeyStore password, it should be provided.
          * Note: When provided, 'sslKeyPassword' field must not be provided.
          *
@@ -439,7 +451,7 @@ public final class CreateKafkaSchemaRegistryConnectionDetails extends CreateConn
         private String sslKeyPasswordSecretId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret that stores the password for the cert inside the KeyStore.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password for the cert inside the KeyStore.
          * In case it differs from the KeyStore password, it should be provided.
          * Note: When provided, 'sslKeyPassword' field must not be provided.
          *
@@ -763,6 +775,7 @@ public final class CreateKafkaSchemaRegistryConnectionDetails extends CreateConn
     /**
      * The password to access Schema Registry using basic authentication.
      * This value is injected into 'schema.registry.basic.auth.user.info=user:password' configuration property.
+     * Deprecated: This field is deprecated and replaced by "passwordSecretId". This field will be removed after February 15 2026.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("password")
@@ -771,6 +784,7 @@ public final class CreateKafkaSchemaRegistryConnectionDetails extends CreateConn
     /**
      * The password to access Schema Registry using basic authentication.
      * This value is injected into 'schema.registry.basic.auth.user.info=user:password' configuration property.
+     * Deprecated: This field is deprecated and replaced by "passwordSecretId". This field will be removed after February 15 2026.
      *
      * @return the value
      **/
@@ -779,7 +793,7 @@ public final class CreateKafkaSchemaRegistryConnectionDetails extends CreateConn
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret where the Kafka Schema Registry password is stored,
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Kafka Schema Registry password is stored,
      * The password to access Schema Registry using basic authentication.
      * This value is injected into 'schema.registry.basic.auth.user.info=user:password' configuration property.
      * Note: When provided, 'password' field must not be provided.
@@ -789,7 +803,7 @@ public final class CreateKafkaSchemaRegistryConnectionDetails extends CreateConn
     private final String passwordSecretId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret where the Kafka Schema Registry password is stored,
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Kafka Schema Registry password is stored,
      * The password to access Schema Registry using basic authentication.
      * This value is injected into 'schema.registry.basic.auth.user.info=user:password' configuration property.
      * Note: When provided, 'password' field must not be provided.
@@ -802,6 +816,7 @@ public final class CreateKafkaSchemaRegistryConnectionDetails extends CreateConn
 
     /**
      * The base64 encoded content of the TrustStore file.
+     * Deprecated: This field is deprecated and replaced by "trustStoreSecretId". This field will be removed after February 15 2026.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("trustStore")
@@ -809,6 +824,7 @@ public final class CreateKafkaSchemaRegistryConnectionDetails extends CreateConn
 
     /**
      * The base64 encoded content of the TrustStore file.
+     * Deprecated: This field is deprecated and replaced by "trustStoreSecretId". This field will be removed after February 15 2026.
      *
      * @return the value
      **/
@@ -817,7 +833,7 @@ public final class CreateKafkaSchemaRegistryConnectionDetails extends CreateConn
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret that stores the content of the TrustStore file.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the content of the TrustStore file.
      * Note: When provided, 'trustStore' field must not be provided.
      *
      **/
@@ -825,7 +841,7 @@ public final class CreateKafkaSchemaRegistryConnectionDetails extends CreateConn
     private final String trustStoreSecretId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret that stores the content of the TrustStore file.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the content of the TrustStore file.
      * Note: When provided, 'trustStore' field must not be provided.
      *
      * @return the value
@@ -836,6 +852,7 @@ public final class CreateKafkaSchemaRegistryConnectionDetails extends CreateConn
 
     /**
      * The TrustStore password.
+     * Deprecated: This field is deprecated and replaced by "trustStorePasswordSecretId". This field will be removed after February 15 2026.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("trustStorePassword")
@@ -843,6 +860,7 @@ public final class CreateKafkaSchemaRegistryConnectionDetails extends CreateConn
 
     /**
      * The TrustStore password.
+     * Deprecated: This field is deprecated and replaced by "trustStorePasswordSecretId". This field will be removed after February 15 2026.
      *
      * @return the value
      **/
@@ -851,7 +869,7 @@ public final class CreateKafkaSchemaRegistryConnectionDetails extends CreateConn
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl TrustStore password is stored.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl TrustStore password is stored.
      * Note: When provided, 'trustStorePassword' field must not be provided.
      *
      **/
@@ -859,7 +877,7 @@ public final class CreateKafkaSchemaRegistryConnectionDetails extends CreateConn
     private final String trustStorePasswordSecretId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl TrustStore password is stored.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl TrustStore password is stored.
      * Note: When provided, 'trustStorePassword' field must not be provided.
      *
      * @return the value
@@ -870,6 +888,7 @@ public final class CreateKafkaSchemaRegistryConnectionDetails extends CreateConn
 
     /**
      * The base64 encoded content of the KeyStore file.
+     * Deprecated: This field is deprecated and replaced by "keyStoreSecretId". This field will be removed after February 15 2026.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("keyStore")
@@ -877,6 +896,7 @@ public final class CreateKafkaSchemaRegistryConnectionDetails extends CreateConn
 
     /**
      * The base64 encoded content of the KeyStore file.
+     * Deprecated: This field is deprecated and replaced by "keyStoreSecretId". This field will be removed after February 15 2026.
      *
      * @return the value
      **/
@@ -885,7 +905,7 @@ public final class CreateKafkaSchemaRegistryConnectionDetails extends CreateConn
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret that stores the content of the KeyStore file.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the content of the KeyStore file.
      * Note: When provided, 'keyStore' field must not be provided.
      *
      **/
@@ -893,7 +913,7 @@ public final class CreateKafkaSchemaRegistryConnectionDetails extends CreateConn
     private final String keyStoreSecretId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret that stores the content of the KeyStore file.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the content of the KeyStore file.
      * Note: When provided, 'keyStore' field must not be provided.
      *
      * @return the value
@@ -904,6 +924,7 @@ public final class CreateKafkaSchemaRegistryConnectionDetails extends CreateConn
 
     /**
      * The KeyStore password.
+     * Deprecated: This field is deprecated and replaced by "keyStorePasswordSecretId". This field will be removed after February 15 2026.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("keyStorePassword")
@@ -911,6 +932,7 @@ public final class CreateKafkaSchemaRegistryConnectionDetails extends CreateConn
 
     /**
      * The KeyStore password.
+     * Deprecated: This field is deprecated and replaced by "keyStorePasswordSecretId". This field will be removed after February 15 2026.
      *
      * @return the value
      **/
@@ -919,7 +941,7 @@ public final class CreateKafkaSchemaRegistryConnectionDetails extends CreateConn
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl KeyStore password is stored.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl KeyStore password is stored.
      * Note: When provided, 'keyStorePassword' field must not be provided.
      *
      **/
@@ -927,7 +949,7 @@ public final class CreateKafkaSchemaRegistryConnectionDetails extends CreateConn
     private final String keyStorePasswordSecretId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl KeyStore password is stored.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl KeyStore password is stored.
      * Note: When provided, 'keyStorePassword' field must not be provided.
      *
      * @return the value
@@ -939,6 +961,7 @@ public final class CreateKafkaSchemaRegistryConnectionDetails extends CreateConn
     /**
      * The password for the cert inside the KeyStore.
      * In case it differs from the KeyStore password, it should be provided.
+     * Deprecated: This field is deprecated and replaced by "sslKeyPasswordSecretId". This field will be removed after February 15 2026.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sslKeyPassword")
@@ -947,6 +970,7 @@ public final class CreateKafkaSchemaRegistryConnectionDetails extends CreateConn
     /**
      * The password for the cert inside the KeyStore.
      * In case it differs from the KeyStore password, it should be provided.
+     * Deprecated: This field is deprecated and replaced by "sslKeyPasswordSecretId". This field will be removed after February 15 2026.
      *
      * @return the value
      **/
@@ -955,7 +979,7 @@ public final class CreateKafkaSchemaRegistryConnectionDetails extends CreateConn
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret that stores the password for the cert inside the KeyStore.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password for the cert inside the KeyStore.
      * In case it differs from the KeyStore password, it should be provided.
      * Note: When provided, 'sslKeyPassword' field must not be provided.
      *
@@ -964,7 +988,7 @@ public final class CreateKafkaSchemaRegistryConnectionDetails extends CreateConn
     private final String sslKeyPasswordSecretId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret that stores the password for the cert inside the KeyStore.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password for the cert inside the KeyStore.
      * In case it differs from the KeyStore password, it should be provided.
      * Note: When provided, 'sslKeyPassword' field must not be provided.
      *

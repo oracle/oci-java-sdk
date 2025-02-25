@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.keymanagement;
@@ -8,7 +8,7 @@ import com.oracle.bmc.keymanagement.requests.*;
 import com.oracle.bmc.keymanagement.responses.*;
 
 /**
- * Use the Key Management API to manage vaults and keys. For more information, see [Managing Vaults](https://docs.cloud.oracle.com/Content/KeyManagement/Tasks/managingvaults.htm) and [Managing Keys](https://docs.cloud.oracle.com/Content/KeyManagement/Tasks/managingkeys.htm).
+ * Use the Key Management API to manage vaults and keys. For more information, see [Managing Vaults](https://docs.oracle.com/iaas/Content/KeyManagement/Tasks/managingvaults.htm) and [Managing Keys](https://docs.oracle.com/iaas/Content/KeyManagement/Tasks/managingkeys.htm).
  *
  * This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by default if no circuit breaker configuration is defined by the user.
  */
@@ -71,7 +71,7 @@ public interface KmsVault extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/BackupVaultExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use BackupVault API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/BackupVaultExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use BackupVault API.
      */
     BackupVaultResponse backupVault(BackupVaultRequest request);
 
@@ -92,13 +92,13 @@ public interface KmsVault extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/CancelVaultDeletionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CancelVaultDeletion API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/CancelVaultDeletionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CancelVaultDeletion API.
      */
     CancelVaultDeletionResponse cancelVaultDeletion(CancelVaultDeletionRequest request);
 
     /**
      * Moves a vault into a different compartment within the same tenancy. For information about
-     * moving resources between compartments, see [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * moving resources between compartments, see [Moving Resources to a Different Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      * <p>
      * When provided, if-match is checked against the ETag values of the resource.
      * <p>
@@ -113,7 +113,7 @@ public interface KmsVault extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/ChangeVaultCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeVaultCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/ChangeVaultCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeVaultCompartment API.
      */
     ChangeVaultCompartmentResponse changeVaultCompartment(ChangeVaultCompartmentRequest request);
 
@@ -134,7 +134,7 @@ public interface KmsVault extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/CreateVaultExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateVault API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/CreateVaultExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateVault API.
      */
     CreateVaultResponse createVault(CreateVaultRequest request);
 
@@ -156,7 +156,7 @@ public interface KmsVault extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/CreateVaultReplicaExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateVaultReplica API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/CreateVaultReplicaExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateVaultReplica API.
      */
     CreateVaultReplicaResponse createVaultReplica(CreateVaultReplicaRequest request);
 
@@ -174,7 +174,7 @@ public interface KmsVault extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/DeleteVaultReplicaExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteVaultReplica API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/DeleteVaultReplicaExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteVaultReplica API.
      */
     DeleteVaultReplicaResponse deleteVaultReplica(DeleteVaultReplicaRequest request);
 
@@ -192,7 +192,7 @@ public interface KmsVault extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/GetVaultExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetVault API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/GetVaultExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetVault API.
      */
     GetVaultResponse getVault(GetVaultRequest request);
 
@@ -205,7 +205,7 @@ public interface KmsVault extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/GetVaultUsageExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetVaultUsage API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/GetVaultUsageExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetVaultUsage API.
      */
     GetVaultUsageResponse getVaultUsage(GetVaultUsageRequest request);
 
@@ -223,7 +223,7 @@ public interface KmsVault extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/ListVaultReplicasExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListVaultReplicas API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/ListVaultReplicasExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListVaultReplicas API.
      */
     ListVaultReplicasResponse listVaultReplicas(ListVaultReplicasRequest request);
 
@@ -241,7 +241,7 @@ public interface KmsVault extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/ListVaultsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListVaults API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/ListVaultsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListVaults API.
      */
     ListVaultsResponse listVaults(ListVaultsRequest request);
 
@@ -283,7 +283,7 @@ public interface KmsVault extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/RestoreVaultFromFileExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RestoreVaultFromFile API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/RestoreVaultFromFileExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RestoreVaultFromFile API.
      */
     RestoreVaultFromFileResponse restoreVaultFromFile(RestoreVaultFromFileRequest request);
 
@@ -298,7 +298,7 @@ public interface KmsVault extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/RestoreVaultFromObjectStoreExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RestoreVaultFromObjectStore API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/RestoreVaultFromObjectStoreExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RestoreVaultFromObjectStore API.
      */
     RestoreVaultFromObjectStoreResponse restoreVaultFromObjectStore(
             RestoreVaultFromObjectStoreRequest request);
@@ -321,7 +321,7 @@ public interface KmsVault extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/ScheduleVaultDeletionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ScheduleVaultDeletion API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/ScheduleVaultDeletionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ScheduleVaultDeletion API.
      */
     ScheduleVaultDeletionResponse scheduleVaultDeletion(ScheduleVaultDeletionRequest request);
 
@@ -341,7 +341,7 @@ public interface KmsVault extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/UpdateVaultExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateVault API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/UpdateVaultExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateVault API.
      */
     UpdateVaultResponse updateVault(UpdateVaultRequest request);
 

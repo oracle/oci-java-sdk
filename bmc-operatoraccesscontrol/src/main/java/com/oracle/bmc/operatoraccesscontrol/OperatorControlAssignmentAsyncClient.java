@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.operatoraccesscontrol;
@@ -479,7 +479,7 @@ public class OperatorControlAssignmentAsyncClient implements OperatorControlAssi
                         "OperatorControlAssignment",
                         "ChangeOperatorControlAssignmentCompartment",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/OperatorControlAssignment/ChangeOperatorControlAssignmentCompartment");
+                        "");
         final java.util.function.Function<
                         javax.ws.rs.core.Response,
                         ChangeOperatorControlAssignmentCompartmentResponse>
@@ -541,7 +541,7 @@ public class OperatorControlAssignmentAsyncClient implements OperatorControlAssi
                         "OperatorControlAssignment",
                         "CreateOperatorControlAssignment",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/OperatorControlAssignment/CreateOperatorControlAssignment");
+                        "");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, CreateOperatorControlAssignmentResponse>
                 transformer =
@@ -599,7 +599,7 @@ public class OperatorControlAssignmentAsyncClient implements OperatorControlAssi
                         "OperatorControlAssignment",
                         "DeleteOperatorControlAssignment",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/OperatorControlAssignment/DeleteOperatorControlAssignment");
+                        "");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, DeleteOperatorControlAssignmentResponse>
                 transformer =
@@ -652,7 +652,7 @@ public class OperatorControlAssignmentAsyncClient implements OperatorControlAssi
                         "OperatorControlAssignment",
                         "GetAssignmentValidationStatus",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/OperatorControlAssignment/GetAssignmentValidationStatus");
+                        "");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, GetAssignmentValidationStatusResponse>
                 transformer =
@@ -703,7 +703,7 @@ public class OperatorControlAssignmentAsyncClient implements OperatorControlAssi
                         "OperatorControlAssignment",
                         "GetOperatorControlAssignment",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/OperatorControlAssignment/GetOperatorControlAssignment");
+                        "");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, GetOperatorControlAssignmentResponse>
                 transformer =
@@ -754,7 +754,7 @@ public class OperatorControlAssignmentAsyncClient implements OperatorControlAssi
                         "OperatorControlAssignment",
                         "ListOperatorControlAssignments",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/OperatorControlAssignment/ListOperatorControlAssignments");
+                        "");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, ListOperatorControlAssignmentsResponse>
                 transformer =
@@ -806,7 +806,7 @@ public class OperatorControlAssignmentAsyncClient implements OperatorControlAssi
                         "OperatorControlAssignment",
                         "UpdateOperatorControlAssignment",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/OperatorControlAssignment/UpdateOperatorControlAssignment");
+                        "");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, UpdateOperatorControlAssignmentResponse>
                 transformer =
@@ -865,7 +865,7 @@ public class OperatorControlAssignmentAsyncClient implements OperatorControlAssi
                         "OperatorControlAssignment",
                         "ValidateOperatorAssignment",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/OperatorControlAssignment/ValidateOperatorAssignment");
+                        "");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, ValidateOperatorAssignmentResponse>
                 transformer =

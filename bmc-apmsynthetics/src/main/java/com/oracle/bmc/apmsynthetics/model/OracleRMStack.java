@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.apmsynthetics.model;
@@ -34,13 +34,13 @@ public final class OracleRMStack extends DvpStackDetails {
             return this;
         }
         /**
-         * Stack [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Resource Manager stack for dedicated vantage point.
+         * Stack [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Resource Manager stack for dedicated vantage point.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("dvpStackId")
         private String dvpStackId;
 
         /**
-         * Stack [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Resource Manager stack for dedicated vantage point.
+         * Stack [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Resource Manager stack for dedicated vantage point.
          * @param dvpStackId the value to set
          * @return this builder
          **/
@@ -50,13 +50,13 @@ public final class OracleRMStack extends DvpStackDetails {
             return this;
         }
         /**
-         * Stream [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Resource Manager stack for dedicated vantage point.
+         * Stream [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Resource Manager stack for dedicated vantage point.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("dvpStreamId")
         private String dvpStreamId;
 
         /**
-         * Stream [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Resource Manager stack for dedicated vantage point.
+         * Stream [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Resource Manager stack for dedicated vantage point.
          * @param dvpStreamId the value to set
          * @return this builder
          **/
@@ -112,13 +112,13 @@ public final class OracleRMStack extends DvpStackDetails {
     }
 
     /**
-     * Stack [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Resource Manager stack for dedicated vantage point.
+     * Stack [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Resource Manager stack for dedicated vantage point.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dvpStackId")
     private final String dvpStackId;
 
     /**
-     * Stack [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Resource Manager stack for dedicated vantage point.
+     * Stack [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Resource Manager stack for dedicated vantage point.
      * @return the value
      **/
     public String getDvpStackId() {
@@ -126,13 +126,13 @@ public final class OracleRMStack extends DvpStackDetails {
     }
 
     /**
-     * Stream [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Resource Manager stack for dedicated vantage point.
+     * Stream [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Resource Manager stack for dedicated vantage point.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dvpStreamId")
     private final String dvpStreamId;
 
     /**
-     * Stream [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Resource Manager stack for dedicated vantage point.
+     * Stream [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Resource Manager stack for dedicated vantage point.
      * @return the value
      **/
     public String getDvpStreamId() {

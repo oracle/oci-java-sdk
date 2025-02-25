@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.osmanagementhub.model;
@@ -39,7 +39,8 @@ public final class CreateScheduledJobDetails
         "freeformTags",
         "definedTags",
         "retryIntervals",
-        "isManagedByAutonomousLinux"
+        "isManagedByAutonomousLinux",
+        "workRequestId"
     })
     public CreateScheduledJobDetails(
             String compartmentId,
@@ -58,7 +59,8 @@ public final class CreateScheduledJobDetails
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.List<Integer> retryIntervals,
-            Boolean isManagedByAutonomousLinux) {
+            Boolean isManagedByAutonomousLinux,
+            String workRequestId) {
         super();
         this.compartmentId = compartmentId;
         this.displayName = displayName;
@@ -77,18 +79,19 @@ public final class CreateScheduledJobDetails
         this.definedTags = definedTags;
         this.retryIntervals = retryIntervals;
         this.isManagedByAutonomousLinux = isManagedByAutonomousLinux;
+        this.workRequestId = workRequestId;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the scheduled job.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the scheduled job.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the scheduled job.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the scheduled job.
          * @param compartmentId the value to set
          * @return this builder
          **/
@@ -194,7 +197,7 @@ public final class CreateScheduledJobDetails
             return this;
         }
         /**
-         * The managed instance [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.
+         * The managed instance [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.
          * A scheduled job can only operate on one type of target, therefore you must supply either this or
          * managedInstanceGroupIds, or managedCompartmentIds, or lifecycleStageIds.
          *
@@ -203,7 +206,7 @@ public final class CreateScheduledJobDetails
         private java.util.List<String> managedInstanceIds;
 
         /**
-         * The managed instance [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.
+         * The managed instance [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.
          * A scheduled job can only operate on one type of target, therefore you must supply either this or
          * managedInstanceGroupIds, or managedCompartmentIds, or lifecycleStageIds.
          *
@@ -216,7 +219,7 @@ public final class CreateScheduledJobDetails
             return this;
         }
         /**
-         * The managed instance group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.
+         * The managed instance group [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.
          * A scheduled job can only operate on one type of target, therefore you must supply either this or managedInstanceIds,
          * or managedCompartmentIds, or lifecycleStageIds.
          *
@@ -225,7 +228,7 @@ public final class CreateScheduledJobDetails
         private java.util.List<String> managedInstanceGroupIds;
 
         /**
-         * The managed instance group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.
+         * The managed instance group [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.
          * A scheduled job can only operate on one type of target, therefore you must supply either this or managedInstanceIds,
          * or managedCompartmentIds, or lifecycleStageIds.
          *
@@ -238,7 +241,7 @@ public final class CreateScheduledJobDetails
             return this;
         }
         /**
-         * The compartment [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.
+         * The compartment [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.
          * To apply the job to all compartments in the tenancy, set this to the tenancy OCID (root compartment) and set
          * isSubcompartmentIncluded to true. A scheduled job can only operate on one type of target, therefore you must
          * supply either this or managedInstanceIds, or managedInstanceGroupIds, or lifecycleStageIds.
@@ -248,7 +251,7 @@ public final class CreateScheduledJobDetails
         private java.util.List<String> managedCompartmentIds;
 
         /**
-         * The compartment [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.
+         * The compartment [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.
          * To apply the job to all compartments in the tenancy, set this to the tenancy OCID (root compartment) and set
          * isSubcompartmentIncluded to true. A scheduled job can only operate on one type of target, therefore you must
          * supply either this or managedInstanceIds, or managedInstanceGroupIds, or lifecycleStageIds.
@@ -262,7 +265,7 @@ public final class CreateScheduledJobDetails
             return this;
         }
         /**
-         * The lifecycle stage [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.
+         * The lifecycle stage [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.
          * A scheduled job can only operate on one type of target, therefore you must supply either this or managedInstanceIds,
          * or managedInstanceGroupIds, or managedCompartmentIds.
          *
@@ -271,7 +274,7 @@ public final class CreateScheduledJobDetails
         private java.util.List<String> lifecycleStageIds;
 
         /**
-         * The lifecycle stage [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.
+         * The lifecycle stage [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.
          * A scheduled job can only operate on one type of target, therefore you must supply either this or managedInstanceIds,
          * or managedInstanceGroupIds, or managedCompartmentIds.
          *
@@ -285,7 +288,7 @@ public final class CreateScheduledJobDetails
         }
         /**
          * Indicates whether to apply the scheduled job to all compartments in the tenancy when managedCompartmentIds specifies
-         * the tenancy [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) (root compartment).
+         * the tenancy [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) (root compartment).
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("isSubcompartmentIncluded")
@@ -293,7 +296,7 @@ public final class CreateScheduledJobDetails
 
         /**
          * Indicates whether to apply the scheduled job to all compartments in the tenancy when managedCompartmentIds specifies
-         * the tenancy [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) (root compartment).
+         * the tenancy [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) (root compartment).
          *
          * @param isSubcompartmentIncluded the value to set
          * @return this builder
@@ -341,7 +344,7 @@ public final class CreateScheduledJobDetails
         }
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * Example: {@code {"Department": "Finance"}}
          *
          **/
@@ -350,7 +353,7 @@ public final class CreateScheduledJobDetails
 
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * Example: {@code {"Department": "Finance"}}
          *
          * @param freeformTags the value to set
@@ -363,7 +366,7 @@ public final class CreateScheduledJobDetails
         }
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
          **/
@@ -372,7 +375,7 @@ public final class CreateScheduledJobDetails
 
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
          * @param definedTags the value to set
@@ -424,6 +427,22 @@ public final class CreateScheduledJobDetails
             this.__explicitlySet__.add("isManagedByAutonomousLinux");
             return this;
         }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the work request that will be rerun.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("workRequestId")
+        private String workRequestId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the work request that will be rerun.
+         * @param workRequestId the value to set
+         * @return this builder
+         **/
+        public Builder workRequestId(String workRequestId) {
+            this.workRequestId = workRequestId;
+            this.__explicitlySet__.add("workRequestId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -447,7 +466,8 @@ public final class CreateScheduledJobDetails
                             this.freeformTags,
                             this.definedTags,
                             this.retryIntervals,
-                            this.isManagedByAutonomousLinux);
+                            this.isManagedByAutonomousLinux,
+                            this.workRequestId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -507,6 +527,9 @@ public final class CreateScheduledJobDetails
             if (model.wasPropertyExplicitlySet("isManagedByAutonomousLinux")) {
                 this.isManagedByAutonomousLinux(model.getIsManagedByAutonomousLinux());
             }
+            if (model.wasPropertyExplicitlySet("workRequestId")) {
+                this.workRequestId(model.getWorkRequestId());
+            }
             return this;
         }
     }
@@ -523,13 +546,13 @@ public final class CreateScheduledJobDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the scheduled job.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the scheduled job.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the scheduled job.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the scheduled job.
      * @return the value
      **/
     public String getCompartmentId() {
@@ -621,7 +644,7 @@ public final class CreateScheduledJobDetails
     }
 
     /**
-     * The managed instance [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.
+     * The managed instance [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.
      * A scheduled job can only operate on one type of target, therefore you must supply either this or
      * managedInstanceGroupIds, or managedCompartmentIds, or lifecycleStageIds.
      *
@@ -630,7 +653,7 @@ public final class CreateScheduledJobDetails
     private final java.util.List<String> managedInstanceIds;
 
     /**
-     * The managed instance [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.
+     * The managed instance [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.
      * A scheduled job can only operate on one type of target, therefore you must supply either this or
      * managedInstanceGroupIds, or managedCompartmentIds, or lifecycleStageIds.
      *
@@ -641,7 +664,7 @@ public final class CreateScheduledJobDetails
     }
 
     /**
-     * The managed instance group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.
+     * The managed instance group [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.
      * A scheduled job can only operate on one type of target, therefore you must supply either this or managedInstanceIds,
      * or managedCompartmentIds, or lifecycleStageIds.
      *
@@ -650,7 +673,7 @@ public final class CreateScheduledJobDetails
     private final java.util.List<String> managedInstanceGroupIds;
 
     /**
-     * The managed instance group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.
+     * The managed instance group [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.
      * A scheduled job can only operate on one type of target, therefore you must supply either this or managedInstanceIds,
      * or managedCompartmentIds, or lifecycleStageIds.
      *
@@ -661,7 +684,7 @@ public final class CreateScheduledJobDetails
     }
 
     /**
-     * The compartment [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.
+     * The compartment [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.
      * To apply the job to all compartments in the tenancy, set this to the tenancy OCID (root compartment) and set
      * isSubcompartmentIncluded to true. A scheduled job can only operate on one type of target, therefore you must
      * supply either this or managedInstanceIds, or managedInstanceGroupIds, or lifecycleStageIds.
@@ -671,7 +694,7 @@ public final class CreateScheduledJobDetails
     private final java.util.List<String> managedCompartmentIds;
 
     /**
-     * The compartment [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.
+     * The compartment [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.
      * To apply the job to all compartments in the tenancy, set this to the tenancy OCID (root compartment) and set
      * isSubcompartmentIncluded to true. A scheduled job can only operate on one type of target, therefore you must
      * supply either this or managedInstanceIds, or managedInstanceGroupIds, or lifecycleStageIds.
@@ -683,7 +706,7 @@ public final class CreateScheduledJobDetails
     }
 
     /**
-     * The lifecycle stage [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.
+     * The lifecycle stage [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.
      * A scheduled job can only operate on one type of target, therefore you must supply either this or managedInstanceIds,
      * or managedInstanceGroupIds, or managedCompartmentIds.
      *
@@ -692,7 +715,7 @@ public final class CreateScheduledJobDetails
     private final java.util.List<String> lifecycleStageIds;
 
     /**
-     * The lifecycle stage [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.
+     * The lifecycle stage [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.
      * A scheduled job can only operate on one type of target, therefore you must supply either this or managedInstanceIds,
      * or managedInstanceGroupIds, or managedCompartmentIds.
      *
@@ -704,7 +727,7 @@ public final class CreateScheduledJobDetails
 
     /**
      * Indicates whether to apply the scheduled job to all compartments in the tenancy when managedCompartmentIds specifies
-     * the tenancy [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) (root compartment).
+     * the tenancy [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) (root compartment).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isSubcompartmentIncluded")
@@ -712,7 +735,7 @@ public final class CreateScheduledJobDetails
 
     /**
      * Indicates whether to apply the scheduled job to all compartments in the tenancy when managedCompartmentIds specifies
-     * the tenancy [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) (root compartment).
+     * the tenancy [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) (root compartment).
      *
      * @return the value
      **/
@@ -756,7 +779,7 @@ public final class CreateScheduledJobDetails
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * Example: {@code {"Department": "Finance"}}
      *
      **/
@@ -765,7 +788,7 @@ public final class CreateScheduledJobDetails
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * Example: {@code {"Department": "Finance"}}
      *
      * @return the value
@@ -776,7 +799,7 @@ public final class CreateScheduledJobDetails
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      **/
@@ -785,7 +808,7 @@ public final class CreateScheduledJobDetails
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      * @return the value
@@ -830,6 +853,20 @@ public final class CreateScheduledJobDetails
         return isManagedByAutonomousLinux;
     }
 
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the work request that will be rerun.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("workRequestId")
+    private final String workRequestId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the work request that will be rerun.
+     * @return the value
+     **/
+    public String getWorkRequestId() {
+        return workRequestId;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -864,6 +901,7 @@ public final class CreateScheduledJobDetails
         sb.append(", retryIntervals=").append(String.valueOf(this.retryIntervals));
         sb.append(", isManagedByAutonomousLinux=")
                 .append(String.valueOf(this.isManagedByAutonomousLinux));
+        sb.append(", workRequestId=").append(String.valueOf(this.workRequestId));
         sb.append(")");
         return sb.toString();
     }
@@ -898,6 +936,7 @@ public final class CreateScheduledJobDetails
                 && java.util.Objects.equals(this.retryIntervals, other.retryIntervals)
                 && java.util.Objects.equals(
                         this.isManagedByAutonomousLinux, other.isManagedByAutonomousLinux)
+                && java.util.Objects.equals(this.workRequestId, other.workRequestId)
                 && super.equals(other);
     }
 
@@ -952,6 +991,9 @@ public final class CreateScheduledJobDetails
                         + (this.isManagedByAutonomousLinux == null
                                 ? 43
                                 : this.isManagedByAutonomousLinux.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.workRequestId == null ? 43 : this.workRequestId.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

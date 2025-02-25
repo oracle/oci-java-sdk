@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.goldengate.model;
@@ -213,6 +213,7 @@ public final class CreateSnowflakeConnectionDetails extends CreateConnectionDeta
         }
         /**
          * The password Oracle GoldenGate uses to connect to Snowflake platform.
+         * Deprecated: This field is deprecated and replaced by "passwordSecretId". This field will be removed after February 15 2026.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("password")
@@ -220,6 +221,7 @@ public final class CreateSnowflakeConnectionDetails extends CreateConnectionDeta
 
         /**
          * The password Oracle GoldenGate uses to connect to Snowflake platform.
+         * Deprecated: This field is deprecated and replaced by "passwordSecretId". This field will be removed after February 15 2026.
          *
          * @param password the value to set
          * @return this builder
@@ -230,7 +232,7 @@ public final class CreateSnowflakeConnectionDetails extends CreateConnectionDeta
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored.
          * The password Oracle GoldenGate uses to connect the associated system of the given technology.
          * It must conform to the specific security requirements including length, case sensitivity, and so on.
          * If secretId is used plaintext field must not be provided.
@@ -241,7 +243,7 @@ public final class CreateSnowflakeConnectionDetails extends CreateConnectionDeta
         private String passwordSecretId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored.
          * The password Oracle GoldenGate uses to connect the associated system of the given technology.
          * It must conform to the specific security requirements including length, case sensitivity, and so on.
          * If secretId is used plaintext field must not be provided.
@@ -257,6 +259,7 @@ public final class CreateSnowflakeConnectionDetails extends CreateConnectionDeta
         }
         /**
          * The base64 encoded content of private key file in PEM format.
+         * Deprecated: This field is deprecated and replaced by "privateKeyFileSecretId". This field will be removed after February 15 2026.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("privateKeyFile")
@@ -264,6 +267,7 @@ public final class CreateSnowflakeConnectionDetails extends CreateConnectionDeta
 
         /**
          * The base64 encoded content of private key file in PEM format.
+         * Deprecated: This field is deprecated and replaced by "privateKeyFileSecretId". This field will be removed after February 15 2026.
          *
          * @param privateKeyFile the value to set
          * @return this builder
@@ -274,7 +278,7 @@ public final class CreateSnowflakeConnectionDetails extends CreateConnectionDeta
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret that stores the content of the private key file (PEM file) corresponding to the API key of the fingerprint.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the content of the private key file (PEM file) corresponding to the API key of the fingerprint.
          * See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
          * Note: When provided, 'privateKeyFile' field must not be provided.
          *
@@ -283,7 +287,7 @@ public final class CreateSnowflakeConnectionDetails extends CreateConnectionDeta
         private String privateKeyFileSecretId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret that stores the content of the private key file (PEM file) corresponding to the API key of the fingerprint.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the content of the private key file (PEM file) corresponding to the API key of the fingerprint.
          * See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
          * Note: When provided, 'privateKeyFile' field must not be provided.
          *
@@ -297,6 +301,7 @@ public final class CreateSnowflakeConnectionDetails extends CreateConnectionDeta
         }
         /**
          * Password if the private key file is encrypted.
+         * Deprecated: This field is deprecated and replaced by "privateKeyPassphraseSecretId". This field will be removed after February 15 2026.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("privateKeyPassphrase")
@@ -304,6 +309,7 @@ public final class CreateSnowflakeConnectionDetails extends CreateConnectionDeta
 
         /**
          * Password if the private key file is encrypted.
+         * Deprecated: This field is deprecated and replaced by "privateKeyPassphraseSecretId". This field will be removed after February 15 2026.
          *
          * @param privateKeyPassphrase the value to set
          * @return this builder
@@ -314,7 +320,7 @@ public final class CreateSnowflakeConnectionDetails extends CreateConnectionDeta
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret that stores the password for the private key file.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password for the private key file.
          * Note: When provided, 'privateKeyPassphrase' field must not be provided.
          *
          **/
@@ -322,7 +328,7 @@ public final class CreateSnowflakeConnectionDetails extends CreateConnectionDeta
         private String privateKeyPassphraseSecretId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret that stores the password for the private key file.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password for the private key file.
          * Note: When provided, 'privateKeyPassphrase' field must not be provided.
          *
          * @param privateKeyPassphraseSecretId the value to set
@@ -568,6 +574,7 @@ public final class CreateSnowflakeConnectionDetails extends CreateConnectionDeta
 
     /**
      * The password Oracle GoldenGate uses to connect to Snowflake platform.
+     * Deprecated: This field is deprecated and replaced by "passwordSecretId". This field will be removed after February 15 2026.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("password")
@@ -575,6 +582,7 @@ public final class CreateSnowflakeConnectionDetails extends CreateConnectionDeta
 
     /**
      * The password Oracle GoldenGate uses to connect to Snowflake platform.
+     * Deprecated: This field is deprecated and replaced by "passwordSecretId". This field will be removed after February 15 2026.
      *
      * @return the value
      **/
@@ -583,7 +591,7 @@ public final class CreateSnowflakeConnectionDetails extends CreateConnectionDeta
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored.
      * The password Oracle GoldenGate uses to connect the associated system of the given technology.
      * It must conform to the specific security requirements including length, case sensitivity, and so on.
      * If secretId is used plaintext field must not be provided.
@@ -594,7 +602,7 @@ public final class CreateSnowflakeConnectionDetails extends CreateConnectionDeta
     private final String passwordSecretId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored.
      * The password Oracle GoldenGate uses to connect the associated system of the given technology.
      * It must conform to the specific security requirements including length, case sensitivity, and so on.
      * If secretId is used plaintext field must not be provided.
@@ -608,6 +616,7 @@ public final class CreateSnowflakeConnectionDetails extends CreateConnectionDeta
 
     /**
      * The base64 encoded content of private key file in PEM format.
+     * Deprecated: This field is deprecated and replaced by "privateKeyFileSecretId". This field will be removed after February 15 2026.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("privateKeyFile")
@@ -615,6 +624,7 @@ public final class CreateSnowflakeConnectionDetails extends CreateConnectionDeta
 
     /**
      * The base64 encoded content of private key file in PEM format.
+     * Deprecated: This field is deprecated and replaced by "privateKeyFileSecretId". This field will be removed after February 15 2026.
      *
      * @return the value
      **/
@@ -623,7 +633,7 @@ public final class CreateSnowflakeConnectionDetails extends CreateConnectionDeta
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret that stores the content of the private key file (PEM file) corresponding to the API key of the fingerprint.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the content of the private key file (PEM file) corresponding to the API key of the fingerprint.
      * See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
      * Note: When provided, 'privateKeyFile' field must not be provided.
      *
@@ -632,7 +642,7 @@ public final class CreateSnowflakeConnectionDetails extends CreateConnectionDeta
     private final String privateKeyFileSecretId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret that stores the content of the private key file (PEM file) corresponding to the API key of the fingerprint.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the content of the private key file (PEM file) corresponding to the API key of the fingerprint.
      * See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
      * Note: When provided, 'privateKeyFile' field must not be provided.
      *
@@ -644,6 +654,7 @@ public final class CreateSnowflakeConnectionDetails extends CreateConnectionDeta
 
     /**
      * Password if the private key file is encrypted.
+     * Deprecated: This field is deprecated and replaced by "privateKeyPassphraseSecretId". This field will be removed after February 15 2026.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("privateKeyPassphrase")
@@ -651,6 +662,7 @@ public final class CreateSnowflakeConnectionDetails extends CreateConnectionDeta
 
     /**
      * Password if the private key file is encrypted.
+     * Deprecated: This field is deprecated and replaced by "privateKeyPassphraseSecretId". This field will be removed after February 15 2026.
      *
      * @return the value
      **/
@@ -659,7 +671,7 @@ public final class CreateSnowflakeConnectionDetails extends CreateConnectionDeta
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret that stores the password for the private key file.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password for the private key file.
      * Note: When provided, 'privateKeyPassphrase' field must not be provided.
      *
      **/
@@ -667,7 +679,7 @@ public final class CreateSnowflakeConnectionDetails extends CreateConnectionDeta
     private final String privateKeyPassphraseSecretId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret that stores the password for the private key file.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password for the private key file.
      * Note: When provided, 'privateKeyPassphrase' field must not be provided.
      *
      * @return the value

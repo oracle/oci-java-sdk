@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.fleetappsmanagement;
@@ -475,7 +475,7 @@ public class FleetAppsManagementAsyncClient implements FleetAppsManagementAsync 
                         "FleetAppsManagement",
                         "CheckResourceTagging",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Fleet/CheckResourceTagging");
         final java.util.function.Function<javax.ws.rs.core.Response, CheckResourceTaggingResponse>
                 transformer =
                         CheckResourceTaggingConverter.fromResponse(
@@ -525,7 +525,10 @@ public class FleetAppsManagementAsyncClient implements FleetAppsManagementAsync 
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "FleetAppsManagement", "ConfirmTargets", ib.getRequestUri().toString(), "");
+                        "FleetAppsManagement",
+                        "ConfirmTargets",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Fleet/ConfirmTargets");
         final java.util.function.Function<javax.ws.rs.core.Response, ConfirmTargetsResponse>
                 transformer =
                         ConfirmTargetsConverter.fromResponse(java.util.Optional.of(serviceDetails));
@@ -572,7 +575,10 @@ public class FleetAppsManagementAsyncClient implements FleetAppsManagementAsync 
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "FleetAppsManagement", "CreateFleet", ib.getRequestUri().toString(), "");
+                        "FleetAppsManagement",
+                        "CreateFleet",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Fleet/CreateFleet");
         final java.util.function.Function<javax.ws.rs.core.Response, CreateFleetResponse>
                 transformer =
                         CreateFleetConverter.fromResponse(java.util.Optional.of(serviceDetails));
@@ -623,7 +629,7 @@ public class FleetAppsManagementAsyncClient implements FleetAppsManagementAsync 
                         "FleetAppsManagement",
                         "CreateFleetCredential",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/FleetCredential/CreateFleetCredential");
         final java.util.function.Function<javax.ws.rs.core.Response, CreateFleetCredentialResponse>
                 transformer =
                         CreateFleetCredentialConverter.fromResponse(
@@ -676,7 +682,7 @@ public class FleetAppsManagementAsyncClient implements FleetAppsManagementAsync 
                         "FleetAppsManagement",
                         "CreateFleetProperty",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/FleetProperty/CreateFleetProperty");
         final java.util.function.Function<javax.ws.rs.core.Response, CreateFleetPropertyResponse>
                 transformer =
                         CreateFleetPropertyConverter.fromResponse(
@@ -729,7 +735,7 @@ public class FleetAppsManagementAsyncClient implements FleetAppsManagementAsync 
                         "FleetAppsManagement",
                         "CreateFleetResource",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/FleetResource/CreateFleetResource");
         final java.util.function.Function<javax.ws.rs.core.Response, CreateFleetResourceResponse>
                 transformer =
                         CreateFleetResourceConverter.fromResponse(
@@ -777,7 +783,10 @@ public class FleetAppsManagementAsyncClient implements FleetAppsManagementAsync 
                 DeleteFleetConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "FleetAppsManagement", "DeleteFleet", ib.getRequestUri().toString(), "");
+                        "FleetAppsManagement",
+                        "DeleteFleet",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Fleet/DeleteFleet");
         final java.util.function.Function<javax.ws.rs.core.Response, DeleteFleetResponse>
                 transformer =
                         DeleteFleetConverter.fromResponse(java.util.Optional.of(serviceDetails));
@@ -822,7 +831,7 @@ public class FleetAppsManagementAsyncClient implements FleetAppsManagementAsync 
                         "FleetAppsManagement",
                         "DeleteFleetCredential",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/FleetCredential/DeleteFleetCredential");
         final java.util.function.Function<javax.ws.rs.core.Response, DeleteFleetCredentialResponse>
                 transformer =
                         DeleteFleetCredentialConverter.fromResponse(
@@ -869,7 +878,7 @@ public class FleetAppsManagementAsyncClient implements FleetAppsManagementAsync 
                         "FleetAppsManagement",
                         "DeleteFleetProperty",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/FleetProperty/DeleteFleetProperty");
         final java.util.function.Function<javax.ws.rs.core.Response, DeleteFleetPropertyResponse>
                 transformer =
                         DeleteFleetPropertyConverter.fromResponse(
@@ -916,7 +925,7 @@ public class FleetAppsManagementAsyncClient implements FleetAppsManagementAsync 
                         "FleetAppsManagement",
                         "DeleteFleetResource",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/FleetResource/DeleteFleetResource");
         final java.util.function.Function<javax.ws.rs.core.Response, DeleteFleetResourceResponse>
                 transformer =
                         DeleteFleetResourceConverter.fromResponse(
@@ -964,7 +973,7 @@ public class FleetAppsManagementAsyncClient implements FleetAppsManagementAsync 
                         "FleetAppsManagement",
                         "GenerateComplianceReport",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Fleet/GenerateComplianceReport");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, GenerateComplianceReportResponse>
                 transformer =
@@ -1017,7 +1026,7 @@ public class FleetAppsManagementAsyncClient implements FleetAppsManagementAsync 
                         "FleetAppsManagement",
                         "GetComplianceReport",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/ComplianceReport/GetComplianceReport");
         final java.util.function.Function<javax.ws.rs.core.Response, GetComplianceReportResponse>
                 transformer =
                         GetComplianceReportConverter.fromResponse(
@@ -1059,7 +1068,10 @@ public class FleetAppsManagementAsyncClient implements FleetAppsManagementAsync 
                 GetFleetConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "FleetAppsManagement", "GetFleet", ib.getRequestUri().toString(), "");
+                        "FleetAppsManagement",
+                        "GetFleet",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Fleet/GetFleet");
         final java.util.function.Function<javax.ws.rs.core.Response, GetFleetResponse> transformer =
                 GetFleetConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<GetFleetRequest, GetFleetResponse> handlerToUse =
@@ -1102,7 +1114,7 @@ public class FleetAppsManagementAsyncClient implements FleetAppsManagementAsync 
                         "FleetAppsManagement",
                         "GetFleetCredential",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/FleetCredential/GetFleetCredential");
         final java.util.function.Function<javax.ws.rs.core.Response, GetFleetCredentialResponse>
                 transformer =
                         GetFleetCredentialConverter.fromResponse(
@@ -1148,7 +1160,7 @@ public class FleetAppsManagementAsyncClient implements FleetAppsManagementAsync 
                         "FleetAppsManagement",
                         "GetFleetProperty",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/FleetProperty/GetFleetProperty");
         final java.util.function.Function<javax.ws.rs.core.Response, GetFleetPropertyResponse>
                 transformer =
                         GetFleetPropertyConverter.fromResponse(
@@ -1194,7 +1206,7 @@ public class FleetAppsManagementAsyncClient implements FleetAppsManagementAsync 
                         "FleetAppsManagement",
                         "GetFleetResource",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/FleetResource/GetFleetResource");
         final java.util.function.Function<javax.ws.rs.core.Response, GetFleetResourceResponse>
                 transformer =
                         GetFleetResourceConverter.fromResponse(
@@ -1237,7 +1249,10 @@ public class FleetAppsManagementAsyncClient implements FleetAppsManagementAsync 
                 GetWorkRequestConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "FleetAppsManagement", "GetWorkRequest", ib.getRequestUri().toString(), "");
+                        "FleetAppsManagement",
+                        "GetWorkRequest",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/WorkRequest/GetWorkRequest");
         final java.util.function.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
                 transformer =
                         GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
@@ -1282,7 +1297,7 @@ public class FleetAppsManagementAsyncClient implements FleetAppsManagementAsync 
                         "FleetAppsManagement",
                         "ListAnnouncements",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/AnnouncementCollection/ListAnnouncements");
         final java.util.function.Function<javax.ws.rs.core.Response, ListAnnouncementsResponse>
                 transformer =
                         ListAnnouncementsConverter.fromResponse(
@@ -1328,7 +1343,7 @@ public class FleetAppsManagementAsyncClient implements FleetAppsManagementAsync 
                         "FleetAppsManagement",
                         "ListFleetCredentials",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/FleetCredentialCollection/ListFleetCredentials");
         final java.util.function.Function<javax.ws.rs.core.Response, ListFleetCredentialsResponse>
                 transformer =
                         ListFleetCredentialsConverter.fromResponse(
@@ -1375,7 +1390,7 @@ public class FleetAppsManagementAsyncClient implements FleetAppsManagementAsync 
                         "FleetAppsManagement",
                         "ListFleetProducts",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/FleetProductCollection/ListFleetProducts");
         final java.util.function.Function<javax.ws.rs.core.Response, ListFleetProductsResponse>
                 transformer =
                         ListFleetProductsConverter.fromResponse(
@@ -1421,7 +1436,7 @@ public class FleetAppsManagementAsyncClient implements FleetAppsManagementAsync 
                         "FleetAppsManagement",
                         "ListFleetProperties",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/FleetPropertyCollection/ListFleetProperties");
         final java.util.function.Function<javax.ws.rs.core.Response, ListFleetPropertiesResponse>
                 transformer =
                         ListFleetPropertiesConverter.fromResponse(
@@ -1468,7 +1483,7 @@ public class FleetAppsManagementAsyncClient implements FleetAppsManagementAsync 
                         "FleetAppsManagement",
                         "ListFleetResources",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/FleetResourceCollection/ListFleetResources");
         final java.util.function.Function<javax.ws.rs.core.Response, ListFleetResourcesResponse>
                 transformer =
                         ListFleetResourcesConverter.fromResponse(
@@ -1514,7 +1529,7 @@ public class FleetAppsManagementAsyncClient implements FleetAppsManagementAsync 
                         "FleetAppsManagement",
                         "ListFleetTargets",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/FleetTargetCollection/ListFleetTargets");
         final java.util.function.Function<javax.ws.rs.core.Response, ListFleetTargetsResponse>
                 transformer =
                         ListFleetTargetsConverter.fromResponse(
@@ -1555,7 +1570,10 @@ public class FleetAppsManagementAsyncClient implements FleetAppsManagementAsync 
                 ListFleetsConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "FleetAppsManagement", "ListFleets", ib.getRequestUri().toString(), "");
+                        "FleetAppsManagement",
+                        "ListFleets",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/FleetCollection/ListFleets");
         final java.util.function.Function<javax.ws.rs.core.Response, ListFleetsResponse>
                 transformer =
                         ListFleetsConverter.fromResponse(java.util.Optional.of(serviceDetails));
@@ -1600,7 +1618,7 @@ public class FleetAppsManagementAsyncClient implements FleetAppsManagementAsync 
                         "FleetAppsManagement",
                         "ListInventoryResources",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/InventoryResourceCollection/ListInventoryResources");
         final java.util.function.Function<javax.ws.rs.core.Response, ListInventoryResourcesResponse>
                 transformer =
                         ListInventoryResourcesConverter.fromResponse(
@@ -1643,7 +1661,10 @@ public class FleetAppsManagementAsyncClient implements FleetAppsManagementAsync 
                 ListTargetsConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "FleetAppsManagement", "ListTargets", ib.getRequestUri().toString(), "");
+                        "FleetAppsManagement",
+                        "ListTargets",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/FleetTargetCollection/ListTargets");
         final java.util.function.Function<javax.ws.rs.core.Response, ListTargetsResponse>
                 transformer =
                         ListTargetsConverter.fromResponse(java.util.Optional.of(serviceDetails));
@@ -1688,7 +1709,7 @@ public class FleetAppsManagementAsyncClient implements FleetAppsManagementAsync 
                         "FleetAppsManagement",
                         "ListWorkRequestErrors",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/WorkRequestError/ListWorkRequestErrors");
         final java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
                 transformer =
                         ListWorkRequestErrorsConverter.fromResponse(
@@ -1735,7 +1756,7 @@ public class FleetAppsManagementAsyncClient implements FleetAppsManagementAsync 
                         "FleetAppsManagement",
                         "ListWorkRequestLogs",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/WorkRequestLogEntry/ListWorkRequestLogs");
         final java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
                 transformer =
                         ListWorkRequestLogsConverter.fromResponse(
@@ -1782,7 +1803,7 @@ public class FleetAppsManagementAsyncClient implements FleetAppsManagementAsync 
                         "FleetAppsManagement",
                         "ListWorkRequests",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/WorkRequest/ListWorkRequests");
         final java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
                 transformer =
                         ListWorkRequestsConverter.fromResponse(
@@ -1829,7 +1850,7 @@ public class FleetAppsManagementAsyncClient implements FleetAppsManagementAsync 
                         "FleetAppsManagement",
                         "RequestResourceValidation",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Fleet/RequestResourceValidation");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, RequestResourceValidationResponse>
                 transformer =
@@ -1884,7 +1905,7 @@ public class FleetAppsManagementAsyncClient implements FleetAppsManagementAsync 
                         "FleetAppsManagement",
                         "RequestTargetDiscovery",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Fleet/RequestTargetDiscovery");
         final java.util.function.Function<javax.ws.rs.core.Response, RequestTargetDiscoveryResponse>
                 transformer =
                         RequestTargetDiscoveryConverter.fromResponse(
@@ -1932,7 +1953,10 @@ public class FleetAppsManagementAsyncClient implements FleetAppsManagementAsync 
                 UpdateFleetConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "FleetAppsManagement", "UpdateFleet", ib.getRequestUri().toString(), "");
+                        "FleetAppsManagement",
+                        "UpdateFleet",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Fleet/UpdateFleet");
         final java.util.function.Function<javax.ws.rs.core.Response, UpdateFleetResponse>
                 transformer =
                         UpdateFleetConverter.fromResponse(java.util.Optional.of(serviceDetails));
@@ -1982,7 +2006,7 @@ public class FleetAppsManagementAsyncClient implements FleetAppsManagementAsync 
                         "FleetAppsManagement",
                         "UpdateFleetCredential",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/FleetCredential/UpdateFleetCredential");
         final java.util.function.Function<javax.ws.rs.core.Response, UpdateFleetCredentialResponse>
                 transformer =
                         UpdateFleetCredentialConverter.fromResponse(
@@ -2034,7 +2058,7 @@ public class FleetAppsManagementAsyncClient implements FleetAppsManagementAsync 
                         "FleetAppsManagement",
                         "UpdateFleetProperty",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/FleetProperty/UpdateFleetProperty");
         final java.util.function.Function<javax.ws.rs.core.Response, UpdateFleetPropertyResponse>
                 transformer =
                         UpdateFleetPropertyConverter.fromResponse(
@@ -2086,7 +2110,7 @@ public class FleetAppsManagementAsyncClient implements FleetAppsManagementAsync 
                         "FleetAppsManagement",
                         "UpdateFleetResource",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/FleetResource/UpdateFleetResource");
         final java.util.function.Function<javax.ws.rs.core.Response, UpdateFleetResourceResponse>
                 transformer =
                         UpdateFleetResourceConverter.fromResponse(

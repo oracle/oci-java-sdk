@@ -1,12 +1,12 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.databasemanagement.requests;
 
 import com.oracle.bmc.databasemanagement.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/ChangeExternalDbSystemCompartmentExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ChangeExternalDbSystemCompartmentRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/ChangeExternalDbSystemCompartmentExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ChangeExternalDbSystemCompartmentRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 public class ChangeExternalDbSystemCompartmentRequest
@@ -14,24 +14,24 @@ public class ChangeExternalDbSystemCompartmentRequest
                 com.oracle.bmc.databasemanagement.model.ChangeExternalDbSystemCompartmentDetails> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the external DB system.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
      */
     private String externalDbSystemId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the external DB system.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
      */
     public String getExternalDbSystemId() {
         return externalDbSystemId;
     }
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment to which the external DB system should be moved.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to which the external DB system should be moved.
      */
     private com.oracle.bmc.databasemanagement.model.ChangeExternalDbSystemCompartmentDetails
             changeExternalDbSystemCompartmentDetails;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment to which the external DB system should be moved.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to which the external DB system should be moved.
      */
     public com.oracle.bmc.databasemanagement.model.ChangeExternalDbSystemCompartmentDetails
             getChangeExternalDbSystemCompartmentDetails() {
@@ -112,12 +112,12 @@ public class ChangeExternalDbSystemCompartmentRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the external DB system.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
          */
         private String externalDbSystemId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the external DB system.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
          * @param externalDbSystemId the value to set
          * @return this builder instance
          */
@@ -127,13 +127,13 @@ public class ChangeExternalDbSystemCompartmentRequest
         }
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment to which the external DB system should be moved.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to which the external DB system should be moved.
          */
         private com.oracle.bmc.databasemanagement.model.ChangeExternalDbSystemCompartmentDetails
                 changeExternalDbSystemCompartmentDetails = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment to which the external DB system should be moved.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to which the external DB system should be moved.
          * @param changeExternalDbSystemCompartmentDetails the value to set
          * @return this builder instance
          */

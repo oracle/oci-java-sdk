@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.osmanagementhub.model;
@@ -21,13 +21,25 @@ package com.oracle.bmc.osmanagementhub.model;
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class MirrorConfiguration extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"directory", "port", "sslport", "sslcert"})
-    public MirrorConfiguration(String directory, String port, String sslport, String sslcert) {
+    @java.beans.ConstructorProperties({
+        "directory",
+        "port",
+        "sslport",
+        "sslcert",
+        "isSslverifyEnabled"
+    })
+    public MirrorConfiguration(
+            String directory,
+            String port,
+            String sslport,
+            String sslcert,
+            Boolean isSslverifyEnabled) {
         super();
         this.directory = directory;
         this.port = port;
         this.sslport = sslport;
         this.sslcert = sslcert;
+        this.isSslverifyEnabled = isSslverifyEnabled;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -96,13 +108,34 @@ public final class MirrorConfiguration extends com.oracle.bmc.http.internal.Expl
             this.__explicitlySet__.add("sslcert");
             return this;
         }
+        /**
+         * When enabled, the SSL certificate is verified whenever an instance installs or updates a package from a software source that is mirrored on the management station.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isSslverifyEnabled")
+        private Boolean isSslverifyEnabled;
+
+        /**
+         * When enabled, the SSL certificate is verified whenever an instance installs or updates a package from a software source that is mirrored on the management station.
+         * @param isSslverifyEnabled the value to set
+         * @return this builder
+         **/
+        public Builder isSslverifyEnabled(Boolean isSslverifyEnabled) {
+            this.isSslverifyEnabled = isSslverifyEnabled;
+            this.__explicitlySet__.add("isSslverifyEnabled");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public MirrorConfiguration build() {
             MirrorConfiguration model =
-                    new MirrorConfiguration(this.directory, this.port, this.sslport, this.sslcert);
+                    new MirrorConfiguration(
+                            this.directory,
+                            this.port,
+                            this.sslport,
+                            this.sslcert,
+                            this.isSslverifyEnabled);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -122,6 +155,9 @@ public final class MirrorConfiguration extends com.oracle.bmc.http.internal.Expl
             }
             if (model.wasPropertyExplicitlySet("sslcert")) {
                 this.sslcert(model.getSslcert());
+            }
+            if (model.wasPropertyExplicitlySet("isSslverifyEnabled")) {
+                this.isSslverifyEnabled(model.getIsSslverifyEnabled());
             }
             return this;
         }
@@ -194,6 +230,20 @@ public final class MirrorConfiguration extends com.oracle.bmc.http.internal.Expl
         return sslcert;
     }
 
+    /**
+     * When enabled, the SSL certificate is verified whenever an instance installs or updates a package from a software source that is mirrored on the management station.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isSslverifyEnabled")
+    private final Boolean isSslverifyEnabled;
+
+    /**
+     * When enabled, the SSL certificate is verified whenever an instance installs or updates a package from a software source that is mirrored on the management station.
+     * @return the value
+     **/
+    public Boolean getIsSslverifyEnabled() {
+        return isSslverifyEnabled;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -212,6 +262,7 @@ public final class MirrorConfiguration extends com.oracle.bmc.http.internal.Expl
         sb.append(", port=").append(String.valueOf(this.port));
         sb.append(", sslport=").append(String.valueOf(this.sslport));
         sb.append(", sslcert=").append(String.valueOf(this.sslcert));
+        sb.append(", isSslverifyEnabled=").append(String.valueOf(this.isSslverifyEnabled));
         sb.append(")");
         return sb.toString();
     }
@@ -230,6 +281,7 @@ public final class MirrorConfiguration extends com.oracle.bmc.http.internal.Expl
                 && java.util.Objects.equals(this.port, other.port)
                 && java.util.Objects.equals(this.sslport, other.sslport)
                 && java.util.Objects.equals(this.sslcert, other.sslcert)
+                && java.util.Objects.equals(this.isSslverifyEnabled, other.isSslverifyEnabled)
                 && super.equals(other);
     }
 
@@ -241,6 +293,11 @@ public final class MirrorConfiguration extends com.oracle.bmc.http.internal.Expl
         result = (result * PRIME) + (this.port == null ? 43 : this.port.hashCode());
         result = (result * PRIME) + (this.sslport == null ? 43 : this.sslport.hashCode());
         result = (result * PRIME) + (this.sslcert == null ? 43 : this.sslcert.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isSslverifyEnabled == null
+                                ? 43
+                                : this.isSslverifyEnabled.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

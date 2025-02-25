@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.computecloudatcustomer.model;
@@ -69,7 +69,7 @@ public final class CccUpgradeSchedule extends com.oracle.bmc.http.internal.Expli
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Upgrade schedule [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * Upgrade schedule [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          * This cannot be changed once created.
          *
          **/
@@ -77,7 +77,7 @@ public final class CccUpgradeSchedule extends com.oracle.bmc.http.internal.Expli
         private String id;
 
         /**
-         * Upgrade schedule [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * Upgrade schedule [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          * This cannot be changed once created.
          *
          * @param id the value to set
@@ -129,7 +129,7 @@ public final class CccUpgradeSchedule extends com.oracle.bmc.http.internal.Expli
             return this;
         }
         /**
-         * Compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
+         * Compartment [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
          * Compute Cloud@Customer upgrade schedule.
          *
          **/
@@ -137,7 +137,7 @@ public final class CccUpgradeSchedule extends com.oracle.bmc.http.internal.Expli
         private String compartmentId;
 
         /**
-         * Compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
+         * Compartment [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
          * Compute Cloud@Customer upgrade schedule.
          *
          * @param compartmentId the value to set
@@ -244,7 +244,7 @@ public final class CccUpgradeSchedule extends com.oracle.bmc.http.internal.Expli
         }
         /**
          * List of Compute Cloud@Customer infrastructure
-         * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that are using this upgrade
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that are using this upgrade
          * schedule.
          *
          **/
@@ -253,7 +253,7 @@ public final class CccUpgradeSchedule extends com.oracle.bmc.http.internal.Expli
 
         /**
          * List of Compute Cloud@Customer infrastructure
-         * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that are using this upgrade
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that are using this upgrade
          * schedule.
          *
          * @param infrastructureIds the value to set
@@ -408,7 +408,7 @@ public final class CccUpgradeSchedule extends com.oracle.bmc.http.internal.Expli
     }
 
     /**
-     * Upgrade schedule [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * Upgrade schedule [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * This cannot be changed once created.
      *
      **/
@@ -416,7 +416,7 @@ public final class CccUpgradeSchedule extends com.oracle.bmc.http.internal.Expli
     private final String id;
 
     /**
-     * Upgrade schedule [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * Upgrade schedule [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * This cannot be changed once created.
      *
      * @return the value
@@ -462,7 +462,7 @@ public final class CccUpgradeSchedule extends com.oracle.bmc.http.internal.Expli
     }
 
     /**
-     * Compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
+     * Compartment [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
      * Compute Cloud@Customer upgrade schedule.
      *
      **/
@@ -470,7 +470,7 @@ public final class CccUpgradeSchedule extends com.oracle.bmc.http.internal.Expli
     private final String compartmentId;
 
     /**
-     * Compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
+     * Compartment [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
      * Compute Cloud@Customer upgrade schedule.
      *
      * @return the value
@@ -615,7 +615,7 @@ public final class CccUpgradeSchedule extends com.oracle.bmc.http.internal.Expli
 
     /**
      * List of Compute Cloud@Customer infrastructure
-     * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that are using this upgrade
+     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that are using this upgrade
      * schedule.
      *
      **/
@@ -624,7 +624,7 @@ public final class CccUpgradeSchedule extends com.oracle.bmc.http.internal.Expli
 
     /**
      * List of Compute Cloud@Customer infrastructure
-     * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that are using this upgrade
+     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that are using this upgrade
      * schedule.
      *
      * @return the value

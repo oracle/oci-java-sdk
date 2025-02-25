@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.filestorage;
@@ -9,7 +9,7 @@ import com.oracle.bmc.filestorage.responses.*;
 
 /**
  * Use the File Storage service API to manage file systems, mount targets, and snapshots.
- * For more information, see [Overview of File Storage](https://docs.cloud.oracle.com/iaas/Content/File/Concepts/filestorageoverview.htm).
+ * For more information, see [Overview of File Storage](https://docs.oracle.com/iaas/Content/File/Concepts/filestorageoverview.htm).
  *
  * This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by default if no circuit breaker configuration is defined by the user.
  */
@@ -69,7 +69,7 @@ public interface FileStorage extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/AddExportLockExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AddExportLock API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/AddExportLockExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AddExportLock API.
      */
     AddExportLockResponse addExportLock(AddExportLockRequest request);
 
@@ -81,7 +81,7 @@ public interface FileStorage extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/AddFileSystemLockExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AddFileSystemLock API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/AddFileSystemLockExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AddFileSystemLock API.
      */
     AddFileSystemLockResponse addFileSystemLock(AddFileSystemLockRequest request);
 
@@ -93,7 +93,7 @@ public interface FileStorage extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/AddFilesystemSnapshotPolicyLockExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AddFilesystemSnapshotPolicyLock API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/AddFilesystemSnapshotPolicyLockExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AddFilesystemSnapshotPolicyLock API.
      */
     AddFilesystemSnapshotPolicyLockResponse addFilesystemSnapshotPolicyLock(
             AddFilesystemSnapshotPolicyLockRequest request);
@@ -106,7 +106,7 @@ public interface FileStorage extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/AddMountTargetLockExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AddMountTargetLock API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/AddMountTargetLockExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AddMountTargetLock API.
      */
     AddMountTargetLockResponse addMountTargetLock(AddMountTargetLockRequest request);
 
@@ -118,7 +118,7 @@ public interface FileStorage extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/AddOutboundConnectorLockExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AddOutboundConnectorLock API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/AddOutboundConnectorLockExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AddOutboundConnectorLock API.
      */
     AddOutboundConnectorLockResponse addOutboundConnectorLock(
             AddOutboundConnectorLockRequest request);
@@ -131,7 +131,7 @@ public interface FileStorage extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/AddReplicationLockExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AddReplicationLock API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/AddReplicationLockExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AddReplicationLock API.
      */
     AddReplicationLockResponse addReplicationLock(AddReplicationLockRequest request);
 
@@ -143,7 +143,7 @@ public interface FileStorage extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/AddSnapshotLockExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AddSnapshotLock API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/AddSnapshotLockExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AddSnapshotLock API.
      */
     AddSnapshotLockResponse addSnapshotLock(AddSnapshotLockRequest request);
 
@@ -156,13 +156,13 @@ public interface FileStorage extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/CancelDowngradeShapeMountTargetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CancelDowngradeShapeMountTarget API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/CancelDowngradeShapeMountTargetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CancelDowngradeShapeMountTarget API.
      */
     CancelDowngradeShapeMountTargetResponse cancelDowngradeShapeMountTarget(
             CancelDowngradeShapeMountTargetRequest request);
 
     /**
-     * Moves a file system and its associated snapshots into a different compartment within the same tenancy. For information about moving resources between compartments, see [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes)
+     * Moves a file system and its associated snapshots into a different compartment within the same tenancy. For information about moving resources between compartments, see [Moving Resources to a Different Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes)
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -170,13 +170,13 @@ public interface FileStorage extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/ChangeFileSystemCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeFileSystemCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/ChangeFileSystemCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeFileSystemCompartment API.
      */
     ChangeFileSystemCompartmentResponse changeFileSystemCompartment(
             ChangeFileSystemCompartmentRequest request);
 
     /**
-     * Moves a file system snapshot policy into a different compartment within the same tenancy. For information about moving resources between compartments, see [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * Moves a file system snapshot policy into a different compartment within the same tenancy. For information about moving resources between compartments, see [Moving Resources to a Different Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -184,13 +184,13 @@ public interface FileStorage extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/ChangeFilesystemSnapshotPolicyCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeFilesystemSnapshotPolicyCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/ChangeFilesystemSnapshotPolicyCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeFilesystemSnapshotPolicyCompartment API.
      */
     ChangeFilesystemSnapshotPolicyCompartmentResponse changeFilesystemSnapshotPolicyCompartment(
             ChangeFilesystemSnapshotPolicyCompartmentRequest request);
 
     /**
-     * Moves a mount target and its associated export set or share set into a different compartment within the same tenancy. For information about moving resources between compartments, see [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes)
+     * Moves a mount target and its associated export set or share set into a different compartment within the same tenancy. For information about moving resources between compartments, see [Moving Resources to a Different Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes)
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -198,7 +198,7 @@ public interface FileStorage extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/ChangeMountTargetCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeMountTargetCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/ChangeMountTargetCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeMountTargetCompartment API.
      */
     ChangeMountTargetCompartmentResponse changeMountTargetCompartment(
             ChangeMountTargetCompartmentRequest request);
@@ -206,7 +206,7 @@ public interface FileStorage extends AutoCloseable {
     /**
      * Moves an outbound connector into a different compartment within the same tenancy.
      * For information about moving resources between compartments, see
-     * [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes)
+     * [Moving Resources to a Different Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes)
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -214,14 +214,14 @@ public interface FileStorage extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/ChangeOutboundConnectorCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeOutboundConnectorCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/ChangeOutboundConnectorCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeOutboundConnectorCompartment API.
      */
     ChangeOutboundConnectorCompartmentResponse changeOutboundConnectorCompartment(
             ChangeOutboundConnectorCompartmentRequest request);
 
     /**
      * Moves a replication and its replication target into a different compartment within the same tenancy.
-     * For information about moving resources between compartments, see [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * For information about moving resources between compartments, see [Moving Resources to a Different Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -229,7 +229,7 @@ public interface FileStorage extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/ChangeReplicationCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeReplicationCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/ChangeReplicationCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeReplicationCompartment API.
      */
     ChangeReplicationCompartmentResponse changeReplicationCompartment(
             ChangeReplicationCompartmentRequest request);
@@ -244,7 +244,7 @@ public interface FileStorage extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/CreateExportExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateExport API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/CreateExportExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateExport API.
      */
     CreateExportResponse createExport(CreateExportRequest request);
 
@@ -261,20 +261,20 @@ public interface FileStorage extends AutoCloseable {
      * more than one mount target at a time.
      * <p>
      * For information about access control and compartments, see
-     * [Overview of the IAM Service](https://docs.cloud.oracle.com/Content/Identity/Concepts/overview.htm).
+     * [Overview of the IAM Service](https://docs.oracle.com/iaas/Content/Identity/Concepts/overview.htm).
      * <p>
      * For information about Network Security Groups access control, see
-     * [Network Security Groups](https://docs.cloud.oracle.com/Content/Network/Concepts/networksecuritygroups.htm).
+     * [Network Security Groups](https://docs.oracle.com/iaas/Content/Network/Concepts/networksecuritygroups.htm).
      * <p>
      * For information about availability domains, see [Regions and
-     * Availability Domains](https://docs.cloud.oracle.com/Content/General/Concepts/regions.htm).
+     * Availability Domains](https://docs.oracle.com/iaas/Content/General/Concepts/regions.htm).
      * To get a list of availability domains, use the
      * `ListAvailabilityDomains` operation in the Identity and Access
      * Management Service API.
      * <p>
      * All Oracle Cloud Infrastructure resources, including
      * file systems, get an Oracle-assigned, unique ID called an Oracle
-     * Cloud Identifier ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)).
+     * Cloud Identifier ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
      * When you create a resource, you can find its OCID in the response.
      * You can also retrieve a resource's OCID by using a List API operation on that resource
      * type or by viewing the resource in the Console.
@@ -285,7 +285,7 @@ public interface FileStorage extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/CreateFileSystemExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateFileSystem API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/CreateFileSystemExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateFileSystem API.
      */
     CreateFileSystemResponse createFileSystem(CreateFileSystemRequest request);
 
@@ -302,7 +302,7 @@ public interface FileStorage extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/CreateFilesystemSnapshotPolicyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateFilesystemSnapshotPolicy API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/CreateFilesystemSnapshotPolicyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateFilesystemSnapshotPolicy API.
      */
     CreateFilesystemSnapshotPolicyResponse createFilesystemSnapshotPolicy(
             CreateFilesystemSnapshotPolicyRequest request);
@@ -326,17 +326,17 @@ public interface FileStorage extends AutoCloseable {
      * <p>
      * For information about access control and compartments, see
      * [Overview of the IAM
-     * Service](https://docs.cloud.oracle.com/Content/Identity/Concepts/overview.htm).
+     * Service](https://docs.oracle.com/iaas/Content/Identity/Concepts/overview.htm).
      * <p>
      * For information about availability domains, see [Regions and
-     * Availability Domains](https://docs.cloud.oracle.com/Content/General/Concepts/regions.htm).
+     * Availability Domains](https://docs.oracle.com/iaas/Content/General/Concepts/regions.htm).
      * To get a list of availability domains, use the
      * `ListAvailabilityDomains` operation in the Identity and Access
      * Management Service API.
      * <p>
      * All Oracle Cloud Infrastructure Services resources, including
      * mount targets, get an Oracle-assigned, unique ID called an
-     * Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)).
+     * Oracle Cloud Identifier ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
      * When you create a resource, you can find its OCID in the response.
      * You can also retrieve a resource's OCID by using a List API operation on that resource
      * type, or by viewing the resource in the Console.
@@ -347,7 +347,7 @@ public interface FileStorage extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/CreateMountTargetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateMountTarget API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/CreateMountTargetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateMountTarget API.
      */
     CreateMountTargetResponse createMountTarget(CreateMountTargetRequest request);
 
@@ -358,17 +358,17 @@ public interface FileStorage extends AutoCloseable {
      * <p>
      * For information about access control and compartments, see
      * [Overview of the IAM
-     * Service](https://docs.cloud.oracle.com/Content/Identity/Concepts/overview.htm).
+     * Service](https://docs.oracle.com/iaas/Content/Identity/Concepts/overview.htm).
      * <p>
      * For information about availability domains, see [Regions and
-     * Availability Domains](https://docs.cloud.oracle.com/Content/General/Concepts/regions.htm).
+     * Availability Domains](https://docs.oracle.com/iaas/Content/General/Concepts/regions.htm).
      * To get a list of availability domains, use the
      * `ListAvailabilityDomains` operation in the Identity and Access
      * Management Service API.
      * <p>
      * All Oracle Cloud Infrastructure Services resources, including
      * outbound connectors, get an Oracle-assigned, unique ID called an
-     * Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)).
+     * Oracle Cloud Identifier ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
      * When you create a resource, you can find its OCID in the response.
      * You can also retrieve a resource's OCID by using a List API operation on that resource
      * type, or by viewing the resource in the Console.
@@ -379,7 +379,7 @@ public interface FileStorage extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/CreateOutboundConnectorExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateOutboundConnector API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/CreateOutboundConnectorExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateOutboundConnector API.
      */
     CreateOutboundConnectorResponse createOutboundConnector(CreateOutboundConnectorRequest request);
 
@@ -393,21 +393,21 @@ public interface FileStorage extends AutoCloseable {
      * and sends it to the associated `ReplicationTarget`, which retrieves the delta and applies it to the target
      * file system.
      * Only unexported file systems can be used as target file systems.
-     * For more information, see [Using Replication](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/FSreplication.htm).
+     * For more information, see [Using Replication](https://docs.oracle.com/iaas/Content/File/Tasks/FSreplication.htm).
      * <p>
      * For information about access control and compartments, see
      * [Overview of the IAM
-     * Service](https://docs.cloud.oracle.com/Content/Identity/Concepts/overview.htm).
+     * Service](https://docs.oracle.com/iaas/Content/Identity/Concepts/overview.htm).
      * <p>
      * For information about availability domains, see [Regions and
-     * Availability Domains](https://docs.cloud.oracle.com/Content/General/Concepts/regions.htm).
+     * Availability Domains](https://docs.oracle.com/iaas/Content/General/Concepts/regions.htm).
      * To get a list of availability domains, use the
      * `ListAvailabilityDomains` operation in the Identity and Access
      * Management Service API.
      * <p>
      * All Oracle Cloud Infrastructure Services resources, including
      * replications, get an Oracle-assigned, unique ID called an
-     * Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)).
+     * Oracle Cloud Identifier ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
      * When you create a resource, you can find its OCID in the response.
      * You can also retrieve a resource's OCID by using a List API operation on that resource
      * type, or by viewing the resource in the Console.
@@ -418,7 +418,7 @@ public interface FileStorage extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/CreateReplicationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateReplication API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/CreateReplicationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateReplication API.
      */
     CreateReplicationResponse createReplication(CreateReplicationRequest request);
 
@@ -432,7 +432,7 @@ public interface FileStorage extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/CreateSnapshotExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateSnapshot API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/CreateSnapshotExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateSnapshot API.
      */
     CreateSnapshotResponse createSnapshot(CreateSnapshotRequest request);
 
@@ -445,7 +445,7 @@ public interface FileStorage extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/DeleteExportExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteExport API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/DeleteExportExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteExport API.
      */
     DeleteExportResponse deleteExport(DeleteExportRequest request);
 
@@ -460,7 +460,7 @@ public interface FileStorage extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/DeleteFileSystemExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteFileSystem API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/DeleteFileSystemExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteFileSystem API.
      */
     DeleteFileSystemResponse deleteFileSystem(DeleteFileSystemRequest request);
 
@@ -473,7 +473,7 @@ public interface FileStorage extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/DeleteFilesystemSnapshotPolicyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteFilesystemSnapshotPolicy API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/DeleteFilesystemSnapshotPolicyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteFilesystemSnapshotPolicy API.
      */
     DeleteFilesystemSnapshotPolicyResponse deleteFilesystemSnapshotPolicy(
             DeleteFilesystemSnapshotPolicyRequest request);
@@ -488,7 +488,7 @@ public interface FileStorage extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/DeleteMountTargetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteMountTarget API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/DeleteMountTargetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteMountTarget API.
      */
     DeleteMountTargetResponse deleteMountTarget(DeleteMountTargetRequest request);
 
@@ -501,7 +501,7 @@ public interface FileStorage extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/DeleteOutboundConnectorExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteOutboundConnector API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/DeleteOutboundConnectorExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteOutboundConnector API.
      */
     DeleteOutboundConnectorResponse deleteOutboundConnector(DeleteOutboundConnectorRequest request);
 
@@ -514,7 +514,7 @@ public interface FileStorage extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/DeleteReplicationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteReplication API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/DeleteReplicationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteReplication API.
      */
     DeleteReplicationResponse deleteReplication(DeleteReplicationRequest request);
 
@@ -530,7 +530,7 @@ public interface FileStorage extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/DeleteReplicationTargetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteReplicationTarget API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/DeleteReplicationTargetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteReplicationTarget API.
      */
     DeleteReplicationTargetResponse deleteReplicationTarget(DeleteReplicationTargetRequest request);
 
@@ -543,7 +543,7 @@ public interface FileStorage extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/DeleteSnapshotExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteSnapshot API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/DeleteSnapshotExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteSnapshot API.
      */
     DeleteSnapshotResponse deleteSnapshot(DeleteSnapshotRequest request);
 
@@ -556,7 +556,7 @@ public interface FileStorage extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/DetachCloneExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DetachClone API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/DetachCloneExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DetachClone API.
      */
     DetachCloneResponse detachClone(DetachCloneRequest request);
 
@@ -569,7 +569,7 @@ public interface FileStorage extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/EstimateReplicationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use EstimateReplication API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/EstimateReplicationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use EstimateReplication API.
      */
     EstimateReplicationResponse estimateReplication(EstimateReplicationRequest request);
 
@@ -581,7 +581,7 @@ public interface FileStorage extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/GetExportExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetExport API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/GetExportExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetExport API.
      */
     GetExportResponse getExport(GetExportRequest request);
 
@@ -593,7 +593,7 @@ public interface FileStorage extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/GetExportSetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetExportSet API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/GetExportSetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetExportSet API.
      */
     GetExportSetResponse getExportSet(GetExportSetRequest request);
 
@@ -605,7 +605,7 @@ public interface FileStorage extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/GetFileSystemExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetFileSystem API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/GetFileSystemExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetFileSystem API.
      */
     GetFileSystemResponse getFileSystem(GetFileSystemRequest request);
 
@@ -617,7 +617,7 @@ public interface FileStorage extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/GetFilesystemSnapshotPolicyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetFilesystemSnapshotPolicy API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/GetFilesystemSnapshotPolicyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetFilesystemSnapshotPolicy API.
      */
     GetFilesystemSnapshotPolicyResponse getFilesystemSnapshotPolicy(
             GetFilesystemSnapshotPolicyRequest request);
@@ -630,7 +630,7 @@ public interface FileStorage extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/GetMountTargetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetMountTarget API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/GetMountTargetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetMountTarget API.
      */
     GetMountTargetResponse getMountTarget(GetMountTargetRequest request);
 
@@ -642,7 +642,7 @@ public interface FileStorage extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/GetOutboundConnectorExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetOutboundConnector API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/GetOutboundConnectorExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetOutboundConnector API.
      */
     GetOutboundConnectorResponse getOutboundConnector(GetOutboundConnectorRequest request);
 
@@ -654,7 +654,7 @@ public interface FileStorage extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/GetReplicationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetReplication API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/GetReplicationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetReplication API.
      */
     GetReplicationResponse getReplication(GetReplicationRequest request);
 
@@ -666,7 +666,7 @@ public interface FileStorage extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/GetReplicationTargetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetReplicationTarget API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/GetReplicationTargetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetReplicationTarget API.
      */
     GetReplicationTargetResponse getReplicationTarget(GetReplicationTargetRequest request);
 
@@ -678,7 +678,7 @@ public interface FileStorage extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/GetSnapshotExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetSnapshot API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/GetSnapshotExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetSnapshot API.
      */
     GetSnapshotResponse getSnapshot(GetSnapshotRequest request);
 
@@ -691,7 +691,7 @@ public interface FileStorage extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/ListExportSetsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListExportSets API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/ListExportSetsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListExportSets API.
      */
     ListExportSetsResponse listExportSets(ListExportSetsRequest request);
 
@@ -706,7 +706,7 @@ public interface FileStorage extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/ListExportsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListExports API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/ListExportsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListExports API.
      */
     ListExportsResponse listExports(ListExportsRequest request);
 
@@ -720,7 +720,7 @@ public interface FileStorage extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/ListFileSystemsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListFileSystems API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/ListFileSystemsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListFileSystems API.
      */
     ListFileSystemsResponse listFileSystems(ListFileSystemsRequest request);
 
@@ -733,7 +733,7 @@ public interface FileStorage extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/ListFilesystemSnapshotPoliciesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListFilesystemSnapshotPolicies API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/ListFilesystemSnapshotPoliciesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListFilesystemSnapshotPolicies API.
      */
     ListFilesystemSnapshotPoliciesResponse listFilesystemSnapshotPolicies(
             ListFilesystemSnapshotPoliciesRequest request);
@@ -747,7 +747,7 @@ public interface FileStorage extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/ListMountTargetsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListMountTargets API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/ListMountTargetsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListMountTargets API.
      */
     ListMountTargetsResponse listMountTargets(ListMountTargetsRequest request);
 
@@ -760,7 +760,7 @@ public interface FileStorage extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/ListOutboundConnectorsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListOutboundConnectors API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/ListOutboundConnectorsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListOutboundConnectors API.
      */
     ListOutboundConnectorsResponse listOutboundConnectors(ListOutboundConnectorsRequest request);
 
@@ -773,7 +773,7 @@ public interface FileStorage extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/ListReplicationTargetsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListReplicationTargets API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/ListReplicationTargetsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListReplicationTargets API.
      */
     ListReplicationTargetsResponse listReplicationTargets(ListReplicationTargetsRequest request);
 
@@ -786,7 +786,7 @@ public interface FileStorage extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/ListReplicationsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListReplications API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/ListReplicationsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListReplications API.
      */
     ListReplicationsResponse listReplications(ListReplicationsRequest request);
 
@@ -805,7 +805,7 @@ public interface FileStorage extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/ListSnapshotsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSnapshots API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/ListSnapshotsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSnapshots API.
      */
     ListSnapshotsResponse listSnapshots(ListSnapshotsRequest request);
 
@@ -823,7 +823,7 @@ public interface FileStorage extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/PauseFilesystemSnapshotPolicyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use PauseFilesystemSnapshotPolicy API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/PauseFilesystemSnapshotPolicyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use PauseFilesystemSnapshotPolicy API.
      */
     PauseFilesystemSnapshotPolicyResponse pauseFilesystemSnapshotPolicy(
             PauseFilesystemSnapshotPolicyRequest request);
@@ -836,7 +836,7 @@ public interface FileStorage extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/RemoveExportLockExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RemoveExportLock API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/RemoveExportLockExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RemoveExportLock API.
      */
     RemoveExportLockResponse removeExportLock(RemoveExportLockRequest request);
 
@@ -848,7 +848,7 @@ public interface FileStorage extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/RemoveFileSystemLockExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RemoveFileSystemLock API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/RemoveFileSystemLockExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RemoveFileSystemLock API.
      */
     RemoveFileSystemLockResponse removeFileSystemLock(RemoveFileSystemLockRequest request);
 
@@ -860,7 +860,7 @@ public interface FileStorage extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/RemoveFilesystemSnapshotPolicyLockExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RemoveFilesystemSnapshotPolicyLock API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/RemoveFilesystemSnapshotPolicyLockExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RemoveFilesystemSnapshotPolicyLock API.
      */
     RemoveFilesystemSnapshotPolicyLockResponse removeFilesystemSnapshotPolicyLock(
             RemoveFilesystemSnapshotPolicyLockRequest request);
@@ -873,7 +873,7 @@ public interface FileStorage extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/RemoveMountTargetLockExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RemoveMountTargetLock API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/RemoveMountTargetLockExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RemoveMountTargetLock API.
      */
     RemoveMountTargetLockResponse removeMountTargetLock(RemoveMountTargetLockRequest request);
 
@@ -885,7 +885,7 @@ public interface FileStorage extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/RemoveOutboundConnectorLockExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RemoveOutboundConnectorLock API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/RemoveOutboundConnectorLockExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RemoveOutboundConnectorLock API.
      */
     RemoveOutboundConnectorLockResponse removeOutboundConnectorLock(
             RemoveOutboundConnectorLockRequest request);
@@ -898,7 +898,7 @@ public interface FileStorage extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/RemoveReplicationLockExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RemoveReplicationLock API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/RemoveReplicationLockExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RemoveReplicationLock API.
      */
     RemoveReplicationLockResponse removeReplicationLock(RemoveReplicationLockRequest request);
 
@@ -910,7 +910,7 @@ public interface FileStorage extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/RemoveSnapshotLockExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RemoveSnapshotLock API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/RemoveSnapshotLockExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RemoveSnapshotLock API.
      */
     RemoveSnapshotLockResponse removeSnapshotLock(RemoveSnapshotLockRequest request);
 
@@ -923,7 +923,7 @@ public interface FileStorage extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/ScheduleDowngradeShapeMountTargetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ScheduleDowngradeShapeMountTarget API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/ScheduleDowngradeShapeMountTargetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ScheduleDowngradeShapeMountTarget API.
      */
     ScheduleDowngradeShapeMountTargetResponse scheduleDowngradeShapeMountTarget(
             ScheduleDowngradeShapeMountTargetRequest request);
@@ -941,7 +941,7 @@ public interface FileStorage extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/UnpauseFilesystemSnapshotPolicyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UnpauseFilesystemSnapshotPolicy API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/UnpauseFilesystemSnapshotPolicyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UnpauseFilesystemSnapshotPolicy API.
      */
     UnpauseFilesystemSnapshotPolicyResponse unpauseFilesystemSnapshotPolicy(
             UnpauseFilesystemSnapshotPolicyRequest request);
@@ -954,7 +954,7 @@ public interface FileStorage extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/UpdateExportExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateExport API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/UpdateExportExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateExport API.
      */
     UpdateExportResponse updateExport(UpdateExportRequest request);
 
@@ -966,7 +966,7 @@ public interface FileStorage extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/UpdateExportSetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateExportSet API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/UpdateExportSetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateExportSet API.
      */
     UpdateExportSetResponse updateExportSet(UpdateExportSetRequest request);
 
@@ -980,7 +980,7 @@ public interface FileStorage extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/UpdateFileSystemExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateFileSystem API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/UpdateFileSystemExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateFileSystem API.
      */
     UpdateFileSystemResponse updateFileSystem(UpdateFileSystemRequest request);
 
@@ -992,7 +992,7 @@ public interface FileStorage extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/UpdateFilesystemSnapshotPolicyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateFilesystemSnapshotPolicy API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/UpdateFilesystemSnapshotPolicyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateFilesystemSnapshotPolicy API.
      */
     UpdateFilesystemSnapshotPolicyResponse updateFilesystemSnapshotPolicy(
             UpdateFilesystemSnapshotPolicyRequest request);
@@ -1005,7 +1005,7 @@ public interface FileStorage extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/UpdateMountTargetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateMountTarget API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/UpdateMountTargetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateMountTarget API.
      */
     UpdateMountTargetResponse updateMountTarget(UpdateMountTargetRequest request);
 
@@ -1017,7 +1017,7 @@ public interface FileStorage extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/UpdateOutboundConnectorExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateOutboundConnector API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/UpdateOutboundConnectorExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateOutboundConnector API.
      */
     UpdateOutboundConnectorResponse updateOutboundConnector(UpdateOutboundConnectorRequest request);
 
@@ -1030,7 +1030,7 @@ public interface FileStorage extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/UpdateReplicationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateReplication API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/UpdateReplicationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateReplication API.
      */
     UpdateReplicationResponse updateReplication(UpdateReplicationRequest request);
 
@@ -1042,7 +1042,7 @@ public interface FileStorage extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/UpdateSnapshotExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateSnapshot API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/UpdateSnapshotExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateSnapshot API.
      */
     UpdateSnapshotResponse updateSnapshot(UpdateSnapshotRequest request);
 
@@ -1055,7 +1055,7 @@ public interface FileStorage extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/UpgradeShapeMountTargetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpgradeShapeMountTarget API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/UpgradeShapeMountTargetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpgradeShapeMountTarget API.
      */
     UpgradeShapeMountTargetResponse upgradeShapeMountTarget(UpgradeShapeMountTargetRequest request);
 
@@ -1070,7 +1070,7 @@ public interface FileStorage extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/ValidateKeyTabsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ValidateKeyTabs API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/ValidateKeyTabsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ValidateKeyTabs API.
      */
     ValidateKeyTabsResponse validateKeyTabs(ValidateKeyTabsRequest request);
 

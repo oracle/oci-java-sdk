@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cloudmigrations.model;
@@ -111,7 +111,7 @@ public final class LaunchInstanceDetails
         /**
          * The OCID of the compute capacity reservation under which this instance is launched.
          * You can opt out of all default reservations by specifying an empty string as input for this field.
-         * For more information, see [Capacity Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
+         * For more information, see [Capacity Reservations](https://docs.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("capacityReservationId")
@@ -120,7 +120,7 @@ public final class LaunchInstanceDetails
         /**
          * The OCID of the compute capacity reservation under which this instance is launched.
          * You can opt out of all default reservations by specifying an empty string as input for this field.
-         * For more information, see [Capacity Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
+         * For more information, see [Capacity Reservations](https://docs.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
          *
          * @param capacityReservationId the value to set
          * @return this builder
@@ -328,7 +328,7 @@ public final class LaunchInstanceDetails
          * <p>
          * For more information about the Bring Your Own Image feature of
          * Oracle Cloud Infrastructure, see
-         * [Bring Your Own Image](https://docs.cloud.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm).
+         * [Bring Your Own Image](https://docs.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm).
          * <p>
          * For more information about iPXE, see http://ipxe.org.
          *
@@ -364,7 +364,7 @@ public final class LaunchInstanceDetails
          * <p>
          * For more information about the Bring Your Own Image feature of
          * Oracle Cloud Infrastructure, see
-         * [Bring Your Own Image](https://docs.cloud.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm).
+         * [Bring Your Own Image](https://docs.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm).
          * <p>
          * For more information about iPXE, see http://ipxe.org.
          *
@@ -587,7 +587,7 @@ public final class LaunchInstanceDetails
     /**
      * The OCID of the compute capacity reservation under which this instance is launched.
      * You can opt out of all default reservations by specifying an empty string as input for this field.
-     * For more information, see [Capacity Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
+     * For more information, see [Capacity Reservations](https://docs.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("capacityReservationId")
@@ -596,7 +596,7 @@ public final class LaunchInstanceDetails
     /**
      * The OCID of the compute capacity reservation under which this instance is launched.
      * You can opt out of all default reservations by specifying an empty string as input for this field.
-     * For more information, see [Capacity Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
+     * For more information, see [Capacity Reservations](https://docs.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
      *
      * @return the value
      **/
@@ -785,7 +785,7 @@ public final class LaunchInstanceDetails
      * <p>
      * For more information about the Bring Your Own Image feature of
      * Oracle Cloud Infrastructure, see
-     * [Bring Your Own Image](https://docs.cloud.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm).
+     * [Bring Your Own Image](https://docs.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm).
      * <p>
      * For more information about iPXE, see http://ipxe.org.
      *
@@ -821,7 +821,7 @@ public final class LaunchInstanceDetails
      * <p>
      * For more information about the Bring Your Own Image feature of
      * Oracle Cloud Infrastructure, see
-     * [Bring Your Own Image](https://docs.cloud.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm).
+     * [Bring Your Own Image](https://docs.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm).
      * <p>
      * For more information about iPXE, see http://ipxe.org.
      *

@@ -1,12 +1,10 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.generativeaiagent.model;
 
 /**
- * **OciObjectStorageDataSourceConfig**
- * <p>
  * The details of OCI Search with OpenSearch data source information.
  *
  * <br/>
@@ -30,6 +28,14 @@ package com.oracle.bmc.generativeaiagent.model;
 public final class OciObjectStorageDataSourceConfig extends DataSourceConfig {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        @com.fasterxml.jackson.annotation.JsonProperty("shouldEnableMultiModality")
+        private Boolean shouldEnableMultiModality;
+
+        public Builder shouldEnableMultiModality(Boolean shouldEnableMultiModality) {
+            this.shouldEnableMultiModality = shouldEnableMultiModality;
+            this.__explicitlySet__.add("shouldEnableMultiModality");
+            return this;
+        }
         /**
          * The locations of data items in Object Storage, can either be an object (File) or a prefix (folder).
          **/
@@ -53,7 +59,8 @@ public final class OciObjectStorageDataSourceConfig extends DataSourceConfig {
 
         public OciObjectStorageDataSourceConfig build() {
             OciObjectStorageDataSourceConfig model =
-                    new OciObjectStorageDataSourceConfig(this.objectStoragePrefixes);
+                    new OciObjectStorageDataSourceConfig(
+                            this.shouldEnableMultiModality, this.objectStoragePrefixes);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -62,6 +69,9 @@ public final class OciObjectStorageDataSourceConfig extends DataSourceConfig {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(OciObjectStorageDataSourceConfig model) {
+            if (model.wasPropertyExplicitlySet("shouldEnableMultiModality")) {
+                this.shouldEnableMultiModality(model.getShouldEnableMultiModality());
+            }
             if (model.wasPropertyExplicitlySet("objectStoragePrefixes")) {
                 this.objectStoragePrefixes(model.getObjectStoragePrefixes());
             }
@@ -82,8 +92,9 @@ public final class OciObjectStorageDataSourceConfig extends DataSourceConfig {
 
     @Deprecated
     public OciObjectStorageDataSourceConfig(
+            Boolean shouldEnableMultiModality,
             java.util.List<ObjectStoragePrefix> objectStoragePrefixes) {
-        super();
+        super(shouldEnableMultiModality);
         this.objectStoragePrefixes = objectStoragePrefixes;
     }
 

@@ -1,12 +1,12 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.osmanagementhub.requests;
 
 import com.oracle.bmc.osmanagementhub.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/ListManagedInstancesExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListManagedInstancesRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/ListManagedInstancesExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListManagedInstancesRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
 public class ListManagedInstancesRequest
@@ -46,12 +46,12 @@ public class ListManagedInstancesRequest
         return displayNameContains;
     }
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance. This filter returns resources associated with this managed instance.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance. This filter returns resources associated with this managed instance.
      */
     private String managedInstanceId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance. This filter returns resources associated with this managed instance.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance. This filter returns resources associated with this managed instance.
      */
     public String getManagedInstanceId() {
         return managedInstanceId;
@@ -156,12 +156,12 @@ public class ListManagedInstancesRequest
         return isAttachedToGroupOrLifecycleStage;
     }
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source. This filter returns resources associated with this software source.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source. This filter returns resources associated with this software source.
      */
     private String softwareSourceId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source. This filter returns resources associated with this software source.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source. This filter returns resources associated with this software source.
      */
     public String getSoftwareSourceId() {
         return softwareSourceId;
@@ -242,12 +242,12 @@ public class ListManagedInstancesRequest
         return profile;
     }
     /**
-     * A multi filter to return only managed instances that don't contain the given profile [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * A multi filter to return only managed instances that don't contain the given profile [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     private java.util.List<String> profileNotEqualTo;
 
     /**
-     * A multi filter to return only managed instances that don't contain the given profile [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * A multi filter to return only managed instances that don't contain the given profile [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     public java.util.List<String> getProfileNotEqualTo() {
         return profileNotEqualTo;
@@ -277,8 +277,60 @@ public class ListManagedInstancesRequest
         return isManagedByAutonomousLinux;
     }
     /**
+     * A filter to return only managed instances with the specified version of osmh-agent running.
+     */
+    private String agentVersion;
+
+    /**
+     * A filter to return only managed instances with the specified version of osmh-agent running.
+     */
+    public String getAgentVersion() {
+        return agentVersion;
+    }
+    /**
+     * A filter to return resources that are associated with the specified management
+     * station [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     *
+     */
+    private java.util.List<String> managementStation;
+
+    /**
+     * A filter to return resources that are associated with the specified management
+     * station [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     *
+     */
+    public java.util.List<String> getManagementStation() {
+        return managementStation;
+    }
+    /**
+     * A filter to return resources that aren't associated with the specified management
+     * station [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     *
+     */
+    private java.util.List<String> managementStationNotEqualTo;
+
+    /**
+     * A filter to return resources that aren't associated with the specified management
+     * station [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     *
+     */
+    public java.util.List<String> getManagementStationNotEqualTo() {
+        return managementStationNotEqualTo;
+    }
+    /**
+     * A filter to return only managed instances that require a reboot to install updates.
+     */
+    private Boolean isRebootRequired;
+
+    /**
+     * A filter to return only managed instances that require a reboot to install updates.
+     */
+    public Boolean getIsRebootRequired() {
+        return isRebootRequired;
+    }
+    /**
      * For list pagination. The maximum number of results per page, or items to return in a paginated "List" call.
-     * For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For important details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      * <p>
      * Example: {@code 50}
      *
@@ -287,7 +339,7 @@ public class ListManagedInstancesRequest
 
     /**
      * For list pagination. The maximum number of results per page, or items to return in a paginated "List" call.
-     * For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For important details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      * <p>
      * Example: {@code 50}
      *
@@ -297,7 +349,7 @@ public class ListManagedInstancesRequest
     }
     /**
      * For list pagination. The value of the {@code opc-next-page} response header from the previous "List" call.
-     * For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For important details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      * <p>
      * Example: {@code 3}
      *
@@ -306,7 +358,7 @@ public class ListManagedInstancesRequest
 
     /**
      * For list pagination. The value of the {@code opc-next-page} response header from the previous "List" call.
-     * For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For important details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      * <p>
      * Example: {@code 3}
      *
@@ -449,12 +501,12 @@ public class ListManagedInstancesRequest
         }
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance. This filter returns resources associated with this managed instance.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance. This filter returns resources associated with this managed instance.
          */
         private String managedInstanceId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance. This filter returns resources associated with this managed instance.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance. This filter returns resources associated with this managed instance.
          * @param managedInstanceId the value to set
          * @return this builder instance
          */
@@ -631,12 +683,12 @@ public class ListManagedInstancesRequest
         }
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source. This filter returns resources associated with this software source.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source. This filter returns resources associated with this software source.
          */
         private String softwareSourceId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source. This filter returns resources associated with this software source.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source. This filter returns resources associated with this software source.
          * @param softwareSourceId the value to set
          * @return this builder instance
          */
@@ -787,12 +839,12 @@ public class ListManagedInstancesRequest
         }
 
         /**
-         * A multi filter to return only managed instances that don't contain the given profile [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * A multi filter to return only managed instances that don't contain the given profile [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          */
         private java.util.List<String> profileNotEqualTo = null;
 
         /**
-         * A multi filter to return only managed instances that don't contain the given profile [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * A multi filter to return only managed instances that don't contain the given profile [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          * @param profileNotEqualTo the value to set
          * @return this builder instance
          */
@@ -802,7 +854,7 @@ public class ListManagedInstancesRequest
         }
 
         /**
-         * Singular setter. A multi filter to return only managed instances that don't contain the given profile [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * Singular setter. A multi filter to return only managed instances that don't contain the given profile [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          * @param singularValue the singular value to set
          * @return this builder instance
          */
@@ -843,8 +895,99 @@ public class ListManagedInstancesRequest
         }
 
         /**
+         * A filter to return only managed instances with the specified version of osmh-agent running.
+         */
+        private String agentVersion = null;
+
+        /**
+         * A filter to return only managed instances with the specified version of osmh-agent running.
+         * @param agentVersion the value to set
+         * @return this builder instance
+         */
+        public Builder agentVersion(String agentVersion) {
+            this.agentVersion = agentVersion;
+            return this;
+        }
+
+        /**
+         * A filter to return resources that are associated with the specified management
+         * station [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         *
+         */
+        private java.util.List<String> managementStation = null;
+
+        /**
+         * A filter to return resources that are associated with the specified management
+         * station [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         *
+         * @param managementStation the value to set
+         * @return this builder instance
+         */
+        public Builder managementStation(java.util.List<String> managementStation) {
+            this.managementStation = managementStation;
+            return this;
+        }
+
+        /**
+         * Singular setter. A filter to return resources that are associated with the specified management
+         * station [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         *
+         * @param singularValue the singular value to set
+         * @return this builder instance
+         */
+        public Builder managementStation(String singularValue) {
+            return this.managementStation(java.util.Arrays.asList(singularValue));
+        }
+
+        /**
+         * A filter to return resources that aren't associated with the specified management
+         * station [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         *
+         */
+        private java.util.List<String> managementStationNotEqualTo = null;
+
+        /**
+         * A filter to return resources that aren't associated with the specified management
+         * station [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         *
+         * @param managementStationNotEqualTo the value to set
+         * @return this builder instance
+         */
+        public Builder managementStationNotEqualTo(
+                java.util.List<String> managementStationNotEqualTo) {
+            this.managementStationNotEqualTo = managementStationNotEqualTo;
+            return this;
+        }
+
+        /**
+         * Singular setter. A filter to return resources that aren't associated with the specified management
+         * station [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         *
+         * @param singularValue the singular value to set
+         * @return this builder instance
+         */
+        public Builder managementStationNotEqualTo(String singularValue) {
+            return this.managementStationNotEqualTo(java.util.Arrays.asList(singularValue));
+        }
+
+        /**
+         * A filter to return only managed instances that require a reboot to install updates.
+         */
+        private Boolean isRebootRequired = null;
+
+        /**
+         * A filter to return only managed instances that require a reboot to install updates.
+         * @param isRebootRequired the value to set
+         * @return this builder instance
+         */
+        public Builder isRebootRequired(Boolean isRebootRequired) {
+            this.isRebootRequired = isRebootRequired;
+            return this;
+        }
+
+        /**
          * For list pagination. The maximum number of results per page, or items to return in a paginated "List" call.
-         * For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For important details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          * <p>
          * Example: {@code 50}
          *
@@ -853,7 +996,7 @@ public class ListManagedInstancesRequest
 
         /**
          * For list pagination. The maximum number of results per page, or items to return in a paginated "List" call.
-         * For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For important details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          * <p>
          * Example: {@code 50}
          *
@@ -867,7 +1010,7 @@ public class ListManagedInstancesRequest
 
         /**
          * For list pagination. The value of the {@code opc-next-page} response header from the previous "List" call.
-         * For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For important details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          * <p>
          * Example: {@code 3}
          *
@@ -876,7 +1019,7 @@ public class ListManagedInstancesRequest
 
         /**
          * For list pagination. The value of the {@code opc-next-page} response header from the previous "List" call.
-         * For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For important details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          * <p>
          * Example: {@code 3}
          *
@@ -986,6 +1129,10 @@ public class ListManagedInstancesRequest
             profileNotEqualTo(o.getProfileNotEqualTo());
             isProfileAttached(o.getIsProfileAttached());
             isManagedByAutonomousLinux(o.getIsManagedByAutonomousLinux());
+            agentVersion(o.getAgentVersion());
+            managementStation(o.getManagementStation());
+            managementStationNotEqualTo(o.getManagementStationNotEqualTo());
+            isRebootRequired(o.getIsRebootRequired());
             limit(o.getLimit());
             page(o.getPage());
             sortOrder(o.getSortOrder());
@@ -1046,13 +1193,17 @@ public class ListManagedInstancesRequest
             request.profileNotEqualTo = profileNotEqualTo;
             request.isProfileAttached = isProfileAttached;
             request.isManagedByAutonomousLinux = isManagedByAutonomousLinux;
+            request.agentVersion = agentVersion;
+            request.managementStation = managementStation;
+            request.managementStationNotEqualTo = managementStationNotEqualTo;
+            request.isRebootRequired = isRebootRequired;
             request.limit = limit;
             request.page = page;
             request.sortOrder = sortOrder;
             request.sortBy = sortBy;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListManagedInstancesRequest(compartmentId, displayName, displayNameContains, managedInstanceId, status, archType, osFamily, isManagementStation, group, groupNotEqualTo, lifecycleStage, lifecycleStageNotEqualTo, isAttachedToGroupOrLifecycleStage, softwareSourceId, advisoryName, lifecycleEnvironment, lifecycleEnvironmentNotEqualTo, location, locationNotEqualTo, profile, profileNotEqualTo, isProfileAttached, isManagedByAutonomousLinux, limit, page, sortOrder, sortBy, opcRequestId);
+            // new ListManagedInstancesRequest(compartmentId, displayName, displayNameContains, managedInstanceId, status, archType, osFamily, isManagementStation, group, groupNotEqualTo, lifecycleStage, lifecycleStageNotEqualTo, isAttachedToGroupOrLifecycleStage, softwareSourceId, advisoryName, lifecycleEnvironment, lifecycleEnvironmentNotEqualTo, location, locationNotEqualTo, profile, profileNotEqualTo, isProfileAttached, isManagedByAutonomousLinux, agentVersion, managementStation, managementStationNotEqualTo, isRebootRequired, limit, page, sortOrder, sortBy, opcRequestId);
         }
     }
 
@@ -1085,6 +1236,10 @@ public class ListManagedInstancesRequest
                 .profileNotEqualTo(profileNotEqualTo)
                 .isProfileAttached(isProfileAttached)
                 .isManagedByAutonomousLinux(isManagedByAutonomousLinux)
+                .agentVersion(agentVersion)
+                .managementStation(managementStation)
+                .managementStationNotEqualTo(managementStationNotEqualTo)
+                .isRebootRequired(isRebootRequired)
                 .limit(limit)
                 .page(page)
                 .sortOrder(sortOrder)
@@ -1132,6 +1287,11 @@ public class ListManagedInstancesRequest
         sb.append(",isProfileAttached=").append(String.valueOf(this.isProfileAttached));
         sb.append(",isManagedByAutonomousLinux=")
                 .append(String.valueOf(this.isManagedByAutonomousLinux));
+        sb.append(",agentVersion=").append(String.valueOf(this.agentVersion));
+        sb.append(",managementStation=").append(String.valueOf(this.managementStation));
+        sb.append(",managementStationNotEqualTo=")
+                .append(String.valueOf(this.managementStationNotEqualTo));
+        sb.append(",isRebootRequired=").append(String.valueOf(this.isRebootRequired));
         sb.append(",limit=").append(String.valueOf(this.limit));
         sb.append(",page=").append(String.valueOf(this.page));
         sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
@@ -1180,6 +1340,11 @@ public class ListManagedInstancesRequest
                 && java.util.Objects.equals(this.isProfileAttached, other.isProfileAttached)
                 && java.util.Objects.equals(
                         this.isManagedByAutonomousLinux, other.isManagedByAutonomousLinux)
+                && java.util.Objects.equals(this.agentVersion, other.agentVersion)
+                && java.util.Objects.equals(this.managementStation, other.managementStation)
+                && java.util.Objects.equals(
+                        this.managementStationNotEqualTo, other.managementStationNotEqualTo)
+                && java.util.Objects.equals(this.isRebootRequired, other.isRebootRequired)
                 && java.util.Objects.equals(this.limit, other.limit)
                 && java.util.Objects.equals(this.page, other.page)
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder)
@@ -1260,6 +1425,18 @@ public class ListManagedInstancesRequest
                         + (this.isManagedByAutonomousLinux == null
                                 ? 43
                                 : this.isManagedByAutonomousLinux.hashCode());
+        result = (result * PRIME) + (this.agentVersion == null ? 43 : this.agentVersion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.managementStation == null ? 43 : this.managementStation.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.managementStationNotEqualTo == null
+                                ? 43
+                                : this.managementStationNotEqualTo.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isRebootRequired == null ? 43 : this.isRebootRequired.hashCode());
         result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
         result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
         result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.oda;
@@ -68,7 +68,7 @@ public interface Management extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/BulkCreateSkillEntitiesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use BulkCreateSkillEntities API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/BulkCreateSkillEntitiesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use BulkCreateSkillEntities API.
      */
     BulkCreateSkillEntitiesResponse bulkCreateSkillEntities(BulkCreateSkillEntitiesRequest request);
 
@@ -81,7 +81,7 @@ public interface Management extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/CascadingDeleteSkillCustomEntitiesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CascadingDeleteSkillCustomEntities API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/CascadingDeleteSkillCustomEntitiesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CascadingDeleteSkillCustomEntities API.
      */
     CascadingDeleteSkillCustomEntitiesResponse cascadingDeleteSkillCustomEntities(
             CascadingDeleteSkillCustomEntitiesRequest request);
@@ -99,7 +99,7 @@ public interface Management extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/ChangeOdaPrivateEndpointCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeOdaPrivateEndpointCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/ChangeOdaPrivateEndpointCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeOdaPrivateEndpointCompartment API.
      */
     ChangeOdaPrivateEndpointCompartmentResponse changeOdaPrivateEndpointCompartment(
             ChangeOdaPrivateEndpointCompartmentRequest request);
@@ -113,7 +113,7 @@ public interface Management extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/ConfigureDigitalAssistantParametersExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ConfigureDigitalAssistantParameters API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/ConfigureDigitalAssistantParametersExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ConfigureDigitalAssistantParameters API.
      */
     ConfigureDigitalAssistantParametersResponse configureDigitalAssistantParameters(
             ConfigureDigitalAssistantParametersRequest request);
@@ -127,7 +127,7 @@ public interface Management extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/CreateAuthenticationProviderExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateAuthenticationProvider API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/CreateAuthenticationProviderExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateAuthenticationProvider API.
      */
     CreateAuthenticationProviderResponse createAuthenticationProvider(
             CreateAuthenticationProviderRequest request);
@@ -141,7 +141,7 @@ public interface Management extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/CreateChannelExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateChannel API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/CreateChannelExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateChannel API.
      */
     CreateChannelResponse createChannel(CreateChannelRequest request);
 
@@ -154,7 +154,7 @@ public interface Management extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/CreateDigitalAssistantExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateDigitalAssistant API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/CreateDigitalAssistantExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateDigitalAssistant API.
      */
     CreateDigitalAssistantResponse createDigitalAssistant(CreateDigitalAssistantRequest request);
 
@@ -170,7 +170,7 @@ public interface Management extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/CreateOdaPrivateEndpointExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateOdaPrivateEndpoint API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/CreateOdaPrivateEndpointExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateOdaPrivateEndpoint API.
      */
     CreateOdaPrivateEndpointResponse createOdaPrivateEndpoint(
             CreateOdaPrivateEndpointRequest request);
@@ -187,7 +187,7 @@ public interface Management extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/CreateOdaPrivateEndpointAttachmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateOdaPrivateEndpointAttachment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/CreateOdaPrivateEndpointAttachmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateOdaPrivateEndpointAttachment API.
      */
     CreateOdaPrivateEndpointAttachmentResponse createOdaPrivateEndpointAttachment(
             CreateOdaPrivateEndpointAttachmentRequest request);
@@ -204,7 +204,7 @@ public interface Management extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/CreateOdaPrivateEndpointScanProxyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateOdaPrivateEndpointScanProxy API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/CreateOdaPrivateEndpointScanProxyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateOdaPrivateEndpointScanProxy API.
      */
     CreateOdaPrivateEndpointScanProxyResponse createOdaPrivateEndpointScanProxy(
             CreateOdaPrivateEndpointScanProxyRequest request);
@@ -218,7 +218,7 @@ public interface Management extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/CreateSkillExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateSkill API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/CreateSkillExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateSkill API.
      */
     CreateSkillResponse createSkill(CreateSkillRequest request);
 
@@ -231,7 +231,7 @@ public interface Management extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/CreateSkillParameterExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateSkillParameter API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/CreateSkillParameterExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateSkillParameter API.
      */
     CreateSkillParameterResponse createSkillParameter(CreateSkillParameterRequest request);
 
@@ -244,7 +244,7 @@ public interface Management extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/CreateTranslatorExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateTranslator API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/CreateTranslatorExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateTranslator API.
      */
     CreateTranslatorResponse createTranslator(CreateTranslatorRequest request);
 
@@ -256,7 +256,7 @@ public interface Management extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/DeleteAuthenticationProviderExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteAuthenticationProvider API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/DeleteAuthenticationProviderExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteAuthenticationProvider API.
      */
     DeleteAuthenticationProviderResponse deleteAuthenticationProvider(
             DeleteAuthenticationProviderRequest request);
@@ -269,7 +269,7 @@ public interface Management extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/DeleteChannelExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteChannel API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/DeleteChannelExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteChannel API.
      */
     DeleteChannelResponse deleteChannel(DeleteChannelRequest request);
 
@@ -282,7 +282,7 @@ public interface Management extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/DeleteDigitalAssistantExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteDigitalAssistant API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/DeleteDigitalAssistantExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteDigitalAssistant API.
      */
     DeleteDigitalAssistantResponse deleteDigitalAssistant(DeleteDigitalAssistantRequest request);
 
@@ -295,7 +295,7 @@ public interface Management extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/DeleteOdaPrivateEndpointExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteOdaPrivateEndpoint API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/DeleteOdaPrivateEndpointExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteOdaPrivateEndpoint API.
      */
     DeleteOdaPrivateEndpointResponse deleteOdaPrivateEndpoint(
             DeleteOdaPrivateEndpointRequest request);
@@ -309,7 +309,7 @@ public interface Management extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/DeleteOdaPrivateEndpointAttachmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteOdaPrivateEndpointAttachment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/DeleteOdaPrivateEndpointAttachmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteOdaPrivateEndpointAttachment API.
      */
     DeleteOdaPrivateEndpointAttachmentResponse deleteOdaPrivateEndpointAttachment(
             DeleteOdaPrivateEndpointAttachmentRequest request);
@@ -323,7 +323,7 @@ public interface Management extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/DeleteOdaPrivateEndpointScanProxyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteOdaPrivateEndpointScanProxy API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/DeleteOdaPrivateEndpointScanProxyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteOdaPrivateEndpointScanProxy API.
      */
     DeleteOdaPrivateEndpointScanProxyResponse deleteOdaPrivateEndpointScanProxy(
             DeleteOdaPrivateEndpointScanProxyRequest request);
@@ -337,7 +337,7 @@ public interface Management extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/DeleteSkillExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteSkill API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/DeleteSkillExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteSkill API.
      */
     DeleteSkillResponse deleteSkill(DeleteSkillRequest request);
 
@@ -350,7 +350,7 @@ public interface Management extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/DeleteSkillParameterExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteSkillParameter API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/DeleteSkillParameterExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteSkillParameter API.
      */
     DeleteSkillParameterResponse deleteSkillParameter(DeleteSkillParameterRequest request);
 
@@ -362,7 +362,7 @@ public interface Management extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/DeleteTranslatorExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteTranslator API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/DeleteTranslatorExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteTranslator API.
      */
     DeleteTranslatorResponse deleteTranslator(DeleteTranslatorRequest request);
 
@@ -374,7 +374,7 @@ public interface Management extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/ExportDigitalAssistantExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ExportDigitalAssistant API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/ExportDigitalAssistantExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ExportDigitalAssistant API.
      */
     ExportDigitalAssistantResponse exportDigitalAssistant(ExportDigitalAssistantRequest request);
 
@@ -386,7 +386,7 @@ public interface Management extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/ExportSkillExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ExportSkill API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/ExportSkillExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ExportSkill API.
      */
     ExportSkillResponse exportSkill(ExportSkillRequest request);
 
@@ -398,7 +398,7 @@ public interface Management extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/GetAuthenticationProviderExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetAuthenticationProvider API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/GetAuthenticationProviderExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetAuthenticationProvider API.
      */
     GetAuthenticationProviderResponse getAuthenticationProvider(
             GetAuthenticationProviderRequest request);
@@ -411,7 +411,7 @@ public interface Management extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/GetChannelExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetChannel API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/GetChannelExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetChannel API.
      */
     GetChannelResponse getChannel(GetChannelRequest request);
 
@@ -423,7 +423,7 @@ public interface Management extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/GetDigitalAssistantExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetDigitalAssistant API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/GetDigitalAssistantExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetDigitalAssistant API.
      */
     GetDigitalAssistantResponse getDigitalAssistant(GetDigitalAssistantRequest request);
 
@@ -435,7 +435,7 @@ public interface Management extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/GetDigitalAssistantParameterExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetDigitalAssistantParameter API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/GetDigitalAssistantParameterExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetDigitalAssistantParameter API.
      */
     GetDigitalAssistantParameterResponse getDigitalAssistantParameter(
             GetDigitalAssistantParameterRequest request);
@@ -448,7 +448,7 @@ public interface Management extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/GetOdaPrivateEndpointExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetOdaPrivateEndpoint API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/GetOdaPrivateEndpointExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetOdaPrivateEndpoint API.
      */
     GetOdaPrivateEndpointResponse getOdaPrivateEndpoint(GetOdaPrivateEndpointRequest request);
 
@@ -460,7 +460,7 @@ public interface Management extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/GetOdaPrivateEndpointAttachmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetOdaPrivateEndpointAttachment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/GetOdaPrivateEndpointAttachmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetOdaPrivateEndpointAttachment API.
      */
     GetOdaPrivateEndpointAttachmentResponse getOdaPrivateEndpointAttachment(
             GetOdaPrivateEndpointAttachmentRequest request);
@@ -473,7 +473,7 @@ public interface Management extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/GetOdaPrivateEndpointScanProxyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetOdaPrivateEndpointScanProxy API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/GetOdaPrivateEndpointScanProxyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetOdaPrivateEndpointScanProxy API.
      */
     GetOdaPrivateEndpointScanProxyResponse getOdaPrivateEndpointScanProxy(
             GetOdaPrivateEndpointScanProxyRequest request);
@@ -486,7 +486,7 @@ public interface Management extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/GetSkillExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetSkill API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/GetSkillExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetSkill API.
      */
     GetSkillResponse getSkill(GetSkillRequest request);
 
@@ -498,7 +498,7 @@ public interface Management extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/GetSkillParameterExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetSkillParameter API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/GetSkillParameterExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetSkillParameter API.
      */
     GetSkillParameterResponse getSkillParameter(GetSkillParameterRequest request);
 
@@ -510,7 +510,7 @@ public interface Management extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/GetTranslatorExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetTranslator API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/GetTranslatorExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetTranslator API.
      */
     GetTranslatorResponse getTranslator(GetTranslatorRequest request);
 
@@ -522,7 +522,7 @@ public interface Management extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/ImportBotExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ImportBot API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/ImportBotExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ImportBot API.
      */
     ImportBotResponse importBot(ImportBotRequest request);
 
@@ -539,7 +539,7 @@ public interface Management extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/ListAuthenticationProvidersExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListAuthenticationProviders API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/ListAuthenticationProvidersExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListAuthenticationProviders API.
      */
     ListAuthenticationProvidersResponse listAuthenticationProviders(
             ListAuthenticationProvidersRequest request);
@@ -557,7 +557,7 @@ public interface Management extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/ListChannelsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListChannels API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/ListChannelsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListChannels API.
      */
     ListChannelsResponse listChannels(ListChannelsRequest request);
 
@@ -574,7 +574,7 @@ public interface Management extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/ListDigitalAssistantParametersExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDigitalAssistantParameters API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/ListDigitalAssistantParametersExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDigitalAssistantParameters API.
      */
     ListDigitalAssistantParametersResponse listDigitalAssistantParameters(
             ListDigitalAssistantParametersRequest request);
@@ -592,7 +592,7 @@ public interface Management extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/ListDigitalAssistantsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDigitalAssistants API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/ListDigitalAssistantsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDigitalAssistants API.
      */
     ListDigitalAssistantsResponse listDigitalAssistants(ListDigitalAssistantsRequest request);
 
@@ -609,7 +609,7 @@ public interface Management extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/ListOdaPrivateEndpointAttachmentsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListOdaPrivateEndpointAttachments API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/ListOdaPrivateEndpointAttachmentsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListOdaPrivateEndpointAttachments API.
      */
     ListOdaPrivateEndpointAttachmentsResponse listOdaPrivateEndpointAttachments(
             ListOdaPrivateEndpointAttachmentsRequest request);
@@ -628,7 +628,7 @@ public interface Management extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/ListOdaPrivateEndpointScanProxiesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListOdaPrivateEndpointScanProxies API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/ListOdaPrivateEndpointScanProxiesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListOdaPrivateEndpointScanProxies API.
      */
     ListOdaPrivateEndpointScanProxiesResponse listOdaPrivateEndpointScanProxies(
             ListOdaPrivateEndpointScanProxiesRequest request);
@@ -647,7 +647,7 @@ public interface Management extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/ListOdaPrivateEndpointsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListOdaPrivateEndpoints API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/ListOdaPrivateEndpointsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListOdaPrivateEndpoints API.
      */
     ListOdaPrivateEndpointsResponse listOdaPrivateEndpoints(ListOdaPrivateEndpointsRequest request);
 
@@ -664,7 +664,7 @@ public interface Management extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/ListSkillParametersExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSkillParameters API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/ListSkillParametersExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSkillParameters API.
      */
     ListSkillParametersResponse listSkillParameters(ListSkillParametersRequest request);
 
@@ -681,7 +681,7 @@ public interface Management extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/ListSkillsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSkills API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/ListSkillsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSkills API.
      */
     ListSkillsResponse listSkills(ListSkillsRequest request);
 
@@ -698,7 +698,7 @@ public interface Management extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/ListTranslatorsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListTranslators API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/ListTranslatorsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListTranslators API.
      */
     ListTranslatorsResponse listTranslators(ListTranslatorsRequest request);
 
@@ -712,7 +712,7 @@ public interface Management extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/PublishDigitalAssistantExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use PublishDigitalAssistant API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/PublishDigitalAssistantExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use PublishDigitalAssistant API.
      */
     PublishDigitalAssistantResponse publishDigitalAssistant(PublishDigitalAssistantRequest request);
 
@@ -726,7 +726,7 @@ public interface Management extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/PublishSkillExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use PublishSkill API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/PublishSkillExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use PublishSkill API.
      */
     PublishSkillResponse publishSkill(PublishSkillRequest request);
 
@@ -741,7 +741,7 @@ public interface Management extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/RotateChannelKeysExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RotateChannelKeys API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/RotateChannelKeysExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RotateChannelKeys API.
      */
     RotateChannelKeysResponse rotateChannelKeys(RotateChannelKeysRequest request);
 
@@ -754,7 +754,7 @@ public interface Management extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/StartChannelExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use StartChannel API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/StartChannelExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use StartChannel API.
      */
     StartChannelResponse startChannel(StartChannelRequest request);
 
@@ -767,7 +767,7 @@ public interface Management extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/StopChannelExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use StopChannel API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/StopChannelExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use StopChannel API.
      */
     StopChannelResponse stopChannel(StopChannelRequest request);
 
@@ -779,7 +779,7 @@ public interface Management extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/TrainSkillExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use TrainSkill API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/TrainSkillExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use TrainSkill API.
      */
     TrainSkillResponse trainSkill(TrainSkillRequest request);
 
@@ -791,7 +791,7 @@ public interface Management extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/UpdateAuthenticationProviderExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateAuthenticationProvider API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/UpdateAuthenticationProviderExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateAuthenticationProvider API.
      */
     UpdateAuthenticationProviderResponse updateAuthenticationProvider(
             UpdateAuthenticationProviderRequest request);
@@ -804,7 +804,7 @@ public interface Management extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/UpdateChannelExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateChannel API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/UpdateChannelExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateChannel API.
      */
     UpdateChannelResponse updateChannel(UpdateChannelRequest request);
 
@@ -816,7 +816,7 @@ public interface Management extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/UpdateDigitalAssistantExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateDigitalAssistant API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/UpdateDigitalAssistantExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateDigitalAssistant API.
      */
     UpdateDigitalAssistantResponse updateDigitalAssistant(UpdateDigitalAssistantRequest request);
 
@@ -828,7 +828,7 @@ public interface Management extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/UpdateDigitalAssistantParameterExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateDigitalAssistantParameter API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/UpdateDigitalAssistantParameterExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateDigitalAssistantParameter API.
      */
     UpdateDigitalAssistantParameterResponse updateDigitalAssistantParameter(
             UpdateDigitalAssistantParameterRequest request);
@@ -841,7 +841,7 @@ public interface Management extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/UpdateOdaPrivateEndpointExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateOdaPrivateEndpoint API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/UpdateOdaPrivateEndpointExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateOdaPrivateEndpoint API.
      */
     UpdateOdaPrivateEndpointResponse updateOdaPrivateEndpoint(
             UpdateOdaPrivateEndpointRequest request);
@@ -854,7 +854,7 @@ public interface Management extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/UpdateSkillExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateSkill API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/UpdateSkillExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateSkill API.
      */
     UpdateSkillResponse updateSkill(UpdateSkillRequest request);
 
@@ -866,7 +866,7 @@ public interface Management extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/UpdateSkillParameterExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateSkillParameter API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/UpdateSkillParameterExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateSkillParameter API.
      */
     UpdateSkillParameterResponse updateSkillParameter(UpdateSkillParameterRequest request);
 
@@ -878,7 +878,7 @@ public interface Management extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/UpdateTranslatorExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateTranslator API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/UpdateTranslatorExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateTranslator API.
      */
     UpdateTranslatorResponse updateTranslator(UpdateTranslatorRequest request);
 

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.vnmonitoring.model;
@@ -61,7 +61,7 @@ public final class EgressSecurityRule extends com.oracle.bmc.http.internal.Expli
          * <p>
          * IP address range in CIDR notation. For example: {@code 192.168.1.0/24} or {@code 2001:0db8:0123:45::/56}
          *     Note that IPv6 addressing is currently supported only in certain regions. See
-         *     [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+         *     [IPv6 Addresses](https://docs.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
          * <p>
          * The {@code cidrBlock} value for a {@link Service}, if you're
          *     setting up a security list rule for traffic destined for a particular {@code Service} through
@@ -79,7 +79,7 @@ public final class EgressSecurityRule extends com.oracle.bmc.http.internal.Expli
          * <p>
          * IP address range in CIDR notation. For example: {@code 192.168.1.0/24} or {@code 2001:0db8:0123:45::/56}
          *     Note that IPv6 addressing is currently supported only in certain regions. See
-         *     [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+         *     [IPv6 Addresses](https://docs.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
          * <p>
          * The {@code cidrBlock} value for a {@link Service}, if you're
          *     setting up a security list rule for traffic destined for a particular {@code Service} through
@@ -292,7 +292,7 @@ public final class EgressSecurityRule extends com.oracle.bmc.http.internal.Expli
      * <p>
      * IP address range in CIDR notation. For example: {@code 192.168.1.0/24} or {@code 2001:0db8:0123:45::/56}
      *     Note that IPv6 addressing is currently supported only in certain regions. See
-     *     [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+     *     [IPv6 Addresses](https://docs.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
      * <p>
      * The {@code cidrBlock} value for a {@link Service}, if you're
      *     setting up a security list rule for traffic destined for a particular {@code Service} through
@@ -310,7 +310,7 @@ public final class EgressSecurityRule extends com.oracle.bmc.http.internal.Expli
      * <p>
      * IP address range in CIDR notation. For example: {@code 192.168.1.0/24} or {@code 2001:0db8:0123:45::/56}
      *     Note that IPv6 addressing is currently supported only in certain regions. See
-     *     [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+     *     [IPv6 Addresses](https://docs.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
      * <p>
      * The {@code cidrBlock} value for a {@link Service}, if you're
      *     setting up a security list rule for traffic destined for a particular {@code Service} through

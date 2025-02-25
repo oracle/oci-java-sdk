@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.delegateaccesscontrol;
@@ -479,7 +479,7 @@ public class DelegateAccessControlAsyncClient implements DelegateAccessControlAs
                         "DelegateAccessControl",
                         "ApproveDelegatedResourceAccessRequest",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/delegate-access-control/20230801/DelegatedResourceAccessRequest/ApproveDelegatedResourceAccessRequest");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, ApproveDelegatedResourceAccessRequestResponse>
                 transformer =
@@ -539,7 +539,7 @@ public class DelegateAccessControlAsyncClient implements DelegateAccessControlAs
                         "DelegateAccessControl",
                         "ChangeDelegationControlCompartment",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/delegate-access-control/20230801/DelegationControl/ChangeDelegationControlCompartment");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeDelegationControlCompartmentResponse>
                 transformer =
@@ -599,7 +599,7 @@ public class DelegateAccessControlAsyncClient implements DelegateAccessControlAs
                         "DelegateAccessControl",
                         "ChangeDelegationSubscriptionCompartment",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/delegate-access-control/20230801/DelegationSubscription/ChangeDelegationSubscriptionCompartment");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeDelegationSubscriptionCompartmentResponse>
                 transformer =
@@ -658,7 +658,7 @@ public class DelegateAccessControlAsyncClient implements DelegateAccessControlAs
                         "DelegateAccessControl",
                         "CreateDelegationControl",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/delegate-access-control/20230801/DelegationControl/CreateDelegationControl");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, CreateDelegationControlResponse>
                 transformer =
@@ -714,7 +714,7 @@ public class DelegateAccessControlAsyncClient implements DelegateAccessControlAs
                         "DelegateAccessControl",
                         "CreateDelegationSubscription",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/delegate-access-control/20230801/DelegationSubscription/CreateDelegationSubscription");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, CreateDelegationSubscriptionResponse>
                 transformer =
@@ -768,7 +768,7 @@ public class DelegateAccessControlAsyncClient implements DelegateAccessControlAs
                         "DelegateAccessControl",
                         "DeleteDelegationControl",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/delegate-access-control/20230801/DelegationControl/DeleteDelegationControl");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, DeleteDelegationControlResponse>
                 transformer =
@@ -818,7 +818,7 @@ public class DelegateAccessControlAsyncClient implements DelegateAccessControlAs
                         "DelegateAccessControl",
                         "DeleteDelegationSubscription",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/delegate-access-control/20230801/DelegationSubscription/DeleteDelegationSubscription");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, DeleteDelegationSubscriptionResponse>
                 transformer =
@@ -869,7 +869,7 @@ public class DelegateAccessControlAsyncClient implements DelegateAccessControlAs
                         "DelegateAccessControl",
                         "GetDelegatedResourceAccessRequest",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/delegate-access-control/20230801/DelegatedResourceAccessRequest/GetDelegatedResourceAccessRequest");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, GetDelegatedResourceAccessRequestResponse>
                 transformer =
@@ -923,7 +923,7 @@ public class DelegateAccessControlAsyncClient implements DelegateAccessControlAs
                         "DelegateAccessControl",
                         "GetDelegatedResourceAccessRequestAuditLogReport",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/delegate-access-control/20230801/DelegatedResourceAccessRequestAuditLogReport/GetDelegatedResourceAccessRequestAuditLogReport");
         final java.util.function.Function<
                         javax.ws.rs.core.Response,
                         GetDelegatedResourceAccessRequestAuditLogReportResponse>
@@ -976,7 +976,7 @@ public class DelegateAccessControlAsyncClient implements DelegateAccessControlAs
                         "DelegateAccessControl",
                         "GetDelegationControl",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/delegate-access-control/20230801/DelegationControl/GetDelegationControl");
         final java.util.function.Function<javax.ws.rs.core.Response, GetDelegationControlResponse>
                 transformer =
                         GetDelegationControlConverter.fromResponse(
@@ -1023,7 +1023,7 @@ public class DelegateAccessControlAsyncClient implements DelegateAccessControlAs
                         "DelegateAccessControl",
                         "GetDelegationSubscription",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/delegate-access-control/20230801/DelegationSubscription/GetDelegationSubscription");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, GetDelegationSubscriptionResponse>
                 transformer =
@@ -1072,7 +1072,7 @@ public class DelegateAccessControlAsyncClient implements DelegateAccessControlAs
                         "DelegateAccessControl",
                         "GetServiceProvider",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/delegate-access-control/20230801/ServiceProvider/GetServiceProvider");
         final java.util.function.Function<javax.ws.rs.core.Response, GetServiceProviderResponse>
                 transformer =
                         GetServiceProviderConverter.fromResponse(
@@ -1118,7 +1118,7 @@ public class DelegateAccessControlAsyncClient implements DelegateAccessControlAs
                         "DelegateAccessControl",
                         "GetServiceProviderAction",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/delegate-access-control/20230801/ServiceProviderAction/GetServiceProviderAction");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, GetServiceProviderActionResponse>
                 transformer =
@@ -1169,7 +1169,7 @@ public class DelegateAccessControlAsyncClient implements DelegateAccessControlAs
                         "DelegateAccessControl",
                         "ListDelegatedResourceAccessRequestHistories",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/delegate-access-control/20230801/DelegatedResourceAccessRequest/ListDelegatedResourceAccessRequestHistories");
         final java.util.function.Function<
                         javax.ws.rs.core.Response,
                         ListDelegatedResourceAccessRequestHistoriesResponse>
@@ -1225,7 +1225,7 @@ public class DelegateAccessControlAsyncClient implements DelegateAccessControlAs
                         "DelegateAccessControl",
                         "ListDelegatedResourceAccessRequests",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/delegate-access-control/20230801/DelegatedResourceAccessRequest/ListDelegatedResourceAccessRequests");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, ListDelegatedResourceAccessRequestsResponse>
                 transformer =
@@ -1278,7 +1278,7 @@ public class DelegateAccessControlAsyncClient implements DelegateAccessControlAs
                         "DelegateAccessControl",
                         "ListDelegationControlResources",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/delegate-access-control/20230801/DelegationControl/ListDelegationControlResources");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, ListDelegationControlResourcesResponse>
                 transformer =
@@ -1328,7 +1328,7 @@ public class DelegateAccessControlAsyncClient implements DelegateAccessControlAs
                         "DelegateAccessControl",
                         "ListDelegationControls",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/delegate-access-control/20230801/DelegationControl/ListDelegationControls");
         final java.util.function.Function<javax.ws.rs.core.Response, ListDelegationControlsResponse>
                 transformer =
                         ListDelegationControlsConverter.fromResponse(
@@ -1377,7 +1377,7 @@ public class DelegateAccessControlAsyncClient implements DelegateAccessControlAs
                         "DelegateAccessControl",
                         "ListDelegationSubscriptions",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/delegate-access-control/20230801/DelegationSubscription/ListDelegationSubscriptions");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, ListDelegationSubscriptionsResponse>
                 transformer =
@@ -1428,7 +1428,7 @@ public class DelegateAccessControlAsyncClient implements DelegateAccessControlAs
                         "DelegateAccessControl",
                         "ListServiceProviderActions",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/delegate-access-control/20230801/ServiceProviderAction/ListServiceProviderActions");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, ListServiceProviderActionsResponse>
                 transformer =
@@ -1479,7 +1479,7 @@ public class DelegateAccessControlAsyncClient implements DelegateAccessControlAs
                         "DelegateAccessControl",
                         "ListServiceProviderInteractions",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/delegate-access-control/20230801/DelegatedResourceAccessRequest/ListServiceProviderInteractions");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, ListServiceProviderInteractionsResponse>
                 transformer =
@@ -1530,7 +1530,7 @@ public class DelegateAccessControlAsyncClient implements DelegateAccessControlAs
                         "DelegateAccessControl",
                         "ListServiceProviders",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/delegate-access-control/20230801/ServiceProvider/ListServiceProviders");
         final java.util.function.Function<javax.ws.rs.core.Response, ListServiceProvidersResponse>
                 transformer =
                         ListServiceProvidersConverter.fromResponse(
@@ -1581,7 +1581,7 @@ public class DelegateAccessControlAsyncClient implements DelegateAccessControlAs
                         "DelegateAccessControl",
                         "RejectDelegatedResourceAccessRequest",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/delegate-access-control/20230801/DelegatedResourceAccessRequest/RejectDelegatedResourceAccessRequest");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, RejectDelegatedResourceAccessRequestResponse>
                 transformer =
@@ -1641,7 +1641,7 @@ public class DelegateAccessControlAsyncClient implements DelegateAccessControlAs
                         "DelegateAccessControl",
                         "RevokeDelegatedResourceAccessRequest",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/delegate-access-control/20230801/DelegatedResourceAccessRequest/RevokeDelegatedResourceAccessRequest");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, RevokeDelegatedResourceAccessRequestResponse>
                 transformer =
@@ -1700,7 +1700,7 @@ public class DelegateAccessControlAsyncClient implements DelegateAccessControlAs
                         "DelegateAccessControl",
                         "ServiceProviderInteractionRequest",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/delegate-access-control/20230801/DelegatedResourceAccessRequest/ServiceProviderInteractionRequest");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, ServiceProviderInteractionRequestResponse>
                 transformer =
@@ -1756,7 +1756,7 @@ public class DelegateAccessControlAsyncClient implements DelegateAccessControlAs
                         "DelegateAccessControl",
                         "UpdateDelegationControl",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/delegate-access-control/20230801/DelegationControl/UpdateDelegationControl");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, UpdateDelegationControlResponse>
                 transformer =
@@ -1811,7 +1811,7 @@ public class DelegateAccessControlAsyncClient implements DelegateAccessControlAs
                         "DelegateAccessControl",
                         "UpdateDelegationSubscription",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/delegate-access-control/20230801/DelegationSubscription/UpdateDelegationSubscription");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, UpdateDelegationSubscriptionResponse>
                 transformer =

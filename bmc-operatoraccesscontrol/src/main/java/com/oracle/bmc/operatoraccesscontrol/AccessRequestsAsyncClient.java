@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.operatoraccesscontrol;
@@ -476,7 +476,7 @@ public class AccessRequestsAsyncClient implements AccessRequestsAsync {
                         "AccessRequests",
                         "ApproveAccessRequest",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/AccessRequest/ApproveAccessRequest");
+                        "");
         final java.util.function.Function<javax.ws.rs.core.Response, ApproveAccessRequestResponse>
                 transformer =
                         ApproveAccessRequestConverter.fromResponse(
@@ -525,10 +525,7 @@ public class AccessRequestsAsyncClient implements AccessRequestsAsync {
                 GetAccessRequestConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "AccessRequests",
-                        "GetAccessRequest",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/AccessRequest/GetAccessRequest");
+                        "AccessRequests", "GetAccessRequest", ib.getRequestUri().toString(), "");
         final java.util.function.Function<javax.ws.rs.core.Response, GetAccessRequestResponse>
                 transformer =
                         GetAccessRequestConverter.fromResponse(
@@ -571,10 +568,7 @@ public class AccessRequestsAsyncClient implements AccessRequestsAsync {
                 GetAuditLogReportConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "AccessRequests",
-                        "GetAuditLogReport",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/AuditLogReport/GetAuditLogReport");
+                        "AccessRequests", "GetAuditLogReport", ib.getRequestUri().toString(), "");
         final java.util.function.Function<javax.ws.rs.core.Response, GetAuditLogReportResponse>
                 transformer =
                         GetAuditLogReportConverter.fromResponse(
@@ -618,10 +612,7 @@ public class AccessRequestsAsyncClient implements AccessRequestsAsync {
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "AccessRequests",
-                        "InteractionRequest",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/AccessRequest/InteractionRequest");
+                        "AccessRequests", "InteractionRequest", ib.getRequestUri().toString(), "");
         final java.util.function.Function<javax.ws.rs.core.Response, InteractionRequestResponse>
                 transformer =
                         InteractionRequestConverter.fromResponse(
@@ -674,7 +665,7 @@ public class AccessRequestsAsyncClient implements AccessRequestsAsync {
                         "AccessRequests",
                         "ListAccessRequestHistories",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/AccessRequest/ListAccessRequestHistories");
+                        "");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, ListAccessRequestHistoriesResponse>
                 transformer =
@@ -720,10 +711,7 @@ public class AccessRequestsAsyncClient implements AccessRequestsAsync {
                 ListAccessRequestsConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "AccessRequests",
-                        "ListAccessRequests",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/AccessRequest/ListAccessRequests");
+                        "AccessRequests", "ListAccessRequests", ib.getRequestUri().toString(), "");
         final java.util.function.Function<javax.ws.rs.core.Response, ListAccessRequestsResponse>
                 transformer =
                         ListAccessRequestsConverter.fromResponse(
@@ -766,10 +754,7 @@ public class AccessRequestsAsyncClient implements AccessRequestsAsync {
                 ListInteractionsConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "AccessRequests",
-                        "ListInteractions",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/AccessRequest/ListInteractions");
+                        "AccessRequests", "ListInteractions", ib.getRequestUri().toString(), "");
         final java.util.function.Function<javax.ws.rs.core.Response, ListInteractionsResponse>
                 transformer =
                         ListInteractionsConverter.fromResponse(
@@ -813,10 +798,7 @@ public class AccessRequestsAsyncClient implements AccessRequestsAsync {
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "AccessRequests",
-                        "RejectAccessRequest",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/AccessRequest/RejectAccessRequest");
+                        "AccessRequests", "RejectAccessRequest", ib.getRequestUri().toString(), "");
         final java.util.function.Function<javax.ws.rs.core.Response, RejectAccessRequestResponse>
                 transformer =
                         RejectAccessRequestConverter.fromResponse(
@@ -866,10 +848,7 @@ public class AccessRequestsAsyncClient implements AccessRequestsAsync {
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "AccessRequests",
-                        "ReviewAccessRequest",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/AccessRequest/ReviewAccessRequest");
+                        "AccessRequests", "ReviewAccessRequest", ib.getRequestUri().toString(), "");
         final java.util.function.Function<javax.ws.rs.core.Response, ReviewAccessRequestResponse>
                 transformer =
                         ReviewAccessRequestConverter.fromResponse(
@@ -919,10 +898,7 @@ public class AccessRequestsAsyncClient implements AccessRequestsAsync {
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "AccessRequests",
-                        "RevokeAccessRequest",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/AccessRequest/RevokeAccessRequest");
+                        "AccessRequests", "RevokeAccessRequest", ib.getRequestUri().toString(), "");
         final java.util.function.Function<javax.ws.rs.core.Response, RevokeAccessRequestResponse>
                 transformer =
                         RevokeAccessRequestConverter.fromResponse(

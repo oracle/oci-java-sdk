@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.osmanagementhub;
@@ -456,6 +456,69 @@ public class ManagedInstanceAsyncClient implements ManagedInstanceAsync {
     @Override
     public void close() {
         client.close();
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssociateManagedInstancesWithManagementStationResponse>
+            associateManagedInstancesWithManagementStation(
+                    AssociateManagedInstancesWithManagementStationRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    AssociateManagedInstancesWithManagementStationRequest,
+                                    AssociateManagedInstancesWithManagementStationResponse>
+                            handler) {
+        LOG.trace("Called async associateManagedInstancesWithManagementStation");
+        final AssociateManagedInstancesWithManagementStationRequest interceptedRequest =
+                AssociateManagedInstancesWithManagementStationConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                AssociateManagedInstancesWithManagementStationConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ManagedInstance",
+                        "AssociateManagedInstancesWithManagementStation",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstance/AssociateManagedInstancesWithManagementStation");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response,
+                        AssociateManagedInstancesWithManagementStationResponse>
+                transformer =
+                        AssociateManagedInstancesWithManagementStationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        AssociateManagedInstancesWithManagementStationRequest,
+                        AssociateManagedInstancesWithManagementStationResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                AssociateManagedInstancesWithManagementStationRequest,
+                                AssociateManagedInstancesWithManagementStationResponse>,
+                        java.util.concurrent.Future<
+                                AssociateManagedInstancesWithManagementStationResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest
+                                        .getAssociateManagedInstancesWithManagementStationDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    AssociateManagedInstancesWithManagementStationRequest,
+                    AssociateManagedInstancesWithManagementStationResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
     }
 
     @Override
@@ -1771,6 +1834,59 @@ public class ManagedInstanceAsyncClient implements ManagedInstanceAsync {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ManageModuleStreamsOnManagedInstanceRequest,
                     ManageModuleStreamsOnManagedInstanceResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<RebootManagedInstanceResponse> rebootManagedInstance(
+            RebootManagedInstanceRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            RebootManagedInstanceRequest, RebootManagedInstanceResponse>
+                    handler) {
+        LOG.trace("Called async rebootManagedInstance");
+        final RebootManagedInstanceRequest interceptedRequest =
+                RebootManagedInstanceConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RebootManagedInstanceConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ManagedInstance",
+                        "RebootManagedInstance",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstance/RebootManagedInstance");
+        final java.util.function.Function<javax.ws.rs.core.Response, RebootManagedInstanceResponse>
+                transformer =
+                        RebootManagedInstanceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        RebootManagedInstanceRequest, RebootManagedInstanceResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                RebootManagedInstanceRequest, RebootManagedInstanceResponse>,
+                        java.util.concurrent.Future<RebootManagedInstanceResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getRebootManagedInstanceDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    RebootManagedInstanceRequest, RebootManagedInstanceResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

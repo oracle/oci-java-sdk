@@ -3,6 +3,83 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 2.81.0 - 2025-02-25
+### Added 
+- Support for backup retention locks on autonomous database create and update operations in the Database service 
+- Support for multi-modality flags in data source in the Generative AI service 
+- Support for knowledge base statistics in the Generative AI service 
+- Support for document id, title and page numbers in citations in the Generative AI service 
+- Support for creating and updating Amazon Web Services (AWS) asset-sources, EC2 and Elastic Block Store (EBS) assets in the Cloud Bridge service 
+- Support for listing Amazon Web Services (AWS) regions available for discovery and migrations in the Cloud Bridge service 
+- Support for stored video analysis in the AI Vision service 
+- Support for HTTP or REST endpoint-based metric extensions in the OCI Monitoring service 
+- Support for metric extension filter in the list metric extensions operation in the OCI Monitoring service 
+- Support for creating and updating private endpoints for model deployments in the Data Science service 
+- Support for OCI Identity user integration in the Big Data service 
+- Support for user principal session tokens in the Big Data service 
+- Support for historical cluster versions in the Big Data service 
+- Support for new SKUs for digital assets editions in the Blockchain Platform service 
+- Support for Zero ETL pipelines in the GoldenGate service 
+- Support for attaching route tables to VNICs and private IPs in the Networking service 
+- Support for Cross Cluster Search(CCS) for an opensearch cluster in the OpenSearch service 
+- Support for patch-level updates of the autonomous databases after provisioning in the Database service 
+- Support for Bring Your Own ASN (BYOASN) in the Networking service 
+- Support for Data Guard transaction processing in the Database service 
+- Support for permanently disconnecting peer autonomous databases from its primary database in the Database service 
+- Support for databases with external Hardware Security Module (HSM) in the Database service 
+- Support for active and standby purist modes in the Network Load Balancer service 
+- Support for configurable TCP reset in the Network Load Balancer service 
+- Support for external MySQL database management in the Database Management service 
+- Support for fetching highly available metrics for managed databases in the Database Management service 
+- Support for Exadata Infrastructure on Exadata Cloud@Customer in the Database service 
+- Support for disaster recovery for cloud native applications running on OKE clusters in the Disaster Recovery service 
+- Support for subscription assignment at creation of the child tenancies in the Organizations service 
+- Support for additional actionable insights content-types for news reports in the Operations Insights service 
+- Support for MySQL Heatwave database systems in the Operations Insights service 
+- Support for Cohere Embed v3 in the Generative AI Inference service 
+- Support for Llama 3.2 tools in the Generative AI Inference service 
+- Support for nginx discovery and monitoring in the Stack Monitoring service 
+- Support for Oracle JVM runtime discovery and monitoring in the Stack Monitoring service 
+- Support for JBoss discovery and monitoring in the Stack Monitoring service 
+- Support for Service Managed Container(SMC) endpoints on list service operation in the Data Science service 
+- Support for schedulers in the Data Science service 
+- Support for DB system database and access modes in the HeatWave service 
+- Support for DB system read endpoints in the HeatWave service 
+- Support for sensitive types for data discovery in the Data Safe service 
+- Support for referential relation APIs in the Data Safe service 
+- Support for backups and recovery enhancements in autonomous databases in the Database service 
+- Support for IPv6 addresses on system launch in the Database service 
+- Support for enterprise edition GPU infrastructure in the Stack Monitoring service 
+- Support for monitoring templates in the Stack Monitoring service 
+- Support for IPv6 cluster creation in the Kubernetes Engine service 
+- Support for automatic and spoken punctuations in realtime in the AI Speech service 
+- Support for additional connection types for Databricks, Google PubSub and Microsoft Fabric in the GoldenGate service 
+- Support for Customer Onboarding Success(COS) in the Java Management service 
+- Support for filtering performance tuning analysis results in the Java Management service 
+- Support for improved plugin filtering in the Java Management service 
+- Support for operating system distribution information in the Java Management service 
+- Support for Database Lifecycle Management service 
+- Support for Valkey cluster creation and Valkey migration in the OCI Cache service 
+- Support for Dataflow Steps and Storage Mounts in Pipelines in the Data Science service 
+- Support for Bring Your Own DKIM Keys in the Email Delivery service 
+- Support for OpenId Connect Multi Authentication command in the OCI Kubernetes Engine service 
+- Support for security attributes for Load Balancer resource in the Load Balancer service 
+- Support for reservation of private IP addresses in the Networking service 
+- Support for additional configuration parameters in the HeatWave service 
+- Support for private and 3rd party software repositories, and rebooting of instances in the OS Management service    
+
+### Breaking Changes 
+- Enum `com.oracle.bmc.tenantmanagercontrolplane.model.ClassicSubscriptionEnvironmentName` has been removed from the Organizations service 
+- Class `com.oracle.bmc.datasafe.model.CreateAuditPolicyDetails` has been removed from the Data Safe service 
+- Class `com.oracle.bmc.datasafe.model.CreateAuditProfileDetails` has been removed from the Data Safe service 
+- Method `public java.util.Map getZprTags()` has been removed from models `com.oracle.bmc.loadbalancer.model.CreateLoadBalancerDetails`, `com.oracle.bmc.loadbalancer.model.LoadBalancer` and `com.oracle.bmc.loadbalancer.model.UpdateLoadBalancerDetails` in the Load Balancer service 
+- Class `com.oracle.bmc.containerinstances.model.ContainerCommandHealthCheck` has been removed from the Container Instances service 
+- Class `com.oracle.bmc.containerinstances.model.CreateContainerCommandHealthCheckDetails` has been removed from the Container Instances service 
+- Field `Command` has been removed from the model `com.oracle.bmc.containerinstances.model.ContainerHealthCheckType` in the the Container Instances service
+
+### Changed
+- Bouncy Castle dependencies have been removed from OCI Java SDK. It has been replaced with standard Java JCE APIs
+
 ## 2.79.0 - 2024-12-10
 ### Added 
 - Support for Bring Your Own Key (BYOK) in the Database service
@@ -2903,7 +2980,7 @@ We have identified a problem with this version. Please use version [2.51.2](http
 ### Added
 - Support for access types on instances in the Content and Experience service
 - Support for identity contexts in the Search service
-- Support for Client Side Encryption: https://docs.cloud.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm
+- Support for Client Side Encryption: https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm
 
 ## 1.15.4 - 2020-04-07
 ### Added
@@ -3524,7 +3601,7 @@ We have identified a problem with this version. Please use version [2.51.2](http
 ### Added
 - Support for the Search service. An example of how to call this service is available [here](https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResourceSearchExample.java)
 - Support for specifying a backup policy when creating a boot volume in the Block Storage service
-- Support for using the Java SDK in a FIPS compliant environment. Details available [here](https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/javasdkgettingstarted.htm#download)
+- Support for using the Java SDK in a FIPS compliant environment. Details available [here](https://docs.oracle.com/iaas/Content/API/SDKDocs/javasdkgettingstarted.htm#download)
 
 ## 1.2.42 - 2018-07-12
 ### Added

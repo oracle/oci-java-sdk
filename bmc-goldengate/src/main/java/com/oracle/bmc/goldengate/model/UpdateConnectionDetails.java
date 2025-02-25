@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.goldengate.model;
@@ -56,6 +56,34 @@ package com.oracle.bmc.goldengate.model;
         name = "GOOGLE_CLOUD_STORAGE"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = UpdateMicrosoftFabricConnectionDetails.class,
+        name = "MICROSOFT_FABRIC"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = UpdatePostgresqlConnectionDetails.class,
+        name = "POSTGRESQL"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = UpdateMicrosoftSqlserverConnectionDetails.class,
+        name = "MICROSOFT_SQLSERVER"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = UpdateSnowflakeConnectionDetails.class,
+        name = "SNOWFLAKE"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = UpdateHdfsConnectionDetails.class,
+        name = "HDFS"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = UpdateDatabricksConnectionDetails.class,
+        name = "DATABRICKS"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = UpdateKafkaConnectionDetails.class,
+        name = "KAFKA"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = UpdateAzureDataLakeStorageConnectionDetails.class,
         name = "AZURE_DATA_LAKE_STORAGE"
     ),
@@ -72,12 +100,8 @@ package com.oracle.bmc.goldengate.model;
         name = "GOLDENGATE"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = UpdatePostgresqlConnectionDetails.class,
-        name = "POSTGRESQL"
-    ),
-    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = UpdateMicrosoftSqlserverConnectionDetails.class,
-        name = "MICROSOFT_SQLSERVER"
+        value = UpdateGooglePubSubConnectionDetails.class,
+        name = "GOOGLE_PUBSUB"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = UpdateOracleNosqlConnectionDetails.class,
@@ -92,20 +116,8 @@ package com.oracle.bmc.goldengate.model;
         name = "AMAZON_S3"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = UpdateSnowflakeConnectionDetails.class,
-        name = "SNOWFLAKE"
-    ),
-    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = UpdateHdfsConnectionDetails.class,
-        name = "HDFS"
-    ),
-    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = UpdateMysqlConnectionDetails.class,
         name = "MYSQL"
-    ),
-    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = UpdateKafkaConnectionDetails.class,
-        name = "KAFKA"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = UpdateDb2ConnectionDetails.class,
@@ -288,14 +300,14 @@ public class UpdateConnectionDetails extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the target subnet of the dedicated connection.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target subnet of the dedicated connection.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
     private final String subnetId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the target subnet of the dedicated connection.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target subnet of the dedicated connection.
      *
      * @return the value
      **/

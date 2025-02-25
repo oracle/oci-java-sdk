@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.aispeech.model;
@@ -30,7 +30,8 @@ public final class RealtimeParameters extends com.oracle.bmc.http.internal.Expli
         "modelDomain",
         "languageCode",
         "shouldIgnoreInvalidCustomizations",
-        "customizations"
+        "customizations",
+        "punctuation"
     })
     public RealtimeParameters(
             String encoding,
@@ -41,7 +42,8 @@ public final class RealtimeParameters extends com.oracle.bmc.http.internal.Expli
             ModelDomain modelDomain,
             String languageCode,
             Boolean shouldIgnoreInvalidCustomizations,
-            java.util.List<CustomizationInference> customizations) {
+            java.util.List<CustomizationInference> customizations,
+            Punctuation punctuation) {
         super();
         this.encoding = encoding;
         this.isAckEnabled = isAckEnabled;
@@ -52,6 +54,7 @@ public final class RealtimeParameters extends com.oracle.bmc.http.internal.Expli
         this.languageCode = languageCode;
         this.shouldIgnoreInvalidCustomizations = shouldIgnoreInvalidCustomizations;
         this.customizations = customizations;
+        this.punctuation = punctuation;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -202,7 +205,7 @@ public final class RealtimeParameters extends com.oracle.bmc.http.internal.Expli
         }
         /**
          * If set to true, the service will not fail connection attempt if it encounters any issues that prevent the loading of all specified user customizations. Any invalid customizations will simply be ignored and connection will continue being established with the default base model and any remaining valid customizations.
-         * If set to false,  if the service is unable to load any of the specified customizations, an error detailing why will be returned and the session will end.
+         * If set to false, if the service is unable to load any of the specified customizations, an error detailing why will be returned and the session will end.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("shouldIgnoreInvalidCustomizations")
@@ -210,7 +213,7 @@ public final class RealtimeParameters extends com.oracle.bmc.http.internal.Expli
 
         /**
          * If set to true, the service will not fail connection attempt if it encounters any issues that prevent the loading of all specified user customizations. Any invalid customizations will simply be ignored and connection will continue being established with the default base model and any remaining valid customizations.
-         * If set to false,  if the service is unable to load any of the specified customizations, an error detailing why will be returned and the session will end.
+         * If set to false, if the service is unable to load any of the specified customizations, an error detailing why will be returned and the session will end.
          *
          * @param shouldIgnoreInvalidCustomizations the value to set
          * @return this builder
@@ -237,6 +240,30 @@ public final class RealtimeParameters extends com.oracle.bmc.http.internal.Expli
             this.__explicitlySet__.add("customizations");
             return this;
         }
+        /**
+         * Configure punctuations in the generated transcriptions. Disabled by default.
+         * - NONE: No punctuation in the transcription response
+         * - SPOKEN: Punctuations in response only when verbally spoken
+         * - AUTO: Automatic punctuation in the response, spoken punctuations are disabled
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("punctuation")
+        private Punctuation punctuation;
+
+        /**
+         * Configure punctuations in the generated transcriptions. Disabled by default.
+         * - NONE: No punctuation in the transcription response
+         * - SPOKEN: Punctuations in response only when verbally spoken
+         * - AUTO: Automatic punctuation in the response, spoken punctuations are disabled
+         *
+         * @param punctuation the value to set
+         * @return this builder
+         **/
+        public Builder punctuation(Punctuation punctuation) {
+            this.punctuation = punctuation;
+            this.__explicitlySet__.add("punctuation");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -252,7 +279,8 @@ public final class RealtimeParameters extends com.oracle.bmc.http.internal.Expli
                             this.modelDomain,
                             this.languageCode,
                             this.shouldIgnoreInvalidCustomizations,
-                            this.customizations);
+                            this.customizations,
+                            this.punctuation);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -288,6 +316,9 @@ public final class RealtimeParameters extends com.oracle.bmc.http.internal.Expli
             }
             if (model.wasPropertyExplicitlySet("customizations")) {
                 this.customizations(model.getCustomizations());
+            }
+            if (model.wasPropertyExplicitlySet("punctuation")) {
+                this.punctuation(model.getPunctuation());
             }
             return this;
         }
@@ -508,7 +539,7 @@ public final class RealtimeParameters extends com.oracle.bmc.http.internal.Expli
 
     /**
      * If set to true, the service will not fail connection attempt if it encounters any issues that prevent the loading of all specified user customizations. Any invalid customizations will simply be ignored and connection will continue being established with the default base model and any remaining valid customizations.
-     * If set to false,  if the service is unable to load any of the specified customizations, an error detailing why will be returned and the session will end.
+     * If set to false, if the service is unable to load any of the specified customizations, an error detailing why will be returned and the session will end.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("shouldIgnoreInvalidCustomizations")
@@ -516,7 +547,7 @@ public final class RealtimeParameters extends com.oracle.bmc.http.internal.Expli
 
     /**
      * If set to true, the service will not fail connection attempt if it encounters any issues that prevent the loading of all specified user customizations. Any invalid customizations will simply be ignored and connection will continue being established with the default base model and any remaining valid customizations.
-     * If set to false,  if the service is unable to load any of the specified customizations, an error detailing why will be returned and the session will end.
+     * If set to false, if the service is unable to load any of the specified customizations, an error detailing why will be returned and the session will end.
      *
      * @return the value
      **/
@@ -536,6 +567,68 @@ public final class RealtimeParameters extends com.oracle.bmc.http.internal.Expli
      **/
     public java.util.List<CustomizationInference> getCustomizations() {
         return customizations;
+    }
+
+    /**
+     * Configure punctuations in the generated transcriptions. Disabled by default.
+     * - NONE: No punctuation in the transcription response
+     * - SPOKEN: Punctuations in response only when verbally spoken
+     * - AUTO: Automatic punctuation in the response, spoken punctuations are disabled
+     *
+     **/
+    public enum Punctuation {
+        None("NONE"),
+        Spoken("SPOKEN"),
+        Auto("AUTO"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, Punctuation> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (Punctuation v : Punctuation.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        Punctuation(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static Punctuation create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid Punctuation: " + key);
+        }
+    };
+    /**
+     * Configure punctuations in the generated transcriptions. Disabled by default.
+     * - NONE: No punctuation in the transcription response
+     * - SPOKEN: Punctuations in response only when verbally spoken
+     * - AUTO: Automatic punctuation in the response, spoken punctuations are disabled
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("punctuation")
+    private final Punctuation punctuation;
+
+    /**
+     * Configure punctuations in the generated transcriptions. Disabled by default.
+     * - NONE: No punctuation in the transcription response
+     * - SPOKEN: Punctuations in response only when verbally spoken
+     * - AUTO: Automatic punctuation in the response, spoken punctuations are disabled
+     *
+     * @return the value
+     **/
+    public Punctuation getPunctuation() {
+        return punctuation;
     }
 
     @Override
@@ -565,6 +658,7 @@ public final class RealtimeParameters extends com.oracle.bmc.http.internal.Expli
         sb.append(", shouldIgnoreInvalidCustomizations=")
                 .append(String.valueOf(this.shouldIgnoreInvalidCustomizations));
         sb.append(", customizations=").append(String.valueOf(this.customizations));
+        sb.append(", punctuation=").append(String.valueOf(this.punctuation));
         sb.append(")");
         return sb.toString();
     }
@@ -593,6 +687,7 @@ public final class RealtimeParameters extends com.oracle.bmc.http.internal.Expli
                         this.shouldIgnoreInvalidCustomizations,
                         other.shouldIgnoreInvalidCustomizations)
                 && java.util.Objects.equals(this.customizations, other.customizations)
+                && java.util.Objects.equals(this.punctuation, other.punctuation)
                 && super.equals(other);
     }
 
@@ -627,6 +722,7 @@ public final class RealtimeParameters extends com.oracle.bmc.http.internal.Expli
         result =
                 (result * PRIME)
                         + (this.customizations == null ? 43 : this.customizations.hashCode());
+        result = (result * PRIME) + (this.punctuation == null ? 43 : this.punctuation.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

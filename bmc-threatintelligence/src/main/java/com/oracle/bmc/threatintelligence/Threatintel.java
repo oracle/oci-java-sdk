@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.threatintelligence;
@@ -8,7 +8,7 @@ import com.oracle.bmc.threatintelligence.requests.*;
 import com.oracle.bmc.threatintelligence.responses.*;
 
 /**
- * Use the Threat Intelligence API to search for information about known threat indicators, including suspicious IP addresses, domain names, and other digital fingerprints. Threat Intelligence is a managed database of curated threat intelligence that comes from first party Oracle security insights, open source feeds, and vendor-procured data. For more information, see the [Threat Intelligence documentation](https://docs.cloud.oracle.com/iaas/Content/threat-intel/home.htm).
+ * Use the Threat Intelligence API to search for information about known threat indicators, including suspicious IP addresses, domain names, and other digital fingerprints. Threat Intelligence is a managed database of curated threat intelligence that comes from first party Oracle security insights, open source feeds, and vendor-procured data. For more information, see the [Threat Intelligence documentation](https://docs.oracle.com/iaas/Content/threat-intel/home.htm).
  * This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by default if no circuit breaker configuration is defined by the user.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
@@ -67,7 +67,7 @@ public interface Threatintel extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/threatintelligence/GetIndicatorExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetIndicator API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/threatintelligence/GetIndicatorExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetIndicator API.
      */
     GetIndicatorResponse getIndicator(GetIndicatorRequest request);
 
@@ -79,7 +79,7 @@ public interface Threatintel extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/threatintelligence/ListIndicatorCountsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListIndicatorCounts API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/threatintelligence/ListIndicatorCountsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListIndicatorCounts API.
      */
     ListIndicatorCountsResponse listIndicatorCounts(ListIndicatorCountsRequest request);
 
@@ -92,7 +92,7 @@ public interface Threatintel extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/threatintelligence/ListIndicatorsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListIndicators API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/threatintelligence/ListIndicatorsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListIndicators API.
      */
     ListIndicatorsResponse listIndicators(ListIndicatorsRequest request);
 
@@ -106,7 +106,7 @@ public interface Threatintel extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/threatintelligence/ListThreatTypesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListThreatTypes API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/threatintelligence/ListThreatTypesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListThreatTypes API.
      */
     ListThreatTypesResponse listThreatTypes(ListThreatTypesRequest request);
 
@@ -118,7 +118,7 @@ public interface Threatintel extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/threatintelligence/SummarizeIndicatorsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use SummarizeIndicators API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/threatintelligence/SummarizeIndicatorsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use SummarizeIndicators API.
      */
     SummarizeIndicatorsResponse summarizeIndicators(SummarizeIndicatorsRequest request);
 

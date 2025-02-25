@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.stackmonitoring.internal.http;
@@ -30,7 +30,6 @@ public class ListMetricExtensionsConverter {
             com.oracle.bmc.http.internal.RestClient client,
             com.oracle.bmc.stackmonitoring.requests.ListMetricExtensionsRequest request) {
         Validate.notNull(request, "request instance is required");
-        Validate.notNull(request.getCompartmentId(), "compartmentId is required");
 
         com.oracle.bmc.http.internal.WrappedWebTarget target =
                 client.getBaseTarget().path("/20210330").path("metricExtensions");
@@ -67,11 +66,13 @@ public class ListMetricExtensionsConverter {
                                     request.getSortOrder().getValue()));
         }
 
-        target =
-                target.queryParam(
-                        "compartmentId",
-                        com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
-                                request.getCompartmentId()));
+        if (request.getCompartmentId() != null) {
+            target =
+                    target.queryParam(
+                            "compartmentId",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getCompartmentId()));
+        }
 
         if (request.getResourceType() != null) {
             target =
@@ -111,6 +112,14 @@ public class ListMetricExtensionsConverter {
                             "enabledOnResourceId",
                             com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
                                     request.getEnabledOnResourceId()));
+        }
+
+        if (request.getMetricExtensionId() != null) {
+            target =
+                    target.queryParam(
+                            "metricExtensionId",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getMetricExtensionId()));
         }
 
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();

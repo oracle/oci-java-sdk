@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.vnmonitoring.model;
@@ -9,11 +9,11 @@ package com.oracle.bmc.vnmonitoring.model;
  * and VCN. The {@code Cpe} is a virtual representation of your customer-premises equipment,
  * which is the actual router on-premises at your site at your end of the Site-to-Site VPN IPSec connection.
  * For more information,
- * see [Overview of the Networking Service](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/overview.htm).
+ * see [Overview of the Networking Service](https://docs.oracle.com/iaas/Content/Network/Concepts/overview.htm).
  * <p>
  * To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized,
  * talk to an administrator. If you're an administrator who needs to write policies to give users access, see
- * [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
+ * [Getting Started with Policies](https://docs.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -64,13 +64,13 @@ public final class Cpe extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the CPE.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the CPE.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the CPE.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the CPE.
          * @param compartmentId the value to set
          * @return this builder
          **/
@@ -173,10 +173,10 @@ public final class Cpe extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CPE's device type.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CPE's device type.
          * The Networking service maintains a general list of CPE device types (for example,
          * Cisco ASA). For each type, Oracle provides CPE configuration content that can help
-         * a network engineer configure the CPE. The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) uniquely identifies the type of
+         * a network engineer configure the CPE. The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) uniquely identifies the type of
          * device. To get the OCIDs for the device types on the list, see
          * {@link #listCpeDeviceShapes(ListCpeDeviceShapesRequest) listCpeDeviceShapes}.
          * <p>
@@ -193,10 +193,10 @@ public final class Cpe extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
         private String cpeDeviceShapeId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CPE's device type.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CPE's device type.
          * The Networking service maintains a general list of CPE device types (for example,
          * Cisco ASA). For each type, Oracle provides CPE configuration content that can help
-         * a network engineer configure the CPE. The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) uniquely identifies the type of
+         * a network engineer configure the CPE. The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) uniquely identifies the type of
          * device. To get the OCIDs for the device types on the list, see
          * {@link #listCpeDeviceShapes(ListCpeDeviceShapesRequest) listCpeDeviceShapes}.
          * <p>
@@ -323,13 +323,13 @@ public final class Cpe extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the CPE.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the CPE.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the CPE.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the CPE.
      * @return the value
      **/
     public String getCompartmentId() {
@@ -419,10 +419,10 @@ public final class Cpe extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CPE's device type.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CPE's device type.
      * The Networking service maintains a general list of CPE device types (for example,
      * Cisco ASA). For each type, Oracle provides CPE configuration content that can help
-     * a network engineer configure the CPE. The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) uniquely identifies the type of
+     * a network engineer configure the CPE. The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) uniquely identifies the type of
      * device. To get the OCIDs for the device types on the list, see
      * {@link #listCpeDeviceShapes(ListCpeDeviceShapesRequest) listCpeDeviceShapes}.
      * <p>
@@ -439,10 +439,10 @@ public final class Cpe extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
     private final String cpeDeviceShapeId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CPE's device type.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CPE's device type.
      * The Networking service maintains a general list of CPE device types (for example,
      * Cisco ASA). For each type, Oracle provides CPE configuration content that can help
-     * a network engineer configure the CPE. The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) uniquely identifies the type of
+     * a network engineer configure the CPE. The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) uniquely identifies the type of
      * device. To get the OCIDs for the device types on the list, see
      * {@link #listCpeDeviceShapes(ListCpeDeviceShapesRequest) listCpeDeviceShapes}.
      * <p>

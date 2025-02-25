@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.mysql.model;
@@ -39,10 +39,14 @@ public final class DbSystemSummary extends com.oracle.bmc.http.internal.Explicit
         "deletionPolicy",
         "freeformTags",
         "definedTags",
+        "systemTags",
         "backupPolicy",
         "shapeName",
         "crashRecovery",
-        "databaseManagement"
+        "databaseManagement",
+        "databaseMode",
+        "accessMode",
+        "readEndpoint"
     })
     public DbSystemSummary(
             String id,
@@ -63,10 +67,14 @@ public final class DbSystemSummary extends com.oracle.bmc.http.internal.Explicit
             DeletionPolicyDetails deletionPolicy,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.Map<String, java.util.Map<String, Object>> systemTags,
             BackupPolicy backupPolicy,
             String shapeName,
             CrashRecoveryStatus crashRecovery,
-            DatabaseManagementStatus databaseManagement) {
+            DatabaseManagementStatus databaseManagement,
+            DbSystem.DatabaseMode databaseMode,
+            DbSystem.AccessMode accessMode,
+            ReadEndpointDetails readEndpoint) {
         super();
         this.id = id;
         this.displayName = displayName;
@@ -86,10 +94,14 @@ public final class DbSystemSummary extends com.oracle.bmc.http.internal.Explicit
         this.deletionPolicy = deletionPolicy;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
+        this.systemTags = systemTags;
         this.backupPolicy = backupPolicy;
         this.shapeName = shapeName;
         this.crashRecovery = crashRecovery;
         this.databaseManagement = databaseManagement;
+        this.databaseMode = databaseMode;
+        this.accessMode = accessMode;
+        this.readEndpoint = readEndpoint;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -404,6 +416,26 @@ public final class DbSystemSummary extends com.oracle.bmc.http.internal.Explicit
             this.__explicitlySet__.add("definedTags");
             return this;
         }
+        /**
+         * Usage of system tag keys. These predefined keys are scoped to namespaces.
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+        private java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+        /**
+         * Usage of system tag keys. These predefined keys are scoped to namespaces.
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         *
+         * @param systemTags the value to set
+         * @return this builder
+         **/
+        public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+            this.systemTags = systemTags;
+            this.__explicitlySet__.add("systemTags");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("backupPolicy")
         private BackupPolicy backupPolicy;
@@ -477,6 +509,69 @@ public final class DbSystemSummary extends com.oracle.bmc.http.internal.Explicit
             this.__explicitlySet__.add("databaseManagement");
             return this;
         }
+        /**
+         * The database mode indicating the types of statements that are allowed to run in the DB system.
+         * This mode applies only to statements run by user connections. Replicated write statements continue
+         * to be allowed regardless of the DatabaseMode.
+         *   - READ_WRITE: allow running read and write statements on the DB system;
+         *   - READ_ONLY: only allow running read statements on the DB system.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("databaseMode")
+        private DbSystem.DatabaseMode databaseMode;
+
+        /**
+         * The database mode indicating the types of statements that are allowed to run in the DB system.
+         * This mode applies only to statements run by user connections. Replicated write statements continue
+         * to be allowed regardless of the DatabaseMode.
+         *   - READ_WRITE: allow running read and write statements on the DB system;
+         *   - READ_ONLY: only allow running read statements on the DB system.
+         *
+         * @param databaseMode the value to set
+         * @return this builder
+         **/
+        public Builder databaseMode(DbSystem.DatabaseMode databaseMode) {
+            this.databaseMode = databaseMode;
+            this.__explicitlySet__.add("databaseMode");
+            return this;
+        }
+        /**
+         * The access mode indicating if the database access is unrestricted (to all MySQL user accounts),
+         * or restricted (to only certain users with specific privileges):
+         *  - UNRESTRICTED: the access to the database is not restricted;
+         *  - RESTRICTED: the access is allowed only to users with specific privileges;
+         *    RESTRICTED will correspond to setting the MySQL system variable
+         *    [offline_mode](https://dev.mysql.com/doc/en/server-system-variables.html#sysvar_offline_mode) to ON.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("accessMode")
+        private DbSystem.AccessMode accessMode;
+
+        /**
+         * The access mode indicating if the database access is unrestricted (to all MySQL user accounts),
+         * or restricted (to only certain users with specific privileges):
+         *  - UNRESTRICTED: the access to the database is not restricted;
+         *  - RESTRICTED: the access is allowed only to users with specific privileges;
+         *    RESTRICTED will correspond to setting the MySQL system variable
+         *    [offline_mode](https://dev.mysql.com/doc/en/server-system-variables.html#sysvar_offline_mode) to ON.
+         *
+         * @param accessMode the value to set
+         * @return this builder
+         **/
+        public Builder accessMode(DbSystem.AccessMode accessMode) {
+            this.accessMode = accessMode;
+            this.__explicitlySet__.add("accessMode");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("readEndpoint")
+        private ReadEndpointDetails readEndpoint;
+
+        public Builder readEndpoint(ReadEndpointDetails readEndpoint) {
+            this.readEndpoint = readEndpoint;
+            this.__explicitlySet__.add("readEndpoint");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -502,10 +597,14 @@ public final class DbSystemSummary extends com.oracle.bmc.http.internal.Explicit
                             this.deletionPolicy,
                             this.freeformTags,
                             this.definedTags,
+                            this.systemTags,
                             this.backupPolicy,
                             this.shapeName,
                             this.crashRecovery,
-                            this.databaseManagement);
+                            this.databaseManagement,
+                            this.databaseMode,
+                            this.accessMode,
+                            this.readEndpoint);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -568,6 +667,9 @@ public final class DbSystemSummary extends com.oracle.bmc.http.internal.Explicit
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
             }
+            if (model.wasPropertyExplicitlySet("systemTags")) {
+                this.systemTags(model.getSystemTags());
+            }
             if (model.wasPropertyExplicitlySet("backupPolicy")) {
                 this.backupPolicy(model.getBackupPolicy());
             }
@@ -579,6 +681,15 @@ public final class DbSystemSummary extends com.oracle.bmc.http.internal.Explicit
             }
             if (model.wasPropertyExplicitlySet("databaseManagement")) {
                 this.databaseManagement(model.getDatabaseManagement());
+            }
+            if (model.wasPropertyExplicitlySet("databaseMode")) {
+                this.databaseMode(model.getDatabaseMode());
+            }
+            if (model.wasPropertyExplicitlySet("accessMode")) {
+                this.accessMode(model.getAccessMode());
+            }
+            if (model.wasPropertyExplicitlySet("readEndpoint")) {
+                this.readEndpoint(model.getReadEndpoint());
             }
             return this;
         }
@@ -868,6 +979,24 @@ public final class DbSystemSummary extends com.oracle.bmc.http.internal.Explicit
         return definedTags;
     }
 
+    /**
+     * Usage of system tag keys. These predefined keys are scoped to namespaces.
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+    private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+    /**
+     * Usage of system tag keys. These predefined keys are scoped to namespaces.
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     *
+     * @return the value
+     **/
+    public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
+        return systemTags;
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("backupPolicy")
     private final BackupPolicy backupPolicy;
 
@@ -933,6 +1062,63 @@ public final class DbSystemSummary extends com.oracle.bmc.http.internal.Explicit
         return databaseManagement;
     }
 
+    /**
+     * The database mode indicating the types of statements that are allowed to run in the DB system.
+     * This mode applies only to statements run by user connections. Replicated write statements continue
+     * to be allowed regardless of the DatabaseMode.
+     *   - READ_WRITE: allow running read and write statements on the DB system;
+     *   - READ_ONLY: only allow running read statements on the DB system.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("databaseMode")
+    private final DbSystem.DatabaseMode databaseMode;
+
+    /**
+     * The database mode indicating the types of statements that are allowed to run in the DB system.
+     * This mode applies only to statements run by user connections. Replicated write statements continue
+     * to be allowed regardless of the DatabaseMode.
+     *   - READ_WRITE: allow running read and write statements on the DB system;
+     *   - READ_ONLY: only allow running read statements on the DB system.
+     *
+     * @return the value
+     **/
+    public DbSystem.DatabaseMode getDatabaseMode() {
+        return databaseMode;
+    }
+
+    /**
+     * The access mode indicating if the database access is unrestricted (to all MySQL user accounts),
+     * or restricted (to only certain users with specific privileges):
+     *  - UNRESTRICTED: the access to the database is not restricted;
+     *  - RESTRICTED: the access is allowed only to users with specific privileges;
+     *    RESTRICTED will correspond to setting the MySQL system variable
+     *    [offline_mode](https://dev.mysql.com/doc/en/server-system-variables.html#sysvar_offline_mode) to ON.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("accessMode")
+    private final DbSystem.AccessMode accessMode;
+
+    /**
+     * The access mode indicating if the database access is unrestricted (to all MySQL user accounts),
+     * or restricted (to only certain users with specific privileges):
+     *  - UNRESTRICTED: the access to the database is not restricted;
+     *  - RESTRICTED: the access is allowed only to users with specific privileges;
+     *    RESTRICTED will correspond to setting the MySQL system variable
+     *    [offline_mode](https://dev.mysql.com/doc/en/server-system-variables.html#sysvar_offline_mode) to ON.
+     *
+     * @return the value
+     **/
+    public DbSystem.AccessMode getAccessMode() {
+        return accessMode;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("readEndpoint")
+    private final ReadEndpointDetails readEndpoint;
+
+    public ReadEndpointDetails getReadEndpoint() {
+        return readEndpoint;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -966,10 +1152,14 @@ public final class DbSystemSummary extends com.oracle.bmc.http.internal.Explicit
         sb.append(", deletionPolicy=").append(String.valueOf(this.deletionPolicy));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", systemTags=").append(String.valueOf(this.systemTags));
         sb.append(", backupPolicy=").append(String.valueOf(this.backupPolicy));
         sb.append(", shapeName=").append(String.valueOf(this.shapeName));
         sb.append(", crashRecovery=").append(String.valueOf(this.crashRecovery));
         sb.append(", databaseManagement=").append(String.valueOf(this.databaseManagement));
+        sb.append(", databaseMode=").append(String.valueOf(this.databaseMode));
+        sb.append(", accessMode=").append(String.valueOf(this.accessMode));
+        sb.append(", readEndpoint=").append(String.valueOf(this.readEndpoint));
         sb.append(")");
         return sb.toString();
     }
@@ -1003,10 +1193,14 @@ public final class DbSystemSummary extends com.oracle.bmc.http.internal.Explicit
                 && java.util.Objects.equals(this.deletionPolicy, other.deletionPolicy)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.systemTags, other.systemTags)
                 && java.util.Objects.equals(this.backupPolicy, other.backupPolicy)
                 && java.util.Objects.equals(this.shapeName, other.shapeName)
                 && java.util.Objects.equals(this.crashRecovery, other.crashRecovery)
                 && java.util.Objects.equals(this.databaseManagement, other.databaseManagement)
+                && java.util.Objects.equals(this.databaseMode, other.databaseMode)
+                && java.util.Objects.equals(this.accessMode, other.accessMode)
+                && java.util.Objects.equals(this.readEndpoint, other.readEndpoint)
                 && super.equals(other);
     }
 
@@ -1052,6 +1246,7 @@ public final class DbSystemSummary extends com.oracle.bmc.http.internal.Explicit
                         + (this.deletionPolicy == null ? 43 : this.deletionPolicy.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
         result = (result * PRIME) + (this.backupPolicy == null ? 43 : this.backupPolicy.hashCode());
         result = (result * PRIME) + (this.shapeName == null ? 43 : this.shapeName.hashCode());
         result =
@@ -1062,6 +1257,9 @@ public final class DbSystemSummary extends com.oracle.bmc.http.internal.Explicit
                         + (this.databaseManagement == null
                                 ? 43
                                 : this.databaseManagement.hashCode());
+        result = (result * PRIME) + (this.databaseMode == null ? 43 : this.databaseMode.hashCode());
+        result = (result * PRIME) + (this.accessMode == null ? 43 : this.accessMode.hashCode());
+        result = (result * PRIME) + (this.readEndpoint == null ? 43 : this.readEndpoint.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

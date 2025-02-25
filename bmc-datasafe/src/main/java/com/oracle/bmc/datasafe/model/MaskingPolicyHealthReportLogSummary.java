@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datasafe.model;
@@ -27,20 +27,23 @@ public final class MaskingPolicyHealthReportLogSummary
         "timestamp",
         "message",
         "remediation",
-        "description"
+        "description",
+        "healthCheckType"
     })
     public MaskingPolicyHealthReportLogSummary(
             MessageType messageType,
             java.util.Date timestamp,
             String message,
             String remediation,
-            String description) {
+            String description,
+            HealthCheckType healthCheckType) {
         super();
         this.messageType = messageType;
         this.timestamp = timestamp;
         this.message = message;
         this.remediation = remediation;
         this.description = description;
+        this.healthCheckType = healthCheckType;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -127,6 +130,48 @@ public final class MaskingPolicyHealthReportLogSummary
             this.__explicitlySet__.add("description");
             return this;
         }
+        /**
+         * An enum type entry for each health check in the masking policy. Each enum describes a type of health check.
+         * INVALID_OBJECT_CHECK checks if there exist any invalid objects in the masking tables.
+         * PRIVILEGE_CHECK checks if the masking user has sufficient privilege to run masking.
+         * TABLESPACE_CHECK checks if the user has sufficient default and TEMP tablespace.
+         * DATABASE_OR_SYSTEM_TRIGGERS_CHECK checks if there exist any database/system triggers available.
+         * UNDO_TABLESPACE_CHECK checks if the AUTOEXTEND feature is enabled for the undo tablespace. If it's not enabled, it further checks if the undo tablespace has any space remaining
+         * STATE_STATS_CHECK checks if all the statistics of the masking table is upto date or not.
+         * OLS_POLICY_CHECK , VPD_POLICY_CHECK and REDACTION_POLICY_CHECK checks if the masking tables has Oracle Label Security (OLS) or Virtual Private Database (VPD) or Redaction policies enabled.
+         * DV_ENABLE_CHECK checks if database has Database Vault(DV) enabled
+         * DE_COL_SIZE_CHECK checks if any masking column with DETERMINISTIC ENCRYPTION as masking format has average column size greater than 27 or not.
+         * ACTIVE_MASK_JOB_CHECK checks if there is any active masking job running on the target database.
+         * DETERMINISTIC_ENCRYPTION_FORMAT_CHECK checks if any masking column has deterministic encryption masking format.
+         * COLUMN_EXIST_CHECK checks if the masking columns are available in the target database.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("healthCheckType")
+        private HealthCheckType healthCheckType;
+
+        /**
+         * An enum type entry for each health check in the masking policy. Each enum describes a type of health check.
+         * INVALID_OBJECT_CHECK checks if there exist any invalid objects in the masking tables.
+         * PRIVILEGE_CHECK checks if the masking user has sufficient privilege to run masking.
+         * TABLESPACE_CHECK checks if the user has sufficient default and TEMP tablespace.
+         * DATABASE_OR_SYSTEM_TRIGGERS_CHECK checks if there exist any database/system triggers available.
+         * UNDO_TABLESPACE_CHECK checks if the AUTOEXTEND feature is enabled for the undo tablespace. If it's not enabled, it further checks if the undo tablespace has any space remaining
+         * STATE_STATS_CHECK checks if all the statistics of the masking table is upto date or not.
+         * OLS_POLICY_CHECK , VPD_POLICY_CHECK and REDACTION_POLICY_CHECK checks if the masking tables has Oracle Label Security (OLS) or Virtual Private Database (VPD) or Redaction policies enabled.
+         * DV_ENABLE_CHECK checks if database has Database Vault(DV) enabled
+         * DE_COL_SIZE_CHECK checks if any masking column with DETERMINISTIC ENCRYPTION as masking format has average column size greater than 27 or not.
+         * ACTIVE_MASK_JOB_CHECK checks if there is any active masking job running on the target database.
+         * DETERMINISTIC_ENCRYPTION_FORMAT_CHECK checks if any masking column has deterministic encryption masking format.
+         * COLUMN_EXIST_CHECK checks if the masking columns are available in the target database.
+         *
+         * @param healthCheckType the value to set
+         * @return this builder
+         **/
+        public Builder healthCheckType(HealthCheckType healthCheckType) {
+            this.healthCheckType = healthCheckType;
+            this.__explicitlySet__.add("healthCheckType");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -138,7 +183,8 @@ public final class MaskingPolicyHealthReportLogSummary
                             this.timestamp,
                             this.message,
                             this.remediation,
-                            this.description);
+                            this.description,
+                            this.healthCheckType);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -161,6 +207,9 @@ public final class MaskingPolicyHealthReportLogSummary
             }
             if (model.wasPropertyExplicitlySet("description")) {
                 this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("healthCheckType")) {
+                this.healthCheckType(model.getHealthCheckType());
             }
             return this;
         }
@@ -298,6 +347,120 @@ public final class MaskingPolicyHealthReportLogSummary
         return description;
     }
 
+    /**
+     * An enum type entry for each health check in the masking policy. Each enum describes a type of health check.
+     * INVALID_OBJECT_CHECK checks if there exist any invalid objects in the masking tables.
+     * PRIVILEGE_CHECK checks if the masking user has sufficient privilege to run masking.
+     * TABLESPACE_CHECK checks if the user has sufficient default and TEMP tablespace.
+     * DATABASE_OR_SYSTEM_TRIGGERS_CHECK checks if there exist any database/system triggers available.
+     * UNDO_TABLESPACE_CHECK checks if the AUTOEXTEND feature is enabled for the undo tablespace. If it's not enabled, it further checks if the undo tablespace has any space remaining
+     * STATE_STATS_CHECK checks if all the statistics of the masking table is upto date or not.
+     * OLS_POLICY_CHECK , VPD_POLICY_CHECK and REDACTION_POLICY_CHECK checks if the masking tables has Oracle Label Security (OLS) or Virtual Private Database (VPD) or Redaction policies enabled.
+     * DV_ENABLE_CHECK checks if database has Database Vault(DV) enabled
+     * DE_COL_SIZE_CHECK checks if any masking column with DETERMINISTIC ENCRYPTION as masking format has average column size greater than 27 or not.
+     * ACTIVE_MASK_JOB_CHECK checks if there is any active masking job running on the target database.
+     * DETERMINISTIC_ENCRYPTION_FORMAT_CHECK checks if any masking column has deterministic encryption masking format.
+     * COLUMN_EXIST_CHECK checks if the masking columns are available in the target database.
+     *
+     **/
+    public enum HealthCheckType {
+        InvalidObjectCheck("INVALID_OBJECT_CHECK"),
+        PrivilegeCheck("PRIVILEGE_CHECK"),
+        TablespaceCheck("TABLESPACE_CHECK"),
+        DatabaseOrSystemTriggersCheck("DATABASE_OR_SYSTEM_TRIGGERS_CHECK"),
+        UndoTablespaceCheck("UNDO_TABLESPACE_CHECK"),
+        StateStatsCheck("STATE_STATS_CHECK"),
+        OlsPolicyCheck("OLS_POLICY_CHECK"),
+        VpdPolicyCheck("VPD_POLICY_CHECK"),
+        DvEnableCheck("DV_ENABLE_CHECK"),
+        DeColSizeCheck("DE_COL_SIZE_CHECK"),
+        RedactionPolicyCheck("REDACTION_POLICY_CHECK"),
+        ActiveMaskJobCheck("ACTIVE_MASK_JOB_CHECK"),
+        TargetValidationCheck("TARGET_VALIDATION_CHECK"),
+        DeterministicEncryptionFormatCheck("DETERMINISTIC_ENCRYPTION_FORMAT_CHECK"),
+        ColumnExistCheck("COLUMN_EXIST_CHECK"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(HealthCheckType.class);
+
+        private final String value;
+        private static java.util.Map<String, HealthCheckType> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (HealthCheckType v : HealthCheckType.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        HealthCheckType(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static HealthCheckType create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'HealthCheckType', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * An enum type entry for each health check in the masking policy. Each enum describes a type of health check.
+     * INVALID_OBJECT_CHECK checks if there exist any invalid objects in the masking tables.
+     * PRIVILEGE_CHECK checks if the masking user has sufficient privilege to run masking.
+     * TABLESPACE_CHECK checks if the user has sufficient default and TEMP tablespace.
+     * DATABASE_OR_SYSTEM_TRIGGERS_CHECK checks if there exist any database/system triggers available.
+     * UNDO_TABLESPACE_CHECK checks if the AUTOEXTEND feature is enabled for the undo tablespace. If it's not enabled, it further checks if the undo tablespace has any space remaining
+     * STATE_STATS_CHECK checks if all the statistics of the masking table is upto date or not.
+     * OLS_POLICY_CHECK , VPD_POLICY_CHECK and REDACTION_POLICY_CHECK checks if the masking tables has Oracle Label Security (OLS) or Virtual Private Database (VPD) or Redaction policies enabled.
+     * DV_ENABLE_CHECK checks if database has Database Vault(DV) enabled
+     * DE_COL_SIZE_CHECK checks if any masking column with DETERMINISTIC ENCRYPTION as masking format has average column size greater than 27 or not.
+     * ACTIVE_MASK_JOB_CHECK checks if there is any active masking job running on the target database.
+     * DETERMINISTIC_ENCRYPTION_FORMAT_CHECK checks if any masking column has deterministic encryption masking format.
+     * COLUMN_EXIST_CHECK checks if the masking columns are available in the target database.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("healthCheckType")
+    private final HealthCheckType healthCheckType;
+
+    /**
+     * An enum type entry for each health check in the masking policy. Each enum describes a type of health check.
+     * INVALID_OBJECT_CHECK checks if there exist any invalid objects in the masking tables.
+     * PRIVILEGE_CHECK checks if the masking user has sufficient privilege to run masking.
+     * TABLESPACE_CHECK checks if the user has sufficient default and TEMP tablespace.
+     * DATABASE_OR_SYSTEM_TRIGGERS_CHECK checks if there exist any database/system triggers available.
+     * UNDO_TABLESPACE_CHECK checks if the AUTOEXTEND feature is enabled for the undo tablespace. If it's not enabled, it further checks if the undo tablespace has any space remaining
+     * STATE_STATS_CHECK checks if all the statistics of the masking table is upto date or not.
+     * OLS_POLICY_CHECK , VPD_POLICY_CHECK and REDACTION_POLICY_CHECK checks if the masking tables has Oracle Label Security (OLS) or Virtual Private Database (VPD) or Redaction policies enabled.
+     * DV_ENABLE_CHECK checks if database has Database Vault(DV) enabled
+     * DE_COL_SIZE_CHECK checks if any masking column with DETERMINISTIC ENCRYPTION as masking format has average column size greater than 27 or not.
+     * ACTIVE_MASK_JOB_CHECK checks if there is any active masking job running on the target database.
+     * DETERMINISTIC_ENCRYPTION_FORMAT_CHECK checks if any masking column has deterministic encryption masking format.
+     * COLUMN_EXIST_CHECK checks if the masking columns are available in the target database.
+     *
+     * @return the value
+     **/
+    public HealthCheckType getHealthCheckType() {
+        return healthCheckType;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -317,6 +480,7 @@ public final class MaskingPolicyHealthReportLogSummary
         sb.append(", message=").append(String.valueOf(this.message));
         sb.append(", remediation=").append(String.valueOf(this.remediation));
         sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", healthCheckType=").append(String.valueOf(this.healthCheckType));
         sb.append(")");
         return sb.toString();
     }
@@ -336,6 +500,7 @@ public final class MaskingPolicyHealthReportLogSummary
                 && java.util.Objects.equals(this.message, other.message)
                 && java.util.Objects.equals(this.remediation, other.remediation)
                 && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.healthCheckType, other.healthCheckType)
                 && super.equals(other);
     }
 
@@ -348,6 +513,9 @@ public final class MaskingPolicyHealthReportLogSummary
         result = (result * PRIME) + (this.message == null ? 43 : this.message.hashCode());
         result = (result * PRIME) + (this.remediation == null ? 43 : this.remediation.hashCode());
         result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.healthCheckType == null ? 43 : this.healthCheckType.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

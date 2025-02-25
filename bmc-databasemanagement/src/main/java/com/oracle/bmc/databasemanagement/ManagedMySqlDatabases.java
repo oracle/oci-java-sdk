@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.databasemanagement;
@@ -10,7 +10,7 @@ import com.oracle.bmc.databasemanagement.responses.*;
 /**
  * Use the Database Management API to monitor and manage resources such as
  * Oracle Databases, MySQL Databases, and External Database Systems.
- * For more information, see [Database Management](https://docs.cloud.oracle.com/iaas/database-management/home.htm).
+ * For more information, see [Database Management](https://docs.oracle.com/iaas/database-management/home.htm).
  *
  * This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by default if no circuit breaker configuration is defined by the user.
  */
@@ -63,6 +63,34 @@ public interface ManagedMySqlDatabases extends AutoCloseable {
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
+     * Disable an Associated Service for an external MySQL database resource. An Associated Service example is OPSI.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/DisableExternalMysqlAssociatedServiceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DisableExternalMysqlAssociatedService API.
+     */
+    DisableExternalMysqlAssociatedServiceResponse disableExternalMysqlAssociatedService(
+            DisableExternalMysqlAssociatedServiceRequest request);
+
+    /**
+     * Enable an Associated Service for an external MySQL database resource. An Associated Service example is OPSI.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/EnableExternalMysqlAssociatedServiceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use EnableExternalMysqlAssociatedService API.
+     */
+    EnableExternalMysqlAssociatedServiceResponse enableExternalMysqlAssociatedService(
+            EnableExternalMysqlAssociatedServiceRequest request);
+
+    /**
      * Gets the health metrics for a fleet of HeatWave clusters in a compartment.
      *
      * @param request The request object containing the details to send
@@ -71,7 +99,7 @@ public interface ManagedMySqlDatabases extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/GetHeatWaveFleetMetricExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetHeatWaveFleetMetric API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/GetHeatWaveFleetMetricExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetHeatWaveFleetMetric API.
      */
     GetHeatWaveFleetMetricResponse getHeatWaveFleetMetric(GetHeatWaveFleetMetricRequest request);
 
@@ -84,7 +112,7 @@ public interface ManagedMySqlDatabases extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/GetManagedMySqlDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetManagedMySqlDatabase API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/GetManagedMySqlDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetManagedMySqlDatabase API.
      */
     GetManagedMySqlDatabaseResponse getManagedMySqlDatabase(GetManagedMySqlDatabaseRequest request);
 
@@ -97,7 +125,7 @@ public interface ManagedMySqlDatabases extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/GetMySqlFleetMetricExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetMySqlFleetMetric API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/GetMySqlFleetMetricExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetMySqlFleetMetric API.
      */
     GetMySqlFleetMetricResponse getMySqlFleetMetric(GetMySqlFleetMetricRequest request);
 
@@ -110,7 +138,7 @@ public interface ManagedMySqlDatabases extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/ListManagedMySqlDatabaseConfigurationDataExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListManagedMySqlDatabaseConfigurationData API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/ListManagedMySqlDatabaseConfigurationDataExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListManagedMySqlDatabaseConfigurationData API.
      */
     ListManagedMySqlDatabaseConfigurationDataResponse listManagedMySqlDatabaseConfigurationData(
             ListManagedMySqlDatabaseConfigurationDataRequest request);
@@ -124,7 +152,7 @@ public interface ManagedMySqlDatabases extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/ListManagedMySqlDatabaseSqlDataExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListManagedMySqlDatabaseSqlData API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/ListManagedMySqlDatabaseSqlDataExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListManagedMySqlDatabaseSqlData API.
      */
     ListManagedMySqlDatabaseSqlDataResponse listManagedMySqlDatabaseSqlData(
             ListManagedMySqlDatabaseSqlDataRequest request);
@@ -138,7 +166,7 @@ public interface ManagedMySqlDatabases extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/ListManagedMySqlDatabasesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListManagedMySqlDatabases API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/ListManagedMySqlDatabasesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListManagedMySqlDatabases API.
      */
     ListManagedMySqlDatabasesResponse listManagedMySqlDatabases(
             ListManagedMySqlDatabasesRequest request);
@@ -152,11 +180,18 @@ public interface ManagedMySqlDatabases extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/SummarizeManagedMySqlDatabaseAvailabilityMetricsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use SummarizeManagedMySqlDatabaseAvailabilityMetrics API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/SummarizeManagedMySqlDatabaseAvailabilityMetricsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use SummarizeManagedMySqlDatabaseAvailabilityMetrics API.
      */
     SummarizeManagedMySqlDatabaseAvailabilityMetricsResponse
             summarizeManagedMySqlDatabaseAvailabilityMetrics(
                     SummarizeManagedMySqlDatabaseAvailabilityMetricsRequest request);
+
+    /**
+     * Gets the pre-configured waiters available for resources for this service.
+     *
+     * @return The service waiters.
+     */
+    ManagedMySqlDatabasesWaiters getWaiters();
 
     /**
      * Gets the pre-configured paginators available for list operations in this service which may return multiple
