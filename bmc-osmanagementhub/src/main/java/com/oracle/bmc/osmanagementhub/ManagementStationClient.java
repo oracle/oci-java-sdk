@@ -209,6 +209,7 @@ public class ManagementStationClient extends com.oracle.bmc.http.internal.BaseSy
                 .appendPathParam(request.getManagementStationId())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
@@ -268,6 +269,14 @@ public class ManagementStationClient extends com.oracle.bmc.http.internal.BaseSy
                 .appendQueryParam("managedInstanceId", request.getManagedInstanceId())
                 .appendQueryParam("limit", request.getLimit())
                 .appendQueryParam("page", request.getPage())
+                .appendListQueryParam(
+                        "location",
+                        request.getLocation(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "locationNotEqualTo",
+                        request.getLocationNotEqualTo(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .appendQueryParam("id", request.getId())

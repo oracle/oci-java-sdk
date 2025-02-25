@@ -11,6 +11,7 @@ import java.nio.CharBuffer;
 import java.nio.channels.Channels;
 import java.nio.channels.ReadableByteChannel;
 import java.nio.channels.WritableByteChannel;
+import java.util.concurrent.CompletableFuture;
 
 /**
  * Mutable byte buffer for UTF-8 encoded text. When the text has been consumed it MUST be erased via
@@ -41,14 +42,30 @@ interface Utf8 extends CharSequence, Sensitive {
         try (final ByteArrayOutputStream bytes = new ByteArrayOutputStream();
                 final WritableByteChannel sink = Channels.newChannel(bytes)) {
             final ByteBuffer buffer = ByteBuffer.allocate(4096);
-            while (content.read(buffer) != -1) {
-                buffer.flip();
-                while (buffer.hasRemaining()) {
-                    /* write() might not write all of the bytes in a single pass */
-                    sink.write(buffer);
-                }
-                buffer.clear();
-            }
+            CompletableFuture<Void> readTask =
+                    CompletableFuture.runAsync(
+                            () -> {
+                                try {
+                                    while (true) {
+                                        int bytesRead = content.read(buffer);
+                                        if (bytesRead == -1) {
+                                            break; // End of stream
+                                        }
+                                        buffer.flip();
+                                        while (buffer.hasRemaining()) {
+                                            sink.write(buffer); // Write to the sink channel
+                                        }
+                                        buffer.clear();
+                                    }
+                                } catch (IOException e) {
+                                    throw new RuntimeException(
+                                            "Error reading ReadableByteChannel content", e);
+                                }
+                            });
+
+            // Wait for the task to complete
+            readTask.join();
+
             buffer.flip();
             while (buffer.hasRemaining()) {
                 sink.write(buffer);

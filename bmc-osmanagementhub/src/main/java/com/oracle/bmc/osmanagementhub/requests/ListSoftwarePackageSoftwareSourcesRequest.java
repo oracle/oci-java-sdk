@@ -60,29 +60,29 @@ public class ListSoftwarePackageSoftwareSourcesRequest
     public java.util.List<com.oracle.bmc.osmanagementhub.model.ArchType> getArchType() {
         return archType;
     }
-    /** The availabilities of the software source in a non-OCI environment for a tenancy. */
+    /** The availability of the software source in a non-OCI environment for a tenancy. */
     private java.util.List<com.oracle.bmc.osmanagementhub.model.Availability> availability;
 
-    /** The availabilities of the software source in a non-OCI environment for a tenancy. */
+    /** The availability of the software source in a non-OCI environment for a tenancy. */
     public java.util.List<com.oracle.bmc.osmanagementhub.model.Availability> getAvailability() {
         return availability;
     }
-    /** The availabilities of the software source in an OCI environment for a tenancy. */
+    /** The availability of the software source in an OCI environment for a tenancy. */
     private java.util.List<com.oracle.bmc.osmanagementhub.model.Availability> availabilityAtOci;
 
-    /** The availabilities of the software source in an OCI environment for a tenancy. */
+    /** The availability of the software source in an OCI environment for a tenancy. */
     public java.util.List<com.oracle.bmc.osmanagementhub.model.Availability>
             getAvailabilityAtOci() {
         return availabilityAtOci;
     }
     /**
-     * The availabilities of the software source. Use this query parameter to filter across
+     * The availability of the software source. Use this query parameter to filter across
      * availabilities in different environments.
      */
     private java.util.List<com.oracle.bmc.osmanagementhub.model.Availability> availabilityAnywhere;
 
     /**
-     * The availabilities of the software source. Use this query parameter to filter across
+     * The availability of the software source. Use this query parameter to filter across
      * availabilities in different environments.
      */
     public java.util.List<com.oracle.bmc.osmanagementhub.model.Availability>
@@ -342,12 +342,12 @@ public class ListSoftwarePackageSoftwareSourcesRequest
             return this.archType(java.util.Arrays.asList(singularValue));
         }
 
-        /** The availabilities of the software source in a non-OCI environment for a tenancy. */
+        /** The availability of the software source in a non-OCI environment for a tenancy. */
         private java.util.List<com.oracle.bmc.osmanagementhub.model.Availability> availability =
                 null;
 
         /**
-         * The availabilities of the software source in a non-OCI environment for a tenancy.
+         * The availability of the software source in a non-OCI environment for a tenancy.
          *
          * @param availability the value to set
          * @return this builder instance
@@ -359,7 +359,7 @@ public class ListSoftwarePackageSoftwareSourcesRequest
         }
 
         /**
-         * Singular setter. The availabilities of the software source in a non-OCI environment for a
+         * Singular setter. The availability of the software source in a non-OCI environment for a
          * tenancy.
          *
          * @param singularValue the singular value to set
@@ -369,12 +369,12 @@ public class ListSoftwarePackageSoftwareSourcesRequest
             return this.availability(java.util.Arrays.asList(singularValue));
         }
 
-        /** The availabilities of the software source in an OCI environment for a tenancy. */
+        /** The availability of the software source in an OCI environment for a tenancy. */
         private java.util.List<com.oracle.bmc.osmanagementhub.model.Availability>
                 availabilityAtOci = null;
 
         /**
-         * The availabilities of the software source in an OCI environment for a tenancy.
+         * The availability of the software source in an OCI environment for a tenancy.
          *
          * @param availabilityAtOci the value to set
          * @return this builder instance
@@ -387,7 +387,7 @@ public class ListSoftwarePackageSoftwareSourcesRequest
         }
 
         /**
-         * Singular setter. The availabilities of the software source in an OCI environment for a
+         * Singular setter. The availability of the software source in an OCI environment for a
          * tenancy.
          *
          * @param singularValue the singular value to set
@@ -398,14 +398,14 @@ public class ListSoftwarePackageSoftwareSourcesRequest
         }
 
         /**
-         * The availabilities of the software source. Use this query parameter to filter across
+         * The availability of the software source. Use this query parameter to filter across
          * availabilities in different environments.
          */
         private java.util.List<com.oracle.bmc.osmanagementhub.model.Availability>
                 availabilityAnywhere = null;
 
         /**
-         * The availabilities of the software source. Use this query parameter to filter across
+         * The availability of the software source. Use this query parameter to filter across
          * availabilities in different environments.
          *
          * @param availabilityAnywhere the value to set
@@ -419,7 +419,7 @@ public class ListSoftwarePackageSoftwareSourcesRequest
         }
 
         /**
-         * Singular setter. The availabilities of the software source. Use this query parameter to
+         * Singular setter. The availability of the software source. Use this query parameter to
          * filter across availabilities in different environments.
          *
          * @param singularValue the singular value to set

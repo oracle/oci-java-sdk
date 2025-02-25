@@ -42,6 +42,18 @@ public class ListProfilesResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcNextPage;
     }
 
+    /** The total number of items in the result. Used for pagination of a list of items. */
+    private Integer opcTotalItems;
+
+    /**
+     * The total number of items in the result. Used for pagination of a list of items.
+     *
+     * @return the value
+     */
+    public Integer getOpcTotalItems() {
+        return opcTotalItems;
+    }
+
     /** The returned {@code ProfileCollection} instance. */
     private com.oracle.bmc.osmanagementhub.model.ProfileCollection profileCollection;
 
@@ -59,6 +71,7 @@ public class ListProfilesResponse extends com.oracle.bmc.responses.BmcResponse {
         "headers",
         "opcRequestId",
         "opcNextPage",
+        "opcTotalItems",
         "profileCollection"
     })
     private ListProfilesResponse(
@@ -66,10 +79,12 @@ public class ListProfilesResponse extends com.oracle.bmc.responses.BmcResponse {
             java.util.Map<String, java.util.List<String>> headers,
             String opcRequestId,
             String opcNextPage,
+            Integer opcTotalItems,
             com.oracle.bmc.osmanagementhub.model.ProfileCollection profileCollection) {
         super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.opcNextPage = opcNextPage;
+        this.opcTotalItems = opcTotalItems;
         this.profileCollection = profileCollection;
     }
 
@@ -129,6 +144,20 @@ public class ListProfilesResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
+        /** The total number of items in the result. Used for pagination of a list of items. */
+        private Integer opcTotalItems;
+
+        /**
+         * The total number of items in the result. Used for pagination of a list of items.
+         *
+         * @param opcTotalItems the value to set
+         * @return this builder
+         */
+        public Builder opcTotalItems(Integer opcTotalItems) {
+            this.opcTotalItems = opcTotalItems;
+            return this;
+        }
+
         /** The returned {@code ProfileCollection} instance. */
         private com.oracle.bmc.osmanagementhub.model.ProfileCollection profileCollection;
 
@@ -155,6 +184,7 @@ public class ListProfilesResponse extends com.oracle.bmc.responses.BmcResponse {
             headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             opcNextPage(o.getOpcNextPage());
+            opcTotalItems(o.getOpcTotalItems());
             profileCollection(o.getProfileCollection());
 
             return this;
@@ -168,7 +198,12 @@ public class ListProfilesResponse extends com.oracle.bmc.responses.BmcResponse {
         @Override
         public ListProfilesResponse build() {
             return new ListProfilesResponse(
-                    __httpStatusCode__, headers, opcRequestId, opcNextPage, profileCollection);
+                    __httpStatusCode__,
+                    headers,
+                    opcRequestId,
+                    opcNextPage,
+                    opcTotalItems,
+                    profileCollection);
         }
     }
 
@@ -188,6 +223,7 @@ public class ListProfilesResponse extends com.oracle.bmc.responses.BmcResponse {
         sb.append("super=").append(super.toString());
         sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
         sb.append(",opcNextPage=").append(String.valueOf(opcNextPage));
+        sb.append(",opcTotalItems=").append(String.valueOf(opcTotalItems));
         sb.append(",profileCollection=").append(String.valueOf(profileCollection));
         sb.append(")");
         return sb.toString();
@@ -206,6 +242,7 @@ public class ListProfilesResponse extends com.oracle.bmc.responses.BmcResponse {
         return super.equals(o)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
                 && java.util.Objects.equals(this.opcNextPage, other.opcNextPage)
+                && java.util.Objects.equals(this.opcTotalItems, other.opcTotalItems)
                 && java.util.Objects.equals(this.profileCollection, other.profileCollection);
     }
 
@@ -215,6 +252,9 @@ public class ListProfilesResponse extends com.oracle.bmc.responses.BmcResponse {
         int result = super.hashCode();
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         result = (result * PRIME) + (this.opcNextPage == null ? 43 : this.opcNextPage.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcTotalItems == null ? 43 : this.opcTotalItems.hashCode());
         result =
                 (result * PRIME)
                         + (this.profileCollection == null ? 43 : this.profileCollection.hashCode());

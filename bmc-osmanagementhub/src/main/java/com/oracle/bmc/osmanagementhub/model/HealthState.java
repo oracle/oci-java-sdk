@@ -4,11 +4,12 @@
  */
 package com.oracle.bmc.osmanagementhub.model;
 
-/** Overall health status of the managment station. */
+/** Overall health status of the management station. */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
 public enum HealthState implements com.oracle.bmc.http.internal.BmcEnum {
     Healthy("HEALTHY"),
     Unhealthy("UNHEALTHY"),
+    Unavailable("UNAVAILABLE"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

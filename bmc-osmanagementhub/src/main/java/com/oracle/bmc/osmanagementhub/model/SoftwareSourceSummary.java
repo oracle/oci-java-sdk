@@ -25,11 +25,17 @@ package com.oracle.bmc.osmanagementhub.model;
         defaultImpl = SoftwareSourceSummary.class)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = PrivateSoftwareSourceSummary.class,
+            name = "PRIVATE"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = VendorSoftwareSourceSummary.class,
             name = "VENDOR"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = VersionedCustomSoftwareSourceSummary.class,
             name = "VERSIONED"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = ThirdPartySoftwareSourceSummary.class,
+            name = "THIRD_PARTY"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = CustomSoftwareSourceSummary.class,
             name = "CUSTOM")
@@ -249,12 +255,12 @@ public class SoftwareSourceSummary
         return availabilityAtOci;
     }
 
-    /** The OS family the software source belongs to. */
+    /** The OS family of the software source. */
     @com.fasterxml.jackson.annotation.JsonProperty("osFamily")
     private final OsFamily osFamily;
 
     /**
-     * The OS family the software source belongs to.
+     * The OS family of the software source.
      *
      * @return the value
      */
@@ -301,12 +307,12 @@ public class SoftwareSourceSummary
         return lifecycleState;
     }
 
-    /** The size of the software source in gigabytes (GB). */
+    /** The size of the software source in bytes (B). */
     @com.fasterxml.jackson.annotation.JsonProperty("size")
     private final Double size;
 
     /**
-     * The size of the software source in gigabytes (GB).
+     * The size of the software source in bytes (B).
      *
      * @return the value
      */

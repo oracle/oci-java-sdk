@@ -244,6 +244,19 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
         return retryOfId;
     }
     /**
+     * A filter to return the work requests that are a rerun of the given work request
+     * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     */
+    private String rerunOfId;
+
+    /**
+     * A filter to return the work requests that are a rerun of the given work request
+     * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     */
+    public String getRerunOfId() {
+        return rerunOfId;
+    }
+    /**
      * A filter to return work requests that were created before the date provided (in [RFC
      * 3339](https://tools.ietf.org/rfc/rfc3339) format). Example: '2023-08-25T21:10:29.600Z'
      */
@@ -593,6 +606,24 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
         }
 
         /**
+         * A filter to return the work requests that are a rerun of the given work request
+         * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         */
+        private String rerunOfId = null;
+
+        /**
+         * A filter to return the work requests that are a rerun of the given work request
+         * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         *
+         * @param rerunOfId the value to set
+         * @return this builder instance
+         */
+        public Builder rerunOfId(String rerunOfId) {
+            this.rerunOfId = rerunOfId;
+            return this;
+        }
+
+        /**
          * A filter to return work requests that were created before the date provided (in [RFC
          * 3339](https://tools.ietf.org/rfc/rfc3339) format). Example: '2023-08-25T21:10:29.600Z'
          */
@@ -688,6 +719,7 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
             operationType(o.getOperationType());
             displayNameContains(o.getDisplayNameContains());
             retryOfId(o.getRetryOfId());
+            rerunOfId(o.getRerunOfId());
             timeCreatedLessThan(o.getTimeCreatedLessThan());
             timeCreatedGreaterThanOrEqualTo(o.getTimeCreatedGreaterThanOrEqualTo());
             isManagedByAutonomousLinux(o.getIsManagedByAutonomousLinux());
@@ -740,13 +772,14 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
             request.operationType = operationType;
             request.displayNameContains = displayNameContains;
             request.retryOfId = retryOfId;
+            request.rerunOfId = rerunOfId;
             request.timeCreatedLessThan = timeCreatedLessThan;
             request.timeCreatedGreaterThanOrEqualTo = timeCreatedGreaterThanOrEqualTo;
             request.isManagedByAutonomousLinux = isManagedByAutonomousLinux;
             return request;
             // new ListWorkRequestsRequest(compartmentId, workRequestId, status, resourceId,
             // opcRequestId, page, limit, sortOrder, sortBy, initiatorId, parentId,
-            // parentResourcesNotEqualTo, operationType, displayNameContains, retryOfId,
+            // parentResourcesNotEqualTo, operationType, displayNameContains, retryOfId, rerunOfId,
             // timeCreatedLessThan, timeCreatedGreaterThanOrEqualTo, isManagedByAutonomousLinux);
         }
     }
@@ -773,6 +806,7 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
                 .operationType(operationType)
                 .displayNameContains(displayNameContains)
                 .retryOfId(retryOfId)
+                .rerunOfId(rerunOfId)
                 .timeCreatedLessThan(timeCreatedLessThan)
                 .timeCreatedGreaterThanOrEqualTo(timeCreatedGreaterThanOrEqualTo)
                 .isManagedByAutonomousLinux(isManagedByAutonomousLinux);
@@ -808,6 +842,7 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
         sb.append(",operationType=").append(String.valueOf(this.operationType));
         sb.append(",displayNameContains=").append(String.valueOf(this.displayNameContains));
         sb.append(",retryOfId=").append(String.valueOf(this.retryOfId));
+        sb.append(",rerunOfId=").append(String.valueOf(this.rerunOfId));
         sb.append(",timeCreatedLessThan=").append(String.valueOf(this.timeCreatedLessThan));
         sb.append(",timeCreatedGreaterThanOrEqualTo=")
                 .append(String.valueOf(this.timeCreatedGreaterThanOrEqualTo));
@@ -844,6 +879,7 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
                 && java.util.Objects.equals(this.operationType, other.operationType)
                 && java.util.Objects.equals(this.displayNameContains, other.displayNameContains)
                 && java.util.Objects.equals(this.retryOfId, other.retryOfId)
+                && java.util.Objects.equals(this.rerunOfId, other.rerunOfId)
                 && java.util.Objects.equals(this.timeCreatedLessThan, other.timeCreatedLessThan)
                 && java.util.Objects.equals(
                         this.timeCreatedGreaterThanOrEqualTo, other.timeCreatedGreaterThanOrEqualTo)
@@ -884,6 +920,7 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
                                 ? 43
                                 : this.displayNameContains.hashCode());
         result = (result * PRIME) + (this.retryOfId == null ? 43 : this.retryOfId.hashCode());
+        result = (result * PRIME) + (this.rerunOfId == null ? 43 : this.rerunOfId.hashCode());
         result =
                 (result * PRIME)
                         + (this.timeCreatedLessThan == null

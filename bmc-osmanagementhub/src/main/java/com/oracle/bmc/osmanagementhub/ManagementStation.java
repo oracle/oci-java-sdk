@@ -84,7 +84,7 @@ public interface ManagementStation extends AutoCloseable {
             ChangeManagementStationCompartmentRequest request);
 
     /**
-     * Create a management station. You must provide proxy and mirror configuration information.
+     * Creates a management station using the proxy and mirror configuration information provided.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -100,7 +100,9 @@ public interface ManagementStation extends AutoCloseable {
     CreateManagementStationResponse createManagementStation(CreateManagementStationRequest request);
 
     /**
-     * Deletes a management station.
+     * Deletes a management station. You can't delete a station if there are resources associated
+     * with the station (such as instances using the station or profiles associated with the
+     * station). Switch stations and edit profiles as needed before deleting the station.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -116,7 +118,7 @@ public interface ManagementStation extends AutoCloseable {
     DeleteManagementStationResponse deleteManagementStation(DeleteManagementStationRequest request);
 
     /**
-     * Gets information about the specified management station.
+     * Returns information about the specified management station.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -132,7 +134,8 @@ public interface ManagementStation extends AutoCloseable {
     GetManagementStationResponse getManagementStation(GetManagementStationRequest request);
 
     /**
-     * Lists management stations in a compartment.
+     * Lists management stations within the specified compartment. Filter the list against a variety
+     * of criteria including but not limited to name, status, and location.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -163,8 +166,7 @@ public interface ManagementStation extends AutoCloseable {
     ListMirrorsResponse listMirrors(ListMirrorsRequest request);
 
     /**
-     * Refreshes the list of software sources mirrored by the management station to support the
-     * associated instances.
+     * Refreshes the list of software sources mirrored by the management station.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -181,7 +183,7 @@ public interface ManagementStation extends AutoCloseable {
             RefreshManagementStationConfigRequest request);
 
     /**
-     * Synchronize the specified software sources mirrors on the management station.
+     * Synchronize the specified software sources mirrored on the management station.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

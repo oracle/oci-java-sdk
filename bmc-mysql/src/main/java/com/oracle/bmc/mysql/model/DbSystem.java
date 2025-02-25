@@ -54,6 +54,7 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
         "timeUpdated",
         "freeformTags",
         "definedTags",
+        "systemTags",
         "crashRecovery",
         "pointInTimeRecoveryDetails",
         "databaseManagement",
@@ -96,6 +97,7 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
             java.util.Date timeUpdated,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.Map<String, java.util.Map<String, Object>> systemTags,
             CrashRecoveryStatus crashRecovery,
             PointInTimeRecoveryDetails pointInTimeRecoveryDetails,
             DatabaseManagementStatus databaseManagement,
@@ -137,6 +139,7 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
         this.timeUpdated = timeUpdated;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
+        this.systemTags = systemTags;
         this.crashRecovery = crashRecovery;
         this.pointInTimeRecoveryDetails = pointInTimeRecoveryDetails;
         this.databaseManagement = databaseManagement;
@@ -663,6 +666,25 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
             return this;
         }
         /**
+         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
+         * {"orcl-cloud": {"free-tier-retained": "true"}}}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+        private java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+        /**
+         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
+         * {"orcl-cloud": {"free-tier-retained": "true"}}}
+         *
+         * @param systemTags the value to set
+         * @return this builder
+         */
+        public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+            this.systemTags = systemTags;
+            this.__explicitlySet__.add("systemTags");
+            return this;
+        }
+        /**
          * Whether to run the DB System with InnoDB Redo Logs and the Double Write Buffer enabled or
          * disabled, and whether to enable or disable syncing of the Binary Logs.
          */
@@ -842,6 +864,7 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
                             this.timeUpdated,
                             this.freeformTags,
                             this.definedTags,
+                            this.systemTags,
                             this.crashRecovery,
                             this.pointInTimeRecoveryDetails,
                             this.databaseManagement,
@@ -953,6 +976,9 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
             }
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("systemTags")) {
+                this.systemTags(model.getSystemTags());
             }
             if (model.wasPropertyExplicitlySet("crashRecovery")) {
                 this.crashRecovery(model.getCrashRecovery());
@@ -1491,6 +1517,23 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
     }
 
     /**
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
+     * {"orcl-cloud": {"free-tier-retained": "true"}}}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+    private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+    /**
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
+     * {"orcl-cloud": {"free-tier-retained": "true"}}}
+     *
+     * @return the value
+     */
+    public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
+        return systemTags;
+    }
+
+    /**
      * Whether to run the DB System with InnoDB Redo Logs and the Double Write Buffer enabled or
      * disabled, and whether to enable or disable syncing of the Binary Logs.
      */
@@ -1765,6 +1808,7 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", systemTags=").append(String.valueOf(this.systemTags));
         sb.append(", crashRecovery=").append(String.valueOf(this.crashRecovery));
         sb.append(", pointInTimeRecoveryDetails=")
                 .append(String.valueOf(this.pointInTimeRecoveryDetails));
@@ -1821,6 +1865,7 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.systemTags, other.systemTags)
                 && java.util.Objects.equals(this.crashRecovery, other.crashRecovery)
                 && java.util.Objects.equals(
                         this.pointInTimeRecoveryDetails, other.pointInTimeRecoveryDetails)
@@ -1899,6 +1944,7 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
         result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
         result =
                 (result * PRIME)
                         + (this.crashRecovery == null ? 43 : this.crashRecovery.hashCode());

@@ -81,6 +81,26 @@ public class ListPrivateIpsRequest extends com.oracle.bmc.requests.BmcRequest<ja
         return vnicId;
     }
     /**
+     * State of the IP address. If an IP address is assigned to a VNIC it is ASSIGNED otherwise
+     * AVAILABLE
+     */
+    private String ipState;
+
+    /**
+     * State of the IP address. If an IP address is assigned to a VNIC it is ASSIGNED otherwise
+     * AVAILABLE
+     */
+    public String getIpState() {
+        return ipState;
+    }
+    /** Lifetime of the IP address. There are two types of IPs: - Ephemeral - Reserved */
+    private String lifetime;
+
+    /** Lifetime of the IP address. There are two types of IPs: - Ephemeral - Reserved */
+    public String getLifetime() {
+        return lifetime;
+    }
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
      * the VLAN.
      */
@@ -195,6 +215,38 @@ public class ListPrivateIpsRequest extends com.oracle.bmc.requests.BmcRequest<ja
         }
 
         /**
+         * State of the IP address. If an IP address is assigned to a VNIC it is ASSIGNED otherwise
+         * AVAILABLE
+         */
+        private String ipState = null;
+
+        /**
+         * State of the IP address. If an IP address is assigned to a VNIC it is ASSIGNED otherwise
+         * AVAILABLE
+         *
+         * @param ipState the value to set
+         * @return this builder instance
+         */
+        public Builder ipState(String ipState) {
+            this.ipState = ipState;
+            return this;
+        }
+
+        /** Lifetime of the IP address. There are two types of IPs: - Ephemeral - Reserved */
+        private String lifetime = null;
+
+        /**
+         * Lifetime of the IP address. There are two types of IPs: - Ephemeral - Reserved
+         *
+         * @param lifetime the value to set
+         * @return this builder instance
+         */
+        public Builder lifetime(String lifetime) {
+            this.lifetime = lifetime;
+            return this;
+        }
+
+        /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
          * of the VLAN.
          */
@@ -247,6 +299,8 @@ public class ListPrivateIpsRequest extends com.oracle.bmc.requests.BmcRequest<ja
             ipAddress(o.getIpAddress());
             subnetId(o.getSubnetId());
             vnicId(o.getVnicId());
+            ipState(o.getIpState());
+            lifetime(o.getLifetime());
             vlanId(o.getVlanId());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
@@ -287,9 +341,12 @@ public class ListPrivateIpsRequest extends com.oracle.bmc.requests.BmcRequest<ja
             request.ipAddress = ipAddress;
             request.subnetId = subnetId;
             request.vnicId = vnicId;
+            request.ipState = ipState;
+            request.lifetime = lifetime;
             request.vlanId = vlanId;
             return request;
-            // new ListPrivateIpsRequest(limit, page, ipAddress, subnetId, vnicId, vlanId);
+            // new ListPrivateIpsRequest(limit, page, ipAddress, subnetId, vnicId, ipState,
+            // lifetime, vlanId);
         }
     }
 
@@ -305,6 +362,8 @@ public class ListPrivateIpsRequest extends com.oracle.bmc.requests.BmcRequest<ja
                 .ipAddress(ipAddress)
                 .subnetId(subnetId)
                 .vnicId(vnicId)
+                .ipState(ipState)
+                .lifetime(lifetime)
                 .vlanId(vlanId);
     }
 
@@ -327,6 +386,8 @@ public class ListPrivateIpsRequest extends com.oracle.bmc.requests.BmcRequest<ja
         sb.append(",ipAddress=").append(String.valueOf(this.ipAddress));
         sb.append(",subnetId=").append(String.valueOf(this.subnetId));
         sb.append(",vnicId=").append(String.valueOf(this.vnicId));
+        sb.append(",ipState=").append(String.valueOf(this.ipState));
+        sb.append(",lifetime=").append(String.valueOf(this.lifetime));
         sb.append(",vlanId=").append(String.valueOf(this.vlanId));
         sb.append(")");
         return sb.toString();
@@ -348,6 +409,8 @@ public class ListPrivateIpsRequest extends com.oracle.bmc.requests.BmcRequest<ja
                 && java.util.Objects.equals(this.ipAddress, other.ipAddress)
                 && java.util.Objects.equals(this.subnetId, other.subnetId)
                 && java.util.Objects.equals(this.vnicId, other.vnicId)
+                && java.util.Objects.equals(this.ipState, other.ipState)
+                && java.util.Objects.equals(this.lifetime, other.lifetime)
                 && java.util.Objects.equals(this.vlanId, other.vlanId);
     }
 
@@ -360,6 +423,8 @@ public class ListPrivateIpsRequest extends com.oracle.bmc.requests.BmcRequest<ja
         result = (result * PRIME) + (this.ipAddress == null ? 43 : this.ipAddress.hashCode());
         result = (result * PRIME) + (this.subnetId == null ? 43 : this.subnetId.hashCode());
         result = (result * PRIME) + (this.vnicId == null ? 43 : this.vnicId.hashCode());
+        result = (result * PRIME) + (this.ipState == null ? 43 : this.ipState.hashCode());
+        result = (result * PRIME) + (this.lifetime == null ? 43 : this.lifetime.hashCode());
         result = (result * PRIME) + (this.vlanId == null ? 43 : this.vlanId.hashCode());
         return result;
     }

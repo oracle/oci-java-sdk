@@ -36,7 +36,8 @@ public final class WorkRequestSummary
         "percentComplete",
         "timeCreated",
         "timeScheduled",
-        "isManagedByAutonomousLinux"
+        "isManagedByAutonomousLinux",
+        "rebootTimeoutInMins"
     })
     public WorkRequestSummary(
             WorkRequestOperationType operationType,
@@ -51,7 +52,8 @@ public final class WorkRequestSummary
             Float percentComplete,
             java.util.Date timeCreated,
             java.util.Date timeScheduled,
-            Boolean isManagedByAutonomousLinux) {
+            Boolean isManagedByAutonomousLinux,
+            Integer rebootTimeoutInMins) {
         super();
         this.operationType = operationType;
         this.status = status;
@@ -66,6 +68,7 @@ public final class WorkRequestSummary
         this.timeCreated = timeCreated;
         this.timeScheduled = timeScheduled;
         this.isManagedByAutonomousLinux = isManagedByAutonomousLinux;
+        this.rebootTimeoutInMins = rebootTimeoutInMins;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -297,6 +300,25 @@ public final class WorkRequestSummary
             this.__explicitlySet__.add("isManagedByAutonomousLinux");
             return this;
         }
+        /**
+         * The number of minutes the service waits for the reboot to complete. If the managed
+         * instance doesn't reboot within the timeout, the service marks the reboot job as failed.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("rebootTimeoutInMins")
+        private Integer rebootTimeoutInMins;
+
+        /**
+         * The number of minutes the service waits for the reboot to complete. If the managed
+         * instance doesn't reboot within the timeout, the service marks the reboot job as failed.
+         *
+         * @param rebootTimeoutInMins the value to set
+         * @return this builder
+         */
+        public Builder rebootTimeoutInMins(Integer rebootTimeoutInMins) {
+            this.rebootTimeoutInMins = rebootTimeoutInMins;
+            this.__explicitlySet__.add("rebootTimeoutInMins");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -316,7 +338,8 @@ public final class WorkRequestSummary
                             this.percentComplete,
                             this.timeCreated,
                             this.timeScheduled,
-                            this.isManagedByAutonomousLinux);
+                            this.isManagedByAutonomousLinux,
+                            this.rebootTimeoutInMins);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -363,6 +386,9 @@ public final class WorkRequestSummary
             }
             if (model.wasPropertyExplicitlySet("isManagedByAutonomousLinux")) {
                 this.isManagedByAutonomousLinux(model.getIsManagedByAutonomousLinux());
+            }
+            if (model.wasPropertyExplicitlySet("rebootTimeoutInMins")) {
+                this.rebootTimeoutInMins(model.getRebootTimeoutInMins());
             }
             return this;
         }
@@ -576,6 +602,23 @@ public final class WorkRequestSummary
         return isManagedByAutonomousLinux;
     }
 
+    /**
+     * The number of minutes the service waits for the reboot to complete. If the managed instance
+     * doesn't reboot within the timeout, the service marks the reboot job as failed.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("rebootTimeoutInMins")
+    private final Integer rebootTimeoutInMins;
+
+    /**
+     * The number of minutes the service waits for the reboot to complete. If the managed instance
+     * doesn't reboot within the timeout, the service marks the reboot job as failed.
+     *
+     * @return the value
+     */
+    public Integer getRebootTimeoutInMins() {
+        return rebootTimeoutInMins;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -605,6 +648,7 @@ public final class WorkRequestSummary
         sb.append(", timeScheduled=").append(String.valueOf(this.timeScheduled));
         sb.append(", isManagedByAutonomousLinux=")
                 .append(String.valueOf(this.isManagedByAutonomousLinux));
+        sb.append(", rebootTimeoutInMins=").append(String.valueOf(this.rebootTimeoutInMins));
         sb.append(")");
         return sb.toString();
     }
@@ -633,6 +677,7 @@ public final class WorkRequestSummary
                 && java.util.Objects.equals(this.timeScheduled, other.timeScheduled)
                 && java.util.Objects.equals(
                         this.isManagedByAutonomousLinux, other.isManagedByAutonomousLinux)
+                && java.util.Objects.equals(this.rebootTimeoutInMins, other.rebootTimeoutInMins)
                 && super.equals(other);
     }
 
@@ -665,6 +710,11 @@ public final class WorkRequestSummary
                         + (this.isManagedByAutonomousLinux == null
                                 ? 43
                                 : this.isManagedByAutonomousLinux.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.rebootTimeoutInMins == null
+                                ? 43
+                                : this.rebootTimeoutInMins.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

@@ -44,7 +44,8 @@ public final class ScheduledJobSummary
         "definedTags",
         "systemTags",
         "isRestricted",
-        "retryIntervals"
+        "retryIntervals",
+        "workRequestId"
     })
     public ScheduledJobSummary(
             String id,
@@ -67,7 +68,8 @@ public final class ScheduledJobSummary
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags,
             Boolean isRestricted,
-            java.util.List<Integer> retryIntervals) {
+            java.util.List<Integer> retryIntervals,
+            String workRequestId) {
         super();
         this.id = id;
         this.displayName = displayName;
@@ -90,6 +92,7 @@ public final class ScheduledJobSummary
         this.systemTags = systemTags;
         this.isRestricted = isRestricted;
         this.retryIntervals = retryIntervals;
+        this.workRequestId = workRequestId;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -524,6 +527,25 @@ public final class ScheduledJobSummary
             this.__explicitlySet__.add("retryIntervals");
             return this;
         }
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * for the work request that will be rerun.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("workRequestId")
+        private String workRequestId;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * for the work request that will be rerun.
+         *
+         * @param workRequestId the value to set
+         * @return this builder
+         */
+        public Builder workRequestId(String workRequestId) {
+            this.workRequestId = workRequestId;
+            this.__explicitlySet__.add("workRequestId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -551,7 +573,8 @@ public final class ScheduledJobSummary
                             this.definedTags,
                             this.systemTags,
                             this.isRestricted,
-                            this.retryIntervals);
+                            this.retryIntervals,
+                            this.workRequestId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -622,6 +645,9 @@ public final class ScheduledJobSummary
             }
             if (model.wasPropertyExplicitlySet("retryIntervals")) {
                 this.retryIntervals(model.getRetryIntervals());
+            }
+            if (model.wasPropertyExplicitlySet("workRequestId")) {
+                this.workRequestId(model.getWorkRequestId());
             }
             return this;
         }
@@ -1021,6 +1047,23 @@ public final class ScheduledJobSummary
         return retryIntervals;
     }
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for
+     * the work request that will be rerun.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("workRequestId")
+    private final String workRequestId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for
+     * the work request that will be rerun.
+     *
+     * @return the value
+     */
+    public String getWorkRequestId() {
+        return workRequestId;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1059,6 +1102,7 @@ public final class ScheduledJobSummary
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
         sb.append(", isRestricted=").append(String.valueOf(this.isRestricted));
         sb.append(", retryIntervals=").append(String.valueOf(this.retryIntervals));
+        sb.append(", workRequestId=").append(String.valueOf(this.workRequestId));
         sb.append(")");
         return sb.toString();
     }
@@ -1096,6 +1140,7 @@ public final class ScheduledJobSummary
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
                 && java.util.Objects.equals(this.isRestricted, other.isRestricted)
                 && java.util.Objects.equals(this.retryIntervals, other.retryIntervals)
+                && java.util.Objects.equals(this.workRequestId, other.workRequestId)
                 && super.equals(other);
     }
 
@@ -1152,6 +1197,9 @@ public final class ScheduledJobSummary
         result =
                 (result * PRIME)
                         + (this.retryIntervals == null ? 43 : this.retryIntervals.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.workRequestId == null ? 43 : this.workRequestId.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

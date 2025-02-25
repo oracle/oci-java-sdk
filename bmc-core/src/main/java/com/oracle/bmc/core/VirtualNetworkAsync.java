@@ -3252,6 +3252,23 @@ public interface VirtualNetworkAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<GetVtapRequest, GetVtapResponse> handler);
 
     /**
+     * Unassign the specified IPv6 address from Virtual Network Interface Card (VNIC). You must
+     * specify the IPv6
+     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<Ipv6VnicDetachResponse> ipv6VnicDetach(
+            Ipv6VnicDetachRequest request,
+            com.oracle.bmc.responses.AsyncHandler<Ipv6VnicDetachRequest, Ipv6VnicDetachResponse>
+                    handler);
+
+    /**
      * Lists the regions that support remote VCN peering (which is peering across regions). For more
      * information, see [VCN
      * Peering](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/VCNpeering.htm).
@@ -4176,6 +4193,24 @@ public interface VirtualNetworkAsync extends AutoCloseable {
     java.util.concurrent.Future<ModifyVcnCidrResponse> modifyVcnCidr(
             ModifyVcnCidrRequest request,
             com.oracle.bmc.responses.AsyncHandler<ModifyVcnCidrRequest, ModifyVcnCidrResponse>
+                    handler);
+
+    /**
+     * Unassign the specified PrivateIP address from Virtual Network Interface Card (VNIC). You must
+     * specify the PrivateIP
+     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<PrivateIpVnicDetachResponse> privateIpVnicDetach(
+            PrivateIpVnicDetachRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            PrivateIpVnicDetachRequest, PrivateIpVnicDetachResponse>
                     handler);
 
     /**

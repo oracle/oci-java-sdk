@@ -4,7 +4,7 @@
   <parent>
     <groupId>com.oracle.oci.sdk</groupId>
     <artifactId>oci-java-sdk-addons</artifactId>
-    <version>3.57.2</version>
+    <version>3.58.0</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
 
@@ -18,12 +18,12 @@
     <dependency>
       <groupId>org.jboss.resteasy</groupId>
       <artifactId>resteasy-core</artifactId>
-      <version>5.0.3.Final</version>
+      <version>5.0.6.Final</version>
     </dependency>
     <dependency>
       <groupId>com.oracle.oci.sdk</groupId>
       <artifactId>oci-java-sdk-common</artifactId>
-      <version>3.57.2</version>
+      <version>3.58.0</version>
     </dependency>
   </dependencies>
 </project>

@@ -241,6 +241,7 @@ public class WorkRequestAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
                         com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .appendQueryParam("displayNameContains", request.getDisplayNameContains())
                 .appendQueryParam("retryOfId", request.getRetryOfId())
+                .appendQueryParam("rerunOfId", request.getRerunOfId())
                 .appendQueryParam("timeCreatedLessThan", request.getTimeCreatedLessThan())
                 .appendQueryParam(
                         "timeCreatedGreaterThanOrEqualTo",
@@ -256,6 +257,42 @@ public class WorkRequestAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
                         "opc-request-id", ListWorkRequestsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListWorkRequestsResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RerunWorkRequestResponse> rerunWorkRequest(
+            RerunWorkRequestRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            RerunWorkRequestRequest, RerunWorkRequestResponse>
+                    handler) {
+
+        Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");
+        Objects.requireNonNull(
+                request.getRerunWorkRequestDetails(), "rerunWorkRequestDetails is required");
+
+        return clientCall(request, RerunWorkRequestResponse::builder)
+                .logger(LOG, "rerunWorkRequest")
+                .serviceDetails(
+                        "WorkRequest",
+                        "RerunWorkRequest",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/WorkRequest/RerunWorkRequest")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RerunWorkRequestRequest::builder)
+                .basePath("/20220901")
+                .appendPathParam("workRequests")
+                .appendPathParam(request.getWorkRequestId())
+                .appendPathParam("actions")
+                .appendPathParam("rerun")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id", RerunWorkRequestResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", RerunWorkRequestResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 

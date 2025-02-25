@@ -533,6 +533,41 @@ public class LifecycleEnvironmentClient extends com.oracle.bmc.http.internal.Bas
     }
 
     @Override
+    public RebootLifecycleStageResponse rebootLifecycleStage(RebootLifecycleStageRequest request) {
+
+        Validate.notBlank(request.getLifecycleStageId(), "lifecycleStageId must not be blank");
+        Objects.requireNonNull(
+                request.getRebootLifecycleStageDetails(),
+                "rebootLifecycleStageDetails is required");
+
+        return clientCall(request, RebootLifecycleStageResponse::builder)
+                .logger(LOG, "rebootLifecycleStage")
+                .serviceDetails(
+                        "LifecycleEnvironment",
+                        "RebootLifecycleStage",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/LifecycleStage/RebootLifecycleStage")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RebootLifecycleStageRequest::builder)
+                .basePath("/20220901")
+                .appendPathParam("lifecycleStages")
+                .appendPathParam(request.getLifecycleStageId())
+                .appendPathParam("actions")
+                .appendPathParam("reboot")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        RebootLifecycleStageResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", RebootLifecycleStageResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public UpdateLifecycleEnvironmentResponse updateLifecycleEnvironment(
             UpdateLifecycleEnvironmentRequest request) {
 

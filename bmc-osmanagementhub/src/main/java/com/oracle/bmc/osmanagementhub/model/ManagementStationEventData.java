@@ -23,13 +23,20 @@ package com.oracle.bmc.osmanagementhub.model;
 public final class ManagementStationEventData
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"operationType", "status", "additionalDetails"})
+    @java.beans.ConstructorProperties({
+        "operationType",
+        "healthState",
+        "status",
+        "additionalDetails"
+    })
     public ManagementStationEventData(
             OperationType operationType,
+            HealthState healthState,
             EventStatus status,
             WorkRequestEventDataAdditionalDetails additionalDetails) {
         super();
         this.operationType = operationType;
+        this.healthState = healthState;
         this.status = status;
         this.additionalDetails = additionalDetails;
     }
@@ -49,6 +56,21 @@ public final class ManagementStationEventData
         public Builder operationType(OperationType operationType) {
             this.operationType = operationType;
             this.__explicitlySet__.add("operationType");
+            return this;
+        }
+        /** Health state of the management station */
+        @com.fasterxml.jackson.annotation.JsonProperty("healthState")
+        private HealthState healthState;
+
+        /**
+         * Health state of the management station
+         *
+         * @param healthState the value to set
+         * @return this builder
+         */
+        public Builder healthState(HealthState healthState) {
+            this.healthState = healthState;
+            this.__explicitlySet__.add("healthState");
             return this;
         }
         /** Status of the management station operation. */
@@ -82,7 +104,10 @@ public final class ManagementStationEventData
         public ManagementStationEventData build() {
             ManagementStationEventData model =
                     new ManagementStationEventData(
-                            this.operationType, this.status, this.additionalDetails);
+                            this.operationType,
+                            this.healthState,
+                            this.status,
+                            this.additionalDetails);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -93,6 +118,9 @@ public final class ManagementStationEventData
         public Builder copy(ManagementStationEventData model) {
             if (model.wasPropertyExplicitlySet("operationType")) {
                 this.operationType(model.getOperationType());
+            }
+            if (model.wasPropertyExplicitlySet("healthState")) {
+                this.healthState(model.getHealthState());
             }
             if (model.wasPropertyExplicitlySet("status")) {
                 this.status(model.getStatus());
@@ -118,6 +146,7 @@ public final class ManagementStationEventData
         SetManagementStationConfig("SET_MANAGEMENT_STATION_CONFIG"),
         SyncManagementStationMirror("SYNC_MANAGEMENT_STATION_MIRROR"),
         UpdateManagementStationSoftware("UPDATE_MANAGEMENT_STATION_SOFTWARE"),
+        SetManagementStationHealthState("SET_MANAGEMENT_STATION_HEALTH_STATE"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by
@@ -173,6 +202,66 @@ public final class ManagementStationEventData
         return operationType;
     }
 
+    /** Health state of the management station */
+    public enum HealthState implements com.oracle.bmc.http.internal.BmcEnum {
+        Healthy("HEALTHY"),
+        Unhealthy("UNHEALTHY"),
+        Unavailable("UNAVAILABLE"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(HealthState.class);
+
+        private final String value;
+        private static java.util.Map<String, HealthState> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (HealthState v : HealthState.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        HealthState(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static HealthState create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'HealthState', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /** Health state of the management station */
+    @com.fasterxml.jackson.annotation.JsonProperty("healthState")
+    private final HealthState healthState;
+
+    /**
+     * Health state of the management station
+     *
+     * @return the value
+     */
+    public HealthState getHealthState() {
+        return healthState;
+    }
+
     /** Status of the management station operation. */
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final EventStatus status;
@@ -209,6 +298,7 @@ public final class ManagementStationEventData
         sb.append("ManagementStationEventData(");
         sb.append("super=").append(super.toString());
         sb.append("operationType=").append(String.valueOf(this.operationType));
+        sb.append(", healthState=").append(String.valueOf(this.healthState));
         sb.append(", status=").append(String.valueOf(this.status));
         sb.append(", additionalDetails=").append(String.valueOf(this.additionalDetails));
         sb.append(")");
@@ -226,6 +316,7 @@ public final class ManagementStationEventData
 
         ManagementStationEventData other = (ManagementStationEventData) o;
         return java.util.Objects.equals(this.operationType, other.operationType)
+                && java.util.Objects.equals(this.healthState, other.healthState)
                 && java.util.Objects.equals(this.status, other.status)
                 && java.util.Objects.equals(this.additionalDetails, other.additionalDetails)
                 && super.equals(other);
@@ -238,6 +329,7 @@ public final class ManagementStationEventData
         result =
                 (result * PRIME)
                         + (this.operationType == null ? 43 : this.operationType.hashCode());
+        result = (result * PRIME) + (this.healthState == null ? 43 : this.healthState.hashCode());
         result = (result * PRIME) + (this.status == null ? 43 : this.status.hashCode());
         result =
                 (result * PRIME)

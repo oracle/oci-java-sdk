@@ -929,6 +929,43 @@ public class ManagedInstanceGroupClient extends com.oracle.bmc.http.internal.Bas
     }
 
     @Override
+    public RebootManagedInstanceGroupResponse rebootManagedInstanceGroup(
+            RebootManagedInstanceGroupRequest request) {
+
+        Validate.notBlank(
+                request.getManagedInstanceGroupId(), "managedInstanceGroupId must not be blank");
+        Objects.requireNonNull(
+                request.getRebootManagedInstanceGroupDetails(),
+                "rebootManagedInstanceGroupDetails is required");
+
+        return clientCall(request, RebootManagedInstanceGroupResponse::builder)
+                .logger(LOG, "rebootManagedInstanceGroup")
+                .serviceDetails(
+                        "ManagedInstanceGroup",
+                        "RebootManagedInstanceGroup",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstanceGroup/RebootManagedInstanceGroup")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RebootManagedInstanceGroupRequest::builder)
+                .basePath("/20220901")
+                .appendPathParam("managedInstanceGroups")
+                .appendPathParam(request.getManagedInstanceGroupId())
+                .appendPathParam("actions")
+                .appendPathParam("reboot")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        RebootManagedInstanceGroupResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", RebootManagedInstanceGroupResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public RemoveModuleStreamProfileFromManagedInstanceGroupResponse
             removeModuleStreamProfileFromManagedInstanceGroup(
                     RemoveModuleStreamProfileFromManagedInstanceGroupRequest request) {

@@ -5,7 +5,8 @@
 package com.oracle.bmc.osmanagementhub.model;
 
 /**
- * List of mirrors associated with a Management Station <br>
+ * The set of software source mirrors returned for the {@link #listMirrors(ListMirrorsRequest)
+ * listMirrors} operation. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a

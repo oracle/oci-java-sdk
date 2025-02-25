@@ -107,6 +107,24 @@ public final class LifecycleProfile extends Profile {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("timeModified")
+        private java.util.Date timeModified;
+
+        public Builder timeModified(java.util.Date timeModified) {
+            this.timeModified = timeModified;
+            this.__explicitlySet__.add("timeModified");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("profileVersion")
+        private String profileVersion;
+
+        public Builder profileVersion(String profileVersion) {
+            this.profileVersion = profileVersion;
+            this.__explicitlySet__.add("profileVersion");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
@@ -204,6 +222,8 @@ public final class LifecycleProfile extends Profile {
                             this.osFamily,
                             this.archType,
                             this.timeCreated,
+                            this.timeModified,
+                            this.profileVersion,
                             this.lifecycleState,
                             this.registrationType,
                             this.isDefaultProfile,
@@ -247,6 +267,12 @@ public final class LifecycleProfile extends Profile {
             }
             if (model.wasPropertyExplicitlySet("timeCreated")) {
                 this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("timeModified")) {
+                this.timeModified(model.getTimeModified());
+            }
+            if (model.wasPropertyExplicitlySet("profileVersion")) {
+                this.profileVersion(model.getProfileVersion());
             }
             if (model.wasPropertyExplicitlySet("lifecycleState")) {
                 this.lifecycleState(model.getLifecycleState());
@@ -299,6 +325,8 @@ public final class LifecycleProfile extends Profile {
             OsFamily osFamily,
             ArchType archType,
             java.util.Date timeCreated,
+            java.util.Date timeModified,
+            String profileVersion,
             LifecycleState lifecycleState,
             RegistrationType registrationType,
             Boolean isDefaultProfile,
@@ -318,6 +346,8 @@ public final class LifecycleProfile extends Profile {
                 osFamily,
                 archType,
                 timeCreated,
+                timeModified,
+                profileVersion,
                 lifecycleState,
                 registrationType,
                 isDefaultProfile,

@@ -5,7 +5,7 @@
 package com.oracle.bmc.osmanagementhub.model;
 
 /**
- * Summary of a Mirror <br>
+ * Provides summary information for a software source mirror. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -30,7 +30,9 @@ public final class MirrorSummary extends com.oracle.bmc.http.client.internal.Exp
         "state",
         "percentage",
         "timeLastSynced",
-        "log"
+        "log",
+        "packageCount",
+        "size"
     })
     public MirrorSummary(
             String id,
@@ -41,7 +43,9 @@ public final class MirrorSummary extends com.oracle.bmc.http.client.internal.Exp
             MirrorState state,
             Integer percentage,
             java.util.Date timeLastSynced,
-            String log) {
+            String log,
+            Integer packageCount,
+            Long size) {
         super();
         this.id = id;
         this.displayName = displayName;
@@ -52,16 +56,22 @@ public final class MirrorSummary extends com.oracle.bmc.http.client.internal.Exp
         this.percentage = percentage;
         this.timeLastSynced = timeLastSynced;
         this.log = log;
+        this.packageCount = packageCount;
+        this.size = size;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** OCID of a software source */
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the software source.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * OCID of a software source
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the software source.
          *
          * @param id the value to set
          * @return this builder
@@ -71,12 +81,12 @@ public final class MirrorSummary extends com.oracle.bmc.http.client.internal.Exp
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** Display name of the mirror */
+        /** Display name of the mirror. */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * Display name of the mirror
+         * Display name of the mirror.
          *
          * @param displayName the value to set
          * @return this builder
@@ -86,12 +96,12 @@ public final class MirrorSummary extends com.oracle.bmc.http.client.internal.Exp
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** Type of the mirror */
+        /** Type of software source. */
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private MirrorType type;
 
         /**
-         * Type of the mirror
+         * Type of software source.
          *
          * @param type the value to set
          * @return this builder
@@ -101,12 +111,12 @@ public final class MirrorSummary extends com.oracle.bmc.http.client.internal.Exp
             this.__explicitlySet__.add("type");
             return this;
         }
-        /** The OS family the Software Source belongs to */
+        /** The OS family of the software source. */
         @com.fasterxml.jackson.annotation.JsonProperty("osFamily")
         private OsFamily osFamily;
 
         /**
-         * The OS family the Software Source belongs to
+         * The OS family of the software source.
          *
          * @param osFamily the value to set
          * @return this builder
@@ -116,12 +126,12 @@ public final class MirrorSummary extends com.oracle.bmc.http.client.internal.Exp
             this.__explicitlySet__.add("osFamily");
             return this;
         }
-        /** The architecture type supported by the Software Source */
+        /** The architecture type supported by the software source. */
         @com.fasterxml.jackson.annotation.JsonProperty("archType")
         private ArchType archType;
 
         /**
-         * The architecture type supported by the Software Source
+         * The architecture type supported by the software source.
          *
          * @param archType the value to set
          * @return this builder
@@ -131,12 +141,12 @@ public final class MirrorSummary extends com.oracle.bmc.http.client.internal.Exp
             this.__explicitlySet__.add("archType");
             return this;
         }
-        /** Current state of the mirror */
+        /** Current state of the software source mirror. */
         @com.fasterxml.jackson.annotation.JsonProperty("state")
         private MirrorState state;
 
         /**
-         * Current state of the mirror
+         * Current state of the software source mirror.
          *
          * @param state the value to set
          * @return this builder
@@ -146,12 +156,14 @@ public final class MirrorSummary extends com.oracle.bmc.http.client.internal.Exp
             this.__explicitlySet__.add("state");
             return this;
         }
-        /** A decimal number representing the completness percentage */
+        /**
+         * A decimal number representing the percentage of the software source that has been synced.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("percentage")
         private Integer percentage;
 
         /**
-         * A decimal number representing the completness percentage
+         * A decimal number representing the percentage of the software source that has been synced.
          *
          * @param percentage the value to set
          * @return this builder
@@ -161,12 +173,16 @@ public final class MirrorSummary extends com.oracle.bmc.http.client.internal.Exp
             this.__explicitlySet__.add("percentage");
             return this;
         }
-        /** Timestamp of the last time the mirror was sync */
+        /**
+         * Time that the software source was last synced (in [RFC
+         * 3339](https://tools.ietf.org/rfc/rfc3339) format).
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("timeLastSynced")
         private java.util.Date timeLastSynced;
 
         /**
-         * Timestamp of the last time the mirror was sync
+         * Time that the software source was last synced (in [RFC
+         * 3339](https://tools.ietf.org/rfc/rfc3339) format).
          *
          * @param timeLastSynced the value to set
          * @return this builder
@@ -191,6 +207,36 @@ public final class MirrorSummary extends com.oracle.bmc.http.client.internal.Exp
             this.__explicitlySet__.add("log");
             return this;
         }
+        /** The number of packages within the mirrored software source. */
+        @com.fasterxml.jackson.annotation.JsonProperty("packageCount")
+        private Integer packageCount;
+
+        /**
+         * The number of packages within the mirrored software source.
+         *
+         * @param packageCount the value to set
+         * @return this builder
+         */
+        public Builder packageCount(Integer packageCount) {
+            this.packageCount = packageCount;
+            this.__explicitlySet__.add("packageCount");
+            return this;
+        }
+        /** The size the mirrored software source in bytes. */
+        @com.fasterxml.jackson.annotation.JsonProperty("size")
+        private Long size;
+
+        /**
+         * The size the mirrored software source in bytes.
+         *
+         * @param size the value to set
+         * @return this builder
+         */
+        public Builder size(Long size) {
+            this.size = size;
+            this.__explicitlySet__.add("size");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -206,7 +252,9 @@ public final class MirrorSummary extends com.oracle.bmc.http.client.internal.Exp
                             this.state,
                             this.percentage,
                             this.timeLastSynced,
-                            this.log);
+                            this.log,
+                            this.packageCount,
+                            this.size);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -242,6 +290,12 @@ public final class MirrorSummary extends com.oracle.bmc.http.client.internal.Exp
             if (model.wasPropertyExplicitlySet("log")) {
                 this.log(model.getLog());
             }
+            if (model.wasPropertyExplicitlySet("packageCount")) {
+                this.packageCount(model.getPackageCount());
+            }
+            if (model.wasPropertyExplicitlySet("size")) {
+                this.size(model.getSize());
+            }
             return this;
         }
     }
@@ -255,12 +309,16 @@ public final class MirrorSummary extends com.oracle.bmc.http.client.internal.Exp
         return new Builder().copy(this);
     }
 
-    /** OCID of a software source */
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the software source.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * OCID of a software source
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the software source.
      *
      * @return the value
      */
@@ -268,12 +326,12 @@ public final class MirrorSummary extends com.oracle.bmc.http.client.internal.Exp
         return id;
     }
 
-    /** Display name of the mirror */
+    /** Display name of the mirror. */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * Display name of the mirror
+     * Display name of the mirror.
      *
      * @return the value
      */
@@ -281,12 +339,12 @@ public final class MirrorSummary extends com.oracle.bmc.http.client.internal.Exp
         return displayName;
     }
 
-    /** Type of the mirror */
+    /** Type of software source. */
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final MirrorType type;
 
     /**
-     * Type of the mirror
+     * Type of software source.
      *
      * @return the value
      */
@@ -294,12 +352,12 @@ public final class MirrorSummary extends com.oracle.bmc.http.client.internal.Exp
         return type;
     }
 
-    /** The OS family the Software Source belongs to */
+    /** The OS family of the software source. */
     @com.fasterxml.jackson.annotation.JsonProperty("osFamily")
     private final OsFamily osFamily;
 
     /**
-     * The OS family the Software Source belongs to
+     * The OS family of the software source.
      *
      * @return the value
      */
@@ -307,12 +365,12 @@ public final class MirrorSummary extends com.oracle.bmc.http.client.internal.Exp
         return osFamily;
     }
 
-    /** The architecture type supported by the Software Source */
+    /** The architecture type supported by the software source. */
     @com.fasterxml.jackson.annotation.JsonProperty("archType")
     private final ArchType archType;
 
     /**
-     * The architecture type supported by the Software Source
+     * The architecture type supported by the software source.
      *
      * @return the value
      */
@@ -320,12 +378,12 @@ public final class MirrorSummary extends com.oracle.bmc.http.client.internal.Exp
         return archType;
     }
 
-    /** Current state of the mirror */
+    /** Current state of the software source mirror. */
     @com.fasterxml.jackson.annotation.JsonProperty("state")
     private final MirrorState state;
 
     /**
-     * Current state of the mirror
+     * Current state of the software source mirror.
      *
      * @return the value
      */
@@ -333,12 +391,12 @@ public final class MirrorSummary extends com.oracle.bmc.http.client.internal.Exp
         return state;
     }
 
-    /** A decimal number representing the completness percentage */
+    /** A decimal number representing the percentage of the software source that has been synced. */
     @com.fasterxml.jackson.annotation.JsonProperty("percentage")
     private final Integer percentage;
 
     /**
-     * A decimal number representing the completness percentage
+     * A decimal number representing the percentage of the software source that has been synced.
      *
      * @return the value
      */
@@ -346,12 +404,16 @@ public final class MirrorSummary extends com.oracle.bmc.http.client.internal.Exp
         return percentage;
     }
 
-    /** Timestamp of the last time the mirror was sync */
+    /**
+     * Time that the software source was last synced (in [RFC
+     * 3339](https://tools.ietf.org/rfc/rfc3339) format).
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("timeLastSynced")
     private final java.util.Date timeLastSynced;
 
     /**
-     * Timestamp of the last time the mirror was sync
+     * Time that the software source was last synced (in [RFC
+     * 3339](https://tools.ietf.org/rfc/rfc3339) format).
      *
      * @return the value
      */
@@ -370,6 +432,32 @@ public final class MirrorSummary extends com.oracle.bmc.http.client.internal.Exp
      */
     public String getLog() {
         return log;
+    }
+
+    /** The number of packages within the mirrored software source. */
+    @com.fasterxml.jackson.annotation.JsonProperty("packageCount")
+    private final Integer packageCount;
+
+    /**
+     * The number of packages within the mirrored software source.
+     *
+     * @return the value
+     */
+    public Integer getPackageCount() {
+        return packageCount;
+    }
+
+    /** The size the mirrored software source in bytes. */
+    @com.fasterxml.jackson.annotation.JsonProperty("size")
+    private final Long size;
+
+    /**
+     * The size the mirrored software source in bytes.
+     *
+     * @return the value
+     */
+    public Long getSize() {
+        return size;
     }
 
     @Override
@@ -396,6 +484,8 @@ public final class MirrorSummary extends com.oracle.bmc.http.client.internal.Exp
         sb.append(", percentage=").append(String.valueOf(this.percentage));
         sb.append(", timeLastSynced=").append(String.valueOf(this.timeLastSynced));
         sb.append(", log=").append(String.valueOf(this.log));
+        sb.append(", packageCount=").append(String.valueOf(this.packageCount));
+        sb.append(", size=").append(String.valueOf(this.size));
         sb.append(")");
         return sb.toString();
     }
@@ -419,6 +509,8 @@ public final class MirrorSummary extends com.oracle.bmc.http.client.internal.Exp
                 && java.util.Objects.equals(this.percentage, other.percentage)
                 && java.util.Objects.equals(this.timeLastSynced, other.timeLastSynced)
                 && java.util.Objects.equals(this.log, other.log)
+                && java.util.Objects.equals(this.packageCount, other.packageCount)
+                && java.util.Objects.equals(this.size, other.size)
                 && super.equals(other);
     }
 
@@ -437,6 +529,8 @@ public final class MirrorSummary extends com.oracle.bmc.http.client.internal.Exp
                 (result * PRIME)
                         + (this.timeLastSynced == null ? 43 : this.timeLastSynced.hashCode());
         result = (result * PRIME) + (this.log == null ? 43 : this.log.hashCode());
+        result = (result * PRIME) + (this.packageCount == null ? 43 : this.packageCount.hashCode());
+        result = (result * PRIME) + (this.size == null ? 43 : this.size.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

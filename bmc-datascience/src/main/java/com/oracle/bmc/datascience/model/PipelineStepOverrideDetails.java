@@ -26,16 +26,19 @@ public final class PipelineStepOverrideDetails
     @java.beans.ConstructorProperties({
         "stepName",
         "stepConfigurationDetails",
-        "stepContainerConfigurationDetails"
+        "stepContainerConfigurationDetails",
+        "stepDataflowConfigurationDetails"
     })
     public PipelineStepOverrideDetails(
             String stepName,
             PipelineStepConfigurationDetails stepConfigurationDetails,
-            PipelineContainerConfigurationDetails stepContainerConfigurationDetails) {
+            PipelineContainerConfigurationDetails stepContainerConfigurationDetails,
+            PipelineDataflowConfigurationDetails stepDataflowConfigurationDetails) {
         super();
         this.stepName = stepName;
         this.stepConfigurationDetails = stepConfigurationDetails;
         this.stepContainerConfigurationDetails = stepContainerConfigurationDetails;
+        this.stepDataflowConfigurationDetails = stepDataflowConfigurationDetails;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -76,6 +79,16 @@ public final class PipelineStepOverrideDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("stepDataflowConfigurationDetails")
+        private PipelineDataflowConfigurationDetails stepDataflowConfigurationDetails;
+
+        public Builder stepDataflowConfigurationDetails(
+                PipelineDataflowConfigurationDetails stepDataflowConfigurationDetails) {
+            this.stepDataflowConfigurationDetails = stepDataflowConfigurationDetails;
+            this.__explicitlySet__.add("stepDataflowConfigurationDetails");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -84,7 +97,8 @@ public final class PipelineStepOverrideDetails
                     new PipelineStepOverrideDetails(
                             this.stepName,
                             this.stepConfigurationDetails,
-                            this.stepContainerConfigurationDetails);
+                            this.stepContainerConfigurationDetails,
+                            this.stepDataflowConfigurationDetails);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -102,6 +116,9 @@ public final class PipelineStepOverrideDetails
             if (model.wasPropertyExplicitlySet("stepContainerConfigurationDetails")) {
                 this.stepContainerConfigurationDetails(
                         model.getStepContainerConfigurationDetails());
+            }
+            if (model.wasPropertyExplicitlySet("stepDataflowConfigurationDetails")) {
+                this.stepDataflowConfigurationDetails(model.getStepDataflowConfigurationDetails());
             }
             return this;
         }
@@ -143,6 +160,13 @@ public final class PipelineStepOverrideDetails
         return stepContainerConfigurationDetails;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("stepDataflowConfigurationDetails")
+    private final PipelineDataflowConfigurationDetails stepDataflowConfigurationDetails;
+
+    public PipelineDataflowConfigurationDetails getStepDataflowConfigurationDetails() {
+        return stepDataflowConfigurationDetails;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -163,6 +187,8 @@ public final class PipelineStepOverrideDetails
                 .append(String.valueOf(this.stepConfigurationDetails));
         sb.append(", stepContainerConfigurationDetails=")
                 .append(String.valueOf(this.stepContainerConfigurationDetails));
+        sb.append(", stepDataflowConfigurationDetails=")
+                .append(String.valueOf(this.stepDataflowConfigurationDetails));
         sb.append(")");
         return sb.toString();
     }
@@ -183,6 +209,9 @@ public final class PipelineStepOverrideDetails
                 && java.util.Objects.equals(
                         this.stepContainerConfigurationDetails,
                         other.stepContainerConfigurationDetails)
+                && java.util.Objects.equals(
+                        this.stepDataflowConfigurationDetails,
+                        other.stepDataflowConfigurationDetails)
                 && super.equals(other);
     }
 
@@ -201,6 +230,11 @@ public final class PipelineStepOverrideDetails
                         + (this.stepContainerConfigurationDetails == null
                                 ? 43
                                 : this.stepContainerConfigurationDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.stepDataflowConfigurationDetails == null
+                                ? 43
+                                : this.stepDataflowConfigurationDetails.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

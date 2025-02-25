@@ -82,7 +82,7 @@ public interface ManagementStationAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Create a management station. You must provide proxy and mirror configuration information.
+     * Creates a management station using the proxy and mirror configuration information provided.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -98,7 +98,9 @@ public interface ManagementStationAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Deletes a management station.
+     * Deletes a management station. You can't delete a station if there are resources associated
+     * with the station (such as instances using the station or profiles associated with the
+     * station). Switch stations and edit profiles as needed before deleting the station.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -114,7 +116,7 @@ public interface ManagementStationAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets information about the specified management station.
+     * Returns information about the specified management station.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -130,7 +132,8 @@ public interface ManagementStationAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Lists management stations in a compartment.
+     * Lists management stations within the specified compartment. Filter the list against a variety
+     * of criteria including but not limited to name, status, and location.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -160,8 +163,7 @@ public interface ManagementStationAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<ListMirrorsRequest, ListMirrorsResponse> handler);
 
     /**
-     * Refreshes the list of software sources mirrored by the management station to support the
-     * associated instances.
+     * Refreshes the list of software sources mirrored by the management station.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -179,7 +181,7 @@ public interface ManagementStationAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Synchronize the specified software sources mirrors on the management station.
+     * Synchronize the specified software sources mirrored on the management station.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.

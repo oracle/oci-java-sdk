@@ -14,10 +14,12 @@ import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
 import java.security.interfaces.RSAPrivateKey;
 import java.util.Optional;
+import java.util.concurrent.atomic.AtomicReference;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
+import static org.junit.Assert.assertNull;
 
 /** Tests for {@link PEMFileRSAPrivateKeySupplierTest}. */
 public class PEMFileRSAPrivateKeySupplierTest {
@@ -222,5 +224,38 @@ public class PEMFileRSAPrivateKeySupplierTest {
             assertTrue(e instanceof IllegalArgumentException);
             assertEquals("Private key must be in PEM format", e.getMessage());
         }
+    }
+
+    /** Thread interruption should not stop the decryption */
+    @Test
+    public void testClosedByInterruptException() throws IOException, InterruptedException {
+
+        String pkcs8DecryptedPrivateKey =
+                StreamUtils.toString(
+                        new FileInputStream("src/test/resources/pkcs1_decrypted_private_key.pem"),
+                        StandardCharsets.UTF_8);
+        InputStream pkcs8DecryptedPrivateKeyStream =
+                new ByteArrayInputStream(pkcs8DecryptedPrivateKey.getBytes(StandardCharsets.UTF_8));
+
+        // Create a thread that attempts to read the private key
+        AtomicReference<Exception> threadException = new AtomicReference<>();
+
+        Thread t1 =
+                new Thread(
+                        () -> {
+                            try {
+                                new PEMFileRSAPrivateKeySupplier(
+                                                pkcs8DecryptedPrivateKeyStream, null)
+                                        .supplyKey();
+                            } catch (Exception e) {
+                                threadException.set(e);
+                            }
+                        });
+        t1.setName("first-thread");
+
+        t1.start();
+        t1.interrupt();
+        t1.join();
+        assertNull(threadException.get());
     }
 }

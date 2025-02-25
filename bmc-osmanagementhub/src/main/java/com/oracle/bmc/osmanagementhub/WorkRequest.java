@@ -67,7 +67,7 @@ public interface WorkRequest extends AutoCloseable {
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
-     * Gets information about the specified work request.
+     * Returns information about the specified work request.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -82,7 +82,7 @@ public interface WorkRequest extends AutoCloseable {
     GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request);
 
     /**
-     * Gets the errors for the specified work request.
+     * Returns the errors for the specified work request.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -98,7 +98,7 @@ public interface WorkRequest extends AutoCloseable {
     ListWorkRequestErrorsResponse listWorkRequestErrors(ListWorkRequestErrorsRequest request);
 
     /**
-     * Gets the logs for the specified work request.
+     * Returns the logs for the specified work request.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -130,6 +130,24 @@ public interface WorkRequest extends AutoCloseable {
      *     API.
      */
     ListWorkRequestsResponse listWorkRequests(ListWorkRequestsRequest request);
+
+    /**
+     * Reruns a failed work for the specified work request
+     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * Rerunning restarts the work on failed targets.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/RerunWorkRequestExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use RerunWorkRequest
+     *     API.
+     */
+    RerunWorkRequestResponse rerunWorkRequest(RerunWorkRequestRequest request);
 
     /**
      * Gets the pre-configured waiters available for resources for this service.

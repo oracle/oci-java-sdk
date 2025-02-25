@@ -31,6 +31,8 @@ public final class CreatePrivateIpDetails
         "ipAddress",
         "vnicId",
         "vlanId",
+        "subnetId",
+        "lifetime",
         "routeTableId"
     })
     public CreatePrivateIpDetails(
@@ -41,6 +43,8 @@ public final class CreatePrivateIpDetails
             String ipAddress,
             String vnicId,
             String vlanId,
+            String subnetId,
+            Lifetime lifetime,
             String routeTableId) {
         super();
         this.definedTags = definedTags;
@@ -50,6 +54,8 @@ public final class CreatePrivateIpDetails
         this.ipAddress = ipAddress;
         this.vnicId = vnicId;
         this.vlanId = vlanId;
+        this.subnetId = subnetId;
+        this.lifetime = lifetime;
         this.routeTableId = routeTableId;
     }
 
@@ -235,14 +241,54 @@ public final class CreatePrivateIpDetails
         }
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the route table the PrivateIp will use.
+         * of the subnet from which the private IP is to be drawn. The IP address, *if supplied*,
+         * must be valid for the given subnet.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
+        private String subnetId;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the subnet from which the private IP is to be drawn. The IP address, *if supplied*,
+         * must be valid for the given subnet.
+         *
+         * @param subnetId the value to set
+         * @return this builder
+         */
+        public Builder subnetId(String subnetId) {
+            this.subnetId = subnetId;
+            this.__explicitlySet__.add("subnetId");
+            return this;
+        }
+        /** Lifetime of the IP address. There are two types of IPv6 IPs: - Ephemeral - Reserved */
+        @com.fasterxml.jackson.annotation.JsonProperty("lifetime")
+        private Lifetime lifetime;
+
+        /**
+         * Lifetime of the IP address. There are two types of IPv6 IPs: - Ephemeral - Reserved
+         *
+         * @param lifetime the value to set
+         * @return this builder
+         */
+        public Builder lifetime(Lifetime lifetime) {
+            this.lifetime = lifetime;
+            this.__explicitlySet__.add("lifetime");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the route table the IP address or VNIC will use. For more information, see [Source
+         * Based
+         * Routing](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("routeTableId")
         private String routeTableId;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the route table the PrivateIp will use.
+         * of the route table the IP address or VNIC will use. For more information, see [Source
+         * Based
+         * Routing](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing).
          *
          * @param routeTableId the value to set
          * @return this builder
@@ -266,6 +312,8 @@ public final class CreatePrivateIpDetails
                             this.ipAddress,
                             this.vnicId,
                             this.vlanId,
+                            this.subnetId,
+                            this.lifetime,
                             this.routeTableId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -295,6 +343,12 @@ public final class CreatePrivateIpDetails
             }
             if (model.wasPropertyExplicitlySet("vlanId")) {
                 this.vlanId(model.getVlanId());
+            }
+            if (model.wasPropertyExplicitlySet("subnetId")) {
+                this.subnetId(model.getSubnetId());
+            }
+            if (model.wasPropertyExplicitlySet("lifetime")) {
+                this.lifetime(model.getLifetime());
             }
             if (model.wasPropertyExplicitlySet("routeTableId")) {
                 this.routeTableId(model.getRouteTableId());
@@ -473,14 +527,81 @@ public final class CreatePrivateIpDetails
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the route table the PrivateIp will use.
+     * the subnet from which the private IP is to be drawn. The IP address, *if supplied*, must be
+     * valid for the given subnet.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
+    private final String subnetId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the subnet from which the private IP is to be drawn. The IP address, *if supplied*, must be
+     * valid for the given subnet.
+     *
+     * @return the value
+     */
+    public String getSubnetId() {
+        return subnetId;
+    }
+
+    /** Lifetime of the IP address. There are two types of IPv6 IPs: - Ephemeral - Reserved */
+    public enum Lifetime implements com.oracle.bmc.http.internal.BmcEnum {
+        Ephemeral("EPHEMERAL"),
+        Reserved("RESERVED"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, Lifetime> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (Lifetime v : Lifetime.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        Lifetime(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static Lifetime create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid Lifetime: " + key);
+        }
+    };
+    /** Lifetime of the IP address. There are two types of IPv6 IPs: - Ephemeral - Reserved */
+    @com.fasterxml.jackson.annotation.JsonProperty("lifetime")
+    private final Lifetime lifetime;
+
+    /**
+     * Lifetime of the IP address. There are two types of IPv6 IPs: - Ephemeral - Reserved
+     *
+     * @return the value
+     */
+    public Lifetime getLifetime() {
+        return lifetime;
+    }
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the route table the IP address or VNIC will use. For more information, see [Source Based
+     * Routing](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("routeTableId")
     private final String routeTableId;
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the route table the PrivateIp will use.
+     * the route table the IP address or VNIC will use. For more information, see [Source Based
+     * Routing](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing).
      *
      * @return the value
      */
@@ -510,6 +631,8 @@ public final class CreatePrivateIpDetails
         sb.append(", ipAddress=").append(String.valueOf(this.ipAddress));
         sb.append(", vnicId=").append(String.valueOf(this.vnicId));
         sb.append(", vlanId=").append(String.valueOf(this.vlanId));
+        sb.append(", subnetId=").append(String.valueOf(this.subnetId));
+        sb.append(", lifetime=").append(String.valueOf(this.lifetime));
         sb.append(", routeTableId=").append(String.valueOf(this.routeTableId));
         sb.append(")");
         return sb.toString();
@@ -532,6 +655,8 @@ public final class CreatePrivateIpDetails
                 && java.util.Objects.equals(this.ipAddress, other.ipAddress)
                 && java.util.Objects.equals(this.vnicId, other.vnicId)
                 && java.util.Objects.equals(this.vlanId, other.vlanId)
+                && java.util.Objects.equals(this.subnetId, other.subnetId)
+                && java.util.Objects.equals(this.lifetime, other.lifetime)
                 && java.util.Objects.equals(this.routeTableId, other.routeTableId)
                 && super.equals(other);
     }
@@ -549,6 +674,8 @@ public final class CreatePrivateIpDetails
         result = (result * PRIME) + (this.ipAddress == null ? 43 : this.ipAddress.hashCode());
         result = (result * PRIME) + (this.vnicId == null ? 43 : this.vnicId.hashCode());
         result = (result * PRIME) + (this.vlanId == null ? 43 : this.vlanId.hashCode());
+        result = (result * PRIME) + (this.subnetId == null ? 43 : this.subnetId.hashCode());
+        result = (result * PRIME) + (this.lifetime == null ? 43 : this.lifetime.hashCode());
         result = (result * PRIME) + (this.routeTableId == null ? 43 : this.routeTableId.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;

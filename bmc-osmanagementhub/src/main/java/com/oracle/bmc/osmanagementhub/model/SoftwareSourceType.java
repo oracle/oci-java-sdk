@@ -10,6 +10,8 @@ public enum SoftwareSourceType implements com.oracle.bmc.http.internal.BmcEnum {
     Vendor("VENDOR"),
     Custom("CUSTOM"),
     Versioned("VERSIONED"),
+    Private("PRIVATE"),
+    ThirdParty("THIRD_PARTY"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

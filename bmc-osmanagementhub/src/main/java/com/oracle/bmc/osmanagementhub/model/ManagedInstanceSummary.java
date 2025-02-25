@@ -41,7 +41,8 @@ public final class ManagedInstanceSummary
         "isManagementStation",
         "notificationTopicId",
         "autonomousSettings",
-        "isManagedByAutonomousLinux"
+        "isManagedByAutonomousLinux",
+        "agentVersion"
     })
     public ManagedInstanceSummary(
             String id,
@@ -61,7 +62,8 @@ public final class ManagedInstanceSummary
             Boolean isManagementStation,
             String notificationTopicId,
             AutonomousSettings autonomousSettings,
-            Boolean isManagedByAutonomousLinux) {
+            Boolean isManagedByAutonomousLinux,
+            String agentVersion) {
         super();
         this.id = id;
         this.displayName = displayName;
@@ -81,6 +83,7 @@ public final class ManagedInstanceSummary
         this.notificationTopicId = notificationTopicId;
         this.autonomousSettings = autonomousSettings;
         this.isManagedByAutonomousLinux = isManagedByAutonomousLinux;
+        this.agentVersion = agentVersion;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -349,6 +352,21 @@ public final class ManagedInstanceSummary
             this.__explicitlySet__.add("isManagedByAutonomousLinux");
             return this;
         }
+        /** The version of osmh-agent running on the managed instance */
+        @com.fasterxml.jackson.annotation.JsonProperty("agentVersion")
+        private String agentVersion;
+
+        /**
+         * The version of osmh-agent running on the managed instance
+         *
+         * @param agentVersion the value to set
+         * @return this builder
+         */
+        public Builder agentVersion(String agentVersion) {
+            this.agentVersion = agentVersion;
+            this.__explicitlySet__.add("agentVersion");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -373,7 +391,8 @@ public final class ManagedInstanceSummary
                             this.isManagementStation,
                             this.notificationTopicId,
                             this.autonomousSettings,
-                            this.isManagedByAutonomousLinux);
+                            this.isManagedByAutonomousLinux,
+                            this.agentVersion);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -435,6 +454,9 @@ public final class ManagedInstanceSummary
             }
             if (model.wasPropertyExplicitlySet("isManagedByAutonomousLinux")) {
                 this.isManagedByAutonomousLinux(model.getIsManagedByAutonomousLinux());
+            }
+            if (model.wasPropertyExplicitlySet("agentVersion")) {
+                this.agentVersion(model.getAgentVersion());
             }
             return this;
         }
@@ -677,6 +699,19 @@ public final class ManagedInstanceSummary
         return isManagedByAutonomousLinux;
     }
 
+    /** The version of osmh-agent running on the managed instance */
+    @com.fasterxml.jackson.annotation.JsonProperty("agentVersion")
+    private final String agentVersion;
+
+    /**
+     * The version of osmh-agent running on the managed instance
+     *
+     * @return the value
+     */
+    public String getAgentVersion() {
+        return agentVersion;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -711,6 +746,7 @@ public final class ManagedInstanceSummary
         sb.append(", autonomousSettings=").append(String.valueOf(this.autonomousSettings));
         sb.append(", isManagedByAutonomousLinux=")
                 .append(String.valueOf(this.isManagedByAutonomousLinux));
+        sb.append(", agentVersion=").append(String.valueOf(this.agentVersion));
         sb.append(")");
         return sb.toString();
     }
@@ -744,6 +780,7 @@ public final class ManagedInstanceSummary
                 && java.util.Objects.equals(this.autonomousSettings, other.autonomousSettings)
                 && java.util.Objects.equals(
                         this.isManagedByAutonomousLinux, other.isManagedByAutonomousLinux)
+                && java.util.Objects.equals(this.agentVersion, other.agentVersion)
                 && super.equals(other);
     }
 
@@ -801,6 +838,7 @@ public final class ManagedInstanceSummary
                         + (this.isManagedByAutonomousLinux == null
                                 ? 43
                                 : this.isManagedByAutonomousLinux.hashCode());
+        result = (result * PRIME) + (this.agentVersion == null ? 43 : this.agentVersion.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

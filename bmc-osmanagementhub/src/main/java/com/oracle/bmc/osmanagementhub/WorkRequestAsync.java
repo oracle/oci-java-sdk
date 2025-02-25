@@ -64,7 +64,7 @@ public interface WorkRequestAsync extends AutoCloseable {
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
-     * Gets information about the specified work request.
+     * Returns information about the specified work request.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -79,7 +79,7 @@ public interface WorkRequestAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets the errors for the specified work request.
+     * Returns the errors for the specified work request.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -95,7 +95,7 @@ public interface WorkRequestAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets the logs for the specified work request.
+     * Returns the logs for the specified work request.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -125,5 +125,22 @@ public interface WorkRequestAsync extends AutoCloseable {
     java.util.concurrent.Future<ListWorkRequestsResponse> listWorkRequests(
             ListWorkRequestsRequest request,
             com.oracle.bmc.responses.AsyncHandler<ListWorkRequestsRequest, ListWorkRequestsResponse>
+                    handler);
+
+    /**
+     * Reruns a failed work for the specified work request
+     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * Rerunning restarts the work on failed targets.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<RerunWorkRequestResponse> rerunWorkRequest(
+            RerunWorkRequestRequest request,
+            com.oracle.bmc.responses.AsyncHandler<RerunWorkRequestRequest, RerunWorkRequestResponse>
                     handler);
 }

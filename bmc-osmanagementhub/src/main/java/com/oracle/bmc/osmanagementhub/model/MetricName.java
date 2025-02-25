@@ -21,6 +21,8 @@ public enum MetricName implements com.oracle.bmc.http.internal.BmcEnum {
     InstanceBugfixUpdatesCount("INSTANCE_BUGFIX_UPDATES_COUNT"),
     InstanceSecurityAdvisoryCount("INSTANCE_SECURITY_ADVISORY_COUNT"),
     InstanceBugfixAdvisoryCount("INSTANCE_BUGFIX_ADVISORY_COUNT"),
+    RebootingInstanceCount("REBOOTING_INSTANCE_COUNT"),
+    NeedsRebootingInstanceCount("NEEDS_REBOOTING_INSTANCE_COUNT"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

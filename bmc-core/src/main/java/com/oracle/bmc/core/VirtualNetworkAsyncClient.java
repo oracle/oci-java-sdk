@@ -5049,6 +5049,40 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
     }
 
     @Override
+    public java.util.concurrent.Future<Ipv6VnicDetachResponse> ipv6VnicDetach(
+            Ipv6VnicDetachRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            Ipv6VnicDetachRequest, Ipv6VnicDetachResponse>
+                    handler) {
+
+        Validate.notBlank(request.getIpv6Id(), "ipv6Id must not be blank");
+
+        return clientCall(request, Ipv6VnicDetachResponse::builder)
+                .logger(LOG, "ipv6VnicDetach")
+                .serviceDetails(
+                        "VirtualNetwork",
+                        "Ipv6VnicDetach",
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Ipv6/Ipv6VnicDetach")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(Ipv6VnicDetachRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("ipv6")
+                .appendPathParam(request.getIpv6Id())
+                .appendPathParam("actions")
+                .appendPathParam("detach")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleBody(
+                        com.oracle.bmc.core.model.Ipv6.class, Ipv6VnicDetachResponse.Builder::ipv6)
+                .handleResponseHeaderString("etag", Ipv6VnicDetachResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", Ipv6VnicDetachResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<ListAllowedPeerRegionsForRemotePeeringResponse>
             listAllowedPeerRegionsForRemotePeering(
                     ListAllowedPeerRegionsForRemotePeeringRequest request,
@@ -6056,6 +6090,8 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
                 .appendQueryParam("ipAddress", request.getIpAddress())
                 .appendQueryParam("subnetId", request.getSubnetId())
                 .appendQueryParam("vnicId", request.getVnicId())
+                .appendQueryParam("ipState", request.getIpState())
+                .appendQueryParam("lifetime", request.getLifetime())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleBodyList(
@@ -6277,6 +6313,8 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
                 .appendQueryParam("ipAddress", request.getIpAddress())
                 .appendQueryParam("subnetId", request.getSubnetId())
                 .appendQueryParam("vnicId", request.getVnicId())
+                .appendQueryParam("ipState", request.getIpState())
+                .appendQueryParam("lifetime", request.getLifetime())
                 .appendQueryParam("vlanId", request.getVlanId())
                 .accept("application/json")
                 .handleBodyList(
@@ -6858,6 +6896,41 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
                         "opc-request-id", ModifyVcnCidrResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-work-request-id", ModifyVcnCidrResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PrivateIpVnicDetachResponse> privateIpVnicDetach(
+            PrivateIpVnicDetachRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            PrivateIpVnicDetachRequest, PrivateIpVnicDetachResponse>
+                    handler) {
+
+        Validate.notBlank(request.getPrivateIpId(), "privateIpId must not be blank");
+
+        return clientCall(request, PrivateIpVnicDetachResponse::builder)
+                .logger(LOG, "privateIpVnicDetach")
+                .serviceDetails(
+                        "VirtualNetwork",
+                        "PrivateIpVnicDetach",
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/PrivateIpVnicDetach")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(PrivateIpVnicDetachRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("privateIps")
+                .appendPathParam(request.getPrivateIpId())
+                .appendPathParam("actions")
+                .appendPathParam("detach")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleBody(
+                        com.oracle.bmc.core.model.PrivateIp.class,
+                        PrivateIpVnicDetachResponse.Builder::privateIp)
+                .handleResponseHeaderString("etag", PrivateIpVnicDetachResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", PrivateIpVnicDetachResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 

@@ -47,8 +47,10 @@ public final class WorkRequest extends com.oracle.bmc.http.client.internal.Expli
         "eventId",
         "contentChecksum",
         "retryOfId",
+        "rerunOfId",
         "retryIntervals",
-        "isManagedByAutonomousLinux"
+        "isManagedByAutonomousLinux",
+        "rebootTimeoutInMins"
     })
     public WorkRequest(
             WorkRequestOperationType operationType,
@@ -76,8 +78,10 @@ public final class WorkRequest extends com.oracle.bmc.http.client.internal.Expli
             String eventId,
             String contentChecksum,
             String retryOfId,
+            String rerunOfId,
             java.util.List<Integer> retryIntervals,
-            Boolean isManagedByAutonomousLinux) {
+            Boolean isManagedByAutonomousLinux,
+            Integer rebootTimeoutInMins) {
         super();
         this.operationType = operationType;
         this.status = status;
@@ -104,8 +108,10 @@ public final class WorkRequest extends com.oracle.bmc.http.client.internal.Expli
         this.eventId = eventId;
         this.contentChecksum = contentChecksum;
         this.retryOfId = retryOfId;
+        this.rerunOfId = rerunOfId;
         this.retryIntervals = retryIntervals;
         this.isManagedByAutonomousLinux = isManagedByAutonomousLinux;
+        this.rebootTimeoutInMins = rebootTimeoutInMins;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -204,12 +210,16 @@ public final class WorkRequest extends com.oracle.bmc.http.client.internal.Expli
             this.__explicitlySet__.add("message");
             return this;
         }
-        /** The OCID of the parent work request, if there is any. */
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the parent work request, if there is any.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("parentId")
         private String parentId;
 
         /**
-         * The OCID of the parent work request, if there is any.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the parent work request, if there is any.
          *
          * @param parentId the value to set
          * @return this builder
@@ -219,12 +229,18 @@ public final class WorkRequest extends com.oracle.bmc.http.client.internal.Expli
             this.__explicitlySet__.add("parentId");
             return this;
         }
-        /** The list of OCIDs for the child work requests. */
+        /**
+         * The list of
+         * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for
+         * the child work requests.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("childrenId")
         private java.util.List<String> childrenId;
 
         /**
-         * The list of OCIDs for the child work requests.
+         * The list of
+         * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for
+         * the child work requests.
          *
          * @param childrenId the value to set
          * @return this builder
@@ -543,12 +559,41 @@ public final class WorkRequest extends com.oracle.bmc.http.client.internal.Expli
             this.__explicitlySet__.add("retryOfId");
             return this;
         }
-        /** Indicates whether this work request is managed by the Autonomous Linux service. */
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the original work request that is being rerun.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("rerunOfId")
+        private String rerunOfId;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the original work request that is being rerun.
+         *
+         * @param rerunOfId the value to set
+         * @return this builder
+         */
+        public Builder rerunOfId(String rerunOfId) {
+            this.rerunOfId = rerunOfId;
+            this.__explicitlySet__.add("rerunOfId");
+            return this;
+        }
+        /**
+         * The amount of time in minutes to wait until retrying the work request. If set, the
+         * service will automatically retry a failed work request after the interval. For example,
+         * An interval set to [2,5,10]. If the initial execution of the work request fails, the
+         * service waits 2 minutes and then retries. If that fails, the service waits 5 minutes and
+         * then retries. If that fails, the service waits 10 minutes and then retries.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("retryIntervals")
         private java.util.List<Integer> retryIntervals;
 
         /**
-         * Indicates whether this work request is managed by the Autonomous Linux service.
+         * The amount of time in minutes to wait until retrying the work request. If set, the
+         * service will automatically retry a failed work request after the interval. For example,
+         * An interval set to [2,5,10]. If the initial execution of the work request fails, the
+         * service waits 2 minutes and then retries. If that fails, the service waits 5 minutes and
+         * then retries. If that fails, the service waits 10 minutes and then retries.
          *
          * @param retryIntervals the value to set
          * @return this builder
@@ -571,6 +616,25 @@ public final class WorkRequest extends com.oracle.bmc.http.client.internal.Expli
         public Builder isManagedByAutonomousLinux(Boolean isManagedByAutonomousLinux) {
             this.isManagedByAutonomousLinux = isManagedByAutonomousLinux;
             this.__explicitlySet__.add("isManagedByAutonomousLinux");
+            return this;
+        }
+        /**
+         * The number of minutes the service waits for the reboot to complete. If the managed
+         * instance doesn't reboot within the timeout, the service marks the reboot job as failed.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("rebootTimeoutInMins")
+        private Integer rebootTimeoutInMins;
+
+        /**
+         * The number of minutes the service waits for the reboot to complete. If the managed
+         * instance doesn't reboot within the timeout, the service marks the reboot job as failed.
+         *
+         * @param rebootTimeoutInMins the value to set
+         * @return this builder
+         */
+        public Builder rebootTimeoutInMins(Integer rebootTimeoutInMins) {
+            this.rebootTimeoutInMins = rebootTimeoutInMins;
+            this.__explicitlySet__.add("rebootTimeoutInMins");
             return this;
         }
 
@@ -605,8 +669,10 @@ public final class WorkRequest extends com.oracle.bmc.http.client.internal.Expli
                             this.eventId,
                             this.contentChecksum,
                             this.retryOfId,
+                            this.rerunOfId,
                             this.retryIntervals,
-                            this.isManagedByAutonomousLinux);
+                            this.isManagedByAutonomousLinux,
+                            this.rebootTimeoutInMins);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -690,11 +756,17 @@ public final class WorkRequest extends com.oracle.bmc.http.client.internal.Expli
             if (model.wasPropertyExplicitlySet("retryOfId")) {
                 this.retryOfId(model.getRetryOfId());
             }
+            if (model.wasPropertyExplicitlySet("rerunOfId")) {
+                this.rerunOfId(model.getRerunOfId());
+            }
             if (model.wasPropertyExplicitlySet("retryIntervals")) {
                 this.retryIntervals(model.getRetryIntervals());
             }
             if (model.wasPropertyExplicitlySet("isManagedByAutonomousLinux")) {
                 this.isManagedByAutonomousLinux(model.getIsManagedByAutonomousLinux());
+            }
+            if (model.wasPropertyExplicitlySet("rebootTimeoutInMins")) {
+                this.rebootTimeoutInMins(model.getRebootTimeoutInMins());
             }
             return this;
         }
@@ -791,12 +863,16 @@ public final class WorkRequest extends com.oracle.bmc.http.client.internal.Expli
         return message;
     }
 
-    /** The OCID of the parent work request, if there is any. */
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the parent work request, if there is any.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("parentId")
     private final String parentId;
 
     /**
-     * The OCID of the parent work request, if there is any.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the parent work request, if there is any.
      *
      * @return the value
      */
@@ -804,12 +880,18 @@ public final class WorkRequest extends com.oracle.bmc.http.client.internal.Expli
         return parentId;
     }
 
-    /** The list of OCIDs for the child work requests. */
+    /**
+     * The list of
+     * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
+     * child work requests.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("childrenId")
     private final java.util.List<String> childrenId;
 
     /**
-     * The list of OCIDs for the child work requests.
+     * The list of
+     * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
+     * child work requests.
      *
      * @return the value
      */
@@ -1088,12 +1170,39 @@ public final class WorkRequest extends com.oracle.bmc.http.client.internal.Expli
         return retryOfId;
     }
 
-    /** Indicates whether this work request is managed by the Autonomous Linux service. */
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the original work request that is being rerun.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("rerunOfId")
+    private final String rerunOfId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the original work request that is being rerun.
+     *
+     * @return the value
+     */
+    public String getRerunOfId() {
+        return rerunOfId;
+    }
+
+    /**
+     * The amount of time in minutes to wait until retrying the work request. If set, the service
+     * will automatically retry a failed work request after the interval. For example, An interval
+     * set to [2,5,10]. If the initial execution of the work request fails, the service waits 2
+     * minutes and then retries. If that fails, the service waits 5 minutes and then retries. If
+     * that fails, the service waits 10 minutes and then retries.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("retryIntervals")
     private final java.util.List<Integer> retryIntervals;
 
     /**
-     * Indicates whether this work request is managed by the Autonomous Linux service.
+     * The amount of time in minutes to wait until retrying the work request. If set, the service
+     * will automatically retry a failed work request after the interval. For example, An interval
+     * set to [2,5,10]. If the initial execution of the work request fails, the service waits 2
+     * minutes and then retries. If that fails, the service waits 5 minutes and then retries. If
+     * that fails, the service waits 10 minutes and then retries.
      *
      * @return the value
      */
@@ -1112,6 +1221,23 @@ public final class WorkRequest extends com.oracle.bmc.http.client.internal.Expli
      */
     public Boolean getIsManagedByAutonomousLinux() {
         return isManagedByAutonomousLinux;
+    }
+
+    /**
+     * The number of minutes the service waits for the reboot to complete. If the managed instance
+     * doesn't reboot within the timeout, the service marks the reboot job as failed.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("rebootTimeoutInMins")
+    private final Integer rebootTimeoutInMins;
+
+    /**
+     * The number of minutes the service waits for the reboot to complete. If the managed instance
+     * doesn't reboot within the timeout, the service marks the reboot job as failed.
+     *
+     * @return the value
+     */
+    public Integer getRebootTimeoutInMins() {
+        return rebootTimeoutInMins;
     }
 
     @Override
@@ -1154,9 +1280,11 @@ public final class WorkRequest extends com.oracle.bmc.http.client.internal.Expli
         sb.append(", eventId=").append(String.valueOf(this.eventId));
         sb.append(", contentChecksum=").append(String.valueOf(this.contentChecksum));
         sb.append(", retryOfId=").append(String.valueOf(this.retryOfId));
+        sb.append(", rerunOfId=").append(String.valueOf(this.rerunOfId));
         sb.append(", retryIntervals=").append(String.valueOf(this.retryIntervals));
         sb.append(", isManagedByAutonomousLinux=")
                 .append(String.valueOf(this.isManagedByAutonomousLinux));
+        sb.append(", rebootTimeoutInMins=").append(String.valueOf(this.rebootTimeoutInMins));
         sb.append(")");
         return sb.toString();
     }
@@ -1196,9 +1324,11 @@ public final class WorkRequest extends com.oracle.bmc.http.client.internal.Expli
                 && java.util.Objects.equals(this.eventId, other.eventId)
                 && java.util.Objects.equals(this.contentChecksum, other.contentChecksum)
                 && java.util.Objects.equals(this.retryOfId, other.retryOfId)
+                && java.util.Objects.equals(this.rerunOfId, other.rerunOfId)
                 && java.util.Objects.equals(this.retryIntervals, other.retryIntervals)
                 && java.util.Objects.equals(
                         this.isManagedByAutonomousLinux, other.isManagedByAutonomousLinux)
+                && java.util.Objects.equals(this.rebootTimeoutInMins, other.rebootTimeoutInMins)
                 && super.equals(other);
     }
 
@@ -1249,6 +1379,7 @@ public final class WorkRequest extends com.oracle.bmc.http.client.internal.Expli
                 (result * PRIME)
                         + (this.contentChecksum == null ? 43 : this.contentChecksum.hashCode());
         result = (result * PRIME) + (this.retryOfId == null ? 43 : this.retryOfId.hashCode());
+        result = (result * PRIME) + (this.rerunOfId == null ? 43 : this.rerunOfId.hashCode());
         result =
                 (result * PRIME)
                         + (this.retryIntervals == null ? 43 : this.retryIntervals.hashCode());
@@ -1257,6 +1388,11 @@ public final class WorkRequest extends com.oracle.bmc.http.client.internal.Expli
                         + (this.isManagedByAutonomousLinux == null
                                 ? 43
                                 : this.isManagedByAutonomousLinux.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.rebootTimeoutInMins == null
+                                ? 43
+                                : this.rebootTimeoutInMins.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

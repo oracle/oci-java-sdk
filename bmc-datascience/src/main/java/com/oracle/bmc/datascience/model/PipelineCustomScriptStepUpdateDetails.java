@@ -65,6 +65,25 @@ public final class PipelineCustomScriptStepUpdateDetails extends PipelineStepUpd
             this.__explicitlySet__.add("stepInfrastructureConfigurationDetails");
             return this;
         }
+        /** The storage mount details to mount to the instance running the pipeline step. */
+        @com.fasterxml.jackson.annotation.JsonProperty("stepStorageMountConfigurationDetailsList")
+        private java.util.List<StorageMountConfigurationDetails>
+                stepStorageMountConfigurationDetailsList;
+
+        /**
+         * The storage mount details to mount to the instance running the pipeline step.
+         *
+         * @param stepStorageMountConfigurationDetailsList the value to set
+         * @return this builder
+         */
+        public Builder stepStorageMountConfigurationDetailsList(
+                java.util.List<StorageMountConfigurationDetails>
+                        stepStorageMountConfigurationDetailsList) {
+            this.stepStorageMountConfigurationDetailsList =
+                    stepStorageMountConfigurationDetailsList;
+            this.__explicitlySet__.add("stepStorageMountConfigurationDetailsList");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -75,7 +94,8 @@ public final class PipelineCustomScriptStepUpdateDetails extends PipelineStepUpd
                             this.stepName,
                             this.description,
                             this.stepConfigurationDetails,
-                            this.stepInfrastructureConfigurationDetails);
+                            this.stepInfrastructureConfigurationDetails,
+                            this.stepStorageMountConfigurationDetailsList);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -97,6 +117,10 @@ public final class PipelineCustomScriptStepUpdateDetails extends PipelineStepUpd
                 this.stepInfrastructureConfigurationDetails(
                         model.getStepInfrastructureConfigurationDetails());
             }
+            if (model.wasPropertyExplicitlySet("stepStorageMountConfigurationDetailsList")) {
+                this.stepStorageMountConfigurationDetailsList(
+                        model.getStepStorageMountConfigurationDetailsList());
+            }
             return this;
         }
     }
@@ -115,9 +139,12 @@ public final class PipelineCustomScriptStepUpdateDetails extends PipelineStepUpd
             String stepName,
             String description,
             PipelineStepConfigurationDetails stepConfigurationDetails,
-            PipelineInfrastructureConfigurationDetails stepInfrastructureConfigurationDetails) {
+            PipelineInfrastructureConfigurationDetails stepInfrastructureConfigurationDetails,
+            java.util.List<StorageMountConfigurationDetails>
+                    stepStorageMountConfigurationDetailsList) {
         super(stepName, description, stepConfigurationDetails);
         this.stepInfrastructureConfigurationDetails = stepInfrastructureConfigurationDetails;
+        this.stepStorageMountConfigurationDetailsList = stepStorageMountConfigurationDetailsList;
     }
 
     @com.fasterxml.jackson.annotation.JsonProperty("stepInfrastructureConfigurationDetails")
@@ -125,6 +152,21 @@ public final class PipelineCustomScriptStepUpdateDetails extends PipelineStepUpd
 
     public PipelineInfrastructureConfigurationDetails getStepInfrastructureConfigurationDetails() {
         return stepInfrastructureConfigurationDetails;
+    }
+
+    /** The storage mount details to mount to the instance running the pipeline step. */
+    @com.fasterxml.jackson.annotation.JsonProperty("stepStorageMountConfigurationDetailsList")
+    private final java.util.List<StorageMountConfigurationDetails>
+            stepStorageMountConfigurationDetailsList;
+
+    /**
+     * The storage mount details to mount to the instance running the pipeline step.
+     *
+     * @return the value
+     */
+    public java.util.List<StorageMountConfigurationDetails>
+            getStepStorageMountConfigurationDetailsList() {
+        return stepStorageMountConfigurationDetailsList;
     }
 
     @Override
@@ -144,6 +186,8 @@ public final class PipelineCustomScriptStepUpdateDetails extends PipelineStepUpd
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", stepInfrastructureConfigurationDetails=")
                 .append(String.valueOf(this.stepInfrastructureConfigurationDetails));
+        sb.append(", stepStorageMountConfigurationDetailsList=")
+                .append(String.valueOf(this.stepStorageMountConfigurationDetailsList));
         sb.append(")");
         return sb.toString();
     }
@@ -161,6 +205,9 @@ public final class PipelineCustomScriptStepUpdateDetails extends PipelineStepUpd
         return java.util.Objects.equals(
                         this.stepInfrastructureConfigurationDetails,
                         other.stepInfrastructureConfigurationDetails)
+                && java.util.Objects.equals(
+                        this.stepStorageMountConfigurationDetailsList,
+                        other.stepStorageMountConfigurationDetailsList)
                 && super.equals(other);
     }
 
@@ -173,6 +220,11 @@ public final class PipelineCustomScriptStepUpdateDetails extends PipelineStepUpd
                         + (this.stepInfrastructureConfigurationDetails == null
                                 ? 43
                                 : this.stepInfrastructureConfigurationDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.stepStorageMountConfigurationDetailsList == null
+                                ? 43
+                                : this.stepStorageMountConfigurationDetailsList.hashCode());
         return result;
     }
 }

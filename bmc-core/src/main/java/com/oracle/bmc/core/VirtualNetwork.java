@@ -3278,6 +3278,23 @@ public interface VirtualNetwork extends AutoCloseable {
     GetVtapResponse getVtap(GetVtapRequest request);
 
     /**
+     * Unassign the specified IPv6 address from Virtual Network Interface Card (VNIC). You must
+     * specify the IPv6
+     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/Ipv6VnicDetachExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use Ipv6VnicDetach API.
+     */
+    Ipv6VnicDetachResponse ipv6VnicDetach(Ipv6VnicDetachRequest request);
+
+    /**
      * Lists the regions that support remote VCN peering (which is peering across regions). For more
      * information, see [VCN
      * Peering](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/VCNpeering.htm).
@@ -4212,6 +4229,24 @@ public interface VirtualNetwork extends AutoCloseable {
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ModifyVcnCidr API.
      */
     ModifyVcnCidrResponse modifyVcnCidr(ModifyVcnCidrRequest request);
+
+    /**
+     * Unassign the specified PrivateIP address from Virtual Network Interface Card (VNIC). You must
+     * specify the PrivateIP
+     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/PrivateIpVnicDetachExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use PrivateIpVnicDetach
+     *     API.
+     */
+    PrivateIpVnicDetachResponse privateIpVnicDetach(PrivateIpVnicDetachRequest request);
 
     /**
      * Removes one or more route distribution statements from the specified route distribution's

@@ -5,7 +5,7 @@
 package com.oracle.bmc.osmanagementhub.model;
 
 /**
- * Summary of the Management Station. <br>
+ * Provides summary information for a management station. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -38,6 +38,7 @@ public final class ManagementStationSummary
         "overallPercentage",
         "mirrorCapacity",
         "lifecycleState",
+        "location",
         "freeformTags",
         "definedTags",
         "systemTags"
@@ -57,6 +58,7 @@ public final class ManagementStationSummary
             Integer overallPercentage,
             Integer mirrorCapacity,
             ManagementStation.LifecycleState lifecycleState,
+            ManagedInstanceLocation location,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags) {
@@ -75,6 +77,7 @@ public final class ManagementStationSummary
         this.overallPercentage = overallPercentage;
         this.mirrorCapacity = mirrorCapacity;
         this.lifecycleState = lifecycleState;
+        this.location = location;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.systemTags = systemTags;
@@ -316,6 +319,21 @@ public final class ManagementStationSummary
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
+        /** The location of the instance that is acting as the management station. */
+        @com.fasterxml.jackson.annotation.JsonProperty("location")
+        private ManagedInstanceLocation location;
+
+        /**
+         * The location of the instance that is acting as the management station.
+         *
+         * @param location the value to set
+         * @return this builder
+         */
+        public Builder location(ManagedInstanceLocation location) {
+            this.location = location;
+            this.__explicitlySet__.add("location");
+            return this;
+        }
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
@@ -403,6 +421,7 @@ public final class ManagementStationSummary
                             this.overallPercentage,
                             this.mirrorCapacity,
                             this.lifecycleState,
+                            this.location,
                             this.freeformTags,
                             this.definedTags,
                             this.systemTags);
@@ -455,6 +474,9 @@ public final class ManagementStationSummary
             }
             if (model.wasPropertyExplicitlySet("lifecycleState")) {
                 this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("location")) {
+                this.location(model.getLocation());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -684,6 +706,19 @@ public final class ManagementStationSummary
         return lifecycleState;
     }
 
+    /** The location of the instance that is acting as the management station. */
+    @com.fasterxml.jackson.annotation.JsonProperty("location")
+    private final ManagedInstanceLocation location;
+
+    /**
+     * The location of the instance that is acting as the management station.
+     *
+     * @return the value
+     */
+    public ManagedInstanceLocation getLocation() {
+        return location;
+    }
+
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
@@ -772,6 +807,7 @@ public final class ManagementStationSummary
         sb.append(", overallPercentage=").append(String.valueOf(this.overallPercentage));
         sb.append(", mirrorCapacity=").append(String.valueOf(this.mirrorCapacity));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", location=").append(String.valueOf(this.location));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
@@ -803,6 +839,7 @@ public final class ManagementStationSummary
                 && java.util.Objects.equals(this.overallPercentage, other.overallPercentage)
                 && java.util.Objects.equals(this.mirrorCapacity, other.mirrorCapacity)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.location, other.location)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
@@ -841,6 +878,7 @@ public final class ManagementStationSummary
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result = (result * PRIME) + (this.location == null ? 43 : this.location.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());

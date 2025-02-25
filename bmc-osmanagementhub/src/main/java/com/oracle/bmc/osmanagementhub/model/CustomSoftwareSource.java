@@ -360,6 +360,40 @@ public final class CustomSoftwareSource extends SoftwareSource {
             this.__explicitlySet__.add("packages");
             return this;
         }
+        /** Identifies how the custom software source was created. */
+        @com.fasterxml.jackson.annotation.JsonProperty("softwareSourceSubType")
+        private SoftwareSourceSubType softwareSourceSubType;
+
+        /**
+         * Identifies how the custom software source was created.
+         *
+         * @param softwareSourceSubType the value to set
+         * @return this builder
+         */
+        public Builder softwareSourceSubType(SoftwareSourceSubType softwareSourceSubType) {
+            this.softwareSourceSubType = softwareSourceSubType;
+            this.__explicitlySet__.add("softwareSourceSubType");
+            return this;
+        }
+        /**
+         * The date and time the metadata for this software source was last updated (in [RFC
+         * 3339](https://tools.ietf.org/rfc/rfc3339) format).
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("timeMetadataUpdated")
+        private java.util.Date timeMetadataUpdated;
+
+        /**
+         * The date and time the metadata for this software source was last updated (in [RFC
+         * 3339](https://tools.ietf.org/rfc/rfc3339) format).
+         *
+         * @param timeMetadataUpdated the value to set
+         * @return this builder
+         */
+        public Builder timeMetadataUpdated(java.util.Date timeMetadataUpdated) {
+            this.timeMetadataUpdated = timeMetadataUpdated;
+            this.__explicitlySet__.add("timeMetadataUpdated");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -394,7 +428,9 @@ public final class CustomSoftwareSource extends SoftwareSource {
                             this.isAutoResolveDependencies,
                             this.isCreatedFromPackageList,
                             this.isLatestContentOnly,
-                            this.packages);
+                            this.packages,
+                            this.softwareSourceSubType,
+                            this.timeMetadataUpdated);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -487,6 +523,12 @@ public final class CustomSoftwareSource extends SoftwareSource {
             if (model.wasPropertyExplicitlySet("packages")) {
                 this.packages(model.getPackages());
             }
+            if (model.wasPropertyExplicitlySet("softwareSourceSubType")) {
+                this.softwareSourceSubType(model.getSoftwareSourceSubType());
+            }
+            if (model.wasPropertyExplicitlySet("timeMetadataUpdated")) {
+                this.timeMetadataUpdated(model.getTimeMetadataUpdated());
+            }
             return this;
         }
     }
@@ -529,7 +571,9 @@ public final class CustomSoftwareSource extends SoftwareSource {
             Boolean isAutoResolveDependencies,
             Boolean isCreatedFromPackageList,
             Boolean isLatestContentOnly,
-            java.util.List<String> packages) {
+            java.util.List<String> packages,
+            SoftwareSourceSubType softwareSourceSubType,
+            java.util.Date timeMetadataUpdated) {
         super(
                 id,
                 compartmentId,
@@ -559,6 +603,8 @@ public final class CustomSoftwareSource extends SoftwareSource {
         this.isCreatedFromPackageList = isCreatedFromPackageList;
         this.isLatestContentOnly = isLatestContentOnly;
         this.packages = packages;
+        this.softwareSourceSubType = softwareSourceSubType;
+        this.timeMetadataUpdated = timeMetadataUpdated;
     }
 
     /**
@@ -682,6 +728,36 @@ public final class CustomSoftwareSource extends SoftwareSource {
         return packages;
     }
 
+    /** Identifies how the custom software source was created. */
+    @com.fasterxml.jackson.annotation.JsonProperty("softwareSourceSubType")
+    private final SoftwareSourceSubType softwareSourceSubType;
+
+    /**
+     * Identifies how the custom software source was created.
+     *
+     * @return the value
+     */
+    public SoftwareSourceSubType getSoftwareSourceSubType() {
+        return softwareSourceSubType;
+    }
+
+    /**
+     * The date and time the metadata for this software source was last updated (in [RFC
+     * 3339](https://tools.ietf.org/rfc/rfc3339) format).
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("timeMetadataUpdated")
+    private final java.util.Date timeMetadataUpdated;
+
+    /**
+     * The date and time the metadata for this software source was last updated (in [RFC
+     * 3339](https://tools.ietf.org/rfc/rfc3339) format).
+     *
+     * @return the value
+     */
+    public java.util.Date getTimeMetadataUpdated() {
+        return timeMetadataUpdated;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -707,6 +783,8 @@ public final class CustomSoftwareSource extends SoftwareSource {
                 .append(String.valueOf(this.isCreatedFromPackageList));
         sb.append(", isLatestContentOnly=").append(String.valueOf(this.isLatestContentOnly));
         sb.append(", packages=").append(String.valueOf(this.packages));
+        sb.append(", softwareSourceSubType=").append(String.valueOf(this.softwareSourceSubType));
+        sb.append(", timeMetadataUpdated=").append(String.valueOf(this.timeMetadataUpdated));
         sb.append(")");
         return sb.toString();
     }
@@ -732,6 +810,8 @@ public final class CustomSoftwareSource extends SoftwareSource {
                         this.isCreatedFromPackageList, other.isCreatedFromPackageList)
                 && java.util.Objects.equals(this.isLatestContentOnly, other.isLatestContentOnly)
                 && java.util.Objects.equals(this.packages, other.packages)
+                && java.util.Objects.equals(this.softwareSourceSubType, other.softwareSourceSubType)
+                && java.util.Objects.equals(this.timeMetadataUpdated, other.timeMetadataUpdated)
                 && super.equals(other);
     }
 
@@ -770,6 +850,16 @@ public final class CustomSoftwareSource extends SoftwareSource {
                                 ? 43
                                 : this.isLatestContentOnly.hashCode());
         result = (result * PRIME) + (this.packages == null ? 43 : this.packages.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.softwareSourceSubType == null
+                                ? 43
+                                : this.softwareSourceSubType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeMetadataUpdated == null
+                                ? 43
+                                : this.timeMetadataUpdated.hashCode());
         return result;
     }
 }

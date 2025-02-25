@@ -234,17 +234,17 @@ public final class VendorSoftwareSource extends SoftwareSource {
             return this;
         }
         /**
-         * This property applies only to replicated vendor software sources. This is the
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-         * the vendor software source in the root compartment.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the vendor software source in the root compartment. This property applies only to
+         * replicated vendor software sources.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("originSoftwareSourceId")
         private String originSoftwareSourceId;
 
         /**
-         * This property applies only to replicated vendor software sources. This is the
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-         * the vendor software source in the root compartment.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the vendor software source in the root compartment. This property applies only to
+         * replicated vendor software sources.
          *
          * @param originSoftwareSourceId the value to set
          * @return this builder
@@ -460,17 +460,17 @@ public final class VendorSoftwareSource extends SoftwareSource {
     }
 
     /**
-     * This property applies only to replicated vendor software sources. This is the
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * vendor software source in the root compartment.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the vendor software source in the root compartment. This property applies only to replicated
+     * vendor software sources.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("originSoftwareSourceId")
     private final String originSoftwareSourceId;
 
     /**
-     * This property applies only to replicated vendor software sources. This is the
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * vendor software source in the root compartment.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the vendor software source in the root compartment. This property applies only to replicated
+     * vendor software sources.
      *
      * @return the value
      */

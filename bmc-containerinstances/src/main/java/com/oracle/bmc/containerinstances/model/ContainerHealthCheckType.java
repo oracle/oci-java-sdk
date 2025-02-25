@@ -9,7 +9,6 @@ package com.oracle.bmc.containerinstances.model;
 public enum ContainerHealthCheckType implements com.oracle.bmc.http.internal.BmcEnum {
     Http("HTTP"),
     Tcp("TCP"),
-    Command("COMMAND"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

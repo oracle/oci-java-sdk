@@ -69,29 +69,29 @@ public class ListSoftwareSourcesRequest extends com.oracle.bmc.requests.BmcReque
     public java.util.List<com.oracle.bmc.osmanagementhub.model.ArchType> getArchType() {
         return archType;
     }
-    /** The availabilities of the software source in a non-OCI environment for a tenancy. */
+    /** The availability of the software source in a non-OCI environment for a tenancy. */
     private java.util.List<com.oracle.bmc.osmanagementhub.model.Availability> availability;
 
-    /** The availabilities of the software source in a non-OCI environment for a tenancy. */
+    /** The availability of the software source in a non-OCI environment for a tenancy. */
     public java.util.List<com.oracle.bmc.osmanagementhub.model.Availability> getAvailability() {
         return availability;
     }
-    /** The availabilities of the software source in an OCI environment for a tenancy. */
+    /** The availability of the software source in an OCI environment for a tenancy. */
     private java.util.List<com.oracle.bmc.osmanagementhub.model.Availability> availabilityAtOci;
 
-    /** The availabilities of the software source in an OCI environment for a tenancy. */
+    /** The availability of the software source in an OCI environment for a tenancy. */
     public java.util.List<com.oracle.bmc.osmanagementhub.model.Availability>
             getAvailabilityAtOci() {
         return availabilityAtOci;
     }
     /**
-     * The availabilities of the software source. Use this query parameter to filter across
+     * The availability of the software source. Use this query parameter to filter across
      * availabilities in different environments.
      */
     private java.util.List<com.oracle.bmc.osmanagementhub.model.Availability> availabilityAnywhere;
 
     /**
-     * The availabilities of the software source. Use this query parameter to filter across
+     * The availability of the software source. Use this query parameter to filter across
      * availabilities in different environments.
      */
     public java.util.List<com.oracle.bmc.osmanagementhub.model.Availability>
@@ -104,6 +104,13 @@ public class ListSoftwareSourcesRequest extends com.oracle.bmc.requests.BmcReque
     /** Indicates whether the software source is mandatory for the Autonomous Linux service. */
     public Boolean getIsMandatoryForAutonomousLinux() {
         return isMandatoryForAutonomousLinux;
+    }
+    /** A filter to return software sources which can be synced to a management station. */
+    private Boolean isMirrorSyncAllowed;
+
+    /** A filter to return software sources which can be synced to a management station. */
+    public Boolean getIsMirrorSyncAllowed() {
+        return isMirrorSyncAllowed;
     }
     /** A filter to return resources that match the given user-friendly name. */
     private String displayName;
@@ -381,12 +388,12 @@ public class ListSoftwareSourcesRequest extends com.oracle.bmc.requests.BmcReque
             return this.archType(java.util.Arrays.asList(singularValue));
         }
 
-        /** The availabilities of the software source in a non-OCI environment for a tenancy. */
+        /** The availability of the software source in a non-OCI environment for a tenancy. */
         private java.util.List<com.oracle.bmc.osmanagementhub.model.Availability> availability =
                 null;
 
         /**
-         * The availabilities of the software source in a non-OCI environment for a tenancy.
+         * The availability of the software source in a non-OCI environment for a tenancy.
          *
          * @param availability the value to set
          * @return this builder instance
@@ -398,7 +405,7 @@ public class ListSoftwareSourcesRequest extends com.oracle.bmc.requests.BmcReque
         }
 
         /**
-         * Singular setter. The availabilities of the software source in a non-OCI environment for a
+         * Singular setter. The availability of the software source in a non-OCI environment for a
          * tenancy.
          *
          * @param singularValue the singular value to set
@@ -408,12 +415,12 @@ public class ListSoftwareSourcesRequest extends com.oracle.bmc.requests.BmcReque
             return this.availability(java.util.Arrays.asList(singularValue));
         }
 
-        /** The availabilities of the software source in an OCI environment for a tenancy. */
+        /** The availability of the software source in an OCI environment for a tenancy. */
         private java.util.List<com.oracle.bmc.osmanagementhub.model.Availability>
                 availabilityAtOci = null;
 
         /**
-         * The availabilities of the software source in an OCI environment for a tenancy.
+         * The availability of the software source in an OCI environment for a tenancy.
          *
          * @param availabilityAtOci the value to set
          * @return this builder instance
@@ -426,7 +433,7 @@ public class ListSoftwareSourcesRequest extends com.oracle.bmc.requests.BmcReque
         }
 
         /**
-         * Singular setter. The availabilities of the software source in an OCI environment for a
+         * Singular setter. The availability of the software source in an OCI environment for a
          * tenancy.
          *
          * @param singularValue the singular value to set
@@ -437,14 +444,14 @@ public class ListSoftwareSourcesRequest extends com.oracle.bmc.requests.BmcReque
         }
 
         /**
-         * The availabilities of the software source. Use this query parameter to filter across
+         * The availability of the software source. Use this query parameter to filter across
          * availabilities in different environments.
          */
         private java.util.List<com.oracle.bmc.osmanagementhub.model.Availability>
                 availabilityAnywhere = null;
 
         /**
-         * The availabilities of the software source. Use this query parameter to filter across
+         * The availability of the software source. Use this query parameter to filter across
          * availabilities in different environments.
          *
          * @param availabilityAnywhere the value to set
@@ -458,7 +465,7 @@ public class ListSoftwareSourcesRequest extends com.oracle.bmc.requests.BmcReque
         }
 
         /**
-         * Singular setter. The availabilities of the software source. Use this query parameter to
+         * Singular setter. The availability of the software source. Use this query parameter to
          * filter across availabilities in different environments.
          *
          * @param singularValue the singular value to set
@@ -479,6 +486,20 @@ public class ListSoftwareSourcesRequest extends com.oracle.bmc.requests.BmcReque
          */
         public Builder isMandatoryForAutonomousLinux(Boolean isMandatoryForAutonomousLinux) {
             this.isMandatoryForAutonomousLinux = isMandatoryForAutonomousLinux;
+            return this;
+        }
+
+        /** A filter to return software sources which can be synced to a management station. */
+        private Boolean isMirrorSyncAllowed = null;
+
+        /**
+         * A filter to return software sources which can be synced to a management station.
+         *
+         * @param isMirrorSyncAllowed the value to set
+         * @return this builder instance
+         */
+        public Builder isMirrorSyncAllowed(Boolean isMirrorSyncAllowed) {
+            this.isMirrorSyncAllowed = isMirrorSyncAllowed;
             return this;
         }
 
@@ -702,6 +723,7 @@ public class ListSoftwareSourcesRequest extends com.oracle.bmc.requests.BmcReque
             availabilityAtOci(o.getAvailabilityAtOci());
             availabilityAnywhere(o.getAvailabilityAnywhere());
             isMandatoryForAutonomousLinux(o.getIsMandatoryForAutonomousLinux());
+            isMirrorSyncAllowed(o.getIsMirrorSyncAllowed());
             displayName(o.getDisplayName());
             displayNameContains(o.getDisplayNameContains());
             displayNameNotEqualTo(o.getDisplayNameNotEqualTo());
@@ -755,6 +777,7 @@ public class ListSoftwareSourcesRequest extends com.oracle.bmc.requests.BmcReque
             request.availabilityAtOci = availabilityAtOci;
             request.availabilityAnywhere = availabilityAnywhere;
             request.isMandatoryForAutonomousLinux = isMandatoryForAutonomousLinux;
+            request.isMirrorSyncAllowed = isMirrorSyncAllowed;
             request.displayName = displayName;
             request.displayNameContains = displayNameContains;
             request.displayNameNotEqualTo = displayNameNotEqualTo;
@@ -767,9 +790,9 @@ public class ListSoftwareSourcesRequest extends com.oracle.bmc.requests.BmcReque
             return request;
             // new ListSoftwareSourcesRequest(compartmentId, softwareSourceId, softwareSourceType,
             // vendorName, osFamily, archType, availability, availabilityAtOci,
-            // availabilityAnywhere, isMandatoryForAutonomousLinux, displayName,
-            // displayNameContains, displayNameNotEqualTo, limit, page, sortOrder, sortBy,
-            // lifecycleState, opcRequestId);
+            // availabilityAnywhere, isMandatoryForAutonomousLinux, isMirrorSyncAllowed,
+            // displayName, displayNameContains, displayNameNotEqualTo, limit, page, sortOrder,
+            // sortBy, lifecycleState, opcRequestId);
         }
     }
 
@@ -790,6 +813,7 @@ public class ListSoftwareSourcesRequest extends com.oracle.bmc.requests.BmcReque
                 .availabilityAtOci(availabilityAtOci)
                 .availabilityAnywhere(availabilityAnywhere)
                 .isMandatoryForAutonomousLinux(isMandatoryForAutonomousLinux)
+                .isMirrorSyncAllowed(isMirrorSyncAllowed)
                 .displayName(displayName)
                 .displayNameContains(displayNameContains)
                 .displayNameNotEqualTo(displayNameNotEqualTo)
@@ -826,6 +850,7 @@ public class ListSoftwareSourcesRequest extends com.oracle.bmc.requests.BmcReque
         sb.append(",availabilityAnywhere=").append(String.valueOf(this.availabilityAnywhere));
         sb.append(",isMandatoryForAutonomousLinux=")
                 .append(String.valueOf(this.isMandatoryForAutonomousLinux));
+        sb.append(",isMirrorSyncAllowed=").append(String.valueOf(this.isMirrorSyncAllowed));
         sb.append(",displayName=").append(String.valueOf(this.displayName));
         sb.append(",displayNameContains=").append(String.valueOf(this.displayNameContains));
         sb.append(",displayNameNotEqualTo=").append(String.valueOf(this.displayNameNotEqualTo));
@@ -861,6 +886,7 @@ public class ListSoftwareSourcesRequest extends com.oracle.bmc.requests.BmcReque
                 && java.util.Objects.equals(this.availabilityAnywhere, other.availabilityAnywhere)
                 && java.util.Objects.equals(
                         this.isMandatoryForAutonomousLinux, other.isMandatoryForAutonomousLinux)
+                && java.util.Objects.equals(this.isMirrorSyncAllowed, other.isMirrorSyncAllowed)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.displayNameContains, other.displayNameContains)
                 && java.util.Objects.equals(this.displayNameNotEqualTo, other.displayNameNotEqualTo)
@@ -904,6 +930,11 @@ public class ListSoftwareSourcesRequest extends com.oracle.bmc.requests.BmcReque
                         + (this.isMandatoryForAutonomousLinux == null
                                 ? 43
                                 : this.isMandatoryForAutonomousLinux.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isMirrorSyncAllowed == null
+                                ? 43
+                                : this.isMirrorSyncAllowed.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result =
                 (result * PRIME)

@@ -44,6 +44,7 @@ public enum WorkRequestOperationType implements com.oracle.bmc.http.internal.Bmc
     InstallOtherWindowsUpdates("INSTALL_OTHER_WINDOWS_UPDATES"),
     RemoveContent("REMOVE_CONTENT"),
     UnregisterManagedInstance("UNREGISTER_MANAGED_INSTANCE"),
+    Reboot("REBOOT"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

@@ -218,6 +218,21 @@ public final class CreateCustomSoftwareSourceDetails extends CreateSoftwareSourc
             this.__explicitlySet__.add("packages");
             return this;
         }
+        /** The creation type of a software source. */
+        @com.fasterxml.jackson.annotation.JsonProperty("softwareSourceSubType")
+        private SoftwareSourceSubType softwareSourceSubType;
+
+        /**
+         * The creation type of a software source.
+         *
+         * @param softwareSourceSubType the value to set
+         * @return this builder
+         */
+        public Builder softwareSourceSubType(SoftwareSourceSubType softwareSourceSubType) {
+            this.softwareSourceSubType = softwareSourceSubType;
+            this.__explicitlySet__.add("softwareSourceSubType");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -236,7 +251,8 @@ public final class CreateCustomSoftwareSourceDetails extends CreateSoftwareSourc
                             this.isAutoResolveDependencies,
                             this.isCreatedFromPackageList,
                             this.isLatestContentOnly,
-                            this.packages);
+                            this.packages,
+                            this.softwareSourceSubType);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -281,6 +297,9 @@ public final class CreateCustomSoftwareSourceDetails extends CreateSoftwareSourc
             if (model.wasPropertyExplicitlySet("packages")) {
                 this.packages(model.getPackages());
             }
+            if (model.wasPropertyExplicitlySet("softwareSourceSubType")) {
+                this.softwareSourceSubType(model.getSoftwareSourceSubType());
+            }
             return this;
         }
     }
@@ -307,7 +326,8 @@ public final class CreateCustomSoftwareSourceDetails extends CreateSoftwareSourc
             Boolean isAutoResolveDependencies,
             Boolean isCreatedFromPackageList,
             Boolean isLatestContentOnly,
-            java.util.List<String> packages) {
+            java.util.List<String> packages,
+            SoftwareSourceSubType softwareSourceSubType) {
         super(compartmentId, displayName, description, freeformTags, definedTags);
         this.vendorSoftwareSources = vendorSoftwareSources;
         this.customSoftwareSourceFilter = customSoftwareSourceFilter;
@@ -316,6 +336,7 @@ public final class CreateCustomSoftwareSourceDetails extends CreateSoftwareSourc
         this.isCreatedFromPackageList = isCreatedFromPackageList;
         this.isLatestContentOnly = isLatestContentOnly;
         this.packages = packages;
+        this.softwareSourceSubType = softwareSourceSubType;
     }
 
     /** List of vendor software sources. */
@@ -445,6 +466,19 @@ public final class CreateCustomSoftwareSourceDetails extends CreateSoftwareSourc
         return packages;
     }
 
+    /** The creation type of a software source. */
+    @com.fasterxml.jackson.annotation.JsonProperty("softwareSourceSubType")
+    private final SoftwareSourceSubType softwareSourceSubType;
+
+    /**
+     * The creation type of a software source.
+     *
+     * @return the value
+     */
+    public SoftwareSourceSubType getSoftwareSourceSubType() {
+        return softwareSourceSubType;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -470,6 +504,7 @@ public final class CreateCustomSoftwareSourceDetails extends CreateSoftwareSourc
                 .append(String.valueOf(this.isCreatedFromPackageList));
         sb.append(", isLatestContentOnly=").append(String.valueOf(this.isLatestContentOnly));
         sb.append(", packages=").append(String.valueOf(this.packages));
+        sb.append(", softwareSourceSubType=").append(String.valueOf(this.softwareSourceSubType));
         sb.append(")");
         return sb.toString();
     }
@@ -495,6 +530,7 @@ public final class CreateCustomSoftwareSourceDetails extends CreateSoftwareSourc
                         this.isCreatedFromPackageList, other.isCreatedFromPackageList)
                 && java.util.Objects.equals(this.isLatestContentOnly, other.isLatestContentOnly)
                 && java.util.Objects.equals(this.packages, other.packages)
+                && java.util.Objects.equals(this.softwareSourceSubType, other.softwareSourceSubType)
                 && super.equals(other);
     }
 
@@ -533,6 +569,11 @@ public final class CreateCustomSoftwareSourceDetails extends CreateSoftwareSourc
                                 ? 43
                                 : this.isLatestContentOnly.hashCode());
         result = (result * PRIME) + (this.packages == null ? 43 : this.packages.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.softwareSourceSubType == null
+                                ? 43
+                                : this.softwareSourceSubType.hashCode());
         return result;
     }
 }

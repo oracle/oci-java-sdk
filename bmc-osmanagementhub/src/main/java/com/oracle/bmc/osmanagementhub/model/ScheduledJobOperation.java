@@ -29,7 +29,8 @@ public final class ScheduledJobOperation
         "windowsUpdateNames",
         "manageModuleStreamsDetails",
         "switchModuleStreamsDetails",
-        "softwareSourceIds"
+        "softwareSourceIds",
+        "rebootTimeoutInMins"
     })
     public ScheduledJobOperation(
             OperationTypes operationType,
@@ -37,7 +38,8 @@ public final class ScheduledJobOperation
             java.util.List<String> windowsUpdateNames,
             ManageModuleStreamsInScheduledJobDetails manageModuleStreamsDetails,
             ModuleStreamDetails switchModuleStreamsDetails,
-            java.util.List<String> softwareSourceIds) {
+            java.util.List<String> softwareSourceIds,
+            Integer rebootTimeoutInMins) {
         super();
         this.operationType = operationType;
         this.packageNames = packageNames;
@@ -45,6 +47,7 @@ public final class ScheduledJobOperation
         this.manageModuleStreamsDetails = manageModuleStreamsDetails;
         this.switchModuleStreamsDetails = switchModuleStreamsDetails;
         this.softwareSourceIds = softwareSourceIds;
+        this.rebootTimeoutInMins = rebootTimeoutInMins;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -146,6 +149,25 @@ public final class ScheduledJobOperation
             this.__explicitlySet__.add("softwareSourceIds");
             return this;
         }
+        /**
+         * The number of minutes the service waits for the reboot to complete. If the instance
+         * doesn't reboot within the timeout, the service marks the reboot job as failed.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("rebootTimeoutInMins")
+        private Integer rebootTimeoutInMins;
+
+        /**
+         * The number of minutes the service waits for the reboot to complete. If the instance
+         * doesn't reboot within the timeout, the service marks the reboot job as failed.
+         *
+         * @param rebootTimeoutInMins the value to set
+         * @return this builder
+         */
+        public Builder rebootTimeoutInMins(Integer rebootTimeoutInMins) {
+            this.rebootTimeoutInMins = rebootTimeoutInMins;
+            this.__explicitlySet__.add("rebootTimeoutInMins");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -158,7 +180,8 @@ public final class ScheduledJobOperation
                             this.windowsUpdateNames,
                             this.manageModuleStreamsDetails,
                             this.switchModuleStreamsDetails,
-                            this.softwareSourceIds);
+                            this.softwareSourceIds,
+                            this.rebootTimeoutInMins);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -184,6 +207,9 @@ public final class ScheduledJobOperation
             }
             if (model.wasPropertyExplicitlySet("softwareSourceIds")) {
                 this.softwareSourceIds(model.getSoftwareSourceIds());
+            }
+            if (model.wasPropertyExplicitlySet("rebootTimeoutInMins")) {
+                this.rebootTimeoutInMins(model.getRebootTimeoutInMins());
             }
             return this;
         }
@@ -280,6 +306,23 @@ public final class ScheduledJobOperation
         return softwareSourceIds;
     }
 
+    /**
+     * The number of minutes the service waits for the reboot to complete. If the instance doesn't
+     * reboot within the timeout, the service marks the reboot job as failed.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("rebootTimeoutInMins")
+    private final Integer rebootTimeoutInMins;
+
+    /**
+     * The number of minutes the service waits for the reboot to complete. If the instance doesn't
+     * reboot within the timeout, the service marks the reboot job as failed.
+     *
+     * @return the value
+     */
+    public Integer getRebootTimeoutInMins() {
+        return rebootTimeoutInMins;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -303,6 +346,7 @@ public final class ScheduledJobOperation
         sb.append(", switchModuleStreamsDetails=")
                 .append(String.valueOf(this.switchModuleStreamsDetails));
         sb.append(", softwareSourceIds=").append(String.valueOf(this.softwareSourceIds));
+        sb.append(", rebootTimeoutInMins=").append(String.valueOf(this.rebootTimeoutInMins));
         sb.append(")");
         return sb.toString();
     }
@@ -325,6 +369,7 @@ public final class ScheduledJobOperation
                 && java.util.Objects.equals(
                         this.switchModuleStreamsDetails, other.switchModuleStreamsDetails)
                 && java.util.Objects.equals(this.softwareSourceIds, other.softwareSourceIds)
+                && java.util.Objects.equals(this.rebootTimeoutInMins, other.rebootTimeoutInMins)
                 && super.equals(other);
     }
 
@@ -354,6 +399,11 @@ public final class ScheduledJobOperation
         result =
                 (result * PRIME)
                         + (this.softwareSourceIds == null ? 43 : this.softwareSourceIds.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.rebootTimeoutInMins == null
+                                ? 43
+                                : this.rebootTimeoutInMins.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

@@ -33,6 +33,7 @@ public final class Pipeline extends com.oracle.bmc.http.client.internal.Explicit
         "configurationDetails",
         "logConfigurationDetails",
         "infrastructureConfigurationDetails",
+        "storageMountConfigurationDetailsList",
         "stepDetails",
         "lifecycleState",
         "lifecycleDetails",
@@ -52,6 +53,7 @@ public final class Pipeline extends com.oracle.bmc.http.client.internal.Explicit
             PipelineConfigurationDetails configurationDetails,
             PipelineLogConfigurationDetails logConfigurationDetails,
             PipelineInfrastructureConfigurationDetails infrastructureConfigurationDetails,
+            java.util.List<StorageMountConfigurationDetails> storageMountConfigurationDetailsList,
             java.util.List<PipelineStepDetails> stepDetails,
             PipelineLifecycleState lifecycleState,
             String lifecycleDetails,
@@ -70,6 +72,7 @@ public final class Pipeline extends com.oracle.bmc.http.client.internal.Explicit
         this.configurationDetails = configurationDetails;
         this.logConfigurationDetails = logConfigurationDetails;
         this.infrastructureConfigurationDetails = infrastructureConfigurationDetails;
+        this.storageMountConfigurationDetailsList = storageMountConfigurationDetailsList;
         this.stepDetails = stepDetails;
         this.lifecycleState = lifecycleState;
         this.lifecycleDetails = lifecycleDetails;
@@ -253,6 +256,24 @@ public final class Pipeline extends com.oracle.bmc.http.client.internal.Explicit
             this.__explicitlySet__.add("infrastructureConfigurationDetails");
             return this;
         }
+        /** The storage mount details to mount to the instance running the pipeline step. */
+        @com.fasterxml.jackson.annotation.JsonProperty("storageMountConfigurationDetailsList")
+        private java.util.List<StorageMountConfigurationDetails>
+                storageMountConfigurationDetailsList;
+
+        /**
+         * The storage mount details to mount to the instance running the pipeline step.
+         *
+         * @param storageMountConfigurationDetailsList the value to set
+         * @return this builder
+         */
+        public Builder storageMountConfigurationDetailsList(
+                java.util.List<StorageMountConfigurationDetails>
+                        storageMountConfigurationDetailsList) {
+            this.storageMountConfigurationDetailsList = storageMountConfigurationDetailsList;
+            this.__explicitlySet__.add("storageMountConfigurationDetailsList");
+            return this;
+        }
         /** Array of step details for each step. */
         @com.fasterxml.jackson.annotation.JsonProperty("stepDetails")
         private java.util.List<PipelineStepDetails> stepDetails;
@@ -384,6 +405,7 @@ public final class Pipeline extends com.oracle.bmc.http.client.internal.Explicit
                             this.configurationDetails,
                             this.logConfigurationDetails,
                             this.infrastructureConfigurationDetails,
+                            this.storageMountConfigurationDetailsList,
                             this.stepDetails,
                             this.lifecycleState,
                             this.lifecycleDetails,
@@ -431,6 +453,10 @@ public final class Pipeline extends com.oracle.bmc.http.client.internal.Explicit
             if (model.wasPropertyExplicitlySet("infrastructureConfigurationDetails")) {
                 this.infrastructureConfigurationDetails(
                         model.getInfrastructureConfigurationDetails());
+            }
+            if (model.wasPropertyExplicitlySet("storageMountConfigurationDetailsList")) {
+                this.storageMountConfigurationDetailsList(
+                        model.getStorageMountConfigurationDetailsList());
             }
             if (model.wasPropertyExplicitlySet("stepDetails")) {
                 this.stepDetails(model.getStepDetails());
@@ -612,6 +638,21 @@ public final class Pipeline extends com.oracle.bmc.http.client.internal.Explicit
         return infrastructureConfigurationDetails;
     }
 
+    /** The storage mount details to mount to the instance running the pipeline step. */
+    @com.fasterxml.jackson.annotation.JsonProperty("storageMountConfigurationDetailsList")
+    private final java.util.List<StorageMountConfigurationDetails>
+            storageMountConfigurationDetailsList;
+
+    /**
+     * The storage mount details to mount to the instance running the pipeline step.
+     *
+     * @return the value
+     */
+    public java.util.List<StorageMountConfigurationDetails>
+            getStorageMountConfigurationDetailsList() {
+        return storageMountConfigurationDetailsList;
+    }
+
     /** Array of step details for each step. */
     @com.fasterxml.jackson.annotation.JsonProperty("stepDetails")
     private final java.util.List<PipelineStepDetails> stepDetails;
@@ -740,6 +781,8 @@ public final class Pipeline extends com.oracle.bmc.http.client.internal.Explicit
                 .append(String.valueOf(this.logConfigurationDetails));
         sb.append(", infrastructureConfigurationDetails=")
                 .append(String.valueOf(this.infrastructureConfigurationDetails));
+        sb.append(", storageMountConfigurationDetailsList=")
+                .append(String.valueOf(this.storageMountConfigurationDetailsList));
         sb.append(", stepDetails=").append(String.valueOf(this.stepDetails));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
@@ -774,6 +817,9 @@ public final class Pipeline extends com.oracle.bmc.http.client.internal.Explicit
                 && java.util.Objects.equals(
                         this.infrastructureConfigurationDetails,
                         other.infrastructureConfigurationDetails)
+                && java.util.Objects.equals(
+                        this.storageMountConfigurationDetailsList,
+                        other.storageMountConfigurationDetailsList)
                 && java.util.Objects.equals(this.stepDetails, other.stepDetails)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
@@ -812,6 +858,11 @@ public final class Pipeline extends com.oracle.bmc.http.client.internal.Explicit
                         + (this.infrastructureConfigurationDetails == null
                                 ? 43
                                 : this.infrastructureConfigurationDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.storageMountConfigurationDetailsList == null
+                                ? 43
+                                : this.storageMountConfigurationDetailsList.hashCode());
         result = (result * PRIME) + (this.stepDetails == null ? 43 : this.stepDetails.hashCode());
         result =
                 (result * PRIME)

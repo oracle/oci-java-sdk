@@ -3,6 +3,24 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 3.58.0 - 2025-02-25
+### Added 
+- Support for Database Lifecycle Management service 
+- Support for Valkey cluster creation and Valkey migration in the OCI Cache service 
+- Support for Dataflow Steps and Storage Mounts in Pipelines in the Data Science service 
+- Support for Bring Your Own DKIM Keys in the Email Delivery service 
+- Support for OpenId Connect Multi Authentication command in the OCI Kubernetes Engine service 
+- Support for security attributes for Load Balancer resource in the Load Balancer service 
+- Support for reservation of private IP addresses in the Networking service 
+- Support for additional configuration parameters in the HeatWave service 
+- Support for private and 3rd party software repositories, and rebooting of instances in the OS Management service    
+
+### Breaking Changes 
+- Method `public java.util.Map getZprTags()` has been removed from models `com.oracle.bmc.loadbalancer.model.CreateLoadBalancerDetails`, `com.oracle.bmc.loadbalancer.model.LoadBalancer` and `com.oracle.bmc.loadbalancer.model.UpdateLoadBalancerDetails` in the Load Balancer service 
+- Class `com.oracle.bmc.containerinstances.model.ContainerCommandHealthCheck` has been removed from the Container Instances service 
+- Class `com.oracle.bmc.containerinstances.model.CreateContainerCommandHealthCheckDetails` has been removed from the Container Instances service 
+- Field `Command` has been removed from the model `com.oracle.bmc.containerinstances.model.ContainerHealthCheckType` in the the Container Instances service
+
 ## 3.57.2 - 2025-02-18
 ### Added 
 - Support for Customer Onboarding Success(COS) in the Java Management service 

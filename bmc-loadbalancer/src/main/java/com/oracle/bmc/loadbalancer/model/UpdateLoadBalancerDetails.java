@@ -33,7 +33,7 @@ public final class UpdateLoadBalancerDetails
         "requestIdHeader",
         "freeformTags",
         "definedTags",
-        "zprTags"
+        "securityAttributes"
     })
     public UpdateLoadBalancerDetails(
             String displayName,
@@ -42,7 +42,7 @@ public final class UpdateLoadBalancerDetails
             String requestIdHeader,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
-            java.util.Map<String, java.util.Map<String, Object>> zprTags) {
+            java.util.Map<String, java.util.Map<String, Object>> securityAttributes) {
         super();
         this.displayName = displayName;
         this.isDeleteProtectionEnabled = isDeleteProtectionEnabled;
@@ -50,7 +50,7 @@ public final class UpdateLoadBalancerDetails
         this.requestIdHeader = requestIdHeader;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
-        this.zprTags = zprTags;
+        this.securityAttributes = securityAttributes;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -257,8 +257,8 @@ public final class UpdateLoadBalancerDetails
          * <p>Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit",
          * "usagetype" : "zpr"}}}}
          */
-        @com.fasterxml.jackson.annotation.JsonProperty("zprTags")
-        private java.util.Map<String, java.util.Map<String, Object>> zprTags;
+        @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+        private java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
 
         /**
          * Extended Defined tags for ZPR for this resource. Each key is predefined and scoped to a
@@ -267,12 +267,13 @@ public final class UpdateLoadBalancerDetails
          * <p>Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit",
          * "usagetype" : "zpr"}}}}
          *
-         * @param zprTags the value to set
+         * @param securityAttributes the value to set
          * @return this builder
          */
-        public Builder zprTags(java.util.Map<String, java.util.Map<String, Object>> zprTags) {
-            this.zprTags = zprTags;
-            this.__explicitlySet__.add("zprTags");
+        public Builder securityAttributes(
+                java.util.Map<String, java.util.Map<String, Object>> securityAttributes) {
+            this.securityAttributes = securityAttributes;
+            this.__explicitlySet__.add("securityAttributes");
             return this;
         }
 
@@ -288,7 +289,7 @@ public final class UpdateLoadBalancerDetails
                             this.requestIdHeader,
                             this.freeformTags,
                             this.definedTags,
-                            this.zprTags);
+                            this.securityAttributes);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -315,8 +316,8 @@ public final class UpdateLoadBalancerDetails
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
             }
-            if (model.wasPropertyExplicitlySet("zprTags")) {
-                this.zprTags(model.getZprTags());
+            if (model.wasPropertyExplicitlySet("securityAttributes")) {
+                this.securityAttributes(model.getSecurityAttributes());
             }
             return this;
         }
@@ -516,8 +517,8 @@ public final class UpdateLoadBalancerDetails
      * <p>Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit",
      * "usagetype" : "zpr"}}}}
      */
-    @com.fasterxml.jackson.annotation.JsonProperty("zprTags")
-    private final java.util.Map<String, java.util.Map<String, Object>> zprTags;
+    @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+    private final java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
 
     /**
      * Extended Defined tags for ZPR for this resource. Each key is predefined and scoped to a
@@ -528,8 +529,8 @@ public final class UpdateLoadBalancerDetails
      *
      * @return the value
      */
-    public java.util.Map<String, java.util.Map<String, Object>> getZprTags() {
-        return zprTags;
+    public java.util.Map<String, java.util.Map<String, Object>> getSecurityAttributes() {
+        return securityAttributes;
     }
 
     @Override
@@ -554,7 +555,7 @@ public final class UpdateLoadBalancerDetails
         sb.append(", requestIdHeader=").append(String.valueOf(this.requestIdHeader));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
-        sb.append(", zprTags=").append(String.valueOf(this.zprTags));
+        sb.append(", securityAttributes=").append(String.valueOf(this.securityAttributes));
         sb.append(")");
         return sb.toString();
     }
@@ -576,7 +577,7 @@ public final class UpdateLoadBalancerDetails
                 && java.util.Objects.equals(this.requestIdHeader, other.requestIdHeader)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
-                && java.util.Objects.equals(this.zprTags, other.zprTags)
+                && java.util.Objects.equals(this.securityAttributes, other.securityAttributes)
                 && super.equals(other);
     }
 
@@ -600,7 +601,11 @@ public final class UpdateLoadBalancerDetails
                         + (this.requestIdHeader == null ? 43 : this.requestIdHeader.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
-        result = (result * PRIME) + (this.zprTags == null ? 43 : this.zprTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.securityAttributes == null
+                                ? 43
+                                : this.securityAttributes.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }
