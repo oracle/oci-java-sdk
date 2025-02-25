@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
@@ -75,13 +75,16 @@ public final class UpdateAutonomousDatabaseDetails
         "isMtlsConnectionRequired",
         "resourcePoolLeaderId",
         "resourcePoolSummary",
+        "autonomousMaintenanceScheduleType",
+        "isBackupRetentionLocked",
         "scheduledOperations",
         "isAutoScalingForStorageEnabled",
         "databaseEdition",
         "dbToolsDetails",
         "secretId",
         "secretVersionNumber",
-        "encryptionKey"
+        "encryptionKey",
+        "isDisconnectPeer"
     })
     public UpdateAutonomousDatabaseDetails(
             Integer backupRetentionPeriodInDays,
@@ -129,13 +132,16 @@ public final class UpdateAutonomousDatabaseDetails
             Boolean isMtlsConnectionRequired,
             String resourcePoolLeaderId,
             ResourcePoolSummary resourcePoolSummary,
+            AutonomousMaintenanceScheduleType autonomousMaintenanceScheduleType,
+            Boolean isBackupRetentionLocked,
             java.util.List<ScheduledOperationDetails> scheduledOperations,
             Boolean isAutoScalingForStorageEnabled,
             AutonomousDatabaseSummary.DatabaseEdition databaseEdition,
             java.util.List<DatabaseTool> dbToolsDetails,
             String secretId,
             Integer secretVersionNumber,
-            AutonomousDatabaseEncryptionKeyDetails encryptionKey) {
+            AutonomousDatabaseEncryptionKeyDetails encryptionKey,
+            Boolean isDisconnectPeer) {
         super();
         this.backupRetentionPeriodInDays = backupRetentionPeriodInDays;
         this.computeModel = computeModel;
@@ -182,6 +188,8 @@ public final class UpdateAutonomousDatabaseDetails
         this.isMtlsConnectionRequired = isMtlsConnectionRequired;
         this.resourcePoolLeaderId = resourcePoolLeaderId;
         this.resourcePoolSummary = resourcePoolSummary;
+        this.autonomousMaintenanceScheduleType = autonomousMaintenanceScheduleType;
+        this.isBackupRetentionLocked = isBackupRetentionLocked;
         this.scheduledOperations = scheduledOperations;
         this.isAutoScalingForStorageEnabled = isAutoScalingForStorageEnabled;
         this.databaseEdition = databaseEdition;
@@ -189,6 +197,7 @@ public final class UpdateAutonomousDatabaseDetails
         this.secretId = secretId;
         this.secretVersionNumber = secretVersionNumber;
         this.encryptionKey = encryptionKey;
+        this.isDisconnectPeer = isDisconnectPeer;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -522,7 +531,7 @@ public final class UpdateAutonomousDatabaseDetails
         }
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * <p>
          * Example: {@code {"Department": "Finance"}}
          *
@@ -532,7 +541,7 @@ public final class UpdateAutonomousDatabaseDetails
 
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * <p>
          * Example: {@code {"Department": "Finance"}}
          *
@@ -546,7 +555,7 @@ public final class UpdateAutonomousDatabaseDetails
         }
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -554,7 +563,7 @@ public final class UpdateAutonomousDatabaseDetails
 
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * @param definedTags the value to set
          * @return this builder
@@ -567,7 +576,7 @@ public final class UpdateAutonomousDatabaseDetails
         }
         /**
          * Security Attributes for this resource. Each key is predefined and scoped to a namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
          *
          **/
@@ -576,7 +585,7 @@ public final class UpdateAutonomousDatabaseDetails
 
         /**
          * Security Attributes for this resource. Each key is predefined and scoped to a namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
          *
          * @param securityAttributes the value to set
@@ -1003,7 +1012,7 @@ public final class UpdateAutonomousDatabaseDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the subnet the resource is associated with.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the resource is associated with.
          * <p>
          **Subnet Restrictions:**
          * - For bare metal DB systems and for single node virtual machine DB systems, do not use a subnet that overlaps with 192.168.16.16/28.
@@ -1019,7 +1028,7 @@ public final class UpdateAutonomousDatabaseDetails
         private String subnetId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the subnet the resource is associated with.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the resource is associated with.
          * <p>
          **Subnet Restrictions:**
          * - For bare metal DB systems and for single node virtual machine DB systems, do not use a subnet that overlaps with 192.168.16.16/28.
@@ -1083,7 +1092,7 @@ public final class UpdateAutonomousDatabaseDetails
             return this;
         }
         /**
-         * The list of [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm).
+         * The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
          * **NsgIds restrictions:**
          * - A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
          *
@@ -1092,7 +1101,7 @@ public final class UpdateAutonomousDatabaseDetails
         private java.util.List<String> nsgIds;
 
         /**
-         * The list of [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm).
+         * The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
          * **NsgIds restrictions:**
          * - A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
          *
@@ -1213,13 +1222,13 @@ public final class UpdateAutonomousDatabaseDetails
             return this;
         }
         /**
-         * The unique identifier for leader autonomous database OCID [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * The unique identifier for leader autonomous database OCID [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourcePoolLeaderId")
         private String resourcePoolLeaderId;
 
         /**
-         * The unique identifier for leader autonomous database OCID [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * The unique identifier for leader autonomous database OCID [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          * @param resourcePoolLeaderId the value to set
          * @return this builder
          **/
@@ -1235,6 +1244,43 @@ public final class UpdateAutonomousDatabaseDetails
         public Builder resourcePoolSummary(ResourcePoolSummary resourcePoolSummary) {
             this.resourcePoolSummary = resourcePoolSummary;
             this.__explicitlySet__.add("resourcePoolSummary");
+            return this;
+        }
+        /**
+         * The maintenance schedule type of the Autonomous Database Serverless. An EARLY maintenance schedule
+         * follows a schedule applying patches prior to the REGULAR schedule. A REGULAR maintenance schedule follows the normal cycle
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("autonomousMaintenanceScheduleType")
+        private AutonomousMaintenanceScheduleType autonomousMaintenanceScheduleType;
+
+        /**
+         * The maintenance schedule type of the Autonomous Database Serverless. An EARLY maintenance schedule
+         * follows a schedule applying patches prior to the REGULAR schedule. A REGULAR maintenance schedule follows the normal cycle
+         *
+         * @param autonomousMaintenanceScheduleType the value to set
+         * @return this builder
+         **/
+        public Builder autonomousMaintenanceScheduleType(
+                AutonomousMaintenanceScheduleType autonomousMaintenanceScheduleType) {
+            this.autonomousMaintenanceScheduleType = autonomousMaintenanceScheduleType;
+            this.__explicitlySet__.add("autonomousMaintenanceScheduleType");
+            return this;
+        }
+        /**
+         * True if the Autonomous Database is backup retention locked.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isBackupRetentionLocked")
+        private Boolean isBackupRetentionLocked;
+
+        /**
+         * True if the Autonomous Database is backup retention locked.
+         * @param isBackupRetentionLocked the value to set
+         * @return this builder
+         **/
+        public Builder isBackupRetentionLocked(Boolean isBackupRetentionLocked) {
+            this.isBackupRetentionLocked = isBackupRetentionLocked;
+            this.__explicitlySet__.add("isBackupRetentionLocked");
             return this;
         }
         /**
@@ -1363,6 +1409,28 @@ public final class UpdateAutonomousDatabaseDetails
             this.__explicitlySet__.add("encryptionKey");
             return this;
         }
+        /**
+         * If true, this will disconnect the Autonomous Database from its peer and the Autonomous Database can work permanently as a standalone database.
+         * <p>
+         * To disconnect a cross region standby, please also provide the OCID of the standby database in the {@code peerDbId} parameter.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isDisconnectPeer")
+        private Boolean isDisconnectPeer;
+
+        /**
+         * If true, this will disconnect the Autonomous Database from its peer and the Autonomous Database can work permanently as a standalone database.
+         * <p>
+         * To disconnect a cross region standby, please also provide the OCID of the standby database in the {@code peerDbId} parameter.
+         *
+         * @param isDisconnectPeer the value to set
+         * @return this builder
+         **/
+        public Builder isDisconnectPeer(Boolean isDisconnectPeer) {
+            this.isDisconnectPeer = isDisconnectPeer;
+            this.__explicitlySet__.add("isDisconnectPeer");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -1415,13 +1483,16 @@ public final class UpdateAutonomousDatabaseDetails
                             this.isMtlsConnectionRequired,
                             this.resourcePoolLeaderId,
                             this.resourcePoolSummary,
+                            this.autonomousMaintenanceScheduleType,
+                            this.isBackupRetentionLocked,
                             this.scheduledOperations,
                             this.isAutoScalingForStorageEnabled,
                             this.databaseEdition,
                             this.dbToolsDetails,
                             this.secretId,
                             this.secretVersionNumber,
-                            this.encryptionKey);
+                            this.encryptionKey,
+                            this.isDisconnectPeer);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -1566,6 +1637,13 @@ public final class UpdateAutonomousDatabaseDetails
             if (model.wasPropertyExplicitlySet("resourcePoolSummary")) {
                 this.resourcePoolSummary(model.getResourcePoolSummary());
             }
+            if (model.wasPropertyExplicitlySet("autonomousMaintenanceScheduleType")) {
+                this.autonomousMaintenanceScheduleType(
+                        model.getAutonomousMaintenanceScheduleType());
+            }
+            if (model.wasPropertyExplicitlySet("isBackupRetentionLocked")) {
+                this.isBackupRetentionLocked(model.getIsBackupRetentionLocked());
+            }
             if (model.wasPropertyExplicitlySet("scheduledOperations")) {
                 this.scheduledOperations(model.getScheduledOperations());
             }
@@ -1586,6 +1664,9 @@ public final class UpdateAutonomousDatabaseDetails
             }
             if (model.wasPropertyExplicitlySet("encryptionKey")) {
                 this.encryptionKey(model.getEncryptionKey());
+            }
+            if (model.wasPropertyExplicitlySet("isDisconnectPeer")) {
+                this.isDisconnectPeer(model.getIsDisconnectPeer());
             }
             return this;
         }
@@ -1934,7 +2015,7 @@ public final class UpdateAutonomousDatabaseDetails
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
      * Example: {@code {"Department": "Finance"}}
      *
@@ -1944,7 +2025,7 @@ public final class UpdateAutonomousDatabaseDetails
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
      * Example: {@code {"Department": "Finance"}}
      *
@@ -1956,7 +2037,7 @@ public final class UpdateAutonomousDatabaseDetails
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -1964,7 +2045,7 @@ public final class UpdateAutonomousDatabaseDetails
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * @return the value
      **/
@@ -1974,7 +2055,7 @@ public final class UpdateAutonomousDatabaseDetails
 
     /**
      * Security Attributes for this resource. Each key is predefined and scoped to a namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
      *
      **/
@@ -1983,7 +2064,7 @@ public final class UpdateAutonomousDatabaseDetails
 
     /**
      * Security Attributes for this resource. Each key is predefined and scoped to a namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
      *
      * @return the value
@@ -2572,7 +2653,7 @@ public final class UpdateAutonomousDatabaseDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the subnet the resource is associated with.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the resource is associated with.
      * <p>
      **Subnet Restrictions:**
      * - For bare metal DB systems and for single node virtual machine DB systems, do not use a subnet that overlaps with 192.168.16.16/28.
@@ -2588,7 +2669,7 @@ public final class UpdateAutonomousDatabaseDetails
     private final String subnetId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the subnet the resource is associated with.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the resource is associated with.
      * <p>
      **Subnet Restrictions:**
      * - For bare metal DB systems and for single node virtual machine DB systems, do not use a subnet that overlaps with 192.168.16.16/28.
@@ -2646,7 +2727,7 @@ public final class UpdateAutonomousDatabaseDetails
     }
 
     /**
-     * The list of [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm).
+     * The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
      * **NsgIds restrictions:**
      * - A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
      *
@@ -2655,7 +2736,7 @@ public final class UpdateAutonomousDatabaseDetails
     private final java.util.List<String> nsgIds;
 
     /**
-     * The list of [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm).
+     * The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
      * **NsgIds restrictions:**
      * - A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
      *
@@ -2764,13 +2845,13 @@ public final class UpdateAutonomousDatabaseDetails
     }
 
     /**
-     * The unique identifier for leader autonomous database OCID [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * The unique identifier for leader autonomous database OCID [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourcePoolLeaderId")
     private final String resourcePoolLeaderId;
 
     /**
-     * The unique identifier for leader autonomous database OCID [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * The unique identifier for leader autonomous database OCID [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * @return the value
      **/
     public String getResourcePoolLeaderId() {
@@ -2782,6 +2863,75 @@ public final class UpdateAutonomousDatabaseDetails
 
     public ResourcePoolSummary getResourcePoolSummary() {
         return resourcePoolSummary;
+    }
+
+    /**
+     * The maintenance schedule type of the Autonomous Database Serverless. An EARLY maintenance schedule
+     * follows a schedule applying patches prior to the REGULAR schedule. A REGULAR maintenance schedule follows the normal cycle
+     *
+     **/
+    public enum AutonomousMaintenanceScheduleType {
+        Early("EARLY"),
+        Regular("REGULAR"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, AutonomousMaintenanceScheduleType> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (AutonomousMaintenanceScheduleType v : AutonomousMaintenanceScheduleType.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        AutonomousMaintenanceScheduleType(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static AutonomousMaintenanceScheduleType create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid AutonomousMaintenanceScheduleType: " + key);
+        }
+    };
+    /**
+     * The maintenance schedule type of the Autonomous Database Serverless. An EARLY maintenance schedule
+     * follows a schedule applying patches prior to the REGULAR schedule. A REGULAR maintenance schedule follows the normal cycle
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("autonomousMaintenanceScheduleType")
+    private final AutonomousMaintenanceScheduleType autonomousMaintenanceScheduleType;
+
+    /**
+     * The maintenance schedule type of the Autonomous Database Serverless. An EARLY maintenance schedule
+     * follows a schedule applying patches prior to the REGULAR schedule. A REGULAR maintenance schedule follows the normal cycle
+     *
+     * @return the value
+     **/
+    public AutonomousMaintenanceScheduleType getAutonomousMaintenanceScheduleType() {
+        return autonomousMaintenanceScheduleType;
+    }
+
+    /**
+     * True if the Autonomous Database is backup retention locked.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isBackupRetentionLocked")
+    private final Boolean isBackupRetentionLocked;
+
+    /**
+     * True if the Autonomous Database is backup retention locked.
+     * @return the value
+     **/
+    public Boolean getIsBackupRetentionLocked() {
+        return isBackupRetentionLocked;
     }
 
     /**
@@ -2895,6 +3045,26 @@ public final class UpdateAutonomousDatabaseDetails
         return encryptionKey;
     }
 
+    /**
+     * If true, this will disconnect the Autonomous Database from its peer and the Autonomous Database can work permanently as a standalone database.
+     * <p>
+     * To disconnect a cross region standby, please also provide the OCID of the standby database in the {@code peerDbId} parameter.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isDisconnectPeer")
+    private final Boolean isDisconnectPeer;
+
+    /**
+     * If true, this will disconnect the Autonomous Database from its peer and the Autonomous Database can work permanently as a standalone database.
+     * <p>
+     * To disconnect a cross region standby, please also provide the OCID of the standby database in the {@code peerDbId} parameter.
+     *
+     * @return the value
+     **/
+    public Boolean getIsDisconnectPeer() {
+        return isDisconnectPeer;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -2961,6 +3131,10 @@ public final class UpdateAutonomousDatabaseDetails
                 .append(String.valueOf(this.isMtlsConnectionRequired));
         sb.append(", resourcePoolLeaderId=").append(String.valueOf(this.resourcePoolLeaderId));
         sb.append(", resourcePoolSummary=").append(String.valueOf(this.resourcePoolSummary));
+        sb.append(", autonomousMaintenanceScheduleType=")
+                .append(String.valueOf(this.autonomousMaintenanceScheduleType));
+        sb.append(", isBackupRetentionLocked=")
+                .append(String.valueOf(this.isBackupRetentionLocked));
         sb.append(", scheduledOperations=").append(String.valueOf(this.scheduledOperations));
         sb.append(", isAutoScalingForStorageEnabled=")
                 .append(String.valueOf(this.isAutoScalingForStorageEnabled));
@@ -2969,6 +3143,7 @@ public final class UpdateAutonomousDatabaseDetails
         sb.append(", secretId=").append(String.valueOf(this.secretId));
         sb.append(", secretVersionNumber=").append(String.valueOf(this.secretVersionNumber));
         sb.append(", encryptionKey=").append(String.valueOf(this.encryptionKey));
+        sb.append(", isDisconnectPeer=").append(String.valueOf(this.isDisconnectPeer));
         sb.append(")");
         return sb.toString();
     }
@@ -3039,6 +3214,11 @@ public final class UpdateAutonomousDatabaseDetails
                         this.isMtlsConnectionRequired, other.isMtlsConnectionRequired)
                 && java.util.Objects.equals(this.resourcePoolLeaderId, other.resourcePoolLeaderId)
                 && java.util.Objects.equals(this.resourcePoolSummary, other.resourcePoolSummary)
+                && java.util.Objects.equals(
+                        this.autonomousMaintenanceScheduleType,
+                        other.autonomousMaintenanceScheduleType)
+                && java.util.Objects.equals(
+                        this.isBackupRetentionLocked, other.isBackupRetentionLocked)
                 && java.util.Objects.equals(this.scheduledOperations, other.scheduledOperations)
                 && java.util.Objects.equals(
                         this.isAutoScalingForStorageEnabled, other.isAutoScalingForStorageEnabled)
@@ -3047,6 +3227,7 @@ public final class UpdateAutonomousDatabaseDetails
                 && java.util.Objects.equals(this.secretId, other.secretId)
                 && java.util.Objects.equals(this.secretVersionNumber, other.secretVersionNumber)
                 && java.util.Objects.equals(this.encryptionKey, other.encryptionKey)
+                && java.util.Objects.equals(this.isDisconnectPeer, other.isDisconnectPeer)
                 && super.equals(other);
     }
 
@@ -3201,6 +3382,16 @@ public final class UpdateAutonomousDatabaseDetails
                                 : this.resourcePoolSummary.hashCode());
         result =
                 (result * PRIME)
+                        + (this.autonomousMaintenanceScheduleType == null
+                                ? 43
+                                : this.autonomousMaintenanceScheduleType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isBackupRetentionLocked == null
+                                ? 43
+                                : this.isBackupRetentionLocked.hashCode());
+        result =
+                (result * PRIME)
                         + (this.scheduledOperations == null
                                 ? 43
                                 : this.scheduledOperations.hashCode());
@@ -3224,6 +3415,9 @@ public final class UpdateAutonomousDatabaseDetails
         result =
                 (result * PRIME)
                         + (this.encryptionKey == null ? 43 : this.encryptionKey.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isDisconnectPeer == null ? 43 : this.isDisconnectPeer.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

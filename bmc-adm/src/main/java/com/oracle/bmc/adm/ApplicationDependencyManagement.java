@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.adm;
@@ -8,7 +8,7 @@ import com.oracle.bmc.adm.requests.*;
 import com.oracle.bmc.adm.responses.*;
 
 /**
- * Use the Application Dependency Management API to create knowledge bases and vulnerability audits.  For more information, see [ADM](https://docs.cloud.oracle.com/Content/application-dependency-management/home.htm).
+ * Use the Application Dependency Management API to create knowledge bases and vulnerability audits.  For more information, see [ADM](https://docs.oracle.com/iaas/Content/application-dependency-management/home.htm).
  * This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by default if no circuit breaker configuration is defined by the user.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220421")
@@ -67,7 +67,7 @@ public interface ApplicationDependencyManagement extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/adm/ActivateRemediationRecipeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ActivateRemediationRecipe API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/adm/ActivateRemediationRecipeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ActivateRemediationRecipe API.
      */
     ActivateRemediationRecipeResponse activateRemediationRecipe(
             ActivateRemediationRecipeRequest request);
@@ -80,7 +80,7 @@ public interface ApplicationDependencyManagement extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/adm/CancelRemediationRunExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CancelRemediationRun API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/adm/CancelRemediationRunExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CancelRemediationRun API.
      */
     CancelRemediationRunResponse cancelRemediationRun(CancelRemediationRunRequest request);
 
@@ -92,7 +92,7 @@ public interface ApplicationDependencyManagement extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/adm/CancelWorkRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CancelWorkRequest API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/adm/CancelWorkRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CancelWorkRequest API.
      */
     CancelWorkRequestResponse cancelWorkRequest(CancelWorkRequestRequest request);
 
@@ -104,7 +104,7 @@ public interface ApplicationDependencyManagement extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/adm/ChangeKnowledgeBaseCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeKnowledgeBaseCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/adm/ChangeKnowledgeBaseCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeKnowledgeBaseCompartment API.
      */
     ChangeKnowledgeBaseCompartmentResponse changeKnowledgeBaseCompartment(
             ChangeKnowledgeBaseCompartmentRequest request);
@@ -117,7 +117,7 @@ public interface ApplicationDependencyManagement extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/adm/ChangeRemediationRecipeCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeRemediationRecipeCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/adm/ChangeRemediationRecipeCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeRemediationRecipeCompartment API.
      */
     ChangeRemediationRecipeCompartmentResponse changeRemediationRecipeCompartment(
             ChangeRemediationRecipeCompartmentRequest request);
@@ -130,7 +130,7 @@ public interface ApplicationDependencyManagement extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/adm/ChangeRemediationRunCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeRemediationRunCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/adm/ChangeRemediationRunCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeRemediationRunCompartment API.
      */
     ChangeRemediationRunCompartmentResponse changeRemediationRunCompartment(
             ChangeRemediationRunCompartmentRequest request);
@@ -143,7 +143,7 @@ public interface ApplicationDependencyManagement extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/adm/ChangeVulnerabilityAuditCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeVulnerabilityAuditCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/adm/ChangeVulnerabilityAuditCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeVulnerabilityAuditCompartment API.
      */
     ChangeVulnerabilityAuditCompartmentResponse changeVulnerabilityAuditCompartment(
             ChangeVulnerabilityAuditCompartmentRequest request);
@@ -156,7 +156,7 @@ public interface ApplicationDependencyManagement extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/adm/CreateKnowledgeBaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateKnowledgeBase API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/adm/CreateKnowledgeBaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateKnowledgeBase API.
      */
     CreateKnowledgeBaseResponse createKnowledgeBase(CreateKnowledgeBaseRequest request);
 
@@ -168,7 +168,7 @@ public interface ApplicationDependencyManagement extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/adm/CreateRemediationRecipeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateRemediationRecipe API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/adm/CreateRemediationRecipeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateRemediationRecipe API.
      */
     CreateRemediationRecipeResponse createRemediationRecipe(CreateRemediationRecipeRequest request);
 
@@ -180,7 +180,7 @@ public interface ApplicationDependencyManagement extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/adm/CreateRemediationRunExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateRemediationRun API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/adm/CreateRemediationRunExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateRemediationRun API.
      */
     CreateRemediationRunResponse createRemediationRun(CreateRemediationRunRequest request);
 
@@ -192,7 +192,7 @@ public interface ApplicationDependencyManagement extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/adm/CreateVulnerabilityAuditExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateVulnerabilityAudit API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/adm/CreateVulnerabilityAuditExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateVulnerabilityAudit API.
      */
     CreateVulnerabilityAuditResponse createVulnerabilityAudit(
             CreateVulnerabilityAuditRequest request);
@@ -205,7 +205,7 @@ public interface ApplicationDependencyManagement extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/adm/DeactivateRemediationRecipeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeactivateRemediationRecipe API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/adm/DeactivateRemediationRecipeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeactivateRemediationRecipe API.
      */
     DeactivateRemediationRecipeResponse deactivateRemediationRecipe(
             DeactivateRemediationRecipeRequest request);
@@ -218,7 +218,7 @@ public interface ApplicationDependencyManagement extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/adm/DeleteKnowledgeBaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteKnowledgeBase API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/adm/DeleteKnowledgeBaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteKnowledgeBase API.
      */
     DeleteKnowledgeBaseResponse deleteKnowledgeBase(DeleteKnowledgeBaseRequest request);
 
@@ -230,7 +230,7 @@ public interface ApplicationDependencyManagement extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/adm/DeleteRemediationRecipeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteRemediationRecipe API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/adm/DeleteRemediationRecipeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteRemediationRecipe API.
      */
     DeleteRemediationRecipeResponse deleteRemediationRecipe(DeleteRemediationRecipeRequest request);
 
@@ -242,7 +242,7 @@ public interface ApplicationDependencyManagement extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/adm/DeleteRemediationRunExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteRemediationRun API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/adm/DeleteRemediationRunExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteRemediationRun API.
      */
     DeleteRemediationRunResponse deleteRemediationRun(DeleteRemediationRunRequest request);
 
@@ -254,7 +254,7 @@ public interface ApplicationDependencyManagement extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/adm/DeleteVulnerabilityAuditExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteVulnerabilityAudit API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/adm/DeleteVulnerabilityAuditExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteVulnerabilityAudit API.
      */
     DeleteVulnerabilityAuditResponse deleteVulnerabilityAudit(
             DeleteVulnerabilityAuditRequest request);
@@ -267,7 +267,7 @@ public interface ApplicationDependencyManagement extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/adm/GetKnowledgeBaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetKnowledgeBase API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/adm/GetKnowledgeBaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetKnowledgeBase API.
      */
     GetKnowledgeBaseResponse getKnowledgeBase(GetKnowledgeBaseRequest request);
 
@@ -279,7 +279,7 @@ public interface ApplicationDependencyManagement extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/adm/GetRemediationRecipeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetRemediationRecipe API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/adm/GetRemediationRecipeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetRemediationRecipe API.
      */
     GetRemediationRecipeResponse getRemediationRecipe(GetRemediationRecipeRequest request);
 
@@ -291,7 +291,7 @@ public interface ApplicationDependencyManagement extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/adm/GetRemediationRunExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetRemediationRun API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/adm/GetRemediationRunExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetRemediationRun API.
      */
     GetRemediationRunResponse getRemediationRun(GetRemediationRunRequest request);
 
@@ -303,7 +303,7 @@ public interface ApplicationDependencyManagement extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/adm/GetStageExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetStage API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/adm/GetStageExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetStage API.
      */
     GetStageResponse getStage(GetStageRequest request);
 
@@ -315,7 +315,7 @@ public interface ApplicationDependencyManagement extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/adm/GetVulnerabilityAuditExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetVulnerabilityAudit API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/adm/GetVulnerabilityAuditExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetVulnerabilityAudit API.
      */
     GetVulnerabilityAuditResponse getVulnerabilityAudit(GetVulnerabilityAuditRequest request);
 
@@ -327,7 +327,7 @@ public interface ApplicationDependencyManagement extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/adm/GetWorkRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetWorkRequest API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/adm/GetWorkRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetWorkRequest API.
      */
     GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request);
 
@@ -339,7 +339,7 @@ public interface ApplicationDependencyManagement extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/adm/ListApplicationDependencyRecommendationsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListApplicationDependencyRecommendations API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/adm/ListApplicationDependencyRecommendationsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListApplicationDependencyRecommendations API.
      */
     ListApplicationDependencyRecommendationsResponse listApplicationDependencyRecommendations(
             ListApplicationDependencyRecommendationsRequest request);
@@ -352,7 +352,7 @@ public interface ApplicationDependencyManagement extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/adm/ListApplicationDependencyVulnerabilitiesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListApplicationDependencyVulnerabilities API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/adm/ListApplicationDependencyVulnerabilitiesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListApplicationDependencyVulnerabilities API.
      */
     ListApplicationDependencyVulnerabilitiesResponse listApplicationDependencyVulnerabilities(
             ListApplicationDependencyVulnerabilitiesRequest request);
@@ -367,7 +367,7 @@ public interface ApplicationDependencyManagement extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/adm/ListKnowledgeBasesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListKnowledgeBases API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/adm/ListKnowledgeBasesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListKnowledgeBases API.
      */
     ListKnowledgeBasesResponse listKnowledgeBases(ListKnowledgeBasesRequest request);
 
@@ -381,7 +381,7 @@ public interface ApplicationDependencyManagement extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/adm/ListRemediationRecipesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListRemediationRecipes API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/adm/ListRemediationRecipesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListRemediationRecipes API.
      */
     ListRemediationRecipesResponse listRemediationRecipes(ListRemediationRecipesRequest request);
 
@@ -395,7 +395,7 @@ public interface ApplicationDependencyManagement extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/adm/ListRemediationRunsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListRemediationRuns API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/adm/ListRemediationRunsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListRemediationRuns API.
      */
     ListRemediationRunsResponse listRemediationRuns(ListRemediationRunsRequest request);
 
@@ -407,7 +407,7 @@ public interface ApplicationDependencyManagement extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/adm/ListStagesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListStages API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/adm/ListStagesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListStages API.
      */
     ListStagesResponse listStages(ListStagesRequest request);
 
@@ -421,7 +421,7 @@ public interface ApplicationDependencyManagement extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/adm/ListVulnerabilityAuditsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListVulnerabilityAudits API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/adm/ListVulnerabilityAuditsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListVulnerabilityAudits API.
      */
     ListVulnerabilityAuditsResponse listVulnerabilityAudits(ListVulnerabilityAuditsRequest request);
 
@@ -434,7 +434,7 @@ public interface ApplicationDependencyManagement extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/adm/ListWorkRequestErrorsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequestErrors API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/adm/ListWorkRequestErrorsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequestErrors API.
      */
     ListWorkRequestErrorsResponse listWorkRequestErrors(ListWorkRequestErrorsRequest request);
 
@@ -447,7 +447,7 @@ public interface ApplicationDependencyManagement extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/adm/ListWorkRequestLogsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequestLogs API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/adm/ListWorkRequestLogsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequestLogs API.
      */
     ListWorkRequestLogsResponse listWorkRequestLogs(ListWorkRequestLogsRequest request);
 
@@ -460,7 +460,7 @@ public interface ApplicationDependencyManagement extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/adm/ListWorkRequestsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequests API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/adm/ListWorkRequestsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequests API.
      */
     ListWorkRequestsResponse listWorkRequests(ListWorkRequestsRequest request);
 
@@ -472,7 +472,7 @@ public interface ApplicationDependencyManagement extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/adm/UpdateKnowledgeBaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateKnowledgeBase API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/adm/UpdateKnowledgeBaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateKnowledgeBase API.
      */
     UpdateKnowledgeBaseResponse updateKnowledgeBase(UpdateKnowledgeBaseRequest request);
 
@@ -484,7 +484,7 @@ public interface ApplicationDependencyManagement extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/adm/UpdateRemediationRecipeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateRemediationRecipe API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/adm/UpdateRemediationRecipeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateRemediationRecipe API.
      */
     UpdateRemediationRecipeResponse updateRemediationRecipe(UpdateRemediationRecipeRequest request);
 
@@ -496,7 +496,7 @@ public interface ApplicationDependencyManagement extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/adm/UpdateRemediationRunExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateRemediationRun API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/adm/UpdateRemediationRunExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateRemediationRun API.
      */
     UpdateRemediationRunResponse updateRemediationRun(UpdateRemediationRunRequest request);
 
@@ -508,7 +508,7 @@ public interface ApplicationDependencyManagement extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/adm/UpdateVulnerabilityAuditExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateVulnerabilityAudit API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/adm/UpdateVulnerabilityAuditExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateVulnerabilityAudit API.
      */
     UpdateVulnerabilityAuditResponse updateVulnerabilityAudit(
             UpdateVulnerabilityAuditRequest request);

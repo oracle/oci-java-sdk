@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.jms.model;
@@ -23,6 +23,7 @@ public final class OperatingSystem extends com.oracle.bmc.http.internal.Explicit
     @java.beans.ConstructorProperties({
         "family",
         "name",
+        "distribution",
         "version",
         "architecture",
         "managedInstanceCount"
@@ -30,12 +31,14 @@ public final class OperatingSystem extends com.oracle.bmc.http.internal.Explicit
     public OperatingSystem(
             OsFamily family,
             String name,
+            String distribution,
             String version,
             String architecture,
             Integer managedInstanceCount) {
         super();
         this.family = family;
         this.name = name;
+        this.distribution = distribution;
         this.version = version;
         this.architecture = architecture;
         this.managedInstanceCount = managedInstanceCount;
@@ -73,6 +76,22 @@ public final class OperatingSystem extends com.oracle.bmc.http.internal.Explicit
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
+            return this;
+        }
+        /**
+         * The name of the Operating System distribution, such as Oracle Linux 9, Windows 10, or macOS X.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("distribution")
+        private String distribution;
+
+        /**
+         * The name of the Operating System distribution, such as Oracle Linux 9, Windows 10, or macOS X.
+         * @param distribution the value to set
+         * @return this builder
+         **/
+        public Builder distribution(String distribution) {
+            this.distribution = distribution;
+            this.__explicitlySet__.add("distribution");
             return this;
         }
         /**
@@ -132,6 +151,7 @@ public final class OperatingSystem extends com.oracle.bmc.http.internal.Explicit
                     new OperatingSystem(
                             this.family,
                             this.name,
+                            this.distribution,
                             this.version,
                             this.architecture,
                             this.managedInstanceCount);
@@ -148,6 +168,9 @@ public final class OperatingSystem extends com.oracle.bmc.http.internal.Explicit
             }
             if (model.wasPropertyExplicitlySet("name")) {
                 this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("distribution")) {
+                this.distribution(model.getDistribution());
             }
             if (model.wasPropertyExplicitlySet("version")) {
                 this.version(model.getVersion());
@@ -199,6 +222,20 @@ public final class OperatingSystem extends com.oracle.bmc.http.internal.Explicit
      **/
     public String getName() {
         return name;
+    }
+
+    /**
+     * The name of the Operating System distribution, such as Oracle Linux 9, Windows 10, or macOS X.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("distribution")
+    private final String distribution;
+
+    /**
+     * The name of the Operating System distribution, such as Oracle Linux 9, Windows 10, or macOS X.
+     * @return the value
+     **/
+    public String getDistribution() {
+        return distribution;
     }
 
     /**
@@ -259,6 +296,7 @@ public final class OperatingSystem extends com.oracle.bmc.http.internal.Explicit
         sb.append("super=").append(super.toString());
         sb.append("family=").append(String.valueOf(this.family));
         sb.append(", name=").append(String.valueOf(this.name));
+        sb.append(", distribution=").append(String.valueOf(this.distribution));
         sb.append(", version=").append(String.valueOf(this.version));
         sb.append(", architecture=").append(String.valueOf(this.architecture));
         sb.append(", managedInstanceCount=").append(String.valueOf(this.managedInstanceCount));
@@ -278,6 +316,7 @@ public final class OperatingSystem extends com.oracle.bmc.http.internal.Explicit
         OperatingSystem other = (OperatingSystem) o;
         return java.util.Objects.equals(this.family, other.family)
                 && java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.distribution, other.distribution)
                 && java.util.Objects.equals(this.version, other.version)
                 && java.util.Objects.equals(this.architecture, other.architecture)
                 && java.util.Objects.equals(this.managedInstanceCount, other.managedInstanceCount)
@@ -290,6 +329,7 @@ public final class OperatingSystem extends com.oracle.bmc.http.internal.Explicit
         int result = 1;
         result = (result * PRIME) + (this.family == null ? 43 : this.family.hashCode());
         result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.distribution == null ? 43 : this.distribution.hashCode());
         result = (result * PRIME) + (this.version == null ? 43 : this.version.hashCode());
         result = (result * PRIME) + (this.architecture == null ? 43 : this.architecture.hashCode());
         result =

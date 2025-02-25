@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cloudguard;
@@ -8,7 +8,7 @@ import com.oracle.bmc.cloudguard.requests.*;
 import com.oracle.bmc.cloudguard.responses.*;
 
 /**
- * Use the Cloud Guard and Security Zones API to automate processes that you would otherwise perform through the Cloud Guard Console or the Security Zones Console. For more information on these services, see the [Cloud Guard](https://docs.cloud.oracle.com/iaas/cloud-guard/home.htm) and [Security Zones](https://docs.cloud.oracle.com/iaas/security-zone/home.htm) documentation.
+ * Use the Cloud Guard and Security Zones API to automate processes that you would otherwise perform through the Cloud Guard Console or the Security Zones Console. For more information on these services, see the [Cloud Guard](https://docs.oracle.com/iaas/cloud-guard/home.htm) and [Security Zones](https://docs.oracle.com/iaas/security-zone/home.htm) documentation.
  *
  **Note:** For Cloud Guard, you can perform Create, Update, and Delete operations only from the reporting region of your Cloud Guard tenancy. You can perform Read operations from any region.
  *
@@ -75,7 +75,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/AddCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AddCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/AddCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AddCompartment API.
      */
     AddCompartmentResponse addCompartment(AddCompartmentRequest request);
 
@@ -87,7 +87,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/CancelWorkRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CancelWorkRequest API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/CancelWorkRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CancelWorkRequest API.
      */
     CancelWorkRequestResponse cancelWorkRequest(CancelWorkRequestRequest request);
 
@@ -102,7 +102,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ChangeDataSourceCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeDataSourceCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ChangeDataSourceCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeDataSourceCompartment API.
      */
     ChangeDataSourceCompartmentResponse changeDataSourceCompartment(
             ChangeDataSourceCompartmentRequest request);
@@ -119,7 +119,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ChangeDetectorRecipeCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeDetectorRecipeCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ChangeDetectorRecipeCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeDetectorRecipeCompartment API.
      */
     ChangeDetectorRecipeCompartmentResponse changeDetectorRecipeCompartment(
             ChangeDetectorRecipeCompartmentRequest request);
@@ -132,7 +132,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ChangeManagedListCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeManagedListCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ChangeManagedListCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeManagedListCompartment API.
      */
     ChangeManagedListCompartmentResponse changeManagedListCompartment(
             ChangeManagedListCompartmentRequest request);
@@ -148,7 +148,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ChangeResponderRecipeCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeResponderRecipeCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ChangeResponderRecipeCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeResponderRecipeCompartment API.
      */
     ChangeResponderRecipeCompartmentResponse changeResponderRecipeCompartment(
             ChangeResponderRecipeCompartmentRequest request);
@@ -161,7 +161,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ChangeSavedQueryCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeSavedQueryCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ChangeSavedQueryCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeSavedQueryCompartment API.
      */
     ChangeSavedQueryCompartmentResponse changeSavedQueryCompartment(
             ChangeSavedQueryCompartmentRequest request);
@@ -177,7 +177,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ChangeSecurityRecipeCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeSecurityRecipeCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ChangeSecurityRecipeCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeSecurityRecipeCompartment API.
      */
     ChangeSecurityRecipeCompartmentResponse changeSecurityRecipeCompartment(
             ChangeSecurityRecipeCompartmentRequest request);
@@ -193,7 +193,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ChangeSecurityZoneCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeSecurityZoneCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ChangeSecurityZoneCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeSecurityZoneCompartment API.
      */
     ChangeSecurityZoneCompartmentResponse changeSecurityZoneCompartment(
             ChangeSecurityZoneCompartmentRequest request);
@@ -207,7 +207,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/CreateAdhocQueryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateAdhocQuery API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/CreateAdhocQueryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateAdhocQuery API.
      */
     CreateAdhocQueryResponse createAdhocQuery(CreateAdhocQueryRequest request);
 
@@ -220,7 +220,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/CreateDataMaskRuleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateDataMaskRule API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/CreateDataMaskRuleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateDataMaskRule API.
      */
     CreateDataMaskRuleResponse createDataMaskRule(CreateDataMaskRuleRequest request);
 
@@ -234,7 +234,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/CreateDataSourceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateDataSource API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/CreateDataSourceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateDataSource API.
      */
     CreateDataSourceResponse createDataSource(CreateDataSourceRequest request);
 
@@ -247,7 +247,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/CreateDetectorRecipeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateDetectorRecipe API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/CreateDetectorRecipeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateDetectorRecipe API.
      */
     CreateDetectorRecipeResponse createDetectorRecipe(CreateDetectorRecipeRequest request);
 
@@ -259,7 +259,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/CreateDetectorRecipeDetectorRuleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateDetectorRecipeDetectorRule API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/CreateDetectorRecipeDetectorRuleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateDetectorRecipeDetectorRule API.
      */
     CreateDetectorRecipeDetectorRuleResponse createDetectorRecipeDetectorRule(
             CreateDetectorRecipeDetectorRuleRequest request);
@@ -273,7 +273,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/CreateManagedListExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateManagedList API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/CreateManagedListExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateManagedList API.
      */
     CreateManagedListResponse createManagedList(CreateManagedListRequest request);
 
@@ -287,7 +287,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/CreateResponderRecipeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateResponderRecipe API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/CreateResponderRecipeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateResponderRecipe API.
      */
     CreateResponderRecipeResponse createResponderRecipe(CreateResponderRecipeRequest request);
 
@@ -300,7 +300,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/CreateSavedQueryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateSavedQuery API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/CreateSavedQueryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateSavedQuery API.
      */
     CreateSavedQueryResponse createSavedQuery(CreateSavedQueryRequest request);
 
@@ -314,7 +314,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/CreateSecurityRecipeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateSecurityRecipe API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/CreateSecurityRecipeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateSecurityRecipe API.
      */
     CreateSecurityRecipeResponse createSecurityRecipe(CreateSecurityRecipeRequest request);
 
@@ -328,7 +328,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/CreateSecurityZoneExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateSecurityZone API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/CreateSecurityZoneExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateSecurityZone API.
      */
     CreateSecurityZoneResponse createSecurityZone(CreateSecurityZoneRequest request);
 
@@ -341,7 +341,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/CreateTargetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateTarget API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/CreateTargetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateTarget API.
      */
     CreateTargetResponse createTarget(CreateTargetRequest request);
 
@@ -356,7 +356,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/CreateTargetDetectorRecipeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateTargetDetectorRecipe API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/CreateTargetDetectorRecipeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateTargetDetectorRecipe API.
      */
     CreateTargetDetectorRecipeResponse createTargetDetectorRecipe(
             CreateTargetDetectorRecipeRequest request);
@@ -370,7 +370,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/CreateTargetResponderRecipeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateTargetResponderRecipe API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/CreateTargetResponderRecipeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateTargetResponderRecipe API.
      */
     CreateTargetResponderRecipeResponse createTargetResponderRecipe(
             CreateTargetResponderRecipeRequest request);
@@ -385,7 +385,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/CreateWlpAgentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateWlpAgent API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/CreateWlpAgentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateWlpAgent API.
      */
     CreateWlpAgentResponse createWlpAgent(CreateWlpAgentRequest request);
 
@@ -397,7 +397,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/DeleteAdhocQueryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteAdhocQuery API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/DeleteAdhocQueryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteAdhocQuery API.
      */
     DeleteAdhocQueryResponse deleteAdhocQuery(DeleteAdhocQueryRequest request);
 
@@ -409,7 +409,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/DeleteDataMaskRuleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteDataMaskRule API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/DeleteDataMaskRuleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteDataMaskRule API.
      */
     DeleteDataMaskRuleResponse deleteDataMaskRule(DeleteDataMaskRuleRequest request);
 
@@ -421,7 +421,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/DeleteDataSourceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteDataSource API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/DeleteDataSourceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteDataSource API.
      */
     DeleteDataSourceResponse deleteDataSource(DeleteDataSourceRequest request);
 
@@ -433,7 +433,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/DeleteDetectorRecipeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteDetectorRecipe API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/DeleteDetectorRecipeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteDetectorRecipe API.
      */
     DeleteDetectorRecipeResponse deleteDetectorRecipe(DeleteDetectorRecipeRequest request);
 
@@ -445,7 +445,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/DeleteDetectorRecipeDetectorRuleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteDetectorRecipeDetectorRule API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/DeleteDetectorRecipeDetectorRuleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteDetectorRecipeDetectorRule API.
      */
     DeleteDetectorRecipeDetectorRuleResponse deleteDetectorRecipeDetectorRule(
             DeleteDetectorRecipeDetectorRuleRequest request);
@@ -458,7 +458,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/DeleteDetectorRecipeDetectorRuleDataSourceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteDetectorRecipeDetectorRuleDataSource API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/DeleteDetectorRecipeDetectorRuleDataSourceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteDetectorRecipeDetectorRuleDataSource API.
      */
     DeleteDetectorRecipeDetectorRuleDataSourceResponse deleteDetectorRecipeDetectorRuleDataSource(
             DeleteDetectorRecipeDetectorRuleDataSourceRequest request);
@@ -471,7 +471,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/DeleteManagedListExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteManagedList API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/DeleteManagedListExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteManagedList API.
      */
     DeleteManagedListResponse deleteManagedList(DeleteManagedListRequest request);
 
@@ -483,7 +483,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/DeleteResponderRecipeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteResponderRecipe API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/DeleteResponderRecipeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteResponderRecipe API.
      */
     DeleteResponderRecipeResponse deleteResponderRecipe(DeleteResponderRecipeRequest request);
 
@@ -495,7 +495,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/DeleteSavedQueryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteSavedQuery API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/DeleteSavedQueryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteSavedQuery API.
      */
     DeleteSavedQueryResponse deleteSavedQuery(DeleteSavedQueryRequest request);
 
@@ -507,7 +507,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/DeleteSecurityRecipeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteSecurityRecipe API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/DeleteSecurityRecipeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteSecurityRecipe API.
      */
     DeleteSecurityRecipeResponse deleteSecurityRecipe(DeleteSecurityRecipeRequest request);
 
@@ -519,7 +519,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/DeleteSecurityZoneExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteSecurityZone API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/DeleteSecurityZoneExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteSecurityZone API.
      */
     DeleteSecurityZoneResponse deleteSecurityZone(DeleteSecurityZoneRequest request);
 
@@ -531,7 +531,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/DeleteTargetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteTarget API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/DeleteTargetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteTarget API.
      */
     DeleteTargetResponse deleteTarget(DeleteTargetRequest request);
 
@@ -545,7 +545,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/DeleteTargetDetectorRecipeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteTargetDetectorRecipe API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/DeleteTargetDetectorRecipeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteTargetDetectorRecipe API.
      */
     DeleteTargetDetectorRecipeResponse deleteTargetDetectorRecipe(
             DeleteTargetDetectorRecipeRequest request);
@@ -561,7 +561,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/DeleteTargetResponderRecipeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteTargetResponderRecipe API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/DeleteTargetResponderRecipeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteTargetResponderRecipe API.
      */
     DeleteTargetResponderRecipeResponse deleteTargetResponderRecipe(
             DeleteTargetResponderRecipeRequest request);
@@ -607,7 +607,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/DeleteWlpAgentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteWlpAgent API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/DeleteWlpAgentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteWlpAgent API.
      */
     DeleteWlpAgentResponse deleteWlpAgent(DeleteWlpAgentRequest request);
 
@@ -621,7 +621,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ExecuteResponderExecutionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ExecuteResponderExecution API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ExecuteResponderExecutionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ExecuteResponderExecution API.
      */
     ExecuteResponderExecutionResponse executeResponderExecution(
             ExecuteResponderExecutionRequest request);
@@ -634,7 +634,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/GetAdhocQueryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetAdhocQuery API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/GetAdhocQueryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetAdhocQuery API.
      */
     GetAdhocQueryResponse getAdhocQuery(GetAdhocQueryRequest request);
 
@@ -646,7 +646,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/GetAdhocQueryResultContentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetAdhocQueryResultContent API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/GetAdhocQueryResultContentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetAdhocQueryResultContent API.
      */
     GetAdhocQueryResultContentResponse getAdhocQueryResultContent(
             GetAdhocQueryResultContentRequest request);
@@ -660,7 +660,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/GetConditionMetadataTypeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetConditionMetadataType API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/GetConditionMetadataTypeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetConditionMetadataType API.
      */
     GetConditionMetadataTypeResponse getConditionMetadataType(
             GetConditionMetadataTypeRequest request);
@@ -675,7 +675,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/GetConfigurationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetConfiguration API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/GetConfigurationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetConfiguration API.
      */
     GetConfigurationResponse getConfiguration(GetConfigurationRequest request);
 
@@ -687,7 +687,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/GetDataMaskRuleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetDataMaskRule API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/GetDataMaskRuleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetDataMaskRule API.
      */
     GetDataMaskRuleResponse getDataMaskRule(GetDataMaskRuleRequest request);
 
@@ -699,7 +699,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/GetDataSourceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetDataSource API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/GetDataSourceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetDataSource API.
      */
     GetDataSourceResponse getDataSource(GetDataSourceRequest request);
 
@@ -712,7 +712,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/GetDetectorExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetDetector API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/GetDetectorExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetDetector API.
      */
     GetDetectorResponse getDetector(GetDetectorRequest request);
 
@@ -724,7 +724,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/GetDetectorRecipeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetDetectorRecipe API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/GetDetectorRecipeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetDetectorRecipe API.
      */
     GetDetectorRecipeResponse getDetectorRecipe(GetDetectorRecipeRequest request);
 
@@ -736,7 +736,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/GetDetectorRecipeDetectorRuleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetDetectorRecipeDetectorRule API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/GetDetectorRecipeDetectorRuleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetDetectorRecipeDetectorRule API.
      */
     GetDetectorRecipeDetectorRuleResponse getDetectorRecipeDetectorRule(
             GetDetectorRecipeDetectorRuleRequest request);
@@ -750,7 +750,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/GetDetectorRuleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetDetectorRule API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/GetDetectorRuleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetDetectorRule API.
      */
     GetDetectorRuleResponse getDetectorRule(GetDetectorRuleRequest request);
 
@@ -762,7 +762,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/GetManagedListExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetManagedList API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/GetManagedListExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetManagedList API.
      */
     GetManagedListResponse getManagedList(GetManagedListRequest request);
 
@@ -774,7 +774,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/GetProblemExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetProblem API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/GetProblemExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetProblem API.
      */
     GetProblemResponse getProblem(GetProblemRequest request);
 
@@ -786,7 +786,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/GetResourceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetResource API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/GetResourceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetResource API.
      */
     GetResourceResponse getResource(GetResourceRequest request);
 
@@ -798,7 +798,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/GetResourceProfileExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetResourceProfile API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/GetResourceProfileExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetResourceProfile API.
      */
     GetResourceProfileResponse getResourceProfile(GetResourceProfileRequest request);
 
@@ -810,7 +810,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/GetResourceVulnerabilityExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetResourceVulnerability API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/GetResourceVulnerabilityExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetResourceVulnerability API.
      */
     GetResourceVulnerabilityResponse getResourceVulnerability(
             GetResourceVulnerabilityRequest request);
@@ -824,7 +824,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/GetResponderExecutionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetResponderExecution API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/GetResponderExecutionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetResponderExecution API.
      */
     GetResponderExecutionResponse getResponderExecution(GetResponderExecutionRequest request);
 
@@ -836,7 +836,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/GetResponderRecipeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetResponderRecipe API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/GetResponderRecipeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetResponderRecipe API.
      */
     GetResponderRecipeResponse getResponderRecipe(GetResponderRecipeRequest request);
 
@@ -848,7 +848,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/GetResponderRecipeResponderRuleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetResponderRecipeResponderRule API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/GetResponderRecipeResponderRuleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetResponderRecipeResponderRule API.
      */
     GetResponderRecipeResponderRuleResponse getResponderRecipeResponderRule(
             GetResponderRecipeResponderRuleRequest request);
@@ -861,7 +861,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/GetResponderRuleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetResponderRule API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/GetResponderRuleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetResponderRule API.
      */
     GetResponderRuleResponse getResponderRule(GetResponderRuleRequest request);
 
@@ -873,7 +873,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/GetSavedQueryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetSavedQuery API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/GetSavedQueryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetSavedQuery API.
      */
     GetSavedQueryResponse getSavedQuery(GetSavedQueryRequest request);
 
@@ -888,7 +888,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/GetSecurityPolicyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetSecurityPolicy API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/GetSecurityPolicyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetSecurityPolicy API.
      */
     GetSecurityPolicyResponse getSecurityPolicy(GetSecurityPolicyRequest request);
 
@@ -900,7 +900,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/GetSecurityRecipeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetSecurityRecipe API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/GetSecurityRecipeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetSecurityRecipe API.
      */
     GetSecurityRecipeResponse getSecurityRecipe(GetSecurityRecipeRequest request);
 
@@ -912,7 +912,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/GetSecurityZoneExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetSecurityZone API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/GetSecurityZoneExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetSecurityZone API.
      */
     GetSecurityZoneResponse getSecurityZone(GetSecurityZoneRequest request);
 
@@ -924,7 +924,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/GetSightingExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetSighting API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/GetSightingExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetSighting API.
      */
     GetSightingResponse getSighting(GetSightingRequest request);
 
@@ -936,7 +936,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/GetTargetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetTarget API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/GetTargetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetTarget API.
      */
     GetTargetResponse getTarget(GetTargetRequest request);
 
@@ -948,7 +948,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/GetTargetDetectorRecipeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetTargetDetectorRecipe API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/GetTargetDetectorRecipeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetTargetDetectorRecipe API.
      */
     GetTargetDetectorRecipeResponse getTargetDetectorRecipe(GetTargetDetectorRecipeRequest request);
 
@@ -960,7 +960,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/GetTargetDetectorRecipeDetectorRuleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetTargetDetectorRecipeDetectorRule API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/GetTargetDetectorRecipeDetectorRuleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetTargetDetectorRecipeDetectorRule API.
      */
     GetTargetDetectorRecipeDetectorRuleResponse getTargetDetectorRecipeDetectorRule(
             GetTargetDetectorRecipeDetectorRuleRequest request);
@@ -975,7 +975,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/GetTargetResponderRecipeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetTargetResponderRecipe API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/GetTargetResponderRecipeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetTargetResponderRecipe API.
      */
     GetTargetResponderRecipeResponse getTargetResponderRecipe(
             GetTargetResponderRecipeRequest request);
@@ -992,7 +992,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/GetTargetResponderRecipeResponderRuleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetTargetResponderRecipeResponderRule API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/GetTargetResponderRecipeResponderRuleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetTargetResponderRecipeResponderRule API.
      */
     GetTargetResponderRecipeResponderRuleResponse getTargetResponderRecipeResponderRule(
             GetTargetResponderRecipeResponderRuleRequest request);
@@ -1005,7 +1005,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/GetWlpAgentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetWlpAgent API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/GetWlpAgentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetWlpAgent API.
      */
     GetWlpAgentResponse getWlpAgent(GetWlpAgentRequest request);
 
@@ -1017,7 +1017,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/GetWorkRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetWorkRequest API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/GetWorkRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetWorkRequest API.
      */
     GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request);
 
@@ -1046,7 +1046,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ListAdhocQueriesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListAdhocQueries API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ListAdhocQueriesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListAdhocQueries API.
      */
     ListAdhocQueriesResponse listAdhocQueries(ListAdhocQueriesRequest request);
 
@@ -1058,7 +1058,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ListAdhocQueryResultsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListAdhocQueryResults API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ListAdhocQueryResultsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListAdhocQueryResults API.
      */
     ListAdhocQueryResultsResponse listAdhocQueryResults(ListAdhocQueryResultsRequest request);
 
@@ -1071,7 +1071,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ListConditionMetadataTypesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListConditionMetadataTypes API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ListConditionMetadataTypesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListConditionMetadataTypes API.
      */
     ListConditionMetadataTypesResponse listConditionMetadataTypes(
             ListConditionMetadataTypesRequest request);
@@ -1085,7 +1085,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ListDataMaskRulesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDataMaskRules API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ListDataMaskRulesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDataMaskRules API.
      */
     ListDataMaskRulesResponse listDataMaskRules(ListDataMaskRulesRequest request);
 
@@ -1100,7 +1100,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ListDataSourceEventsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDataSourceEvents API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ListDataSourceEventsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDataSourceEvents API.
      */
     ListDataSourceEventsResponse listDataSourceEvents(ListDataSourceEventsRequest request);
 
@@ -1129,7 +1129,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ListDataSourcesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDataSources API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ListDataSourcesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDataSources API.
      */
     ListDataSourcesResponse listDataSources(ListDataSourcesRequest request);
 
@@ -1142,7 +1142,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ListDetectorRecipeDetectorRulesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDetectorRecipeDetectorRules API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ListDetectorRecipeDetectorRulesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDetectorRecipeDetectorRules API.
      */
     ListDetectorRecipeDetectorRulesResponse listDetectorRecipeDetectorRules(
             ListDetectorRecipeDetectorRulesRequest request);
@@ -1170,7 +1170,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ListDetectorRecipesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDetectorRecipes API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ListDetectorRecipesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDetectorRecipes API.
      */
     ListDetectorRecipesResponse listDetectorRecipes(ListDetectorRecipesRequest request);
 
@@ -1183,7 +1183,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ListDetectorRulesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDetectorRules API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ListDetectorRulesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDetectorRules API.
      */
     ListDetectorRulesResponse listDetectorRules(ListDetectorRulesRequest request);
 
@@ -1196,7 +1196,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ListDetectorsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDetectors API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ListDetectorsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDetectors API.
      */
     ListDetectorsResponse listDetectors(ListDetectorsRequest request);
 
@@ -1209,7 +1209,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ListImpactedResourcesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListImpactedResources API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ListImpactedResourcesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListImpactedResources API.
      */
     ListImpactedResourcesResponse listImpactedResources(ListImpactedResourcesRequest request);
 
@@ -1221,7 +1221,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ListManagedListTypesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListManagedListTypes API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ListManagedListTypesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListManagedListTypes API.
      */
     ListManagedListTypesResponse listManagedListTypes(ListManagedListTypesRequest request);
 
@@ -1247,7 +1247,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ListManagedListsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListManagedLists API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ListManagedListsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListManagedLists API.
      */
     ListManagedListsResponse listManagedLists(ListManagedListsRequest request);
 
@@ -1260,7 +1260,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ListPoliciesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListPolicies API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ListPoliciesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListPolicies API.
      */
     ListPoliciesResponse listPolicies(ListPoliciesRequest request);
 
@@ -1273,7 +1273,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ListProblemEndpointsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListProblemEndpoints API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ListProblemEndpointsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListProblemEndpoints API.
      */
     ListProblemEndpointsResponse listProblemEndpoints(ListProblemEndpointsRequest request);
 
@@ -1286,7 +1286,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ListProblemEntitiesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListProblemEntities API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ListProblemEntitiesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListProblemEntities API.
      */
     ListProblemEntitiesResponse listProblemEntities(ListProblemEntitiesRequest request);
 
@@ -1299,7 +1299,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ListProblemHistoriesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListProblemHistories API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ListProblemHistoriesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListProblemHistories API.
      */
     ListProblemHistoriesResponse listProblemHistories(ListProblemHistoriesRequest request);
 
@@ -1326,7 +1326,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ListProblemsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListProblems API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ListProblemsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListProblems API.
      */
     ListProblemsResponse listProblems(ListProblemsRequest request);
 
@@ -1340,7 +1340,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ListRecommendationsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListRecommendations API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ListRecommendationsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListRecommendations API.
      */
     ListRecommendationsResponse listRecommendations(ListRecommendationsRequest request);
 
@@ -1352,7 +1352,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ListResourcePortsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListResourcePorts API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ListResourcePortsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListResourcePorts API.
      */
     ListResourcePortsResponse listResourcePorts(ListResourcePortsRequest request);
 
@@ -1366,7 +1366,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ListResourceProfileEndpointsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListResourceProfileEndpoints API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ListResourceProfileEndpointsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListResourceProfileEndpoints API.
      */
     ListResourceProfileEndpointsResponse listResourceProfileEndpoints(
             ListResourceProfileEndpointsRequest request);
@@ -1382,7 +1382,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ListResourceProfileImpactedResourcesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListResourceProfileImpactedResources API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ListResourceProfileImpactedResourcesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListResourceProfileImpactedResources API.
      */
     ListResourceProfileImpactedResourcesResponse listResourceProfileImpactedResources(
             ListResourceProfileImpactedResourcesRequest request);
@@ -1409,7 +1409,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ListResourceProfilesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListResourceProfiles API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ListResourceProfilesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListResourceProfiles API.
      */
     ListResourceProfilesResponse listResourceProfiles(ListResourceProfilesRequest request);
 
@@ -1423,7 +1423,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ListResourceTypesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListResourceTypes API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ListResourceTypesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListResourceTypes API.
      */
     ListResourceTypesResponse listResourceTypes(ListResourceTypesRequest request);
 
@@ -1435,7 +1435,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ListResourceVulnerabilitiesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListResourceVulnerabilities API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ListResourceVulnerabilitiesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListResourceVulnerabilities API.
      */
     ListResourceVulnerabilitiesResponse listResourceVulnerabilities(
             ListResourceVulnerabilitiesRequest request);
@@ -1463,7 +1463,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ListResourcesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListResources API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ListResourcesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListResources API.
      */
     ListResourcesResponse listResources(ListResourcesRequest request);
 
@@ -1477,7 +1477,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ListResponderActivitiesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListResponderActivities API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ListResponderActivitiesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListResponderActivities API.
      */
     ListResponderActivitiesResponse listResponderActivities(ListResponderActivitiesRequest request);
 
@@ -1491,7 +1491,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ListResponderExecutionsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListResponderExecutions API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ListResponderExecutionsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListResponderExecutions API.
      */
     ListResponderExecutionsResponse listResponderExecutions(ListResponderExecutionsRequest request);
 
@@ -1506,7 +1506,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ListResponderRecipeResponderRulesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListResponderRecipeResponderRules API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ListResponderRecipeResponderRulesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListResponderRecipeResponderRules API.
      */
     ListResponderRecipeResponderRulesResponse listResponderRecipeResponderRules(
             ListResponderRecipeResponderRulesRequest request);
@@ -1534,7 +1534,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ListResponderRecipesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListResponderRecipes API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ListResponderRecipesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListResponderRecipes API.
      */
     ListResponderRecipesResponse listResponderRecipes(ListResponderRecipesRequest request);
 
@@ -1549,7 +1549,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ListResponderRulesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListResponderRules API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ListResponderRulesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListResponderRules API.
      */
     ListResponderRulesResponse listResponderRules(ListResponderRulesRequest request);
 
@@ -1562,7 +1562,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ListSavedQueriesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSavedQueries API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ListSavedQueriesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSavedQueries API.
      */
     ListSavedQueriesResponse listSavedQueries(ListSavedQueriesRequest request);
 
@@ -1576,7 +1576,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ListSecurityPoliciesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSecurityPolicies API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ListSecurityPoliciesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSecurityPolicies API.
      */
     ListSecurityPoliciesResponse listSecurityPolicies(ListSecurityPoliciesRequest request);
 
@@ -1590,7 +1590,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ListSecurityRecipesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSecurityRecipes API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ListSecurityRecipesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSecurityRecipes API.
      */
     ListSecurityRecipesResponse listSecurityRecipes(ListSecurityRecipesRequest request);
 
@@ -1604,7 +1604,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ListSecurityZonesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSecurityZones API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ListSecurityZonesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSecurityZones API.
      */
     ListSecurityZonesResponse listSecurityZones(ListSecurityZonesRequest request);
 
@@ -1619,7 +1619,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ListSightingEndpointsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSightingEndpoints API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ListSightingEndpointsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSightingEndpoints API.
      */
     ListSightingEndpointsResponse listSightingEndpoints(ListSightingEndpointsRequest request);
 
@@ -1633,7 +1633,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ListSightingImpactedResourcesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSightingImpactedResources API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ListSightingImpactedResourcesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSightingImpactedResources API.
      */
     ListSightingImpactedResourcesResponse listSightingImpactedResources(
             ListSightingImpactedResourcesRequest request);
@@ -1659,7 +1659,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ListSightingsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSightings API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ListSightingsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSightings API.
      */
     ListSightingsResponse listSightings(ListSightingsRequest request);
 
@@ -1671,7 +1671,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ListTacticsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListTactics API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ListTacticsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListTactics API.
      */
     ListTacticsResponse listTactics(ListTacticsRequest request);
 
@@ -1684,7 +1684,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ListTargetDetectorRecipeDetectorRulesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListTargetDetectorRecipeDetectorRules API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ListTargetDetectorRecipeDetectorRulesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListTargetDetectorRecipeDetectorRules API.
      */
     ListTargetDetectorRecipeDetectorRulesResponse listTargetDetectorRecipeDetectorRules(
             ListTargetDetectorRecipeDetectorRulesRequest request);
@@ -1700,7 +1700,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ListTargetDetectorRecipesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListTargetDetectorRecipes API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ListTargetDetectorRecipesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListTargetDetectorRecipes API.
      */
     ListTargetDetectorRecipesResponse listTargetDetectorRecipes(
             ListTargetDetectorRecipesRequest request);
@@ -1717,7 +1717,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ListTargetResponderRecipeResponderRulesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListTargetResponderRecipeResponderRules API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ListTargetResponderRecipeResponderRulesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListTargetResponderRecipeResponderRules API.
      */
     ListTargetResponderRecipeResponderRulesResponse listTargetResponderRecipeResponderRules(
             ListTargetResponderRecipeResponderRulesRequest request);
@@ -1733,7 +1733,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ListTargetResponderRecipesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListTargetResponderRecipes API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ListTargetResponderRecipesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListTargetResponderRecipes API.
      */
     ListTargetResponderRecipesResponse listTargetResponderRecipes(
             ListTargetResponderRecipesRequest request);
@@ -1761,7 +1761,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ListTargetsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListTargets API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ListTargetsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListTargets API.
      */
     ListTargetsResponse listTargets(ListTargetsRequest request);
 
@@ -1774,7 +1774,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ListTechniquesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListTechniques API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ListTechniquesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListTechniques API.
      */
     ListTechniquesResponse listTechniques(ListTechniquesRequest request);
 
@@ -1787,7 +1787,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ListWlpAgentsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWlpAgents API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ListWlpAgentsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWlpAgents API.
      */
     ListWlpAgentsResponse listWlpAgents(ListWlpAgentsRequest request);
 
@@ -1801,7 +1801,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ListWorkRequestErrorsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequestErrors API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ListWorkRequestErrorsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequestErrors API.
      */
     ListWorkRequestErrorsResponse listWorkRequestErrors(ListWorkRequestErrorsRequest request);
 
@@ -1815,7 +1815,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ListWorkRequestLogsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequestLogs API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ListWorkRequestLogsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequestLogs API.
      */
     ListWorkRequestLogsResponse listWorkRequestLogs(ListWorkRequestLogsRequest request);
 
@@ -1829,7 +1829,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ListWorkRequestsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequests API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ListWorkRequestsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequests API.
      */
     ListWorkRequestsResponse listWorkRequests(ListWorkRequestsRequest request);
 
@@ -1845,7 +1845,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/RemoveCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RemoveCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/RemoveCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RemoveCompartment API.
      */
     RemoveCompartmentResponse removeCompartment(RemoveCompartmentRequest request);
 
@@ -1859,7 +1859,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/RequestRiskScoresExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RequestRiskScores API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/RequestRiskScoresExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RequestRiskScores API.
      */
     RequestRiskScoresResponse requestRiskScores(RequestRiskScoresRequest request);
 
@@ -1873,7 +1873,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/RequestSecurityScoreSummarizedTrendExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RequestSecurityScoreSummarizedTrend API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/RequestSecurityScoreSummarizedTrendExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RequestSecurityScoreSummarizedTrend API.
      */
     RequestSecurityScoreSummarizedTrendResponse requestSecurityScoreSummarizedTrend(
             RequestSecurityScoreSummarizedTrendRequest request);
@@ -1888,7 +1888,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/RequestSecurityScoresExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RequestSecurityScores API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/RequestSecurityScoresExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RequestSecurityScores API.
      */
     RequestSecurityScoresResponse requestSecurityScores(RequestSecurityScoresRequest request);
 
@@ -1915,7 +1915,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/RequestSummarizedActivityProblemsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RequestSummarizedActivityProblems API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/RequestSummarizedActivityProblemsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RequestSummarizedActivityProblems API.
      */
     RequestSummarizedActivityProblemsResponse requestSummarizedActivityProblems(
             RequestSummarizedActivityProblemsRequest request);
@@ -1940,7 +1940,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/RequestSummarizedProblemsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RequestSummarizedProblems API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/RequestSummarizedProblemsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RequestSummarizedProblems API.
      */
     RequestSummarizedProblemsResponse requestSummarizedProblems(
             RequestSummarizedProblemsRequest request);
@@ -1965,7 +1965,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/RequestSummarizedResponderExecutionsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RequestSummarizedResponderExecutions API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/RequestSummarizedResponderExecutionsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RequestSummarizedResponderExecutions API.
      */
     RequestSummarizedResponderExecutionsResponse requestSummarizedResponderExecutions(
             RequestSummarizedResponderExecutionsRequest request);
@@ -1979,7 +1979,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/RequestSummarizedRiskScoresExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RequestSummarizedRiskScores API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/RequestSummarizedRiskScoresExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RequestSummarizedRiskScores API.
      */
     RequestSummarizedRiskScoresResponse requestSummarizedRiskScores(
             RequestSummarizedRiskScoresRequest request);
@@ -1993,7 +1993,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/RequestSummarizedSecurityScoresExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RequestSummarizedSecurityScores API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/RequestSummarizedSecurityScoresExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RequestSummarizedSecurityScores API.
      */
     RequestSummarizedSecurityScoresResponse requestSummarizedSecurityScores(
             RequestSummarizedSecurityScoresRequest request);
@@ -2009,7 +2009,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/RequestSummarizedTopTrendResourceProfileRiskScoresExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RequestSummarizedTopTrendResourceProfileRiskScores API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/RequestSummarizedTopTrendResourceProfileRiskScoresExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RequestSummarizedTopTrendResourceProfileRiskScores API.
      */
     RequestSummarizedTopTrendResourceProfileRiskScoresResponse
             requestSummarizedTopTrendResourceProfileRiskScores(
@@ -2035,7 +2035,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/RequestSummarizedTrendProblemsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RequestSummarizedTrendProblems API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/RequestSummarizedTrendProblemsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RequestSummarizedTrendProblems API.
      */
     RequestSummarizedTrendProblemsResponse requestSummarizedTrendProblems(
             RequestSummarizedTrendProblemsRequest request);
@@ -2051,7 +2051,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/RequestSummarizedTrendResourceRiskScoresExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RequestSummarizedTrendResourceRiskScores API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/RequestSummarizedTrendResourceRiskScoresExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RequestSummarizedTrendResourceRiskScores API.
      */
     RequestSummarizedTrendResourceRiskScoresResponse requestSummarizedTrendResourceRiskScores(
             RequestSummarizedTrendResourceRiskScoresRequest request);
@@ -2076,7 +2076,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/RequestSummarizedTrendResponderExecutionsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RequestSummarizedTrendResponderExecutions API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/RequestSummarizedTrendResponderExecutionsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RequestSummarizedTrendResponderExecutions API.
      */
     RequestSummarizedTrendResponderExecutionsResponse requestSummarizedTrendResponderExecutions(
             RequestSummarizedTrendResponderExecutionsRequest request);
@@ -2090,7 +2090,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/RequestSummarizedTrendSecurityScoresExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RequestSummarizedTrendSecurityScores API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/RequestSummarizedTrendSecurityScoresExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RequestSummarizedTrendSecurityScores API.
      */
     RequestSummarizedTrendSecurityScoresResponse requestSummarizedTrendSecurityScores(
             RequestSummarizedTrendSecurityScoresRequest request);
@@ -2103,7 +2103,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/SkipBulkResponderExecutionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use SkipBulkResponderExecution API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/SkipBulkResponderExecutionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use SkipBulkResponderExecution API.
      */
     SkipBulkResponderExecutionResponse skipBulkResponderExecution(
             SkipBulkResponderExecutionRequest request);
@@ -2116,7 +2116,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/SkipResponderExecutionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use SkipResponderExecution API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/SkipResponderExecutionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use SkipResponderExecution API.
      */
     SkipResponderExecutionResponse skipResponderExecution(SkipResponderExecutionRequest request);
 
@@ -2130,7 +2130,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/TriggerResponderExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use TriggerResponder API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/TriggerResponderExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use TriggerResponder API.
      */
     TriggerResponderResponse triggerResponder(TriggerResponderRequest request);
 
@@ -2143,7 +2143,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/UpdateBulkProblemStatusExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateBulkProblemStatus API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/UpdateBulkProblemStatusExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateBulkProblemStatus API.
      */
     UpdateBulkProblemStatusResponse updateBulkProblemStatus(UpdateBulkProblemStatusRequest request);
 
@@ -2157,7 +2157,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/UpdateConfigurationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateConfiguration API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/UpdateConfigurationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateConfiguration API.
      */
     UpdateConfigurationResponse updateConfiguration(UpdateConfigurationRequest request);
 
@@ -2169,7 +2169,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/UpdateDataMaskRuleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateDataMaskRule API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/UpdateDataMaskRuleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateDataMaskRule API.
      */
     UpdateDataMaskRuleResponse updateDataMaskRule(UpdateDataMaskRuleRequest request);
 
@@ -2183,7 +2183,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/UpdateDataSourceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateDataSource API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/UpdateDataSourceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateDataSource API.
      */
     UpdateDataSourceResponse updateDataSource(UpdateDataSourceRequest request);
 
@@ -2195,7 +2195,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/UpdateDetectorRecipeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateDetectorRecipe API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/UpdateDetectorRecipeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateDetectorRecipe API.
      */
     UpdateDetectorRecipeResponse updateDetectorRecipe(UpdateDetectorRecipeRequest request);
 
@@ -2207,7 +2207,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/UpdateDetectorRecipeDetectorRuleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateDetectorRecipeDetectorRule API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/UpdateDetectorRecipeDetectorRuleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateDetectorRecipeDetectorRule API.
      */
     UpdateDetectorRecipeDetectorRuleResponse updateDetectorRecipeDetectorRule(
             UpdateDetectorRecipeDetectorRuleRequest request);
@@ -2220,7 +2220,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/UpdateManagedListExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateManagedList API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/UpdateManagedListExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateManagedList API.
      */
     UpdateManagedListResponse updateManagedList(UpdateManagedListRequest request);
 
@@ -2233,7 +2233,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/UpdateProblemStatusExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateProblemStatus API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/UpdateProblemStatusExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateProblemStatus API.
      */
     UpdateProblemStatusResponse updateProblemStatus(UpdateProblemStatusRequest request);
 
@@ -2247,7 +2247,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/UpdateResponderRecipeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateResponderRecipe API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/UpdateResponderRecipeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateResponderRecipe API.
      */
     UpdateResponderRecipeResponse updateResponderRecipe(UpdateResponderRecipeRequest request);
 
@@ -2261,7 +2261,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/UpdateResponderRecipeResponderRuleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateResponderRecipeResponderRule API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/UpdateResponderRecipeResponderRuleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateResponderRecipeResponderRule API.
      */
     UpdateResponderRecipeResponderRuleResponse updateResponderRecipeResponderRule(
             UpdateResponderRecipeResponderRuleRequest request);
@@ -2274,7 +2274,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/UpdateSavedQueryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateSavedQuery API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/UpdateSavedQueryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateSavedQuery API.
      */
     UpdateSavedQueryResponse updateSavedQuery(UpdateSavedQueryRequest request);
 
@@ -2288,7 +2288,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/UpdateSecurityRecipeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateSecurityRecipe API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/UpdateSecurityRecipeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateSecurityRecipe API.
      */
     UpdateSecurityRecipeResponse updateSecurityRecipe(UpdateSecurityRecipeRequest request);
 
@@ -2302,7 +2302,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/UpdateSecurityZoneExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateSecurityZone API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/UpdateSecurityZoneExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateSecurityZone API.
      */
     UpdateSecurityZoneResponse updateSecurityZone(UpdateSecurityZoneRequest request);
 
@@ -2316,7 +2316,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/UpdateTargetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateTarget API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/UpdateTargetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateTarget API.
      */
     UpdateTargetResponse updateTarget(UpdateTargetRequest request);
 
@@ -2330,7 +2330,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/UpdateTargetDetectorRecipeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateTargetDetectorRecipe API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/UpdateTargetDetectorRecipeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateTargetDetectorRecipe API.
      */
     UpdateTargetDetectorRecipeResponse updateTargetDetectorRecipe(
             UpdateTargetDetectorRecipeRequest request);
@@ -2343,7 +2343,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/UpdateTargetDetectorRecipeDetectorRuleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateTargetDetectorRecipeDetectorRule API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/UpdateTargetDetectorRecipeDetectorRuleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateTargetDetectorRecipeDetectorRule API.
      */
     UpdateTargetDetectorRecipeDetectorRuleResponse updateTargetDetectorRecipeDetectorRule(
             UpdateTargetDetectorRecipeDetectorRuleRequest request);
@@ -2360,7 +2360,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/UpdateTargetResponderRecipeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateTargetResponderRecipe API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/UpdateTargetResponderRecipeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateTargetResponderRecipe API.
      */
     UpdateTargetResponderRecipeResponse updateTargetResponderRecipe(
             UpdateTargetResponderRecipeRequest request);
@@ -2378,7 +2378,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/UpdateTargetResponderRecipeResponderRuleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateTargetResponderRecipeResponderRule API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/UpdateTargetResponderRecipeResponderRuleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateTargetResponderRecipeResponderRule API.
      */
     UpdateTargetResponderRecipeResponderRuleResponse updateTargetResponderRecipeResponderRule(
             UpdateTargetResponderRecipeResponderRuleRequest request);
@@ -2391,7 +2391,7 @@ public interface CloudGuard extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/UpdateWlpAgentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateWlpAgent API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/UpdateWlpAgentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateWlpAgent API.
      */
     UpdateWlpAgentResponse updateWlpAgent(UpdateWlpAgentRequest request);
 

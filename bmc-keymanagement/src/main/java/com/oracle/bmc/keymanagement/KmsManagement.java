@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.keymanagement;
@@ -8,7 +8,7 @@ import com.oracle.bmc.keymanagement.requests.*;
 import com.oracle.bmc.keymanagement.responses.*;
 
 /**
- * Use the Key Management API to manage vaults and keys. For more information, see [Managing Vaults](https://docs.cloud.oracle.com/Content/KeyManagement/Tasks/managingvaults.htm) and [Managing Keys](https://docs.cloud.oracle.com/Content/KeyManagement/Tasks/managingkeys.htm).
+ * Use the Key Management API to manage vaults and keys. For more information, see [Managing Vaults](https://docs.oracle.com/iaas/Content/KeyManagement/Tasks/managingvaults.htm) and [Managing Keys](https://docs.oracle.com/iaas/Content/KeyManagement/Tasks/managingkeys.htm).
  *
  * This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by default if no circuit breaker configuration is defined by the user.
  */
@@ -42,7 +42,7 @@ public interface KmsManagement extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/BackupKeyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use BackupKey API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/BackupKeyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use BackupKey API.
      */
     BackupKeyResponse backupKey(BackupKeyRequest request);
 
@@ -62,7 +62,7 @@ public interface KmsManagement extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/CancelKeyDeletionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CancelKeyDeletion API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/CancelKeyDeletionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CancelKeyDeletion API.
      */
     CancelKeyDeletionResponse cancelKeyDeletion(CancelKeyDeletionRequest request);
 
@@ -82,14 +82,14 @@ public interface KmsManagement extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/CancelKeyVersionDeletionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CancelKeyVersionDeletion API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/CancelKeyVersionDeletionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CancelKeyVersionDeletion API.
      */
     CancelKeyVersionDeletionResponse cancelKeyVersionDeletion(
             CancelKeyVersionDeletionRequest request);
 
     /**
      * Moves a key into a different compartment within the same tenancy. For information about
-     * moving resources between compartments, see [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * moving resources between compartments, see [Moving Resources to a Different Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      * <p>
      * When provided, if-match is checked against the ETag values of the key.
      * <p>
@@ -104,7 +104,7 @@ public interface KmsManagement extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/ChangeKeyCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeKeyCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/ChangeKeyCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeKeyCompartment API.
      */
     ChangeKeyCompartmentResponse changeKeyCompartment(ChangeKeyCompartmentRequest request);
 
@@ -122,12 +122,12 @@ public interface KmsManagement extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/CreateKeyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateKey API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/CreateKeyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateKey API.
      */
     CreateKeyResponse createKey(CreateKeyRequest request);
 
     /**
-     * Generates a new [KeyVersion](https://docs.cloud.oracle.com/api/#/en/key/latest/KeyVersion/) resource that provides new cryptographic
+     * Generates a new [KeyVersion](https://docs.oracle.com/iaas/api/#/en/key/latest/KeyVersion/) resource that provides new cryptographic
      * material for a master encryption key. The key must be in an `ENABLED` state to be rotated.
      * <p>
      * As a management operation, this call is subject to a Key Management limit that applies to the total number
@@ -141,7 +141,7 @@ public interface KmsManagement extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/CreateKeyVersionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateKeyVersion API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/CreateKeyVersionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateKeyVersion API.
      */
     CreateKeyVersionResponse createKeyVersion(CreateKeyVersionRequest request);
 
@@ -160,7 +160,7 @@ public interface KmsManagement extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/DisableKeyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DisableKey API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/DisableKeyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DisableKey API.
      */
     DisableKeyResponse disableKey(DisableKeyRequest request);
 
@@ -179,7 +179,7 @@ public interface KmsManagement extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/EnableKeyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use EnableKey API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/EnableKeyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use EnableKey API.
      */
     EnableKeyResponse enableKey(EnableKeyRequest request);
 
@@ -197,7 +197,7 @@ public interface KmsManagement extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/GetKeyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetKey API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/GetKeyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetKey API.
      */
     GetKeyResponse getKey(GetKeyRequest request);
 
@@ -215,7 +215,7 @@ public interface KmsManagement extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/GetKeyVersionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetKeyVersion API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/GetKeyVersionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetKeyVersion API.
      */
     GetKeyVersionResponse getKeyVersion(GetKeyVersionRequest request);
 
@@ -231,7 +231,7 @@ public interface KmsManagement extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/GetReplicationStatusExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetReplicationStatus API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/GetReplicationStatusExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetReplicationStatus API.
      */
     GetReplicationStatusResponse getReplicationStatus(GetReplicationStatusRequest request);
 
@@ -245,7 +245,7 @@ public interface KmsManagement extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/GetWrappingKeyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetWrappingKey API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/GetWrappingKeyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetWrappingKey API.
      */
     GetWrappingKeyResponse getWrappingKey(GetWrappingKeyRequest request);
 
@@ -263,7 +263,7 @@ public interface KmsManagement extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/ImportKeyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ImportKey API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/ImportKeyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ImportKey API.
      */
     ImportKeyResponse importKey(ImportKeyRequest request);
 
@@ -281,12 +281,12 @@ public interface KmsManagement extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/ImportKeyVersionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ImportKeyVersion API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/ImportKeyVersionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ImportKeyVersion API.
      */
     ImportKeyVersionResponse importKeyVersion(ImportKeyVersionRequest request);
 
     /**
-     * Lists all [KeyVersion](https://docs.cloud.oracle.com/api/#/en/key/latest/KeyVersion/) resources for the specified
+     * Lists all [KeyVersion](https://docs.oracle.com/iaas/api/#/en/key/latest/KeyVersion/) resources for the specified
      * master encryption key.
      * <p>
      * As a management operation, this call is subject to a Key Management limit that applies to the total number
@@ -300,7 +300,7 @@ public interface KmsManagement extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/ListKeyVersionsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListKeyVersions API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/ListKeyVersionsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListKeyVersions API.
      */
     ListKeyVersionsResponse listKeyVersions(ListKeyVersionsRequest request);
 
@@ -318,7 +318,7 @@ public interface KmsManagement extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/ListKeysExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListKeys API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/ListKeysExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListKeys API.
      */
     ListKeysResponse listKeys(ListKeysRequest request);
 
@@ -360,7 +360,7 @@ public interface KmsManagement extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/RestoreKeyFromFileExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RestoreKeyFromFile API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/RestoreKeyFromFileExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RestoreKeyFromFile API.
      */
     RestoreKeyFromFileResponse restoreKeyFromFile(RestoreKeyFromFileRequest request);
 
@@ -375,7 +375,7 @@ public interface KmsManagement extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/RestoreKeyFromObjectStoreExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RestoreKeyFromObjectStore API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/RestoreKeyFromObjectStoreExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RestoreKeyFromObjectStore API.
      */
     RestoreKeyFromObjectStoreResponse restoreKeyFromObjectStore(
             RestoreKeyFromObjectStoreRequest request);
@@ -395,7 +395,7 @@ public interface KmsManagement extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/ScheduleKeyDeletionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ScheduleKeyDeletion API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/ScheduleKeyDeletionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ScheduleKeyDeletion API.
      */
     ScheduleKeyDeletionResponse scheduleKeyDeletion(ScheduleKeyDeletionRequest request);
 
@@ -414,7 +414,7 @@ public interface KmsManagement extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/ScheduleKeyVersionDeletionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ScheduleKeyVersionDeletion API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/ScheduleKeyVersionDeletionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ScheduleKeyVersionDeletion API.
      */
     ScheduleKeyVersionDeletionResponse scheduleKeyVersionDeletion(
             ScheduleKeyVersionDeletionRequest request);
@@ -435,7 +435,7 @@ public interface KmsManagement extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/UpdateKeyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateKey API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/UpdateKeyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateKey API.
      */
     UpdateKeyResponse updateKey(UpdateKeyRequest request);
 

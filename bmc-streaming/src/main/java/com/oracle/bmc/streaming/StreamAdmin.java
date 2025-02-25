@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.streaming;
@@ -8,7 +8,7 @@ import com.oracle.bmc.streaming.requests.*;
 import com.oracle.bmc.streaming.responses.*;
 
 /**
- * Use the Streaming API to produce and consume messages, create streams and stream pools, and manage related items. For more information, see [Streaming](https://docs.cloud.oracle.com/Content/Streaming/Concepts/streamingoverview.htm).
+ * Use the Streaming API to produce and consume messages, create streams and stream pools, and manage related items. For more information, see [Streaming](https://docs.oracle.com/iaas/Content/Streaming/Concepts/streamingoverview.htm).
  * This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by default if no circuit breaker configuration is defined by the user.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180418")
@@ -67,7 +67,7 @@ public interface StreamAdmin extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/streaming/ChangeConnectHarnessCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeConnectHarnessCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/streaming/ChangeConnectHarnessCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeConnectHarnessCompartment API.
      */
     ChangeConnectHarnessCompartmentResponse changeConnectHarnessCompartment(
             ChangeConnectHarnessCompartmentRequest request);
@@ -83,7 +83,7 @@ public interface StreamAdmin extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/streaming/ChangeStreamCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeStreamCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/streaming/ChangeStreamCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeStreamCompartment API.
      */
     ChangeStreamCompartmentResponse changeStreamCompartment(ChangeStreamCompartmentRequest request);
 
@@ -95,7 +95,7 @@ public interface StreamAdmin extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/streaming/ChangeStreamPoolCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeStreamPoolCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/streaming/ChangeStreamPoolCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeStreamPoolCompartment API.
      */
     ChangeStreamPoolCompartmentResponse changeStreamPoolCompartment(
             ChangeStreamPoolCompartmentRequest request);
@@ -110,7 +110,7 @@ public interface StreamAdmin extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/streaming/CreateConnectHarnessExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateConnectHarness API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/streaming/CreateConnectHarnessExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateConnectHarness API.
      */
     CreateConnectHarnessResponse createConnectHarness(CreateConnectHarnessRequest request);
 
@@ -127,7 +127,7 @@ public interface StreamAdmin extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/streaming/CreateStreamExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateStream API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/streaming/CreateStreamExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateStream API.
      */
     CreateStreamResponse createStream(CreateStreamRequest request);
 
@@ -142,7 +142,7 @@ public interface StreamAdmin extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/streaming/CreateStreamPoolExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateStreamPool API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/streaming/CreateStreamPoolExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateStreamPool API.
      */
     CreateStreamPoolResponse createStreamPool(CreateStreamPoolRequest request);
 
@@ -159,7 +159,7 @@ public interface StreamAdmin extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/streaming/DeleteConnectHarnessExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteConnectHarness API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/streaming/DeleteConnectHarnessExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteConnectHarness API.
      */
     DeleteConnectHarnessResponse deleteConnectHarness(DeleteConnectHarnessRequest request);
 
@@ -176,7 +176,7 @@ public interface StreamAdmin extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/streaming/DeleteStreamExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteStream API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/streaming/DeleteStreamExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteStream API.
      */
     DeleteStreamResponse deleteStream(DeleteStreamRequest request);
 
@@ -190,7 +190,7 @@ public interface StreamAdmin extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/streaming/DeleteStreamPoolExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteStreamPool API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/streaming/DeleteStreamPoolExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteStreamPool API.
      */
     DeleteStreamPoolResponse deleteStreamPool(DeleteStreamPoolRequest request);
 
@@ -202,7 +202,7 @@ public interface StreamAdmin extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/streaming/GetConnectHarnessExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetConnectHarness API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/streaming/GetConnectHarnessExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetConnectHarness API.
      */
     GetConnectHarnessResponse getConnectHarness(GetConnectHarnessRequest request);
 
@@ -214,7 +214,7 @@ public interface StreamAdmin extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/streaming/GetStreamExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetStream API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/streaming/GetStreamExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetStream API.
      */
     GetStreamResponse getStream(GetStreamRequest request);
 
@@ -226,7 +226,7 @@ public interface StreamAdmin extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/streaming/GetStreamPoolExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetStreamPool API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/streaming/GetStreamPoolExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetStreamPool API.
      */
     GetStreamPoolResponse getStreamPool(GetStreamPoolRequest request);
 
@@ -238,7 +238,7 @@ public interface StreamAdmin extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/streaming/ListConnectHarnessesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListConnectHarnesses API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/streaming/ListConnectHarnessesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListConnectHarnesses API.
      */
     ListConnectHarnessesResponse listConnectHarnesses(ListConnectHarnessesRequest request);
 
@@ -250,7 +250,7 @@ public interface StreamAdmin extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/streaming/ListStreamPoolsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListStreamPools API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/streaming/ListStreamPoolsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListStreamPools API.
      */
     ListStreamPoolsResponse listStreamPools(ListStreamPoolsRequest request);
 
@@ -266,7 +266,7 @@ public interface StreamAdmin extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/streaming/ListStreamsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListStreams API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/streaming/ListStreamsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListStreams API.
      */
     ListStreamsResponse listStreams(ListStreamsRequest request);
 
@@ -279,7 +279,7 @@ public interface StreamAdmin extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/streaming/UpdateConnectHarnessExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateConnectHarness API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/streaming/UpdateConnectHarnessExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateConnectHarness API.
      */
     UpdateConnectHarnessResponse updateConnectHarness(UpdateConnectHarnessRequest request);
 
@@ -292,7 +292,7 @@ public interface StreamAdmin extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/streaming/UpdateStreamExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateStream API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/streaming/UpdateStreamExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateStream API.
      */
     UpdateStreamResponse updateStream(UpdateStreamRequest request);
 
@@ -305,7 +305,7 @@ public interface StreamAdmin extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/streaming/UpdateStreamPoolExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateStreamPool API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/streaming/UpdateStreamPoolExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateStreamPool API.
      */
     UpdateStreamPoolResponse updateStreamPool(UpdateStreamPoolRequest request);
 

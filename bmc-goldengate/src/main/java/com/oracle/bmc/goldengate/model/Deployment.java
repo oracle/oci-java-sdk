@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.goldengate.model;
@@ -158,14 +158,14 @@ public final class Deployment extends com.oracle.bmc.http.internal.ExplicitlySet
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
          *
          * @param id the value to set
          * @return this builder
@@ -212,14 +212,14 @@ public final class Deployment extends com.oracle.bmc.http.internal.ExplicitlySet
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -230,14 +230,14 @@ public final class Deployment extends com.oracle.bmc.http.internal.ExplicitlySet
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the backup being referenced.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup being referenced.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("deploymentBackupId")
         private String deploymentBackupId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the backup being referenced.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup being referenced.
          *
          * @param deploymentBackupId the value to set
          * @return this builder
@@ -425,7 +425,7 @@ public final class Deployment extends com.oracle.bmc.http.internal.ExplicitlySet
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the subnet of the deployment's private endpoint.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the deployment's private endpoint.
          * The subnet must be a private subnet. For backward compatibility, public subnets are allowed until May 31 2025,
          * after which the private subnet will be enforced.
          *
@@ -434,7 +434,7 @@ public final class Deployment extends com.oracle.bmc.http.internal.ExplicitlySet
         private String subnetId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the subnet of the deployment's private endpoint.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the deployment's private endpoint.
          * The subnet must be a private subnet. For backward compatibility, public subnets are allowed until May 31 2025,
          * after which the private subnet will be enforced.
          *
@@ -447,7 +447,7 @@ public final class Deployment extends com.oracle.bmc.http.internal.ExplicitlySet
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy.
          * Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy.
          * For backward compatibility, this is an optional property. It will become mandatory for public deployments after October 1, 2024.
          *
@@ -456,7 +456,7 @@ public final class Deployment extends com.oracle.bmc.http.internal.ExplicitlySet
         private String loadBalancerSubnetId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy.
          * Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy.
          * For backward compatibility, this is an optional property. It will become mandatory for public deployments after October 1, 2024.
          *
@@ -469,7 +469,7 @@ public final class Deployment extends com.oracle.bmc.http.internal.ExplicitlySet
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the loadbalancer in the customer's subnet.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the loadbalancer in the customer's subnet.
          * The loadbalancer of the public deployment created in the customer subnet.
          *
          **/
@@ -477,7 +477,7 @@ public final class Deployment extends com.oracle.bmc.http.internal.ExplicitlySet
         private String loadBalancerId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the loadbalancer in the customer's subnet.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the loadbalancer in the customer's subnet.
          * The loadbalancer of the public deployment created in the customer subnet.
          *
          * @param loadBalancerId the value to set
@@ -693,7 +693,7 @@ public final class Deployment extends com.oracle.bmc.http.internal.ExplicitlySet
         /**
          * The system tags associated with this resource, if any. The system tags are set by Oracle
          * Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more
-         * information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * <p>
          * Example: {@code {orcl-cloud: {free-tier-retain: true}}}
          *
@@ -704,7 +704,7 @@ public final class Deployment extends com.oracle.bmc.http.internal.ExplicitlySet
         /**
          * The system tags associated with this resource, if any. The system tags are set by Oracle
          * Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more
-         * information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * <p>
          * Example: {@code {orcl-cloud: {free-tier-retain: true}}}
          *
@@ -1161,14 +1161,14 @@ public final class Deployment extends com.oracle.bmc.http.internal.ExplicitlySet
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
      *
      * @return the value
      **/
@@ -1209,14 +1209,14 @@ public final class Deployment extends com.oracle.bmc.http.internal.ExplicitlySet
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
      *
      * @return the value
      **/
@@ -1225,14 +1225,14 @@ public final class Deployment extends com.oracle.bmc.http.internal.ExplicitlySet
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the backup being referenced.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup being referenced.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("deploymentBackupId")
     private final String deploymentBackupId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the backup being referenced.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup being referenced.
      *
      * @return the value
      **/
@@ -1399,7 +1399,7 @@ public final class Deployment extends com.oracle.bmc.http.internal.ExplicitlySet
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the subnet of the deployment's private endpoint.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the deployment's private endpoint.
      * The subnet must be a private subnet. For backward compatibility, public subnets are allowed until May 31 2025,
      * after which the private subnet will be enforced.
      *
@@ -1408,7 +1408,7 @@ public final class Deployment extends com.oracle.bmc.http.internal.ExplicitlySet
     private final String subnetId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the subnet of the deployment's private endpoint.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the deployment's private endpoint.
      * The subnet must be a private subnet. For backward compatibility, public subnets are allowed until May 31 2025,
      * after which the private subnet will be enforced.
      *
@@ -1419,7 +1419,7 @@ public final class Deployment extends com.oracle.bmc.http.internal.ExplicitlySet
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy.
      * Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy.
      * For backward compatibility, this is an optional property. It will become mandatory for public deployments after October 1, 2024.
      *
@@ -1428,7 +1428,7 @@ public final class Deployment extends com.oracle.bmc.http.internal.ExplicitlySet
     private final String loadBalancerSubnetId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy.
      * Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy.
      * For backward compatibility, this is an optional property. It will become mandatory for public deployments after October 1, 2024.
      *
@@ -1439,7 +1439,7 @@ public final class Deployment extends com.oracle.bmc.http.internal.ExplicitlySet
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the loadbalancer in the customer's subnet.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the loadbalancer in the customer's subnet.
      * The loadbalancer of the public deployment created in the customer subnet.
      *
      **/
@@ -1447,7 +1447,7 @@ public final class Deployment extends com.oracle.bmc.http.internal.ExplicitlySet
     private final String loadBalancerId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the loadbalancer in the customer's subnet.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the loadbalancer in the customer's subnet.
      * The loadbalancer of the public deployment created in the customer subnet.
      *
      * @return the value
@@ -1639,7 +1639,7 @@ public final class Deployment extends com.oracle.bmc.http.internal.ExplicitlySet
     /**
      * The system tags associated with this resource, if any. The system tags are set by Oracle
      * Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more
-     * information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
      * Example: {@code {orcl-cloud: {free-tier-retain: true}}}
      *
@@ -1650,7 +1650,7 @@ public final class Deployment extends com.oracle.bmc.http.internal.ExplicitlySet
     /**
      * The system tags associated with this resource, if any. The system tags are set by Oracle
      * Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more
-     * information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
      * Example: {@code {orcl-cloud: {free-tier-retain: true}}}
      *

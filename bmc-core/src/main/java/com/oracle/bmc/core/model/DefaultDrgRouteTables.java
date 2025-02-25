@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core.model;
@@ -46,7 +46,7 @@ public final class DefaultDrgRouteTables
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the default DRG route table to be assigned to DRG attachments
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the default DRG route table to be assigned to DRG attachments
          * of type VCN on creation.
          *
          **/
@@ -54,7 +54,7 @@ public final class DefaultDrgRouteTables
         private String vcn;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the default DRG route table to be assigned to DRG attachments
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the default DRG route table to be assigned to DRG attachments
          * of type VCN on creation.
          *
          * @param vcn the value to set
@@ -66,7 +66,7 @@ public final class DefaultDrgRouteTables
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the default DRG route table assigned to DRG attachments
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the default DRG route table assigned to DRG attachments
          * of type IPSEC_TUNNEL on creation.
          *
          **/
@@ -74,7 +74,7 @@ public final class DefaultDrgRouteTables
         private String ipsecTunnel;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the default DRG route table assigned to DRG attachments
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the default DRG route table assigned to DRG attachments
          * of type IPSEC_TUNNEL on creation.
          *
          * @param ipsecTunnel the value to set
@@ -86,7 +86,7 @@ public final class DefaultDrgRouteTables
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the default DRG route table to be assigned to DRG attachments
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the default DRG route table to be assigned to DRG attachments
          * of type VIRTUAL_CIRCUIT on creation.
          *
          **/
@@ -94,7 +94,7 @@ public final class DefaultDrgRouteTables
         private String virtualCircuit;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the default DRG route table to be assigned to DRG attachments
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the default DRG route table to be assigned to DRG attachments
          * of type VIRTUAL_CIRCUIT on creation.
          *
          * @param virtualCircuit the value to set
@@ -106,7 +106,7 @@ public final class DefaultDrgRouteTables
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the default DRG route table to be assigned to DRG attachments
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the default DRG route table to be assigned to DRG attachments
          * of type REMOTE_PEERING_CONNECTION on creation.
          *
          **/
@@ -114,7 +114,7 @@ public final class DefaultDrgRouteTables
         private String remotePeeringConnection;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the default DRG route table to be assigned to DRG attachments
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the default DRG route table to be assigned to DRG attachments
          * of type REMOTE_PEERING_CONNECTION on creation.
          *
          * @param remotePeeringConnection the value to set
@@ -172,7 +172,7 @@ public final class DefaultDrgRouteTables
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the default DRG route table to be assigned to DRG attachments
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the default DRG route table to be assigned to DRG attachments
      * of type VCN on creation.
      *
      **/
@@ -180,7 +180,7 @@ public final class DefaultDrgRouteTables
     private final String vcn;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the default DRG route table to be assigned to DRG attachments
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the default DRG route table to be assigned to DRG attachments
      * of type VCN on creation.
      *
      * @return the value
@@ -190,7 +190,7 @@ public final class DefaultDrgRouteTables
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the default DRG route table assigned to DRG attachments
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the default DRG route table assigned to DRG attachments
      * of type IPSEC_TUNNEL on creation.
      *
      **/
@@ -198,7 +198,7 @@ public final class DefaultDrgRouteTables
     private final String ipsecTunnel;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the default DRG route table assigned to DRG attachments
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the default DRG route table assigned to DRG attachments
      * of type IPSEC_TUNNEL on creation.
      *
      * @return the value
@@ -208,7 +208,7 @@ public final class DefaultDrgRouteTables
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the default DRG route table to be assigned to DRG attachments
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the default DRG route table to be assigned to DRG attachments
      * of type VIRTUAL_CIRCUIT on creation.
      *
      **/
@@ -216,7 +216,7 @@ public final class DefaultDrgRouteTables
     private final String virtualCircuit;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the default DRG route table to be assigned to DRG attachments
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the default DRG route table to be assigned to DRG attachments
      * of type VIRTUAL_CIRCUIT on creation.
      *
      * @return the value
@@ -226,7 +226,7 @@ public final class DefaultDrgRouteTables
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the default DRG route table to be assigned to DRG attachments
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the default DRG route table to be assigned to DRG attachments
      * of type REMOTE_PEERING_CONNECTION on creation.
      *
      **/
@@ -234,7 +234,7 @@ public final class DefaultDrgRouteTables
     private final String remotePeeringConnection;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the default DRG route table to be assigned to DRG attachments
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the default DRG route table to be assigned to DRG attachments
      * of type REMOTE_PEERING_CONNECTION on creation.
      *
      * @return the value

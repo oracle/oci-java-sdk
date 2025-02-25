@@ -17,12 +17,6 @@
 
 ======================== Third Party Components ========================
 
-bouncycastle
-* Copyright © 2000-2021 The Legion of the Bouncy Castle Inc.
-* License: MIT License
-* Source code: https://github.com/bcgit/bc-java
-* Project home: https://bouncycastle.org
-
 commons-codec
 * Copyright © 2002-2021 The Apache Software Foundation
 * License: Apache License 2.0
@@ -213,14 +207,6 @@ net.minidev:json-smart
 org.apache.httpcomponents:httpclient
 * Copyright © 2005–2021 The Apache Software Foundation. All rights reserved.
 * License: Apache License 2.0
-
-org.bouncycastle:bcpkix-jdk15on
-* Copyright © 2000-2021 The Legion of the Bouncy Castle Inc
-* License: MIT License
-
-org.bouncycastle:bcprov-jdk15on
-* Copyright © 2000-2021 The Legion of the Bouncy Castle Inc
-* License: MIT License
 
 org.checkerframework:checker-qual
 * Copyright © 2004-present by the Checker Framework developers

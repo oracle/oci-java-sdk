@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.bds.model;
@@ -42,7 +42,8 @@ public final class BdsInstance extends com.oracle.bmc.http.internal.ExplicitlySe
         "freeformTags",
         "definedTags",
         "kmsKeyId",
-        "clusterProfile"
+        "clusterProfile",
+        "bdsClusterVersionSummary"
     })
     public BdsInstance(
             String id,
@@ -67,7 +68,8 @@ public final class BdsInstance extends com.oracle.bmc.http.internal.ExplicitlySe
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             String kmsKeyId,
-            ClusterProfile clusterProfile) {
+            ClusterProfile clusterProfile,
+            BdsClusterVersionSummary bdsClusterVersionSummary) {
         super();
         this.id = id;
         this.compartmentId = compartmentId;
@@ -92,6 +94,7 @@ public final class BdsInstance extends com.oracle.bmc.http.internal.ExplicitlySe
         this.definedTags = definedTags;
         this.kmsKeyId = kmsKeyId;
         this.clusterProfile = clusterProfile;
+        this.bdsClusterVersionSummary = bdsClusterVersionSummary;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -454,6 +457,15 @@ public final class BdsInstance extends com.oracle.bmc.http.internal.ExplicitlySe
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("bdsClusterVersionSummary")
+        private BdsClusterVersionSummary bdsClusterVersionSummary;
+
+        public Builder bdsClusterVersionSummary(BdsClusterVersionSummary bdsClusterVersionSummary) {
+            this.bdsClusterVersionSummary = bdsClusterVersionSummary;
+            this.__explicitlySet__.add("bdsClusterVersionSummary");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -482,7 +494,8 @@ public final class BdsInstance extends com.oracle.bmc.http.internal.ExplicitlySe
                             this.freeformTags,
                             this.definedTags,
                             this.kmsKeyId,
-                            this.clusterProfile);
+                            this.clusterProfile,
+                            this.bdsClusterVersionSummary);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -560,6 +573,9 @@ public final class BdsInstance extends com.oracle.bmc.http.internal.ExplicitlySe
             }
             if (model.wasPropertyExplicitlySet("clusterProfile")) {
                 this.clusterProfile(model.getClusterProfile());
+            }
+            if (model.wasPropertyExplicitlySet("bdsClusterVersionSummary")) {
+                this.bdsClusterVersionSummary(model.getBdsClusterVersionSummary());
             }
             return this;
         }
@@ -1045,6 +1061,13 @@ public final class BdsInstance extends com.oracle.bmc.http.internal.ExplicitlySe
         return clusterProfile;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("bdsClusterVersionSummary")
+    private final BdsClusterVersionSummary bdsClusterVersionSummary;
+
+    public BdsClusterVersionSummary getBdsClusterVersionSummary() {
+        return bdsClusterVersionSummary;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1083,6 +1106,8 @@ public final class BdsInstance extends com.oracle.bmc.http.internal.ExplicitlySe
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", kmsKeyId=").append(String.valueOf(this.kmsKeyId));
         sb.append(", clusterProfile=").append(String.valueOf(this.clusterProfile));
+        sb.append(", bdsClusterVersionSummary=")
+                .append(String.valueOf(this.bdsClusterVersionSummary));
         sb.append(")");
         return sb.toString();
     }
@@ -1122,6 +1147,8 @@ public final class BdsInstance extends com.oracle.bmc.http.internal.ExplicitlySe
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.kmsKeyId, other.kmsKeyId)
                 && java.util.Objects.equals(this.clusterProfile, other.clusterProfile)
+                && java.util.Objects.equals(
+                        this.bdsClusterVersionSummary, other.bdsClusterVersionSummary)
                 && super.equals(other);
     }
 
@@ -1186,6 +1213,11 @@ public final class BdsInstance extends com.oracle.bmc.http.internal.ExplicitlySe
         result =
                 (result * PRIME)
                         + (this.clusterProfile == null ? 43 : this.clusterProfile.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.bdsClusterVersionSummary == null
+                                ? 43
+                                : this.bdsClusterVersionSummary.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

@@ -1,29 +1,42 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.jms.requests;
 
 import com.oracle.bmc.jms.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/SummarizeResourceInventoryExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use SummarizeResourceInventoryRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/SummarizeResourceInventoryExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use SummarizeResourceInventoryRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
 public class SummarizeResourceInventoryRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
      *
      */
     private String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
      *
      */
     public String getCompartmentId() {
         return compartmentId;
+    }
+    /**
+     * Flag to determine whether the info should be gathered only in the compartment or in the compartment and its subcompartments.
+     *
+     */
+    private Boolean compartmentIdInSubtree;
+
+    /**
+     * Flag to determine whether the info should be gathered only in the compartment or in the compartment and its subcompartments.
+     *
+     */
+    public Boolean getCompartmentIdInSubtree() {
+        return compartmentIdInSubtree;
     }
     /**
      * The start of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
@@ -67,19 +80,36 @@ public class SummarizeResourceInventoryRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
          *
          */
         private String compartmentId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
          *
          * @param compartmentId the value to set
          * @return this builder instance
          */
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
+            return this;
+        }
+
+        /**
+         * Flag to determine whether the info should be gathered only in the compartment or in the compartment and its subcompartments.
+         *
+         */
+        private Boolean compartmentIdInSubtree = null;
+
+        /**
+         * Flag to determine whether the info should be gathered only in the compartment or in the compartment and its subcompartments.
+         *
+         * @param compartmentIdInSubtree the value to set
+         * @return this builder instance
+         */
+        public Builder compartmentIdInSubtree(Boolean compartmentIdInSubtree) {
+            this.compartmentIdInSubtree = compartmentIdInSubtree;
             return this;
         }
 
@@ -157,6 +187,7 @@ public class SummarizeResourceInventoryRequest
          */
         public Builder copy(SummarizeResourceInventoryRequest o) {
             compartmentId(o.getCompartmentId());
+            compartmentIdInSubtree(o.getCompartmentIdInSubtree());
             timeStart(o.getTimeStart());
             timeEnd(o.getTimeEnd());
             opcRequestId(o.getOpcRequestId());
@@ -193,11 +224,12 @@ public class SummarizeResourceInventoryRequest
         public SummarizeResourceInventoryRequest buildWithoutInvocationCallback() {
             SummarizeResourceInventoryRequest request = new SummarizeResourceInventoryRequest();
             request.compartmentId = compartmentId;
+            request.compartmentIdInSubtree = compartmentIdInSubtree;
             request.timeStart = timeStart;
             request.timeEnd = timeEnd;
             request.opcRequestId = opcRequestId;
             return request;
-            // new SummarizeResourceInventoryRequest(compartmentId, timeStart, timeEnd, opcRequestId);
+            // new SummarizeResourceInventoryRequest(compartmentId, compartmentIdInSubtree, timeStart, timeEnd, opcRequestId);
         }
     }
 
@@ -208,6 +240,7 @@ public class SummarizeResourceInventoryRequest
     public Builder toBuilder() {
         return new Builder()
                 .compartmentId(compartmentId)
+                .compartmentIdInSubtree(compartmentIdInSubtree)
                 .timeStart(timeStart)
                 .timeEnd(timeEnd)
                 .opcRequestId(opcRequestId);
@@ -227,6 +260,7 @@ public class SummarizeResourceInventoryRequest
         sb.append("(");
         sb.append("super=").append(super.toString());
         sb.append(",compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(",compartmentIdInSubtree=").append(String.valueOf(this.compartmentIdInSubtree));
         sb.append(",timeStart=").append(String.valueOf(this.timeStart));
         sb.append(",timeEnd=").append(String.valueOf(this.timeEnd));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
@@ -246,6 +280,8 @@ public class SummarizeResourceInventoryRequest
         SummarizeResourceInventoryRequest other = (SummarizeResourceInventoryRequest) o;
         return super.equals(o)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(
+                        this.compartmentIdInSubtree, other.compartmentIdInSubtree)
                 && java.util.Objects.equals(this.timeStart, other.timeStart)
                 && java.util.Objects.equals(this.timeEnd, other.timeEnd)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
@@ -258,6 +294,11 @@ public class SummarizeResourceInventoryRequest
         result =
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentIdInSubtree == null
+                                ? 43
+                                : this.compartmentIdInSubtree.hashCode());
         result = (result * PRIME) + (this.timeStart == null ? 43 : this.timeStart.hashCode());
         result = (result * PRIME) + (this.timeEnd == null ? 43 : this.timeEnd.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());

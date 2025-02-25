@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.databasemanagement;
@@ -10,7 +10,7 @@ import com.oracle.bmc.databasemanagement.responses.*;
 /**
  * Use the Database Management API to monitor and manage resources such as
  * Oracle Databases, MySQL Databases, and External Database Systems.
- * For more information, see [Database Management](https://docs.cloud.oracle.com/iaas/database-management/home.htm).
+ * For more information, see [Database Management](https://docs.oracle.com/iaas/database-management/home.htm).
  *
  * This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by default if no circuit breaker configuration is defined by the user.
  */
@@ -71,7 +71,7 @@ public interface SqlTuning extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/CloneSqlTuningTaskExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CloneSqlTuningTask API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/CloneSqlTuningTaskExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CloneSqlTuningTask API.
      */
     CloneSqlTuningTaskResponse cloneSqlTuningTask(CloneSqlTuningTaskRequest request);
 
@@ -84,7 +84,7 @@ public interface SqlTuning extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/CreateSqlTuningSetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateSqlTuningSet API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/CreateSqlTuningSetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateSqlTuningSet API.
      */
     CreateSqlTuningSetResponse createSqlTuningSet(CreateSqlTuningSetRequest request);
 
@@ -97,7 +97,7 @@ public interface SqlTuning extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/DropSqlTuningSetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DropSqlTuningSet API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/DropSqlTuningSetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DropSqlTuningSet API.
      */
     DropSqlTuningSetResponse dropSqlTuningSet(DropSqlTuningSetRequest request);
 
@@ -110,7 +110,7 @@ public interface SqlTuning extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/DropSqlTuningTaskExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DropSqlTuningTask API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/DropSqlTuningTaskExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DropSqlTuningTask API.
      */
     DropSqlTuningTaskResponse dropSqlTuningTask(DropSqlTuningTaskRequest request);
 
@@ -124,7 +124,7 @@ public interface SqlTuning extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/DropSqlsInSqlTuningSetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DropSqlsInSqlTuningSet API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/DropSqlsInSqlTuningSetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DropSqlsInSqlTuningSet API.
      */
     DropSqlsInSqlTuningSetResponse dropSqlsInSqlTuningSet(DropSqlsInSqlTuningSetRequest request);
 
@@ -137,7 +137,7 @@ public interface SqlTuning extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/FetchSqlTuningSetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use FetchSqlTuningSet API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/FetchSqlTuningSetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use FetchSqlTuningSet API.
      */
     FetchSqlTuningSetResponse fetchSqlTuningSet(FetchSqlTuningSetRequest request);
 
@@ -152,7 +152,7 @@ public interface SqlTuning extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/GetExecutionPlanStatsComparisionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetExecutionPlanStatsComparision API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/GetExecutionPlanStatsComparisionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetExecutionPlanStatsComparision API.
      */
     GetExecutionPlanStatsComparisionResponse getExecutionPlanStatsComparision(
             GetExecutionPlanStatsComparisionRequest request);
@@ -166,7 +166,7 @@ public interface SqlTuning extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/GetSqlExecutionPlanExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetSqlExecutionPlan API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/GetSqlExecutionPlanExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetSqlExecutionPlan API.
      */
     GetSqlExecutionPlanResponse getSqlExecutionPlan(GetSqlExecutionPlanRequest request);
 
@@ -179,7 +179,7 @@ public interface SqlTuning extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/GetSqlTuningAdvisorTaskSummaryReportExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetSqlTuningAdvisorTaskSummaryReport API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/GetSqlTuningAdvisorTaskSummaryReportExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetSqlTuningAdvisorTaskSummaryReport API.
      */
     GetSqlTuningAdvisorTaskSummaryReportResponse getSqlTuningAdvisorTaskSummaryReport(
             GetSqlTuningAdvisorTaskSummaryReportRequest request);
@@ -193,7 +193,7 @@ public interface SqlTuning extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/ListSqlTuningAdvisorTaskFindingsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSqlTuningAdvisorTaskFindings API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/ListSqlTuningAdvisorTaskFindingsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSqlTuningAdvisorTaskFindings API.
      */
     ListSqlTuningAdvisorTaskFindingsResponse listSqlTuningAdvisorTaskFindings(
             ListSqlTuningAdvisorTaskFindingsRequest request);
@@ -208,7 +208,7 @@ public interface SqlTuning extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/ListSqlTuningAdvisorTaskRecommendationsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSqlTuningAdvisorTaskRecommendations API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/ListSqlTuningAdvisorTaskRecommendationsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSqlTuningAdvisorTaskRecommendations API.
      */
     ListSqlTuningAdvisorTaskRecommendationsResponse listSqlTuningAdvisorTaskRecommendations(
             ListSqlTuningAdvisorTaskRecommendationsRequest request);
@@ -222,7 +222,7 @@ public interface SqlTuning extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/ListSqlTuningAdvisorTasksExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSqlTuningAdvisorTasks API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/ListSqlTuningAdvisorTasksExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSqlTuningAdvisorTasks API.
      */
     ListSqlTuningAdvisorTasksResponse listSqlTuningAdvisorTasks(
             ListSqlTuningAdvisorTasksRequest request);
@@ -236,7 +236,7 @@ public interface SqlTuning extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/ListSqlTuningSetsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSqlTuningSets API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/ListSqlTuningSetsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSqlTuningSets API.
      */
     ListSqlTuningSetsResponse listSqlTuningSets(ListSqlTuningSetsRequest request);
 
@@ -249,7 +249,7 @@ public interface SqlTuning extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/LoadSqlTuningSetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use LoadSqlTuningSet API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/LoadSqlTuningSetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use LoadSqlTuningSet API.
      */
     LoadSqlTuningSetResponse loadSqlTuningSet(LoadSqlTuningSetRequest request);
 
@@ -262,7 +262,7 @@ public interface SqlTuning extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/SaveSqlTuningSetAsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use SaveSqlTuningSetAs API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/SaveSqlTuningSetAsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use SaveSqlTuningSetAs API.
      */
     SaveSqlTuningSetAsResponse saveSqlTuningSetAs(SaveSqlTuningSetAsRequest request);
 
@@ -275,7 +275,7 @@ public interface SqlTuning extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/StartSqlTuningTaskExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use StartSqlTuningTask API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/StartSqlTuningTaskExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use StartSqlTuningTask API.
      */
     StartSqlTuningTaskResponse startSqlTuningTask(StartSqlTuningTaskRequest request);
 
@@ -288,7 +288,7 @@ public interface SqlTuning extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/ValidateBasicFilterExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ValidateBasicFilter API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/ValidateBasicFilterExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ValidateBasicFilter API.
      */
     ValidateBasicFilterResponse validateBasicFilter(ValidateBasicFilterRequest request);
 

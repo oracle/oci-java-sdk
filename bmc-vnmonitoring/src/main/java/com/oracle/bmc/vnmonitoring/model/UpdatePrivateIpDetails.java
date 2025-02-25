@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.vnmonitoring.model;
@@ -115,7 +115,7 @@ public final class UpdatePrivateIpDetails
          * [RFC 1123](https://tools.ietf.org/html/rfc1123).
          * <p>
          * For more information, see
-         * [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
+         * [DNS in Your Virtual Cloud Network](https://docs.oracle.com/iaas/Content/Network/Concepts/dns.htm).
          * <p>
          * Example: {@code bminstance1}
          *
@@ -132,7 +132,7 @@ public final class UpdatePrivateIpDetails
          * [RFC 1123](https://tools.ietf.org/html/rfc1123).
          * <p>
          * For more information, see
-         * [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
+         * [DNS in Your Virtual Cloud Network](https://docs.oracle.com/iaas/Content/Network/Concepts/dns.htm).
          * <p>
          * Example: {@code bminstance1}
          *
@@ -145,7 +145,7 @@ public final class UpdatePrivateIpDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC to reassign the private IP to. The VNIC must
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC to reassign the private IP to. The VNIC must
          * be in the same subnet as the current VNIC.
          *
          **/
@@ -153,7 +153,7 @@ public final class UpdatePrivateIpDetails
         private String vnicId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC to reassign the private IP to. The VNIC must
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC to reassign the private IP to. The VNIC must
          * be in the same subnet as the current VNIC.
          *
          * @param vnicId the value to set
@@ -277,7 +277,7 @@ public final class UpdatePrivateIpDetails
      * [RFC 1123](https://tools.ietf.org/html/rfc1123).
      * <p>
      * For more information, see
-     * [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
+     * [DNS in Your Virtual Cloud Network](https://docs.oracle.com/iaas/Content/Network/Concepts/dns.htm).
      * <p>
      * Example: {@code bminstance1}
      *
@@ -294,7 +294,7 @@ public final class UpdatePrivateIpDetails
      * [RFC 1123](https://tools.ietf.org/html/rfc1123).
      * <p>
      * For more information, see
-     * [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
+     * [DNS in Your Virtual Cloud Network](https://docs.oracle.com/iaas/Content/Network/Concepts/dns.htm).
      * <p>
      * Example: {@code bminstance1}
      *
@@ -305,7 +305,7 @@ public final class UpdatePrivateIpDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC to reassign the private IP to. The VNIC must
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC to reassign the private IP to. The VNIC must
      * be in the same subnet as the current VNIC.
      *
      **/
@@ -313,7 +313,7 @@ public final class UpdatePrivateIpDetails
     private final String vnicId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC to reassign the private IP to. The VNIC must
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC to reassign the private IP to. The VNIC must
      * be in the same subnet as the current VNIC.
      *
      * @return the value

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.opsi.model;
@@ -26,6 +26,8 @@ public final class SummarizeExadataInsightResourceUtilizationInsightAggregation
     @java.beans.ConstructorProperties({
         "timeIntervalStart",
         "timeIntervalEnd",
+        "highUtilizationThreshold",
+        "lowUtilizationThreshold",
         "exadataResourceMetric",
         "exadataResourceType",
         "utilization"
@@ -33,12 +35,16 @@ public final class SummarizeExadataInsightResourceUtilizationInsightAggregation
     public SummarizeExadataInsightResourceUtilizationInsightAggregation(
             java.util.Date timeIntervalStart,
             java.util.Date timeIntervalEnd,
+            Integer highUtilizationThreshold,
+            Integer lowUtilizationThreshold,
             ExadataResourceMetric exadataResourceMetric,
             ExadataResourceType exadataResourceType,
             java.util.List<ExadataInsightResourceInsightUtilizationItem> utilization) {
         super();
         this.timeIntervalStart = timeIntervalStart;
         this.timeIntervalEnd = timeIntervalEnd;
+        this.highUtilizationThreshold = highUtilizationThreshold;
+        this.lowUtilizationThreshold = lowUtilizationThreshold;
         this.exadataResourceMetric = exadataResourceMetric;
         this.exadataResourceType = exadataResourceType;
         this.utilization = utilization;
@@ -76,6 +82,38 @@ public final class SummarizeExadataInsightResourceUtilizationInsightAggregation
         public Builder timeIntervalEnd(java.util.Date timeIntervalEnd) {
             this.timeIntervalEnd = timeIntervalEnd;
             this.__explicitlySet__.add("timeIntervalEnd");
+            return this;
+        }
+        /**
+         * Percent value in which a resource metric is considered highly utilized.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("highUtilizationThreshold")
+        private Integer highUtilizationThreshold;
+
+        /**
+         * Percent value in which a resource metric is considered highly utilized.
+         * @param highUtilizationThreshold the value to set
+         * @return this builder
+         **/
+        public Builder highUtilizationThreshold(Integer highUtilizationThreshold) {
+            this.highUtilizationThreshold = highUtilizationThreshold;
+            this.__explicitlySet__.add("highUtilizationThreshold");
+            return this;
+        }
+        /**
+         * Percent value in which a resource metric is considered lowly utilized.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("lowUtilizationThreshold")
+        private Integer lowUtilizationThreshold;
+
+        /**
+         * Percent value in which a resource metric is considered lowly utilized.
+         * @param lowUtilizationThreshold the value to set
+         * @return this builder
+         **/
+        public Builder lowUtilizationThreshold(Integer lowUtilizationThreshold) {
+            this.lowUtilizationThreshold = lowUtilizationThreshold;
+            this.__explicitlySet__.add("lowUtilizationThreshold");
             return this;
         }
         /**
@@ -140,6 +178,8 @@ public final class SummarizeExadataInsightResourceUtilizationInsightAggregation
                     new SummarizeExadataInsightResourceUtilizationInsightAggregation(
                             this.timeIntervalStart,
                             this.timeIntervalEnd,
+                            this.highUtilizationThreshold,
+                            this.lowUtilizationThreshold,
                             this.exadataResourceMetric,
                             this.exadataResourceType,
                             this.utilization);
@@ -156,6 +196,12 @@ public final class SummarizeExadataInsightResourceUtilizationInsightAggregation
             }
             if (model.wasPropertyExplicitlySet("timeIntervalEnd")) {
                 this.timeIntervalEnd(model.getTimeIntervalEnd());
+            }
+            if (model.wasPropertyExplicitlySet("highUtilizationThreshold")) {
+                this.highUtilizationThreshold(model.getHighUtilizationThreshold());
+            }
+            if (model.wasPropertyExplicitlySet("lowUtilizationThreshold")) {
+                this.lowUtilizationThreshold(model.getLowUtilizationThreshold());
             }
             if (model.wasPropertyExplicitlySet("exadataResourceMetric")) {
                 this.exadataResourceMetric(model.getExadataResourceMetric());
@@ -207,6 +253,34 @@ public final class SummarizeExadataInsightResourceUtilizationInsightAggregation
      **/
     public java.util.Date getTimeIntervalEnd() {
         return timeIntervalEnd;
+    }
+
+    /**
+     * Percent value in which a resource metric is considered highly utilized.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("highUtilizationThreshold")
+    private final Integer highUtilizationThreshold;
+
+    /**
+     * Percent value in which a resource metric is considered highly utilized.
+     * @return the value
+     **/
+    public Integer getHighUtilizationThreshold() {
+        return highUtilizationThreshold;
+    }
+
+    /**
+     * Percent value in which a resource metric is considered lowly utilized.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("lowUtilizationThreshold")
+    private final Integer lowUtilizationThreshold;
+
+    /**
+     * Percent value in which a resource metric is considered lowly utilized.
+     * @return the value
+     **/
+    public Integer getLowUtilizationThreshold() {
+        return lowUtilizationThreshold;
     }
 
     /**
@@ -375,6 +449,10 @@ public final class SummarizeExadataInsightResourceUtilizationInsightAggregation
         sb.append("super=").append(super.toString());
         sb.append("timeIntervalStart=").append(String.valueOf(this.timeIntervalStart));
         sb.append(", timeIntervalEnd=").append(String.valueOf(this.timeIntervalEnd));
+        sb.append(", highUtilizationThreshold=")
+                .append(String.valueOf(this.highUtilizationThreshold));
+        sb.append(", lowUtilizationThreshold=")
+                .append(String.valueOf(this.lowUtilizationThreshold));
         sb.append(", exadataResourceMetric=").append(String.valueOf(this.exadataResourceMetric));
         sb.append(", exadataResourceType=").append(String.valueOf(this.exadataResourceType));
         sb.append(", utilization=").append(String.valueOf(this.utilization));
@@ -395,6 +473,10 @@ public final class SummarizeExadataInsightResourceUtilizationInsightAggregation
                 (SummarizeExadataInsightResourceUtilizationInsightAggregation) o;
         return java.util.Objects.equals(this.timeIntervalStart, other.timeIntervalStart)
                 && java.util.Objects.equals(this.timeIntervalEnd, other.timeIntervalEnd)
+                && java.util.Objects.equals(
+                        this.highUtilizationThreshold, other.highUtilizationThreshold)
+                && java.util.Objects.equals(
+                        this.lowUtilizationThreshold, other.lowUtilizationThreshold)
                 && java.util.Objects.equals(this.exadataResourceMetric, other.exadataResourceMetric)
                 && java.util.Objects.equals(this.exadataResourceType, other.exadataResourceType)
                 && java.util.Objects.equals(this.utilization, other.utilization)
@@ -411,6 +493,16 @@ public final class SummarizeExadataInsightResourceUtilizationInsightAggregation
         result =
                 (result * PRIME)
                         + (this.timeIntervalEnd == null ? 43 : this.timeIntervalEnd.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.highUtilizationThreshold == null
+                                ? 43
+                                : this.highUtilizationThreshold.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lowUtilizationThreshold == null
+                                ? 43
+                                : this.lowUtilizationThreshold.hashCode());
         result =
                 (result * PRIME)
                         + (this.exadataResourceMetric == null

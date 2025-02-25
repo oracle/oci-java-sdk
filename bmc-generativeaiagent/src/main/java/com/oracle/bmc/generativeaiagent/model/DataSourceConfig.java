@@ -1,12 +1,10 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.generativeaiagent.model;
 
 /**
- * **DataSourceConfig**
- * <p>
  * The details of data source.
  *
  * <br/>
@@ -33,9 +31,24 @@ package com.oracle.bmc.generativeaiagent.model;
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class DataSourceConfig extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({})
-    protected DataSourceConfig() {
+    @java.beans.ConstructorProperties({"shouldEnableMultiModality"})
+    protected DataSourceConfig(Boolean shouldEnableMultiModality) {
         super();
+        this.shouldEnableMultiModality = shouldEnableMultiModality;
+    }
+
+    /**
+     * Flag to enable or disable multi modality such as image processing while ingestion of data. True enable the processing and false exclude the multi modality contents during ingestion.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("shouldEnableMultiModality")
+    private final Boolean shouldEnableMultiModality;
+
+    /**
+     * Flag to enable or disable multi modality such as image processing while ingestion of data. True enable the processing and false exclude the multi modality contents during ingestion.
+     * @return the value
+     **/
+    public Boolean getShouldEnableMultiModality() {
+        return shouldEnableMultiModality;
     }
 
     @Override
@@ -52,6 +65,8 @@ public class DataSourceConfig extends com.oracle.bmc.http.internal.ExplicitlySet
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("DataSourceConfig(");
         sb.append("super=").append(super.toString());
+        sb.append("shouldEnableMultiModality=")
+                .append(String.valueOf(this.shouldEnableMultiModality));
         sb.append(")");
         return sb.toString();
     }
@@ -66,13 +81,20 @@ public class DataSourceConfig extends com.oracle.bmc.http.internal.ExplicitlySet
         }
 
         DataSourceConfig other = (DataSourceConfig) o;
-        return super.equals(other);
+        return java.util.Objects.equals(
+                        this.shouldEnableMultiModality, other.shouldEnableMultiModality)
+                && super.equals(other);
     }
 
     @Override
     public int hashCode() {
         final int PRIME = 59;
         int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.shouldEnableMultiModality == null
+                                ? 43
+                                : this.shouldEnableMultiModality.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.dataflow.model;
@@ -141,7 +141,7 @@ public final class Application extends com.oracle.bmc.http.internal.ExplicitlySe
         }
         /**
          * A comma separated list of one or more archive files as Oracle Cloud Infrastructure URIs. For example, {@code oci://path/to/a.zip,oci://path/to/b.zip}. An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution of a Python, Java, or Scala application.
-         * See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
+         * See https://docs.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("archiveUri")
@@ -149,7 +149,7 @@ public final class Application extends com.oracle.bmc.http.internal.ExplicitlySe
 
         /**
          * A comma separated list of one or more archive files as Oracle Cloud Infrastructure URIs. For example, {@code oci://path/to/a.zip,oci://path/to/b.zip}. An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution of a Python, Java, or Scala application.
-         * See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
+         * See https://docs.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
          *
          * @param archiveUri the value to set
          * @return this builder
@@ -254,7 +254,7 @@ public final class Application extends com.oracle.bmc.http.internal.ExplicitlySe
             return this;
         }
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
          **/
@@ -262,7 +262,7 @@ public final class Application extends com.oracle.bmc.http.internal.ExplicitlySe
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
          * @param definedTags the value to set
@@ -392,7 +392,7 @@ public final class Application extends com.oracle.bmc.http.internal.ExplicitlySe
         }
         /**
          * An Oracle Cloud Infrastructure URI of the file containing the application to execute.
-         * See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
+         * See https://docs.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("fileUri")
@@ -400,7 +400,7 @@ public final class Application extends com.oracle.bmc.http.internal.ExplicitlySe
 
         /**
          * An Oracle Cloud Infrastructure URI of the file containing the application to execute.
-         * See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
+         * See https://docs.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
          *
          * @param fileUri the value to set
          * @return this builder
@@ -412,7 +412,7 @@ public final class Application extends com.oracle.bmc.http.internal.ExplicitlySe
         }
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * Example: {@code {"Department": "Finance"}}
          *
          **/
@@ -421,7 +421,7 @@ public final class Application extends com.oracle.bmc.http.internal.ExplicitlySe
 
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * Example: {@code {"Department": "Finance"}}
          *
          * @param freeformTags the value to set
@@ -488,7 +488,7 @@ public final class Application extends com.oracle.bmc.http.internal.ExplicitlySe
         }
         /**
          * An Oracle Cloud Infrastructure URI of the bucket where the Spark job logs are to be uploaded.
-         * See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
+         * See https://docs.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("logsBucketUri")
@@ -496,7 +496,7 @@ public final class Application extends com.oracle.bmc.http.internal.ExplicitlySe
 
         /**
          * An Oracle Cloud Infrastructure URI of the bucket where the Spark job logs are to be uploaded.
-         * See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
+         * See https://docs.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
          *
          * @param logsBucketUri the value to set
          * @return this builder
@@ -719,7 +719,7 @@ public final class Application extends com.oracle.bmc.http.internal.ExplicitlySe
         /**
          * An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory
          * for BATCH SQL runs.
-         * See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
+         * See https://docs.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("warehouseBucketUri")
@@ -728,7 +728,7 @@ public final class Application extends com.oracle.bmc.http.internal.ExplicitlySe
         /**
          * An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory
          * for BATCH SQL runs.
-         * See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
+         * See https://docs.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
          *
          * @param warehouseBucketUri the value to set
          * @return this builder
@@ -953,7 +953,7 @@ public final class Application extends com.oracle.bmc.http.internal.ExplicitlySe
 
     /**
      * A comma separated list of one or more archive files as Oracle Cloud Infrastructure URIs. For example, {@code oci://path/to/a.zip,oci://path/to/b.zip}. An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution of a Python, Java, or Scala application.
-     * See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
+     * See https://docs.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("archiveUri")
@@ -961,7 +961,7 @@ public final class Application extends com.oracle.bmc.http.internal.ExplicitlySe
 
     /**
      * A comma separated list of one or more archive files as Oracle Cloud Infrastructure URIs. For example, {@code oci://path/to/a.zip,oci://path/to/b.zip}. An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution of a Python, Java, or Scala application.
-     * See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
+     * See https://docs.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
      *
      * @return the value
      **/
@@ -1056,7 +1056,7 @@ public final class Application extends com.oracle.bmc.http.internal.ExplicitlySe
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      **/
@@ -1064,7 +1064,7 @@ public final class Application extends com.oracle.bmc.http.internal.ExplicitlySe
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      * @return the value
@@ -1177,7 +1177,7 @@ public final class Application extends com.oracle.bmc.http.internal.ExplicitlySe
 
     /**
      * An Oracle Cloud Infrastructure URI of the file containing the application to execute.
-     * See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
+     * See https://docs.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("fileUri")
@@ -1185,7 +1185,7 @@ public final class Application extends com.oracle.bmc.http.internal.ExplicitlySe
 
     /**
      * An Oracle Cloud Infrastructure URI of the file containing the application to execute.
-     * See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
+     * See https://docs.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
      *
      * @return the value
      **/
@@ -1195,7 +1195,7 @@ public final class Application extends com.oracle.bmc.http.internal.ExplicitlySe
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * Example: {@code {"Department": "Finance"}}
      *
      **/
@@ -1204,7 +1204,7 @@ public final class Application extends com.oracle.bmc.http.internal.ExplicitlySe
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * Example: {@code {"Department": "Finance"}}
      *
      * @return the value
@@ -1263,7 +1263,7 @@ public final class Application extends com.oracle.bmc.http.internal.ExplicitlySe
 
     /**
      * An Oracle Cloud Infrastructure URI of the bucket where the Spark job logs are to be uploaded.
-     * See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
+     * See https://docs.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("logsBucketUri")
@@ -1271,7 +1271,7 @@ public final class Application extends com.oracle.bmc.http.internal.ExplicitlySe
 
     /**
      * An Oracle Cloud Infrastructure URI of the bucket where the Spark job logs are to be uploaded.
-     * See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
+     * See https://docs.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
      *
      * @return the value
      **/
@@ -1470,7 +1470,7 @@ public final class Application extends com.oracle.bmc.http.internal.ExplicitlySe
     /**
      * An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory
      * for BATCH SQL runs.
-     * See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
+     * See https://docs.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("warehouseBucketUri")
@@ -1479,7 +1479,7 @@ public final class Application extends com.oracle.bmc.http.internal.ExplicitlySe
     /**
      * An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory
      * for BATCH SQL runs.
-     * See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
+     * See https://docs.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
      *
      * @return the value
      **/

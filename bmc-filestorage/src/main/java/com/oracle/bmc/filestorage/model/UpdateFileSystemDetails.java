@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.filestorage.model;
@@ -72,7 +72,7 @@ public final class UpdateFileSystemDetails
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair
          *  with no predefined name, type, or namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * Example: {@code {"Department": "Finance"}}
          *
          **/
@@ -82,7 +82,7 @@ public final class UpdateFileSystemDetails
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair
          *  with no predefined name, type, or namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * Example: {@code {"Department": "Finance"}}
          *
          * @param freeformTags the value to set
@@ -95,7 +95,7 @@ public final class UpdateFileSystemDetails
         }
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
          **/
@@ -104,7 +104,7 @@ public final class UpdateFileSystemDetails
 
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
          * @param definedTags the value to set
@@ -117,24 +117,24 @@ public final class UpdateFileSystemDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Key Management master encryption key to associate with the specified file system.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Key Management master encryption key to associate with the specified file system.
          * If this value is empty, the Update operation will remove the associated key, if there is one, from the file system.
          * (The file system will continue to be encrypted, but with an encryption key managed by Oracle.)
          * <p>
          * If updating to a new Key Management key, the old key must remain enabled so that files previously encrypted continue
-         * to be accessible. For more information, see [Overview of Key Management](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm).
+         * to be accessible. For more information, see [Overview of Key Management](https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm).
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
         private String kmsKeyId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Key Management master encryption key to associate with the specified file system.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Key Management master encryption key to associate with the specified file system.
          * If this value is empty, the Update operation will remove the associated key, if there is one, from the file system.
          * (The file system will continue to be encrypted, but with an encryption key managed by Oracle.)
          * <p>
          * If updating to a new Key Management key, the old key must remain enabled so that files previously encrypted continue
-         * to be accessible. For more information, see [Overview of Key Management](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm).
+         * to be accessible. For more information, see [Overview of Key Management](https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm).
          *
          * @param kmsKeyId the value to set
          * @return this builder
@@ -145,7 +145,7 @@ public final class UpdateFileSystemDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the associated file system snapshot policy, which
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated file system snapshot policy, which
          * controls the frequency of snapshot creation and retention period of the taken snapshots.
          * <p>
          * If string is empty, the policy reference (if any) would be removed.
@@ -155,7 +155,7 @@ public final class UpdateFileSystemDetails
         private String filesystemSnapshotPolicyId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the associated file system snapshot policy, which
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated file system snapshot policy, which
          * controls the frequency of snapshot creation and retention period of the taken snapshots.
          * <p>
          * If string is empty, the policy reference (if any) would be removed.
@@ -243,7 +243,7 @@ public final class UpdateFileSystemDetails
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair
      *  with no predefined name, type, or namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * Example: {@code {"Department": "Finance"}}
      *
      **/
@@ -253,7 +253,7 @@ public final class UpdateFileSystemDetails
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair
      *  with no predefined name, type, or namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * Example: {@code {"Department": "Finance"}}
      *
      * @return the value
@@ -264,7 +264,7 @@ public final class UpdateFileSystemDetails
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      **/
@@ -273,7 +273,7 @@ public final class UpdateFileSystemDetails
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      * @return the value
@@ -283,24 +283,24 @@ public final class UpdateFileSystemDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Key Management master encryption key to associate with the specified file system.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Key Management master encryption key to associate with the specified file system.
      * If this value is empty, the Update operation will remove the associated key, if there is one, from the file system.
      * (The file system will continue to be encrypted, but with an encryption key managed by Oracle.)
      * <p>
      * If updating to a new Key Management key, the old key must remain enabled so that files previously encrypted continue
-     * to be accessible. For more information, see [Overview of Key Management](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm).
+     * to be accessible. For more information, see [Overview of Key Management](https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
     private final String kmsKeyId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Key Management master encryption key to associate with the specified file system.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Key Management master encryption key to associate with the specified file system.
      * If this value is empty, the Update operation will remove the associated key, if there is one, from the file system.
      * (The file system will continue to be encrypted, but with an encryption key managed by Oracle.)
      * <p>
      * If updating to a new Key Management key, the old key must remain enabled so that files previously encrypted continue
-     * to be accessible. For more information, see [Overview of Key Management](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm).
+     * to be accessible. For more information, see [Overview of Key Management](https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm).
      *
      * @return the value
      **/
@@ -309,7 +309,7 @@ public final class UpdateFileSystemDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the associated file system snapshot policy, which
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated file system snapshot policy, which
      * controls the frequency of snapshot creation and retention period of the taken snapshots.
      * <p>
      * If string is empty, the policy reference (if any) would be removed.
@@ -319,7 +319,7 @@ public final class UpdateFileSystemDetails
     private final String filesystemSnapshotPolicyId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the associated file system snapshot policy, which
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated file system snapshot policy, which
      * controls the frequency of snapshot creation and retention period of the taken snapshots.
      * <p>
      * If string is empty, the policy reference (if any) would be removed.

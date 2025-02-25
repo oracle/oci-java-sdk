@@ -1,12 +1,12 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.databasemanagement.requests;
 
 import com.oracle.bmc.databasemanagement.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/ChangeNamedCredentialCompartmentExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ChangeNamedCredentialCompartmentRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/ChangeNamedCredentialCompartmentExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ChangeNamedCredentialCompartmentRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 public class ChangeNamedCredentialCompartmentRequest
@@ -14,24 +14,24 @@ public class ChangeNamedCredentialCompartmentRequest
                 com.oracle.bmc.databasemanagement.model.ChangeNamedCredentialCompartmentDetails> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the named credential.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the named credential.
      */
     private String namedCredentialId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the named credential.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the named credential.
      */
     public String getNamedCredentialId() {
         return namedCredentialId;
     }
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment to which the named credential should be moved.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to which the named credential should be moved.
      */
     private com.oracle.bmc.databasemanagement.model.ChangeNamedCredentialCompartmentDetails
             changeNamedCredentialCompartmentDetails;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment to which the named credential should be moved.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to which the named credential should be moved.
      */
     public com.oracle.bmc.databasemanagement.model.ChangeNamedCredentialCompartmentDetails
             getChangeNamedCredentialCompartmentDetails() {
@@ -112,12 +112,12 @@ public class ChangeNamedCredentialCompartmentRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the named credential.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the named credential.
          */
         private String namedCredentialId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the named credential.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the named credential.
          * @param namedCredentialId the value to set
          * @return this builder instance
          */
@@ -127,13 +127,13 @@ public class ChangeNamedCredentialCompartmentRequest
         }
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment to which the named credential should be moved.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to which the named credential should be moved.
          */
         private com.oracle.bmc.databasemanagement.model.ChangeNamedCredentialCompartmentDetails
                 changeNamedCredentialCompartmentDetails = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment to which the named credential should be moved.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to which the named credential should be moved.
          * @param changeNamedCredentialCompartmentDetails the value to set
          * @return this builder instance
          */

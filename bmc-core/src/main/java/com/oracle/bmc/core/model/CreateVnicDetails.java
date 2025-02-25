@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core.model;
@@ -8,7 +8,7 @@ package com.oracle.bmc.core.model;
  * Contains properties for a VNIC. You use this object when creating the
  * primary VNIC during instance launch or when creating a secondary VNIC.
  * For more information about VNICs, see
- * [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
+ * [Virtual Network Interface Cards (VNICs)](https://docs.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -113,14 +113,14 @@ public final class CreateVnicDetails extends com.oracle.bmc.http.internal.Explic
          * <p>
          **Note:** This public IP address is associated with the primary private IP
          * on the VNIC. For more information, see
-         * [IP Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingIPaddresses.htm).
+         * [IP Addresses](https://docs.oracle.com/iaas/Content/Network/Tasks/managingIPaddresses.htm).
          * <p>
          **Note:** There's a limit to the number of {@link PublicIp}
          * a VNIC or instance can have. If you try to create a secondary VNIC
          * with an assigned public IP for an instance that has already
          * reached its public IP limit, an error is returned. For information
          * about the public IP limits, see
-         * [Public IP Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm).
+         * [Public IP Addresses](https://docs.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm).
          * <p>
          * Example: {@code false}
          * <p>
@@ -142,14 +142,14 @@ public final class CreateVnicDetails extends com.oracle.bmc.http.internal.Explic
          * <p>
          **Note:** This public IP address is associated with the primary private IP
          * on the VNIC. For more information, see
-         * [IP Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingIPaddresses.htm).
+         * [IP Addresses](https://docs.oracle.com/iaas/Content/Network/Tasks/managingIPaddresses.htm).
          * <p>
          **Note:** There's a limit to the number of {@link PublicIp}
          * a VNIC or instance can have. If you try to create a secondary VNIC
          * with an assigned public IP for an instance that has already
          * reached its public IP limit, an error is returned. For information
          * about the public IP limits, see
-         * [Public IP Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm).
+         * [Public IP Addresses](https://docs.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm).
          * <p>
          * Example: {@code false}
          * <p>
@@ -192,7 +192,7 @@ public final class CreateVnicDetails extends com.oracle.bmc.http.internal.Explic
         }
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a
-         * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * <p>
          * Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
@@ -202,7 +202,7 @@ public final class CreateVnicDetails extends com.oracle.bmc.http.internal.Explic
 
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a
-         * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * <p>
          * Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
@@ -237,7 +237,7 @@ public final class CreateVnicDetails extends com.oracle.bmc.http.internal.Explic
         }
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no
-         * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * <p>
          * Example: {@code {"Department": "Finance"}}
          *
@@ -247,7 +247,7 @@ public final class CreateVnicDetails extends com.oracle.bmc.http.internal.Explic
 
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no
-         * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * <p>
          * Example: {@code {"Department": "Finance"}}
          *
@@ -260,7 +260,9 @@ public final class CreateVnicDetails extends com.oracle.bmc.http.internal.Explic
             return this;
         }
         /**
-         * Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.
+         * [Security attributes](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels
+         * for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm)
+         * (ZPR) policy to control access to ZPR-supported resources.
          * <p>
          * Example: {@code {"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}}
          *
@@ -269,7 +271,9 @@ public final class CreateVnicDetails extends com.oracle.bmc.http.internal.Explic
         private java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
 
         /**
-         * Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.
+         * [Security attributes](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels
+         * for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm)
+         * (ZPR) policy to control access to ZPR-supported resources.
          * <p>
          * Example: {@code {"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}}
          *
@@ -289,17 +293,17 @@ public final class CreateVnicDetails extends com.oracle.bmc.http.internal.Explic
          * Must be unique across all VNICs in the subnet and comply with
          * [RFC 952](https://tools.ietf.org/html/rfc952) and
          * [RFC 1123](https://tools.ietf.org/html/rfc1123).
-         * The value appears in the {@code {@link Vnic}} object and also the
-         * {@code {@link PrivateIp}} object returned by
-         * {@code {@link #listPrivateIps(ListPrivateIpsRequest) listPrivateIps}} and
-         * {@code {@link #getPrivateIp(GetPrivateIpRequest) getPrivateIp}}.
+         * The value appears in the {@link Vnic} object and also the
+         * {@link PrivateIp} object returned by
+         * {@link #listPrivateIps(ListPrivateIpsRequest) listPrivateIps} and
+         * {@link #getPrivateIp(GetPrivateIpRequest) getPrivateIp}.
          * <p>
          * For more information, see
-         * [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
+         * [DNS in Your Virtual Cloud Network](https://docs.oracle.com/iaas/Content/Network/Concepts/dns.htm).
          * <p>
          * When launching an instance, use this {@code hostnameLabel} instead
          * of the deprecated {@code hostnameLabel} in
-         * {@code {@link #launchInstanceDetails(LaunchInstanceDetailsRequest) launchInstanceDetails}}.
+         * {@link #launchInstanceDetails(LaunchInstanceDetailsRequest) launchInstanceDetails}.
          * If you provide both, the values must match.
          * <p>
          * Example: {@code bminstance1}
@@ -318,17 +322,17 @@ public final class CreateVnicDetails extends com.oracle.bmc.http.internal.Explic
          * Must be unique across all VNICs in the subnet and comply with
          * [RFC 952](https://tools.ietf.org/html/rfc952) and
          * [RFC 1123](https://tools.ietf.org/html/rfc1123).
-         * The value appears in the {@code {@link Vnic}} object and also the
-         * {@code {@link PrivateIp}} object returned by
-         * {@code {@link #listPrivateIps(ListPrivateIpsRequest) listPrivateIps}} and
-         * {@code {@link #getPrivateIp(GetPrivateIpRequest) getPrivateIp}}.
+         * The value appears in the {@link Vnic} object and also the
+         * {@link PrivateIp} object returned by
+         * {@link #listPrivateIps(ListPrivateIpsRequest) listPrivateIps} and
+         * {@link #getPrivateIp(GetPrivateIpRequest) getPrivateIp}.
          * <p>
          * For more information, see
-         * [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
+         * [DNS in Your Virtual Cloud Network](https://docs.oracle.com/iaas/Content/Network/Concepts/dns.htm).
          * <p>
          * When launching an instance, use this {@code hostnameLabel} instead
          * of the deprecated {@code hostnameLabel} in
-         * {@code {@link #launchInstanceDetails(LaunchInstanceDetailsRequest) launchInstanceDetails}}.
+         * {@link #launchInstanceDetails(LaunchInstanceDetailsRequest) launchInstanceDetails}.
          * If you provide both, the values must match.
          * <p>
          * Example: {@code bminstance1}
@@ -408,10 +412,10 @@ public final class CreateVnicDetails extends com.oracle.bmc.http.internal.Explic
          * available IP address within the subnet's CIDR. If you don't specify a
          * value, Oracle automatically assigns a private IP address from the subnet.
          * This is the VNIC's *primary* private IP address. The value appears in
-         * the {@code {@link Vnic}} object and also the
-         * {@code {@link PrivateIp}} object returned by
-         * {@code {@link #listPrivateIps(ListPrivateIpsRequest) listPrivateIps}} and
-         * {@code {@link #getPrivateIp(GetPrivateIpRequest) getPrivateIp}}.
+         * the {@link Vnic} object and also the
+         * {@link PrivateIp} object returned by
+         * {@link #listPrivateIps(ListPrivateIpsRequest) listPrivateIps} and
+         * {@link #getPrivateIp(GetPrivateIpRequest) getPrivateIp}.
          * <p>
          *
          * If you specify a {@code vlanId}, the {@code privateIp} cannot be specified.
@@ -428,10 +432,10 @@ public final class CreateVnicDetails extends com.oracle.bmc.http.internal.Explic
          * available IP address within the subnet's CIDR. If you don't specify a
          * value, Oracle automatically assigns a private IP address from the subnet.
          * This is the VNIC's *primary* private IP address. The value appears in
-         * the {@code {@link Vnic}} object and also the
-         * {@code {@link PrivateIp}} object returned by
-         * {@code {@link #listPrivateIps(ListPrivateIpsRequest) listPrivateIps}} and
-         * {@code {@link #getPrivateIp(GetPrivateIpRequest) getPrivateIp}}.
+         * the {@link Vnic} object and also the
+         * {@link PrivateIp} object returned by
+         * {@link #listPrivateIps(ListPrivateIpsRequest) listPrivateIps} and
+         * {@link #getPrivateIp(GetPrivateIpRequest) getPrivateIp}.
          * <p>
          *
          * If you specify a {@code vlanId}, the {@code privateIp} cannot be specified.
@@ -451,7 +455,7 @@ public final class CreateVnicDetails extends com.oracle.bmc.http.internal.Explic
          * Whether the source/destination check is disabled on the VNIC.
          * Defaults to {@code false}, which means the check is performed. For information
          * about why you would skip the source/destination check, see
-         * [Using a Private IP as a Route Target](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip).
+         * [Using a Private IP as a Route Target](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip).
          * <p>
          *
          * If you specify a {@code vlanId}, the {@code skipSourceDestCheck} cannot be specified because the
@@ -468,7 +472,7 @@ public final class CreateVnicDetails extends com.oracle.bmc.http.internal.Explic
          * Whether the source/destination check is disabled on the VNIC.
          * Defaults to {@code false}, which means the check is performed. For information
          * about why you would skip the source/destination check, see
-         * [Using a Private IP as a Route Target](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip).
+         * [Using a Private IP as a Route Target](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip).
          * <p>
          *
          * If you specify a {@code vlanId}, the {@code skipSourceDestCheck} cannot be specified because the
@@ -486,7 +490,7 @@ public final class CreateVnicDetails extends com.oracle.bmc.http.internal.Explic
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create the VNIC in. When launching an instance,
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create the VNIC in. When launching an instance,
          * use this {@code subnetId} instead of the deprecated {@code subnetId} in
          * {@link #launchInstanceDetails(LaunchInstanceDetailsRequest) launchInstanceDetails}.
          * At least one of them is required; if you provide both, the values must match.
@@ -500,7 +504,7 @@ public final class CreateVnicDetails extends com.oracle.bmc.http.internal.Explic
         private String subnetId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create the VNIC in. When launching an instance,
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create the VNIC in. When launching an instance,
          * use this {@code subnetId} instead of the deprecated {@code subnetId} in
          * {@link #launchInstanceDetails(LaunchInstanceDetailsRequest) launchInstanceDetails}.
          * At least one of them is required; if you provide both, the values must match.
@@ -519,7 +523,7 @@ public final class CreateVnicDetails extends com.oracle.bmc.http.internal.Explic
         }
         /**
          * Provide this attribute only if you are an Oracle Cloud VMware Solution
-         * customer and creating a secondary VNIC in a VLAN. The value is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN.
+         * customer and creating a secondary VNIC in a VLAN. The value is the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN.
          * See {@link Vlan}.
          * <p>
          * Provide a {@code vlanId} instead of a {@code subnetId}. If you provide both a
@@ -531,7 +535,7 @@ public final class CreateVnicDetails extends com.oracle.bmc.http.internal.Explic
 
         /**
          * Provide this attribute only if you are an Oracle Cloud VMware Solution
-         * customer and creating a secondary VNIC in a VLAN. The value is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN.
+         * customer and creating a secondary VNIC in a VLAN. The value is the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN.
          * See {@link Vlan}.
          * <p>
          * Provide a {@code vlanId} instead of a {@code subnetId}. If you provide both a
@@ -667,14 +671,14 @@ public final class CreateVnicDetails extends com.oracle.bmc.http.internal.Explic
      * <p>
      **Note:** This public IP address is associated with the primary private IP
      * on the VNIC. For more information, see
-     * [IP Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingIPaddresses.htm).
+     * [IP Addresses](https://docs.oracle.com/iaas/Content/Network/Tasks/managingIPaddresses.htm).
      * <p>
      **Note:** There's a limit to the number of {@link PublicIp}
      * a VNIC or instance can have. If you try to create a secondary VNIC
      * with an assigned public IP for an instance that has already
      * reached its public IP limit, an error is returned. For information
      * about the public IP limits, see
-     * [Public IP Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm).
+     * [Public IP Addresses](https://docs.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm).
      * <p>
      * Example: {@code false}
      * <p>
@@ -696,14 +700,14 @@ public final class CreateVnicDetails extends com.oracle.bmc.http.internal.Explic
      * <p>
      **Note:** This public IP address is associated with the primary private IP
      * on the VNIC. For more information, see
-     * [IP Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingIPaddresses.htm).
+     * [IP Addresses](https://docs.oracle.com/iaas/Content/Network/Tasks/managingIPaddresses.htm).
      * <p>
      **Note:** There's a limit to the number of {@link PublicIp}
      * a VNIC or instance can have. If you try to create a secondary VNIC
      * with an assigned public IP for an instance that has already
      * reached its public IP limit, an error is returned. For information
      * about the public IP limits, see
-     * [Public IP Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm).
+     * [Public IP Addresses](https://docs.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm).
      * <p>
      * Example: {@code false}
      * <p>
@@ -742,7 +746,7 @@ public final class CreateVnicDetails extends com.oracle.bmc.http.internal.Explic
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a
-     * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
      * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
@@ -752,7 +756,7 @@ public final class CreateVnicDetails extends com.oracle.bmc.http.internal.Explic
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a
-     * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
      * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
@@ -782,7 +786,7 @@ public final class CreateVnicDetails extends com.oracle.bmc.http.internal.Explic
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no
-     * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
      * Example: {@code {"Department": "Finance"}}
      *
@@ -792,7 +796,7 @@ public final class CreateVnicDetails extends com.oracle.bmc.http.internal.Explic
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no
-     * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
      * Example: {@code {"Department": "Finance"}}
      *
@@ -803,7 +807,9 @@ public final class CreateVnicDetails extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
-     * Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.
+     * [Security attributes](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels
+     * for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm)
+     * (ZPR) policy to control access to ZPR-supported resources.
      * <p>
      * Example: {@code {"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}}
      *
@@ -812,7 +818,9 @@ public final class CreateVnicDetails extends com.oracle.bmc.http.internal.Explic
     private final java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
 
     /**
-     * Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.
+     * [Security attributes](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels
+     * for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm)
+     * (ZPR) policy to control access to ZPR-supported resources.
      * <p>
      * Example: {@code {"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}}
      *
@@ -829,17 +837,17 @@ public final class CreateVnicDetails extends com.oracle.bmc.http.internal.Explic
      * Must be unique across all VNICs in the subnet and comply with
      * [RFC 952](https://tools.ietf.org/html/rfc952) and
      * [RFC 1123](https://tools.ietf.org/html/rfc1123).
-     * The value appears in the {@code {@link Vnic}} object and also the
-     * {@code {@link PrivateIp}} object returned by
-     * {@code {@link #listPrivateIps(ListPrivateIpsRequest) listPrivateIps}} and
-     * {@code {@link #getPrivateIp(GetPrivateIpRequest) getPrivateIp}}.
+     * The value appears in the {@link Vnic} object and also the
+     * {@link PrivateIp} object returned by
+     * {@link #listPrivateIps(ListPrivateIpsRequest) listPrivateIps} and
+     * {@link #getPrivateIp(GetPrivateIpRequest) getPrivateIp}.
      * <p>
      * For more information, see
-     * [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
+     * [DNS in Your Virtual Cloud Network](https://docs.oracle.com/iaas/Content/Network/Concepts/dns.htm).
      * <p>
      * When launching an instance, use this {@code hostnameLabel} instead
      * of the deprecated {@code hostnameLabel} in
-     * {@code {@link #launchInstanceDetails(LaunchInstanceDetailsRequest) launchInstanceDetails}}.
+     * {@link #launchInstanceDetails(LaunchInstanceDetailsRequest) launchInstanceDetails}.
      * If you provide both, the values must match.
      * <p>
      * Example: {@code bminstance1}
@@ -858,17 +866,17 @@ public final class CreateVnicDetails extends com.oracle.bmc.http.internal.Explic
      * Must be unique across all VNICs in the subnet and comply with
      * [RFC 952](https://tools.ietf.org/html/rfc952) and
      * [RFC 1123](https://tools.ietf.org/html/rfc1123).
-     * The value appears in the {@code {@link Vnic}} object and also the
-     * {@code {@link PrivateIp}} object returned by
-     * {@code {@link #listPrivateIps(ListPrivateIpsRequest) listPrivateIps}} and
-     * {@code {@link #getPrivateIp(GetPrivateIpRequest) getPrivateIp}}.
+     * The value appears in the {@link Vnic} object and also the
+     * {@link PrivateIp} object returned by
+     * {@link #listPrivateIps(ListPrivateIpsRequest) listPrivateIps} and
+     * {@link #getPrivateIp(GetPrivateIpRequest) getPrivateIp}.
      * <p>
      * For more information, see
-     * [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
+     * [DNS in Your Virtual Cloud Network](https://docs.oracle.com/iaas/Content/Network/Concepts/dns.htm).
      * <p>
      * When launching an instance, use this {@code hostnameLabel} instead
      * of the deprecated {@code hostnameLabel} in
-     * {@code {@link #launchInstanceDetails(LaunchInstanceDetailsRequest) launchInstanceDetails}}.
+     * {@link #launchInstanceDetails(LaunchInstanceDetailsRequest) launchInstanceDetails}.
      * If you provide both, the values must match.
      * <p>
      * Example: {@code bminstance1}
@@ -941,10 +949,10 @@ public final class CreateVnicDetails extends com.oracle.bmc.http.internal.Explic
      * available IP address within the subnet's CIDR. If you don't specify a
      * value, Oracle automatically assigns a private IP address from the subnet.
      * This is the VNIC's *primary* private IP address. The value appears in
-     * the {@code {@link Vnic}} object and also the
-     * {@code {@link PrivateIp}} object returned by
-     * {@code {@link #listPrivateIps(ListPrivateIpsRequest) listPrivateIps}} and
-     * {@code {@link #getPrivateIp(GetPrivateIpRequest) getPrivateIp}}.
+     * the {@link Vnic} object and also the
+     * {@link PrivateIp} object returned by
+     * {@link #listPrivateIps(ListPrivateIpsRequest) listPrivateIps} and
+     * {@link #getPrivateIp(GetPrivateIpRequest) getPrivateIp}.
      * <p>
      *
      * If you specify a {@code vlanId}, the {@code privateIp} cannot be specified.
@@ -961,10 +969,10 @@ public final class CreateVnicDetails extends com.oracle.bmc.http.internal.Explic
      * available IP address within the subnet's CIDR. If you don't specify a
      * value, Oracle automatically assigns a private IP address from the subnet.
      * This is the VNIC's *primary* private IP address. The value appears in
-     * the {@code {@link Vnic}} object and also the
-     * {@code {@link PrivateIp}} object returned by
-     * {@code {@link #listPrivateIps(ListPrivateIpsRequest) listPrivateIps}} and
-     * {@code {@link #getPrivateIp(GetPrivateIpRequest) getPrivateIp}}.
+     * the {@link Vnic} object and also the
+     * {@link PrivateIp} object returned by
+     * {@link #listPrivateIps(ListPrivateIpsRequest) listPrivateIps} and
+     * {@link #getPrivateIp(GetPrivateIpRequest) getPrivateIp}.
      * <p>
      *
      * If you specify a {@code vlanId}, the {@code privateIp} cannot be specified.
@@ -982,7 +990,7 @@ public final class CreateVnicDetails extends com.oracle.bmc.http.internal.Explic
      * Whether the source/destination check is disabled on the VNIC.
      * Defaults to {@code false}, which means the check is performed. For information
      * about why you would skip the source/destination check, see
-     * [Using a Private IP as a Route Target](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip).
+     * [Using a Private IP as a Route Target](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip).
      * <p>
      *
      * If you specify a {@code vlanId}, the {@code skipSourceDestCheck} cannot be specified because the
@@ -999,7 +1007,7 @@ public final class CreateVnicDetails extends com.oracle.bmc.http.internal.Explic
      * Whether the source/destination check is disabled on the VNIC.
      * Defaults to {@code false}, which means the check is performed. For information
      * about why you would skip the source/destination check, see
-     * [Using a Private IP as a Route Target](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip).
+     * [Using a Private IP as a Route Target](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip).
      * <p>
      *
      * If you specify a {@code vlanId}, the {@code skipSourceDestCheck} cannot be specified because the
@@ -1015,7 +1023,7 @@ public final class CreateVnicDetails extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create the VNIC in. When launching an instance,
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create the VNIC in. When launching an instance,
      * use this {@code subnetId} instead of the deprecated {@code subnetId} in
      * {@link #launchInstanceDetails(LaunchInstanceDetailsRequest) launchInstanceDetails}.
      * At least one of them is required; if you provide both, the values must match.
@@ -1029,7 +1037,7 @@ public final class CreateVnicDetails extends com.oracle.bmc.http.internal.Explic
     private final String subnetId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create the VNIC in. When launching an instance,
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create the VNIC in. When launching an instance,
      * use this {@code subnetId} instead of the deprecated {@code subnetId} in
      * {@link #launchInstanceDetails(LaunchInstanceDetailsRequest) launchInstanceDetails}.
      * At least one of them is required; if you provide both, the values must match.
@@ -1046,7 +1054,7 @@ public final class CreateVnicDetails extends com.oracle.bmc.http.internal.Explic
 
     /**
      * Provide this attribute only if you are an Oracle Cloud VMware Solution
-     * customer and creating a secondary VNIC in a VLAN. The value is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN.
+     * customer and creating a secondary VNIC in a VLAN. The value is the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN.
      * See {@link Vlan}.
      * <p>
      * Provide a {@code vlanId} instead of a {@code subnetId}. If you provide both a
@@ -1058,7 +1066,7 @@ public final class CreateVnicDetails extends com.oracle.bmc.http.internal.Explic
 
     /**
      * Provide this attribute only if you are an Oracle Cloud VMware Solution
-     * customer and creating a secondary VNIC in a VLAN. The value is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN.
+     * customer and creating a secondary VNIC in a VLAN. The value is the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN.
      * See {@link Vlan}.
      * <p>
      * Provide a {@code vlanId} instead of a {@code subnetId}. If you provide both a

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
@@ -52,13 +52,13 @@ public final class ExternalBackupJob extends com.oracle.bmc.http.internal.Explic
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the associated backup resource.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated backup resource.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("backupId")
         private String backupId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the associated backup resource.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated backup resource.
          * @param backupId the value to set
          * @return this builder
          **/
@@ -149,7 +149,7 @@ public final class ExternalBackupJob extends com.oracle.bmc.http.internal.Explic
         }
         /**
          * The auth token to use for access to the Swift compartment bucket that will store the standalone backup.
-         * For information about auth tokens, see [Working with Auth Tokens](https://docs.cloud.oracle.com/Content/Identity/Tasks/managingcredentials.htm#two).
+         * For information about auth tokens, see [Working with Auth Tokens](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcredentials.htm#two).
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("swiftPassword")
@@ -157,7 +157,7 @@ public final class ExternalBackupJob extends com.oracle.bmc.http.internal.Explic
 
         /**
          * The auth token to use for access to the Swift compartment bucket that will store the standalone backup.
-         * For information about auth tokens, see [Working with Auth Tokens](https://docs.cloud.oracle.com/Content/Identity/Tasks/managingcredentials.htm#two).
+         * For information about auth tokens, see [Working with Auth Tokens](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcredentials.htm#two).
          *
          * @param swiftPassword the value to set
          * @return this builder
@@ -226,13 +226,13 @@ public final class ExternalBackupJob extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the associated backup resource.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated backup resource.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("backupId")
     private final String backupId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the associated backup resource.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated backup resource.
      * @return the value
      **/
     public String getBackupId() {
@@ -311,7 +311,7 @@ public final class ExternalBackupJob extends com.oracle.bmc.http.internal.Explic
 
     /**
      * The auth token to use for access to the Swift compartment bucket that will store the standalone backup.
-     * For information about auth tokens, see [Working with Auth Tokens](https://docs.cloud.oracle.com/Content/Identity/Tasks/managingcredentials.htm#two).
+     * For information about auth tokens, see [Working with Auth Tokens](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcredentials.htm#two).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("swiftPassword")
@@ -319,7 +319,7 @@ public final class ExternalBackupJob extends com.oracle.bmc.http.internal.Explic
 
     /**
      * The auth token to use for access to the Swift compartment bucket that will store the standalone backup.
-     * For information about auth tokens, see [Working with Auth Tokens](https://docs.cloud.oracle.com/Content/Identity/Tasks/managingcredentials.htm#two).
+     * For information about auth tokens, see [Working with Auth Tokens](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcredentials.htm#two).
      *
      * @return the value
      **/

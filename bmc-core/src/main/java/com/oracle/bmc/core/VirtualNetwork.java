@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core;
@@ -10,11 +10,11 @@ import com.oracle.bmc.core.responses.*;
 /**
  * Use the Core Services API to manage resources such as virtual cloud networks (VCNs),
  * compute instances, and block storage volumes. For more information, see the console
- * documentation for the [Networking](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/overview.htm),
- * [Compute](https://docs.cloud.oracle.com/iaas/Content/Compute/Concepts/computeoverview.htm), and
- * [Block Volume](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/overview.htm) services.
+ * documentation for the [Networking](https://docs.oracle.com/iaas/Content/Network/Concepts/overview.htm),
+ * [Compute](https://docs.oracle.com/iaas/Content/Compute/Concepts/computeoverview.htm), and
+ * [Block Volume](https://docs.oracle.com/iaas/Content/Block/Concepts/overview.htm) services.
  * The required permissions are documented in the
- * [Details for the Core Services](https://docs.cloud.oracle.com/iaas/Content/Identity/Reference/corepolicyreference.htm) article.
+ * [Details for the Core Services](https://docs.oracle.com/iaas/Content/Identity/Reference/corepolicyreference.htm) article.
  *
  * This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by default if no circuit breaker configuration is defined by the user.
  */
@@ -75,7 +75,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/AddDrgRouteDistributionStatementsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AddDrgRouteDistributionStatements API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/AddDrgRouteDistributionStatementsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AddDrgRouteDistributionStatements API.
      */
     AddDrgRouteDistributionStatementsResponse addDrgRouteDistributionStatements(
             AddDrgRouteDistributionStatementsRequest request);
@@ -89,7 +89,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/AddDrgRouteRulesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AddDrgRouteRules API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/AddDrgRouteRulesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AddDrgRouteRules API.
      */
     AddDrgRouteRulesResponse addDrgRouteRules(AddDrgRouteRulesRequest request);
 
@@ -102,7 +102,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/AddIpv6SubnetCidrExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AddIpv6SubnetCidr API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/AddIpv6SubnetCidrExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AddIpv6SubnetCidr API.
      */
     AddIpv6SubnetCidrResponse addIpv6SubnetCidr(AddIpv6SubnetCidrRequest request);
 
@@ -116,7 +116,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/AddIpv6VcnCidrExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AddIpv6VcnCidr API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/AddIpv6VcnCidrExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AddIpv6VcnCidr API.
      */
     AddIpv6VcnCidrResponse addIpv6VcnCidr(AddIpv6VcnCidrRequest request);
 
@@ -129,7 +129,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/AddNetworkSecurityGroupSecurityRulesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AddNetworkSecurityGroupSecurityRules API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/AddNetworkSecurityGroupSecurityRulesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AddNetworkSecurityGroupSecurityRules API.
      */
     AddNetworkSecurityGroupSecurityRulesResponse addNetworkSecurityGroupSecurityRules(
             AddNetworkSecurityGroupSecurityRulesRequest request);
@@ -145,7 +145,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/AddPublicIpPoolCapacityExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AddPublicIpPoolCapacity API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/AddPublicIpPoolCapacityExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AddPublicIpPoolCapacity API.
      */
     AddPublicIpPoolCapacityResponse addPublicIpPoolCapacity(AddPublicIpPoolCapacityRequest request);
 
@@ -164,7 +164,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/AddVcnCidrExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AddVcnCidr API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/AddVcnCidrExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AddVcnCidr API.
      */
     AddVcnCidrResponse addVcnCidr(AddVcnCidrRequest request);
 
@@ -178,7 +178,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/AdvertiseByoipRangeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AdvertiseByoipRange API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/AdvertiseByoipRangeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AdvertiseByoipRange API.
      */
     AdvertiseByoipRangeResponse advertiseByoipRange(AdvertiseByoipRangeRequest request);
 
@@ -200,7 +200,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/AttachServiceIdExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AttachServiceId API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/AttachServiceIdExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AttachServiceId API.
      */
     AttachServiceIdResponse attachServiceId(AttachServiceIdRequest request);
 
@@ -216,7 +216,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/BulkAddVirtualCircuitPublicPrefixesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use BulkAddVirtualCircuitPublicPrefixes API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/BulkAddVirtualCircuitPublicPrefixesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use BulkAddVirtualCircuitPublicPrefixes API.
      */
     BulkAddVirtualCircuitPublicPrefixesResponse bulkAddVirtualCircuitPublicPrefixes(
             BulkAddVirtualCircuitPublicPrefixesRequest request);
@@ -233,15 +233,30 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/BulkDeleteVirtualCircuitPublicPrefixesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use BulkDeleteVirtualCircuitPublicPrefixes API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/BulkDeleteVirtualCircuitPublicPrefixesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use BulkDeleteVirtualCircuitPublicPrefixes API.
      */
     BulkDeleteVirtualCircuitPublicPrefixesResponse bulkDeleteVirtualCircuitPublicPrefixes(
             BulkDeleteVirtualCircuitPublicPrefixesRequest request);
 
     /**
+     * Moves a BYOASN Resource to a different compartment. For information
+     * about moving resources between compartments, see
+     * [Moving Resources to a Different Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ChangeByoasnCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeByoasnCompartment API.
+     */
+    ChangeByoasnCompartmentResponse changeByoasnCompartment(ChangeByoasnCompartmentRequest request);
+
+    /**
      * Moves a BYOIP CIDR block to a different compartment. For information
      * about moving resources between compartments, see
-     * [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * [Moving Resources to a Different Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -249,7 +264,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ChangeByoipRangeCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeByoipRangeCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ChangeByoipRangeCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeByoipRangeCompartment API.
      */
     ChangeByoipRangeCompartmentResponse changeByoipRangeCompartment(
             ChangeByoipRangeCompartmentRequest request);
@@ -257,7 +272,7 @@ public interface VirtualNetwork extends AutoCloseable {
     /**
      * Moves a capture filter to a new compartment in the same tenancy. For information
      * about moving resources between compartments, see
-     * [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * [Moving Resources to a Different Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -265,7 +280,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ChangeCaptureFilterCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeCaptureFilterCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ChangeCaptureFilterCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeCaptureFilterCompartment API.
      */
     ChangeCaptureFilterCompartmentResponse changeCaptureFilterCompartment(
             ChangeCaptureFilterCompartmentRequest request);
@@ -273,7 +288,7 @@ public interface VirtualNetwork extends AutoCloseable {
     /**
      * Moves a CPE object into a different compartment within the same tenancy. For information
      * about moving resources between compartments, see
-     * [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * [Moving Resources to a Different Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -281,14 +296,14 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ChangeCpeCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeCpeCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ChangeCpeCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeCpeCompartment API.
      */
     ChangeCpeCompartmentResponse changeCpeCompartment(ChangeCpeCompartmentRequest request);
 
     /**
      * Moves a cross-connect into a different compartment within the same tenancy. For information
      * about moving resources between compartments, see
-     * [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * [Moving Resources to a Different Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -296,7 +311,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ChangeCrossConnectCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeCrossConnectCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ChangeCrossConnectCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeCrossConnectCompartment API.
      */
     ChangeCrossConnectCompartmentResponse changeCrossConnectCompartment(
             ChangeCrossConnectCompartmentRequest request);
@@ -304,7 +319,7 @@ public interface VirtualNetwork extends AutoCloseable {
     /**
      * Moves a cross-connect group into a different compartment within the same tenancy. For information
      * about moving resources between compartments, see
-     * [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * [Moving Resources to a Different Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -312,7 +327,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ChangeCrossConnectGroupCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeCrossConnectGroupCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ChangeCrossConnectGroupCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeCrossConnectGroupCompartment API.
      */
     ChangeCrossConnectGroupCompartmentResponse changeCrossConnectGroupCompartment(
             ChangeCrossConnectGroupCompartmentRequest request);
@@ -320,7 +335,7 @@ public interface VirtualNetwork extends AutoCloseable {
     /**
      * Moves a set of DHCP options into a different compartment within the same tenancy. For information
      * about moving resources between compartments, see
-     * [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * [Moving Resources to a Different Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -328,7 +343,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ChangeDhcpOptionsCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeDhcpOptionsCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ChangeDhcpOptionsCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeDhcpOptionsCompartment API.
      */
     ChangeDhcpOptionsCompartmentResponse changeDhcpOptionsCompartment(
             ChangeDhcpOptionsCompartmentRequest request);
@@ -336,7 +351,7 @@ public interface VirtualNetwork extends AutoCloseable {
     /**
      * Moves a DRG into a different compartment within the same tenancy. For information
      * about moving resources between compartments, see
-     * [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * [Moving Resources to a Different Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -344,14 +359,14 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ChangeDrgCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeDrgCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ChangeDrgCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeDrgCompartment API.
      */
     ChangeDrgCompartmentResponse changeDrgCompartment(ChangeDrgCompartmentRequest request);
 
     /**
      * Moves an IPSec connection into a different compartment within the same tenancy. For information
      * about moving resources between compartments, see
-     * [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * [Moving Resources to a Different Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -359,7 +374,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ChangeIPSecConnectionCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeIPSecConnectionCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ChangeIPSecConnectionCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeIPSecConnectionCompartment API.
      */
     ChangeIPSecConnectionCompartmentResponse changeIPSecConnectionCompartment(
             ChangeIPSecConnectionCompartmentRequest request);
@@ -367,7 +382,7 @@ public interface VirtualNetwork extends AutoCloseable {
     /**
      * Moves an internet gateway into a different compartment within the same tenancy. For information
      * about moving resources between compartments, see
-     * [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * [Moving Resources to a Different Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -375,7 +390,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ChangeInternetGatewayCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeInternetGatewayCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ChangeInternetGatewayCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeInternetGatewayCompartment API.
      */
     ChangeInternetGatewayCompartmentResponse changeInternetGatewayCompartment(
             ChangeInternetGatewayCompartmentRequest request);
@@ -383,7 +398,7 @@ public interface VirtualNetwork extends AutoCloseable {
     /**
      * Moves a local peering gateway into a different compartment within the same tenancy. For information
      * about moving resources between compartments, see
-     * [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * [Moving Resources to a Different Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -391,7 +406,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ChangeLocalPeeringGatewayCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeLocalPeeringGatewayCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ChangeLocalPeeringGatewayCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeLocalPeeringGatewayCompartment API.
      */
     ChangeLocalPeeringGatewayCompartmentResponse changeLocalPeeringGatewayCompartment(
             ChangeLocalPeeringGatewayCompartmentRequest request);
@@ -399,7 +414,7 @@ public interface VirtualNetwork extends AutoCloseable {
     /**
      * Moves a NAT gateway into a different compartment within the same tenancy. For information
      * about moving resources between compartments, see
-     * [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * [Moving Resources to a Different Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -407,14 +422,14 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ChangeNatGatewayCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeNatGatewayCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ChangeNatGatewayCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeNatGatewayCompartment API.
      */
     ChangeNatGatewayCompartmentResponse changeNatGatewayCompartment(
             ChangeNatGatewayCompartmentRequest request);
 
     /**
      * Moves a network security group into a different compartment within the same tenancy. For
-     * information about moving resources between compartments, see [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * information about moving resources between compartments, see [Moving Resources to a Different Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -422,7 +437,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ChangeNetworkSecurityGroupCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeNetworkSecurityGroupCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ChangeNetworkSecurityGroupCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeNetworkSecurityGroupCompartment API.
      */
     ChangeNetworkSecurityGroupCompartmentResponse changeNetworkSecurityGroupCompartment(
             ChangeNetworkSecurityGroupCompartmentRequest request);
@@ -430,7 +445,7 @@ public interface VirtualNetwork extends AutoCloseable {
     /**
      * Moves a public IP into a different compartment within the same tenancy. For information
      * about moving resources between compartments, see
-     * [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * [Moving Resources to a Different Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      * <p>
      * This operation applies only to reserved public IPs. Ephemeral public IPs always belong to the
      * same compartment as their VNIC and move accordingly.
@@ -441,7 +456,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ChangePublicIpCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangePublicIpCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ChangePublicIpCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangePublicIpCompartment API.
      */
     ChangePublicIpCompartmentResponse changePublicIpCompartment(
             ChangePublicIpCompartmentRequest request);
@@ -449,7 +464,7 @@ public interface VirtualNetwork extends AutoCloseable {
     /**
      * Moves a public IP pool to a different compartment. For information
      * about moving resources between compartments, see
-     * [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * [Moving Resources to a Different Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -457,7 +472,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ChangePublicIpPoolCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangePublicIpPoolCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ChangePublicIpPoolCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangePublicIpPoolCompartment API.
      */
     ChangePublicIpPoolCompartmentResponse changePublicIpPoolCompartment(
             ChangePublicIpPoolCompartmentRequest request);
@@ -465,7 +480,7 @@ public interface VirtualNetwork extends AutoCloseable {
     /**
      * Moves a remote peering connection (RPC) into a different compartment within the same tenancy. For information
      * about moving resources between compartments, see
-     * [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * [Moving Resources to a Different Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -473,7 +488,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ChangeRemotePeeringConnectionCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeRemotePeeringConnectionCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ChangeRemotePeeringConnectionCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeRemotePeeringConnectionCompartment API.
      */
     ChangeRemotePeeringConnectionCompartmentResponse changeRemotePeeringConnectionCompartment(
             ChangeRemotePeeringConnectionCompartmentRequest request);
@@ -481,7 +496,7 @@ public interface VirtualNetwork extends AutoCloseable {
     /**
      * Moves a route table into a different compartment within the same tenancy. For information
      * about moving resources between compartments, see
-     * [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * [Moving Resources to a Different Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -489,7 +504,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ChangeRouteTableCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeRouteTableCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ChangeRouteTableCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeRouteTableCompartment API.
      */
     ChangeRouteTableCompartmentResponse changeRouteTableCompartment(
             ChangeRouteTableCompartmentRequest request);
@@ -497,7 +512,7 @@ public interface VirtualNetwork extends AutoCloseable {
     /**
      * Moves a security list into a different compartment within the same tenancy. For information
      * about moving resources between compartments, see
-     * [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * [Moving Resources to a Different Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -505,7 +520,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ChangeSecurityListCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeSecurityListCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ChangeSecurityListCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeSecurityListCompartment API.
      */
     ChangeSecurityListCompartmentResponse changeSecurityListCompartment(
             ChangeSecurityListCompartmentRequest request);
@@ -513,7 +528,7 @@ public interface VirtualNetwork extends AutoCloseable {
     /**
      * Moves a service gateway into a different compartment within the same tenancy. For information
      * about moving resources between compartments, see
-     * [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * [Moving Resources to a Different Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -521,7 +536,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ChangeServiceGatewayCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeServiceGatewayCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ChangeServiceGatewayCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeServiceGatewayCompartment API.
      */
     ChangeServiceGatewayCompartmentResponse changeServiceGatewayCompartment(
             ChangeServiceGatewayCompartmentRequest request);
@@ -529,7 +544,7 @@ public interface VirtualNetwork extends AutoCloseable {
     /**
      * Moves a subnet into a different compartment within the same tenancy. For information
      * about moving resources between compartments, see
-     * [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * [Moving Resources to a Different Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -537,14 +552,14 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ChangeSubnetCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeSubnetCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ChangeSubnetCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeSubnetCompartment API.
      */
     ChangeSubnetCompartmentResponse changeSubnetCompartment(ChangeSubnetCompartmentRequest request);
 
     /**
      * Moves a VCN into a different compartment within the same tenancy. For information
      * about moving resources between compartments, see
-     * [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * [Moving Resources to a Different Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -552,14 +567,14 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ChangeVcnCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeVcnCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ChangeVcnCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeVcnCompartment API.
      */
     ChangeVcnCompartmentResponse changeVcnCompartment(ChangeVcnCompartmentRequest request);
 
     /**
      * Moves a virtual circuit into a different compartment within the same tenancy. For information
      * about moving resources between compartments, see
-     * [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * [Moving Resources to a Different Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -567,7 +582,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ChangeVirtualCircuitCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeVirtualCircuitCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ChangeVirtualCircuitCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeVirtualCircuitCompartment API.
      */
     ChangeVirtualCircuitCompartmentResponse changeVirtualCircuitCompartment(
             ChangeVirtualCircuitCompartmentRequest request);
@@ -575,7 +590,7 @@ public interface VirtualNetwork extends AutoCloseable {
     /**
      * Moves a VLAN into a different compartment within the same tenancy.
      * For information about moving resources between compartments, see
-     * [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * [Moving Resources to a Different Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -583,14 +598,14 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ChangeVlanCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeVlanCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ChangeVlanCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeVlanCompartment API.
      */
     ChangeVlanCompartmentResponse changeVlanCompartment(ChangeVlanCompartmentRequest request);
 
     /**
      * Moves a VTAP to a new compartment within the same tenancy. For information
      * about moving resources between compartments, see
-     * [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * [Moving Resources to a Different Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -598,7 +613,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ChangeVtapCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeVtapCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ChangeVtapCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeVtapCompartment API.
      */
     ChangeVtapCompartmentResponse changeVtapCompartment(ChangeVtapCompartmentRequest request);
 
@@ -610,7 +625,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * an Identity and Access Management (IAM) policy that gives the requestor permission
      * to connect to LPGs in the acceptor's compartment. Without that permission, this
      * operation will fail. For more information, see
-     * [VCN Peering](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/VCNpeering.htm).
+     * [VCN Peering](https://docs.oracle.com/iaas/Content/Network/Tasks/VCNpeering.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -618,7 +633,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ConnectLocalPeeringGatewaysExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ConnectLocalPeeringGateways API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ConnectLocalPeeringGatewaysExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ConnectLocalPeeringGateways API.
      */
     ConnectLocalPeeringGatewaysResponse connectLocalPeeringGateways(
             ConnectLocalPeeringGatewaysRequest request);
@@ -631,7 +646,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * an Identity and Access Management (IAM) policy that gives the requestor permission
      * to connect to RPCs in the acceptor's compartment. Without that permission, this
      * operation will fail. For more information, see
-     * [VCN Peering](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/VCNpeering.htm).
+     * [VCN Peering](https://docs.oracle.com/iaas/Content/Network/Tasks/VCNpeering.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -639,10 +654,23 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ConnectRemotePeeringConnectionsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ConnectRemotePeeringConnections API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ConnectRemotePeeringConnectionsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ConnectRemotePeeringConnections API.
      */
     ConnectRemotePeeringConnectionsResponse connectRemotePeeringConnections(
             ConnectRemotePeeringConnectionsRequest request);
+
+    /**
+     * Creates a BYOASN Resource
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateByoasnExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateByoasn API.
+     */
+    CreateByoasnResponse createByoasn(CreateByoasnRequest request);
 
     /**
      * Creates a subrange of the BYOIP CIDR block.
@@ -653,17 +681,17 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateByoipRangeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateByoipRange API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateByoipRangeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateByoipRange API.
      */
     CreateByoipRangeResponse createByoipRange(CreateByoipRangeRequest request);
 
     /**
      * Creates a virtual test access point (VTAP) capture filter in the specified compartment.
      * <p>
-     * For the purposes of access control, you must provide the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains
+     * For the purposes of access control, you must provide the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains
      * the VTAP. For more information about compartments and access control, see
-     * [Overview of the IAM Service](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm).
-     * For information about OCIDs, see [Resource Identifiers](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * [Overview of the IAM Service](https://docs.oracle.com/iaas/Content/Identity/Concepts/overview.htm).
+     * For information about OCIDs, see [Resource Identifiers](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * <p>
      * You may optionally specify a *display name* for the VTAP, otherwise a default is provided.
      * It does not have to be unique, and you can change it.
@@ -674,23 +702,23 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateCaptureFilterExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateCaptureFilter API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateCaptureFilterExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateCaptureFilter API.
      */
     CreateCaptureFilterResponse createCaptureFilter(CreateCaptureFilterRequest request);
 
     /**
      * Creates a new virtual customer-premises equipment (CPE) object in the specified compartment. For
-     * more information, see [Site-to-Site VPN Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/overviewIPsec.htm).
+     * more information, see [Site-to-Site VPN Overview](https://docs.oracle.com/iaas/Content/Network/Tasks/overviewIPsec.htm).
      * <p>
-     * For the purposes of access control, you must provide the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want
+     * For the purposes of access control, you must provide the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want
      * the CPE to reside. Notice that the CPE doesn't have to be in the same compartment as the IPSec
      * connection or other Networking Service components. If you're not sure which compartment to
      * use, put the CPE in the same compartment as the DRG. For more information about
-     * compartments and access control, see [Overview of the IAM Service](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm).
-     * For information about OCIDs, see [Resource Identifiers](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * compartments and access control, see [Overview of the IAM Service](https://docs.oracle.com/iaas/Content/Identity/Concepts/overview.htm).
+     * For information about OCIDs, see [Resource Identifiers](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * <p>
      * You must provide the public IP address of your on-premises router. See
-     * [CPE Configuration](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/configuringCPE.htm).
+     * [CPE Configuration](https://docs.oracle.com/iaas/Content/Network/Tasks/configuringCPE.htm).
      * <p>
      * You may optionally specify a *display name* for the CPE, otherwise a default is provided. It does not have to
      * be unique, and you can change it. Avoid entering confidential information.
@@ -701,7 +729,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateCpeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateCpe API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateCpeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateCpe API.
      */
     CreateCpeResponse createCpe(CreateCpeRequest request);
 
@@ -712,16 +740,16 @@ public interface VirtualNetwork extends AutoCloseable {
      * <p>
      * After creating the `CrossConnect` object, you need to go the FastConnect location
      * and request to have the physical cable installed. For more information, see
-     * [FastConnect Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
+     * [FastConnect Overview](https://docs.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
      * <p>
-     * For the purposes of access control, you must provide the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * For the purposes of access control, you must provide the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment where you want the cross-connect to reside. If you're
      * not sure which compartment to use, put the cross-connect in the
      * same compartment with your VCN. For more information about
      * compartments and access control, see
-     * [Overview of the IAM Service](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm).
+     * [Overview of the IAM Service](https://docs.oracle.com/iaas/Content/Identity/Concepts/overview.htm).
      * For information about OCIDs, see
-     * [Resource Identifiers](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * [Resource Identifiers](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * <p>
      * You may optionally specify a *display name* for the cross-connect.
      * It does not have to be unique, and you can change it. Avoid entering confidential information.
@@ -732,23 +760,23 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateCrossConnectExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateCrossConnect API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateCrossConnectExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateCrossConnect API.
      */
     CreateCrossConnectResponse createCrossConnect(CreateCrossConnectRequest request);
 
     /**
      * Creates a new cross-connect group to use with Oracle Cloud Infrastructure
      * FastConnect. For more information, see
-     * [FastConnect Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
+     * [FastConnect Overview](https://docs.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
      * <p>
-     * For the purposes of access control, you must provide the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * For the purposes of access control, you must provide the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment where you want the cross-connect group to reside. If you're
      * not sure which compartment to use, put the cross-connect group in the
      * same compartment with your VCN. For more information about
      * compartments and access control, see
-     * [Overview of the IAM Service](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm).
+     * [Overview of the IAM Service](https://docs.oracle.com/iaas/Content/Identity/Concepts/overview.htm).
      * For information about OCIDs, see
-     * [Resource Identifiers](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * [Resource Identifiers](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * <p>
      * You may optionally specify a *display name* for the cross-connect group.
      * It does not have to be unique, and you can change it. Avoid entering confidential information.
@@ -759,7 +787,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateCrossConnectGroupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateCrossConnectGroup API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateCrossConnectGroupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateCrossConnectGroup API.
      */
     CreateCrossConnectGroupResponse createCrossConnectGroup(CreateCrossConnectGroupRequest request);
 
@@ -767,12 +795,12 @@ public interface VirtualNetwork extends AutoCloseable {
      * Creates a new set of DHCP options for the specified VCN. For more information, see
      * {@link DhcpOptions}.
      * <p>
-     * For the purposes of access control, you must provide the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want the set of
+     * For the purposes of access control, you must provide the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want the set of
      * DHCP options to reside. Notice that the set of options doesn't have to be in the same compartment as the VCN,
      * subnets, or other Networking Service components. If you're not sure which compartment to use, put the set
      * of DHCP options in the same compartment as the VCN. For more information about compartments and access control, see
-     * [Overview of the IAM Service](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm). For information about OCIDs, see
-     * [Resource Identifiers](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * [Overview of the IAM Service](https://docs.oracle.com/iaas/Content/Identity/Concepts/overview.htm). For information about OCIDs, see
+     * [Resource Identifiers](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * <p>
      * You may optionally specify a *display name* for the set of DHCP options, otherwise a default is provided.
      * It does not have to be unique, and you can change it. Avoid entering confidential information.
@@ -783,20 +811,20 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateDhcpOptionsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateDhcpOptions API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateDhcpOptionsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateDhcpOptions API.
      */
     CreateDhcpOptionsResponse createDhcpOptions(CreateDhcpOptionsRequest request);
 
     /**
      * Creates a new dynamic routing gateway (DRG) in the specified compartment. For more information,
-     * see [Dynamic Routing Gateways (DRGs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingDRGs.htm).
+     * see [Dynamic Routing Gateways (DRGs)](https://docs.oracle.com/iaas/Content/Network/Tasks/managingDRGs.htm).
      * <p>
-     * For the purposes of access control, you must provide the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want
+     * For the purposes of access control, you must provide the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want
      * the DRG to reside. Notice that the DRG doesn't have to be in the same compartment as the VCN,
      * the DRG attachment, or other Networking Service components. If you're not sure which compartment
      * to use, put the DRG in the same compartment as the VCN. For more information about compartments
-     * and access control, see [Overview of the IAM Service](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm).
-     * For information about OCIDs, see [Resource Identifiers](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * and access control, see [Overview of the IAM Service](https://docs.oracle.com/iaas/Content/Identity/Concepts/overview.htm).
+     * For information about OCIDs, see [Resource Identifiers](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * <p>
      * You may optionally specify a *display name* for the DRG, otherwise a default is provided.
      * It does not have to be unique, and you can change it. Avoid entering confidential information.
@@ -807,22 +835,22 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateDrgExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateDrg API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateDrgExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateDrg API.
      */
     CreateDrgResponse createDrg(CreateDrgRequest request);
 
     /**
      * Attaches the specified DRG to the specified network resource. A VCN can be attached to only one DRG
      * at a time, but a DRG can be attached to more than one VCN. The response includes a `DrgAttachment`
-     * object with its own [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). For more information about DRGs, see
-     * [Dynamic Routing Gateways (DRGs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingDRGs.htm).
+     * object with its own [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). For more information about DRGs, see
+     * [Dynamic Routing Gateways (DRGs)](https://docs.oracle.com/iaas/Content/Network/Tasks/managingDRGs.htm).
      * <p>
      * You may optionally specify a *display name* for the attachment, otherwise a default is provided.
      * It does not have to be unique, and you can change it. Avoid entering confidential information.
      * <p>
      * For the purposes of access control, the DRG attachment is automatically placed into the currently selected compartment.
      * For more information about compartments and access control, see
-     * [Overview of the IAM Service](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm).
+     * [Overview of the IAM Service](https://docs.oracle.com/iaas/Content/Identity/Concepts/overview.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -830,7 +858,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateDrgAttachmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateDrgAttachment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateDrgAttachmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateDrgAttachment API.
      */
     CreateDrgAttachmentResponse createDrgAttachment(CreateDrgAttachmentRequest request);
 
@@ -846,7 +874,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateDrgRouteDistributionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateDrgRouteDistribution API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateDrgRouteDistributionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateDrgRouteDistribution API.
      */
     CreateDrgRouteDistributionResponse createDrgRouteDistribution(
             CreateDrgRouteDistributionRequest request);
@@ -861,13 +889,13 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateDrgRouteTableExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateDrgRouteTable API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateDrgRouteTableExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateDrgRouteTable API.
      */
     CreateDrgRouteTableResponse createDrgRouteTable(CreateDrgRouteTableRequest request);
 
     /**
      * Creates a new IPSec connection between the specified DRG and CPE. For more information, see
-     * [Site-to-Site VPN Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/overviewIPsec.htm).
+     * [Site-to-Site VPN Overview](https://docs.oracle.com/iaas/Content/Network/Tasks/overviewIPsec.htm).
      * <p>
      * If you configure at least one tunnel to use static routing, then in the request you must provide
      * at least one valid static route (you're allowed a maximum of 10). For example: 10.0.0.0/16.
@@ -875,12 +903,12 @@ public interface VirtualNetwork extends AutoCloseable {
      * the static routes. For more information, see the important note in
      * {@link IPSecConnection}.
      * <p>
-     * For the purposes of access control, you must provide the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want the
+     * For the purposes of access control, you must provide the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want the
      * IPSec connection to reside. Notice that the IPSec connection doesn't have to be in the same compartment
      * as the DRG, CPE, or other Networking Service components. If you're not sure which compartment to
      * use, put the IPSec connection in the same compartment as the DRG. For more information about
      * compartments and access control, see
-     * [Overview of the IAM Service](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm).
+     * [Overview of the IAM Service](https://docs.oracle.com/iaas/Content/Identity/Concepts/overview.htm).
      * <p>
      * You may optionally specify a *display name* for the IPSec connection, otherwise a default is provided.
      * It does not have to be unique, and you can change it. Avoid entering confidential information.
@@ -893,7 +921,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * <p>
      * For each tunnel, you need the IP address of Oracle's VPN headend and the shared secret
      * (that is, the pre-shared key). For more information, see
-     * [CPE Configuration](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/configuringCPE.htm).
+     * [CPE Configuration](https://docs.oracle.com/iaas/Content/Network/Tasks/configuringCPE.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -901,19 +929,19 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateIPSecConnectionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateIPSecConnection API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateIPSecConnectionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateIPSecConnection API.
      */
     CreateIPSecConnectionResponse createIPSecConnection(CreateIPSecConnectionRequest request);
 
     /**
      * Creates a new internet gateway for the specified VCN. For more information, see
-     * [Access to the Internet](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingIGs.htm).
+     * [Access to the Internet](https://docs.oracle.com/iaas/Content/Network/Tasks/managingIGs.htm).
      * <p>
-     * For the purposes of access control, you must provide the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want the Internet
+     * For the purposes of access control, you must provide the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want the Internet
      * Gateway to reside. Notice that the internet gateway doesn't have to be in the same compartment as the VCN or
      * other Networking Service components. If you're not sure which compartment to use, put the Internet
      * Gateway in the same compartment with the VCN. For more information about compartments and access control, see
-     * [Overview of the IAM Service](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm).
+     * [Overview of the IAM Service](https://docs.oracle.com/iaas/Content/Identity/Concepts/overview.htm).
      * <p>
      * You may optionally specify a *display name* for the internet gateway, otherwise a default is provided. It
      * does not have to be unique, and you can change it. Avoid entering confidential information.
@@ -933,7 +961,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateInternetGatewayExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateInternetGateway API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateInternetGatewayExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateInternetGateway API.
      */
     CreateInternetGatewayResponse createInternetGateway(CreateInternetGatewayRequest request);
 
@@ -946,7 +974,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateIpv6Example.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateIpv6 API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateIpv6Example.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateIpv6 API.
      */
     CreateIpv6Response createIpv6(CreateIpv6Request request);
 
@@ -959,7 +987,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateLocalPeeringGatewayExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateLocalPeeringGateway API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateLocalPeeringGatewayExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateLocalPeeringGateway API.
      */
     CreateLocalPeeringGatewayResponse createLocalPeeringGateway(
             CreateLocalPeeringGatewayRequest request);
@@ -974,7 +1002,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateNatGatewayExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateNatGateway API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateNatGatewayExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateNatGateway API.
      */
     CreateNatGatewayResponse createNatGateway(CreateNatGatewayRequest request);
 
@@ -987,7 +1015,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateNetworkSecurityGroupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateNetworkSecurityGroup API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateNetworkSecurityGroupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateNetworkSecurityGroup API.
      */
     CreateNetworkSecurityGroupResponse createNetworkSecurityGroup(
             CreateNetworkSecurityGroupRequest request);
@@ -995,7 +1023,7 @@ public interface VirtualNetwork extends AutoCloseable {
     /**
      * Creates a secondary private IP for the specified VNIC.
      * For more information about secondary private IPs, see
-     * [IP Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingIPaddresses.htm).
+     * [IP Addresses](https://docs.oracle.com/iaas/Content/Network/Tasks/managingIPaddresses.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1003,17 +1031,17 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreatePrivateIpExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreatePrivateIp API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreatePrivateIpExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreatePrivateIp API.
      */
     CreatePrivateIpResponse createPrivateIp(CreatePrivateIpRequest request);
 
     /**
      * Creates a public IP. Use the `lifetime` property to specify whether it's an ephemeral or
      * reserved public IP. For information about limits on how many you can create, see
-     * [Public IP Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm).
+     * [Public IP Addresses](https://docs.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm).
      * <p>
      * **For an ephemeral public IP assigned to a private IP:** You must also specify a `privateIpId`
-     * with the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary private IP you want to assign the public IP to. The public IP is
+     * with the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary private IP you want to assign the public IP to. The public IP is
      * created in the same availability domain as the private IP. An ephemeral public IP must always be
      * assigned to a private IP, and only to the *primary* private IP on a VNIC, not a secondary
      * private IP. Exception: If you create a {@link NatGateway}, Oracle
@@ -1036,7 +1064,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreatePublicIpExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreatePublicIp API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreatePublicIpExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreatePublicIp API.
      */
     CreatePublicIpResponse createPublicIp(CreatePublicIpRequest request);
 
@@ -1049,7 +1077,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreatePublicIpPoolExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreatePublicIpPool API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreatePublicIpPoolExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreatePublicIpPool API.
      */
     CreatePublicIpPoolResponse createPublicIpPool(CreatePublicIpPoolRequest request);
 
@@ -1062,7 +1090,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateRemotePeeringConnectionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateRemotePeeringConnection API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateRemotePeeringConnectionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateRemotePeeringConnection API.
      */
     CreateRemotePeeringConnectionResponse createRemotePeeringConnection(
             CreateRemotePeeringConnectionRequest request);
@@ -1070,16 +1098,16 @@ public interface VirtualNetwork extends AutoCloseable {
     /**
      * Creates a new route table for the specified VCN. In the request you must also include at least one route
      * rule for the new route table. For information on the number of rules you can have in a route table, see
-     * [Service Limits](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/servicelimits.htm). For general information about route
+     * [Service Limits](https://docs.oracle.com/iaas/Content/General/Concepts/servicelimits.htm). For general information about route
      * tables in your VCN and the types of targets you can use in route rules,
-     * see [Route Tables](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm).
+     * see [Route Tables](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm).
      * <p>
-     * For the purposes of access control, you must provide the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want the route
+     * For the purposes of access control, you must provide the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want the route
      * table to reside. Notice that the route table doesn't have to be in the same compartment as the VCN, subnets,
      * or other Networking Service components. If you're not sure which compartment to use, put the route
      * table in the same compartment as the VCN. For more information about compartments and access control, see
-     * [Overview of the IAM Service](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm). For information about OCIDs, see
-     * [Resource Identifiers](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * [Overview of the IAM Service](https://docs.oracle.com/iaas/Content/Identity/Concepts/overview.htm). For information about OCIDs, see
+     * [Resource Identifiers](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * <p>
      * You may optionally specify a *display name* for the route table, otherwise a default is provided.
      * It does not have to be unique, and you can change it. Avoid entering confidential information.
@@ -1090,22 +1118,22 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateRouteTableExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateRouteTable API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateRouteTableExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateRouteTable API.
      */
     CreateRouteTableResponse createRouteTable(CreateRouteTableRequest request);
 
     /**
      * Creates a new security list for the specified VCN. For more information
-     * about security lists, see [Security Lists](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securitylists.htm).
+     * about security lists, see [Security Lists](https://docs.oracle.com/iaas/Content/Network/Concepts/securitylists.htm).
      * For information on the number of rules you can have in a security list, see
-     * [Service Limits](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/servicelimits.htm).
+     * [Service Limits](https://docs.oracle.com/iaas/Content/General/Concepts/servicelimits.htm).
      * <p>
-     * For the purposes of access control, you must provide the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want the security
+     * For the purposes of access control, you must provide the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want the security
      * list to reside. Notice that the security list doesn't have to be in the same compartment as the VCN, subnets,
      * or other Networking Service components. If you're not sure which compartment to use, put the security
      * list in the same compartment as the VCN. For more information about compartments and access control, see
-     * [Overview of the IAM Service](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm). For information about OCIDs, see
-     * [Resource Identifiers](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * [Overview of the IAM Service](https://docs.oracle.com/iaas/Content/Identity/Concepts/overview.htm). For information about OCIDs, see
+     * [Resource Identifiers](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * <p>
      * You may optionally specify a *display name* for the security list, otherwise a default is provided.
      * It does not have to be unique, and you can change it. Avoid entering confidential information.
@@ -1116,17 +1144,17 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateSecurityListExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateSecurityList API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateSecurityListExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateSecurityList API.
      */
     CreateSecurityListResponse createSecurityList(CreateSecurityListRequest request);
 
     /**
      * Creates a new service gateway in the specified compartment.
      * <p>
-     * For the purposes of access control, you must provide the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want
+     * For the purposes of access control, you must provide the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want
      * the service gateway to reside. For more information about compartments and access control, see
-     * [Overview of the IAM Service](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm).
-     * For information about OCIDs, see [Resource Identifiers](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * [Overview of the IAM Service](https://docs.oracle.com/iaas/Content/Identity/Concepts/overview.htm).
+     * For information about OCIDs, see [Resource Identifiers](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * <p>
      * You may optionally specify a *display name* for the service gateway, otherwise a default is provided.
      * It does not have to be unique, and you can change it. Avoid entering confidential information.
@@ -1140,42 +1168,42 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateServiceGatewayExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateServiceGateway API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateServiceGatewayExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateServiceGateway API.
      */
     CreateServiceGatewayResponse createServiceGateway(CreateServiceGatewayRequest request);
 
     /**
      * Creates a new subnet in the specified VCN. You can't change the size of the subnet after creation,
      * so it's important to think about the size of subnets you need before creating them.
-     * For more information, see [VCNs and Subnets](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVCNs.htm).
+     * For more information, see [VCNs and Subnets](https://docs.oracle.com/iaas/Content/Network/Tasks/managingVCNs.htm).
      * For information on the number of subnets you can have in a VCN, see
-     * [Service Limits](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/servicelimits.htm).
+     * [Service Limits](https://docs.oracle.com/iaas/Content/General/Concepts/servicelimits.htm).
      * <p>
-     * For the purposes of access control, you must provide the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want the subnet
+     * For the purposes of access control, you must provide the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want the subnet
      * to reside. Notice that the subnet doesn't have to be in the same compartment as the VCN, route tables, or
      * other Networking Service components. If you're not sure which compartment to use, put the subnet in
      * the same compartment as the VCN. For more information about compartments and access control, see
-     * [Overview of the IAM Service](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm). For information about OCIDs,
-     * see [Resource Identifiers](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * [Overview of the IAM Service](https://docs.oracle.com/iaas/Content/Identity/Concepts/overview.htm). For information about OCIDs,
+     * see [Resource Identifiers](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * <p>
      * You may optionally associate a route table with the subnet. If you don't, the subnet will use the
      * VCN's default route table. For more information about route tables, see
-     * [Route Tables](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm).
+     * [Route Tables](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm).
      * <p>
      * You may optionally associate a security list with the subnet. If you don't, the subnet will use the
      * VCN's default security list. For more information about security lists, see
-     * [Security Lists](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securitylists.htm).
+     * [Security Lists](https://docs.oracle.com/iaas/Content/Network/Concepts/securitylists.htm).
      * <p>
      * You may optionally associate a set of DHCP options with the subnet. If you don't, the subnet will use the
      * VCN's default set. For more information about DHCP options, see
-     * [DHCP Options](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingDHCP.htm).
+     * [DHCP Options](https://docs.oracle.com/iaas/Content/Network/Tasks/managingDHCP.htm).
      * <p>
      * You may optionally specify a *display name* for the subnet, otherwise a default is provided.
      * It does not have to be unique, and you can change it. Avoid entering confidential information.
      * <p>
      * You can also add a DNS label for the subnet, which is required if you want the Internet and
      * VCN Resolver to resolve hostnames for instances in the subnet. For more information, see
-     * [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
+     * [DNS in Your Virtual Cloud Network](https://docs.oracle.com/iaas/Content/Network/Concepts/dns.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1183,13 +1211,13 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateSubnetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateSubnet API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateSubnetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateSubnet API.
      */
     CreateSubnetResponse createSubnet(CreateSubnetRequest request);
 
     /**
      * Creates a new virtual cloud network (VCN). For more information, see
-     * [VCNs and Subnets](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVCNs.htm).
+     * [VCNs and Subnets](https://docs.oracle.com/iaas/Content/Network/Tasks/managingVCNs.htm).
      * <p>
      * For the VCN, you specify a list of one or more IPv4 CIDR blocks that meet the following criteria:
      * <p>
@@ -1200,27 +1228,27 @@ public interface VirtualNetwork extends AutoCloseable {
      * For a CIDR block, Oracle recommends that you use one of the private IP address ranges specified in [RFC 1918](https://tools.ietf.org/html/rfc1918) (10.0.0.0/8, 172.16/12, and 192.168/16). Example:
      * 172.16.0.0/16. The CIDR blocks can range from /16 to /30.
      * <p>
-     * For the purposes of access control, you must provide the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want the VCN to
+     * For the purposes of access control, you must provide the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want the VCN to
      * reside. Consult an Oracle Cloud Infrastructure administrator in your organization if you're not sure which
      * compartment to use. Notice that the VCN doesn't have to be in the same compartment as the subnets or other
      * Networking Service components. For more information about compartments and access control, see
-     * [Overview of the IAM Service](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm). For information about OCIDs, see
-     * [Resource Identifiers](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * [Overview of the IAM Service](https://docs.oracle.com/iaas/Content/Identity/Concepts/overview.htm). For information about OCIDs, see
+     * [Resource Identifiers](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * <p>
      * You may optionally specify a *display name* for the VCN, otherwise a default is provided. It does not have to
      * be unique, and you can change it. Avoid entering confidential information.
      * <p>
      * You can also add a DNS label for the VCN, which is required if you want the instances to use the
      * Interent and VCN Resolver option for DNS in the VCN. For more information, see
-     * [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
+     * [DNS in Your Virtual Cloud Network](https://docs.oracle.com/iaas/Content/Network/Concepts/dns.htm).
      * <p>
      * The VCN automatically comes with a default route table, default security list, and default set of DHCP options.
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for each is returned in the response. You can't delete these default objects, but you can change their
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for each is returned in the response. You can't delete these default objects, but you can change their
      * contents (that is, change the route rules, security list rules, and so on).
      * <p>
      * The VCN and subnets you create are not accessible until you attach an internet gateway or set up a Site-to-Site VPN
      * or FastConnect. For more information, see
-     * [Overview of the Networking Service](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/overview.htm).
+     * [Overview of the Networking Service](https://docs.oracle.com/iaas/Content/Network/Concepts/overview.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1228,23 +1256,23 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateVcnExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateVcn API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateVcnExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateVcn API.
      */
     CreateVcnResponse createVcn(CreateVcnRequest request);
 
     /**
      * Creates a new virtual circuit to use with Oracle Cloud
      * Infrastructure FastConnect. For more information, see
-     * [FastConnect Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
+     * [FastConnect Overview](https://docs.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
      * <p>
-     * For the purposes of access control, you must provide the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * For the purposes of access control, you must provide the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment where you want the virtual circuit to reside. If you're
      * not sure which compartment to use, put the virtual circuit in the
      * same compartment with the DRG it's using. For more information about
      * compartments and access control, see
-     * [Overview of the IAM Service](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm).
+     * [Overview of the IAM Service](https://docs.oracle.com/iaas/Content/Identity/Concepts/overview.htm).
      * For information about OCIDs, see
-     * [Resource Identifiers](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * [Resource Identifiers](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * <p>
      * You may optionally specify a *display name* for the virtual circuit.
      * It does not have to be unique, and you can change it. Avoid entering confidential information.
@@ -1253,7 +1281,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * the traffic to flow through. Make sure you attach the DRG to your
      * VCN and confirm the VCN's routing sends traffic to the DRG. Otherwise
      * traffic will not flow. For more information, see
-     * [Route Tables](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm).
+     * [Route Tables](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1261,7 +1289,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateVirtualCircuitExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateVirtualCircuit API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateVirtualCircuitExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateVirtualCircuit API.
      */
     CreateVirtualCircuitResponse createVirtualCircuit(CreateVirtualCircuitRequest request);
 
@@ -1274,17 +1302,17 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateVlanExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateVlan API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateVlanExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateVlan API.
      */
     CreateVlanResponse createVlan(CreateVlanRequest request);
 
     /**
      * Creates a virtual test access point (VTAP) in the specified compartment.
      * <p>
-     * For the purposes of access control, you must provide the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the VTAP.
+     * For the purposes of access control, you must provide the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the VTAP.
      * For more information about compartments and access control, see
-     * [Overview of the IAM Service](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm).
-     * For information about OCIDs, see [Resource Identifiers](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * [Overview of the IAM Service](https://docs.oracle.com/iaas/Content/Identity/Concepts/overview.htm).
+     * For information about OCIDs, see [Resource Identifiers](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * <p>
      * You may optionally specify a *display name* for the VTAP, otherwise a default is provided.
      * It does not have to be unique, and you can change it.
@@ -1295,15 +1323,31 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateVtapExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateVtap API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateVtapExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateVtap API.
      */
     CreateVtapResponse createVtap(CreateVtapRequest request);
+
+    /**
+     * Deletes the specified `Byoasn` resource.
+     * The resource must be in one of the following states: CREATING, ACTIVE or FAILED.
+     * It must not be in use by any of the byoipRanges or deletion will fail.
+     * You must specify the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteByoasnExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteByoasn API.
+     */
+    DeleteByoasnResponse deleteByoasn(DeleteByoasnRequest request);
 
     /**
      * Deletes the specified `ByoipRange` resource.
      * The resource must be in one of the following states: CREATING, PROVISIONED, ACTIVE, or FAILED.
      * It must not have any subranges currently allocated to a PublicIpPool object or the deletion will fail.
-     * You must specify the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * You must specify the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * If the `ByoipRange` resource is currently in the PROVISIONED or ACTIVE state, it will be de-provisioned and then deleted.
      *
      * @param request The request object containing the details to send
@@ -1312,7 +1356,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteByoipRangeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteByoipRange API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteByoipRangeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteByoipRange API.
      */
     DeleteByoipRangeResponse deleteByoipRange(DeleteByoipRangeRequest request);
 
@@ -1326,7 +1370,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteCaptureFilterExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteCaptureFilter API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteCaptureFilterExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteCaptureFilter API.
      */
     DeleteCaptureFilterResponse deleteCaptureFilter(DeleteCaptureFilterRequest request);
 
@@ -1341,7 +1385,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteCpeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteCpe API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteCpeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteCpe API.
      */
     DeleteCpeResponse deleteCpe(DeleteCpeRequest request);
 
@@ -1355,7 +1399,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteCrossConnectExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteCrossConnect API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteCrossConnectExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteCrossConnect API.
      */
     DeleteCrossConnectResponse deleteCrossConnect(DeleteCrossConnectRequest request);
 
@@ -1370,7 +1414,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteCrossConnectGroupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteCrossConnectGroup API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteCrossConnectGroupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteCrossConnectGroup API.
      */
     DeleteCrossConnectGroupResponse deleteCrossConnectGroup(DeleteCrossConnectGroupRequest request);
 
@@ -1387,7 +1431,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteDhcpOptionsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteDhcpOptions API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteDhcpOptionsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteDhcpOptions API.
      */
     DeleteDhcpOptionsResponse deleteDhcpOptions(DeleteDhcpOptionsRequest request);
 
@@ -1403,7 +1447,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteDrgExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteDrg API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteDrgExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteDrg API.
      */
     DeleteDrgResponse deleteDrg(DeleteDrgRequest request);
 
@@ -1418,7 +1462,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteDrgAttachmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteDrgAttachment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteDrgAttachmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteDrgAttachment API.
      */
     DeleteDrgAttachmentResponse deleteDrgAttachment(DeleteDrgAttachmentRequest request);
 
@@ -1433,7 +1477,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteDrgRouteDistributionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteDrgRouteDistribution API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteDrgRouteDistributionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteDrgRouteDistribution API.
      */
     DeleteDrgRouteDistributionResponse deleteDrgRouteDistribution(
             DeleteDrgRouteDistributionRequest request);
@@ -1447,7 +1491,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteDrgRouteTableExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteDrgRouteTable API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteDrgRouteTableExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteDrgRouteTable API.
      */
     DeleteDrgRouteTableResponse deleteDrgRouteTable(DeleteDrgRouteTableRequest request);
 
@@ -1467,7 +1511,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteIPSecConnectionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteIPSecConnection API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteIPSecConnectionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteIPSecConnection API.
      */
     DeleteIPSecConnectionResponse deleteIPSecConnection(DeleteIPSecConnectionRequest request);
 
@@ -1484,12 +1528,12 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteInternetGatewayExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteInternetGateway API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteInternetGatewayExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteInternetGateway API.
      */
     DeleteInternetGatewayResponse deleteInternetGateway(DeleteInternetGatewayRequest request);
 
     /**
-     * Unassigns and deletes the specified IPv6. You must specify the object's [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * Unassigns and deletes the specified IPv6. You must specify the object's [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * The IPv6 address is returned to the subnet's pool of available addresses.
      *
      * @param request The request object containing the details to send
@@ -1498,7 +1542,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteIpv6Example.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteIpv6 API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteIpv6Example.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteIpv6 API.
      */
     DeleteIpv6Response deleteIpv6(DeleteIpv6Request request);
 
@@ -1514,7 +1558,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteLocalPeeringGatewayExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteLocalPeeringGateway API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteLocalPeeringGatewayExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteLocalPeeringGateway API.
      */
     DeleteLocalPeeringGatewayResponse deleteLocalPeeringGateway(
             DeleteLocalPeeringGatewayRequest request);
@@ -1532,7 +1576,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteNatGatewayExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteNatGateway API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteNatGatewayExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteNatGateway API.
      */
     DeleteNatGatewayResponse deleteNatGateway(DeleteNatGatewayRequest request);
 
@@ -1542,7 +1586,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * To get a list of the VNICs in a network security group, use
      * {@link #listNetworkSecurityGroupVnics(ListNetworkSecurityGroupVnicsRequest) listNetworkSecurityGroupVnics}.
      * Each returned {@link NetworkSecurityGroupVnic} object
-     * contains both the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC and the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC's parent resource (for example,
+     * contains both the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC and the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC's parent resource (for example,
      * the Compute instance that the VNIC is attached to).
      *
      * @param request The request object containing the details to send
@@ -1551,21 +1595,21 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteNetworkSecurityGroupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteNetworkSecurityGroup API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteNetworkSecurityGroupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteNetworkSecurityGroup API.
      */
     DeleteNetworkSecurityGroupResponse deleteNetworkSecurityGroup(
             DeleteNetworkSecurityGroupRequest request);
 
     /**
      * Unassigns and deletes the specified private IP. You must
-     * specify the object's [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). The private IP address is returned to
+     * specify the object's [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). The private IP address is returned to
      * the subnet's pool of available addresses.
      * <p>
      * This operation cannot be used with primary private IPs, which are
      * automatically unassigned and deleted when the VNIC is terminated.
      * <p>
      **Important:** If a secondary private IP is the
-     * [target of a route rule](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip),
+     * [target of a route rule](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip),
      * unassigning it from the VNIC causes that route rule to blackhole and the traffic
      * will be dropped.
      *
@@ -1575,13 +1619,13 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeletePrivateIpExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeletePrivateIp API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeletePrivateIpExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeletePrivateIp API.
      */
     DeletePrivateIpResponse deletePrivateIp(DeletePrivateIpRequest request);
 
     /**
      * Unassigns and deletes the specified public IP (either ephemeral or reserved).
-     * You must specify the object's [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). The public IP address is returned to the
+     * You must specify the object's [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). The public IP address is returned to the
      * Oracle Cloud Infrastructure public IP pool.
      * <p>
      **Note:** You cannot update, unassign, or delete the public IP that Oracle automatically
@@ -1602,14 +1646,14 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeletePublicIpExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeletePublicIp API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeletePublicIpExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeletePublicIp API.
      */
     DeletePublicIpResponse deletePublicIp(DeletePublicIpRequest request);
 
     /**
      * Deletes the specified public IP pool.
      * To delete a public IP pool it must not have any active IP address allocations.
-     * You must specify the object's [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) when deleting an IP pool.
+     * You must specify the object's [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) when deleting an IP pool.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1617,7 +1661,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeletePublicIpPoolExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeletePublicIpPool API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeletePublicIpPoolExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeletePublicIpPool API.
      */
     DeletePublicIpPoolResponse deletePublicIpPool(DeletePublicIpPoolRequest request);
 
@@ -1633,7 +1677,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteRemotePeeringConnectionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteRemotePeeringConnection API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteRemotePeeringConnectionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteRemotePeeringConnection API.
      */
     DeleteRemotePeeringConnectionResponse deleteRemotePeeringConnection(
             DeleteRemotePeeringConnectionRequest request);
@@ -1651,7 +1695,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteRouteTableExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteRouteTable API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteRouteTableExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteRouteTable API.
      */
     DeleteRouteTableResponse deleteRouteTable(DeleteRouteTableRequest request);
 
@@ -1668,7 +1712,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteSecurityListExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteSecurityList API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteSecurityListExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteSecurityList API.
      */
     DeleteSecurityListResponse deleteSecurityList(DeleteSecurityListRequest request);
 
@@ -1682,7 +1726,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteServiceGatewayExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteServiceGateway API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteServiceGatewayExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteServiceGateway API.
      */
     DeleteServiceGatewayResponse deleteServiceGateway(DeleteServiceGatewayRequest request);
 
@@ -1697,7 +1741,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteSubnetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteSubnet API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteSubnetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteSubnet API.
      */
     DeleteSubnetResponse deleteSubnet(DeleteSubnetRequest request);
 
@@ -1715,7 +1759,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteVcnExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteVcn API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteVcnExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteVcn API.
      */
     DeleteVcnResponse deleteVcn(DeleteVcnRequest request);
 
@@ -1732,7 +1776,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteVirtualCircuitExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteVirtualCircuit API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteVirtualCircuitExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteVirtualCircuit API.
      */
     DeleteVirtualCircuitResponse deleteVirtualCircuit(DeleteVirtualCircuitRequest request);
 
@@ -1745,7 +1789,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteVlanExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteVlan API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteVlanExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteVlan API.
      */
     DeleteVlanResponse deleteVlan(DeleteVlanRequest request);
 
@@ -1759,7 +1803,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteVtapExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteVtap API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteVtapExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteVtap API.
      */
     DeleteVtapResponse deleteVtap(DeleteVtapRequest request);
 
@@ -1783,7 +1827,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DetachServiceIdExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DetachServiceId API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DetachServiceIdExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DetachServiceId API.
      */
     DetachServiceIdResponse detachServiceId(DetachServiceIdRequest request);
 
@@ -1796,7 +1840,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetAllDrgAttachmentsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetAllDrgAttachments API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetAllDrgAttachmentsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetAllDrgAttachments API.
      */
     GetAllDrgAttachmentsResponse getAllDrgAttachments(GetAllDrgAttachmentsRequest request);
 
@@ -1809,13 +1853,26 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetAllowedIkeIPSecParametersExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetAllowedIkeIPSecParameters API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetAllowedIkeIPSecParametersExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetAllowedIkeIPSecParameters API.
      */
     GetAllowedIkeIPSecParametersResponse getAllowedIkeIPSecParameters(
             GetAllowedIkeIPSecParametersRequest request);
 
     /**
-     * Gets the `ByoipRange` resource. You must specify the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * Gets the `Byoasn` resource. You must specify the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetByoasnExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetByoasn API.
+     */
+    GetByoasnResponse getByoasn(GetByoasnRequest request);
+
+    /**
+     * Gets the `ByoipRange` resource. You must specify the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1823,7 +1880,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetByoipRangeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetByoipRange API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetByoipRangeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetByoipRange API.
      */
     GetByoipRangeResponse getByoipRange(GetByoipRangeRequest request);
 
@@ -1835,7 +1892,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetCaptureFilterExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetCaptureFilter API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetCaptureFilterExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetCaptureFilter API.
      */
     GetCaptureFilterResponse getCaptureFilter(GetCaptureFilterRequest request);
 
@@ -1847,7 +1904,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetCpeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetCpe API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetCpeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetCpe API.
      */
     GetCpeResponse getCpe(GetCpeRequest request);
 
@@ -1877,7 +1934,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetCpeDeviceConfigContentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetCpeDeviceConfigContent API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetCpeDeviceConfigContentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetCpeDeviceConfigContent API.
      */
     GetCpeDeviceConfigContentResponse getCpeDeviceConfigContent(
             GetCpeDeviceConfigContentRequest request);
@@ -1899,7 +1956,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetCpeDeviceShapeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetCpeDeviceShape API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetCpeDeviceShapeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetCpeDeviceShape API.
      */
     GetCpeDeviceShapeResponse getCpeDeviceShape(GetCpeDeviceShapeRequest request);
 
@@ -1911,7 +1968,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetCrossConnectExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetCrossConnect API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetCrossConnectExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetCrossConnect API.
      */
     GetCrossConnectResponse getCrossConnect(GetCrossConnectRequest request);
 
@@ -1923,7 +1980,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetCrossConnectGroupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetCrossConnectGroup API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetCrossConnectGroupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetCrossConnectGroup API.
      */
     GetCrossConnectGroupResponse getCrossConnectGroup(GetCrossConnectGroupRequest request);
 
@@ -1935,7 +1992,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetCrossConnectLetterOfAuthorityExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetCrossConnectLetterOfAuthority API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetCrossConnectLetterOfAuthorityExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetCrossConnectLetterOfAuthority API.
      */
     GetCrossConnectLetterOfAuthorityResponse getCrossConnectLetterOfAuthority(
             GetCrossConnectLetterOfAuthorityRequest request);
@@ -1949,7 +2006,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetCrossConnectStatusExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetCrossConnectStatus API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetCrossConnectStatusExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetCrossConnectStatus API.
      */
     GetCrossConnectStatusResponse getCrossConnectStatus(GetCrossConnectStatusRequest request);
 
@@ -1961,7 +2018,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetDhcpOptionsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetDhcpOptions API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetDhcpOptionsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetDhcpOptions API.
      */
     GetDhcpOptionsResponse getDhcpOptions(GetDhcpOptionsRequest request);
 
@@ -1973,7 +2030,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetDrgExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetDrg API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetDrgExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetDrg API.
      */
     GetDrgResponse getDrg(GetDrgRequest request);
 
@@ -1985,13 +2042,13 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetDrgAttachmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetDrgAttachment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetDrgAttachmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetDrgAttachment API.
      */
     GetDrgAttachmentResponse getDrgAttachment(GetDrgAttachmentRequest request);
 
     /**
      * Gets the redundancy status for the specified DRG. For more information, see
-     * [Redundancy Remedies](https://docs.cloud.oracle.com/iaas/Content/Network/Troubleshoot/drgredundancy.htm).
+     * [Redundancy Remedies](https://docs.oracle.com/iaas/Content/Network/Troubleshoot/drgredundancy.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1999,7 +2056,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetDrgRedundancyStatusExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetDrgRedundancyStatus API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetDrgRedundancyStatusExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetDrgRedundancyStatus API.
      */
     GetDrgRedundancyStatusResponse getDrgRedundancyStatus(GetDrgRedundancyStatusRequest request);
 
@@ -2011,7 +2068,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetDrgRouteDistributionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetDrgRouteDistribution API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetDrgRouteDistributionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetDrgRouteDistribution API.
      */
     GetDrgRouteDistributionResponse getDrgRouteDistribution(GetDrgRouteDistributionRequest request);
 
@@ -2023,13 +2080,13 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetDrgRouteTableExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetDrgRouteTable API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetDrgRouteTableExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetDrgRouteTable API.
      */
     GetDrgRouteTableResponse getDrgRouteTable(GetDrgRouteTableRequest request);
 
     /**
      * Gets the specified provider service.
-     * For more information, see [FastConnect Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
+     * For more information, see [FastConnect Overview](https://docs.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -2037,7 +2094,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetFastConnectProviderServiceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetFastConnectProviderService API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetFastConnectProviderServiceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetFastConnectProviderService API.
      */
     GetFastConnectProviderServiceResponse getFastConnectProviderService(
             GetFastConnectProviderServiceRequest request);
@@ -2052,7 +2109,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetFastConnectProviderServiceKeyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetFastConnectProviderServiceKey API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetFastConnectProviderServiceKeyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetFastConnectProviderServiceKey API.
      */
     GetFastConnectProviderServiceKeyResponse getFastConnectProviderServiceKey(
             GetFastConnectProviderServiceKeyRequest request);
@@ -2068,7 +2125,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetIPSecConnectionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetIPSecConnection API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetIPSecConnectionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetIPSecConnection API.
      */
     GetIPSecConnectionResponse getIPSecConnection(GetIPSecConnectionRequest request);
 
@@ -2084,7 +2141,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetIPSecConnectionDeviceConfigExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetIPSecConnectionDeviceConfig API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetIPSecConnectionDeviceConfigExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetIPSecConnectionDeviceConfig API.
      */
     GetIPSecConnectionDeviceConfigResponse getIPSecConnectionDeviceConfig(
             GetIPSecConnectionDeviceConfigRequest request);
@@ -2099,7 +2156,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetIPSecConnectionDeviceStatusExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetIPSecConnectionDeviceStatus API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetIPSecConnectionDeviceStatusExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetIPSecConnectionDeviceStatus API.
      */
     GetIPSecConnectionDeviceStatusResponse getIPSecConnectionDeviceStatus(
             GetIPSecConnectionDeviceStatusRequest request);
@@ -2115,7 +2172,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetIPSecConnectionTunnelExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetIPSecConnectionTunnel API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetIPSecConnectionTunnelExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetIPSecConnectionTunnel API.
      */
     GetIPSecConnectionTunnelResponse getIPSecConnectionTunnel(
             GetIPSecConnectionTunnelRequest request);
@@ -2129,7 +2186,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetIPSecConnectionTunnelErrorExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetIPSecConnectionTunnelError API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetIPSecConnectionTunnelErrorExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetIPSecConnectionTunnelError API.
      */
     GetIPSecConnectionTunnelErrorResponse getIPSecConnectionTunnelError(
             GetIPSecConnectionTunnelErrorRequest request);
@@ -2144,7 +2201,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetIPSecConnectionTunnelSharedSecretExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetIPSecConnectionTunnelSharedSecret API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetIPSecConnectionTunnelSharedSecretExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetIPSecConnectionTunnelSharedSecret API.
      */
     GetIPSecConnectionTunnelSharedSecretResponse getIPSecConnectionTunnelSharedSecret(
             GetIPSecConnectionTunnelSharedSecretRequest request);
@@ -2157,7 +2214,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetInternetGatewayExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetInternetGateway API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetInternetGatewayExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetInternetGateway API.
      */
     GetInternetGatewayResponse getInternetGateway(GetInternetGatewayRequest request);
 
@@ -2188,16 +2245,16 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetIpsecCpeDeviceConfigContentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetIpsecCpeDeviceConfigContent API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetIpsecCpeDeviceConfigContentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetIpsecCpeDeviceConfigContent API.
      */
     GetIpsecCpeDeviceConfigContentResponse getIpsecCpeDeviceConfigContent(
             GetIpsecCpeDeviceConfigContentRequest request);
 
     /**
-     * Gets the specified IPv6. You must specify the object's [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * Gets the specified IPv6. You must specify the object's [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * Alternatively, you can get the object by using
      * {@link #listIpv6s(ListIpv6sRequest) listIpv6s}
-     * with the IPv6 address (for example, 2001:0db8:0123:1111:98fe:dcba:9876:4321) and subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * with the IPv6 address (for example, 2001:0db8:0123:1111:98fe:dcba:9876:4321) and subnet [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -2205,7 +2262,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetIpv6Example.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetIpv6 API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetIpv6Example.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetIpv6 API.
      */
     GetIpv6Response getIpv6(GetIpv6Request request);
 
@@ -2217,7 +2274,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetLocalPeeringGatewayExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetLocalPeeringGateway API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetLocalPeeringGatewayExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetLocalPeeringGateway API.
      */
     GetLocalPeeringGatewayResponse getLocalPeeringGateway(GetLocalPeeringGatewayRequest request);
 
@@ -2229,7 +2286,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetNatGatewayExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetNatGateway API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetNatGatewayExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetNatGateway API.
      */
     GetNatGatewayResponse getNatGateway(GetNatGatewayRequest request);
 
@@ -2248,7 +2305,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetNetworkSecurityGroupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetNetworkSecurityGroup API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetNetworkSecurityGroupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetNetworkSecurityGroup API.
      */
     GetNetworkSecurityGroupResponse getNetworkSecurityGroup(GetNetworkSecurityGroupRequest request);
 
@@ -2260,15 +2317,15 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetNetworkingTopologyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetNetworkingTopology API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetNetworkingTopologyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetNetworkingTopology API.
      */
     GetNetworkingTopologyResponse getNetworkingTopology(GetNetworkingTopologyRequest request);
 
     /**
-     * Gets the specified private IP. You must specify the object's [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * Gets the specified private IP. You must specify the object's [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * Alternatively, you can get the object by using
      * {@link #listPrivateIps(ListPrivateIpsRequest) listPrivateIps}
-     * with the private IP address (for example, 10.0.3.3) and subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * with the private IP address (for example, 10.0.3.3) and subnet [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -2276,22 +2333,22 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetPrivateIpExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetPrivateIp API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetPrivateIpExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetPrivateIp API.
      */
     GetPrivateIpResponse getPrivateIp(GetPrivateIpRequest request);
 
     /**
-     * Gets the specified public IP. You must specify the object's [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * Gets the specified public IP. You must specify the object's [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * <p>
      * Alternatively, you can get the object by using {@link #getPublicIpByIpAddress(GetPublicIpByIpAddressRequest) getPublicIpByIpAddress}
      * with the public IP address (for example, 203.0.113.2).
      * <p>
      * Or you can use {@link #getPublicIpByPrivateIpId(GetPublicIpByPrivateIpIdRequest) getPublicIpByPrivateIpId}
-     * with the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private IP that the public IP is assigned to.
+     * with the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private IP that the public IP is assigned to.
      * <p>
      **Note:** If you're fetching a reserved public IP that is in the process of being
      * moved to a different private IP, the service returns the public IP object with
-     * `lifecycleState` = ASSIGNING and `assignedEntityId` = [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target private IP.
+     * `lifecycleState` = ASSIGNING and `assignedEntityId` = [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target private IP.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -2299,7 +2356,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetPublicIpExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetPublicIp API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetPublicIpExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetPublicIp API.
      */
     GetPublicIpResponse getPublicIp(GetPublicIpRequest request);
 
@@ -2308,7 +2365,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * <p>
      **Note:** If you're fetching a reserved public IP that is in the process of being
      * moved to a different private IP, the service returns the public IP object with
-     * `lifecycleState` = ASSIGNING and `assignedEntityId` = [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target private IP.
+     * `lifecycleState` = ASSIGNING and `assignedEntityId` = [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target private IP.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -2316,7 +2373,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetPublicIpByIpAddressExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetPublicIpByIpAddress API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetPublicIpByIpAddressExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetPublicIpByIpAddress API.
      */
     GetPublicIpByIpAddressResponse getPublicIpByIpAddress(GetPublicIpByIpAddressRequest request);
 
@@ -2325,13 +2382,13 @@ public interface VirtualNetwork extends AutoCloseable {
      * of the private IP. If no public IP is assigned, a 404 is returned.
      * <p>
      **Note:** If you're fetching a reserved public IP that is in the process of being
-     * moved to a different private IP, and you provide the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the original private
-     * IP, this operation returns a 404. If you instead provide the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target
+     * moved to a different private IP, and you provide the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the original private
+     * IP, this operation returns a 404. If you instead provide the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target
      * private IP, or if you instead call
      * {@link #getPublicIp(GetPublicIpRequest) getPublicIp} or
      * {@link #getPublicIpByIpAddress(GetPublicIpByIpAddressRequest) getPublicIpByIpAddress}, the
      * service returns the public IP object with `lifecycleState` = ASSIGNING and
-     * `assignedEntityId` = [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target private IP.
+     * `assignedEntityId` = [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target private IP.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -2339,13 +2396,13 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetPublicIpByPrivateIpIdExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetPublicIpByPrivateIpId API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetPublicIpByPrivateIpIdExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetPublicIpByPrivateIpId API.
      */
     GetPublicIpByPrivateIpIdResponse getPublicIpByPrivateIpId(
             GetPublicIpByPrivateIpIdRequest request);
 
     /**
-     * Gets the specified `PublicIpPool` object. You must specify the object's [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * Gets the specified `PublicIpPool` object. You must specify the object's [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -2353,7 +2410,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetPublicIpPoolExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetPublicIpPool API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetPublicIpPoolExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetPublicIpPool API.
      */
     GetPublicIpPoolResponse getPublicIpPool(GetPublicIpPoolRequest request);
 
@@ -2366,7 +2423,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetRemotePeeringConnectionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetRemotePeeringConnection API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetRemotePeeringConnectionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetRemotePeeringConnection API.
      */
     GetRemotePeeringConnectionResponse getRemotePeeringConnection(
             GetRemotePeeringConnectionRequest request);
@@ -2380,7 +2437,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetResourceIpInventoryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetResourceIpInventory API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetResourceIpInventoryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetResourceIpInventory API.
      */
     GetResourceIpInventoryResponse getResourceIpInventory(GetResourceIpInventoryRequest request);
 
@@ -2392,7 +2449,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetRouteTableExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetRouteTable API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetRouteTableExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetRouteTable API.
      */
     GetRouteTableResponse getRouteTable(GetRouteTableRequest request);
 
@@ -2404,7 +2461,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetSecurityListExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetSecurityList API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetSecurityListExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetSecurityList API.
      */
     GetSecurityListResponse getSecurityList(GetSecurityListRequest request);
 
@@ -2417,7 +2474,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetServiceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetService API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetServiceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetService API.
      */
     GetServiceResponse getService(GetServiceRequest request);
 
@@ -2429,7 +2486,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetServiceGatewayExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetServiceGateway API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetServiceGatewayExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetServiceGateway API.
      */
     GetServiceGatewayResponse getServiceGateway(GetServiceGatewayRequest request);
 
@@ -2441,12 +2498,12 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetSubnetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetSubnet API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetSubnetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetSubnet API.
      */
     GetSubnetResponse getSubnet(GetSubnetRequest request);
 
     /**
-     * Gets the CIDR utilization data of the specified subnet. Specify the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * Gets the CIDR utilization data of the specified subnet. Specify the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -2454,13 +2511,13 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetSubnetCidrUtilizationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetSubnetCidrUtilization API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetSubnetCidrUtilizationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetSubnetCidrUtilization API.
      */
     GetSubnetCidrUtilizationResponse getSubnetCidrUtilization(
             GetSubnetCidrUtilizationRequest request);
 
     /**
-     * Gets the IP Inventory data of the specified subnet. Specify the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * Gets the IP Inventory data of the specified subnet. Specify the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -2468,7 +2525,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetSubnetIpInventoryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetSubnetIpInventory API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetSubnetIpInventoryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetSubnetIpInventory API.
      */
     GetSubnetIpInventoryResponse getSubnetIpInventory(GetSubnetIpInventoryRequest request);
 
@@ -2480,7 +2537,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetSubnetTopologyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetSubnetTopology API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetSubnetTopologyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetSubnetTopology API.
      */
     GetSubnetTopologyResponse getSubnetTopology(GetSubnetTopologyRequest request);
 
@@ -2497,7 +2554,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetTunnelCpeDeviceConfigExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetTunnelCpeDeviceConfig API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetTunnelCpeDeviceConfigExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetTunnelCpeDeviceConfig API.
      */
     GetTunnelCpeDeviceConfigResponse getTunnelCpeDeviceConfig(
             GetTunnelCpeDeviceConfigRequest request);
@@ -2528,7 +2585,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetTunnelCpeDeviceConfigContentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetTunnelCpeDeviceConfigContent API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetTunnelCpeDeviceConfigContentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetTunnelCpeDeviceConfigContent API.
      */
     GetTunnelCpeDeviceConfigContentResponse getTunnelCpeDeviceConfigContent(
             GetTunnelCpeDeviceConfigContentRequest request);
@@ -2542,7 +2599,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetUpgradeStatusExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetUpgradeStatus API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetUpgradeStatusExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetUpgradeStatus API.
      */
     GetUpgradeStatusResponse getUpgradeStatus(GetUpgradeStatusRequest request);
 
@@ -2554,7 +2611,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetVcnExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetVcn API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetVcnExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetVcn API.
      */
     GetVcnResponse getVcn(GetVcnRequest request);
 
@@ -2566,13 +2623,13 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetVcnDnsResolverAssociationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetVcnDnsResolverAssociation API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetVcnDnsResolverAssociationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetVcnDnsResolverAssociation API.
      */
     GetVcnDnsResolverAssociationResponse getVcnDnsResolverAssociation(
             GetVcnDnsResolverAssociationRequest request);
 
     /**
-     * Gets the CIDR overlap information of the specified VCN in selected compartments. Specify the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * Gets the CIDR overlap information of the specified VCN in selected compartments. Specify the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -2580,7 +2637,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetVcnOverlapExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetVcnOverlap API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetVcnOverlapExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetVcnOverlap API.
      */
     GetVcnOverlapResponse getVcnOverlap(GetVcnOverlapRequest request);
 
@@ -2592,7 +2649,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetVcnTopologyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetVcnTopology API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetVcnTopologyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetVcnTopology API.
      */
     GetVcnTopologyResponse getVcnTopology(GetVcnTopologyRequest request);
 
@@ -2604,7 +2661,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetVirtualCircuitExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetVirtualCircuit API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetVirtualCircuitExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetVirtualCircuit API.
      */
     GetVirtualCircuitResponse getVirtualCircuit(GetVirtualCircuitRequest request);
 
@@ -2616,13 +2673,13 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetVlanExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetVlan API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetVlanExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetVlan API.
      */
     GetVlanResponse getVlan(GetVlanRequest request);
 
     /**
      * Gets the information for the specified virtual network interface card (VNIC).
-     * You can get the VNIC [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) from the
+     * You can get the VNIC [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) from the
      * {@link #listVnicAttachments(ListVnicAttachmentsRequest) listVnicAttachments}
      * operation.
      *
@@ -2632,7 +2689,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetVnicExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetVnic API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetVnicExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetVnic API.
      */
     GetVnicResponse getVnic(GetVnicRequest request);
 
@@ -2644,13 +2701,26 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetVtapExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetVtap API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetVtapExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetVtap API.
      */
     GetVtapResponse getVtap(GetVtapRequest request);
 
     /**
+     * Unassign the specified IPv6 address from Virtual Network Interface Card (VNIC). You must specify the IPv6 [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/Ipv6VnicDetachExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use Ipv6VnicDetach API.
+     */
+    Ipv6VnicDetachResponse ipv6VnicDetach(Ipv6VnicDetachRequest request);
+
+    /**
      * Lists the regions that support remote VCN peering (which is peering across regions).
-     * For more information, see [VCN Peering](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/VCNpeering.htm).
+     * For more information, see [VCN Peering](https://docs.oracle.com/iaas/Content/Network/Tasks/VCNpeering.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -2658,10 +2728,24 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListAllowedPeerRegionsForRemotePeeringExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListAllowedPeerRegionsForRemotePeering API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListAllowedPeerRegionsForRemotePeeringExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListAllowedPeerRegionsForRemotePeering API.
      */
     ListAllowedPeerRegionsForRemotePeeringResponse listAllowedPeerRegionsForRemotePeering(
             ListAllowedPeerRegionsForRemotePeeringRequest request);
+
+    /**
+     * Lists the `Byoasn` resources in the specified compartment.
+     * You can filter the list using query parameters.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListByoasnsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListByoasns API.
+     */
+    ListByoasnsResponse listByoasns(ListByoasnsRequest request);
 
     /**
      * Lists the subranges of a BYOIP CIDR block currently allocated to an IP pool.
@@ -2673,7 +2757,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListByoipAllocatedRangesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListByoipAllocatedRanges API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListByoipAllocatedRangesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListByoipAllocatedRanges API.
      */
     ListByoipAllocatedRangesResponse listByoipAllocatedRanges(
             ListByoipAllocatedRangesRequest request);
@@ -2688,7 +2772,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListByoipRangesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListByoipRanges API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListByoipRangesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListByoipRanges API.
      */
     ListByoipRangesResponse listByoipRanges(ListByoipRangesRequest request);
 
@@ -2701,7 +2785,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListCaptureFiltersExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListCaptureFilters API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListCaptureFiltersExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListCaptureFilters API.
      */
     ListCaptureFiltersResponse listCaptureFilters(ListCaptureFiltersRequest request);
 
@@ -2712,7 +2796,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * <p>
      * If you want to generate CPE configuration content for one of the returned CPE device types,
      * ensure that the {@link Cpe} object's `cpeDeviceShapeId` attribute is set
-     * to the CPE device type's [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) (returned by this operation).
+     * to the CPE device type's [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) (returned by this operation).
      * <p>
      * For information about generating CPE configuration content, see these operations:
      * <p>
@@ -2726,7 +2810,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListCpeDeviceShapesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListCpeDeviceShapes API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListCpeDeviceShapesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListCpeDeviceShapes API.
      */
     ListCpeDeviceShapesResponse listCpeDeviceShapes(ListCpeDeviceShapesRequest request);
 
@@ -2739,7 +2823,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListCpesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListCpes API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListCpesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListCpes API.
      */
     ListCpesResponse listCpes(ListCpesRequest request);
 
@@ -2752,7 +2836,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListCrossConnectGroupsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListCrossConnectGroups API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListCrossConnectGroupsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListCrossConnectGroups API.
      */
     ListCrossConnectGroupsResponse listCrossConnectGroups(ListCrossConnectGroupsRequest request);
 
@@ -2766,7 +2850,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListCrossConnectLocationsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListCrossConnectLocations API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListCrossConnectLocationsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListCrossConnectLocations API.
      */
     ListCrossConnectLocationsResponse listCrossConnectLocations(
             ListCrossConnectLocationsRequest request);
@@ -2781,14 +2865,14 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListCrossConnectMappingsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListCrossConnectMappings API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListCrossConnectMappingsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListCrossConnectMappings API.
      */
     ListCrossConnectMappingsResponse listCrossConnectMappings(
             ListCrossConnectMappingsRequest request);
 
     /**
      * Lists the cross-connects in the specified compartment. You can filter the list
-     * by specifying the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a cross-connect group.
+     * by specifying the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a cross-connect group.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -2796,7 +2880,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListCrossConnectsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListCrossConnects API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListCrossConnectsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListCrossConnects API.
      */
     ListCrossConnectsResponse listCrossConnects(ListCrossConnectsRequest request);
 
@@ -2811,7 +2895,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListCrossconnectPortSpeedShapesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListCrossconnectPortSpeedShapes API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListCrossconnectPortSpeedShapesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListCrossconnectPortSpeedShapes API.
      */
     ListCrossconnectPortSpeedShapesResponse listCrossconnectPortSpeedShapes(
             ListCrossconnectPortSpeedShapesRequest request);
@@ -2828,7 +2912,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListDhcpOptionsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDhcpOptions API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListDhcpOptionsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDhcpOptions API.
      */
     ListDhcpOptionsResponse listDhcpOptions(ListDhcpOptionsRequest request);
 
@@ -2846,7 +2930,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListDrgAttachmentsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDrgAttachments API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListDrgAttachmentsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDrgAttachments API.
      */
     ListDrgAttachmentsResponse listDrgAttachments(ListDrgAttachmentsRequest request);
 
@@ -2858,7 +2942,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListDrgRouteDistributionStatementsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDrgRouteDistributionStatements API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListDrgRouteDistributionStatementsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDrgRouteDistributionStatements API.
      */
     ListDrgRouteDistributionStatementsResponse listDrgRouteDistributionStatements(
             ListDrgRouteDistributionStatementsRequest request);
@@ -2875,7 +2959,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListDrgRouteDistributionsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDrgRouteDistributions API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListDrgRouteDistributionsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDrgRouteDistributions API.
      */
     ListDrgRouteDistributionsResponse listDrgRouteDistributions(
             ListDrgRouteDistributionsRequest request);
@@ -2888,7 +2972,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListDrgRouteRulesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDrgRouteRules API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListDrgRouteRulesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDrgRouteRules API.
      */
     ListDrgRouteRulesResponse listDrgRouteRules(ListDrgRouteRulesRequest request);
 
@@ -2903,7 +2987,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListDrgRouteTablesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDrgRouteTables API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListDrgRouteTablesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDrgRouteTables API.
      */
     ListDrgRouteTablesResponse listDrgRouteTables(ListDrgRouteTablesRequest request);
 
@@ -2916,7 +3000,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListDrgsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDrgs API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListDrgsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDrgs API.
      */
     ListDrgsResponse listDrgs(ListDrgsRequest request);
 
@@ -2925,9 +3009,9 @@ public interface VirtualNetwork extends AutoCloseable {
      * information so you can specify your desired provider and service
      * offering when you create a virtual circuit.
      * <p>
-     * For the compartment ID, provide the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of your tenancy (the root compartment).
+     * For the compartment ID, provide the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of your tenancy (the root compartment).
      * <p>
-     * For more information, see [FastConnect Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
+     * For more information, see [FastConnect Overview](https://docs.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -2935,7 +3019,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListFastConnectProviderServicesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListFastConnectProviderServices API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListFastConnectProviderServicesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListFastConnectProviderServices API.
      */
     ListFastConnectProviderServicesResponse listFastConnectProviderServices(
             ListFastConnectProviderServicesRequest request);
@@ -2944,7 +3028,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * Gets the list of available virtual circuit bandwidth levels for a provider.
      * You need this information so you can specify your desired bandwidth level (shape) when you create a virtual circuit.
      * <p>
-     * For more information about virtual circuits, see [FastConnect Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
+     * For more information about virtual circuits, see [FastConnect Overview](https://docs.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -2952,7 +3036,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListFastConnectProviderVirtualCircuitBandwidthShapesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListFastConnectProviderVirtualCircuitBandwidthShapes API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListFastConnectProviderVirtualCircuitBandwidthShapesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListFastConnectProviderVirtualCircuitBandwidthShapes API.
      */
     ListFastConnectProviderVirtualCircuitBandwidthShapesResponse
             listFastConnectProviderVirtualCircuitBandwidthShapes(
@@ -2967,7 +3051,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListIPSecConnectionTunnelRoutesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListIPSecConnectionTunnelRoutes API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListIPSecConnectionTunnelRoutesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListIPSecConnectionTunnelRoutes API.
      */
     ListIPSecConnectionTunnelRoutesResponse listIPSecConnectionTunnelRoutes(
             ListIPSecConnectionTunnelRoutesRequest request);
@@ -2981,7 +3065,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListIPSecConnectionTunnelSecurityAssociationsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListIPSecConnectionTunnelSecurityAssociations API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListIPSecConnectionTunnelSecurityAssociationsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListIPSecConnectionTunnelSecurityAssociations API.
      */
     ListIPSecConnectionTunnelSecurityAssociationsResponse
             listIPSecConnectionTunnelSecurityAssociations(
@@ -2996,7 +3080,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListIPSecConnectionTunnelsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListIPSecConnectionTunnels API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListIPSecConnectionTunnelsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListIPSecConnectionTunnels API.
      */
     ListIPSecConnectionTunnelsResponse listIPSecConnectionTunnels(
             ListIPSecConnectionTunnelsRequest request);
@@ -3011,7 +3095,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListIPSecConnectionsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListIPSecConnections API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListIPSecConnectionsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListIPSecConnections API.
      */
     ListIPSecConnectionsResponse listIPSecConnections(ListIPSecConnectionsRequest request);
 
@@ -3025,7 +3109,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListInternetGatewaysExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListInternetGateways API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListInternetGatewaysExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListInternetGateways API.
      */
     ListInternetGatewaysResponse listInternetGateways(ListInternetGatewaysRequest request);
 
@@ -3038,7 +3122,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListIpInventoryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListIpInventory API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListIpInventoryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListIpInventory API.
      */
     ListIpInventoryResponse listIpInventory(ListIpInventoryRequest request);
 
@@ -3046,11 +3130,11 @@ public interface VirtualNetwork extends AutoCloseable {
      * Lists the {@link Ipv6} objects based
      * on one of these filters:
      * <p>
-     * Subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-     *   * VNIC [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * Subnet [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     *   * VNIC [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *   * Both IPv6 address and subnet OCID: This lets you get an `Ipv6` object based on its private
-     *   IPv6 address (for example, 2001:0db8:0123:1111:abcd:ef01:2345:6789) and not its [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). For comparison,
-     *   {@link #getIpv6(GetIpv6Request) getIpv6} requires the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     *   IPv6 address (for example, 2001:0db8:0123:1111:abcd:ef01:2345:6789) and not its [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). For comparison,
+     *   {@link #getIpv6(GetIpv6Request) getIpv6} requires the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -3058,7 +3142,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListIpv6sExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListIpv6s API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListIpv6sExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListIpv6s API.
      */
     ListIpv6sResponse listIpv6s(ListIpv6sRequest request);
 
@@ -3072,7 +3156,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListLocalPeeringGatewaysExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListLocalPeeringGateways API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListLocalPeeringGatewaysExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListLocalPeeringGateways API.
      */
     ListLocalPeeringGatewaysResponse listLocalPeeringGateways(
             ListLocalPeeringGatewaysRequest request);
@@ -3087,7 +3171,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListNatGatewaysExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListNatGateways API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListNatGatewaysExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListNatGateways API.
      */
     ListNatGatewaysResponse listNatGateways(ListNatGatewaysRequest request);
 
@@ -3100,7 +3184,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListNetworkSecurityGroupSecurityRulesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListNetworkSecurityGroupSecurityRules API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListNetworkSecurityGroupSecurityRulesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListNetworkSecurityGroupSecurityRules API.
      */
     ListNetworkSecurityGroupSecurityRulesResponse listNetworkSecurityGroupSecurityRules(
             ListNetworkSecurityGroupSecurityRulesRequest request);
@@ -3114,7 +3198,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListNetworkSecurityGroupVnicsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListNetworkSecurityGroupVnics API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListNetworkSecurityGroupVnicsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListNetworkSecurityGroupVnics API.
      */
     ListNetworkSecurityGroupVnicsResponse listNetworkSecurityGroupVnics(
             ListNetworkSecurityGroupVnicsRequest request);
@@ -3129,7 +3213,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListNetworkSecurityGroupsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListNetworkSecurityGroups API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListNetworkSecurityGroupsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListNetworkSecurityGroups API.
      */
     ListNetworkSecurityGroupsResponse listNetworkSecurityGroups(
             ListNetworkSecurityGroupsRequest request);
@@ -3138,19 +3222,19 @@ public interface VirtualNetwork extends AutoCloseable {
      * Lists the {@link PrivateIp} objects based
      * on one of these filters:
      * <p>
-     * - Subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-     *   - VNIC [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * - Subnet [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     *   - VNIC [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *   - Both private IP address and subnet OCID: This lets
      *   you get a `privateIP` object based on its private IP
-     *   address (for example, 10.0.3.3) and not its [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). For comparison,
+     *   address (for example, 10.0.3.3) and not its [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). For comparison,
      *   {@link #getPrivateIp(GetPrivateIpRequest) getPrivateIp}
-     *   requires the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     *   requires the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * <p>
      * If you're listing all the private IPs associated with a given subnet
      * or VNIC, the response includes both primary and secondary private IPs.
      * <p>
      * If you are an Oracle Cloud VMware Solution customer and have VLANs
-     * in your VCN, you can filter the list by VLAN [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). See {@link Vlan}.
+     * in your VCN, you can filter the list by VLAN [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). See {@link Vlan}.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -3158,7 +3242,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListPrivateIpsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListPrivateIps API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListPrivateIpsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListPrivateIps API.
      */
     ListPrivateIpsResponse listPrivateIps(ListPrivateIpsRequest request);
 
@@ -3172,7 +3256,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListPublicIpPoolsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListPublicIpPools API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListPublicIpPoolsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListPublicIpPools API.
      */
     ListPublicIpPoolsResponse listPublicIpPools(ListPublicIpPoolsRequest request);
 
@@ -3204,7 +3288,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListPublicIpsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListPublicIps API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListPublicIpsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListPublicIps API.
      */
     ListPublicIpsResponse listPublicIps(ListPublicIpsRequest request);
 
@@ -3218,7 +3302,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListRemotePeeringConnectionsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListRemotePeeringConnections API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListRemotePeeringConnectionsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListRemotePeeringConnections API.
      */
     ListRemotePeeringConnectionsResponse listRemotePeeringConnections(
             ListRemotePeeringConnectionsRequest request);
@@ -3235,7 +3319,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListRouteTablesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListRouteTables API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListRouteTablesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListRouteTables API.
      */
     ListRouteTablesResponse listRouteTables(ListRouteTablesRequest request);
 
@@ -3249,7 +3333,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListSecurityListsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSecurityLists API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListSecurityListsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSecurityLists API.
      */
     ListSecurityListsResponse listSecurityLists(ListSecurityListsRequest request);
 
@@ -3263,7 +3347,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListServiceGatewaysExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListServiceGateways API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListServiceGatewaysExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListServiceGateways API.
      */
     ListServiceGatewaysResponse listServiceGateways(ListServiceGatewaysRequest request);
 
@@ -3277,7 +3361,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListServicesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListServices API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListServicesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListServices API.
      */
     ListServicesResponse listServices(ListServicesRequest request);
 
@@ -3291,7 +3375,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListSubnetsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSubnets API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListSubnetsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSubnets API.
      */
     ListSubnetsResponse listSubnets(ListSubnetsRequest request);
 
@@ -3304,7 +3388,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListVcnsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListVcns API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListVcnsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListVcns API.
      */
     ListVcnsResponse listVcns(ListVcnsRequest request);
 
@@ -3316,13 +3400,13 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListVirtualCircuitAssociatedTunnelsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListVirtualCircuitAssociatedTunnels API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListVirtualCircuitAssociatedTunnelsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListVirtualCircuitAssociatedTunnels API.
      */
     ListVirtualCircuitAssociatedTunnelsResponse listVirtualCircuitAssociatedTunnels(
             ListVirtualCircuitAssociatedTunnelsRequest request);
 
     /**
-     * The operation lists available bandwidth levels for virtual circuits. For the compartment ID, provide the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of your tenancy (the root compartment).
+     * The operation lists available bandwidth levels for virtual circuits. For the compartment ID, provide the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of your tenancy (the root compartment).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -3330,7 +3414,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListVirtualCircuitBandwidthShapesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListVirtualCircuitBandwidthShapes API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListVirtualCircuitBandwidthShapesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListVirtualCircuitBandwidthShapes API.
      */
     ListVirtualCircuitBandwidthShapesResponse listVirtualCircuitBandwidthShapes(
             ListVirtualCircuitBandwidthShapesRequest request);
@@ -3345,7 +3429,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListVirtualCircuitPublicPrefixesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListVirtualCircuitPublicPrefixes API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListVirtualCircuitPublicPrefixesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListVirtualCircuitPublicPrefixes API.
      */
     ListVirtualCircuitPublicPrefixesResponse listVirtualCircuitPublicPrefixes(
             ListVirtualCircuitPublicPrefixesRequest request);
@@ -3359,7 +3443,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListVirtualCircuitsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListVirtualCircuits API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListVirtualCircuitsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListVirtualCircuits API.
      */
     ListVirtualCircuitsResponse listVirtualCircuits(ListVirtualCircuitsRequest request);
 
@@ -3372,7 +3456,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListVlansExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListVlans API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListVlansExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListVlans API.
      */
     ListVlansResponse listVlans(ListVlansRequest request);
 
@@ -3385,7 +3469,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListVtapsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListVtaps API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListVtapsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListVtaps API.
      */
     ListVtapsResponse listVtaps(ListVtapsRequest request);
 
@@ -3406,9 +3490,22 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ModifyVcnCidrExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ModifyVcnCidr API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ModifyVcnCidrExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ModifyVcnCidr API.
      */
     ModifyVcnCidrResponse modifyVcnCidr(ModifyVcnCidrRequest request);
+
+    /**
+     * Unassign the specified PrivateIP address from Virtual Network Interface Card (VNIC). You must specify the PrivateIP [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/PrivateIpVnicDetachExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use PrivateIpVnicDetach API.
+     */
+    PrivateIpVnicDetachResponse privateIpVnicDetach(PrivateIpVnicDetachRequest request);
 
     /**
      * Removes one or more route distribution statements from the specified route distribution's map.
@@ -3419,7 +3516,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/RemoveDrgRouteDistributionStatementsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RemoveDrgRouteDistributionStatements API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/RemoveDrgRouteDistributionStatementsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RemoveDrgRouteDistributionStatements API.
      */
     RemoveDrgRouteDistributionStatementsResponse removeDrgRouteDistributionStatements(
             RemoveDrgRouteDistributionStatementsRequest request);
@@ -3433,7 +3530,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/RemoveDrgRouteRulesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RemoveDrgRouteRules API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/RemoveDrgRouteRulesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RemoveDrgRouteRules API.
      */
     RemoveDrgRouteRulesResponse removeDrgRouteRules(RemoveDrgRouteRulesRequest request);
 
@@ -3446,7 +3543,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/RemoveExportDrgRouteDistributionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RemoveExportDrgRouteDistribution API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/RemoveExportDrgRouteDistributionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RemoveExportDrgRouteDistribution API.
      */
     RemoveExportDrgRouteDistributionResponse removeExportDrgRouteDistribution(
             RemoveExportDrgRouteDistributionRequest request);
@@ -3461,7 +3558,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/RemoveImportDrgRouteDistributionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RemoveImportDrgRouteDistribution API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/RemoveImportDrgRouteDistributionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RemoveImportDrgRouteDistribution API.
      */
     RemoveImportDrgRouteDistributionResponse removeImportDrgRouteDistribution(
             RemoveImportDrgRouteDistributionRequest request);
@@ -3475,7 +3572,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/RemoveIpv6SubnetCidrExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RemoveIpv6SubnetCidr API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/RemoveIpv6SubnetCidrExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RemoveIpv6SubnetCidr API.
      */
     RemoveIpv6SubnetCidrResponse removeIpv6SubnetCidr(RemoveIpv6SubnetCidrRequest request);
 
@@ -3488,7 +3585,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/RemoveIpv6VcnCidrExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RemoveIpv6VcnCidr API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/RemoveIpv6VcnCidrExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RemoveIpv6VcnCidr API.
      */
     RemoveIpv6VcnCidrResponse removeIpv6VcnCidr(RemoveIpv6VcnCidrRequest request);
 
@@ -3501,7 +3598,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/RemoveNetworkSecurityGroupSecurityRulesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RemoveNetworkSecurityGroupSecurityRules API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/RemoveNetworkSecurityGroupSecurityRulesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RemoveNetworkSecurityGroupSecurityRules API.
      */
     RemoveNetworkSecurityGroupSecurityRulesResponse removeNetworkSecurityGroupSecurityRules(
             RemoveNetworkSecurityGroupSecurityRulesRequest request);
@@ -3515,7 +3612,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/RemovePublicIpPoolCapacityExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RemovePublicIpPoolCapacity API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/RemovePublicIpPoolCapacityExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RemovePublicIpPoolCapacity API.
      */
     RemovePublicIpPoolCapacityResponse removePublicIpPoolCapacity(
             RemovePublicIpPoolCapacityRequest request);
@@ -3533,9 +3630,48 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/RemoveVcnCidrExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RemoveVcnCidr API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/RemoveVcnCidrExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RemoveVcnCidr API.
      */
     RemoveVcnCidrResponse removeVcnCidr(RemoveVcnCidrRequest request);
+
+    /**
+     * Update BYOIP's origin ASN to byoasn.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/SetOriginAsnExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use SetOriginAsn API.
+     */
+    SetOriginAsnResponse setOriginAsn(SetOriginAsnRequest request);
+
+    /**
+     * Update prefix's origin ASN to OCI
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/SetOriginAsnToOracleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use SetOriginAsnToOracle API.
+     */
+    SetOriginAsnToOracleResponse setOriginAsnToOracle(SetOriginAsnToOracleRequest request);
+
+    /**
+     * Updates the tags or display name associated with the specified BYOASN Resource.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateByoasnExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateByoasn API.
+     */
+    UpdateByoasnResponse updateByoasn(UpdateByoasnRequest request);
 
     /**
      * Updates the tags or display name associated to the specified BYOIP CIDR block.
@@ -3546,7 +3682,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateByoipRangeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateByoipRange API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateByoipRangeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateByoipRange API.
      */
     UpdateByoipRangeResponse updateByoipRange(UpdateByoipRangeRequest request);
 
@@ -3559,7 +3695,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateCaptureFilterExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateCaptureFilter API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateCaptureFilterExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateCaptureFilter API.
      */
     UpdateCaptureFilterResponse updateCaptureFilter(UpdateCaptureFilterRequest request);
 
@@ -3573,7 +3709,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateCpeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateCpe API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateCpeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateCpe API.
      */
     UpdateCpeResponse updateCpe(UpdateCpeRequest request);
 
@@ -3585,7 +3721,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateCrossConnectExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateCrossConnect API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateCrossConnectExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateCrossConnect API.
      */
     UpdateCrossConnectResponse updateCrossConnect(UpdateCrossConnectRequest request);
 
@@ -3599,7 +3735,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateCrossConnectGroupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateCrossConnectGroup API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateCrossConnectGroupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateCrossConnectGroup API.
      */
     UpdateCrossConnectGroupResponse updateCrossConnectGroup(UpdateCrossConnectGroupRequest request);
 
@@ -3615,7 +3751,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateDhcpOptionsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateDhcpOptions API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateDhcpOptionsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateDhcpOptions API.
      */
     UpdateDhcpOptionsResponse updateDhcpOptions(UpdateDhcpOptionsRequest request);
 
@@ -3628,7 +3764,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateDrgExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateDrg API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateDrgExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateDrg API.
      */
     UpdateDrgResponse updateDrg(UpdateDrgRequest request);
 
@@ -3642,7 +3778,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateDrgAttachmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateDrgAttachment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateDrgAttachmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateDrgAttachment API.
      */
     UpdateDrgAttachmentResponse updateDrgAttachment(UpdateDrgAttachmentRequest request);
 
@@ -3655,7 +3791,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateDrgRouteDistributionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateDrgRouteDistribution API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateDrgRouteDistributionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateDrgRouteDistribution API.
      */
     UpdateDrgRouteDistributionResponse updateDrgRouteDistribution(
             UpdateDrgRouteDistributionRequest request);
@@ -3669,7 +3805,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateDrgRouteDistributionStatementsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateDrgRouteDistributionStatements API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateDrgRouteDistributionStatementsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateDrgRouteDistributionStatements API.
      */
     UpdateDrgRouteDistributionStatementsResponse updateDrgRouteDistributionStatements(
             UpdateDrgRouteDistributionStatementsRequest request);
@@ -3683,7 +3819,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateDrgRouteRulesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateDrgRouteRules API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateDrgRouteRulesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateDrgRouteRules API.
      */
     UpdateDrgRouteRulesResponse updateDrgRouteRules(UpdateDrgRouteRulesRequest request);
 
@@ -3696,7 +3832,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateDrgRouteTableExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateDrgRouteTable API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateDrgRouteTableExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateDrgRouteTable API.
      */
     UpdateDrgRouteTableResponse updateDrgRouteTable(UpdateDrgRouteTableRequest request);
 
@@ -3712,7 +3848,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateIPSecConnectionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateIPSecConnection API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateIPSecConnectionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateIPSecConnection API.
      */
     UpdateIPSecConnectionResponse updateIPSecConnection(UpdateIPSecConnectionRequest request);
 
@@ -3736,7 +3872,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateIPSecConnectionTunnelExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateIPSecConnectionTunnel API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateIPSecConnectionTunnelExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateIPSecConnectionTunnel API.
      */
     UpdateIPSecConnectionTunnelResponse updateIPSecConnectionTunnel(
             UpdateIPSecConnectionTunnelRequest request);
@@ -3752,7 +3888,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateIPSecConnectionTunnelSharedSecretExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateIPSecConnectionTunnelSharedSecret API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateIPSecConnectionTunnelSharedSecretExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateIPSecConnectionTunnelSharedSecret API.
      */
     UpdateIPSecConnectionTunnelSharedSecretResponse updateIPSecConnectionTunnelSharedSecret(
             UpdateIPSecConnectionTunnelSharedSecretRequest request);
@@ -3770,12 +3906,12 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateInternetGatewayExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateInternetGateway API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateInternetGatewayExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateInternetGateway API.
      */
     UpdateInternetGatewayResponse updateInternetGateway(UpdateInternetGatewayRequest request);
 
     /**
-     * Updates the specified IPv6. You must specify the object's [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * Updates the specified IPv6. You must specify the object's [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * Use this operation if you want to:
      * <p>
      * Move an IPv6 to a different VNIC in the same subnet.
@@ -3789,7 +3925,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateIpv6Example.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateIpv6 API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateIpv6Example.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateIpv6 API.
      */
     UpdateIpv6Response updateIpv6(UpdateIpv6Request request);
 
@@ -3802,7 +3938,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateLocalPeeringGatewayExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateLocalPeeringGateway API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateLocalPeeringGatewayExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateLocalPeeringGateway API.
      */
     UpdateLocalPeeringGatewayResponse updateLocalPeeringGateway(
             UpdateLocalPeeringGatewayRequest request);
@@ -3816,7 +3952,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateNatGatewayExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateNatGateway API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateNatGatewayExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateNatGateway API.
      */
     UpdateNatGatewayResponse updateNatGateway(UpdateNatGatewayRequest request);
 
@@ -3826,7 +3962,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * To add or remove an existing VNIC from the group, use
      * {@link #updateVnic(UpdateVnicRequest) updateVnic}.
      * <p>
-     * To add a VNIC to the group *when you create the VNIC*, specify the NSG's [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) during creation.
+     * To add a VNIC to the group *when you create the VNIC*, specify the NSG's [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) during creation.
      * For example, see the `nsgIds` attribute in {@link #createVnicDetails(CreateVnicDetailsRequest) createVnicDetails}.
      * <p>
      * To add or remove security rules from the group, use
@@ -3843,7 +3979,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateNetworkSecurityGroupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateNetworkSecurityGroup API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateNetworkSecurityGroupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateNetworkSecurityGroup API.
      */
     UpdateNetworkSecurityGroupResponse updateNetworkSecurityGroup(
             UpdateNetworkSecurityGroupRequest request);
@@ -3857,13 +3993,13 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateNetworkSecurityGroupSecurityRulesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateNetworkSecurityGroupSecurityRules API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateNetworkSecurityGroupSecurityRulesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateNetworkSecurityGroupSecurityRules API.
      */
     UpdateNetworkSecurityGroupSecurityRulesResponse updateNetworkSecurityGroupSecurityRules(
             UpdateNetworkSecurityGroupSecurityRulesRequest request);
 
     /**
-     * Updates the specified private IP. You must specify the object's [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * Updates the specified private IP. You must specify the object's [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * Use this operation if you want to:
      * <p>
      * - Move a secondary private IP to a different VNIC in the same subnet.
@@ -3880,12 +4016,12 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdatePrivateIpExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdatePrivateIp API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdatePrivateIpExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdatePrivateIp API.
      */
     UpdatePrivateIpResponse updatePrivateIp(UpdatePrivateIpRequest request);
 
     /**
-     * Updates the specified public IP. You must specify the object's [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Use this operation if you want to:
+     * Updates the specified public IP. You must specify the object's [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Use this operation if you want to:
      * <p>
      * Assign a reserved public IP in your pool to a private IP.
      * * Move a reserved public IP to a different private IP.
@@ -3923,7 +4059,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * a VNIC or instance can have. If you try to move a reserved public IP
      * to a VNIC or instance that has already reached its public IP limit, an error is
      * returned. For information about the public IP limits, see
-     * [Public IP Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm).
+     * [Public IP Addresses](https://docs.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -3931,7 +4067,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdatePublicIpExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdatePublicIp API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdatePublicIpExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdatePublicIp API.
      */
     UpdatePublicIpResponse updatePublicIp(UpdatePublicIpRequest request);
 
@@ -3944,7 +4080,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdatePublicIpPoolExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdatePublicIpPool API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdatePublicIpPoolExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdatePublicIpPool API.
      */
     UpdatePublicIpPoolResponse updatePublicIpPool(UpdatePublicIpPoolRequest request);
 
@@ -3957,7 +4093,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateRemotePeeringConnectionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateRemotePeeringConnection API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateRemotePeeringConnectionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateRemotePeeringConnection API.
      */
     UpdateRemotePeeringConnectionResponse updateRemotePeeringConnection(
             UpdateRemotePeeringConnectionRequest request);
@@ -3974,7 +4110,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateRouteTableExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateRouteTable API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateRouteTableExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateRouteTable API.
      */
     UpdateRouteTableResponse updateRouteTable(UpdateRouteTableRequest request);
 
@@ -3991,7 +4127,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateSecurityListExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateSecurityList API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateSecurityListExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateSecurityList API.
      */
     UpdateSecurityListResponse updateSecurityList(UpdateSecurityListRequest request);
 
@@ -4005,7 +4141,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateServiceGatewayExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateServiceGateway API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateServiceGatewayExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateServiceGateway API.
      */
     UpdateServiceGatewayResponse updateServiceGateway(UpdateServiceGatewayRequest request);
 
@@ -4018,7 +4154,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateSubnetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateSubnet API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateSubnetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateSubnet API.
      */
     UpdateSubnetResponse updateSubnet(UpdateSubnetRequest request);
 
@@ -4033,7 +4169,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateTunnelCpeDeviceConfigExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateTunnelCpeDeviceConfig API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateTunnelCpeDeviceConfigExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateTunnelCpeDeviceConfig API.
      */
     UpdateTunnelCpeDeviceConfigResponse updateTunnelCpeDeviceConfig(
             UpdateTunnelCpeDeviceConfigRequest request);
@@ -4047,7 +4183,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateVcnExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateVcn API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateVcnExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateVcn API.
      */
     UpdateVcnResponse updateVcn(UpdateVcnRequest request);
 
@@ -4067,7 +4203,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * its state will return to PROVISIONED. Make sure you confirm that
      * the associated BGP session is back up. For more information
      * about the various states and how to test connectivity, see
-     * [FastConnect Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
+     * [FastConnect Overview](https://docs.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
      * <p>
      * To change the list of public IP prefixes for a public virtual circuit,
      * use {@link #bulkAddVirtualCircuitPublicPrefixes(BulkAddVirtualCircuitPublicPrefixesRequest) bulkAddVirtualCircuitPublicPrefixes}
@@ -4083,7 +4219,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateVirtualCircuitExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateVirtualCircuit API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateVirtualCircuitExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateVirtualCircuit API.
      */
     UpdateVirtualCircuitResponse updateVirtualCircuit(UpdateVirtualCircuitRequest request);
 
@@ -4097,7 +4233,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateVlanExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateVlan API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateVlanExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateVlan API.
      */
     UpdateVlanResponse updateVlan(UpdateVlanRequest request);
 
@@ -4110,7 +4246,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateVnicExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateVnic API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateVnicExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateVnic API.
      */
     UpdateVnicResponse updateVnic(UpdateVnicRequest request);
 
@@ -4123,7 +4259,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateVtapExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateVtap API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateVtapExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateVtap API.
      */
     UpdateVtapResponse updateVtap(UpdateVtapRequest request);
 
@@ -4137,13 +4273,27 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpgradeDrgExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpgradeDrg API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpgradeDrgExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpgradeDrg API.
      */
     UpgradeDrgResponse upgradeDrg(UpgradeDrgRequest request);
 
     /**
+     * Submits the BYOASN for validation. Please do not submit to Oracle for validation if the information for the BYOASN is not already modified in the Regional Internet Registry.
+     * See [To import a BYOASN](https://docs.oracle.com/iaas/Content/Network/Concepts/BYOASN.htm) for details.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ValidateByoasnExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ValidateByoasn API.
+     */
+    ValidateByoasnResponse validateByoasn(ValidateByoasnRequest request);
+
+    /**
      * Submits the BYOIP CIDR block you are importing for validation. Do not submit to Oracle for validation if you have not already
-     * modified the information for the BYOIP CIDR block with your Regional Internet Registry. See [To import a CIDR block](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/BYOIP.htm#import_cidr) for details.
+     * modified the information for the BYOIP CIDR block with your Regional Internet Registry. See [To import a CIDR block](https://docs.oracle.com/iaas/Content/Network/Concepts/BYOIP.htm#import_cidr) for details.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -4151,7 +4301,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ValidateByoipRangeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ValidateByoipRange API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ValidateByoipRangeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ValidateByoipRange API.
      */
     ValidateByoipRangeResponse validateByoipRange(ValidateByoipRangeRequest request);
 
@@ -4164,7 +4314,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/WithdrawByoipRangeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use WithdrawByoipRange API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/WithdrawByoipRangeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use WithdrawByoipRange API.
      */
     WithdrawByoipRangeResponse withdrawByoipRange(WithdrawByoipRangeRequest request);
 

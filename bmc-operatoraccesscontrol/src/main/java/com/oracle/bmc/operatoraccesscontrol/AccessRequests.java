@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.operatoraccesscontrol;
@@ -72,7 +72,7 @@ public interface AccessRequests extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/operatoraccesscontrol/ApproveAccessRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ApproveAccessRequest API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/operatoraccesscontrol/ApproveAccessRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ApproveAccessRequest API.
      */
     ApproveAccessRequestResponse approveAccessRequest(ApproveAccessRequestRequest request);
 
@@ -84,7 +84,7 @@ public interface AccessRequests extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/operatoraccesscontrol/GetAccessRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetAccessRequest API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/operatoraccesscontrol/GetAccessRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetAccessRequest API.
      */
     GetAccessRequestResponse getAccessRequest(GetAccessRequestRequest request);
 
@@ -96,7 +96,7 @@ public interface AccessRequests extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/operatoraccesscontrol/GetAuditLogReportExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetAuditLogReport API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/operatoraccesscontrol/GetAuditLogReportExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetAuditLogReport API.
      */
     GetAuditLogReportResponse getAuditLogReport(GetAuditLogReportRequest request);
 
@@ -109,7 +109,7 @@ public interface AccessRequests extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/operatoraccesscontrol/InteractionRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use InteractionRequest API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/operatoraccesscontrol/InteractionRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use InteractionRequest API.
      */
     InteractionRequestResponse interactionRequest(InteractionRequestRequest request);
 
@@ -122,7 +122,7 @@ public interface AccessRequests extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/operatoraccesscontrol/ListAccessRequestHistoriesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListAccessRequestHistories API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/operatoraccesscontrol/ListAccessRequestHistoriesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListAccessRequestHistories API.
      */
     ListAccessRequestHistoriesResponse listAccessRequestHistories(
             ListAccessRequestHistoriesRequest request);
@@ -136,7 +136,7 @@ public interface AccessRequests extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/operatoraccesscontrol/ListAccessRequestsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListAccessRequests API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/operatoraccesscontrol/ListAccessRequestsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListAccessRequests API.
      */
     ListAccessRequestsResponse listAccessRequests(ListAccessRequestsRequest request);
 
@@ -149,7 +149,7 @@ public interface AccessRequests extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/operatoraccesscontrol/ListInteractionsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListInteractions API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/operatoraccesscontrol/ListInteractionsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListInteractions API.
      */
     ListInteractionsResponse listInteractions(ListInteractionsRequest request);
 
@@ -162,7 +162,7 @@ public interface AccessRequests extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/operatoraccesscontrol/RejectAccessRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RejectAccessRequest API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/operatoraccesscontrol/RejectAccessRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RejectAccessRequest API.
      */
     RejectAccessRequestResponse rejectAccessRequest(RejectAccessRequestRequest request);
 
@@ -175,7 +175,7 @@ public interface AccessRequests extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/operatoraccesscontrol/ReviewAccessRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ReviewAccessRequest API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/operatoraccesscontrol/ReviewAccessRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ReviewAccessRequest API.
      */
     ReviewAccessRequestResponse reviewAccessRequest(ReviewAccessRequestRequest request);
 
@@ -188,7 +188,7 @@ public interface AccessRequests extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/operatoraccesscontrol/RevokeAccessRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RevokeAccessRequest API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/operatoraccesscontrol/RevokeAccessRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RevokeAccessRequest API.
      */
     RevokeAccessRequestResponse revokeAccessRequest(RevokeAccessRequestRequest request);
 

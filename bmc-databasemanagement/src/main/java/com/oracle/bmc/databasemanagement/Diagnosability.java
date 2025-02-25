@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.databasemanagement;
@@ -10,7 +10,7 @@ import com.oracle.bmc.databasemanagement.responses.*;
 /**
  * Use the Database Management API to monitor and manage resources such as
  * Oracle Databases, MySQL Databases, and External Database Systems.
- * For more information, see [Database Management](https://docs.cloud.oracle.com/iaas/database-management/home.htm).
+ * For more information, see [Database Management](https://docs.oracle.com/iaas/database-management/home.htm).
  *
  * This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by default if no circuit breaker configuration is defined by the user.
  */
@@ -71,7 +71,7 @@ public interface Diagnosability extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/ListAlertLogsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListAlertLogs API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/ListAlertLogsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListAlertLogs API.
      */
     ListAlertLogsResponse listAlertLogs(ListAlertLogsRequest request);
 
@@ -84,7 +84,7 @@ public interface Diagnosability extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/ListAttentionLogsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListAttentionLogs API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/ListAttentionLogsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListAttentionLogs API.
      */
     ListAttentionLogsResponse listAttentionLogs(ListAttentionLogsRequest request);
 
@@ -97,7 +97,7 @@ public interface Diagnosability extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/SummarizeAlertLogCountsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use SummarizeAlertLogCounts API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/SummarizeAlertLogCountsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use SummarizeAlertLogCounts API.
      */
     SummarizeAlertLogCountsResponse summarizeAlertLogCounts(SummarizeAlertLogCountsRequest request);
 
@@ -110,7 +110,7 @@ public interface Diagnosability extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/SummarizeAttentionLogCountsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use SummarizeAttentionLogCounts API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/SummarizeAttentionLogCountsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use SummarizeAttentionLogCounts API.
      */
     SummarizeAttentionLogCountsResponse summarizeAttentionLogCounts(
             SummarizeAttentionLogCountsRequest request);

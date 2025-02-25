@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.email.model;
@@ -27,6 +27,7 @@ public final class CreateDkimDetails extends com.oracle.bmc.http.internal.Explic
         "name",
         "emailDomainId",
         "description",
+        "privateKey",
         "freeformTags",
         "definedTags"
     })
@@ -34,12 +35,14 @@ public final class CreateDkimDetails extends com.oracle.bmc.http.internal.Explic
             String name,
             String emailDomainId,
             String description,
+            String privateKey,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
         this.name = name;
         this.emailDomainId = emailDomainId;
         this.description = description;
+        this.privateKey = privateKey;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
     }
@@ -83,14 +86,14 @@ public final class CreateDkimDetails extends com.oracle.bmc.http.internal.Explic
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the EmailDomain for this DKIM.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the EmailDomain for this DKIM.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("emailDomainId")
         private String emailDomainId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the EmailDomain for this DKIM.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the EmailDomain for this DKIM.
          *
          * @param emailDomainId the value to set
          * @return this builder
@@ -121,8 +124,24 @@ public final class CreateDkimDetails extends com.oracle.bmc.http.internal.Explic
             return this;
         }
         /**
+         * The DKIM RSA Private Key in Privacy-Enhanced Mail (PEM) format. It is a text-based representation of the private key used for signing email messages.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("privateKey")
+        private String privateKey;
+
+        /**
+         * The DKIM RSA Private Key in Privacy-Enhanced Mail (PEM) format. It is a text-based representation of the private key used for signing email messages.
+         * @param privateKey the value to set
+         * @return this builder
+         **/
+        public Builder privateKey(String privateKey) {
+            this.privateKey = privateKey;
+            this.__explicitlySet__.add("privateKey");
+            return this;
+        }
+        /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * <p>
          * Example: {@code {"Department": "Finance"}}
          *
@@ -132,7 +151,7 @@ public final class CreateDkimDetails extends com.oracle.bmc.http.internal.Explic
 
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * <p>
          * Example: {@code {"Department": "Finance"}}
          *
@@ -146,7 +165,7 @@ public final class CreateDkimDetails extends com.oracle.bmc.http.internal.Explic
         }
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * <p>
          * Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
@@ -156,7 +175,7 @@ public final class CreateDkimDetails extends com.oracle.bmc.http.internal.Explic
 
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * <p>
          * Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
@@ -179,6 +198,7 @@ public final class CreateDkimDetails extends com.oracle.bmc.http.internal.Explic
                             this.name,
                             this.emailDomainId,
                             this.description,
+                            this.privateKey,
                             this.freeformTags,
                             this.definedTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -197,6 +217,9 @@ public final class CreateDkimDetails extends com.oracle.bmc.http.internal.Explic
             }
             if (model.wasPropertyExplicitlySet("description")) {
                 this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("privateKey")) {
+                this.privateKey(model.getPrivateKey());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -254,14 +277,14 @@ public final class CreateDkimDetails extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the EmailDomain for this DKIM.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the EmailDomain for this DKIM.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("emailDomainId")
     private final String emailDomainId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the EmailDomain for this DKIM.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the EmailDomain for this DKIM.
      *
      * @return the value
      **/
@@ -288,8 +311,22 @@ public final class CreateDkimDetails extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
+     * The DKIM RSA Private Key in Privacy-Enhanced Mail (PEM) format. It is a text-based representation of the private key used for signing email messages.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("privateKey")
+    private final String privateKey;
+
+    /**
+     * The DKIM RSA Private Key in Privacy-Enhanced Mail (PEM) format. It is a text-based representation of the private key used for signing email messages.
+     * @return the value
+     **/
+    public String getPrivateKey() {
+        return privateKey;
+    }
+
+    /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
      * Example: {@code {"Department": "Finance"}}
      *
@@ -299,7 +336,7 @@ public final class CreateDkimDetails extends com.oracle.bmc.http.internal.Explic
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
      * Example: {@code {"Department": "Finance"}}
      *
@@ -311,7 +348,7 @@ public final class CreateDkimDetails extends com.oracle.bmc.http.internal.Explic
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
      * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
@@ -321,7 +358,7 @@ public final class CreateDkimDetails extends com.oracle.bmc.http.internal.Explic
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
      * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
@@ -348,6 +385,7 @@ public final class CreateDkimDetails extends com.oracle.bmc.http.internal.Explic
         sb.append("name=").append(String.valueOf(this.name));
         sb.append(", emailDomainId=").append(String.valueOf(this.emailDomainId));
         sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", privateKey=").append(String.valueOf(this.privateKey));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
@@ -367,6 +405,7 @@ public final class CreateDkimDetails extends com.oracle.bmc.http.internal.Explic
         return java.util.Objects.equals(this.name, other.name)
                 && java.util.Objects.equals(this.emailDomainId, other.emailDomainId)
                 && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.privateKey, other.privateKey)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
@@ -381,6 +420,7 @@ public final class CreateDkimDetails extends com.oracle.bmc.http.internal.Explic
                 (result * PRIME)
                         + (this.emailDomainId == null ? 43 : this.emailDomainId.hashCode());
         result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result = (result * PRIME) + (this.privateKey == null ? 43 : this.privateKey.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();

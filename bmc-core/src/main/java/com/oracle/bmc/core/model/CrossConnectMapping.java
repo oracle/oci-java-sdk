@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core.model;
@@ -102,7 +102,7 @@ public final class CrossConnectMapping extends com.oracle.bmc.http.internal.Expl
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cross-connect or cross-connect group for this mapping.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cross-connect or cross-connect group for this mapping.
          * Specified by the owner of the cross-connect or cross-connect group (the
          * customer if the customer is colocated with Oracle, or the provider if the
          * customer is connecting via provider).
@@ -112,7 +112,7 @@ public final class CrossConnectMapping extends com.oracle.bmc.http.internal.Expl
         private String crossConnectOrCrossConnectGroupId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cross-connect or cross-connect group for this mapping.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cross-connect or cross-connect group for this mapping.
          * Specified by the owner of the cross-connect or cross-connect group (the
          * customer if the customer is colocated with Oracle, or the provider if the
          * customer is connecting via provider).
@@ -201,7 +201,7 @@ public final class CrossConnectMapping extends com.oracle.bmc.http.internal.Expl
          * There's one exception: for a public virtual circuit, Oracle specifies the BGP IPv6 addresses.
          * <p>
          * IPv6 addressing is supported for all commercial and government regions. See
-         * [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+         * [IPv6 Addresses](https://docs.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
          * <p>
          * Example: {@code 2001:db8::1/64}
          *
@@ -219,7 +219,7 @@ public final class CrossConnectMapping extends com.oracle.bmc.http.internal.Expl
          * There's one exception: for a public virtual circuit, Oracle specifies the BGP IPv6 addresses.
          * <p>
          * IPv6 addressing is supported for all commercial and government regions. See
-         * [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+         * [IPv6 Addresses](https://docs.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
          * <p>
          * Example: {@code 2001:db8::1/64}
          *
@@ -240,7 +240,7 @@ public final class CrossConnectMapping extends com.oracle.bmc.http.internal.Expl
          * There's one exception: for a public virtual circuit, Oracle specifies the BGP IPv6 addresses.
          * <p>
          * Note that IPv6 addressing is currently supported only in certain regions. See
-         * [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+         * [IPv6 Addresses](https://docs.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
          * <p>
          * Example: {@code 2001:db8::2/64}
          *
@@ -257,7 +257,7 @@ public final class CrossConnectMapping extends com.oracle.bmc.http.internal.Expl
          * There's one exception: for a public virtual circuit, Oracle specifies the BGP IPv6 addresses.
          * <p>
          * Note that IPv6 addressing is currently supported only in certain regions. See
-         * [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+         * [IPv6 Addresses](https://docs.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
          * <p>
          * Example: {@code 2001:db8::2/64}
          *
@@ -377,7 +377,7 @@ public final class CrossConnectMapping extends com.oracle.bmc.http.internal.Expl
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cross-connect or cross-connect group for this mapping.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cross-connect or cross-connect group for this mapping.
      * Specified by the owner of the cross-connect or cross-connect group (the
      * customer if the customer is colocated with Oracle, or the provider if the
      * customer is connecting via provider).
@@ -387,7 +387,7 @@ public final class CrossConnectMapping extends com.oracle.bmc.http.internal.Expl
     private final String crossConnectOrCrossConnectGroupId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cross-connect or cross-connect group for this mapping.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cross-connect or cross-connect group for this mapping.
      * Specified by the owner of the cross-connect or cross-connect group (the
      * customer if the customer is colocated with Oracle, or the provider if the
      * customer is connecting via provider).
@@ -470,7 +470,7 @@ public final class CrossConnectMapping extends com.oracle.bmc.http.internal.Expl
      * There's one exception: for a public virtual circuit, Oracle specifies the BGP IPv6 addresses.
      * <p>
      * IPv6 addressing is supported for all commercial and government regions. See
-     * [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+     * [IPv6 Addresses](https://docs.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
      * <p>
      * Example: {@code 2001:db8::1/64}
      *
@@ -488,7 +488,7 @@ public final class CrossConnectMapping extends com.oracle.bmc.http.internal.Expl
      * There's one exception: for a public virtual circuit, Oracle specifies the BGP IPv6 addresses.
      * <p>
      * IPv6 addressing is supported for all commercial and government regions. See
-     * [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+     * [IPv6 Addresses](https://docs.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
      * <p>
      * Example: {@code 2001:db8::1/64}
      *
@@ -507,7 +507,7 @@ public final class CrossConnectMapping extends com.oracle.bmc.http.internal.Expl
      * There's one exception: for a public virtual circuit, Oracle specifies the BGP IPv6 addresses.
      * <p>
      * Note that IPv6 addressing is currently supported only in certain regions. See
-     * [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+     * [IPv6 Addresses](https://docs.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
      * <p>
      * Example: {@code 2001:db8::2/64}
      *
@@ -524,7 +524,7 @@ public final class CrossConnectMapping extends com.oracle.bmc.http.internal.Expl
      * There's one exception: for a public virtual circuit, Oracle specifies the BGP IPv6 addresses.
      * <p>
      * Note that IPv6 addressing is currently supported only in certain regions. See
-     * [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+     * [IPv6 Addresses](https://docs.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
      * <p>
      * Example: {@code 2001:db8::2/64}
      *

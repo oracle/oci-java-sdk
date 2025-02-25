@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.osmanagementhub.model;
@@ -42,7 +42,8 @@ public final class ScheduledJobSummary extends com.oracle.bmc.http.internal.Expl
         "definedTags",
         "systemTags",
         "isRestricted",
-        "retryIntervals"
+        "retryIntervals",
+        "workRequestId"
     })
     public ScheduledJobSummary(
             String id,
@@ -65,7 +66,8 @@ public final class ScheduledJobSummary extends com.oracle.bmc.http.internal.Expl
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags,
             Boolean isRestricted,
-            java.util.List<Integer> retryIntervals) {
+            java.util.List<Integer> retryIntervals,
+            String workRequestId) {
         super();
         this.id = id;
         this.displayName = displayName;
@@ -88,18 +90,19 @@ public final class ScheduledJobSummary extends com.oracle.bmc.http.internal.Expl
         this.systemTags = systemTags;
         this.isRestricted = isRestricted;
         this.retryIntervals = retryIntervals;
+        this.workRequestId = workRequestId;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the scheduled job.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the scheduled job.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the scheduled job.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the scheduled job.
          * @param id the value to set
          * @return this builder
          **/
@@ -125,13 +128,13 @@ public final class ScheduledJobSummary extends com.oracle.bmc.http.internal.Expl
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the scheduled job.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the scheduled job.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the scheduled job.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the scheduled job.
          * @param compartmentId the value to set
          * @return this builder
          **/
@@ -237,7 +240,7 @@ public final class ScheduledJobSummary extends com.oracle.bmc.http.internal.Expl
             return this;
         }
         /**
-         * The managed instance [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.
+         * The managed instance [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.
          * A scheduled job can only operate on one type of target, therefore this parameter is mutually exclusive with
          * managedInstanceGroupIds, managedCompartmentIds, and lifecycleStageIds.
          *
@@ -246,7 +249,7 @@ public final class ScheduledJobSummary extends com.oracle.bmc.http.internal.Expl
         private java.util.List<String> managedInstanceIds;
 
         /**
-         * The managed instance [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.
+         * The managed instance [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.
          * A scheduled job can only operate on one type of target, therefore this parameter is mutually exclusive with
          * managedInstanceGroupIds, managedCompartmentIds, and lifecycleStageIds.
          *
@@ -259,7 +262,7 @@ public final class ScheduledJobSummary extends com.oracle.bmc.http.internal.Expl
             return this;
         }
         /**
-         * The managed instance group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.
+         * The managed instance group [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.
          * A scheduled job can only operate on one type of target, therefore this parameter is mutually exclusive with
          * managedInstanceIds, managedCompartmentIds, and lifecycleStageIds.
          *
@@ -268,7 +271,7 @@ public final class ScheduledJobSummary extends com.oracle.bmc.http.internal.Expl
         private java.util.List<String> managedInstanceGroupIds;
 
         /**
-         * The managed instance group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.
+         * The managed instance group [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.
          * A scheduled job can only operate on one type of target, therefore this parameter is mutually exclusive with
          * managedInstanceIds, managedCompartmentIds, and lifecycleStageIds.
          *
@@ -281,7 +284,7 @@ public final class ScheduledJobSummary extends com.oracle.bmc.http.internal.Expl
             return this;
         }
         /**
-         * The compartment [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.
+         * The compartment [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.
          * A scheduled job can only operate on one type of target, therefore this parameter is mutually exclusive with
          * managedInstanceIds, managedInstanceGroupIds, and lifecycleStageIds.
          *
@@ -290,7 +293,7 @@ public final class ScheduledJobSummary extends com.oracle.bmc.http.internal.Expl
         private java.util.List<String> managedCompartmentIds;
 
         /**
-         * The compartment [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.
+         * The compartment [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.
          * A scheduled job can only operate on one type of target, therefore this parameter is mutually exclusive with
          * managedInstanceIds, managedInstanceGroupIds, and lifecycleStageIds.
          *
@@ -303,7 +306,7 @@ public final class ScheduledJobSummary extends com.oracle.bmc.http.internal.Expl
             return this;
         }
         /**
-         * The lifecycle stage [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.
+         * The lifecycle stage [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.
          * A scheduled job can only operate on one type of target, therefore this parameter is mutually exclusive with
          * managedInstanceIds, managedInstanceGroupIds, and managedCompartmentIds.
          *
@@ -312,7 +315,7 @@ public final class ScheduledJobSummary extends com.oracle.bmc.http.internal.Expl
         private java.util.List<String> lifecycleStageIds;
 
         /**
-         * The lifecycle stage [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.
+         * The lifecycle stage [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.
          * A scheduled job can only operate on one type of target, therefore this parameter is mutually exclusive with
          * managedInstanceIds, managedInstanceGroupIds, and managedCompartmentIds.
          *
@@ -394,7 +397,7 @@ public final class ScheduledJobSummary extends com.oracle.bmc.http.internal.Expl
         }
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * Example: {@code {"Department": "Finance"}}
          *
          **/
@@ -403,7 +406,7 @@ public final class ScheduledJobSummary extends com.oracle.bmc.http.internal.Expl
 
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * Example: {@code {"Department": "Finance"}}
          *
          * @param freeformTags the value to set
@@ -416,7 +419,7 @@ public final class ScheduledJobSummary extends com.oracle.bmc.http.internal.Expl
         }
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
          **/
@@ -425,7 +428,7 @@ public final class ScheduledJobSummary extends com.oracle.bmc.http.internal.Expl
 
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
          * @param definedTags the value to set
@@ -501,6 +504,22 @@ public final class ScheduledJobSummary extends com.oracle.bmc.http.internal.Expl
             this.__explicitlySet__.add("retryIntervals");
             return this;
         }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the work request that will be rerun.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("workRequestId")
+        private String workRequestId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the work request that will be rerun.
+         * @param workRequestId the value to set
+         * @return this builder
+         **/
+        public Builder workRequestId(String workRequestId) {
+            this.workRequestId = workRequestId;
+            this.__explicitlySet__.add("workRequestId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -528,7 +547,8 @@ public final class ScheduledJobSummary extends com.oracle.bmc.http.internal.Expl
                             this.definedTags,
                             this.systemTags,
                             this.isRestricted,
-                            this.retryIntervals);
+                            this.retryIntervals,
+                            this.workRequestId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -600,6 +620,9 @@ public final class ScheduledJobSummary extends com.oracle.bmc.http.internal.Expl
             if (model.wasPropertyExplicitlySet("retryIntervals")) {
                 this.retryIntervals(model.getRetryIntervals());
             }
+            if (model.wasPropertyExplicitlySet("workRequestId")) {
+                this.workRequestId(model.getWorkRequestId());
+            }
             return this;
         }
     }
@@ -616,13 +639,13 @@ public final class ScheduledJobSummary extends com.oracle.bmc.http.internal.Expl
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the scheduled job.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the scheduled job.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the scheduled job.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the scheduled job.
      * @return the value
      **/
     public String getId() {
@@ -644,13 +667,13 @@ public final class ScheduledJobSummary extends com.oracle.bmc.http.internal.Expl
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the scheduled job.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the scheduled job.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the scheduled job.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the scheduled job.
      * @return the value
      **/
     public String getCompartmentId() {
@@ -742,7 +765,7 @@ public final class ScheduledJobSummary extends com.oracle.bmc.http.internal.Expl
     }
 
     /**
-     * The managed instance [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.
+     * The managed instance [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.
      * A scheduled job can only operate on one type of target, therefore this parameter is mutually exclusive with
      * managedInstanceGroupIds, managedCompartmentIds, and lifecycleStageIds.
      *
@@ -751,7 +774,7 @@ public final class ScheduledJobSummary extends com.oracle.bmc.http.internal.Expl
     private final java.util.List<String> managedInstanceIds;
 
     /**
-     * The managed instance [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.
+     * The managed instance [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.
      * A scheduled job can only operate on one type of target, therefore this parameter is mutually exclusive with
      * managedInstanceGroupIds, managedCompartmentIds, and lifecycleStageIds.
      *
@@ -762,7 +785,7 @@ public final class ScheduledJobSummary extends com.oracle.bmc.http.internal.Expl
     }
 
     /**
-     * The managed instance group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.
+     * The managed instance group [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.
      * A scheduled job can only operate on one type of target, therefore this parameter is mutually exclusive with
      * managedInstanceIds, managedCompartmentIds, and lifecycleStageIds.
      *
@@ -771,7 +794,7 @@ public final class ScheduledJobSummary extends com.oracle.bmc.http.internal.Expl
     private final java.util.List<String> managedInstanceGroupIds;
 
     /**
-     * The managed instance group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.
+     * The managed instance group [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.
      * A scheduled job can only operate on one type of target, therefore this parameter is mutually exclusive with
      * managedInstanceIds, managedCompartmentIds, and lifecycleStageIds.
      *
@@ -782,7 +805,7 @@ public final class ScheduledJobSummary extends com.oracle.bmc.http.internal.Expl
     }
 
     /**
-     * The compartment [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.
+     * The compartment [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.
      * A scheduled job can only operate on one type of target, therefore this parameter is mutually exclusive with
      * managedInstanceIds, managedInstanceGroupIds, and lifecycleStageIds.
      *
@@ -791,7 +814,7 @@ public final class ScheduledJobSummary extends com.oracle.bmc.http.internal.Expl
     private final java.util.List<String> managedCompartmentIds;
 
     /**
-     * The compartment [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.
+     * The compartment [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.
      * A scheduled job can only operate on one type of target, therefore this parameter is mutually exclusive with
      * managedInstanceIds, managedInstanceGroupIds, and lifecycleStageIds.
      *
@@ -802,7 +825,7 @@ public final class ScheduledJobSummary extends com.oracle.bmc.http.internal.Expl
     }
 
     /**
-     * The lifecycle stage [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.
+     * The lifecycle stage [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.
      * A scheduled job can only operate on one type of target, therefore this parameter is mutually exclusive with
      * managedInstanceIds, managedInstanceGroupIds, and managedCompartmentIds.
      *
@@ -811,7 +834,7 @@ public final class ScheduledJobSummary extends com.oracle.bmc.http.internal.Expl
     private final java.util.List<String> lifecycleStageIds;
 
     /**
-     * The lifecycle stage [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.
+     * The lifecycle stage [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.
      * A scheduled job can only operate on one type of target, therefore this parameter is mutually exclusive with
      * managedInstanceIds, managedInstanceGroupIds, and managedCompartmentIds.
      *
@@ -885,7 +908,7 @@ public final class ScheduledJobSummary extends com.oracle.bmc.http.internal.Expl
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * Example: {@code {"Department": "Finance"}}
      *
      **/
@@ -894,7 +917,7 @@ public final class ScheduledJobSummary extends com.oracle.bmc.http.internal.Expl
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * Example: {@code {"Department": "Finance"}}
      *
      * @return the value
@@ -905,7 +928,7 @@ public final class ScheduledJobSummary extends com.oracle.bmc.http.internal.Expl
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      **/
@@ -914,7 +937,7 @@ public final class ScheduledJobSummary extends com.oracle.bmc.http.internal.Expl
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      * @return the value
@@ -981,6 +1004,20 @@ public final class ScheduledJobSummary extends com.oracle.bmc.http.internal.Expl
         return retryIntervals;
     }
 
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the work request that will be rerun.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("workRequestId")
+    private final String workRequestId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the work request that will be rerun.
+     * @return the value
+     **/
+    public String getWorkRequestId() {
+        return workRequestId;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1018,6 +1055,7 @@ public final class ScheduledJobSummary extends com.oracle.bmc.http.internal.Expl
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
         sb.append(", isRestricted=").append(String.valueOf(this.isRestricted));
         sb.append(", retryIntervals=").append(String.valueOf(this.retryIntervals));
+        sb.append(", workRequestId=").append(String.valueOf(this.workRequestId));
         sb.append(")");
         return sb.toString();
     }
@@ -1055,6 +1093,7 @@ public final class ScheduledJobSummary extends com.oracle.bmc.http.internal.Expl
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
                 && java.util.Objects.equals(this.isRestricted, other.isRestricted)
                 && java.util.Objects.equals(this.retryIntervals, other.retryIntervals)
+                && java.util.Objects.equals(this.workRequestId, other.workRequestId)
                 && super.equals(other);
     }
 
@@ -1111,6 +1150,9 @@ public final class ScheduledJobSummary extends com.oracle.bmc.http.internal.Expl
         result =
                 (result * PRIME)
                         + (this.retryIntervals == null ? 43 : this.retryIntervals.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.workRequestId == null ? 43 : this.workRequestId.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

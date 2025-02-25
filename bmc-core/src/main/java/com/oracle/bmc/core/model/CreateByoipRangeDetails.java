@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core.model;
@@ -25,6 +25,8 @@ public final class CreateByoipRangeDetails
     @java.beans.ConstructorProperties({
         "cidrBlock",
         "compartmentId",
+        "ipAnycastId",
+        "monitorIp",
         "ipv6CidrBlock",
         "definedTags",
         "displayName",
@@ -33,6 +35,8 @@ public final class CreateByoipRangeDetails
     public CreateByoipRangeDetails(
             String cidrBlock,
             String compartmentId,
+            String ipAnycastId,
+            String monitorIp,
             String ipv6CidrBlock,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             String displayName,
@@ -40,6 +44,8 @@ public final class CreateByoipRangeDetails
         super();
         this.cidrBlock = cidrBlock;
         this.compartmentId = compartmentId;
+        this.ipAnycastId = ipAnycastId;
+        this.monitorIp = monitorIp;
         this.ipv6CidrBlock = ipv6CidrBlock;
         this.definedTags = definedTags;
         this.displayName = displayName;
@@ -69,14 +75,14 @@ public final class CreateByoipRangeDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the BYOIP CIDR block.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the BYOIP CIDR block.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the BYOIP CIDR block.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the BYOIP CIDR block.
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -84,6 +90,38 @@ public final class CreateByoipRangeDetails
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the {@code IpAnycast} resource.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("ipAnycastId")
+        private String ipAnycastId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the {@code IpAnycast} resource.
+         * @param ipAnycastId the value to set
+         * @return this builder
+         **/
+        public Builder ipAnycastId(String ipAnycastId) {
+            this.ipAnycastId = ipAnycastId;
+            this.__explicitlySet__.add("ipAnycastId");
+            return this;
+        }
+        /**
+         * The IP address of the CIDR for Prefix Monitoring.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("monitorIp")
+        private String monitorIp;
+
+        /**
+         * The IP address of the CIDR for Prefix Monitoring.
+         * @param monitorIp the value to set
+         * @return this builder
+         **/
+        public Builder monitorIp(String monitorIp) {
+            this.monitorIp = monitorIp;
+            this.__explicitlySet__.add("monitorIp");
             return this;
         }
         /**
@@ -106,7 +144,7 @@ public final class CreateByoipRangeDetails
         }
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a
-         * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * <p>
          * Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
@@ -116,7 +154,7 @@ public final class CreateByoipRangeDetails
 
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a
-         * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * <p>
          * Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
@@ -151,7 +189,7 @@ public final class CreateByoipRangeDetails
         }
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no
-         * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * <p>
          * Example: {@code {"Department": "Finance"}}
          *
@@ -161,7 +199,7 @@ public final class CreateByoipRangeDetails
 
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no
-         * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * <p>
          * Example: {@code {"Department": "Finance"}}
          *
@@ -182,6 +220,8 @@ public final class CreateByoipRangeDetails
                     new CreateByoipRangeDetails(
                             this.cidrBlock,
                             this.compartmentId,
+                            this.ipAnycastId,
+                            this.monitorIp,
                             this.ipv6CidrBlock,
                             this.definedTags,
                             this.displayName,
@@ -199,6 +239,12 @@ public final class CreateByoipRangeDetails
             }
             if (model.wasPropertyExplicitlySet("compartmentId")) {
                 this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("ipAnycastId")) {
+                this.ipAnycastId(model.getIpAnycastId());
+            }
+            if (model.wasPropertyExplicitlySet("monitorIp")) {
+                this.monitorIp(model.getMonitorIp());
             }
             if (model.wasPropertyExplicitlySet("ipv6CidrBlock")) {
                 this.ipv6CidrBlock(model.getIpv6CidrBlock());
@@ -246,19 +292,47 @@ public final class CreateByoipRangeDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the BYOIP CIDR block.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the BYOIP CIDR block.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the BYOIP CIDR block.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the BYOIP CIDR block.
      *
      * @return the value
      **/
     public String getCompartmentId() {
         return compartmentId;
+    }
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the {@code IpAnycast} resource.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("ipAnycastId")
+    private final String ipAnycastId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the {@code IpAnycast} resource.
+     * @return the value
+     **/
+    public String getIpAnycastId() {
+        return ipAnycastId;
+    }
+
+    /**
+     * The IP address of the CIDR for Prefix Monitoring.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("monitorIp")
+    private final String monitorIp;
+
+    /**
+     * The IP address of the CIDR for Prefix Monitoring.
+     * @return the value
+     **/
+    public String getMonitorIp() {
+        return monitorIp;
     }
 
     /**
@@ -279,7 +353,7 @@ public final class CreateByoipRangeDetails
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a
-     * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
      * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
@@ -289,7 +363,7 @@ public final class CreateByoipRangeDetails
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a
-     * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
      * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
@@ -319,7 +393,7 @@ public final class CreateByoipRangeDetails
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no
-     * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
      * Example: {@code {"Department": "Finance"}}
      *
@@ -329,7 +403,7 @@ public final class CreateByoipRangeDetails
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no
-     * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
      * Example: {@code {"Department": "Finance"}}
      *
@@ -355,6 +429,8 @@ public final class CreateByoipRangeDetails
         sb.append("super=").append(super.toString());
         sb.append("cidrBlock=").append(String.valueOf(this.cidrBlock));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", ipAnycastId=").append(String.valueOf(this.ipAnycastId));
+        sb.append(", monitorIp=").append(String.valueOf(this.monitorIp));
         sb.append(", ipv6CidrBlock=").append(String.valueOf(this.ipv6CidrBlock));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
@@ -375,6 +451,8 @@ public final class CreateByoipRangeDetails
         CreateByoipRangeDetails other = (CreateByoipRangeDetails) o;
         return java.util.Objects.equals(this.cidrBlock, other.cidrBlock)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.ipAnycastId, other.ipAnycastId)
+                && java.util.Objects.equals(this.monitorIp, other.monitorIp)
                 && java.util.Objects.equals(this.ipv6CidrBlock, other.ipv6CidrBlock)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.displayName, other.displayName)
@@ -390,6 +468,8 @@ public final class CreateByoipRangeDetails
         result =
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.ipAnycastId == null ? 43 : this.ipAnycastId.hashCode());
+        result = (result * PRIME) + (this.monitorIp == null ? 43 : this.monitorIp.hashCode());
         result =
                 (result * PRIME)
                         + (this.ipv6CidrBlock == null ? 43 : this.ipv6CidrBlock.hashCode());

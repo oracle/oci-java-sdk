@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.databasemanagement;
@@ -30,6 +30,8 @@ public class ManagedMySqlDatabasesClient implements ManagedMySqlDatabases {
     com.oracle.bmc.http.internal.RestClient getClient() {
         return client;
     }
+
+    private final ManagedMySqlDatabasesWaiters waiters;
 
     private final ManagedMySqlDatabasesPaginators paginators;
     private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
@@ -217,6 +219,44 @@ public class ManagedMySqlDatabasesClient implements ManagedMySqlDatabases {
                 signingStrategyRequestSignerFactories,
                 additionalClientConfigurators,
                 endpoint,
+                null);
+    }
+
+    /**
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
+     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
+     * @param executorService ExecutorService used by the client, or null to use the default configured ThreadPoolExecutor
+     */
+    public ManagedMySqlDatabasesClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.Map<
+                            com.oracle.bmc.http.signing.SigningStrategy,
+                            com.oracle.bmc.http.signing.RequestSignerFactory>
+                    signingStrategyRequestSignerFactories,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
+            String endpoint,
+            java.util.concurrent.ExecutorService executorService) {
+        this(
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                signingStrategyRequestSignerFactories,
+                additionalClientConfigurators,
+                endpoint,
+                executorService,
                 com.oracle.bmc.http.internal.RestClientFactoryBuilder.builder());
     }
 
@@ -234,6 +274,7 @@ public class ManagedMySqlDatabasesClient implements ManagedMySqlDatabases {
      * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
      * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
      * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
+     * @param executorService ExecutorService used by the client, or null to use the default configured ThreadPoolExecutor
      * @param restClientFactoryBuilder the builder for the {@link com.oracle.bmc.http.internal.RestClientFactory}
      */
     protected ManagedMySqlDatabasesClient(
@@ -247,6 +288,7 @@ public class ManagedMySqlDatabasesClient implements ManagedMySqlDatabases {
                     signingStrategyRequestSignerFactories,
             java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
             String endpoint,
+            java.util.concurrent.ExecutorService executorService,
             com.oracle.bmc.http.internal.RestClientFactoryBuilder restClientFactoryBuilder) {
         this.authenticationDetailsProvider = authenticationDetailsProvider;
         java.util.List<com.oracle.bmc.http.ClientConfigurator> authenticationDetailsConfigurators =
@@ -293,6 +335,25 @@ public class ManagedMySqlDatabasesClient implements ManagedMySqlDatabases {
 
         this.refreshClient();
 
+        if (executorService == null) {
+            // up to 50 (core) threads, time out after 60s idle, all daemon
+            java.util.concurrent.ThreadPoolExecutor threadPoolExecutor =
+                    new java.util.concurrent.ThreadPoolExecutor(
+                            50,
+                            50,
+                            60L,
+                            java.util.concurrent.TimeUnit.SECONDS,
+                            new java.util.concurrent.LinkedBlockingQueue<Runnable>(),
+                            com.oracle.bmc.internal.ClientThreadFactory.builder()
+                                    .isDaemon(true)
+                                    .nameFormat("ManagedMySqlDatabases-waiters-%d")
+                                    .build());
+            threadPoolExecutor.allowCoreThreadTimeOut(true);
+
+            executorService = threadPoolExecutor;
+        }
+        this.waiters = new ManagedMySqlDatabasesWaiters(executorService, this);
+
         this.paginators = new ManagedMySqlDatabasesPaginators(this);
 
         if (this.authenticationDetailsProvider instanceof com.oracle.bmc.auth.RegionProvider) {
@@ -330,11 +391,23 @@ public class ManagedMySqlDatabasesClient implements ManagedMySqlDatabases {
     public static class Builder
             extends com.oracle.bmc.common.RegionalClientBuilder<
                     Builder, ManagedMySqlDatabasesClient> {
+        private java.util.concurrent.ExecutorService executorService;
+
         private Builder(com.oracle.bmc.Service service) {
             super(service);
             requestSignerFactory =
                     new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
                             com.oracle.bmc.http.signing.SigningStrategy.STANDARD);
+        }
+
+        /**
+         * Set the ExecutorService for the client to be created.
+         * @param executorService executorService
+         * @return this builder
+         */
+        public Builder executorService(java.util.concurrent.ExecutorService executorService) {
+            this.executorService = executorService;
+            return this;
         }
 
         /**
@@ -358,6 +431,7 @@ public class ManagedMySqlDatabasesClient implements ManagedMySqlDatabases {
                     signingStrategyRequestSignerFactories,
                     additionalClientConfigurators,
                     endpoint,
+                    executorService,
                     restClientFactoryBuilder);
         }
     }
@@ -472,6 +546,98 @@ public class ManagedMySqlDatabasesClient implements ManagedMySqlDatabases {
     @Override
     public void close() {
         client.close();
+    }
+
+    @Override
+    public DisableExternalMysqlAssociatedServiceResponse disableExternalMysqlAssociatedService(
+            DisableExternalMysqlAssociatedServiceRequest request) {
+        LOG.trace("Called disableExternalMysqlAssociatedService");
+        final DisableExternalMysqlAssociatedServiceRequest interceptedRequest =
+                DisableExternalMysqlAssociatedServiceConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DisableExternalMysqlAssociatedServiceConverter.fromRequest(
+                        client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ManagedMySqlDatabases",
+                        "DisableExternalMysqlAssociatedService",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalMySqlDatabase/DisableExternalMysqlAssociatedService");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, DisableExternalMysqlAssociatedServiceResponse>
+                transformer =
+                        DisableExternalMysqlAssociatedServiceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getDisableExternalMysqlAssociatedServiceDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public EnableExternalMysqlAssociatedServiceResponse enableExternalMysqlAssociatedService(
+            EnableExternalMysqlAssociatedServiceRequest request) {
+        LOG.trace("Called enableExternalMysqlAssociatedService");
+        final EnableExternalMysqlAssociatedServiceRequest interceptedRequest =
+                EnableExternalMysqlAssociatedServiceConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                EnableExternalMysqlAssociatedServiceConverter.fromRequest(
+                        client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ManagedMySqlDatabases",
+                        "EnableExternalMysqlAssociatedService",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalMySqlDatabase/EnableExternalMysqlAssociatedService");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, EnableExternalMysqlAssociatedServiceResponse>
+                transformer =
+                        EnableExternalMysqlAssociatedServiceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getEnableExternalMysqlAssociatedServiceDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
@@ -746,6 +912,11 @@ public class ManagedMySqlDatabasesClient implements ManagedMySqlDatabases {
                                 return transformer.apply(response);
                             });
                 });
+    }
+
+    @Override
+    public ManagedMySqlDatabasesWaiters getWaiters() {
+        return waiters;
     }
 
     @Override

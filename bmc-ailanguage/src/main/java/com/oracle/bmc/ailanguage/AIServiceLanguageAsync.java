@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.ailanguage;
@@ -64,7 +64,7 @@ public interface AIServiceLanguageAsync extends AutoCloseable {
     /**
      * The API returns the detected language and a related confidence score (between 0 and 1).  It supports passing a batch of records.
      * <p>
-     * [List of supported languages.](https://docs.cloud.oracle.com/iaas/language/using/pretrain-models.htm#lang-detect)
+     * [List of supported languages.](https://docs.oracle.com/iaas/language/using/pretrain-models.htm#lang-detect)
      * <p>
      * Limitations:
      * - A batch may have up to 100 records.
@@ -110,7 +110,7 @@ public interface AIServiceLanguageAsync extends AutoCloseable {
     /**
      * The API extracts entities in text records. For each entity, its type/subtype and confidence score (between 0 and 1) is returned.  It supports passing a batch of records.
      * <p>
-     * [List of supported entities.](https://docs.cloud.oracle.com/iaas/language/using/pretrain-models.htm#ner__sup-ner-entity)
+     * [List of supported entities.](https://docs.oracle.com/iaas/language/using/pretrain-models.htm#ner__sup-ner-entity)
      * <p>
      * Limitations:
      * - A batch may have up to 100 records.
@@ -186,7 +186,7 @@ public interface AIServiceLanguageAsync extends AutoCloseable {
      * <p>
      * For sentiment analysis, confidence scores are provided for each of the classes (positive, negative, neutral and mixed).
      * <p>
-     * Learn more about sentiment analysis [here](https://docs.cloud.oracle.com/iaas/language/using/pretrain-models.htm#sentiment).
+     * Learn more about sentiment analysis [here](https://docs.oracle.com/iaas/language/using/pretrain-models.htm#sentiment).
      * <p>
      * Limitations:
      *  - A batch may have up to 100 records.
@@ -214,7 +214,7 @@ public interface AIServiceLanguageAsync extends AutoCloseable {
      * <p>
      * It supports passing a batch of records.
      * <p>
-     * Learn more about text classification [here](https://docs.cloud.oracle.com/iaas/language/using/pretrain-models.htm#text-class).
+     * Learn more about text classification [here](https://docs.oracle.com/iaas/language/using/pretrain-models.htm#text-class).
      * <p>
      * Limitations:
      * - A batch may have up to 100 records.
@@ -458,11 +458,11 @@ public interface AIServiceLanguageAsync extends AutoCloseable {
 
     /**
      * **Deprecated**: This API will be retired Tuesday, 10 Oct 2023 00:00:00 GMT.
-     * We recommend you replace this API with the batch API, [BatchDetectDominantLanguage](https://docs.cloud.oracle.com/iaas/api/#/en/language/20221001/BatchDetectDominantLanguage/BatchDetectDominantLanguage).
+     * We recommend you replace this API with the batch API, [BatchDetectDominantLanguage](https://docs.oracle.com/iaas/api/#/en/language/20221001/BatchDetectDominantLanguage/BatchDetectDominantLanguage).
      * <p>
      * The DetectDominantLanguage API returns the detected language and a related confidence score (between 0 and 1).
      * <p>
-     * [List of supported languages](https://docs.cloud.oracle.com/iaas/language/using/pretrain-models.htm#lang-detect)
+     * [List of supported languages](https://docs.oracle.com/iaas/language/using/pretrain-models.htm#lang-detect)
      * <p>
      * Limitations:
      * - A record may be up to 1000 characters long.
@@ -483,7 +483,7 @@ public interface AIServiceLanguageAsync extends AutoCloseable {
 
     /**
      * **Deprecated**: This API will be retired Tuesday, 10 Oct 2023 00:00:00 GMT.
-     * We recommend you replace this API with the batch API, [BatchDetectLanguageEntities](https://docs.cloud.oracle.com/iaas/api/#/en/language/20221001/BatchDetectLanguageEntities/BatchDetectLanguageEntities).
+     * We recommend you replace this API with the batch API, [BatchDetectLanguageEntities](https://docs.oracle.com/iaas/api/#/en/language/20221001/BatchDetectLanguageEntities/BatchDetectLanguageEntities).
      * <p>
      * The DetectLanguageEntities API extracts entities in text records. For each entity, its type and confidence score (between 0 and 1) is returned.
      * <p>
@@ -506,7 +506,7 @@ public interface AIServiceLanguageAsync extends AutoCloseable {
 
     /**
      * **Deprecated**: This API will be retired Tuesday, 10 Oct 2023 00:00:00 GMT.
-     *         We recommend you replace this API with the batch API, [BatchDetectLanguageKeyPhrases](https://docs.cloud.oracle.com/iaas/api/#/en/language/20221001/BatchDetectLanguageKeyPhrases/BatchDetectLanguageKeyPhrases).
+     *         We recommend you replace this API with the batch API, [BatchDetectLanguageKeyPhrases](https://docs.oracle.com/iaas/api/#/en/language/20221001/BatchDetectLanguageKeyPhrases/BatchDetectLanguageKeyPhrases).
      * <p>
      * The DetectLanguageKeyPhrases API extracts key-phrases in text records. For each key-phrase, a score (between 0 and 1) is returned that highlights the importance of the key-phrase in the context of the text.
      * Limitations:
@@ -528,7 +528,7 @@ public interface AIServiceLanguageAsync extends AutoCloseable {
 
     /**
      * **Deprecated**: This API will be retired Tuesday, 10 Oct 2023 00:00:00 GMT.
-     * We recommend you replace this API with the batch API, [BatchDetectLanguageSentiments](https://docs.cloud.oracle.com/iaas/api/#/en/language/20221001/BatchDetectLanguageSentiments/BatchDetectLanguageSentiments).
+     * We recommend you replace this API with the batch API, [BatchDetectLanguageSentiments](https://docs.oracle.com/iaas/api/#/en/language/20221001/BatchDetectLanguageSentiments/BatchDetectLanguageSentiments).
      * <p>
      * The DetectLanguageSentiments API extracts aspect-based in text records.
      * <p>
@@ -536,7 +536,7 @@ public interface AIServiceLanguageAsync extends AutoCloseable {
      * <p>
      * For sentiment analysis, confidence scores are provided for each of the classes (positive, negative, neutral).
      * <p>
-     * Learn more about sentiment analysis [here](https://docs.cloud.oracle.com/iaas/language/using/pretrain-models.htm#sentiment).
+     * Learn more about sentiment analysis [here](https://docs.oracle.com/iaas/language/using/pretrain-models.htm#sentiment).
      * <p>
      * Limitations:
      *  - A record may be up to 1000 characters long.
@@ -557,11 +557,11 @@ public interface AIServiceLanguageAsync extends AutoCloseable {
 
     /**
      * **Deprecated**: This API will be retired Tuesday, 10 Oct 2023 00:00:00 GMT.
-     * We recommend you replace this API with the batch API, [BatchDetectLanguageTextClassification](https://docs.cloud.oracle.com/iaas/api/#/en/language/20221001/BatchDetectLanguageTextClassification/BatchDetectLanguageTextClassification).
+     * We recommend you replace this API with the batch API, [BatchDetectLanguageTextClassification](https://docs.oracle.com/iaas/api/#/en/language/20221001/BatchDetectLanguageTextClassification/BatchDetectLanguageTextClassification).
      * <p>
      * The DetectLanguageTextClassification API automatically classifies text into a set of pre-determined classes and sub-classes. A single class/subclass is returned for each record classified.
      * <p>
-     * Learn more about text classification [here](https://docs.cloud.oracle.com/iaas/language/using/pretrain-models.htm#text-class).
+     * Learn more about text classification [here](https://docs.oracle.com/iaas/language/using/pretrain-models.htm#text-class).
      * <p>
      * Limitations:
      * - A record may be up to 1000 characters long.

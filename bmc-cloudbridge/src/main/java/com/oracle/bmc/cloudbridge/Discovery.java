@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cloudbridge;
@@ -67,7 +67,7 @@ public interface Discovery extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/ChangeAssetSourceCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeAssetSourceCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/ChangeAssetSourceCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeAssetSourceCompartment API.
      */
     ChangeAssetSourceCompartmentResponse changeAssetSourceCompartment(
             ChangeAssetSourceCompartmentRequest request);
@@ -80,7 +80,7 @@ public interface Discovery extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/ChangeDiscoveryScheduleCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeDiscoveryScheduleCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/ChangeDiscoveryScheduleCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeDiscoveryScheduleCompartment API.
      */
     ChangeDiscoveryScheduleCompartmentResponse changeDiscoveryScheduleCompartment(
             ChangeDiscoveryScheduleCompartmentRequest request);
@@ -94,7 +94,7 @@ public interface Discovery extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/CreateAssetSourceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateAssetSource API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/CreateAssetSourceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateAssetSource API.
      */
     CreateAssetSourceResponse createAssetSource(CreateAssetSourceRequest request);
 
@@ -106,7 +106,7 @@ public interface Discovery extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/CreateDiscoveryScheduleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateDiscoverySchedule API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/CreateDiscoveryScheduleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateDiscoverySchedule API.
      */
     CreateDiscoveryScheduleResponse createDiscoverySchedule(CreateDiscoveryScheduleRequest request);
 
@@ -118,7 +118,7 @@ public interface Discovery extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/DeleteAssetSourceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteAssetSource API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/DeleteAssetSourceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteAssetSource API.
      */
     DeleteAssetSourceResponse deleteAssetSource(DeleteAssetSourceRequest request);
 
@@ -130,7 +130,7 @@ public interface Discovery extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/DeleteDiscoveryScheduleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteDiscoverySchedule API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/DeleteDiscoveryScheduleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteDiscoverySchedule API.
      */
     DeleteDiscoveryScheduleResponse deleteDiscoverySchedule(DeleteDiscoveryScheduleRequest request);
 
@@ -142,7 +142,7 @@ public interface Discovery extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/GetAssetSourceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetAssetSource API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/GetAssetSourceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetAssetSource API.
      */
     GetAssetSourceResponse getAssetSource(GetAssetSourceRequest request);
 
@@ -154,7 +154,7 @@ public interface Discovery extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/GetDiscoveryScheduleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetDiscoverySchedule API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/GetDiscoveryScheduleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetDiscoverySchedule API.
      */
     GetDiscoveryScheduleResponse getDiscoverySchedule(GetDiscoveryScheduleRequest request);
 
@@ -166,7 +166,7 @@ public interface Discovery extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/ListAssetSourceConnectionsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListAssetSourceConnections API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/ListAssetSourceConnectionsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListAssetSourceConnections API.
      */
     ListAssetSourceConnectionsResponse listAssetSourceConnections(
             ListAssetSourceConnectionsRequest request);
@@ -180,7 +180,7 @@ public interface Discovery extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/ListAssetSourcesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListAssetSources API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/ListAssetSourcesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListAssetSources API.
      */
     ListAssetSourcesResponse listAssetSources(ListAssetSourcesRequest request);
 
@@ -192,7 +192,7 @@ public interface Discovery extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/ListDiscoverySchedulesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDiscoverySchedules API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/ListDiscoverySchedulesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDiscoverySchedules API.
      */
     ListDiscoverySchedulesResponse listDiscoverySchedules(ListDiscoverySchedulesRequest request);
 
@@ -205,7 +205,7 @@ public interface Discovery extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/ListSupportedCloudRegionsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSupportedCloudRegions API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/ListSupportedCloudRegionsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSupportedCloudRegions API.
      */
     ListSupportedCloudRegionsResponse listSupportedCloudRegions(
             ListSupportedCloudRegionsRequest request);
@@ -218,7 +218,7 @@ public interface Discovery extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/RefreshAssetSourceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RefreshAssetSource API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/RefreshAssetSourceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RefreshAssetSource API.
      */
     RefreshAssetSourceResponse refreshAssetSource(RefreshAssetSourceRequest request);
 
@@ -230,7 +230,7 @@ public interface Discovery extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/UpdateAssetSourceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateAssetSource API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/UpdateAssetSourceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateAssetSource API.
      */
     UpdateAssetSourceResponse updateAssetSource(UpdateAssetSourceRequest request);
 
@@ -242,7 +242,7 @@ public interface Discovery extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/UpdateDiscoveryScheduleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateDiscoverySchedule API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/UpdateDiscoveryScheduleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateDiscoverySchedule API.
      */
     UpdateDiscoveryScheduleResponse updateDiscoverySchedule(UpdateDiscoveryScheduleRequest request);
 

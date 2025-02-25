@@ -1,12 +1,12 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.autoscaling.requests;
 
 import com.oracle.bmc.autoscaling.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/autoscaling/ChangeAutoScalingConfigurationCompartmentExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ChangeAutoScalingConfigurationCompartmentRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/autoscaling/ChangeAutoScalingConfigurationCompartmentExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ChangeAutoScalingConfigurationCompartmentRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
 public class ChangeAutoScalingConfigurationCompartmentRequest
@@ -14,12 +14,12 @@ public class ChangeAutoScalingConfigurationCompartmentRequest
                 com.oracle.bmc.autoscaling.model.ChangeAutoScalingCompartmentDetails> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the autoscaling configuration.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the autoscaling configuration.
      */
     private String autoScalingConfigurationId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the autoscaling configuration.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the autoscaling configuration.
      */
     public String getAutoScalingConfigurationId() {
         return autoScalingConfigurationId;
@@ -101,12 +101,12 @@ public class ChangeAutoScalingConfigurationCompartmentRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the autoscaling configuration.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the autoscaling configuration.
          */
         private String autoScalingConfigurationId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the autoscaling configuration.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the autoscaling configuration.
          * @param autoScalingConfigurationId the value to set
          * @return this builder instance
          */

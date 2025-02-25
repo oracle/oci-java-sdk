@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datascience.model;
@@ -31,6 +31,7 @@ public final class Pipeline extends com.oracle.bmc.http.internal.ExplicitlySetBm
         "configurationDetails",
         "logConfigurationDetails",
         "infrastructureConfigurationDetails",
+        "storageMountConfigurationDetailsList",
         "stepDetails",
         "lifecycleState",
         "lifecycleDetails",
@@ -50,6 +51,7 @@ public final class Pipeline extends com.oracle.bmc.http.internal.ExplicitlySetBm
             PipelineConfigurationDetails configurationDetails,
             PipelineLogConfigurationDetails logConfigurationDetails,
             PipelineInfrastructureConfigurationDetails infrastructureConfigurationDetails,
+            java.util.List<StorageMountConfigurationDetails> storageMountConfigurationDetailsList,
             java.util.List<PipelineStepDetails> stepDetails,
             PipelineLifecycleState lifecycleState,
             String lifecycleDetails,
@@ -68,6 +70,7 @@ public final class Pipeline extends com.oracle.bmc.http.internal.ExplicitlySetBm
         this.configurationDetails = configurationDetails;
         this.logConfigurationDetails = logConfigurationDetails;
         this.infrastructureConfigurationDetails = infrastructureConfigurationDetails;
+        this.storageMountConfigurationDetailsList = storageMountConfigurationDetailsList;
         this.stepDetails = stepDetails;
         this.lifecycleState = lifecycleState;
         this.lifecycleDetails = lifecycleDetails;
@@ -79,13 +82,13 @@ public final class Pipeline extends com.oracle.bmc.http.internal.ExplicitlySetBm
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline.
          * @param id the value to set
          * @return this builder
          **/
@@ -135,13 +138,13 @@ public final class Pipeline extends com.oracle.bmc.http.internal.ExplicitlySetBm
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the pipeline.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the pipeline.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("createdBy")
         private String createdBy;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the pipeline.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the pipeline.
          * @param createdBy the value to set
          * @return this builder
          **/
@@ -151,13 +154,13 @@ public final class Pipeline extends com.oracle.bmc.http.internal.ExplicitlySetBm
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline with.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline with.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("projectId")
         private String projectId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline with.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline with.
          * @param projectId the value to set
          * @return this builder
          **/
@@ -167,13 +170,13 @@ public final class Pipeline extends com.oracle.bmc.http.internal.ExplicitlySetBm
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the pipeline.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the pipeline.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the pipeline.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the pipeline.
          * @param compartmentId the value to set
          * @return this builder
          **/
@@ -244,6 +247,25 @@ public final class Pipeline extends com.oracle.bmc.http.internal.ExplicitlySetBm
             return this;
         }
         /**
+         * The storage mount details to mount to the instance running the pipeline step.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("storageMountConfigurationDetailsList")
+        private java.util.List<StorageMountConfigurationDetails>
+                storageMountConfigurationDetailsList;
+
+        /**
+         * The storage mount details to mount to the instance running the pipeline step.
+         * @param storageMountConfigurationDetailsList the value to set
+         * @return this builder
+         **/
+        public Builder storageMountConfigurationDetailsList(
+                java.util.List<StorageMountConfigurationDetails>
+                        storageMountConfigurationDetailsList) {
+            this.storageMountConfigurationDetailsList = storageMountConfigurationDetailsList;
+            this.__explicitlySet__.add("storageMountConfigurationDetailsList");
+            return this;
+        }
+        /**
          * Array of step details for each step.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("stepDetails")
@@ -292,7 +314,7 @@ public final class Pipeline extends com.oracle.bmc.http.internal.ExplicitlySetBm
             return this;
         }
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * Example: {@code {"Department": "Finance"}}
          *
          **/
@@ -300,7 +322,7 @@ public final class Pipeline extends com.oracle.bmc.http.internal.ExplicitlySetBm
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * Example: {@code {"Department": "Finance"}}
          *
          * @param freeformTags the value to set
@@ -312,7 +334,7 @@ public final class Pipeline extends com.oracle.bmc.http.internal.ExplicitlySetBm
             return this;
         }
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
          **/
@@ -320,7 +342,7 @@ public final class Pipeline extends com.oracle.bmc.http.internal.ExplicitlySetBm
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
          * @param definedTags the value to set
@@ -370,6 +392,7 @@ public final class Pipeline extends com.oracle.bmc.http.internal.ExplicitlySetBm
                             this.configurationDetails,
                             this.logConfigurationDetails,
                             this.infrastructureConfigurationDetails,
+                            this.storageMountConfigurationDetailsList,
                             this.stepDetails,
                             this.lifecycleState,
                             this.lifecycleDetails,
@@ -418,6 +441,10 @@ public final class Pipeline extends com.oracle.bmc.http.internal.ExplicitlySetBm
                 this.infrastructureConfigurationDetails(
                         model.getInfrastructureConfigurationDetails());
             }
+            if (model.wasPropertyExplicitlySet("storageMountConfigurationDetailsList")) {
+                this.storageMountConfigurationDetailsList(
+                        model.getStorageMountConfigurationDetailsList());
+            }
             if (model.wasPropertyExplicitlySet("stepDetails")) {
                 this.stepDetails(model.getStepDetails());
             }
@@ -452,13 +479,13 @@ public final class Pipeline extends com.oracle.bmc.http.internal.ExplicitlySetBm
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline.
      * @return the value
      **/
     public String getId() {
@@ -502,13 +529,13 @@ public final class Pipeline extends com.oracle.bmc.http.internal.ExplicitlySetBm
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the pipeline.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the pipeline.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("createdBy")
     private final String createdBy;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the pipeline.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the pipeline.
      * @return the value
      **/
     public String getCreatedBy() {
@@ -516,13 +543,13 @@ public final class Pipeline extends com.oracle.bmc.http.internal.ExplicitlySetBm
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline with.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline with.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("projectId")
     private final String projectId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline with.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline with.
      * @return the value
      **/
     public String getProjectId() {
@@ -530,13 +557,13 @@ public final class Pipeline extends com.oracle.bmc.http.internal.ExplicitlySetBm
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the pipeline.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the pipeline.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the pipeline.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the pipeline.
      * @return the value
      **/
     public String getCompartmentId() {
@@ -593,6 +620,22 @@ public final class Pipeline extends com.oracle.bmc.http.internal.ExplicitlySetBm
     }
 
     /**
+     * The storage mount details to mount to the instance running the pipeline step.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("storageMountConfigurationDetailsList")
+    private final java.util.List<StorageMountConfigurationDetails>
+            storageMountConfigurationDetailsList;
+
+    /**
+     * The storage mount details to mount to the instance running the pipeline step.
+     * @return the value
+     **/
+    public java.util.List<StorageMountConfigurationDetails>
+            getStorageMountConfigurationDetailsList() {
+        return storageMountConfigurationDetailsList;
+    }
+
+    /**
      * Array of step details for each step.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("stepDetails")
@@ -635,7 +678,7 @@ public final class Pipeline extends com.oracle.bmc.http.internal.ExplicitlySetBm
     }
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * Example: {@code {"Department": "Finance"}}
      *
      **/
@@ -643,7 +686,7 @@ public final class Pipeline extends com.oracle.bmc.http.internal.ExplicitlySetBm
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * Example: {@code {"Department": "Finance"}}
      *
      * @return the value
@@ -653,7 +696,7 @@ public final class Pipeline extends com.oracle.bmc.http.internal.ExplicitlySetBm
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      **/
@@ -661,7 +704,7 @@ public final class Pipeline extends com.oracle.bmc.http.internal.ExplicitlySetBm
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      * @return the value
@@ -715,6 +758,8 @@ public final class Pipeline extends com.oracle.bmc.http.internal.ExplicitlySetBm
                 .append(String.valueOf(this.logConfigurationDetails));
         sb.append(", infrastructureConfigurationDetails=")
                 .append(String.valueOf(this.infrastructureConfigurationDetails));
+        sb.append(", storageMountConfigurationDetailsList=")
+                .append(String.valueOf(this.storageMountConfigurationDetailsList));
         sb.append(", stepDetails=").append(String.valueOf(this.stepDetails));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
@@ -749,6 +794,9 @@ public final class Pipeline extends com.oracle.bmc.http.internal.ExplicitlySetBm
                 && java.util.Objects.equals(
                         this.infrastructureConfigurationDetails,
                         other.infrastructureConfigurationDetails)
+                && java.util.Objects.equals(
+                        this.storageMountConfigurationDetailsList,
+                        other.storageMountConfigurationDetailsList)
                 && java.util.Objects.equals(this.stepDetails, other.stepDetails)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
@@ -787,6 +835,11 @@ public final class Pipeline extends com.oracle.bmc.http.internal.ExplicitlySetBm
                         + (this.infrastructureConfigurationDetails == null
                                 ? 43
                                 : this.infrastructureConfigurationDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.storageMountConfigurationDetailsList == null
+                                ? 43
+                                : this.storageMountConfigurationDetailsList.hashCode());
         result = (result * PRIME) + (this.stepDetails == null ? 43 : this.stepDetails.hashCode());
         result =
                 (result * PRIME)

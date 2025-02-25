@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.securityattribute;
@@ -8,7 +8,7 @@ import com.oracle.bmc.securityattribute.requests.*;
 import com.oracle.bmc.securityattribute.responses.*;
 
 /**
- * Use the Security Attributes API to manage security attributes and security attribute namespaces. For more information, see the documentation for [Security Attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/managing-security-attributes.htm) and [Security Attribute Nampespaces](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/managing-security-attribute-namespaces.htm).
+ * Use the Security Attributes API to manage security attributes and security attribute namespaces. For more information, see the documentation for [Security Attributes](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/managing-security-attributes.htm) and [Security Attribute Nampespaces](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/managing-security-attribute-namespaces.htm).
  * This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by default if no circuit breaker configuration is defined by the user.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20240815")
@@ -83,7 +83,7 @@ public interface SecurityAttribute extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/securityattribute/BulkDeleteSecurityAttributesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use BulkDeleteSecurityAttributes API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/securityattribute/BulkDeleteSecurityAttributesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use BulkDeleteSecurityAttributes API.
      */
     BulkDeleteSecurityAttributesResponse bulkDeleteSecurityAttributes(
             BulkDeleteSecurityAttributesRequest request);
@@ -106,7 +106,7 @@ public interface SecurityAttribute extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/securityattribute/BulkEditSecurityAttributesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use BulkEditSecurityAttributes API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/securityattribute/BulkEditSecurityAttributesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use BulkEditSecurityAttributes API.
      */
     BulkEditSecurityAttributesResponse bulkEditSecurityAttributes(
             BulkEditSecurityAttributesRequest request);
@@ -138,7 +138,7 @@ public interface SecurityAttribute extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/securityattribute/CascadingDeleteSecurityAttributeNamespaceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CascadingDeleteSecurityAttributeNamespace API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/securityattribute/CascadingDeleteSecurityAttributeNamespaceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CascadingDeleteSecurityAttributeNamespace API.
      */
     CascadingDeleteSecurityAttributeNamespaceResponse cascadingDeleteSecurityAttributeNamespace(
             CascadingDeleteSecurityAttributeNamespaceRequest request);
@@ -147,7 +147,7 @@ public interface SecurityAttribute extends AutoCloseable {
      * Moves the specified security attribute namespace to the specified compartment within the same tenancy.
      * <p>
      * To move the security attribute namespace, you must have the manage security-attributes permission on both compartments.
-     * For more information about IAM policies, see [Details for IAM](https://docs.cloud.oracle.com/Content/Identity/policyreference/iampolicyreference.htm).
+     * For more information about IAM policies, see [Details for IAM](https://docs.oracle.com/iaas/Content/Identity/policyreference/iampolicyreference.htm).
      * <p>
      * Moving a security attribute namespace moves all the security attributes contained in the security attribute namespace.
      *
@@ -157,7 +157,7 @@ public interface SecurityAttribute extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/securityattribute/ChangeSecurityAttributeNamespaceCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeSecurityAttributeNamespaceCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/securityattribute/ChangeSecurityAttributeNamespaceCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeSecurityAttributeNamespaceCompartment API.
      */
     ChangeSecurityAttributeNamespaceCompartmentResponse changeSecurityAttributeNamespaceCompartment(
             ChangeSecurityAttributeNamespaceCompartmentRequest request);
@@ -187,7 +187,7 @@ public interface SecurityAttribute extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/securityattribute/CreateSecurityAttributeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateSecurityAttribute API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/securityattribute/CreateSecurityAttributeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateSecurityAttribute API.
      */
     CreateSecurityAttributeResponse createSecurityAttribute(CreateSecurityAttributeRequest request);
 
@@ -213,7 +213,7 @@ public interface SecurityAttribute extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/securityattribute/CreateSecurityAttributeNamespaceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateSecurityAttributeNamespace API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/securityattribute/CreateSecurityAttributeNamespaceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateSecurityAttributeNamespace API.
      */
     CreateSecurityAttributeNamespaceResponse createSecurityAttributeNamespace(
             CreateSecurityAttributeNamespaceRequest request);
@@ -240,7 +240,7 @@ public interface SecurityAttribute extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/securityattribute/DeleteSecurityAttributeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteSecurityAttribute API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/securityattribute/DeleteSecurityAttributeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteSecurityAttribute API.
      */
     DeleteSecurityAttributeResponse deleteSecurityAttribute(DeleteSecurityAttributeRequest request);
 
@@ -255,7 +255,7 @@ public interface SecurityAttribute extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/securityattribute/DeleteSecurityAttributeNamespaceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteSecurityAttributeNamespace API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/securityattribute/DeleteSecurityAttributeNamespaceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteSecurityAttributeNamespace API.
      */
     DeleteSecurityAttributeNamespaceResponse deleteSecurityAttributeNamespace(
             DeleteSecurityAttributeNamespaceRequest request);
@@ -268,7 +268,7 @@ public interface SecurityAttribute extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/securityattribute/GetSecurityAttributeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetSecurityAttribute API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/securityattribute/GetSecurityAttributeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetSecurityAttribute API.
      */
     GetSecurityAttributeResponse getSecurityAttribute(GetSecurityAttributeRequest request);
 
@@ -281,7 +281,7 @@ public interface SecurityAttribute extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/securityattribute/GetSecurityAttributeNamespaceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetSecurityAttributeNamespace API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/securityattribute/GetSecurityAttributeNamespaceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetSecurityAttributeNamespace API.
      */
     GetSecurityAttributeNamespaceResponse getSecurityAttributeNamespace(
             GetSecurityAttributeNamespaceRequest request);
@@ -296,7 +296,7 @@ public interface SecurityAttribute extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/securityattribute/GetSecurityAttributeWorkRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetSecurityAttributeWorkRequest API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/securityattribute/GetSecurityAttributeWorkRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetSecurityAttributeWorkRequest API.
      */
     GetSecurityAttributeWorkRequestResponse getSecurityAttributeWorkRequest(
             GetSecurityAttributeWorkRequestRequest request);
@@ -310,7 +310,7 @@ public interface SecurityAttribute extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/securityattribute/ListSecurityAttributeNamespacesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSecurityAttributeNamespaces API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/securityattribute/ListSecurityAttributeNamespacesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSecurityAttributeNamespaces API.
      */
     ListSecurityAttributeNamespacesResponse listSecurityAttributeNamespaces(
             ListSecurityAttributeNamespacesRequest request);
@@ -324,7 +324,7 @@ public interface SecurityAttribute extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/securityattribute/ListSecurityAttributeWorkRequestErrorsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSecurityAttributeWorkRequestErrors API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/securityattribute/ListSecurityAttributeWorkRequestErrorsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSecurityAttributeWorkRequestErrors API.
      */
     ListSecurityAttributeWorkRequestErrorsResponse listSecurityAttributeWorkRequestErrors(
             ListSecurityAttributeWorkRequestErrorsRequest request);
@@ -338,7 +338,7 @@ public interface SecurityAttribute extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/securityattribute/ListSecurityAttributeWorkRequestLogsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSecurityAttributeWorkRequestLogs API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/securityattribute/ListSecurityAttributeWorkRequestLogsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSecurityAttributeWorkRequestLogs API.
      */
     ListSecurityAttributeWorkRequestLogsResponse listSecurityAttributeWorkRequestLogs(
             ListSecurityAttributeWorkRequestLogsRequest request);
@@ -352,7 +352,7 @@ public interface SecurityAttribute extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/securityattribute/ListSecurityAttributeWorkRequestsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSecurityAttributeWorkRequests API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/securityattribute/ListSecurityAttributeWorkRequestsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSecurityAttributeWorkRequests API.
      */
     ListSecurityAttributeWorkRequestsResponse listSecurityAttributeWorkRequests(
             ListSecurityAttributeWorkRequestsRequest request);
@@ -366,7 +366,7 @@ public interface SecurityAttribute extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/securityattribute/ListSecurityAttributesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSecurityAttributes API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/securityattribute/ListSecurityAttributesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSecurityAttributes API.
      */
     ListSecurityAttributesResponse listSecurityAttributes(ListSecurityAttributesRequest request);
 
@@ -379,7 +379,7 @@ public interface SecurityAttribute extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/securityattribute/UpdateSecurityAttributeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateSecurityAttribute API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/securityattribute/UpdateSecurityAttributeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateSecurityAttribute API.
      */
     UpdateSecurityAttributeResponse updateSecurityAttribute(UpdateSecurityAttributeRequest request);
 
@@ -390,7 +390,7 @@ public interface SecurityAttribute extends AutoCloseable {
      * namespace (changing `isRetired` from 'true' to 'false') does not reactivate security attributes.
      * To reactivate the security attributes, you must reactivate each one individually *after* you reactivate the namespace,
      * using {@link #updateTag(UpdateTagRequest) updateTag}. For more information about retiring security attribute namespaces, see
-     * [Managing Security Attribute Namespaces](https://docs.cloud.oracle.com/Content/zero-trust-packet-routing/managing-security-attribute-namespaces.htm).
+     * [Managing Security Attribute Namespaces](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/managing-security-attribute-namespaces.htm).
      * <p>
      * You can't add a namespace with the same name as a retired namespace in the same tenancy.
      *
@@ -400,7 +400,7 @@ public interface SecurityAttribute extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/securityattribute/UpdateSecurityAttributeNamespaceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateSecurityAttributeNamespace API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/securityattribute/UpdateSecurityAttributeNamespaceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateSecurityAttributeNamespace API.
      */
     UpdateSecurityAttributeNamespaceResponse updateSecurityAttributeNamespace(
             UpdateSecurityAttributeNamespaceRequest request);

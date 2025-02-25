@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.operatoraccesscontrol;
@@ -472,10 +472,7 @@ public class OperatorActionsAsyncClient implements OperatorActionsAsync {
                 GetOperatorActionConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "OperatorActions",
-                        "GetOperatorAction",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/OperatorAction/GetOperatorAction");
+                        "OperatorActions", "GetOperatorAction", ib.getRequestUri().toString(), "");
         final java.util.function.Function<javax.ws.rs.core.Response, GetOperatorActionResponse>
                 transformer =
                         GetOperatorActionConverter.fromResponse(
@@ -521,7 +518,7 @@ public class OperatorActionsAsyncClient implements OperatorActionsAsync {
                         "OperatorActions",
                         "ListOperatorActions",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/OperatorAction/ListOperatorActions");
+                        "");
         final java.util.function.Function<javax.ws.rs.core.Response, ListOperatorActionsResponse>
                 transformer =
                         ListOperatorActionsConverter.fromResponse(

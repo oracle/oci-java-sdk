@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.generativeaiinference.model;
@@ -46,13 +46,13 @@ public final class EmbedTextDetails extends com.oracle.bmc.http.internal.Explici
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Provide a list of strings. Each string can be words, a phrase, or a paragraph. The maximum length of each string entry in the list is 512 tokens.
+         * Provide a list of strings or one base64 encoded image with {@code input_type} setting to {@code IMAGE}. If text embedding, each string can be words, a phrase, or a paragraph. The maximum length of each string entry in the list is 512 tokens.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("inputs")
         private java.util.List<String> inputs;
 
         /**
-         * Provide a list of strings. Each string can be words, a phrase, or a paragraph. The maximum length of each string entry in the list is 512 tokens.
+         * Provide a list of strings or one base64 encoded image with {@code input_type} setting to {@code IMAGE}. If text embedding, each string can be words, a phrase, or a paragraph. The maximum length of each string entry in the list is 512 tokens.
          * @param inputs the value to set
          * @return this builder
          **/
@@ -189,13 +189,13 @@ public final class EmbedTextDetails extends com.oracle.bmc.http.internal.Explici
     }
 
     /**
-     * Provide a list of strings. Each string can be words, a phrase, or a paragraph. The maximum length of each string entry in the list is 512 tokens.
+     * Provide a list of strings or one base64 encoded image with {@code input_type} setting to {@code IMAGE}. If text embedding, each string can be words, a phrase, or a paragraph. The maximum length of each string entry in the list is 512 tokens.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("inputs")
     private final java.util.List<String> inputs;
 
     /**
-     * Provide a list of strings. Each string can be words, a phrase, or a paragraph. The maximum length of each string entry in the list is 512 tokens.
+     * Provide a list of strings or one base64 encoded image with {@code input_type} setting to {@code IMAGE}. If text embedding, each string can be words, a phrase, or a paragraph. The maximum length of each string entry in the list is 512 tokens.
      * @return the value
      **/
     public java.util.List<String> getInputs() {
@@ -295,6 +295,7 @@ public final class EmbedTextDetails extends com.oracle.bmc.http.internal.Explici
         SearchQuery("SEARCH_QUERY"),
         Classification("CLASSIFICATION"),
         Clustering("CLUSTERING"),
+        Image("IMAGE"),
         ;
 
         private final String value;

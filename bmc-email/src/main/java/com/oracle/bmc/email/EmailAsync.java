@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.email;
@@ -9,7 +9,7 @@ import com.oracle.bmc.email.responses.*;
 
 /**
  * Use the Email Delivery API to do the necessary set up to send high-volume and application-generated emails through the OCI Email Delivery service.
- * For more information, see [Overview of the Email Delivery Service](https://docs.cloud.oracle.com/iaas/Content/Email/Concepts/overview.htm).
+ * For more information, see [Overview of the Email Delivery Service](https://docs.oracle.com/iaas/Content/Email/Concepts/overview.htm).
  *
  **Note:** Write actions (POST, UPDATE, DELETE) may take several minutes to propagate and be reflected by the API.
  * If a subsequent read request fails to reflect your changes, wait a few minutes and try again.
@@ -67,7 +67,7 @@ public interface EmailAsync extends AutoCloseable {
      * Moves an email domain into a different compartment.
      * When provided, If-Match is checked against ETag value of the resource.
      * For information about moving resources between compartments, see
-     * [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * [Moving Resources to a Different Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      * <p>
      **Note:** All DKIM objects associated with this email domain will also be moved into the provided compartment.
      *
@@ -561,7 +561,7 @@ public interface EmailAsync extends AutoCloseable {
      * Replaces the set of tags for a sender with the tags provided. If either freeform
      * or defined tags are omitted, the tags for that set remain the same. Each set must
      * include the full set of tags for the sender, partial updates are not permitted.
-     * For more information about tagging, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * For more information about tagging, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      *
      * @param request The request object containing the details to send

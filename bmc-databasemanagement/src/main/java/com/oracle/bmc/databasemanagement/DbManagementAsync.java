@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.databasemanagement;
@@ -10,7 +10,7 @@ import com.oracle.bmc.databasemanagement.responses.*;
 /**
  * Use the Database Management API to monitor and manage resources such as
  * Oracle Databases, MySQL Databases, and External Database Systems.
- * For more information, see [Database Management](https://docs.cloud.oracle.com/iaas/database-management/home.htm).
+ * For more information, see [Database Management](https://docs.oracle.com/iaas/database-management/home.htm).
  *
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
@@ -356,6 +356,26 @@ public interface DbManagementAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Check the status of the external database connection specified in this connector.
+     * This operation will refresh the connectionStatus and timeConnectionStatusLastUpdated fields.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CheckExternalMySqlDatabaseConnectorConnectionStatusResponse>
+            checkExternalMySqlDatabaseConnectorConnectionStatus(
+                    CheckExternalMySqlDatabaseConnectorConnectionStatusRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    CheckExternalMySqlDatabaseConnectorConnectionStatusRequest,
+                                    CheckExternalMySqlDatabaseConnectorConnectionStatusResponse>
+                            handler);
+
+    /**
      * Configures automatic capture filters to capture only those statements
      * that match the filter criteria.
      *
@@ -510,6 +530,42 @@ public interface DbManagementAsync extends AutoCloseable {
                     com.oracle.bmc.responses.AsyncHandler<
                                     CreateExternalExadataStorageConnectorRequest,
                                     CreateExternalExadataStorageConnectorResponse>
+                            handler);
+
+    /**
+     * Creates an external MySQL database.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateExternalMySqlDatabaseResponse> createExternalMySqlDatabase(
+            CreateExternalMySqlDatabaseRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateExternalMySqlDatabaseRequest, CreateExternalMySqlDatabaseResponse>
+                    handler);
+
+    /**
+     * Creates an external MySQL connector resource.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateExternalMySqlDatabaseConnectorResponse>
+            createExternalMySqlDatabaseConnector(
+                    CreateExternalMySqlDatabaseConnectorRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    CreateExternalMySqlDatabaseConnectorRequest,
+                                    CreateExternalMySqlDatabaseConnectorResponse>
                             handler);
 
     /**
@@ -689,6 +745,42 @@ public interface DbManagementAsync extends AutoCloseable {
                     com.oracle.bmc.responses.AsyncHandler<
                                     DeleteExternalExadataStorageConnectorRequest,
                                     DeleteExternalExadataStorageConnectorResponse>
+                            handler);
+
+    /**
+     * Deletes the Oracle Cloud Infrastructure resource representing an external MySQL database.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteExternalMySqlDatabaseResponse> deleteExternalMySqlDatabase(
+            DeleteExternalMySqlDatabaseRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteExternalMySqlDatabaseRequest, DeleteExternalMySqlDatabaseResponse>
+                    handler);
+
+    /**
+     * Deletes the Oracle Cloud Infrastructure resource representing an external MySQL database connector.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteExternalMySqlDatabaseConnectorResponse>
+            deleteExternalMySqlDatabaseConnector(
+                    DeleteExternalMySqlDatabaseConnectorRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteExternalMySqlDatabaseConnectorRequest,
+                                    DeleteExternalMySqlDatabaseConnectorResponse>
                             handler);
 
     /**
@@ -919,6 +1011,25 @@ public interface DbManagementAsync extends AutoCloseable {
                     com.oracle.bmc.responses.AsyncHandler<
                                     DisableExternalExadataInfrastructureManagementRequest,
                                     DisableExternalExadataInfrastructureManagementResponse>
+                            handler);
+
+    /**
+     * Disables Database Management for an external MySQL Database.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DisableExternalMySqlDatabaseManagementResponse>
+            disableExternalMySqlDatabaseManagement(
+                    DisableExternalMySqlDatabaseManagementRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    DisableExternalMySqlDatabaseManagementRequest,
+                                    DisableExternalMySqlDatabaseManagementResponse>
                             handler);
 
     /**
@@ -1269,6 +1380,25 @@ public interface DbManagementAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Enables Database Management for an external MySQL Database.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<EnableExternalMySqlDatabaseManagementResponse>
+            enableExternalMySqlDatabaseManagement(
+                    EnableExternalMySqlDatabaseManagementRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    EnableExternalMySqlDatabaseManagementRequest,
+                                    EnableExternalMySqlDatabaseManagementResponse>
+                            handler);
+
+    /**
      * Enables Database Management feature for the specified external non-container database.
      *
      *
@@ -1442,6 +1572,67 @@ public interface DbManagementAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Gets the fleet of container databases (CDBs) and their backup details and metrics, in a compartment or Database Group.
+     * The databaseHostedIn query parameter must be provided to list either cloud or external databases.
+     * Either the CompartmentId or the ManagedDatabaseGroupId query parameters must be provided to retrieve the HA and backup metrics.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetDatabaseFleetBackupMetricsResponse>
+            getDatabaseFleetBackupMetrics(
+                    GetDatabaseFleetBackupMetricsRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    GetDatabaseFleetBackupMetricsRequest,
+                                    GetDatabaseFleetBackupMetricsResponse>
+                            handler);
+
+    /**
+     * Gets the fleet of Oracle Data Guard-enabled container databases (CDBs) along with Data Guard metrics and standby databases, in a compartment or Database Group.
+     * Either the CompartmentId or the ManagedDatabaseGroupId query parameters must be provided to retrieve the list of databases and Data Guard metrics.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetDatabaseFleetDataguardMetricsResponse>
+            getDatabaseFleetDataguardMetrics(
+                    GetDatabaseFleetDataguardMetricsRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    GetDatabaseFleetDataguardMetricsRequest,
+                                    GetDatabaseFleetDataguardMetricsResponse>
+                            handler);
+
+    /**
+     * Gets the fleet of container databases (CDBs) and their HA and backup metrics in a compartment or in a Database Group.
+     * Either the CompartmentId or the ManagedDatabaseGroupId query parameters must be provided to retrieve the HA and backup metrics.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetDatabaseFleetHaOverviewMetricsResponse>
+            getDatabaseFleetHaOverviewMetrics(
+                    GetDatabaseFleetHaOverviewMetricsRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    GetDatabaseFleetHaOverviewMetricsRequest,
+                                    GetDatabaseFleetHaOverviewMetricsResponse>
+                            handler);
+
+    /**
      * Gets the health metrics for a fleet of databases in a compartment or in a Managed Database Group.
      * Either the CompartmentId or the ManagedDatabaseGroupId query parameters must be provided to retrieve the health metrics.
      *
@@ -1460,6 +1651,23 @@ public interface DbManagementAsync extends AutoCloseable {
                                     GetDatabaseFleetHealthMetricsRequest,
                                     GetDatabaseFleetHealthMetricsResponse>
                             handler);
+
+    /**
+     * Gets HA and backup details with metrics and backup history for a single database.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetDatabaseHaBackupDetailsResponse> getDatabaseHaBackupDetails(
+            GetDatabaseHaBackupDetailsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetDatabaseHaBackupDetailsRequest, GetDatabaseHaBackupDetailsResponse>
+                    handler);
 
     /**
      * Gets a summary of the activity and resource usage metrics like DB Time, CPU, User I/O, Wait, Storage, and Memory for a Managed Database.
@@ -1780,6 +1988,42 @@ public interface DbManagementAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             GetExternalListenerRequest, GetExternalListenerResponse>
                     handler);
+
+    /**
+     * Retrieves the external MySQL database information.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetExternalMySqlDatabaseResponse> getExternalMySqlDatabase(
+            GetExternalMySqlDatabaseRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetExternalMySqlDatabaseRequest, GetExternalMySqlDatabaseResponse>
+                    handler);
+
+    /**
+     * Retrieves the MySQL database connector.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetExternalMySqlDatabaseConnectorResponse>
+            getExternalMySqlDatabaseConnector(
+                    GetExternalMySqlDatabaseConnectorRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    GetExternalMySqlDatabaseConnectorRequest,
+                                    GetExternalMySqlDatabaseConnectorResponse>
+                            handler);
 
     /**
      * Get the IORM plan from the specific Exadata storage server.
@@ -2580,6 +2824,23 @@ public interface DbManagementAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Gets the list of External MySQL Databases.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListExternalMySqlDatabasesResponse> listExternalMySqlDatabases(
+            ListExternalMySqlDatabasesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListExternalMySqlDatabasesRequest, ListExternalMySqlDatabasesResponse>
+                    handler);
+
+    /**
      * Gets the job execution for a specific ID or the list of job executions for a job, job run, Managed Database or Managed Database Group
      * in a specific compartment. Only one of the parameters, ID, jobId, jobRunId, managedDatabaseId or managedDatabaseGroupId should be provided.
      * If none of these parameters is provided, all the job executions in the compartment are listed. Job executions can also be filtered
@@ -2675,6 +2936,23 @@ public interface DbManagementAsync extends AutoCloseable {
             ListManagedDatabasesRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             ListManagedDatabasesRequest, ListManagedDatabasesResponse>
+                    handler);
+
+    /**
+     * Gets the list of External MySQL Database connectors.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListMySqlDatabaseConnectorsResponse> listMySqlDatabaseConnectors(
+            ListMySqlDatabaseConnectorsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListMySqlDatabaseConnectorsRequest, ListMySqlDatabaseConnectorsResponse>
                     handler);
 
     /**
@@ -3836,6 +4114,42 @@ public interface DbManagementAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             UpdateExternalListenerRequest, UpdateExternalListenerResponse>
                     handler);
+
+    /**
+     * Updates the External Mysql Database.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateExternalMysqlDatabaseResponse> updateExternalMysqlDatabase(
+            UpdateExternalMysqlDatabaseRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateExternalMysqlDatabaseRequest, UpdateExternalMysqlDatabaseResponse>
+                    handler);
+
+    /**
+     * Updates the External Mysql Database Connector.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateExternalMysqlDatabaseConnectorResponse>
+            updateExternalMysqlDatabaseConnector(
+                    UpdateExternalMysqlDatabaseConnectorRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateExternalMysqlDatabaseConnectorRequest,
+                                    UpdateExternalMysqlDatabaseConnectorResponse>
+                            handler);
 
     /**
      * Updates the details for the recurring scheduled job specified by jobId. Note that non-recurring (one time) jobs cannot be updated.

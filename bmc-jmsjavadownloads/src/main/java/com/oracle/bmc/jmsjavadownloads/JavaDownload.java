@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.jmsjavadownloads;
@@ -67,7 +67,7 @@ public interface JavaDownload extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jmsjavadownloads/CancelWorkRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CancelWorkRequest API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jmsjavadownloads/CancelWorkRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CancelWorkRequest API.
      */
     CancelWorkRequestResponse cancelWorkRequest(CancelWorkRequestRequest request);
 
@@ -81,7 +81,7 @@ public interface JavaDownload extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jmsjavadownloads/CreateJavaDownloadReportExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateJavaDownloadReport API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jmsjavadownloads/CreateJavaDownloadReportExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateJavaDownloadReport API.
      */
     CreateJavaDownloadReportResponse createJavaDownloadReport(
             CreateJavaDownloadReportRequest request);
@@ -96,7 +96,7 @@ public interface JavaDownload extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jmsjavadownloads/CreateJavaDownloadTokenExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateJavaDownloadToken API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jmsjavadownloads/CreateJavaDownloadTokenExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateJavaDownloadToken API.
      */
     CreateJavaDownloadTokenResponse createJavaDownloadToken(CreateJavaDownloadTokenRequest request);
 
@@ -109,7 +109,7 @@ public interface JavaDownload extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jmsjavadownloads/CreateJavaLicenseAcceptanceRecordExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateJavaLicenseAcceptanceRecord API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jmsjavadownloads/CreateJavaLicenseAcceptanceRecordExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateJavaLicenseAcceptanceRecord API.
      */
     CreateJavaLicenseAcceptanceRecordResponse createJavaLicenseAcceptanceRecord(
             CreateJavaLicenseAcceptanceRecordRequest request);
@@ -122,7 +122,7 @@ public interface JavaDownload extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jmsjavadownloads/DeleteJavaDownloadReportExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteJavaDownloadReport API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jmsjavadownloads/DeleteJavaDownloadReportExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteJavaDownloadReport API.
      */
     DeleteJavaDownloadReportResponse deleteJavaDownloadReport(
             DeleteJavaDownloadReportRequest request);
@@ -135,7 +135,7 @@ public interface JavaDownload extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jmsjavadownloads/DeleteJavaDownloadTokenExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteJavaDownloadToken API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jmsjavadownloads/DeleteJavaDownloadTokenExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteJavaDownloadToken API.
      */
     DeleteJavaDownloadTokenResponse deleteJavaDownloadToken(DeleteJavaDownloadTokenRequest request);
 
@@ -148,7 +148,7 @@ public interface JavaDownload extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jmsjavadownloads/DeleteJavaLicenseAcceptanceRecordExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteJavaLicenseAcceptanceRecord API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jmsjavadownloads/DeleteJavaLicenseAcceptanceRecordExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteJavaLicenseAcceptanceRecord API.
      */
     DeleteJavaLicenseAcceptanceRecordResponse deleteJavaLicenseAcceptanceRecord(
             DeleteJavaLicenseAcceptanceRecordRequest request);
@@ -167,7 +167,7 @@ public interface JavaDownload extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jmsjavadownloads/GenerateArtifactDownloadUrlExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GenerateArtifactDownloadUrl API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jmsjavadownloads/GenerateArtifactDownloadUrlExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GenerateArtifactDownloadUrl API.
      */
     GenerateArtifactDownloadUrlResponse generateArtifactDownloadUrl(
             GenerateArtifactDownloadUrlRequest request);
@@ -180,7 +180,7 @@ public interface JavaDownload extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jmsjavadownloads/GetJavaDownloadReportExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetJavaDownloadReport API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jmsjavadownloads/GetJavaDownloadReportExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetJavaDownloadReport API.
      */
     GetJavaDownloadReportResponse getJavaDownloadReport(GetJavaDownloadReportRequest request);
 
@@ -192,7 +192,7 @@ public interface JavaDownload extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jmsjavadownloads/GetJavaDownloadReportContentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetJavaDownloadReportContent API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jmsjavadownloads/GetJavaDownloadReportContentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetJavaDownloadReportContent API.
      */
     GetJavaDownloadReportContentResponse getJavaDownloadReportContent(
             GetJavaDownloadReportContentRequest request);
@@ -205,7 +205,7 @@ public interface JavaDownload extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jmsjavadownloads/GetJavaDownloadTokenExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetJavaDownloadToken API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jmsjavadownloads/GetJavaDownloadTokenExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetJavaDownloadToken API.
      */
     GetJavaDownloadTokenResponse getJavaDownloadToken(GetJavaDownloadTokenRequest request);
 
@@ -218,7 +218,7 @@ public interface JavaDownload extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jmsjavadownloads/GetJavaLicenseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetJavaLicense API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jmsjavadownloads/GetJavaLicenseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetJavaLicense API.
      */
     GetJavaLicenseResponse getJavaLicense(GetJavaLicenseRequest request);
 
@@ -231,7 +231,7 @@ public interface JavaDownload extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jmsjavadownloads/GetJavaLicenseAcceptanceRecordExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetJavaLicenseAcceptanceRecord API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jmsjavadownloads/GetJavaLicenseAcceptanceRecordExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetJavaLicenseAcceptanceRecord API.
      */
     GetJavaLicenseAcceptanceRecordResponse getJavaLicenseAcceptanceRecord(
             GetJavaLicenseAcceptanceRecordRequest request);
@@ -244,7 +244,7 @@ public interface JavaDownload extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jmsjavadownloads/GetWorkRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetWorkRequest API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jmsjavadownloads/GetWorkRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetWorkRequest API.
      */
     GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request);
 
@@ -259,7 +259,7 @@ public interface JavaDownload extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jmsjavadownloads/ListJavaDownloadRecordsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListJavaDownloadRecords API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jmsjavadownloads/ListJavaDownloadRecordsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListJavaDownloadRecords API.
      */
     ListJavaDownloadRecordsResponse listJavaDownloadRecords(ListJavaDownloadRecordsRequest request);
 
@@ -272,7 +272,7 @@ public interface JavaDownload extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jmsjavadownloads/ListJavaDownloadReportsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListJavaDownloadReports API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jmsjavadownloads/ListJavaDownloadReportsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListJavaDownloadReports API.
      */
     ListJavaDownloadReportsResponse listJavaDownloadReports(ListJavaDownloadReportsRequest request);
 
@@ -285,7 +285,7 @@ public interface JavaDownload extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jmsjavadownloads/ListJavaDownloadTokensExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListJavaDownloadTokens API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jmsjavadownloads/ListJavaDownloadTokensExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListJavaDownloadTokens API.
      */
     ListJavaDownloadTokensResponse listJavaDownloadTokens(ListJavaDownloadTokensRequest request);
 
@@ -298,7 +298,7 @@ public interface JavaDownload extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jmsjavadownloads/ListJavaLicenseAcceptanceRecordsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListJavaLicenseAcceptanceRecords API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jmsjavadownloads/ListJavaLicenseAcceptanceRecordsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListJavaLicenseAcceptanceRecords API.
      */
     ListJavaLicenseAcceptanceRecordsResponse listJavaLicenseAcceptanceRecords(
             ListJavaLicenseAcceptanceRecordsRequest request);
@@ -312,7 +312,7 @@ public interface JavaDownload extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jmsjavadownloads/ListJavaLicensesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListJavaLicenses API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jmsjavadownloads/ListJavaLicensesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListJavaLicenses API.
      */
     ListJavaLicensesResponse listJavaLicenses(ListJavaLicensesRequest request);
 
@@ -325,7 +325,7 @@ public interface JavaDownload extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jmsjavadownloads/ListWorkRequestErrorsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequestErrors API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jmsjavadownloads/ListWorkRequestErrorsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequestErrors API.
      */
     ListWorkRequestErrorsResponse listWorkRequestErrors(ListWorkRequestErrorsRequest request);
 
@@ -338,7 +338,7 @@ public interface JavaDownload extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jmsjavadownloads/ListWorkRequestLogsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequestLogs API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jmsjavadownloads/ListWorkRequestLogsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequestLogs API.
      */
     ListWorkRequestLogsResponse listWorkRequestLogs(ListWorkRequestLogsRequest request);
 
@@ -351,7 +351,7 @@ public interface JavaDownload extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jmsjavadownloads/ListWorkRequestsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequests API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jmsjavadownloads/ListWorkRequestsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequests API.
      */
     ListWorkRequestsResponse listWorkRequests(ListWorkRequestsRequest request);
 
@@ -364,7 +364,7 @@ public interface JavaDownload extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jmsjavadownloads/RequestSummarizedJavaDownloadCountsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RequestSummarizedJavaDownloadCounts API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jmsjavadownloads/RequestSummarizedJavaDownloadCountsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RequestSummarizedJavaDownloadCounts API.
      */
     RequestSummarizedJavaDownloadCountsResponse requestSummarizedJavaDownloadCounts(
             RequestSummarizedJavaDownloadCountsRequest request);
@@ -377,7 +377,7 @@ public interface JavaDownload extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jmsjavadownloads/UpdateJavaDownloadTokenExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateJavaDownloadToken API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jmsjavadownloads/UpdateJavaDownloadTokenExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateJavaDownloadToken API.
      */
     UpdateJavaDownloadTokenResponse updateJavaDownloadToken(UpdateJavaDownloadTokenRequest request);
 
@@ -390,7 +390,7 @@ public interface JavaDownload extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jmsjavadownloads/UpdateJavaLicenseAcceptanceRecordExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateJavaLicenseAcceptanceRecord API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jmsjavadownloads/UpdateJavaLicenseAcceptanceRecordExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateJavaLicenseAcceptanceRecord API.
      */
     UpdateJavaLicenseAcceptanceRecordResponse updateJavaLicenseAcceptanceRecord(
             UpdateJavaLicenseAcceptanceRecordRequest request);

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.ons;
@@ -9,7 +9,7 @@ import com.oracle.bmc.ons.responses.*;
 
 /**
  * Use the Notifications API to broadcast messages to distributed components by topic, using a publish-subscribe pattern.
- * For information about managing topics, subscriptions, and messages, see [Notifications Overview](https://docs.cloud.oracle.com/iaas/Content/Notification/Concepts/notificationoverview.htm).
+ * For information about managing topics, subscriptions, and messages, see [Notifications Overview](https://docs.oracle.com/iaas/Content/Notification/Concepts/notificationoverview.htm).
  *
  * This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by default if no circuit breaker configuration is defined by the user.
  */
@@ -64,7 +64,7 @@ public interface NotificationControlPlane extends AutoCloseable {
     /**
      * Moves a topic into a different compartment within the same tenancy. For information about moving resources
      * between compartments, see
-     * [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * [Moving Resources to a Different Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      * <p>
      * Transactions Per Minute (TPM) per-tenancy limit for this operation: 60.
      *
@@ -74,23 +74,23 @@ public interface NotificationControlPlane extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ons/ChangeTopicCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeTopicCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ons/ChangeTopicCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeTopicCompartment API.
      */
     ChangeTopicCompartmentResponse changeTopicCompartment(ChangeTopicCompartmentRequest request);
 
     /**
      * Creates a topic in the specified compartment. For general information about topics, see
-     * [Managing Topics and Subscriptions](https://docs.cloud.oracle.com/iaas/Content/Notification/Tasks/managingtopicsandsubscriptions.htm).
+     * [Managing Topics and Subscriptions](https://docs.oracle.com/iaas/Content/Notification/Tasks/managingtopicsandsubscriptions.htm).
      * <p>
      * For the purposes of access control, you must provide the OCID of the compartment where you want the topic to reside.
-     * For information about access control and compartments, see [Overview of the IAM Service](https://docs.cloud.oracle.com/Content/Identity/Concepts/overview.htm).
+     * For information about access control and compartments, see [Overview of the IAM Service](https://docs.oracle.com/iaas/Content/Identity/Concepts/overview.htm).
      * <p>
      * You must specify a display name for the topic.
      * <p>
      * All Oracle Cloud Infrastructure resources, including topics, get an Oracle-assigned, unique ID called an
      * Oracle Cloud Identifier (OCID). When you create a resource, you can find its OCID in the response. You can also
      * retrieve a resource's OCID by using a List API operation on that resource type, or by viewing the resource in the
-     * Console. For more information, see [Resource Identifiers](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * Console. For more information, see [Resource Identifiers](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * <p>
      * Transactions Per Minute (TPM) per-tenancy limit for this operation: 60.
      *
@@ -100,7 +100,7 @@ public interface NotificationControlPlane extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ons/CreateTopicExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateTopic API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ons/CreateTopicExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateTopic API.
      */
     CreateTopicResponse createTopic(CreateTopicRequest request);
 
@@ -115,7 +115,7 @@ public interface NotificationControlPlane extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ons/DeleteTopicExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteTopic API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ons/DeleteTopicExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteTopic API.
      */
     DeleteTopicResponse deleteTopic(DeleteTopicRequest request);
 
@@ -128,7 +128,7 @@ public interface NotificationControlPlane extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ons/GetTopicExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetTopic API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ons/GetTopicExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetTopic API.
      */
     GetTopicResponse getTopic(GetTopicRequest request);
 
@@ -143,7 +143,7 @@ public interface NotificationControlPlane extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ons/ListTopicsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListTopics API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ons/ListTopicsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListTopics API.
      */
     ListTopicsResponse listTopics(ListTopicsRequest request);
 
@@ -158,7 +158,7 @@ public interface NotificationControlPlane extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ons/UpdateTopicExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateTopic API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ons/UpdateTopicExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateTopic API.
      */
     UpdateTopicResponse updateTopic(UpdateTopicRequest request);
 

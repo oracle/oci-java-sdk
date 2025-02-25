@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.goldengate.model;
@@ -193,6 +193,7 @@ public final class CreateAzureDataLakeStorageConnectionDetails extends CreateCon
         /**
          * Azure storage account key. This property is required when 'authenticationType' is set to 'SHARED_KEY'.
          * e.g.: pa3WbhVATzj56xD4DH1VjOUhApRGEGHvOo58eQJVWIzX+j8j4CUVFcTjpIqDSRaSa1Wo2LbWY5at+AStEgLOIQ==
+         * Deprecated: This field is deprecated and replaced by "accountKeySecretId". This field will be removed after February 15 2026.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("accountKey")
@@ -201,6 +202,7 @@ public final class CreateAzureDataLakeStorageConnectionDetails extends CreateCon
         /**
          * Azure storage account key. This property is required when 'authenticationType' is set to 'SHARED_KEY'.
          * e.g.: pa3WbhVATzj56xD4DH1VjOUhApRGEGHvOo58eQJVWIzX+j8j4CUVFcTjpIqDSRaSa1Wo2LbWY5at+AStEgLOIQ==
+         * Deprecated: This field is deprecated and replaced by "accountKeySecretId". This field will be removed after February 15 2026.
          *
          * @param accountKey the value to set
          * @return this builder
@@ -211,7 +213,7 @@ public final class CreateAzureDataLakeStorageConnectionDetails extends CreateCon
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret where the account key is stored.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the account key is stored.
          * Note: When provided, 'accountKey' field must not be provided.
          *
          **/
@@ -219,7 +221,7 @@ public final class CreateAzureDataLakeStorageConnectionDetails extends CreateCon
         private String accountKeySecretId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret where the account key is stored.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the account key is stored.
          * Note: When provided, 'accountKey' field must not be provided.
          *
          * @param accountKeySecretId the value to set
@@ -234,6 +236,7 @@ public final class CreateAzureDataLakeStorageConnectionDetails extends CreateCon
          * Credential that uses a shared access signature (SAS) to authenticate to an Azure Service. This property is
          * required when 'authenticationType' is set to 'SHARED_ACCESS_SIGNATURE'.
          * e.g.: ?sv=2020-06-08&ss=bfqt&srt=sco&sp=rwdlacupyx&se=2020-09-10T20:27:28Z&st=2022-08-05T12:27:28Z&spr=https&sig=C1IgHsiLBmTSStYkXXGLTP8it0xBrArcgCqOsZbXwIQ%3D
+         * Deprecated: This field is deprecated and replaced by "sasTokenSecretId". This field will be removed after February 15 2026.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("sasToken")
@@ -243,6 +246,7 @@ public final class CreateAzureDataLakeStorageConnectionDetails extends CreateCon
          * Credential that uses a shared access signature (SAS) to authenticate to an Azure Service. This property is
          * required when 'authenticationType' is set to 'SHARED_ACCESS_SIGNATURE'.
          * e.g.: ?sv=2020-06-08&ss=bfqt&srt=sco&sp=rwdlacupyx&se=2020-09-10T20:27:28Z&st=2022-08-05T12:27:28Z&spr=https&sig=C1IgHsiLBmTSStYkXXGLTP8it0xBrArcgCqOsZbXwIQ%3D
+         * Deprecated: This field is deprecated and replaced by "sasTokenSecretId". This field will be removed after February 15 2026.
          *
          * @param sasToken the value to set
          * @return this builder
@@ -253,7 +257,7 @@ public final class CreateAzureDataLakeStorageConnectionDetails extends CreateCon
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret where the sas token is stored.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the sas token is stored.
          * Note: When provided, 'sasToken' field must not be provided.
          *
          **/
@@ -261,7 +265,7 @@ public final class CreateAzureDataLakeStorageConnectionDetails extends CreateCon
         private String sasTokenSecretId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret where the sas token is stored.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the sas token is stored.
          * Note: When provided, 'sasToken' field must not be provided.
          *
          * @param sasTokenSecretId the value to set
@@ -315,6 +319,7 @@ public final class CreateAzureDataLakeStorageConnectionDetails extends CreateCon
         /**
          * Azure client secret (aka application password) for authentication. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'.
          * e.g.: dO29Q~F5-VwnA.lZdd11xFF_t5NAXCaGwDl9NbT1
+         * Deprecated: This field is deprecated and replaced by "clientSecretSecretId". This field will be removed after February 15 2026.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("clientSecret")
@@ -323,6 +328,7 @@ public final class CreateAzureDataLakeStorageConnectionDetails extends CreateCon
         /**
          * Azure client secret (aka application password) for authentication. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'.
          * e.g.: dO29Q~F5-VwnA.lZdd11xFF_t5NAXCaGwDl9NbT1
+         * Deprecated: This field is deprecated and replaced by "clientSecretSecretId". This field will be removed after February 15 2026.
          *
          * @param clientSecret the value to set
          * @return this builder
@@ -333,7 +339,7 @@ public final class CreateAzureDataLakeStorageConnectionDetails extends CreateCon
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored.
          * Note: When provided, 'clientSecret' field must not be provided.
          *
          **/
@@ -341,7 +347,7 @@ public final class CreateAzureDataLakeStorageConnectionDetails extends CreateCon
         private String clientSecretSecretId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored.
          * Note: When provided, 'clientSecret' field must not be provided.
          *
          * @param clientSecretSecretId the value to set
@@ -600,6 +606,7 @@ public final class CreateAzureDataLakeStorageConnectionDetails extends CreateCon
     /**
      * Azure storage account key. This property is required when 'authenticationType' is set to 'SHARED_KEY'.
      * e.g.: pa3WbhVATzj56xD4DH1VjOUhApRGEGHvOo58eQJVWIzX+j8j4CUVFcTjpIqDSRaSa1Wo2LbWY5at+AStEgLOIQ==
+     * Deprecated: This field is deprecated and replaced by "accountKeySecretId". This field will be removed after February 15 2026.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("accountKey")
@@ -608,6 +615,7 @@ public final class CreateAzureDataLakeStorageConnectionDetails extends CreateCon
     /**
      * Azure storage account key. This property is required when 'authenticationType' is set to 'SHARED_KEY'.
      * e.g.: pa3WbhVATzj56xD4DH1VjOUhApRGEGHvOo58eQJVWIzX+j8j4CUVFcTjpIqDSRaSa1Wo2LbWY5at+AStEgLOIQ==
+     * Deprecated: This field is deprecated and replaced by "accountKeySecretId". This field will be removed after February 15 2026.
      *
      * @return the value
      **/
@@ -616,7 +624,7 @@ public final class CreateAzureDataLakeStorageConnectionDetails extends CreateCon
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret where the account key is stored.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the account key is stored.
      * Note: When provided, 'accountKey' field must not be provided.
      *
      **/
@@ -624,7 +632,7 @@ public final class CreateAzureDataLakeStorageConnectionDetails extends CreateCon
     private final String accountKeySecretId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret where the account key is stored.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the account key is stored.
      * Note: When provided, 'accountKey' field must not be provided.
      *
      * @return the value
@@ -637,6 +645,7 @@ public final class CreateAzureDataLakeStorageConnectionDetails extends CreateCon
      * Credential that uses a shared access signature (SAS) to authenticate to an Azure Service. This property is
      * required when 'authenticationType' is set to 'SHARED_ACCESS_SIGNATURE'.
      * e.g.: ?sv=2020-06-08&ss=bfqt&srt=sco&sp=rwdlacupyx&se=2020-09-10T20:27:28Z&st=2022-08-05T12:27:28Z&spr=https&sig=C1IgHsiLBmTSStYkXXGLTP8it0xBrArcgCqOsZbXwIQ%3D
+     * Deprecated: This field is deprecated and replaced by "sasTokenSecretId". This field will be removed after February 15 2026.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sasToken")
@@ -646,6 +655,7 @@ public final class CreateAzureDataLakeStorageConnectionDetails extends CreateCon
      * Credential that uses a shared access signature (SAS) to authenticate to an Azure Service. This property is
      * required when 'authenticationType' is set to 'SHARED_ACCESS_SIGNATURE'.
      * e.g.: ?sv=2020-06-08&ss=bfqt&srt=sco&sp=rwdlacupyx&se=2020-09-10T20:27:28Z&st=2022-08-05T12:27:28Z&spr=https&sig=C1IgHsiLBmTSStYkXXGLTP8it0xBrArcgCqOsZbXwIQ%3D
+     * Deprecated: This field is deprecated and replaced by "sasTokenSecretId". This field will be removed after February 15 2026.
      *
      * @return the value
      **/
@@ -654,7 +664,7 @@ public final class CreateAzureDataLakeStorageConnectionDetails extends CreateCon
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret where the sas token is stored.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the sas token is stored.
      * Note: When provided, 'sasToken' field must not be provided.
      *
      **/
@@ -662,7 +672,7 @@ public final class CreateAzureDataLakeStorageConnectionDetails extends CreateCon
     private final String sasTokenSecretId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret where the sas token is stored.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the sas token is stored.
      * Note: When provided, 'sasToken' field must not be provided.
      *
      * @return the value
@@ -710,6 +720,7 @@ public final class CreateAzureDataLakeStorageConnectionDetails extends CreateCon
     /**
      * Azure client secret (aka application password) for authentication. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'.
      * e.g.: dO29Q~F5-VwnA.lZdd11xFF_t5NAXCaGwDl9NbT1
+     * Deprecated: This field is deprecated and replaced by "clientSecretSecretId". This field will be removed after February 15 2026.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("clientSecret")
@@ -718,6 +729,7 @@ public final class CreateAzureDataLakeStorageConnectionDetails extends CreateCon
     /**
      * Azure client secret (aka application password) for authentication. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'.
      * e.g.: dO29Q~F5-VwnA.lZdd11xFF_t5NAXCaGwDl9NbT1
+     * Deprecated: This field is deprecated and replaced by "clientSecretSecretId". This field will be removed after February 15 2026.
      *
      * @return the value
      **/
@@ -726,7 +738,7 @@ public final class CreateAzureDataLakeStorageConnectionDetails extends CreateCon
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored.
      * Note: When provided, 'clientSecret' field must not be provided.
      *
      **/
@@ -734,7 +746,7 @@ public final class CreateAzureDataLakeStorageConnectionDetails extends CreateCon
     private final String clientSecretSecretId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored.
      * Note: When provided, 'clientSecret' field must not be provided.
      *
      * @return the value

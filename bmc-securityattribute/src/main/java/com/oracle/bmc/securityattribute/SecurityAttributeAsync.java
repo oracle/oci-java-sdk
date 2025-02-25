@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.securityattribute;
@@ -8,7 +8,7 @@ import com.oracle.bmc.securityattribute.requests.*;
 import com.oracle.bmc.securityattribute.responses.*;
 
 /**
- * Use the Security Attributes API to manage security attributes and security attribute namespaces. For more information, see the documentation for [Security Attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/managing-security-attributes.htm) and [Security Attribute Nampespaces](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/managing-security-attribute-namespaces.htm).
+ * Use the Security Attributes API to manage security attributes and security attribute namespaces. For more information, see the documentation for [Security Attributes](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/managing-security-attributes.htm) and [Security Attribute Nampespaces](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/managing-security-attribute-namespaces.htm).
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20240815")
 public interface SecurityAttributeAsync extends AutoCloseable {
@@ -158,7 +158,7 @@ public interface SecurityAttributeAsync extends AutoCloseable {
      * Moves the specified security attribute namespace to the specified compartment within the same tenancy.
      * <p>
      * To move the security attribute namespace, you must have the manage security-attributes permission on both compartments.
-     * For more information about IAM policies, see [Details for IAM](https://docs.cloud.oracle.com/Content/Identity/policyreference/iampolicyreference.htm).
+     * For more information about IAM policies, see [Details for IAM](https://docs.oracle.com/iaas/Content/Identity/policyreference/iampolicyreference.htm).
      * <p>
      * Moving a security attribute namespace moves all the security attributes contained in the security attribute namespace.
      *
@@ -466,7 +466,7 @@ public interface SecurityAttributeAsync extends AutoCloseable {
      * namespace (changing `isRetired` from 'true' to 'false') does not reactivate security attributes.
      * To reactivate the security attributes, you must reactivate each one individually *after* you reactivate the namespace,
      * using {@link #updateTag(UpdateTagRequest, Consumer, Consumer) updateTag}. For more information about retiring security attribute namespaces, see
-     * [Managing Security Attribute Namespaces](https://docs.cloud.oracle.com/Content/zero-trust-packet-routing/managing-security-attribute-namespaces.htm).
+     * [Managing Security Attribute Namespaces](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/managing-security-attribute-namespaces.htm).
      * <p>
      * You can't add a namespace with the same name as a retired namespace in the same tenancy.
      *

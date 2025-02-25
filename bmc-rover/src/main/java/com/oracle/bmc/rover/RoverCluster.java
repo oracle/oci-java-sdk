@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.rover;
@@ -67,7 +67,7 @@ public interface RoverCluster extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/rover/ChangeRoverClusterCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeRoverClusterCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/rover/ChangeRoverClusterCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeRoverClusterCompartment API.
      */
     ChangeRoverClusterCompartmentResponse changeRoverClusterCompartment(
             ChangeRoverClusterCompartmentRequest request);
@@ -81,7 +81,7 @@ public interface RoverCluster extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/rover/CreateRoverClusterExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateRoverCluster API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/rover/CreateRoverClusterExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateRoverCluster API.
      */
     CreateRoverClusterResponse createRoverCluster(CreateRoverClusterRequest request);
 
@@ -93,7 +93,7 @@ public interface RoverCluster extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/rover/DeleteRoverClusterExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteRoverCluster API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/rover/DeleteRoverClusterExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteRoverCluster API.
      */
     DeleteRoverClusterResponse deleteRoverCluster(DeleteRoverClusterRequest request);
 
@@ -105,7 +105,7 @@ public interface RoverCluster extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/rover/GetRoverClusterExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetRoverCluster API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/rover/GetRoverClusterExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetRoverCluster API.
      */
     GetRoverClusterResponse getRoverCluster(GetRoverClusterRequest request);
 
@@ -117,7 +117,7 @@ public interface RoverCluster extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/rover/GetRoverClusterCertificateExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetRoverClusterCertificate API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/rover/GetRoverClusterCertificateExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetRoverClusterCertificate API.
      */
     GetRoverClusterCertificateResponse getRoverClusterCertificate(
             GetRoverClusterCertificateRequest request);
@@ -131,7 +131,7 @@ public interface RoverCluster extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/rover/ListRoverClustersExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListRoverClusters API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/rover/ListRoverClustersExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListRoverClusters API.
      */
     ListRoverClustersResponse listRoverClusters(ListRoverClustersRequest request);
 
@@ -143,7 +143,7 @@ public interface RoverCluster extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/rover/RequestAdditionalNodesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RequestAdditionalNodes API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/rover/RequestAdditionalNodesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RequestAdditionalNodes API.
      */
     RequestAdditionalNodesResponse requestAdditionalNodes(RequestAdditionalNodesRequest request);
 
@@ -155,7 +155,7 @@ public interface RoverCluster extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/rover/UpdateRoverClusterExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateRoverCluster API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/rover/UpdateRoverClusterExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateRoverCluster API.
      */
     UpdateRoverClusterResponse updateRoverCluster(UpdateRoverClusterRequest request);
 

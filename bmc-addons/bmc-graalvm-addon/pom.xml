@@ -4,17 +4,17 @@
   <parent>
     <artifactId>oci-java-sdk-addons</artifactId>
     <groupId>com.oracle.oci.sdk</groupId>
-    <version>2.79.0</version>
+    <version>2.81.0</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
   <artifactId>oci-java-sdk-addons-graalvm</artifactId>
   <name>Oracle Cloud Infrastructure SDK - GraalVM</name>
   <description>This project enables GraalVM support in the Oracle Cloud Infrastructure Java SDK</description>
-  <url>https://docs.cloud.oracle.com/Content/API/SDKDocs/javasdk.htm</url>
+  <url>https://docs.oracle.com/iaas/Content/API/SDKDocs/javasdk.htm</url>
   <properties>
     <graalvm.version>21.3.1</graalvm.version>
     <junit.jupiter.version>5.8.1</junit.jupiter.version>
-    <native.maven.plugin.version>0.9.8</native.maven.plugin.version>
+    <native.maven.plugin.version>0.10.2</native.maven.plugin.version>
     <maven.surefire.plugin.version>3.0.0-M5</maven.surefire.plugin.version>
   </properties>
   <profiles>
@@ -112,11 +112,6 @@
       <scope>test</scope>
     </dependency>
     <dependency>
-      <groupId>org.bouncycastle</groupId>
-      <artifactId>bcprov-jdk15on</artifactId>
-      <scope>provided</scope>
-    </dependency>
-    <dependency>
       <groupId>com.fasterxml.jackson.core</groupId>
       <artifactId>jackson-annotations</artifactId>
     </dependency>
@@ -132,24 +127,24 @@
     <dependency>
       <groupId>com.oracle.oci.sdk</groupId>
       <artifactId>oci-java-sdk-common</artifactId>
-      <version>2.79.0</version>
+      <version>2.81.0</version>
     </dependency>
     <dependency>
       <groupId>com.oracle.oci.sdk</groupId>
       <artifactId>oci-java-sdk-objectstorage-extensions</artifactId>
-      <version>2.79.0</version>
+      <version>2.81.0</version>
       <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>com.oracle.oci.sdk</groupId>
       <artifactId>oci-java-sdk-identity</artifactId>
-      <version>2.79.0</version>
+      <version>2.81.0</version>
       <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>com.oracle.oci.sdk</groupId>
       <artifactId>oci-java-sdk-core</artifactId>
-      <version>2.79.0</version>
+      <version>2.81.0</version>
       <scope>test</scope>
     </dependency>
   </dependencies>

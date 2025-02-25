@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.monitoring.model;
@@ -44,8 +44,8 @@ public final class AlarmHistoryEntry extends com.oracle.bmc.http.internal.Explic
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Customizable alarm summary ({@code alarmSummary} [alarm message parameter](https://docs.cloud.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm)).
-         * Optionally include [dynamic variables](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm).
+         * Customizable alarm summary ({@code alarmSummary} [alarm message parameter](https://docs.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm)).
+         * Optionally include [dynamic variables](https://docs.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm).
          * The alarm summary appears within the body of the alarm message and in responses to
          * {@link #listAlarmsStatus(ListAlarmsStatusRequest) listAlarmsStatus}
          * {@link #getAlarmHistory(GetAlarmHistoryRequest) getAlarmHistory} and
@@ -56,8 +56,8 @@ public final class AlarmHistoryEntry extends com.oracle.bmc.http.internal.Explic
         private String alarmSummary;
 
         /**
-         * Customizable alarm summary ({@code alarmSummary} [alarm message parameter](https://docs.cloud.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm)).
-         * Optionally include [dynamic variables](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm).
+         * Customizable alarm summary ({@code alarmSummary} [alarm message parameter](https://docs.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm)).
+         * Optionally include [dynamic variables](https://docs.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm).
          * The alarm summary appears within the body of the alarm message and in responses to
          * {@link #listAlarmsStatus(ListAlarmsStatusRequest) listAlarmsStatus}
          * {@link #getAlarmHistory(GetAlarmHistoryRequest) getAlarmHistory} and
@@ -190,8 +190,8 @@ public final class AlarmHistoryEntry extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
-     * Customizable alarm summary ({@code alarmSummary} [alarm message parameter](https://docs.cloud.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm)).
-     * Optionally include [dynamic variables](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm).
+     * Customizable alarm summary ({@code alarmSummary} [alarm message parameter](https://docs.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm)).
+     * Optionally include [dynamic variables](https://docs.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm).
      * The alarm summary appears within the body of the alarm message and in responses to
      * {@link #listAlarmsStatus(ListAlarmsStatusRequest) listAlarmsStatus}
      * {@link #getAlarmHistory(GetAlarmHistoryRequest) getAlarmHistory} and
@@ -202,8 +202,8 @@ public final class AlarmHistoryEntry extends com.oracle.bmc.http.internal.Explic
     private final String alarmSummary;
 
     /**
-     * Customizable alarm summary ({@code alarmSummary} [alarm message parameter](https://docs.cloud.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm)).
-     * Optionally include [dynamic variables](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm).
+     * Customizable alarm summary ({@code alarmSummary} [alarm message parameter](https://docs.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm)).
+     * Optionally include [dynamic variables](https://docs.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm).
      * The alarm summary appears within the body of the alarm message and in responses to
      * {@link #listAlarmsStatus(ListAlarmsStatusRequest) listAlarmsStatus}
      * {@link #getAlarmHistory(GetAlarmHistoryRequest) getAlarmHistory} and

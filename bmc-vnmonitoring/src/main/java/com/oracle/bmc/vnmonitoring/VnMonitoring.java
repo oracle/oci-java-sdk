@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.vnmonitoring;
@@ -9,7 +9,7 @@ import com.oracle.bmc.vnmonitoring.responses.*;
 
 /**
  * Use the Network Monitoring API to troubleshoot routing and security issues for resources such as virtual cloud networks (VCNs) and compute instances. For more information, see the console
- * documentation for the [Network Path Analyzer](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/path_analyzer.htm) tool.
+ * documentation for the [Network Path Analyzer](https://docs.oracle.com/iaas/Content/Network/Concepts/path_analyzer.htm) tool.
  *
  * This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by default if no circuit breaker configuration is defined by the user.
  */
@@ -70,7 +70,7 @@ public interface VnMonitoring extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/vnmonitoring/ChangePathAnalyzerTestCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangePathAnalyzerTestCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/vnmonitoring/ChangePathAnalyzerTestCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangePathAnalyzerTestCompartment API.
      */
     ChangePathAnalyzerTestCompartmentResponse changePathAnalyzerTestCompartment(
             ChangePathAnalyzerTestCompartmentRequest request);
@@ -83,7 +83,7 @@ public interface VnMonitoring extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/vnmonitoring/CreatePathAnalyzerTestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreatePathAnalyzerTest API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/vnmonitoring/CreatePathAnalyzerTestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreatePathAnalyzerTest API.
      */
     CreatePathAnalyzerTestResponse createPathAnalyzerTest(CreatePathAnalyzerTestRequest request);
 
@@ -95,12 +95,12 @@ public interface VnMonitoring extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/vnmonitoring/DeletePathAnalyzerTestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeletePathAnalyzerTest API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/vnmonitoring/DeletePathAnalyzerTestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeletePathAnalyzerTest API.
      */
     DeletePathAnalyzerTestResponse deletePathAnalyzerTest(DeletePathAnalyzerTestRequest request);
 
     /**
-     * Use this method to initiate a [Network Path Analyzer](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/path_analyzer.htm) analysis. This method returns
+     * Use this method to initiate a [Network Path Analyzer](https://docs.oracle.com/iaas/Content/Network/Concepts/path_analyzer.htm) analysis. This method returns
      * an opc-work-request-id, and you can poll the status of the work request until it either fails or succeeds.
      * <p>
      * If the work request status is successful, use {@link #listWorkRequestResults(ListWorkRequestResultsRequest) listWorkRequestResults}
@@ -115,7 +115,7 @@ public interface VnMonitoring extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/vnmonitoring/GetPathAnalysisExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetPathAnalysis API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/vnmonitoring/GetPathAnalysisExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetPathAnalysis API.
      */
     GetPathAnalysisResponse getPathAnalysis(GetPathAnalysisRequest request);
 
@@ -127,7 +127,7 @@ public interface VnMonitoring extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/vnmonitoring/GetPathAnalyzerTestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetPathAnalyzerTest API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/vnmonitoring/GetPathAnalyzerTestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetPathAnalyzerTest API.
      */
     GetPathAnalyzerTestResponse getPathAnalyzerTest(GetPathAnalyzerTestRequest request);
 
@@ -139,7 +139,7 @@ public interface VnMonitoring extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/vnmonitoring/GetWorkRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetWorkRequest API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/vnmonitoring/GetWorkRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetWorkRequest API.
      */
     GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request);
 
@@ -152,7 +152,7 @@ public interface VnMonitoring extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/vnmonitoring/ListPathAnalyzerTestsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListPathAnalyzerTests API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/vnmonitoring/ListPathAnalyzerTestsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListPathAnalyzerTests API.
      */
     ListPathAnalyzerTestsResponse listPathAnalyzerTests(ListPathAnalyzerTestsRequest request);
 
@@ -165,7 +165,7 @@ public interface VnMonitoring extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/vnmonitoring/ListWorkRequestErrorsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequestErrors API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/vnmonitoring/ListWorkRequestErrorsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequestErrors API.
      */
     ListWorkRequestErrorsResponse listWorkRequestErrors(ListWorkRequestErrorsRequest request);
 
@@ -178,7 +178,7 @@ public interface VnMonitoring extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/vnmonitoring/ListWorkRequestLogsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequestLogs API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/vnmonitoring/ListWorkRequestLogsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequestLogs API.
      */
     ListWorkRequestLogsResponse listWorkRequestLogs(ListWorkRequestLogsRequest request);
 
@@ -192,7 +192,7 @@ public interface VnMonitoring extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/vnmonitoring/ListWorkRequestResultsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequestResults API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/vnmonitoring/ListWorkRequestResultsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequestResults API.
      */
     ListWorkRequestResultsResponse listWorkRequestResults(ListWorkRequestResultsRequest request);
 
@@ -204,7 +204,7 @@ public interface VnMonitoring extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/vnmonitoring/ListWorkRequestsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequests API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/vnmonitoring/ListWorkRequestsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequests API.
      */
     ListWorkRequestsResponse listWorkRequests(ListWorkRequestsRequest request);
 
@@ -216,7 +216,7 @@ public interface VnMonitoring extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/vnmonitoring/UpdatePathAnalyzerTestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdatePathAnalyzerTest API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/vnmonitoring/UpdatePathAnalyzerTestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdatePathAnalyzerTest API.
      */
     UpdatePathAnalyzerTestResponse updatePathAnalyzerTest(UpdatePathAnalyzerTestRequest request);
 

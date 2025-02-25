@@ -1,15 +1,13 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.generativeaiagent.model;
 
 /**
- * **KnowledgeBase**
- * <p>
  * A knowledge base is the base for all the data sources that an agent can use to retrieve information for its responses.
  * <p>
- * To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized, talk to an administrator. If you're an administrator who needs to write policies to give users access, see [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/policiesgs/get-started-with-policies.htm).
+ * To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized, talk to an administrator. If you're an administrator who needs to write policies to give users access, see [Getting Started with Policies](https://docs.oracle.com/iaas/Content/Identity/policiesgs/get-started-with-policies.htm).
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -30,6 +28,7 @@ public final class KnowledgeBase extends com.oracle.bmc.http.internal.Explicitly
         "description",
         "compartmentId",
         "indexConfig",
+        "knowledgeBaseStatistics",
         "timeCreated",
         "timeUpdated",
         "lifecycleState",
@@ -44,6 +43,7 @@ public final class KnowledgeBase extends com.oracle.bmc.http.internal.Explicitly
             String description,
             String compartmentId,
             IndexConfig indexConfig,
+            KnowledgeBaseStatistics knowledgeBaseStatistics,
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
             LifecycleState lifecycleState,
@@ -57,6 +57,7 @@ public final class KnowledgeBase extends com.oracle.bmc.http.internal.Explicitly
         this.description = description;
         this.compartmentId = compartmentId;
         this.indexConfig = indexConfig;
+        this.knowledgeBaseStatistics = knowledgeBaseStatistics;
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
         this.lifecycleState = lifecycleState;
@@ -69,13 +70,13 @@ public final class KnowledgeBase extends com.oracle.bmc.http.internal.Explicitly
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the knowledge base.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the knowledge base.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the knowledge base.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the knowledge base.
          * @param id the value to set
          * @return this builder
          **/
@@ -117,13 +118,13 @@ public final class KnowledgeBase extends com.oracle.bmc.http.internal.Explicitly
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
          * @param compartmentId the value to set
          * @return this builder
          **/
@@ -139,6 +140,15 @@ public final class KnowledgeBase extends com.oracle.bmc.http.internal.Explicitly
         public Builder indexConfig(IndexConfig indexConfig) {
             this.indexConfig = indexConfig;
             this.__explicitlySet__.add("indexConfig");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("knowledgeBaseStatistics")
+        private KnowledgeBaseStatistics knowledgeBaseStatistics;
+
+        public Builder knowledgeBaseStatistics(KnowledgeBaseStatistics knowledgeBaseStatistics) {
+            this.knowledgeBaseStatistics = knowledgeBaseStatistics;
+            this.__explicitlySet__.add("knowledgeBaseStatistics");
             return this;
         }
         /**
@@ -223,7 +233,7 @@ public final class KnowledgeBase extends com.oracle.bmc.http.internal.Explicitly
         }
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * <p>
          * Example: {@code {"Department": "Finance"}}
          *
@@ -233,7 +243,7 @@ public final class KnowledgeBase extends com.oracle.bmc.http.internal.Explicitly
 
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * <p>
          * Example: {@code {"Department": "Finance"}}
          *
@@ -247,7 +257,7 @@ public final class KnowledgeBase extends com.oracle.bmc.http.internal.Explicitly
         }
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * <p>
          * Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
@@ -257,7 +267,7 @@ public final class KnowledgeBase extends com.oracle.bmc.http.internal.Explicitly
 
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * <p>
          * Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
@@ -304,6 +314,7 @@ public final class KnowledgeBase extends com.oracle.bmc.http.internal.Explicitly
                             this.description,
                             this.compartmentId,
                             this.indexConfig,
+                            this.knowledgeBaseStatistics,
                             this.timeCreated,
                             this.timeUpdated,
                             this.lifecycleState,
@@ -333,6 +344,9 @@ public final class KnowledgeBase extends com.oracle.bmc.http.internal.Explicitly
             }
             if (model.wasPropertyExplicitlySet("indexConfig")) {
                 this.indexConfig(model.getIndexConfig());
+            }
+            if (model.wasPropertyExplicitlySet("knowledgeBaseStatistics")) {
+                this.knowledgeBaseStatistics(model.getKnowledgeBaseStatistics());
             }
             if (model.wasPropertyExplicitlySet("timeCreated")) {
                 this.timeCreated(model.getTimeCreated());
@@ -371,13 +385,13 @@ public final class KnowledgeBase extends com.oracle.bmc.http.internal.Explicitly
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the knowledge base.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the knowledge base.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the knowledge base.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the knowledge base.
      * @return the value
      **/
     public String getId() {
@@ -413,13 +427,13 @@ public final class KnowledgeBase extends com.oracle.bmc.http.internal.Explicitly
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * @return the value
      **/
     public String getCompartmentId() {
@@ -431,6 +445,13 @@ public final class KnowledgeBase extends com.oracle.bmc.http.internal.Explicitly
 
     public IndexConfig getIndexConfig() {
         return indexConfig;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("knowledgeBaseStatistics")
+    private final KnowledgeBaseStatistics knowledgeBaseStatistics;
+
+    public KnowledgeBaseStatistics getKnowledgeBaseStatistics() {
+        return knowledgeBaseStatistics;
     }
 
     /**
@@ -560,7 +581,7 @@ public final class KnowledgeBase extends com.oracle.bmc.http.internal.Explicitly
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
      * Example: {@code {"Department": "Finance"}}
      *
@@ -570,7 +591,7 @@ public final class KnowledgeBase extends com.oracle.bmc.http.internal.Explicitly
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
      * Example: {@code {"Department": "Finance"}}
      *
@@ -582,7 +603,7 @@ public final class KnowledgeBase extends com.oracle.bmc.http.internal.Explicitly
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
      * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
@@ -592,7 +613,7 @@ public final class KnowledgeBase extends com.oracle.bmc.http.internal.Explicitly
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
      * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
@@ -641,6 +662,8 @@ public final class KnowledgeBase extends com.oracle.bmc.http.internal.Explicitly
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", indexConfig=").append(String.valueOf(this.indexConfig));
+        sb.append(", knowledgeBaseStatistics=")
+                .append(String.valueOf(this.knowledgeBaseStatistics));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
@@ -667,6 +690,8 @@ public final class KnowledgeBase extends com.oracle.bmc.http.internal.Explicitly
                 && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.indexConfig, other.indexConfig)
+                && java.util.Objects.equals(
+                        this.knowledgeBaseStatistics, other.knowledgeBaseStatistics)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
@@ -688,6 +713,11 @@ public final class KnowledgeBase extends com.oracle.bmc.http.internal.Explicitly
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         result = (result * PRIME) + (this.indexConfig == null ? 43 : this.indexConfig.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.knowledgeBaseStatistics == null
+                                ? 43
+                                : this.knowledgeBaseStatistics.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
         result =

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.resourcemanager.model;
@@ -8,9 +8,9 @@ package com.oracle.bmc.resourcemanager.model;
  * The properties of a job.
  * A job performs the actions that are defined in your Terraform configuration.
  * For instructions on managing jobs, see
- * [Managing Jobs](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/jobs.htm).
+ * [Managing Jobs](https://docs.oracle.com/iaas/Content/ResourceManager/Tasks/jobs.htm).
  * For more information about jobs, see
- * [Key Concepts](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts__jobdefinition).
+ * [Key Concepts](https://docs.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts__jobdefinition).
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -94,13 +94,13 @@ public final class Job extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job.
          * @param id the value to set
          * @return this builder
          **/
@@ -110,13 +110,13 @@ public final class Job extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stack that is associated with the job.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stack that is associated with the job.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("stackId")
         private String stackId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stack that is associated with the job.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stack that is associated with the job.
          * @param stackId the value to set
          * @return this builder
          **/
@@ -126,13 +126,13 @@ public final class Job extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the job's associated stack resides.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the job's associated stack resides.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the job's associated stack resides.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the job's associated stack resides.
          * @param compartmentId the value to set
          * @return this builder
          **/
@@ -178,7 +178,7 @@ public final class Job extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
          * [Terraform Registry](https://registry.terraform.io/browse/providers) and allows
          * {@link #customTerraformProvider(CustomTerraformProviderRequest) customTerraformProvider}.
          * For more information about stack sourcing of third-party Terraform providers, see
-         * [Third-party Provider Configuration](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/terraformconfigresourcemanager.htm#third-party-providers).
+         * [Third-party Provider Configuration](https://docs.oracle.com/iaas/Content/ResourceManager/Concepts/terraformconfigresourcemanager.htm#third-party-providers).
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("isThirdPartyProviderExperienceEnabled")
@@ -189,7 +189,7 @@ public final class Job extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
          * [Terraform Registry](https://registry.terraform.io/browse/providers) and allows
          * {@link #customTerraformProvider(CustomTerraformProviderRequest) customTerraformProvider}.
          * For more information about stack sourcing of third-party Terraform providers, see
-         * [Third-party Provider Configuration](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/terraformconfigresourcemanager.htm#third-party-providers).
+         * [Third-party Provider Configuration](https://docs.oracle.com/iaas/Content/ResourceManager/Concepts/terraformconfigresourcemanager.htm#third-party-providers).
          *
          * @param isThirdPartyProviderExperienceEnabled the value to set
          * @return this builder
@@ -242,7 +242,7 @@ public final class Job extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
         }
         /**
          * Deprecated. Use the property {@code executionPlanJobId} in {@code jobOperationDetails} instead.
-         * The plan job [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that was used (if this was an apply job and was not auto-approved).
+         * The plan job [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that was used (if this was an apply job and was not auto-approved).
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("resolvedPlanJobId")
@@ -250,7 +250,7 @@ public final class Job extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
 
         /**
          * Deprecated. Use the property {@code executionPlanJobId} in {@code jobOperationDetails} instead.
-         * The plan job [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that was used (if this was an apply job and was not auto-approved).
+         * The plan job [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that was used (if this was an apply job and was not auto-approved).
          *
          * @param resolvedPlanJobId the value to set
          * @return this builder
@@ -307,7 +307,7 @@ public final class Job extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
         /**
          * Current state of the specified job.
          * For more information about job lifecycle states in Resource Manager, see
-         * [Key Concepts](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts__JobStates).
+         * [Key Concepts](https://docs.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts__JobStates).
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
@@ -316,7 +316,7 @@ public final class Job extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
         /**
          * Current state of the specified job.
          * For more information about job lifecycle states in Resource Manager, see
-         * [Key Concepts](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts__JobStates).
+         * [Key Concepts](https://docs.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts__JobStates).
          *
          * @param lifecycleState the value to set
          * @return this builder
@@ -350,7 +350,7 @@ public final class Job extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
          * Required when using a zip Terraform configuration ({@code configSourceType} value of {@code ZIP_UPLOAD}) that contains folders.
          * Ignored for the {@code configSourceType} value of {@code COMPARTMENT_CONFIG_SOURCE}.
          * For more information about required and recommended file structure, see
-         * [File Structure (Terraform Configurations for Resource Manager)](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/terraformconfigresourcemanager.htm#filestructure).
+         * [File Structure (Terraform Configurations for Resource Manager)](https://docs.oracle.com/iaas/Content/ResourceManager/Concepts/terraformconfigresourcemanager.htm#filestructure).
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("workingDirectory")
@@ -362,7 +362,7 @@ public final class Job extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
          * Required when using a zip Terraform configuration ({@code configSourceType} value of {@code ZIP_UPLOAD}) that contains folders.
          * Ignored for the {@code configSourceType} value of {@code COMPARTMENT_CONFIG_SOURCE}.
          * For more information about required and recommended file structure, see
-         * [File Structure (Terraform Configurations for Resource Manager)](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/terraformconfigresourcemanager.htm#filestructure).
+         * [File Structure (Terraform Configurations for Resource Manager)](https://docs.oracle.com/iaas/Content/ResourceManager/Concepts/terraformconfigresourcemanager.htm#filestructure).
          *
          * @param workingDirectory the value to set
          * @return this builder
@@ -407,7 +407,7 @@ public final class Job extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
         }
         /**
          * Free-form tags associated with this resource. Each tag is a key-value pair with no predefined name, type, or namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * Example: {@code {"Department": "Finance"}}
          *
          **/
@@ -416,7 +416,7 @@ public final class Job extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
 
         /**
          * Free-form tags associated with this resource. Each tag is a key-value pair with no predefined name, type, or namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * Example: {@code {"Department": "Finance"}}
          *
          * @param freeformTags the value to set
@@ -429,7 +429,7 @@ public final class Job extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
         }
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
          **/
@@ -438,7 +438,7 @@ public final class Job extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
 
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
          * @param definedTags the value to set
@@ -562,13 +562,13 @@ public final class Job extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job.
      * @return the value
      **/
     public String getId() {
@@ -576,13 +576,13 @@ public final class Job extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stack that is associated with the job.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stack that is associated with the job.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("stackId")
     private final String stackId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stack that is associated with the job.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stack that is associated with the job.
      * @return the value
      **/
     public String getStackId() {
@@ -590,13 +590,13 @@ public final class Job extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the job's associated stack resides.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the job's associated stack resides.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the job's associated stack resides.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the job's associated stack resides.
      * @return the value
      **/
     public String getCompartmentId() {
@@ -688,7 +688,7 @@ public final class Job extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
      * [Terraform Registry](https://registry.terraform.io/browse/providers) and allows
      * {@link #customTerraformProvider(CustomTerraformProviderRequest) customTerraformProvider}.
      * For more information about stack sourcing of third-party Terraform providers, see
-     * [Third-party Provider Configuration](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/terraformconfigresourcemanager.htm#third-party-providers).
+     * [Third-party Provider Configuration](https://docs.oracle.com/iaas/Content/ResourceManager/Concepts/terraformconfigresourcemanager.htm#third-party-providers).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isThirdPartyProviderExperienceEnabled")
@@ -699,7 +699,7 @@ public final class Job extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
      * [Terraform Registry](https://registry.terraform.io/browse/providers) and allows
      * {@link #customTerraformProvider(CustomTerraformProviderRequest) customTerraformProvider}.
      * For more information about stack sourcing of third-party Terraform providers, see
-     * [Third-party Provider Configuration](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/terraformconfigresourcemanager.htm#third-party-providers).
+     * [Third-party Provider Configuration](https://docs.oracle.com/iaas/Content/ResourceManager/Concepts/terraformconfigresourcemanager.htm#third-party-providers).
      *
      * @return the value
      **/
@@ -743,7 +743,7 @@ public final class Job extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
 
     /**
      * Deprecated. Use the property {@code executionPlanJobId} in {@code jobOperationDetails} instead.
-     * The plan job [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that was used (if this was an apply job and was not auto-approved).
+     * The plan job [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that was used (if this was an apply job and was not auto-approved).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resolvedPlanJobId")
@@ -751,7 +751,7 @@ public final class Job extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
 
     /**
      * Deprecated. Use the property {@code executionPlanJobId} in {@code jobOperationDetails} instead.
-     * The plan job [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that was used (if this was an apply job and was not auto-approved).
+     * The plan job [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that was used (if this was an apply job and was not auto-approved).
      *
      * @return the value
      **/
@@ -802,7 +802,7 @@ public final class Job extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
     /**
      * Current state of the specified job.
      * For more information about job lifecycle states in Resource Manager, see
-     * [Key Concepts](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts__JobStates).
+     * [Key Concepts](https://docs.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts__JobStates).
      *
      **/
     public enum LifecycleState {
@@ -857,7 +857,7 @@ public final class Job extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
     /**
      * Current state of the specified job.
      * For more information about job lifecycle states in Resource Manager, see
-     * [Key Concepts](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts__JobStates).
+     * [Key Concepts](https://docs.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts__JobStates).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
@@ -866,7 +866,7 @@ public final class Job extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
     /**
      * Current state of the specified job.
      * For more information about job lifecycle states in Resource Manager, see
-     * [Key Concepts](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts__JobStates).
+     * [Key Concepts](https://docs.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts__JobStates).
      *
      * @return the value
      **/
@@ -894,7 +894,7 @@ public final class Job extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
      * Required when using a zip Terraform configuration ({@code configSourceType} value of {@code ZIP_UPLOAD}) that contains folders.
      * Ignored for the {@code configSourceType} value of {@code COMPARTMENT_CONFIG_SOURCE}.
      * For more information about required and recommended file structure, see
-     * [File Structure (Terraform Configurations for Resource Manager)](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/terraformconfigresourcemanager.htm#filestructure).
+     * [File Structure (Terraform Configurations for Resource Manager)](https://docs.oracle.com/iaas/Content/ResourceManager/Concepts/terraformconfigresourcemanager.htm#filestructure).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("workingDirectory")
@@ -906,7 +906,7 @@ public final class Job extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
      * Required when using a zip Terraform configuration ({@code configSourceType} value of {@code ZIP_UPLOAD}) that contains folders.
      * Ignored for the {@code configSourceType} value of {@code COMPARTMENT_CONFIG_SOURCE}.
      * For more information about required and recommended file structure, see
-     * [File Structure (Terraform Configurations for Resource Manager)](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/terraformconfigresourcemanager.htm#filestructure).
+     * [File Structure (Terraform Configurations for Resource Manager)](https://docs.oracle.com/iaas/Content/ResourceManager/Concepts/terraformconfigresourcemanager.htm#filestructure).
      *
      * @return the value
      **/
@@ -945,7 +945,7 @@ public final class Job extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
 
     /**
      * Free-form tags associated with this resource. Each tag is a key-value pair with no predefined name, type, or namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * Example: {@code {"Department": "Finance"}}
      *
      **/
@@ -954,7 +954,7 @@ public final class Job extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
 
     /**
      * Free-form tags associated with this resource. Each tag is a key-value pair with no predefined name, type, or namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * Example: {@code {"Department": "Finance"}}
      *
      * @return the value
@@ -965,7 +965,7 @@ public final class Job extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      **/
@@ -974,7 +974,7 @@ public final class Job extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      * @return the value

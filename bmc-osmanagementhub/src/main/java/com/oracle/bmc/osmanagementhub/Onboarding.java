@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.osmanagementhub;
@@ -9,7 +9,7 @@ import com.oracle.bmc.osmanagementhub.responses.*;
 
 /**
  * Use the OS Management Hub API to manage and monitor updates and patches for instances in OCI, your private data center, or 3rd-party clouds.
- * For more information, see [Overview of OS Management Hub](https://docs.cloud.oracle.com/iaas/osmh/doc/overview.htm).
+ * For more information, see [Overview of OS Management Hub](https://docs.oracle.com/iaas/osmh/doc/overview.htm).
  *
  * This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by default if no circuit breaker configuration is defined by the user.
  */
@@ -62,6 +62,62 @@ public interface Onboarding extends AutoCloseable {
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
+     * Attaches the specified lifecycle stage to a profile.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/AttachLifecycleStageToProfileExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AttachLifecycleStageToProfile API.
+     */
+    AttachLifecycleStageToProfileResponse attachLifecycleStageToProfile(
+            AttachLifecycleStageToProfileRequest request);
+
+    /**
+     * Attaches the specified managed instance group to a profile.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/AttachManagedInstanceGroupToProfileExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AttachManagedInstanceGroupToProfile API.
+     */
+    AttachManagedInstanceGroupToProfileResponse attachManagedInstanceGroupToProfile(
+            AttachManagedInstanceGroupToProfileRequest request);
+
+    /**
+     * Attaches the specified management station to a profile.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/AttachManagementStationToProfileExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AttachManagementStationToProfile API.
+     */
+    AttachManagementStationToProfileResponse attachManagementStationToProfile(
+            AttachManagementStationToProfileRequest request);
+
+    /**
+     * Attaches the specified software sources to a profile.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/AttachSoftwareSourcesToProfileExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AttachSoftwareSourcesToProfile API.
+     */
+    AttachSoftwareSourcesToProfileResponse attachSoftwareSourcesToProfile(
+            AttachSoftwareSourcesToProfileRequest request);
+
+    /**
      * Moves the profile to a different compartment.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -69,7 +125,7 @@ public interface Onboarding extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/ChangeProfileCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeProfileCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/ChangeProfileCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeProfileCompartment API.
      */
     ChangeProfileCompartmentResponse changeProfileCompartment(
             ChangeProfileCompartmentRequest request);
@@ -83,7 +139,7 @@ public interface Onboarding extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/CreateProfileExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateProfile API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/CreateProfileExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateProfile API.
      */
     CreateProfileResponse createProfile(CreateProfileRequest request);
 
@@ -95,21 +151,61 @@ public interface Onboarding extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/DeleteProfileExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteProfile API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/DeleteProfileExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteProfile API.
      */
     DeleteProfileResponse deleteProfile(DeleteProfileRequest request);
 
     /**
-     * Gets information about the specified registration profile.
+     * Detaches the specified software sources from a profile.
+     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/GetProfileExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetProfile API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/DetachSoftwareSourcesFromProfileExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DetachSoftwareSourcesFromProfile API.
+     */
+    DetachSoftwareSourcesFromProfileResponse detachSoftwareSourcesFromProfile(
+            DetachSoftwareSourcesFromProfileRequest request);
+
+    /**
+     * Returns information about the specified registration profile.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/GetProfileExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetProfile API.
      */
     GetProfileResponse getProfile(GetProfileRequest request);
+
+    /**
+     * Returns information about the version of the specified registration profile.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/GetProfileVersionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetProfileVersion API.
+     */
+    GetProfileVersionResponse getProfileVersion(GetProfileVersionRequest request);
+
+    /**
+     * Lists available software sources for a specified profile. Filter the list against a variety of criteria including but not limited to the software source name. The results list only software sources that have not already been added to the profile.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/ListProfileAvailableSoftwareSourcesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListProfileAvailableSoftwareSources API.
+     */
+    ListProfileAvailableSoftwareSourcesResponse listProfileAvailableSoftwareSources(
+            ListProfileAvailableSoftwareSourcesRequest request);
 
     /**
      * Lists registration profiles that match the specified compartment or profile OCID. Filter the list against a
@@ -121,7 +217,7 @@ public interface Onboarding extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/ListProfilesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListProfiles API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/ListProfilesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListProfiles API.
      */
     ListProfilesResponse listProfiles(ListProfilesRequest request);
 
@@ -133,7 +229,7 @@ public interface Onboarding extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/UpdateProfileExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateProfile API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/UpdateProfileExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateProfile API.
      */
     UpdateProfileResponse updateProfile(UpdateProfileRequest request);
 

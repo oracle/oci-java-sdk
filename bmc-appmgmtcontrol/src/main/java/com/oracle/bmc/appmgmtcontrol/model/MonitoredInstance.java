@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.appmgmtcontrol.model;
@@ -57,13 +57,13 @@ public final class MonitoredInstance extends com.oracle.bmc.http.internal.Explic
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of monitored instance.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of monitored instance.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("instanceId")
         private String instanceId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of monitored instance.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of monitored instance.
          * @param instanceId the value to set
          * @return this builder
          **/
@@ -73,13 +73,13 @@ public final class MonitoredInstance extends com.oracle.bmc.http.internal.Explic
             return this;
         }
         /**
-         * Compartment Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+         * Compartment Identifier [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * Compartment Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+         * Compartment Identifier [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
          * @param compartmentId the value to set
          * @return this builder
          **/
@@ -89,16 +89,16 @@ public final class MonitoredInstance extends com.oracle.bmc.http.internal.Explic
             return this;
         }
         /**
-         * A user-friendly name of the monitored instance. It is binded to [Compute Instance](https://docs.cloud.oracle.com/Content/Compute/Concepts/computeoverview.htm).
-         * DisplayName is fetched from [Core Service API](https://docs.cloud.oracle.com/api/#/en/iaas/20160918/Instance/).
+         * A user-friendly name of the monitored instance. It is binded to [Compute Instance](https://docs.oracle.com/iaas/Content/Compute/Concepts/computeoverview.htm).
+         * DisplayName is fetched from [Core Service API](https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Instance/).
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * A user-friendly name of the monitored instance. It is binded to [Compute Instance](https://docs.cloud.oracle.com/Content/Compute/Concepts/computeoverview.htm).
-         * DisplayName is fetched from [Core Service API](https://docs.cloud.oracle.com/api/#/en/iaas/20160918/Instance/).
+         * A user-friendly name of the monitored instance. It is binded to [Compute Instance](https://docs.oracle.com/iaas/Content/Compute/Concepts/computeoverview.htm).
+         * DisplayName is fetched from [Core Service API](https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Instance/).
          *
          * @param displayName the value to set
          * @return this builder
@@ -109,7 +109,7 @@ public final class MonitoredInstance extends com.oracle.bmc.http.internal.Explic
             return this;
         }
         /**
-         * Management Agent Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * Management Agent Identifier [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          * Used to invoke manage operations on Management Agent Cloud Service.
          *
          **/
@@ -117,7 +117,7 @@ public final class MonitoredInstance extends com.oracle.bmc.http.internal.Explic
         private String managementAgentId;
 
         /**
-         * Management Agent Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * Management Agent Identifier [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          * Used to invoke manage operations on Management Agent Cloud Service.
          *
          * @param managementAgentId the value to set
@@ -275,13 +275,13 @@ public final class MonitoredInstance extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of monitored instance.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of monitored instance.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("instanceId")
     private final String instanceId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of monitored instance.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of monitored instance.
      * @return the value
      **/
     public String getInstanceId() {
@@ -289,13 +289,13 @@ public final class MonitoredInstance extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
-     * Compartment Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     * Compartment Identifier [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * Compartment Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     * Compartment Identifier [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      * @return the value
      **/
     public String getCompartmentId() {
@@ -303,16 +303,16 @@ public final class MonitoredInstance extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
-     * A user-friendly name of the monitored instance. It is binded to [Compute Instance](https://docs.cloud.oracle.com/Content/Compute/Concepts/computeoverview.htm).
-     * DisplayName is fetched from [Core Service API](https://docs.cloud.oracle.com/api/#/en/iaas/20160918/Instance/).
+     * A user-friendly name of the monitored instance. It is binded to [Compute Instance](https://docs.oracle.com/iaas/Content/Compute/Concepts/computeoverview.htm).
+     * DisplayName is fetched from [Core Service API](https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Instance/).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * A user-friendly name of the monitored instance. It is binded to [Compute Instance](https://docs.cloud.oracle.com/Content/Compute/Concepts/computeoverview.htm).
-     * DisplayName is fetched from [Core Service API](https://docs.cloud.oracle.com/api/#/en/iaas/20160918/Instance/).
+     * A user-friendly name of the monitored instance. It is binded to [Compute Instance](https://docs.oracle.com/iaas/Content/Compute/Concepts/computeoverview.htm).
+     * DisplayName is fetched from [Core Service API](https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Instance/).
      *
      * @return the value
      **/
@@ -321,7 +321,7 @@ public final class MonitoredInstance extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
-     * Management Agent Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * Management Agent Identifier [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * Used to invoke manage operations on Management Agent Cloud Service.
      *
      **/
@@ -329,7 +329,7 @@ public final class MonitoredInstance extends com.oracle.bmc.http.internal.Explic
     private final String managementAgentId;
 
     /**
-     * Management Agent Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * Management Agent Identifier [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * Used to invoke manage operations on Management Agent Cloud Service.
      *
      * @return the value

@@ -45,11 +45,11 @@
         <exclusions>
             <exclusion>
                 <groupId>org.bouncycastle</groupId>
-                <artifactId>bcprov-jdk15on</artifactId>
+                <artifactId>bcprov-jdk15to18</artifactId>
             </exclusion>
             <exclusion>
                 <groupId>org.bouncycastle</groupId>
-                <artifactId>bcpkix-jdk15on</artifactId>
+                <artifactId>bcpkix-jdk15to18</artifactId>
             </exclusion>
         </exclusions>
     </dependency>

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datascience.model;
@@ -84,6 +84,26 @@ public final class PipelineContainerStepDetails extends PipelineStepDetails {
             return this;
         }
         /**
+         * The storage mount details to mount to the instance running the pipeline step.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("stepStorageMountConfigurationDetailsList")
+        private java.util.List<StorageMountConfigurationDetails>
+                stepStorageMountConfigurationDetailsList;
+
+        /**
+         * The storage mount details to mount to the instance running the pipeline step.
+         * @param stepStorageMountConfigurationDetailsList the value to set
+         * @return this builder
+         **/
+        public Builder stepStorageMountConfigurationDetailsList(
+                java.util.List<StorageMountConfigurationDetails>
+                        stepStorageMountConfigurationDetailsList) {
+            this.stepStorageMountConfigurationDetailsList =
+                    stepStorageMountConfigurationDetailsList;
+            this.__explicitlySet__.add("stepStorageMountConfigurationDetailsList");
+            return this;
+        }
+        /**
          * A flag to indicate whether the artifact has been uploaded for this step or not.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("isArtifactUploaded")
@@ -112,6 +132,7 @@ public final class PipelineContainerStepDetails extends PipelineStepDetails {
                             this.stepConfigurationDetails,
                             this.stepInfrastructureConfigurationDetails,
                             this.stepContainerConfigurationDetails,
+                            this.stepStorageMountConfigurationDetailsList,
                             this.isArtifactUploaded);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -141,6 +162,10 @@ public final class PipelineContainerStepDetails extends PipelineStepDetails {
                 this.stepContainerConfigurationDetails(
                         model.getStepContainerConfigurationDetails());
             }
+            if (model.wasPropertyExplicitlySet("stepStorageMountConfigurationDetailsList")) {
+                this.stepStorageMountConfigurationDetailsList(
+                        model.getStepStorageMountConfigurationDetailsList());
+            }
             if (model.wasPropertyExplicitlySet("isArtifactUploaded")) {
                 this.isArtifactUploaded(model.getIsArtifactUploaded());
             }
@@ -167,10 +192,13 @@ public final class PipelineContainerStepDetails extends PipelineStepDetails {
             PipelineStepConfigurationDetails stepConfigurationDetails,
             PipelineInfrastructureConfigurationDetails stepInfrastructureConfigurationDetails,
             PipelineContainerConfigurationDetails stepContainerConfigurationDetails,
+            java.util.List<StorageMountConfigurationDetails>
+                    stepStorageMountConfigurationDetailsList,
             Boolean isArtifactUploaded) {
         super(stepName, description, dependsOn, stepConfigurationDetails);
         this.stepInfrastructureConfigurationDetails = stepInfrastructureConfigurationDetails;
         this.stepContainerConfigurationDetails = stepContainerConfigurationDetails;
+        this.stepStorageMountConfigurationDetailsList = stepStorageMountConfigurationDetailsList;
         this.isArtifactUploaded = isArtifactUploaded;
     }
 
@@ -186,6 +214,22 @@ public final class PipelineContainerStepDetails extends PipelineStepDetails {
 
     public PipelineContainerConfigurationDetails getStepContainerConfigurationDetails() {
         return stepContainerConfigurationDetails;
+    }
+
+    /**
+     * The storage mount details to mount to the instance running the pipeline step.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("stepStorageMountConfigurationDetailsList")
+    private final java.util.List<StorageMountConfigurationDetails>
+            stepStorageMountConfigurationDetailsList;
+
+    /**
+     * The storage mount details to mount to the instance running the pipeline step.
+     * @return the value
+     **/
+    public java.util.List<StorageMountConfigurationDetails>
+            getStepStorageMountConfigurationDetailsList() {
+        return stepStorageMountConfigurationDetailsList;
     }
 
     /**
@@ -220,6 +264,8 @@ public final class PipelineContainerStepDetails extends PipelineStepDetails {
                 .append(String.valueOf(this.stepInfrastructureConfigurationDetails));
         sb.append(", stepContainerConfigurationDetails=")
                 .append(String.valueOf(this.stepContainerConfigurationDetails));
+        sb.append(", stepStorageMountConfigurationDetailsList=")
+                .append(String.valueOf(this.stepStorageMountConfigurationDetailsList));
         sb.append(", isArtifactUploaded=").append(String.valueOf(this.isArtifactUploaded));
         sb.append(")");
         return sb.toString();
@@ -241,6 +287,9 @@ public final class PipelineContainerStepDetails extends PipelineStepDetails {
                 && java.util.Objects.equals(
                         this.stepContainerConfigurationDetails,
                         other.stepContainerConfigurationDetails)
+                && java.util.Objects.equals(
+                        this.stepStorageMountConfigurationDetailsList,
+                        other.stepStorageMountConfigurationDetailsList)
                 && java.util.Objects.equals(this.isArtifactUploaded, other.isArtifactUploaded)
                 && super.equals(other);
     }
@@ -259,6 +308,11 @@ public final class PipelineContainerStepDetails extends PipelineStepDetails {
                         + (this.stepContainerConfigurationDetails == null
                                 ? 43
                                 : this.stepContainerConfigurationDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.stepStorageMountConfigurationDetailsList == null
+                                ? 43
+                                : this.stepStorageMountConfigurationDetailsList.hashCode());
         result =
                 (result * PRIME)
                         + (this.isArtifactUploaded == null

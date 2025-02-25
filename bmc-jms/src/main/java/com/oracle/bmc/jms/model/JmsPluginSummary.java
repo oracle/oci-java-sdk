@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.jms.model;
@@ -79,13 +79,13 @@ public final class JmsPluginSummary extends com.oracle.bmc.http.internal.Explici
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) to identify this JmsPlugin.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to identify this JmsPlugin.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) to identify this JmsPlugin.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to identify this JmsPlugin.
          * @param id the value to set
          * @return this builder
          **/
@@ -95,13 +95,13 @@ public final class JmsPluginSummary extends com.oracle.bmc.http.internal.Explici
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Management Agent (OMA) or the Oracle Cloud Agent (OCA) instance where the JMS plugin is deployed.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent (OMA) or the Oracle Cloud Agent (OCA) instance where the JMS plugin is deployed.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("agentId")
         private String agentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Management Agent (OMA) or the Oracle Cloud Agent (OCA) instance where the JMS plugin is deployed.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent (OMA) or the Oracle Cloud Agent (OCA) instance where the JMS plugin is deployed.
          * @param agentId the value to set
          * @return this builder
          **/
@@ -159,14 +159,14 @@ public final class JmsPluginSummary extends com.oracle.bmc.http.internal.Explici
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the fleet.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the fleet.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("fleetId")
         private String fleetId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the fleet.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the fleet.
          *
          * @param fleetId the value to set
          * @return this builder
@@ -177,14 +177,14 @@ public final class JmsPluginSummary extends com.oracle.bmc.http.internal.Explici
             return this;
         }
         /**
-         * The OMA/OCA agent's compartment [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * The OMA/OCA agent's compartment [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The OMA/OCA agent's compartment [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * The OMA/OCA agent's compartment [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -320,7 +320,7 @@ public final class JmsPluginSummary extends com.oracle.bmc.http.internal.Explici
         }
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}. (See [Understanding Free-form Tags](https://docs.cloud.oracle.com/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}. (See [Understanding Free-form Tags](https://docs.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -328,7 +328,7 @@ public final class JmsPluginSummary extends com.oracle.bmc.http.internal.Explici
 
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}. (See [Understanding Free-form Tags](https://docs.cloud.oracle.com/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}. (See [Understanding Free-form Tags](https://docs.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
          *
          * @param definedTags the value to set
          * @return this builder
@@ -341,7 +341,7 @@ public final class JmsPluginSummary extends com.oracle.bmc.http.internal.Explici
         }
         /**
          * Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.
-         * Example: {@code {"bar-key": "value"}}. (See [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/Content/Tagging/Concepts/understandingfreeformtags.htm).)
+         * Example: {@code {"bar-key": "value"}}. (See [Managing Tags and Tag Namespaces](https://docs.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -349,7 +349,7 @@ public final class JmsPluginSummary extends com.oracle.bmc.http.internal.Explici
 
         /**
          * Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.
-         * Example: {@code {"bar-key": "value"}}. (See [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/Content/Tagging/Concepts/understandingfreeformtags.htm).)
+         * Example: {@code {"bar-key": "value"}}. (See [Managing Tags and Tag Namespaces](https://docs.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
          *
          * @param freeformTags the value to set
          * @return this builder
@@ -361,7 +361,7 @@ public final class JmsPluginSummary extends com.oracle.bmc.http.internal.Explici
         }
         /**
          * System tags for this resource. Each key is predefined and scoped to a namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * System tags can be viewed by users, but can only be created by the system.
          * <p>
          * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
@@ -372,7 +372,7 @@ public final class JmsPluginSummary extends com.oracle.bmc.http.internal.Explici
 
         /**
          * System tags for this resource. Each key is predefined and scoped to a namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * System tags can be viewed by users, but can only be created by the system.
          * <p>
          * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
@@ -484,13 +484,13 @@ public final class JmsPluginSummary extends com.oracle.bmc.http.internal.Explici
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) to identify this JmsPlugin.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to identify this JmsPlugin.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) to identify this JmsPlugin.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to identify this JmsPlugin.
      * @return the value
      **/
     public String getId() {
@@ -498,13 +498,13 @@ public final class JmsPluginSummary extends com.oracle.bmc.http.internal.Explici
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Management Agent (OMA) or the Oracle Cloud Agent (OCA) instance where the JMS plugin is deployed.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent (OMA) or the Oracle Cloud Agent (OCA) instance where the JMS plugin is deployed.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("agentId")
     private final String agentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Management Agent (OMA) or the Oracle Cloud Agent (OCA) instance where the JMS plugin is deployed.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent (OMA) or the Oracle Cloud Agent (OCA) instance where the JMS plugin is deployed.
      * @return the value
      **/
     public String getAgentId() {
@@ -554,14 +554,14 @@ public final class JmsPluginSummary extends com.oracle.bmc.http.internal.Explici
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the fleet.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the fleet.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("fleetId")
     private final String fleetId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the fleet.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the fleet.
      *
      * @return the value
      **/
@@ -570,14 +570,14 @@ public final class JmsPluginSummary extends com.oracle.bmc.http.internal.Explici
     }
 
     /**
-     * The OMA/OCA agent's compartment [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * The OMA/OCA agent's compartment [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The OMA/OCA agent's compartment [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * The OMA/OCA agent's compartment [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      * @return the value
      **/
@@ -697,7 +697,7 @@ public final class JmsPluginSummary extends com.oracle.bmc.http.internal.Explici
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}. (See [Understanding Free-form Tags](https://docs.cloud.oracle.com/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}. (See [Understanding Free-form Tags](https://docs.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -705,7 +705,7 @@ public final class JmsPluginSummary extends com.oracle.bmc.http.internal.Explici
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}. (See [Understanding Free-form Tags](https://docs.cloud.oracle.com/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}. (See [Understanding Free-form Tags](https://docs.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
      *
      * @return the value
      **/
@@ -715,7 +715,7 @@ public final class JmsPluginSummary extends com.oracle.bmc.http.internal.Explici
 
     /**
      * Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.
-     * Example: {@code {"bar-key": "value"}}. (See [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/Content/Tagging/Concepts/understandingfreeformtags.htm).)
+     * Example: {@code {"bar-key": "value"}}. (See [Managing Tags and Tag Namespaces](https://docs.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -723,7 +723,7 @@ public final class JmsPluginSummary extends com.oracle.bmc.http.internal.Explici
 
     /**
      * Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.
-     * Example: {@code {"bar-key": "value"}}. (See [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/Content/Tagging/Concepts/understandingfreeformtags.htm).)
+     * Example: {@code {"bar-key": "value"}}. (See [Managing Tags and Tag Namespaces](https://docs.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
      *
      * @return the value
      **/
@@ -733,7 +733,7 @@ public final class JmsPluginSummary extends com.oracle.bmc.http.internal.Explici
 
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * System tags can be viewed by users, but can only be created by the system.
      * <p>
      * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
@@ -744,7 +744,7 @@ public final class JmsPluginSummary extends com.oracle.bmc.http.internal.Explici
 
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * System tags can be viewed by users, but can only be created by the system.
      * <p>
      * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}

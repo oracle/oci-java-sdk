@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.objectstorage.model;
@@ -7,7 +7,7 @@ package com.oracle.bmc.objectstorage.model;
 /**
  * To use any of the API operations, you must be authorized in an IAM policy. If you are not authorized,
  * talk to an administrator. If you are an administrator who needs to write policies to give users access, see
- * [Getting Started with Policies](https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm).
+ * [Getting Started with Policies](https://docs.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -104,7 +104,7 @@ public final class ObjectLifecycleRule extends com.oracle.bmc.http.internal.Expl
         /**
          * The action of the object lifecycle policy rule.
          * Rules using the action 'ARCHIVE' move objects from Standard and InfrequentAccess storage tiers
-         * into the [Archive storage tier](https://docs.cloud.oracle.com/Content/Archive/Concepts/archivestorageoverview.htm).
+         * into the [Archive storage tier](https://docs.oracle.com/iaas/Content/Archive/Concepts/archivestorageoverview.htm).
          * Rules using the action 'INFREQUENT_ACCESS' move objects from Standard storage tier into the
          * Infrequent Access Storage tier. Objects that are already in InfrequentAccess tier or in Archive
          * tier are left untouched.
@@ -118,7 +118,7 @@ public final class ObjectLifecycleRule extends com.oracle.bmc.http.internal.Expl
         /**
          * The action of the object lifecycle policy rule.
          * Rules using the action 'ARCHIVE' move objects from Standard and InfrequentAccess storage tiers
-         * into the [Archive storage tier](https://docs.cloud.oracle.com/Content/Archive/Concepts/archivestorageoverview.htm).
+         * into the [Archive storage tier](https://docs.oracle.com/iaas/Content/Archive/Concepts/archivestorageoverview.htm).
          * Rules using the action 'INFREQUENT_ACCESS' move objects from Standard storage tier into the
          * Infrequent Access Storage tier. Objects that are already in InfrequentAccess tier or in Archive
          * tier are left untouched.
@@ -303,7 +303,7 @@ public final class ObjectLifecycleRule extends com.oracle.bmc.http.internal.Expl
     /**
      * The action of the object lifecycle policy rule.
      * Rules using the action 'ARCHIVE' move objects from Standard and InfrequentAccess storage tiers
-     * into the [Archive storage tier](https://docs.cloud.oracle.com/Content/Archive/Concepts/archivestorageoverview.htm).
+     * into the [Archive storage tier](https://docs.oracle.com/iaas/Content/Archive/Concepts/archivestorageoverview.htm).
      * Rules using the action 'INFREQUENT_ACCESS' move objects from Standard storage tier into the
      * Infrequent Access Storage tier. Objects that are already in InfrequentAccess tier or in Archive
      * tier are left untouched.
@@ -317,7 +317,7 @@ public final class ObjectLifecycleRule extends com.oracle.bmc.http.internal.Expl
     /**
      * The action of the object lifecycle policy rule.
      * Rules using the action 'ARCHIVE' move objects from Standard and InfrequentAccess storage tiers
-     * into the [Archive storage tier](https://docs.cloud.oracle.com/Content/Archive/Concepts/archivestorageoverview.htm).
+     * into the [Archive storage tier](https://docs.oracle.com/iaas/Content/Archive/Concepts/archivestorageoverview.htm).
      * Rules using the action 'INFREQUENT_ACCESS' move objects from Standard storage tier into the
      * Infrequent Access Storage tier. Objects that are already in InfrequentAccess tier or in Archive
      * tier are left untouched.

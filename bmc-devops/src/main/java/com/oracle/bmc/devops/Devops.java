@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.devops;
@@ -8,7 +8,7 @@ import com.oracle.bmc.devops.requests.*;
 import com.oracle.bmc.devops.responses.*;
 
 /**
- * Use the DevOps API to create DevOps projects, configure code repositories,  add artifacts to deploy, build and test software applications, configure  target deployment environments, and deploy software applications.  For more information, see [DevOps](https://docs.cloud.oracle.com/Content/devops/using/home.htm).
+ * Use the DevOps API to create DevOps projects, configure code repositories,  add artifacts to deploy, build and test software applications, configure  target deployment environments, and deploy software applications.  For more information, see [DevOps](https://docs.oracle.com/iaas/Content/devops/using/home.htm).
  * This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by default if no circuit breaker configuration is defined by the user.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
@@ -67,7 +67,7 @@ public interface Devops extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/ApproveDeploymentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ApproveDeployment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/ApproveDeploymentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ApproveDeployment API.
      */
     ApproveDeploymentResponse approveDeployment(ApproveDeploymentRequest request);
 
@@ -79,7 +79,7 @@ public interface Devops extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/CancelBuildRunExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CancelBuildRun API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/CancelBuildRunExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CancelBuildRun API.
      */
     CancelBuildRunResponse cancelBuildRun(CancelBuildRunRequest request);
 
@@ -91,7 +91,7 @@ public interface Devops extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/CancelDeploymentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CancelDeployment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/CancelDeploymentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CancelDeployment API.
      */
     CancelDeploymentResponse cancelDeployment(CancelDeploymentRequest request);
 
@@ -103,7 +103,7 @@ public interface Devops extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/CancelScheduledCascadingProjectDeletionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CancelScheduledCascadingProjectDeletion API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/CancelScheduledCascadingProjectDeletionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CancelScheduledCascadingProjectDeletion API.
      */
     CancelScheduledCascadingProjectDeletionResponse cancelScheduledCascadingProjectDeletion(
             CancelScheduledCascadingProjectDeletionRequest request);
@@ -116,7 +116,7 @@ public interface Devops extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/ChangeProjectCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeProjectCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/ChangeProjectCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeProjectCompartment API.
      */
     ChangeProjectCompartmentResponse changeProjectCompartment(
             ChangeProjectCompartmentRequest request);
@@ -130,7 +130,7 @@ public interface Devops extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/CreateBuildPipelineExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateBuildPipeline API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/CreateBuildPipelineExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateBuildPipeline API.
      */
     CreateBuildPipelineResponse createBuildPipeline(CreateBuildPipelineRequest request);
 
@@ -143,7 +143,7 @@ public interface Devops extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/CreateBuildPipelineStageExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateBuildPipelineStage API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/CreateBuildPipelineStageExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateBuildPipelineStage API.
      */
     CreateBuildPipelineStageResponse createBuildPipelineStage(
             CreateBuildPipelineStageRequest request);
@@ -157,7 +157,7 @@ public interface Devops extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/CreateBuildRunExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateBuildRun API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/CreateBuildRunExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateBuildRun API.
      */
     CreateBuildRunResponse createBuildRun(CreateBuildRunRequest request);
 
@@ -170,7 +170,7 @@ public interface Devops extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/CreateConnectionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateConnection API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/CreateConnectionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateConnection API.
      */
     CreateConnectionResponse createConnection(CreateConnectionRequest request);
 
@@ -182,7 +182,7 @@ public interface Devops extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/CreateDeployArtifactExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateDeployArtifact API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/CreateDeployArtifactExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateDeployArtifact API.
      */
     CreateDeployArtifactResponse createDeployArtifact(CreateDeployArtifactRequest request);
 
@@ -194,7 +194,7 @@ public interface Devops extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/CreateDeployEnvironmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateDeployEnvironment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/CreateDeployEnvironmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateDeployEnvironment API.
      */
     CreateDeployEnvironmentResponse createDeployEnvironment(CreateDeployEnvironmentRequest request);
 
@@ -206,7 +206,7 @@ public interface Devops extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/CreateDeployPipelineExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateDeployPipeline API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/CreateDeployPipelineExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateDeployPipeline API.
      */
     CreateDeployPipelineResponse createDeployPipeline(CreateDeployPipelineRequest request);
 
@@ -218,7 +218,7 @@ public interface Devops extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/CreateDeployStageExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateDeployStage API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/CreateDeployStageExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateDeployStage API.
      */
     CreateDeployStageResponse createDeployStage(CreateDeployStageRequest request);
 
@@ -230,7 +230,7 @@ public interface Devops extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/CreateDeploymentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateDeployment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/CreateDeploymentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateDeployment API.
      */
     CreateDeploymentResponse createDeployment(CreateDeploymentRequest request);
 
@@ -243,7 +243,7 @@ public interface Devops extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/CreateOrUpdateGitRefExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateOrUpdateGitRef API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/CreateOrUpdateGitRefExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateOrUpdateGitRef API.
      */
     CreateOrUpdateGitRefResponse createOrUpdateGitRef(CreateOrUpdateGitRefRequest request);
 
@@ -255,7 +255,7 @@ public interface Devops extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/CreateOrUpdateProtectedBranchExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateOrUpdateProtectedBranch API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/CreateOrUpdateProtectedBranchExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateOrUpdateProtectedBranch API.
      */
     CreateOrUpdateProtectedBranchResponse createOrUpdateProtectedBranch(
             CreateOrUpdateProtectedBranchRequest request);
@@ -268,7 +268,7 @@ public interface Devops extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/CreateProjectExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateProject API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/CreateProjectExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateProject API.
      */
     CreateProjectResponse createProject(CreateProjectRequest request);
 
@@ -281,7 +281,7 @@ public interface Devops extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/CreatePullRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreatePullRequest API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/CreatePullRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreatePullRequest API.
      */
     CreatePullRequestResponse createPullRequest(CreatePullRequestRequest request);
 
@@ -321,7 +321,7 @@ public interface Devops extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/CreatePullRequestAttachmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreatePullRequestAttachment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/CreatePullRequestAttachmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreatePullRequestAttachment API.
      */
     CreatePullRequestAttachmentResponse createPullRequestAttachment(
             CreatePullRequestAttachmentRequest request);
@@ -335,7 +335,7 @@ public interface Devops extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/CreatePullRequestCommentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreatePullRequestComment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/CreatePullRequestCommentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreatePullRequestComment API.
      */
     CreatePullRequestCommentResponse createPullRequestComment(
             CreatePullRequestCommentRequest request);
@@ -349,7 +349,7 @@ public interface Devops extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/CreateRepositoryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateRepository API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/CreateRepositoryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateRepository API.
      */
     CreateRepositoryResponse createRepository(CreateRepositoryRequest request);
 
@@ -362,7 +362,7 @@ public interface Devops extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/CreateTriggerExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateTrigger API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/CreateTriggerExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateTrigger API.
      */
     CreateTriggerResponse createTrigger(CreateTriggerRequest request);
 
@@ -375,7 +375,7 @@ public interface Devops extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/DeclinePullRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeclinePullRequest API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/DeclinePullRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeclinePullRequest API.
      */
     DeclinePullRequestResponse declinePullRequest(DeclinePullRequestRequest request);
 
@@ -387,7 +387,7 @@ public interface Devops extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/DeleteBuildPipelineExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteBuildPipeline API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/DeleteBuildPipelineExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteBuildPipeline API.
      */
     DeleteBuildPipelineResponse deleteBuildPipeline(DeleteBuildPipelineRequest request);
 
@@ -399,7 +399,7 @@ public interface Devops extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/DeleteBuildPipelineStageExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteBuildPipelineStage API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/DeleteBuildPipelineStageExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteBuildPipelineStage API.
      */
     DeleteBuildPipelineStageResponse deleteBuildPipelineStage(
             DeleteBuildPipelineStageRequest request);
@@ -412,7 +412,7 @@ public interface Devops extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/DeleteConnectionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteConnection API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/DeleteConnectionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteConnection API.
      */
     DeleteConnectionResponse deleteConnection(DeleteConnectionRequest request);
 
@@ -424,7 +424,7 @@ public interface Devops extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/DeleteDeployArtifactExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteDeployArtifact API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/DeleteDeployArtifactExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteDeployArtifact API.
      */
     DeleteDeployArtifactResponse deleteDeployArtifact(DeleteDeployArtifactRequest request);
 
@@ -436,7 +436,7 @@ public interface Devops extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/DeleteDeployEnvironmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteDeployEnvironment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/DeleteDeployEnvironmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteDeployEnvironment API.
      */
     DeleteDeployEnvironmentResponse deleteDeployEnvironment(DeleteDeployEnvironmentRequest request);
 
@@ -448,7 +448,7 @@ public interface Devops extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/DeleteDeployPipelineExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteDeployPipeline API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/DeleteDeployPipelineExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteDeployPipeline API.
      */
     DeleteDeployPipelineResponse deleteDeployPipeline(DeleteDeployPipelineRequest request);
 
@@ -460,7 +460,7 @@ public interface Devops extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/DeleteDeployStageExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteDeployStage API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/DeleteDeployStageExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteDeployStage API.
      */
     DeleteDeployStageResponse deleteDeployStage(DeleteDeployStageRequest request);
 
@@ -472,7 +472,7 @@ public interface Devops extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/DeleteGitRefExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteGitRef API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/DeleteGitRefExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteGitRef API.
      */
     DeleteGitRefResponse deleteGitRef(DeleteGitRefRequest request);
 
@@ -484,7 +484,7 @@ public interface Devops extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/DeleteProjectExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteProject API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/DeleteProjectExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteProject API.
      */
     DeleteProjectResponse deleteProject(DeleteProjectRequest request);
 
@@ -496,7 +496,7 @@ public interface Devops extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/DeleteProjectRepositorySettingsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteProjectRepositorySettings API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/DeleteProjectRepositorySettingsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteProjectRepositorySettings API.
      */
     DeleteProjectRepositorySettingsResponse deleteProjectRepositorySettings(
             DeleteProjectRepositorySettingsRequest request);
@@ -509,7 +509,7 @@ public interface Devops extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/DeleteProtectedBranchExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteProtectedBranch API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/DeleteProtectedBranchExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteProtectedBranch API.
      */
     DeleteProtectedBranchResponse deleteProtectedBranch(DeleteProtectedBranchRequest request);
 
@@ -521,7 +521,7 @@ public interface Devops extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/DeletePullRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeletePullRequest API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/DeletePullRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeletePullRequest API.
      */
     DeletePullRequestResponse deletePullRequest(DeletePullRequestRequest request);
 
@@ -533,7 +533,7 @@ public interface Devops extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/DeletePullRequestAttachmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeletePullRequestAttachment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/DeletePullRequestAttachmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeletePullRequestAttachment API.
      */
     DeletePullRequestAttachmentResponse deletePullRequestAttachment(
             DeletePullRequestAttachmentRequest request);
@@ -546,7 +546,7 @@ public interface Devops extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/DeletePullRequestCommentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeletePullRequestComment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/DeletePullRequestCommentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeletePullRequestComment API.
      */
     DeletePullRequestCommentResponse deletePullRequestComment(
             DeletePullRequestCommentRequest request);
@@ -559,7 +559,7 @@ public interface Devops extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/DeleteRefExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteRef API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/DeleteRefExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteRef API.
      */
     DeleteRefResponse deleteRef(DeleteRefRequest request);
 
@@ -571,7 +571,7 @@ public interface Devops extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/DeleteRepositoryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteRepository API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/DeleteRepositoryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteRepository API.
      */
     DeleteRepositoryResponse deleteRepository(DeleteRepositoryRequest request);
 
@@ -583,7 +583,7 @@ public interface Devops extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/DeleteRepositorySettingsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteRepositorySettings API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/DeleteRepositorySettingsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteRepositorySettings API.
      */
     DeleteRepositorySettingsResponse deleteRepositorySettings(
             DeleteRepositorySettingsRequest request);
@@ -596,7 +596,7 @@ public interface Devops extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/DeleteTriggerExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteTrigger API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/DeleteTriggerExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteTrigger API.
      */
     DeleteTriggerResponse deleteTrigger(DeleteTriggerRequest request);
 
@@ -608,7 +608,7 @@ public interface Devops extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/GetBuildPipelineExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetBuildPipeline API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/GetBuildPipelineExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetBuildPipeline API.
      */
     GetBuildPipelineResponse getBuildPipeline(GetBuildPipelineRequest request);
 
@@ -620,7 +620,7 @@ public interface Devops extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/GetBuildPipelineStageExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetBuildPipelineStage API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/GetBuildPipelineStageExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetBuildPipelineStage API.
      */
     GetBuildPipelineStageResponse getBuildPipelineStage(GetBuildPipelineStageRequest request);
 
@@ -633,7 +633,7 @@ public interface Devops extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/GetBuildRunExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetBuildRun API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/GetBuildRunExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetBuildRun API.
      */
     GetBuildRunResponse getBuildRun(GetBuildRunRequest request);
 
@@ -645,7 +645,7 @@ public interface Devops extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/GetCommitExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetCommit API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/GetCommitExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetCommit API.
      */
     GetCommitResponse getCommit(GetCommitRequest request);
 
@@ -658,7 +658,7 @@ public interface Devops extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/GetCommitDiffExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetCommitDiff API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/GetCommitDiffExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetCommitDiff API.
      */
     GetCommitDiffResponse getCommitDiff(GetCommitDiffRequest request);
 
@@ -670,7 +670,7 @@ public interface Devops extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/GetConnectionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetConnection API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/GetConnectionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetConnection API.
      */
     GetConnectionResponse getConnection(GetConnectionRequest request);
 
@@ -682,7 +682,7 @@ public interface Devops extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/GetDeployArtifactExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetDeployArtifact API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/GetDeployArtifactExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetDeployArtifact API.
      */
     GetDeployArtifactResponse getDeployArtifact(GetDeployArtifactRequest request);
 
@@ -694,7 +694,7 @@ public interface Devops extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/GetDeployEnvironmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetDeployEnvironment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/GetDeployEnvironmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetDeployEnvironment API.
      */
     GetDeployEnvironmentResponse getDeployEnvironment(GetDeployEnvironmentRequest request);
 
@@ -706,7 +706,7 @@ public interface Devops extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/GetDeployPipelineExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetDeployPipeline API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/GetDeployPipelineExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetDeployPipeline API.
      */
     GetDeployPipelineResponse getDeployPipeline(GetDeployPipelineRequest request);
 
@@ -718,7 +718,7 @@ public interface Devops extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/GetDeployStageExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetDeployStage API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/GetDeployStageExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetDeployStage API.
      */
     GetDeployStageResponse getDeployStage(GetDeployStageRequest request);
 
@@ -730,7 +730,7 @@ public interface Devops extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/GetDeploymentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetDeployment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/GetDeploymentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetDeployment API.
      */
     GetDeploymentResponse getDeployment(GetDeploymentRequest request);
 
@@ -743,7 +743,7 @@ public interface Devops extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/GetFileDiffExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetFileDiff API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/GetFileDiffExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetFileDiff API.
      */
     GetFileDiffResponse getFileDiff(GetFileDiffRequest request);
 
@@ -756,7 +756,7 @@ public interface Devops extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/GetMirrorRecordExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetMirrorRecord API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/GetMirrorRecordExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetMirrorRecord API.
      */
     GetMirrorRecordResponse getMirrorRecord(GetMirrorRecordRequest request);
 
@@ -769,7 +769,7 @@ public interface Devops extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/GetObjectExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetObject API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/GetObjectExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetObject API.
      */
     GetObjectResponse getObject(GetObjectRequest request);
 
@@ -782,7 +782,7 @@ public interface Devops extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/GetObjectContentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetObjectContent API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/GetObjectContentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetObjectContent API.
      */
     GetObjectContentResponse getObjectContent(GetObjectContentRequest request);
 
@@ -794,7 +794,7 @@ public interface Devops extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/GetProjectExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetProject API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/GetProjectExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetProject API.
      */
     GetProjectResponse getProject(GetProjectRequest request);
 
@@ -806,7 +806,7 @@ public interface Devops extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/GetProjectNotificationPreferenceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetProjectNotificationPreference API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/GetProjectNotificationPreferenceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetProjectNotificationPreference API.
      */
     GetProjectNotificationPreferenceResponse getProjectNotificationPreference(
             GetProjectNotificationPreferenceRequest request);
@@ -819,7 +819,7 @@ public interface Devops extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/GetProjectRepositorySettingsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetProjectRepositorySettings API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/GetProjectRepositorySettingsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetProjectRepositorySettings API.
      */
     GetProjectRepositorySettingsResponse getProjectRepositorySettings(
             GetProjectRepositorySettingsRequest request);
@@ -832,7 +832,7 @@ public interface Devops extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/GetPullRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetPullRequest API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/GetPullRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetPullRequest API.
      */
     GetPullRequestResponse getPullRequest(GetPullRequestRequest request);
 
@@ -844,7 +844,7 @@ public interface Devops extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/GetPullRequestAttachmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetPullRequestAttachment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/GetPullRequestAttachmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetPullRequestAttachment API.
      */
     GetPullRequestAttachmentResponse getPullRequestAttachment(
             GetPullRequestAttachmentRequest request);
@@ -857,7 +857,7 @@ public interface Devops extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/GetPullRequestAttachmentContentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetPullRequestAttachmentContent API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/GetPullRequestAttachmentContentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetPullRequestAttachmentContent API.
      */
     GetPullRequestAttachmentContentResponse getPullRequestAttachmentContent(
             GetPullRequestAttachmentContentRequest request);
@@ -870,7 +870,7 @@ public interface Devops extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/GetPullRequestChangeSummaryMetricsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetPullRequestChangeSummaryMetrics API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/GetPullRequestChangeSummaryMetricsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetPullRequestChangeSummaryMetrics API.
      */
     GetPullRequestChangeSummaryMetricsResponse getPullRequestChangeSummaryMetrics(
             GetPullRequestChangeSummaryMetricsRequest request);
@@ -883,7 +883,7 @@ public interface Devops extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/GetPullRequestCommentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetPullRequestComment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/GetPullRequestCommentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetPullRequestComment API.
      */
     GetPullRequestCommentResponse getPullRequestComment(GetPullRequestCommentRequest request);
 
@@ -895,7 +895,7 @@ public interface Devops extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/GetPullRequestNotificationPreferenceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetPullRequestNotificationPreference API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/GetPullRequestNotificationPreferenceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetPullRequestNotificationPreference API.
      */
     GetPullRequestNotificationPreferenceResponse getPullRequestNotificationPreference(
             GetPullRequestNotificationPreferenceRequest request);
@@ -908,7 +908,7 @@ public interface Devops extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/GetRefExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetRef API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/GetRefExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetRef API.
      */
     GetRefResponse getRef(GetRefRequest request);
 
@@ -921,7 +921,7 @@ public interface Devops extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/GetRepoFileDiffExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetRepoFileDiff API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/GetRepoFileDiffExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetRepoFileDiff API.
      */
     GetRepoFileDiffResponse getRepoFileDiff(GetRepoFileDiffRequest request);
 
@@ -934,7 +934,7 @@ public interface Devops extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/GetRepoFileLinesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetRepoFileLines API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/GetRepoFileLinesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetRepoFileLines API.
      */
     GetRepoFileLinesResponse getRepoFileLines(GetRepoFileLinesRequest request);
 
@@ -946,7 +946,7 @@ public interface Devops extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/GetRepositoryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetRepository API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/GetRepositoryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetRepository API.
      */
     GetRepositoryResponse getRepository(GetRepositoryRequest request);
 
@@ -959,7 +959,7 @@ public interface Devops extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/GetRepositoryArchiveContentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetRepositoryArchiveContent API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/GetRepositoryArchiveContentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetRepositoryArchiveContent API.
      */
     GetRepositoryArchiveContentResponse getRepositoryArchiveContent(
             GetRepositoryArchiveContentRequest request);
@@ -973,7 +973,7 @@ public interface Devops extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/GetRepositoryFileLinesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetRepositoryFileLines API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/GetRepositoryFileLinesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetRepositoryFileLines API.
      */
     GetRepositoryFileLinesResponse getRepositoryFileLines(GetRepositoryFileLinesRequest request);
 
@@ -985,7 +985,7 @@ public interface Devops extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/GetRepositoryNotificationPreferenceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetRepositoryNotificationPreference API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/GetRepositoryNotificationPreferenceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetRepositoryNotificationPreference API.
      */
     GetRepositoryNotificationPreferenceResponse getRepositoryNotificationPreference(
             GetRepositoryNotificationPreferenceRequest request);
@@ -998,7 +998,7 @@ public interface Devops extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/GetRepositorySettingsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetRepositorySettings API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/GetRepositorySettingsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetRepositorySettings API.
      */
     GetRepositorySettingsResponse getRepositorySettings(GetRepositorySettingsRequest request);
 
@@ -1010,7 +1010,7 @@ public interface Devops extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/GetTriggerExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetTrigger API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/GetTriggerExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetTrigger API.
      */
     GetTriggerResponse getTrigger(GetTriggerRequest request);
 
@@ -1022,7 +1022,7 @@ public interface Devops extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/GetWorkRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetWorkRequest API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/GetWorkRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetWorkRequest API.
      */
     GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request);
 
@@ -1035,7 +1035,7 @@ public interface Devops extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/LikePullRequestCommentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use LikePullRequestComment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/LikePullRequestCommentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use LikePullRequestComment API.
      */
     LikePullRequestCommentResponse likePullRequestComment(LikePullRequestCommentRequest request);
 
@@ -1048,7 +1048,7 @@ public interface Devops extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/ListAuthorsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListAuthors API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/ListAuthorsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListAuthors API.
      */
     ListAuthorsResponse listAuthors(ListAuthorsRequest request);
 
@@ -1061,7 +1061,7 @@ public interface Devops extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/ListBuildPipelineStagesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListBuildPipelineStages API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/ListBuildPipelineStagesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListBuildPipelineStages API.
      */
     ListBuildPipelineStagesResponse listBuildPipelineStages(ListBuildPipelineStagesRequest request);
 
@@ -1074,7 +1074,7 @@ public interface Devops extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/ListBuildPipelinesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListBuildPipelines API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/ListBuildPipelinesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListBuildPipelines API.
      */
     ListBuildPipelinesResponse listBuildPipelines(ListBuildPipelinesRequest request);
 
@@ -1087,7 +1087,7 @@ public interface Devops extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/ListBuildRunSnapshotsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListBuildRunSnapshots API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/ListBuildRunSnapshotsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListBuildRunSnapshots API.
      */
     ListBuildRunSnapshotsResponse listBuildRunSnapshots(ListBuildRunSnapshotsRequest request);
 
@@ -1100,7 +1100,7 @@ public interface Devops extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/ListBuildRunsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListBuildRuns API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/ListBuildRunsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListBuildRuns API.
      */
     ListBuildRunsResponse listBuildRuns(ListBuildRunsRequest request);
 
@@ -1113,7 +1113,7 @@ public interface Devops extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/ListCommitDiffsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListCommitDiffs API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/ListCommitDiffsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListCommitDiffs API.
      */
     ListCommitDiffsResponse listCommitDiffs(ListCommitDiffsRequest request);
 
@@ -1126,7 +1126,7 @@ public interface Devops extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/ListCommitsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListCommits API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/ListCommitsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListCommits API.
      */
     ListCommitsResponse listCommits(ListCommitsRequest request);
 
@@ -1139,7 +1139,7 @@ public interface Devops extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/ListConnectionsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListConnections API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/ListConnectionsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListConnections API.
      */
     ListConnectionsResponse listConnections(ListConnectionsRequest request);
 
@@ -1151,7 +1151,7 @@ public interface Devops extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/ListDeployArtifactsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDeployArtifacts API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/ListDeployArtifactsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDeployArtifacts API.
      */
     ListDeployArtifactsResponse listDeployArtifacts(ListDeployArtifactsRequest request);
 
@@ -1163,7 +1163,7 @@ public interface Devops extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/ListDeployEnvironmentsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDeployEnvironments API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/ListDeployEnvironmentsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDeployEnvironments API.
      */
     ListDeployEnvironmentsResponse listDeployEnvironments(ListDeployEnvironmentsRequest request);
 
@@ -1175,7 +1175,7 @@ public interface Devops extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/ListDeployPipelinesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDeployPipelines API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/ListDeployPipelinesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDeployPipelines API.
      */
     ListDeployPipelinesResponse listDeployPipelines(ListDeployPipelinesRequest request);
 
@@ -1187,7 +1187,7 @@ public interface Devops extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/ListDeployStagesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDeployStages API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/ListDeployStagesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDeployStages API.
      */
     ListDeployStagesResponse listDeployStages(ListDeployStagesRequest request);
 
@@ -1199,7 +1199,7 @@ public interface Devops extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/ListDeploymentsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDeployments API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/ListDeploymentsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDeployments API.
      */
     ListDeploymentsResponse listDeployments(ListDeploymentsRequest request);
 
@@ -1211,7 +1211,7 @@ public interface Devops extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/ListForkSyncStatusesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListForkSyncStatuses API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/ListForkSyncStatusesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListForkSyncStatuses API.
      */
     ListForkSyncStatusesResponse listForkSyncStatuses(ListForkSyncStatusesRequest request);
 
@@ -1224,7 +1224,7 @@ public interface Devops extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/ListMirrorRecordsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListMirrorRecords API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/ListMirrorRecordsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListMirrorRecords API.
      */
     ListMirrorRecordsResponse listMirrorRecords(ListMirrorRecordsRequest request);
 
@@ -1237,7 +1237,7 @@ public interface Devops extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/ListPathsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListPaths API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/ListPathsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListPaths API.
      */
     ListPathsResponse listPaths(ListPathsRequest request);
 
@@ -1250,7 +1250,7 @@ public interface Devops extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/ListProjectCommitAnalyticsAuthorsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListProjectCommitAnalyticsAuthors API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/ListProjectCommitAnalyticsAuthorsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListProjectCommitAnalyticsAuthors API.
      */
     ListProjectCommitAnalyticsAuthorsResponse listProjectCommitAnalyticsAuthors(
             ListProjectCommitAnalyticsAuthorsRequest request);
@@ -1263,7 +1263,7 @@ public interface Devops extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/ListProjectsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListProjects API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/ListProjectsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListProjects API.
      */
     ListProjectsResponse listProjects(ListProjectsRequest request);
 
@@ -1276,7 +1276,7 @@ public interface Devops extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/ListProtectedBranchesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListProtectedBranches API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/ListProtectedBranchesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListProtectedBranches API.
      */
     ListProtectedBranchesResponse listProtectedBranches(ListProtectedBranchesRequest request);
 
@@ -1288,7 +1288,7 @@ public interface Devops extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/ListPullRequestActivitiesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListPullRequestActivities API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/ListPullRequestActivitiesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListPullRequestActivities API.
      */
     ListPullRequestActivitiesResponse listPullRequestActivities(
             ListPullRequestActivitiesRequest request);
@@ -1301,7 +1301,7 @@ public interface Devops extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/ListPullRequestAttachmentsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListPullRequestAttachments API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/ListPullRequestAttachmentsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListPullRequestAttachments API.
      */
     ListPullRequestAttachmentsResponse listPullRequestAttachments(
             ListPullRequestAttachmentsRequest request);
@@ -1315,7 +1315,7 @@ public interface Devops extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/ListPullRequestAuthorsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListPullRequestAuthors API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/ListPullRequestAuthorsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListPullRequestAuthors API.
      */
     ListPullRequestAuthorsResponse listPullRequestAuthors(ListPullRequestAuthorsRequest request);
 
@@ -1327,7 +1327,7 @@ public interface Devops extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/ListPullRequestCommentsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListPullRequestComments API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/ListPullRequestCommentsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListPullRequestComments API.
      */
     ListPullRequestCommentsResponse listPullRequestComments(ListPullRequestCommentsRequest request);
 
@@ -1339,7 +1339,7 @@ public interface Devops extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/ListPullRequestCommitsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListPullRequestCommits API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/ListPullRequestCommitsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListPullRequestCommits API.
      */
     ListPullRequestCommitsResponse listPullRequestCommits(ListPullRequestCommitsRequest request);
 
@@ -1351,7 +1351,7 @@ public interface Devops extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/ListPullRequestFileChangesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListPullRequestFileChanges API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/ListPullRequestFileChangesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListPullRequestFileChanges API.
      */
     ListPullRequestFileChangesResponse listPullRequestFileChanges(
             ListPullRequestFileChangesRequest request);
@@ -1365,7 +1365,7 @@ public interface Devops extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/ListPullRequestsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListPullRequests API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/ListPullRequestsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListPullRequests API.
      */
     ListPullRequestsResponse listPullRequests(ListPullRequestsRequest request);
 
@@ -1378,7 +1378,7 @@ public interface Devops extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/ListRefsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListRefs API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/ListRefsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListRefs API.
      */
     ListRefsResponse listRefs(ListRefsRequest request);
 
@@ -1391,7 +1391,7 @@ public interface Devops extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/ListRepositoriesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListRepositories API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/ListRepositoriesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListRepositories API.
      */
     ListRepositoriesResponse listRepositories(ListRepositoriesRequest request);
 
@@ -1404,7 +1404,7 @@ public interface Devops extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/ListRepositoryCommitAnalyticsAuthorsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListRepositoryCommitAnalyticsAuthors API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/ListRepositoryCommitAnalyticsAuthorsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListRepositoryCommitAnalyticsAuthors API.
      */
     ListRepositoryCommitAnalyticsAuthorsResponse listRepositoryCommitAnalyticsAuthors(
             ListRepositoryCommitAnalyticsAuthorsRequest request);
@@ -1418,7 +1418,7 @@ public interface Devops extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/ListTriggersExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListTriggers API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/ListTriggersExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListTriggers API.
      */
     ListTriggersResponse listTriggers(ListTriggersRequest request);
 
@@ -1430,7 +1430,7 @@ public interface Devops extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/ListWorkRequestErrorsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequestErrors API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/ListWorkRequestErrorsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequestErrors API.
      */
     ListWorkRequestErrorsResponse listWorkRequestErrors(ListWorkRequestErrorsRequest request);
 
@@ -1442,7 +1442,7 @@ public interface Devops extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/ListWorkRequestLogsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequestLogs API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/ListWorkRequestLogsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequestLogs API.
      */
     ListWorkRequestLogsResponse listWorkRequestLogs(ListWorkRequestLogsRequest request);
 
@@ -1454,7 +1454,7 @@ public interface Devops extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/ListWorkRequestsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequests API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/ListWorkRequestsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequests API.
      */
     ListWorkRequestsResponse listWorkRequests(ListWorkRequestsRequest request);
 
@@ -1466,7 +1466,7 @@ public interface Devops extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/MergePullRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use MergePullRequest API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/MergePullRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use MergePullRequest API.
      */
     MergePullRequestResponse mergePullRequest(MergePullRequestRequest request);
 
@@ -1479,7 +1479,7 @@ public interface Devops extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/MirrorRepositoryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use MirrorRepository API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/MirrorRepositoryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use MirrorRepository API.
      */
     MirrorRepositoryResponse mirrorRepository(MirrorRepositoryRequest request);
 
@@ -1492,7 +1492,7 @@ public interface Devops extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/PatchPullRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use PatchPullRequest API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/PatchPullRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use PatchPullRequest API.
      */
     PatchPullRequestResponse patchPullRequest(PatchPullRequestRequest request);
 
@@ -1505,7 +1505,7 @@ public interface Devops extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/PutRepositoryRefExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use PutRepositoryRef API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/PutRepositoryRefExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use PutRepositoryRef API.
      */
     PutRepositoryRefResponse putRepositoryRef(PutRepositoryRefRequest request);
 
@@ -1518,7 +1518,7 @@ public interface Devops extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/ReopenPullRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ReopenPullRequest API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/ReopenPullRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ReopenPullRequest API.
      */
     ReopenPullRequestResponse reopenPullRequest(ReopenPullRequestRequest request);
 
@@ -1531,7 +1531,7 @@ public interface Devops extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/ReviewPullRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ReviewPullRequest API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/ReviewPullRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ReviewPullRequest API.
      */
     ReviewPullRequestResponse reviewPullRequest(ReviewPullRequestRequest request);
 
@@ -1543,7 +1543,7 @@ public interface Devops extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/ScheduleCascadingProjectDeletionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ScheduleCascadingProjectDeletion API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/ScheduleCascadingProjectDeletionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ScheduleCascadingProjectDeletion API.
      */
     ScheduleCascadingProjectDeletionResponse scheduleCascadingProjectDeletion(
             ScheduleCascadingProjectDeletionRequest request);
@@ -1556,7 +1556,7 @@ public interface Devops extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/SummarizeProjectRepositoryAnalyticsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use SummarizeProjectRepositoryAnalytics API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/SummarizeProjectRepositoryAnalyticsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use SummarizeProjectRepositoryAnalytics API.
      */
     SummarizeProjectRepositoryAnalyticsResponse summarizeProjectRepositoryAnalytics(
             SummarizeProjectRepositoryAnalyticsRequest request);
@@ -1569,7 +1569,7 @@ public interface Devops extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/SummarizeRepositoryAnalyticsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use SummarizeRepositoryAnalytics API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/SummarizeRepositoryAnalyticsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use SummarizeRepositoryAnalytics API.
      */
     SummarizeRepositoryAnalyticsResponse summarizeRepositoryAnalytics(
             SummarizeRepositoryAnalyticsRequest request);
@@ -1583,7 +1583,7 @@ public interface Devops extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/SyncRepositoryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use SyncRepository API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/SyncRepositoryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use SyncRepository API.
      */
     SyncRepositoryResponse syncRepository(SyncRepositoryRequest request);
 
@@ -1596,7 +1596,7 @@ public interface Devops extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/UnlikePullRequestCommentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UnlikePullRequestComment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/UnlikePullRequestCommentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UnlikePullRequestComment API.
      */
     UnlikePullRequestCommentResponse unlikePullRequestComment(
             UnlikePullRequestCommentRequest request);
@@ -1609,7 +1609,7 @@ public interface Devops extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/UnsubscribePullRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UnsubscribePullRequest API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/UnsubscribePullRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UnsubscribePullRequest API.
      */
     UnsubscribePullRequestResponse unsubscribePullRequest(UnsubscribePullRequestRequest request);
 
@@ -1621,7 +1621,7 @@ public interface Devops extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/UpdateBuildPipelineExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateBuildPipeline API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/UpdateBuildPipelineExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateBuildPipeline API.
      */
     UpdateBuildPipelineResponse updateBuildPipeline(UpdateBuildPipelineRequest request);
 
@@ -1633,7 +1633,7 @@ public interface Devops extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/UpdateBuildPipelineStageExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateBuildPipelineStage API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/UpdateBuildPipelineStageExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateBuildPipelineStage API.
      */
     UpdateBuildPipelineStageResponse updateBuildPipelineStage(
             UpdateBuildPipelineStageRequest request);
@@ -1646,7 +1646,7 @@ public interface Devops extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/UpdateBuildRunExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateBuildRun API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/UpdateBuildRunExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateBuildRun API.
      */
     UpdateBuildRunResponse updateBuildRun(UpdateBuildRunRequest request);
 
@@ -1658,7 +1658,7 @@ public interface Devops extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/UpdateConnectionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateConnection API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/UpdateConnectionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateConnection API.
      */
     UpdateConnectionResponse updateConnection(UpdateConnectionRequest request);
 
@@ -1670,7 +1670,7 @@ public interface Devops extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/UpdateDeployArtifactExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateDeployArtifact API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/UpdateDeployArtifactExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateDeployArtifact API.
      */
     UpdateDeployArtifactResponse updateDeployArtifact(UpdateDeployArtifactRequest request);
 
@@ -1682,7 +1682,7 @@ public interface Devops extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/UpdateDeployEnvironmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateDeployEnvironment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/UpdateDeployEnvironmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateDeployEnvironment API.
      */
     UpdateDeployEnvironmentResponse updateDeployEnvironment(UpdateDeployEnvironmentRequest request);
 
@@ -1694,7 +1694,7 @@ public interface Devops extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/UpdateDeployPipelineExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateDeployPipeline API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/UpdateDeployPipelineExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateDeployPipeline API.
      */
     UpdateDeployPipelineResponse updateDeployPipeline(UpdateDeployPipelineRequest request);
 
@@ -1706,7 +1706,7 @@ public interface Devops extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/UpdateDeployStageExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateDeployStage API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/UpdateDeployStageExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateDeployStage API.
      */
     UpdateDeployStageResponse updateDeployStage(UpdateDeployStageRequest request);
 
@@ -1718,7 +1718,7 @@ public interface Devops extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/UpdateDeploymentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateDeployment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/UpdateDeploymentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateDeployment API.
      */
     UpdateDeploymentResponse updateDeployment(UpdateDeploymentRequest request);
 
@@ -1730,7 +1730,7 @@ public interface Devops extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/UpdateProjectExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateProject API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/UpdateProjectExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateProject API.
      */
     UpdateProjectResponse updateProject(UpdateProjectRequest request);
 
@@ -1742,7 +1742,7 @@ public interface Devops extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/UpdateProjectNotificationPreferenceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateProjectNotificationPreference API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/UpdateProjectNotificationPreferenceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateProjectNotificationPreference API.
      */
     UpdateProjectNotificationPreferenceResponse updateProjectNotificationPreference(
             UpdateProjectNotificationPreferenceRequest request);
@@ -1755,7 +1755,7 @@ public interface Devops extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/UpdateProjectRepositorySettingsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateProjectRepositorySettings API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/UpdateProjectRepositorySettingsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateProjectRepositorySettings API.
      */
     UpdateProjectRepositorySettingsResponse updateProjectRepositorySettings(
             UpdateProjectRepositorySettingsRequest request);
@@ -1768,7 +1768,7 @@ public interface Devops extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/UpdatePullRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdatePullRequest API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/UpdatePullRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdatePullRequest API.
      */
     UpdatePullRequestResponse updatePullRequest(UpdatePullRequestRequest request);
 
@@ -1780,7 +1780,7 @@ public interface Devops extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/UpdatePullRequestCommentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdatePullRequestComment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/UpdatePullRequestCommentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdatePullRequestComment API.
      */
     UpdatePullRequestCommentResponse updatePullRequestComment(
             UpdatePullRequestCommentRequest request);
@@ -1793,7 +1793,7 @@ public interface Devops extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/UpdatePullRequestNotificationPreferenceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdatePullRequestNotificationPreference API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/UpdatePullRequestNotificationPreferenceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdatePullRequestNotificationPreference API.
      */
     UpdatePullRequestNotificationPreferenceResponse updatePullRequestNotificationPreference(
             UpdatePullRequestNotificationPreferenceRequest request);
@@ -1806,7 +1806,7 @@ public interface Devops extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/UpdateRepositoryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateRepository API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/UpdateRepositoryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateRepository API.
      */
     UpdateRepositoryResponse updateRepository(UpdateRepositoryRequest request);
 
@@ -1818,7 +1818,7 @@ public interface Devops extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/UpdateRepositoryNotificationPreferenceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateRepositoryNotificationPreference API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/UpdateRepositoryNotificationPreferenceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateRepositoryNotificationPreference API.
      */
     UpdateRepositoryNotificationPreferenceResponse updateRepositoryNotificationPreference(
             UpdateRepositoryNotificationPreferenceRequest request);
@@ -1831,7 +1831,7 @@ public interface Devops extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/UpdateRepositorySettingsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateRepositorySettings API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/UpdateRepositorySettingsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateRepositorySettings API.
      */
     UpdateRepositorySettingsResponse updateRepositorySettings(
             UpdateRepositorySettingsRequest request);
@@ -1844,7 +1844,7 @@ public interface Devops extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/UpdateTriggerExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateTrigger API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/UpdateTriggerExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateTrigger API.
      */
     UpdateTriggerResponse updateTrigger(UpdateTriggerRequest request);
 
@@ -1857,7 +1857,7 @@ public interface Devops extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/ValidateConnectionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ValidateConnection API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/ValidateConnectionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ValidateConnection API.
      */
     ValidateConnectionResponse validateConnection(ValidateConnectionRequest request);
 

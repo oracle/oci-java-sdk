@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.securityattribute;
@@ -478,7 +478,7 @@ public class SecurityAttributeAsyncClient implements SecurityAttributeAsync {
                         "SecurityAttribute",
                         "BulkDeleteSecurityAttributes",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/security-attribute/20240815/SecurityAttribute/BulkDeleteSecurityAttributes");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, BulkDeleteSecurityAttributesResponse>
                 transformer =
@@ -535,7 +535,7 @@ public class SecurityAttributeAsyncClient implements SecurityAttributeAsync {
                         "SecurityAttribute",
                         "BulkEditSecurityAttributes",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/security-attribute/20240815/SecurityAttribute/BulkEditSecurityAttributes");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, BulkEditSecurityAttributesResponse>
                 transformer =
@@ -593,7 +593,7 @@ public class SecurityAttributeAsyncClient implements SecurityAttributeAsync {
                         "SecurityAttribute",
                         "CascadingDeleteSecurityAttributeNamespace",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/security-attribute/20240815/SecurityAttributeNamespace/CascadingDeleteSecurityAttributeNamespace");
         final java.util.function.Function<
                         javax.ws.rs.core.Response,
                         CascadingDeleteSecurityAttributeNamespaceResponse>
@@ -650,7 +650,7 @@ public class SecurityAttributeAsyncClient implements SecurityAttributeAsync {
                         "SecurityAttribute",
                         "ChangeSecurityAttributeNamespaceCompartment",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/security-attribute/20240815/SecurityAttributeNamespace/ChangeSecurityAttributeNamespaceCompartment");
         final java.util.function.Function<
                         javax.ws.rs.core.Response,
                         ChangeSecurityAttributeNamespaceCompartmentResponse>
@@ -710,7 +710,7 @@ public class SecurityAttributeAsyncClient implements SecurityAttributeAsync {
                         "SecurityAttribute",
                         "CreateSecurityAttribute",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/security-attribute/20240815/SecurityAttribute/CreateSecurityAttribute");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, CreateSecurityAttributeResponse>
                 transformer =
@@ -766,7 +766,7 @@ public class SecurityAttributeAsyncClient implements SecurityAttributeAsync {
                         "SecurityAttribute",
                         "CreateSecurityAttributeNamespace",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/security-attribute/20240815/SecurityAttributeNamespace/CreateSecurityAttributeNamespace");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, CreateSecurityAttributeNamespaceResponse>
                 transformer =
@@ -823,7 +823,7 @@ public class SecurityAttributeAsyncClient implements SecurityAttributeAsync {
                         "SecurityAttribute",
                         "DeleteSecurityAttribute",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/security-attribute/20240815/SecurityAttribute/DeleteSecurityAttribute");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, DeleteSecurityAttributeResponse>
                 transformer =
@@ -874,7 +874,7 @@ public class SecurityAttributeAsyncClient implements SecurityAttributeAsync {
                         "SecurityAttribute",
                         "DeleteSecurityAttributeNamespace",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/security-attribute/20240815/SecurityAttributeNamespace/DeleteSecurityAttributeNamespace");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, DeleteSecurityAttributeNamespaceResponse>
                 transformer =
@@ -925,7 +925,7 @@ public class SecurityAttributeAsyncClient implements SecurityAttributeAsync {
                         "SecurityAttribute",
                         "GetSecurityAttribute",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/security-attribute/20240815/SecurityAttribute/GetSecurityAttribute");
         final java.util.function.Function<javax.ws.rs.core.Response, GetSecurityAttributeResponse>
                 transformer =
                         GetSecurityAttributeConverter.fromResponse(
@@ -974,7 +974,7 @@ public class SecurityAttributeAsyncClient implements SecurityAttributeAsync {
                         "SecurityAttribute",
                         "GetSecurityAttributeNamespace",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/security-attribute/20240815/SecurityAttributeNamespace/GetSecurityAttributeNamespace");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, GetSecurityAttributeNamespaceResponse>
                 transformer =
@@ -1025,7 +1025,7 @@ public class SecurityAttributeAsyncClient implements SecurityAttributeAsync {
                         "SecurityAttribute",
                         "GetSecurityAttributeWorkRequest",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/security-attribute/20240815/SecurityAttributeWorkRequest/GetSecurityAttributeWorkRequest");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, GetSecurityAttributeWorkRequestResponse>
                 transformer =
@@ -1078,7 +1078,7 @@ public class SecurityAttributeAsyncClient implements SecurityAttributeAsync {
                         "SecurityAttribute",
                         "ListSecurityAttributeNamespaces",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/security-attribute/20240815/SecurityAttributeNamespaceSummary/ListSecurityAttributeNamespaces");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, ListSecurityAttributeNamespacesResponse>
                 transformer =
@@ -1132,7 +1132,7 @@ public class SecurityAttributeAsyncClient implements SecurityAttributeAsync {
                         "SecurityAttribute",
                         "ListSecurityAttributeWorkRequestErrors",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/security-attribute/20240815/SecurityAttributeWorkRequestErrorSummary/ListSecurityAttributeWorkRequestErrors");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, ListSecurityAttributeWorkRequestErrorsResponse>
                 transformer =
@@ -1186,7 +1186,7 @@ public class SecurityAttributeAsyncClient implements SecurityAttributeAsync {
                         "SecurityAttribute",
                         "ListSecurityAttributeWorkRequestLogs",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/security-attribute/20240815/SecurityAttributeWorkRequestLogSummary/ListSecurityAttributeWorkRequestLogs");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, ListSecurityAttributeWorkRequestLogsResponse>
                 transformer =
@@ -1239,7 +1239,7 @@ public class SecurityAttributeAsyncClient implements SecurityAttributeAsync {
                         "SecurityAttribute",
                         "ListSecurityAttributeWorkRequests",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/security-attribute/20240815/SecurityAttributeWorkRequestSummary/ListSecurityAttributeWorkRequests");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, ListSecurityAttributeWorkRequestsResponse>
                 transformer =
@@ -1290,7 +1290,7 @@ public class SecurityAttributeAsyncClient implements SecurityAttributeAsync {
                         "SecurityAttribute",
                         "ListSecurityAttributes",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/security-attribute/20240815/SecurityAttributeSummary/ListSecurityAttributes");
         final java.util.function.Function<javax.ws.rs.core.Response, ListSecurityAttributesResponse>
                 transformer =
                         ListSecurityAttributesConverter.fromResponse(
@@ -1338,7 +1338,7 @@ public class SecurityAttributeAsyncClient implements SecurityAttributeAsync {
                         "SecurityAttribute",
                         "UpdateSecurityAttribute",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/security-attribute/20240815/SecurityAttribute/UpdateSecurityAttribute");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, UpdateSecurityAttributeResponse>
                 transformer =
@@ -1394,7 +1394,7 @@ public class SecurityAttributeAsyncClient implements SecurityAttributeAsync {
                         "SecurityAttribute",
                         "UpdateSecurityAttributeNamespace",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/security-attribute/20240815/SecurityAttributeNamespace/UpdateSecurityAttributeNamespace");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, UpdateSecurityAttributeNamespaceResponse>
                 transformer =

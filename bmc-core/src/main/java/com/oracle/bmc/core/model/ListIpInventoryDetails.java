@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core.model;
@@ -84,13 +84,13 @@ public final class ListIpInventoryDetails
             return this;
         }
         /**
-         * List the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartments.
+         * List the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartments.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentList")
         private java.util.List<String> compartmentList;
 
         /**
-         * List the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartments.
+         * List the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartments.
          * @param compartmentList the value to set
          * @return this builder
          **/
@@ -243,7 +243,7 @@ public final class ListIpInventoryDetails
         }
         /**
          * Most List operations paginate results. Results are paginated for the ListInstances operations. When you call a paginated List operation, the response indicates more pages of results by including the opc-next-page header.
-         * For more information, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For more information, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("paginationOffset")
@@ -251,7 +251,7 @@ public final class ListIpInventoryDetails
 
         /**
          * Most List operations paginate results. Results are paginated for the ListInstances operations. When you call a paginated List operation, the response indicates more pages of results by including the opc-next-page header.
-         * For more information, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For more information, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param paginationOffset the value to set
          * @return this builder
@@ -262,7 +262,7 @@ public final class ListIpInventoryDetails
             return this;
         }
         /**
-         * Specifies the maximum number of results displayed per page for a paginated "List" call. For more information, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Specifies the maximum number of results displayed per page for a paginated "List" call. For more information, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          * Example: {@code 50}
          *
          **/
@@ -270,7 +270,7 @@ public final class ListIpInventoryDetails
         private Integer paginationLimit;
 
         /**
-         * Specifies the maximum number of results displayed per page for a paginated "List" call. For more information, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Specifies the maximum number of results displayed per page for a paginated "List" call. For more information, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          * Example: {@code 50}
          *
          * @param paginationLimit the value to set
@@ -374,13 +374,13 @@ public final class ListIpInventoryDetails
     }
 
     /**
-     * List the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartments.
+     * List the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartments.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentList")
     private final java.util.List<String> compartmentList;
 
     /**
-     * List the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartments.
+     * List the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartments.
      * @return the value
      **/
     public java.util.List<String> getCompartmentList() {
@@ -627,7 +627,7 @@ public final class ListIpInventoryDetails
 
     /**
      * Most List operations paginate results. Results are paginated for the ListInstances operations. When you call a paginated List operation, the response indicates more pages of results by including the opc-next-page header.
-     * For more information, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For more information, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("paginationOffset")
@@ -635,7 +635,7 @@ public final class ListIpInventoryDetails
 
     /**
      * Most List operations paginate results. Results are paginated for the ListInstances operations. When you call a paginated List operation, the response indicates more pages of results by including the opc-next-page header.
-     * For more information, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For more information, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      * @return the value
      **/
@@ -644,7 +644,7 @@ public final class ListIpInventoryDetails
     }
 
     /**
-     * Specifies the maximum number of results displayed per page for a paginated "List" call. For more information, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Specifies the maximum number of results displayed per page for a paginated "List" call. For more information, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      * Example: {@code 50}
      *
      **/
@@ -652,7 +652,7 @@ public final class ListIpInventoryDetails
     private final Integer paginationLimit;
 
     /**
-     * Specifies the maximum number of results displayed per page for a paginated "List" call. For more information, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Specifies the maximum number of results displayed per page for a paginated "List" call. For more information, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      * Example: {@code 50}
      *
      * @return the value

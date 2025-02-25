@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.bds;
@@ -265,6 +265,121 @@ public class BdsPaginators {
     }
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listBdsClusterVersions operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListBdsClusterVersionsResponse> listBdsClusterVersionsResponseIterator(
+            final ListBdsClusterVersionsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListBdsClusterVersionsRequest.Builder, ListBdsClusterVersionsRequest,
+                ListBdsClusterVersionsResponse>(
+                new java.util.function.Supplier<ListBdsClusterVersionsRequest.Builder>() {
+                    @Override
+                    public ListBdsClusterVersionsRequest.Builder get() {
+                        return ListBdsClusterVersionsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListBdsClusterVersionsResponse, String>() {
+                    @Override
+                    public String apply(ListBdsClusterVersionsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListBdsClusterVersionsRequest.Builder>,
+                        ListBdsClusterVersionsRequest>() {
+                    @Override
+                    public ListBdsClusterVersionsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListBdsClusterVersionsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListBdsClusterVersionsRequest, ListBdsClusterVersionsResponse>() {
+                    @Override
+                    public ListBdsClusterVersionsResponse apply(
+                            ListBdsClusterVersionsRequest request) {
+                        return client.listBdsClusterVersions(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.bds.model.BdsClusterVersionSummary} objects
+     * contained in responses from the listBdsClusterVersions operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.bds.model.BdsClusterVersionSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.bds.model.BdsClusterVersionSummary>
+            listBdsClusterVersionsRecordIterator(final ListBdsClusterVersionsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListBdsClusterVersionsRequest.Builder, ListBdsClusterVersionsRequest,
+                ListBdsClusterVersionsResponse, com.oracle.bmc.bds.model.BdsClusterVersionSummary>(
+                new java.util.function.Supplier<ListBdsClusterVersionsRequest.Builder>() {
+                    @Override
+                    public ListBdsClusterVersionsRequest.Builder get() {
+                        return ListBdsClusterVersionsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListBdsClusterVersionsResponse, String>() {
+                    @Override
+                    public String apply(ListBdsClusterVersionsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListBdsClusterVersionsRequest.Builder>,
+                        ListBdsClusterVersionsRequest>() {
+                    @Override
+                    public ListBdsClusterVersionsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListBdsClusterVersionsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListBdsClusterVersionsRequest, ListBdsClusterVersionsResponse>() {
+                    @Override
+                    public ListBdsClusterVersionsResponse apply(
+                            ListBdsClusterVersionsRequest request) {
+                        return client.listBdsClusterVersions(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListBdsClusterVersionsResponse,
+                        java.util.List<com.oracle.bmc.bds.model.BdsClusterVersionSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.bds.model.BdsClusterVersionSummary> apply(
+                            ListBdsClusterVersionsResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listBdsInstances operation. This iterable
      * will fetch more data from the server as needed.
      *
@@ -492,6 +607,123 @@ public class BdsPaginators {
                     @Override
                     public java.util.List<com.oracle.bmc.bds.model.BdsMetastoreConfigurationSummary>
                             apply(ListBdsMetastoreConfigurationsResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listIdentityConfigurations operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListIdentityConfigurationsResponse> listIdentityConfigurationsResponseIterator(
+            final ListIdentityConfigurationsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListIdentityConfigurationsRequest.Builder, ListIdentityConfigurationsRequest,
+                ListIdentityConfigurationsResponse>(
+                new java.util.function.Supplier<ListIdentityConfigurationsRequest.Builder>() {
+                    @Override
+                    public ListIdentityConfigurationsRequest.Builder get() {
+                        return ListIdentityConfigurationsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListIdentityConfigurationsResponse, String>() {
+                    @Override
+                    public String apply(ListIdentityConfigurationsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListIdentityConfigurationsRequest.Builder>,
+                        ListIdentityConfigurationsRequest>() {
+                    @Override
+                    public ListIdentityConfigurationsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListIdentityConfigurationsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListIdentityConfigurationsRequest, ListIdentityConfigurationsResponse>() {
+                    @Override
+                    public ListIdentityConfigurationsResponse apply(
+                            ListIdentityConfigurationsRequest request) {
+                        return client.listIdentityConfigurations(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.bds.model.IdentityConfigurationSummary} objects
+     * contained in responses from the listIdentityConfigurations operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.bds.model.IdentityConfigurationSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.bds.model.IdentityConfigurationSummary>
+            listIdentityConfigurationsRecordIterator(
+                    final ListIdentityConfigurationsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListIdentityConfigurationsRequest.Builder, ListIdentityConfigurationsRequest,
+                ListIdentityConfigurationsResponse,
+                com.oracle.bmc.bds.model.IdentityConfigurationSummary>(
+                new java.util.function.Supplier<ListIdentityConfigurationsRequest.Builder>() {
+                    @Override
+                    public ListIdentityConfigurationsRequest.Builder get() {
+                        return ListIdentityConfigurationsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListIdentityConfigurationsResponse, String>() {
+                    @Override
+                    public String apply(ListIdentityConfigurationsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListIdentityConfigurationsRequest.Builder>,
+                        ListIdentityConfigurationsRequest>() {
+                    @Override
+                    public ListIdentityConfigurationsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListIdentityConfigurationsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListIdentityConfigurationsRequest, ListIdentityConfigurationsResponse>() {
+                    @Override
+                    public ListIdentityConfigurationsResponse apply(
+                            ListIdentityConfigurationsRequest request) {
+                        return client.listIdentityConfigurations(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListIdentityConfigurationsResponse,
+                        java.util.List<com.oracle.bmc.bds.model.IdentityConfigurationSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.bds.model.IdentityConfigurationSummary>
+                            apply(ListIdentityConfigurationsResponse response) {
                         return response.getItems();
                     }
                 });

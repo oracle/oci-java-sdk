@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
@@ -485,6 +485,15 @@ public final class CreateAutonomousDatabaseFromBackupTimestampDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isBackupRetentionLocked")
+        private Boolean isBackupRetentionLocked;
+
+        public Builder isBackupRetentionLocked(Boolean isBackupRetentionLocked) {
+            this.isBackupRetentionLocked = isBackupRetentionLocked;
+            this.__explicitlySet__.add("isBackupRetentionLocked");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("secretId")
         private String secretId;
 
@@ -503,13 +512,13 @@ public final class CreateAutonomousDatabaseFromBackupTimestampDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the source Autonomous Database that you will clone to create a new Autonomous Database.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous Database that you will clone to create a new Autonomous Database.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("autonomousDatabaseId")
         private String autonomousDatabaseId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the source Autonomous Database that you will clone to create a new Autonomous Database.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous Database that you will clone to create a new Autonomous Database.
          * @param autonomousDatabaseId the value to set
          * @return this builder
          **/
@@ -569,6 +578,22 @@ public final class CreateAutonomousDatabaseFromBackupTimestampDetails
             this.__explicitlySet__.add("useLatestAvailableBackupTimeStamp");
             return this;
         }
+        /**
+         * A list of the source Autonomous Database's table space number(s) used to create this partial clone from the backup.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("cloneTableSpaceList")
+        private java.util.List<Integer> cloneTableSpaceList;
+
+        /**
+         * A list of the source Autonomous Database's table space number(s) used to create this partial clone from the backup.
+         * @param cloneTableSpaceList the value to set
+         * @return this builder
+         **/
+        public Builder cloneTableSpaceList(java.util.List<Integer> cloneTableSpaceList) {
+            this.cloneTableSpaceList = cloneTableSpaceList;
+            this.__explicitlySet__.add("cloneTableSpaceList");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -626,12 +651,14 @@ public final class CreateAutonomousDatabaseFromBackupTimestampDetails
                             this.isAutoScalingForStorageEnabled,
                             this.databaseEdition,
                             this.dbToolsDetails,
+                            this.isBackupRetentionLocked,
                             this.secretId,
                             this.secretVersionNumber,
                             this.autonomousDatabaseId,
                             this.timestamp,
                             this.cloneType,
-                            this.useLatestAvailableBackupTimeStamp);
+                            this.useLatestAvailableBackupTimeStamp,
+                            this.cloneTableSpaceList);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -792,6 +819,9 @@ public final class CreateAutonomousDatabaseFromBackupTimestampDetails
             if (model.wasPropertyExplicitlySet("dbToolsDetails")) {
                 this.dbToolsDetails(model.getDbToolsDetails());
             }
+            if (model.wasPropertyExplicitlySet("isBackupRetentionLocked")) {
+                this.isBackupRetentionLocked(model.getIsBackupRetentionLocked());
+            }
             if (model.wasPropertyExplicitlySet("secretId")) {
                 this.secretId(model.getSecretId());
             }
@@ -810,6 +840,9 @@ public final class CreateAutonomousDatabaseFromBackupTimestampDetails
             if (model.wasPropertyExplicitlySet("useLatestAvailableBackupTimeStamp")) {
                 this.useLatestAvailableBackupTimeStamp(
                         model.getUseLatestAvailableBackupTimeStamp());
+            }
+            if (model.wasPropertyExplicitlySet("cloneTableSpaceList")) {
+                this.cloneTableSpaceList(model.getCloneTableSpaceList());
             }
             return this;
         }
@@ -878,12 +911,14 @@ public final class CreateAutonomousDatabaseFromBackupTimestampDetails
             Boolean isAutoScalingForStorageEnabled,
             AutonomousDatabaseSummary.DatabaseEdition databaseEdition,
             java.util.List<DatabaseTool> dbToolsDetails,
+            Boolean isBackupRetentionLocked,
             String secretId,
             Integer secretVersionNumber,
             String autonomousDatabaseId,
             java.util.Date timestamp,
             CloneType cloneType,
-            Boolean useLatestAvailableBackupTimeStamp) {
+            Boolean useLatestAvailableBackupTimeStamp,
+            java.util.List<Integer> cloneTableSpaceList) {
         super(
                 subscriptionId,
                 compartmentId,
@@ -935,22 +970,24 @@ public final class CreateAutonomousDatabaseFromBackupTimestampDetails
                 isAutoScalingForStorageEnabled,
                 databaseEdition,
                 dbToolsDetails,
+                isBackupRetentionLocked,
                 secretId,
                 secretVersionNumber);
         this.autonomousDatabaseId = autonomousDatabaseId;
         this.timestamp = timestamp;
         this.cloneType = cloneType;
         this.useLatestAvailableBackupTimeStamp = useLatestAvailableBackupTimeStamp;
+        this.cloneTableSpaceList = cloneTableSpaceList;
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the source Autonomous Database that you will clone to create a new Autonomous Database.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous Database that you will clone to create a new Autonomous Database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("autonomousDatabaseId")
     private final String autonomousDatabaseId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the source Autonomous Database that you will clone to create a new Autonomous Database.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous Database that you will clone to create a new Autonomous Database.
      * @return the value
      **/
     public String getAutonomousDatabaseId() {
@@ -977,6 +1014,7 @@ public final class CreateAutonomousDatabaseFromBackupTimestampDetails
     public enum CloneType {
         Full("FULL"),
         Metadata("METADATA"),
+        Partial("PARTIAL"),
         ;
 
         private final String value;
@@ -1036,6 +1074,20 @@ public final class CreateAutonomousDatabaseFromBackupTimestampDetails
         return useLatestAvailableBackupTimeStamp;
     }
 
+    /**
+     * A list of the source Autonomous Database's table space number(s) used to create this partial clone from the backup.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("cloneTableSpaceList")
+    private final java.util.List<Integer> cloneTableSpaceList;
+
+    /**
+     * A list of the source Autonomous Database's table space number(s) used to create this partial clone from the backup.
+     * @return the value
+     **/
+    public java.util.List<Integer> getCloneTableSpaceList() {
+        return cloneTableSpaceList;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1055,6 +1107,7 @@ public final class CreateAutonomousDatabaseFromBackupTimestampDetails
         sb.append(", cloneType=").append(String.valueOf(this.cloneType));
         sb.append(", useLatestAvailableBackupTimeStamp=")
                 .append(String.valueOf(this.useLatestAvailableBackupTimeStamp));
+        sb.append(", cloneTableSpaceList=").append(String.valueOf(this.cloneTableSpaceList));
         sb.append(")");
         return sb.toString();
     }
@@ -1076,6 +1129,7 @@ public final class CreateAutonomousDatabaseFromBackupTimestampDetails
                 && java.util.Objects.equals(
                         this.useLatestAvailableBackupTimeStamp,
                         other.useLatestAvailableBackupTimeStamp)
+                && java.util.Objects.equals(this.cloneTableSpaceList, other.cloneTableSpaceList)
                 && super.equals(other);
     }
 
@@ -1095,6 +1149,11 @@ public final class CreateAutonomousDatabaseFromBackupTimestampDetails
                         + (this.useLatestAvailableBackupTimeStamp == null
                                 ? 43
                                 : this.useLatestAvailableBackupTimeStamp.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.cloneTableSpaceList == null
+                                ? 43
+                                : this.cloneTableSpaceList.hashCode());
         return result;
     }
 }

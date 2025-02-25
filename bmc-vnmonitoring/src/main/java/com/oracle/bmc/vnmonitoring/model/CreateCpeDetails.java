@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.vnmonitoring.model;
@@ -49,13 +49,13 @@ public final class CreateCpeDetails extends com.oracle.bmc.http.internal.Explici
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the CPE.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the CPE.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the CPE.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the CPE.
          * @param compartmentId the value to set
          * @return this builder
          **/
@@ -148,7 +148,7 @@ public final class CreateCpeDetails extends com.oracle.bmc.http.internal.Explici
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CPE device type. You can provide
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CPE device type. You can provide
          * a value if you want to later generate CPE device configuration content for IPSec connections
          * that use this CPE. You can also call {@link #updateCpe(UpdateCpeRequest) updateCpe} later to
          * provide a value. For a list of possible values, see
@@ -166,7 +166,7 @@ public final class CreateCpeDetails extends com.oracle.bmc.http.internal.Explici
         private String cpeDeviceShapeId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CPE device type. You can provide
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CPE device type. You can provide
          * a value if you want to later generate CPE device configuration content for IPSec connections
          * that use this CPE. You can also call {@link #updateCpe(UpdateCpeRequest) updateCpe} later to
          * provide a value. For a list of possible values, see
@@ -264,13 +264,13 @@ public final class CreateCpeDetails extends com.oracle.bmc.http.internal.Explici
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the CPE.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the CPE.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the CPE.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the CPE.
      * @return the value
      **/
     public String getCompartmentId() {
@@ -352,7 +352,7 @@ public final class CreateCpeDetails extends com.oracle.bmc.http.internal.Explici
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CPE device type. You can provide
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CPE device type. You can provide
      * a value if you want to later generate CPE device configuration content for IPSec connections
      * that use this CPE. You can also call {@link #updateCpe(UpdateCpeRequest) updateCpe} later to
      * provide a value. For a list of possible values, see
@@ -370,7 +370,7 @@ public final class CreateCpeDetails extends com.oracle.bmc.http.internal.Explici
     private final String cpeDeviceShapeId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CPE device type. You can provide
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CPE device type. You can provide
      * a value if you want to later generate CPE device configuration content for IPSec connections
      * that use this CPE. You can also call {@link #updateCpe(UpdateCpeRequest) updateCpe} later to
      * provide a value. For a list of possible values, see

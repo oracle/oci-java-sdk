@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.licensemanager;
@@ -8,7 +8,7 @@ import com.oracle.bmc.licensemanager.requests.*;
 import com.oracle.bmc.licensemanager.responses.*;
 
 /**
- * Use the License Manager API to manage product licenses and license records. For more information, see [License Manager Overview](https://docs.cloud.oracle.com/iaas/Content/LicenseManager/Concepts/licensemanageroverview.htm).
+ * Use the License Manager API to manage product licenses and license records. For more information, see [License Manager Overview](https://docs.oracle.com/iaas/Content/LicenseManager/Concepts/licensemanageroverview.htm).
  * This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by default if no circuit breaker configuration is defined by the user.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220430")
@@ -67,7 +67,7 @@ public interface LicenseManager extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/licensemanager/BulkUploadLicenseRecordsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use BulkUploadLicenseRecords API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/licensemanager/BulkUploadLicenseRecordsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use BulkUploadLicenseRecords API.
      */
     BulkUploadLicenseRecordsResponse bulkUploadLicenseRecords(
             BulkUploadLicenseRecordsRequest request);
@@ -80,7 +80,7 @@ public interface LicenseManager extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/licensemanager/CreateLicenseRecordExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateLicenseRecord API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/licensemanager/CreateLicenseRecordExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateLicenseRecord API.
      */
     CreateLicenseRecordResponse createLicenseRecord(CreateLicenseRecordRequest request);
 
@@ -92,7 +92,7 @@ public interface LicenseManager extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/licensemanager/CreateProductLicenseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateProductLicense API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/licensemanager/CreateProductLicenseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateProductLicense API.
      */
     CreateProductLicenseResponse createProductLicense(CreateProductLicenseRequest request);
 
@@ -104,7 +104,7 @@ public interface LicenseManager extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/licensemanager/DeleteLicenseRecordExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteLicenseRecord API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/licensemanager/DeleteLicenseRecordExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteLicenseRecord API.
      */
     DeleteLicenseRecordResponse deleteLicenseRecord(DeleteLicenseRecordRequest request);
 
@@ -116,7 +116,7 @@ public interface LicenseManager extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/licensemanager/DeleteProductLicenseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteProductLicense API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/licensemanager/DeleteProductLicenseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteProductLicense API.
      */
     DeleteProductLicenseResponse deleteProductLicense(DeleteProductLicenseRequest request);
 
@@ -128,7 +128,7 @@ public interface LicenseManager extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/licensemanager/GetBulkUploadTemplateExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetBulkUploadTemplate API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/licensemanager/GetBulkUploadTemplateExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetBulkUploadTemplate API.
      */
     GetBulkUploadTemplateResponse getBulkUploadTemplate(GetBulkUploadTemplateRequest request);
 
@@ -140,7 +140,7 @@ public interface LicenseManager extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/licensemanager/GetConfigurationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetConfiguration API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/licensemanager/GetConfigurationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetConfiguration API.
      */
     GetConfigurationResponse getConfiguration(GetConfigurationRequest request);
 
@@ -152,7 +152,7 @@ public interface LicenseManager extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/licensemanager/GetLicenseMetricExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetLicenseMetric API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/licensemanager/GetLicenseMetricExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetLicenseMetric API.
      */
     GetLicenseMetricResponse getLicenseMetric(GetLicenseMetricRequest request);
 
@@ -164,7 +164,7 @@ public interface LicenseManager extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/licensemanager/GetLicenseRecordExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetLicenseRecord API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/licensemanager/GetLicenseRecordExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetLicenseRecord API.
      */
     GetLicenseRecordResponse getLicenseRecord(GetLicenseRecordRequest request);
 
@@ -176,7 +176,7 @@ public interface LicenseManager extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/licensemanager/GetProductLicenseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetProductLicense API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/licensemanager/GetProductLicenseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetProductLicense API.
      */
     GetProductLicenseResponse getProductLicense(GetProductLicenseRequest request);
 
@@ -188,7 +188,7 @@ public interface LicenseManager extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/licensemanager/ListLicenseRecordsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListLicenseRecords API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/licensemanager/ListLicenseRecordsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListLicenseRecords API.
      */
     ListLicenseRecordsResponse listLicenseRecords(ListLicenseRecordsRequest request);
 
@@ -200,7 +200,7 @@ public interface LicenseManager extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/licensemanager/ListProductLicenseConsumersExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListProductLicenseConsumers API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/licensemanager/ListProductLicenseConsumersExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListProductLicenseConsumers API.
      */
     ListProductLicenseConsumersResponse listProductLicenseConsumers(
             ListProductLicenseConsumersRequest request);
@@ -213,7 +213,7 @@ public interface LicenseManager extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/licensemanager/ListProductLicensesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListProductLicenses API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/licensemanager/ListProductLicensesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListProductLicenses API.
      */
     ListProductLicensesResponse listProductLicenses(ListProductLicensesRequest request);
 
@@ -225,7 +225,7 @@ public interface LicenseManager extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/licensemanager/ListTopUtilizedProductLicensesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListTopUtilizedProductLicenses API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/licensemanager/ListTopUtilizedProductLicensesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListTopUtilizedProductLicenses API.
      */
     ListTopUtilizedProductLicensesResponse listTopUtilizedProductLicenses(
             ListTopUtilizedProductLicensesRequest request);
@@ -238,7 +238,7 @@ public interface LicenseManager extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/licensemanager/ListTopUtilizedResourcesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListTopUtilizedResources API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/licensemanager/ListTopUtilizedResourcesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListTopUtilizedResources API.
      */
     ListTopUtilizedResourcesResponse listTopUtilizedResources(
             ListTopUtilizedResourcesRequest request);
@@ -251,7 +251,7 @@ public interface LicenseManager extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/licensemanager/UpdateConfigurationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateConfiguration API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/licensemanager/UpdateConfigurationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateConfiguration API.
      */
     UpdateConfigurationResponse updateConfiguration(UpdateConfigurationRequest request);
 
@@ -263,7 +263,7 @@ public interface LicenseManager extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/licensemanager/UpdateLicenseRecordExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateLicenseRecord API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/licensemanager/UpdateLicenseRecordExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateLicenseRecord API.
      */
     UpdateLicenseRecordResponse updateLicenseRecord(UpdateLicenseRecordRequest request);
 
@@ -275,7 +275,7 @@ public interface LicenseManager extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/licensemanager/UpdateProductLicenseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateProductLicense API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/licensemanager/UpdateProductLicenseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateProductLicense API.
      */
     UpdateProductLicenseResponse updateProductLicense(UpdateProductLicenseRequest request);
 

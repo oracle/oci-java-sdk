@@ -5,19 +5,19 @@
 
 oci-java-sdk provides an SDK for Java that you can use to manage your Oracle Cloud Infrastructure resources.
 
-The project is open source and maintained by Oracle Corp. The home page for the project is [here](https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/javasdk.htm).
+The project is open source and maintained by Oracle Corp. The home page for the project is [here](https://docs.oracle.com/iaas/Content/API/SDKDocs/javasdk.htm).
 
 ## Documentation
 
-Full documentation, including prerequisites, installation, supported JDK versions and configuration instructions, is available [here](https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/javasdk.htm).
+Full documentation, including prerequisites, installation, supported JDK versions and configuration instructions, is available [here](https://docs.oracle.com/iaas/Content/API/SDKDocs/javasdk.htm).
 
-API reference can be found [here](https://docs.cloud.oracle.com/iaas/tools/java/latest/).
+API reference can be found [here](https://docs.oracle.com/iaas/tools/java/latest/).
 
 ## Installation
 
-For basic set up, see [Getting Started](https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/javasdkgettingstarted.htm).
+For basic set up, see [Getting Started](https://docs.oracle.com/iaas/Content/API/SDKDocs/javasdkgettingstarted.htm).
 
-For details on compatibility, advanced configurations, and add-ons, see [Configuration](https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/javasdkconfig.htm).
+For details on compatibility, advanced configurations, and add-ons, see [Configuration](https://docs.oracle.com/iaas/Content/API/SDKDocs/javasdkconfig.htm).
 
 - *Circuit Breaker*: By default, circuit breaker feature is enabled, if it is not expected, please explicitly set the environment variable:
 ```
@@ -50,7 +50,7 @@ Where `compartment_id`, `bucket_name`, and `object_name` should be substituted w
 
 ## Help
 
-For details on contributions, questions, or feedback, see [Contact Us](https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/javasdk.htm#ContactUs).
+For details on contributions, questions, or feedback, see [Contact Us](https://docs.oracle.com/iaas/Content/API/SDKDocs/javasdk.htm#ContactUs).
 
 ## Changes
 
@@ -64,7 +64,7 @@ Oracle gratefully acknowledges the contributions to oci-java-sdk that have been 
 
 ## Known Issues
 
-You can find information on any known issues with the SDK [here](https://docs.cloud.oracle.com/iaas/Content/knownissues.htm) and under the [“Issues” tab of this GitHub repository](https://github.com/oracle/oci-java-sdk/issues).
+You can find information on any known issues with the SDK [here](https://docs.oracle.com/iaas/Content/knownissues.htm) and under the [“Issues” tab of this GitHub repository](https://github.com/oracle/oci-java-sdk/issues).
 
 ### Potential data corruption issue with OCI Java SDK on binary data upload with `RefreshableOnNotAuthenticatedProvider`
 
@@ -72,7 +72,7 @@ You can find information on any known issues with the SDK [here](https://docs.cl
 
 **Workaround**: Update the OCI Java SDK client to version 1.25.2 or later. For more information about this issue and workarounds, see [Potential data corruption issue for OCI Java SDK on binary data upload with `RefreshableOnNotAuthenticatedProvider`](https://github.com/oracle/oci-java-sdk/issues/255).
 
-**Direct link to this issue**: [Potential data corruption issue with OCI Java SDK on binary data upload with `RefreshableOnNotAuthenticatedProvider`](https://docs.cloud.oracle.com/en-us/iaas/Content/knownissues.htm#javaSDKStreamDataCorrupt)
+**Direct link to this issue**: [Potential data corruption issue with OCI Java SDK on binary data upload with `RefreshableOnNotAuthenticatedProvider`](https://docs.oracle.com/en-us/iaas/Content/knownissues.htm#javaSDKStreamDataCorrupt)
 
 ### Program hangs for an indefinite time
 
@@ -96,7 +96,7 @@ For more info on Apache Connector, please look into ApacheConnector-README.
 
 OCI Java SDK displays wrong service details when a BmcException is thrown. For example, exception generated from service A could see information about service B. This behavior can be seen in versions `2.23.0` to `2.34.0` making it thread unsafe. Please update to version `2.35.0` which has the fix for this issue.
  
-You can find information on any known issues with the SDK [here](https://docs.cloud.oracle.com/iaas/Content/knownissues.htm) and under the “Issues” tab of this GitHub repository.
+You can find information on any known issues with the SDK [here](https://docs.oracle.com/iaas/Content/knownissues.htm) and under the “Issues” tab of this GitHub repository.
 
 ## License
 

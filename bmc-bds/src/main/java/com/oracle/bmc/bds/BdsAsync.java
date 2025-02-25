@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.bds;
@@ -77,6 +77,40 @@ public interface BdsAsync extends AutoCloseable {
                                     ActivateBdsMetastoreConfigurationRequest,
                                     ActivateBdsMetastoreConfigurationResponse>
                             handler);
+
+    /**
+     * Activate IAM user sync configuration for the given identity configuration
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ActivateIamUserSyncConfigurationResponse>
+            activateIamUserSyncConfiguration(
+                    ActivateIamUserSyncConfigurationRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ActivateIamUserSyncConfigurationRequest,
+                                    ActivateIamUserSyncConfigurationResponse>
+                            handler);
+
+    /**
+     * Activate UPST configuration for the given identity configuration
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ActivateUpstConfigurationResponse> activateUpstConfiguration(
+            ActivateUpstConfigurationRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ActivateUpstConfigurationRequest, ActivateUpstConfigurationResponse>
+                    handler);
 
     /**
      * Add an autoscale configuration to the cluster.
@@ -307,6 +341,22 @@ public interface BdsAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Create an identity configuration for the cluster
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateIdentityConfigurationResponse> createIdentityConfiguration(
+            CreateIdentityConfigurationRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateIdentityConfigurationRequest, CreateIdentityConfigurationResponse>
+                    handler);
+
+    /**
      * Add a node volume backup configuration to the cluster for an indicated node type or node.
      *
      *
@@ -364,6 +414,40 @@ public interface BdsAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Deactivate the IAM user sync configuration.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeactivateIamUserSyncConfigurationResponse>
+            deactivateIamUserSyncConfiguration(
+                    DeactivateIamUserSyncConfigurationRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    DeactivateIamUserSyncConfigurationRequest,
+                                    DeactivateIamUserSyncConfigurationResponse>
+                            handler);
+
+    /**
+     * Deactivate the UPST configuration represented by the provided ID.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeactivateUpstConfigurationResponse> deactivateUpstConfiguration(
+            DeactivateUpstConfigurationRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeactivateUpstConfigurationRequest, DeactivateUpstConfigurationResponse>
+                    handler);
+
+    /**
      * Deletes the user's API key represented by the provided ID.
      *
      * @param request The request object containing the details to send
@@ -411,6 +495,22 @@ public interface BdsAsync extends AutoCloseable {
                                     DeleteBdsMetastoreConfigurationRequest,
                                     DeleteBdsMetastoreConfigurationResponse>
                             handler);
+
+    /**
+     * Delete the identity configuration represented by the provided ID. Deletion is only allowed if this identity configuration is not associated with any active IAM user sync configuration or UPST configuration.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteIdentityConfigurationResponse> deleteIdentityConfiguration(
+            DeleteIdentityConfigurationRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteIdentityConfigurationRequest, DeleteIdentityConfigurationResponse>
+                    handler);
 
     /**
      * Delete the NodeBackup represented by the provided ID.
@@ -577,6 +677,22 @@ public interface BdsAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             GetBdsMetastoreConfigurationRequest,
                             GetBdsMetastoreConfigurationResponse>
+                    handler);
+
+    /**
+     * Get details of one identity config on the cluster
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetIdentityConfigurationResponse> getIdentityConfiguration(
+            GetIdentityConfigurationRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetIdentityConfigurationRequest, GetIdentityConfigurationResponse>
                     handler);
 
     /**
@@ -747,6 +863,23 @@ public interface BdsAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Returns a list of cluster versions with associated odh and bds versions.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListBdsClusterVersionsResponse> listBdsClusterVersions(
+            ListBdsClusterVersionsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListBdsClusterVersionsRequest, ListBdsClusterVersionsResponse>
+                    handler);
+
+    /**
      * Returns a list of all Big Data Service clusters in a compartment.
      *
      *
@@ -780,6 +913,23 @@ public interface BdsAsync extends AutoCloseable {
                                     ListBdsMetastoreConfigurationsRequest,
                                     ListBdsMetastoreConfigurationsResponse>
                             handler);
+
+    /**
+     * Returns a list of all identity configurations associated with this Big Data Service cluster.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListIdentityConfigurationsResponse> listIdentityConfigurations(
+            ListIdentityConfigurationsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListIdentityConfigurationsRequest, ListIdentityConfigurationsResponse>
+                    handler);
 
     /**
      * Returns information about the NodeBackupConfigurations.
@@ -949,6 +1099,42 @@ public interface BdsAsync extends AutoCloseable {
             ListWorkRequestsRequest request,
             com.oracle.bmc.responses.AsyncHandler<ListWorkRequestsRequest, ListWorkRequestsResponse>
                     handler);
+
+    /**
+     * Refresh confidential application for the given identity configuration in case of any update to the confidential application (e.g. regenerated client secret)
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<RefreshConfidentialApplicationResponse>
+            refreshConfidentialApplication(
+                    RefreshConfidentialApplicationRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    RefreshConfidentialApplicationRequest,
+                                    RefreshConfidentialApplicationResponse>
+                            handler);
+
+    /**
+     * Refresh token exchange kerberos principal keytab for the UPST enabled identity configuration
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<RefreshUpstTokenExchangeKeytabResponse>
+            refreshUpstTokenExchangeKeytab(
+                    RefreshUpstTokenExchangeKeytabRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    RefreshUpstTokenExchangeKeytabRequest,
+                                    RefreshUpstTokenExchangeKeytabResponse>
+                            handler);
 
     /**
      * Deletes an autoscale configuration.
@@ -1220,6 +1406,22 @@ public interface BdsAsync extends AutoCloseable {
                                     UpdateBdsMetastoreConfigurationRequest,
                                     UpdateBdsMetastoreConfigurationResponse>
                             handler);
+
+    /**
+     * Update the IAM user sync and UPST configuration for the specified identity configuration
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateIdentityConfigurationResponse> updateIdentityConfiguration(
+            UpdateIdentityConfigurationRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateIdentityConfigurationRequest, UpdateIdentityConfigurationResponse>
+                    handler);
 
     /**
      * Updates fields on NodeBackupConfiguration, including the name, the schedule.

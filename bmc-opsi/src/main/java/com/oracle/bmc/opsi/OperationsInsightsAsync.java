@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.opsi;
@@ -10,7 +10,7 @@ import com.oracle.bmc.opsi.responses.*;
 /**
  * Use the Ops Insights API to perform data extraction operations to obtain database
  * resource utilization, performance statistics, and reference information. For more information,
- * see [About Oracle Cloud Infrastructure Ops Insights](https://docs.cloud.oracle.com/en-us/iaas/operations-insights/doc/operations-insights.html).
+ * see [About Oracle Cloud Infrastructure Ops Insights](https://docs.oracle.com/iaas/en-us/iaas/operations-insights/doc/operations-insights.html).
  *
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
@@ -165,6 +165,24 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                     com.oracle.bmc.responses.AsyncHandler<
                                     ChangeExadataInsightCompartmentRequest,
                                     ChangeExadataInsightCompartmentResponse>
+                            handler);
+
+    /**
+     * Change the connection details of an External MySQL database insight. When provided, If-Match is checked against ETag values of the resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeExternalMysqlDatabaseInsightConnectionResponse>
+            changeExternalMysqlDatabaseInsightConnection(
+                    ChangeExternalMysqlDatabaseInsightConnectionRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeExternalMysqlDatabaseInsightConnectionRequest,
+                                    ChangeExternalMysqlDatabaseInsightConnectionResponse>
                             handler);
 
     /**

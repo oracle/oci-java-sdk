@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.filestorage.model;
@@ -33,6 +33,7 @@ public final class FileSystemSummary extends com.oracle.bmc.http.internal.Explic
         "locks",
         "freeformTags",
         "definedTags",
+        "systemTags",
         "kmsKeyId",
         "sourceDetails",
         "isCloneParent",
@@ -51,6 +52,7 @@ public final class FileSystemSummary extends com.oracle.bmc.http.internal.Explic
             java.util.List<ResourceLock> locks,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.Map<String, java.util.Map<String, Object>> systemTags,
             String kmsKeyId,
             SourceDetails sourceDetails,
             Boolean isCloneParent,
@@ -68,6 +70,7 @@ public final class FileSystemSummary extends com.oracle.bmc.http.internal.Explic
         this.locks = locks;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
+        this.systemTags = systemTags;
         this.kmsKeyId = kmsKeyId;
         this.sourceDetails = sourceDetails;
         this.isCloneParent = isCloneParent;
@@ -127,13 +130,13 @@ public final class FileSystemSummary extends com.oracle.bmc.http.internal.Explic
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment that contains the file system.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the file system.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment that contains the file system.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the file system.
          * @param compartmentId the value to set
          * @return this builder
          **/
@@ -167,13 +170,13 @@ public final class FileSystemSummary extends com.oracle.bmc.http.internal.Explic
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the file system.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the file system.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system.
          * @param id the value to set
          * @return this builder
          **/
@@ -241,7 +244,7 @@ public final class FileSystemSummary extends com.oracle.bmc.http.internal.Explic
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair
          *  with no predefined name, type, or namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * Example: {@code {"Department": "Finance"}}
          *
          **/
@@ -251,7 +254,7 @@ public final class FileSystemSummary extends com.oracle.bmc.http.internal.Explic
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair
          *  with no predefined name, type, or namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * Example: {@code {"Department": "Finance"}}
          *
          * @param freeformTags the value to set
@@ -264,7 +267,7 @@ public final class FileSystemSummary extends com.oracle.bmc.http.internal.Explic
         }
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
          **/
@@ -273,7 +276,7 @@ public final class FileSystemSummary extends com.oracle.bmc.http.internal.Explic
 
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
          * @param definedTags the value to set
@@ -286,14 +289,34 @@ public final class FileSystemSummary extends com.oracle.bmc.http.internal.Explic
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the KMS key used to encrypt the encryption keys associated with this file system.
+         * System tags for this resource.
+         * System tags are applied to resources by internal OCI services.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+        private java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+        /**
+         * System tags for this resource.
+         * System tags are applied to resources by internal OCI services.
+         *
+         * @param systemTags the value to set
+         * @return this builder
+         **/
+        public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+            this.systemTags = systemTags;
+            this.__explicitlySet__.add("systemTags");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the KMS key used to encrypt the encryption keys associated with this file system.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
         private String kmsKeyId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the KMS key used to encrypt the encryption keys associated with this file system.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the KMS key used to encrypt the encryption keys associated with this file system.
          *
          * @param kmsKeyId the value to set
          * @return this builder
@@ -314,7 +337,7 @@ public final class FileSystemSummary extends com.oracle.bmc.http.internal.Explic
         }
         /**
          * Specifies whether the file system has been cloned.
-         * See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
+         * See [Cloning a File System](https://docs.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("isCloneParent")
@@ -322,7 +345,7 @@ public final class FileSystemSummary extends com.oracle.bmc.http.internal.Explic
 
         /**
          * Specifies whether the file system has been cloned.
-         * See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
+         * See [Cloning a File System](https://docs.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
          *
          * @param isCloneParent the value to set
          * @return this builder
@@ -336,7 +359,7 @@ public final class FileSystemSummary extends com.oracle.bmc.http.internal.Explic
          * Specifies whether the data has finished copying from the source to the clone.
          * Hydration can take up to several hours to complete depending on the size of the source.
          * The source and clone remain available during hydration, but there may be some performance impact.
-         * See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm#hydration).
+         * See [Cloning a File System](https://docs.oracle.com/iaas/Content/File/Tasks/cloningFS.htm#hydration).
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("isHydrated")
@@ -346,7 +369,7 @@ public final class FileSystemSummary extends com.oracle.bmc.http.internal.Explic
          * Specifies whether the data has finished copying from the source to the clone.
          * Hydration can take up to several hours to complete depending on the size of the source.
          * The source and clone remain available during hydration, but there may be some performance impact.
-         * See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm#hydration).
+         * See [Cloning a File System](https://docs.oracle.com/iaas/Content/File/Tasks/cloningFS.htm#hydration).
          *
          * @param isHydrated the value to set
          * @return this builder
@@ -405,6 +428,7 @@ public final class FileSystemSummary extends com.oracle.bmc.http.internal.Explic
                             this.locks,
                             this.freeformTags,
                             this.definedTags,
+                            this.systemTags,
                             this.kmsKeyId,
                             this.sourceDetails,
                             this.isCloneParent,
@@ -448,6 +472,9 @@ public final class FileSystemSummary extends com.oracle.bmc.http.internal.Explic
             }
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("systemTags")) {
+                this.systemTags(model.getSystemTags());
             }
             if (model.wasPropertyExplicitlySet("kmsKeyId")) {
                 this.kmsKeyId(model.getKmsKeyId());
@@ -527,13 +554,13 @@ public final class FileSystemSummary extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment that contains the file system.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the file system.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment that contains the file system.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the file system.
      * @return the value
      **/
     public String getCompartmentId() {
@@ -563,13 +590,13 @@ public final class FileSystemSummary extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the file system.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the file system.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system.
      * @return the value
      **/
     public String getId() {
@@ -681,7 +708,7 @@ public final class FileSystemSummary extends com.oracle.bmc.http.internal.Explic
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair
      *  with no predefined name, type, or namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * Example: {@code {"Department": "Finance"}}
      *
      **/
@@ -691,7 +718,7 @@ public final class FileSystemSummary extends com.oracle.bmc.http.internal.Explic
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair
      *  with no predefined name, type, or namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * Example: {@code {"Department": "Finance"}}
      *
      * @return the value
@@ -702,7 +729,7 @@ public final class FileSystemSummary extends com.oracle.bmc.http.internal.Explic
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      **/
@@ -711,7 +738,7 @@ public final class FileSystemSummary extends com.oracle.bmc.http.internal.Explic
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      * @return the value
@@ -721,14 +748,32 @@ public final class FileSystemSummary extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the KMS key used to encrypt the encryption keys associated with this file system.
+     * System tags for this resource.
+     * System tags are applied to resources by internal OCI services.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+    private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+    /**
+     * System tags for this resource.
+     * System tags are applied to resources by internal OCI services.
+     *
+     * @return the value
+     **/
+    public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
+        return systemTags;
+    }
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the KMS key used to encrypt the encryption keys associated with this file system.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
     private final String kmsKeyId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the KMS key used to encrypt the encryption keys associated with this file system.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the KMS key used to encrypt the encryption keys associated with this file system.
      *
      * @return the value
      **/
@@ -745,7 +790,7 @@ public final class FileSystemSummary extends com.oracle.bmc.http.internal.Explic
 
     /**
      * Specifies whether the file system has been cloned.
-     * See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
+     * See [Cloning a File System](https://docs.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isCloneParent")
@@ -753,7 +798,7 @@ public final class FileSystemSummary extends com.oracle.bmc.http.internal.Explic
 
     /**
      * Specifies whether the file system has been cloned.
-     * See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
+     * See [Cloning a File System](https://docs.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
      *
      * @return the value
      **/
@@ -765,7 +810,7 @@ public final class FileSystemSummary extends com.oracle.bmc.http.internal.Explic
      * Specifies whether the data has finished copying from the source to the clone.
      * Hydration can take up to several hours to complete depending on the size of the source.
      * The source and clone remain available during hydration, but there may be some performance impact.
-     * See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm#hydration).
+     * See [Cloning a File System](https://docs.oracle.com/iaas/Content/File/Tasks/cloningFS.htm#hydration).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isHydrated")
@@ -775,7 +820,7 @@ public final class FileSystemSummary extends com.oracle.bmc.http.internal.Explic
      * Specifies whether the data has finished copying from the source to the clone.
      * Hydration can take up to several hours to complete depending on the size of the source.
      * The source and clone remain available during hydration, but there may be some performance impact.
-     * See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm#hydration).
+     * See [Cloning a File System](https://docs.oracle.com/iaas/Content/File/Tasks/cloningFS.htm#hydration).
      *
      * @return the value
      **/
@@ -884,6 +929,7 @@ public final class FileSystemSummary extends com.oracle.bmc.http.internal.Explic
         sb.append(", locks=").append(String.valueOf(this.locks));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", systemTags=").append(String.valueOf(this.systemTags));
         sb.append(", kmsKeyId=").append(String.valueOf(this.kmsKeyId));
         sb.append(", sourceDetails=").append(String.valueOf(this.sourceDetails));
         sb.append(", isCloneParent=").append(String.valueOf(this.isCloneParent));
@@ -914,6 +960,7 @@ public final class FileSystemSummary extends com.oracle.bmc.http.internal.Explic
                 && java.util.Objects.equals(this.locks, other.locks)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.systemTags, other.systemTags)
                 && java.util.Objects.equals(this.kmsKeyId, other.kmsKeyId)
                 && java.util.Objects.equals(this.sourceDetails, other.sourceDetails)
                 && java.util.Objects.equals(this.isCloneParent, other.isCloneParent)
@@ -945,6 +992,7 @@ public final class FileSystemSummary extends com.oracle.bmc.http.internal.Explic
         result = (result * PRIME) + (this.locks == null ? 43 : this.locks.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
         result = (result * PRIME) + (this.kmsKeyId == null ? 43 : this.kmsKeyId.hashCode());
         result =
                 (result * PRIME)

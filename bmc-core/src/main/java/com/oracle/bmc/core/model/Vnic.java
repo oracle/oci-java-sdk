@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core.model;
@@ -10,12 +10,12 @@ package com.oracle.bmc.core.model;
  * through that subnet. Each instance has a *primary VNIC* that is automatically
  * created and attached during launch. You can add *secondary VNICs* to an
  * instance after it's launched. For more information, see
- * [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
+ * [Virtual Network Interface Cards (VNICs)](https://docs.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
  * <p>
  * Each VNIC has a *primary private IP* that is automatically assigned during launch.
  * You can add *secondary private IPs* to a VNIC after it's created. For more
  * information, see {@link #createPrivateIp(CreatePrivateIpRequest) createPrivateIp} and
- * [IP Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingIPaddresses.htm).
+ * [IP Addresses](https://docs.oracle.com/iaas/Content/Network/Tasks/managingIPaddresses.htm).
  * <p>
  *
  * If you are an Oracle Cloud VMware Solution customer, you will have secondary VNICs
@@ -25,7 +25,7 @@ package com.oracle.bmc.core.model;
  * <p>
  * To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized,
  * talk to an administrator. If you're an administrator who needs to write policies to give users access, see
- * [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
+ * [Getting Started with Policies](https://docs.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -59,7 +59,8 @@ public final class Vnic extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
         "skipSourceDestCheck",
         "subnetId",
         "timeCreated",
-        "ipv6Addresses"
+        "ipv6Addresses",
+        "routeTableId"
     })
     public Vnic(
             String availabilityDomain,
@@ -80,7 +81,8 @@ public final class Vnic extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
             Boolean skipSourceDestCheck,
             String subnetId,
             java.util.Date timeCreated,
-            java.util.List<String> ipv6Addresses) {
+            java.util.List<String> ipv6Addresses,
+            String routeTableId) {
         super();
         this.availabilityDomain = availabilityDomain;
         this.compartmentId = compartmentId;
@@ -101,6 +103,7 @@ public final class Vnic extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
         this.subnetId = subnetId;
         this.timeCreated = timeCreated;
         this.ipv6Addresses = ipv6Addresses;
+        this.routeTableId = routeTableId;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -128,13 +131,13 @@ public final class Vnic extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the VNIC.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the VNIC.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the VNIC.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the VNIC.
          * @param compartmentId the value to set
          * @return this builder
          **/
@@ -145,7 +148,7 @@ public final class Vnic extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
         }
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a
-         * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * <p>
          * Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
@@ -155,7 +158,7 @@ public final class Vnic extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
 
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a
-         * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * <p>
          * Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
@@ -189,7 +192,9 @@ public final class Vnic extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
             return this;
         }
         /**
-         * Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.
+         * [Security attributes](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels
+         * for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm)
+         * (ZPR) policy to control access to ZPR-supported resources.
          * <p>
          * Example: {@code {"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}}
          *
@@ -198,7 +203,9 @@ public final class Vnic extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
         private java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
 
         /**
-         * Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.
+         * [Security attributes](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels
+         * for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm)
+         * (ZPR) policy to control access to ZPR-supported resources.
          * <p>
          * Example: {@code {"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}}
          *
@@ -213,7 +220,7 @@ public final class Vnic extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
         }
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no
-         * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * <p>
          * Example: {@code {"Department": "Finance"}}
          *
@@ -223,7 +230,7 @@ public final class Vnic extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
 
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no
-         * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * <p>
          * Example: {@code {"Department": "Finance"}}
          *
@@ -244,7 +251,7 @@ public final class Vnic extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
          * [RFC 1123](https://tools.ietf.org/html/rfc1123).
          * <p>
          * For more information, see
-         * [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
+         * [DNS in Your Virtual Cloud Network](https://docs.oracle.com/iaas/Content/Network/Concepts/dns.htm).
          * <p>
          * Example: {@code bminstance1}
          *
@@ -261,7 +268,7 @@ public final class Vnic extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
          * [RFC 1123](https://tools.ietf.org/html/rfc1123).
          * <p>
          * For more information, see
-         * [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
+         * [DNS in Your Virtual Cloud Network](https://docs.oracle.com/iaas/Content/Network/Concepts/dns.htm).
          * <p>
          * Example: {@code bminstance1}
          *
@@ -274,13 +281,13 @@ public final class Vnic extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC.
          * @param id the value to set
          * @return this builder
          **/
@@ -389,7 +396,7 @@ public final class Vnic extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
         }
         /**
          * If the VNIC belongs to a VLAN as part of the Oracle Cloud VMware Solution (instead of
-         * belonging to a subnet), the {@code vlanId} is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN the VNIC is in. See
+         * belonging to a subnet), the {@code vlanId} is the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN the VNIC is in. See
          * {@link Vlan}. If the VNIC is instead in a subnet, {@code subnetId} has a value.
          *
          **/
@@ -398,7 +405,7 @@ public final class Vnic extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
 
         /**
          * If the VNIC belongs to a VLAN as part of the Oracle Cloud VMware Solution (instead of
-         * belonging to a subnet), the {@code vlanId} is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN the VNIC is in. See
+         * belonging to a subnet), the {@code vlanId} is the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN the VNIC is in. See
          * {@link Vlan}. If the VNIC is instead in a subnet, {@code subnetId} has a value.
          *
          * @param vlanId the value to set
@@ -455,7 +462,7 @@ public final class Vnic extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
          * Whether the source/destination check is disabled on the VNIC.
          * Defaults to {@code false}, which means the check is performed. For information
          * about why you would skip the source/destination check, see
-         * [Using a Private IP as a Route Target](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip).
+         * [Using a Private IP as a Route Target](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip).
          * <p>
          *
          * If the VNIC belongs to a VLAN as part of the Oracle Cloud VMware Solution (instead of
@@ -472,7 +479,7 @@ public final class Vnic extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
          * Whether the source/destination check is disabled on the VNIC.
          * Defaults to {@code false}, which means the check is performed. For information
          * about why you would skip the source/destination check, see
-         * [Using a Private IP as a Route Target](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip).
+         * [Using a Private IP as a Route Target](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip).
          * <p>
          *
          * If the VNIC belongs to a VLAN as part of the Oracle Cloud VMware Solution (instead of
@@ -490,13 +497,13 @@ public final class Vnic extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the VNIC is in.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the VNIC is in.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
         private String subnetId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the VNIC is in.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the VNIC is in.
          * @param subnetId the value to set
          * @return this builder
          **/
@@ -549,6 +556,26 @@ public final class Vnic extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
             this.__explicitlySet__.add("ipv6Addresses");
             return this;
         }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the IP address or VNIC will use. For more information, see
+         * [Source Based Routing](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing).
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("routeTableId")
+        private String routeTableId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the IP address or VNIC will use. For more information, see
+         * [Source Based Routing](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing).
+         *
+         * @param routeTableId the value to set
+         * @return this builder
+         **/
+        public Builder routeTableId(String routeTableId) {
+            this.routeTableId = routeTableId;
+            this.__explicitlySet__.add("routeTableId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -574,7 +601,8 @@ public final class Vnic extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
                             this.skipSourceDestCheck,
                             this.subnetId,
                             this.timeCreated,
-                            this.ipv6Addresses);
+                            this.ipv6Addresses,
+                            this.routeTableId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -640,6 +668,9 @@ public final class Vnic extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
             if (model.wasPropertyExplicitlySet("ipv6Addresses")) {
                 this.ipv6Addresses(model.getIpv6Addresses());
             }
+            if (model.wasPropertyExplicitlySet("routeTableId")) {
+                this.routeTableId(model.getRouteTableId());
+            }
             return this;
         }
     }
@@ -676,13 +707,13 @@ public final class Vnic extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the VNIC.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the VNIC.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the VNIC.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the VNIC.
      * @return the value
      **/
     public String getCompartmentId() {
@@ -691,7 +722,7 @@ public final class Vnic extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a
-     * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
      * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
@@ -701,7 +732,7 @@ public final class Vnic extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a
-     * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
      * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
@@ -730,7 +761,9 @@ public final class Vnic extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
     }
 
     /**
-     * Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.
+     * [Security attributes](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels
+     * for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm)
+     * (ZPR) policy to control access to ZPR-supported resources.
      * <p>
      * Example: {@code {"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}}
      *
@@ -739,7 +772,9 @@ public final class Vnic extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
     private final java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
 
     /**
-     * Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.
+     * [Security attributes](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels
+     * for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm)
+     * (ZPR) policy to control access to ZPR-supported resources.
      * <p>
      * Example: {@code {"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}}
      *
@@ -751,7 +786,7 @@ public final class Vnic extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no
-     * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
      * Example: {@code {"Department": "Finance"}}
      *
@@ -761,7 +796,7 @@ public final class Vnic extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no
-     * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
      * Example: {@code {"Department": "Finance"}}
      *
@@ -780,7 +815,7 @@ public final class Vnic extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
      * [RFC 1123](https://tools.ietf.org/html/rfc1123).
      * <p>
      * For more information, see
-     * [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
+     * [DNS in Your Virtual Cloud Network](https://docs.oracle.com/iaas/Content/Network/Concepts/dns.htm).
      * <p>
      * Example: {@code bminstance1}
      *
@@ -797,7 +832,7 @@ public final class Vnic extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
      * [RFC 1123](https://tools.ietf.org/html/rfc1123).
      * <p>
      * For more information, see
-     * [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
+     * [DNS in Your Virtual Cloud Network](https://docs.oracle.com/iaas/Content/Network/Concepts/dns.htm).
      * <p>
      * Example: {@code bminstance1}
      *
@@ -808,13 +843,13 @@ public final class Vnic extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC.
      * @return the value
      **/
     public String getId() {
@@ -963,7 +998,7 @@ public final class Vnic extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
 
     /**
      * If the VNIC belongs to a VLAN as part of the Oracle Cloud VMware Solution (instead of
-     * belonging to a subnet), the {@code vlanId} is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN the VNIC is in. See
+     * belonging to a subnet), the {@code vlanId} is the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN the VNIC is in. See
      * {@link Vlan}. If the VNIC is instead in a subnet, {@code subnetId} has a value.
      *
      **/
@@ -972,7 +1007,7 @@ public final class Vnic extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
 
     /**
      * If the VNIC belongs to a VLAN as part of the Oracle Cloud VMware Solution (instead of
-     * belonging to a subnet), the {@code vlanId} is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN the VNIC is in. See
+     * belonging to a subnet), the {@code vlanId} is the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN the VNIC is in. See
      * {@link Vlan}. If the VNIC is instead in a subnet, {@code subnetId} has a value.
      *
      * @return the value
@@ -1023,7 +1058,7 @@ public final class Vnic extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
      * Whether the source/destination check is disabled on the VNIC.
      * Defaults to {@code false}, which means the check is performed. For information
      * about why you would skip the source/destination check, see
-     * [Using a Private IP as a Route Target](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip).
+     * [Using a Private IP as a Route Target](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip).
      * <p>
      *
      * If the VNIC belongs to a VLAN as part of the Oracle Cloud VMware Solution (instead of
@@ -1040,7 +1075,7 @@ public final class Vnic extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
      * Whether the source/destination check is disabled on the VNIC.
      * Defaults to {@code false}, which means the check is performed. For information
      * about why you would skip the source/destination check, see
-     * [Using a Private IP as a Route Target](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip).
+     * [Using a Private IP as a Route Target](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip).
      * <p>
      *
      * If the VNIC belongs to a VLAN as part of the Oracle Cloud VMware Solution (instead of
@@ -1056,13 +1091,13 @@ public final class Vnic extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the VNIC is in.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the VNIC is in.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
     private final String subnetId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the VNIC is in.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the VNIC is in.
      * @return the value
      **/
     public String getSubnetId() {
@@ -1109,6 +1144,24 @@ public final class Vnic extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
         return ipv6Addresses;
     }
 
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the IP address or VNIC will use. For more information, see
+     * [Source Based Routing](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing).
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("routeTableId")
+    private final String routeTableId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the IP address or VNIC will use. For more information, see
+     * [Source Based Routing](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing).
+     *
+     * @return the value
+     **/
+    public String getRouteTableId() {
+        return routeTableId;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1142,6 +1195,7 @@ public final class Vnic extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
         sb.append(", subnetId=").append(String.valueOf(this.subnetId));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", ipv6Addresses=").append(String.valueOf(this.ipv6Addresses));
+        sb.append(", routeTableId=").append(String.valueOf(this.routeTableId));
         sb.append(")");
         return sb.toString();
     }
@@ -1175,6 +1229,7 @@ public final class Vnic extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
                 && java.util.Objects.equals(this.subnetId, other.subnetId)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.ipv6Addresses, other.ipv6Addresses)
+                && java.util.Objects.equals(this.routeTableId, other.routeTableId)
                 && super.equals(other);
     }
 
@@ -1221,6 +1276,7 @@ public final class Vnic extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
         result =
                 (result * PRIME)
                         + (this.ipv6Addresses == null ? 43 : this.ipv6Addresses.hashCode());
+        result = (result * PRIME) + (this.routeTableId == null ? 43 : this.routeTableId.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

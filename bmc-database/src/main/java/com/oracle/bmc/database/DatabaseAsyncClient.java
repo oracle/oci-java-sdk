@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database;
@@ -1919,6 +1919,63 @@ public class DatabaseAsyncClient implements DatabaseAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ChangeEncryptionKeyLocationResponse>
+            changeEncryptionKeyLocation(
+                    ChangeEncryptionKeyLocationRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeEncryptionKeyLocationRequest,
+                                    ChangeEncryptionKeyLocationResponse>
+                            handler) {
+        LOG.trace("Called async changeEncryptionKeyLocation");
+        final ChangeEncryptionKeyLocationRequest interceptedRequest =
+                ChangeEncryptionKeyLocationConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeEncryptionKeyLocationConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ChangeEncryptionKeyLocation",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/Database/ChangeEncryptionKeyLocation");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ChangeEncryptionKeyLocationResponse>
+                transformer =
+                        ChangeEncryptionKeyLocationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ChangeEncryptionKeyLocationRequest, ChangeEncryptionKeyLocationResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ChangeEncryptionKeyLocationRequest,
+                                ChangeEncryptionKeyLocationResponse>,
+                        java.util.concurrent.Future<ChangeEncryptionKeyLocationResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getEncryptionKeyLocationDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ChangeEncryptionKeyLocationRequest, ChangeEncryptionKeyLocationResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ChangeExadataInfrastructureCompartmentResponse>
             changeExadataInfrastructureCompartment(
                     ChangeExadataInfrastructureCompartmentRequest request,
@@ -3060,6 +3117,59 @@ public class DatabaseAsyncClient implements DatabaseAsync {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ConvertToRegularPluggableDatabaseRequest,
                     ConvertToRegularPluggableDatabaseResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ConvertToStandaloneResponse> convertToStandalone(
+            ConvertToStandaloneRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ConvertToStandaloneRequest, ConvertToStandaloneResponse>
+                    handler) {
+        LOG.trace("Called async convertToStandalone");
+        final ConvertToStandaloneRequest interceptedRequest =
+                ConvertToStandaloneConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ConvertToStandaloneConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ConvertToStandalone",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/Database/ConvertToStandalone");
+        final java.util.function.Function<javax.ws.rs.core.Response, ConvertToStandaloneResponse>
+                transformer =
+                        ConvertToStandaloneConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ConvertToStandaloneRequest, ConvertToStandaloneResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ConvertToStandaloneRequest, ConvertToStandaloneResponse>,
+                        java.util.concurrent.Future<ConvertToStandaloneResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getConvertToStandaloneDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ConvertToStandaloneRequest, ConvertToStandaloneResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -8580,6 +8690,58 @@ public class DatabaseAsyncClient implements DatabaseAsync {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     FailoverAutonomousContainerDatabaseDataguardAssociationRequest,
                     FailoverAutonomousContainerDatabaseDataguardAssociationResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<FailoverDataGuardResponse> failoverDataGuard(
+            FailoverDataGuardRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            FailoverDataGuardRequest, FailoverDataGuardResponse>
+                    handler) {
+        LOG.trace("Called async failoverDataGuard");
+        final FailoverDataGuardRequest interceptedRequest =
+                FailoverDataGuardConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                FailoverDataGuardConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "FailoverDataGuard",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/Database/FailoverDataGuard");
+        final java.util.function.Function<javax.ws.rs.core.Response, FailoverDataGuardResponse>
+                transformer =
+                        FailoverDataGuardConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<FailoverDataGuardRequest, FailoverDataGuardResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                FailoverDataGuardRequest, FailoverDataGuardResponse>,
+                        java.util.concurrent.Future<FailoverDataGuardResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getFailoverDataGuardDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    FailoverDataGuardRequest, FailoverDataGuardResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -16486,6 +16648,63 @@ public class DatabaseAsyncClient implements DatabaseAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<MigrateDataGuardAssociationToMultiDataGuardsResponse>
+            migrateDataGuardAssociationToMultiDataGuards(
+                    MigrateDataGuardAssociationToMultiDataGuardsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    MigrateDataGuardAssociationToMultiDataGuardsRequest,
+                                    MigrateDataGuardAssociationToMultiDataGuardsResponse>
+                            handler) {
+        LOG.trace("Called async migrateDataGuardAssociationToMultiDataGuards");
+        final MigrateDataGuardAssociationToMultiDataGuardsRequest interceptedRequest =
+                MigrateDataGuardAssociationToMultiDataGuardsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                MigrateDataGuardAssociationToMultiDataGuardsConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "MigrateDataGuardAssociationToMultiDataGuards",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/DataGuardAssociation/MigrateDataGuardAssociationToMultiDataGuards");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response,
+                        MigrateDataGuardAssociationToMultiDataGuardsResponse>
+                transformer =
+                        MigrateDataGuardAssociationToMultiDataGuardsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        MigrateDataGuardAssociationToMultiDataGuardsRequest,
+                        MigrateDataGuardAssociationToMultiDataGuardsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                MigrateDataGuardAssociationToMultiDataGuardsRequest,
+                                MigrateDataGuardAssociationToMultiDataGuardsResponse>,
+                        java.util.concurrent.Future<
+                                MigrateDataGuardAssociationToMultiDataGuardsResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    MigrateDataGuardAssociationToMultiDataGuardsRequest,
+                    MigrateDataGuardAssociationToMultiDataGuardsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<MigrateExadataDbSystemResourceModelResponse>
             migrateExadataDbSystemResourceModel(
                     MigrateExadataDbSystemResourceModelRequest request,
@@ -16913,6 +17132,58 @@ public class DatabaseAsyncClient implements DatabaseAsync {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ReinstateAutonomousContainerDatabaseDataguardAssociationRequest,
                     ReinstateAutonomousContainerDatabaseDataguardAssociationResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ReinstateDataGuardResponse> reinstateDataGuard(
+            ReinstateDataGuardRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ReinstateDataGuardRequest, ReinstateDataGuardResponse>
+                    handler) {
+        LOG.trace("Called async reinstateDataGuard");
+        final ReinstateDataGuardRequest interceptedRequest =
+                ReinstateDataGuardConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ReinstateDataGuardConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ReinstateDataGuard",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/Database/ReinstateDataGuard");
+        final java.util.function.Function<javax.ws.rs.core.Response, ReinstateDataGuardResponse>
+                transformer =
+                        ReinstateDataGuardConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<ReinstateDataGuardRequest, ReinstateDataGuardResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ReinstateDataGuardRequest, ReinstateDataGuardResponse>,
+                        java.util.concurrent.Future<ReinstateDataGuardResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getReinstateDataGuardDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ReinstateDataGuardRequest, ReinstateDataGuardResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -18641,6 +18912,59 @@ public class DatabaseAsyncClient implements DatabaseAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<SwitchOverDataGuardResponse> switchOverDataGuard(
+            SwitchOverDataGuardRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            SwitchOverDataGuardRequest, SwitchOverDataGuardResponse>
+                    handler) {
+        LOG.trace("Called async switchOverDataGuard");
+        final SwitchOverDataGuardRequest interceptedRequest =
+                SwitchOverDataGuardConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                SwitchOverDataGuardConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "SwitchOverDataGuard",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/Database/SwitchOverDataGuard");
+        final java.util.function.Function<javax.ws.rs.core.Response, SwitchOverDataGuardResponse>
+                transformer =
+                        SwitchOverDataGuardConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        SwitchOverDataGuardRequest, SwitchOverDataGuardResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                SwitchOverDataGuardRequest, SwitchOverDataGuardResponse>,
+                        java.util.concurrent.Future<SwitchOverDataGuardResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getSwitchOverDataGuardDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    SwitchOverDataGuardRequest, SwitchOverDataGuardResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<
                     SwitchoverAutonomousContainerDatabaseDataguardAssociationResponse>
             switchoverAutonomousContainerDatabaseDataguardAssociation(
@@ -19854,6 +20178,58 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     UpdateConsoleHistoryRequest, UpdateConsoleHistoryResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateDataGuardResponse> updateDataGuard(
+            UpdateDataGuardRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateDataGuardRequest, UpdateDataGuardResponse>
+                    handler) {
+        LOG.trace("Called async updateDataGuard");
+        final UpdateDataGuardRequest interceptedRequest =
+                UpdateDataGuardConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateDataGuardConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "UpdateDataGuard",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/Database/UpdateDataGuard");
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateDataGuardResponse>
+                transformer =
+                        UpdateDataGuardConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<UpdateDataGuardRequest, UpdateDataGuardResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateDataGuardRequest, UpdateDataGuardResponse>,
+                        java.util.concurrent.Future<UpdateDataGuardResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateDataGuardDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateDataGuardRequest, UpdateDataGuardResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

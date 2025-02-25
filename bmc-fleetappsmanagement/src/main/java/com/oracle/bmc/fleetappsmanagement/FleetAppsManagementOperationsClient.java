@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.fleetappsmanagement;
@@ -571,7 +571,7 @@ public class FleetAppsManagementOperationsClient implements FleetAppsManagementO
                         "FleetAppsManagementOperations",
                         "CreatePatch",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Patch/CreatePatch");
         java.util.function.Function<javax.ws.rs.core.Response, CreatePatchResponse> transformer =
                 CreatePatchConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -612,7 +612,7 @@ public class FleetAppsManagementOperationsClient implements FleetAppsManagementO
                         "FleetAppsManagementOperations",
                         "CreateSchedulerDefinition",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/SchedulerDefinition/CreateSchedulerDefinition");
         java.util.function.Function<javax.ws.rs.core.Response, CreateSchedulerDefinitionResponse>
                 transformer =
                         CreateSchedulerDefinitionConverter.fromResponse(
@@ -654,7 +654,7 @@ public class FleetAppsManagementOperationsClient implements FleetAppsManagementO
                         "FleetAppsManagementOperations",
                         "DeletePatch",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Patch/DeletePatch");
         java.util.function.Function<javax.ws.rs.core.Response, DeletePatchResponse> transformer =
                 DeletePatchConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -691,7 +691,7 @@ public class FleetAppsManagementOperationsClient implements FleetAppsManagementO
                         "FleetAppsManagementOperations",
                         "DeleteSchedulerDefinition",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/SchedulerDefinition/DeleteSchedulerDefinition");
         java.util.function.Function<javax.ws.rs.core.Response, DeleteSchedulerDefinitionResponse>
                 transformer =
                         DeleteSchedulerDefinitionConverter.fromResponse(
@@ -729,7 +729,7 @@ public class FleetAppsManagementOperationsClient implements FleetAppsManagementO
                         "FleetAppsManagementOperations",
                         "DeleteSchedulerJob",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/SchedulerJob/DeleteSchedulerJob");
         java.util.function.Function<javax.ws.rs.core.Response, DeleteSchedulerJobResponse>
                 transformer =
                         DeleteSchedulerJobConverter.fromResponse(
@@ -769,7 +769,7 @@ public class FleetAppsManagementOperationsClient implements FleetAppsManagementO
                         "FleetAppsManagementOperations",
                         "ExportComplianceReport",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/ComplianceRecord/ExportComplianceReport");
         java.util.function.Function<javax.ws.rs.core.Response, ExportComplianceReportResponse>
                 transformer =
                         ExportComplianceReportConverter.fromResponse(
@@ -810,7 +810,7 @@ public class FleetAppsManagementOperationsClient implements FleetAppsManagementO
                         "FleetAppsManagementOperations",
                         "GetExecution",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Execution/GetExecution");
         java.util.function.Function<javax.ws.rs.core.Response, GetExecutionResponse> transformer =
                 GetExecutionConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -845,7 +845,7 @@ public class FleetAppsManagementOperationsClient implements FleetAppsManagementO
                         "FleetAppsManagementOperations",
                         "GetJobActivity",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/JobActivity/GetJobActivity");
         java.util.function.Function<javax.ws.rs.core.Response, GetJobActivityResponse> transformer =
                 GetJobActivityConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -879,7 +879,7 @@ public class FleetAppsManagementOperationsClient implements FleetAppsManagementO
                         "FleetAppsManagementOperations",
                         "GetPatch",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Patch/GetPatch");
         java.util.function.Function<javax.ws.rs.core.Response, GetPatchResponse> transformer =
                 GetPatchConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -915,7 +915,7 @@ public class FleetAppsManagementOperationsClient implements FleetAppsManagementO
                         "FleetAppsManagementOperations",
                         "GetSchedulerDefinition",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/SchedulerDefinition/GetSchedulerDefinition");
         java.util.function.Function<javax.ws.rs.core.Response, GetSchedulerDefinitionResponse>
                 transformer =
                         GetSchedulerDefinitionConverter.fromResponse(
@@ -952,7 +952,7 @@ public class FleetAppsManagementOperationsClient implements FleetAppsManagementO
                         "FleetAppsManagementOperations",
                         "GetSchedulerJob",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/SchedulerJob/GetSchedulerJob");
         java.util.function.Function<javax.ws.rs.core.Response, GetSchedulerJobResponse>
                 transformer =
                         GetSchedulerJobConverter.fromResponse(
@@ -990,7 +990,7 @@ public class FleetAppsManagementOperationsClient implements FleetAppsManagementO
                         "FleetAppsManagementOperations",
                         "ListComplianceRecords",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/ComplianceRecordCollection/ListComplianceRecords");
         java.util.function.Function<javax.ws.rs.core.Response, ListComplianceRecordsResponse>
                 transformer =
                         ListComplianceRecordsConverter.fromResponse(
@@ -1027,7 +1027,7 @@ public class FleetAppsManagementOperationsClient implements FleetAppsManagementO
                         "FleetAppsManagementOperations",
                         "ListExecutions",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/ExecutionCollection/ListExecutions");
         java.util.function.Function<javax.ws.rs.core.Response, ListExecutionsResponse> transformer =
                 ListExecutionsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -1062,7 +1062,7 @@ public class FleetAppsManagementOperationsClient implements FleetAppsManagementO
                         "FleetAppsManagementOperations",
                         "ListPatches",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/PatchCollection/ListPatches");
         java.util.function.Function<javax.ws.rs.core.Response, ListPatchesResponse> transformer =
                 ListPatchesConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -1097,7 +1097,7 @@ public class FleetAppsManagementOperationsClient implements FleetAppsManagementO
                         "FleetAppsManagementOperations",
                         "ListResources",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/ResourceCollection/ListResources");
         java.util.function.Function<javax.ws.rs.core.Response, ListResourcesResponse> transformer =
                 ListResourcesConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -1132,7 +1132,7 @@ public class FleetAppsManagementOperationsClient implements FleetAppsManagementO
                         "FleetAppsManagementOperations",
                         "ListScheduledFleets",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/ScheduledFleetCollection/ListScheduledFleets");
         java.util.function.Function<javax.ws.rs.core.Response, ListScheduledFleetsResponse>
                 transformer =
                         ListScheduledFleetsConverter.fromResponse(
@@ -1170,7 +1170,7 @@ public class FleetAppsManagementOperationsClient implements FleetAppsManagementO
                         "FleetAppsManagementOperations",
                         "ListSchedulerDefinitions",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/SchedulerDefinitionCollection/ListSchedulerDefinitions");
         java.util.function.Function<javax.ws.rs.core.Response, ListSchedulerDefinitionsResponse>
                 transformer =
                         ListSchedulerDefinitionsConverter.fromResponse(
@@ -1207,7 +1207,7 @@ public class FleetAppsManagementOperationsClient implements FleetAppsManagementO
                         "FleetAppsManagementOperations",
                         "ListSchedulerJobs",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/SchedulerJobCollection/ListSchedulerJobs");
         java.util.function.Function<javax.ws.rs.core.Response, ListSchedulerJobsResponse>
                 transformer =
                         ListSchedulerJobsConverter.fromResponse(
@@ -1243,7 +1243,7 @@ public class FleetAppsManagementOperationsClient implements FleetAppsManagementO
                         "FleetAppsManagementOperations",
                         "ListSteps",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/StepCollection/ListSteps");
         java.util.function.Function<javax.ws.rs.core.Response, ListStepsResponse> transformer =
                 ListStepsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -1279,7 +1279,7 @@ public class FleetAppsManagementOperationsClient implements FleetAppsManagementO
                         "FleetAppsManagementOperations",
                         "ManageJobExecution",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/SchedulerJob/ManageJobExecution");
         java.util.function.Function<javax.ws.rs.core.Response, ManageJobExecutionResponse>
                 transformer =
                         ManageJobExecutionConverter.fromResponse(
@@ -1321,7 +1321,7 @@ public class FleetAppsManagementOperationsClient implements FleetAppsManagementO
                         "FleetAppsManagementOperations",
                         "SummarizeComplianceRecordCounts",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/ComplianceRecordAggregationCollection/SummarizeComplianceRecordCounts");
         java.util.function.Function<
                         javax.ws.rs.core.Response, SummarizeComplianceRecordCountsResponse>
                 transformer =
@@ -1360,7 +1360,7 @@ public class FleetAppsManagementOperationsClient implements FleetAppsManagementO
                         "FleetAppsManagementOperations",
                         "SummarizeManagedEntityCounts",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/ManagedEntityAggregationCollection/SummarizeManagedEntityCounts");
         java.util.function.Function<javax.ws.rs.core.Response, SummarizeManagedEntityCountsResponse>
                 transformer =
                         SummarizeManagedEntityCountsConverter.fromResponse(
@@ -1398,7 +1398,7 @@ public class FleetAppsManagementOperationsClient implements FleetAppsManagementO
                         "FleetAppsManagementOperations",
                         "SummarizeSchedulerJobCounts",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/SchedulerJobAggregationCollection/SummarizeSchedulerJobCounts");
         java.util.function.Function<javax.ws.rs.core.Response, SummarizeSchedulerJobCountsResponse>
                 transformer =
                         SummarizeSchedulerJobCountsConverter.fromResponse(
@@ -1435,7 +1435,7 @@ public class FleetAppsManagementOperationsClient implements FleetAppsManagementO
                         "FleetAppsManagementOperations",
                         "UpdatePatch",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Patch/UpdatePatch");
         java.util.function.Function<javax.ws.rs.core.Response, UpdatePatchResponse> transformer =
                 UpdatePatchConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -1475,7 +1475,7 @@ public class FleetAppsManagementOperationsClient implements FleetAppsManagementO
                         "FleetAppsManagementOperations",
                         "UpdateSchedulerDefinition",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/SchedulerDefinition/UpdateSchedulerDefinition");
         java.util.function.Function<javax.ws.rs.core.Response, UpdateSchedulerDefinitionResponse>
                 transformer =
                         UpdateSchedulerDefinitionConverter.fromResponse(
@@ -1517,7 +1517,7 @@ public class FleetAppsManagementOperationsClient implements FleetAppsManagementO
                         "FleetAppsManagementOperations",
                         "UpdateSchedulerJob",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/SchedulerJob/UpdateSchedulerJob");
         java.util.function.Function<javax.ws.rs.core.Response, UpdateSchedulerJobResponse>
                 transformer =
                         UpdateSchedulerJobConverter.fromResponse(

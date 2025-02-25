@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.osmanagementhub;
@@ -146,6 +146,128 @@ public class SoftwareSourcePaginators {
                     public java.util.List<
                                     com.oracle.bmc.osmanagementhub.model.SoftwarePackageSummary>
                             apply(ListAllSoftwarePackagesResponse response) {
+                        return response.getSoftwarePackageCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listAvailableSoftwarePackages operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListAvailableSoftwarePackagesResponse>
+            listAvailableSoftwarePackagesResponseIterator(
+                    final ListAvailableSoftwarePackagesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListAvailableSoftwarePackagesRequest.Builder, ListAvailableSoftwarePackagesRequest,
+                ListAvailableSoftwarePackagesResponse>(
+                new java.util.function.Supplier<ListAvailableSoftwarePackagesRequest.Builder>() {
+                    @Override
+                    public ListAvailableSoftwarePackagesRequest.Builder get() {
+                        return ListAvailableSoftwarePackagesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListAvailableSoftwarePackagesResponse, String>() {
+                    @Override
+                    public String apply(ListAvailableSoftwarePackagesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListAvailableSoftwarePackagesRequest.Builder>,
+                        ListAvailableSoftwarePackagesRequest>() {
+                    @Override
+                    public ListAvailableSoftwarePackagesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListAvailableSoftwarePackagesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListAvailableSoftwarePackagesRequest,
+                        ListAvailableSoftwarePackagesResponse>() {
+                    @Override
+                    public ListAvailableSoftwarePackagesResponse apply(
+                            ListAvailableSoftwarePackagesRequest request) {
+                        return client.listAvailableSoftwarePackages(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.osmanagementhub.model.SoftwarePackageSummary} objects
+     * contained in responses from the listAvailableSoftwarePackages operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.osmanagementhub.model.SoftwarePackageSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.osmanagementhub.model.SoftwarePackageSummary>
+            listAvailableSoftwarePackagesRecordIterator(
+                    final ListAvailableSoftwarePackagesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListAvailableSoftwarePackagesRequest.Builder, ListAvailableSoftwarePackagesRequest,
+                ListAvailableSoftwarePackagesResponse,
+                com.oracle.bmc.osmanagementhub.model.SoftwarePackageSummary>(
+                new java.util.function.Supplier<ListAvailableSoftwarePackagesRequest.Builder>() {
+                    @Override
+                    public ListAvailableSoftwarePackagesRequest.Builder get() {
+                        return ListAvailableSoftwarePackagesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListAvailableSoftwarePackagesResponse, String>() {
+                    @Override
+                    public String apply(ListAvailableSoftwarePackagesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListAvailableSoftwarePackagesRequest.Builder>,
+                        ListAvailableSoftwarePackagesRequest>() {
+                    @Override
+                    public ListAvailableSoftwarePackagesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListAvailableSoftwarePackagesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListAvailableSoftwarePackagesRequest,
+                        ListAvailableSoftwarePackagesResponse>() {
+                    @Override
+                    public ListAvailableSoftwarePackagesResponse apply(
+                            ListAvailableSoftwarePackagesRequest request) {
+                        return client.listAvailableSoftwarePackages(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListAvailableSoftwarePackagesResponse,
+                        java.util.List<
+                                com.oracle.bmc.osmanagementhub.model.SoftwarePackageSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.osmanagementhub.model.SoftwarePackageSummary>
+                            apply(ListAvailableSoftwarePackagesResponse response) {
                         return response.getSoftwarePackageCollection().getItems();
                     }
                 });

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.globallydistributeddatabase;
@@ -68,7 +68,7 @@ public interface ShardedDatabaseService extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/globallydistributeddatabase/ChangePrivateEndpointCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangePrivateEndpointCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/globallydistributeddatabase/ChangePrivateEndpointCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangePrivateEndpointCompartment API.
      */
     ChangePrivateEndpointCompartmentResponse changePrivateEndpointCompartment(
             ChangePrivateEndpointCompartmentRequest request);
@@ -82,7 +82,7 @@ public interface ShardedDatabaseService extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/globallydistributeddatabase/ChangeShardedDatabaseCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeShardedDatabaseCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/globallydistributeddatabase/ChangeShardedDatabaseCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeShardedDatabaseCompartment API.
      */
     ChangeShardedDatabaseCompartmentResponse changeShardedDatabaseCompartment(
             ChangeShardedDatabaseCompartmentRequest request);
@@ -99,7 +99,7 @@ public interface ShardedDatabaseService extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/globallydistributeddatabase/ConfigureShardedDatabaseGsmsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ConfigureShardedDatabaseGsms API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/globallydistributeddatabase/ConfigureShardedDatabaseGsmsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ConfigureShardedDatabaseGsms API.
      */
     ConfigureShardedDatabaseGsmsResponse configureShardedDatabaseGsms(
             ConfigureShardedDatabaseGsmsRequest request);
@@ -117,7 +117,7 @@ public interface ShardedDatabaseService extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/globallydistributeddatabase/ConfigureShardingExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ConfigureSharding API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/globallydistributeddatabase/ConfigureShardingExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ConfigureSharding API.
      */
     ConfigureShardingResponse configureSharding(ConfigureShardingRequest request);
 
@@ -130,7 +130,7 @@ public interface ShardedDatabaseService extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/globallydistributeddatabase/CreatePrivateEndpointExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreatePrivateEndpoint API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/globallydistributeddatabase/CreatePrivateEndpointExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreatePrivateEndpoint API.
      */
     CreatePrivateEndpointResponse createPrivateEndpoint(CreatePrivateEndpointRequest request);
 
@@ -143,7 +143,7 @@ public interface ShardedDatabaseService extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/globallydistributeddatabase/CreateShardedDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateShardedDatabase API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/globallydistributeddatabase/CreateShardedDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateShardedDatabase API.
      */
     CreateShardedDatabaseResponse createShardedDatabase(CreateShardedDatabaseRequest request);
 
@@ -156,7 +156,7 @@ public interface ShardedDatabaseService extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/globallydistributeddatabase/DeletePrivateEndpointExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeletePrivateEndpoint API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/globallydistributeddatabase/DeletePrivateEndpointExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeletePrivateEndpoint API.
      */
     DeletePrivateEndpointResponse deletePrivateEndpoint(DeletePrivateEndpointRequest request);
 
@@ -169,7 +169,7 @@ public interface ShardedDatabaseService extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/globallydistributeddatabase/DeleteShardedDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteShardedDatabase API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/globallydistributeddatabase/DeleteShardedDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteShardedDatabase API.
      */
     DeleteShardedDatabaseResponse deleteShardedDatabase(DeleteShardedDatabaseRequest request);
 
@@ -185,7 +185,7 @@ public interface ShardedDatabaseService extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/globallydistributeddatabase/DownloadGsmCertificateSigningRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DownloadGsmCertificateSigningRequest API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/globallydistributeddatabase/DownloadGsmCertificateSigningRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DownloadGsmCertificateSigningRequest API.
      */
     DownloadGsmCertificateSigningRequestResponse downloadGsmCertificateSigningRequest(
             DownloadGsmCertificateSigningRequestRequest request);
@@ -199,7 +199,7 @@ public interface ShardedDatabaseService extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/globallydistributeddatabase/FetchConnectionStringExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use FetchConnectionString API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/globallydistributeddatabase/FetchConnectionStringExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use FetchConnectionString API.
      */
     FetchConnectionStringResponse fetchConnectionString(FetchConnectionStringRequest request);
 
@@ -212,7 +212,7 @@ public interface ShardedDatabaseService extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/globallydistributeddatabase/FetchShardableCloudAutonomousVmClustersExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use FetchShardableCloudAutonomousVmClusters API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/globallydistributeddatabase/FetchShardableCloudAutonomousVmClustersExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use FetchShardableCloudAutonomousVmClusters API.
      */
     FetchShardableCloudAutonomousVmClustersResponse fetchShardableCloudAutonomousVmClusters(
             FetchShardableCloudAutonomousVmClustersRequest request);
@@ -228,7 +228,7 @@ public interface ShardedDatabaseService extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/globallydistributeddatabase/GenerateGsmCertificateSigningRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GenerateGsmCertificateSigningRequest API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/globallydistributeddatabase/GenerateGsmCertificateSigningRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GenerateGsmCertificateSigningRequest API.
      */
     GenerateGsmCertificateSigningRequestResponse generateGsmCertificateSigningRequest(
             GenerateGsmCertificateSigningRequestRequest request);
@@ -242,7 +242,7 @@ public interface ShardedDatabaseService extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/globallydistributeddatabase/GenerateWalletExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GenerateWallet API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/globallydistributeddatabase/GenerateWalletExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GenerateWallet API.
      */
     GenerateWalletResponse generateWallet(GenerateWalletRequest request);
 
@@ -255,7 +255,7 @@ public interface ShardedDatabaseService extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/globallydistributeddatabase/GetPrivateEndpointExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetPrivateEndpoint API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/globallydistributeddatabase/GetPrivateEndpointExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetPrivateEndpoint API.
      */
     GetPrivateEndpointResponse getPrivateEndpoint(GetPrivateEndpointRequest request);
 
@@ -268,7 +268,7 @@ public interface ShardedDatabaseService extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/globallydistributeddatabase/GetShardedDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetShardedDatabase API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/globallydistributeddatabase/GetShardedDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetShardedDatabase API.
      */
     GetShardedDatabaseResponse getShardedDatabase(GetShardedDatabaseRequest request);
 
@@ -280,7 +280,7 @@ public interface ShardedDatabaseService extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/globallydistributeddatabase/GetWorkRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetWorkRequest API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/globallydistributeddatabase/GetWorkRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetWorkRequest API.
      */
     GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request);
 
@@ -293,7 +293,7 @@ public interface ShardedDatabaseService extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/globallydistributeddatabase/ListPrivateEndpointsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListPrivateEndpoints API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/globallydistributeddatabase/ListPrivateEndpointsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListPrivateEndpoints API.
      */
     ListPrivateEndpointsResponse listPrivateEndpoints(ListPrivateEndpointsRequest request);
 
@@ -306,7 +306,7 @@ public interface ShardedDatabaseService extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/globallydistributeddatabase/ListShardedDatabasesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListShardedDatabases API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/globallydistributeddatabase/ListShardedDatabasesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListShardedDatabases API.
      */
     ListShardedDatabasesResponse listShardedDatabases(ListShardedDatabasesRequest request);
 
@@ -319,7 +319,7 @@ public interface ShardedDatabaseService extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/globallydistributeddatabase/ListWorkRequestErrorsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequestErrors API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/globallydistributeddatabase/ListWorkRequestErrorsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequestErrors API.
      */
     ListWorkRequestErrorsResponse listWorkRequestErrors(ListWorkRequestErrorsRequest request);
 
@@ -332,7 +332,7 @@ public interface ShardedDatabaseService extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/globallydistributeddatabase/ListWorkRequestLogsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequestLogs API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/globallydistributeddatabase/ListWorkRequestLogsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequestLogs API.
      */
     ListWorkRequestLogsResponse listWorkRequestLogs(ListWorkRequestLogsRequest request);
 
@@ -345,7 +345,7 @@ public interface ShardedDatabaseService extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/globallydistributeddatabase/ListWorkRequestsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequests API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/globallydistributeddatabase/ListWorkRequestsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequests API.
      */
     ListWorkRequestsResponse listWorkRequests(ListWorkRequestsRequest request);
 
@@ -360,7 +360,7 @@ public interface ShardedDatabaseService extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/globallydistributeddatabase/PatchShardedDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use PatchShardedDatabase API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/globallydistributeddatabase/PatchShardedDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use PatchShardedDatabase API.
      */
     PatchShardedDatabaseResponse patchShardedDatabase(PatchShardedDatabaseRequest request);
 
@@ -373,7 +373,7 @@ public interface ShardedDatabaseService extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/globallydistributeddatabase/PrevalidateShardedDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use PrevalidateShardedDatabase API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/globallydistributeddatabase/PrevalidateShardedDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use PrevalidateShardedDatabase API.
      */
     PrevalidateShardedDatabaseResponse prevalidateShardedDatabase(
             PrevalidateShardedDatabaseRequest request);
@@ -387,7 +387,7 @@ public interface ShardedDatabaseService extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/globallydistributeddatabase/ReinstateProxyInstanceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ReinstateProxyInstance API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/globallydistributeddatabase/ReinstateProxyInstanceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ReinstateProxyInstance API.
      */
     ReinstateProxyInstanceResponse reinstateProxyInstance(ReinstateProxyInstanceRequest request);
 
@@ -399,7 +399,7 @@ public interface ShardedDatabaseService extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/globallydistributeddatabase/StartShardedDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use StartShardedDatabase API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/globallydistributeddatabase/StartShardedDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use StartShardedDatabase API.
      */
     StartShardedDatabaseResponse startShardedDatabase(StartShardedDatabaseRequest request);
 
@@ -411,7 +411,7 @@ public interface ShardedDatabaseService extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/globallydistributeddatabase/StopShardedDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use StopShardedDatabase API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/globallydistributeddatabase/StopShardedDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use StopShardedDatabase API.
      */
     StopShardedDatabaseResponse stopShardedDatabase(StopShardedDatabaseRequest request);
 
@@ -424,7 +424,7 @@ public interface ShardedDatabaseService extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/globallydistributeddatabase/UpdatePrivateEndpointExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdatePrivateEndpoint API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/globallydistributeddatabase/UpdatePrivateEndpointExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdatePrivateEndpoint API.
      */
     UpdatePrivateEndpointResponse updatePrivateEndpoint(UpdatePrivateEndpointRequest request);
 
@@ -437,7 +437,7 @@ public interface ShardedDatabaseService extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/globallydistributeddatabase/UpdateShardedDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateShardedDatabase API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/globallydistributeddatabase/UpdateShardedDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateShardedDatabase API.
      */
     UpdateShardedDatabaseResponse updateShardedDatabase(UpdateShardedDatabaseRequest request);
 
@@ -452,7 +452,7 @@ public interface ShardedDatabaseService extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/globallydistributeddatabase/UploadSignedCertificateAndGenerateWalletExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UploadSignedCertificateAndGenerateWallet API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/globallydistributeddatabase/UploadSignedCertificateAndGenerateWalletExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UploadSignedCertificateAndGenerateWallet API.
      */
     UploadSignedCertificateAndGenerateWalletResponse uploadSignedCertificateAndGenerateWallet(
             UploadSignedCertificateAndGenerateWalletRequest request);
@@ -466,7 +466,7 @@ public interface ShardedDatabaseService extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/globallydistributeddatabase/ValidateNetworkExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ValidateNetwork API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/globallydistributeddatabase/ValidateNetworkExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ValidateNetwork API.
      */
     ValidateNetworkResponse validateNetwork(ValidateNetworkRequest request);
 

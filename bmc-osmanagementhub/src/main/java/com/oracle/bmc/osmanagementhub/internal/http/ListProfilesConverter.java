@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.osmanagementhub.internal.http;
@@ -114,6 +114,32 @@ public class ListProfilesConverter {
                             "isServiceProvidedProfile",
                             com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
                                     request.getIsServiceProvidedProfile()));
+        }
+
+        if (request.getManagementStation() != null) {
+            target =
+                    com.oracle.bmc.util.internal.HttpUtils.encodeCollectionFormatQueryParam(
+                            target,
+                            "managementStation",
+                            request.getManagementStation(),
+                            com.oracle.bmc.util.internal.CollectionFormatType.Multi);
+        }
+
+        if (request.getManagementStationNotEqualTo() != null) {
+            target =
+                    com.oracle.bmc.util.internal.HttpUtils.encodeCollectionFormatQueryParam(
+                            target,
+                            "managementStationNotEqualTo",
+                            request.getManagementStationNotEqualTo(),
+                            com.oracle.bmc.util.internal.CollectionFormatType.Multi);
+        }
+
+        if (request.getProfileVersion() != null) {
+            target =
+                    target.queryParam(
+                            "profileVersion",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getProfileVersion()));
         }
 
         if (request.getVendorName() != null) {
@@ -259,6 +285,17 @@ public class ListProfilesConverter {
                                                     "opc-next-page",
                                                     opcNextPageHeader.get().get(0),
                                                     String.class));
+                                }
+
+                                java.util.Optional<java.util.List<String>> opcTotalItemsHeader =
+                                        com.oracle.bmc.http.internal.HeaderUtils.getHeadersWithName(
+                                                headers, "opc-total-items");
+                                if (opcTotalItemsHeader.isPresent()) {
+                                    builder.opcTotalItems(
+                                            com.oracle.bmc.http.internal.HeaderUtils.toValue(
+                                                    "opc-total-items",
+                                                    opcTotalItemsHeader.get().get(0),
+                                                    Integer.class));
                                 }
 
                                 com.oracle.bmc.osmanagementhub.responses.ListProfilesResponse

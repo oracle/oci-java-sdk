@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.vnmonitoring.model;
@@ -129,7 +129,7 @@ public final class UpdateNatGatewayDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table used by the NAT gateway.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table used by the NAT gateway.
          * <p>
          * If you don't specify a route table here, the NAT gateway is created without an associated route
          * table. The Networking service does NOT automatically associate the attached VCN's default route
@@ -140,7 +140,7 @@ public final class UpdateNatGatewayDetails
         private String routeTableId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table used by the NAT gateway.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table used by the NAT gateway.
          * <p>
          * If you don't specify a route table here, the NAT gateway is created without an associated route
          * table. The Networking service does NOT automatically associate the attached VCN's default route
@@ -279,7 +279,7 @@ public final class UpdateNatGatewayDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table used by the NAT gateway.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table used by the NAT gateway.
      * <p>
      * If you don't specify a route table here, the NAT gateway is created without an associated route
      * table. The Networking service does NOT automatically associate the attached VCN's default route
@@ -290,7 +290,7 @@ public final class UpdateNatGatewayDetails
     private final String routeTableId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table used by the NAT gateway.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table used by the NAT gateway.
      * <p>
      * If you don't specify a route table here, the NAT gateway is created without an associated route
      * table. The Networking service does NOT automatically associate the attached VCN's default route

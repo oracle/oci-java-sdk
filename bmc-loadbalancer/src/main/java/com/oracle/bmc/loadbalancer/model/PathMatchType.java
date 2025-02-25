@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.loadbalancer.model;
@@ -41,7 +41,7 @@ public final class PathMatchType extends com.oracle.bmc.http.internal.Explicitly
          *  **SUFFIX_MATCH** - Looks for a {@code path} string that matches the ending portion of the incoming URI path.
          * <p>
          * For a full description of how the system handles {@code matchType} in a path route set containing multiple rules, see
-         * [Managing Request Routing](https://docs.cloud.oracle.com/Content/Balance/Tasks/managingrequest.htm).
+         * [Managing Request Routing](https://docs.oracle.com/iaas/Content/Balance/Tasks/managingrequest.htm).
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("matchType")
@@ -61,7 +61,7 @@ public final class PathMatchType extends com.oracle.bmc.http.internal.Explicitly
          *  **SUFFIX_MATCH** - Looks for a {@code path} string that matches the ending portion of the incoming URI path.
          * <p>
          * For a full description of how the system handles {@code matchType} in a path route set containing multiple rules, see
-         * [Managing Request Routing](https://docs.cloud.oracle.com/Content/Balance/Tasks/managingrequest.htm).
+         * [Managing Request Routing](https://docs.oracle.com/iaas/Content/Balance/Tasks/managingrequest.htm).
          *
          * @param matchType the value to set
          * @return this builder
@@ -117,7 +117,7 @@ public final class PathMatchType extends com.oracle.bmc.http.internal.Explicitly
      *  **SUFFIX_MATCH** - Looks for a {@code path} string that matches the ending portion of the incoming URI path.
      * <p>
      * For a full description of how the system handles {@code matchType} in a path route set containing multiple rules, see
-     * [Managing Request Routing](https://docs.cloud.oracle.com/Content/Balance/Tasks/managingrequest.htm).
+     * [Managing Request Routing](https://docs.oracle.com/iaas/Content/Balance/Tasks/managingrequest.htm).
      *
      **/
     public enum MatchType {
@@ -181,7 +181,7 @@ public final class PathMatchType extends com.oracle.bmc.http.internal.Explicitly
      *  **SUFFIX_MATCH** - Looks for a {@code path} string that matches the ending portion of the incoming URI path.
      * <p>
      * For a full description of how the system handles {@code matchType} in a path route set containing multiple rules, see
-     * [Managing Request Routing](https://docs.cloud.oracle.com/Content/Balance/Tasks/managingrequest.htm).
+     * [Managing Request Routing](https://docs.oracle.com/iaas/Content/Balance/Tasks/managingrequest.htm).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("matchType")
@@ -201,7 +201,7 @@ public final class PathMatchType extends com.oracle.bmc.http.internal.Explicitly
      *  **SUFFIX_MATCH** - Looks for a {@code path} string that matches the ending portion of the incoming URI path.
      * <p>
      * For a full description of how the system handles {@code matchType} in a path route set containing multiple rules, see
-     * [Managing Request Routing](https://docs.cloud.oracle.com/Content/Balance/Tasks/managingrequest.htm).
+     * [Managing Request Routing](https://docs.oracle.com/iaas/Content/Balance/Tasks/managingrequest.htm).
      *
      * @return the value
      **/

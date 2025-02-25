@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.osmanagementhub;
@@ -9,7 +9,7 @@ import com.oracle.bmc.osmanagementhub.responses.*;
 
 /**
  * Use the OS Management Hub API to manage and monitor updates and patches for instances in OCI, your private data center, or 3rd-party clouds.
- * For more information, see [Overview of OS Management Hub](https://docs.cloud.oracle.com/iaas/osmh/doc/overview.htm).
+ * For more information, see [Overview of OS Management Hub](https://docs.oracle.com/iaas/osmh/doc/overview.htm).
  *
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
@@ -59,6 +59,25 @@ public interface ManagedInstanceAsync extends AutoCloseable {
      * @param realmSpecificEndpointTemplateEnabled flag to enable the use of realm specific endpoint template
      */
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
+
+    /**
+     * Associates managed instances to the specified management station
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<AssociateManagedInstancesWithManagementStationResponse>
+            associateManagedInstancesWithManagementStation(
+                    AssociateManagedInstancesWithManagementStationRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    AssociateManagedInstancesWithManagementStationRequest,
+                                    AssociateManagedInstancesWithManagementStationResponse>
+                            handler);
 
     /**
      * Adds profile to a managed instance. After the profile has been added,
@@ -515,6 +534,24 @@ public interface ManagedInstanceAsync extends AutoCloseable {
                                     ManageModuleStreamsOnManagedInstanceRequest,
                                     ManageModuleStreamsOnManagedInstanceResponse>
                             handler);
+
+    /**
+     * Initiates a reboot of the specified managed instance. You can also specify the number of minutes the service
+     * waits before marking the reboot operation as failed.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<RebootManagedInstanceResponse> rebootManagedInstance(
+            RebootManagedInstanceRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            RebootManagedInstanceRequest, RebootManagedInstanceResponse>
+                    handler);
 
     /**
      * Refreshes the package or Windows update information on a managed instance with the latest data from the software source. This does not update packages on the instance. It provides the service with the latest package data.

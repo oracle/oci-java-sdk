@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.dns.model;
@@ -125,7 +125,7 @@ public final class CreateSteeringPolicyDetails
          *
          * **Note:** To use the Health Check monitoring feature in a steering policy, a monitor
          * must be created using the Health Checks service first. For more information on how to
-         * create a monitor, please see [Managing Health Checks](https://docs.cloud.oracle.com/iaas/Content/HealthChecks/Tasks/managinghealthchecks.htm).
+         * create a monitor, please see [Managing Health Checks](https://docs.oracle.com/iaas/Content/HealthChecks/Tasks/managinghealthchecks.htm).
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("healthCheckMonitorId")
@@ -140,7 +140,7 @@ public final class CreateSteeringPolicyDetails
          *
          * **Note:** To use the Health Check monitoring feature in a steering policy, a monitor
          * must be created using the Health Checks service first. For more information on how to
-         * create a monitor, please see [Managing Health Checks](https://docs.cloud.oracle.com/iaas/Content/HealthChecks/Tasks/managinghealthchecks.htm).
+         * create a monitor, please see [Managing Health Checks](https://docs.oracle.com/iaas/Content/HealthChecks/Tasks/managinghealthchecks.htm).
          *
          * @param healthCheckMonitorId the value to set
          * @return this builder
@@ -169,7 +169,7 @@ public final class CreateSteeringPolicyDetails
          * answers contingent upon {@code answer.isDisabled != true}, except for {@code CUSTOM}. A defined
          * {@code HEALTH} rule must follow the {@code FILTER} rule if the policy references a {@code healthCheckMonitorId}.
          * The last rule of a template must must be a {@code LIMIT} rule. For more information about templates
-         * and code examples, see [Traffic Management API Guide](https://docs.cloud.oracle.com/iaas/Content/TrafficManagement/Concepts/trafficmanagementapi.htm).
+         * and code examples, see [Traffic Management API Guide](https://docs.oracle.com/iaas/Content/TrafficManagement/Concepts/trafficmanagementapi.htm).
          * <p>
          **Template Types**
          * <p>
@@ -182,7 +182,7 @@ public final class CreateSteeringPolicyDetails
          * <p>
          *
          * * {@code ROUTE_BY_GEO} - Answers DNS queries based on the query's geographic location. For a list of geographic
-         * locations to route by, see [Traffic Management Geographic Locations](https://docs.cloud.oracle.com/iaas/Content/TrafficManagement/Reference/trafficmanagementgeo.htm).
+         * locations to route by, see [Traffic Management Geographic Locations](https://docs.oracle.com/iaas/Content/TrafficManagement/Reference/trafficmanagementgeo.htm).
          * <p>
          *
          * * {@code ROUTE_BY_ASN} - Answers DNS queries based on the query's originating ASN.
@@ -216,7 +216,7 @@ public final class CreateSteeringPolicyDetails
          * answers contingent upon {@code answer.isDisabled != true}, except for {@code CUSTOM}. A defined
          * {@code HEALTH} rule must follow the {@code FILTER} rule if the policy references a {@code healthCheckMonitorId}.
          * The last rule of a template must must be a {@code LIMIT} rule. For more information about templates
-         * and code examples, see [Traffic Management API Guide](https://docs.cloud.oracle.com/iaas/Content/TrafficManagement/Concepts/trafficmanagementapi.htm).
+         * and code examples, see [Traffic Management API Guide](https://docs.oracle.com/iaas/Content/TrafficManagement/Concepts/trafficmanagementapi.htm).
          * <p>
          **Template Types**
          * <p>
@@ -229,7 +229,7 @@ public final class CreateSteeringPolicyDetails
          * <p>
          *
          * * {@code ROUTE_BY_GEO} - Answers DNS queries based on the query's geographic location. For a list of geographic
-         * locations to route by, see [Traffic Management Geographic Locations](https://docs.cloud.oracle.com/iaas/Content/TrafficManagement/Reference/trafficmanagementgeo.htm).
+         * locations to route by, see [Traffic Management Geographic Locations](https://docs.oracle.com/iaas/Content/TrafficManagement/Reference/trafficmanagementgeo.htm).
          * <p>
          *
          * * {@code ROUTE_BY_ASN} - Answers DNS queries based on the query's originating ASN.
@@ -250,7 +250,7 @@ public final class CreateSteeringPolicyDetails
         }
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * <p>
          *
          * **Example:** {@code {"Department": "Finance"}}
@@ -261,7 +261,7 @@ public final class CreateSteeringPolicyDetails
 
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * <p>
          *
          * **Example:** {@code {"Department": "Finance"}}
@@ -276,7 +276,7 @@ public final class CreateSteeringPolicyDetails
         }
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * <p>
          *
          * **Example:** {@code {"Operations": {"CostCenter": "42"}}}
@@ -287,7 +287,7 @@ public final class CreateSteeringPolicyDetails
 
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * <p>
          *
          * **Example:** {@code {"Operations": {"CostCenter": "42"}}}
@@ -474,7 +474,7 @@ public final class CreateSteeringPolicyDetails
      *
      * **Note:** To use the Health Check monitoring feature in a steering policy, a monitor
      * must be created using the Health Checks service first. For more information on how to
-     * create a monitor, please see [Managing Health Checks](https://docs.cloud.oracle.com/iaas/Content/HealthChecks/Tasks/managinghealthchecks.htm).
+     * create a monitor, please see [Managing Health Checks](https://docs.oracle.com/iaas/Content/HealthChecks/Tasks/managinghealthchecks.htm).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("healthCheckMonitorId")
@@ -489,7 +489,7 @@ public final class CreateSteeringPolicyDetails
      *
      * **Note:** To use the Health Check monitoring feature in a steering policy, a monitor
      * must be created using the Health Checks service first. For more information on how to
-     * create a monitor, please see [Managing Health Checks](https://docs.cloud.oracle.com/iaas/Content/HealthChecks/Tasks/managinghealthchecks.htm).
+     * create a monitor, please see [Managing Health Checks](https://docs.oracle.com/iaas/Content/HealthChecks/Tasks/managinghealthchecks.htm).
      *
      * @return the value
      **/
@@ -516,7 +516,7 @@ public final class CreateSteeringPolicyDetails
      * answers contingent upon {@code answer.isDisabled != true}, except for {@code CUSTOM}. A defined
      * {@code HEALTH} rule must follow the {@code FILTER} rule if the policy references a {@code healthCheckMonitorId}.
      * The last rule of a template must must be a {@code LIMIT} rule. For more information about templates
-     * and code examples, see [Traffic Management API Guide](https://docs.cloud.oracle.com/iaas/Content/TrafficManagement/Concepts/trafficmanagementapi.htm).
+     * and code examples, see [Traffic Management API Guide](https://docs.oracle.com/iaas/Content/TrafficManagement/Concepts/trafficmanagementapi.htm).
      * <p>
      **Template Types**
      * <p>
@@ -529,7 +529,7 @@ public final class CreateSteeringPolicyDetails
      * <p>
      *
      * * {@code ROUTE_BY_GEO} - Answers DNS queries based on the query's geographic location. For a list of geographic
-     * locations to route by, see [Traffic Management Geographic Locations](https://docs.cloud.oracle.com/iaas/Content/TrafficManagement/Reference/trafficmanagementgeo.htm).
+     * locations to route by, see [Traffic Management Geographic Locations](https://docs.oracle.com/iaas/Content/TrafficManagement/Reference/trafficmanagementgeo.htm).
      * <p>
      *
      * * {@code ROUTE_BY_ASN} - Answers DNS queries based on the query's originating ASN.
@@ -596,7 +596,7 @@ public final class CreateSteeringPolicyDetails
      * answers contingent upon {@code answer.isDisabled != true}, except for {@code CUSTOM}. A defined
      * {@code HEALTH} rule must follow the {@code FILTER} rule if the policy references a {@code healthCheckMonitorId}.
      * The last rule of a template must must be a {@code LIMIT} rule. For more information about templates
-     * and code examples, see [Traffic Management API Guide](https://docs.cloud.oracle.com/iaas/Content/TrafficManagement/Concepts/trafficmanagementapi.htm).
+     * and code examples, see [Traffic Management API Guide](https://docs.oracle.com/iaas/Content/TrafficManagement/Concepts/trafficmanagementapi.htm).
      * <p>
      **Template Types**
      * <p>
@@ -609,7 +609,7 @@ public final class CreateSteeringPolicyDetails
      * <p>
      *
      * * {@code ROUTE_BY_GEO} - Answers DNS queries based on the query's geographic location. For a list of geographic
-     * locations to route by, see [Traffic Management Geographic Locations](https://docs.cloud.oracle.com/iaas/Content/TrafficManagement/Reference/trafficmanagementgeo.htm).
+     * locations to route by, see [Traffic Management Geographic Locations](https://docs.oracle.com/iaas/Content/TrafficManagement/Reference/trafficmanagementgeo.htm).
      * <p>
      *
      * * {@code ROUTE_BY_ASN} - Answers DNS queries based on the query's originating ASN.
@@ -643,7 +643,7 @@ public final class CreateSteeringPolicyDetails
      * answers contingent upon {@code answer.isDisabled != true}, except for {@code CUSTOM}. A defined
      * {@code HEALTH} rule must follow the {@code FILTER} rule if the policy references a {@code healthCheckMonitorId}.
      * The last rule of a template must must be a {@code LIMIT} rule. For more information about templates
-     * and code examples, see [Traffic Management API Guide](https://docs.cloud.oracle.com/iaas/Content/TrafficManagement/Concepts/trafficmanagementapi.htm).
+     * and code examples, see [Traffic Management API Guide](https://docs.oracle.com/iaas/Content/TrafficManagement/Concepts/trafficmanagementapi.htm).
      * <p>
      **Template Types**
      * <p>
@@ -656,7 +656,7 @@ public final class CreateSteeringPolicyDetails
      * <p>
      *
      * * {@code ROUTE_BY_GEO} - Answers DNS queries based on the query's geographic location. For a list of geographic
-     * locations to route by, see [Traffic Management Geographic Locations](https://docs.cloud.oracle.com/iaas/Content/TrafficManagement/Reference/trafficmanagementgeo.htm).
+     * locations to route by, see [Traffic Management Geographic Locations](https://docs.oracle.com/iaas/Content/TrafficManagement/Reference/trafficmanagementgeo.htm).
      * <p>
      *
      * * {@code ROUTE_BY_ASN} - Answers DNS queries based on the query's originating ASN.
@@ -675,7 +675,7 @@ public final class CreateSteeringPolicyDetails
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
      *
      * **Example:** {@code {"Department": "Finance"}}
@@ -686,7 +686,7 @@ public final class CreateSteeringPolicyDetails
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
      *
      * **Example:** {@code {"Department": "Finance"}}
@@ -699,7 +699,7 @@ public final class CreateSteeringPolicyDetails
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
      *
      * **Example:** {@code {"Operations": {"CostCenter": "42"}}}
@@ -710,7 +710,7 @@ public final class CreateSteeringPolicyDetails
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
      *
      * **Example:** {@code {"Operations": {"CostCenter": "42"}}}

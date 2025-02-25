@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.goldengate.model;
@@ -326,7 +326,7 @@ public final class Db2ConnectionSummary extends ConnectionSummary {
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored,
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored,
          * that Oracle GoldenGate uses to connect the associated DB2 database.
          * Note: When provided, 'password' field must not be provided.
          *
@@ -335,7 +335,7 @@ public final class Db2ConnectionSummary extends ConnectionSummary {
         private String passwordSecretId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored,
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored,
          * that Oracle GoldenGate uses to connect the associated DB2 database.
          * Note: When provided, 'password' field must not be provided.
          *
@@ -348,7 +348,7 @@ public final class Db2ConnectionSummary extends ConnectionSummary {
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret where the keystore file stored,
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystore file stored,
          * which created at the client containing the server certificate / CA root certificate.
          * Note: When provided, 'sslClientKeystoredb' field must not be provided.
          *
@@ -357,7 +357,7 @@ public final class Db2ConnectionSummary extends ConnectionSummary {
         private String sslClientKeystoredbSecretId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret where the keystore file stored,
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystore file stored,
          * which created at the client containing the server certificate / CA root certificate.
          * Note: When provided, 'sslClientKeystoredb' field must not be provided.
          *
@@ -370,7 +370,7 @@ public final class Db2ConnectionSummary extends ConnectionSummary {
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret where the keystash file is stored,
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystash file is stored,
          * which contains the encrypted password to the key database file.
          * Note: When provided, 'sslClientKeystash' field must not be provided.
          *
@@ -379,7 +379,7 @@ public final class Db2ConnectionSummary extends ConnectionSummary {
         private String sslClientKeystashSecretId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret where the keystash file is stored,
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystash file is stored,
          * which contains the encrypted password to the key database file.
          * Note: When provided, 'sslClientKeystash' field must not be provided.
          *
@@ -713,7 +713,7 @@ public final class Db2ConnectionSummary extends ConnectionSummary {
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored,
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored,
      * that Oracle GoldenGate uses to connect the associated DB2 database.
      * Note: When provided, 'password' field must not be provided.
      *
@@ -722,7 +722,7 @@ public final class Db2ConnectionSummary extends ConnectionSummary {
     private final String passwordSecretId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored,
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored,
      * that Oracle GoldenGate uses to connect the associated DB2 database.
      * Note: When provided, 'password' field must not be provided.
      *
@@ -733,7 +733,7 @@ public final class Db2ConnectionSummary extends ConnectionSummary {
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret where the keystore file stored,
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystore file stored,
      * which created at the client containing the server certificate / CA root certificate.
      * Note: When provided, 'sslClientKeystoredb' field must not be provided.
      *
@@ -742,7 +742,7 @@ public final class Db2ConnectionSummary extends ConnectionSummary {
     private final String sslClientKeystoredbSecretId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret where the keystore file stored,
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystore file stored,
      * which created at the client containing the server certificate / CA root certificate.
      * Note: When provided, 'sslClientKeystoredb' field must not be provided.
      *
@@ -753,7 +753,7 @@ public final class Db2ConnectionSummary extends ConnectionSummary {
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret where the keystash file is stored,
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystash file is stored,
      * which contains the encrypted password to the key database file.
      * Note: When provided, 'sslClientKeystash' field must not be provided.
      *
@@ -762,7 +762,7 @@ public final class Db2ConnectionSummary extends ConnectionSummary {
     private final String sslClientKeystashSecretId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret where the keystash file is stored,
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystash file is stored,
      * which contains the encrypted password to the key database file.
      * Note: When provided, 'sslClientKeystash' field must not be provided.
      *

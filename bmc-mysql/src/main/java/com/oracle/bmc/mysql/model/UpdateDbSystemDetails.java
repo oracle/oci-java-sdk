@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.mysql.model;
@@ -27,6 +27,8 @@ public final class UpdateDbSystemDetails
         "displayName",
         "description",
         "subnetId",
+        "databaseMode",
+        "accessMode",
         "isHighlyAvailable",
         "availabilityDomain",
         "faultDomain",
@@ -49,12 +51,15 @@ public final class UpdateDbSystemDetails
         "crashRecovery",
         "databaseManagement",
         "secureConnections",
-        "customerContacts"
+        "customerContacts",
+        "readEndpoint"
     })
     public UpdateDbSystemDetails(
             String displayName,
             String description,
             String subnetId,
+            DbSystem.DatabaseMode databaseMode,
+            DbSystem.AccessMode accessMode,
             Boolean isHighlyAvailable,
             String availabilityDomain,
             String faultDomain,
@@ -77,11 +82,14 @@ public final class UpdateDbSystemDetails
             CrashRecoveryStatus crashRecovery,
             DatabaseManagementStatus databaseManagement,
             SecureConnectionDetails secureConnections,
-            java.util.List<CustomerContact> customerContacts) {
+            java.util.List<CustomerContact> customerContacts,
+            UpdateReadEndpointDetails readEndpoint) {
         super();
         this.displayName = displayName;
         this.description = description;
         this.subnetId = subnetId;
+        this.databaseMode = databaseMode;
+        this.accessMode = accessMode;
         this.isHighlyAvailable = isHighlyAvailable;
         this.availabilityDomain = availabilityDomain;
         this.faultDomain = faultDomain;
@@ -105,6 +113,7 @@ public final class UpdateDbSystemDetails
         this.databaseManagement = databaseManagement;
         this.secureConnections = secureConnections;
         this.customerContacts = customerContacts;
+        this.readEndpoint = readEndpoint;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -157,6 +166,58 @@ public final class UpdateDbSystemDetails
         public Builder subnetId(String subnetId) {
             this.subnetId = subnetId;
             this.__explicitlySet__.add("subnetId");
+            return this;
+        }
+        /**
+         * The database mode indicating the types of statements that will be allowed to run in the DB system.
+         * This mode will apply only to statements run by user connections. Replicated write statements will continue
+         * to be allowed regardless of the DatabaseMode.
+         *   - READ_WRITE: allow running read and write statements on the DB system;
+         *   - READ_ONLY: only allow running read statements on the DB system.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("databaseMode")
+        private DbSystem.DatabaseMode databaseMode;
+
+        /**
+         * The database mode indicating the types of statements that will be allowed to run in the DB system.
+         * This mode will apply only to statements run by user connections. Replicated write statements will continue
+         * to be allowed regardless of the DatabaseMode.
+         *   - READ_WRITE: allow running read and write statements on the DB system;
+         *   - READ_ONLY: only allow running read statements on the DB system.
+         *
+         * @param databaseMode the value to set
+         * @return this builder
+         **/
+        public Builder databaseMode(DbSystem.DatabaseMode databaseMode) {
+            this.databaseMode = databaseMode;
+            this.__explicitlySet__.add("databaseMode");
+            return this;
+        }
+        /**
+         * The access mode indicating if the database access will be restricted only to administrators or not:
+         *  - UNRESTRICTED: the access to the database is not restricted;
+         *  - RESTRICTED: the access will be allowed only to users with specific privileges;
+         *    RESTRICTED will correspond to setting the MySQL system variable
+         *    [offline_mode](https://dev.mysql.com/doc/en/server-system-variables.html#sysvar_offline_mode) to ON.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("accessMode")
+        private DbSystem.AccessMode accessMode;
+
+        /**
+         * The access mode indicating if the database access will be restricted only to administrators or not:
+         *  - UNRESTRICTED: the access to the database is not restricted;
+         *  - RESTRICTED: the access will be allowed only to users with specific privileges;
+         *    RESTRICTED will correspond to setting the MySQL system variable
+         *    [offline_mode](https://dev.mysql.com/doc/en/server-system-variables.html#sysvar_offline_mode) to ON.
+         *
+         * @param accessMode the value to set
+         * @return this builder
+         **/
+        public Builder accessMode(DbSystem.AccessMode accessMode) {
+            this.accessMode = accessMode;
+            this.__explicitlySet__.add("accessMode");
             return this;
         }
         /**
@@ -616,6 +677,15 @@ public final class UpdateDbSystemDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("readEndpoint")
+        private UpdateReadEndpointDetails readEndpoint;
+
+        public Builder readEndpoint(UpdateReadEndpointDetails readEndpoint) {
+            this.readEndpoint = readEndpoint;
+            this.__explicitlySet__.add("readEndpoint");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -625,6 +695,8 @@ public final class UpdateDbSystemDetails
                             this.displayName,
                             this.description,
                             this.subnetId,
+                            this.databaseMode,
+                            this.accessMode,
                             this.isHighlyAvailable,
                             this.availabilityDomain,
                             this.faultDomain,
@@ -647,7 +719,8 @@ public final class UpdateDbSystemDetails
                             this.crashRecovery,
                             this.databaseManagement,
                             this.secureConnections,
-                            this.customerContacts);
+                            this.customerContacts,
+                            this.readEndpoint);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -664,6 +737,12 @@ public final class UpdateDbSystemDetails
             }
             if (model.wasPropertyExplicitlySet("subnetId")) {
                 this.subnetId(model.getSubnetId());
+            }
+            if (model.wasPropertyExplicitlySet("databaseMode")) {
+                this.databaseMode(model.getDatabaseMode());
+            }
+            if (model.wasPropertyExplicitlySet("accessMode")) {
+                this.accessMode(model.getAccessMode());
             }
             if (model.wasPropertyExplicitlySet("isHighlyAvailable")) {
                 this.isHighlyAvailable(model.getIsHighlyAvailable());
@@ -734,6 +813,9 @@ public final class UpdateDbSystemDetails
             if (model.wasPropertyExplicitlySet("customerContacts")) {
                 this.customerContacts(model.getCustomerContacts());
             }
+            if (model.wasPropertyExplicitlySet("readEndpoint")) {
+                this.readEndpoint(model.getReadEndpoint());
+            }
             return this;
         }
     }
@@ -791,6 +873,54 @@ public final class UpdateDbSystemDetails
      **/
     public String getSubnetId() {
         return subnetId;
+    }
+
+    /**
+     * The database mode indicating the types of statements that will be allowed to run in the DB system.
+     * This mode will apply only to statements run by user connections. Replicated write statements will continue
+     * to be allowed regardless of the DatabaseMode.
+     *   - READ_WRITE: allow running read and write statements on the DB system;
+     *   - READ_ONLY: only allow running read statements on the DB system.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("databaseMode")
+    private final DbSystem.DatabaseMode databaseMode;
+
+    /**
+     * The database mode indicating the types of statements that will be allowed to run in the DB system.
+     * This mode will apply only to statements run by user connections. Replicated write statements will continue
+     * to be allowed regardless of the DatabaseMode.
+     *   - READ_WRITE: allow running read and write statements on the DB system;
+     *   - READ_ONLY: only allow running read statements on the DB system.
+     *
+     * @return the value
+     **/
+    public DbSystem.DatabaseMode getDatabaseMode() {
+        return databaseMode;
+    }
+
+    /**
+     * The access mode indicating if the database access will be restricted only to administrators or not:
+     *  - UNRESTRICTED: the access to the database is not restricted;
+     *  - RESTRICTED: the access will be allowed only to users with specific privileges;
+     *    RESTRICTED will correspond to setting the MySQL system variable
+     *    [offline_mode](https://dev.mysql.com/doc/en/server-system-variables.html#sysvar_offline_mode) to ON.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("accessMode")
+    private final DbSystem.AccessMode accessMode;
+
+    /**
+     * The access mode indicating if the database access will be restricted only to administrators or not:
+     *  - UNRESTRICTED: the access to the database is not restricted;
+     *  - RESTRICTED: the access will be allowed only to users with specific privileges;
+     *    RESTRICTED will correspond to setting the MySQL system variable
+     *    [offline_mode](https://dev.mysql.com/doc/en/server-system-variables.html#sysvar_offline_mode) to ON.
+     *
+     * @return the value
+     **/
+    public DbSystem.AccessMode getAccessMode() {
+        return accessMode;
     }
 
     /**
@@ -1202,6 +1332,13 @@ public final class UpdateDbSystemDetails
         return customerContacts;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("readEndpoint")
+    private final UpdateReadEndpointDetails readEndpoint;
+
+    public UpdateReadEndpointDetails getReadEndpoint() {
+        return readEndpoint;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1219,6 +1356,8 @@ public final class UpdateDbSystemDetails
         sb.append("displayName=").append(String.valueOf(this.displayName));
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", subnetId=").append(String.valueOf(this.subnetId));
+        sb.append(", databaseMode=").append(String.valueOf(this.databaseMode));
+        sb.append(", accessMode=").append(String.valueOf(this.accessMode));
         sb.append(", isHighlyAvailable=").append(String.valueOf(this.isHighlyAvailable));
         sb.append(", availabilityDomain=").append(String.valueOf(this.availabilityDomain));
         sb.append(", faultDomain=").append(String.valueOf(this.faultDomain));
@@ -1242,6 +1381,7 @@ public final class UpdateDbSystemDetails
         sb.append(", databaseManagement=").append(String.valueOf(this.databaseManagement));
         sb.append(", secureConnections=").append(String.valueOf(this.secureConnections));
         sb.append(", customerContacts=").append(String.valueOf(this.customerContacts));
+        sb.append(", readEndpoint=").append(String.valueOf(this.readEndpoint));
         sb.append(")");
         return sb.toString();
     }
@@ -1259,6 +1399,8 @@ public final class UpdateDbSystemDetails
         return java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.subnetId, other.subnetId)
+                && java.util.Objects.equals(this.databaseMode, other.databaseMode)
+                && java.util.Objects.equals(this.accessMode, other.accessMode)
                 && java.util.Objects.equals(this.isHighlyAvailable, other.isHighlyAvailable)
                 && java.util.Objects.equals(this.availabilityDomain, other.availabilityDomain)
                 && java.util.Objects.equals(this.faultDomain, other.faultDomain)
@@ -1282,6 +1424,7 @@ public final class UpdateDbSystemDetails
                 && java.util.Objects.equals(this.databaseManagement, other.databaseManagement)
                 && java.util.Objects.equals(this.secureConnections, other.secureConnections)
                 && java.util.Objects.equals(this.customerContacts, other.customerContacts)
+                && java.util.Objects.equals(this.readEndpoint, other.readEndpoint)
                 && super.equals(other);
     }
 
@@ -1292,6 +1435,8 @@ public final class UpdateDbSystemDetails
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
         result = (result * PRIME) + (this.subnetId == null ? 43 : this.subnetId.hashCode());
+        result = (result * PRIME) + (this.databaseMode == null ? 43 : this.databaseMode.hashCode());
+        result = (result * PRIME) + (this.accessMode == null ? 43 : this.accessMode.hashCode());
         result =
                 (result * PRIME)
                         + (this.isHighlyAvailable == null ? 43 : this.isHighlyAvailable.hashCode());
@@ -1345,6 +1490,7 @@ public final class UpdateDbSystemDetails
         result =
                 (result * PRIME)
                         + (this.customerContacts == null ? 43 : this.customerContacts.hashCode());
+        result = (result * PRIME) + (this.readEndpoint == null ? 43 : this.readEndpoint.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

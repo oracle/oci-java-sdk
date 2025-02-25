@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.rover;
@@ -67,7 +67,7 @@ public interface RoverNode extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/rover/ChangeRoverNodeCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeRoverNodeCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/rover/ChangeRoverNodeCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeRoverNodeCompartment API.
      */
     ChangeRoverNodeCompartmentResponse changeRoverNodeCompartment(
             ChangeRoverNodeCompartmentRequest request);
@@ -81,7 +81,7 @@ public interface RoverNode extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/rover/CreateRoverNodeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateRoverNode API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/rover/CreateRoverNodeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateRoverNode API.
      */
     CreateRoverNodeResponse createRoverNode(CreateRoverNodeRequest request);
 
@@ -93,7 +93,7 @@ public interface RoverNode extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/rover/DeleteRoverNodeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteRoverNode API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/rover/DeleteRoverNodeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteRoverNode API.
      */
     DeleteRoverNodeResponse deleteRoverNode(DeleteRoverNodeRequest request);
 
@@ -105,7 +105,7 @@ public interface RoverNode extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/rover/GetRoverNodeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetRoverNode API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/rover/GetRoverNodeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetRoverNode API.
      */
     GetRoverNodeResponse getRoverNode(GetRoverNodeRequest request);
 
@@ -117,7 +117,7 @@ public interface RoverNode extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/rover/GetRoverNodeCertificateExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetRoverNodeCertificate API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/rover/GetRoverNodeCertificateExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetRoverNodeCertificate API.
      */
     GetRoverNodeCertificateResponse getRoverNodeCertificate(GetRoverNodeCertificateRequest request);
 
@@ -129,7 +129,7 @@ public interface RoverNode extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/rover/GetRoverNodeEncryptionKeyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetRoverNodeEncryptionKey API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/rover/GetRoverNodeEncryptionKeyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetRoverNodeEncryptionKey API.
      */
     GetRoverNodeEncryptionKeyResponse getRoverNodeEncryptionKey(
             GetRoverNodeEncryptionKeyRequest request);
@@ -142,7 +142,7 @@ public interface RoverNode extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/rover/GetRoverNodeGetRptExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetRoverNodeGetRpt API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/rover/GetRoverNodeGetRptExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetRoverNodeGetRpt API.
      */
     GetRoverNodeGetRptResponse getRoverNodeGetRpt(GetRoverNodeGetRptRequest request);
 
@@ -155,7 +155,7 @@ public interface RoverNode extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/rover/ListRoverNodesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListRoverNodes API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/rover/ListRoverNodesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListRoverNodes API.
      */
     ListRoverNodesResponse listRoverNodes(ListRoverNodesRequest request);
 
@@ -167,7 +167,7 @@ public interface RoverNode extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/rover/RoverNodeActionRetrieveCaBundleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RoverNodeActionRetrieveCaBundle API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/rover/RoverNodeActionRetrieveCaBundleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RoverNodeActionRetrieveCaBundle API.
      */
     RoverNodeActionRetrieveCaBundleResponse roverNodeActionRetrieveCaBundle(
             RoverNodeActionRetrieveCaBundleRequest request);
@@ -180,7 +180,7 @@ public interface RoverNode extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/rover/RoverNodeActionSetKeyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RoverNodeActionSetKey API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/rover/RoverNodeActionSetKeyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RoverNodeActionSetKey API.
      */
     RoverNodeActionSetKeyResponse roverNodeActionSetKey(RoverNodeActionSetKeyRequest request);
 
@@ -193,7 +193,7 @@ public interface RoverNode extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/rover/RoverNodeGenerateCertificateExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RoverNodeGenerateCertificate API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/rover/RoverNodeGenerateCertificateExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RoverNodeGenerateCertificate API.
      */
     RoverNodeGenerateCertificateResponse roverNodeGenerateCertificate(
             RoverNodeGenerateCertificateRequest request);
@@ -207,7 +207,7 @@ public interface RoverNode extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/rover/RoverNodeRenewCertificateExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RoverNodeRenewCertificate API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/rover/RoverNodeRenewCertificateExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RoverNodeRenewCertificate API.
      */
     RoverNodeRenewCertificateResponse roverNodeRenewCertificate(
             RoverNodeRenewCertificateRequest request);
@@ -221,7 +221,7 @@ public interface RoverNode extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/rover/RoverNodeReplaceCertificateAuthorityExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RoverNodeReplaceCertificateAuthority API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/rover/RoverNodeReplaceCertificateAuthorityExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RoverNodeReplaceCertificateAuthority API.
      */
     RoverNodeReplaceCertificateAuthorityResponse roverNodeReplaceCertificateAuthority(
             RoverNodeReplaceCertificateAuthorityRequest request);
@@ -234,7 +234,7 @@ public interface RoverNode extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/rover/RoverNodeRetrieveLeafCertificateExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RoverNodeRetrieveLeafCertificate API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/rover/RoverNodeRetrieveLeafCertificateExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RoverNodeRetrieveLeafCertificate API.
      */
     RoverNodeRetrieveLeafCertificateResponse roverNodeRetrieveLeafCertificate(
             RoverNodeRetrieveLeafCertificateRequest request);
@@ -247,7 +247,7 @@ public interface RoverNode extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/rover/UpdateRoverNodeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateRoverNode API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/rover/UpdateRoverNodeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateRoverNode API.
      */
     UpdateRoverNodeResponse updateRoverNode(UpdateRoverNodeRequest request);
 

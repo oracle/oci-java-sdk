@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.stackmonitoring.model;
@@ -33,6 +33,7 @@ public final class MonitoredResourceTypeSummary
         "sourceType",
         "resourceCategory",
         "metadata",
+        "additionalNamespaceMap",
         "timeCreated",
         "timeUpdated",
         "freeformTags",
@@ -50,6 +51,7 @@ public final class MonitoredResourceTypeSummary
             SourceType sourceType,
             ResourceCategory resourceCategory,
             ResourceTypeMetadataDetails metadata,
+            java.util.Map<String, String> additionalNamespaceMap,
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
             java.util.Map<String, String> freeformTags,
@@ -66,6 +68,7 @@ public final class MonitoredResourceTypeSummary
         this.sourceType = sourceType;
         this.resourceCategory = resourceCategory;
         this.metadata = metadata;
+        this.additionalNamespaceMap = additionalNamespaceMap;
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
         this.freeformTags = freeformTags;
@@ -76,14 +79,14 @@ public final class MonitoredResourceTypeSummary
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Monitored resource type identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * Monitored resource type identifier [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * Monitored resource type identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * Monitored resource type identifier [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          * @param id the value to set
          * @return this builder
@@ -162,14 +165,14 @@ public final class MonitoredResourceTypeSummary
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the tenancy containing the resource type.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy containing the resource type.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the tenancy containing the resource type.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy containing the resource type.
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -238,6 +241,23 @@ public final class MonitoredResourceTypeSummary
         public Builder metadata(ResourceTypeMetadataDetails metadata) {
             this.metadata = metadata;
             this.__explicitlySet__.add("metadata");
+            return this;
+        }
+        /**
+         * Key/Value pair for additional namespaces used by stack monitoring services for SYSTEM (SMB) resource types.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("additionalNamespaceMap")
+        private java.util.Map<String, String> additionalNamespaceMap;
+
+        /**
+         * Key/Value pair for additional namespaces used by stack monitoring services for SYSTEM (SMB) resource types.
+         * @param additionalNamespaceMap the value to set
+         * @return this builder
+         **/
+        public Builder additionalNamespaceMap(
+                java.util.Map<String, String> additionalNamespaceMap) {
+            this.additionalNamespaceMap = additionalNamespaceMap;
+            this.__explicitlySet__.add("additionalNamespaceMap");
             return this;
         }
         /**
@@ -358,6 +378,7 @@ public final class MonitoredResourceTypeSummary
                             this.sourceType,
                             this.resourceCategory,
                             this.metadata,
+                            this.additionalNamespaceMap,
                             this.timeCreated,
                             this.timeUpdated,
                             this.freeformTags,
@@ -401,6 +422,9 @@ public final class MonitoredResourceTypeSummary
             if (model.wasPropertyExplicitlySet("metadata")) {
                 this.metadata(model.getMetadata());
             }
+            if (model.wasPropertyExplicitlySet("additionalNamespaceMap")) {
+                this.additionalNamespaceMap(model.getAdditionalNamespaceMap());
+            }
             if (model.wasPropertyExplicitlySet("timeCreated")) {
                 this.timeCreated(model.getTimeCreated());
             }
@@ -432,14 +456,14 @@ public final class MonitoredResourceTypeSummary
     }
 
     /**
-     * Monitored resource type identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * Monitored resource type identifier [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * Monitored resource type identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * Monitored resource type identifier [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      * @return the value
      **/
@@ -508,14 +532,14 @@ public final class MonitoredResourceTypeSummary
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the tenancy containing the resource type.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy containing the resource type.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the tenancy containing the resource type.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy containing the resource type.
      *
      * @return the value
      **/
@@ -574,6 +598,20 @@ public final class MonitoredResourceTypeSummary
 
     public ResourceTypeMetadataDetails getMetadata() {
         return metadata;
+    }
+
+    /**
+     * Key/Value pair for additional namespaces used by stack monitoring services for SYSTEM (SMB) resource types.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("additionalNamespaceMap")
+    private final java.util.Map<String, String> additionalNamespaceMap;
+
+    /**
+     * Key/Value pair for additional namespaces used by stack monitoring services for SYSTEM (SMB) resource types.
+     * @return the value
+     **/
+    public java.util.Map<String, String> getAdditionalNamespaceMap() {
+        return additionalNamespaceMap;
     }
 
     /**
@@ -690,6 +728,7 @@ public final class MonitoredResourceTypeSummary
         sb.append(", sourceType=").append(String.valueOf(this.sourceType));
         sb.append(", resourceCategory=").append(String.valueOf(this.resourceCategory));
         sb.append(", metadata=").append(String.valueOf(this.metadata));
+        sb.append(", additionalNamespaceMap=").append(String.valueOf(this.additionalNamespaceMap));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
@@ -719,6 +758,8 @@ public final class MonitoredResourceTypeSummary
                 && java.util.Objects.equals(this.sourceType, other.sourceType)
                 && java.util.Objects.equals(this.resourceCategory, other.resourceCategory)
                 && java.util.Objects.equals(this.metadata, other.metadata)
+                && java.util.Objects.equals(
+                        this.additionalNamespaceMap, other.additionalNamespaceMap)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
@@ -749,6 +790,11 @@ public final class MonitoredResourceTypeSummary
                 (result * PRIME)
                         + (this.resourceCategory == null ? 43 : this.resourceCategory.hashCode());
         result = (result * PRIME) + (this.metadata == null ? 43 : this.metadata.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.additionalNamespaceMap == null
+                                ? 43
+                                : this.additionalNamespaceMap.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());

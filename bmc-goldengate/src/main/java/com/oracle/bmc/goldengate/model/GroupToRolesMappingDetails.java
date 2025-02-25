@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.goldengate.model;
@@ -46,7 +46,7 @@ public final class GroupToRolesMappingDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the IDP group which will be mapped to goldengate role securityGroup.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IDP group which will be mapped to goldengate role securityGroup.
          * It grants administration of security related objects and invoke security related service requests. This role has full privileges.
          *
          **/
@@ -54,7 +54,7 @@ public final class GroupToRolesMappingDetails
         private String securityGroupId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the IDP group which will be mapped to goldengate role securityGroup.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IDP group which will be mapped to goldengate role securityGroup.
          * It grants administration of security related objects and invoke security related service requests. This role has full privileges.
          *
          * @param securityGroupId the value to set
@@ -66,7 +66,7 @@ public final class GroupToRolesMappingDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the IDP group which will be mapped to goldengate role administratorGroup.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IDP group which will be mapped to goldengate role administratorGroup.
          * It grants full access to the user, including the ability to alter general, non-security related operational parameters
          * and profiles of the server.
          *
@@ -75,7 +75,7 @@ public final class GroupToRolesMappingDetails
         private String administratorGroupId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the IDP group which will be mapped to goldengate role administratorGroup.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IDP group which will be mapped to goldengate role administratorGroup.
          * It grants full access to the user, including the ability to alter general, non-security related operational parameters
          * and profiles of the server.
          *
@@ -88,7 +88,7 @@ public final class GroupToRolesMappingDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the IDP group which will be mapped to goldengate role operatorGroup.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IDP group which will be mapped to goldengate role operatorGroup.
          * It allows users to perform only operational actions, like starting and stopping resources.
          * Operators cannot alter the operational parameters or profiles of the MA server.
          *
@@ -97,7 +97,7 @@ public final class GroupToRolesMappingDetails
         private String operatorGroupId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the IDP group which will be mapped to goldengate role operatorGroup.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IDP group which will be mapped to goldengate role operatorGroup.
          * It allows users to perform only operational actions, like starting and stopping resources.
          * Operators cannot alter the operational parameters or profiles of the MA server.
          *
@@ -110,7 +110,7 @@ public final class GroupToRolesMappingDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the IDP group which will be mapped to goldengate role userGroup.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IDP group which will be mapped to goldengate role userGroup.
          * It allows information-only service requests, which do not alter or affect the operation of either the MA.
          * Examples of query and read-only information include performance metric information and resource status and monitoring information
          *
@@ -119,7 +119,7 @@ public final class GroupToRolesMappingDetails
         private String userGroupId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the IDP group which will be mapped to goldengate role userGroup.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IDP group which will be mapped to goldengate role userGroup.
          * It allows information-only service requests, which do not alter or affect the operation of either the MA.
          * Examples of query and read-only information include performance metric information and resource status and monitoring information
          *
@@ -178,7 +178,7 @@ public final class GroupToRolesMappingDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the IDP group which will be mapped to goldengate role securityGroup.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IDP group which will be mapped to goldengate role securityGroup.
      * It grants administration of security related objects and invoke security related service requests. This role has full privileges.
      *
      **/
@@ -186,7 +186,7 @@ public final class GroupToRolesMappingDetails
     private final String securityGroupId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the IDP group which will be mapped to goldengate role securityGroup.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IDP group which will be mapped to goldengate role securityGroup.
      * It grants administration of security related objects and invoke security related service requests. This role has full privileges.
      *
      * @return the value
@@ -196,7 +196,7 @@ public final class GroupToRolesMappingDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the IDP group which will be mapped to goldengate role administratorGroup.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IDP group which will be mapped to goldengate role administratorGroup.
      * It grants full access to the user, including the ability to alter general, non-security related operational parameters
      * and profiles of the server.
      *
@@ -205,7 +205,7 @@ public final class GroupToRolesMappingDetails
     private final String administratorGroupId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the IDP group which will be mapped to goldengate role administratorGroup.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IDP group which will be mapped to goldengate role administratorGroup.
      * It grants full access to the user, including the ability to alter general, non-security related operational parameters
      * and profiles of the server.
      *
@@ -216,7 +216,7 @@ public final class GroupToRolesMappingDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the IDP group which will be mapped to goldengate role operatorGroup.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IDP group which will be mapped to goldengate role operatorGroup.
      * It allows users to perform only operational actions, like starting and stopping resources.
      * Operators cannot alter the operational parameters or profiles of the MA server.
      *
@@ -225,7 +225,7 @@ public final class GroupToRolesMappingDetails
     private final String operatorGroupId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the IDP group which will be mapped to goldengate role operatorGroup.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IDP group which will be mapped to goldengate role operatorGroup.
      * It allows users to perform only operational actions, like starting and stopping resources.
      * Operators cannot alter the operational parameters or profiles of the MA server.
      *
@@ -236,7 +236,7 @@ public final class GroupToRolesMappingDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the IDP group which will be mapped to goldengate role userGroup.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IDP group which will be mapped to goldengate role userGroup.
      * It allows information-only service requests, which do not alter or affect the operation of either the MA.
      * Examples of query and read-only information include performance metric information and resource status and monitoring information
      *
@@ -245,7 +245,7 @@ public final class GroupToRolesMappingDetails
     private final String userGroupId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the IDP group which will be mapped to goldengate role userGroup.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IDP group which will be mapped to goldengate role userGroup.
      * It allows information-only service requests, which do not alter or affect the operation of either the MA.
      * Examples of query and read-only information include performance metric information and resource status and monitoring information
      *

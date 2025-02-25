@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.goldengate.model;
@@ -153,14 +153,14 @@ public final class CreateOciObjectStorageConnectionDetails extends CreateConnect
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the related OCI tenancy.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related OCI tenancy.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("tenancyId")
         private String tenancyId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the related OCI tenancy.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related OCI tenancy.
          *
          * @param tenancyId the value to set
          * @return this builder
@@ -172,6 +172,7 @@ public final class CreateOciObjectStorageConnectionDetails extends CreateConnect
         }
         /**
          * The name of the region. e.g.: us-ashburn-1
+         * If the region is not provided, backend will default to the default region.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("region")
@@ -179,6 +180,7 @@ public final class CreateOciObjectStorageConnectionDetails extends CreateConnect
 
         /**
          * The name of the region. e.g.: us-ashburn-1
+         * If the region is not provided, backend will default to the default region.
          *
          * @param region the value to set
          * @return this builder
@@ -189,16 +191,18 @@ public final class CreateOciObjectStorageConnectionDetails extends CreateConnect
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the OCI user who will access the Object Storage.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OCI user who will access the Object Storage.
          * The user must have write access to the bucket they want to connect to.
+         * If the user is not provided, backend will default to the user who is calling the API endpoint.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("userId")
         private String userId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the OCI user who will access the Object Storage.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OCI user who will access the Object Storage.
          * The user must have write access to the bucket they want to connect to.
+         * If the user is not provided, backend will default to the user who is calling the API endpoint.
          *
          * @param userId the value to set
          * @return this builder
@@ -211,6 +215,7 @@ public final class CreateOciObjectStorageConnectionDetails extends CreateConnect
         /**
          * The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint.
          * See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+         * Deprecated: This field is deprecated and replaced by "privateKeyFileSecretId". This field will be removed after February 15 2026.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("privateKeyFile")
@@ -219,6 +224,7 @@ public final class CreateOciObjectStorageConnectionDetails extends CreateConnect
         /**
          * The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint.
          * See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+         * Deprecated: This field is deprecated and replaced by "privateKeyFileSecretId". This field will be removed after February 15 2026.
          *
          * @param privateKeyFile the value to set
          * @return this builder
@@ -229,7 +235,7 @@ public final class CreateOciObjectStorageConnectionDetails extends CreateConnect
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret that stores the content of the private key file (PEM file) corresponding to the API key of the fingerprint.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the content of the private key file (PEM file) corresponding to the API key of the fingerprint.
          * See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
          * Note: When provided, 'privateKeyFile' field must not be provided.
          *
@@ -238,7 +244,7 @@ public final class CreateOciObjectStorageConnectionDetails extends CreateConnect
         private String privateKeyFileSecretId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret that stores the content of the private key file (PEM file) corresponding to the API key of the fingerprint.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the content of the private key file (PEM file) corresponding to the API key of the fingerprint.
          * See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
          * Note: When provided, 'privateKeyFile' field must not be provided.
          *
@@ -252,6 +258,7 @@ public final class CreateOciObjectStorageConnectionDetails extends CreateConnect
         }
         /**
          * The passphrase of the private key.
+         * Deprecated: This field is deprecated and replaced by "privateKeyPassphraseSecretId". This field will be removed after February 15 2026.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("privateKeyPassphrase")
@@ -259,6 +266,7 @@ public final class CreateOciObjectStorageConnectionDetails extends CreateConnect
 
         /**
          * The passphrase of the private key.
+         * Deprecated: This field is deprecated and replaced by "privateKeyPassphraseSecretId". This field will be removed after February 15 2026.
          *
          * @param privateKeyPassphrase the value to set
          * @return this builder
@@ -269,7 +277,7 @@ public final class CreateOciObjectStorageConnectionDetails extends CreateConnect
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret that stores the passphrase of the private key.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the passphrase of the private key.
          * Note: When provided, 'privateKeyPassphrase' field must not be provided.
          *
          **/
@@ -277,7 +285,7 @@ public final class CreateOciObjectStorageConnectionDetails extends CreateConnect
         private String privateKeyPassphraseSecretId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret that stores the passphrase of the private key.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the passphrase of the private key.
          * Note: When provided, 'privateKeyPassphrase' field must not be provided.
          *
          * @param privateKeyPassphraseSecretId the value to set
@@ -308,6 +316,24 @@ public final class CreateOciObjectStorageConnectionDetails extends CreateConnect
             this.__explicitlySet__.add("publicKeyFingerprint");
             return this;
         }
+        /**
+         * Indicates that the user intents to connect to the instance through resource principal.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("shouldUseResourcePrincipal")
+        private Boolean shouldUseResourcePrincipal;
+
+        /**
+         * Indicates that the user intents to connect to the instance through resource principal.
+         *
+         * @param shouldUseResourcePrincipal the value to set
+         * @return this builder
+         **/
+        public Builder shouldUseResourcePrincipal(Boolean shouldUseResourcePrincipal) {
+            this.shouldUseResourcePrincipal = shouldUseResourcePrincipal;
+            this.__explicitlySet__.add("shouldUseResourcePrincipal");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -335,7 +361,8 @@ public final class CreateOciObjectStorageConnectionDetails extends CreateConnect
                             this.privateKeyFileSecretId,
                             this.privateKeyPassphrase,
                             this.privateKeyPassphraseSecretId,
-                            this.publicKeyFingerprint);
+                            this.publicKeyFingerprint,
+                            this.shouldUseResourcePrincipal);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -407,6 +434,9 @@ public final class CreateOciObjectStorageConnectionDetails extends CreateConnect
             if (model.wasPropertyExplicitlySet("publicKeyFingerprint")) {
                 this.publicKeyFingerprint(model.getPublicKeyFingerprint());
             }
+            if (model.wasPropertyExplicitlySet("shouldUseResourcePrincipal")) {
+                this.shouldUseResourcePrincipal(model.getShouldUseResourcePrincipal());
+            }
             return this;
         }
     }
@@ -444,7 +474,8 @@ public final class CreateOciObjectStorageConnectionDetails extends CreateConnect
             String privateKeyFileSecretId,
             String privateKeyPassphrase,
             String privateKeyPassphraseSecretId,
-            String publicKeyFingerprint) {
+            String publicKeyFingerprint,
+            Boolean shouldUseResourcePrincipal) {
         super(
                 displayName,
                 description,
@@ -467,6 +498,7 @@ public final class CreateOciObjectStorageConnectionDetails extends CreateConnect
         this.privateKeyPassphrase = privateKeyPassphrase;
         this.privateKeyPassphraseSecretId = privateKeyPassphraseSecretId;
         this.publicKeyFingerprint = publicKeyFingerprint;
+        this.shouldUseResourcePrincipal = shouldUseResourcePrincipal;
     }
 
     /**
@@ -484,14 +516,14 @@ public final class CreateOciObjectStorageConnectionDetails extends CreateConnect
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the related OCI tenancy.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related OCI tenancy.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("tenancyId")
     private final String tenancyId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the related OCI tenancy.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related OCI tenancy.
      *
      * @return the value
      **/
@@ -501,6 +533,7 @@ public final class CreateOciObjectStorageConnectionDetails extends CreateConnect
 
     /**
      * The name of the region. e.g.: us-ashburn-1
+     * If the region is not provided, backend will default to the default region.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("region")
@@ -508,6 +541,7 @@ public final class CreateOciObjectStorageConnectionDetails extends CreateConnect
 
     /**
      * The name of the region. e.g.: us-ashburn-1
+     * If the region is not provided, backend will default to the default region.
      *
      * @return the value
      **/
@@ -516,16 +550,18 @@ public final class CreateOciObjectStorageConnectionDetails extends CreateConnect
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the OCI user who will access the Object Storage.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OCI user who will access the Object Storage.
      * The user must have write access to the bucket they want to connect to.
+     * If the user is not provided, backend will default to the user who is calling the API endpoint.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("userId")
     private final String userId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the OCI user who will access the Object Storage.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OCI user who will access the Object Storage.
      * The user must have write access to the bucket they want to connect to.
+     * If the user is not provided, backend will default to the user who is calling the API endpoint.
      *
      * @return the value
      **/
@@ -536,6 +572,7 @@ public final class CreateOciObjectStorageConnectionDetails extends CreateConnect
     /**
      * The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint.
      * See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+     * Deprecated: This field is deprecated and replaced by "privateKeyFileSecretId". This field will be removed after February 15 2026.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("privateKeyFile")
@@ -544,6 +581,7 @@ public final class CreateOciObjectStorageConnectionDetails extends CreateConnect
     /**
      * The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint.
      * See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+     * Deprecated: This field is deprecated and replaced by "privateKeyFileSecretId". This field will be removed after February 15 2026.
      *
      * @return the value
      **/
@@ -552,7 +590,7 @@ public final class CreateOciObjectStorageConnectionDetails extends CreateConnect
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret that stores the content of the private key file (PEM file) corresponding to the API key of the fingerprint.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the content of the private key file (PEM file) corresponding to the API key of the fingerprint.
      * See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
      * Note: When provided, 'privateKeyFile' field must not be provided.
      *
@@ -561,7 +599,7 @@ public final class CreateOciObjectStorageConnectionDetails extends CreateConnect
     private final String privateKeyFileSecretId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret that stores the content of the private key file (PEM file) corresponding to the API key of the fingerprint.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the content of the private key file (PEM file) corresponding to the API key of the fingerprint.
      * See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
      * Note: When provided, 'privateKeyFile' field must not be provided.
      *
@@ -573,6 +611,7 @@ public final class CreateOciObjectStorageConnectionDetails extends CreateConnect
 
     /**
      * The passphrase of the private key.
+     * Deprecated: This field is deprecated and replaced by "privateKeyPassphraseSecretId". This field will be removed after February 15 2026.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("privateKeyPassphrase")
@@ -580,6 +619,7 @@ public final class CreateOciObjectStorageConnectionDetails extends CreateConnect
 
     /**
      * The passphrase of the private key.
+     * Deprecated: This field is deprecated and replaced by "privateKeyPassphraseSecretId". This field will be removed after February 15 2026.
      *
      * @return the value
      **/
@@ -588,7 +628,7 @@ public final class CreateOciObjectStorageConnectionDetails extends CreateConnect
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret that stores the passphrase of the private key.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the passphrase of the private key.
      * Note: When provided, 'privateKeyPassphrase' field must not be provided.
      *
      **/
@@ -596,7 +636,7 @@ public final class CreateOciObjectStorageConnectionDetails extends CreateConnect
     private final String privateKeyPassphraseSecretId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret that stores the passphrase of the private key.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the passphrase of the private key.
      * Note: When provided, 'privateKeyPassphrase' field must not be provided.
      *
      * @return the value
@@ -623,6 +663,22 @@ public final class CreateOciObjectStorageConnectionDetails extends CreateConnect
         return publicKeyFingerprint;
     }
 
+    /**
+     * Indicates that the user intents to connect to the instance through resource principal.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("shouldUseResourcePrincipal")
+    private final Boolean shouldUseResourcePrincipal;
+
+    /**
+     * Indicates that the user intents to connect to the instance through resource principal.
+     *
+     * @return the value
+     **/
+    public Boolean getShouldUseResourcePrincipal() {
+        return shouldUseResourcePrincipal;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -647,6 +703,8 @@ public final class CreateOciObjectStorageConnectionDetails extends CreateConnect
         sb.append(", privateKeyPassphraseSecretId=")
                 .append(String.valueOf(this.privateKeyPassphraseSecretId));
         sb.append(", publicKeyFingerprint=").append(String.valueOf(this.publicKeyFingerprint));
+        sb.append(", shouldUseResourcePrincipal=")
+                .append(String.valueOf(this.shouldUseResourcePrincipal));
         sb.append(")");
         return sb.toString();
     }
@@ -672,6 +730,8 @@ public final class CreateOciObjectStorageConnectionDetails extends CreateConnect
                 && java.util.Objects.equals(
                         this.privateKeyPassphraseSecretId, other.privateKeyPassphraseSecretId)
                 && java.util.Objects.equals(this.publicKeyFingerprint, other.publicKeyFingerprint)
+                && java.util.Objects.equals(
+                        this.shouldUseResourcePrincipal, other.shouldUseResourcePrincipal)
                 && super.equals(other);
     }
 
@@ -708,6 +768,11 @@ public final class CreateOciObjectStorageConnectionDetails extends CreateConnect
                         + (this.publicKeyFingerprint == null
                                 ? 43
                                 : this.publicKeyFingerprint.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.shouldUseResourcePrincipal == null
+                                ? 43
+                                : this.shouldUseResourcePrincipal.hashCode());
         return result;
     }
 }

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.ocvp.model;
@@ -126,14 +126,14 @@ public final class EsxiHost extends com.oracle.bmc.http.internal.ExplicitlySetBm
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the ESXi host.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the ESXi host.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host.
          *
          * @param id the value to set
          * @return this builder
@@ -164,7 +164,7 @@ public final class EsxiHost extends com.oracle.bmc.http.internal.ExplicitlySetBm
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the SDDC that the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC that the
          * ESXi host belongs to.
          *
          **/
@@ -172,7 +172,7 @@ public final class EsxiHost extends com.oracle.bmc.http.internal.ExplicitlySetBm
         private String sddcId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the SDDC that the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC that the
          * ESXi host belongs to.
          *
          * @param sddcId the value to set
@@ -184,7 +184,7 @@ public final class EsxiHost extends com.oracle.bmc.http.internal.ExplicitlySetBm
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Cluster that the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cluster that the
          * ESXi host belongs to.
          *
          **/
@@ -192,7 +192,7 @@ public final class EsxiHost extends com.oracle.bmc.http.internal.ExplicitlySetBm
         private String clusterId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Cluster that the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cluster that the
          * ESXi host belongs to.
          *
          * @param clusterId the value to set
@@ -204,7 +204,7 @@ public final class EsxiHost extends com.oracle.bmc.http.internal.ExplicitlySetBm
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment that
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that
          * contains the Cluster.
          *
          **/
@@ -212,7 +212,7 @@ public final class EsxiHost extends com.oracle.bmc.http.internal.ExplicitlySetBm
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment that
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that
          * contains the Cluster.
          *
          * @param compartmentId the value to set
@@ -226,7 +226,7 @@ public final class EsxiHost extends com.oracle.bmc.http.internal.ExplicitlySetBm
         /**
          * In terms of implementation, an ESXi host is a Compute instance that
          * is configured with the chosen bundle of VMware software. The {@code computeInstanceId}
-         * is the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of that Compute instance.
+         * is the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of that Compute instance.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("computeInstanceId")
@@ -235,7 +235,7 @@ public final class EsxiHost extends com.oracle.bmc.http.internal.ExplicitlySetBm
         /**
          * In terms of implementation, an ESXi host is a Compute instance that
          * is configured with the chosen bundle of VMware software. The {@code computeInstanceId}
-         * is the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of that Compute instance.
+         * is the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of that Compute instance.
          *
          * @param computeInstanceId the value to set
          * @return this builder
@@ -306,14 +306,14 @@ public final class EsxiHost extends com.oracle.bmc.http.internal.ExplicitlySetBm
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the deleted ESXi Host with LeftOver billing cycle.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deleted ESXi Host with LeftOver billing cycle.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("billingDonorHostId")
         private String billingDonorHostId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the deleted ESXi Host with LeftOver billing cycle.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deleted ESXi Host with LeftOver billing cycle.
          *
          * @param billingDonorHostId the value to set
          * @return this builder
@@ -324,14 +324,14 @@ public final class EsxiHost extends com.oracle.bmc.http.internal.ExplicitlySetBm
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the active ESXi Host to swap billing with current host.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the active ESXi Host to swap billing with current host.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("swapBillingHostId")
         private String swapBillingHostId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the active ESXi Host to swap billing with current host.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the active ESXi Host to swap billing with current host.
          *
          * @param swapBillingHostId the value to set
          * @return this builder
@@ -442,14 +442,14 @@ public final class EsxiHost extends com.oracle.bmc.http.internal.ExplicitlySetBm
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the ESXi host that failed.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that failed.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("failedEsxiHostId")
         private String failedEsxiHostId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the ESXi host that failed.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that failed.
          *
          * @param failedEsxiHostId the value to set
          * @return this builder
@@ -460,7 +460,7 @@ public final class EsxiHost extends com.oracle.bmc.http.internal.ExplicitlySetBm
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the ESXi host that
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that
          * is created to replace the failed host.
          *
          **/
@@ -468,7 +468,7 @@ public final class EsxiHost extends com.oracle.bmc.http.internal.ExplicitlySetBm
         private String replacementEsxiHostId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the ESXi host that
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that
          * is created to replace the failed host.
          *
          * @param replacementEsxiHostId the value to set
@@ -538,7 +538,7 @@ public final class EsxiHost extends com.oracle.bmc.http.internal.ExplicitlySetBm
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the ESXi host that
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that
          * will be upgraded.
          *
          **/
@@ -546,7 +546,7 @@ public final class EsxiHost extends com.oracle.bmc.http.internal.ExplicitlySetBm
         private String nonUpgradedEsxiHostId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the ESXi host that
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that
          * will be upgraded.
          *
          * @param nonUpgradedEsxiHostId the value to set
@@ -558,7 +558,7 @@ public final class EsxiHost extends com.oracle.bmc.http.internal.ExplicitlySetBm
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the ESXi host that
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that
          * is newly created to upgrade the original host.
          *
          **/
@@ -566,7 +566,7 @@ public final class EsxiHost extends com.oracle.bmc.http.internal.ExplicitlySetBm
         private String upgradedReplacementEsxiHostId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the ESXi host that
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that
          * is newly created to upgrade the original host.
          *
          * @param upgradedReplacementEsxiHostId the value to set
@@ -634,14 +634,14 @@ public final class EsxiHost extends com.oracle.bmc.http.internal.ExplicitlySetBm
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("capacityReservationId")
         private String capacityReservationId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
          *
          * @param capacityReservationId the value to set
          * @return this builder
@@ -653,7 +653,7 @@ public final class EsxiHost extends com.oracle.bmc.http.internal.ExplicitlySetBm
         }
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no
-         * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * <p>
          * Example: {@code {"Department": "Finance"}}
          *
@@ -663,7 +663,7 @@ public final class EsxiHost extends com.oracle.bmc.http.internal.ExplicitlySetBm
 
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no
-         * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * <p>
          * Example: {@code {"Department": "Finance"}}
          *
@@ -677,7 +677,7 @@ public final class EsxiHost extends com.oracle.bmc.http.internal.ExplicitlySetBm
         }
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a
-         * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * <p>
          * Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
@@ -687,7 +687,7 @@ public final class EsxiHost extends com.oracle.bmc.http.internal.ExplicitlySetBm
 
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a
-         * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * <p>
          * Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
@@ -871,14 +871,14 @@ public final class EsxiHost extends com.oracle.bmc.http.internal.ExplicitlySetBm
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the ESXi host.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the ESXi host.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host.
      *
      * @return the value
      **/
@@ -905,7 +905,7 @@ public final class EsxiHost extends com.oracle.bmc.http.internal.ExplicitlySetBm
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the SDDC that the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC that the
      * ESXi host belongs to.
      *
      **/
@@ -913,7 +913,7 @@ public final class EsxiHost extends com.oracle.bmc.http.internal.ExplicitlySetBm
     private final String sddcId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the SDDC that the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC that the
      * ESXi host belongs to.
      *
      * @return the value
@@ -923,7 +923,7 @@ public final class EsxiHost extends com.oracle.bmc.http.internal.ExplicitlySetBm
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Cluster that the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cluster that the
      * ESXi host belongs to.
      *
      **/
@@ -931,7 +931,7 @@ public final class EsxiHost extends com.oracle.bmc.http.internal.ExplicitlySetBm
     private final String clusterId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Cluster that the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cluster that the
      * ESXi host belongs to.
      *
      * @return the value
@@ -941,7 +941,7 @@ public final class EsxiHost extends com.oracle.bmc.http.internal.ExplicitlySetBm
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment that
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that
      * contains the Cluster.
      *
      **/
@@ -949,7 +949,7 @@ public final class EsxiHost extends com.oracle.bmc.http.internal.ExplicitlySetBm
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment that
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that
      * contains the Cluster.
      *
      * @return the value
@@ -961,7 +961,7 @@ public final class EsxiHost extends com.oracle.bmc.http.internal.ExplicitlySetBm
     /**
      * In terms of implementation, an ESXi host is a Compute instance that
      * is configured with the chosen bundle of VMware software. The {@code computeInstanceId}
-     * is the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of that Compute instance.
+     * is the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of that Compute instance.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("computeInstanceId")
@@ -970,7 +970,7 @@ public final class EsxiHost extends com.oracle.bmc.http.internal.ExplicitlySetBm
     /**
      * In terms of implementation, an ESXi host is a Compute instance that
      * is configured with the chosen bundle of VMware software. The {@code computeInstanceId}
-     * is the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of that Compute instance.
+     * is the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of that Compute instance.
      *
      * @return the value
      **/
@@ -1033,14 +1033,14 @@ public final class EsxiHost extends com.oracle.bmc.http.internal.ExplicitlySetBm
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the deleted ESXi Host with LeftOver billing cycle.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deleted ESXi Host with LeftOver billing cycle.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("billingDonorHostId")
     private final String billingDonorHostId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the deleted ESXi Host with LeftOver billing cycle.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deleted ESXi Host with LeftOver billing cycle.
      *
      * @return the value
      **/
@@ -1049,14 +1049,14 @@ public final class EsxiHost extends com.oracle.bmc.http.internal.ExplicitlySetBm
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the active ESXi Host to swap billing with current host.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the active ESXi Host to swap billing with current host.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("swapBillingHostId")
     private final String swapBillingHostId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the active ESXi Host to swap billing with current host.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the active ESXi Host to swap billing with current host.
      *
      * @return the value
      **/
@@ -1155,14 +1155,14 @@ public final class EsxiHost extends com.oracle.bmc.http.internal.ExplicitlySetBm
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the ESXi host that failed.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that failed.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("failedEsxiHostId")
     private final String failedEsxiHostId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the ESXi host that failed.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that failed.
      *
      * @return the value
      **/
@@ -1171,7 +1171,7 @@ public final class EsxiHost extends com.oracle.bmc.http.internal.ExplicitlySetBm
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the ESXi host that
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that
      * is created to replace the failed host.
      *
      **/
@@ -1179,7 +1179,7 @@ public final class EsxiHost extends com.oracle.bmc.http.internal.ExplicitlySetBm
     private final String replacementEsxiHostId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the ESXi host that
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that
      * is created to replace the failed host.
      *
      * @return the value
@@ -1241,7 +1241,7 @@ public final class EsxiHost extends com.oracle.bmc.http.internal.ExplicitlySetBm
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the ESXi host that
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that
      * will be upgraded.
      *
      **/
@@ -1249,7 +1249,7 @@ public final class EsxiHost extends com.oracle.bmc.http.internal.ExplicitlySetBm
     private final String nonUpgradedEsxiHostId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the ESXi host that
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that
      * will be upgraded.
      *
      * @return the value
@@ -1259,7 +1259,7 @@ public final class EsxiHost extends com.oracle.bmc.http.internal.ExplicitlySetBm
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the ESXi host that
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that
      * is newly created to upgrade the original host.
      *
      **/
@@ -1267,7 +1267,7 @@ public final class EsxiHost extends com.oracle.bmc.http.internal.ExplicitlySetBm
     private final String upgradedReplacementEsxiHostId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the ESXi host that
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that
      * is newly created to upgrade the original host.
      *
      * @return the value
@@ -1327,14 +1327,14 @@ public final class EsxiHost extends com.oracle.bmc.http.internal.ExplicitlySetBm
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("capacityReservationId")
     private final String capacityReservationId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
      *
      * @return the value
      **/
@@ -1344,7 +1344,7 @@ public final class EsxiHost extends com.oracle.bmc.http.internal.ExplicitlySetBm
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no
-     * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
      * Example: {@code {"Department": "Finance"}}
      *
@@ -1354,7 +1354,7 @@ public final class EsxiHost extends com.oracle.bmc.http.internal.ExplicitlySetBm
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no
-     * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
      * Example: {@code {"Department": "Finance"}}
      *
@@ -1366,7 +1366,7 @@ public final class EsxiHost extends com.oracle.bmc.http.internal.ExplicitlySetBm
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a
-     * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
      * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
@@ -1376,7 +1376,7 @@ public final class EsxiHost extends com.oracle.bmc.http.internal.ExplicitlySetBm
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a
-     * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
      * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *

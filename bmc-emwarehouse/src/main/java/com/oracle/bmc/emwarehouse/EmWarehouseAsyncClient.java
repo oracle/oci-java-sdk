@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.emwarehouse;
@@ -471,10 +471,7 @@ public class EmWarehouseAsyncClient implements EmWarehouseAsync {
                 CancelWorkRequestConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "EmWarehouse",
-                        "CancelWorkRequest",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/em-warehouse/20180828/WorkRequest/CancelWorkRequest");
+                        "EmWarehouse", "CancelWorkRequest", ib.getRequestUri().toString(), "");
         final java.util.function.Function<javax.ws.rs.core.Response, CancelWorkRequestResponse>
                 transformer =
                         CancelWorkRequestConverter.fromResponse(
@@ -523,7 +520,7 @@ public class EmWarehouseAsyncClient implements EmWarehouseAsync {
                         "EmWarehouse",
                         "ChangeEmWarehouseCompartment",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/em-warehouse/20180828/EmWarehouse/ChangeEmWarehouseCompartment");
+                        "");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeEmWarehouseCompartmentResponse>
                 transformer =
@@ -575,10 +572,7 @@ public class EmWarehouseAsyncClient implements EmWarehouseAsync {
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "EmWarehouse",
-                        "CreateEmWarehouse",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/em-warehouse/20180828/EmWarehouse/CreateEmWarehouse");
+                        "EmWarehouse", "CreateEmWarehouse", ib.getRequestUri().toString(), "");
         final java.util.function.Function<javax.ws.rs.core.Response, CreateEmWarehouseResponse>
                 transformer =
                         CreateEmWarehouseConverter.fromResponse(
@@ -626,10 +620,7 @@ public class EmWarehouseAsyncClient implements EmWarehouseAsync {
                 DeleteEmWarehouseConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "EmWarehouse",
-                        "DeleteEmWarehouse",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/em-warehouse/20180828/EmWarehouse/DeleteEmWarehouse");
+                        "EmWarehouse", "DeleteEmWarehouse", ib.getRequestUri().toString(), "");
         final java.util.function.Function<javax.ws.rs.core.Response, DeleteEmWarehouseResponse>
                 transformer =
                         DeleteEmWarehouseConverter.fromResponse(
@@ -672,10 +663,7 @@ public class EmWarehouseAsyncClient implements EmWarehouseAsync {
                 GetEmWarehouseConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "EmWarehouse",
-                        "GetEmWarehouse",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/em-warehouse/20180828/EmWarehouse/GetEmWarehouse");
+                        "EmWarehouse", "GetEmWarehouse", ib.getRequestUri().toString(), "");
         final java.util.function.Function<javax.ws.rs.core.Response, GetEmWarehouseResponse>
                 transformer =
                         GetEmWarehouseConverter.fromResponse(java.util.Optional.of(serviceDetails));
@@ -722,7 +710,7 @@ public class EmWarehouseAsyncClient implements EmWarehouseAsync {
                         "EmWarehouse",
                         "GetEmWarehouseResourceUsage",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/em-warehouse/20180828/ResourceUsage/GetEmWarehouseResourceUsage");
+                        "");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, GetEmWarehouseResourceUsageResponse>
                 transformer =
@@ -768,10 +756,7 @@ public class EmWarehouseAsyncClient implements EmWarehouseAsync {
                 GetWorkRequestConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "EmWarehouse",
-                        "GetWorkRequest",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/em-warehouse/20180828/WorkRequest/GetWorkRequest");
+                        "EmWarehouse", "GetWorkRequest", ib.getRequestUri().toString(), "");
         final java.util.function.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
                 transformer =
                         GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
@@ -813,10 +798,7 @@ public class EmWarehouseAsyncClient implements EmWarehouseAsync {
                 ListEmWarehousesConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "EmWarehouse",
-                        "ListEmWarehouses",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/em-warehouse/20180828/EmWarehouseCollection/ListEmWarehouses");
+                        "EmWarehouse", "ListEmWarehouses", ib.getRequestUri().toString(), "");
         final java.util.function.Function<javax.ws.rs.core.Response, ListEmWarehousesResponse>
                 transformer =
                         ListEmWarehousesConverter.fromResponse(
@@ -858,10 +840,7 @@ public class EmWarehouseAsyncClient implements EmWarehouseAsync {
                 ListEtlRunsConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "EmWarehouse",
-                        "ListEtlRuns",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/em-warehouse/20180828/EtlRunCollection/ListEtlRuns");
+                        "EmWarehouse", "ListEtlRuns", ib.getRequestUri().toString(), "");
         final java.util.function.Function<javax.ws.rs.core.Response, ListEtlRunsResponse>
                 transformer =
                         ListEtlRunsConverter.fromResponse(java.util.Optional.of(serviceDetails));
@@ -903,10 +882,7 @@ public class EmWarehouseAsyncClient implements EmWarehouseAsync {
                 ListWorkRequestErrorsConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "EmWarehouse",
-                        "ListWorkRequestErrors",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/em-warehouse/20180828/WorkRequestError/ListWorkRequestErrors");
+                        "EmWarehouse", "ListWorkRequestErrors", ib.getRequestUri().toString(), "");
         final java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
                 transformer =
                         ListWorkRequestErrorsConverter.fromResponse(
@@ -950,10 +926,7 @@ public class EmWarehouseAsyncClient implements EmWarehouseAsync {
                 ListWorkRequestLogsConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "EmWarehouse",
-                        "ListWorkRequestLogs",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/em-warehouse/20180828/WorkRequestLogEntry/ListWorkRequestLogs");
+                        "EmWarehouse", "ListWorkRequestLogs", ib.getRequestUri().toString(), "");
         final java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
                 transformer =
                         ListWorkRequestLogsConverter.fromResponse(
@@ -997,10 +970,7 @@ public class EmWarehouseAsyncClient implements EmWarehouseAsync {
                 ListWorkRequestsConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "EmWarehouse",
-                        "ListWorkRequests",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/em-warehouse/20180828/WorkRequest/ListWorkRequests");
+                        "EmWarehouse", "ListWorkRequests", ib.getRequestUri().toString(), "");
         final java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
                 transformer =
                         ListWorkRequestsConverter.fromResponse(
@@ -1043,10 +1013,7 @@ public class EmWarehouseAsyncClient implements EmWarehouseAsync {
                 UpdateEmWarehouseConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "EmWarehouse",
-                        "UpdateEmWarehouse",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/em-warehouse/20180828/EmWarehouse/UpdateEmWarehouse");
+                        "EmWarehouse", "UpdateEmWarehouse", ib.getRequestUri().toString(), "");
         final java.util.function.Function<javax.ws.rs.core.Response, UpdateEmWarehouseResponse>
                 transformer =
                         UpdateEmWarehouseConverter.fromResponse(

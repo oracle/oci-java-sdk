@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.opensearch.model;
@@ -36,7 +36,9 @@ public final class OpensearchClusterSummary
         "totalStorageGB",
         "lifecycleState",
         "availabilityDomains",
-        "securityMode"
+        "securityMode",
+        "backupPolicy",
+        "outboundClusterConfig"
     })
     public OpensearchClusterSummary(
             String id,
@@ -52,7 +54,9 @@ public final class OpensearchClusterSummary
             Integer totalStorageGB,
             OpensearchCluster.LifecycleState lifecycleState,
             java.util.List<String> availabilityDomains,
-            SecurityMode securityMode) {
+            SecurityMode securityMode,
+            BackupPolicy backupPolicy,
+            OutboundClusterConfig outboundClusterConfig) {
         super();
         this.id = id;
         this.displayName = displayName;
@@ -68,6 +72,8 @@ public final class OpensearchClusterSummary
         this.lifecycleState = lifecycleState;
         this.availabilityDomains = availabilityDomains;
         this.securityMode = securityMode;
+        this.backupPolicy = backupPolicy;
+        this.outboundClusterConfig = outboundClusterConfig;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -318,6 +324,24 @@ public final class OpensearchClusterSummary
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("backupPolicy")
+        private BackupPolicy backupPolicy;
+
+        public Builder backupPolicy(BackupPolicy backupPolicy) {
+            this.backupPolicy = backupPolicy;
+            this.__explicitlySet__.add("backupPolicy");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("outboundClusterConfig")
+        private OutboundClusterConfig outboundClusterConfig;
+
+        public Builder outboundClusterConfig(OutboundClusterConfig outboundClusterConfig) {
+            this.outboundClusterConfig = outboundClusterConfig;
+            this.__explicitlySet__.add("outboundClusterConfig");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -337,7 +361,9 @@ public final class OpensearchClusterSummary
                             this.totalStorageGB,
                             this.lifecycleState,
                             this.availabilityDomains,
-                            this.securityMode);
+                            this.securityMode,
+                            this.backupPolicy,
+                            this.outboundClusterConfig);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -387,6 +413,12 @@ public final class OpensearchClusterSummary
             }
             if (model.wasPropertyExplicitlySet("securityMode")) {
                 this.securityMode(model.getSecurityMode());
+            }
+            if (model.wasPropertyExplicitlySet("backupPolicy")) {
+                this.backupPolicy(model.getBackupPolicy());
+            }
+            if (model.wasPropertyExplicitlySet("outboundClusterConfig")) {
+                this.outboundClusterConfig(model.getOutboundClusterConfig());
             }
             return this;
         }
@@ -619,6 +651,20 @@ public final class OpensearchClusterSummary
         return securityMode;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("backupPolicy")
+    private final BackupPolicy backupPolicy;
+
+    public BackupPolicy getBackupPolicy() {
+        return backupPolicy;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("outboundClusterConfig")
+    private final OutboundClusterConfig outboundClusterConfig;
+
+    public OutboundClusterConfig getOutboundClusterConfig() {
+        return outboundClusterConfig;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -647,6 +693,8 @@ public final class OpensearchClusterSummary
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", availabilityDomains=").append(String.valueOf(this.availabilityDomains));
         sb.append(", securityMode=").append(String.valueOf(this.securityMode));
+        sb.append(", backupPolicy=").append(String.valueOf(this.backupPolicy));
+        sb.append(", outboundClusterConfig=").append(String.valueOf(this.outboundClusterConfig));
         sb.append(")");
         return sb.toString();
     }
@@ -675,6 +723,8 @@ public final class OpensearchClusterSummary
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.availabilityDomains, other.availabilityDomains)
                 && java.util.Objects.equals(this.securityMode, other.securityMode)
+                && java.util.Objects.equals(this.backupPolicy, other.backupPolicy)
+                && java.util.Objects.equals(this.outboundClusterConfig, other.outboundClusterConfig)
                 && super.equals(other);
     }
 
@@ -710,6 +760,12 @@ public final class OpensearchClusterSummary
                                 ? 43
                                 : this.availabilityDomains.hashCode());
         result = (result * PRIME) + (this.securityMode == null ? 43 : this.securityMode.hashCode());
+        result = (result * PRIME) + (this.backupPolicy == null ? 43 : this.backupPolicy.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.outboundClusterConfig == null
+                                ? 43
+                                : this.outboundClusterConfig.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

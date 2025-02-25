@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.stackmonitoring.model;
@@ -88,13 +88,13 @@ public final class MetricExtension extends com.oracle.bmc.http.internal.Explicit
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of Metric Extension resource
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Metric Extension resource
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of Metric Extension resource
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Metric Extension resource
          * @param id the value to set
          * @return this builder
          **/
@@ -168,13 +168,13 @@ public final class MetricExtension extends com.oracle.bmc.http.internal.Explicit
             return this;
         }
         /**
-         * Compartment Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+         * Compartment Identifier [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * Compartment Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+         * Compartment Identifier [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
          * @param compartmentId the value to set
          * @return this builder
          **/
@@ -184,13 +184,13 @@ public final class MetricExtension extends com.oracle.bmc.http.internal.Explicit
             return this;
         }
         /**
-         * Tenant Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+         * Tenant Identifier [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("tenantId")
         private String tenantId;
 
         /**
-         * Tenant Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+         * Tenant Identifier [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
          * @param tenantId the value to set
          * @return this builder
          **/
@@ -353,13 +353,13 @@ public final class MetricExtension extends com.oracle.bmc.http.internal.Explicit
             return this;
         }
         /**
-         * List of resource objects on which this metric extension is enabled.
+         * List of resource details objects having resourceIds on which this metric extension is enabled.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("enabledOnResources")
         private java.util.List<EnabledResourceDetails> enabledOnResources;
 
         /**
-         * List of resource objects on which this metric extension is enabled.
+         * List of resource details objects having resourceIds on which this metric extension is enabled.
          * @param enabledOnResources the value to set
          * @return this builder
          **/
@@ -512,13 +512,13 @@ public final class MetricExtension extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of Metric Extension resource
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Metric Extension resource
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of Metric Extension resource
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Metric Extension resource
      * @return the value
      **/
     public String getId() {
@@ -582,13 +582,13 @@ public final class MetricExtension extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
-     * Compartment Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     * Compartment Identifier [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * Compartment Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     * Compartment Identifier [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      * @return the value
      **/
     public String getCompartmentId() {
@@ -596,13 +596,13 @@ public final class MetricExtension extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
-     * Tenant Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     * Tenant Identifier [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("tenantId")
     private final String tenantId;
 
     /**
-     * Tenant Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     * Tenant Identifier [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      * @return the value
      **/
     public String getTenantId() {
@@ -743,13 +743,13 @@ public final class MetricExtension extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
-     * List of resource objects on which this metric extension is enabled.
+     * List of resource details objects having resourceIds on which this metric extension is enabled.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("enabledOnResources")
     private final java.util.List<EnabledResourceDetails> enabledOnResources;
 
     /**
-     * List of resource objects on which this metric extension is enabled.
+     * List of resource details objects having resourceIds on which this metric extension is enabled.
      * @return the value
      **/
     public java.util.List<EnabledResourceDetails> getEnabledOnResources() {

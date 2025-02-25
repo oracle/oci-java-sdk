@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.osmanagementhub.model;
@@ -53,6 +53,8 @@ public class Profile extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel 
         "osFamily",
         "archType",
         "timeCreated",
+        "timeModified",
+        "profileVersion",
         "lifecycleState",
         "registrationType",
         "isDefaultProfile",
@@ -71,6 +73,8 @@ public class Profile extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel 
             OsFamily osFamily,
             ArchType archType,
             java.util.Date timeCreated,
+            java.util.Date timeModified,
+            String profileVersion,
             LifecycleState lifecycleState,
             RegistrationType registrationType,
             Boolean isDefaultProfile,
@@ -88,6 +92,8 @@ public class Profile extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel 
         this.osFamily = osFamily;
         this.archType = archType;
         this.timeCreated = timeCreated;
+        this.timeModified = timeModified;
+        this.profileVersion = profileVersion;
         this.lifecycleState = lifecycleState;
         this.registrationType = registrationType;
         this.isDefaultProfile = isDefaultProfile;
@@ -98,13 +104,13 @@ public class Profile extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel 
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the registration profile.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the registration profile.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the registration profile.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the registration profile.
      * @return the value
      **/
     public String getId() {
@@ -112,13 +118,13 @@ public class Profile extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel 
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the registration profile.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the registration profile.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the registration profile.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the registration profile.
      * @return the value
      **/
     public String getCompartmentId() {
@@ -154,13 +160,17 @@ public class Profile extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel 
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station to associate with an instance once registered. Associating with a management station applies only to non-OCI instances.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station to associate with an
+     * instance once registered. Management stations are only used by non-OCI instances.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("managementStationId")
     private final String managementStationId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station to associate with an instance once registered. Associating with a management station applies only to non-OCI instances.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station to associate with an
+     * instance once registered. Management stations are only used by non-OCI instances.
+     *
      * @return the value
      **/
     public String getManagementStationId() {
@@ -224,12 +234,41 @@ public class Profile extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel 
     }
 
     /**
+     * The time the registration profile was last modified (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("timeModified")
+    private final java.util.Date timeModified;
+
+    /**
+     * The time the registration profile was last modified (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+     * @return the value
+     **/
+    public java.util.Date getTimeModified() {
+        return timeModified;
+    }
+
+    /**
+     * The version of the profile. The version is automatically incremented each time the profiled is edited.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("profileVersion")
+    private final String profileVersion;
+
+    /**
+     * The version of the profile. The version is automatically incremented each time the profiled is edited.
+     * @return the value
+     **/
+    public String getProfileVersion() {
+        return profileVersion;
+    }
+
+    /**
      * The current state of the registration profile.
      **/
     public enum LifecycleState {
         Creating("CREATING"),
         Updating("UPDATING"),
         Active("ACTIVE"),
+        Inactive("INACTIVE"),
         Deleting("DELETING"),
         Deleted("DELETED"),
         Failed("FAILED"),
@@ -387,7 +426,7 @@ public class Profile extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel 
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * Example: {@code {"Department": "Finance"}}
      *
      **/
@@ -396,7 +435,7 @@ public class Profile extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel 
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * Example: {@code {"Department": "Finance"}}
      *
      * @return the value
@@ -407,7 +446,7 @@ public class Profile extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel 
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      **/
@@ -416,7 +455,7 @@ public class Profile extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel 
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      * @return the value
@@ -466,6 +505,8 @@ public class Profile extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel 
         sb.append(", osFamily=").append(String.valueOf(this.osFamily));
         sb.append(", archType=").append(String.valueOf(this.archType));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", timeModified=").append(String.valueOf(this.timeModified));
+        sb.append(", profileVersion=").append(String.valueOf(this.profileVersion));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", registrationType=").append(String.valueOf(this.registrationType));
         sb.append(", isDefaultProfile=").append(String.valueOf(this.isDefaultProfile));
@@ -497,6 +538,8 @@ public class Profile extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel 
                 && java.util.Objects.equals(this.osFamily, other.osFamily)
                 && java.util.Objects.equals(this.archType, other.archType)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.timeModified, other.timeModified)
+                && java.util.Objects.equals(this.profileVersion, other.profileVersion)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.registrationType, other.registrationType)
                 && java.util.Objects.equals(this.isDefaultProfile, other.isDefaultProfile)
@@ -527,6 +570,10 @@ public class Profile extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel 
         result = (result * PRIME) + (this.osFamily == null ? 43 : this.osFamily.hashCode());
         result = (result * PRIME) + (this.archType == null ? 43 : this.archType.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result = (result * PRIME) + (this.timeModified == null ? 43 : this.timeModified.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.profileVersion == null ? 43 : this.profileVersion.hashCode());
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());

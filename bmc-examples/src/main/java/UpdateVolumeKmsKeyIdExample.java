@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 import com.oracle.bmc.ConfigFileReader;
@@ -52,7 +52,7 @@ public class UpdateVolumeKmsKeyIdExample {
 
         // When an instance is created, a boot volume is created at the same time. User could choose to use their own kms key to encrypt the data.
         // fill out necessary kms key information to use your own key to protect kms.  More information of volume security please refer to https://cloud.oracle.com/storage/block-volume/faq
-        // make sure you have set up proper policy for blockstorage to access the key. More information please refer to https://docs.cloud.oracle.com/en-us/iaas/Content/Identity/Concepts/commonpolicies.htm#services-use-key
+        // make sure you have set up proper policy for blockstorage to access the key. More information please refer to https://docs.oracle.com/en-us/iaas/Content/Identity/Concepts/commonpolicies.htm#services-use-key
         String kmsKeyId = "SOME VALID KEY OCID";
 
         // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI config file

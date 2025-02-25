@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.email;
@@ -9,7 +9,7 @@ import com.oracle.bmc.email.responses.*;
 
 /**
  * Use the Email Delivery API to do the necessary set up to send high-volume and application-generated emails through the OCI Email Delivery service.
- * For more information, see [Overview of the Email Delivery Service](https://docs.cloud.oracle.com/iaas/Content/Email/Concepts/overview.htm).
+ * For more information, see [Overview of the Email Delivery Service](https://docs.oracle.com/iaas/Content/Email/Concepts/overview.htm).
  *
  **Note:** Write actions (POST, UPDATE, DELETE) may take several minutes to propagate and be reflected by the API.
  * If a subsequent read request fails to reflect your changes, wait a few minutes and try again.
@@ -68,7 +68,7 @@ public interface Email extends AutoCloseable {
      * Moves an email domain into a different compartment.
      * When provided, If-Match is checked against ETag value of the resource.
      * For information about moving resources between compartments, see
-     * [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * [Moving Resources to a Different Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      * <p>
      **Note:** All DKIM objects associated with this email domain will also be moved into the provided compartment.
      *
@@ -78,7 +78,7 @@ public interface Email extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/ChangeEmailDomainCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeEmailDomainCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/ChangeEmailDomainCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeEmailDomainCompartment API.
      */
     ChangeEmailDomainCompartmentResponse changeEmailDomainCompartment(
             ChangeEmailDomainCompartmentRequest request);
@@ -91,7 +91,7 @@ public interface Email extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/ChangeSenderCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeSenderCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/ChangeSenderCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeSenderCompartment API.
      */
     ChangeSenderCompartmentResponse changeSenderCompartment(ChangeSenderCompartmentRequest request);
 
@@ -108,7 +108,7 @@ public interface Email extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/CreateDkimExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateDkim API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/CreateDkimExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateDkim API.
      */
     CreateDkimResponse createDkim(CreateDkimRequest request);
 
@@ -120,7 +120,7 @@ public interface Email extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/CreateEmailDomainExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateEmailDomain API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/CreateEmailDomainExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateEmailDomain API.
      */
     CreateEmailDomainResponse createEmailDomain(CreateEmailDomainRequest request);
 
@@ -132,7 +132,7 @@ public interface Email extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/CreateEmailReturnPathExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateEmailReturnPath API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/CreateEmailReturnPathExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateEmailReturnPath API.
      */
     CreateEmailReturnPathResponse createEmailReturnPath(CreateEmailReturnPathRequest request);
 
@@ -144,7 +144,7 @@ public interface Email extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/CreateSenderExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateSender API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/CreateSenderExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateSender API.
      */
     CreateSenderResponse createSender(CreateSenderRequest request);
 
@@ -160,7 +160,7 @@ public interface Email extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/CreateSuppressionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateSuppression API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/CreateSuppressionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateSuppression API.
      */
     CreateSuppressionResponse createSuppression(CreateSuppressionRequest request);
 
@@ -178,7 +178,7 @@ public interface Email extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/DeleteDkimExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteDkim API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/DeleteDkimExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteDkim API.
      */
     DeleteDkimResponse deleteDkim(DeleteDkimRequest request);
 
@@ -190,7 +190,7 @@ public interface Email extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/DeleteEmailDomainExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteEmailDomain API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/DeleteEmailDomainExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteEmailDomain API.
      */
     DeleteEmailDomainResponse deleteEmailDomain(DeleteEmailDomainRequest request);
 
@@ -202,7 +202,7 @@ public interface Email extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/DeleteEmailReturnPathExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteEmailReturnPath API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/DeleteEmailReturnPathExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteEmailReturnPath API.
      */
     DeleteEmailReturnPathResponse deleteEmailReturnPath(DeleteEmailReturnPathRequest request);
 
@@ -216,7 +216,7 @@ public interface Email extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/DeleteSenderExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteSender API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/DeleteSenderExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteSender API.
      */
     DeleteSenderResponse deleteSender(DeleteSenderRequest request);
 
@@ -230,7 +230,7 @@ public interface Email extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/DeleteSuppressionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteSuppression API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/DeleteSuppressionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteSuppression API.
      */
     DeleteSuppressionResponse deleteSuppression(DeleteSuppressionRequest request);
 
@@ -242,7 +242,7 @@ public interface Email extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/GetDkimExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetDkim API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/GetDkimExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetDkim API.
      */
     GetDkimResponse getDkim(GetDkimRequest request);
 
@@ -255,7 +255,7 @@ public interface Email extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/GetEmailConfigurationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetEmailConfiguration API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/GetEmailConfigurationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetEmailConfiguration API.
      */
     GetEmailConfigurationResponse getEmailConfiguration(GetEmailConfigurationRequest request);
 
@@ -267,7 +267,7 @@ public interface Email extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/GetEmailDomainExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetEmailDomain API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/GetEmailDomainExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetEmailDomain API.
      */
     GetEmailDomainResponse getEmailDomain(GetEmailDomainRequest request);
 
@@ -279,7 +279,7 @@ public interface Email extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/GetEmailReturnPathExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetEmailReturnPath API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/GetEmailReturnPathExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetEmailReturnPath API.
      */
     GetEmailReturnPathResponse getEmailReturnPath(GetEmailReturnPathRequest request);
 
@@ -291,7 +291,7 @@ public interface Email extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/GetSenderExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetSender API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/GetSenderExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetSender API.
      */
     GetSenderResponse getSender(GetSenderRequest request);
 
@@ -305,7 +305,7 @@ public interface Email extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/GetSuppressionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetSuppression API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/GetSuppressionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetSuppression API.
      */
     GetSuppressionResponse getSuppression(GetSuppressionRequest request);
 
@@ -317,7 +317,7 @@ public interface Email extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/GetWorkRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetWorkRequest API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/GetWorkRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetWorkRequest API.
      */
     GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request);
 
@@ -329,7 +329,7 @@ public interface Email extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/ListDkimsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDkims API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/ListDkimsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDkims API.
      */
     ListDkimsResponse listDkims(ListDkimsRequest request);
 
@@ -341,7 +341,7 @@ public interface Email extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/ListEmailDomainsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListEmailDomains API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/ListEmailDomainsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListEmailDomains API.
      */
     ListEmailDomainsResponse listEmailDomains(ListEmailDomainsRequest request);
 
@@ -353,7 +353,7 @@ public interface Email extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/ListEmailReturnPathsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListEmailReturnPaths API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/ListEmailReturnPathsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListEmailReturnPaths API.
      */
     ListEmailReturnPathsResponse listEmailReturnPaths(ListEmailReturnPathsRequest request);
 
@@ -366,7 +366,7 @@ public interface Email extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/ListSendersExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSenders API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/ListSendersExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSenders API.
      */
     ListSendersResponse listSenders(ListSendersRequest request);
 
@@ -381,7 +381,7 @@ public interface Email extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/ListSuppressionsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSuppressions API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/ListSuppressionsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSuppressions API.
      */
     ListSuppressionsResponse listSuppressions(ListSuppressionsRequest request);
 
@@ -394,7 +394,7 @@ public interface Email extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/ListWorkRequestErrorsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequestErrors API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/ListWorkRequestErrorsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequestErrors API.
      */
     ListWorkRequestErrorsResponse listWorkRequestErrors(ListWorkRequestErrorsRequest request);
 
@@ -407,7 +407,7 @@ public interface Email extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/ListWorkRequestLogsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequestLogs API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/ListWorkRequestLogsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequestLogs API.
      */
     ListWorkRequestLogsResponse listWorkRequestLogs(ListWorkRequestLogsRequest request);
 
@@ -420,7 +420,7 @@ public interface Email extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/ListWorkRequestsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequests API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/ListWorkRequestsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequests API.
      */
     ListWorkRequestsResponse listWorkRequests(ListWorkRequestsRequest request);
 
@@ -432,7 +432,7 @@ public interface Email extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/UpdateDkimExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateDkim API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/UpdateDkimExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateDkim API.
      */
     UpdateDkimResponse updateDkim(UpdateDkimRequest request);
 
@@ -444,7 +444,7 @@ public interface Email extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/UpdateEmailDomainExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateEmailDomain API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/UpdateEmailDomainExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateEmailDomain API.
      */
     UpdateEmailDomainResponse updateEmailDomain(UpdateEmailDomainRequest request);
 
@@ -456,7 +456,7 @@ public interface Email extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/UpdateEmailReturnPathExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateEmailReturnPath API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/UpdateEmailReturnPathExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateEmailReturnPath API.
      */
     UpdateEmailReturnPathResponse updateEmailReturnPath(UpdateEmailReturnPathRequest request);
 
@@ -464,7 +464,7 @@ public interface Email extends AutoCloseable {
      * Replaces the set of tags for a sender with the tags provided. If either freeform
      * or defined tags are omitted, the tags for that set remain the same. Each set must
      * include the full set of tags for the sender, partial updates are not permitted.
-     * For more information about tagging, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * For more information about tagging, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -472,7 +472,7 @@ public interface Email extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/UpdateSenderExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateSender API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/UpdateSenderExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateSender API.
      */
     UpdateSenderResponse updateSender(UpdateSenderRequest request);
 

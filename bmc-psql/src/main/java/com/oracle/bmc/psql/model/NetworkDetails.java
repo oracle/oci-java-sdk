@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.psql.model;
@@ -40,13 +40,13 @@ public final class NetworkDetails extends com.oracle.bmc.http.internal.Explicitl
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the customer subnet associated with the database system.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer subnet associated with the database system.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
         private String subnetId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the customer subnet associated with the database system.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer subnet associated with the database system.
          * @param subnetId the value to set
          * @return this builder
          **/
@@ -76,13 +76,13 @@ public final class NetworkDetails extends com.oracle.bmc.http.internal.Explicitl
             return this;
         }
         /**
-         * List of customer Network Security Group [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) associated with the database system.
+         * List of customer Network Security Group [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the database system.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
         private java.util.List<String> nsgIds;
 
         /**
-         * List of customer Network Security Group [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) associated with the database system.
+         * List of customer Network Security Group [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the database system.
          * @param nsgIds the value to set
          * @return this builder
          **/
@@ -154,13 +154,13 @@ public final class NetworkDetails extends com.oracle.bmc.http.internal.Explicitl
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the customer subnet associated with the database system.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer subnet associated with the database system.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
     private final String subnetId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the customer subnet associated with the database system.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer subnet associated with the database system.
      * @return the value
      **/
     public String getSubnetId() {
@@ -186,13 +186,13 @@ public final class NetworkDetails extends com.oracle.bmc.http.internal.Explicitl
     }
 
     /**
-     * List of customer Network Security Group [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) associated with the database system.
+     * List of customer Network Security Group [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the database system.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
     private final java.util.List<String> nsgIds;
 
     /**
-     * List of customer Network Security Group [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) associated with the database system.
+     * List of customer Network Security Group [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the database system.
      * @return the value
      **/
     public java.util.List<String> getNsgIds() {

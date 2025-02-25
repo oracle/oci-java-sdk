@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
@@ -56,6 +56,9 @@ public final class AutonomousContainerDatabase
         "availabilityDomain",
         "dbVersion",
         "backupConfig",
+        "backupDestinationPropertiesList",
+        "associatedBackupConfigurationDetails",
+        "recoveryApplianceDetails",
         "keyStoreId",
         "keyStoreWalletName",
         "memoryPerOracleComputeUnitInGBs",
@@ -108,6 +111,10 @@ public final class AutonomousContainerDatabase
             String availabilityDomain,
             String dbVersion,
             AutonomousContainerDatabaseBackupConfig backupConfig,
+            java.util.List<BackupDestinationProperties> backupDestinationPropertiesList,
+            java.util.List<BackupDestinationConfigurationSummary>
+                    associatedBackupConfigurationDetails,
+            RecoveryApplianceDetails recoveryApplianceDetails,
             String keyStoreId,
             String keyStoreWalletName,
             Integer memoryPerOracleComputeUnitInGBs,
@@ -159,6 +166,9 @@ public final class AutonomousContainerDatabase
         this.availabilityDomain = availabilityDomain;
         this.dbVersion = dbVersion;
         this.backupConfig = backupConfig;
+        this.backupDestinationPropertiesList = backupDestinationPropertiesList;
+        this.associatedBackupConfigurationDetails = associatedBackupConfigurationDetails;
+        this.recoveryApplianceDetails = recoveryApplianceDetails;
         this.keyStoreId = keyStoreId;
         this.keyStoreWalletName = keyStoreWalletName;
         this.memoryPerOracleComputeUnitInGBs = memoryPerOracleComputeUnitInGBs;
@@ -331,13 +341,13 @@ public final class AutonomousContainerDatabase
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the cloud Autonomous Exadata VM Cluster.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous Exadata VM Cluster.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("cloudAutonomousVmClusterId")
         private String cloudAutonomousVmClusterId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the cloud Autonomous Exadata VM Cluster.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous Exadata VM Cluster.
          * @param cloudAutonomousVmClusterId the value to set
          * @return this builder
          **/
@@ -363,13 +373,13 @@ public final class AutonomousContainerDatabase
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and {@code secretId} are required for Customer Managed Keys.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and {@code secretId} are required for Customer Managed Keys.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("vaultId")
         private String vaultId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and {@code secretId} are required for Customer Managed Keys.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and {@code secretId} are required for Customer Managed Keys.
          * @param vaultId the value to set
          * @return this builder
          **/
@@ -494,13 +504,13 @@ public final class AutonomousContainerDatabase
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the last patch applied on the system.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch applied on the system.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("patchId")
         private String patchId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the last patch applied on the system.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch applied on the system.
          * @param patchId the value to set
          * @return this builder
          **/
@@ -510,13 +520,13 @@ public final class AutonomousContainerDatabase
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the last maintenance run.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("lastMaintenanceRunId")
         private String lastMaintenanceRunId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the last maintenance run.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
          * @param lastMaintenanceRunId the value to set
          * @return this builder
          **/
@@ -526,13 +536,13 @@ public final class AutonomousContainerDatabase
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the next maintenance run.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("nextMaintenanceRunId")
         private String nextMaintenanceRunId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the next maintenance run.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
          * @param nextMaintenanceRunId the value to set
          * @return this builder
          **/
@@ -622,7 +632,7 @@ public final class AutonomousContainerDatabase
         }
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * <p>
          * Example: {@code {"Department": "Finance"}}
          *
@@ -632,7 +642,7 @@ public final class AutonomousContainerDatabase
 
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * <p>
          * Example: {@code {"Department": "Finance"}}
          *
@@ -646,7 +656,7 @@ public final class AutonomousContainerDatabase
         }
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -654,7 +664,7 @@ public final class AutonomousContainerDatabase
 
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * @param definedTags the value to set
          * @return this builder
@@ -725,13 +735,58 @@ public final class AutonomousContainerDatabase
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
+         * This list describes the backup destination properties associated with the Autonomous Container Database (ACD) 's preferred backup destination. The object at a given index is associated with the destination present at the same index in the backup destination details list of the ACD Backup Configuration.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("backupDestinationPropertiesList")
+        private java.util.List<BackupDestinationProperties> backupDestinationPropertiesList;
+
+        /**
+         * This list describes the backup destination properties associated with the Autonomous Container Database (ACD) 's preferred backup destination. The object at a given index is associated with the destination present at the same index in the backup destination details list of the ACD Backup Configuration.
+         * @param backupDestinationPropertiesList the value to set
+         * @return this builder
+         **/
+        public Builder backupDestinationPropertiesList(
+                java.util.List<BackupDestinationProperties> backupDestinationPropertiesList) {
+            this.backupDestinationPropertiesList = backupDestinationPropertiesList;
+            this.__explicitlySet__.add("backupDestinationPropertiesList");
+            return this;
+        }
+        /**
+         * A backup config object holds information about preferred backup destinations only. This object holds information about the associated backup destinations, such as secondary backup destinations created for local backups or remote replicated backups.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("associatedBackupConfigurationDetails")
+        private java.util.List<BackupDestinationConfigurationSummary>
+                associatedBackupConfigurationDetails;
+
+        /**
+         * A backup config object holds information about preferred backup destinations only. This object holds information about the associated backup destinations, such as secondary backup destinations created for local backups or remote replicated backups.
+         * @param associatedBackupConfigurationDetails the value to set
+         * @return this builder
+         **/
+        public Builder associatedBackupConfigurationDetails(
+                java.util.List<BackupDestinationConfigurationSummary>
+                        associatedBackupConfigurationDetails) {
+            this.associatedBackupConfigurationDetails = associatedBackupConfigurationDetails;
+            this.__explicitlySet__.add("associatedBackupConfigurationDetails");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("recoveryApplianceDetails")
+        private RecoveryApplianceDetails recoveryApplianceDetails;
+
+        public Builder recoveryApplianceDetails(RecoveryApplianceDetails recoveryApplianceDetails) {
+            this.recoveryApplianceDetails = recoveryApplianceDetails;
+            this.__explicitlySet__.add("recoveryApplianceDetails");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("keyStoreId")
         private String keyStoreId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
          * @param keyStoreId the value to set
          * @return this builder
          **/
@@ -1049,6 +1104,9 @@ public final class AutonomousContainerDatabase
                             this.availabilityDomain,
                             this.dbVersion,
                             this.backupConfig,
+                            this.backupDestinationPropertiesList,
+                            this.associatedBackupConfigurationDetails,
+                            this.recoveryApplianceDetails,
                             this.keyStoreId,
                             this.keyStoreWalletName,
                             this.memoryPerOracleComputeUnitInGBs,
@@ -1173,6 +1231,16 @@ public final class AutonomousContainerDatabase
             }
             if (model.wasPropertyExplicitlySet("backupConfig")) {
                 this.backupConfig(model.getBackupConfig());
+            }
+            if (model.wasPropertyExplicitlySet("backupDestinationPropertiesList")) {
+                this.backupDestinationPropertiesList(model.getBackupDestinationPropertiesList());
+            }
+            if (model.wasPropertyExplicitlySet("associatedBackupConfigurationDetails")) {
+                this.associatedBackupConfigurationDetails(
+                        model.getAssociatedBackupConfigurationDetails());
+            }
+            if (model.wasPropertyExplicitlySet("recoveryApplianceDetails")) {
+                this.recoveryApplianceDetails(model.getRecoveryApplianceDetails());
             }
             if (model.wasPropertyExplicitlySet("keyStoreId")) {
                 this.keyStoreId(model.getKeyStoreId());
@@ -1469,13 +1537,13 @@ public final class AutonomousContainerDatabase
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the cloud Autonomous Exadata VM Cluster.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous Exadata VM Cluster.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cloudAutonomousVmClusterId")
     private final String cloudAutonomousVmClusterId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the cloud Autonomous Exadata VM Cluster.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous Exadata VM Cluster.
      * @return the value
      **/
     public String getCloudAutonomousVmClusterId() {
@@ -1497,13 +1565,13 @@ public final class AutonomousContainerDatabase
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and {@code secretId} are required for Customer Managed Keys.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and {@code secretId} are required for Customer Managed Keys.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vaultId")
     private final String vaultId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and {@code secretId} are required for Customer Managed Keys.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and {@code secretId} are required for Customer Managed Keys.
      * @return the value
      **/
     public String getVaultId() {
@@ -1719,13 +1787,13 @@ public final class AutonomousContainerDatabase
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the last patch applied on the system.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch applied on the system.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("patchId")
     private final String patchId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the last patch applied on the system.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch applied on the system.
      * @return the value
      **/
     public String getPatchId() {
@@ -1733,13 +1801,13 @@ public final class AutonomousContainerDatabase
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the last maintenance run.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lastMaintenanceRunId")
     private final String lastMaintenanceRunId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the last maintenance run.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
      * @return the value
      **/
     public String getLastMaintenanceRunId() {
@@ -1747,13 +1815,13 @@ public final class AutonomousContainerDatabase
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the next maintenance run.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nextMaintenanceRunId")
     private final String nextMaintenanceRunId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the next maintenance run.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
      * @return the value
      **/
     public String getNextMaintenanceRunId() {
@@ -1880,7 +1948,7 @@ public final class AutonomousContainerDatabase
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
      * Example: {@code {"Department": "Finance"}}
      *
@@ -1890,7 +1958,7 @@ public final class AutonomousContainerDatabase
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
      * Example: {@code {"Department": "Finance"}}
      *
@@ -1902,7 +1970,7 @@ public final class AutonomousContainerDatabase
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -1910,7 +1978,7 @@ public final class AutonomousContainerDatabase
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * @return the value
      **/
@@ -2020,13 +2088,50 @@ public final class AutonomousContainerDatabase
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
+     * This list describes the backup destination properties associated with the Autonomous Container Database (ACD) 's preferred backup destination. The object at a given index is associated with the destination present at the same index in the backup destination details list of the ACD Backup Configuration.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("backupDestinationPropertiesList")
+    private final java.util.List<BackupDestinationProperties> backupDestinationPropertiesList;
+
+    /**
+     * This list describes the backup destination properties associated with the Autonomous Container Database (ACD) 's preferred backup destination. The object at a given index is associated with the destination present at the same index in the backup destination details list of the ACD Backup Configuration.
+     * @return the value
+     **/
+    public java.util.List<BackupDestinationProperties> getBackupDestinationPropertiesList() {
+        return backupDestinationPropertiesList;
+    }
+
+    /**
+     * A backup config object holds information about preferred backup destinations only. This object holds information about the associated backup destinations, such as secondary backup destinations created for local backups or remote replicated backups.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("associatedBackupConfigurationDetails")
+    private final java.util.List<BackupDestinationConfigurationSummary>
+            associatedBackupConfigurationDetails;
+
+    /**
+     * A backup config object holds information about preferred backup destinations only. This object holds information about the associated backup destinations, such as secondary backup destinations created for local backups or remote replicated backups.
+     * @return the value
+     **/
+    public java.util.List<BackupDestinationConfigurationSummary>
+            getAssociatedBackupConfigurationDetails() {
+        return associatedBackupConfigurationDetails;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("recoveryApplianceDetails")
+    private final RecoveryApplianceDetails recoveryApplianceDetails;
+
+    public RecoveryApplianceDetails getRecoveryApplianceDetails() {
+        return recoveryApplianceDetails;
+    }
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("keyStoreId")
     private final String keyStoreId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
      * @return the value
      **/
     public String getKeyStoreId() {
@@ -2464,6 +2569,12 @@ public final class AutonomousContainerDatabase
         sb.append(", availabilityDomain=").append(String.valueOf(this.availabilityDomain));
         sb.append(", dbVersion=").append(String.valueOf(this.dbVersion));
         sb.append(", backupConfig=").append(String.valueOf(this.backupConfig));
+        sb.append(", backupDestinationPropertiesList=")
+                .append(String.valueOf(this.backupDestinationPropertiesList));
+        sb.append(", associatedBackupConfigurationDetails=")
+                .append(String.valueOf(this.associatedBackupConfigurationDetails));
+        sb.append(", recoveryApplianceDetails=")
+                .append(String.valueOf(this.recoveryApplianceDetails));
         sb.append(", keyStoreId=").append(String.valueOf(this.keyStoreId));
         sb.append(", keyStoreWalletName=").append(String.valueOf(this.keyStoreWalletName));
         sb.append(", memoryPerOracleComputeUnitInGBs=")
@@ -2538,6 +2649,13 @@ public final class AutonomousContainerDatabase
                 && java.util.Objects.equals(this.availabilityDomain, other.availabilityDomain)
                 && java.util.Objects.equals(this.dbVersion, other.dbVersion)
                 && java.util.Objects.equals(this.backupConfig, other.backupConfig)
+                && java.util.Objects.equals(
+                        this.backupDestinationPropertiesList, other.backupDestinationPropertiesList)
+                && java.util.Objects.equals(
+                        this.associatedBackupConfigurationDetails,
+                        other.associatedBackupConfigurationDetails)
+                && java.util.Objects.equals(
+                        this.recoveryApplianceDetails, other.recoveryApplianceDetails)
                 && java.util.Objects.equals(this.keyStoreId, other.keyStoreId)
                 && java.util.Objects.equals(this.keyStoreWalletName, other.keyStoreWalletName)
                 && java.util.Objects.equals(
@@ -2659,6 +2777,21 @@ public final class AutonomousContainerDatabase
                                 : this.availabilityDomain.hashCode());
         result = (result * PRIME) + (this.dbVersion == null ? 43 : this.dbVersion.hashCode());
         result = (result * PRIME) + (this.backupConfig == null ? 43 : this.backupConfig.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.backupDestinationPropertiesList == null
+                                ? 43
+                                : this.backupDestinationPropertiesList.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.associatedBackupConfigurationDetails == null
+                                ? 43
+                                : this.associatedBackupConfigurationDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.recoveryApplianceDetails == null
+                                ? 43
+                                : this.recoveryApplianceDetails.hashCode());
         result = (result * PRIME) + (this.keyStoreId == null ? 43 : this.keyStoreId.hashCode());
         result =
                 (result * PRIME)

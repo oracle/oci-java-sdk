@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.loadbalancer.model;
@@ -46,7 +46,7 @@ public final class CreateLoadBalancerDetails
         "pathRouteSets",
         "freeformTags",
         "definedTags",
-        "zprTags",
+        "securityAttributes",
         "ruleSets"
     })
     public CreateLoadBalancerDetails(
@@ -70,7 +70,7 @@ public final class CreateLoadBalancerDetails
             java.util.Map<String, PathRouteSetDetails> pathRouteSets,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
-            java.util.Map<String, java.util.Map<String, Object>> zprTags,
+            java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
             java.util.Map<String, RuleSetDetails> ruleSets) {
         super();
         this.compartmentId = compartmentId;
@@ -93,20 +93,20 @@ public final class CreateLoadBalancerDetails
         this.pathRouteSets = pathRouteSets;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
-        this.zprTags = zprTags;
+        this.securityAttributes = securityAttributes;
         this.ruleSets = ruleSets;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment in which to create the load balancer.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to create the load balancer.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment in which to create the load balancer.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to create the load balancer.
          * @param compartmentId the value to set
          * @return this builder
          **/
@@ -195,8 +195,8 @@ public final class CreateLoadBalancerDetails
          * If "false", the service assigns a public IP address to the load balancer.
          * <p>
          * A public load balancer is accessible from the internet, depending on your VCN's
-         * [security list rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securitylists.htm). For more information about public and
-         * private load balancers, see [How Load Balancing Works](https://docs.cloud.oracle.com/Content/Balance/Concepts/balanceoverview.htm#how-load-balancing-works).
+         * [security list rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securitylists.htm). For more information about public and
+         * private load balancers, see [How Load Balancing Works](https://docs.oracle.com/iaas/Content/Balance/Concepts/balanceoverview.htm#how-load-balancing-works).
          * <p>
          * Example: {@code true}
          *
@@ -212,8 +212,8 @@ public final class CreateLoadBalancerDetails
          * If "false", the service assigns a public IP address to the load balancer.
          * <p>
          * A public load balancer is accessible from the internet, depending on your VCN's
-         * [security list rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securitylists.htm). For more information about public and
-         * private load balancers, see [How Load Balancing Works](https://docs.cloud.oracle.com/Content/Balance/Concepts/balanceoverview.htm#how-load-balancing-works).
+         * [security list rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securitylists.htm). For more information about public and
+         * private load balancers, see [How Load Balancing Works](https://docs.oracle.com/iaas/Content/Balance/Concepts/balanceoverview.htm#how-load-balancing-works).
          * <p>
          * Example: {@code true}
          *
@@ -423,7 +423,7 @@ public final class CreateLoadBalancerDetails
             return this;
         }
         /**
-         * An array of NSG [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) associated with this load balancer.
+         * An array of NSG [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this load balancer.
          * <p>
          * During the load balancer's creation, the service adds the new load balancer to the specified NSGs.
          * <p>
@@ -441,7 +441,7 @@ public final class CreateLoadBalancerDetails
         private java.util.List<String> networkSecurityGroupIds;
 
         /**
-         * An array of NSG [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) associated with this load balancer.
+         * An array of NSG [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this load balancer.
          * <p>
          * During the load balancer's creation, the service adds the new load balancer to the specified NSGs.
          * <p>
@@ -463,13 +463,13 @@ public final class CreateLoadBalancerDetails
             return this;
         }
         /**
-         * An array of subnet [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * An array of subnet [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("subnetIds")
         private java.util.List<String> subnetIds;
 
         /**
-         * An array of subnet [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * An array of subnet [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          * @param subnetIds the value to set
          * @return this builder
          **/
@@ -508,7 +508,7 @@ public final class CreateLoadBalancerDetails
         }
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * <p>
          * Example: {@code {"Department": "Finance"}}
          *
@@ -518,7 +518,7 @@ public final class CreateLoadBalancerDetails
 
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * <p>
          * Example: {@code {"Department": "Finance"}}
          *
@@ -532,7 +532,7 @@ public final class CreateLoadBalancerDetails
         }
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * <p>
          * Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
@@ -542,7 +542,7 @@ public final class CreateLoadBalancerDetails
 
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * <p>
          * Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
@@ -561,20 +561,21 @@ public final class CreateLoadBalancerDetails
          * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit", "usagetype" : "zpr"}}}}
          *
          **/
-        @com.fasterxml.jackson.annotation.JsonProperty("zprTags")
-        private java.util.Map<String, java.util.Map<String, Object>> zprTags;
+        @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+        private java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
 
         /**
          * Extended Defined tags for ZPR for this resource. Each key is predefined and scoped to a namespace.
          * <p>
          * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit", "usagetype" : "zpr"}}}}
          *
-         * @param zprTags the value to set
+         * @param securityAttributes the value to set
          * @return this builder
          **/
-        public Builder zprTags(java.util.Map<String, java.util.Map<String, Object>> zprTags) {
-            this.zprTags = zprTags;
-            this.__explicitlySet__.add("zprTags");
+        public Builder securityAttributes(
+                java.util.Map<String, java.util.Map<String, Object>> securityAttributes) {
+            this.securityAttributes = securityAttributes;
+            this.__explicitlySet__.add("securityAttributes");
             return this;
         }
 
@@ -613,7 +614,7 @@ public final class CreateLoadBalancerDetails
                             this.pathRouteSets,
                             this.freeformTags,
                             this.definedTags,
-                            this.zprTags,
+                            this.securityAttributes,
                             this.ruleSets);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -683,8 +684,8 @@ public final class CreateLoadBalancerDetails
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
             }
-            if (model.wasPropertyExplicitlySet("zprTags")) {
-                this.zprTags(model.getZprTags());
+            if (model.wasPropertyExplicitlySet("securityAttributes")) {
+                this.securityAttributes(model.getSecurityAttributes());
             }
             if (model.wasPropertyExplicitlySet("ruleSets")) {
                 this.ruleSets(model.getRuleSets());
@@ -705,13 +706,13 @@ public final class CreateLoadBalancerDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment in which to create the load balancer.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to create the load balancer.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment in which to create the load balancer.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to create the load balancer.
      * @return the value
      **/
     public String getCompartmentId() {
@@ -792,8 +793,8 @@ public final class CreateLoadBalancerDetails
      * If "false", the service assigns a public IP address to the load balancer.
      * <p>
      * A public load balancer is accessible from the internet, depending on your VCN's
-     * [security list rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securitylists.htm). For more information about public and
-     * private load balancers, see [How Load Balancing Works](https://docs.cloud.oracle.com/Content/Balance/Concepts/balanceoverview.htm#how-load-balancing-works).
+     * [security list rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securitylists.htm). For more information about public and
+     * private load balancers, see [How Load Balancing Works](https://docs.oracle.com/iaas/Content/Balance/Concepts/balanceoverview.htm#how-load-balancing-works).
      * <p>
      * Example: {@code true}
      *
@@ -809,8 +810,8 @@ public final class CreateLoadBalancerDetails
      * If "false", the service assigns a public IP address to the load balancer.
      * <p>
      * A public load balancer is accessible from the internet, depending on your VCN's
-     * [security list rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securitylists.htm). For more information about public and
-     * private load balancers, see [How Load Balancing Works](https://docs.cloud.oracle.com/Content/Balance/Concepts/balanceoverview.htm#how-load-balancing-works).
+     * [security list rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securitylists.htm). For more information about public and
+     * private load balancers, see [How Load Balancing Works](https://docs.oracle.com/iaas/Content/Balance/Concepts/balanceoverview.htm#how-load-balancing-works).
      * <p>
      * Example: {@code true}
      *
@@ -1044,7 +1045,7 @@ public final class CreateLoadBalancerDetails
     }
 
     /**
-     * An array of NSG [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) associated with this load balancer.
+     * An array of NSG [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this load balancer.
      * <p>
      * During the load balancer's creation, the service adds the new load balancer to the specified NSGs.
      * <p>
@@ -1062,7 +1063,7 @@ public final class CreateLoadBalancerDetails
     private final java.util.List<String> networkSecurityGroupIds;
 
     /**
-     * An array of NSG [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) associated with this load balancer.
+     * An array of NSG [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this load balancer.
      * <p>
      * During the load balancer's creation, the service adds the new load balancer to the specified NSGs.
      * <p>
@@ -1082,13 +1083,13 @@ public final class CreateLoadBalancerDetails
     }
 
     /**
-     * An array of subnet [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * An array of subnet [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("subnetIds")
     private final java.util.List<String> subnetIds;
 
     /**
-     * An array of subnet [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * An array of subnet [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * @return the value
      **/
     public java.util.List<String> getSubnetIds() {
@@ -1118,7 +1119,7 @@ public final class CreateLoadBalancerDetails
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
      * Example: {@code {"Department": "Finance"}}
      *
@@ -1128,7 +1129,7 @@ public final class CreateLoadBalancerDetails
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
      * Example: {@code {"Department": "Finance"}}
      *
@@ -1140,7 +1141,7 @@ public final class CreateLoadBalancerDetails
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
      * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
@@ -1150,7 +1151,7 @@ public final class CreateLoadBalancerDetails
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
      * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
@@ -1166,8 +1167,8 @@ public final class CreateLoadBalancerDetails
      * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit", "usagetype" : "zpr"}}}}
      *
      **/
-    @com.fasterxml.jackson.annotation.JsonProperty("zprTags")
-    private final java.util.Map<String, java.util.Map<String, Object>> zprTags;
+    @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+    private final java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
 
     /**
      * Extended Defined tags for ZPR for this resource. Each key is predefined and scoped to a namespace.
@@ -1176,8 +1177,8 @@ public final class CreateLoadBalancerDetails
      *
      * @return the value
      **/
-    public java.util.Map<String, java.util.Map<String, Object>> getZprTags() {
-        return zprTags;
+    public java.util.Map<String, java.util.Map<String, Object>> getSecurityAttributes() {
+        return securityAttributes;
     }
 
     @com.fasterxml.jackson.annotation.JsonProperty("ruleSets")
@@ -1223,7 +1224,7 @@ public final class CreateLoadBalancerDetails
         sb.append(", pathRouteSets=").append(String.valueOf(this.pathRouteSets));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
-        sb.append(", zprTags=").append(String.valueOf(this.zprTags));
+        sb.append(", securityAttributes=").append(String.valueOf(this.securityAttributes));
         sb.append(", ruleSets=").append(String.valueOf(this.ruleSets));
         sb.append(")");
         return sb.toString();
@@ -1261,7 +1262,7 @@ public final class CreateLoadBalancerDetails
                 && java.util.Objects.equals(this.pathRouteSets, other.pathRouteSets)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
-                && java.util.Objects.equals(this.zprTags, other.zprTags)
+                && java.util.Objects.equals(this.securityAttributes, other.securityAttributes)
                 && java.util.Objects.equals(this.ruleSets, other.ruleSets)
                 && super.equals(other);
     }
@@ -1310,7 +1311,11 @@ public final class CreateLoadBalancerDetails
                         + (this.pathRouteSets == null ? 43 : this.pathRouteSets.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
-        result = (result * PRIME) + (this.zprTags == null ? 43 : this.zprTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.securityAttributes == null
+                                ? 43
+                                : this.securityAttributes.hashCode());
         result = (result * PRIME) + (this.ruleSets == null ? 43 : this.ruleSets.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;

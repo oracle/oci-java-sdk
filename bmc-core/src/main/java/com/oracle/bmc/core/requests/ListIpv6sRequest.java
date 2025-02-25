@@ -1,12 +1,12 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core.requests;
 
 import com.oracle.bmc.core.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListIpv6sExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListIpv6sRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListIpv6sExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListIpv6sRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class ListIpv6sRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
@@ -14,7 +14,7 @@ public class ListIpv6sRequest extends com.oracle.bmc.requests.BmcRequest<java.la
     /**
      * For list pagination. The maximum number of results per page, or items to return in a paginated
      * "List" call. For important details about how pagination works, see
-     * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      * <p>
      * Example: {@code 50}
      *
@@ -24,7 +24,7 @@ public class ListIpv6sRequest extends com.oracle.bmc.requests.BmcRequest<java.la
     /**
      * For list pagination. The maximum number of results per page, or items to return in a paginated
      * "List" call. For important details about how pagination works, see
-     * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      * <p>
      * Example: {@code 50}
      *
@@ -35,7 +35,7 @@ public class ListIpv6sRequest extends com.oracle.bmc.requests.BmcRequest<java.la
     /**
      * For list pagination. The value of the {@code opc-next-page} response header from the previous "List"
      * call. For important details about how pagination works, see
-     * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      */
     private String page;
@@ -43,7 +43,7 @@ public class ListIpv6sRequest extends com.oracle.bmc.requests.BmcRequest<java.la
     /**
      * For list pagination. The value of the {@code opc-next-page} response header from the previous "List"
      * call. For important details about how pagination works, see
-     * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      */
     public String getPage() {
@@ -65,12 +65,12 @@ public class ListIpv6sRequest extends com.oracle.bmc.requests.BmcRequest<java.la
         return ipAddress;
     }
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet.
      */
     private String subnetId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet.
      */
     public String getSubnetId() {
         return subnetId;
@@ -85,6 +85,36 @@ public class ListIpv6sRequest extends com.oracle.bmc.requests.BmcRequest<java.la
      */
     public String getVnicId() {
         return vnicId;
+    }
+    /**
+     * State of the IP address. If an IP address is assigned to a VNIC it is ASSIGNED otherwise AVAILABLE
+     */
+    private String ipState;
+
+    /**
+     * State of the IP address. If an IP address is assigned to a VNIC it is ASSIGNED otherwise AVAILABLE
+     */
+    public String getIpState() {
+        return ipState;
+    }
+    /**
+     * Lifetime of the IP address.
+     * There are two types of IPs:
+     *  - Ephemeral
+     *  - Reserved
+     *
+     */
+    private String lifetime;
+
+    /**
+     * Lifetime of the IP address.
+     * There are two types of IPs:
+     *  - Ephemeral
+     *  - Reserved
+     *
+     */
+    public String getLifetime() {
+        return lifetime;
     }
     /**
      * Unique identifier for the request.
@@ -112,7 +142,7 @@ public class ListIpv6sRequest extends com.oracle.bmc.requests.BmcRequest<java.la
         /**
          * For list pagination. The maximum number of results per page, or items to return in a paginated
          * "List" call. For important details about how pagination works, see
-         * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          * <p>
          * Example: {@code 50}
          *
@@ -122,7 +152,7 @@ public class ListIpv6sRequest extends com.oracle.bmc.requests.BmcRequest<java.la
         /**
          * For list pagination. The maximum number of results per page, or items to return in a paginated
          * "List" call. For important details about how pagination works, see
-         * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          * <p>
          * Example: {@code 50}
          *
@@ -137,7 +167,7 @@ public class ListIpv6sRequest extends com.oracle.bmc.requests.BmcRequest<java.la
         /**
          * For list pagination. The value of the {@code opc-next-page} response header from the previous "List"
          * call. For important details about how pagination works, see
-         * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          */
         private String page = null;
@@ -145,7 +175,7 @@ public class ListIpv6sRequest extends com.oracle.bmc.requests.BmcRequest<java.la
         /**
          * For list pagination. The value of the {@code opc-next-page} response header from the previous "List"
          * call. For important details about how pagination works, see
-         * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param page the value to set
          * @return this builder instance
@@ -175,12 +205,12 @@ public class ListIpv6sRequest extends com.oracle.bmc.requests.BmcRequest<java.la
         }
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet.
          */
         private String subnetId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet.
          * @param subnetId the value to set
          * @return this builder instance
          */
@@ -201,6 +231,44 @@ public class ListIpv6sRequest extends com.oracle.bmc.requests.BmcRequest<java.la
          */
         public Builder vnicId(String vnicId) {
             this.vnicId = vnicId;
+            return this;
+        }
+
+        /**
+         * State of the IP address. If an IP address is assigned to a VNIC it is ASSIGNED otherwise AVAILABLE
+         */
+        private String ipState = null;
+
+        /**
+         * State of the IP address. If an IP address is assigned to a VNIC it is ASSIGNED otherwise AVAILABLE
+         * @param ipState the value to set
+         * @return this builder instance
+         */
+        public Builder ipState(String ipState) {
+            this.ipState = ipState;
+            return this;
+        }
+
+        /**
+         * Lifetime of the IP address.
+         * There are two types of IPs:
+         *  - Ephemeral
+         *  - Reserved
+         *
+         */
+        private String lifetime = null;
+
+        /**
+         * Lifetime of the IP address.
+         * There are two types of IPs:
+         *  - Ephemeral
+         *  - Reserved
+         *
+         * @param lifetime the value to set
+         * @return this builder instance
+         */
+        public Builder lifetime(String lifetime) {
+            this.lifetime = lifetime;
             return this;
         }
 
@@ -256,6 +324,8 @@ public class ListIpv6sRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             ipAddress(o.getIpAddress());
             subnetId(o.getSubnetId());
             vnicId(o.getVnicId());
+            ipState(o.getIpState());
+            lifetime(o.getLifetime());
             opcRequestId(o.getOpcRequestId());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
@@ -294,9 +364,11 @@ public class ListIpv6sRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             request.ipAddress = ipAddress;
             request.subnetId = subnetId;
             request.vnicId = vnicId;
+            request.ipState = ipState;
+            request.lifetime = lifetime;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListIpv6sRequest(limit, page, ipAddress, subnetId, vnicId, opcRequestId);
+            // new ListIpv6sRequest(limit, page, ipAddress, subnetId, vnicId, ipState, lifetime, opcRequestId);
         }
     }
 
@@ -311,6 +383,8 @@ public class ListIpv6sRequest extends com.oracle.bmc.requests.BmcRequest<java.la
                 .ipAddress(ipAddress)
                 .subnetId(subnetId)
                 .vnicId(vnicId)
+                .ipState(ipState)
+                .lifetime(lifetime)
                 .opcRequestId(opcRequestId);
     }
 
@@ -332,6 +406,8 @@ public class ListIpv6sRequest extends com.oracle.bmc.requests.BmcRequest<java.la
         sb.append(",ipAddress=").append(String.valueOf(this.ipAddress));
         sb.append(",subnetId=").append(String.valueOf(this.subnetId));
         sb.append(",vnicId=").append(String.valueOf(this.vnicId));
+        sb.append(",ipState=").append(String.valueOf(this.ipState));
+        sb.append(",lifetime=").append(String.valueOf(this.lifetime));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(")");
         return sb.toString();
@@ -353,6 +429,8 @@ public class ListIpv6sRequest extends com.oracle.bmc.requests.BmcRequest<java.la
                 && java.util.Objects.equals(this.ipAddress, other.ipAddress)
                 && java.util.Objects.equals(this.subnetId, other.subnetId)
                 && java.util.Objects.equals(this.vnicId, other.vnicId)
+                && java.util.Objects.equals(this.ipState, other.ipState)
+                && java.util.Objects.equals(this.lifetime, other.lifetime)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
     }
 
@@ -365,6 +443,8 @@ public class ListIpv6sRequest extends com.oracle.bmc.requests.BmcRequest<java.la
         result = (result * PRIME) + (this.ipAddress == null ? 43 : this.ipAddress.hashCode());
         result = (result * PRIME) + (this.subnetId == null ? 43 : this.subnetId.hashCode());
         result = (result * PRIME) + (this.vnicId == null ? 43 : this.vnicId.hashCode());
+        result = (result * PRIME) + (this.ipState == null ? 43 : this.ipState.hashCode());
+        result = (result * PRIME) + (this.lifetime == null ? 43 : this.lifetime.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         return result;
     }

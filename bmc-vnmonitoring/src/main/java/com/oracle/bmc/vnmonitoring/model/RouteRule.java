@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.vnmonitoring.model;
@@ -91,7 +91,7 @@ public final class RouteRule extends com.oracle.bmc.http.internal.ExplicitlySetB
          *   or {@code 2001:0db8:0123:45::/56}. If you set this to an IPv6 CIDR, the route rule's target
          *   can only be a DRG or internet gateway.
          *   IPv6 addressing is supported for all commercial and government regions.
-         *   See [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+         *   See [IPv6 Addresses](https://docs.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
          * <p>
          * The {@code cidrBlock} value for a {@link Service}, if you're
          *     setting up a route rule for traffic destined for a particular {@code Service} through
@@ -111,7 +111,7 @@ public final class RouteRule extends com.oracle.bmc.http.internal.ExplicitlySetB
          *   or {@code 2001:0db8:0123:45::/56}. If you set this to an IPv6 CIDR, the route rule's target
          *   can only be a DRG or internet gateway.
          *   IPv6 addressing is supported for all commercial and government regions.
-         *   See [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+         *   See [IPv6 Addresses](https://docs.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
          * <p>
          * The {@code cidrBlock} value for a {@link Service}, if you're
          *     setting up a route rule for traffic destined for a particular {@code Service} through
@@ -156,18 +156,18 @@ public final class RouteRule extends com.oracle.bmc.http.internal.ExplicitlySetB
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the route rule's target. For information about the type of
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the route rule's target. For information about the type of
          * targets you can specify, see
-         * [Route Tables](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm).
+         * [Route Tables](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm).
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("networkEntityId")
         private String networkEntityId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the route rule's target. For information about the type of
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the route rule's target. For information about the type of
          * targets you can specify, see
-         * [Route Tables](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm).
+         * [Route Tables](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm).
          *
          * @param networkEntityId the value to set
          * @return this builder
@@ -309,7 +309,7 @@ public final class RouteRule extends com.oracle.bmc.http.internal.ExplicitlySetB
      *   or {@code 2001:0db8:0123:45::/56}. If you set this to an IPv6 CIDR, the route rule's target
      *   can only be a DRG or internet gateway.
      *   IPv6 addressing is supported for all commercial and government regions.
-     *   See [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+     *   See [IPv6 Addresses](https://docs.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
      * <p>
      * The {@code cidrBlock} value for a {@link Service}, if you're
      *     setting up a route rule for traffic destined for a particular {@code Service} through
@@ -329,7 +329,7 @@ public final class RouteRule extends com.oracle.bmc.http.internal.ExplicitlySetB
      *   or {@code 2001:0db8:0123:45::/56}. If you set this to an IPv6 CIDR, the route rule's target
      *   can only be a DRG or internet gateway.
      *   IPv6 addressing is supported for all commercial and government regions.
-     *   See [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+     *   See [IPv6 Addresses](https://docs.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
      * <p>
      * The {@code cidrBlock} value for a {@link Service}, if you're
      *     setting up a route rule for traffic destined for a particular {@code Service} through
@@ -425,18 +425,18 @@ public final class RouteRule extends com.oracle.bmc.http.internal.ExplicitlySetB
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the route rule's target. For information about the type of
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the route rule's target. For information about the type of
      * targets you can specify, see
-     * [Route Tables](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm).
+     * [Route Tables](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("networkEntityId")
     private final String networkEntityId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the route rule's target. For information about the type of
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the route rule's target. For information about the type of
      * targets you can specify, see
-     * [Route Tables](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm).
+     * [Route Tables](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm).
      *
      * @return the value
      **/

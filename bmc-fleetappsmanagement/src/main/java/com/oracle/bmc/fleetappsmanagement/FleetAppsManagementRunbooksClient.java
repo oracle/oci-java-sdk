@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.fleetappsmanagement;
@@ -566,7 +566,7 @@ public class FleetAppsManagementRunbooksClient implements FleetAppsManagementRun
                         "FleetAppsManagementRunbooks",
                         "CreateRunbook",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Runbook/CreateRunbook");
         java.util.function.Function<javax.ws.rs.core.Response, CreateRunbookResponse> transformer =
                 CreateRunbookConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -606,7 +606,7 @@ public class FleetAppsManagementRunbooksClient implements FleetAppsManagementRun
                         "FleetAppsManagementRunbooks",
                         "CreateTaskRecord",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/TaskRecord/CreateTaskRecord");
         java.util.function.Function<javax.ws.rs.core.Response, CreateTaskRecordResponse>
                 transformer =
                         CreateTaskRecordConverter.fromResponse(
@@ -647,7 +647,7 @@ public class FleetAppsManagementRunbooksClient implements FleetAppsManagementRun
                         "FleetAppsManagementRunbooks",
                         "DeleteRunbook",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Runbook/DeleteRunbook");
         java.util.function.Function<javax.ws.rs.core.Response, DeleteRunbookResponse> transformer =
                 DeleteRunbookConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -683,7 +683,7 @@ public class FleetAppsManagementRunbooksClient implements FleetAppsManagementRun
                         "FleetAppsManagementRunbooks",
                         "DeleteTaskRecord",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/TaskRecord/DeleteTaskRecord");
         java.util.function.Function<javax.ws.rs.core.Response, DeleteTaskRecordResponse>
                 transformer =
                         DeleteTaskRecordConverter.fromResponse(
@@ -720,7 +720,7 @@ public class FleetAppsManagementRunbooksClient implements FleetAppsManagementRun
                         "FleetAppsManagementRunbooks",
                         "GetRunbook",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Runbook/GetRunbook");
         java.util.function.Function<javax.ws.rs.core.Response, GetRunbookResponse> transformer =
                 GetRunbookConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -755,7 +755,7 @@ public class FleetAppsManagementRunbooksClient implements FleetAppsManagementRun
                         "FleetAppsManagementRunbooks",
                         "GetTaskRecord",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/TaskRecord/GetTaskRecord");
         java.util.function.Function<javax.ws.rs.core.Response, GetTaskRecordResponse> transformer =
                 GetTaskRecordConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -790,7 +790,7 @@ public class FleetAppsManagementRunbooksClient implements FleetAppsManagementRun
                         "FleetAppsManagementRunbooks",
                         "ListRunbooks",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/RunbookCollection/ListRunbooks");
         java.util.function.Function<javax.ws.rs.core.Response, ListRunbooksResponse> transformer =
                 ListRunbooksConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -825,7 +825,7 @@ public class FleetAppsManagementRunbooksClient implements FleetAppsManagementRun
                         "FleetAppsManagementRunbooks",
                         "ListTaskRecords",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/TaskRecordCollection/ListTaskRecords");
         java.util.function.Function<javax.ws.rs.core.Response, ListTaskRecordsResponse>
                 transformer =
                         ListTaskRecordsConverter.fromResponse(
@@ -863,7 +863,7 @@ public class FleetAppsManagementRunbooksClient implements FleetAppsManagementRun
                         "FleetAppsManagementRunbooks",
                         "PublishRunbook",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Runbook/PublishRunbook");
         java.util.function.Function<javax.ws.rs.core.Response, PublishRunbookResponse> transformer =
                 PublishRunbookConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -903,7 +903,7 @@ public class FleetAppsManagementRunbooksClient implements FleetAppsManagementRun
                         "FleetAppsManagementRunbooks",
                         "SetDefaultRunbook",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Runbook/SetDefaultRunbook");
         java.util.function.Function<javax.ws.rs.core.Response, SetDefaultRunbookResponse>
                 transformer =
                         SetDefaultRunbookConverter.fromResponse(
@@ -944,7 +944,7 @@ public class FleetAppsManagementRunbooksClient implements FleetAppsManagementRun
                         "FleetAppsManagementRunbooks",
                         "UpdateRunbook",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Runbook/UpdateRunbook");
         java.util.function.Function<javax.ws.rs.core.Response, UpdateRunbookResponse> transformer =
                 UpdateRunbookConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -983,7 +983,7 @@ public class FleetAppsManagementRunbooksClient implements FleetAppsManagementRun
                         "FleetAppsManagementRunbooks",
                         "UpdateTaskRecord",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/TaskRecord/UpdateTaskRecord");
         java.util.function.Function<javax.ws.rs.core.Response, UpdateTaskRecordResponse>
                 transformer =
                         UpdateTaskRecordConverter.fromResponse(

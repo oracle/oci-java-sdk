@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.filestorage;
@@ -9,7 +9,7 @@ import com.oracle.bmc.filestorage.responses.*;
 
 /**
  * Use the File Storage service API to manage file systems, mount targets, and snapshots.
- * For more information, see [Overview of File Storage](https://docs.cloud.oracle.com/iaas/Content/File/Concepts/filestorageoverview.htm).
+ * For more information, see [Overview of File Storage](https://docs.oracle.com/iaas/Content/File/Concepts/filestorageoverview.htm).
  *
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20171215")
@@ -192,7 +192,7 @@ public interface FileStorageAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Moves a file system and its associated snapshots into a different compartment within the same tenancy. For information about moving resources between compartments, see [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes)
+     * Moves a file system and its associated snapshots into a different compartment within the same tenancy. For information about moving resources between compartments, see [Moving Resources to a Different Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes)
      *
      *
      * @param request The request object containing the details to send
@@ -209,7 +209,7 @@ public interface FileStorageAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Moves a file system snapshot policy into a different compartment within the same tenancy. For information about moving resources between compartments, see [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * Moves a file system snapshot policy into a different compartment within the same tenancy. For information about moving resources between compartments, see [Moving Resources to a Different Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
      *
      * @param request The request object containing the details to send
@@ -228,7 +228,7 @@ public interface FileStorageAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Moves a mount target and its associated export set or share set into a different compartment within the same tenancy. For information about moving resources between compartments, see [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes)
+     * Moves a mount target and its associated export set or share set into a different compartment within the same tenancy. For information about moving resources between compartments, see [Moving Resources to a Different Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes)
      *
      *
      * @param request The request object containing the details to send
@@ -248,7 +248,7 @@ public interface FileStorageAsync extends AutoCloseable {
     /**
      * Moves an outbound connector into a different compartment within the same tenancy.
      * For information about moving resources between compartments, see
-     * [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes)
+     * [Moving Resources to a Different Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes)
      *
      *
      * @param request The request object containing the details to send
@@ -268,7 +268,7 @@ public interface FileStorageAsync extends AutoCloseable {
 
     /**
      * Moves a replication and its replication target into a different compartment within the same tenancy.
-     * For information about moving resources between compartments, see [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * For information about moving resources between compartments, see [Moving Resources to a Different Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
      *
      * @param request The request object containing the details to send
@@ -315,20 +315,20 @@ public interface FileStorageAsync extends AutoCloseable {
      * more than one mount target at a time.
      * <p>
      * For information about access control and compartments, see
-     * [Overview of the IAM Service](https://docs.cloud.oracle.com/Content/Identity/Concepts/overview.htm).
+     * [Overview of the IAM Service](https://docs.oracle.com/iaas/Content/Identity/Concepts/overview.htm).
      * <p>
      * For information about Network Security Groups access control, see
-     * [Network Security Groups](https://docs.cloud.oracle.com/Content/Network/Concepts/networksecuritygroups.htm).
+     * [Network Security Groups](https://docs.oracle.com/iaas/Content/Network/Concepts/networksecuritygroups.htm).
      * <p>
      * For information about availability domains, see [Regions and
-     * Availability Domains](https://docs.cloud.oracle.com/Content/General/Concepts/regions.htm).
+     * Availability Domains](https://docs.oracle.com/iaas/Content/General/Concepts/regions.htm).
      * To get a list of availability domains, use the
      * `ListAvailabilityDomains` operation in the Identity and Access
      * Management Service API.
      * <p>
      * All Oracle Cloud Infrastructure resources, including
      * file systems, get an Oracle-assigned, unique ID called an Oracle
-     * Cloud Identifier ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)).
+     * Cloud Identifier ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
      * When you create a resource, you can find its OCID in the response.
      * You can also retrieve a resource's OCID by using a List API operation on that resource
      * type or by viewing the resource in the Console.
@@ -388,17 +388,17 @@ public interface FileStorageAsync extends AutoCloseable {
      * <p>
      * For information about access control and compartments, see
      * [Overview of the IAM
-     * Service](https://docs.cloud.oracle.com/Content/Identity/Concepts/overview.htm).
+     * Service](https://docs.oracle.com/iaas/Content/Identity/Concepts/overview.htm).
      * <p>
      * For information about availability domains, see [Regions and
-     * Availability Domains](https://docs.cloud.oracle.com/Content/General/Concepts/regions.htm).
+     * Availability Domains](https://docs.oracle.com/iaas/Content/General/Concepts/regions.htm).
      * To get a list of availability domains, use the
      * `ListAvailabilityDomains` operation in the Identity and Access
      * Management Service API.
      * <p>
      * All Oracle Cloud Infrastructure Services resources, including
      * mount targets, get an Oracle-assigned, unique ID called an
-     * Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)).
+     * Oracle Cloud Identifier ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
      * When you create a resource, you can find its OCID in the response.
      * You can also retrieve a resource's OCID by using a List API operation on that resource
      * type, or by viewing the resource in the Console.
@@ -424,17 +424,17 @@ public interface FileStorageAsync extends AutoCloseable {
      * <p>
      * For information about access control and compartments, see
      * [Overview of the IAM
-     * Service](https://docs.cloud.oracle.com/Content/Identity/Concepts/overview.htm).
+     * Service](https://docs.oracle.com/iaas/Content/Identity/Concepts/overview.htm).
      * <p>
      * For information about availability domains, see [Regions and
-     * Availability Domains](https://docs.cloud.oracle.com/Content/General/Concepts/regions.htm).
+     * Availability Domains](https://docs.oracle.com/iaas/Content/General/Concepts/regions.htm).
      * To get a list of availability domains, use the
      * `ListAvailabilityDomains` operation in the Identity and Access
      * Management Service API.
      * <p>
      * All Oracle Cloud Infrastructure Services resources, including
      * outbound connectors, get an Oracle-assigned, unique ID called an
-     * Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)).
+     * Oracle Cloud Identifier ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
      * When you create a resource, you can find its OCID in the response.
      * You can also retrieve a resource's OCID by using a List API operation on that resource
      * type, or by viewing the resource in the Console.
@@ -463,21 +463,21 @@ public interface FileStorageAsync extends AutoCloseable {
      * and sends it to the associated `ReplicationTarget`, which retrieves the delta and applies it to the target
      * file system.
      * Only unexported file systems can be used as target file systems.
-     * For more information, see [Using Replication](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/FSreplication.htm).
+     * For more information, see [Using Replication](https://docs.oracle.com/iaas/Content/File/Tasks/FSreplication.htm).
      * <p>
      * For information about access control and compartments, see
      * [Overview of the IAM
-     * Service](https://docs.cloud.oracle.com/Content/Identity/Concepts/overview.htm).
+     * Service](https://docs.oracle.com/iaas/Content/Identity/Concepts/overview.htm).
      * <p>
      * For information about availability domains, see [Regions and
-     * Availability Domains](https://docs.cloud.oracle.com/Content/General/Concepts/regions.htm).
+     * Availability Domains](https://docs.oracle.com/iaas/Content/General/Concepts/regions.htm).
      * To get a list of availability domains, use the
      * `ListAvailabilityDomains` operation in the Identity and Access
      * Management Service API.
      * <p>
      * All Oracle Cloud Infrastructure Services resources, including
      * replications, get an Oracle-assigned, unique ID called an
-     * Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)).
+     * Oracle Cloud Identifier ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
      * When you create a resource, you can find its OCID in the response.
      * You can also retrieve a resource's OCID by using a List API operation on that resource
      * type, or by viewing the resource in the Console.

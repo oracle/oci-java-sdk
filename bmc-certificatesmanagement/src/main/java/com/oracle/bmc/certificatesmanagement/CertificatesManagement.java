@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.certificatesmanagement;
@@ -67,7 +67,7 @@ public interface CertificatesManagement extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/certificatesmanagement/CancelCertificateAuthorityDeletionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CancelCertificateAuthorityDeletion API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/certificatesmanagement/CancelCertificateAuthorityDeletionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CancelCertificateAuthorityDeletion API.
      */
     CancelCertificateAuthorityDeletionResponse cancelCertificateAuthorityDeletion(
             CancelCertificateAuthorityDeletionRequest request);
@@ -83,7 +83,7 @@ public interface CertificatesManagement extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/certificatesmanagement/CancelCertificateAuthorityVersionDeletionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CancelCertificateAuthorityVersionDeletion API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/certificatesmanagement/CancelCertificateAuthorityVersionDeletionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CancelCertificateAuthorityVersionDeletion API.
      */
     CancelCertificateAuthorityVersionDeletionResponse cancelCertificateAuthorityVersionDeletion(
             CancelCertificateAuthorityVersionDeletionRequest request);
@@ -99,7 +99,7 @@ public interface CertificatesManagement extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/certificatesmanagement/CancelCertificateDeletionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CancelCertificateDeletion API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/certificatesmanagement/CancelCertificateDeletionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CancelCertificateDeletion API.
      */
     CancelCertificateDeletionResponse cancelCertificateDeletion(
             CancelCertificateDeletionRequest request);
@@ -112,14 +112,14 @@ public interface CertificatesManagement extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/certificatesmanagement/CancelCertificateVersionDeletionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CancelCertificateVersionDeletion API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/certificatesmanagement/CancelCertificateVersionDeletionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CancelCertificateVersionDeletion API.
      */
     CancelCertificateVersionDeletionResponse cancelCertificateVersionDeletion(
             CancelCertificateVersionDeletionRequest request);
 
     /**
      * Moves a CA bundle to a different compartment in the same tenancy. For information about
-     * moving resources between compartments, see [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * moving resources between compartments, see [Moving Resources to a Different Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      * <p>
      * When provided, if-match is checked against the ETag values of the secret.
      *
@@ -129,14 +129,14 @@ public interface CertificatesManagement extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/certificatesmanagement/ChangeCaBundleCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeCaBundleCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/certificatesmanagement/ChangeCaBundleCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeCaBundleCompartment API.
      */
     ChangeCaBundleCompartmentResponse changeCaBundleCompartment(
             ChangeCaBundleCompartmentRequest request);
 
     /**
      * Moves a certificate authority (CA) to a different compartment within the same tenancy. For information about
-     * moving resources between compartments, see [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * moving resources between compartments, see [Moving Resources to a Different Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      * <p>
      * When provided, If-Match is checked against the ETag values of the source.
      *
@@ -146,14 +146,14 @@ public interface CertificatesManagement extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/certificatesmanagement/ChangeCertificateAuthorityCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeCertificateAuthorityCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/certificatesmanagement/ChangeCertificateAuthorityCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeCertificateAuthorityCompartment API.
      */
     ChangeCertificateAuthorityCompartmentResponse changeCertificateAuthorityCompartment(
             ChangeCertificateAuthorityCompartmentRequest request);
 
     /**
      * Moves a certificate to a different compartment within the same tenancy. For information about
-     * moving resources between compartments, see [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * moving resources between compartments, see [Moving Resources to a Different Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      * <p>
      * When provided, if-match is checked against the ETag values of the secret.
      *
@@ -163,7 +163,7 @@ public interface CertificatesManagement extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/certificatesmanagement/ChangeCertificateCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeCertificateCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/certificatesmanagement/ChangeCertificateCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeCertificateCompartment API.
      */
     ChangeCertificateCompartmentResponse changeCertificateCompartment(
             ChangeCertificateCompartmentRequest request);
@@ -176,7 +176,7 @@ public interface CertificatesManagement extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/certificatesmanagement/CreateCaBundleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateCaBundle API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/certificatesmanagement/CreateCaBundleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateCaBundle API.
      */
     CreateCaBundleResponse createCaBundle(CreateCaBundleRequest request);
 
@@ -188,7 +188,7 @@ public interface CertificatesManagement extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/certificatesmanagement/CreateCertificateExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateCertificate API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/certificatesmanagement/CreateCertificateExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateCertificate API.
      */
     CreateCertificateResponse createCertificate(CreateCertificateRequest request);
 
@@ -200,7 +200,7 @@ public interface CertificatesManagement extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/certificatesmanagement/CreateCertificateAuthorityExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateCertificateAuthority API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/certificatesmanagement/CreateCertificateAuthorityExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateCertificateAuthority API.
      */
     CreateCertificateAuthorityResponse createCertificateAuthority(
             CreateCertificateAuthorityRequest request);
@@ -213,7 +213,7 @@ public interface CertificatesManagement extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/certificatesmanagement/DeleteCaBundleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteCaBundle API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/certificatesmanagement/DeleteCaBundleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteCaBundle API.
      */
     DeleteCaBundleResponse deleteCaBundle(DeleteCaBundleRequest request);
 
@@ -225,7 +225,7 @@ public interface CertificatesManagement extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/certificatesmanagement/GetAssociationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetAssociation API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/certificatesmanagement/GetAssociationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetAssociation API.
      */
     GetAssociationResponse getAssociation(GetAssociationRequest request);
 
@@ -237,7 +237,7 @@ public interface CertificatesManagement extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/certificatesmanagement/GetCaBundleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetCaBundle API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/certificatesmanagement/GetCaBundleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetCaBundle API.
      */
     GetCaBundleResponse getCaBundle(GetCaBundleRequest request);
 
@@ -249,7 +249,7 @@ public interface CertificatesManagement extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/certificatesmanagement/GetCertificateExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetCertificate API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/certificatesmanagement/GetCertificateExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetCertificate API.
      */
     GetCertificateResponse getCertificate(GetCertificateRequest request);
 
@@ -261,7 +261,7 @@ public interface CertificatesManagement extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/certificatesmanagement/GetCertificateAuthorityExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetCertificateAuthority API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/certificatesmanagement/GetCertificateAuthorityExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetCertificateAuthority API.
      */
     GetCertificateAuthorityResponse getCertificateAuthority(GetCertificateAuthorityRequest request);
 
@@ -273,7 +273,7 @@ public interface CertificatesManagement extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/certificatesmanagement/GetCertificateAuthorityVersionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetCertificateAuthorityVersion API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/certificatesmanagement/GetCertificateAuthorityVersionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetCertificateAuthorityVersion API.
      */
     GetCertificateAuthorityVersionResponse getCertificateAuthorityVersion(
             GetCertificateAuthorityVersionRequest request);
@@ -286,7 +286,7 @@ public interface CertificatesManagement extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/certificatesmanagement/GetCertificateVersionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetCertificateVersion API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/certificatesmanagement/GetCertificateVersionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetCertificateVersion API.
      */
     GetCertificateVersionResponse getCertificateVersion(GetCertificateVersionRequest request);
 
@@ -300,7 +300,7 @@ public interface CertificatesManagement extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/certificatesmanagement/ListAssociationsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListAssociations API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/certificatesmanagement/ListAssociationsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListAssociations API.
      */
     ListAssociationsResponse listAssociations(ListAssociationsRequest request);
 
@@ -314,7 +314,7 @@ public interface CertificatesManagement extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/certificatesmanagement/ListCaBundlesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListCaBundles API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/certificatesmanagement/ListCaBundlesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListCaBundles API.
      */
     ListCaBundlesResponse listCaBundles(ListCaBundlesRequest request);
 
@@ -328,7 +328,7 @@ public interface CertificatesManagement extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/certificatesmanagement/ListCertificateAuthoritiesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListCertificateAuthorities API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/certificatesmanagement/ListCertificateAuthoritiesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListCertificateAuthorities API.
      */
     ListCertificateAuthoritiesResponse listCertificateAuthorities(
             ListCertificateAuthoritiesRequest request);
@@ -343,7 +343,7 @@ public interface CertificatesManagement extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/certificatesmanagement/ListCertificateAuthorityVersionsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListCertificateAuthorityVersions API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/certificatesmanagement/ListCertificateAuthorityVersionsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListCertificateAuthorityVersions API.
      */
     ListCertificateAuthorityVersionsResponse listCertificateAuthorityVersions(
             ListCertificateAuthorityVersionsRequest request);
@@ -358,7 +358,7 @@ public interface CertificatesManagement extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/certificatesmanagement/ListCertificateVersionsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListCertificateVersions API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/certificatesmanagement/ListCertificateVersionsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListCertificateVersions API.
      */
     ListCertificateVersionsResponse listCertificateVersions(ListCertificateVersionsRequest request);
 
@@ -372,7 +372,7 @@ public interface CertificatesManagement extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/certificatesmanagement/ListCertificatesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListCertificates API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/certificatesmanagement/ListCertificatesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListCertificates API.
      */
     ListCertificatesResponse listCertificates(ListCertificatesRequest request);
 
@@ -384,7 +384,7 @@ public interface CertificatesManagement extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/certificatesmanagement/RevokeCertificateAuthorityVersionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RevokeCertificateAuthorityVersion API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/certificatesmanagement/RevokeCertificateAuthorityVersionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RevokeCertificateAuthorityVersion API.
      */
     RevokeCertificateAuthorityVersionResponse revokeCertificateAuthorityVersion(
             RevokeCertificateAuthorityVersionRequest request);
@@ -397,7 +397,7 @@ public interface CertificatesManagement extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/certificatesmanagement/RevokeCertificateVersionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RevokeCertificateVersion API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/certificatesmanagement/RevokeCertificateVersionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RevokeCertificateVersion API.
      */
     RevokeCertificateVersionResponse revokeCertificateVersion(
             RevokeCertificateVersionRequest request);
@@ -411,7 +411,7 @@ public interface CertificatesManagement extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/certificatesmanagement/ScheduleCertificateAuthorityDeletionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ScheduleCertificateAuthorityDeletion API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/certificatesmanagement/ScheduleCertificateAuthorityDeletionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ScheduleCertificateAuthorityDeletion API.
      */
     ScheduleCertificateAuthorityDeletionResponse scheduleCertificateAuthorityDeletion(
             ScheduleCertificateAuthorityDeletionRequest request);
@@ -427,7 +427,7 @@ public interface CertificatesManagement extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/certificatesmanagement/ScheduleCertificateAuthorityVersionDeletionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ScheduleCertificateAuthorityVersionDeletion API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/certificatesmanagement/ScheduleCertificateAuthorityVersionDeletionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ScheduleCertificateAuthorityVersionDeletion API.
      */
     ScheduleCertificateAuthorityVersionDeletionResponse scheduleCertificateAuthorityVersionDeletion(
             ScheduleCertificateAuthorityVersionDeletionRequest request);
@@ -443,7 +443,7 @@ public interface CertificatesManagement extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/certificatesmanagement/ScheduleCertificateDeletionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ScheduleCertificateDeletion API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/certificatesmanagement/ScheduleCertificateDeletionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ScheduleCertificateDeletion API.
      */
     ScheduleCertificateDeletionResponse scheduleCertificateDeletion(
             ScheduleCertificateDeletionRequest request);
@@ -460,7 +460,7 @@ public interface CertificatesManagement extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/certificatesmanagement/ScheduleCertificateVersionDeletionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ScheduleCertificateVersionDeletion API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/certificatesmanagement/ScheduleCertificateVersionDeletionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ScheduleCertificateVersionDeletion API.
      */
     ScheduleCertificateVersionDeletionResponse scheduleCertificateVersionDeletion(
             ScheduleCertificateVersionDeletionRequest request);
@@ -473,7 +473,7 @@ public interface CertificatesManagement extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/certificatesmanagement/UpdateCaBundleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateCaBundle API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/certificatesmanagement/UpdateCaBundleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateCaBundle API.
      */
     UpdateCaBundleResponse updateCaBundle(UpdateCaBundleRequest request);
 
@@ -485,7 +485,7 @@ public interface CertificatesManagement extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/certificatesmanagement/UpdateCertificateExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateCertificate API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/certificatesmanagement/UpdateCertificateExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateCertificate API.
      */
     UpdateCertificateResponse updateCertificate(UpdateCertificateRequest request);
 
@@ -497,7 +497,7 @@ public interface CertificatesManagement extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/certificatesmanagement/UpdateCertificateAuthorityExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateCertificateAuthority API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/certificatesmanagement/UpdateCertificateAuthorityExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateCertificateAuthority API.
      */
     UpdateCertificateAuthorityResponse updateCertificateAuthority(
             UpdateCertificateAuthorityRequest request);

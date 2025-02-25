@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core.model;
 
 /**
- * Redundancy level details of the virtual circuit
+ * This resource provides redundancy level details for the virtual circuit. For more about redundancy, see [FastConnect Redundancy Best Practices](https://docs.oracle.com/iaas/Content/Network/Concepts/fastconnectresiliency.htm).
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -41,13 +41,13 @@ public final class VirtualCircuitRedundancyMetadata
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The configured redundancy level of the virtual circuit
+         * The configured redundancy level of the virtual circuit.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("configuredRedundancyLevel")
         private ConfiguredRedundancyLevel configuredRedundancyLevel;
 
         /**
-         * The configured redundancy level of the virtual circuit
+         * The configured redundancy level of the virtual circuit.
          * @param configuredRedundancyLevel the value to set
          * @return this builder
          **/
@@ -58,13 +58,15 @@ public final class VirtualCircuitRedundancyMetadata
             return this;
         }
         /**
-         * IPV4 BGP redundancy status indicates if the configured redundancy level is met
+         * Indicates if the configured level is met for IPv4 BGP redundancy.
+         *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("ipv4bgpSessionRedundancyStatus")
         private Ipv4bgpSessionRedundancyStatus ipv4bgpSessionRedundancyStatus;
 
         /**
-         * IPV4 BGP redundancy status indicates if the configured redundancy level is met
+         * Indicates if the configured level is met for IPv4 BGP redundancy.
+         *
          * @param ipv4bgpSessionRedundancyStatus the value to set
          * @return this builder
          **/
@@ -75,13 +77,15 @@ public final class VirtualCircuitRedundancyMetadata
             return this;
         }
         /**
-         * IPV6 BGP redundancy status indicates if the configured redundancy level is met
+         * Indicates if the configured level is met for IPv6 BGP redundancy.
+         *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("ipv6bgpSessionRedundancyStatus")
         private Ipv6bgpSessionRedundancyStatus ipv6bgpSessionRedundancyStatus;
 
         /**
-         * IPV6 BGP redundancy status indicates if the configured redundancy level is met
+         * Indicates if the configured level is met for IPv6 BGP redundancy.
+         *
          * @param ipv6bgpSessionRedundancyStatus the value to set
          * @return this builder
          **/
@@ -134,7 +138,7 @@ public final class VirtualCircuitRedundancyMetadata
     }
 
     /**
-     * The configured redundancy level of the virtual circuit
+     * The configured redundancy level of the virtual circuit.
      **/
     public enum ConfiguredRedundancyLevel {
         Device("DEVICE"),
@@ -185,13 +189,13 @@ public final class VirtualCircuitRedundancyMetadata
         }
     };
     /**
-     * The configured redundancy level of the virtual circuit
+     * The configured redundancy level of the virtual circuit.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("configuredRedundancyLevel")
     private final ConfiguredRedundancyLevel configuredRedundancyLevel;
 
     /**
-     * The configured redundancy level of the virtual circuit
+     * The configured redundancy level of the virtual circuit.
      * @return the value
      **/
     public ConfiguredRedundancyLevel getConfiguredRedundancyLevel() {
@@ -199,7 +203,8 @@ public final class VirtualCircuitRedundancyMetadata
     }
 
     /**
-     * IPV4 BGP redundancy status indicates if the configured redundancy level is met
+     * Indicates if the configured level is met for IPv4 BGP redundancy.
+     *
      **/
     public enum Ipv4bgpSessionRedundancyStatus {
         ConfigurationMatch("CONFIGURATION_MATCH"),
@@ -248,13 +253,15 @@ public final class VirtualCircuitRedundancyMetadata
         }
     };
     /**
-     * IPV4 BGP redundancy status indicates if the configured redundancy level is met
+     * Indicates if the configured level is met for IPv4 BGP redundancy.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ipv4bgpSessionRedundancyStatus")
     private final Ipv4bgpSessionRedundancyStatus ipv4bgpSessionRedundancyStatus;
 
     /**
-     * IPV4 BGP redundancy status indicates if the configured redundancy level is met
+     * Indicates if the configured level is met for IPv4 BGP redundancy.
+     *
      * @return the value
      **/
     public Ipv4bgpSessionRedundancyStatus getIpv4bgpSessionRedundancyStatus() {
@@ -262,7 +269,8 @@ public final class VirtualCircuitRedundancyMetadata
     }
 
     /**
-     * IPV6 BGP redundancy status indicates if the configured redundancy level is met
+     * Indicates if the configured level is met for IPv6 BGP redundancy.
+     *
      **/
     public enum Ipv6bgpSessionRedundancyStatus {
         ConfigurationMatch("CONFIGURATION_MATCH"),
@@ -311,13 +319,15 @@ public final class VirtualCircuitRedundancyMetadata
         }
     };
     /**
-     * IPV6 BGP redundancy status indicates if the configured redundancy level is met
+     * Indicates if the configured level is met for IPv6 BGP redundancy.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ipv6bgpSessionRedundancyStatus")
     private final Ipv6bgpSessionRedundancyStatus ipv6bgpSessionRedundancyStatus;
 
     /**
-     * IPV6 BGP redundancy status indicates if the configured redundancy level is met
+     * Indicates if the configured level is met for IPv6 BGP redundancy.
+     *
      * @return the value
      **/
     public Ipv6bgpSessionRedundancyStatus getIpv6bgpSessionRedundancyStatus() {

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.resourcemanager;
@@ -11,7 +11,7 @@ import com.oracle.bmc.resourcemanager.responses.*;
  * Use the Resource Manager API to automate deployment and operations for all Oracle Cloud Infrastructure resources.
  * Using the infrastructure-as-code (IaC) model, the service is based on Terraform, an open source industry standard that lets DevOps engineers develop and deploy their infrastructure anywhere.
  * For more information, see
- * [the Resource Manager documentation](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/home.htm).
+ * [the Resource Manager documentation](https://docs.oracle.com/iaas/Content/ResourceManager/home.htm).
  *
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180917")
@@ -85,7 +85,7 @@ public interface ResourceManagerAsync extends AutoCloseable {
     /**
      * Moves a configuration source provider into a different compartment within the same tenancy.
      * For information about moving resources between compartments, see
-     * [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * [Moving Resources to a Different Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
      *
      * @param request The request object containing the details to send
@@ -106,7 +106,7 @@ public interface ResourceManagerAsync extends AutoCloseable {
     /**
      * Moves a private endpoint to a different compartment within the same tenancy.
      * For information about moving resources between compartments, see
-     * [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * [Moving Resources to a Different Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
      *
      * @param request The request object containing the details to send
@@ -127,7 +127,7 @@ public interface ResourceManagerAsync extends AutoCloseable {
     /**
      * Moves a stack (and its associated jobs) into a different compartment within the same tenancy.
      * For information about moving resources between compartments, see
-     * [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * [Moving Resources to a Different Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
      *
      * @param request The request object containing the details to send
@@ -146,7 +146,7 @@ public interface ResourceManagerAsync extends AutoCloseable {
     /**
      * Moves a template into a different compartment within the same tenancy.
      * For information about moving resources between compartments, see
-     * [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * [Moving Resources to a Different Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
      *
      * @param request The request object containing the details to send
@@ -165,7 +165,7 @@ public interface ResourceManagerAsync extends AutoCloseable {
     /**
      * Creates a configuration source provider in the specified compartment.
      * For more information, see
-     * [To create a configuration source provider](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/managingconfigurationsourceproviders.htm#CreateConfigurationSourceProvider).
+     * [To create a configuration source provider](https://docs.oracle.com/iaas/Content/ResourceManager/Tasks/managingconfigurationsourceproviders.htm#CreateConfigurationSourceProvider).
      *
      *
      * @param request The request object containing the details to send
@@ -221,7 +221,7 @@ public interface ResourceManagerAsync extends AutoCloseable {
      * You can also create a stack from an existing compartment, which generates a Terraform configuration.
      * You can also upload the Terraform configuration from an Object Storage bucket.
      * For more information, see
-     * [Creating Stacks](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/create-stack.htm).
+     * [Creating Stacks](https://docs.oracle.com/iaas/Content/ResourceManager/Tasks/create-stack.htm).
      *
      *
      * @param request The request object containing the details to send
@@ -431,7 +431,7 @@ public interface ResourceManagerAsync extends AutoCloseable {
     /**
      * Returns the output of the specified Terraform plan job in binary or JSON format.
      * For information about running Terraform plan jobs, see
-     * [Creating Plan Jobs](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/create-job.htm).
+     * [Creating Plan Jobs](https://docs.oracle.com/iaas/Content/ResourceManager/Tasks/create-job.htm).
      *
      *
      * @param request The request object containing the details to send
@@ -659,9 +659,9 @@ public interface ResourceManagerAsync extends AutoCloseable {
     /**
      * Lists jobs according to the specified filter. By default, the list is ordered by time created.
      * <p>
-     * - To list all jobs in a stack, provide the stack [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-     * - To list all jobs in a compartment, provide the compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-     * - To return a specific job, provide the job [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). (Equivalent to {@link #getStack(GetStackRequest, Consumer, Consumer) getStack}.)
+     * - To list all jobs in a stack, provide the stack [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * - To list all jobs in a compartment, provide the compartment [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * - To return a specific job, provide the job [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). (Equivalent to {@link #getStack(GetStackRequest, Consumer, Consumer) getStack}.)
      *
      *
      * @param request The request object containing the details to send
@@ -695,7 +695,7 @@ public interface ResourceManagerAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Returns a list of supported services for [Resource Discovery](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resource-discovery.htm).
+     * Returns a list of supported services for [Resource Discovery](https://docs.oracle.com/iaas/Content/ResourceManager/Concepts/resource-discovery.htm).
      * For reference on service names, see the [Terraform provider documentation](https://www.terraform.io/docs/providers/oci/guides/resource_discovery.html#services).
      *
      *
@@ -875,7 +875,7 @@ public interface ResourceManagerAsync extends AutoCloseable {
     /**
      * Updates the properties of the specified configuration source provider.
      * For more information, see
-     * [To edit a configuration source provider](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/managingconfigurationsourceproviders.htm#EditConfigurationSourceProvider).
+     * [To edit a configuration source provider](https://docs.oracle.com/iaas/Content/ResourceManager/Tasks/managingconfigurationsourceproviders.htm#EditConfigurationSourceProvider).
      *
      *
      * @param request The request object containing the details to send
@@ -928,7 +928,7 @@ public interface ResourceManagerAsync extends AutoCloseable {
      * Use `UpdateStack` when you update your Terraform configuration
      * and want your changes to be reflected in the execution plan.
      * For more information, see
-     * [Updating Stacks](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/update-stack.htm).
+     * [Updating Stacks](https://docs.oracle.com/iaas/Content/ResourceManager/Tasks/update-stack.htm).
      *
      *
      * @param request The request object containing the details to send
