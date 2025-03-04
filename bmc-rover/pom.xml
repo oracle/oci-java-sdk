@@ -4,18 +4,18 @@
   <parent>
     <groupId>com.oracle.oci.sdk</groupId>
     <artifactId>oci-java-sdk</artifactId>
-    <version>3.58.0</version>
+    <version>3.59.0</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
   <artifactId>oci-java-sdk-rover</artifactId>
   <name>Oracle Cloud Infrastructure SDK - Rover</name>
   <description>This project contains the SDK used for Oracle Cloud Infrastructure Rover</description>
-  <url>https://docs.cloud.oracle.com/Content/API/SDKDocs/javasdk.htm</url>
+  <url>https://docs.oracle.com/iaas/Content/API/SDKDocs/javasdk.htm</url>
   <dependencies>
     <dependency>
       <groupId>com.oracle.oci.sdk</groupId>
       <artifactId>oci-java-sdk-common</artifactId>
-      <version>3.58.0</version>
+      <version>3.59.0</version>
     </dependency>
   </dependencies>
 </project>

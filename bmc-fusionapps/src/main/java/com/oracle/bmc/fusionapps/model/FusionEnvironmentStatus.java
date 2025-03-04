@@ -6,7 +6,7 @@ package com.oracle.bmc.fusionapps.model;
 
 /**
  * The health status of the Fusion Applications environment. For more information, see [Environment
- * Status](https://docs.cloud.oracle.com/iaas/Content/fusion-applications/manage-environment.htm#environment-status).
+ * Status](https://docs.oracle.com/iaas/Content/fusion-applications/manage-environment.htm#environment-status).
  * <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly

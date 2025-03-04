@@ -7,7 +7,7 @@ package com.oracle.bmc.database.requests;
 import com.oracle.bmc.database.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/CreateExadbVmClusterExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/CreateExadbVmClusterExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use CreateExadbVmClusterRequest.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
@@ -18,7 +18,7 @@ public class CreateExadbVmClusterRequest
     /**
      * Request to create a Exadata VM cluster on Exascale Infrastructure. Applies to Exadata
      * Database Service on Exascale Infrastructure only. See [The New Exadata Cloud Service Resource
-     * Model](https://docs.cloud.oracle.com/iaas/Content/Database/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model)
+     * Model](https://docs.oracle.com/iaas/Content/Database/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model)
      * for information on this resource type.
      */
     private com.oracle.bmc.database.model.CreateExadbVmClusterDetails createExadbVmClusterDetails;
@@ -26,7 +26,7 @@ public class CreateExadbVmClusterRequest
     /**
      * Request to create a Exadata VM cluster on Exascale Infrastructure. Applies to Exadata
      * Database Service on Exascale Infrastructure only. See [The New Exadata Cloud Service Resource
-     * Model](https://docs.cloud.oracle.com/iaas/Content/Database/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model)
+     * Model](https://docs.oracle.com/iaas/Content/Database/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model)
      * for information on this resource type.
      */
     public com.oracle.bmc.database.model.CreateExadbVmClusterDetails
@@ -82,7 +82,7 @@ public class CreateExadbVmClusterRequest
          * Request to create a Exadata VM cluster on Exascale Infrastructure. Applies to Exadata
          * Database Service on Exascale Infrastructure only. See [The New Exadata Cloud Service
          * Resource
-         * Model](https://docs.cloud.oracle.com/iaas/Content/Database/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model)
+         * Model](https://docs.oracle.com/iaas/Content/Database/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model)
          * for information on this resource type.
          */
         private com.oracle.bmc.database.model.CreateExadbVmClusterDetails
@@ -92,7 +92,7 @@ public class CreateExadbVmClusterRequest
          * Request to create a Exadata VM cluster on Exascale Infrastructure. Applies to Exadata
          * Database Service on Exascale Infrastructure only. See [The New Exadata Cloud Service
          * Resource
-         * Model](https://docs.cloud.oracle.com/iaas/Content/Database/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model)
+         * Model](https://docs.oracle.com/iaas/Content/Database/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model)
          * for information on this resource type.
          *
          * @param createExadbVmClusterDetails the value to set

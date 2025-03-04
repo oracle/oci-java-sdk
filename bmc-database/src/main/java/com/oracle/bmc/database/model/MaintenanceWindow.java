@@ -86,7 +86,7 @@ public final class MaintenanceWindow
          *
          * <p>IMPORTANT*: Non-rolling infrastructure patching involves system down time. See
          * [Oracle-Managed Infrastructure Maintenance
-         * Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle)
+         * Updates](https://docs.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle)
          * for more information.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("patchingMode")
@@ -98,7 +98,7 @@ public final class MaintenanceWindow
          *
          * <p>IMPORTANT*: Non-rolling infrastructure patching involves system down time. See
          * [Oracle-Managed Infrastructure Maintenance
-         * Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle)
+         * Updates](https://docs.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle)
          * for more information.
          *
          * @param patchingMode the value to set
@@ -427,7 +427,7 @@ public final class MaintenanceWindow
      *
      * <p>IMPORTANT*: Non-rolling infrastructure patching involves system down time. See
      * [Oracle-Managed Infrastructure Maintenance
-     * Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle)
+     * Updates](https://docs.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle)
      * for more information.
      */
     public enum PatchingMode implements com.oracle.bmc.http.internal.BmcEnum {
@@ -481,7 +481,7 @@ public final class MaintenanceWindow
      *
      * <p>IMPORTANT*: Non-rolling infrastructure patching involves system down time. See
      * [Oracle-Managed Infrastructure Maintenance
-     * Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle)
+     * Updates](https://docs.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle)
      * for more information.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("patchingMode")
@@ -493,7 +493,7 @@ public final class MaintenanceWindow
      *
      * <p>IMPORTANT*: Non-rolling infrastructure patching involves system down time. See
      * [Oracle-Managed Infrastructure Maintenance
-     * Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle)
+     * Updates](https://docs.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle)
      * for more information.
      *
      * @return the value

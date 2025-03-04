@@ -36,19 +36,19 @@ public final class CreateCompartmentConfigSourceDetails extends CreateConfigSour
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compartment to use for creating the stack. The new stack will include definitions
-         * for supported resource types in scope of the specified compartment OCID (tenancy level
-         * for root compartment, compartment level otherwise).
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment to use for creating the stack. The new stack will include definitions for
+         * supported resource types in scope of the specified compartment OCID (tenancy level for
+         * root compartment, compartment level otherwise).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compartment to use for creating the stack. The new stack will include definitions
-         * for supported resource types in scope of the specified compartment OCID (tenancy level
-         * for root compartment, compartment level otherwise).
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment to use for creating the stack. The new stack will include definitions for
+         * supported resource types in scope of the specified compartment OCID (tenancy level for
+         * root compartment, compartment level otherwise).
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -161,8 +161,8 @@ public final class CreateCompartmentConfigSourceDetails extends CreateConfigSour
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compartment to use for creating the stack. The new stack will include definitions for
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment to use for creating the stack. The new stack will include definitions for
      * supported resource types in scope of the specified compartment OCID (tenancy level for root
      * compartment, compartment level otherwise).
      */
@@ -170,8 +170,8 @@ public final class CreateCompartmentConfigSourceDetails extends CreateConfigSour
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compartment to use for creating the stack. The new stack will include definitions for
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment to use for creating the stack. The new stack will include definitions for
      * supported resource types in scope of the specified compartment OCID (tenancy level for root
      * compartment, compartment level otherwise).
      *

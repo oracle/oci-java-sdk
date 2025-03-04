@@ -28,14 +28,14 @@ public final class OracleFunctionBackend extends ApiSpecificationRouteBackend {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Oracle Functions function resource.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("functionId")
         private String functionId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Oracle Functions function resource.
          *
          * @param functionId the value to set
@@ -83,14 +83,14 @@ public final class OracleFunctionBackend extends ApiSpecificationRouteBackend {
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Oracle Functions function resource.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("functionId")
     private final String functionId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Oracle Functions function resource.
      *
      * @return the value

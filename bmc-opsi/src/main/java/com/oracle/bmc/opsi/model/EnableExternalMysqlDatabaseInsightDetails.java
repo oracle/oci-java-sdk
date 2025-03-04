@@ -29,7 +29,7 @@ public final class EnableExternalMysqlDatabaseInsightDetails extends EnableDatab
     public static class Builder {
         /**
          * The DBM owned database connector
-         * [OCID](https://docs.cloud.oracle.com/iaas/database-management/doc/view-connector-details.html)
+         * [OCID](https://docs.oracle.com/iaas/database-management/doc/view-connector-details.html)
          * mapping to the database credentials and connection details.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("databaseConnectorId")
@@ -37,7 +37,7 @@ public final class EnableExternalMysqlDatabaseInsightDetails extends EnableDatab
 
         /**
          * The DBM owned database connector
-         * [OCID](https://docs.cloud.oracle.com/iaas/database-management/doc/view-connector-details.html)
+         * [OCID](https://docs.oracle.com/iaas/database-management/doc/view-connector-details.html)
          * mapping to the database credentials and connection details.
          *
          * @param databaseConnectorId the value to set
@@ -87,7 +87,7 @@ public final class EnableExternalMysqlDatabaseInsightDetails extends EnableDatab
 
     /**
      * The DBM owned database connector
-     * [OCID](https://docs.cloud.oracle.com/iaas/database-management/doc/view-connector-details.html)
+     * [OCID](https://docs.oracle.com/iaas/database-management/doc/view-connector-details.html)
      * mapping to the database credentials and connection details.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("databaseConnectorId")
@@ -95,7 +95,7 @@ public final class EnableExternalMysqlDatabaseInsightDetails extends EnableDatab
 
     /**
      * The DBM owned database connector
-     * [OCID](https://docs.cloud.oracle.com/iaas/database-management/doc/view-connector-details.html)
+     * [OCID](https://docs.oracle.com/iaas/database-management/doc/view-connector-details.html)
      * mapping to the database credentials and connection details.
      *
      * @return the value

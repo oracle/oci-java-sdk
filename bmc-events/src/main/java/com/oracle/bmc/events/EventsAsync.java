@@ -10,7 +10,7 @@ import com.oracle.bmc.events.responses.*;
 /**
  * API for the Events Service. Use this API to manage rules and actions that create automation in
  * your tenancy. For more information, see [Overview of
- * Events](https://docs.cloud.oracle.com/iaas/Content/Events/Concepts/eventsoverview.htm).
+ * Events](https://docs.oracle.com/iaas/Content/Events/Concepts/eventsoverview.htm).
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 public interface EventsAsync extends AutoCloseable {
@@ -66,7 +66,7 @@ public interface EventsAsync extends AutoCloseable {
     /**
      * Moves a rule into a different compartment within the same tenancy. For information about
      * moving resources between compartments, see [Moving Resources to a Different
-     * Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.

@@ -32,14 +32,14 @@ public final class MoveCompartmentDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * destination compartment into which to move the compartment.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("targetCompartmentId")
         private String targetCompartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * destination compartment into which to move the compartment.
          *
          * @param targetCompartmentId the value to set
@@ -81,14 +81,14 @@ public final class MoveCompartmentDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * destination compartment into which to move the compartment.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("targetCompartmentId")
     private final String targetCompartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * destination compartment into which to move the compartment.
      *
      * @return the value

@@ -45,7 +45,7 @@ public final class ControlAccessUsingHttpMethodsRule extends Rule {
          * Registry](http://www.iana.org/assignments/http-methods/http-methods.xhtml). You can also
          * see a list of supported standard HTTP methods in the Load Balancing service documentation
          * at [Managing Rule
-         * Sets](https://docs.cloud.oracle.com/Content/Balance/Tasks/managingrulesets.htm).
+         * Sets](https://docs.oracle.com/iaas/Content/Balance/Tasks/managingrulesets.htm).
          *
          * <p>Your backend application must be able to handle the methods specified in this list.
          *
@@ -65,7 +65,7 @@ public final class ControlAccessUsingHttpMethodsRule extends Rule {
          * Registry](http://www.iana.org/assignments/http-methods/http-methods.xhtml). You can also
          * see a list of supported standard HTTP methods in the Load Balancing service documentation
          * at [Managing Rule
-         * Sets](https://docs.cloud.oracle.com/Content/Balance/Tasks/managingrulesets.htm).
+         * Sets](https://docs.oracle.com/iaas/Content/Balance/Tasks/managingrulesets.htm).
          *
          * <p>Your backend application must be able to handle the methods specified in this list.
          *
@@ -157,7 +157,7 @@ public final class ControlAccessUsingHttpMethodsRule extends Rule {
      * Registry](http://www.iana.org/assignments/http-methods/http-methods.xhtml). You can also see
      * a list of supported standard HTTP methods in the Load Balancing service documentation at
      * [Managing Rule
-     * Sets](https://docs.cloud.oracle.com/Content/Balance/Tasks/managingrulesets.htm).
+     * Sets](https://docs.oracle.com/iaas/Content/Balance/Tasks/managingrulesets.htm).
      *
      * <p>Your backend application must be able to handle the methods specified in this list.
      *
@@ -177,7 +177,7 @@ public final class ControlAccessUsingHttpMethodsRule extends Rule {
      * Registry](http://www.iana.org/assignments/http-methods/http-methods.xhtml). You can also see
      * a list of supported standard HTTP methods in the Load Balancing service documentation at
      * [Managing Rule
-     * Sets](https://docs.cloud.oracle.com/Content/Balance/Tasks/managingrulesets.htm).
+     * Sets](https://docs.oracle.com/iaas/Content/Balance/Tasks/managingrulesets.htm).
      *
      * <p>Your backend application must be able to handle the methods specified in this list.
      *

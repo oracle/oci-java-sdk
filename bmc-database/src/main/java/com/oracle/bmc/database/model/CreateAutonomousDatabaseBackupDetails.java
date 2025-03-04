@@ -65,14 +65,14 @@ public final class CreateAutonomousDatabaseBackupDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Autonomous Database backup.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("autonomousDatabaseId")
         private String autonomousDatabaseId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Autonomous Database backup.
          *
          * @param autonomousDatabaseId the value to set
@@ -184,14 +184,14 @@ public final class CreateAutonomousDatabaseBackupDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Autonomous Database backup.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("autonomousDatabaseId")
     private final String autonomousDatabaseId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Autonomous Database backup.
      *
      * @return the value

@@ -29,14 +29,14 @@ public final class DatabaseToolsUserPasswordSecretIdSummary
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * secret containing the user password.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("secretId")
         private String secretId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * secret containing the user password.
          *
          * @param secretId the value to set
@@ -85,14 +85,14 @@ public final class DatabaseToolsUserPasswordSecretIdSummary
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * secret containing the user password.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("secretId")
     private final String secretId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * secret containing the user password.
      *
      * @return the value

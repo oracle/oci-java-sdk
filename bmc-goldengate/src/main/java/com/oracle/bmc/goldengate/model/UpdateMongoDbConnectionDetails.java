@@ -175,7 +175,7 @@ public final class UpdateMongoDbConnectionDetails extends UpdateConnectionDetail
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Secret that stores the password Oracle GoldenGate uses to connect the associated
          * database. Note: When provided, 'password' field must not be provided.
          */
@@ -183,7 +183,7 @@ public final class UpdateMongoDbConnectionDetails extends UpdateConnectionDetail
         private String passwordSecretId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Secret that stores the password Oracle GoldenGate uses to connect the associated
          * database. Note: When provided, 'password' field must not be provided.
          *
@@ -196,14 +196,14 @@ public final class UpdateMongoDbConnectionDetails extends UpdateConnectionDetail
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Oracle Autonomous Json Database.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("databaseId")
         private String databaseId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Oracle Autonomous Json Database.
          *
          * @param databaseId the value to set
@@ -270,7 +270,7 @@ public final class UpdateMongoDbConnectionDetails extends UpdateConnectionDetail
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Secret that stores the certificate key file of the mtls connection. - The content of a
          * .pem file containing the client private key (for 2-way SSL). Note: When provided,
          * 'tlsCertificateKeyFile' field must not be provided.
@@ -279,7 +279,7 @@ public final class UpdateMongoDbConnectionDetails extends UpdateConnectionDetail
         private String tlsCertificateKeyFileSecretId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Secret that stores the certificate key file of the mtls connection. - The content of a
          * .pem file containing the client private key (for 2-way SSL). Note: When provided,
          * 'tlsCertificateKeyFile' field must not be provided.
@@ -314,7 +314,7 @@ public final class UpdateMongoDbConnectionDetails extends UpdateConnectionDetail
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Secret that stores the password of the tls certificate key file. Note: When provided,
          * 'tlsCertificateKeyFilePassword' field must not be provided.
          */
@@ -322,7 +322,7 @@ public final class UpdateMongoDbConnectionDetails extends UpdateConnectionDetail
         private String tlsCertificateKeyFilePasswordSecretId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Secret that stores the password of the tls certificate key file. Note: When provided,
          * 'tlsCertificateKeyFilePassword' field must not be provided.
          *
@@ -545,7 +545,7 @@ public final class UpdateMongoDbConnectionDetails extends UpdateConnectionDetail
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Secret that stores the password Oracle GoldenGate uses to connect the associated database.
      * Note: When provided, 'password' field must not be provided.
      */
@@ -553,7 +553,7 @@ public final class UpdateMongoDbConnectionDetails extends UpdateConnectionDetail
     private final String passwordSecretId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Secret that stores the password Oracle GoldenGate uses to connect the associated database.
      * Note: When provided, 'password' field must not be provided.
      *
@@ -564,14 +564,14 @@ public final class UpdateMongoDbConnectionDetails extends UpdateConnectionDetail
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Oracle Autonomous Json Database.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("databaseId")
     private final String databaseId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Oracle Autonomous Json Database.
      *
      * @return the value
@@ -630,7 +630,7 @@ public final class UpdateMongoDbConnectionDetails extends UpdateConnectionDetail
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Secret that stores the certificate key file of the mtls connection. - The content of a .pem
      * file containing the client private key (for 2-way SSL). Note: When provided,
      * 'tlsCertificateKeyFile' field must not be provided.
@@ -639,7 +639,7 @@ public final class UpdateMongoDbConnectionDetails extends UpdateConnectionDetail
     private final String tlsCertificateKeyFileSecretId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Secret that stores the certificate key file of the mtls connection. - The content of a .pem
      * file containing the client private key (for 2-way SSL). Note: When provided,
      * 'tlsCertificateKeyFile' field must not be provided.
@@ -668,7 +668,7 @@ public final class UpdateMongoDbConnectionDetails extends UpdateConnectionDetail
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Secret that stores the password of the tls certificate key file. Note: When provided,
      * 'tlsCertificateKeyFilePassword' field must not be provided.
      */
@@ -676,7 +676,7 @@ public final class UpdateMongoDbConnectionDetails extends UpdateConnectionDetail
     private final String tlsCertificateKeyFilePasswordSecretId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Secret that stores the password of the tls certificate key file. Note: When provided,
      * 'tlsCertificateKeyFilePassword' field must not be provided.
      *

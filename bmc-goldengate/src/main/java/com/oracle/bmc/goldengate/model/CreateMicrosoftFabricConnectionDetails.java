@@ -200,7 +200,7 @@ public final class CreateMicrosoftFabricConnectionDetails extends CreateConnecti
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Secret where the client secret is stored. Note: When provided, 'clientSecret' field must
          * not be provided.
          */
@@ -208,7 +208,7 @@ public final class CreateMicrosoftFabricConnectionDetails extends CreateConnecti
         private String clientSecretSecretId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Secret where the client secret is stored. Note: When provided, 'clientSecret' field must
          * not be provided.
          *
@@ -437,7 +437,7 @@ public final class CreateMicrosoftFabricConnectionDetails extends CreateConnecti
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Secret where the client secret is stored. Note: When provided, 'clientSecret' field must not
      * be provided.
      */
@@ -445,7 +445,7 @@ public final class CreateMicrosoftFabricConnectionDetails extends CreateConnecti
     private final String clientSecretSecretId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Secret where the client secret is stored. Note: When provided, 'clientSecret' field must not
      * be provided.
      *

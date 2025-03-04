@@ -50,14 +50,14 @@ public final class ExternalAsmInstanceParameters
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * external ASM instance.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("asmInstanceId")
         private String asmInstanceId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * external ASM instance.
          *
          * @param asmInstanceId the value to set
@@ -205,14 +205,14 @@ public final class ExternalAsmInstanceParameters
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * external ASM instance.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("asmInstanceId")
     private final String asmInstanceId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * external ASM instance.
      *
      * @return the value

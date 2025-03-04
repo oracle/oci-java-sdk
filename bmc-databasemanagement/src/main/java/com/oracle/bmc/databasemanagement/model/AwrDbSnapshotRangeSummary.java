@@ -81,7 +81,7 @@ public final class AwrDbSnapshotRangeSummary
     public static class Builder {
         /**
          * The internal ID of the database. The internal ID of the database is not the
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm). It can be
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). It can be
          * retrieved from the following endpoint: /managedDatabases/{managedDatabaseId}/awrDbs
          */
         @com.fasterxml.jackson.annotation.JsonProperty("awrDbId")
@@ -89,7 +89,7 @@ public final class AwrDbSnapshotRangeSummary
 
         /**
          * The internal ID of the database. The internal ID of the database is not the
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm). It can be
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). It can be
          * retrieved from the following endpoint: /managedDatabases/{managedDatabaseId}/awrDbs
          *
          * @param awrDbId the value to set
@@ -222,7 +222,7 @@ public final class AwrDbSnapshotRangeSummary
         }
         /**
          * The ID of the earliest snapshot. The snapshot ID is not the
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm). It can be
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). It can be
          * retrieved from the following endpoint:
          * /managedDatabases/{managedDatabaseId}/awrDbs/{awrDbId}/awrDbSnapshots
          */
@@ -231,7 +231,7 @@ public final class AwrDbSnapshotRangeSummary
 
         /**
          * The ID of the earliest snapshot. The snapshot ID is not the
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm). It can be
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). It can be
          * retrieved from the following endpoint:
          * /managedDatabases/{managedDatabaseId}/awrDbs/{awrDbId}/awrDbSnapshots
          *
@@ -245,7 +245,7 @@ public final class AwrDbSnapshotRangeSummary
         }
         /**
          * The ID of the latest snapshot. The snapshot ID is not the
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm). It can be
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). It can be
          * retrieved from the following endpoint:
          * /managedDatabases/{managedDatabaseId}/awrDbs/{awrDbId}/awrDbSnapshots
          */
@@ -254,7 +254,7 @@ public final class AwrDbSnapshotRangeSummary
 
         /**
          * The ID of the latest snapshot. The snapshot ID is not the
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm). It can be
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). It can be
          * retrieved from the following endpoint:
          * /managedDatabases/{managedDatabaseId}/awrDbs/{awrDbId}/awrDbSnapshots
          *
@@ -298,7 +298,7 @@ public final class AwrDbSnapshotRangeSummary
         }
         /**
          * ID of the database container. The database container ID is not the
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm). It can be
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). It can be
          * retrieved from the following endpoint:
          * /managedDatabases/{managedDatabaseId}/awrDbSnapshotRanges
          */
@@ -307,7 +307,7 @@ public final class AwrDbSnapshotRangeSummary
 
         /**
          * ID of the database container. The database container ID is not the
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm). It can be
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). It can be
          * retrieved from the following endpoint:
          * /managedDatabases/{managedDatabaseId}/awrDbSnapshotRanges
          *
@@ -443,7 +443,7 @@ public final class AwrDbSnapshotRangeSummary
 
     /**
      * The internal ID of the database. The internal ID of the database is not the
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm). It can be
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). It can be
      * retrieved from the following endpoint: /managedDatabases/{managedDatabaseId}/awrDbs
      */
     @com.fasterxml.jackson.annotation.JsonProperty("awrDbId")
@@ -451,7 +451,7 @@ public final class AwrDbSnapshotRangeSummary
 
     /**
      * The internal ID of the database. The internal ID of the database is not the
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm). It can be
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). It can be
      * retrieved from the following endpoint: /managedDatabases/{managedDatabaseId}/awrDbs
      *
      * @return the value
@@ -566,7 +566,7 @@ public final class AwrDbSnapshotRangeSummary
 
     /**
      * The ID of the earliest snapshot. The snapshot ID is not the
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm). It can be
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). It can be
      * retrieved from the following endpoint:
      * /managedDatabases/{managedDatabaseId}/awrDbs/{awrDbId}/awrDbSnapshots
      */
@@ -575,7 +575,7 @@ public final class AwrDbSnapshotRangeSummary
 
     /**
      * The ID of the earliest snapshot. The snapshot ID is not the
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm). It can be
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). It can be
      * retrieved from the following endpoint:
      * /managedDatabases/{managedDatabaseId}/awrDbs/{awrDbId}/awrDbSnapshots
      *
@@ -587,7 +587,7 @@ public final class AwrDbSnapshotRangeSummary
 
     /**
      * The ID of the latest snapshot. The snapshot ID is not the
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm). It can be
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). It can be
      * retrieved from the following endpoint:
      * /managedDatabases/{managedDatabaseId}/awrDbs/{awrDbId}/awrDbSnapshots
      */
@@ -596,7 +596,7 @@ public final class AwrDbSnapshotRangeSummary
 
     /**
      * The ID of the latest snapshot. The snapshot ID is not the
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm). It can be
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). It can be
      * retrieved from the following endpoint:
      * /managedDatabases/{managedDatabaseId}/awrDbs/{awrDbId}/awrDbSnapshots
      *
@@ -634,7 +634,7 @@ public final class AwrDbSnapshotRangeSummary
 
     /**
      * ID of the database container. The database container ID is not the
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm). It can be
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). It can be
      * retrieved from the following endpoint:
      * /managedDatabases/{managedDatabaseId}/awrDbSnapshotRanges
      */
@@ -643,7 +643,7 @@ public final class AwrDbSnapshotRangeSummary
 
     /**
      * ID of the database container. The database container ID is not the
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm). It can be
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). It can be
      * retrieved from the following endpoint:
      * /managedDatabases/{managedDatabaseId}/awrDbSnapshotRanges
      *

@@ -7,7 +7,7 @@ package com.oracle.bmc.resourcemanager.requests;
 import com.oracle.bmc.resourcemanager.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/GetConfigurationSourceProviderExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/GetConfigurationSourceProviderExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * GetConfigurationSourceProviderRequest.
  */
@@ -16,14 +16,14 @@ public class GetConfigurationSourceProviderRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the configuration source provider.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * configuration source provider.
      */
     private String configurationSourceProviderId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the configuration source provider.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * configuration source provider.
      */
     public String getConfigurationSourceProviderId() {
         return configurationSourceProviderId;
@@ -49,14 +49,14 @@ public class GetConfigurationSourceProviderRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the configuration source provider.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * configuration source provider.
          */
         private String configurationSourceProviderId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the configuration source provider.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * configuration source provider.
          *
          * @param configurationSourceProviderId the value to set
          * @return this builder instance

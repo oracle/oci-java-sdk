@@ -100,16 +100,16 @@ public final class CreateCccInfrastructureDetails
         }
         /**
          * The compartment
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * associated with the infrastructure.
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated
+         * with the infrastructure.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * The compartment
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * associated with the infrastructure.
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated
+         * with the infrastructure.
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -333,16 +333,14 @@ public final class CreateCccInfrastructureDetails
     }
 
     /**
-     * The compartment
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * The compartment [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      * associated with the infrastructure.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The compartment
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * The compartment [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      * associated with the infrastructure.
      *
      * @return the value

@@ -59,14 +59,14 @@ public final class MonitoredInstance
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
          * monitored instance.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("instanceId")
         private String instanceId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
          * monitored instance.
          *
          * @param instanceId the value to set
@@ -79,14 +79,14 @@ public final class MonitoredInstance
         }
         /**
          * Compartment Identifier
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * Compartment Identifier
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -98,18 +98,18 @@ public final class MonitoredInstance
         }
         /**
          * A user-friendly name of the monitored instance. It is binded to [Compute
-         * Instance](https://docs.cloud.oracle.com/Content/Compute/Concepts/computeoverview.htm).
+         * Instance](https://docs.oracle.com/iaas/Content/Compute/Concepts/computeoverview.htm).
          * DisplayName is fetched from [Core Service
-         * API](https://docs.cloud.oracle.com/api/#/en/iaas/20160918/Instance/).
+         * API](https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Instance/).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * A user-friendly name of the monitored instance. It is binded to [Compute
-         * Instance](https://docs.cloud.oracle.com/Content/Compute/Concepts/computeoverview.htm).
+         * Instance](https://docs.oracle.com/iaas/Content/Compute/Concepts/computeoverview.htm).
          * DisplayName is fetched from [Core Service
-         * API](https://docs.cloud.oracle.com/api/#/en/iaas/20160918/Instance/).
+         * API](https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Instance/).
          *
          * @param displayName the value to set
          * @return this builder
@@ -121,7 +121,7 @@ public final class MonitoredInstance
         }
         /**
          * Management Agent Identifier
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm). Used to
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Used to
          * invoke manage operations on Management Agent Cloud Service.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("managementAgentId")
@@ -129,7 +129,7 @@ public final class MonitoredInstance
 
         /**
          * Management Agent Identifier
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm). Used to
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Used to
          * invoke manage operations on Management Agent Cloud Service.
          *
          * @param managementAgentId the value to set
@@ -284,14 +284,14 @@ public final class MonitoredInstance
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
      * monitored instance.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("instanceId")
     private final String instanceId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
      * monitored instance.
      *
      * @return the value
@@ -302,14 +302,14 @@ public final class MonitoredInstance
 
     /**
      * Compartment Identifier
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * Compartment Identifier
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      *
      * @return the value
      */
@@ -319,18 +319,18 @@ public final class MonitoredInstance
 
     /**
      * A user-friendly name of the monitored instance. It is binded to [Compute
-     * Instance](https://docs.cloud.oracle.com/Content/Compute/Concepts/computeoverview.htm).
+     * Instance](https://docs.oracle.com/iaas/Content/Compute/Concepts/computeoverview.htm).
      * DisplayName is fetched from [Core Service
-     * API](https://docs.cloud.oracle.com/api/#/en/iaas/20160918/Instance/).
+     * API](https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Instance/).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * A user-friendly name of the monitored instance. It is binded to [Compute
-     * Instance](https://docs.cloud.oracle.com/Content/Compute/Concepts/computeoverview.htm).
+     * Instance](https://docs.oracle.com/iaas/Content/Compute/Concepts/computeoverview.htm).
      * DisplayName is fetched from [Core Service
-     * API](https://docs.cloud.oracle.com/api/#/en/iaas/20160918/Instance/).
+     * API](https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Instance/).
      *
      * @return the value
      */
@@ -340,16 +340,16 @@ public final class MonitoredInstance
 
     /**
      * Management Agent Identifier
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm). Used to
-     * invoke manage operations on Management Agent Cloud Service.
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Used to invoke
+     * manage operations on Management Agent Cloud Service.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("managementAgentId")
     private final String managementAgentId;
 
     /**
      * Management Agent Identifier
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm). Used to
-     * invoke manage operations on Management Agent Cloud Service.
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Used to invoke
+     * manage operations on Management Agent Cloud Service.
      *
      * @return the value
      */

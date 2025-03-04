@@ -58,7 +58,7 @@ public final class EnforcedGovernanceRule
     public static class Builder {
         /**
          * The Oracle ID
-         * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the
+         * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the
          * enforced governance rule.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
@@ -66,7 +66,7 @@ public final class EnforcedGovernanceRule
 
         /**
          * The Oracle ID
-         * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the
+         * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the
          * enforced governance rule.
          *
          * @param id the value to set
@@ -79,7 +79,7 @@ public final class EnforcedGovernanceRule
         }
         /**
          * The Oracle ID
-         * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the
+         * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the
          * child's root compartment to which the governance rule is attached.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
@@ -87,7 +87,7 @@ public final class EnforcedGovernanceRule
 
         /**
          * The Oracle ID
-         * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the
+         * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the
          * child's root compartment to which the governance rule is attached.
          *
          * @param compartmentId the value to set
@@ -261,17 +261,15 @@ public final class EnforcedGovernanceRule
     }
 
     /**
-     * The Oracle ID
-     * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the
-     * enforced governance rule.
+     * The Oracle ID ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm))
+     * of the enforced governance rule.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The Oracle ID
-     * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the
-     * enforced governance rule.
+     * The Oracle ID ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm))
+     * of the enforced governance rule.
      *
      * @return the value
      */
@@ -280,17 +278,15 @@ public final class EnforcedGovernanceRule
     }
 
     /**
-     * The Oracle ID
-     * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the
-     * child's root compartment to which the governance rule is attached.
+     * The Oracle ID ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm))
+     * of the child's root compartment to which the governance rule is attached.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The Oracle ID
-     * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the
-     * child's root compartment to which the governance rule is attached.
+     * The Oracle ID ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm))
+     * of the child's root compartment to which the governance rule is attached.
      *
      * @return the value
      */

@@ -7,7 +7,7 @@ package com.oracle.bmc.loganalytics.requests;
 import com.oracle.bmc.loganalytics.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/PutQueryWorkRequestBackgroundExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/PutQueryWorkRequestBackgroundExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * PutQueryWorkRequestBackgroundRequest.
  */
@@ -24,15 +24,15 @@ public class PutQueryWorkRequestBackgroundRequest
     }
     /**
      * Work Request Identifier [OCID]
-     * (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
-     * asynchronous request.
+     * (https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the asynchronous
+     * request.
      */
     private String workRequestId;
 
     /**
      * Work Request Identifier [OCID]
-     * (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
-     * asynchronous request.
+     * (https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the asynchronous
+     * request.
      */
     public String getWorkRequestId() {
         return workRequestId;
@@ -84,14 +84,14 @@ public class PutQueryWorkRequestBackgroundRequest
 
         /**
          * Work Request Identifier [OCID]
-         * (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
+         * (https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
          * asynchronous request.
          */
         private String workRequestId = null;
 
         /**
          * Work Request Identifier [OCID]
-         * (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
+         * (https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
          * asynchronous request.
          *
          * @param workRequestId the value to set

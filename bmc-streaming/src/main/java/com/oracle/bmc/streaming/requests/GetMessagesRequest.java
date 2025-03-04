@@ -7,7 +7,7 @@ package com.oracle.bmc.streaming.requests;
 import com.oracle.bmc.streaming.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/streaming/GetMessagesExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/streaming/GetMessagesExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use GetMessagesRequest.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180418")

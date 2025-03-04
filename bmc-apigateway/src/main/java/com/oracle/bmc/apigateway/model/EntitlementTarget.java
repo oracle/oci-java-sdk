@@ -32,14 +32,14 @@ public final class EntitlementTarget
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
          * deployment resource.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("deploymentId")
         private String deploymentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
          * deployment resource.
          *
          * @param deploymentId the value to set
@@ -81,14 +81,14 @@ public final class EntitlementTarget
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
      * deployment resource.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("deploymentId")
     private final String deploymentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
      * deployment resource.
      *
      * @return the value

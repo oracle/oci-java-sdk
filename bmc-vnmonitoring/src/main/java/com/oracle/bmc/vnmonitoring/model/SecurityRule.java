@@ -97,14 +97,13 @@ public final class SecurityRule extends com.oracle.bmc.http.client.internal.Expl
          * <p>An IP address range in CIDR notation. For example: {@code 192.168.1.0/24} or {@code
          * 2001:0db8:0123:45::/56} IPv6 addressing is supported for all commercial and government
          * regions. See [IPv6
-         * Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+         * Addresses](https://docs.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
          *
          * <p>The {@code cidrBlock} value for a {@link Service}, if you're setting up a security
          * rule for traffic destined for a particular {@code Service} through a service gateway. For
          * example: {@code oci-phx-objectstorage}.
          *
-         * <p>The
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
+         * <p>The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
          * {@link NetworkSecurityGroup} in the same VCN. The value can be the NSG that the rule
          * belongs to if the rule's intent is to control traffic between VNICs in the same NSG.
          */
@@ -120,14 +119,13 @@ public final class SecurityRule extends com.oracle.bmc.http.client.internal.Expl
          * <p>An IP address range in CIDR notation. For example: {@code 192.168.1.0/24} or {@code
          * 2001:0db8:0123:45::/56} IPv6 addressing is supported for all commercial and government
          * regions. See [IPv6
-         * Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+         * Addresses](https://docs.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
          *
          * <p>The {@code cidrBlock} value for a {@link Service}, if you're setting up a security
          * rule for traffic destined for a particular {@code Service} through a service gateway. For
          * example: {@code oci-phx-objectstorage}.
          *
-         * <p>The
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
+         * <p>The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
          * {@link NetworkSecurityGroup} in the same VCN. The value can be the NSG that the rule
          * belongs to if the rule's intent is to control traffic between VNICs in the same NSG.
          *
@@ -152,8 +150,8 @@ public final class SecurityRule extends com.oracle.bmc.http.client.internal.Expl
          * Service} through a service gateway).
          *
          * <p>{@code NETWORK_SECURITY_GROUP}: If the rule's {@code destination} is the
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
-         * {@link NetworkSecurityGroup}.
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a {@link
+         * NetworkSecurityGroup}.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("destinationType")
         private DestinationType destinationType;
@@ -171,8 +169,8 @@ public final class SecurityRule extends com.oracle.bmc.http.client.internal.Expl
          * Service} through a service gateway).
          *
          * <p>{@code NETWORK_SECURITY_GROUP}: If the rule's {@code destination} is the
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
-         * {@link NetworkSecurityGroup}.
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a {@link
+         * NetworkSecurityGroup}.
          *
          * @param destinationType the value to set
          * @return this builder
@@ -311,14 +309,13 @@ public final class SecurityRule extends com.oracle.bmc.http.client.internal.Expl
          * <p>An IP address range in CIDR notation. For example: {@code 192.168.1.0/24} or {@code
          * 2001:0db8:0123:45::/56} IPv6 addressing is supported for all commercial and government
          * regions. See [IPv6
-         * Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+         * Addresses](https://docs.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
          *
          * <p>The {@code cidrBlock} value for a {@link Service}, if you're setting up a security
          * rule for traffic coming from a particular {@code Service} through a service gateway. For
          * example: {@code oci-phx-objectstorage}.
          *
-         * <p>The
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
+         * <p>The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
          * {@link NetworkSecurityGroup} in the same VCN. The value can be the NSG that the rule
          * belongs to if the rule's intent is to control traffic between VNICs in the same NSG.
          */
@@ -334,14 +331,13 @@ public final class SecurityRule extends com.oracle.bmc.http.client.internal.Expl
          * <p>An IP address range in CIDR notation. For example: {@code 192.168.1.0/24} or {@code
          * 2001:0db8:0123:45::/56} IPv6 addressing is supported for all commercial and government
          * regions. See [IPv6
-         * Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+         * Addresses](https://docs.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
          *
          * <p>The {@code cidrBlock} value for a {@link Service}, if you're setting up a security
          * rule for traffic coming from a particular {@code Service} through a service gateway. For
          * example: {@code oci-phx-objectstorage}.
          *
-         * <p>The
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
+         * <p>The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
          * {@link NetworkSecurityGroup} in the same VCN. The value can be the NSG that the rule
          * belongs to if the rule's intent is to control traffic between VNICs in the same NSG.
          *
@@ -364,8 +360,8 @@ public final class SecurityRule extends com.oracle.bmc.http.client.internal.Expl
          * Service} through a service gateway).
          *
          * <p>{@code NETWORK_SECURITY_GROUP}: If the rule's {@code source} is the
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
-         * {@link NetworkSecurityGroup}.
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a {@link
+         * NetworkSecurityGroup}.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("sourceType")
         private SourceType sourceType;
@@ -381,8 +377,8 @@ public final class SecurityRule extends com.oracle.bmc.http.client.internal.Expl
          * Service} through a service gateway).
          *
          * <p>{@code NETWORK_SECURITY_GROUP}: If the rule's {@code source} is the
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
-         * {@link NetworkSecurityGroup}.
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a {@link
+         * NetworkSecurityGroup}.
          *
          * @param sourceType the value to set
          * @return this builder
@@ -535,15 +531,15 @@ public final class SecurityRule extends com.oracle.bmc.http.client.internal.Expl
      * <p>An IP address range in CIDR notation. For example: {@code 192.168.1.0/24} or {@code
      * 2001:0db8:0123:45::/56} IPv6 addressing is supported for all commercial and government
      * regions. See [IPv6
-     * Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+     * Addresses](https://docs.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
      *
      * <p>The {@code cidrBlock} value for a {@link Service}, if you're setting up a security rule
      * for traffic destined for a particular {@code Service} through a service gateway. For example:
      * {@code oci-phx-objectstorage}.
      *
-     * <p>The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * a {@link NetworkSecurityGroup} in the same VCN. The value can be the NSG that the rule
-     * belongs to if the rule's intent is to control traffic between VNICs in the same NSG.
+     * <p>The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
+     * {@link NetworkSecurityGroup} in the same VCN. The value can be the NSG that the rule belongs
+     * to if the rule's intent is to control traffic between VNICs in the same NSG.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("destination")
     private final String destination;
@@ -557,15 +553,15 @@ public final class SecurityRule extends com.oracle.bmc.http.client.internal.Expl
      * <p>An IP address range in CIDR notation. For example: {@code 192.168.1.0/24} or {@code
      * 2001:0db8:0123:45::/56} IPv6 addressing is supported for all commercial and government
      * regions. See [IPv6
-     * Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+     * Addresses](https://docs.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
      *
      * <p>The {@code cidrBlock} value for a {@link Service}, if you're setting up a security rule
      * for traffic destined for a particular {@code Service} through a service gateway. For example:
      * {@code oci-phx-objectstorage}.
      *
-     * <p>The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * a {@link NetworkSecurityGroup} in the same VCN. The value can be the NSG that the rule
-     * belongs to if the rule's intent is to control traffic between VNICs in the same NSG.
+     * <p>The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
+     * {@link NetworkSecurityGroup} in the same VCN. The value can be the NSG that the rule belongs
+     * to if the rule's intent is to control traffic between VNICs in the same NSG.
      *
      * @return the value
      */
@@ -586,8 +582,8 @@ public final class SecurityRule extends com.oracle.bmc.http.client.internal.Expl
      * Service} through a service gateway).
      *
      * <p>{@code NETWORK_SECURITY_GROUP}: If the rule's {@code destination} is the
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
-     * {@link NetworkSecurityGroup}.
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a {@link
+     * NetworkSecurityGroup}.
      */
     public enum DestinationType implements com.oracle.bmc.http.internal.BmcEnum {
         CidrBlock("CIDR_BLOCK"),
@@ -648,8 +644,8 @@ public final class SecurityRule extends com.oracle.bmc.http.client.internal.Expl
      * Service} through a service gateway).
      *
      * <p>{@code NETWORK_SECURITY_GROUP}: If the rule's {@code destination} is the
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
-     * {@link NetworkSecurityGroup}.
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a {@link
+     * NetworkSecurityGroup}.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("destinationType")
     private final DestinationType destinationType;
@@ -667,8 +663,8 @@ public final class SecurityRule extends com.oracle.bmc.http.client.internal.Expl
      * Service} through a service gateway).
      *
      * <p>{@code NETWORK_SECURITY_GROUP}: If the rule's {@code destination} is the
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
-     * {@link NetworkSecurityGroup}.
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a {@link
+     * NetworkSecurityGroup}.
      *
      * @return the value
      */
@@ -840,15 +836,15 @@ public final class SecurityRule extends com.oracle.bmc.http.client.internal.Expl
      * <p>An IP address range in CIDR notation. For example: {@code 192.168.1.0/24} or {@code
      * 2001:0db8:0123:45::/56} IPv6 addressing is supported for all commercial and government
      * regions. See [IPv6
-     * Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+     * Addresses](https://docs.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
      *
      * <p>The {@code cidrBlock} value for a {@link Service}, if you're setting up a security rule
      * for traffic coming from a particular {@code Service} through a service gateway. For example:
      * {@code oci-phx-objectstorage}.
      *
-     * <p>The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * a {@link NetworkSecurityGroup} in the same VCN. The value can be the NSG that the rule
-     * belongs to if the rule's intent is to control traffic between VNICs in the same NSG.
+     * <p>The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
+     * {@link NetworkSecurityGroup} in the same VCN. The value can be the NSG that the rule belongs
+     * to if the rule's intent is to control traffic between VNICs in the same NSG.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("source")
     private final String source;
@@ -862,15 +858,15 @@ public final class SecurityRule extends com.oracle.bmc.http.client.internal.Expl
      * <p>An IP address range in CIDR notation. For example: {@code 192.168.1.0/24} or {@code
      * 2001:0db8:0123:45::/56} IPv6 addressing is supported for all commercial and government
      * regions. See [IPv6
-     * Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+     * Addresses](https://docs.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
      *
      * <p>The {@code cidrBlock} value for a {@link Service}, if you're setting up a security rule
      * for traffic coming from a particular {@code Service} through a service gateway. For example:
      * {@code oci-phx-objectstorage}.
      *
-     * <p>The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * a {@link NetworkSecurityGroup} in the same VCN. The value can be the NSG that the rule
-     * belongs to if the rule's intent is to control traffic between VNICs in the same NSG.
+     * <p>The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
+     * {@link NetworkSecurityGroup} in the same VCN. The value can be the NSG that the rule belongs
+     * to if the rule's intent is to control traffic between VNICs in the same NSG.
      *
      * @return the value
      */
@@ -888,8 +884,8 @@ public final class SecurityRule extends com.oracle.bmc.http.client.internal.Expl
      * through a service gateway).
      *
      * <p>{@code NETWORK_SECURITY_GROUP}: If the rule's {@code source} is the
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
-     * {@link NetworkSecurityGroup}.
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a {@link
+     * NetworkSecurityGroup}.
      */
     public enum SourceType implements com.oracle.bmc.http.internal.BmcEnum {
         CidrBlock("CIDR_BLOCK"),
@@ -947,8 +943,8 @@ public final class SecurityRule extends com.oracle.bmc.http.client.internal.Expl
      * through a service gateway).
      *
      * <p>{@code NETWORK_SECURITY_GROUP}: If the rule's {@code source} is the
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
-     * {@link NetworkSecurityGroup}.
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a {@link
+     * NetworkSecurityGroup}.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("sourceType")
     private final SourceType sourceType;
@@ -963,8 +959,8 @@ public final class SecurityRule extends com.oracle.bmc.http.client.internal.Expl
      * through a service gateway).
      *
      * <p>{@code NETWORK_SECURITY_GROUP}: If the rule's {@code source} is the
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
-     * {@link NetworkSecurityGroup}.
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a {@link
+     * NetworkSecurityGroup}.
      *
      * @return the value
      */

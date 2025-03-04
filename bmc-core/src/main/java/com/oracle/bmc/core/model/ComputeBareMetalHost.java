@@ -65,15 +65,15 @@ public final class ComputeBareMetalHost
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compute capacity topology.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compute capacity topology.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("computeCapacityTopologyId")
         private String computeCapacityTopologyId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compute capacity topology.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compute capacity topology.
          *
          * @param computeCapacityTopologyId the value to set
          * @return this builder
@@ -84,15 +84,15 @@ public final class ComputeBareMetalHost
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compute HPC island.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compute HPC island.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("computeHpcIslandId")
         private String computeHpcIslandId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compute HPC island.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compute HPC island.
          *
          * @param computeHpcIslandId the value to set
          * @return this builder
@@ -103,15 +103,15 @@ public final class ComputeBareMetalHost
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compute local block.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compute local block.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("computeLocalBlockId")
         private String computeLocalBlockId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compute local block.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compute local block.
          *
          * @param computeLocalBlockId the value to set
          * @return this builder
@@ -122,15 +122,15 @@ public final class ComputeBareMetalHost
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compute network block.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compute network block.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("computeNetworkBlockId")
         private String computeNetworkBlockId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compute network block.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compute network block.
          *
          * @param computeNetworkBlockId the value to set
          * @return this builder
@@ -141,15 +141,15 @@ public final class ComputeBareMetalHost
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compute bare metal host.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compute bare metal host.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compute bare metal host.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compute bare metal host.
          *
          * @param id the value to set
          * @return this builder
@@ -160,15 +160,15 @@ public final class ComputeBareMetalHost
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compute instance that runs on the compute bare metal host.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compute instance that runs on the compute bare metal host.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("instanceId")
         private String instanceId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compute instance that runs on the compute bare metal host.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compute instance that runs on the compute bare metal host.
          *
          * @param instanceId the value to set
          * @return this builder
@@ -342,15 +342,15 @@ public final class ComputeBareMetalHost
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compute capacity topology.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compute capacity topology.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("computeCapacityTopologyId")
     private final String computeCapacityTopologyId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compute capacity topology.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compute capacity topology.
      *
      * @return the value
      */
@@ -359,15 +359,15 @@ public final class ComputeBareMetalHost
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compute HPC island.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compute HPC island.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("computeHpcIslandId")
     private final String computeHpcIslandId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compute HPC island.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compute HPC island.
      *
      * @return the value
      */
@@ -376,15 +376,15 @@ public final class ComputeBareMetalHost
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compute local block.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compute local block.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("computeLocalBlockId")
     private final String computeLocalBlockId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compute local block.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compute local block.
      *
      * @return the value
      */
@@ -393,15 +393,15 @@ public final class ComputeBareMetalHost
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compute network block.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compute network block.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("computeNetworkBlockId")
     private final String computeNetworkBlockId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compute network block.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compute network block.
      *
      * @return the value
      */
@@ -410,15 +410,15 @@ public final class ComputeBareMetalHost
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compute bare metal host.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compute bare metal host.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compute bare metal host.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compute bare metal host.
      *
      * @return the value
      */
@@ -427,15 +427,15 @@ public final class ComputeBareMetalHost
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compute instance that runs on the compute bare metal host.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compute instance that runs on the compute bare metal host.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("instanceId")
     private final String instanceId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compute instance that runs on the compute bare metal host.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compute instance that runs on the compute bare metal host.
      *
      * @return the value
      */

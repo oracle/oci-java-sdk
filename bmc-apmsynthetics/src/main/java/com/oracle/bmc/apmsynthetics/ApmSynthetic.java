@@ -75,7 +75,7 @@ public interface ApmSynthetic extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmsynthetics/AggregateNetworkDataExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmsynthetics/AggregateNetworkDataExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     AggregateNetworkData API.
      */
@@ -91,7 +91,7 @@ public interface ApmSynthetic extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmsynthetics/CreateDedicatedVantagePointExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmsynthetics/CreateDedicatedVantagePointExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     CreateDedicatedVantagePoint API.
      */
@@ -108,7 +108,7 @@ public interface ApmSynthetic extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmsynthetics/CreateMonitorExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmsynthetics/CreateMonitorExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateMonitor API.
      */
     CreateMonitorResponse createMonitor(CreateMonitorRequest request);
@@ -123,7 +123,7 @@ public interface ApmSynthetic extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmsynthetics/CreateOnPremiseVantagePointExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmsynthetics/CreateOnPremiseVantagePointExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     CreateOnPremiseVantagePoint API.
      */
@@ -140,7 +140,7 @@ public interface ApmSynthetic extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmsynthetics/CreateScriptExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmsynthetics/CreateScriptExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateScript API.
      */
     CreateScriptResponse createScript(CreateScriptRequest request);
@@ -155,7 +155,7 @@ public interface ApmSynthetic extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmsynthetics/CreateWorkerExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmsynthetics/CreateWorkerExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateWorker API.
      */
     CreateWorkerResponse createWorker(CreateWorkerRequest request);
@@ -170,7 +170,7 @@ public interface ApmSynthetic extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmsynthetics/DeleteDedicatedVantagePointExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmsynthetics/DeleteDedicatedVantagePointExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     DeleteDedicatedVantagePoint API.
      */
@@ -187,7 +187,7 @@ public interface ApmSynthetic extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmsynthetics/DeleteMonitorExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmsynthetics/DeleteMonitorExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteMonitor API.
      */
     DeleteMonitorResponse deleteMonitor(DeleteMonitorRequest request);
@@ -202,7 +202,7 @@ public interface ApmSynthetic extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmsynthetics/DeleteOnPremiseVantagePointExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmsynthetics/DeleteOnPremiseVantagePointExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     DeleteOnPremiseVantagePoint API.
      */
@@ -219,7 +219,7 @@ public interface ApmSynthetic extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmsynthetics/DeleteScriptExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmsynthetics/DeleteScriptExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteScript API.
      */
     DeleteScriptResponse deleteScript(DeleteScriptRequest request);
@@ -234,7 +234,7 @@ public interface ApmSynthetic extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmsynthetics/DeleteWorkerExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmsynthetics/DeleteWorkerExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteWorker API.
      */
     DeleteWorkerResponse deleteWorker(DeleteWorkerRequest request);
@@ -249,7 +249,7 @@ public interface ApmSynthetic extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmsynthetics/GetDedicatedVantagePointExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmsynthetics/GetDedicatedVantagePointExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     GetDedicatedVantagePoint API.
      */
@@ -266,7 +266,7 @@ public interface ApmSynthetic extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmsynthetics/GetMonitorExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmsynthetics/GetMonitorExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetMonitor API.
      */
     GetMonitorResponse getMonitor(GetMonitorRequest request);
@@ -282,7 +282,7 @@ public interface ApmSynthetic extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmsynthetics/GetMonitorResultExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmsynthetics/GetMonitorResultExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetMonitorResult
      *     API.
      */
@@ -298,7 +298,7 @@ public interface ApmSynthetic extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmsynthetics/GetOnPremiseVantagePointExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmsynthetics/GetOnPremiseVantagePointExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     GetOnPremiseVantagePoint API.
      */
@@ -315,7 +315,7 @@ public interface ApmSynthetic extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmsynthetics/GetScriptExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmsynthetics/GetScriptExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetScript API.
      */
     GetScriptResponse getScript(GetScriptRequest request);
@@ -330,7 +330,7 @@ public interface ApmSynthetic extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmsynthetics/GetWorkerExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmsynthetics/GetWorkerExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetWorker API.
      */
     GetWorkerResponse getWorker(GetWorkerRequest request);
@@ -345,7 +345,7 @@ public interface ApmSynthetic extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmsynthetics/ListDedicatedVantagePointsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmsynthetics/ListDedicatedVantagePointsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ListDedicatedVantagePoints API.
      */
@@ -362,7 +362,7 @@ public interface ApmSynthetic extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmsynthetics/ListMonitorsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmsynthetics/ListMonitorsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListMonitors API.
      */
     ListMonitorsResponse listMonitors(ListMonitorsRequest request);
@@ -377,7 +377,7 @@ public interface ApmSynthetic extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmsynthetics/ListOnPremiseVantagePointsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmsynthetics/ListOnPremiseVantagePointsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ListOnPremiseVantagePoints API.
      */
@@ -394,7 +394,7 @@ public interface ApmSynthetic extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmsynthetics/ListPublicVantagePointsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmsynthetics/ListPublicVantagePointsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ListPublicVantagePoints API.
      */
@@ -410,7 +410,7 @@ public interface ApmSynthetic extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmsynthetics/ListScriptsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmsynthetics/ListScriptsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListScripts API.
      */
     ListScriptsResponse listScripts(ListScriptsRequest request);
@@ -425,7 +425,7 @@ public interface ApmSynthetic extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmsynthetics/ListWorkersExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmsynthetics/ListWorkersExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkers API.
      */
     ListWorkersResponse listWorkers(ListWorkersRequest request);
@@ -440,7 +440,7 @@ public interface ApmSynthetic extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmsynthetics/UpdateDedicatedVantagePointExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmsynthetics/UpdateDedicatedVantagePointExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     UpdateDedicatedVantagePoint API.
      */
@@ -457,7 +457,7 @@ public interface ApmSynthetic extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmsynthetics/UpdateMonitorExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmsynthetics/UpdateMonitorExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateMonitor API.
      */
     UpdateMonitorResponse updateMonitor(UpdateMonitorRequest request);
@@ -472,7 +472,7 @@ public interface ApmSynthetic extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmsynthetics/UpdateOnPremiseVantagePointExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmsynthetics/UpdateOnPremiseVantagePointExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     UpdateOnPremiseVantagePoint API.
      */
@@ -489,7 +489,7 @@ public interface ApmSynthetic extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmsynthetics/UpdateScriptExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmsynthetics/UpdateScriptExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateScript API.
      */
     UpdateScriptResponse updateScript(UpdateScriptRequest request);
@@ -504,7 +504,7 @@ public interface ApmSynthetic extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmsynthetics/UpdateWorkerExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmsynthetics/UpdateWorkerExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateWorker API.
      */
     UpdateWorkerResponse updateWorker(UpdateWorkerRequest request);

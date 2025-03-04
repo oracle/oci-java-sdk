@@ -7,7 +7,7 @@ package com.oracle.bmc.oda.requests;
 import com.oracle.bmc.oda.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/DeleteOdaPrivateEndpointAttachmentExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/DeleteOdaPrivateEndpointAttachmentExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * DeleteOdaPrivateEndpointAttachmentRequest.
  */
@@ -16,14 +16,14 @@ public class DeleteOdaPrivateEndpointAttachmentRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * ODA Private Endpoint Attachment.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of ODA
+     * Private Endpoint Attachment.
      */
     private String odaPrivateEndpointAttachmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * ODA Private Endpoint Attachment.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of ODA
+     * Private Endpoint Attachment.
      */
     public String getOdaPrivateEndpointAttachmentId() {
         return odaPrivateEndpointAttachmentId;
@@ -66,14 +66,14 @@ public class DeleteOdaPrivateEndpointAttachmentRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of ODA Private Endpoint Attachment.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of ODA
+         * Private Endpoint Attachment.
          */
         private String odaPrivateEndpointAttachmentId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of ODA Private Endpoint Attachment.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of ODA
+         * Private Endpoint Attachment.
          *
          * @param odaPrivateEndpointAttachmentId the value to set
          * @return this builder instance

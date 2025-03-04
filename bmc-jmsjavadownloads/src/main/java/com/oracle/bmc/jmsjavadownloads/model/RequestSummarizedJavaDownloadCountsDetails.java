@@ -63,16 +63,16 @@ public final class RequestSummarizedJavaDownloadCountsDetails
     public static class Builder {
         /**
          * The compartment
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) here
-         * should be the tenancy OCID.
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) here should
+         * be the tenancy OCID.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * The compartment
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) here
-         * should be the tenancy OCID.
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) here should
+         * be the tenancy OCID.
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -298,17 +298,15 @@ public final class RequestSummarizedJavaDownloadCountsDetails
     }
 
     /**
-     * The compartment
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) here should be
-     * the tenancy OCID.
+     * The compartment [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * here should be the tenancy OCID.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The compartment
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) here should be
-     * the tenancy OCID.
+     * The compartment [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * here should be the tenancy OCID.
      *
      * @return the value
      */

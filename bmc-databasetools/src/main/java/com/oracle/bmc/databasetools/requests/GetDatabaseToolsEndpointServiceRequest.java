@@ -7,7 +7,7 @@ package com.oracle.bmc.databasetools.requests;
 import com.oracle.bmc.databasetools.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasetools/GetDatabaseToolsEndpointServiceExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasetools/GetDatabaseToolsEndpointServiceExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * GetDatabaseToolsEndpointServiceRequest.
  */
@@ -16,13 +16,13 @@ public class GetDatabaseToolsEndpointServiceRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
      * Database Tools Endpoint Service.
      */
     private String databaseToolsEndpointServiceId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
      * Database Tools Endpoint Service.
      */
     public String getDatabaseToolsEndpointServiceId() {
@@ -43,13 +43,13 @@ public class GetDatabaseToolsEndpointServiceRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
          * Database Tools Endpoint Service.
          */
         private String databaseToolsEndpointServiceId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
          * Database Tools Endpoint Service.
          *
          * @param databaseToolsEndpointServiceId the value to set

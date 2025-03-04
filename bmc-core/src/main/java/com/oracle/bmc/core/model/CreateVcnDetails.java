@@ -115,15 +115,15 @@ public final class CreateVcnDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compartment to contain the VCN.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment to contain the VCN.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compartment to contain the VCN.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment to contain the VCN.
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -203,7 +203,7 @@ public final class CreateVcnDetails
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
          */
@@ -213,7 +213,7 @@ public final class CreateVcnDetails
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
@@ -256,7 +256,7 @@ public final class CreateVcnDetails
          * other instances in the VCN. Otherwise the Internet and VCN Resolver will not work.
          *
          * <p>For more information, see [DNS in Your Virtual Cloud
-         * Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
+         * Network](https://docs.oracle.com/iaas/Content/Network/Concepts/dns.htm).
          *
          * <p>Example: {@code vcn1}
          */
@@ -274,7 +274,7 @@ public final class CreateVcnDetails
          * other instances in the VCN. Otherwise the Internet and VCN Resolver will not work.
          *
          * <p>For more information, see [DNS in Your Virtual Cloud
-         * Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
+         * Network](https://docs.oracle.com/iaas/Content/Network/Concepts/dns.htm).
          *
          * <p>Example: {@code vcn1}
          *
@@ -289,7 +289,7 @@ public final class CreateVcnDetails
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          */
@@ -299,7 +299,7 @@ public final class CreateVcnDetails
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          *
@@ -313,9 +313,9 @@ public final class CreateVcnDetails
         }
         /**
          * [Security
-         * attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes)
+         * attributes](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes)
          * are labels for a resource that can be referenced in a [Zero Trust Packet
-         * Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm)
+         * Routing](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm)
          * (ZPR) policy to control access to ZPR-supported resources.
          *
          * <p>Example: {@code {"Oracle-DataSecurity-ZPR": {"MaxEgressCount":
@@ -326,9 +326,9 @@ public final class CreateVcnDetails
 
         /**
          * [Security
-         * attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes)
+         * attributes](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes)
          * are labels for a resource that can be referenced in a [Zero Trust Packet
-         * Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm)
+         * Routing](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm)
          * (ZPR) policy to control access to ZPR-supported resources.
          *
          * <p>Example: {@code {"Oracle-DataSecurity-ZPR": {"MaxEgressCount":
@@ -348,7 +348,7 @@ public final class CreateVcnDetails
          * assign the VCN a IPv6 /56 CIDR block. You may skip having Oracle allocate the VCN a IPv6
          * /56 CIDR block by setting isOracleGuaAllocationEnabled to {@code false}. For important
          * details about IPv6 addressing in a VCN, see [IPv6
-         * Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+         * Addresses](https://docs.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
          *
          * <p>Example: {@code true}
          */
@@ -360,7 +360,7 @@ public final class CreateVcnDetails
          * assign the VCN a IPv6 /56 CIDR block. You may skip having Oracle allocate the VCN a IPv6
          * /56 CIDR block by setting isOracleGuaAllocationEnabled to {@code false}. For important
          * details about IPv6 addressing in a VCN, see [IPv6
-         * Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+         * Addresses](https://docs.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
          *
          * <p>Example: {@code true}
          *
@@ -491,15 +491,15 @@ public final class CreateVcnDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compartment to contain the VCN.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment to contain the VCN.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compartment to contain the VCN.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment to contain the VCN.
      *
      * @return the value
      */
@@ -571,7 +571,7 @@ public final class CreateVcnDetails
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
      */
@@ -581,7 +581,7 @@ public final class CreateVcnDetails
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
@@ -619,7 +619,7 @@ public final class CreateVcnDetails
      * instances in the VCN. Otherwise the Internet and VCN Resolver will not work.
      *
      * <p>For more information, see [DNS in Your Virtual Cloud
-     * Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
+     * Network](https://docs.oracle.com/iaas/Content/Network/Concepts/dns.htm).
      *
      * <p>Example: {@code vcn1}
      */
@@ -637,7 +637,7 @@ public final class CreateVcnDetails
      * instances in the VCN. Otherwise the Internet and VCN Resolver will not work.
      *
      * <p>For more information, see [DNS in Your Virtual Cloud
-     * Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
+     * Network](https://docs.oracle.com/iaas/Content/Network/Concepts/dns.htm).
      *
      * <p>Example: {@code vcn1}
      *
@@ -650,7 +650,7 @@ public final class CreateVcnDetails
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      */
@@ -660,7 +660,7 @@ public final class CreateVcnDetails
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      *
@@ -672,10 +672,10 @@ public final class CreateVcnDetails
 
     /**
      * [Security
-     * attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes)
+     * attributes](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes)
      * are labels for a resource that can be referenced in a [Zero Trust Packet
-     * Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm)
-     * (ZPR) policy to control access to ZPR-supported resources.
+     * Routing](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR)
+     * policy to control access to ZPR-supported resources.
      *
      * <p>Example: {@code {"Oracle-DataSecurity-ZPR": {"MaxEgressCount":
      * {"value":"42","mode":"audit"}}}}
@@ -685,10 +685,10 @@ public final class CreateVcnDetails
 
     /**
      * [Security
-     * attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes)
+     * attributes](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes)
      * are labels for a resource that can be referenced in a [Zero Trust Packet
-     * Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm)
-     * (ZPR) policy to control access to ZPR-supported resources.
+     * Routing](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR)
+     * policy to control access to ZPR-supported resources.
      *
      * <p>Example: {@code {"Oracle-DataSecurity-ZPR": {"MaxEgressCount":
      * {"value":"42","mode":"audit"}}}}
@@ -704,7 +704,7 @@ public final class CreateVcnDetails
      * the VCN a IPv6 /56 CIDR block. You may skip having Oracle allocate the VCN a IPv6 /56 CIDR
      * block by setting isOracleGuaAllocationEnabled to {@code false}. For important details about
      * IPv6 addressing in a VCN, see [IPv6
-     * Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+     * Addresses](https://docs.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
      *
      * <p>Example: {@code true}
      */
@@ -716,7 +716,7 @@ public final class CreateVcnDetails
      * the VCN a IPv6 /56 CIDR block. You may skip having Oracle allocate the VCN a IPv6 /56 CIDR
      * block by setting isOracleGuaAllocationEnabled to {@code false}. For important details about
      * IPv6 addressing in a VCN, see [IPv6
-     * Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+     * Addresses](https://docs.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
      *
      * <p>Example: {@code true}
      *

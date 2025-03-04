@@ -132,16 +132,16 @@ public final class AwrDatabaseParameterChangeSummary
         }
         /**
          * The ID of the snapshot with the parameter value changed. The snapshot identifier is not
-         * the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm). It
-         * can be retrieved from the following endpoint: /awrHubs/{awrHubId}/awrDatabaseSnapshots
+         * the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). It can
+         * be retrieved from the following endpoint: /awrHubs/{awrHubId}/awrDatabaseSnapshots
          */
         @com.fasterxml.jackson.annotation.JsonProperty("snapshotIdentifier")
         private Integer snapshotIdentifier;
 
         /**
          * The ID of the snapshot with the parameter value changed. The snapshot identifier is not
-         * the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm). It
-         * can be retrieved from the following endpoint: /awrHubs/{awrHubId}/awrDatabaseSnapshots
+         * the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). It can
+         * be retrieved from the following endpoint: /awrHubs/{awrHubId}/awrDatabaseSnapshots
          *
          * @param snapshotIdentifier the value to set
          * @return this builder
@@ -316,7 +316,7 @@ public final class AwrDatabaseParameterChangeSummary
 
     /**
      * The ID of the snapshot with the parameter value changed. The snapshot identifier is not the
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm). It can be
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). It can be
      * retrieved from the following endpoint: /awrHubs/{awrHubId}/awrDatabaseSnapshots
      */
     @com.fasterxml.jackson.annotation.JsonProperty("snapshotIdentifier")
@@ -324,7 +324,7 @@ public final class AwrDatabaseParameterChangeSummary
 
     /**
      * The ID of the snapshot with the parameter value changed. The snapshot identifier is not the
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm). It can be
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). It can be
      * retrieved from the following endpoint: /awrHubs/{awrHubId}/awrDatabaseSnapshots
      *
      * @return the value

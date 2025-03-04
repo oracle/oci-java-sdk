@@ -34,7 +34,7 @@ public final class WorkRequestError
     public static class Builder {
         /**
          * A machine-usable
-         * [code](https://docs.cloud.oracle.com/Content/API/References/apierrors.htm) for the error
+         * [code](https://docs.oracle.com/iaas/Content/API/References/apierrors.htm) for the error
          * that occured.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("code")
@@ -42,7 +42,7 @@ public final class WorkRequestError
 
         /**
          * A machine-usable
-         * [code](https://docs.cloud.oracle.com/Content/API/References/apierrors.htm) for the error
+         * [code](https://docs.oracle.com/iaas/Content/API/References/apierrors.htm) for the error
          * that occured.
          *
          * @param code the value to set
@@ -124,14 +124,14 @@ public final class WorkRequestError
     }
 
     /**
-     * A machine-usable [code](https://docs.cloud.oracle.com/Content/API/References/apierrors.htm)
+     * A machine-usable [code](https://docs.oracle.com/iaas/Content/API/References/apierrors.htm)
      * for the error that occured.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("code")
     private final String code;
 
     /**
-     * A machine-usable [code](https://docs.cloud.oracle.com/Content/API/References/apierrors.htm)
+     * A machine-usable [code](https://docs.oracle.com/iaas/Content/API/References/apierrors.htm)
      * for the error that occured.
      *
      * @return the value

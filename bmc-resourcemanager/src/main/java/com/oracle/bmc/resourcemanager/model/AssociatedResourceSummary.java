@@ -143,16 +143,16 @@ public final class AssociatedResourceSummary
         }
         /**
          * Resource region. For information about regions, see [Regions and Availability
-         * Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
-         * Example: {@code us-phoenix-1}
+         * Domains](https://docs.oracle.com/iaas/Content/General/Concepts/regions.htm). Example:
+         * {@code us-phoenix-1}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("region")
         private String region;
 
         /**
          * Resource region. For information about regions, see [Regions and Availability
-         * Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
-         * Example: {@code us-phoenix-1}
+         * Domains](https://docs.oracle.com/iaas/Content/General/Concepts/regions.htm). Example:
+         * {@code us-phoenix-1}
          *
          * @param region the value to set
          * @return this builder
@@ -314,16 +314,16 @@ public final class AssociatedResourceSummary
 
     /**
      * Resource region. For information about regions, see [Regions and Availability
-     * Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm). Example:
-     * {@code us-phoenix-1}
+     * Domains](https://docs.oracle.com/iaas/Content/General/Concepts/regions.htm). Example: {@code
+     * us-phoenix-1}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("region")
     private final String region;
 
     /**
      * Resource region. For information about regions, see [Regions and Availability
-     * Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm). Example:
-     * {@code us-phoenix-1}
+     * Domains](https://docs.oracle.com/iaas/Content/General/Concepts/regions.htm). Example: {@code
+     * us-phoenix-1}
      *
      * @return the value
      */

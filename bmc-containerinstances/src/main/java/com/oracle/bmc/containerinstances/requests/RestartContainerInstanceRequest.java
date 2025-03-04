@@ -7,7 +7,7 @@ package com.oracle.bmc.containerinstances.requests;
 import com.oracle.bmc.containerinstances.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/containerinstances/RestartContainerInstanceExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/containerinstances/RestartContainerInstanceExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * RestartContainerInstanceRequest.
  */
@@ -16,14 +16,14 @@ public class RestartContainerInstanceRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the container instance.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * container instance.
      */
     private String containerInstanceId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the container instance.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * container instance.
      */
     public String getContainerInstanceId() {
         return containerInstanceId;
@@ -66,14 +66,14 @@ public class RestartContainerInstanceRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the container instance.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * container instance.
          */
         private String containerInstanceId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the container instance.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * container instance.
          *
          * @param containerInstanceId the value to set
          * @return this builder instance

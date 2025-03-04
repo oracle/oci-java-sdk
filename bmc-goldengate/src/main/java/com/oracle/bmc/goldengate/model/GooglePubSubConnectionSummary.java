@@ -214,7 +214,7 @@ public final class GooglePubSubConnectionSummary extends ConnectionSummary {
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Secret where the content of the service account key file is stored, which containing the
          * credentials required to use Google PubSub. Note: When provided, 'serviceAccountKeyFile'
          * field must not be provided.
@@ -223,7 +223,7 @@ public final class GooglePubSubConnectionSummary extends ConnectionSummary {
         private String serviceAccountKeyFileSecretId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Secret where the content of the service account key file is stored, which containing the
          * credentials required to use Google PubSub. Note: When provided, 'serviceAccountKeyFile'
          * field must not be provided.
@@ -409,7 +409,7 @@ public final class GooglePubSubConnectionSummary extends ConnectionSummary {
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Secret where the content of the service account key file is stored, which containing the
      * credentials required to use Google PubSub. Note: When provided, 'serviceAccountKeyFile' field
      * must not be provided.
@@ -418,7 +418,7 @@ public final class GooglePubSubConnectionSummary extends ConnectionSummary {
     private final String serviceAccountKeyFileSecretId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Secret where the content of the service account key file is stored, which containing the
      * credentials required to use Google PubSub. Note: When provided, 'serviceAccountKeyFile' field
      * must not be provided.

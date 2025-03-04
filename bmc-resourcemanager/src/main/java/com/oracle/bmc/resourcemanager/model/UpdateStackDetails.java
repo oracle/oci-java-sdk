@@ -113,7 +113,7 @@ public final class UpdateStackDetails
          * Applies to older stacks. Once set to {@code true}, cannot be reverted. For more
          * information about stack sourcing of third-party Terraform providers, see [Third-party
          * Provider
-         * Configuration](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/terraformconfigresourcemanager.htm#third-party-providers).
+         * Configuration](https://docs.oracle.com/iaas/Content/ResourceManager/Concepts/terraformconfigresourcemanager.htm#third-party-providers).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("isThirdPartyProviderExperienceEnabled")
         private Boolean isThirdPartyProviderExperienceEnabled;
@@ -125,7 +125,7 @@ public final class UpdateStackDetails
          * Applies to older stacks. Once set to {@code true}, cannot be reverted. For more
          * information about stack sourcing of third-party Terraform providers, see [Third-party
          * Provider
-         * Configuration](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/terraformconfigresourcemanager.htm#third-party-providers).
+         * Configuration](https://docs.oracle.com/iaas/Content/ResourceManager/Concepts/terraformconfigresourcemanager.htm#third-party-providers).
          *
          * @param isThirdPartyProviderExperienceEnabled the value to set
          * @return this builder
@@ -175,8 +175,8 @@ public final class UpdateStackDetails
         /**
          * Free-form tags associated with this resource. Each tag is a simple key-value pair with no
          * predefined name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         * Example: {@code {"Department": "Finance"}}
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+         * {@code {"Department": "Finance"}}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
@@ -184,8 +184,8 @@ public final class UpdateStackDetails
         /**
          * Free-form tags associated with this resource. Each tag is a simple key-value pair with no
          * predefined name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         * Example: {@code {"Department": "Finance"}}
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+         * {@code {"Department": "Finance"}}
          *
          * @param freeformTags the value to set
          * @return this builder
@@ -198,8 +198,8 @@ public final class UpdateStackDetails
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+         * {@code {"Operations": {"CostCenter": "42"}}}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
@@ -207,8 +207,8 @@ public final class UpdateStackDetails
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+         * {@code {"Operations": {"CostCenter": "42"}}}
          *
          * @param definedTags the value to set
          * @return this builder
@@ -330,7 +330,7 @@ public final class UpdateStackDetails
      * #customTerraformProvider(CustomTerraformProviderRequest) customTerraformProvider}. Applies to
      * older stacks. Once set to {@code true}, cannot be reverted. For more information about stack
      * sourcing of third-party Terraform providers, see [Third-party Provider
-     * Configuration](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/terraformconfigresourcemanager.htm#third-party-providers).
+     * Configuration](https://docs.oracle.com/iaas/Content/ResourceManager/Concepts/terraformconfigresourcemanager.htm#third-party-providers).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("isThirdPartyProviderExperienceEnabled")
     private final Boolean isThirdPartyProviderExperienceEnabled;
@@ -341,7 +341,7 @@ public final class UpdateStackDetails
      * #customTerraformProvider(CustomTerraformProviderRequest) customTerraformProvider}. Applies to
      * older stacks. Once set to {@code true}, cannot be reverted. For more information about stack
      * sourcing of third-party Terraform providers, see [Third-party Provider
-     * Configuration](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/terraformconfigresourcemanager.htm#third-party-providers).
+     * Configuration](https://docs.oracle.com/iaas/Content/ResourceManager/Concepts/terraformconfigresourcemanager.htm#third-party-providers).
      *
      * @return the value
      */
@@ -384,7 +384,7 @@ public final class UpdateStackDetails
     /**
      * Free-form tags associated with this resource. Each tag is a simple key-value pair with no
      * predefined name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Department": "Finance"}}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -393,7 +393,7 @@ public final class UpdateStackDetails
     /**
      * Free-form tags associated with this resource. Each tag is a simple key-value pair with no
      * predefined name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Department": "Finance"}}
      *
      * @return the value
@@ -405,7 +405,7 @@ public final class UpdateStackDetails
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Operations": {"CostCenter": "42"}}}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -414,7 +414,7 @@ public final class UpdateStackDetails
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Operations": {"CostCenter": "42"}}}
      *
      * @return the value

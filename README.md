@@ -5,7 +5,7 @@
 
 oci-java-sdk provides an SDK for Java that you can use to manage your Oracle Cloud Infrastructure resources.
 
-The project is open source and maintained by Oracle Corp. The home page for the project is [here](https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/javasdk.htm).
+The project is open source and maintained by Oracle Corp. The home page for the project is [here](https://docs.oracle.com/iaas/Content/API/SDKDocs/javasdk.htm).
 
 The OCI Java SDK versions `1.x.y` and `2.x.y` are now referred as OCI Legacy Java SDK. Any updates or bug fixes related to OCI Legacy Java SDK can be found in [legacy/v2/master branch](https://github.com/oracle/oci-java-sdk/tree/legacy/v2/master). Please refer [README.md](https://github.com/oracle/oci-java-sdk/blob/legacy/v2/master/README.md) to learn more about these legacy versions.
 
@@ -14,15 +14,15 @@ This Github repository will refer to OCI Java SDK version `3.x.y` by default whe
 
 ## Documentation
 
-Full documentation, including prerequisites, installation, supported JDK versions and configuration instructions, is available [here](https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/javasdk.htm).
+Full documentation, including prerequisites, installation, supported JDK versions and configuration instructions, is available [here](https://docs.oracle.com/iaas/Content/API/SDKDocs/javasdk.htm).
 
-API reference can be found [here](https://docs.cloud.oracle.com/iaas/tools/java/latest/).
+API reference can be found [here](https://docs.oracle.com/iaas/tools/java/latest/).
 
 ## Installation
 
-For basic set up, see [Getting Started](https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/javasdkgettingstarted.htm).
+For basic set up, see [Getting Started](https://docs.oracle.com/iaas/Content/API/SDKDocs/javasdkgettingstarted.htm).
 
-For details on compatibility, advanced configurations, and add-ons, see [Configuration](https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/javasdkconfig.htm).
+For details on compatibility, advanced configurations, and add-ons, see [Configuration](https://docs.oracle.com/iaas/Content/API/SDKDocs/javasdkconfig.htm).
 
 - *Circuit Breaker*: By default, circuit breaker feature is enabled, if it is not expected, please explicitly set the environment variable:
 ```
@@ -206,7 +206,7 @@ Examples for OCI Legacy Java SDK can be found [here](https://github.com/oracle/o
 
 ## Help
 
-For details on contributions, questions, or feedback, see [Contact Us](https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/javasdk.htm#ContactUs).
+For details on contributions, questions, or feedback, see [Contact Us](https://docs.oracle.com/iaas/Content/API/SDKDocs/javasdk.htm#ContactUs).
 
 ## Changes
 
@@ -220,7 +220,7 @@ Oracle gratefully acknowledges the contributions to oci-java-sdk that have been 
 
 ## Known Issues
 
-You can find information on any known issues with the SDK [here](https://docs.cloud.oracle.com/iaas/Content/knownissues.htm) and under the [“Issues” tab of this GitHub repository](https://github.com/oracle/oci-java-sdk/issues).
+You can find information on any known issues with the SDK [here](https://docs.oracle.com/iaas/Content/knownissues.htm) and under the [“Issues” tab of this GitHub repository](https://github.com/oracle/oci-java-sdk/issues).
 
 To learn about known issues with OCI Legacy Java SDK, please refer [Known Issues in OCI Legacy Java SDK](https://github.com/oracle/oci-java-sdk/blob/legacy/v2/master/README.md#known-issues)
 
@@ -230,7 +230,7 @@ To learn about known issues with OCI Legacy Java SDK, please refer [Known Issues
 
 **Workaround**: Update the OCI Java SDK client to version 1.25.2 or later. For more information about this issue and workarounds, see [Potential data corruption issue for OCI Java SDK on binary data upload with `RefreshableOnNotAuthenticatedProvider`](https://github.com/oracle/oci-java-sdk/issues/255).
 
-**Direct link to this issue**: [Potential data corruption issue with OCI Java SDK on binary data upload with `RefreshableOnNotAuthenticatedProvider`](https://docs.cloud.oracle.com/en-us/iaas/Content/knownissues.htm#javaSDKStreamDataCorrupt)
+**Direct link to this issue**: [Potential data corruption issue with OCI Java SDK on binary data upload with `RefreshableOnNotAuthenticatedProvider`](https://docs.oracle.com/en-us/iaas/Content/knownissues.htm#javaSDKStreamDataCorrupt)
 
 ### Program hangs for an indefinite time
 

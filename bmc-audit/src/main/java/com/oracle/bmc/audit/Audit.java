@@ -10,7 +10,7 @@ import com.oracle.bmc.audit.responses.*;
 /**
  * API for the Audit Service. Use this API for compliance monitoring in your tenancy. For more
  * information, see [Overview of
- * Audit](https://docs.cloud.oracle.com/iaas/Content/Audit/Concepts/auditoverview.htm).
+ * Audit](https://docs.oracle.com/iaas/Content/Audit/Concepts/auditoverview.htm).
  *
  * <p>*Tip**: This API is good for queries, but not bulk-export operations.
  *
@@ -78,7 +78,7 @@ public interface Audit extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/audit/GetConfigurationExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/audit/GetConfigurationExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetConfiguration
      *     API.
      */
@@ -95,7 +95,7 @@ public interface Audit extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/audit/ListEventsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/audit/ListEventsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListEvents API.
      */
     ListEventsResponse listEvents(ListEventsRequest request);
@@ -110,7 +110,7 @@ public interface Audit extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/audit/UpdateConfigurationExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/audit/UpdateConfigurationExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateConfiguration
      *     API.
      */

@@ -33,17 +33,15 @@ public final class GenerateArtifactDownloadUrlDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The tenancy
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-         * user initiating the download.
+         * The tenancy [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the user initiating the download.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The tenancy
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-         * user initiating the download.
+         * The tenancy [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the user initiating the download.
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -103,14 +101,14 @@ public final class GenerateArtifactDownloadUrlDetails
     }
 
     /**
-     * The tenancy [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of
+     * The tenancy [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
      * the user initiating the download.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The tenancy [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of
+     * The tenancy [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
      * the user initiating the download.
      *
      * @return the value

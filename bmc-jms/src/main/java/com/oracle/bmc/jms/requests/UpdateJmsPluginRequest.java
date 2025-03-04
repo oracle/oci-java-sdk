@@ -7,7 +7,7 @@ package com.oracle.bmc.jms.requests;
 import com.oracle.bmc.jms.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/UpdateJmsPluginExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/UpdateJmsPluginExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateJmsPluginRequest.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
@@ -16,13 +16,13 @@ public class UpdateJmsPluginRequest
                 com.oracle.bmc.jms.model.UpdateJmsPluginDetails> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * JmsPlugin.
      */
     private String jmsPluginId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * JmsPlugin.
      */
     public String getJmsPluginId() {
@@ -78,13 +78,13 @@ public class UpdateJmsPluginRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * JmsPlugin.
          */
         private String jmsPluginId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * JmsPlugin.
          *
          * @param jmsPluginId the value to set

@@ -27,7 +27,7 @@ import com.oracle.bmc.generativeaiagentruntime.responses.*;
  * eNGenerative-ai-agentsLatest}.
  *
  * <p>To learn more about the service, see the [Generative AI Agents
- * documentation](https://docs.cloud.oracle.com/iaas/Content/generative-ai-agents/home.htm).
+ * documentation](https://docs.oracle.com/iaas/Content/generative-ai-agents/home.htm).
  *
  * <p>This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by
  * default if no circuit breaker configuration is defined by the user.
@@ -93,7 +93,7 @@ public interface GenerativeAiAgentRuntime extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeaiagentruntime/ChatExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeaiagentruntime/ChatExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use Chat API.
      */
     ChatResponse chat(ChatRequest request);
@@ -115,7 +115,7 @@ public interface GenerativeAiAgentRuntime extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeaiagentruntime/CreateSessionExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeaiagentruntime/CreateSessionExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateSession API.
      */
     CreateSessionResponse createSession(CreateSessionRequest request);
@@ -130,7 +130,7 @@ public interface GenerativeAiAgentRuntime extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeaiagentruntime/DeleteSessionExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeaiagentruntime/DeleteSessionExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteSession API.
      */
     DeleteSessionResponse deleteSession(DeleteSessionRequest request);
@@ -145,7 +145,7 @@ public interface GenerativeAiAgentRuntime extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeaiagentruntime/GetSessionExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeaiagentruntime/GetSessionExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetSession API.
      */
     GetSessionResponse getSession(GetSessionRequest request);
@@ -160,7 +160,7 @@ public interface GenerativeAiAgentRuntime extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeaiagentruntime/UpdateSessionExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeaiagentruntime/UpdateSessionExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateSession API.
      */
     UpdateSessionResponse updateSession(UpdateSessionRequest request);

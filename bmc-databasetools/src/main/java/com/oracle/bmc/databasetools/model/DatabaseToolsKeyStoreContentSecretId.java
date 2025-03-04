@@ -28,14 +28,14 @@ public final class DatabaseToolsKeyStoreContentSecretId extends DatabaseToolsKey
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * secret containing the key store.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("secretId")
         private String secretId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * secret containing the key store.
          *
          * @param secretId the value to set
@@ -84,14 +84,14 @@ public final class DatabaseToolsKeyStoreContentSecretId extends DatabaseToolsKey
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * secret containing the key store.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("secretId")
     private final String secretId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * secret containing the key store.
      *
      * @return the value

@@ -52,9 +52,9 @@ public final class BulkEditTagsResourceType
          *
          * <p>For example, for a bucket, the value of {@code metadataKeys} will be ["namespaceName",
          * "bucketName"]. This information will match the API documentation. See
-         * [UpdateBucket](https://docs.cloud.oracle.com/api/#/en/objectstorage/latest/Bucket/UpdateBucket)
+         * [UpdateBucket](https://docs.oracle.com/iaas/api/#/en/objectstorage/latest/Bucket/UpdateBucket)
          * and
-         * [DeleteBucket](https://docs.cloud.oracle.com/api/#/en/objectstorage/latest/Bucket/DeleteBucket).
+         * [DeleteBucket](https://docs.oracle.com/iaas/api/#/en/objectstorage/latest/Bucket/DeleteBucket).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("metadataKeys")
         private java.util.List<String> metadataKeys;
@@ -64,9 +64,9 @@ public final class BulkEditTagsResourceType
          *
          * <p>For example, for a bucket, the value of {@code metadataKeys} will be ["namespaceName",
          * "bucketName"]. This information will match the API documentation. See
-         * [UpdateBucket](https://docs.cloud.oracle.com/api/#/en/objectstorage/latest/Bucket/UpdateBucket)
+         * [UpdateBucket](https://docs.oracle.com/iaas/api/#/en/objectstorage/latest/Bucket/UpdateBucket)
          * and
-         * [DeleteBucket](https://docs.cloud.oracle.com/api/#/en/objectstorage/latest/Bucket/DeleteBucket).
+         * [DeleteBucket](https://docs.oracle.com/iaas/api/#/en/objectstorage/latest/Bucket/DeleteBucket).
          *
          * @param metadataKeys the value to set
          * @return this builder
@@ -128,9 +128,9 @@ public final class BulkEditTagsResourceType
      *
      * <p>For example, for a bucket, the value of {@code metadataKeys} will be ["namespaceName",
      * "bucketName"]. This information will match the API documentation. See
-     * [UpdateBucket](https://docs.cloud.oracle.com/api/#/en/objectstorage/latest/Bucket/UpdateBucket)
+     * [UpdateBucket](https://docs.oracle.com/iaas/api/#/en/objectstorage/latest/Bucket/UpdateBucket)
      * and
-     * [DeleteBucket](https://docs.cloud.oracle.com/api/#/en/objectstorage/latest/Bucket/DeleteBucket).
+     * [DeleteBucket](https://docs.oracle.com/iaas/api/#/en/objectstorage/latest/Bucket/DeleteBucket).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("metadataKeys")
     private final java.util.List<String> metadataKeys;
@@ -140,9 +140,9 @@ public final class BulkEditTagsResourceType
      *
      * <p>For example, for a bucket, the value of {@code metadataKeys} will be ["namespaceName",
      * "bucketName"]. This information will match the API documentation. See
-     * [UpdateBucket](https://docs.cloud.oracle.com/api/#/en/objectstorage/latest/Bucket/UpdateBucket)
+     * [UpdateBucket](https://docs.oracle.com/iaas/api/#/en/objectstorage/latest/Bucket/UpdateBucket)
      * and
-     * [DeleteBucket](https://docs.cloud.oracle.com/api/#/en/objectstorage/latest/Bucket/DeleteBucket).
+     * [DeleteBucket](https://docs.oracle.com/iaas/api/#/en/objectstorage/latest/Bucket/DeleteBucket).
      *
      * @return the value
      */

@@ -79,14 +79,14 @@ public class EntityDiscovered extends com.oracle.bmc.http.client.internal.Explic
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * entity discovered.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * entity discovered.
      *
      * @return the value
@@ -96,14 +96,14 @@ public class EntityDiscovered extends com.oracle.bmc.http.client.internal.Explic
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * agent used for monitoring.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("agentId")
     private final String agentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * agent used for monitoring.
      *
      * @return the value
@@ -113,14 +113,14 @@ public class EntityDiscovered extends com.oracle.bmc.http.client.internal.Explic
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * associated connector.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("connectorId")
     private final String connectorId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * associated connector.
      *
      * @return the value

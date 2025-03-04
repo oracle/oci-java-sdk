@@ -9,8 +9,8 @@ import com.oracle.bmc.keymanagement.responses.*;
 
 /**
  * Use the Key Management API to manage vaults and keys. For more information, see [Managing
- * Vaults](https://docs.cloud.oracle.com/Content/KeyManagement/Tasks/managingvaults.htm) and
- * [Managing Keys](https://docs.cloud.oracle.com/Content/KeyManagement/Tasks/managingkeys.htm).
+ * Vaults](https://docs.oracle.com/iaas/Content/KeyManagement/Tasks/managingvaults.htm) and
+ * [Managing Keys](https://docs.oracle.com/iaas/Content/KeyManagement/Tasks/managingkeys.htm).
  *
  * <p>This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by
  * default if no circuit breaker configuration is defined by the user.
@@ -33,7 +33,7 @@ public interface KmsCrypto extends AutoCloseable {
 
     /**
      * Decrypts data using the given
-     * [DecryptDataDetails](https://docs.cloud.oracle.com/api/#/en/key/latest/datatypes/DecryptDataDetails)
+     * [DecryptDataDetails](https://docs.oracle.com/iaas/api/#/en/key/latest/datatypes/DecryptDataDetails)
      * resource.
      *
      * @param request The request object containing the details to send
@@ -43,14 +43,14 @@ public interface KmsCrypto extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/DecryptExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/DecryptExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use Decrypt API.
      */
     DecryptResponse decrypt(DecryptRequest request);
 
     /**
      * Encrypts data using the given
-     * [EncryptDataDetails](https://docs.cloud.oracle.com/api/#/en/key/latest/datatypes/EncryptDataDetails)
+     * [EncryptDataDetails](https://docs.oracle.com/iaas/api/#/en/key/latest/datatypes/EncryptDataDetails)
      * resource. Plaintext included in the example request is a base64-encoded value of a UTF-8
      * string.
      *
@@ -61,7 +61,7 @@ public interface KmsCrypto extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/EncryptExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/EncryptExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use Encrypt API.
      */
     EncryptResponse encrypt(EncryptRequest request);
@@ -80,7 +80,7 @@ public interface KmsCrypto extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/ExportKeyExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/ExportKeyExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ExportKey API.
      */
     ExportKeyResponse exportKey(ExportKeyRequest request);
@@ -95,7 +95,7 @@ public interface KmsCrypto extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/GenerateDataEncryptionKeyExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/GenerateDataEncryptionKeyExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     GenerateDataEncryptionKey API.
      */
@@ -106,8 +106,8 @@ public interface KmsCrypto extends AutoCloseable {
      * Creates a digital signature for a message or message digest by using the private key of a
      * public-private key pair, also known as an asymmetric key. To verify the generated signature,
      * you can use the
-     * [Verify](https://docs.cloud.oracle.com/api/#/en/key/latest/VerifiedData/Verify) operation.
-     * Or, if you want to validate the signature outside of the service, you can do so by using the
+     * [Verify](https://docs.oracle.com/iaas/api/#/en/key/latest/VerifiedData/Verify) operation. Or,
+     * if you want to validate the signature outside of the service, you can do so by using the
      * public key of the same asymmetric key. This operation is not supported for keys having
      * protection mode `EXTERNAL`.
      *
@@ -118,14 +118,14 @@ public interface KmsCrypto extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/SignExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/SignExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use Sign API.
      */
     SignResponse sign(SignRequest request);
 
     /**
      * Verifies a digital signature that was generated by the
-     * [Sign](https://docs.cloud.oracle.com/api/#/en/key/latest/SignedData/Sign) operation by using
+     * [Sign](https://docs.oracle.com/iaas/api/#/en/key/latest/SignedData/Sign) operation by using
      * the public key of the same asymmetric key that was used to sign the data. If you want to
      * validate the digital signature outside of the service, you can do so by using the public key
      * of the asymmetric key. This operation is not supported for keys having protection mode
@@ -138,7 +138,7 @@ public interface KmsCrypto extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/VerifyExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/VerifyExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use Verify API.
      */
     VerifyResponse verify(VerifyRequest request);

@@ -10,7 +10,7 @@ import com.oracle.bmc.psql.responses.*;
 /**
  * Use the OCI Database with PostgreSQL API to manage resources such as database systems, database
  * nodes, backups, and configurations. For information, see the user guide documentation for the
- * [service](https://docs.cloud.oracle.com/iaas/Content/postgresql/home.htm).
+ * [service](https://docs.oracle.com/iaas/Content/postgresql/home.htm).
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220915")
 public interface PostgresqlAsync extends AutoCloseable {
@@ -62,6 +62,21 @@ public interface PostgresqlAsync extends AutoCloseable {
      *     template
      */
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
+
+    /**
+     * Backup Copy Request to copy back up in remote region. When provided, If-Match is checked
+     * against ETag values of the resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<BackupCopyResponse> backupCopy(
+            BackupCopyRequest request,
+            com.oracle.bmc.responses.AsyncHandler<BackupCopyRequest, BackupCopyResponse> handler);
 
     /**
      * Moves a backup from one compartment to another. When provided, If-Match is checked against

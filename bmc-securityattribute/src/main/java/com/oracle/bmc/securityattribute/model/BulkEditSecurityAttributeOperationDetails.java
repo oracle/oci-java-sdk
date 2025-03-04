@@ -68,7 +68,7 @@ public final class BulkEditSecurityAttributeOperationDetails
         /**
          * Security attributes for this resource. Each key is predefined and scoped to a namespace.
          * For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
          * {@code {"oracle-zpr": {"td": {"value": "42", "mode": "audit"}}}}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
@@ -77,7 +77,7 @@ public final class BulkEditSecurityAttributeOperationDetails
         /**
          * Security attributes for this resource. Each key is predefined and scoped to a namespace.
          * For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
          * {@code {"oracle-zpr": {"td": {"value": "42", "mode": "audit"}}}}
          *
          * @param securityAttributes the value to set
@@ -200,7 +200,7 @@ public final class BulkEditSecurityAttributeOperationDetails
     /**
      * Security attributes for this resource. Each key is predefined and scoped to a namespace. For
      * more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"oracle-zpr": {"td": {"value": "42", "mode": "audit"}}}}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
@@ -209,7 +209,7 @@ public final class BulkEditSecurityAttributeOperationDetails
     /**
      * Security attributes for this resource. Each key is predefined and scoped to a namespace. For
      * more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"oracle-zpr": {"td": {"value": "42", "mode": "audit"}}}}
      *
      * @return the value

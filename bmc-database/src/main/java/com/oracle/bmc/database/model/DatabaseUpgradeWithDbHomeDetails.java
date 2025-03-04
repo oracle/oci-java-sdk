@@ -36,14 +36,14 @@ public final class DatabaseUpgradeWithDbHomeDetails extends DatabaseUpgradeSourc
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Database Home.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("dbHomeId")
         private String dbHomeId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Database Home.
          *
          * @param dbHomeId the value to set
@@ -95,14 +95,14 @@ public final class DatabaseUpgradeWithDbHomeDetails extends DatabaseUpgradeSourc
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Database Home.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("dbHomeId")
     private final String dbHomeId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Database Home.
      *
      * @return the value

@@ -100,15 +100,15 @@ public final class CreateGroupProfileDetails extends CreateProfileDetails {
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the managed instance group that the instance will join after registration.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * managed instance group that the instance will join after registration.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("managedInstanceGroupId")
         private String managedInstanceGroupId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the managed instance group that the instance will join after registration.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * managed instance group that the instance will join after registration.
          *
          * @param managedInstanceGroupId the value to set
          * @return this builder
@@ -206,15 +206,15 @@ public final class CreateGroupProfileDetails extends CreateProfileDetails {
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the managed instance group that the instance will join after registration.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * managed instance group that the instance will join after registration.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("managedInstanceGroupId")
     private final String managedInstanceGroupId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the managed instance group that the instance will join after registration.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * managed instance group that the instance will join after registration.
      *
      * @return the value
      */

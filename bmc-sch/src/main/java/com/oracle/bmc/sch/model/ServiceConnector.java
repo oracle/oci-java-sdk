@@ -7,7 +7,7 @@ package com.oracle.bmc.sch.model;
 /**
  * The configuration details of the flow defined by the connector. For more information about flows
  * defined by connectors, see [Overview of Connector
- * Hub](https://docs.cloud.oracle.com/iaas/Content/connector-hub/overview.htm). <br>
+ * Hub](https://docs.oracle.com/iaas/Content/connector-hub/overview.htm). <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -75,15 +75,15 @@ public final class ServiceConnector
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the connector.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * connector.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the connector.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * connector.
          *
          * @param id the value to set
          * @return this builder
@@ -128,15 +128,15 @@ public final class ServiceConnector
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compartment containing the connector.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment containing the connector.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compartment containing the connector.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment containing the connector.
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -294,8 +294,8 @@ public final class ServiceConnector
          * The system tags associated with this resource, if any. The system tags are set by Oracle
          * Cloud Infrastructure services. Each key is predefined and scoped to namespaces. For more
          * information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         * Example: {@code {orcl-cloud: {free-tier-retain: true}}}
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+         * {@code {orcl-cloud: {free-tier-retain: true}}}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
         private java.util.Map<String, java.util.Map<String, Object>> systemTags;
@@ -304,8 +304,8 @@ public final class ServiceConnector
          * The system tags associated with this resource, if any. The system tags are set by Oracle
          * Cloud Infrastructure services. Each key is predefined and scoped to namespaces. For more
          * information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         * Example: {@code {orcl-cloud: {free-tier-retain: true}}}
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+         * {@code {orcl-cloud: {free-tier-retain: true}}}
          *
          * @param systemTags the value to set
          * @return this builder
@@ -400,15 +400,15 @@ public final class ServiceConnector
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the connector.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * connector.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the connector.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * connector.
      *
      * @return the value
      */
@@ -447,15 +447,15 @@ public final class ServiceConnector
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compartment containing the connector.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment containing the connector.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compartment containing the connector.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment containing the connector.
      *
      * @return the value
      */
@@ -592,7 +592,7 @@ public final class ServiceConnector
      * The system tags associated with this resource, if any. The system tags are set by Oracle
      * Cloud Infrastructure services. Each key is predefined and scoped to namespaces. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {orcl-cloud: {free-tier-retain: true}}}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
@@ -602,7 +602,7 @@ public final class ServiceConnector
      * The system tags associated with this resource, if any. The system tags are set by Oracle
      * Cloud Infrastructure services. Each key is predefined and scoped to namespaces. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {orcl-cloud: {free-tier-retain: true}}}
      *
      * @return the value

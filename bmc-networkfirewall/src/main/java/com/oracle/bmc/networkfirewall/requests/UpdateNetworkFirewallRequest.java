@@ -7,7 +7,7 @@ package com.oracle.bmc.networkfirewall.requests;
 import com.oracle.bmc.networkfirewall.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkfirewall/UpdateNetworkFirewallExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkfirewall/UpdateNetworkFirewallExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * UpdateNetworkFirewallRequest.
  */
@@ -17,14 +17,14 @@ public class UpdateNetworkFirewallRequest
                 com.oracle.bmc.networkfirewall.model.UpdateNetworkFirewallDetails> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the Network Firewall resource.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Network Firewall resource.
      */
     private String networkFirewallId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the Network Firewall resource.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Network Firewall resource.
      */
     public String getNetworkFirewallId() {
         return networkFirewallId;
@@ -82,14 +82,14 @@ public class UpdateNetworkFirewallRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the Network Firewall resource.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Network Firewall resource.
          */
         private String networkFirewallId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the Network Firewall resource.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Network Firewall resource.
          *
          * @param networkFirewallId the value to set
          * @return this builder instance

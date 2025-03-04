@@ -124,14 +124,14 @@ public final class CreateDatabaseDetails
         }
         /**
          * The database software image
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
          */
         @com.fasterxml.jackson.annotation.JsonProperty("databaseSoftwareImageId")
         private String databaseSoftwareImageId;
 
         /**
          * The database software image
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
          *
          * @param databaseSoftwareImageId the value to set
          * @return this builder
@@ -315,7 +315,7 @@ public final class CreateDatabaseDetails
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          */
@@ -325,7 +325,7 @@ public final class CreateDatabaseDetails
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          *
@@ -340,7 +340,7 @@ public final class CreateDatabaseDetails
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
@@ -348,7 +348,7 @@ public final class CreateDatabaseDetails
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * @param definedTags the value to set
          * @return this builder
@@ -404,18 +404,18 @@ public final class CreateDatabaseDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Oracle Cloud Infrastructure
-         * [vault](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+         * [vault](https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
          * This parameter and {@code secretId} are required for Customer Managed Keys.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("vaultId")
         private String vaultId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Oracle Cloud Infrastructure
-         * [vault](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+         * [vault](https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
          * This parameter and {@code secretId} are required for Customer Managed Keys.
          *
          * @param vaultId the value to set
@@ -442,14 +442,14 @@ public final class CreateDatabaseDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * key store of Oracle Vault.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("keyStoreId")
         private String keyStoreId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * key store of Oracle Vault.
          *
          * @param keyStoreId the value to set
@@ -602,14 +602,14 @@ public final class CreateDatabaseDetails
 
     /**
      * The database software image
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      */
     @com.fasterxml.jackson.annotation.JsonProperty("databaseSoftwareImageId")
     private final String databaseSoftwareImageId;
 
     /**
      * The database software image
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      *
      * @return the value
      */
@@ -816,7 +816,7 @@ public final class CreateDatabaseDetails
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      */
@@ -826,7 +826,7 @@ public final class CreateDatabaseDetails
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      *
@@ -839,7 +839,7 @@ public final class CreateDatabaseDetails
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
@@ -847,7 +847,7 @@ public final class CreateDatabaseDetails
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * @return the value
      */
@@ -896,18 +896,18 @@ public final class CreateDatabaseDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Oracle Cloud Infrastructure
-     * [vault](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+     * [vault](https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
      * This parameter and {@code secretId} are required for Customer Managed Keys.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("vaultId")
     private final String vaultId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Oracle Cloud Infrastructure
-     * [vault](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+     * [vault](https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
      * This parameter and {@code secretId} are required for Customer Managed Keys.
      *
      * @return the value
@@ -930,14 +930,14 @@ public final class CreateDatabaseDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the key
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key
      * store of Oracle Vault.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("keyStoreId")
     private final String keyStoreId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the key
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key
      * store of Oracle Vault.
      *
      * @return the value

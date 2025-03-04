@@ -53,14 +53,14 @@ public final class PluginErrorSummary
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Managed Instance running the plugin.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("managedInstanceId")
         private String managedInstanceId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Managed Instance running the plugin.
          *
          * @param managedInstanceId the value to set
@@ -103,7 +103,7 @@ public final class PluginErrorSummary
         }
         /**
          * The compartment
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Fleet.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
@@ -111,7 +111,7 @@ public final class PluginErrorSummary
 
         /**
          * The compartment
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Fleet.
          *
          * @param compartmentId the value to set
@@ -224,14 +224,14 @@ public final class PluginErrorSummary
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Managed Instance running the plugin.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("managedInstanceId")
     private final String managedInstanceId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Managed Instance running the plugin.
      *
      * @return the value
@@ -267,15 +267,15 @@ public final class PluginErrorSummary
     }
 
     /**
-     * The compartment
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Fleet.
+     * The compartment [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * of the Fleet.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The compartment
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Fleet.
+     * The compartment [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * of the Fleet.
      *
      * @return the value
      */

@@ -106,14 +106,14 @@ public final class Sender extends com.oracle.bmc.http.client.internal.Explicitly
         }
         /**
          * Value of the SPF field. For more information about SPF, please see [SPF
-         * Authentication](https://docs.us-phoenix-1.oraclecloud.com/Content/Email/Concepts/overview.htm#components).
+         * Authentication](https://docs.oracle.com/iaas/Content/Email/Concepts/overview.htm#components).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("isSpf")
         private Boolean isSpf;
 
         /**
          * Value of the SPF field. For more information about SPF, please see [SPF
-         * Authentication](https://docs.us-phoenix-1.oraclecloud.com/Content/Email/Concepts/overview.htm#components).
+         * Authentication](https://docs.oracle.com/iaas/Content/Email/Concepts/overview.htm#components).
          *
          * @param isSpf the value to set
          * @return this builder
@@ -175,7 +175,7 @@ public final class Sender extends com.oracle.bmc.http.client.internal.Explicitly
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          */
@@ -185,7 +185,7 @@ public final class Sender extends com.oracle.bmc.http.client.internal.Explicitly
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          *
@@ -200,7 +200,7 @@ public final class Sender extends com.oracle.bmc.http.client.internal.Explicitly
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
          */
@@ -210,7 +210,7 @@ public final class Sender extends com.oracle.bmc.http.client.internal.Explicitly
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
@@ -351,14 +351,14 @@ public final class Sender extends com.oracle.bmc.http.client.internal.Explicitly
 
     /**
      * Value of the SPF field. For more information about SPF, please see [SPF
-     * Authentication](https://docs.us-phoenix-1.oraclecloud.com/Content/Email/Concepts/overview.htm#components).
+     * Authentication](https://docs.oracle.com/iaas/Content/Email/Concepts/overview.htm#components).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("isSpf")
     private final Boolean isSpf;
 
     /**
      * Value of the SPF field. For more information about SPF, please see [SPF
-     * Authentication](https://docs.us-phoenix-1.oraclecloud.com/Content/Email/Concepts/overview.htm#components).
+     * Authentication](https://docs.oracle.com/iaas/Content/Email/Concepts/overview.htm#components).
      *
      * @return the value
      */
@@ -463,7 +463,7 @@ public final class Sender extends com.oracle.bmc.http.client.internal.Explicitly
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      */
@@ -473,7 +473,7 @@ public final class Sender extends com.oracle.bmc.http.client.internal.Explicitly
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      *
@@ -486,7 +486,7 @@ public final class Sender extends com.oracle.bmc.http.client.internal.Explicitly
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
      */
@@ -496,7 +496,7 @@ public final class Sender extends com.oracle.bmc.http.client.internal.Explicitly
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
      *

@@ -11,12 +11,12 @@ package com.oracle.bmc.objectstorage.model;
  * of time you spend uploading. Multipart uploads can also minimize the impact of network failures
  * by letting you retry a failed part upload instead of requiring you to retry an entire object
  * upload. See [Using Multipart
- * Uploads](https://docs.cloud.oracle.com/Content/Object/Tasks/usingmultipartuploads.htm).
+ * Uploads](https://docs.oracle.com/iaas/Content/Object/Tasks/usingmultipartuploads.htm).
  *
  * <p>To use any of the API operations, you must be authorized in an IAM policy. If you are not
  * authorized, talk to an administrator. If you are an administrator who needs to write policies to
  * give users access, see [Getting Started with
- * Policies](https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm). <br>
+ * Policies](https://docs.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm). <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a

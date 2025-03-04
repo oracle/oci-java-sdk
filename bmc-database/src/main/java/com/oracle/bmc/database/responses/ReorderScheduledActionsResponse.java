@@ -40,7 +40,7 @@ public class ReorderScheduledActionsResponse extends com.oracle.bmc.responses.Bm
      * For pagination of a list of items. When paging through a list, if this header appears in the
      * response, then there are additional items still to get. Include this value as the {@code
      * page} parameter for the subsequent GET request. For information about pagination, see [List
-     * Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private String opcNextPage;
 
@@ -48,7 +48,7 @@ public class ReorderScheduledActionsResponse extends com.oracle.bmc.responses.Bm
      * For pagination of a list of items. When paging through a list, if this header appears in the
      * response, then there are additional items still to get. Include this value as the {@code
      * page} parameter for the subsequent GET request. For information about pagination, see [List
-     * Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      * @return the value
      */
@@ -57,16 +57,16 @@ public class ReorderScheduledActionsResponse extends com.oracle.bmc.responses.Bm
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * work request. Multiple OCID values are returned in a comma-separated list. Use {@link
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the work
+     * request. Multiple OCID values are returned in a comma-separated list. Use {@link
      * #getWorkRequest(GetWorkRequestRequest) getWorkRequest} with a work request OCID to track the
      * status of the request.
      */
     private String opcWorkRequestId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * work request. Multiple OCID values are returned in a comma-separated list. Use {@link
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the work
+     * request. Multiple OCID values are returned in a comma-separated list. Use {@link
      * #getWorkRequest(GetWorkRequestRequest) getWorkRequest} with a work request OCID to track the
      * status of the request.
      *
@@ -169,7 +169,7 @@ public class ReorderScheduledActionsResponse extends com.oracle.bmc.responses.Bm
          * the response, then there are additional items still to get. Include this value as the
          * {@code page} parameter for the subsequent GET request. For information about pagination,
          * see [List
-         * Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private String opcNextPage;
 
@@ -178,7 +178,7 @@ public class ReorderScheduledActionsResponse extends com.oracle.bmc.responses.Bm
          * the response, then there are additional items still to get. Include this value as the
          * {@code page} parameter for the subsequent GET request. For information about pagination,
          * see [List
-         * Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param opcNextPage the value to set
          * @return this builder
@@ -189,7 +189,7 @@ public class ReorderScheduledActionsResponse extends com.oracle.bmc.responses.Bm
         }
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * work request. Multiple OCID values are returned in a comma-separated list. Use {@link
          * #getWorkRequest(GetWorkRequestRequest) getWorkRequest} with a work request OCID to track
          * the status of the request.
@@ -197,7 +197,7 @@ public class ReorderScheduledActionsResponse extends com.oracle.bmc.responses.Bm
         private String opcWorkRequestId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * work request. Multiple OCID values are returned in a comma-separated list. Use {@link
          * #getWorkRequest(GetWorkRequestRequest) getWorkRequest} with a work request OCID to track
          * the status of the request.

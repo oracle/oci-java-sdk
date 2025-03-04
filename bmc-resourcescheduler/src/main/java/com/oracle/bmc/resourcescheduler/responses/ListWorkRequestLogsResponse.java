@@ -11,14 +11,14 @@ public class ListWorkRequestLogsResponse extends com.oracle.bmc.responses.BmcRes
     /**
      * When this header appears in the list pagination response, there are additional results pages
      * to view. For important details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private String opcNextPage;
 
     /**
      * When this header appears in the list pagination response, there are additional results pages
      * to view. For important details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      * @return the value
      */
@@ -97,14 +97,14 @@ public class ListWorkRequestLogsResponse extends com.oracle.bmc.responses.BmcRes
         /**
          * When this header appears in the list pagination response, there are additional results
          * pages to view. For important details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private String opcNextPage;
 
         /**
          * When this header appears in the list pagination response, there are additional results
          * pages to view. For important details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param opcNextPage the value to set
          * @return this builder

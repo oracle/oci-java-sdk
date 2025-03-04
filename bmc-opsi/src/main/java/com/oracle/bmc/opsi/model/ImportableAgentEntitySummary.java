@@ -40,15 +40,15 @@ public class ImportableAgentEntitySummary
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the Management Agent
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Management Agent
      */
     @com.fasterxml.jackson.annotation.JsonProperty("managementAgentId")
     private final String managementAgentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the Management Agent
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Management Agent
      *
      * @return the value
      */
@@ -58,16 +58,16 @@ public class ImportableAgentEntitySummary
 
     /**
      * The [Display
-     * Name](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Display) of
-     * the Management Agent
+     * Name](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Display) of the
+     * Management Agent
      */
     @com.fasterxml.jackson.annotation.JsonProperty("managementAgentDisplayName")
     private final String managementAgentDisplayName;
 
     /**
      * The [Display
-     * Name](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Display) of
-     * the Management Agent
+     * Name](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Display) of the
+     * Management Agent
      *
      * @return the value
      */

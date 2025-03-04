@@ -7,7 +7,7 @@ package com.oracle.bmc.osmanagementhub.model;
 /**
  * The object that defines a vendor software source. A software source is a collection of packages.
  * For more information, see [Managing Software
- * Sources](https://docs.cloud.oracle.com/iaas/osmh/doc/software-sources.htm). <br>
+ * Sources](https://docs.oracle.com/iaas/osmh/doc/software-sources.htm). <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -234,17 +234,17 @@ public final class VendorSoftwareSource extends SoftwareSource {
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the vendor software source in the root compartment. This property applies only to
-         * replicated vendor software sources.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * vendor software source in the root compartment. This property applies only to replicated
+         * vendor software sources.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("originSoftwareSourceId")
         private String originSoftwareSourceId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the vendor software source in the root compartment. This property applies only to
-         * replicated vendor software sources.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * vendor software source in the root compartment. This property applies only to replicated
+         * vendor software sources.
          *
          * @param originSoftwareSourceId the value to set
          * @return this builder
@@ -460,16 +460,16 @@ public final class VendorSoftwareSource extends SoftwareSource {
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the vendor software source in the root compartment. This property applies only to replicated
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * vendor software source in the root compartment. This property applies only to replicated
      * vendor software sources.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("originSoftwareSourceId")
     private final String originSoftwareSourceId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the vendor software source in the root compartment. This property applies only to replicated
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * vendor software source in the root compartment. This property applies only to replicated
      * vendor software sources.
      *
      * @return the value

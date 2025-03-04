@@ -7,7 +7,7 @@ package com.oracle.bmc.waf.requests;
 import com.oracle.bmc.waf.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waf/DeleteWebAppFirewallPolicyExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waf/DeleteWebAppFirewallPolicyExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * DeleteWebAppFirewallPolicyRequest.
  */
@@ -16,13 +16,13 @@ public class DeleteWebAppFirewallPolicyRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * WebAppFirewallPolicy.
      */
     private String webAppFirewallPolicyId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * WebAppFirewallPolicy.
      */
     public String getWebAppFirewallPolicyId() {
@@ -60,13 +60,13 @@ public class DeleteWebAppFirewallPolicyRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * WebAppFirewallPolicy.
          */
         private String webAppFirewallPolicyId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * WebAppFirewallPolicy.
          *
          * @param webAppFirewallPolicyId the value to set

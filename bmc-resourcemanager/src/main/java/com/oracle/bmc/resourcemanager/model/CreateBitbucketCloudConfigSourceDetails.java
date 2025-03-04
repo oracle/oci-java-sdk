@@ -36,15 +36,15 @@ public final class CreateBitbucketCloudConfigSourceDetails extends CreateConfigS
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the Bitbucket Cloud configuration source.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Bitbucket Cloud configuration source.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("configurationSourceProviderId")
         private String configurationSourceProviderId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the Bitbucket Cloud configuration source.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Bitbucket Cloud configuration source.
          *
          * @param configurationSourceProviderId the value to set
          * @return this builder
@@ -164,15 +164,15 @@ public final class CreateBitbucketCloudConfigSourceDetails extends CreateConfigS
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the Bitbucket Cloud configuration source.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Bitbucket Cloud configuration source.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("configurationSourceProviderId")
     private final String configurationSourceProviderId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the Bitbucket Cloud configuration source.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Bitbucket Cloud configuration source.
      *
      * @return the value
      */

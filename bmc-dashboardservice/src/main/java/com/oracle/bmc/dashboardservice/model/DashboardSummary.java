@@ -64,15 +64,15 @@ public final class DashboardSummary
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the dashboard resource.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * dashboard resource.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the dashboard resource.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * dashboard resource.
          *
          * @param id the value to set
          * @return this builder
@@ -83,15 +83,15 @@ public final class DashboardSummary
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the dashboard group that the dashboard belongs to.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * dashboard group that the dashboard belongs to.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("dashboardGroupId")
         private String dashboardGroupId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the dashboard group that the dashboard belongs to.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * dashboard group that the dashboard belongs to.
          *
          * @param dashboardGroupId the value to set
          * @return this builder
@@ -142,17 +142,17 @@ public final class DashboardSummary
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compartment containing the dashboard. A dashboard is always in the same
-         * compartment as its dashboard group.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment containing the dashboard. A dashboard is always in the same compartment as
+         * its dashboard group.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compartment containing the dashboard. A dashboard is always in the same
-         * compartment as its dashboard group.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment containing the dashboard. A dashboard is always in the same compartment as
+         * its dashboard group.
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -354,15 +354,15 @@ public final class DashboardSummary
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the dashboard resource.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * dashboard resource.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the dashboard resource.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * dashboard resource.
      *
      * @return the value
      */
@@ -371,15 +371,15 @@ public final class DashboardSummary
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the dashboard group that the dashboard belongs to.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * dashboard group that the dashboard belongs to.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("dashboardGroupId")
     private final String dashboardGroupId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the dashboard group that the dashboard belongs to.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * dashboard group that the dashboard belongs to.
      *
      * @return the value
      */
@@ -424,17 +424,17 @@ public final class DashboardSummary
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compartment containing the dashboard. A dashboard is always in the same compartment as
-     * its dashboard group.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment containing the dashboard. A dashboard is always in the same compartment as its
+     * dashboard group.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compartment containing the dashboard. A dashboard is always in the same compartment as
-     * its dashboard group.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment containing the dashboard. A dashboard is always in the same compartment as its
+     * dashboard group.
      *
      * @return the value
      */

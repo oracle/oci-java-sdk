@@ -7,34 +7,34 @@ package com.oracle.bmc.opsi.requests;
 import com.oracle.bmc.opsi.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/ListHostedEntitiesExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/ListHostedEntitiesExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListHostedEntitiesRequest.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 public class ListHostedEntitiesRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compartment.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment.
      */
     private String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compartment.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment.
      */
     public String getCompartmentId() {
         return compartmentId;
     }
     /**
-     * Required [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-     * of the host insight resource.
+     * Required [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * host insight resource.
      */
     private String id;
 
     /**
-     * Required [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-     * of the host insight resource.
+     * Required [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * host insight resource.
      */
     public String getId() {
         return id;
@@ -150,14 +150,14 @@ public class ListHostedEntitiesRequest extends com.oracle.bmc.requests.BmcReques
         return platformType;
     }
     /**
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * exadata insight resource.
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of exadata
+     * insight resource.
      */
     private String exadataInsightId;
 
     /**
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * exadata insight resource.
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of exadata
+     * insight resource.
      */
     public String getExadataInsightId() {
         return exadataInsightId;
@@ -165,7 +165,7 @@ public class ListHostedEntitiesRequest extends com.oracle.bmc.requests.BmcReques
     /**
      * For list pagination. The maximum number of results per page, or items to return in a
      * paginated "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine). Example:
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine). Example:
      * {@code 50}
      */
     private Integer limit;
@@ -173,7 +173,7 @@ public class ListHostedEntitiesRequest extends com.oracle.bmc.requests.BmcReques
     /**
      * For list pagination. The maximum number of results per page, or items to return in a
      * paginated "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine). Example:
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine). Example:
      * {@code 50}
      */
     public Integer getLimit() {
@@ -182,14 +182,14 @@ public class ListHostedEntitiesRequest extends com.oracle.bmc.requests.BmcReques
     /**
      * For list pagination. The value of the {@code opc-next-page} response header from the previous
      * "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private String page;
 
     /**
      * For list pagination. The value of the {@code opc-next-page} response header from the previous
      * "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     public String getPage() {
         return page;
@@ -269,14 +269,14 @@ public class ListHostedEntitiesRequest extends com.oracle.bmc.requests.BmcReques
         return hostType;
     }
     /**
-     * Optional [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-     * of the host (Compute Id)
+     * Optional [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * host (Compute Id)
      */
     private String hostId;
 
     /**
-     * Optional [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-     * of the host (Compute Id)
+     * Optional [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * host (Compute Id)
      */
     public String getHostId() {
         return hostId;
@@ -296,14 +296,14 @@ public class ListHostedEntitiesRequest extends com.oracle.bmc.requests.BmcReques
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compartment.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment.
          */
         private String compartmentId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compartment.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment.
          *
          * @param compartmentId the value to set
          * @return this builder instance
@@ -314,15 +314,13 @@ public class ListHostedEntitiesRequest extends com.oracle.bmc.requests.BmcReques
         }
 
         /**
-         * Required
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+         * Required [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
          * the host insight resource.
          */
         private String id = null;
 
         /**
-         * Required
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+         * Required [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
          * the host insight resource.
          *
          * @param id the value to set
@@ -435,14 +433,14 @@ public class ListHostedEntitiesRequest extends com.oracle.bmc.requests.BmcReques
         }
 
         /**
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-         * exadata insight resource.
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of exadata
+         * insight resource.
          */
         private String exadataInsightId = null;
 
         /**
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-         * exadata insight resource.
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of exadata
+         * insight resource.
          *
          * @param exadataInsightId the value to set
          * @return this builder instance
@@ -455,7 +453,7 @@ public class ListHostedEntitiesRequest extends com.oracle.bmc.requests.BmcReques
         /**
          * For list pagination. The maximum number of results per page, or items to return in a
          * paginated "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          * Example: {@code 50}
          */
         private Integer limit = null;
@@ -463,7 +461,7 @@ public class ListHostedEntitiesRequest extends com.oracle.bmc.requests.BmcReques
         /**
          * For list pagination. The maximum number of results per page, or items to return in a
          * paginated "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          * Example: {@code 50}
          *
          * @param limit the value to set
@@ -477,14 +475,14 @@ public class ListHostedEntitiesRequest extends com.oracle.bmc.requests.BmcReques
         /**
          * For list pagination. The value of the {@code opc-next-page} response header from the
          * previous "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private String page = null;
 
         /**
          * For list pagination. The value of the {@code opc-next-page} response header from the
          * previous "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param page the value to set
          * @return this builder instance
@@ -571,15 +569,13 @@ public class ListHostedEntitiesRequest extends com.oracle.bmc.requests.BmcReques
         }
 
         /**
-         * Optional
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+         * Optional [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
          * the host (Compute Id)
          */
         private String hostId = null;
 
         /**
-         * Optional
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+         * Optional [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
          * the host (Compute Id)
          *
          * @param hostId the value to set

@@ -36,7 +36,7 @@ public final class NetworkConfiguration
     public static class Builder {
         /**
          * The Oracle Cloud Identifier
-         * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the
+         * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the
          * subnet.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
@@ -44,7 +44,7 @@ public final class NetworkConfiguration
 
         /**
          * The Oracle Cloud Identifier
-         * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the
+         * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the
          * subnet.
          *
          * @param subnetId the value to set
@@ -57,7 +57,7 @@ public final class NetworkConfiguration
         }
         /**
          * The list of Oracle Cloud Identifiers
-         * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm))
+         * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm))
          * corresponding to Network Security Groups.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
@@ -65,7 +65,7 @@ public final class NetworkConfiguration
 
         /**
          * The list of Oracle Cloud Identifiers
-         * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm))
+         * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm))
          * corresponding to Network Security Groups.
          *
          * @param nsgIds the value to set
@@ -111,7 +111,7 @@ public final class NetworkConfiguration
 
     /**
      * The Oracle Cloud Identifier
-     * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the
+     * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the
      * subnet.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
@@ -119,7 +119,7 @@ public final class NetworkConfiguration
 
     /**
      * The Oracle Cloud Identifier
-     * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the
+     * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the
      * subnet.
      *
      * @return the value
@@ -130,16 +130,16 @@ public final class NetworkConfiguration
 
     /**
      * The list of Oracle Cloud Identifiers
-     * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm))
-     * corresponding to Network Security Groups.
+     * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) corresponding
+     * to Network Security Groups.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
     private final java.util.List<String> nsgIds;
 
     /**
      * The list of Oracle Cloud Identifiers
-     * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm))
-     * corresponding to Network Security Groups.
+     * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) corresponding
+     * to Network Security Groups.
      *
      * @return the value
      */

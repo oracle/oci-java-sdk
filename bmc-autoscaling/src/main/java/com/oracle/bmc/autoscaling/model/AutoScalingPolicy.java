@@ -9,7 +9,7 @@ package com.oracle.bmc.autoscaling.model;
  * take.
  *
  * <p>An autoscaling policy is part of an autoscaling configuration. For more information, see
- * [Autoscaling](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/autoscalinginstancepools.htm).
+ * [Autoscaling](https://docs.oracle.com/iaas/Content/Compute/Tasks/autoscalinginstancepools.htm).
  *
  * <p>You can create the following types of autoscaling policies:
  *

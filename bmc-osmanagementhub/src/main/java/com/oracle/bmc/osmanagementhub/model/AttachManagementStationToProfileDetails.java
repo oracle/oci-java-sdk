@@ -32,15 +32,15 @@ public final class AttachManagementStationToProfileDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the management station that the instance will be associated with.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * management station that the instance will be associated with.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("managementStationId")
         private String managementStationId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the management station that the instance will be associated with.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * management station that the instance will be associated with.
          *
          * @param managementStationId the value to set
          * @return this builder
@@ -82,15 +82,15 @@ public final class AttachManagementStationToProfileDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the management station that the instance will be associated with.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * management station that the instance will be associated with.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("managementStationId")
     private final String managementStationId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the management station that the instance will be associated with.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * management station that the instance will be associated with.
      *
      * @return the value
      */

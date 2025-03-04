@@ -69,14 +69,14 @@ public final class MonitoredResourceTask
     public static class Builder {
         /**
          * Task identifier
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * Task identifier
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          * @param id the value to set
          * @return this builder
@@ -102,14 +102,14 @@ public final class MonitoredResourceTask
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * compartment identifier.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * compartment identifier.
          *
          * @param compartmentId the value to set
@@ -121,14 +121,14 @@ public final class MonitoredResourceTask
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * tenancy.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("tenantId")
         private String tenantId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * tenancy.
          *
          * @param tenantId the value to set
@@ -149,17 +149,15 @@ public final class MonitoredResourceTask
             return this;
         }
         /**
-         * Identifiers
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) for work
-         * requests submitted for this task.
+         * Identifiers [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * for work requests submitted for this task.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("workRequestIds")
         private java.util.List<String> workRequestIds;
 
         /**
-         * Identifiers
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) for work
-         * requests submitted for this task.
+         * Identifiers [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * for work requests submitted for this task.
          *
          * @param workRequestIds the value to set
          * @return this builder
@@ -358,14 +356,14 @@ public final class MonitoredResourceTask
 
     /**
      * Task identifier
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * Task identifier
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      * @return the value
      */
@@ -387,14 +385,14 @@ public final class MonitoredResourceTask
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment identifier.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment identifier.
      *
      * @return the value
@@ -404,14 +402,14 @@ public final class MonitoredResourceTask
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * tenancy.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("tenantId")
     private final String tenantId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * tenancy.
      *
      * @return the value
@@ -428,15 +426,15 @@ public final class MonitoredResourceTask
     }
 
     /**
-     * Identifiers [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
-     * for work requests submitted for this task.
+     * Identifiers [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for
+     * work requests submitted for this task.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("workRequestIds")
     private final java.util.List<String> workRequestIds;
 
     /**
-     * Identifiers [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
-     * for work requests submitted for this task.
+     * Identifiers [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for
+     * work requests submitted for this task.
      *
      * @return the value
      */

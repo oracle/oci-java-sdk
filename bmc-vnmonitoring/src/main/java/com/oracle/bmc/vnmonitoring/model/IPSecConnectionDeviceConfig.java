@@ -41,15 +41,15 @@ public final class IPSecConnectionDeviceConfig
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compartment containing the IPSec connection.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment containing the IPSec connection.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compartment containing the IPSec connection.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment containing the IPSec connection.
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -61,14 +61,14 @@ public final class IPSecConnectionDeviceConfig
         }
         /**
          * The IPSec connection's Oracle ID
-         * ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
+         * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * The IPSec connection's Oracle ID
-         * ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
+         * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
          *
          * @param id the value to set
          * @return this builder
@@ -150,15 +150,15 @@ public final class IPSecConnectionDeviceConfig
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compartment containing the IPSec connection.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment containing the IPSec connection.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compartment containing the IPSec connection.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment containing the IPSec connection.
      *
      * @return the value
      */
@@ -168,14 +168,14 @@ public final class IPSecConnectionDeviceConfig
 
     /**
      * The IPSec connection's Oracle ID
-     * ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
+     * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The IPSec connection's Oracle ID
-     * ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
+     * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
      *
      * @return the value
      */

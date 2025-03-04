@@ -7,7 +7,7 @@ package com.oracle.bmc.zpr.requests;
 import com.oracle.bmc.zpr.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/zpr/UpdateZprPolicyExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/zpr/UpdateZprPolicyExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateZprPolicyRequest.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20240301")
@@ -16,14 +16,14 @@ public class UpdateZprPolicyRequest
                 com.oracle.bmc.zpr.model.UpdateZprPolicyDetails> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the ZprPolicy.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * ZprPolicy.
      */
     private String zprPolicyId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the ZprPolicy.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * ZprPolicy.
      */
     public String getZprPolicyId() {
         return zprPolicyId;
@@ -118,14 +118,14 @@ public class UpdateZprPolicyRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the ZprPolicy.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * ZprPolicy.
          */
         private String zprPolicyId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the ZprPolicy.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * ZprPolicy.
          *
          * @param zprPolicyId the value to set
          * @return this builder instance

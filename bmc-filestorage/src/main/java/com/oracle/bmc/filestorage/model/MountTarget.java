@@ -118,14 +118,14 @@ public final class MountTarget extends com.oracle.bmc.http.client.internal.Expli
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * compartment that contains the mount target.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * compartment that contains the mount target.
          *
          * @param compartmentId the value to set
@@ -160,7 +160,7 @@ public final class MountTarget extends com.oracle.bmc.http.client.internal.Expli
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * associated export set. Controls what file systems will be exported through Network File
          * System (NFS) protocol on this mount target.
          */
@@ -168,7 +168,7 @@ public final class MountTarget extends com.oracle.bmc.http.client.internal.Expli
         private String exportSetId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * associated export set. Controls what file systems will be exported through Network File
          * System (NFS) protocol on this mount target.
          *
@@ -181,14 +181,14 @@ public final class MountTarget extends com.oracle.bmc.http.client.internal.Expli
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * mount target.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * mount target.
          *
          * @param id the value to set
@@ -245,14 +245,14 @@ public final class MountTarget extends com.oracle.bmc.http.client.internal.Expli
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * subnet the mount target is in.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
         private String subnetId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * subnet the mount target is in.
          *
          * @param subnetId the value to set
@@ -293,22 +293,22 @@ public final class MountTarget extends com.oracle.bmc.http.client.internal.Expli
         }
         /**
          * A list of Network Security Group
-         * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
-         * associated with this mount target. A maximum of 5 is allowed. Setting this to an empty
-         * array after the list is created removes the mount target from all NSGs. For more
-         * information about NSGs, see [Security
-         * Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm).
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated
+         * with this mount target. A maximum of 5 is allowed. Setting this to an empty array after
+         * the list is created removes the mount target from all NSGs. For more information about
+         * NSGs, see [Security
+         * Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
         private java.util.List<String> nsgIds;
 
         /**
          * A list of Network Security Group
-         * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
-         * associated with this mount target. A maximum of 5 is allowed. Setting this to an empty
-         * array after the list is created removes the mount target from all NSGs. For more
-         * information about NSGs, see [Security
-         * Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm).
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated
+         * with this mount target. A maximum of 5 is allowed. Setting this to an empty array after
+         * the list is created removes the mount target from all NSGs. For more information about
+         * NSGs, see [Security
+         * Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
          *
          * @param nsgIds the value to set
          * @return this builder
@@ -448,7 +448,7 @@ public final class MountTarget extends com.oracle.bmc.http.client.internal.Expli
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
          * {@code {"Department": "Finance"}}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -457,7 +457,7 @@ public final class MountTarget extends com.oracle.bmc.http.client.internal.Expli
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
          * {@code {"Department": "Finance"}}
          *
          * @param freeformTags the value to set
@@ -471,7 +471,7 @@ public final class MountTarget extends com.oracle.bmc.http.client.internal.Expli
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
          * {@code {"Operations": {"CostCenter": "42"}}}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -480,7 +480,7 @@ public final class MountTarget extends com.oracle.bmc.http.client.internal.Expli
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
          * {@code {"Operations": {"CostCenter": "42"}}}
          *
          * @param definedTags the value to set
@@ -647,14 +647,14 @@ public final class MountTarget extends com.oracle.bmc.http.client.internal.Expli
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment that contains the mount target.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment that contains the mount target.
      *
      * @return the value
@@ -685,7 +685,7 @@ public final class MountTarget extends com.oracle.bmc.http.client.internal.Expli
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * associated export set. Controls what file systems will be exported through Network File
      * System (NFS) protocol on this mount target.
      */
@@ -693,7 +693,7 @@ public final class MountTarget extends com.oracle.bmc.http.client.internal.Expli
     private final String exportSetId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * associated export set. Controls what file systems will be exported through Network File
      * System (NFS) protocol on this mount target.
      *
@@ -704,14 +704,14 @@ public final class MountTarget extends com.oracle.bmc.http.client.internal.Expli
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * mount target.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * mount target.
      *
      * @return the value
@@ -810,14 +810,14 @@ public final class MountTarget extends com.oracle.bmc.http.client.internal.Expli
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * subnet the mount target is in.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
     private final String subnetId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * subnet the mount target is in.
      *
      * @return the value
@@ -901,20 +901,20 @@ public final class MountTarget extends com.oracle.bmc.http.client.internal.Expli
 
     /**
      * A list of Network Security Group
-     * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) associated
+     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated
      * with this mount target. A maximum of 5 is allowed. Setting this to an empty array after the
      * list is created removes the mount target from all NSGs. For more information about NSGs, see
-     * [Security Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm).
+     * [Security Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
     private final java.util.List<String> nsgIds;
 
     /**
      * A list of Network Security Group
-     * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) associated
+     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated
      * with this mount target. A maximum of 5 is allowed. Setting this to an empty array after the
      * list is created removes the mount target from all NSGs. For more information about NSGs, see
-     * [Security Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm).
+     * [Security Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
      *
      * @return the value
      */
@@ -1038,7 +1038,7 @@ public final class MountTarget extends com.oracle.bmc.http.client.internal.Expli
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Department": "Finance"}}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -1047,7 +1047,7 @@ public final class MountTarget extends com.oracle.bmc.http.client.internal.Expli
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Department": "Finance"}}
      *
      * @return the value
@@ -1059,7 +1059,7 @@ public final class MountTarget extends com.oracle.bmc.http.client.internal.Expli
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Operations": {"CostCenter": "42"}}}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -1068,7 +1068,7 @@ public final class MountTarget extends com.oracle.bmc.http.client.internal.Expli
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Operations": {"CostCenter": "42"}}}
      *
      * @return the value

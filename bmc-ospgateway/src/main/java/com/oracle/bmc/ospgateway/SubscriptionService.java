@@ -73,7 +73,7 @@ public interface SubscriptionService extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ospgateway/AuthorizeSubscriptionPaymentExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ospgateway/AuthorizeSubscriptionPaymentExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     AuthorizeSubscriptionPayment API.
      */
@@ -90,7 +90,7 @@ public interface SubscriptionService extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ospgateway/GetSubscriptionExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ospgateway/GetSubscriptionExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetSubscription
      *     API.
      */
@@ -106,7 +106,7 @@ public interface SubscriptionService extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ospgateway/ListSubscriptionsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ospgateway/ListSubscriptionsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSubscriptions
      *     API.
      */
@@ -122,7 +122,7 @@ public interface SubscriptionService extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ospgateway/PaySubscriptionExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ospgateway/PaySubscriptionExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use PaySubscription
      *     API.
      */
@@ -138,7 +138,7 @@ public interface SubscriptionService extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ospgateway/UpdateSubscriptionExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ospgateway/UpdateSubscriptionExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateSubscription
      *     API.
      */

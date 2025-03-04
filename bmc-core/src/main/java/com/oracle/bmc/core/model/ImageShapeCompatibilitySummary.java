@@ -39,15 +39,13 @@ public final class ImageShapeCompatibilitySummary
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The image
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * The image [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("imageId")
         private String imageId;
 
         /**
-         * The image
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * The image [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          * @param imageId the value to set
          * @return this builder
@@ -131,16 +129,12 @@ public final class ImageShapeCompatibilitySummary
         return new Builder().copy(this);
     }
 
-    /**
-     * The image
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-     */
+    /** The image [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). */
     @com.fasterxml.jackson.annotation.JsonProperty("imageId")
     private final String imageId;
 
     /**
-     * The image
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * The image [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      * @return the value
      */

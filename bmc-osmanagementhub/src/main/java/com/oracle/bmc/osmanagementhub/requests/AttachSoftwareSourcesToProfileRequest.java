@@ -7,7 +7,7 @@ package com.oracle.bmc.osmanagementhub.requests;
 import com.oracle.bmc.osmanagementhub.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/AttachSoftwareSourcesToProfileExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/AttachSoftwareSourcesToProfileExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * AttachSoftwareSourcesToProfileRequest.
  */
@@ -17,30 +17,30 @@ public class AttachSoftwareSourcesToProfileRequest
                 com.oracle.bmc.osmanagementhub.model.AttachSoftwareSourcesToProfileDetails> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the registration profile.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * registration profile.
      */
     private String profileId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the registration profile.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * registration profile.
      */
     public String getProfileId() {
         return profileId;
     }
     /**
      * The software source
-     * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to
-     * attach to the profile
+     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to attach to
+     * the profile
      */
     private com.oracle.bmc.osmanagementhub.model.AttachSoftwareSourcesToProfileDetails
             attachSoftwareSourcesToProfileDetails;
 
     /**
      * The software source
-     * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to
-     * attach to the profile
+     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to attach to
+     * the profile
      */
     public com.oracle.bmc.osmanagementhub.model.AttachSoftwareSourcesToProfileDetails
             getAttachSoftwareSourcesToProfileDetails() {
@@ -115,14 +115,14 @@ public class AttachSoftwareSourcesToProfileRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the registration profile.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * registration profile.
          */
         private String profileId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the registration profile.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * registration profile.
          *
          * @param profileId the value to set
          * @return this builder instance
@@ -134,16 +134,16 @@ public class AttachSoftwareSourcesToProfileRequest
 
         /**
          * The software source
-         * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to
-         * attach to the profile
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to attach
+         * to the profile
          */
         private com.oracle.bmc.osmanagementhub.model.AttachSoftwareSourcesToProfileDetails
                 attachSoftwareSourcesToProfileDetails = null;
 
         /**
          * The software source
-         * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to
-         * attach to the profile
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to attach
+         * to the profile
          *
          * @param attachSoftwareSourcesToProfileDetails the value to set
          * @return this builder instance

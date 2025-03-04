@@ -119,7 +119,7 @@ public final class UpdateVnicDetails
          * #getPrivateIp(GetPrivateIpRequest) getPrivateIp}.
          *
          * <p>For more information, see [DNS in Your Virtual Cloud
-         * Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
+         * Network](https://docs.oracle.com/iaas/Content/Network/Concepts/dns.htm).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("hostnameLabel")
         private String hostnameLabel;
@@ -136,7 +136,7 @@ public final class UpdateVnicDetails
          * #getPrivateIp(GetPrivateIpRequest) getPrivateIp}.
          *
          * <p>For more information, see [DNS in Your Virtual Cloud
-         * Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
+         * Network](https://docs.oracle.com/iaas/Content/Network/Concepts/dns.htm).
          *
          * @param hostnameLabel the value to set
          * @return this builder
@@ -181,7 +181,7 @@ public final class UpdateVnicDetails
          * Whether the source/destination check is disabled on the VNIC. Defaults to {@code false},
          * which means the check is performed. For information about why you would skip the
          * source/destination check, see [Using a Private IP as a Route
-         * Target](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip).
+         * Target](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip).
          *
          * <p>If the VNIC belongs to a VLAN as part of the Oracle Cloud VMware Solution (instead of
          * belonging to a subnet), the value of the {@code skipSourceDestCheck} attribute is
@@ -195,7 +195,7 @@ public final class UpdateVnicDetails
          * Whether the source/destination check is disabled on the VNIC. Defaults to {@code false},
          * which means the check is performed. For information about why you would skip the
          * source/destination check, see [Using a Private IP as a Route
-         * Target](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip).
+         * Target](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip).
          *
          * <p>If the VNIC belongs to a VLAN as part of the Oracle Cloud VMware Solution (instead of
          * belonging to a subnet), the value of the {@code skipSourceDestCheck} attribute is
@@ -324,7 +324,7 @@ public final class UpdateVnicDetails
      * #getPrivateIp(GetPrivateIpRequest) getPrivateIp}.
      *
      * <p>For more information, see [DNS in Your Virtual Cloud
-     * Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
+     * Network](https://docs.oracle.com/iaas/Content/Network/Concepts/dns.htm).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("hostnameLabel")
     private final String hostnameLabel;
@@ -340,7 +340,7 @@ public final class UpdateVnicDetails
      * #getPrivateIp(GetPrivateIpRequest) getPrivateIp}.
      *
      * <p>For more information, see [DNS in Your Virtual Cloud
-     * Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
+     * Network](https://docs.oracle.com/iaas/Content/Network/Concepts/dns.htm).
      *
      * @return the value
      */
@@ -381,7 +381,7 @@ public final class UpdateVnicDetails
      * Whether the source/destination check is disabled on the VNIC. Defaults to {@code false},
      * which means the check is performed. For information about why you would skip the
      * source/destination check, see [Using a Private IP as a Route
-     * Target](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip).
+     * Target](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip).
      *
      * <p>If the VNIC belongs to a VLAN as part of the Oracle Cloud VMware Solution (instead of
      * belonging to a subnet), the value of the {@code skipSourceDestCheck} attribute is ignored.
@@ -395,7 +395,7 @@ public final class UpdateVnicDetails
      * Whether the source/destination check is disabled on the VNIC. Defaults to {@code false},
      * which means the check is performed. For information about why you would skip the
      * source/destination check, see [Using a Private IP as a Route
-     * Target](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip).
+     * Target](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip).
      *
      * <p>If the VNIC belongs to a VLAN as part of the Oracle Cloud VMware Solution (instead of
      * belonging to a subnet), the value of the {@code skipSourceDestCheck} attribute is ignored.

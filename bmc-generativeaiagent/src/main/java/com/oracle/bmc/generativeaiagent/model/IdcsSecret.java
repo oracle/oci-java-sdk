@@ -57,15 +57,15 @@ public final class IdcsSecret extends SecretDetail {
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the secret for client secret.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * secret for client secret.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("vaultSecretId")
         private String vaultSecretId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the secret for client secret.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * secret for client secret.
          *
          * @param vaultSecretId the value to set
          * @return this builder
@@ -166,15 +166,15 @@ public final class IdcsSecret extends SecretDetail {
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the secret for client secret.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * secret for client secret.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("vaultSecretId")
     private final String vaultSecretId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the secret for client secret.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * secret for client secret.
      *
      * @return the value
      */

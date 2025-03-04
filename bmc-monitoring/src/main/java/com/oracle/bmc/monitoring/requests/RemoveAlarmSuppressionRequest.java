@@ -7,7 +7,7 @@ package com.oracle.bmc.monitoring.requests;
 import com.oracle.bmc.monitoring.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/monitoring/RemoveAlarmSuppressionExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/monitoring/RemoveAlarmSuppressionExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * RemoveAlarmSuppressionRequest.
  */
@@ -16,13 +16,13 @@ public class RemoveAlarmSuppressionRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of an
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of an
      * alarm.
      */
     private String alarmId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of an
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of an
      * alarm.
      */
     public String getAlarmId() {
@@ -66,14 +66,14 @@ public class RemoveAlarmSuppressionRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of an alarm.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of an
+         * alarm.
          */
         private String alarmId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of an alarm.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of an
+         * alarm.
          *
          * @param alarmId the value to set
          * @return this builder instance

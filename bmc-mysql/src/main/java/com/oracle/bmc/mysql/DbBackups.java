@@ -74,7 +74,7 @@ public interface DbBackups extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/ChangeBackupCompartmentExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/ChangeBackupCompartmentExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ChangeBackupCompartment API.
      */
@@ -90,7 +90,7 @@ public interface DbBackups extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/CopyBackupExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/CopyBackupExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CopyBackup API.
      */
     CopyBackupResponse copyBackup(CopyBackupRequest request);
@@ -105,7 +105,7 @@ public interface DbBackups extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/CreateBackupExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/CreateBackupExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateBackup API.
      */
     CreateBackupResponse createBackup(CreateBackupRequest request);
@@ -120,7 +120,7 @@ public interface DbBackups extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/DeleteBackupExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/DeleteBackupExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteBackup API.
      */
     DeleteBackupResponse deleteBackup(DeleteBackupRequest request);
@@ -135,7 +135,7 @@ public interface DbBackups extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/GetBackupExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/GetBackupExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetBackup API.
      */
     GetBackupResponse getBackup(GetBackupRequest request);
@@ -150,7 +150,7 @@ public interface DbBackups extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/ListBackupsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/ListBackupsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListBackups API.
      */
     ListBackupsResponse listBackups(ListBackupsRequest request);
@@ -165,7 +165,7 @@ public interface DbBackups extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/UpdateBackupExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/UpdateBackupExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateBackup API.
      */
     UpdateBackupResponse updateBackup(UpdateBackupRequest request);

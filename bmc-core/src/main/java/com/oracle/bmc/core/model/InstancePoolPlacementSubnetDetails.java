@@ -91,17 +91,15 @@ public final class InstancePoolPlacementSubnetDetails
             return this;
         }
         /**
-         * The subnet
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for
-         * the secondary VNIC.
+         * The subnet [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * for the secondary VNIC.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
         private String subnetId;
 
         /**
-         * The subnet
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for
-         * the secondary VNIC.
+         * The subnet [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * for the secondary VNIC.
          *
          * @param subnetId the value to set
          * @return this builder
@@ -197,17 +195,15 @@ public final class InstancePoolPlacementSubnetDetails
     }
 
     /**
-     * The subnet
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
-     * secondary VNIC.
+     * The subnet [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for
+     * the secondary VNIC.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
     private final String subnetId;
 
     /**
-     * The subnet
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
-     * secondary VNIC.
+     * The subnet [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for
+     * the secondary VNIC.
      *
      * @return the value
      */

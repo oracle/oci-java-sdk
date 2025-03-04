@@ -82,7 +82,7 @@ public final class CreateAutonomousContainerDatabaseDataguardAssociationDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * compartment where the standby Autonomous Container Database will be created.
          */
         @com.fasterxml.jackson.annotation.JsonProperty(
@@ -90,7 +90,7 @@ public final class CreateAutonomousContainerDatabaseDataguardAssociationDetails
         private String peerAutonomousContainerDatabaseCompartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * compartment where the standby Autonomous Container Database will be created.
          *
          * @param peerAutonomousContainerDatabaseCompartmentId the value to set
@@ -104,14 +104,14 @@ public final class CreateAutonomousContainerDatabaseDataguardAssociationDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * peer cloud Autonomous Exadata VM Cluster.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("peerCloudAutonomousVmClusterId")
         private String peerCloudAutonomousVmClusterId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * peer cloud Autonomous Exadata VM Cluster.
          *
          * @param peerCloudAutonomousVmClusterId the value to set
@@ -123,14 +123,14 @@ public final class CreateAutonomousContainerDatabaseDataguardAssociationDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * peer Autonomous Exadata VM Cluster.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("peerAutonomousVmClusterId")
         private String peerAutonomousVmClusterId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * peer Autonomous Exadata VM Cluster.
          *
          * @param peerAutonomousVmClusterId the value to set
@@ -335,14 +335,14 @@ public final class CreateAutonomousContainerDatabaseDataguardAssociationDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment where the standby Autonomous Container Database will be created.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("peerAutonomousContainerDatabaseCompartmentId")
     private final String peerAutonomousContainerDatabaseCompartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment where the standby Autonomous Container Database will be created.
      *
      * @return the value
@@ -352,15 +352,15 @@ public final class CreateAutonomousContainerDatabaseDataguardAssociationDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * peer cloud Autonomous Exadata VM Cluster.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer
+     * cloud Autonomous Exadata VM Cluster.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("peerCloudAutonomousVmClusterId")
     private final String peerCloudAutonomousVmClusterId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * peer cloud Autonomous Exadata VM Cluster.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer
+     * cloud Autonomous Exadata VM Cluster.
      *
      * @return the value
      */
@@ -369,15 +369,15 @@ public final class CreateAutonomousContainerDatabaseDataguardAssociationDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * peer Autonomous Exadata VM Cluster.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer
+     * Autonomous Exadata VM Cluster.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("peerAutonomousVmClusterId")
     private final String peerAutonomousVmClusterId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * peer Autonomous Exadata VM Cluster.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer
+     * Autonomous Exadata VM Cluster.
      *
      * @return the value
      */

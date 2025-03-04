@@ -113,15 +113,15 @@ public final class ProjectSummary
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) for
-         * the project's compartment.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
+         * project's compartment.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) for
-         * the project's compartment.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
+         * project's compartment.
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -373,14 +373,14 @@ public final class ProjectSummary
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) for the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
      * project's compartment.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) for the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
      * project's compartment.
      *
      * @return the value

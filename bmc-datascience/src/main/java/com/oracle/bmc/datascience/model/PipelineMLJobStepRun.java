@@ -72,15 +72,15 @@ public final class PipelineMLJobStepRun extends PipelineStepRun {
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the job run triggered for this step run.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * job run triggered for this step run.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("jobRunId")
         private String jobRunId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the job run triggered for this step run.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * job run triggered for this step run.
          *
          * @param jobRunId the value to set
          * @return this builder
@@ -155,15 +155,15 @@ public final class PipelineMLJobStepRun extends PipelineStepRun {
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the job run triggered for this step run.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job
+     * run triggered for this step run.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("jobRunId")
     private final String jobRunId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the job run triggered for this step run.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job
+     * run triggered for this step run.
      *
      * @return the value
      */

@@ -9,22 +9,21 @@ package com.oracle.bmc.identity.model;
  * Infrastructure resources. Users might need to launch instances, manage remote disks, work with
  * your cloud network, etc. Users have one or more IAM Service credentials ({@link ApiKey}, {@link
  * UIPassword}, {@link SwiftPassword} and {@link AuthToken}). For more information, see [User
- * Credentials](https://docs.cloud.oracle.com/Content/Identity/usercred/usercredentials.htm)). End
+ * Credentials](https://docs.oracle.com/iaas/Content/Identity/usercred/usercredentials.htm)). End
  * users of your application are not typically IAM Service users, but for tenancies that have
  * identity domains, they might be. For conceptual information about users and other IAM Service
  * components, see [Overview of
- * IAM](https://docs.cloud.oracle.com/Content/Identity/getstarted/identity-domains.htm).
+ * IAM](https://docs.oracle.com/iaas/Content/Identity/getstarted/identity-domains.htm).
  *
  * <p>These users are created directly within the Oracle Cloud Infrastructure system, via the IAM
  * service. They are different from *federated users*, who authenticate themselves to the Oracle
  * Cloud Infrastructure Console via an identity provider. For more information, see [Identity
- * Providers and
- * Federation](https://docs.cloud.oracle.com/Content/Identity/Concepts/federation.htm).
+ * Providers and Federation](https://docs.oracle.com/iaas/Content/Identity/Concepts/federation.htm).
  *
  * <p>To use any of the API operations, you must be authorized in an IAM policy. If you're not
  * authorized, talk to an administrator. If you're an administrator who needs to write policies to
  * give users access, see [Get Started with
- * Policies](https://docs.cloud.oracle.com/Content/Identity/policiesgs/get-started-with-policies.htm).
+ * Policies](https://docs.oracle.com/iaas/Content/Identity/policiesgs/get-started-with-policies.htm).
  *
  * <p>*Warning:** Oracle recommends that you avoid using any confidential information when you
  * supply string values using the API. <br>
@@ -330,7 +329,7 @@ public final class User extends com.oracle.bmc.http.client.internal.ExplicitlySe
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          */
@@ -340,7 +339,7 @@ public final class User extends com.oracle.bmc.http.client.internal.ExplicitlySe
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          *
@@ -355,7 +354,7 @@ public final class User extends com.oracle.bmc.http.client.internal.ExplicitlySe
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
          * {@code {"Operations": {"CostCenter": "42"}}}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -364,7 +363,7 @@ public final class User extends com.oracle.bmc.http.client.internal.ExplicitlySe
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
          * {@code {"Operations": {"CostCenter": "42"}}}
          *
          * @param definedTags the value to set
@@ -823,7 +822,7 @@ public final class User extends com.oracle.bmc.http.client.internal.ExplicitlySe
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      */
@@ -833,7 +832,7 @@ public final class User extends com.oracle.bmc.http.client.internal.ExplicitlySe
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      *
@@ -846,7 +845,7 @@ public final class User extends com.oracle.bmc.http.client.internal.ExplicitlySe
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Operations": {"CostCenter": "42"}}}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -855,7 +854,7 @@ public final class User extends com.oracle.bmc.http.client.internal.ExplicitlySe
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Operations": {"CostCenter": "42"}}}
      *
      * @return the value

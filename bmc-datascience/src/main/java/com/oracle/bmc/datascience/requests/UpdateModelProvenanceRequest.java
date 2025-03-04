@@ -7,7 +7,7 @@ package com.oracle.bmc.datascience.requests;
 import com.oracle.bmc.datascience.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/UpdateModelProvenanceExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/UpdateModelProvenanceExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * UpdateModelProvenanceRequest.
  */
@@ -17,14 +17,14 @@ public class UpdateModelProvenanceRequest
                 com.oracle.bmc.datascience.model.UpdateModelProvenanceDetails> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the model.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * model.
      */
     private String modelId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the model.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * model.
      */
     public String getModelId() {
         return modelId;
@@ -88,14 +88,14 @@ public class UpdateModelProvenanceRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the model.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * model.
          */
         private String modelId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the model.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * model.
          *
          * @param modelId the value to set
          * @return this builder instance

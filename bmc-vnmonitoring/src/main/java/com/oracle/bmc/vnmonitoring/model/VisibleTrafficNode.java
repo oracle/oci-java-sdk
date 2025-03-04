@@ -63,14 +63,14 @@ public final class VisibleTrafficNode extends TrafficNode {
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * OCI entity that represents the traffic node (Instance, GW, LB, etc.).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("entityId")
         private String entityId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * OCI entity that represents the traffic node (Instance, GW, LB, etc.).
          *
          * @param entityId the value to set
@@ -166,14 +166,14 @@ public final class VisibleTrafficNode extends TrafficNode {
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the OCI
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OCI
      * entity that represents the traffic node (Instance, GW, LB, etc.).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("entityId")
     private final String entityId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the OCI
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OCI
      * entity that represents the traffic node (Instance, GW, LB, etc.).
      *
      * @return the value

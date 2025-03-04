@@ -36,14 +36,14 @@ public final class OracleRMStack extends DvpStackDetails {
             return this;
         }
         /**
-         * Stack [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of
+         * Stack [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
          * the Resource Manager stack for dedicated vantage point.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("dvpStackId")
         private String dvpStackId;
 
         /**
-         * Stack [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of
+         * Stack [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
          * the Resource Manager stack for dedicated vantage point.
          *
          * @param dvpStackId the value to set
@@ -55,14 +55,14 @@ public final class OracleRMStack extends DvpStackDetails {
             return this;
         }
         /**
-         * Stream [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of
+         * Stream [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
          * the Resource Manager stack for dedicated vantage point.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("dvpStreamId")
         private String dvpStreamId;
 
         /**
-         * Stream [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of
+         * Stream [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
          * the Resource Manager stack for dedicated vantage point.
          *
          * @param dvpStreamId the value to set
@@ -118,14 +118,14 @@ public final class OracleRMStack extends DvpStackDetails {
     }
 
     /**
-     * Stack [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * Stack [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Resource Manager stack for dedicated vantage point.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("dvpStackId")
     private final String dvpStackId;
 
     /**
-     * Stack [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * Stack [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Resource Manager stack for dedicated vantage point.
      *
      * @return the value
@@ -135,14 +135,14 @@ public final class OracleRMStack extends DvpStackDetails {
     }
 
     /**
-     * Stream [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * Stream [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Resource Manager stack for dedicated vantage point.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("dvpStreamId")
     private final String dvpStreamId;
 
     /**
-     * Stream [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * Stream [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Resource Manager stack for dedicated vantage point.
      *
      * @return the value

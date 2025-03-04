@@ -60,7 +60,7 @@ public class ConfigSource extends com.oracle.bmc.http.client.internal.Explicitly
      * {@code ZIP_UPLOAD}) that contains folders. Ignored for the {@code configSourceType} value of
      * {@code COMPARTMENT_CONFIG_SOURCE}. For more information about required and recommended file
      * structure, see [File Structure (Terraform Configurations for Resource
-     * Manager)](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/terraformconfigresourcemanager.htm#filestructure).
+     * Manager)](https://docs.oracle.com/iaas/Content/ResourceManager/Concepts/terraformconfigresourcemanager.htm#filestructure).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("workingDirectory")
     private final String workingDirectory;
@@ -71,7 +71,7 @@ public class ConfigSource extends com.oracle.bmc.http.client.internal.Explicitly
      * {@code ZIP_UPLOAD}) that contains folders. Ignored for the {@code configSourceType} value of
      * {@code COMPARTMENT_CONFIG_SOURCE}. For more information about required and recommended file
      * structure, see [File Structure (Terraform Configurations for Resource
-     * Manager)](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/terraformconfigresourcemanager.htm#filestructure).
+     * Manager)](https://docs.oracle.com/iaas/Content/ResourceManager/Concepts/terraformconfigresourcemanager.htm#filestructure).
      *
      * @return the value
      */

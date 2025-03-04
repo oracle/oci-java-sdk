@@ -7,7 +7,7 @@ package com.oracle.bmc.osmanagementhub.requests;
 import com.oracle.bmc.osmanagementhub.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/ChangeScheduledJobCompartmentExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/ChangeScheduledJobCompartmentExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * ChangeScheduledJobCompartmentRequest.
  */
@@ -17,28 +17,28 @@ public class ChangeScheduledJobCompartmentRequest
                 com.oracle.bmc.osmanagementhub.model.ChangeScheduledJobCompartmentDetails> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the scheduled job.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * scheduled job.
      */
     private String scheduledJobId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the scheduled job.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * scheduled job.
      */
     public String getScheduledJobId() {
         return scheduledJobId;
     }
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compartment to move the scheduled job to.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment to move the scheduled job to.
      */
     private com.oracle.bmc.osmanagementhub.model.ChangeScheduledJobCompartmentDetails
             changeScheduledJobCompartmentDetails;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compartment to move the scheduled job to.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment to move the scheduled job to.
      */
     public com.oracle.bmc.osmanagementhub.model.ChangeScheduledJobCompartmentDetails
             getChangeScheduledJobCompartmentDetails() {
@@ -113,14 +113,14 @@ public class ChangeScheduledJobCompartmentRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the scheduled job.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * scheduled job.
          */
         private String scheduledJobId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the scheduled job.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * scheduled job.
          *
          * @param scheduledJobId the value to set
          * @return this builder instance
@@ -131,15 +131,15 @@ public class ChangeScheduledJobCompartmentRequest
         }
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compartment to move the scheduled job to.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment to move the scheduled job to.
          */
         private com.oracle.bmc.osmanagementhub.model.ChangeScheduledJobCompartmentDetails
                 changeScheduledJobCompartmentDetails = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compartment to move the scheduled job to.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment to move the scheduled job to.
          *
          * @param changeScheduledJobCompartmentDetails the value to set
          * @return this builder instance

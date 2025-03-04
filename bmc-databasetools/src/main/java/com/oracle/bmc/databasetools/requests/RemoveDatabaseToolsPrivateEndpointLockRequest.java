@@ -7,7 +7,7 @@ package com.oracle.bmc.databasetools.requests;
 import com.oracle.bmc.databasetools.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasetools/RemoveDatabaseToolsPrivateEndpointLockExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasetools/RemoveDatabaseToolsPrivateEndpointLockExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * RemoveDatabaseToolsPrivateEndpointLockRequest.
  */
@@ -17,13 +17,13 @@ public class RemoveDatabaseToolsPrivateEndpointLockRequest
                 com.oracle.bmc.databasetools.model.RemoveResourceLockDetails> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
      * Database Tools private endpoint.
      */
     private String databaseToolsPrivateEndpointId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
      * Database Tools private endpoint.
      */
     public String getDatabaseToolsPrivateEndpointId() {
@@ -87,13 +87,13 @@ public class RemoveDatabaseToolsPrivateEndpointLockRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
          * Database Tools private endpoint.
          */
         private String databaseToolsPrivateEndpointId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
          * Database Tools private endpoint.
          *
          * @param databaseToolsPrivateEndpointId the value to set

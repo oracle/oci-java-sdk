@@ -64,7 +64,7 @@ public final class GitLabPipelineConfiguration extends VerifyConfiguration {
         }
         /**
          * The Oracle Cloud Identifier
-         * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the
+         * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the
          * Private Access Token (PAT) Secret. The PAT provides the credentials to access the GitLab
          * pipeline.
          */
@@ -73,7 +73,7 @@ public final class GitLabPipelineConfiguration extends VerifyConfiguration {
 
         /**
          * The Oracle Cloud Identifier
-         * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the
+         * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the
          * Private Access Token (PAT) Secret. The PAT provides the credentials to access the GitLab
          * pipeline.
          *
@@ -87,7 +87,7 @@ public final class GitLabPipelineConfiguration extends VerifyConfiguration {
         }
         /**
          * The Oracle Cloud Identifier
-         * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the
+         * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the
          * trigger Secret. The Secret provides access to the trigger for a GitLab pipeline.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("triggerSecretId")
@@ -95,7 +95,7 @@ public final class GitLabPipelineConfiguration extends VerifyConfiguration {
 
         /**
          * The Oracle Cloud Identifier
-         * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the
+         * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the
          * trigger Secret. The Secret provides access to the trigger for a GitLab pipeline.
          *
          * @param triggerSecretId the value to set
@@ -220,7 +220,7 @@ public final class GitLabPipelineConfiguration extends VerifyConfiguration {
 
     /**
      * The Oracle Cloud Identifier
-     * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the
+     * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the
      * Private Access Token (PAT) Secret. The PAT provides the credentials to access the GitLab
      * pipeline.
      */
@@ -229,7 +229,7 @@ public final class GitLabPipelineConfiguration extends VerifyConfiguration {
 
     /**
      * The Oracle Cloud Identifier
-     * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the
+     * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the
      * Private Access Token (PAT) Secret. The PAT provides the credentials to access the GitLab
      * pipeline.
      *
@@ -241,7 +241,7 @@ public final class GitLabPipelineConfiguration extends VerifyConfiguration {
 
     /**
      * The Oracle Cloud Identifier
-     * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the
+     * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the
      * trigger Secret. The Secret provides access to the trigger for a GitLab pipeline.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("triggerSecretId")
@@ -249,7 +249,7 @@ public final class GitLabPipelineConfiguration extends VerifyConfiguration {
 
     /**
      * The Oracle Cloud Identifier
-     * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the
+     * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the
      * trigger Secret. The Secret provides access to the trigger for a GitLab pipeline.
      *
      * @return the value

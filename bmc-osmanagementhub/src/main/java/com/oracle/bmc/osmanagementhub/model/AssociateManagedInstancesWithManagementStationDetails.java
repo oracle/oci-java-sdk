@@ -35,7 +35,7 @@ public final class AssociateManagedInstancesWithManagementStationDetails
     public static class Builder {
         /**
          * List of managed instance
-         * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to
          * associate to the management station.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("managedInstances")
@@ -43,7 +43,7 @@ public final class AssociateManagedInstancesWithManagementStationDetails
 
         /**
          * List of managed instance
-         * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to
          * associate to the management station.
          *
          * @param managedInstances the value to set
@@ -100,16 +100,16 @@ public final class AssociateManagedInstancesWithManagementStationDetails
 
     /**
      * List of managed instance
-     * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to
-     * associate to the management station.
+     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to associate
+     * to the management station.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("managedInstances")
     private final java.util.List<String> managedInstances;
 
     /**
      * List of managed instance
-     * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to
-     * associate to the management station.
+     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to associate
+     * to the management station.
      *
      * @return the value
      */

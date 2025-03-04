@@ -37,8 +37,8 @@ public final class UpdateNetworkSecurityGroupsDetails
     public static class Builder {
         /**
          * An array of NSG
-         * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
-         * associated with the load balancer.
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated
+         * with the load balancer.
          *
          * <p>During the load balancer's creation, the service adds the new load balancer to the
          * specified NSGs.
@@ -56,8 +56,8 @@ public final class UpdateNetworkSecurityGroupsDetails
 
         /**
          * An array of NSG
-         * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
-         * associated with the load balancer.
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated
+         * with the load balancer.
          *
          * <p>During the load balancer's creation, the service adds the new load balancer to the
          * specified NSGs.
@@ -111,7 +111,7 @@ public final class UpdateNetworkSecurityGroupsDetails
 
     /**
      * An array of NSG
-     * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) associated
+     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated
      * with the load balancer.
      *
      * <p>During the load balancer's creation, the service adds the new load balancer to the
@@ -130,7 +130,7 @@ public final class UpdateNetworkSecurityGroupsDetails
 
     /**
      * An array of NSG
-     * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) associated
+     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated
      * with the load balancer.
      *
      * <p>During the load balancer's creation, the service adds the new load balancer to the

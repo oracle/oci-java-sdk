@@ -33,14 +33,14 @@ public final class ChangeSubscriptionDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * subscription with which resource needs to be associated with.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
         private String subscriptionId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * subscription with which resource needs to be associated with.
          *
          * @param subscriptionId the value to set
@@ -101,14 +101,14 @@ public final class ChangeSubscriptionDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * subscription with which resource needs to be associated with.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
     private final String subscriptionId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * subscription with which resource needs to be associated with.
      *
      * @return the value

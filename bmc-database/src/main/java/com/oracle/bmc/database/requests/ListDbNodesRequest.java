@@ -7,7 +7,7 @@ package com.oracle.bmc.database.requests;
 import com.oracle.bmc.database.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListDbNodesExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListDbNodesExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListDbNodesRequest.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
@@ -15,26 +15,26 @@ public class ListDbNodesRequest extends com.oracle.bmc.requests.BmcRequest<java.
 
     /**
      * The compartment
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     private String compartmentId;
 
     /**
      * The compartment
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     public String getCompartmentId() {
         return compartmentId;
     }
     /**
-     * The DB system [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * The DB system [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * If provided, filters the results to the set of database versions which are supported for the
      * DB system.
      */
     private String dbSystemId;
 
     /**
-     * The DB system [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * The DB system [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * If provided, filters the results to the set of database versions which are supported for the
      * DB system.
      */
@@ -42,13 +42,13 @@ public class ListDbNodesRequest extends com.oracle.bmc.requests.BmcRequest<java.
         return dbSystemId;
     }
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VM
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM
      * cluster.
      */
     private String vmClusterId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VM
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM
      * cluster.
      */
     public String getVmClusterId() {
@@ -157,13 +157,13 @@ public class ListDbNodesRequest extends com.oracle.bmc.requests.BmcRequest<java.
         return lifecycleState;
     }
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Exacc Db server.
      */
     private String dbServerId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Exacc Db server.
      */
     public String getDbServerId() {
@@ -178,13 +178,13 @@ public class ListDbNodesRequest extends com.oracle.bmc.requests.BmcRequest<java.
 
         /**
          * The compartment
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          */
         private String compartmentId = null;
 
         /**
          * The compartment
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          * @param compartmentId the value to set
          * @return this builder instance
@@ -196,7 +196,7 @@ public class ListDbNodesRequest extends com.oracle.bmc.requests.BmcRequest<java.
 
         /**
          * The DB system
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm). If
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). If
          * provided, filters the results to the set of database versions which are supported for the
          * DB system.
          */
@@ -204,7 +204,7 @@ public class ListDbNodesRequest extends com.oracle.bmc.requests.BmcRequest<java.
 
         /**
          * The DB system
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm). If
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). If
          * provided, filters the results to the set of database versions which are supported for the
          * DB system.
          *
@@ -217,13 +217,13 @@ public class ListDbNodesRequest extends com.oracle.bmc.requests.BmcRequest<java.
         }
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * VM cluster.
          */
         private String vmClusterId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * VM cluster.
          *
          * @param vmClusterId the value to set
@@ -306,13 +306,13 @@ public class ListDbNodesRequest extends com.oracle.bmc.requests.BmcRequest<java.
         }
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Exacc Db server.
          */
         private String dbServerId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Exacc Db server.
          *
          * @param dbServerId the value to set

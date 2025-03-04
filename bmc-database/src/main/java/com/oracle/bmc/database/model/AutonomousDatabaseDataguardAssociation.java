@@ -102,14 +102,14 @@ public final class AutonomousDatabaseDataguardAssociation
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Autonomous Database that has a relationship with the peer Autonomous Database.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("autonomousDatabaseId")
         private String autonomousDatabaseId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Autonomous Database that has a relationship with the peer Autonomous Database.
          *
          * @param autonomousDatabaseId the value to set
@@ -189,14 +189,14 @@ public final class AutonomousDatabaseDataguardAssociation
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * peer Autonomous Database.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("peerAutonomousDatabaseId")
         private String peerAutonomousDatabaseId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * peer Autonomous Database.
          *
          * @param peerAutonomousDatabaseId the value to set
@@ -492,14 +492,14 @@ public final class AutonomousDatabaseDataguardAssociation
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Autonomous Database that has a relationship with the peer Autonomous Database.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("autonomousDatabaseId")
     private final String autonomousDatabaseId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Autonomous Database that has a relationship with the peer Autonomous Database.
      *
      * @return the value
@@ -723,15 +723,15 @@ public final class AutonomousDatabaseDataguardAssociation
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * peer Autonomous Database.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer
+     * Autonomous Database.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("peerAutonomousDatabaseId")
     private final String peerAutonomousDatabaseId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * peer Autonomous Database.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer
+     * Autonomous Database.
      *
      * @return the value
      */

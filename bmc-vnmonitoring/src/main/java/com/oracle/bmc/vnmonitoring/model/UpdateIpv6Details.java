@@ -97,17 +97,15 @@ public final class UpdateIpv6Details
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the VNIC to reassign the IPv6 to. The VNIC must be in the same subnet as the current
-         * VNIC.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * VNIC to reassign the IPv6 to. The VNIC must be in the same subnet as the current VNIC.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("vnicId")
         private String vnicId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the VNIC to reassign the IPv6 to. The VNIC must be in the same subnet as the current
-         * VNIC.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * VNIC to reassign the IPv6 to. The VNIC must be in the same subnet as the current VNIC.
          *
          * @param vnicId the value to set
          * @return this builder
@@ -210,15 +208,15 @@ public final class UpdateIpv6Details
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the VNIC to reassign the IPv6 to. The VNIC must be in the same subnet as the current VNIC.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC
+     * to reassign the IPv6 to. The VNIC must be in the same subnet as the current VNIC.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("vnicId")
     private final String vnicId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the VNIC to reassign the IPv6 to. The VNIC must be in the same subnet as the current VNIC.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC
+     * to reassign the IPv6 to. The VNIC must be in the same subnet as the current VNIC.
      *
      * @return the value
      */

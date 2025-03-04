@@ -7,7 +7,7 @@ package com.oracle.bmc.fusionapps.model;
 /**
  * The configuration details of the FusionEnvironment. For more information about these fields, see
  * [Managing
- * Environments](https://docs.cloud.oracle.com/iaas/Content/fusion-applications/manage-environment.htm).
+ * Environments](https://docs.oracle.com/iaas/Content/fusion-applications/manage-environment.htm).
  * <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly

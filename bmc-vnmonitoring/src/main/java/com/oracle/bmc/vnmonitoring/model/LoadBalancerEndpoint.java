@@ -28,14 +28,14 @@ public final class LoadBalancerEndpoint extends Endpoint {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * load balancer.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("loadBalancerId")
         private String loadBalancerId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * load balancer.
          *
          * @param loadBalancerId the value to set
@@ -83,15 +83,15 @@ public final class LoadBalancerEndpoint extends Endpoint {
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * load balancer.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load
+     * balancer.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("loadBalancerId")
     private final String loadBalancerId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * load balancer.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load
+     * balancer.
      *
      * @return the value
      */

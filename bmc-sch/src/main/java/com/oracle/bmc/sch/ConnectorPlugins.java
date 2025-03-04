@@ -10,8 +10,8 @@ import com.oracle.bmc.sch.responses.*;
 /**
  * Use the Connector Hub API to transfer data between services in Oracle Cloud Infrastructure. For
  * more information about Connector Hub, see [the Connector Hub
- * documentation](https://docs.cloud.oracle.com/iaas/Content/connector-hub/home.htm). Connector Hub
- * is formerly known as Service Connector Hub.
+ * documentation](https://docs.oracle.com/iaas/Content/connector-hub/home.htm). Connector Hub is
+ * formerly known as Service Connector Hub.
  *
  * <p>This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by
  * default if no circuit breaker configuration is defined by the user.
@@ -77,7 +77,7 @@ public interface ConnectorPlugins extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/sch/GetConnectorPluginExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/sch/GetConnectorPluginExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetConnectorPlugin
      *     API.
      */
@@ -93,7 +93,7 @@ public interface ConnectorPlugins extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/sch/ListConnectorPluginsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/sch/ListConnectorPluginsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ListConnectorPlugins API.
      */

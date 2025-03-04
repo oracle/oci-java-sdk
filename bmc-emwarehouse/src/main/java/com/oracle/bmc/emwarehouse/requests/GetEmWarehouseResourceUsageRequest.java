@@ -7,7 +7,7 @@ package com.oracle.bmc.emwarehouse.requests;
 import com.oracle.bmc.emwarehouse.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/emwarehouse/GetEmWarehouseResourceUsageExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/emwarehouse/GetEmWarehouseResourceUsageExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * GetEmWarehouseResourceUsageRequest.
  */

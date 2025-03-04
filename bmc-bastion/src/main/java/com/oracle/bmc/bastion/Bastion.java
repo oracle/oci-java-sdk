@@ -11,8 +11,8 @@ import com.oracle.bmc.bastion.responses.*;
  * Use the Bastion API to provide restricted and time-limited access to target resources that don't
  * have public endpoints. Bastions let authorized users connect from specific IP addresses to target
  * resources using Secure Shell (SSH) sessions. For more information, see [the Bastion
- * documentation](https://docs.cloud.oracle.com/iaas/Content/Bastion/home.htm). This service client
- * uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by default if no circuit
+ * documentation](https://docs.oracle.com/iaas/Content/Bastion/home.htm). This service client uses
+ * CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by default if no circuit
  * breaker configuration is defined by the user.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210331")
@@ -76,7 +76,7 @@ public interface Bastion extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bastion/ChangeBastionCompartmentExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bastion/ChangeBastionCompartmentExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ChangeBastionCompartment API.
      */
@@ -96,7 +96,7 @@ public interface Bastion extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bastion/CreateBastionExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bastion/CreateBastionExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateBastion API.
      */
     CreateBastionResponse createBastion(CreateBastionRequest request);
@@ -115,7 +115,7 @@ public interface Bastion extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bastion/CreateSessionExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bastion/CreateSessionExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateSession API.
      */
     CreateSessionResponse createSession(CreateSessionRequest request);
@@ -130,7 +130,7 @@ public interface Bastion extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bastion/DeleteBastionExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bastion/DeleteBastionExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteBastion API.
      */
     DeleteBastionResponse deleteBastion(DeleteBastionRequest request);
@@ -145,7 +145,7 @@ public interface Bastion extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bastion/DeleteSessionExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bastion/DeleteSessionExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteSession API.
      */
     DeleteSessionResponse deleteSession(DeleteSessionRequest request);
@@ -161,7 +161,7 @@ public interface Bastion extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bastion/GetBastionExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bastion/GetBastionExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetBastion API.
      */
     GetBastionResponse getBastion(GetBastionRequest request);
@@ -177,7 +177,7 @@ public interface Bastion extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bastion/GetSessionExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bastion/GetSessionExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetSession API.
      */
     GetSessionResponse getSession(GetSessionRequest request);
@@ -192,7 +192,7 @@ public interface Bastion extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bastion/GetWorkRequestExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bastion/GetWorkRequestExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetWorkRequest API.
      */
     GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request);
@@ -208,7 +208,7 @@ public interface Bastion extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bastion/ListBastionsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bastion/ListBastionsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListBastions API.
      */
     ListBastionsResponse listBastions(ListBastionsRequest request);
@@ -224,7 +224,7 @@ public interface Bastion extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bastion/ListSessionsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bastion/ListSessionsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSessions API.
      */
     ListSessionsResponse listSessions(ListSessionsRequest request);
@@ -239,7 +239,7 @@ public interface Bastion extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bastion/ListWorkRequestErrorsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bastion/ListWorkRequestErrorsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ListWorkRequestErrors API.
      */
@@ -255,7 +255,7 @@ public interface Bastion extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bastion/ListWorkRequestLogsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bastion/ListWorkRequestLogsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequestLogs
      *     API.
      */
@@ -271,7 +271,7 @@ public interface Bastion extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bastion/ListWorkRequestsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bastion/ListWorkRequestsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequests
      *     API.
      */
@@ -288,7 +288,7 @@ public interface Bastion extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bastion/UpdateBastionExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bastion/UpdateBastionExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateBastion API.
      */
     UpdateBastionResponse updateBastion(UpdateBastionRequest request);
@@ -304,7 +304,7 @@ public interface Bastion extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bastion/UpdateSessionExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bastion/UpdateSessionExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateSession API.
      */
     UpdateSessionResponse updateSession(UpdateSessionRequest request);

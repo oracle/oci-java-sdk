@@ -110,7 +110,7 @@ public final class ExternalScmConfiguration extends ScmConfiguration {
         }
         /**
          * The Oracle Cloud Identifier
-         * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the
+         * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the
          * Private Access Token (PAT) Secret. The secret provides the credentials necessary to
          * authenticate against the SCM.
          */
@@ -119,7 +119,7 @@ public final class ExternalScmConfiguration extends ScmConfiguration {
 
         /**
          * The Oracle Cloud Identifier
-         * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the
+         * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the
          * Private Access Token (PAT) Secret. The secret provides the credentials necessary to
          * authenticate against the SCM.
          *
@@ -298,7 +298,7 @@ public final class ExternalScmConfiguration extends ScmConfiguration {
 
     /**
      * The Oracle Cloud Identifier
-     * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the
+     * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the
      * Private Access Token (PAT) Secret. The secret provides the credentials necessary to
      * authenticate against the SCM.
      */
@@ -307,7 +307,7 @@ public final class ExternalScmConfiguration extends ScmConfiguration {
 
     /**
      * The Oracle Cloud Identifier
-     * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the
+     * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the
      * Private Access Token (PAT) Secret. The secret provides the credentials necessary to
      * authenticate against the SCM.
      *

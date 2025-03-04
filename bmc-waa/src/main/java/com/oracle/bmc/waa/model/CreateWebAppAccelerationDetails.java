@@ -69,14 +69,14 @@ public class CreateWebAppAccelerationDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment.
      *
      * @return the value
@@ -86,14 +86,14 @@ public class CreateWebAppAccelerationDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
      * WebAppAccelerationPolicy, which is attached to the resource.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("webAppAccelerationPolicyId")
     private final String webAppAccelerationPolicyId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
      * WebAppAccelerationPolicy, which is attached to the resource.
      *
      * @return the value

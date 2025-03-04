@@ -42,16 +42,14 @@ public final class MacsecKey extends com.oracle.bmc.http.client.internal.Explici
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Secret
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * Secret [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
          * containing the Connectivity association Key Name (CKN) of this MACsec key.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("connectivityAssociationNameSecretId")
         private String connectivityAssociationNameSecretId;
 
         /**
-         * Secret
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * Secret [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
          * containing the Connectivity association Key Name (CKN) of this MACsec key.
          *
          * @param connectivityAssociationNameSecretId the value to set
@@ -81,16 +79,14 @@ public final class MacsecKey extends com.oracle.bmc.http.client.internal.Explici
             return this;
         }
         /**
-         * Secret
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * Secret [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
          * containing the Connectivity Association Key (CAK) of this MACsec key.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("connectivityAssociationKeySecretId")
         private String connectivityAssociationKeySecretId;
 
         /**
-         * Secret
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * Secret [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
          * containing the Connectivity Association Key (CAK) of this MACsec key.
          *
          * @param connectivityAssociationKeySecretId the value to set
@@ -167,14 +163,14 @@ public final class MacsecKey extends com.oracle.bmc.http.client.internal.Explici
     }
 
     /**
-     * Secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * Secret [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      * containing the Connectivity association Key Name (CKN) of this MACsec key.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("connectivityAssociationNameSecretId")
     private final String connectivityAssociationNameSecretId;
 
     /**
-     * Secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * Secret [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      * containing the Connectivity association Key Name (CKN) of this MACsec key.
      *
      * @return the value
@@ -197,14 +193,14 @@ public final class MacsecKey extends com.oracle.bmc.http.client.internal.Explici
     }
 
     /**
-     * Secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * Secret [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      * containing the Connectivity Association Key (CAK) of this MACsec key.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("connectivityAssociationKeySecretId")
     private final String connectivityAssociationKeySecretId;
 
     /**
-     * Secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * Secret [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      * containing the Connectivity Association Key (CAK) of this MACsec key.
      *
      * @return the value

@@ -7,7 +7,7 @@ package com.oracle.bmc.artifacts.requests;
 import com.oracle.bmc.artifacts.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/artifacts/DeleteContainerRepositoryExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/artifacts/DeleteContainerRepositoryExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * DeleteContainerRepositoryRequest.
  */
@@ -16,16 +16,16 @@ public class DeleteContainerRepositoryRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the container repository.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * container repository.
      *
      * <p>Example: {@code ocid1.containerrepo.oc1..exampleuniqueID}
      */
     private String repositoryId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the container repository.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * container repository.
      *
      * <p>Example: {@code ocid1.containerrepo.oc1..exampleuniqueID}
      */
@@ -70,16 +70,16 @@ public class DeleteContainerRepositoryRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the container repository.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * container repository.
          *
          * <p>Example: {@code ocid1.containerrepo.oc1..exampleuniqueID}
          */
         private String repositoryId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the container repository.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * container repository.
          *
          * <p>Example: {@code ocid1.containerrepo.oc1..exampleuniqueID}
          *

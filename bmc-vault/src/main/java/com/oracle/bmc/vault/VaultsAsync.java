@@ -9,8 +9,7 @@ import com.oracle.bmc.vault.responses.*;
 
 /**
  * Use the Secret Management API to manage secrets and secret versions. For more information, see
- * [Managing
- * Secrets](https://docs.cloud.oracle.com/Content/KeyManagement/Tasks/managingsecrets.htm).
+ * [Managing Secrets](https://docs.oracle.com/iaas/Content/KeyManagement/Tasks/managingsecrets.htm).
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180608")
 public interface VaultsAsync extends AutoCloseable {
@@ -116,7 +115,7 @@ public interface VaultsAsync extends AutoCloseable {
     /**
      * Moves a secret into a different compartment within the same tenancy. For information about
      * moving resources between compartments, see [Moving Resources to a Different
-     * Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
      * <p>When provided, if-match is checked against the ETag values of the secret.
      *

@@ -3,6 +3,19 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 3.59.0 - 2025-03-04
+### Added 
+- Support for user quotas on file system resources in the File Storage service 
+- Support for long term retention backups in the Autonomous Recovery service 
+- Support for Cross Region Replication(CRR) in the PostgreSQL service 
+- Support for subscriptions and cluster placement groups on exascale infrastructure in the Database service 
+- Support for multiple standby databases for autonomous dataguard associations in the Database service 
+- Support for major version upgrade of clusters in the OpenSearch service 
+- Support for Customer Service Identifier(CSI) number in list assigned subscriptions response in the Organizations service    
+
+### Breaking Changes 
+- The method public `java.lang.String getOpcRetryToken()` has been removed from `com.oracle.bmc.tenantmanagercontrolplane.responses.CreateSubscriptionMappingResponse` in the Organizations service
+
 ## 3.58.0 - 2025-02-25
 ### Added 
 - Support for Database Lifecycle Management service 
@@ -3293,7 +3306,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 ### Added
 - Support for access types on instances in the Content and Experience service
 - Support for identity contexts in the Search service
-- Support for Client Side Encryption: https://docs.cloud.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm
+- Support for Client Side Encryption: https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm
 
 ## 1.15.4 - 2020-04-07
 ### Added
@@ -3914,7 +3927,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 ### Added
 - Support for the Search service. An example of how to call this service is available [here](https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResourceSearchExample.java)
 - Support for specifying a backup policy when creating a boot volume in the Block Storage service
-- Support for using the Java SDK in a FIPS compliant environment. Details available [here](https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/javasdkgettingstarted.htm#download)
+- Support for using the Java SDK in a FIPS compliant environment. Details available [here](https://docs.oracle.com/iaas/Content/API/SDKDocs/javasdkgettingstarted.htm#download)
 
 ## 1.2.42 - 2018-07-12
 ### Added

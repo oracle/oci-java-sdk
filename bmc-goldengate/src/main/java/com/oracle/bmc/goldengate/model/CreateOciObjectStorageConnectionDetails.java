@@ -151,14 +151,14 @@ public final class CreateOciObjectStorageConnectionDetails extends CreateConnect
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * related OCI tenancy.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("tenancyId")
         private String tenancyId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * related OCI tenancy.
          *
          * @param tenancyId the value to set
@@ -189,7 +189,7 @@ public final class CreateOciObjectStorageConnectionDetails extends CreateConnect
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * OCI user who will access the Object Storage. The user must have write access to the
          * bucket they want to connect to. If the user is not provided, backend will default to the
          * user who is calling the API endpoint.
@@ -198,7 +198,7 @@ public final class CreateOciObjectStorageConnectionDetails extends CreateConnect
         private String userId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * OCI user who will access the Object Storage. The user must have write access to the
          * bucket they want to connect to. If the user is not provided, backend will default to the
          * user who is calling the API endpoint.
@@ -237,7 +237,7 @@ public final class CreateOciObjectStorageConnectionDetails extends CreateConnect
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Secret that stores the content of the private key file (PEM file) corresponding to the
          * API key of the fingerprint. See documentation:
          * https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm Note:
@@ -247,7 +247,7 @@ public final class CreateOciObjectStorageConnectionDetails extends CreateConnect
         private String privateKeyFileSecretId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Secret that stores the content of the private key file (PEM file) corresponding to the
          * API key of the fingerprint. See documentation:
          * https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm Note:
@@ -281,7 +281,7 @@ public final class CreateOciObjectStorageConnectionDetails extends CreateConnect
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Secret that stores the passphrase of the private key. Note: When provided,
          * 'privateKeyPassphrase' field must not be provided.
          */
@@ -289,7 +289,7 @@ public final class CreateOciObjectStorageConnectionDetails extends CreateConnect
         private String privateKeyPassphraseSecretId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Secret that stores the passphrase of the private key. Note: When provided,
          * 'privateKeyPassphrase' field must not be provided.
          *
@@ -516,14 +516,14 @@ public final class CreateOciObjectStorageConnectionDetails extends CreateConnect
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * related OCI tenancy.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("tenancyId")
     private final String tenancyId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * related OCI tenancy.
      *
      * @return the value
@@ -550,7 +550,7 @@ public final class CreateOciObjectStorageConnectionDetails extends CreateConnect
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the OCI
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OCI
      * user who will access the Object Storage. The user must have write access to the bucket they
      * want to connect to. If the user is not provided, backend will default to the user who is
      * calling the API endpoint.
@@ -559,7 +559,7 @@ public final class CreateOciObjectStorageConnectionDetails extends CreateConnect
     private final String userId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the OCI
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OCI
      * user who will access the Object Storage. The user must have write access to the bucket they
      * want to connect to. If the user is not provided, backend will default to the user who is
      * calling the API endpoint.
@@ -594,7 +594,7 @@ public final class CreateOciObjectStorageConnectionDetails extends CreateConnect
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Secret that stores the content of the private key file (PEM file) corresponding to the API
      * key of the fingerprint. See documentation:
      * https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm Note: When
@@ -604,7 +604,7 @@ public final class CreateOciObjectStorageConnectionDetails extends CreateConnect
     private final String privateKeyFileSecretId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Secret that stores the content of the private key file (PEM file) corresponding to the API
      * key of the fingerprint. See documentation:
      * https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm Note: When
@@ -634,7 +634,7 @@ public final class CreateOciObjectStorageConnectionDetails extends CreateConnect
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Secret that stores the passphrase of the private key. Note: When provided,
      * 'privateKeyPassphrase' field must not be provided.
      */
@@ -642,7 +642,7 @@ public final class CreateOciObjectStorageConnectionDetails extends CreateConnect
     private final String privateKeyPassphraseSecretId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Secret that stores the passphrase of the private key. Note: When provided,
      * 'privateKeyPassphrase' field must not be provided.
      *

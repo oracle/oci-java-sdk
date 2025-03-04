@@ -7,7 +7,7 @@ package com.oracle.bmc.apigateway.requests;
 import com.oracle.bmc.apigateway.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apigateway/GetGatewayExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apigateway/GetGatewayExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use GetGatewayRequest.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190501")

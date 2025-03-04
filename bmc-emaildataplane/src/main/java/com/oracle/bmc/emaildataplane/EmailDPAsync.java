@@ -10,7 +10,7 @@ import com.oracle.bmc.emaildataplane.responses.*;
 /**
  * Use the Email Delivery API to send high-volume and application-generated emails. For more
  * information, see [Overview of the Email Delivery
- * Service](https://docs.cloud.oracle.com/iaas/Content/Email/Concepts/overview.htm).
+ * Service](https://docs.oracle.com/iaas/Content/Email/Concepts/overview.htm).
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220926")
 public interface EmailDPAsync extends AutoCloseable {

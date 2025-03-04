@@ -7,7 +7,7 @@ package com.oracle.bmc.capacitymanagement.requests;
 import com.oracle.bmc.capacitymanagement.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/capacitymanagement/ListOccCustomerGroupsExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/capacitymanagement/ListOccCustomerGroupsExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * ListOccCustomerGroupsRequest.
  */

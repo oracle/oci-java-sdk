@@ -68,15 +68,15 @@ public final class IpInventorySubnetResourceSummary
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the IP address.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * IP address.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("ipId")
         private String ipId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the IP address.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * IP address.
          *
          * @param ipId the value to set
          * @return this builder
@@ -328,15 +328,15 @@ public final class IpInventorySubnetResourceSummary
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the IP address.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IP
+     * address.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("ipId")
     private final String ipId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the IP address.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IP
+     * address.
      *
      * @return the value
      */

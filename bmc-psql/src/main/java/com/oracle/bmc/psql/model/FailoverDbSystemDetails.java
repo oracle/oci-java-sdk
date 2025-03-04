@@ -52,7 +52,7 @@ public final class FailoverDbSystemDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * database instance node. This parameter is optional. If not set, an existing database
          * instance node will be chosen based on availability.
          */
@@ -60,7 +60,7 @@ public final class FailoverDbSystemDetails
         private String dbInstanceId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * database instance node. This parameter is optional. If not set, an existing database
          * instance node will be chosen based on availability.
          *
@@ -123,7 +123,7 @@ public final class FailoverDbSystemDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * database instance node. This parameter is optional. If not set, an existing database instance
      * node will be chosen based on availability.
      */
@@ -131,7 +131,7 @@ public final class FailoverDbSystemDetails
     private final String dbInstanceId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * database instance node. This parameter is optional. If not set, an existing database instance
      * node will be chosen based on availability.
      *

@@ -33,14 +33,14 @@ public final class NetworkLoadBalancerHealthSummary
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * network load balancer with which the health status is associated.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("networkLoadBalancerId")
         private String networkLoadBalancerId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * network load balancer with which the health status is associated.
          *
          * @param networkLoadBalancerId the value to set
@@ -147,14 +147,14 @@ public final class NetworkLoadBalancerHealthSummary
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * network load balancer with which the health status is associated.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("networkLoadBalancerId")
     private final String networkLoadBalancerId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * network load balancer with which the health status is associated.
      *
      * @return the value

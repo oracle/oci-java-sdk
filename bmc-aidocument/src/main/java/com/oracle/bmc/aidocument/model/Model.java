@@ -307,14 +307,14 @@ public final class Model extends com.oracle.bmc.http.client.internal.ExplicitlyS
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
          * collection of active custom Key Value models that need to be composed.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("componentModels")
         private java.util.List<ComponentModel> componentModels;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
          * collection of active custom Key Value models that need to be composed.
          *
          * @param componentModels the value to set
@@ -356,15 +356,15 @@ public final class Model extends com.oracle.bmc.http.client.internal.ExplicitlyS
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the project that contains the model.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * project that contains the model.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("projectId")
         private String projectId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the project that contains the model.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * project that contains the model.
          *
          * @param projectId the value to set
          * @return this builder
@@ -871,15 +871,15 @@ public final class Model extends com.oracle.bmc.http.client.internal.ExplicitlyS
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-     * collection of active custom Key Value models that need to be composed.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) collection
+     * of active custom Key Value models that need to be composed.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("componentModels")
     private final java.util.List<ComponentModel> componentModels;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-     * collection of active custom Key Value models that need to be composed.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) collection
+     * of active custom Key Value models that need to be composed.
      *
      * @return the value
      */
@@ -914,15 +914,15 @@ public final class Model extends com.oracle.bmc.http.client.internal.ExplicitlyS
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the project that contains the model.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * project that contains the model.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("projectId")
     private final String projectId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the project that contains the model.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * project that contains the model.
      *
      * @return the value
      */

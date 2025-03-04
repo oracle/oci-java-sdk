@@ -7,7 +7,7 @@ package com.oracle.bmc.stackmonitoring.requests;
 import com.oracle.bmc.stackmonitoring.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/stackmonitoring/UpdateMonitoringTemplateExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/stackmonitoring/UpdateMonitoringTemplateExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * UpdateMonitoringTemplateRequest.
  */
@@ -17,13 +17,13 @@ public class UpdateMonitoringTemplateRequest
                 com.oracle.bmc.stackmonitoring.model.UpdateMonitoringTemplateDetails> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * monitoring template.
      */
     private String monitoringTemplateId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * monitoring template.
      */
     public String getMonitoringTemplateId() {
@@ -88,13 +88,13 @@ public class UpdateMonitoringTemplateRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * monitoring template.
          */
         private String monitoringTemplateId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * monitoring template.
          *
          * @param monitoringTemplateId the value to set

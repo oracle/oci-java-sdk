@@ -89,15 +89,15 @@ public final class ManagedInstanceSummary
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the managed instance.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * managed instance.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the managed instance.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * managed instance.
          *
          * @param id the value to set
          * @return this builder
@@ -138,15 +138,15 @@ public final class ManagedInstanceSummary
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the tenancy this managed instance resides in.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * tenancy this managed instance resides in.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("tenancyId")
         private String tenancyId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the tenancy this managed instance resides in.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * tenancy this managed instance resides in.
          *
          * @param tenancyId the value to set
          * @return this builder
@@ -157,15 +157,15 @@ public final class ManagedInstanceSummary
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compartment that contains the managed instance.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment that contains the managed instance.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compartment that contains the managed instance.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment that contains the managed instance.
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -308,17 +308,17 @@ public final class ManagedInstanceSummary
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * for the Oracle Notifications service (ONS) topic. ONS is the channel used to send
-         * notifications to the customer.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
+         * Oracle Notifications service (ONS) topic. ONS is the channel used to send notifications
+         * to the customer.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("notificationTopicId")
         private String notificationTopicId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * for the Oracle Notifications service (ONS) topic. ONS is the channel used to send
-         * notifications to the customer.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
+         * Oracle Notifications service (ONS) topic. ONS is the channel used to send notifications
+         * to the customer.
          *
          * @param notificationTopicId the value to set
          * @return this builder
@@ -472,15 +472,15 @@ public final class ManagedInstanceSummary
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the managed instance.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * managed instance.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the managed instance.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * managed instance.
      *
      * @return the value
      */
@@ -515,15 +515,15 @@ public final class ManagedInstanceSummary
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the tenancy this managed instance resides in.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * tenancy this managed instance resides in.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("tenancyId")
     private final String tenancyId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the tenancy this managed instance resides in.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * tenancy this managed instance resides in.
      *
      * @return the value
      */
@@ -532,15 +532,15 @@ public final class ManagedInstanceSummary
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compartment that contains the managed instance.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment that contains the managed instance.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compartment that contains the managed instance.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment that contains the managed instance.
      *
      * @return the value
      */
@@ -661,17 +661,17 @@ public final class ManagedInstanceSummary
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for
-     * the Oracle Notifications service (ONS) topic. ONS is the channel used to send notifications
-     * to the customer.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
+     * Oracle Notifications service (ONS) topic. ONS is the channel used to send notifications to
+     * the customer.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("notificationTopicId")
     private final String notificationTopicId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for
-     * the Oracle Notifications service (ONS) topic. ONS is the channel used to send notifications
-     * to the customer.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
+     * Oracle Notifications service (ONS) topic. ONS is the channel used to send notifications to
+     * the customer.
      *
      * @return the value
      */

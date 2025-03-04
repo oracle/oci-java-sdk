@@ -49,7 +49,7 @@ public class ListReplicationPoliciesResponse extends com.oracle.bmc.responses.Bm
      * policies.
      *
      * <p>For more details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private String opcNextPage;
 
@@ -62,7 +62,7 @@ public class ListReplicationPoliciesResponse extends com.oracle.bmc.responses.Bm
      * policies.
      *
      * <p>For more details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      * @return the value
      */
@@ -168,7 +168,7 @@ public class ListReplicationPoliciesResponse extends com.oracle.bmc.responses.Bm
          * retrieve the entire list of policies.
          *
          * <p>For more details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private String opcNextPage;
 
@@ -181,7 +181,7 @@ public class ListReplicationPoliciesResponse extends com.oracle.bmc.responses.Bm
          * retrieve the entire list of policies.
          *
          * <p>For more details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param opcNextPage the value to set
          * @return this builder

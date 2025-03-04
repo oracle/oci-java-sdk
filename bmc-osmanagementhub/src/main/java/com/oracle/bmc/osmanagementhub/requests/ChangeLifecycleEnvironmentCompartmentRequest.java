@@ -7,7 +7,7 @@ package com.oracle.bmc.osmanagementhub.requests;
 import com.oracle.bmc.osmanagementhub.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/ChangeLifecycleEnvironmentCompartmentExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/ChangeLifecycleEnvironmentCompartmentExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * ChangeLifecycleEnvironmentCompartmentRequest.
  */
@@ -17,28 +17,28 @@ public class ChangeLifecycleEnvironmentCompartmentRequest
                 com.oracle.bmc.osmanagementhub.model.ChangeLifecycleEnvironmentCompartmentDetails> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the lifecycle environment.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * lifecycle environment.
      */
     private String lifecycleEnvironmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the lifecycle environment.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * lifecycle environment.
      */
     public String getLifecycleEnvironmentId() {
         return lifecycleEnvironmentId;
     }
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compartment to move the lifecycle environment into.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment to move the lifecycle environment into.
      */
     private com.oracle.bmc.osmanagementhub.model.ChangeLifecycleEnvironmentCompartmentDetails
             changeLifecycleEnvironmentCompartmentDetails;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compartment to move the lifecycle environment into.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment to move the lifecycle environment into.
      */
     public com.oracle.bmc.osmanagementhub.model.ChangeLifecycleEnvironmentCompartmentDetails
             getChangeLifecycleEnvironmentCompartmentDetails() {
@@ -115,14 +115,14 @@ public class ChangeLifecycleEnvironmentCompartmentRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the lifecycle environment.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * lifecycle environment.
          */
         private String lifecycleEnvironmentId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the lifecycle environment.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * lifecycle environment.
          *
          * @param lifecycleEnvironmentId the value to set
          * @return this builder instance
@@ -133,15 +133,15 @@ public class ChangeLifecycleEnvironmentCompartmentRequest
         }
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compartment to move the lifecycle environment into.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment to move the lifecycle environment into.
          */
         private com.oracle.bmc.osmanagementhub.model.ChangeLifecycleEnvironmentCompartmentDetails
                 changeLifecycleEnvironmentCompartmentDetails = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compartment to move the lifecycle environment into.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment to move the lifecycle environment into.
          *
          * @param changeLifecycleEnvironmentCompartmentDetails the value to set
          * @return this builder instance

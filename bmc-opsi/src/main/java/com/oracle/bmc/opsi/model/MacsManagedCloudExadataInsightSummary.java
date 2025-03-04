@@ -154,15 +154,15 @@ public final class MacsManagedCloudExadataInsightSummary extends ExadataInsightS
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the Exadata Infrastructure.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Exadata Infrastructure.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("exadataInfraId")
         private String exadataInfraId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the Exadata Infrastructure.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Exadata Infrastructure.
          *
          * @param exadataInfraId the value to set
          * @return this builder
@@ -338,15 +338,15 @@ public final class MacsManagedCloudExadataInsightSummary extends ExadataInsightS
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the Exadata Infrastructure.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Exadata Infrastructure.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("exadataInfraId")
     private final String exadataInfraId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the Exadata Infrastructure.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Exadata Infrastructure.
      *
      * @return the value
      */

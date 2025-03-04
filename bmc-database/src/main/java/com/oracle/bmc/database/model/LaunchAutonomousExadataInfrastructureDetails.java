@@ -65,14 +65,14 @@ public final class LaunchAutonomousExadataInfrastructureDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * compartment the Autonomous Exadata Infrastructure belongs in.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * compartment the Autonomous Exadata Infrastructure belongs in.
          *
          * @param compartmentId the value to set
@@ -118,7 +118,7 @@ public final class LaunchAutonomousExadataInfrastructureDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * subnet the Autonomous Exadata Infrastructure is associated with.
          *
          * <p>*Subnet Restrictions:** - For Autonomous Exadata Infrastructures, do not use a subnet
@@ -132,7 +132,7 @@ public final class LaunchAutonomousExadataInfrastructureDetails
         private String subnetId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * subnet the Autonomous Exadata Infrastructure is associated with.
          *
          * <p>*Subnet Restrictions:** - For Autonomous Exadata Infrastructures, do not use a subnet
@@ -152,24 +152,24 @@ public final class LaunchAutonomousExadataInfrastructureDetails
         }
         /**
          * The list of
-         * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) for the
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
          * network security groups (NSGs) to which this resource belongs. Setting this to an empty
          * list removes all resources from all NSGs. For more information about NSGs, see [Security
-         * Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm).
-         * **NsgIds restrictions:** - A network security group (NSG) is optional for Autonomous
-         * Databases with private access. The nsgIds list can be empty.
+         * Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds
+         * restrictions:** - A network security group (NSG) is optional for Autonomous Databases
+         * with private access. The nsgIds list can be empty.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
         private java.util.List<String> nsgIds;
 
         /**
          * The list of
-         * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) for the
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
          * network security groups (NSGs) to which this resource belongs. Setting this to an empty
          * list removes all resources from all NSGs. For more information about NSGs, see [Security
-         * Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm).
-         * **NsgIds restrictions:** - A network security group (NSG) is optional for Autonomous
-         * Databases with private access. The nsgIds list can be empty.
+         * Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds
+         * restrictions:** - A network security group (NSG) is optional for Autonomous Databases
+         * with private access. The nsgIds list can be empty.
          *
          * @param nsgIds the value to set
          * @return this builder
@@ -254,7 +254,7 @@ public final class LaunchAutonomousExadataInfrastructureDetails
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          */
@@ -264,7 +264,7 @@ public final class LaunchAutonomousExadataInfrastructureDetails
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          *
@@ -279,7 +279,7 @@ public final class LaunchAutonomousExadataInfrastructureDetails
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
@@ -287,7 +287,7 @@ public final class LaunchAutonomousExadataInfrastructureDetails
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * @param definedTags the value to set
          * @return this builder
@@ -371,14 +371,14 @@ public final class LaunchAutonomousExadataInfrastructureDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment the Autonomous Exadata Infrastructure belongs in.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment the Autonomous Exadata Infrastructure belongs in.
      *
      * @return the value
@@ -418,7 +418,7 @@ public final class LaunchAutonomousExadataInfrastructureDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * subnet the Autonomous Exadata Infrastructure is associated with.
      *
      * <p>*Subnet Restrictions:** - For Autonomous Exadata Infrastructures, do not use a subnet that
@@ -432,7 +432,7 @@ public final class LaunchAutonomousExadataInfrastructureDetails
     private final String subnetId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * subnet the Autonomous Exadata Infrastructure is associated with.
      *
      * <p>*Subnet Restrictions:** - For Autonomous Exadata Infrastructures, do not use a subnet that
@@ -449,10 +449,10 @@ public final class LaunchAutonomousExadataInfrastructureDetails
     }
 
     /**
-     * The list of [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     * The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      * for the network security groups (NSGs) to which this resource belongs. Setting this to an
      * empty list removes all resources from all NSGs. For more information about NSGs, see
-     * [Security Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm).
+     * [Security Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
      * **NsgIds restrictions:** - A network security group (NSG) is optional for Autonomous
      * Databases with private access. The nsgIds list can be empty.
      */
@@ -460,10 +460,10 @@ public final class LaunchAutonomousExadataInfrastructureDetails
     private final java.util.List<String> nsgIds;
 
     /**
-     * The list of [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     * The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      * for the network security groups (NSGs) to which this resource belongs. Setting this to an
      * empty list removes all resources from all NSGs. For more information about NSGs, see
-     * [Security Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm).
+     * [Security Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
      * **NsgIds restrictions:** - A network security group (NSG) is optional for Autonomous
      * Databases with private access. The nsgIds list can be empty.
      *
@@ -576,7 +576,7 @@ public final class LaunchAutonomousExadataInfrastructureDetails
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      */
@@ -586,7 +586,7 @@ public final class LaunchAutonomousExadataInfrastructureDetails
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      *
@@ -599,7 +599,7 @@ public final class LaunchAutonomousExadataInfrastructureDetails
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
@@ -607,7 +607,7 @@ public final class LaunchAutonomousExadataInfrastructureDetails
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * @return the value
      */

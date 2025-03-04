@@ -80,15 +80,15 @@ public final class EnableAutonomousDatabaseInsightDetails extends EnableDatabase
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the OPSI private endpoint
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * OPSI private endpoint
          */
         @com.fasterxml.jackson.annotation.JsonProperty("opsiPrivateEndpointId")
         private String opsiPrivateEndpointId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the OPSI private endpoint
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * OPSI private endpoint
          *
          * @param opsiPrivateEndpointId the value to set
          * @return this builder
@@ -278,15 +278,15 @@ public final class EnableAutonomousDatabaseInsightDetails extends EnableDatabase
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the OPSI private endpoint
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OPSI
+     * private endpoint
      */
     @com.fasterxml.jackson.annotation.JsonProperty("opsiPrivateEndpointId")
     private final String opsiPrivateEndpointId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the OPSI private endpoint
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OPSI
+     * private endpoint
      *
      * @return the value
      */

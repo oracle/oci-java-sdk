@@ -14,8 +14,8 @@ import com.oracle.bmc.mediaservices.responses.*;
  *
  * <p>Use the Media Services API to configure media workflows and run Media Flow jobs, create
  * distribution channels, ingest assets, create Preview URLs and play assets. For more information,
- * see [Media Flow](https://docs.cloud.oracle.com/iaas/Content/dms-mediaflow/home.htm) and [Media
- * Streams](https://docs.cloud.oracle.com/iaas/Content/dms-mediastream/home.htm).
+ * see [Media Flow](https://docs.oracle.com/iaas/Content/dms-mediaflow/home.htm) and [Media
+ * Streams](https://docs.oracle.com/iaas/Content/dms-mediastream/home.htm).
  *
  * <p>This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by
  * default if no circuit breaker configuration is defined by the user.
@@ -85,7 +85,7 @@ public interface MediaStream extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/GeneratePlaylistExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/GeneratePlaylistExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GeneratePlaylist
      *     API.
      */
@@ -105,7 +105,7 @@ public interface MediaStream extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/GenerateSessionTokenExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/GenerateSessionTokenExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     GenerateSessionToken API.
      */

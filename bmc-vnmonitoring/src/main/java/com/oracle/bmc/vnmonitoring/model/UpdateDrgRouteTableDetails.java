@@ -108,17 +108,17 @@ public final class UpdateDrgRouteTableDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the import route distribution used to specify how incoming route advertisements
-         * through referenced attachements are inserted into the DRG route table.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * import route distribution used to specify how incoming route advertisements through
+         * referenced attachements are inserted into the DRG route table.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("importDrgRouteDistributionId")
         private String importDrgRouteDistributionId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the import route distribution used to specify how incoming route advertisements
-         * through referenced attachements are inserted into the DRG route table.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * import route distribution used to specify how incoming route advertisements through
+         * referenced attachements are inserted into the DRG route table.
          *
          * @param importDrgRouteDistributionId the value to set
          * @return this builder
@@ -247,16 +247,16 @@ public final class UpdateDrgRouteTableDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the import route distribution used to specify how incoming route advertisements through
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * import route distribution used to specify how incoming route advertisements through
      * referenced attachements are inserted into the DRG route table.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("importDrgRouteDistributionId")
     private final String importDrgRouteDistributionId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the import route distribution used to specify how incoming route advertisements through
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * import route distribution used to specify how incoming route advertisements through
      * referenced attachements are inserted into the DRG route table.
      *
      * @return the value

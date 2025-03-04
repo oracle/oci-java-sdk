@@ -7,7 +7,7 @@ package com.oracle.bmc.osmanagementhub.requests;
 import com.oracle.bmc.osmanagementhub.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/DetachManagedInstancesFromLifecycleStageExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/DetachManagedInstancesFromLifecycleStageExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * DetachManagedInstancesFromLifecycleStageRequest.
  */
@@ -18,14 +18,14 @@ public class DetachManagedInstancesFromLifecycleStageRequest
                         .DetachManagedInstancesFromLifecycleStageDetails> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the lifecycle stage.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * lifecycle stage.
      */
     private String lifecycleStageId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the lifecycle stage.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * lifecycle stage.
      */
     public String getLifecycleStageId() {
         return lifecycleStageId;
@@ -110,14 +110,14 @@ public class DetachManagedInstancesFromLifecycleStageRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the lifecycle stage.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * lifecycle stage.
          */
         private String lifecycleStageId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the lifecycle stage.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * lifecycle stage.
          *
          * @param lifecycleStageId the value to set
          * @return this builder instance

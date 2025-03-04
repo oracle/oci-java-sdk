@@ -56,7 +56,7 @@ public class UpdateVolumeKmsKeyIdExample {
         // https://cloud.oracle.com/storage/block-volume/faq
         // make sure you have set up proper policy for blockstorage to access the key. More
         // information please refer to
-        // https://docs.cloud.oracle.com/en-us/iaas/Content/Identity/Concepts/commonpolicies.htm#services-use-key
+        // https://docs.oracle.com/en-us/iaas/Content/Identity/Concepts/commonpolicies.htm#services-use-key
         String kmsKeyId = "SOME VALID KEY OCID";
 
         // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI

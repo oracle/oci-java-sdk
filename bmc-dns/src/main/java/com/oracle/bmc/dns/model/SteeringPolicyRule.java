@@ -12,7 +12,7 @@ package com.oracle.bmc.dns.model;
  * expression. Cases allow a sequence of conditions to be defined that will apply different
  * parameters to the rule when the conditions are met. For more information about cases, see
  * [Traffic Management API
- * Guide](https://docs.cloud.oracle.com/iaas/Content/TrafficManagement/Concepts/trafficmanagementapi.htm).
+ * Guide](https://docs.oracle.com/iaas/Content/TrafficManagement/Concepts/trafficmanagementapi.htm).
  *
  * <p>**Warning:** Oracle recommends that you avoid using any confidential information when you
  * supply string values using the API. <br>

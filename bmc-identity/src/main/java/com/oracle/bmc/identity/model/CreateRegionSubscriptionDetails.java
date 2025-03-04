@@ -33,7 +33,7 @@ public final class CreateRegionSubscriptionDetails
     public static class Builder {
         /**
          * The regions's key. See [Regions and Availability
-         * Domains](https://docs.cloud.oracle.com/Content/General/Concepts/regions.htm) for the full
+         * Domains](https://docs.oracle.com/iaas/Content/General/Concepts/regions.htm) for the full
          * list of supported 3-letter region codes.
          *
          * <p>Example: {@code PHX}
@@ -43,7 +43,7 @@ public final class CreateRegionSubscriptionDetails
 
         /**
          * The regions's key. See [Regions and Availability
-         * Domains](https://docs.cloud.oracle.com/Content/General/Concepts/regions.htm) for the full
+         * Domains](https://docs.oracle.com/iaas/Content/General/Concepts/regions.htm) for the full
          * list of supported 3-letter region codes.
          *
          * <p>Example: {@code PHX}
@@ -89,8 +89,8 @@ public final class CreateRegionSubscriptionDetails
 
     /**
      * The regions's key. See [Regions and Availability
-     * Domains](https://docs.cloud.oracle.com/Content/General/Concepts/regions.htm) for the full
-     * list of supported 3-letter region codes.
+     * Domains](https://docs.oracle.com/iaas/Content/General/Concepts/regions.htm) for the full list
+     * of supported 3-letter region codes.
      *
      * <p>Example: {@code PHX}
      */
@@ -99,8 +99,8 @@ public final class CreateRegionSubscriptionDetails
 
     /**
      * The regions's key. See [Regions and Availability
-     * Domains](https://docs.cloud.oracle.com/Content/General/Concepts/regions.htm) for the full
-     * list of supported 3-letter region codes.
+     * Domains](https://docs.oracle.com/iaas/Content/General/Concepts/regions.htm) for the full list
+     * of supported 3-letter region codes.
      *
      * <p>Example: {@code PHX}
      *

@@ -77,15 +77,15 @@ public final class ScheduledTaskSummary
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the data plane resource.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * data plane resource.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the data plane resource.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * data plane resource.
          *
          * @param id the value to set
          * @return this builder
@@ -127,14 +127,14 @@ public final class ScheduledTaskSummary
         }
         /**
          * Compartment Identifier [OCID]
-         * (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * (https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * Compartment Identifier [OCID]
-         * (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * (https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -223,7 +223,7 @@ public final class ScheduledTaskSummary
         }
         /**
          * most recent Work Request Identifier [OCID]
-         * (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
+         * (https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
          * asynchronous request.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("workRequestId")
@@ -231,7 +231,7 @@ public final class ScheduledTaskSummary
 
         /**
          * most recent Work Request Identifier [OCID]
-         * (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
+         * (https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
          * asynchronous request.
          *
          * @param workRequestId the value to set
@@ -421,15 +421,15 @@ public final class ScheduledTaskSummary
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the data plane resource.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the data
+     * plane resource.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the data plane resource.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the data
+     * plane resource.
      *
      * @return the value
      */
@@ -465,14 +465,14 @@ public final class ScheduledTaskSummary
 
     /**
      * Compartment Identifier [OCID]
-     * (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * (https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * Compartment Identifier [OCID]
-     * (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * (https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      * @return the value
      */
@@ -595,16 +595,16 @@ public final class ScheduledTaskSummary
 
     /**
      * most recent Work Request Identifier [OCID]
-     * (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
-     * asynchronous request.
+     * (https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the asynchronous
+     * request.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("workRequestId")
     private final String workRequestId;
 
     /**
      * most recent Work Request Identifier [OCID]
-     * (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
-     * asynchronous request.
+     * (https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the asynchronous
+     * request.
      *
      * @return the value
      */

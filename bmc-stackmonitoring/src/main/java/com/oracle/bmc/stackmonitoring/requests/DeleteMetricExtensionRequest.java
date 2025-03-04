@@ -7,7 +7,7 @@ package com.oracle.bmc.stackmonitoring.requests;
 import com.oracle.bmc.stackmonitoring.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/stackmonitoring/DeleteMetricExtensionExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/stackmonitoring/DeleteMetricExtensionExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * DeleteMetricExtensionRequest.
  */
@@ -16,13 +16,13 @@ public class DeleteMetricExtensionRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * metric extension resource.
      */
     private String metricExtensionId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * metric extension resource.
      */
     public String getMetricExtensionId() {
@@ -66,13 +66,13 @@ public class DeleteMetricExtensionRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * metric extension resource.
          */
         private String metricExtensionId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * metric extension resource.
          *
          * @param metricExtensionId the value to set

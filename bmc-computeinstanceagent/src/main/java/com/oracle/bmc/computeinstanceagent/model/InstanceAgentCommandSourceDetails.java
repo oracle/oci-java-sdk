@@ -90,7 +90,7 @@ public class InstanceAgentCommandSourceDetails
      * OBJECT_STORAGE_TUPLE} - imports a command from an Object Storage bucket.
      *
      * <p>For background information about Object Storage buckets and URLs, see [Overview of Object
-     * Storage](https://docs.cloud.oracle.com/Content/Object/Concepts/objectstorageoverview.htm).
+     * Storage](https://docs.oracle.com/iaas/Content/Object/Concepts/objectstorageoverview.htm).
      */
     public enum SourceType implements com.oracle.bmc.http.internal.BmcEnum {
         Text("TEXT"),

@@ -7,7 +7,7 @@ package com.oracle.bmc.dns.requests;
 import com.oracle.bmc.dns.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/DeleteZoneExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/DeleteZoneExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use DeleteZoneRequest.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180115")

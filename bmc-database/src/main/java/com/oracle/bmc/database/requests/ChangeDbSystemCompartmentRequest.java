@@ -7,7 +7,7 @@ package com.oracle.bmc.database.requests;
 import com.oracle.bmc.database.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ChangeDbSystemCompartmentExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ChangeDbSystemCompartmentExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * ChangeDbSystemCompartmentRequest.
  */
@@ -20,12 +20,12 @@ public class ChangeDbSystemCompartmentRequest
      * Request to move the DB system to a different compartment.
      *
      * <p>*Note:** Deprecated for Exadata Cloud Service systems. Use the [new resource model
-     * APIs](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model)
+     * APIs](https://docs.oracle.com/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model)
      * instead.
      *
      * <p>For Exadata Cloud Service instances, support for this API will end on May 15th, 2021. See
      * [Switching an Exadata DB System to the New Resource Model and
-     * APIs](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem_topic-resource_model_conversion.htm)
+     * APIs](https://docs.oracle.com/iaas/Content/Database/Concepts/exaflexsystem_topic-resource_model_conversion.htm)
      * for details on converting existing Exadata DB systems to the new resource model.
      */
     private com.oracle.bmc.database.model.ChangeCompartmentDetails changeCompartmentDetails;
@@ -34,24 +34,24 @@ public class ChangeDbSystemCompartmentRequest
      * Request to move the DB system to a different compartment.
      *
      * <p>*Note:** Deprecated for Exadata Cloud Service systems. Use the [new resource model
-     * APIs](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model)
+     * APIs](https://docs.oracle.com/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model)
      * instead.
      *
      * <p>For Exadata Cloud Service instances, support for this API will end on May 15th, 2021. See
      * [Switching an Exadata DB System to the New Resource Model and
-     * APIs](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem_topic-resource_model_conversion.htm)
+     * APIs](https://docs.oracle.com/iaas/Content/Database/Concepts/exaflexsystem_topic-resource_model_conversion.htm)
      * for details on converting existing Exadata DB systems to the new resource model.
      */
     public com.oracle.bmc.database.model.ChangeCompartmentDetails getChangeCompartmentDetails() {
         return changeCompartmentDetails;
     }
     /**
-     * The DB system [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * The DB system [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     private String dbSystemId;
 
     /**
-     * The DB system [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * The DB system [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     public String getDbSystemId() {
         return dbSystemId;
@@ -122,12 +122,12 @@ public class ChangeDbSystemCompartmentRequest
          * Request to move the DB system to a different compartment.
          *
          * <p>*Note:** Deprecated for Exadata Cloud Service systems. Use the [new resource model
-         * APIs](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model)
+         * APIs](https://docs.oracle.com/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model)
          * instead.
          *
          * <p>For Exadata Cloud Service instances, support for this API will end on May 15th, 2021.
          * See [Switching an Exadata DB System to the New Resource Model and
-         * APIs](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem_topic-resource_model_conversion.htm)
+         * APIs](https://docs.oracle.com/iaas/Content/Database/Concepts/exaflexsystem_topic-resource_model_conversion.htm)
          * for details on converting existing Exadata DB systems to the new resource model.
          */
         private com.oracle.bmc.database.model.ChangeCompartmentDetails changeCompartmentDetails =
@@ -137,12 +137,12 @@ public class ChangeDbSystemCompartmentRequest
          * Request to move the DB system to a different compartment.
          *
          * <p>*Note:** Deprecated for Exadata Cloud Service systems. Use the [new resource model
-         * APIs](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model)
+         * APIs](https://docs.oracle.com/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model)
          * instead.
          *
          * <p>For Exadata Cloud Service instances, support for this API will end on May 15th, 2021.
          * See [Switching an Exadata DB System to the New Resource Model and
-         * APIs](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem_topic-resource_model_conversion.htm)
+         * APIs](https://docs.oracle.com/iaas/Content/Database/Concepts/exaflexsystem_topic-resource_model_conversion.htm)
          * for details on converting existing Exadata DB systems to the new resource model.
          *
          * @param changeCompartmentDetails the value to set
@@ -156,13 +156,13 @@ public class ChangeDbSystemCompartmentRequest
 
         /**
          * The DB system
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          */
         private String dbSystemId = null;
 
         /**
          * The DB system
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          * @param dbSystemId the value to set
          * @return this builder instance

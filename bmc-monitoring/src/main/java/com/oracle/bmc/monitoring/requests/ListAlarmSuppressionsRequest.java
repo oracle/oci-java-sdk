@@ -7,7 +7,7 @@ package com.oracle.bmc.monitoring.requests;
 import com.oracle.bmc.monitoring.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/monitoring/ListAlarmSuppressionsExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/monitoring/ListAlarmSuppressionsExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * ListAlarmSuppressionsRequest.
  */
@@ -29,14 +29,14 @@ public class ListAlarmSuppressionsRequest
         return opcRequestId;
     }
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the alarm that is the target of the alarm suppression.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * alarm that is the target of the alarm suppression.
      */
     private String alarmId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the alarm that is the target of the alarm suppression.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * alarm that is the target of the alarm suppression.
      */
     public String getAlarmId() {
         return alarmId;
@@ -85,8 +85,8 @@ public class ListAlarmSuppressionsRequest
         return level;
     }
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compartment for searching. Use the tenancy OCID to search in the root compartment.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment for searching. Use the tenancy OCID to search in the root compartment.
      *
      * <p>If targetType is not specified, searches all suppressions defined under the compartment.
      * If targetType is {@code COMPARTMENT}, searches suppressions in the specified compartment
@@ -97,8 +97,8 @@ public class ListAlarmSuppressionsRequest
     private String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compartment for searching. Use the tenancy OCID to search in the root compartment.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment for searching. Use the tenancy OCID to search in the root compartment.
      *
      * <p>If targetType is not specified, searches all suppressions defined under the compartment.
      * If targetType is {@code COMPARTMENT}, searches suppressions in the specified compartment
@@ -320,14 +320,14 @@ public class ListAlarmSuppressionsRequest
     /**
      * For list pagination. The value of the {@code opc-next-page} response header from the previous
      * "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private String page;
 
     /**
      * For list pagination. The value of the {@code opc-next-page} response header from the previous
      * "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     public String getPage() {
         return page;
@@ -335,7 +335,7 @@ public class ListAlarmSuppressionsRequest
     /**
      * For list pagination. The maximum number of results per page, or items to return in a
      * paginated "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      * <p>Default: 1000
      *
@@ -346,7 +346,7 @@ public class ListAlarmSuppressionsRequest
     /**
      * For list pagination. The maximum number of results per page, or items to return in a
      * paginated "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      * <p>Default: 1000
      *
@@ -381,14 +381,14 @@ public class ListAlarmSuppressionsRequest
         }
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the alarm that is the target of the alarm suppression.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * alarm that is the target of the alarm suppression.
          */
         private String alarmId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the alarm that is the target of the alarm suppression.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * alarm that is the target of the alarm suppression.
          *
          * @param alarmId the value to set
          * @return this builder instance
@@ -459,8 +459,8 @@ public class ListAlarmSuppressionsRequest
         }
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compartment for searching. Use the tenancy OCID to search in the root compartment.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment for searching. Use the tenancy OCID to search in the root compartment.
          *
          * <p>If targetType is not specified, searches all suppressions defined under the
          * compartment. If targetType is {@code COMPARTMENT}, searches suppressions in the specified
@@ -471,8 +471,8 @@ public class ListAlarmSuppressionsRequest
         private String compartmentId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compartment for searching. Use the tenancy OCID to search in the root compartment.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment for searching. Use the tenancy OCID to search in the root compartment.
          *
          * <p>If targetType is not specified, searches all suppressions defined under the
          * compartment. If targetType is {@code COMPARTMENT}, searches suppressions in the specified
@@ -607,14 +607,14 @@ public class ListAlarmSuppressionsRequest
         /**
          * For list pagination. The value of the {@code opc-next-page} response header from the
          * previous "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private String page = null;
 
         /**
          * For list pagination. The value of the {@code opc-next-page} response header from the
          * previous "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param page the value to set
          * @return this builder instance
@@ -627,7 +627,7 @@ public class ListAlarmSuppressionsRequest
         /**
          * For list pagination. The maximum number of results per page, or items to return in a
          * paginated "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * <p>Default: 1000
          *
@@ -638,7 +638,7 @@ public class ListAlarmSuppressionsRequest
         /**
          * For list pagination. The maximum number of results per page, or items to return in a
          * paginated "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * <p>Default: 1000
          *

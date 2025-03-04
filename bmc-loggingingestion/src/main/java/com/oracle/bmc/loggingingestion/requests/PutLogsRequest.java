@@ -7,7 +7,7 @@ package com.oracle.bmc.loggingingestion.requests;
 import com.oracle.bmc.loggingingestion.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loggingingestion/PutLogsExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loggingingestion/PutLogsExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use PutLogsRequest.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200831")

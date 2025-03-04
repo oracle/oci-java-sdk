@@ -30,7 +30,7 @@ public final class OciDevOpsBuildConfiguration extends VerifyConfiguration {
     public static class Builder {
         /**
          * The Oracle Cloud Identifier
-         * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the
+         * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the
          * user's DevOps Build Pipeline.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("pipelineId")
@@ -38,7 +38,7 @@ public final class OciDevOpsBuildConfiguration extends VerifyConfiguration {
 
         /**
          * The Oracle Cloud Identifier
-         * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the
+         * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the
          * user's DevOps Build Pipeline.
          *
          * @param pipelineId the value to set
@@ -112,16 +112,16 @@ public final class OciDevOpsBuildConfiguration extends VerifyConfiguration {
 
     /**
      * The Oracle Cloud Identifier
-     * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the
-     * user's DevOps Build Pipeline.
+     * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the user's
+     * DevOps Build Pipeline.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("pipelineId")
     private final String pipelineId;
 
     /**
      * The Oracle Cloud Identifier
-     * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the
-     * user's DevOps Build Pipeline.
+     * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the user's
+     * DevOps Build Pipeline.
      *
      * @return the value
      */

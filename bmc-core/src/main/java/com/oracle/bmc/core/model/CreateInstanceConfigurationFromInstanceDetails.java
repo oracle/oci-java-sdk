@@ -65,15 +65,15 @@ public final class CreateInstanceConfigurationFromInstanceDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the instance to use to create the instance configuration.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * instance to use to create the instance configuration.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("instanceId")
         private String instanceId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the instance to use to create the instance configuration.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * instance to use to create the instance configuration.
          *
          * @param instanceId the value to set
          * @return this builder
@@ -143,15 +143,15 @@ public final class CreateInstanceConfigurationFromInstanceDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the instance to use to create the instance configuration.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * instance to use to create the instance configuration.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("instanceId")
     private final String instanceId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the instance to use to create the instance configuration.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * instance to use to create the instance configuration.
      *
      * @return the value
      */

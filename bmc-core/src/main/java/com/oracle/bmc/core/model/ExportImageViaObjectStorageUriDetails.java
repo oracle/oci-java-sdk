@@ -37,9 +37,9 @@ public final class ExportImageViaObjectStorageUriDetails extends ExportImageDeta
         }
         /**
          * The Object Storage URL to export the image to. See [Object Storage
-         * URLs](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/imageimportexport.htm#URLs)
-         * and [Using Pre-Authenticated
-         * Requests](https://docs.cloud.oracle.com/iaas/Content/Object/Tasks/usingpreauthenticatedrequests.htm)
+         * URLs](https://docs.oracle.com/iaas/Content/Compute/Tasks/imageimportexport.htm#URLs) and
+         * [Using Pre-Authenticated
+         * Requests](https://docs.oracle.com/iaas/Content/Object/Tasks/usingpreauthenticatedrequests.htm)
          * for constructing URLs for image import/export.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("destinationUri")
@@ -47,9 +47,9 @@ public final class ExportImageViaObjectStorageUriDetails extends ExportImageDeta
 
         /**
          * The Object Storage URL to export the image to. See [Object Storage
-         * URLs](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/imageimportexport.htm#URLs)
-         * and [Using Pre-Authenticated
-         * Requests](https://docs.cloud.oracle.com/iaas/Content/Object/Tasks/usingpreauthenticatedrequests.htm)
+         * URLs](https://docs.oracle.com/iaas/Content/Compute/Tasks/imageimportexport.htm#URLs) and
+         * [Using Pre-Authenticated
+         * Requests](https://docs.oracle.com/iaas/Content/Object/Tasks/usingpreauthenticatedrequests.htm)
          * for constructing URLs for image import/export.
          *
          * @param destinationUri the value to set
@@ -103,9 +103,9 @@ public final class ExportImageViaObjectStorageUriDetails extends ExportImageDeta
 
     /**
      * The Object Storage URL to export the image to. See [Object Storage
-     * URLs](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/imageimportexport.htm#URLs)
-     * and [Using Pre-Authenticated
-     * Requests](https://docs.cloud.oracle.com/iaas/Content/Object/Tasks/usingpreauthenticatedrequests.htm)
+     * URLs](https://docs.oracle.com/iaas/Content/Compute/Tasks/imageimportexport.htm#URLs) and
+     * [Using Pre-Authenticated
+     * Requests](https://docs.oracle.com/iaas/Content/Object/Tasks/usingpreauthenticatedrequests.htm)
      * for constructing URLs for image import/export.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("destinationUri")
@@ -113,9 +113,9 @@ public final class ExportImageViaObjectStorageUriDetails extends ExportImageDeta
 
     /**
      * The Object Storage URL to export the image to. See [Object Storage
-     * URLs](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/imageimportexport.htm#URLs)
-     * and [Using Pre-Authenticated
-     * Requests](https://docs.cloud.oracle.com/iaas/Content/Object/Tasks/usingpreauthenticatedrequests.htm)
+     * URLs](https://docs.oracle.com/iaas/Content/Compute/Tasks/imageimportexport.htm#URLs) and
+     * [Using Pre-Authenticated
+     * Requests](https://docs.oracle.com/iaas/Content/Object/Tasks/usingpreauthenticatedrequests.htm)
      * for constructing URLs for image import/export.
      *
      * @return the value

@@ -29,15 +29,15 @@ public final class InvokeMlApplicationProviderTriggerScheduleActionDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the schedule.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * schedule.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("mlApplicationInstanceViewId")
         private String mlApplicationInstanceViewId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the schedule.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * schedule.
          *
          * @param mlApplicationInstanceViewId the value to set
          * @return this builder
@@ -110,15 +110,15 @@ public final class InvokeMlApplicationProviderTriggerScheduleActionDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the schedule.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * schedule.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("mlApplicationInstanceViewId")
     private final String mlApplicationInstanceViewId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the schedule.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * schedule.
      *
      * @return the value
      */

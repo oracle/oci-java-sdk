@@ -7,7 +7,7 @@ package com.oracle.bmc.oce.requests;
 import com.oracle.bmc.oce.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oce/CreateOceInstanceExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oce/CreateOceInstanceExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use CreateOceInstanceRequest.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190912")

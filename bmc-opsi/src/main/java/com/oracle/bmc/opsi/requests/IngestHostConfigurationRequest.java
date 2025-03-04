@@ -7,7 +7,7 @@ package com.oracle.bmc.opsi.requests;
 import com.oracle.bmc.opsi.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/IngestHostConfigurationExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/IngestHostConfigurationExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * IngestHostConfigurationRequest.
  */
@@ -17,14 +17,14 @@ public class IngestHostConfigurationRequest
                 com.oracle.bmc.opsi.model.IngestHostConfigurationDetails> {
 
     /**
-     * Required [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-     * of the host insight resource.
+     * Required [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * host insight resource.
      */
     private String id;
 
     /**
-     * Required [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-     * of the host insight resource.
+     * Required [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * host insight resource.
      */
     public String getId() {
         return id;
@@ -106,15 +106,13 @@ public class IngestHostConfigurationRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * Required
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+         * Required [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
          * the host insight resource.
          */
         private String id = null;
 
         /**
-         * Required
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+         * Required [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
          * the host insight resource.
          *
          * @param id the value to set

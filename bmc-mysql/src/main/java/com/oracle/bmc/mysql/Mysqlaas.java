@@ -73,7 +73,7 @@ public interface Mysqlaas extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/CreateConfigurationExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/CreateConfigurationExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateConfiguration
      *     API.
      */
@@ -89,7 +89,7 @@ public interface Mysqlaas extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/DeleteConfigurationExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/DeleteConfigurationExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteConfiguration
      *     API.
      */
@@ -106,7 +106,7 @@ public interface Mysqlaas extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/GetConfigurationExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/GetConfigurationExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetConfiguration
      *     API.
      */
@@ -127,7 +127,7 @@ public interface Mysqlaas extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/ListConfigurationsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/ListConfigurationsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListConfigurations
      *     API.
      */
@@ -145,7 +145,7 @@ public interface Mysqlaas extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/ListShapesExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/ListShapesExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListShapes API.
      */
     ListShapesResponse listShapes(ListShapesRequest request);
@@ -162,7 +162,7 @@ public interface Mysqlaas extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/ListVersionsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/ListVersionsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListVersions API.
      */
     ListVersionsResponse listVersions(ListVersionsRequest request);
@@ -177,7 +177,7 @@ public interface Mysqlaas extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/UpdateConfigurationExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/UpdateConfigurationExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateConfiguration
      *     API.
      */

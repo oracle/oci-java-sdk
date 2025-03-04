@@ -7,7 +7,7 @@ package com.oracle.bmc.fleetappsmanagement.requests;
 import com.oracle.bmc.fleetappsmanagement.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/PublishRunbookExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/PublishRunbookExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use PublishRunbookRequest.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")

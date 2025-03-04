@@ -26,7 +26,7 @@ public class ListTemplatesResponse extends com.oracle.bmc.responses.BmcResponse 
      * header value in the {@code page} param. If the {@code opc-next-page} header does not appear
      * in the response, there are no more list items to get. For more information about list
      * pagination, see [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private String opcNextPage;
 
@@ -36,7 +36,7 @@ public class ListTemplatesResponse extends com.oracle.bmc.responses.BmcResponse 
      * header value in the {@code page} param. If the {@code opc-next-page} header does not appear
      * in the response, there are no more list items to get. For more information about list
      * pagination, see [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      * @return the value
      */
@@ -116,7 +116,7 @@ public class ListTemplatesResponse extends com.oracle.bmc.responses.BmcResponse 
          * include the header value in the {@code page} param. If the {@code opc-next-page} header
          * does not appear in the response, there are no more list items to get. For more
          * information about list pagination, see [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private String opcNextPage;
 
@@ -126,7 +126,7 @@ public class ListTemplatesResponse extends com.oracle.bmc.responses.BmcResponse 
          * include the header value in the {@code page} param. If the {@code opc-next-page} header
          * does not appear in the response, there are no more list items to get. For more
          * information about list pagination, see [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param opcNextPage the value to set
          * @return this builder

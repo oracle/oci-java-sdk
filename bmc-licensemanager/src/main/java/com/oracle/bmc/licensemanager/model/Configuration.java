@@ -38,16 +38,16 @@ public final class Configuration extends com.oracle.bmc.http.client.internal.Exp
     public static class Builder {
         /**
          * The compartment
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to
-         * which the configuration is specified.
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to which
+         * the configuration is specified.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * The compartment
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to
-         * which the configuration is specified.
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to which
+         * the configuration is specified.
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -152,17 +152,15 @@ public final class Configuration extends com.oracle.bmc.http.client.internal.Exp
     }
 
     /**
-     * The compartment
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to which
-     * the configuration is specified.
+     * The compartment [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * to which the configuration is specified.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The compartment
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to which
-     * the configuration is specified.
+     * The compartment [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * to which the configuration is specified.
      *
      * @return the value
      */

@@ -7,7 +7,7 @@ package com.oracle.bmc.osmanagementhub.requests;
 import com.oracle.bmc.osmanagementhub.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/RerunWorkRequestExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/RerunWorkRequestExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use RerunWorkRequestRequest.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
@@ -16,31 +16,29 @@ public class RerunWorkRequestRequest
                 com.oracle.bmc.osmanagementhub.model.RerunWorkRequestDetails> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the work request.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the work
+     * request.
      */
     private String workRequestId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the work request.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the work
+     * request.
      */
     public String getWorkRequestId() {
         return workRequestId;
     }
     /**
-     * The resource
-     * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to rerun
-     * the work requests for. If no OCIDs are provided, rerun will apply to all failed work requests
-     * associated with the specified work request id.
+     * The resource [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * to rerun the work requests for. If no OCIDs are provided, rerun will apply to all failed work
+     * requests associated with the specified work request id.
      */
     private com.oracle.bmc.osmanagementhub.model.RerunWorkRequestDetails rerunWorkRequestDetails;
 
     /**
-     * The resource
-     * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to rerun
-     * the work requests for. If no OCIDs are provided, rerun will apply to all failed work requests
-     * associated with the specified work request id.
+     * The resource [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * to rerun the work requests for. If no OCIDs are provided, rerun will apply to all failed work
+     * requests associated with the specified work request id.
      */
     public com.oracle.bmc.osmanagementhub.model.RerunWorkRequestDetails
             getRerunWorkRequestDetails() {
@@ -115,14 +113,14 @@ public class RerunWorkRequestRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the work request.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * work request.
          */
         private String workRequestId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the work request.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * work request.
          *
          * @param workRequestId the value to set
          * @return this builder instance
@@ -134,18 +132,18 @@ public class RerunWorkRequestRequest
 
         /**
          * The resource
-         * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to
-         * rerun the work requests for. If no OCIDs are provided, rerun will apply to all failed
-         * work requests associated with the specified work request id.
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to rerun
+         * the work requests for. If no OCIDs are provided, rerun will apply to all failed work
+         * requests associated with the specified work request id.
          */
         private com.oracle.bmc.osmanagementhub.model.RerunWorkRequestDetails
                 rerunWorkRequestDetails = null;
 
         /**
          * The resource
-         * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to
-         * rerun the work requests for. If no OCIDs are provided, rerun will apply to all failed
-         * work requests associated with the specified work request id.
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to rerun
+         * the work requests for. If no OCIDs are provided, rerun will apply to all failed work
+         * requests associated with the specified work request id.
          *
          * @param rerunWorkRequestDetails the value to set
          * @return this builder instance

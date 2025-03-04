@@ -85,14 +85,14 @@ public final class FleetSummary extends com.oracle.bmc.http.client.internal.Expl
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Fleet.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Fleet.
          *
          * @param id the value to set
@@ -136,14 +136,14 @@ public final class FleetSummary extends com.oracle.bmc.http.client.internal.Expl
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * compartment of the Fleet.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * compartment of the Fleet.
          *
          * @param compartmentId the value to set
@@ -348,7 +348,7 @@ public final class FleetSummary extends com.oracle.bmc.http.client.internal.Expl
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
          * Example: {@code {"foo-namespace": {"bar-key": "value"}}}. (See [Understanding Free-form
-         * Tags](https://docs.cloud.oracle.com/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
+         * Tags](https://docs.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
@@ -356,7 +356,7 @@ public final class FleetSummary extends com.oracle.bmc.http.client.internal.Expl
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
          * Example: {@code {"foo-namespace": {"bar-key": "value"}}}. (See [Understanding Free-form
-         * Tags](https://docs.cloud.oracle.com/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
+         * Tags](https://docs.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
          *
          * @param definedTags the value to set
          * @return this builder
@@ -371,7 +371,7 @@ public final class FleetSummary extends com.oracle.bmc.http.client.internal.Expl
          * Simple key-value pair that is applied without any predefined name, type, or scope. Exists
          * for cross-compatibility only. Example: {@code {"bar-key": "value"}}. (See [Managing Tags
          * and Tag
-         * Namespaces](https://docs.cloud.oracle.com/Content/Tagging/Concepts/understandingfreeformtags.htm).)
+         * Namespaces](https://docs.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
          */
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
@@ -380,7 +380,7 @@ public final class FleetSummary extends com.oracle.bmc.http.client.internal.Expl
          * Simple key-value pair that is applied without any predefined name, type, or scope. Exists
          * for cross-compatibility only. Example: {@code {"bar-key": "value"}}. (See [Managing Tags
          * and Tag
-         * Namespaces](https://docs.cloud.oracle.com/Content/Tagging/Concepts/understandingfreeformtags.htm).)
+         * Namespaces](https://docs.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
          *
          * @param freeformTags the value to set
          * @return this builder
@@ -393,7 +393,7 @@ public final class FleetSummary extends com.oracle.bmc.http.client.internal.Expl
         /**
          * System tags for this resource. Each key is predefined and scoped to a namespace. For more
          * information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). System
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System
          * tags can be viewed by users, but can only be created by the system.
          *
          * <p>Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
@@ -404,7 +404,7 @@ public final class FleetSummary extends com.oracle.bmc.http.client.internal.Expl
         /**
          * System tags for this resource. Each key is predefined and scoped to a namespace. For more
          * information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). System
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System
          * tags can be viewed by users, but can only be created by the system.
          *
          * <p>Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
@@ -518,14 +518,14 @@ public final class FleetSummary extends com.oracle.bmc.http.client.internal.Expl
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Fleet.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Fleet.
      *
      * @return the value
@@ -561,14 +561,14 @@ public final class FleetSummary extends com.oracle.bmc.http.client.internal.Expl
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment of the Fleet.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment of the Fleet.
      *
      * @return the value
@@ -749,7 +749,7 @@ public final class FleetSummary extends com.oracle.bmc.http.client.internal.Expl
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
      * {@code {"foo-namespace": {"bar-key": "value"}}}. (See [Understanding Free-form
-     * Tags](https://docs.cloud.oracle.com/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
+     * Tags](https://docs.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
@@ -757,7 +757,7 @@ public final class FleetSummary extends com.oracle.bmc.http.client.internal.Expl
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
      * {@code {"foo-namespace": {"bar-key": "value"}}}. (See [Understanding Free-form
-     * Tags](https://docs.cloud.oracle.com/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
+     * Tags](https://docs.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
      *
      * @return the value
      */
@@ -768,7 +768,7 @@ public final class FleetSummary extends com.oracle.bmc.http.client.internal.Expl
     /**
      * Simple key-value pair that is applied without any predefined name, type, or scope. Exists for
      * cross-compatibility only. Example: {@code {"bar-key": "value"}}. (See [Managing Tags and Tag
-     * Namespaces](https://docs.cloud.oracle.com/Content/Tagging/Concepts/understandingfreeformtags.htm).)
+     * Namespaces](https://docs.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
      */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
@@ -776,7 +776,7 @@ public final class FleetSummary extends com.oracle.bmc.http.client.internal.Expl
     /**
      * Simple key-value pair that is applied without any predefined name, type, or scope. Exists for
      * cross-compatibility only. Example: {@code {"bar-key": "value"}}. (See [Managing Tags and Tag
-     * Namespaces](https://docs.cloud.oracle.com/Content/Tagging/Concepts/understandingfreeformtags.htm).)
+     * Namespaces](https://docs.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
      *
      * @return the value
      */
@@ -787,7 +787,7 @@ public final class FleetSummary extends com.oracle.bmc.http.client.internal.Expl
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). System tags
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags
      * can be viewed by users, but can only be created by the system.
      *
      * <p>Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
@@ -798,7 +798,7 @@ public final class FleetSummary extends com.oracle.bmc.http.client.internal.Expl
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). System tags
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags
      * can be viewed by users, but can only be created by the system.
      *
      * <p>Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}

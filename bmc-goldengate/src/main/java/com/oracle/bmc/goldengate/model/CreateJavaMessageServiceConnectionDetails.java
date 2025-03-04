@@ -259,7 +259,7 @@ public final class CreateJavaMessageServiceConnectionDetails extends CreateConne
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Secret where the security credentials are stored associated to the principal. Note: When
          * provided, 'jndiSecurityCredentials' field must not be provided.
          */
@@ -267,7 +267,7 @@ public final class CreateJavaMessageServiceConnectionDetails extends CreateConne
         private String jndiSecurityCredentialsSecretId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Secret where the security credentials are stored associated to the principal. Note: When
          * provided, 'jndiSecurityCredentials' field must not be provided.
          *
@@ -358,7 +358,7 @@ public final class CreateJavaMessageServiceConnectionDetails extends CreateConne
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Secret where the password is stored, that Oracle GoldenGate uses to connect the
          * associated Java Message Service. Note: When provided, 'password' field must not be
          * provided.
@@ -367,7 +367,7 @@ public final class CreateJavaMessageServiceConnectionDetails extends CreateConne
         private String passwordSecretId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Secret where the password is stored, that Oracle GoldenGate uses to connect the
          * associated Java Message Service. Note: When provided, 'password' field must not be
          * provided.
@@ -440,7 +440,7 @@ public final class CreateJavaMessageServiceConnectionDetails extends CreateConne
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Secret where the content of the TrustStore file is stored. Note: When provided,
          * 'trustStore' field must not be provided.
          */
@@ -448,7 +448,7 @@ public final class CreateJavaMessageServiceConnectionDetails extends CreateConne
         private String trustStoreSecretId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Secret where the content of the TrustStore file is stored. Note: When provided,
          * 'trustStore' field must not be provided.
          *
@@ -480,7 +480,7 @@ public final class CreateJavaMessageServiceConnectionDetails extends CreateConne
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Secret where the TrustStore password is stored. Note: When provided, 'trustStorePassword'
          * field must not be provided.
          */
@@ -488,7 +488,7 @@ public final class CreateJavaMessageServiceConnectionDetails extends CreateConne
         private String trustStorePasswordSecretId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Secret where the TrustStore password is stored. Note: When provided, 'trustStorePassword'
          * field must not be provided.
          *
@@ -520,7 +520,7 @@ public final class CreateJavaMessageServiceConnectionDetails extends CreateConne
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Secret where the content of the KeyStore file is stored. Note: When provided, 'keyStore'
          * field must not be provided.
          */
@@ -528,7 +528,7 @@ public final class CreateJavaMessageServiceConnectionDetails extends CreateConne
         private String keyStoreSecretId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Secret where the content of the KeyStore file is stored. Note: When provided, 'keyStore'
          * field must not be provided.
          *
@@ -560,7 +560,7 @@ public final class CreateJavaMessageServiceConnectionDetails extends CreateConne
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Secret where the KeyStore password is stored. Note: When provided, 'keyStorePassword'
          * field must not be provided.
          */
@@ -568,7 +568,7 @@ public final class CreateJavaMessageServiceConnectionDetails extends CreateConne
         private String keyStorePasswordSecretId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Secret where the KeyStore password is stored. Note: When provided, 'keyStorePassword'
          * field must not be provided.
          *
@@ -602,7 +602,7 @@ public final class CreateJavaMessageServiceConnectionDetails extends CreateConne
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Secret where the password is stored for the cert inside of the Keystore. In case it
          * differs from the KeyStore password, it should be provided. Note: When provided,
          * 'sslKeyPassword' field must not be provided.
@@ -611,7 +611,7 @@ public final class CreateJavaMessageServiceConnectionDetails extends CreateConne
         private String sslKeyPasswordSecretId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Secret where the password is stored for the cert inside of the Keystore. In case it
          * differs from the KeyStore password, it should be provided. Note: When provided,
          * 'sslKeyPassword' field must not be provided.
@@ -1026,7 +1026,7 @@ public final class CreateJavaMessageServiceConnectionDetails extends CreateConne
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Secret where the security credentials are stored associated to the principal. Note: When
      * provided, 'jndiSecurityCredentials' field must not be provided.
      */
@@ -1034,7 +1034,7 @@ public final class CreateJavaMessageServiceConnectionDetails extends CreateConne
     private final String jndiSecurityCredentialsSecretId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Secret where the security credentials are stored associated to the principal. Note: When
      * provided, 'jndiSecurityCredentials' field must not be provided.
      *
@@ -1115,7 +1115,7 @@ public final class CreateJavaMessageServiceConnectionDetails extends CreateConne
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Secret where the password is stored, that Oracle GoldenGate uses to connect the associated
      * Java Message Service. Note: When provided, 'password' field must not be provided.
      */
@@ -1123,7 +1123,7 @@ public final class CreateJavaMessageServiceConnectionDetails extends CreateConne
     private final String passwordSecretId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Secret where the password is stored, that Oracle GoldenGate uses to connect the associated
      * Java Message Service. Note: When provided, 'password' field must not be provided.
      *
@@ -1185,7 +1185,7 @@ public final class CreateJavaMessageServiceConnectionDetails extends CreateConne
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Secret where the content of the TrustStore file is stored. Note: When provided, 'trustStore'
      * field must not be provided.
      */
@@ -1193,7 +1193,7 @@ public final class CreateJavaMessageServiceConnectionDetails extends CreateConne
     private final String trustStoreSecretId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Secret where the content of the TrustStore file is stored. Note: When provided, 'trustStore'
      * field must not be provided.
      *
@@ -1221,7 +1221,7 @@ public final class CreateJavaMessageServiceConnectionDetails extends CreateConne
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Secret where the TrustStore password is stored. Note: When provided, 'trustStorePassword'
      * field must not be provided.
      */
@@ -1229,7 +1229,7 @@ public final class CreateJavaMessageServiceConnectionDetails extends CreateConne
     private final String trustStorePasswordSecretId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Secret where the TrustStore password is stored. Note: When provided, 'trustStorePassword'
      * field must not be provided.
      *
@@ -1257,7 +1257,7 @@ public final class CreateJavaMessageServiceConnectionDetails extends CreateConne
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Secret where the content of the KeyStore file is stored. Note: When provided, 'keyStore'
      * field must not be provided.
      */
@@ -1265,7 +1265,7 @@ public final class CreateJavaMessageServiceConnectionDetails extends CreateConne
     private final String keyStoreSecretId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Secret where the content of the KeyStore file is stored. Note: When provided, 'keyStore'
      * field must not be provided.
      *
@@ -1293,7 +1293,7 @@ public final class CreateJavaMessageServiceConnectionDetails extends CreateConne
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Secret where the KeyStore password is stored. Note: When provided, 'keyStorePassword' field
      * must not be provided.
      */
@@ -1301,7 +1301,7 @@ public final class CreateJavaMessageServiceConnectionDetails extends CreateConne
     private final String keyStorePasswordSecretId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Secret where the KeyStore password is stored. Note: When provided, 'keyStorePassword' field
      * must not be provided.
      *
@@ -1331,7 +1331,7 @@ public final class CreateJavaMessageServiceConnectionDetails extends CreateConne
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Secret where the password is stored for the cert inside of the Keystore. In case it differs
      * from the KeyStore password, it should be provided. Note: When provided, 'sslKeyPassword'
      * field must not be provided.
@@ -1340,7 +1340,7 @@ public final class CreateJavaMessageServiceConnectionDetails extends CreateConne
     private final String sslKeyPasswordSecretId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Secret where the password is stored for the cert inside of the Keystore. In case it differs
      * from the KeyStore password, it should be provided. Note: When provided, 'sslKeyPassword'
      * field must not be provided.

@@ -102,7 +102,7 @@ public final class WorkRequest extends com.oracle.bmc.http.client.internal.Expli
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * compartment that contains the work request. Work requests are scoped to the same
          * compartment as the resource the work request affects.
          *
@@ -115,7 +115,7 @@ public final class WorkRequest extends com.oracle.bmc.http.client.internal.Expli
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * compartment that contains the work request. Work requests are scoped to the same
          * compartment as the resource the work request affects.
          *
@@ -415,7 +415,7 @@ public final class WorkRequest extends com.oracle.bmc.http.client.internal.Expli
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment that contains the work request. Work requests are scoped to the same compartment
      * as the resource the work request affects.
      *
@@ -428,7 +428,7 @@ public final class WorkRequest extends com.oracle.bmc.http.client.internal.Expli
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment that contains the work request. Work requests are scoped to the same compartment
      * as the resource the work request affects.
      *

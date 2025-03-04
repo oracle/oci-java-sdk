@@ -7,7 +7,7 @@ package com.oracle.bmc.waas.requests;
 import com.oracle.bmc.waas.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/UpdateJsChallengeExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/UpdateJsChallengeExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateJsChallengeRequest.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181116")
@@ -15,14 +15,14 @@ public class UpdateJsChallengeRequest
         extends com.oracle.bmc.requests.BmcRequest<com.oracle.bmc.waas.model.JsChallenge> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * WAAS policy.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the WAAS
+     * policy.
      */
     private String waasPolicyId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * WAAS policy.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the WAAS
+     * policy.
      */
     public String getWaasPolicyId() {
         return waasPolicyId;
@@ -102,13 +102,13 @@ public class UpdateJsChallengeRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * WAAS policy.
          */
         private String waasPolicyId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * WAAS policy.
          *
          * @param waasPolicyId the value to set

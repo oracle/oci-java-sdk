@@ -10,15 +10,13 @@ import com.oracle.bmc.datasafe.model.*;
 public class GetTargetAlertPolicyAssociationResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * For optimistic concurrency control. For more information, see [ETags for Optimistic
-     * Concurrency
-     * Control](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven)
+     * Concurrency Control](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven)
      */
     private String etag;
 
     /**
      * For optimistic concurrency control. For more information, see [ETags for Optimistic
-     * Concurrency
-     * Control](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven)
+     * Concurrency Control](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven)
      *
      * @return the value
      */
@@ -97,14 +95,14 @@ public class GetTargetAlertPolicyAssociationResponse extends com.oracle.bmc.resp
         /**
          * For optimistic concurrency control. For more information, see [ETags for Optimistic
          * Concurrency
-         * Control](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven)
+         * Control](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven)
          */
         private String etag;
 
         /**
          * For optimistic concurrency control. For more information, see [ETags for Optimistic
          * Concurrency
-         * Control](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven)
+         * Control](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven)
          *
          * @param etag the value to set
          * @return this builder

@@ -7,7 +7,7 @@ package com.oracle.bmc.tenantmanagercontrolplane.requests;
 import com.oracle.bmc.tenantmanagercontrolplane.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/tenantmanagercontrolplane/GetAssignedSubscriptionExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/tenantmanagercontrolplane/GetAssignedSubscriptionExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * GetAssignedSubscriptionRequest.
  */

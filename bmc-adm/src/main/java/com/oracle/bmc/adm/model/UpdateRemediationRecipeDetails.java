@@ -111,7 +111,7 @@ public final class UpdateRemediationRecipeDetails
         }
         /**
          * The Oracle Cloud Identifier
-         * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the
+         * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the
          * knowledge base.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("knowledgeBaseId")
@@ -119,7 +119,7 @@ public final class UpdateRemediationRecipeDetails
 
         /**
          * The Oracle Cloud Identifier
-         * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the
+         * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the
          * knowledge base.
          *
          * @param knowledgeBaseId the value to set
@@ -295,7 +295,7 @@ public final class UpdateRemediationRecipeDetails
 
     /**
      * The Oracle Cloud Identifier
-     * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the
+     * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the
      * knowledge base.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("knowledgeBaseId")
@@ -303,7 +303,7 @@ public final class UpdateRemediationRecipeDetails
 
     /**
      * The Oracle Cloud Identifier
-     * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the
+     * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the
      * knowledge base.
      *
      * @return the value

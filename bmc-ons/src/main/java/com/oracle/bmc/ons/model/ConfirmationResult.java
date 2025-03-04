@@ -7,7 +7,7 @@ package com.oracle.bmc.ons.model;
 /**
  * The confirmation details for the specified subscription. For information about confirming
  * subscriptions, see [To confirm a
- * subscription](https://docs.cloud.oracle.com/iaas/Content/Notification/Tasks/managingtopicsandsubscriptions.htm#confirmSub).
+ * subscription](https://docs.oracle.com/iaas/Content/Notification/Tasks/managingtopicsandsubscriptions.htm#confirmSub).
  * <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
@@ -68,15 +68,15 @@ public final class ConfirmationResult
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the topic associated with the specified subscription.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * topic associated with the specified subscription.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("topicId")
         private String topicId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the topic associated with the specified subscription.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * topic associated with the specified subscription.
          *
          * @param topicId the value to set
          * @return this builder
@@ -138,15 +138,15 @@ public final class ConfirmationResult
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the subscription specified in the request.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * subscription specified in the request.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
         private String subscriptionId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the subscription specified in the request.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * subscription specified in the request.
          *
          * @param subscriptionId the value to set
          * @return this builder
@@ -222,15 +222,15 @@ public final class ConfirmationResult
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the topic associated with the specified subscription.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * topic associated with the specified subscription.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("topicId")
     private final String topicId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the topic associated with the specified subscription.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * topic associated with the specified subscription.
      *
      * @return the value
      */
@@ -284,15 +284,15 @@ public final class ConfirmationResult
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the subscription specified in the request.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * subscription specified in the request.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
     private final String subscriptionId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the subscription specified in the request.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * subscription specified in the request.
      *
      * @return the value
      */

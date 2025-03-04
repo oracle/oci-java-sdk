@@ -7,7 +7,7 @@ package com.oracle.bmc.clusterplacementgroups.requests;
 import com.oracle.bmc.clusterplacementgroups.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/clusterplacementgroups/ListClusterPlacementGroupsExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/clusterplacementgroups/ListClusterPlacementGroupsExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * ListClusterPlacementGroupsRequest.
  */
@@ -17,13 +17,13 @@ public class ListClusterPlacementGroupsRequest
 
     /**
      * A filter to return only the resources that match the specified compartment
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     private String compartmentId;
 
     /**
      * A filter to return only the resources that match the specified compartment
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     public String getCompartmentId() {
         return compartmentId;
@@ -171,13 +171,13 @@ public class ListClusterPlacementGroupsRequest
 
         /**
          * A filter to return only the resources that match the specified compartment
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          */
         private String compartmentId = null;
 
         /**
          * A filter to return only the resources that match the specified compartment
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          * @param compartmentId the value to set
          * @return this builder instance

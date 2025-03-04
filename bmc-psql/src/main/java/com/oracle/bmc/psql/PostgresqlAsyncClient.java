@@ -95,6 +95,40 @@ public class PostgresqlAsyncClient extends com.oracle.bmc.http.internal.BaseAsyn
     }
 
     @Override
+    public java.util.concurrent.Future<BackupCopyResponse> backupCopy(
+            BackupCopyRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<BackupCopyRequest, BackupCopyResponse>
+                    handler) {
+
+        Validate.notBlank(request.getBackupId(), "backupId must not be blank");
+        Objects.requireNonNull(request.getBackupCopyDetails(), "backupCopyDetails is required");
+
+        return clientCall(request, BackupCopyResponse::builder)
+                .logger(LOG, "backupCopy")
+                .serviceDetails(
+                        "Postgresql",
+                        "BackupCopy",
+                        "https://docs.oracle.com/iaas/api/#/en/postgresql/20220915/Backup/BackupCopy")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(BackupCopyRequest::builder)
+                .basePath("/20220915")
+                .appendPathParam("backups")
+                .appendPathParam(request.getBackupId())
+                .appendPathParam("actions")
+                .appendPathParam("copy")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id", BackupCopyResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", BackupCopyResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<ChangeBackupCompartmentResponse> changeBackupCompartment(
             ChangeBackupCompartmentRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -706,6 +740,7 @@ public class PostgresqlAsyncClient extends com.oracle.bmc.http.internal.BaseAsyn
                 .appendPathParam("configurations")
                 .appendQueryParam("compartmentId", request.getCompartmentId())
                 .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendEnumQueryParam("configType", request.getConfigType())
                 .appendQueryParam("displayName", request.getDisplayName())
                 .appendQueryParam("dbVersion", request.getDbVersion())
                 .appendQueryParam("shape", request.getShape())

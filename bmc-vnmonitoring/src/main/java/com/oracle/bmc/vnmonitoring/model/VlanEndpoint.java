@@ -42,7 +42,7 @@ public final class VlanEndpoint extends Endpoint {
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * VLAN containing the IP address. This can be used to disambiguate which VLAN is queried,
          * in case the endpoint IP address belongs to more than one VLAN (when there are VLANs with
          * overlapping IP ranges).
@@ -51,7 +51,7 @@ public final class VlanEndpoint extends Endpoint {
         private String vlanId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * VLAN containing the IP address. This can be used to disambiguate which VLAN is queried,
          * in case the endpoint IP address belongs to more than one VLAN (when there are VLANs with
          * overlapping IP ranges).
@@ -118,19 +118,19 @@ public final class VlanEndpoint extends Endpoint {
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * VLAN containing the IP address. This can be used to disambiguate which VLAN is queried, in
-     * case the endpoint IP address belongs to more than one VLAN (when there are VLANs with
-     * overlapping IP ranges).
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN
+     * containing the IP address. This can be used to disambiguate which VLAN is queried, in case
+     * the endpoint IP address belongs to more than one VLAN (when there are VLANs with overlapping
+     * IP ranges).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("vlanId")
     private final String vlanId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * VLAN containing the IP address. This can be used to disambiguate which VLAN is queried, in
-     * case the endpoint IP address belongs to more than one VLAN (when there are VLANs with
-     * overlapping IP ranges).
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN
+     * containing the IP address. This can be used to disambiguate which VLAN is queried, in case
+     * the endpoint IP address belongs to more than one VLAN (when there are VLANs with overlapping
+     * IP ranges).
      *
      * @return the value
      */

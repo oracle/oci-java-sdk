@@ -6,11 +6,11 @@ package com.oracle.bmc.ocvp.model;
 
 /**
  * An [Oracle Cloud VMware
- * Solution](https://docs.cloud.oracle.com/iaas/Content/VMware/Concepts/ocvsoverview.htm)
- * software-defined data center (SDDC) contains the resources required for a functional VMware
- * environment. Instances in an SDDC (see {@link EsxiHost}) run in a virtual cloud network (VCN) and
- * are preconfigured with VMware and storage. Use the vCenter utility to manage and deploy VMware
- * virtual machines (VMs) in the SDDC.
+ * Solution](https://docs.oracle.com/iaas/Content/VMware/Concepts/ocvsoverview.htm) software-defined
+ * data center (SDDC) contains the resources required for a functional VMware environment. Instances
+ * in an SDDC (see {@link EsxiHost}) run in a virtual cloud network (VCN) and are preconfigured with
+ * VMware and storage. Use the vCenter utility to manage and deploy VMware virtual machines (VMs) in
+ * the SDDC.
  *
  * <p>The SDDC uses a single management subnet for provisioning the SDDC. It also uses a set of
  * VLANs for various components of the VMware environment (vSphere, vMotion, vSAN, and so on). See
@@ -126,14 +126,14 @@ public final class Sddc extends com.oracle.bmc.http.client.internal.ExplicitlySe
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * SDDC.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * SDDC.
          *
          * @param id the value to set
@@ -258,14 +258,14 @@ public final class Sddc extends com.oracle.bmc.http.client.internal.ExplicitlySe
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * compartment that contains the SDDC.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * compartment that contains the SDDC.
          *
          * @param compartmentId the value to set
@@ -334,7 +334,7 @@ public final class Sddc extends com.oracle.bmc.http.client.internal.ExplicitlySe
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * {@code PrivateIp} object that is the virtual IP (VIP) for vCenter. For information about
          * {@code PrivateIp} objects, see the Core Services API.
          */
@@ -342,7 +342,7 @@ public final class Sddc extends com.oracle.bmc.http.client.internal.ExplicitlySe
         private String vcenterPrivateIpId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * {@code PrivateIp} object that is the virtual IP (VIP) for vCenter. For information about
          * {@code PrivateIp} objects, see the Core Services API.
          *
@@ -355,7 +355,7 @@ public final class Sddc extends com.oracle.bmc.http.client.internal.ExplicitlySe
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * {@code PrivateIp} object that is the virtual IP (VIP) for NSX Manager. For information
          * about {@code PrivateIp} objects, see the Core Services API.
          */
@@ -363,7 +363,7 @@ public final class Sddc extends com.oracle.bmc.http.client.internal.ExplicitlySe
         private String nsxManagerPrivateIpId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * {@code PrivateIp} object that is the virtual IP (VIP) for NSX Manager. For information
          * about {@code PrivateIp} objects, see the Core Services API.
          *
@@ -455,7 +455,7 @@ public final class Sddc extends com.oracle.bmc.http.client.internal.ExplicitlySe
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * {@code PrivateIp} object that is the virtual IP (VIP) for the NSX Edge Uplink. Use this
          * OCID as the route target for route table rules when setting up connectivity between the
          * SDDC and other networks. For information about {@code PrivateIp} objects, see the Core
@@ -465,7 +465,7 @@ public final class Sddc extends com.oracle.bmc.http.client.internal.ExplicitlySe
         private String nsxEdgeUplinkIpId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * {@code PrivateIp} object that is the virtual IP (VIP) for the NSX Edge Uplink. Use this
          * OCID as the route target for route table rules when setting up connectivity between the
          * SDDC and other networks. For information about {@code PrivateIp} objects, see the Core
@@ -480,7 +480,7 @@ public final class Sddc extends com.oracle.bmc.http.client.internal.ExplicitlySe
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * {@code PrivateIp} object that is the virtual IP (VIP) for HCX Manager. For information
          * about {@code PrivateIp} objects, see the Core Services API.
          */
@@ -488,7 +488,7 @@ public final class Sddc extends com.oracle.bmc.http.client.internal.ExplicitlySe
         private String hcxPrivateIpId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * {@code PrivateIp} object that is the virtual IP (VIP) for HCX Manager. For information
          * about {@code PrivateIp} objects, see the Core Services API.
          *
@@ -700,7 +700,7 @@ public final class Sddc extends com.oracle.bmc.http.client.internal.ExplicitlySe
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          */
@@ -710,7 +710,7 @@ public final class Sddc extends com.oracle.bmc.http.client.internal.ExplicitlySe
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          *
@@ -725,7 +725,7 @@ public final class Sddc extends com.oracle.bmc.http.client.internal.ExplicitlySe
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
          */
@@ -735,7 +735,7 @@ public final class Sddc extends com.oracle.bmc.http.client.internal.ExplicitlySe
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
@@ -912,14 +912,14 @@ public final class Sddc extends com.oracle.bmc.http.client.internal.ExplicitlySe
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * SDDC.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * SDDC.
      *
      * @return the value
@@ -1032,14 +1032,14 @@ public final class Sddc extends com.oracle.bmc.http.client.internal.ExplicitlySe
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment that contains the SDDC.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment that contains the SDDC.
      *
      * @return the value
@@ -1100,7 +1100,7 @@ public final class Sddc extends com.oracle.bmc.http.client.internal.ExplicitlySe
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * {@code PrivateIp} object that is the virtual IP (VIP) for vCenter. For information about
      * {@code PrivateIp} objects, see the Core Services API.
      */
@@ -1108,7 +1108,7 @@ public final class Sddc extends com.oracle.bmc.http.client.internal.ExplicitlySe
     private final String vcenterPrivateIpId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * {@code PrivateIp} object that is the virtual IP (VIP) for vCenter. For information about
      * {@code PrivateIp} objects, see the Core Services API.
      *
@@ -1119,7 +1119,7 @@ public final class Sddc extends com.oracle.bmc.http.client.internal.ExplicitlySe
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * {@code PrivateIp} object that is the virtual IP (VIP) for NSX Manager. For information about
      * {@code PrivateIp} objects, see the Core Services API.
      */
@@ -1127,7 +1127,7 @@ public final class Sddc extends com.oracle.bmc.http.client.internal.ExplicitlySe
     private final String nsxManagerPrivateIpId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * {@code PrivateIp} object that is the virtual IP (VIP) for NSX Manager. For information about
      * {@code PrivateIp} objects, see the Core Services API.
      *
@@ -1209,7 +1209,7 @@ public final class Sddc extends com.oracle.bmc.http.client.internal.ExplicitlySe
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * {@code PrivateIp} object that is the virtual IP (VIP) for the NSX Edge Uplink. Use this OCID
      * as the route target for route table rules when setting up connectivity between the SDDC and
      * other networks. For information about {@code PrivateIp} objects, see the Core Services API.
@@ -1218,7 +1218,7 @@ public final class Sddc extends com.oracle.bmc.http.client.internal.ExplicitlySe
     private final String nsxEdgeUplinkIpId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * {@code PrivateIp} object that is the virtual IP (VIP) for the NSX Edge Uplink. Use this OCID
      * as the route target for route table rules when setting up connectivity between the SDDC and
      * other networks. For information about {@code PrivateIp} objects, see the Core Services API.
@@ -1230,7 +1230,7 @@ public final class Sddc extends com.oracle.bmc.http.client.internal.ExplicitlySe
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * {@code PrivateIp} object that is the virtual IP (VIP) for HCX Manager. For information about
      * {@code PrivateIp} objects, see the Core Services API.
      */
@@ -1238,7 +1238,7 @@ public final class Sddc extends com.oracle.bmc.http.client.internal.ExplicitlySe
     private final String hcxPrivateIpId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * {@code PrivateIp} object that is the virtual IP (VIP) for HCX Manager. For information about
      * {@code PrivateIp} objects, see the Core Services API.
      *
@@ -1426,7 +1426,7 @@ public final class Sddc extends com.oracle.bmc.http.client.internal.ExplicitlySe
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      */
@@ -1436,7 +1436,7 @@ public final class Sddc extends com.oracle.bmc.http.client.internal.ExplicitlySe
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      *
@@ -1449,7 +1449,7 @@ public final class Sddc extends com.oracle.bmc.http.client.internal.ExplicitlySe
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
      */
@@ -1459,7 +1459,7 @@ public final class Sddc extends com.oracle.bmc.http.client.internal.ExplicitlySe
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
      *

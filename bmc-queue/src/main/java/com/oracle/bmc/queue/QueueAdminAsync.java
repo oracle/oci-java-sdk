@@ -9,7 +9,7 @@ import com.oracle.bmc.queue.responses.*;
 
 /**
  * Use the Queue API to produce and consume messages, create queues, and manage related items. For
- * more information, see [Queue](https://docs.cloud.oracle.com/iaas/Content/queue/overview.htm).
+ * more information, see [Queue](https://docs.oracle.com/iaas/Content/queue/overview.htm).
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210201")
 public interface QueueAdminAsync extends AutoCloseable {

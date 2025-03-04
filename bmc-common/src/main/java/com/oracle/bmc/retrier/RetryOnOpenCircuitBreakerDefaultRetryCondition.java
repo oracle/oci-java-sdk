@@ -10,8 +10,8 @@ import jakarta.annotation.Nonnull;
 
 /**
  * Class that may retry for the conditions documented in
- * https://docs.cloud.oracle.com/iaas/Content/API/References/apierrors.htm and when the
- * CircuitBreaker is OPEN.
+ * https://docs.oracle.com/iaas/Content/API/References/apierrors.htm and when the CircuitBreaker is
+ * OPEN.
  */
 public class RetryOnOpenCircuitBreakerDefaultRetryCondition extends DefaultRetryCondition {
 

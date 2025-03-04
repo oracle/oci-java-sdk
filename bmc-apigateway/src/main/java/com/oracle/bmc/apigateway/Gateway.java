@@ -10,7 +10,7 @@ import com.oracle.bmc.apigateway.responses.*;
 /**
  * API for the API Gateway service. Use this API to manage gateways, deployments, and related items.
  * For more information, see [Overview of API
- * Gateway](https://docs.cloud.oracle.com/iaas/Content/APIGateway/Concepts/apigatewayoverview.htm).
+ * Gateway](https://docs.oracle.com/iaas/Content/APIGateway/Concepts/apigatewayoverview.htm).
  *
  * <p>This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by
  * default if no circuit breaker configuration is defined by the user.
@@ -76,7 +76,7 @@ public interface Gateway extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apigateway/ChangeGatewayCompartmentExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apigateway/ChangeGatewayCompartmentExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ChangeGatewayCompartment API.
      */
@@ -93,7 +93,7 @@ public interface Gateway extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apigateway/CreateGatewayExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apigateway/CreateGatewayExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateGateway API.
      */
     CreateGatewayResponse createGateway(CreateGatewayRequest request);
@@ -108,7 +108,7 @@ public interface Gateway extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apigateway/DeleteGatewayExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apigateway/DeleteGatewayExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteGateway API.
      */
     DeleteGatewayResponse deleteGateway(DeleteGatewayRequest request);
@@ -123,7 +123,7 @@ public interface Gateway extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apigateway/GetGatewayExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apigateway/GetGatewayExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetGateway API.
      */
     GetGatewayResponse getGateway(GetGatewayRequest request);
@@ -138,7 +138,7 @@ public interface Gateway extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apigateway/ListGatewaysExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apigateway/ListGatewaysExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListGateways API.
      */
     ListGatewaysResponse listGateways(ListGatewaysRequest request);
@@ -153,7 +153,7 @@ public interface Gateway extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apigateway/UpdateGatewayExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apigateway/UpdateGatewayExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateGateway API.
      */
     UpdateGatewayResponse updateGateway(UpdateGatewayRequest request);

@@ -63,17 +63,15 @@ public class AssignedSubscription
     }
 
     /**
-     * The Oracle ID
-     * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the
-     * subscription.
+     * The Oracle ID ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm))
+     * of the subscription.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The Oracle ID
-     * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the
-     * subscription.
+     * The Oracle ID ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm))
+     * of the subscription.
      *
      * @return the value
      */
@@ -82,17 +80,15 @@ public class AssignedSubscription
     }
 
     /**
-     * The Oracle ID
-     * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the
-     * owning compartment. Always a tenancy OCID.
+     * The Oracle ID ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm))
+     * of the owning compartment. Always a tenancy OCID.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The Oracle ID
-     * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the
-     * owning compartment. Always a tenancy OCID.
+     * The Oracle ID ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm))
+     * of the owning compartment. Always a tenancy OCID.
      *
      * @return the value
      */

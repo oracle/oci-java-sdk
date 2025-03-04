@@ -111,7 +111,7 @@ public final class AlarmOverride extends com.oracle.bmc.http.client.internal.Exp
         /**
          * The human-readable content of the delivered alarm notification. Optionally include
          * [dynamic
-         * variables](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm).
+         * variables](https://docs.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm).
          * Oracle recommends providing guidance to operators for resolving the alarm condition.
          * Consider adding links to standard runbook practices. Avoid entering confidential
          * information.
@@ -124,7 +124,7 @@ public final class AlarmOverride extends com.oracle.bmc.http.client.internal.Exp
         /**
          * The human-readable content of the delivered alarm notification. Optionally include
          * [dynamic
-         * variables](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm).
+         * variables](https://docs.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm).
          * Oracle recommends providing guidance to operators for resolving the alarm condition.
          * Consider adding links to standard runbook practices. Avoid entering confidential
          * information.
@@ -167,15 +167,15 @@ public final class AlarmOverride extends com.oracle.bmc.http.client.internal.Exp
          * for interval depend on the specified time range. More interval values are supported for
          * smaller time ranges. You can optionally specify dimensions and grouping functions. Also,
          * you can customize the [absence detection
-         * period](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/create-edit-alarm-query-absence-detection-period.htm).
+         * period](https://docs.oracle.com/iaas/Content/Monitoring/Tasks/create-edit-alarm-query-absence-detection-period.htm).
          * Supported grouping functions: {@code grouping()}, {@code groupBy()}. For information
          * about writing MQL expressions, see [Editing the MQL Expression for a
-         * Query](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/query-metric-mql.htm).
-         * For details about MQL, see [Monitoring Query Language (MQL)
-         * Reference](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm). For
+         * Query](https://docs.oracle.com/iaas/Content/Monitoring/Tasks/query-metric-mql.htm). For
+         * details about MQL, see [Monitoring Query Language (MQL)
+         * Reference](https://docs.oracle.com/iaas/Content/Monitoring/Reference/mql.htm). For
          * available dimensions, review the metric definition for the supported service. See
          * [Supported
-         * Services](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
+         * Services](https://docs.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
          *
          * <p>Example of threshold alarm:
          *
@@ -212,15 +212,15 @@ public final class AlarmOverride extends com.oracle.bmc.http.client.internal.Exp
          * for interval depend on the specified time range. More interval values are supported for
          * smaller time ranges. You can optionally specify dimensions and grouping functions. Also,
          * you can customize the [absence detection
-         * period](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/create-edit-alarm-query-absence-detection-period.htm).
+         * period](https://docs.oracle.com/iaas/Content/Monitoring/Tasks/create-edit-alarm-query-absence-detection-period.htm).
          * Supported grouping functions: {@code grouping()}, {@code groupBy()}. For information
          * about writing MQL expressions, see [Editing the MQL Expression for a
-         * Query](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/query-metric-mql.htm).
-         * For details about MQL, see [Monitoring Query Language (MQL)
-         * Reference](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm). For
+         * Query](https://docs.oracle.com/iaas/Content/Monitoring/Tasks/query-metric-mql.htm). For
+         * details about MQL, see [Monitoring Query Language (MQL)
+         * Reference](https://docs.oracle.com/iaas/Content/Monitoring/Reference/mql.htm). For
          * available dimensions, review the metric definition for the supported service. See
          * [Supported
-         * Services](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
+         * Services](https://docs.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
          *
          * <p>Example of threshold alarm:
          *
@@ -365,7 +365,7 @@ public final class AlarmOverride extends com.oracle.bmc.http.client.internal.Exp
 
     /**
      * The human-readable content of the delivered alarm notification. Optionally include [dynamic
-     * variables](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm).
+     * variables](https://docs.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm).
      * Oracle recommends providing guidance to operators for resolving the alarm condition. Consider
      * adding links to standard runbook practices. Avoid entering confidential information.
      *
@@ -376,7 +376,7 @@ public final class AlarmOverride extends com.oracle.bmc.http.client.internal.Exp
 
     /**
      * The human-readable content of the delivered alarm notification. Optionally include [dynamic
-     * variables](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm).
+     * variables](https://docs.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm).
      * Oracle recommends providing guidance to operators for resolving the alarm condition. Consider
      * adding links to standard runbook practices. Avoid entering confidential information.
      *
@@ -414,14 +414,14 @@ public final class AlarmOverride extends com.oracle.bmc.http.client.internal.Exp
      * specified time range. More interval values are supported for smaller time ranges. You can
      * optionally specify dimensions and grouping functions. Also, you can customize the [absence
      * detection
-     * period](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/create-edit-alarm-query-absence-detection-period.htm).
+     * period](https://docs.oracle.com/iaas/Content/Monitoring/Tasks/create-edit-alarm-query-absence-detection-period.htm).
      * Supported grouping functions: {@code grouping()}, {@code groupBy()}. For information about
      * writing MQL expressions, see [Editing the MQL Expression for a
-     * Query](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/query-metric-mql.htm). For
+     * Query](https://docs.oracle.com/iaas/Content/Monitoring/Tasks/query-metric-mql.htm). For
      * details about MQL, see [Monitoring Query Language (MQL)
-     * Reference](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm). For
-     * available dimensions, review the metric definition for the supported service. See [Supported
-     * Services](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
+     * Reference](https://docs.oracle.com/iaas/Content/Monitoring/Reference/mql.htm). For available
+     * dimensions, review the metric definition for the supported service. See [Supported
+     * Services](https://docs.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
      *
      * <p>Example of threshold alarm:
      *
@@ -458,14 +458,14 @@ public final class AlarmOverride extends com.oracle.bmc.http.client.internal.Exp
      * specified time range. More interval values are supported for smaller time ranges. You can
      * optionally specify dimensions and grouping functions. Also, you can customize the [absence
      * detection
-     * period](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/create-edit-alarm-query-absence-detection-period.htm).
+     * period](https://docs.oracle.com/iaas/Content/Monitoring/Tasks/create-edit-alarm-query-absence-detection-period.htm).
      * Supported grouping functions: {@code grouping()}, {@code groupBy()}. For information about
      * writing MQL expressions, see [Editing the MQL Expression for a
-     * Query](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/query-metric-mql.htm). For
+     * Query](https://docs.oracle.com/iaas/Content/Monitoring/Tasks/query-metric-mql.htm). For
      * details about MQL, see [Monitoring Query Language (MQL)
-     * Reference](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm). For
-     * available dimensions, review the metric definition for the supported service. See [Supported
-     * Services](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
+     * Reference](https://docs.oracle.com/iaas/Content/Monitoring/Reference/mql.htm). For available
+     * dimensions, review the metric definition for the supported service. See [Supported
+     * Services](https://docs.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
      *
      * <p>Example of threshold alarm:
      *

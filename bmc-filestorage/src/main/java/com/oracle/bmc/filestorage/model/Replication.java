@@ -11,7 +11,7 @@ package com.oracle.bmc.filestorage.model;
  * The replication retrieves the delta of data between two snapshots of a source file system and
  * sends it to the associated {@code ReplicationTarget}, which applies it to the target file system.
  * For more information, see [File System
- * Replication](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/FSreplication.htm). <br>
+ * Replication](https://docs.oracle.com/iaas/Content/File/Tasks/FSreplication.htm). <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -93,14 +93,14 @@ public final class Replication extends com.oracle.bmc.http.client.internal.Expli
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * compartment that contains the replication.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * compartment that contains the replication.
          *
          * @param compartmentId the value to set
@@ -131,14 +131,14 @@ public final class Replication extends com.oracle.bmc.http.client.internal.Expli
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * replication.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * replication.
          *
          * @param id the value to set
@@ -211,14 +211,14 @@ public final class Replication extends com.oracle.bmc.http.client.internal.Expli
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * source file system.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("sourceId")
         private String sourceId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * source file system.
          *
          * @param sourceId the value to set
@@ -230,14 +230,14 @@ public final class Replication extends com.oracle.bmc.http.client.internal.Expli
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * target file system.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("targetId")
         private String targetId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * target file system.
          *
          * @param targetId the value to set
@@ -249,14 +249,14 @@ public final class Replication extends com.oracle.bmc.http.client.internal.Expli
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * {@link ReplicationTarget}.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("replicationTargetId")
         private String replicationTargetId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * {@link ReplicationTarget}.
          *
          * @param replicationTargetId the value to set
@@ -283,7 +283,7 @@ public final class Replication extends com.oracle.bmc.http.client.internal.Expli
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * last snapshot that has been replicated completely. Empty if the copy of the initial
          * snapshot is not complete.
          */
@@ -291,7 +291,7 @@ public final class Replication extends com.oracle.bmc.http.client.internal.Expli
         private String lastSnapshotId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * last snapshot that has been replicated completely. Empty if the copy of the initial
          * snapshot is not complete.
          *
@@ -387,7 +387,7 @@ public final class Replication extends com.oracle.bmc.http.client.internal.Expli
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
          * {@code {"Department": "Finance"}}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -396,7 +396,7 @@ public final class Replication extends com.oracle.bmc.http.client.internal.Expli
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
          * {@code {"Department": "Finance"}}
          *
          * @param freeformTags the value to set
@@ -410,7 +410,7 @@ public final class Replication extends com.oracle.bmc.http.client.internal.Expli
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
          * {@code {"Operations": {"CostCenter": "42"}}}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -419,7 +419,7 @@ public final class Replication extends com.oracle.bmc.http.client.internal.Expli
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
          * {@code {"Operations": {"CostCenter": "42"}}}
          *
          * @param definedTags the value to set
@@ -555,14 +555,14 @@ public final class Replication extends com.oracle.bmc.http.client.internal.Expli
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment that contains the replication.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment that contains the replication.
      *
      * @return the value
@@ -589,14 +589,14 @@ public final class Replication extends com.oracle.bmc.http.client.internal.Expli
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * replication.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * replication.
      *
      * @return the value
@@ -710,14 +710,14 @@ public final class Replication extends com.oracle.bmc.http.client.internal.Expli
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * source file system.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("sourceId")
     private final String sourceId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * source file system.
      *
      * @return the value
@@ -727,14 +727,14 @@ public final class Replication extends com.oracle.bmc.http.client.internal.Expli
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * target file system.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("targetId")
     private final String targetId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * target file system.
      *
      * @return the value
@@ -744,14 +744,14 @@ public final class Replication extends com.oracle.bmc.http.client.internal.Expli
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * {@link ReplicationTarget}.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("replicationTargetId")
     private final String replicationTargetId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * {@link ReplicationTarget}.
      *
      * @return the value
@@ -774,17 +774,17 @@ public final class Replication extends com.oracle.bmc.http.client.internal.Expli
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * last snapshot that has been replicated completely. Empty if the copy of the initial snapshot
-     * is not complete.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last
+     * snapshot that has been replicated completely. Empty if the copy of the initial snapshot is
+     * not complete.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("lastSnapshotId")
     private final String lastSnapshotId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * last snapshot that has been replicated completely. Empty if the copy of the initial snapshot
-     * is not complete.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last
+     * snapshot that has been replicated completely. Empty if the copy of the initial snapshot is
+     * not complete.
      *
      * @return the value
      */
@@ -917,7 +917,7 @@ public final class Replication extends com.oracle.bmc.http.client.internal.Expli
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Department": "Finance"}}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -926,7 +926,7 @@ public final class Replication extends com.oracle.bmc.http.client.internal.Expli
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Department": "Finance"}}
      *
      * @return the value
@@ -938,7 +938,7 @@ public final class Replication extends com.oracle.bmc.http.client.internal.Expli
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Operations": {"CostCenter": "42"}}}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -947,7 +947,7 @@ public final class Replication extends com.oracle.bmc.http.client.internal.Expli
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Operations": {"CostCenter": "42"}}}
      *
      * @return the value

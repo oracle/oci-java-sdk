@@ -10,7 +10,7 @@ import com.oracle.bmc.database.responses.*;
 /**
  * The API for the Database Service. Use this API to manage resources such as databases and DB
  * Systems. For more information, see [Overview of the Database
- * Service](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/databaseoverview.htm).
+ * Service](https://docs.oracle.com/iaas/Content/Database/Concepts/databaseoverview.htm).
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public interface DatabaseAsync extends AutoCloseable {
@@ -80,6 +80,28 @@ public interface DatabaseAsync extends AutoCloseable {
                     com.oracle.bmc.responses.AsyncHandler<
                                     ActivateExadataInfrastructureRequest,
                                     ActivateExadataInfrastructureResponse>
+                            handler);
+
+    /**
+     * Create Standby Autonomous Container Database. For more information about changing Autonomous
+     * Container Databases Add Standby, see [Create Standby Autonomous Container
+     * Database](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html#ADBCL-GUID-D3B503F1-0032-4B0D-9F00-ACAE8151AB80)
+     * and [Convert Snapshot Standby to Physical
+     * Standby](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html#ADBCL-GUID-E8D7E0EE-8244-467D-B33A-1BC6F969A0A4).
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<AddStandbyAutonomousContainerDatabaseResponse>
+            addStandbyAutonomousContainerDatabase(
+                    AddStandbyAutonomousContainerDatabaseRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    AddStandbyAutonomousContainerDatabaseRequest,
+                                    AddStandbyAutonomousContainerDatabaseResponse>
                             handler);
 
     /**
@@ -230,7 +252,7 @@ public interface DatabaseAsync extends AutoCloseable {
      * Move the Autonomous Container Database and its dependent resources to the specified
      * compartment. For more information about moving Autonomous Container Databases, see [Moving
      * Database Resources to a Different
-     * Compartment](https://docs.cloud.oracle.com/Content/Database/Concepts/databaseoverview.htm#moveRes).
+     * Compartment](https://docs.oracle.com/iaas/Content/Database/Concepts/databaseoverview.htm#moveRes).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -251,7 +273,7 @@ public interface DatabaseAsync extends AutoCloseable {
      * Move the Autonomous Database and its dependent resources to the specified compartment. For
      * more information about moving Autonomous Databases, see [Moving Database Resources to a
      * Different
-     * Compartment](https://docs.cloud.oracle.com/Content/Database/Concepts/databaseoverview.htm#moveRes).
+     * Compartment](https://docs.oracle.com/iaas/Content/Database/Concepts/databaseoverview.htm#moveRes).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -314,7 +336,7 @@ public interface DatabaseAsync extends AutoCloseable {
      * Consumer, Consumer) changeCloudAutonomousVmClusterCompartment} operation to move an
      * Autonomous Exadata VM cluster to a different compartment. For more information, see [Moving
      * Database Resources to a Different
-     * Compartment](https://docs.cloud.oracle.com/Content/Database/Concepts/databaseoverview.htm#moveRes).
+     * Compartment](https://docs.oracle.com/iaas/Content/Database/Concepts/databaseoverview.htm#moveRes).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -355,7 +377,7 @@ public interface DatabaseAsync extends AutoCloseable {
     /**
      * Move the backup destination and its dependent resources to the specified compartment. For
      * more information, see [Moving Database Resources to a Different
-     * Compartment](https://docs.cloud.oracle.com/Content/Database/Concepts/databaseoverview.htm#moveRes).
+     * Compartment](https://docs.oracle.com/iaas/Content/Database/Concepts/databaseoverview.htm#moveRes).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -398,7 +420,7 @@ public interface DatabaseAsync extends AutoCloseable {
      * compartment. Applies to Exadata Cloud Service instances and Autonomous Database on dedicated
      * Exadata infrastructure only.For more information about moving resources to a different
      * compartment, see [Moving Database Resources to a Different
-     * Compartment](https://docs.cloud.oracle.com/Content/Database/Concepts/databaseoverview.htm#moveRes).
+     * Compartment](https://docs.oracle.com/iaas/Content/Database/Concepts/databaseoverview.htm#moveRes).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -475,7 +497,7 @@ public interface DatabaseAsync extends AutoCloseable {
      * Move the Database Software Image and its dependent resources to the specified compartment.
      * For more information about moving Databse Software Images, see [Moving Database Resources to
      * a Different
-     * Compartment](https://docs.cloud.oracle.com/Content/Database/Concepts/databaseoverview.htm#moveRes).
+     * Compartment](https://docs.oracle.com/iaas/Content/Database/Concepts/databaseoverview.htm#moveRes).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -516,7 +538,7 @@ public interface DatabaseAsync extends AutoCloseable {
     /**
      * Moves the DB system and its dependent resources to the specified compartment. For more
      * information about moving DB systems, see [Moving Database Resources to a Different
-     * Compartment](https://docs.cloud.oracle.com/Content/Database/Concepts/databaseoverview.htm#moveRes).
+     * Compartment](https://docs.oracle.com/iaas/Content/Database/Concepts/databaseoverview.htm#moveRes).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -608,6 +630,24 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Associate a Exadata VM cluster on Exascale Infrastructure with a different subscription.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeExadbVmClusterSubscriptionResponse>
+            changeExadbVmClusterSubscription(
+                    ChangeExadbVmClusterSubscriptionRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeExadbVmClusterSubscriptionRequest,
+                                    ChangeExadbVmClusterSubscriptionResponse>
+                            handler);
+
+    /**
      * Moves a Exadata Database Storage Vault to another compartment.
      *
      * @param request The request object containing the details to send
@@ -626,12 +666,30 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Associate a Exadata Database Storage Vault with a different subscription.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeExascaleDbStorageVaultSubscriptionResponse>
+            changeExascaleDbStorageVaultSubscription(
+                    ChangeExascaleDbStorageVaultSubscriptionRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeExascaleDbStorageVaultSubscriptionRequest,
+                                    ChangeExascaleDbStorageVaultSubscriptionResponse>
+                            handler);
+
+    /**
      * Move the {@link
      * #createExternalContainerDatabaseDetails(CreateExternalContainerDatabaseDetailsRequest,
      * Consumer, Consumer) createExternalContainerDatabaseDetails} and its dependent resources to
      * the specified compartment. For more information about moving external container databases,
      * see [Moving Database Resources to a Different
-     * Compartment](https://docs.cloud.oracle.com/Content/Database/Concepts/databaseoverview.htm#moveRes).
+     * Compartment](https://docs.oracle.com/iaas/Content/Database/Concepts/databaseoverview.htm#moveRes).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -652,7 +710,7 @@ public interface DatabaseAsync extends AutoCloseable {
      * Move the external non-container database and its dependent resources to the specified
      * compartment. For more information about moving external non-container databases, see [Moving
      * Database Resources to a Different
-     * Compartment](https://docs.cloud.oracle.com/Content/Database/Concepts/databaseoverview.htm#moveRes).
+     * Compartment](https://docs.oracle.com/iaas/Content/Database/Concepts/databaseoverview.htm#moveRes).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -675,7 +733,7 @@ public interface DatabaseAsync extends AutoCloseable {
      * Consumer, Consumer) createExternalPluggableDatabaseDetails} and its dependent resources to
      * the specified compartment. For more information about moving external pluggable databases,
      * see [Moving Database Resources to a Different
-     * Compartment](https://docs.cloud.oracle.com/Content/Database/Concepts/databaseoverview.htm#moveRes).
+     * Compartment](https://docs.oracle.com/iaas/Content/Database/Concepts/databaseoverview.htm#moveRes).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -695,7 +753,7 @@ public interface DatabaseAsync extends AutoCloseable {
     /**
      * Move the key store resource to the specified compartment. For more information about moving
      * key stores, see [Moving Database Resources to a Different
-     * Compartment](https://docs.cloud.oracle.com/Content/Database/Concepts/databaseoverview.htm#moveRes).
+     * Compartment](https://docs.oracle.com/iaas/Content/Database/Concepts/databaseoverview.htm#moveRes).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -826,7 +884,7 @@ public interface DatabaseAsync extends AutoCloseable {
      * with the Oracle Cloud Infrastructure CLI. Oracle recommends that you use the script instead
      * using the API directly. See [Migrating an On-Premises Database to Oracle Cloud Infrastructure
      * by Creating a Backup in the
-     * Cloud](https://docs.cloud.oracle.com/Content/Database/Tasks/mig-onprembackup.htm) for more
+     * Cloud](https://docs.oracle.com/iaas/Content/Database/Tasks/mig-onprembackup.htm) for more
      * information.
      *
      * @param request The request object containing the details to send
@@ -844,7 +902,7 @@ public interface DatabaseAsync extends AutoCloseable {
 
     /**
      * Configures the Autonomous Database Vault service
-     * [key](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+     * [key](https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -915,6 +973,29 @@ public interface DatabaseAsync extends AutoCloseable {
                     com.oracle.bmc.responses.AsyncHandler<
                                     ConfirmKeyStoreDetailsAreCorrectRequest,
                                     ConfirmKeyStoreDetailsAreCorrectResponse>
+                            handler);
+
+    /**
+     * Convert between and SnapshotStandby Standby Autonomous Container Database . For more
+     * information about changing Autonomous Container Databases Add Standby, see [Convert Standby
+     * Autonomous Container
+     * Database](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html#ADBCL-GUID-D3B503F1-0032-4B0D-9F00-ACAE8151AB80)
+     * and [Convert Snapshot Standby to Physical
+     * Standby](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html#ADBCL-GUID-E8D7E0EE-8244-467D-B33A-1BC6F969A0A4).
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ConvertStandbyAutonomousContainerDatabaseResponse>
+            convertStandbyAutonomousContainerDatabase(
+                    ConvertStandbyAutonomousContainerDatabaseRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ConvertStandbyAutonomousContainerDatabaseRequest,
+                                    ConvertStandbyAutonomousContainerDatabaseResponse>
                             handler);
 
     /**
@@ -1011,14 +1092,14 @@ public interface DatabaseAsync extends AutoCloseable {
      * Create a new Autonomous Data Guard association. An Autonomous Data Guard association
      * represents the replication relationship between the specified Autonomous Container database
      * and a peer Autonomous Container database. For more information, see [Using Oracle Data
-     * Guard](https://docs.cloud.oracle.com/Content/Database/Tasks/usingdataguard.htm).
+     * Guard](https://docs.oracle.com/iaas/Content/Database/Tasks/usingdataguard.htm).
      *
      * <p>All Oracle Cloud Infrastructure resources, including Data Guard associations, get an
      * Oracle-assigned, unique ID called an Oracle Cloud Identifier (OCID). When you create a
      * resource, you can find its OCID in the response. You can also retrieve a resource's OCID by
      * using a List API operation on that resource type, or by viewing the resource in the Console.
      * For more information, see [Resource
-     * Identifiers](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * Identifiers](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -1165,7 +1246,7 @@ public interface DatabaseAsync extends AutoCloseable {
     /**
      * Creates a cloud Exadata infrastructure resource. This resource is used to create either an
      * [Exadata Cloud
-     * Service](https://docs.cloud.oracle.com/Content/Database/Concepts/exaoverview.htm) instance or
+     * Service](https://docs.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm) instance or
      * an Autonomous Database on dedicated Exadata infrastructure.
      *
      * @param request The request object containing the details to send
@@ -1237,14 +1318,14 @@ public interface DatabaseAsync extends AutoCloseable {
      * Creates a new Data Guard association. A Data Guard association represents the replication
      * relationship between the specified database and a peer database. For more information, see
      * [Using Oracle Data
-     * Guard](https://docs.cloud.oracle.com/Content/Database/Tasks/usingdataguard.htm).
+     * Guard](https://docs.oracle.com/iaas/Content/Database/Tasks/usingdataguard.htm).
      *
      * <p>All Oracle Cloud Infrastructure resources, including Data Guard associations, get an
      * Oracle-assigned, unique ID called an Oracle Cloud Identifier (OCID). When you create a
      * resource, you can find its OCID in the response. You can also retrieve a resource's OCID by
      * using a List API operation on that resource type, or by viewing the resource in the Console.
      * For more information, see [Resource
-     * Identifiers](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * Identifiers](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -1401,7 +1482,7 @@ public interface DatabaseAsync extends AutoCloseable {
      * with the Oracle Cloud Infrastructure CLI. Oracle recommends that you use the script instead
      * using the API directly. See [Migrating an On-Premises Database to Oracle Cloud Infrastructure
      * by Creating a Backup in the
-     * Cloud](https://docs.cloud.oracle.com/Content/Database/Tasks/mig-onprembackup.htm) for more
+     * Cloud](https://docs.oracle.com/iaas/Content/Database/Tasks/mig-onprembackup.htm) for more
      * information.
      *
      * @param request The request object containing the details to send
@@ -2366,7 +2447,7 @@ public interface DatabaseAsync extends AutoCloseable {
     /**
      * Disable Database Management Service for the external non-container database. For more
      * information about the Database Management Service, see [Database Management
-     * Service](https://docs.cloud.oracle.com/Content/ExternalDatabase/Concepts/databasemanagementservice.htm).
+     * Service](https://docs.oracle.com/iaas/Content/ExternalDatabase/Concepts/databasemanagementservice.htm).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -2422,7 +2503,7 @@ public interface DatabaseAsync extends AutoCloseable {
     /**
      * Disable Database Management Service for the external pluggable database. For more information
      * about the Database Management Service, see [Database Management
-     * Service](https://docs.cloud.oracle.com/Content/ExternalDatabase/Concepts/databasemanagementservice.htm).
+     * Service](https://docs.oracle.com/iaas/Content/ExternalDatabase/Concepts/databasemanagementservice.htm).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -2564,6 +2645,28 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Edit Autonomous Container Database Dataguard. For more information about changing Autonomous
+     * Container Databases Add Standby, see [Update Autonomous Container Database
+     * Dataguard](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html#ADBCL-GUID-D3B503F1-0032-4B0D-9F00-ACAE8151AB80)
+     * and [Convert Snapshot Standby to Physical
+     * Standby](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html#ADBCL-GUID-E8D7E0EE-8244-467D-B33A-1BC6F969A0A4).
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<EditAutonomousContainerDatabaseDataguardResponse>
+            editAutonomousContainerDatabaseDataguard(
+                    EditAutonomousContainerDatabaseDataguardRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    EditAutonomousContainerDatabaseDataguardRequest,
+                                    EditAutonomousContainerDatabaseDataguardResponse>
+                            handler);
+
+    /**
      * Enables Database Management for Autonomous Database.
      *
      * @param request The request object containing the details to send
@@ -2620,7 +2723,7 @@ public interface DatabaseAsync extends AutoCloseable {
     /**
      * Enables Database Management Service for the external container database. For more information
      * about the Database Management Service, see [Database Management
-     * Service](https://docs.cloud.oracle.com/Content/ExternalDatabase/Concepts/databasemanagementservice.htm).
+     * Service](https://docs.oracle.com/iaas/Content/ExternalDatabase/Concepts/databasemanagementservice.htm).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -2658,7 +2761,7 @@ public interface DatabaseAsync extends AutoCloseable {
     /**
      * Enable Database Management Service for the external non-container database. For more
      * information about the Database Management Service, see [Database Management
-     * Service](https://docs.cloud.oracle.com/Content/ExternalDatabase/Concepts/databasemanagementservice.htm).
+     * Service](https://docs.oracle.com/iaas/Content/ExternalDatabase/Concepts/databasemanagementservice.htm).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -2714,7 +2817,7 @@ public interface DatabaseAsync extends AutoCloseable {
     /**
      * Enable Database Management Service for the external pluggable database. For more information
      * about the Database Management Service, see [Database Management
-     * Service](https://docs.cloud.oracle.com/Content/ExternalDatabase/Concepts/databasemanagementservice.htm).
+     * Service](https://docs.oracle.com/iaas/Content/ExternalDatabase/Concepts/databasemanagementservice.htm).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -2808,6 +2911,25 @@ public interface DatabaseAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             FailOverAutonomousDatabaseRequest, FailOverAutonomousDatabaseResponse>
                     handler);
+
+    /**
+     * Failover Autonomous Container Database, identified by the autonomousContainerDatabaseId
+     * parameter, to an active standby Autonomous Container Database.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<FailoverAutonomousContainerDatabaseDataguardResponse>
+            failoverAutonomousContainerDatabaseDataguard(
+                    FailoverAutonomousContainerDatabaseDataguardRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    FailoverAutonomousContainerDatabaseDataguardRequest,
+                                    FailoverAutonomousContainerDatabaseDataguardResponse>
+                            handler);
 
     /**
      * Fails over the standby Autonomous Container Database identified by the
@@ -3544,12 +3666,12 @@ public interface DatabaseAsync extends AutoCloseable {
      * Gets information about the specified DB system.
      *
      * <p>*Note:** Deprecated for Exadata Cloud Service systems. Use the [new resource model
-     * APIs](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model)
+     * APIs](https://docs.oracle.com/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model)
      * instead.
      *
      * <p>For Exadata Cloud Service instances, support for this API will end on May 15th, 2021. See
      * [Switching an Exadata DB System to the New Resource Model and
-     * APIs](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem_topic-resource_model_conversion.htm)
+     * APIs](https://docs.oracle.com/iaas/Content/Database/Concepts/exaflexsystem_topic-resource_model_conversion.htm)
      * for details on converting existing Exadata DB systems to the new resource model.
      *
      * @param request The request object containing the details to send
@@ -3676,12 +3798,12 @@ public interface DatabaseAsync extends AutoCloseable {
      * service instances have default IORM settings.
      *
      * <p>*Note:** Deprecated for Exadata Cloud Service systems. Use the [new resource model
-     * APIs](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model)
+     * APIs](https://docs.oracle.com/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model)
      * instead.
      *
      * <p>For Exadata Cloud Service instances, support for this API will end on May 15th, 2021. See
      * [Switching an Exadata DB System to the New Resource Model and
-     * APIs](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem_topic-resource_model_conversion.htm)
+     * APIs](https://docs.oracle.com/iaas/Content/Database/Concepts/exaflexsystem_topic-resource_model_conversion.htm)
      * for details on converting existing Exadata DB systems to the new resource model.
      *
      * <p>The {@link #getCloudVmClusterIormConfig(GetCloudVmClusterIormConfigRequest, Consumer,
@@ -3809,7 +3931,7 @@ public interface DatabaseAsync extends AutoCloseable {
      * with the Oracle Cloud Infrastructure CLI. Oracle recommends that you use the script instead
      * using the API directly. See [Migrating an On-Premises Database to Oracle Cloud Infrastructure
      * by Creating a Backup in the
-     * Cloud](https://docs.cloud.oracle.com/Content/Database/Tasks/mig-onprembackup.htm) for more
+     * Cloud](https://docs.oracle.com/iaas/Content/Database/Tasks/mig-onprembackup.htm) for more
      * information.
      *
      * @param request The request object containing the details to send
@@ -4211,15 +4333,15 @@ public interface DatabaseAsync extends AutoCloseable {
      * <p>An initial database is created on the DB system based on the request parameters you
      * provide and some default options. For detailed information about default options, see [Bare
      * metal and virtual machine DB system default
-     * options.](https://docs.cloud.oracle.com/Content/Database/Tasks/creatingDBsystem.htm#Default)
+     * options.](https://docs.oracle.com/iaas/Content/Database/Tasks/creatingDBsystem.htm#Default)
      *
      * <p>*Note:** Deprecated for Exadata Cloud Service systems. Use the [new resource model
-     * APIs](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model)
+     * APIs](https://docs.oracle.com/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model)
      * instead.
      *
      * <p>For Exadata Cloud Service instances, support for this API will end on May 15th, 2021. See
      * [Switching an Exadata DB System to the New Resource Model and
-     * APIs](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem_topic-resource_model_conversion.htm)
+     * APIs](https://docs.oracle.com/iaas/Content/Database/Concepts/exaflexsystem_topic-resource_model_conversion.htm)
      * for details on converting existing Exadata DB systems to the new resource model.
      *
      * <p>Use the {@link #createCloudExadataInfrastructure(CreateCloudExadataInfrastructureRequest,
@@ -5035,12 +5157,12 @@ public interface DatabaseAsync extends AutoCloseable {
      * the DB systems that support creating a database using this backup in this compartment.
      *
      * <p>*Note:** Deprecated for Exadata Cloud Service systems. Use the [new resource model
-     * APIs](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model)
+     * APIs](https://docs.oracle.com/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model)
      * instead.
      *
      * <p>For Exadata Cloud Service instances, support for this API will end on May 15th, 2021. See
      * [Switching an Exadata DB System to the New Resource Model and
-     * APIs](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem_topic-resource_model_conversion.htm)
+     * APIs](https://docs.oracle.com/iaas/Content/Database/Concepts/exaflexsystem_topic-resource_model_conversion.htm)
      * for details on converting existing Exadata DB systems to the new resource model.
      *
      * @param request The request object containing the details to send
@@ -5656,6 +5778,25 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Migrate Autonomous Container Database, identified by the autonomousContainerDatabaseId
+     * parameter.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<MigrateAutonomousContainerDatabaseDataguardAssociationResponse>
+            migrateAutonomousContainerDatabaseDataguardAssociation(
+                    MigrateAutonomousContainerDatabaseDataguardAssociationRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    MigrateAutonomousContainerDatabaseDataguardAssociationRequest,
+                                    MigrateAutonomousContainerDatabaseDataguardAssociationResponse>
+                            handler);
+
+    /**
      * Migrates the existing Data Guard association to new Data Guard model to support multiple
      * standby databases functionality.
      *
@@ -5678,7 +5819,7 @@ public interface DatabaseAsync extends AutoCloseable {
 
     /**
      * Migrates the Exadata DB system to the new [Exadata resource
-     * model](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model).
+     * model](https://docs.oracle.com/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model).
      * All related resources will be migrated.
      *
      * @param request The request object containing the details to send
@@ -5698,8 +5839,8 @@ public interface DatabaseAsync extends AutoCloseable {
 
     /**
      * Changes encryption key management from customer-managed, using the [Vault
-     * service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm),
-     * to Oracle-managed.
+     * service](https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm), to
+     * Oracle-managed.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -5795,6 +5936,25 @@ public interface DatabaseAsync extends AutoCloseable {
                     com.oracle.bmc.responses.AsyncHandler<
                                     RegisterAutonomousDatabaseDataSafeRequest,
                                     RegisterAutonomousDatabaseDataSafeResponse>
+                            handler);
+
+    /**
+     * Reinstates a disabled standby Autonomous Container Database, identified by the
+     * autonomousContainerDatabaseId parameter, to an active standby Autonomous Container Database.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ReinstateAutonomousContainerDatabaseDataguardResponse>
+            reinstateAutonomousContainerDatabaseDataguard(
+                    ReinstateAutonomousContainerDatabaseDataguardRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ReinstateAutonomousContainerDatabaseDataguardRequest,
+                                    ReinstateAutonomousContainerDatabaseDataguardResponse>
                             handler);
 
     /**
@@ -6065,8 +6225,7 @@ public interface DatabaseAsync extends AutoCloseable {
 
     /**
      * Creates a new version of an existing [Vault
-     * service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm)
-     * key.
+     * service](https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) key.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -6085,8 +6244,7 @@ public interface DatabaseAsync extends AutoCloseable {
 
     /**
      * Rotate existing AutonomousDatabase [Vault
-     * service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm)
-     * key.
+     * service](https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) key.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -6232,8 +6390,7 @@ public interface DatabaseAsync extends AutoCloseable {
 
     /**
      * Creates a new version of an existing [Vault
-     * service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm)
-     * key.
+     * service](https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) key.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -6285,8 +6442,7 @@ public interface DatabaseAsync extends AutoCloseable {
 
     /**
      * Sets a new version of an existing [Vault
-     * service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm)
-     * key.
+     * service](https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) key.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -6302,8 +6458,7 @@ public interface DatabaseAsync extends AutoCloseable {
 
     /**
      * Sets a new version of an existing [Vault
-     * service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm)
-     * key.
+     * service](https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) key.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -6425,6 +6580,25 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Switchover Autonomous Container Database, identified by the autonomousContainerDatabaseId
+     * parameter, to an active standby Autonomous Container Database.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<SwitchoverAutonomousContainerDatabaseDataguardResponse>
+            switchoverAutonomousContainerDatabaseDataguard(
+                    SwitchoverAutonomousContainerDatabaseDataguardRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    SwitchoverAutonomousContainerDatabaseDataguardRequest,
+                                    SwitchoverAutonomousContainerDatabaseDataguardResponse>
+                            handler);
+
+    /**
      * Switches over the primary Autonomous Container Database of an Autonomous Data Guard peer
      * association to standby role. The standby Autonomous Container Database associated with
      * autonomousContainerDatabaseDataguardAssociationId assumes the primary Autonomous Container
@@ -6543,12 +6717,12 @@ public interface DatabaseAsync extends AutoCloseable {
      * prior to terminating it.
      *
      * <p>*Note:** Deprecated for Exadata Cloud Service systems. Use the [new resource model
-     * APIs](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model)
+     * APIs](https://docs.oracle.com/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model)
      * instead.
      *
      * <p>For Exadata Cloud Service instances, support for this API will end on May 15th, 2021. See
      * [Switching an Exadata DB System to the New Resource Model and
-     * APIs](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem_topic-resource_model_conversion.htm)
+     * APIs](https://docs.oracle.com/iaas/Content/Database/Concepts/exaflexsystem_topic-resource_model_conversion.htm)
      * for details on converting existing Exadata DB systems to the new resource model.
      *
      * @param request The request object containing the details to send
@@ -6734,6 +6908,21 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Updates database backup details.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateBackupResponse> updateBackup(
+            UpdateBackupRequest request,
+            com.oracle.bmc.responses.AsyncHandler<UpdateBackupRequest, UpdateBackupResponse>
+                    handler);
+
+    /**
      * If no database is associated with the backup destination: - For a RECOVERY_APPLIANCE backup
      * destination, updates the connection string and/or the list of VPC users. - For an NFS backup
      * destination, updates the NFS location.
@@ -6863,7 +7052,7 @@ public interface DatabaseAsync extends AutoCloseable {
      * Update an existing Data Guard member. A Data Guard member represents the replication
      * relationship between the specified database and a standby database. For more information, see
      * [Using Oracle Data
-     * Guard](https://docs.cloud.oracle.com/Content/Database/Tasks/usingdataguard.htm).
+     * Guard](https://docs.oracle.com/iaas/Content/Database/Tasks/usingdataguard.htm).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -6959,12 +7148,12 @@ public interface DatabaseAsync extends AutoCloseable {
      * Updates the properties of the specified DB system.
      *
      * <p>*Note:** Deprecated for Exadata Cloud Service systems. Use the [new resource model
-     * APIs](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model)
+     * APIs](https://docs.oracle.com/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model)
      * instead.
      *
      * <p>For Exadata Cloud Service instances, support for this API will end on May 15th, 2021. See
      * [Switching an Exadata DB System to the New Resource Model and
-     * APIs](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem_topic-resource_model_conversion.htm)
+     * APIs](https://docs.oracle.com/iaas/Content/Database/Concepts/exaflexsystem_topic-resource_model_conversion.htm)
      * for details on converting existing Exadata DB systems to the new resource model.
      *
      * @param request The request object containing the details to send
@@ -7002,12 +7191,12 @@ public interface DatabaseAsync extends AutoCloseable {
      * Updates IORM settings for the specified Exadata DB system.
      *
      * <p>*Note:** Deprecated for Exadata Cloud Service systems. Use the [new resource model
-     * APIs](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model)
+     * APIs](https://docs.oracle.com/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model)
      * instead.
      *
      * <p>For Exadata Cloud Service instances, support for this API will end on May 15th, 2021. See
      * [Switching an Exadata DB System to the New Resource Model and
-     * APIs](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem_topic-resource_model_conversion.htm)
+     * APIs](https://docs.oracle.com/iaas/Content/Database/Concepts/exaflexsystem_topic-resource_model_conversion.htm)
      * for details on converting existing Exadata DB systems to the new resource model.
      *
      * <p>The {@link #updateCloudVmClusterIormConfig(UpdateCloudVmClusterIormConfigRequest,

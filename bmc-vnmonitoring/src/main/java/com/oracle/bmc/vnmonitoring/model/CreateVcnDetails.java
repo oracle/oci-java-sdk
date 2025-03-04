@@ -112,15 +112,15 @@ public final class CreateVcnDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compartment to contain the VCN.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment to contain the VCN.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compartment to contain the VCN.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment to contain the VCN.
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -247,7 +247,7 @@ public final class CreateVcnDetails
          * other instances in the VCN. Otherwise the Internet and VCN Resolver will not work.
          *
          * <p>For more information, see [DNS in Your Virtual Cloud
-         * Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
+         * Network](https://docs.oracle.com/iaas/Content/Network/Concepts/dns.htm).
          *
          * <p>Example: {@code vcn1}
          */
@@ -265,7 +265,7 @@ public final class CreateVcnDetails
          * other instances in the VCN. Otherwise the Internet and VCN Resolver will not work.
          *
          * <p>For more information, see [DNS in Your Virtual Cloud
-         * Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
+         * Network](https://docs.oracle.com/iaas/Content/Network/Concepts/dns.htm).
          *
          * <p>Example: {@code vcn1}
          *
@@ -301,7 +301,7 @@ public final class CreateVcnDetails
          * assign the VCN a IPv6 /56 CIDR block. You may skip having Oracle allocate the VCN a IPv6
          * /56 CIDR block by setting isOracleGuaAllocationEnabled to {@code false}. For important
          * details about IPv6 addressing in a VCN, see [IPv6
-         * Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+         * Addresses](https://docs.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
          *
          * <p>Example: {@code true}
          */
@@ -313,7 +313,7 @@ public final class CreateVcnDetails
          * assign the VCN a IPv6 /56 CIDR block. You may skip having Oracle allocate the VCN a IPv6
          * /56 CIDR block by setting isOracleGuaAllocationEnabled to {@code false}. For important
          * details about IPv6 addressing in a VCN, see [IPv6
-         * Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+         * Addresses](https://docs.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
          *
          * <p>Example: {@code true}
          *
@@ -440,15 +440,15 @@ public final class CreateVcnDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compartment to contain the VCN.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment to contain the VCN.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compartment to contain the VCN.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment to contain the VCN.
      *
      * @return the value
      */
@@ -562,7 +562,7 @@ public final class CreateVcnDetails
      * instances in the VCN. Otherwise the Internet and VCN Resolver will not work.
      *
      * <p>For more information, see [DNS in Your Virtual Cloud
-     * Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
+     * Network](https://docs.oracle.com/iaas/Content/Network/Concepts/dns.htm).
      *
      * <p>Example: {@code vcn1}
      */
@@ -580,7 +580,7 @@ public final class CreateVcnDetails
      * instances in the VCN. Otherwise the Internet and VCN Resolver will not work.
      *
      * <p>For more information, see [DNS in Your Virtual Cloud
-     * Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
+     * Network](https://docs.oracle.com/iaas/Content/Network/Concepts/dns.htm).
      *
      * <p>Example: {@code vcn1}
      *
@@ -612,7 +612,7 @@ public final class CreateVcnDetails
      * the VCN a IPv6 /56 CIDR block. You may skip having Oracle allocate the VCN a IPv6 /56 CIDR
      * block by setting isOracleGuaAllocationEnabled to {@code false}. For important details about
      * IPv6 addressing in a VCN, see [IPv6
-     * Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+     * Addresses](https://docs.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
      *
      * <p>Example: {@code true}
      */
@@ -624,7 +624,7 @@ public final class CreateVcnDetails
      * the VCN a IPv6 /56 CIDR block. You may skip having Oracle allocate the VCN a IPv6 /56 CIDR
      * block by setting isOracleGuaAllocationEnabled to {@code false}. For important details about
      * IPv6 addressing in a VCN, see [IPv6
-     * Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+     * Addresses](https://docs.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
      *
      * <p>Example: {@code true}
      *

@@ -9,17 +9,17 @@ import com.oracle.bmc.datascience.model.*;
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
 public class DeactivateModelDeploymentResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/identifiers.htm) of the
-     * work request. Use
-     * [GetWorkRequest](https://docs.cloud.oracle.com/api/#/en/workrequests/20160918/WorkRequest/GetWorkRequest)
+     * The [OCID](https://docs.oracle.com/iaas/Content/API/Concepts/identifiers.htm) of the work
+     * request. Use
+     * [GetWorkRequest](https://docs.oracle.com/iaas/api/#/en/workrequests/20160918/WorkRequest/GetWorkRequest)
      * with this ID to track the status of the request.
      */
     private String opcWorkRequestId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/identifiers.htm) of the
-     * work request. Use
-     * [GetWorkRequest](https://docs.cloud.oracle.com/api/#/en/workrequests/20160918/WorkRequest/GetWorkRequest)
+     * The [OCID](https://docs.oracle.com/iaas/Content/API/Concepts/identifiers.htm) of the work
+     * request. Use
+     * [GetWorkRequest](https://docs.oracle.com/iaas/api/#/en/workrequests/20160918/WorkRequest/GetWorkRequest)
      * with this ID to track the status of the request.
      *
      * @return the value
@@ -80,17 +80,17 @@ public class DeactivateModelDeploymentResponse extends com.oracle.bmc.responses.
         }
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/identifiers.htm) of
-         * the work request. Use
-         * [GetWorkRequest](https://docs.cloud.oracle.com/api/#/en/workrequests/20160918/WorkRequest/GetWorkRequest)
+         * The [OCID](https://docs.oracle.com/iaas/Content/API/Concepts/identifiers.htm) of the work
+         * request. Use
+         * [GetWorkRequest](https://docs.oracle.com/iaas/api/#/en/workrequests/20160918/WorkRequest/GetWorkRequest)
          * with this ID to track the status of the request.
          */
         private String opcWorkRequestId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/identifiers.htm) of
-         * the work request. Use
-         * [GetWorkRequest](https://docs.cloud.oracle.com/api/#/en/workrequests/20160918/WorkRequest/GetWorkRequest)
+         * The [OCID](https://docs.oracle.com/iaas/Content/API/Concepts/identifiers.htm) of the work
+         * request. Use
+         * [GetWorkRequest](https://docs.oracle.com/iaas/api/#/en/workrequests/20160918/WorkRequest/GetWorkRequest)
          * with this ID to track the status of the request.
          *
          * @param opcWorkRequestId the value to set

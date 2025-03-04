@@ -74,7 +74,7 @@ public interface Inventory extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/AnalyzeAssetsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/AnalyzeAssetsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use AnalyzeAssets API.
      */
     AnalyzeAssetsResponse analyzeAssets(AnalyzeAssetsRequest request);
@@ -90,7 +90,7 @@ public interface Inventory extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/ChangeAssetCompartmentExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/ChangeAssetCompartmentExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ChangeAssetCompartment API.
      */
@@ -106,7 +106,7 @@ public interface Inventory extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/ChangeAssetTagsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/ChangeAssetTagsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeAssetTags
      *     API.
      */
@@ -122,7 +122,7 @@ public interface Inventory extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/CreateAssetExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/CreateAssetExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateAsset API.
      */
     CreateAssetResponse createAsset(CreateAssetRequest request);
@@ -137,7 +137,7 @@ public interface Inventory extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/CreateInventoryExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/CreateInventoryExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateInventory
      *     API.
      */
@@ -153,7 +153,7 @@ public interface Inventory extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/DeleteAssetExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/DeleteAssetExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteAsset API.
      */
     DeleteAssetResponse deleteAsset(DeleteAssetRequest request);
@@ -168,7 +168,7 @@ public interface Inventory extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/DeleteInventoryExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/DeleteInventoryExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteInventory
      *     API.
      */
@@ -184,7 +184,7 @@ public interface Inventory extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/GetAssetExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/GetAssetExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetAsset API.
      */
     GetAssetResponse getAsset(GetAssetRequest request);
@@ -199,7 +199,7 @@ public interface Inventory extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/GetInventoryExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/GetInventoryExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetInventory API.
      */
     GetInventoryResponse getInventory(GetInventoryRequest request);
@@ -214,7 +214,7 @@ public interface Inventory extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/ImportInventoryExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/ImportInventoryExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ImportInventory
      *     API.
      */
@@ -230,7 +230,7 @@ public interface Inventory extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/ListAssetsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/ListAssetsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListAssets API.
      */
     ListAssetsResponse listAssets(ListAssetsRequest request);
@@ -245,7 +245,7 @@ public interface Inventory extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/ListHistoricalMetricsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/ListHistoricalMetricsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ListHistoricalMetrics API.
      */
@@ -261,7 +261,7 @@ public interface Inventory extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/ListInventoriesExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/ListInventoriesExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListInventories
      *     API.
      */
@@ -277,7 +277,7 @@ public interface Inventory extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/SubmitHistoricalMetricsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/SubmitHistoricalMetricsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     SubmitHistoricalMetrics API.
      */
@@ -293,7 +293,7 @@ public interface Inventory extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/UpdateAssetExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/UpdateAssetExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateAsset API.
      */
     UpdateAssetResponse updateAsset(UpdateAssetRequest request);
@@ -308,7 +308,7 @@ public interface Inventory extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/UpdateInventoryExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/UpdateInventoryExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateInventory
      *     API.
      */

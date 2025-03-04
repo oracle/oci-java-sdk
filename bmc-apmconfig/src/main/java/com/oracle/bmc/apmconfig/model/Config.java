@@ -67,14 +67,14 @@ public class Config extends com.oracle.bmc.http.client.internal.ExplicitlySetBmc
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * configuration item. An OCID is generated when the item is created.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * configuration item. An OCID is generated when the item is created.
      *
      * @return the value
@@ -122,13 +122,13 @@ public class Config extends com.oracle.bmc.http.client.internal.ExplicitlySetBmc
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a user.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a user.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("createdBy")
     private final String createdBy;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a user.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a user.
      *
      * @return the value
      */
@@ -137,13 +137,13 @@ public class Config extends com.oracle.bmc.http.client.internal.ExplicitlySetBmc
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a user.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a user.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("updatedBy")
     private final String updatedBy;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a user.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a user.
      *
      * @return the value
      */

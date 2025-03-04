@@ -56,7 +56,7 @@ public final class InstanceReservationConfig
          * The fault domain of this capacity configuration. If a value is not supplied, this
          * capacity configuration is applicable to all fault domains in the specified availability
          * domain. For more information, see [Capacity
-         * Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm).
+         * Reservations](https://docs.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("faultDomain")
         private String faultDomain;
@@ -65,7 +65,7 @@ public final class InstanceReservationConfig
          * The fault domain of this capacity configuration. If a value is not supplied, this
          * capacity configuration is applicable to all fault domains in the specified availability
          * domain. For more information, see [Capacity
-         * Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm).
+         * Reservations](https://docs.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm).
          *
          * @param faultDomain the value to set
          * @return this builder
@@ -230,7 +230,7 @@ public final class InstanceReservationConfig
      * The fault domain of this capacity configuration. If a value is not supplied, this capacity
      * configuration is applicable to all fault domains in the specified availability domain. For
      * more information, see [Capacity
-     * Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm).
+     * Reservations](https://docs.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("faultDomain")
     private final String faultDomain;
@@ -239,7 +239,7 @@ public final class InstanceReservationConfig
      * The fault domain of this capacity configuration. If a value is not supplied, this capacity
      * configuration is applicable to all fault domains in the specified availability domain. For
      * more information, see [Capacity
-     * Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm).
+     * Reservations](https://docs.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm).
      *
      * @return the value
      */

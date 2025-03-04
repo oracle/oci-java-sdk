@@ -9,8 +9,8 @@ import com.oracle.bmc.keymanagement.responses.*;
 
 /**
  * Use the Key Management API to manage vaults and keys. For more information, see [Managing
- * Vaults](https://docs.cloud.oracle.com/Content/KeyManagement/Tasks/managingvaults.htm) and
- * [Managing Keys](https://docs.cloud.oracle.com/Content/KeyManagement/Tasks/managingkeys.htm).
+ * Vaults](https://docs.oracle.com/iaas/Content/KeyManagement/Tasks/managingvaults.htm) and
+ * [Managing Keys](https://docs.oracle.com/iaas/Content/KeyManagement/Tasks/managingkeys.htm).
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: release")
 public interface EkmAsync extends AutoCloseable {

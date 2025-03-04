@@ -20,10 +20,10 @@ import com.oracle.bmc.generativeai.responses.*;
  *
  * <p>To access your custom model endpoints, or to try the out-of-the-box models to generate text,
  * summarize, and create text embeddings see the [Generative AI Inference
- * API](https://docs.cloud.oracle.com/iaas/api/#/en/generative-ai-inference/latest/).
+ * API](https://docs.oracle.com/iaas/api/#/en/generative-ai-inference/latest/).
  *
  * <p>To learn more about the service, see the [Generative AI
- * documentation](https://docs.cloud.oracle.com/iaas/Content/generative-ai/home.htm).
+ * documentation](https://docs.oracle.com/iaas/Content/generative-ai/home.htm).
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20231130")
 public interface GenerativeAiAsync extends AutoCloseable {
@@ -79,7 +79,7 @@ public interface GenerativeAiAsync extends AutoCloseable {
     /**
      * Moves a dedicated AI cluster into a different compartment within the same tenancy. For
      * information about moving resources between compartments, see [Moving Resources to a Different
-     * Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -99,7 +99,7 @@ public interface GenerativeAiAsync extends AutoCloseable {
     /**
      * Moves an endpoint into a different compartment within the same tenancy. For information about
      * moving resources between compartments, see [Moving Resources to a Different
-     * Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -117,7 +117,7 @@ public interface GenerativeAiAsync extends AutoCloseable {
     /**
      * Moves a custom model into a different compartment. For information about moving resources
      * between compartments, see [Moving Resources to a Different
-     * Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.

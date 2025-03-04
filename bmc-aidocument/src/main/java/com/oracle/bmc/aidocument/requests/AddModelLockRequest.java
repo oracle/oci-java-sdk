@@ -7,7 +7,7 @@ package com.oracle.bmc.aidocument.requests;
 import com.oracle.bmc.aidocument.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aidocument/AddModelLockExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aidocument/AddModelLockExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use AddModelLockRequest.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221109")

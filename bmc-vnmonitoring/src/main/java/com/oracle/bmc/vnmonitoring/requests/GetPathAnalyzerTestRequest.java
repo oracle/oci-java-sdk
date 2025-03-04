@@ -7,20 +7,20 @@ package com.oracle.bmc.vnmonitoring.requests;
 import com.oracle.bmc.vnmonitoring.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/vnmonitoring/GetPathAnalyzerTestExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/vnmonitoring/GetPathAnalyzerTestExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use GetPathAnalyzerTestRequest.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class GetPathAnalyzerTestRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * {@code PathAnalyzerTest} resource.
      */
     private String pathAnalyzerTestId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * {@code PathAnalyzerTest} resource.
      */
     public String getPathAnalyzerTestId() {
@@ -47,13 +47,13 @@ public class GetPathAnalyzerTestRequest extends com.oracle.bmc.requests.BmcReque
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * {@code PathAnalyzerTest} resource.
          */
         private String pathAnalyzerTestId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * {@code PathAnalyzerTest} resource.
          *
          * @param pathAnalyzerTestId the value to set

@@ -33,7 +33,7 @@ public final class EnableReplicationToRegionDetails
     public static class Builder {
         /**
          * A region to which you want identity domain replication to occur. See [Regions and
-         * Availability Domains](https://docs.cloud.oracle.com/Content/General/Concepts/regions.htm)
+         * Availability Domains](https://docs.oracle.com/iaas/Content/General/Concepts/regions.htm)
          * for the full list of supported region names.
          *
          * <p>Example: {@code us-phoenix-1}
@@ -43,7 +43,7 @@ public final class EnableReplicationToRegionDetails
 
         /**
          * A region to which you want identity domain replication to occur. See [Regions and
-         * Availability Domains](https://docs.cloud.oracle.com/Content/General/Concepts/regions.htm)
+         * Availability Domains](https://docs.oracle.com/iaas/Content/General/Concepts/regions.htm)
          * for the full list of supported region names.
          *
          * <p>Example: {@code us-phoenix-1}
@@ -89,7 +89,7 @@ public final class EnableReplicationToRegionDetails
 
     /**
      * A region to which you want identity domain replication to occur. See [Regions and
-     * Availability Domains](https://docs.cloud.oracle.com/Content/General/Concepts/regions.htm) for
+     * Availability Domains](https://docs.oracle.com/iaas/Content/General/Concepts/regions.htm) for
      * the full list of supported region names.
      *
      * <p>Example: {@code us-phoenix-1}
@@ -99,7 +99,7 @@ public final class EnableReplicationToRegionDetails
 
     /**
      * A region to which you want identity domain replication to occur. See [Regions and
-     * Availability Domains](https://docs.cloud.oracle.com/Content/General/Concepts/regions.htm) for
+     * Availability Domains](https://docs.oracle.com/iaas/Content/General/Concepts/regions.htm) for
      * the full list of supported region names.
      *
      * <p>Example: {@code us-phoenix-1}

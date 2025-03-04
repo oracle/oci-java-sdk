@@ -9,14 +9,14 @@ package com.oracle.bmc.identity.model;
  * Also known as an *API signing key*. Specifically, this is the public key from the key pair. The
  * private key remains with the user calling the API. For information about generating a key pair in
  * the required PEM format, see [Required Keys and
- * OCIDs](https://docs.cloud.oracle.com/Content/API/Concepts/apisigningkey.htm).
+ * OCIDs](https://docs.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm).
  *
  * <p>*Important:** This is **not** the SSH key for accessing compute instances.
  *
  * <p>Each user can have a maximum of three API signing keys.
  *
  * <p>For more information about user credentials, see [User
- * Credentials](https://docs.cloud.oracle.com/Content/Identity/Concepts/usercredentials.htm). <br>
+ * Credentials](https://docs.oracle.com/iaas/Content/Identity/Concepts/usercredentials.htm). <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a

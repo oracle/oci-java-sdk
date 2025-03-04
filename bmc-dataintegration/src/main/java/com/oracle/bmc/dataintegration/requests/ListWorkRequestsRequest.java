@@ -7,7 +7,7 @@ package com.oracle.bmc.dataintegration.requests;
 import com.oracle.bmc.dataintegration.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/ListWorkRequestsExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/ListWorkRequestsExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListWorkRequestsRequest.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
@@ -88,14 +88,14 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
     /**
      * For list pagination. The value for this parameter is the {@code opc-next-page} or the {@code
      * opc-prev-page} response header from the previous {@code List} call. See [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private String page;
 
     /**
      * For list pagination. The value for this parameter is the {@code opc-next-page} or the {@code
      * opc-prev-page} response header from the previous {@code List} call. See [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     public String getPage() {
         return page;
@@ -103,14 +103,14 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
     /**
      * Sets the maximum number of results per page, or items to return in a paginated {@code List}
      * call. See [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private Integer limit;
 
     /**
      * Sets the maximum number of results per page, or items to return in a paginated {@code List}
      * call. See [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     public Integer getLimit() {
         return limit;
@@ -283,14 +283,14 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
         /**
          * For list pagination. The value for this parameter is the {@code opc-next-page} or the
          * {@code opc-prev-page} response header from the previous {@code List} call. See [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private String page = null;
 
         /**
          * For list pagination. The value for this parameter is the {@code opc-next-page} or the
          * {@code opc-prev-page} response header from the previous {@code List} call. See [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param page the value to set
          * @return this builder instance
@@ -303,14 +303,14 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
         /**
          * Sets the maximum number of results per page, or items to return in a paginated {@code
          * List} call. See [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private Integer limit = null;
 
         /**
          * Sets the maximum number of results per page, or items to return in a paginated {@code
          * List} call. See [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param limit the value to set
          * @return this builder instance

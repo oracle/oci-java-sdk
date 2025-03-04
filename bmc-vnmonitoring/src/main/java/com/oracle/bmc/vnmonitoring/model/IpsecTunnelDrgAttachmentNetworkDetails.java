@@ -51,15 +51,15 @@ public final class IpsecTunnelDrgAttachmentNetworkDetails extends DrgAttachmentN
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the virtual circuit's DRG attachment.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * virtual circuit's DRG attachment.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("transportAttachmentId")
         private String transportAttachmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the virtual circuit's DRG attachment.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * virtual circuit's DRG attachment.
          *
          * @param transportAttachmentId the value to set
          * @return this builder
@@ -129,15 +129,15 @@ public final class IpsecTunnelDrgAttachmentNetworkDetails extends DrgAttachmentN
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the virtual circuit's DRG attachment.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * virtual circuit's DRG attachment.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("transportAttachmentId")
     private final String transportAttachmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the virtual circuit's DRG attachment.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * virtual circuit's DRG attachment.
      *
      * @return the value
      */

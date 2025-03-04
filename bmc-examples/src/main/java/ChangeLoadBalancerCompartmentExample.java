@@ -16,7 +16,7 @@ public class ChangeLoadBalancerCompartmentExample {
 
     /**
      * The entry point for the example. Please refer to
-     * https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer for information about using the load
+     * https://docs.oracle.com/iaas/api/#/en/loadbalancer for information about using the load
      * balancer API This example changes the compartment for an existing LoadBalancer
      *
      * @param args Arguments to provide to the example. The following arguments are expected:

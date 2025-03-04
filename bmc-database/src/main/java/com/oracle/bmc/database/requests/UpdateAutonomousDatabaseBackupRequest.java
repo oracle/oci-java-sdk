@@ -7,7 +7,7 @@ package com.oracle.bmc.database.requests;
 import com.oracle.bmc.database.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdateAutonomousDatabaseBackupExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdateAutonomousDatabaseBackupExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * UpdateAutonomousDatabaseBackupRequest.
  */
@@ -17,13 +17,13 @@ public class UpdateAutonomousDatabaseBackupRequest
                 com.oracle.bmc.database.model.UpdateAutonomousDatabaseBackupDetails> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Autonomous Database backup.
      */
     private String autonomousDatabaseBackupId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Autonomous Database backup.
      */
     public String getAutonomousDatabaseBackupId() {
@@ -82,13 +82,13 @@ public class UpdateAutonomousDatabaseBackupRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Autonomous Database backup.
          */
         private String autonomousDatabaseBackupId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Autonomous Database backup.
          *
          * @param autonomousDatabaseBackupId the value to set

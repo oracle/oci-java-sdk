@@ -7,7 +7,7 @@ package com.oracle.bmc.loadbalancer.model;
 /**
  * The configuration details for a load balancer backend set. For more information on backend set
  * configuration, see [Managing Backend
- * Sets](https://docs.cloud.oracle.com/Content/Balance/Tasks/managingbackendsets.htm).
+ * Sets](https://docs.oracle.com/iaas/Content/Balance/Tasks/managingbackendsets.htm).
  *
  * <p>*Note:** The {@code sessionPersistenceConfiguration} (application cookie stickiness) and
  * {@code lbCookieSessionPersistenceConfiguration} (LB cookie stickiness) attributes are mutually

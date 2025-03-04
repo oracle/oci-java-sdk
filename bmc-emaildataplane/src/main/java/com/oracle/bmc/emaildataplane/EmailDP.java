@@ -10,7 +10,7 @@ import com.oracle.bmc.emaildataplane.responses.*;
 /**
  * Use the Email Delivery API to send high-volume and application-generated emails. For more
  * information, see [Overview of the Email Delivery
- * Service](https://docs.cloud.oracle.com/iaas/Content/Email/Concepts/overview.htm).
+ * Service](https://docs.oracle.com/iaas/Content/Email/Concepts/overview.htm).
  *
  * <p>This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by
  * default if no circuit breaker configuration is defined by the user.
@@ -76,7 +76,7 @@ public interface EmailDP extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/emaildataplane/SubmitEmailExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/emaildataplane/SubmitEmailExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use SubmitEmail API.
      */
     SubmitEmailResponse submitEmail(SubmitEmailRequest request);

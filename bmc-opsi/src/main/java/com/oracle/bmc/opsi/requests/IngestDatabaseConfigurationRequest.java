@@ -7,7 +7,7 @@ package com.oracle.bmc.opsi.requests;
 import com.oracle.bmc.opsi.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/IngestDatabaseConfigurationExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/IngestDatabaseConfigurationExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * IngestDatabaseConfigurationRequest.
  */
@@ -26,27 +26,27 @@ public class IngestDatabaseConfigurationRequest
         return ingestDatabaseConfigurationDetails;
     }
     /**
-     * Optional [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-     * of the associated DBaaS entity.
+     * Optional [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * associated DBaaS entity.
      */
     private String databaseId;
 
     /**
-     * Optional [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-     * of the associated DBaaS entity.
+     * Optional [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * associated DBaaS entity.
      */
     public String getDatabaseId() {
         return databaseId;
     }
     /**
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * database insight resource.
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database
+     * insight resource.
      */
     private String id;
 
     /**
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * database insight resource.
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database
+     * insight resource.
      */
     public String getId() {
         return id;
@@ -137,15 +137,13 @@ public class IngestDatabaseConfigurationRequest
         }
 
         /**
-         * Optional
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+         * Optional [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
          * the associated DBaaS entity.
          */
         private String databaseId = null;
 
         /**
-         * Optional
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+         * Optional [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
          * the associated DBaaS entity.
          *
          * @param databaseId the value to set
@@ -157,14 +155,14 @@ public class IngestDatabaseConfigurationRequest
         }
 
         /**
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-         * the database insight resource.
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * database insight resource.
          */
         private String id = null;
 
         /**
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-         * the database insight resource.
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * database insight resource.
          *
          * @param id the value to set
          * @return this builder instance

@@ -7,7 +7,7 @@ package com.oracle.bmc.mediaservices.requests;
 import com.oracle.bmc.mediaservices.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/UpdateMediaWorkflowExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/UpdateMediaWorkflowExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateMediaWorkflowRequest.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211101")

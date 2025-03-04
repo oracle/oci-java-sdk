@@ -287,14 +287,14 @@ public final class RedisConnection extends Connection {
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Redis cluster.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("redisClusterId")
         private String redisClusterId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Redis cluster.
          *
          * @param redisClusterId the value to set
@@ -306,7 +306,7 @@ public final class RedisConnection extends Connection {
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Secret where the password is stored. The password Oracle GoldenGate uses to connect the
          * associated system of the given technology. It must conform to the specific security
          * requirements including length, case sensitivity, and so on. If secretId is used plaintext
@@ -316,7 +316,7 @@ public final class RedisConnection extends Connection {
         private String passwordSecretId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Secret where the password is stored. The password Oracle GoldenGate uses to connect the
          * associated system of the given technology. It must conform to the specific security
          * requirements including length, case sensitivity, and so on. If secretId is used plaintext
@@ -331,7 +331,7 @@ public final class RedisConnection extends Connection {
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Secret that stores the content of the TrustStore file. Note: When provided, 'trustStore'
          * field must not be provided.
          */
@@ -339,7 +339,7 @@ public final class RedisConnection extends Connection {
         private String trustStoreSecretId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Secret that stores the content of the TrustStore file. Note: When provided, 'trustStore'
          * field must not be provided.
          *
@@ -352,7 +352,7 @@ public final class RedisConnection extends Connection {
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Secret where the Redis TrustStore password is stored. Note: When provided,
          * 'trustStorePassword' field must not be provided.
          */
@@ -360,7 +360,7 @@ public final class RedisConnection extends Connection {
         private String trustStorePasswordSecretId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Secret where the Redis TrustStore password is stored. Note: When provided,
          * 'trustStorePassword' field must not be provided.
          *
@@ -373,7 +373,7 @@ public final class RedisConnection extends Connection {
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Secret that stores the content of the KeyStore file. Note: When provided, 'keyStore'
          * field must not be provided.
          */
@@ -381,7 +381,7 @@ public final class RedisConnection extends Connection {
         private String keyStoreSecretId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Secret that stores the content of the KeyStore file. Note: When provided, 'keyStore'
          * field must not be provided.
          *
@@ -394,7 +394,7 @@ public final class RedisConnection extends Connection {
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Secret where the Redis KeyStore password is stored. Note: When provided,
          * 'keyStorePassword' field must not be provided.
          */
@@ -402,7 +402,7 @@ public final class RedisConnection extends Connection {
         private String keyStorePasswordSecretId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Secret where the Redis KeyStore password is stored. Note: When provided,
          * 'keyStorePassword' field must not be provided.
          *
@@ -846,14 +846,14 @@ public final class RedisConnection extends Connection {
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Redis cluster.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("redisClusterId")
     private final String redisClusterId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Redis cluster.
      *
      * @return the value
@@ -863,7 +863,7 @@ public final class RedisConnection extends Connection {
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Secret where the password is stored. The password Oracle GoldenGate uses to connect the
      * associated system of the given technology. It must conform to the specific security
      * requirements including length, case sensitivity, and so on. If secretId is used plaintext
@@ -873,7 +873,7 @@ public final class RedisConnection extends Connection {
     private final String passwordSecretId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Secret where the password is stored. The password Oracle GoldenGate uses to connect the
      * associated system of the given technology. It must conform to the specific security
      * requirements including length, case sensitivity, and so on. If secretId is used plaintext
@@ -886,7 +886,7 @@ public final class RedisConnection extends Connection {
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Secret that stores the content of the TrustStore file. Note: When provided, 'trustStore'
      * field must not be provided.
      */
@@ -894,7 +894,7 @@ public final class RedisConnection extends Connection {
     private final String trustStoreSecretId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Secret that stores the content of the TrustStore file. Note: When provided, 'trustStore'
      * field must not be provided.
      *
@@ -905,7 +905,7 @@ public final class RedisConnection extends Connection {
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Secret where the Redis TrustStore password is stored. Note: When provided,
      * 'trustStorePassword' field must not be provided.
      */
@@ -913,7 +913,7 @@ public final class RedisConnection extends Connection {
     private final String trustStorePasswordSecretId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Secret where the Redis TrustStore password is stored. Note: When provided,
      * 'trustStorePassword' field must not be provided.
      *
@@ -924,7 +924,7 @@ public final class RedisConnection extends Connection {
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Secret that stores the content of the KeyStore file. Note: When provided, 'keyStore' field
      * must not be provided.
      */
@@ -932,7 +932,7 @@ public final class RedisConnection extends Connection {
     private final String keyStoreSecretId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Secret that stores the content of the KeyStore file. Note: When provided, 'keyStore' field
      * must not be provided.
      *
@@ -943,7 +943,7 @@ public final class RedisConnection extends Connection {
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Secret where the Redis KeyStore password is stored. Note: When provided, 'keyStorePassword'
      * field must not be provided.
      */
@@ -951,7 +951,7 @@ public final class RedisConnection extends Connection {
     private final String keyStorePasswordSecretId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Secret where the Redis KeyStore password is stored. Note: When provided, 'keyStorePassword'
      * field must not be provided.
      *

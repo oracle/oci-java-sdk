@@ -13,7 +13,7 @@ import com.oracle.bmc.threatintelligence.responses.*;
  * Intelligence is a managed database of curated threat intelligence that comes from first party
  * Oracle security insights, open source feeds, and vendor-procured data. For more information, see
  * the [Threat Intelligence
- * documentation](https://docs.cloud.oracle.com/iaas/Content/threat-intel/home.htm).
+ * documentation](https://docs.oracle.com/iaas/Content/threat-intel/home.htm).
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
 public interface ThreatintelAsync extends AutoCloseable {

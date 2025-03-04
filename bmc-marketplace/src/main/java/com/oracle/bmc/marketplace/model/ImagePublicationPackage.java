@@ -83,7 +83,7 @@ public final class ImagePublicationPackage extends PublicationPackage {
         /**
          * The ID of the listing resource associated with this publication package. For more
          * information, see
-         * [AppCatalogListing](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogListing/)
+         * [AppCatalogListing](https://docs.oracle.com/iaas/en-us/iaas/api/#/en/iaas/latest/AppCatalogListing/)
          * in the Core Services API.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("appCatalogListingId")
@@ -92,7 +92,7 @@ public final class ImagePublicationPackage extends PublicationPackage {
         /**
          * The ID of the listing resource associated with this publication package. For more
          * information, see
-         * [AppCatalogListing](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogListing/)
+         * [AppCatalogListing](https://docs.oracle.com/iaas/en-us/iaas/api/#/en/iaas/latest/AppCatalogListing/)
          * in the Core Services API.
          *
          * @param appCatalogListingId the value to set
@@ -219,7 +219,7 @@ public final class ImagePublicationPackage extends PublicationPackage {
     /**
      * The ID of the listing resource associated with this publication package. For more
      * information, see
-     * [AppCatalogListing](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogListing/)
+     * [AppCatalogListing](https://docs.oracle.com/iaas/en-us/iaas/api/#/en/iaas/latest/AppCatalogListing/)
      * in the Core Services API.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("appCatalogListingId")
@@ -228,7 +228,7 @@ public final class ImagePublicationPackage extends PublicationPackage {
     /**
      * The ID of the listing resource associated with this publication package. For more
      * information, see
-     * [AppCatalogListing](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogListing/)
+     * [AppCatalogListing](https://docs.oracle.com/iaas/en-us/iaas/api/#/en/iaas/latest/AppCatalogListing/)
      * in the Core Services API.
      *
      * @return the value

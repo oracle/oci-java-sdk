@@ -7,23 +7,21 @@ package com.oracle.bmc.resourcescheduler.requests;
 import com.oracle.bmc.resourcescheduler.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcescheduler/ActivateScheduleExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcescheduler/ActivateScheduleExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use ActivateScheduleRequest.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20240430")
 public class ActivateScheduleRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * This is the
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * schedule.
+     * This is the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the schedule.
      */
     private String scheduleId;
 
     /**
-     * This is the
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * schedule.
+     * This is the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the schedule.
      */
     public String getScheduleId() {
         return scheduleId;
@@ -87,16 +85,14 @@ public class ActivateScheduleRequest extends com.oracle.bmc.requests.BmcRequest<
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * This is the
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-         * the schedule.
+         * This is the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the schedule.
          */
         private String scheduleId = null;
 
         /**
-         * This is the
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-         * the schedule.
+         * This is the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the schedule.
          *
          * @param scheduleId the value to set
          * @return this builder instance

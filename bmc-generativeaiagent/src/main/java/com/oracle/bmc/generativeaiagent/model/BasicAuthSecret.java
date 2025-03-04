@@ -27,15 +27,15 @@ public final class BasicAuthSecret extends SecretDetail {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the secret for basic authentication.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * secret for basic authentication.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("vaultSecretId")
         private String vaultSecretId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the secret for basic authentication.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * secret for basic authentication.
          *
          * @param vaultSecretId the value to set
          * @return this builder
@@ -82,15 +82,15 @@ public final class BasicAuthSecret extends SecretDetail {
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the secret for basic authentication.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * secret for basic authentication.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("vaultSecretId")
     private final String vaultSecretId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the secret for basic authentication.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * secret for basic authentication.
      *
      * @return the value
      */

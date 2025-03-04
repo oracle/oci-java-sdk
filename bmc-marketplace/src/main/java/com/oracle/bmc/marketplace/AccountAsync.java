@@ -10,7 +10,7 @@ import com.oracle.bmc.marketplace.responses.*;
 /**
  * Use the Marketplace API to manage applications in Oracle Cloud Infrastructure Marketplace. For
  * more information, see [Overview of
- * Marketplace](https://docs.cloud.oracle.com/Content/Marketplace/Concepts/marketoverview.htm)
+ * Marketplace](https://docs.oracle.com/iaas/Content/Marketplace/Concepts/marketoverview.htm)
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
 public interface AccountAsync extends AutoCloseable {

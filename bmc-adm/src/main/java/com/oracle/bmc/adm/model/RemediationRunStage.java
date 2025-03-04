@@ -192,7 +192,7 @@ public class RemediationRunStage extends com.oracle.bmc.http.client.internal.Exp
 
     /**
      * The Oracle Cloud identifier
-     * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the
+     * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the
      * remediation run.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("remediationRunId")
@@ -200,7 +200,7 @@ public class RemediationRunStage extends com.oracle.bmc.http.client.internal.Exp
 
     /**
      * The Oracle Cloud identifier
-     * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the
+     * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the
      * remediation run.
      *
      * @return the value

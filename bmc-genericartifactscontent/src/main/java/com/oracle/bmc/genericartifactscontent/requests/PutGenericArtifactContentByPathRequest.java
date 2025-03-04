@@ -7,7 +7,7 @@ package com.oracle.bmc.genericartifactscontent.requests;
 import com.oracle.bmc.genericartifactscontent.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/genericartifactscontent/PutGenericArtifactContentByPathExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/genericartifactscontent/PutGenericArtifactContentByPathExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * PutGenericArtifactContentByPathRequest.
  */
@@ -16,16 +16,16 @@ public class PutGenericArtifactContentByPathRequest
         extends com.oracle.bmc.requests.BmcRequest<java.io.InputStream> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the repository.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * repository.
      *
      * <p>Example: {@code ocid1.repository.oc1..exampleuniqueID}
      */
     private String repositoryId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the repository.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * repository.
      *
      * <p>Example: {@code ocid1.repository.oc1..exampleuniqueID}
      */
@@ -102,7 +102,7 @@ public class PutGenericArtifactContentByPathRequest
     }
     /**
      * Unique Oracle-assigned [request
-     * ID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm)
+     * ID](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm)
      *
      * <p>Example: {@code bxxxxxxx-fxxx-4xxx-9xxx-bxxxxxxxxxxx} If you contact Oracle about a
      * request, provide this request ID.
@@ -111,7 +111,7 @@ public class PutGenericArtifactContentByPathRequest
 
     /**
      * Unique Oracle-assigned [request
-     * ID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm)
+     * ID](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm)
      *
      * <p>Example: {@code bxxxxxxx-fxxx-4xxx-9xxx-bxxxxxxxxxxx} If you contact Oracle about a
      * request, provide this request ID.
@@ -138,16 +138,16 @@ public class PutGenericArtifactContentByPathRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the repository.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * repository.
          *
          * <p>Example: {@code ocid1.repository.oc1..exampleuniqueID}
          */
         private String repositoryId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the repository.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * repository.
          *
          * <p>Example: {@code ocid1.repository.oc1..exampleuniqueID}
          *
@@ -249,7 +249,7 @@ public class PutGenericArtifactContentByPathRequest
 
         /**
          * Unique Oracle-assigned [request
-         * ID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm)
+         * ID](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm)
          *
          * <p>Example: {@code bxxxxxxx-fxxx-4xxx-9xxx-bxxxxxxxxxxx} If you contact Oracle about a
          * request, provide this request ID.
@@ -258,7 +258,7 @@ public class PutGenericArtifactContentByPathRequest
 
         /**
          * Unique Oracle-assigned [request
-         * ID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm)
+         * ID](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm)
          *
          * <p>Example: {@code bxxxxxxx-fxxx-4xxx-9xxx-bxxxxxxxxxxx} If you contact Oracle about a
          * request, provide this request ID.

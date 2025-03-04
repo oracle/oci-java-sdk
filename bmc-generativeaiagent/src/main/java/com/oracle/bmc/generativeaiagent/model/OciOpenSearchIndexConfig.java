@@ -28,15 +28,15 @@ public final class OciOpenSearchIndexConfig extends IndexConfig {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the OpenSearch Cluster.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * OpenSearch Cluster.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("clusterId")
         private String clusterId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the OpenSearch Cluster.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * OpenSearch Cluster.
          *
          * @param clusterId the value to set
          * @return this builder
@@ -117,15 +117,15 @@ public final class OciOpenSearchIndexConfig extends IndexConfig {
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the OpenSearch Cluster.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * OpenSearch Cluster.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("clusterId")
     private final String clusterId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the OpenSearch Cluster.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * OpenSearch Cluster.
      *
      * @return the value
      */

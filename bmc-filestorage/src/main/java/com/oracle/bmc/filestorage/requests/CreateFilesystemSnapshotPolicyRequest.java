@@ -7,7 +7,7 @@ package com.oracle.bmc.filestorage.requests;
 import com.oracle.bmc.filestorage.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/CreateFilesystemSnapshotPolicyExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/CreateFilesystemSnapshotPolicyExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * CreateFilesystemSnapshotPolicyRequest.
  */

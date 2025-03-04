@@ -95,14 +95,14 @@ public final class CreateMountTargetDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * compartment in which to create the mount target.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * compartment in which to create the mount target.
          *
          * @param compartmentId the value to set
@@ -145,16 +145,16 @@ public final class CreateMountTargetDetails
          * 1123](https://tools.ietf.org/html/rfc1123).
          *
          * <p>Note: This attribute value is stored in the
-         * [PrivateIp](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/)
+         * [PrivateIp](https://docs.oracle.com/iaas/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/)
          * resource, not in the {@code mountTarget} resource. To update the {@code hostnameLabel},
          * use {@code GetMountTarget} to obtain the
-         * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * mount target's private IPs ({@code privateIpIds}). Then, you can use
-         * [UpdatePrivateIp](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/UpdatePrivateIp)
+         * [UpdatePrivateIp](https://docs.oracle.com/iaas/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/UpdatePrivateIp)
          * to update the {@code hostnameLabel} value.
          *
          * <p>For more information, see [DNS in Your Virtual Cloud
-         * Network](https://docs.cloud.oracle.com/Content/Network/Concepts/dns.htm).
+         * Network](https://docs.oracle.com/iaas/Content/Network/Concepts/dns.htm).
          *
          * <p>Example: {@code files-1}
          */
@@ -170,16 +170,16 @@ public final class CreateMountTargetDetails
          * 1123](https://tools.ietf.org/html/rfc1123).
          *
          * <p>Note: This attribute value is stored in the
-         * [PrivateIp](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/)
+         * [PrivateIp](https://docs.oracle.com/iaas/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/)
          * resource, not in the {@code mountTarget} resource. To update the {@code hostnameLabel},
          * use {@code GetMountTarget} to obtain the
-         * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * mount target's private IPs ({@code privateIpIds}). Then, you can use
-         * [UpdatePrivateIp](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/UpdatePrivateIp)
+         * [UpdatePrivateIp](https://docs.oracle.com/iaas/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/UpdatePrivateIp)
          * to update the {@code hostnameLabel} value.
          *
          * <p>For more information, see [DNS in Your Virtual Cloud
-         * Network](https://docs.cloud.oracle.com/Content/Network/Concepts/dns.htm).
+         * Network](https://docs.oracle.com/iaas/Content/Network/Concepts/dns.htm).
          *
          * <p>Example: {@code files-1}
          *
@@ -217,14 +217,14 @@ public final class CreateMountTargetDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * subnet in which to create the mount target.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
         private String subnetId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * subnet in which to create the mount target.
          *
          * @param subnetId the value to set
@@ -261,22 +261,22 @@ public final class CreateMountTargetDetails
         }
         /**
          * A list of Network Security Group
-         * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
-         * associated with this mount target. A maximum of 5 is allowed. Setting this to an empty
-         * array after the list is created removes the mount target from all NSGs. For more
-         * information about NSGs, see [Security
-         * Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm).
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated
+         * with this mount target. A maximum of 5 is allowed. Setting this to an empty array after
+         * the list is created removes the mount target from all NSGs. For more information about
+         * NSGs, see [Security
+         * Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
         private java.util.List<String> nsgIds;
 
         /**
          * A list of Network Security Group
-         * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
-         * associated with this mount target. A maximum of 5 is allowed. Setting this to an empty
-         * array after the list is created removes the mount target from all NSGs. For more
-         * information about NSGs, see [Security
-         * Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm).
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated
+         * with this mount target. A maximum of 5 is allowed. Setting this to an empty array after
+         * the list is created removes the mount target from all NSGs. For more information about
+         * NSGs, see [Security
+         * Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
          *
          * @param nsgIds the value to set
          * @return this builder
@@ -298,7 +298,7 @@ public final class CreateMountTargetDetails
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
          * {@code {"Department": "Finance"}}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -307,7 +307,7 @@ public final class CreateMountTargetDetails
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
          * {@code {"Department": "Finance"}}
          *
          * @param freeformTags the value to set
@@ -321,7 +321,7 @@ public final class CreateMountTargetDetails
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
          * {@code {"Operations": {"CostCenter": "42"}}}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -330,7 +330,7 @@ public final class CreateMountTargetDetails
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
          * {@code {"Operations": {"CostCenter": "42"}}}
          *
          * @param definedTags the value to set
@@ -484,14 +484,14 @@ public final class CreateMountTargetDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment in which to create the mount target.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment in which to create the mount target.
      *
      * @return the value
@@ -529,16 +529,16 @@ public final class CreateMountTargetDetails
      * and [RFC 1123](https://tools.ietf.org/html/rfc1123).
      *
      * <p>Note: This attribute value is stored in the
-     * [PrivateIp](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/)
+     * [PrivateIp](https://docs.oracle.com/iaas/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/)
      * resource, not in the {@code mountTarget} resource. To update the {@code hostnameLabel}, use
      * {@code GetMountTarget} to obtain the
-     * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the mount
+     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the mount
      * target's private IPs ({@code privateIpIds}). Then, you can use
-     * [UpdatePrivateIp](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/UpdatePrivateIp)
+     * [UpdatePrivateIp](https://docs.oracle.com/iaas/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/UpdatePrivateIp)
      * to update the {@code hostnameLabel} value.
      *
      * <p>For more information, see [DNS in Your Virtual Cloud
-     * Network](https://docs.cloud.oracle.com/Content/Network/Concepts/dns.htm).
+     * Network](https://docs.oracle.com/iaas/Content/Network/Concepts/dns.htm).
      *
      * <p>Example: {@code files-1}
      */
@@ -553,16 +553,16 @@ public final class CreateMountTargetDetails
      * and [RFC 1123](https://tools.ietf.org/html/rfc1123).
      *
      * <p>Note: This attribute value is stored in the
-     * [PrivateIp](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/)
+     * [PrivateIp](https://docs.oracle.com/iaas/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/)
      * resource, not in the {@code mountTarget} resource. To update the {@code hostnameLabel}, use
      * {@code GetMountTarget} to obtain the
-     * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the mount
+     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the mount
      * target's private IPs ({@code privateIpIds}). Then, you can use
-     * [UpdatePrivateIp](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/UpdatePrivateIp)
+     * [UpdatePrivateIp](https://docs.oracle.com/iaas/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/UpdatePrivateIp)
      * to update the {@code hostnameLabel} value.
      *
      * <p>For more information, see [DNS in Your Virtual Cloud
-     * Network](https://docs.cloud.oracle.com/Content/Network/Concepts/dns.htm).
+     * Network](https://docs.oracle.com/iaas/Content/Network/Concepts/dns.htm).
      *
      * <p>Example: {@code files-1}
      *
@@ -596,14 +596,14 @@ public final class CreateMountTargetDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * subnet in which to create the mount target.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
     private final String subnetId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * subnet in which to create the mount target.
      *
      * @return the value
@@ -634,20 +634,20 @@ public final class CreateMountTargetDetails
 
     /**
      * A list of Network Security Group
-     * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) associated
+     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated
      * with this mount target. A maximum of 5 is allowed. Setting this to an empty array after the
      * list is created removes the mount target from all NSGs. For more information about NSGs, see
-     * [Security Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm).
+     * [Security Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
     private final java.util.List<String> nsgIds;
 
     /**
      * A list of Network Security Group
-     * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) associated
+     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated
      * with this mount target. A maximum of 5 is allowed. Setting this to an empty array after the
      * list is created removes the mount target from all NSGs. For more information about NSGs, see
-     * [Security Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm).
+     * [Security Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
      *
      * @return the value
      */
@@ -665,7 +665,7 @@ public final class CreateMountTargetDetails
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Department": "Finance"}}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -674,7 +674,7 @@ public final class CreateMountTargetDetails
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Department": "Finance"}}
      *
      * @return the value
@@ -686,7 +686,7 @@ public final class CreateMountTargetDetails
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Operations": {"CostCenter": "42"}}}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -695,7 +695,7 @@ public final class CreateMountTargetDetails
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Operations": {"CostCenter": "42"}}}
      *
      * @return the value

@@ -7,7 +7,7 @@ package com.oracle.bmc.bastion.requests;
 import com.oracle.bmc.bastion.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bastion/GetWorkRequestExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bastion/GetWorkRequestExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use GetWorkRequestRequest.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210331")

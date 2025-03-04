@@ -5,7 +5,7 @@
     <parent>
         <artifactId>oci-java-sdk-addons</artifactId>
         <groupId>com.oracle.oci.sdk</groupId>
-        <version>3.58.0</version>
+        <version>3.59.0</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
@@ -13,7 +13,7 @@
     <artifactId>oci-java-sdk-addons-sse-support</artifactId>
     <name>Oracle Cloud Infrastructure SDK - SSE Support</name>
     <description>This project support for Sever-Sent Events for Oracle Cloud Infrastructure</description>
-    <url>https://docs.cloud.oracle.com/Content/API/SDKDocs/javasdk.htm</url>
+    <url>https://docs.oracle.com/iaas/Content/API/SDKDocs/javasdk.htm</url>
 
     <profiles>
         <profile>
@@ -150,12 +150,12 @@
         <dependency>
             <groupId>com.oracle.oci.sdk</groupId>
             <artifactId>oci-java-sdk-common</artifactId>
-            <version>3.58.0</version>
+            <version>3.59.0</version>
         </dependency>
         <dependency>
             <groupId>com.oracle.oci.sdk</groupId>
             <artifactId>oci-java-sdk-generativeaiinference</artifactId>
-            <version>3.58.0</version>
+            <version>3.59.0</version>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -164,7 +164,7 @@
                  but the code in it needs it. -->
             <groupId>com.oracle.oci.sdk</groupId>
             <artifactId>oci-java-sdk-common-httpclient-jersey</artifactId>
-            <version>3.58.0</version>
+            <version>3.59.0</version>
         </dependency>
     </dependencies>
 

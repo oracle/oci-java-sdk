@@ -7,7 +7,7 @@ package com.oracle.bmc.fusionapps.model;
 /**
  * The policy that specifies the maintenance and upgrade preferences for an environment. For more
  * information about the options, see [Understanding Environment
- * Maintenance](https://docs.cloud.oracle.com/iaas/Content/fusion-applications/plan-environment-family.htm#about-env-maintenance).
+ * Maintenance](https://docs.oracle.com/iaas/Content/fusion-applications/plan-environment-family.htm#about-env-maintenance).
  * <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly

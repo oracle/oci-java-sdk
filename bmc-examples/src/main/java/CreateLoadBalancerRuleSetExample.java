@@ -40,7 +40,7 @@ import java.util.HashMap;
 public class CreateLoadBalancerRuleSetExample {
     /**
      * Please refer to
-     * https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/latest/RuleSet/CreateRuleSet for
+     * https://docs.oracle.com/iaas/api/#/en/loadbalancer/latest/RuleSet/CreateRuleSet for
      * information about using the API to create a rule set. This example requires an existing
      * LoadBalancer and it will do the following 1) Create new rule set. 2) Create a new listener
      * with a reference to the new rule set.

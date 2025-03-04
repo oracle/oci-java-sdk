@@ -76,7 +76,7 @@ public interface Config extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmconfig/CreateConfigExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmconfig/CreateConfigExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateConfig API.
      */
     CreateConfigResponse createConfig(CreateConfigRequest request);
@@ -91,7 +91,7 @@ public interface Config extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmconfig/DeleteConfigExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmconfig/DeleteConfigExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteConfig API.
      */
     DeleteConfigResponse deleteConfig(DeleteConfigRequest request);
@@ -106,7 +106,7 @@ public interface Config extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmconfig/GetConfigExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmconfig/GetConfigExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetConfig API.
      */
     GetConfigResponse getConfig(GetConfigRequest request);
@@ -121,7 +121,7 @@ public interface Config extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmconfig/ListConfigsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmconfig/ListConfigsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListConfigs API.
      */
     ListConfigsResponse listConfigs(ListConfigsRequest request);
@@ -136,7 +136,7 @@ public interface Config extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmconfig/RetrieveNamespaceMetricsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmconfig/RetrieveNamespaceMetricsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     RetrieveNamespaceMetrics API.
      */
@@ -153,7 +153,7 @@ public interface Config extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmconfig/RetrieveNamespacesExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmconfig/RetrieveNamespacesExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use RetrieveNamespaces
      *     API.
      */
@@ -170,7 +170,7 @@ public interface Config extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmconfig/TestExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmconfig/TestExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use Test API.
      */
     TestResponse test(TestRequest request);
@@ -185,7 +185,7 @@ public interface Config extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmconfig/UpdateConfigExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmconfig/UpdateConfigExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateConfig API.
      */
     UpdateConfigResponse updateConfig(UpdateConfigRequest request);
@@ -201,7 +201,7 @@ public interface Config extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmconfig/ValidateSpanFilterPatternExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmconfig/ValidateSpanFilterPatternExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ValidateSpanFilterPattern API.
      */

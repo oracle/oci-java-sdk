@@ -54,15 +54,15 @@ public class CreateDashboardDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the dashboard group that the dashbaord is associated with.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * dashboard group that the dashbaord is associated with.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("dashboardGroupId")
     private final String dashboardGroupId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the dashboard group that the dashbaord is associated with.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * dashboard group that the dashbaord is associated with.
      *
      * @return the value
      */

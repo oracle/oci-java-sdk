@@ -276,14 +276,14 @@ public final class InitialClusterConfiguration
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Capacity Reservation.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("capacityReservationId")
         private String capacityReservationId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Capacity Reservation.
          *
          * @param capacityReservationId the value to set
@@ -577,14 +577,14 @@ public final class InitialClusterConfiguration
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Capacity Reservation.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("capacityReservationId")
     private final String capacityReservationId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Capacity Reservation.
      *
      * @return the value

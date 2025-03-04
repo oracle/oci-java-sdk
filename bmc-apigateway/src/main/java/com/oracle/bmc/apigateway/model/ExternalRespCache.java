@@ -47,14 +47,14 @@ public final class ExternalRespCache extends ResponseCacheDetails {
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Oracle Vault Service secret resource.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("authenticationSecretId")
         private String authenticationSecretId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Oracle Vault Service secret resource.
          *
          * @param authenticationSecretId the value to set
@@ -253,14 +253,14 @@ public final class ExternalRespCache extends ResponseCacheDetails {
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Oracle Vault Service secret resource.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("authenticationSecretId")
     private final String authenticationSecretId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Oracle Vault Service secret resource.
      *
      * @return the value

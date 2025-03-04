@@ -64,15 +64,15 @@ public final class PipelineMLJobStepDetails extends PipelineStepDetails {
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the job to be used as a step.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * job to be used as a step.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("jobId")
         private String jobId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the job to be used as a step.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * job to be used as a step.
          *
          * @param jobId the value to set
          * @return this builder
@@ -142,15 +142,15 @@ public final class PipelineMLJobStepDetails extends PipelineStepDetails {
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the job to be used as a step.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job
+     * to be used as a step.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("jobId")
     private final String jobId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the job to be used as a step.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job
+     * to be used as a step.
      *
      * @return the value
      */

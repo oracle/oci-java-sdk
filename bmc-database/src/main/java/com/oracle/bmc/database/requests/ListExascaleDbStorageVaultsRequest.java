@@ -7,7 +7,7 @@ package com.oracle.bmc.database.requests;
 import com.oracle.bmc.database.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListExascaleDbStorageVaultsExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListExascaleDbStorageVaultsExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * ListExascaleDbStorageVaultsRequest.
  */
@@ -17,13 +17,13 @@ public class ListExascaleDbStorageVaultsRequest
 
     /**
      * The compartment
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     private String compartmentId;
 
     /**
      * The compartment
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     public String getCompartmentId() {
         return compartmentId;
@@ -150,6 +150,17 @@ public class ListExascaleDbStorageVaultsRequest
         return lifecycleState;
     }
     /**
+     * A filter to return only resources that match the given cluster placement group ID exactly.
+     */
+    private String clusterPlacementGroupId;
+
+    /**
+     * A filter to return only resources that match the given cluster placement group ID exactly.
+     */
+    public String getClusterPlacementGroupId() {
+        return clusterPlacementGroupId;
+    }
+    /**
      * A filter to return only resources that match the entire display name given. The match is not
      * case sensitive.
      */
@@ -185,13 +196,13 @@ public class ListExascaleDbStorageVaultsRequest
 
         /**
          * The compartment
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          */
         private String compartmentId = null;
 
         /**
          * The compartment
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          * @param compartmentId the value to set
          * @return this builder instance
@@ -285,6 +296,24 @@ public class ListExascaleDbStorageVaultsRequest
         }
 
         /**
+         * A filter to return only resources that match the given cluster placement group ID
+         * exactly.
+         */
+        private String clusterPlacementGroupId = null;
+
+        /**
+         * A filter to return only resources that match the given cluster placement group ID
+         * exactly.
+         *
+         * @param clusterPlacementGroupId the value to set
+         * @return this builder instance
+         */
+        public Builder clusterPlacementGroupId(String clusterPlacementGroupId) {
+            this.clusterPlacementGroupId = clusterPlacementGroupId;
+            return this;
+        }
+
+        /**
          * A filter to return only resources that match the entire display name given. The match is
          * not case sensitive.
          */
@@ -368,6 +397,7 @@ public class ListExascaleDbStorageVaultsRequest
             sortBy(o.getSortBy());
             sortOrder(o.getSortOrder());
             lifecycleState(o.getLifecycleState());
+            clusterPlacementGroupId(o.getClusterPlacementGroupId());
             displayName(o.getDisplayName());
             opcRequestId(o.getOpcRequestId());
             exadataInfrastructureId(o.getExadataInfrastructureId());
@@ -411,12 +441,14 @@ public class ListExascaleDbStorageVaultsRequest
             request.sortBy = sortBy;
             request.sortOrder = sortOrder;
             request.lifecycleState = lifecycleState;
+            request.clusterPlacementGroupId = clusterPlacementGroupId;
             request.displayName = displayName;
             request.opcRequestId = opcRequestId;
             request.exadataInfrastructureId = exadataInfrastructureId;
             return request;
             // new ListExascaleDbStorageVaultsRequest(compartmentId, limit, page, sortBy, sortOrder,
-            // lifecycleState, displayName, opcRequestId, exadataInfrastructureId);
+            // lifecycleState, clusterPlacementGroupId, displayName, opcRequestId,
+            // exadataInfrastructureId);
         }
     }
 
@@ -433,6 +465,7 @@ public class ListExascaleDbStorageVaultsRequest
                 .sortBy(sortBy)
                 .sortOrder(sortOrder)
                 .lifecycleState(lifecycleState)
+                .clusterPlacementGroupId(clusterPlacementGroupId)
                 .displayName(displayName)
                 .opcRequestId(opcRequestId)
                 .exadataInfrastructureId(exadataInfrastructureId);
@@ -458,6 +491,7 @@ public class ListExascaleDbStorageVaultsRequest
         sb.append(",sortBy=").append(String.valueOf(this.sortBy));
         sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
         sb.append(",lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(",clusterPlacementGroupId=").append(String.valueOf(this.clusterPlacementGroupId));
         sb.append(",displayName=").append(String.valueOf(this.displayName));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(",exadataInfrastructureId=").append(String.valueOf(this.exadataInfrastructureId));
@@ -482,6 +516,8 @@ public class ListExascaleDbStorageVaultsRequest
                 && java.util.Objects.equals(this.sortBy, other.sortBy)
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(
+                        this.clusterPlacementGroupId, other.clusterPlacementGroupId)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
                 && java.util.Objects.equals(
@@ -502,6 +538,11 @@ public class ListExascaleDbStorageVaultsRequest
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.clusterPlacementGroupId == null
+                                ? 43
+                                : this.clusterPlacementGroupId.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         result =

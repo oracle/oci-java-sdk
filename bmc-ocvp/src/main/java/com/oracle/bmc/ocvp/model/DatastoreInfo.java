@@ -31,14 +31,14 @@ public final class DatastoreInfo extends com.oracle.bmc.http.client.internal.Exp
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * A list of [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)s
+         * A list of [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s
          * of Block Storage Volumes.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("blockVolumeIds")
         private java.util.List<String> blockVolumeIds;
 
         /**
-         * A list of [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)s
+         * A list of [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s
          * of Block Storage Volumes.
          *
          * @param blockVolumeIds the value to set
@@ -98,14 +98,14 @@ public final class DatastoreInfo extends com.oracle.bmc.http.client.internal.Exp
     }
 
     /**
-     * A list of [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)s of
+     * A list of [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of
      * Block Storage Volumes.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("blockVolumeIds")
     private final java.util.List<String> blockVolumeIds;
 
     /**
-     * A list of [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)s of
+     * A list of [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of
      * Block Storage Volumes.
      *
      * @return the value

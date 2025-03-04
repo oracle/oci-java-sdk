@@ -48,16 +48,16 @@ public final class ApplyJobOperationDetailsSummary extends JobOperationDetailsSu
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the plan job that contains the execution plan used for this job, or {@code null} if no
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * plan job that contains the execution plan used for this job, or {@code null} if no
          * execution plan was used.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("executionPlanJobId")
         private String executionPlanJobId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the plan job that contains the execution plan used for this job, or {@code null} if no
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * plan job that contains the execution plan used for this job, or {@code null} if no
          * execution plan was used.
          *
          * @param executionPlanJobId the value to set
@@ -130,17 +130,17 @@ public final class ApplyJobOperationDetailsSummary extends JobOperationDetailsSu
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the plan job that contains the execution plan used for this job, or {@code null} if no
-     * execution plan was used.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the plan
+     * job that contains the execution plan used for this job, or {@code null} if no execution plan
+     * was used.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("executionPlanJobId")
     private final String executionPlanJobId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the plan job that contains the execution plan used for this job, or {@code null} if no
-     * execution plan was used.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the plan
+     * job that contains the execution plan used for this job, or {@code null} if no execution plan
+     * was used.
      *
      * @return the value
      */

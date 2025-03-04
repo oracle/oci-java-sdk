@@ -73,7 +73,7 @@ public interface Offer extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/CreateOfferExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/CreateOfferExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateOffer API.
      */
     CreateOfferResponse createOffer(CreateOfferRequest request);
@@ -88,7 +88,7 @@ public interface Offer extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/DeleteOfferExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/DeleteOfferExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteOffer API.
      */
     DeleteOfferResponse deleteOffer(DeleteOfferRequest request);
@@ -103,7 +103,7 @@ public interface Offer extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/GetOfferExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/GetOfferExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetOffer API.
      */
     GetOfferResponse getOffer(GetOfferRequest request);
@@ -118,7 +118,7 @@ public interface Offer extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/GetOfferInternalDetailExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/GetOfferInternalDetailExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     GetOfferInternalDetail API.
      */
@@ -135,7 +135,7 @@ public interface Offer extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/ListOffersExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/ListOffersExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListOffers API.
      */
     ListOffersResponse listOffers(ListOffersRequest request);
@@ -150,7 +150,7 @@ public interface Offer extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/UpdateOfferExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/UpdateOfferExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateOffer API.
      */
     UpdateOfferResponse updateOffer(UpdateOfferRequest request);

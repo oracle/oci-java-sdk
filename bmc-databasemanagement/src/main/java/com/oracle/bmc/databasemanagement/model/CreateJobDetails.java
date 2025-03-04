@@ -99,14 +99,14 @@ public class CreateJobDetails extends com.oracle.bmc.http.client.internal.Explic
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment in which the job resides.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment in which the job resides.
      *
      * @return the value
@@ -116,14 +116,14 @@ public class CreateJobDetails extends com.oracle.bmc.http.client.internal.Explic
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Managed Database Group where the job has to be executed.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("managedDatabaseGroupId")
     private final String managedDatabaseGroupId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Managed Database Group where the job has to be executed.
      *
      * @return the value
@@ -133,14 +133,14 @@ public class CreateJobDetails extends com.oracle.bmc.http.client.internal.Explic
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Managed Database where the job has to be executed.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("managedDatabaseId")
     private final String managedDatabaseId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Managed Database where the job has to be executed.
      *
      * @return the value

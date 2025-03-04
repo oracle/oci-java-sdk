@@ -62,14 +62,14 @@ public final class CustomProtectionRule
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * custom protection rule.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * custom protection rule.
          *
          * @param id the value to set
@@ -81,14 +81,14 @@ public final class CustomProtectionRule
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * custom protection rule's compartment.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * custom protection rule's compartment.
          *
          * @param compartmentId the value to set
@@ -174,7 +174,7 @@ public final class CustomProtectionRule
          * match the {@code Cookie} header value during the second input analysis phase.
          *
          * <p>For more information about custom protection rules, see [Custom Protection
-         * Rules](https://docs.cloud.oracle.com/Content/WAF/Tasks/customprotectionrules.htm).
+         * Rules](https://docs.oracle.com/iaas/Content/WAF/Tasks/customprotectionrules.htm).
          *
          * <p>For more information about ModSecurity syntax, see [Making Rules: The Basic
          * Syntax](https://www.modsecurity.org/CRS/Documentation/making.html).
@@ -214,7 +214,7 @@ public final class CustomProtectionRule
          * match the {@code Cookie} header value during the second input analysis phase.
          *
          * <p>For more information about custom protection rules, see [Custom Protection
-         * Rules](https://docs.cloud.oracle.com/Content/WAF/Tasks/customprotectionrules.htm).
+         * Rules](https://docs.oracle.com/iaas/Content/WAF/Tasks/customprotectionrules.htm).
          *
          * <p>For more information about ModSecurity syntax, see [Making Rules: The Basic
          * Syntax](https://www.modsecurity.org/CRS/Documentation/making.html).
@@ -268,7 +268,7 @@ public final class CustomProtectionRule
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          */
@@ -278,7 +278,7 @@ public final class CustomProtectionRule
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          *
@@ -293,7 +293,7 @@ public final class CustomProtectionRule
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
          */
@@ -303,7 +303,7 @@ public final class CustomProtectionRule
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
@@ -385,14 +385,14 @@ public final class CustomProtectionRule
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * custom protection rule.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * custom protection rule.
      *
      * @return the value
@@ -402,14 +402,14 @@ public final class CustomProtectionRule
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * custom protection rule's compartment.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * custom protection rule's compartment.
      *
      * @return the value
@@ -485,7 +485,7 @@ public final class CustomProtectionRule
      * the {@code Cookie} header value during the second input analysis phase.
      *
      * <p>For more information about custom protection rules, see [Custom Protection
-     * Rules](https://docs.cloud.oracle.com/Content/WAF/Tasks/customprotectionrules.htm).
+     * Rules](https://docs.oracle.com/iaas/Content/WAF/Tasks/customprotectionrules.htm).
      *
      * <p>For more information about ModSecurity syntax, see [Making Rules: The Basic
      * Syntax](https://www.modsecurity.org/CRS/Documentation/making.html).
@@ -524,7 +524,7 @@ public final class CustomProtectionRule
      * the {@code Cookie} header value during the second input analysis phase.
      *
      * <p>For more information about custom protection rules, see [Custom Protection
-     * Rules](https://docs.cloud.oracle.com/Content/WAF/Tasks/customprotectionrules.htm).
+     * Rules](https://docs.oracle.com/iaas/Content/WAF/Tasks/customprotectionrules.htm).
      *
      * <p>For more information about ModSecurity syntax, see [Making Rules: The Basic
      * Syntax](https://www.modsecurity.org/CRS/Documentation/making.html).
@@ -569,7 +569,7 @@ public final class CustomProtectionRule
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      */
@@ -579,7 +579,7 @@ public final class CustomProtectionRule
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      *
@@ -592,7 +592,7 @@ public final class CustomProtectionRule
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
      */
@@ -602,7 +602,7 @@ public final class CustomProtectionRule
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
      *

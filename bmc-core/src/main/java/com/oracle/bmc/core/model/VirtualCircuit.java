@@ -11,8 +11,7 @@ package com.oracle.bmc.core.model;
  * connections to provide a single, logical connection between the edge router on the customer's
  * existing network and Oracle Cloud Infrastructure. *Private* virtual circuits support private
  * peering, and *public* virtual circuits support public peering. For more information, see
- * [FastConnect
- * Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
+ * [FastConnect Overview](https://docs.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
  *
  * <p>Each virtual circuit is made up of information shared between a customer, Oracle, and a
  * provider (if the customer is using FastConnect via a provider). Who fills in a given property of
@@ -25,8 +24,7 @@ package com.oracle.bmc.core.model;
  * <p>To use any of the API operations, you must be authorized in an IAM policy. If you're not
  * authorized, talk to an administrator. If you're an administrator who needs to write policies to
  * give users access, see [Getting Started with
- * Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
- * <br>
+ * Policies](https://docs.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm). <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -220,15 +218,15 @@ public final class VirtualCircuit
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compartment containing the virtual circuit.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment containing the virtual circuit.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compartment containing the virtual circuit.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment containing the virtual circuit.
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -262,7 +260,7 @@ public final class VirtualCircuit
          * The routing policy sets how routing information about the Oracle cloud is shared over a
          * public virtual circuit. Policies available are: {@code ORACLE_SERVICE_NETWORK}, {@code
          * REGIONAL}, {@code MARKET_LEVEL}, and {@code GLOBAL}. See [Route
-         * Filtering](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/routingonprem.htm#route_filtering)
+         * Filtering](https://docs.oracle.com/iaas/Content/Network/Concepts/routingonprem.htm#route_filtering)
          * for details. By default, routing information is shared for all routes in the same market.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("routingPolicy")
@@ -272,7 +270,7 @@ public final class VirtualCircuit
          * The routing policy sets how routing information about the Oracle cloud is shared over a
          * public virtual circuit. Policies available are: {@code ORACLE_SERVICE_NETWORK}, {@code
          * REGIONAL}, {@code MARKET_LEVEL}, and {@code GLOBAL}. See [Route
-         * Filtering](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/routingonprem.htm#route_filtering)
+         * Filtering](https://docs.oracle.com/iaas/Content/Network/Concepts/routingonprem.htm#route_filtering)
          * for details. By default, routing information is shared for all routes in the same market.
          *
          * @param routingPolicy the value to set
@@ -387,7 +385,7 @@ public final class VirtualCircuit
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
          */
@@ -397,7 +395,7 @@ public final class VirtualCircuit
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
@@ -432,7 +430,7 @@ public final class VirtualCircuit
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          */
@@ -442,7 +440,7 @@ public final class VirtualCircuit
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          *
@@ -455,17 +453,17 @@ public final class VirtualCircuit
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the customer's {@link Drg} that this virtual circuit uses. Applicable only to private
-         * virtual circuits.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * customer's {@link Drg} that this virtual circuit uses. Applicable only to private virtual
+         * circuits.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("gatewayId")
         private String gatewayId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the customer's {@link Drg} that this virtual circuit uses. Applicable only to private
-         * virtual circuits.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * customer's {@link Drg} that this virtual circuit uses. Applicable only to private virtual
+         * circuits.
          *
          * @param gatewayId the value to set
          * @return this builder
@@ -477,14 +475,14 @@ public final class VirtualCircuit
         }
         /**
          * The virtual circuit's Oracle ID
-         * ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
+         * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * The virtual circuit's Oracle ID
-         * ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
+         * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
          *
          * @param id the value to set
          * @return this builder
@@ -497,7 +495,7 @@ public final class VirtualCircuit
         /**
          * The virtual circuit's current state. For information about the different states, see
          * [FastConnect
-         * Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
+         * Overview](https://docs.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
@@ -505,7 +503,7 @@ public final class VirtualCircuit
         /**
          * The virtual circuit's current state. For information about the different states, see
          * [FastConnect
-         * Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
+         * Overview](https://docs.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
          *
          * @param lifecycleState the value to set
          * @return this builder
@@ -546,15 +544,15 @@ public final class VirtualCircuit
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the service offered by the provider (if the customer is connecting via a provider).
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * service offered by the provider (if the customer is connecting via a provider).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("providerServiceId")
         private String providerServiceId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the service offered by the provider (if the customer is connecting via a provider).
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * service offered by the provider (if the customer is connecting via a provider).
          *
          * @param providerServiceId the value to set
          * @return this builder
@@ -715,7 +713,7 @@ public final class VirtualCircuit
         /**
          * Whether the virtual circuit supports private or public peering. For more information, see
          * [FastConnect
-         * Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
+         * Overview](https://docs.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private Type type;
@@ -723,7 +721,7 @@ public final class VirtualCircuit
         /**
          * Whether the virtual circuit supports private or public peering. For more information, see
          * [FastConnect
-         * Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
+         * Overview](https://docs.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
          *
          * @param type the value to set
          * @return this builder
@@ -1118,15 +1116,15 @@ public final class VirtualCircuit
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compartment containing the virtual circuit.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment containing the virtual circuit.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compartment containing the virtual circuit.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment containing the virtual circuit.
      *
      * @return the value
      */
@@ -1203,7 +1201,7 @@ public final class VirtualCircuit
      * The routing policy sets how routing information about the Oracle cloud is shared over a
      * public virtual circuit. Policies available are: {@code ORACLE_SERVICE_NETWORK}, {@code
      * REGIONAL}, {@code MARKET_LEVEL}, and {@code GLOBAL}. See [Route
-     * Filtering](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/routingonprem.htm#route_filtering)
+     * Filtering](https://docs.oracle.com/iaas/Content/Network/Concepts/routingonprem.htm#route_filtering)
      * for details. By default, routing information is shared for all routes in the same market.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("routingPolicy")
@@ -1213,7 +1211,7 @@ public final class VirtualCircuit
      * The routing policy sets how routing information about the Oracle cloud is shared over a
      * public virtual circuit. Policies available are: {@code ORACLE_SERVICE_NETWORK}, {@code
      * REGIONAL}, {@code MARKET_LEVEL}, and {@code GLOBAL}. See [Route
-     * Filtering](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/routingonprem.htm#route_filtering)
+     * Filtering](https://docs.oracle.com/iaas/Content/Network/Concepts/routingonprem.htm#route_filtering)
      * for details. By default, routing information is shared for all routes in the same market.
      *
      * @return the value
@@ -1365,7 +1363,7 @@ public final class VirtualCircuit
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
      */
@@ -1375,7 +1373,7 @@ public final class VirtualCircuit
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
@@ -1405,7 +1403,7 @@ public final class VirtualCircuit
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      */
@@ -1415,7 +1413,7 @@ public final class VirtualCircuit
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      *
@@ -1426,16 +1424,16 @@ public final class VirtualCircuit
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the customer's {@link Drg} that this virtual circuit uses. Applicable only to private virtual
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * customer's {@link Drg} that this virtual circuit uses. Applicable only to private virtual
      * circuits.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("gatewayId")
     private final String gatewayId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the customer's {@link Drg} that this virtual circuit uses. Applicable only to private virtual
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * customer's {@link Drg} that this virtual circuit uses. Applicable only to private virtual
      * circuits.
      *
      * @return the value
@@ -1446,14 +1444,14 @@ public final class VirtualCircuit
 
     /**
      * The virtual circuit's Oracle ID
-     * ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
+     * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The virtual circuit's Oracle ID
-     * ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
+     * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
      *
      * @return the value
      */
@@ -1464,7 +1462,7 @@ public final class VirtualCircuit
     /**
      * The virtual circuit's current state. For information about the different states, see
      * [FastConnect
-     * Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
+     * Overview](https://docs.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
      */
     public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
         PendingProvider("PENDING_PROVIDER"),
@@ -1520,7 +1518,7 @@ public final class VirtualCircuit
     /**
      * The virtual circuit's current state. For information about the different states, see
      * [FastConnect
-     * Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
+     * Overview](https://docs.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
@@ -1528,7 +1526,7 @@ public final class VirtualCircuit
     /**
      * The virtual circuit's current state. For information about the different states, see
      * [FastConnect
-     * Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
+     * Overview](https://docs.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
      *
      * @return the value
      */
@@ -1563,15 +1561,15 @@ public final class VirtualCircuit
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the service offered by the provider (if the customer is connecting via a provider).
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * service offered by the provider (if the customer is connecting via a provider).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("providerServiceId")
     private final String providerServiceId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the service offered by the provider (if the customer is connecting via a provider).
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * service offered by the provider (if the customer is connecting via a provider).
      *
      * @return the value
      */
@@ -1810,7 +1808,7 @@ public final class VirtualCircuit
     /**
      * Whether the virtual circuit supports private or public peering. For more information, see
      * [FastConnect
-     * Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
+     * Overview](https://docs.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
      */
     public enum Type implements com.oracle.bmc.http.internal.BmcEnum {
         Public("PUBLIC"),
@@ -1858,7 +1856,7 @@ public final class VirtualCircuit
     /**
      * Whether the virtual circuit supports private or public peering. For more information, see
      * [FastConnect
-     * Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
+     * Overview](https://docs.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final Type type;
@@ -1866,7 +1864,7 @@ public final class VirtualCircuit
     /**
      * Whether the virtual circuit supports private or public peering. For more information, see
      * [FastConnect
-     * Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
+     * Overview](https://docs.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
      *
      * @return the value
      */

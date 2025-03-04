@@ -7,7 +7,7 @@ package com.oracle.bmc.computecloudatcustomer.requests;
 import com.oracle.bmc.computecloudatcustomer.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/computecloudatcustomer/GetCccInfrastructureExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/computecloudatcustomer/GetCccInfrastructureExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use GetCccInfrastructureRequest.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221208")
@@ -15,13 +15,13 @@ public class GetCccInfrastructureRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for a
+     * An [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for a
      * Compute Cloud@Customer Infrastructure.
      */
     private String cccInfrastructureId;
 
     /**
-     * An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for a
+     * An [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for a
      * Compute Cloud@Customer Infrastructure.
      */
     public String getCccInfrastructureId() {
@@ -29,15 +29,13 @@ public class GetCccInfrastructureRequest
     }
     /**
      * The client request
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for
-     * tracing.
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for tracing.
      */
     private String opcRequestId;
 
     /**
      * The client request
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for
-     * tracing.
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for tracing.
      */
     public String getOpcRequestId() {
         return opcRequestId;
@@ -50,14 +48,14 @@ public class GetCccInfrastructureRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * for a Compute Cloud@Customer Infrastructure.
+         * An [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for a
+         * Compute Cloud@Customer Infrastructure.
          */
         private String cccInfrastructureId = null;
 
         /**
-         * An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * for a Compute Cloud@Customer Infrastructure.
+         * An [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for a
+         * Compute Cloud@Customer Infrastructure.
          *
          * @param cccInfrastructureId the value to set
          * @return this builder instance
@@ -69,14 +67,14 @@ public class GetCccInfrastructureRequest
 
         /**
          * The client request
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for
          * tracing.
          */
         private String opcRequestId = null;
 
         /**
          * The client request
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for
          * tracing.
          *
          * @param opcRequestId the value to set

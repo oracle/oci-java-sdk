@@ -87,15 +87,15 @@ public final class CreateOdaPrivateEndpointDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compartment that the ODA private endpoint belongs to.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment that the ODA private endpoint belongs to.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compartment that the ODA private endpoint belongs to.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment that the ODA private endpoint belongs to.
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -106,15 +106,15 @@ public final class CreateOdaPrivateEndpointDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the subnet that the private endpoint belongs to.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * subnet that the private endpoint belongs to.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
         private String subnetId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the subnet that the private endpoint belongs to.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * subnet that the private endpoint belongs to.
          *
          * @param subnetId the value to set
          * @return this builder
@@ -125,19 +125,17 @@ public final class CreateOdaPrivateEndpointDetails
             return this;
         }
         /**
-         * List of
-         * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+         * List of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
          * [network security
-         * groups](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/networksecuritygroups.htm)
+         * groups](https://docs.oracle.com/iaas/Content/Network/Concepts/networksecuritygroups.htm)
          */
         @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
         private java.util.List<String> nsgIds;
 
         /**
-         * List of
-         * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+         * List of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
          * [network security
-         * groups](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/networksecuritygroups.htm)
+         * groups](https://docs.oracle.com/iaas/Content/Network/Concepts/networksecuritygroups.htm)
          *
          * @param nsgIds the value to set
          * @return this builder
@@ -273,15 +271,15 @@ public final class CreateOdaPrivateEndpointDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compartment that the ODA private endpoint belongs to.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment that the ODA private endpoint belongs to.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compartment that the ODA private endpoint belongs to.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment that the ODA private endpoint belongs to.
      *
      * @return the value
      */
@@ -290,15 +288,15 @@ public final class CreateOdaPrivateEndpointDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the subnet that the private endpoint belongs to.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * subnet that the private endpoint belongs to.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
     private final String subnetId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the subnet that the private endpoint belongs to.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * subnet that the private endpoint belongs to.
      *
      * @return the value
      */
@@ -307,17 +305,17 @@ public final class CreateOdaPrivateEndpointDetails
     }
 
     /**
-     * List of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-     * of [network security
-     * groups](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/networksecuritygroups.htm)
+     * List of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * [network security
+     * groups](https://docs.oracle.com/iaas/Content/Network/Concepts/networksecuritygroups.htm)
      */
     @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
     private final java.util.List<String> nsgIds;
 
     /**
-     * List of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-     * of [network security
-     * groups](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/networksecuritygroups.htm)
+     * List of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * [network security
+     * groups](https://docs.oracle.com/iaas/Content/Network/Concepts/networksecuritygroups.htm)
      *
      * @return the value
      */

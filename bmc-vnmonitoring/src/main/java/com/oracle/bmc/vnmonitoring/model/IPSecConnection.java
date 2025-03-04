@@ -20,13 +20,12 @@ package com.oracle.bmc.vnmonitoring.model;
  * Otherwise the static routes are ignored.
  *
  * <p>For more information about the workflow for setting up an IPSec connection, see [Site-to-Site
- * VPN Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/overviewIPsec.htm).
+ * VPN Overview](https://docs.oracle.com/iaas/Content/Network/Tasks/overviewIPsec.htm).
  *
  * <p>To use any of the API operations, you must be authorized in an IAM policy. If you're not
  * authorized, talk to an administrator. If you're an administrator who needs to write policies to
  * give users access, see [Getting Started with
- * Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
- * <br>
+ * Policies](https://docs.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm). <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -91,15 +90,15 @@ public final class IPSecConnection
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compartment containing the IPSec connection.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment containing the IPSec connection.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compartment containing the IPSec connection.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment containing the IPSec connection.
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -110,15 +109,15 @@ public final class IPSecConnection
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the {@link Cpe} object.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * {@link Cpe} object.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("cpeId")
         private String cpeId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the {@link Cpe} object.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * {@link Cpe} object.
          *
          * @param cpeId the value to set
          * @return this builder
@@ -168,15 +167,15 @@ public final class IPSecConnection
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the DRG.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * DRG.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("drgId")
         private String drgId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the DRG.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * DRG.
          *
          * @param drgId the value to set
          * @return this builder
@@ -207,14 +206,14 @@ public final class IPSecConnection
         }
         /**
          * The IPSec connection's Oracle ID
-         * ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
+         * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * The IPSec connection's Oracle ID
-         * ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
+         * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
          *
          * @param id the value to set
          * @return this builder
@@ -249,7 +248,7 @@ public final class IPSecConnection
          * cpeLocalIdentifier}.
          *
          * <p>For information about why you'd provide this value, see [If Your CPE Is Behind a NAT
-         * Device](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/overviewIPsec.htm#nat).
+         * Device](https://docs.oracle.com/iaas/Content/Network/Tasks/overviewIPsec.htm#nat).
          *
          * <p>Example IP address: {@code 10.0.3.3}
          *
@@ -268,7 +267,7 @@ public final class IPSecConnection
          * cpeLocalIdentifier}.
          *
          * <p>For information about why you'd provide this value, see [If Your CPE Is Behind a NAT
-         * Device](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/overviewIPsec.htm#nat).
+         * Device](https://docs.oracle.com/iaas/Content/Network/Tasks/overviewIPsec.htm#nat).
          *
          * <p>Example IP address: {@code 10.0.3.3}
          *
@@ -311,7 +310,7 @@ public final class IPSecConnection
          *
          * <p>The CIDR can be either IPv4 or IPv6. IPv6 addressing is supported for all commercial
          * and government regions. See [IPv6
-         * Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+         * Addresses](https://docs.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
          *
          * <p>Example: {@code 10.0.1.0/24}
          *
@@ -330,7 +329,7 @@ public final class IPSecConnection
          *
          * <p>The CIDR can be either IPv4 or IPv6. IPv6 addressing is supported for all commercial
          * and government regions. See [IPv6
-         * Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+         * Addresses](https://docs.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
          *
          * <p>Example: {@code 10.0.1.0/24}
          *
@@ -463,15 +462,15 @@ public final class IPSecConnection
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compartment containing the IPSec connection.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment containing the IPSec connection.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compartment containing the IPSec connection.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment containing the IPSec connection.
      *
      * @return the value
      */
@@ -480,15 +479,15 @@ public final class IPSecConnection
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the {@link Cpe} object.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * {@link Cpe} object.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("cpeId")
     private final String cpeId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the {@link Cpe} object.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * {@link Cpe} object.
      *
      * @return the value
      */
@@ -531,15 +530,13 @@ public final class IPSecConnection
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the DRG.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("drgId")
     private final String drgId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the DRG.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
      *
      * @return the value
      */
@@ -566,14 +563,14 @@ public final class IPSecConnection
 
     /**
      * The IPSec connection's Oracle ID
-     * ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
+     * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The IPSec connection's Oracle ID
-     * ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
+     * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
      *
      * @return the value
      */
@@ -639,7 +636,7 @@ public final class IPSecConnection
      * cpeLocalIdentifier}.
      *
      * <p>For information about why you'd provide this value, see [If Your CPE Is Behind a NAT
-     * Device](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/overviewIPsec.htm#nat).
+     * Device](https://docs.oracle.com/iaas/Content/Network/Tasks/overviewIPsec.htm#nat).
      *
      * <p>Example IP address: {@code 10.0.3.3}
      *
@@ -658,7 +655,7 @@ public final class IPSecConnection
      * cpeLocalIdentifier}.
      *
      * <p>For information about why you'd provide this value, see [If Your CPE Is Behind a NAT
-     * Device](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/overviewIPsec.htm#nat).
+     * Device](https://docs.oracle.com/iaas/Content/Network/Tasks/overviewIPsec.htm#nat).
      *
      * <p>Example IP address: {@code 10.0.3.3}
      *
@@ -733,7 +730,7 @@ public final class IPSecConnection
      *
      * <p>The CIDR can be either IPv4 or IPv6. IPv6 addressing is supported for all commercial and
      * government regions. See [IPv6
-     * Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+     * Addresses](https://docs.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
      *
      * <p>Example: {@code 10.0.1.0/24}
      *
@@ -752,7 +749,7 @@ public final class IPSecConnection
      *
      * <p>The CIDR can be either IPv4 or IPv6. IPv6 addressing is supported for all commercial and
      * government regions. See [IPv6
-     * Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+     * Addresses](https://docs.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
      *
      * <p>Example: {@code 10.0.1.0/24}
      *

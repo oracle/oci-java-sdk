@@ -28,7 +28,7 @@ public final class SourceVcnIdCondition extends RuleCondition {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * originating VCN that an incoming packet must match.
          *
          * <p>You can use this condition in conjunction with {@code SourceVcnIpAddressCondition}.
@@ -41,7 +41,7 @@ public final class SourceVcnIdCondition extends RuleCondition {
         private String attributeValue;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * originating VCN that an incoming packet must match.
          *
          * <p>You can use this condition in conjunction with {@code SourceVcnIpAddressCondition}.
@@ -95,7 +95,7 @@ public final class SourceVcnIdCondition extends RuleCondition {
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * originating VCN that an incoming packet must match.
      *
      * <p>You can use this condition in conjunction with {@code SourceVcnIpAddressCondition}.
@@ -108,7 +108,7 @@ public final class SourceVcnIdCondition extends RuleCondition {
     private final String attributeValue;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * originating VCN that an incoming packet must match.
      *
      * <p>You can use this condition in conjunction with {@code SourceVcnIpAddressCondition}.

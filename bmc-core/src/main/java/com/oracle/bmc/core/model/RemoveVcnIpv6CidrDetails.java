@@ -36,7 +36,7 @@ public final class RemoveVcnIpv6CidrDetails
          * This field is not required and should only be specified when removing ULA or private IPv6
          * prefix or an IPv6 GUA assigned by Oracle or BYOIPv6 prefix from a VCN's IPv6 address
          * space. See[IPv6
-         * Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+         * Addresses](https://docs.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
          *
          * <p>Example: {@code 2001:0db8:0123::/56}
          */
@@ -47,7 +47,7 @@ public final class RemoveVcnIpv6CidrDetails
          * This field is not required and should only be specified when removing ULA or private IPv6
          * prefix or an IPv6 GUA assigned by Oracle or BYOIPv6 prefix from a VCN's IPv6 address
          * space. See[IPv6
-         * Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+         * Addresses](https://docs.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
          *
          * <p>Example: {@code 2001:0db8:0123::/56}
          *
@@ -92,7 +92,7 @@ public final class RemoveVcnIpv6CidrDetails
     /**
      * This field is not required and should only be specified when removing ULA or private IPv6
      * prefix or an IPv6 GUA assigned by Oracle or BYOIPv6 prefix from a VCN's IPv6 address space.
-     * See[IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+     * See[IPv6 Addresses](https://docs.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
      *
      * <p>Example: {@code 2001:0db8:0123::/56}
      */
@@ -102,7 +102,7 @@ public final class RemoveVcnIpv6CidrDetails
     /**
      * This field is not required and should only be specified when removing ULA or private IPv6
      * prefix or an IPv6 GUA assigned by Oracle or BYOIPv6 prefix from a VCN's IPv6 address space.
-     * See[IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+     * See[IPv6 Addresses](https://docs.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
      *
      * <p>Example: {@code 2001:0db8:0123::/56}
      *

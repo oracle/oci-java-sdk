@@ -10,9 +10,9 @@ import com.oracle.bmc.objectstorage.responses.*;
 /**
  * Use Object Storage and Archive Storage APIs to manage buckets, objects, and related resources.
  * For more information, see [Overview of Object
- * Storage](https://docs.cloud.oracle.com/Content/Object/Concepts/objectstorageoverview.htm) and
+ * Storage](https://docs.oracle.com/iaas/Content/Object/Concepts/objectstorageoverview.htm) and
  * [Overview of Archive
- * Storage](https://docs.cloud.oracle.com/Content/Archive/Concepts/archivestorageoverview.htm).
+ * Storage](https://docs.oracle.com/iaas/Content/Archive/Concepts/archivestorageoverview.htm).
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public interface ObjectStorageAsync extends AutoCloseable {
@@ -118,7 +118,7 @@ public interface ObjectStorageAsync extends AutoCloseable {
      * Creates a request to copy an object within a region or to another region.
      *
      * <p>See [Object
-     * Names](https://docs.cloud.oracle.com/Content/Object/Tasks/managingobjects.htm#namerequirements)
+     * Names](https://docs.oracle.com/iaas/Content/Object/Tasks/managingobjects.htm#namerequirements)
      * for object naming requirements.
      *
      * @param request The request object containing the details to send
@@ -153,7 +153,7 @@ public interface ObjectStorageAsync extends AutoCloseable {
      * namespace.
      *
      * <p>See [Object
-     * Names](https://docs.cloud.oracle.com/Content/Object/Tasks/managingobjects.htm#namerequirements)
+     * Names](https://docs.oracle.com/iaas/Content/Object/Tasks/managingobjects.htm#namerequirements)
      * for object naming requirements.
      *
      * @param request The request object containing the details to send
@@ -394,7 +394,7 @@ public interface ObjectStorageAsync extends AutoCloseable {
      * <p>Any user with the OBJECTSTORAGE_NAMESPACE_READ permission will be able to see the current
      * metadata. If you are not authorized, talk to an administrator. If you are an administrator
      * who needs to write policies to give users access, see [Getting Started with
-     * Policies](https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm).
+     * Policies](https://docs.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -557,7 +557,7 @@ public interface ObjectStorageAsync extends AutoCloseable {
      * <p>To use this and other API operations, you must be authorized in an IAM policy. If you are
      * not authorized, talk to an administrator. If you are an administrator who needs to write
      * policies to give users access, see [Getting Started with
-     * Policies](https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm).
+     * Policies](https://docs.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -613,7 +613,7 @@ public interface ObjectStorageAsync extends AutoCloseable {
      * <p>To use this and other API operations, you must be authorized in an IAM policy. If you are
      * not authorized, talk to an administrator. If you are an administrator who needs to write
      * policies to give users access, see [Getting Started with
-     * Policies](https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm).
+     * Policies](https://docs.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -639,7 +639,7 @@ public interface ObjectStorageAsync extends AutoCloseable {
      * <p>To use this and other API operations, you must be authorized in an IAM policy. If you are
      * not authorized, talk to an administrator. If you are an administrator who needs to write
      * policies to give users access, see [Getting Started with
-     * Policies](https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm).
+     * Policies](https://docs.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -674,7 +674,7 @@ public interface ObjectStorageAsync extends AutoCloseable {
      * use this and other API operations, you must be authorized in an IAM policy. If you are not
      * authorized, talk to an administrator. If you are an administrator who needs to write policies
      * to give users access, see [Getting Started with
-     * Policies](https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm).
+     * Policies](https://docs.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -810,11 +810,11 @@ public interface ObjectStorageAsync extends AutoCloseable {
      * size allowed by PutObject is 50 GiB.
      *
      * <p>See [Object
-     * Names](https://docs.cloud.oracle.com/Content/Object/Tasks/managingobjects.htm#namerequirements)
+     * Names](https://docs.oracle.com/iaas/Content/Object/Tasks/managingobjects.htm#namerequirements)
      * for object naming requirements.
      *
      * <p>See [Special Instructions for Object Storage
-     * PUT](https://docs.cloud.oracle.com/Content/API/Concepts/signingrequests.htm#ObjectStoragePut)
+     * PUT](https://docs.oracle.com/iaas/Content/API/Concepts/signingrequests.htm#ObjectStoragePut)
      * for request signature requirements.
      *
      * @param request The request object containing the details to send
@@ -906,7 +906,7 @@ public interface ObjectStorageAsync extends AutoCloseable {
      * Rename an object in the given Object Storage namespace.
      *
      * <p>See [Object
-     * Names](https://docs.cloud.oracle.com/Content/Object/Tasks/managingobjects.htm#namerequirements)
+     * Names](https://docs.oracle.com/iaas/Content/Object/Tasks/managingobjects.htm#namerequirements)
      * for object naming requirements.
      *
      * @param request The request object containing the details to send
@@ -943,7 +943,7 @@ public interface ObjectStorageAsync extends AutoCloseable {
      * <p>Use UpdateBucket to move a bucket from one compartment to another within the same tenancy.
      * Supply the compartmentID of the compartment that you want to move the bucket to. For more
      * information about moving resources between compartments, see [Moving Resources to a Different
-     * Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -1004,7 +1004,7 @@ public interface ObjectStorageAsync extends AutoCloseable {
      * the Private Endpoint to. Or use it to update the name, subnetId, endpointFqdn or
      * privateEndpointIp or accessTargets of the Private Endpoint. For more information about moving
      * resources between compartments, see [Moving Resources to a Different
-     * Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
      * <p>This API follows replace semantics (rather than merge semantics). That means if the body
      * provides values for parameters and the resource has exisiting ones, this operation will

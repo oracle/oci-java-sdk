@@ -193,7 +193,7 @@ public final class UpdateSnowflakeConnectionDetails extends UpdateConnectionDeta
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Secret that stores the password Oracle GoldenGate uses to connect to Snowflake platform.
          * Note: When provided, 'password' field must not be provided.
          */
@@ -201,7 +201,7 @@ public final class UpdateSnowflakeConnectionDetails extends UpdateConnectionDeta
         private String passwordSecretId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Secret that stores the password Oracle GoldenGate uses to connect to Snowflake platform.
          * Note: When provided, 'password' field must not be provided.
          *
@@ -235,7 +235,7 @@ public final class UpdateSnowflakeConnectionDetails extends UpdateConnectionDeta
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Secret that stores the content of the private key file (PEM file) corresponding to the
          * API key of the fingerprint. See documentation:
          * https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm Note:
@@ -245,7 +245,7 @@ public final class UpdateSnowflakeConnectionDetails extends UpdateConnectionDeta
         private String privateKeyFileSecretId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Secret that stores the content of the private key file (PEM file) corresponding to the
          * API key of the fingerprint. See documentation:
          * https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm Note:
@@ -281,7 +281,7 @@ public final class UpdateSnowflakeConnectionDetails extends UpdateConnectionDeta
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Secret that stores the password for the private key file. Note: When provided,
          * 'privateKeyPassphrase' field must not be provided.
          */
@@ -289,7 +289,7 @@ public final class UpdateSnowflakeConnectionDetails extends UpdateConnectionDeta
         private String privateKeyPassphraseSecretId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Secret that stores the password for the private key file. Note: When provided,
          * 'privateKeyPassphrase' field must not be provided.
          *
@@ -515,7 +515,7 @@ public final class UpdateSnowflakeConnectionDetails extends UpdateConnectionDeta
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Secret that stores the password Oracle GoldenGate uses to connect to Snowflake platform.
      * Note: When provided, 'password' field must not be provided.
      */
@@ -523,7 +523,7 @@ public final class UpdateSnowflakeConnectionDetails extends UpdateConnectionDeta
     private final String passwordSecretId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Secret that stores the password Oracle GoldenGate uses to connect to Snowflake platform.
      * Note: When provided, 'password' field must not be provided.
      *
@@ -553,7 +553,7 @@ public final class UpdateSnowflakeConnectionDetails extends UpdateConnectionDeta
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Secret that stores the content of the private key file (PEM file) corresponding to the API
      * key of the fingerprint. See documentation:
      * https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm Note: When
@@ -563,7 +563,7 @@ public final class UpdateSnowflakeConnectionDetails extends UpdateConnectionDeta
     private final String privateKeyFileSecretId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Secret that stores the content of the private key file (PEM file) corresponding to the API
      * key of the fingerprint. See documentation:
      * https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm Note: When
@@ -595,7 +595,7 @@ public final class UpdateSnowflakeConnectionDetails extends UpdateConnectionDeta
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Secret that stores the password for the private key file. Note: When provided,
      * 'privateKeyPassphrase' field must not be provided.
      */
@@ -603,7 +603,7 @@ public final class UpdateSnowflakeConnectionDetails extends UpdateConnectionDeta
     private final String privateKeyPassphraseSecretId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Secret that stores the password for the private key file. Note: When provided,
      * 'privateKeyPassphrase' field must not be provided.
      *

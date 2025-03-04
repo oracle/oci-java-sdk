@@ -29,16 +29,16 @@ public final class BitbucketCloudConfigSourceRecord extends ConfigSourceRecord {
     public static class Builder {
         /**
          * Unique identifier
-         * ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) for
-         * the Bitbucket Cloud configuration source.
+         * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) for the
+         * Bitbucket Cloud configuration source.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("configurationSourceProviderId")
         private String configurationSourceProviderId;
 
         /**
          * Unique identifier
-         * ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) for
-         * the Bitbucket Cloud configuration source.
+         * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) for the
+         * Bitbucket Cloud configuration source.
          *
          * @param configurationSourceProviderId the value to set
          * @return this builder
@@ -177,7 +177,7 @@ public final class BitbucketCloudConfigSourceRecord extends ConfigSourceRecord {
 
     /**
      * Unique identifier
-     * ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) for the
+     * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) for the
      * Bitbucket Cloud configuration source.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("configurationSourceProviderId")
@@ -185,7 +185,7 @@ public final class BitbucketCloudConfigSourceRecord extends ConfigSourceRecord {
 
     /**
      * Unique identifier
-     * ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) for the
+     * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) for the
      * Bitbucket Cloud configuration source.
      *
      * @return the value

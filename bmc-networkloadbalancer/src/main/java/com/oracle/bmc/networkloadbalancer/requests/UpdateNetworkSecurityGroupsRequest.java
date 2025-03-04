@@ -7,7 +7,7 @@ package com.oracle.bmc.networkloadbalancer.requests;
 import com.oracle.bmc.networkloadbalancer.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkloadbalancer/UpdateNetworkSecurityGroupsExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkloadbalancer/UpdateNetworkSecurityGroupsExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * UpdateNetworkSecurityGroupsRequest.
  */
@@ -17,13 +17,13 @@ public class UpdateNetworkSecurityGroupsRequest
                 com.oracle.bmc.networkloadbalancer.model.UpdateNetworkSecurityGroupsDetails> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * network load balancer to update.
      */
     private String networkLoadBalancerId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * network load balancer to update.
      */
     public String getNetworkLoadBalancerId() {
@@ -113,13 +113,13 @@ public class UpdateNetworkSecurityGroupsRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * network load balancer to update.
          */
         private String networkLoadBalancerId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * network load balancer to update.
          *
          * @param networkLoadBalancerId the value to set

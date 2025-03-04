@@ -10,7 +10,7 @@ import com.oracle.bmc.marketplace.responses.*;
 /**
  * Use the Marketplace API to manage applications in Oracle Cloud Infrastructure Marketplace. For
  * more information, see [Overview of
- * Marketplace](https://docs.cloud.oracle.com/Content/Marketplace/Concepts/marketoverview.htm) This
+ * Marketplace](https://docs.oracle.com/iaas/Content/Marketplace/Concepts/marketoverview.htm) This
  * service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by default
  * if no circuit breaker configuration is defined by the user.
  */
@@ -75,7 +75,7 @@ public interface Account extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplace/GetLaunchEligibilityExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplace/GetLaunchEligibilityExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     GetLaunchEligibility API.
      */
@@ -91,7 +91,7 @@ public interface Account extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplace/GetThirdPartyPaidListingEligibilityExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplace/GetThirdPartyPaidListingEligibilityExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     GetThirdPartyPaidListingEligibility API.
      */

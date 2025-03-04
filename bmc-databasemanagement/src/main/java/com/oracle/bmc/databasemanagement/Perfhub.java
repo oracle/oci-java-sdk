@@ -10,7 +10,7 @@ import com.oracle.bmc.databasemanagement.responses.*;
 /**
  * Use the Database Management API to monitor and manage resources such as Oracle Databases, MySQL
  * Databases, and External Database Systems. For more information, see [Database
- * Management](https://docs.cloud.oracle.com/iaas/database-management/home.htm).
+ * Management](https://docs.oracle.com/iaas/database-management/home.htm).
  *
  * <p>This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by
  * default if no circuit breaker configuration is defined by the user.
@@ -76,7 +76,7 @@ public interface Perfhub extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/ModifySnapshotSettingsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/ModifySnapshotSettingsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ModifySnapshotSettings API.
      */

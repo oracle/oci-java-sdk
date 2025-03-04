@@ -7,7 +7,7 @@ package com.oracle.bmc.osmanagementhub.requests;
 import com.oracle.bmc.osmanagementhub.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/ListWorkRequestsExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/ListWorkRequestsExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListWorkRequestsRequest.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
@@ -27,14 +27,14 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
         return compartmentId;
     }
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the work request.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the work
+     * request.
      */
     private String workRequestId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the work request.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the work
+     * request.
      */
     public String getWorkRequestId() {
         return workRequestId;
@@ -47,14 +47,14 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
         return status;
     }
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the resource. This filter returns resources associated with the specified resource.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * resource. This filter returns resources associated with the specified resource.
      */
     private String resourceId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the resource. This filter returns resources associated with the specified resource.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * resource. This filter returns resources associated with the specified resource.
      */
     public String getResourceId() {
         return resourceId;
@@ -75,7 +75,7 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
     /**
      * For list pagination. The value of the {@code opc-next-page} response header from the previous
      * "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      * <p>Example: {@code 3}
      */
@@ -84,7 +84,7 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
     /**
      * For list pagination. The value of the {@code opc-next-page} response header from the previous
      * "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      * <p>Example: {@code 3}
      */
@@ -94,7 +94,7 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
     /**
      * For list pagination. The maximum number of results per page, or items to return in a
      * paginated "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      * <p>Example: {@code 50}
      */
@@ -103,7 +103,7 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
     /**
      * For list pagination. The maximum number of results per page, or items to return in a
      * paginated "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      * <p>Example: {@code 50}
      */
@@ -168,42 +168,40 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
         return sortBy;
     }
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the schedule job that initiated the work request.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * schedule job that initiated the work request.
      */
     private String initiatorId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the schedule job that initiated the work request.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * schedule job that initiated the work request.
      */
     public String getInitiatorId() {
         return initiatorId;
     }
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the parent work request.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * parent work request.
      */
     private String parentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the parent work request.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * parent work request.
      */
     public String getParentId() {
         return parentId;
     }
     /**
      * A filter to return the resources whose parent resources are not the same as the given
-     * resource
-     * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * resource [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     private java.util.List<String> parentResourcesNotEqualTo;
 
     /**
      * A filter to return the resources whose parent resources are not the same as the given
-     * resource
-     * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * resource [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     public java.util.List<String> getParentResourcesNotEqualTo() {
         return parentResourcesNotEqualTo;
@@ -232,26 +230,26 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
     }
     /**
      * A filter to return the work requests that are a retry of the given work request
-     * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     private String retryOfId;
 
     /**
      * A filter to return the work requests that are a retry of the given work request
-     * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     public String getRetryOfId() {
         return retryOfId;
     }
     /**
      * A filter to return the work requests that are a rerun of the given work request
-     * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     private String rerunOfId;
 
     /**
      * A filter to return the work requests that are a rerun of the given work request
-     * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     public String getRerunOfId() {
         return rerunOfId;
@@ -315,14 +313,14 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
         }
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the work request.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * work request.
          */
         private String workRequestId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the work request.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * work request.
          *
          * @param workRequestId the value to set
          * @return this builder instance
@@ -358,14 +356,14 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
         }
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the resource. This filter returns resources associated with the specified resource.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * resource. This filter returns resources associated with the specified resource.
          */
         private String resourceId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the resource. This filter returns resources associated with the specified resource.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * resource. This filter returns resources associated with the specified resource.
          *
          * @param resourceId the value to set
          * @return this builder instance
@@ -396,7 +394,7 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
         /**
          * For list pagination. The value of the {@code opc-next-page} response header from the
          * previous "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * <p>Example: {@code 3}
          */
@@ -405,7 +403,7 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
         /**
          * For list pagination. The value of the {@code opc-next-page} response header from the
          * previous "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * <p>Example: {@code 3}
          *
@@ -420,7 +418,7 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
         /**
          * For list pagination. The maximum number of results per page, or items to return in a
          * paginated "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * <p>Example: {@code 50}
          */
@@ -429,7 +427,7 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
         /**
          * For list pagination. The maximum number of results per page, or items to return in a
          * paginated "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * <p>Example: {@code 50}
          *
@@ -474,14 +472,14 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
         }
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the schedule job that initiated the work request.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * schedule job that initiated the work request.
          */
         private String initiatorId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the schedule job that initiated the work request.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * schedule job that initiated the work request.
          *
          * @param initiatorId the value to set
          * @return this builder instance
@@ -492,14 +490,14 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
         }
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the parent work request.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * parent work request.
          */
         private String parentId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the parent work request.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * parent work request.
          *
          * @param parentId the value to set
          * @return this builder instance
@@ -511,15 +509,13 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
 
         /**
          * A filter to return the resources whose parent resources are not the same as the given
-         * resource
-         * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * resource [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          */
         private java.util.List<String> parentResourcesNotEqualTo = null;
 
         /**
          * A filter to return the resources whose parent resources are not the same as the given
-         * resource
-         * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * resource [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          * @param parentResourcesNotEqualTo the value to set
          * @return this builder instance
@@ -532,7 +528,7 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
         /**
          * Singular setter. A filter to return the resources whose parent resources are not the same
          * as the given resource
-         * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          * @param singularValue the singular value to set
          * @return this builder instance
@@ -589,13 +585,13 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
 
         /**
          * A filter to return the work requests that are a retry of the given work request
-         * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          */
         private String retryOfId = null;
 
         /**
          * A filter to return the work requests that are a retry of the given work request
-         * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          * @param retryOfId the value to set
          * @return this builder instance
@@ -607,13 +603,13 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
 
         /**
          * A filter to return the work requests that are a rerun of the given work request
-         * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          */
         private String rerunOfId = null;
 
         /**
          * A filter to return the work requests that are a rerun of the given work request
-         * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          * @param rerunOfId the value to set
          * @return this builder instance

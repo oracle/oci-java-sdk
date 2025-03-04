@@ -7,7 +7,7 @@ package com.oracle.bmc.logging.requests;
 import com.oracle.bmc.logging.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/logging/ListWorkRequestErrorsExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/logging/ListWorkRequestErrorsExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * ListWorkRequestErrorsRequest.
  */
@@ -39,7 +39,7 @@ public class ListWorkRequestErrorsRequest
      * For list pagination. The value of the {@code opc-next-page} or {@code opc-previous-page}
      * response header from the previous "List" call. For important details about how pagination
      * works, see [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private String page;
 
@@ -47,7 +47,7 @@ public class ListWorkRequestErrorsRequest
      * For list pagination. The value of the {@code opc-next-page} or {@code opc-previous-page}
      * response header from the previous "List" call. For important details about how pagination
      * works, see [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     public String getPage() {
         return page;
@@ -102,7 +102,7 @@ public class ListWorkRequestErrorsRequest
          * For list pagination. The value of the {@code opc-next-page} or {@code opc-previous-page}
          * response header from the previous "List" call. For important details about how pagination
          * works, see [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private String page = null;
 
@@ -110,7 +110,7 @@ public class ListWorkRequestErrorsRequest
          * For list pagination. The value of the {@code opc-next-page} or {@code opc-previous-page}
          * response header from the previous "List" call. For important details about how pagination
          * works, see [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param page the value to set
          * @return this builder instance

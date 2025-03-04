@@ -123,14 +123,14 @@ public final class CreateDedicatedCatalogDetail
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * cloud Autonomous Exadata VM Cluster.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("cloudAutonomousVmClusterId")
         private String cloudAutonomousVmClusterId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * cloud Autonomous Exadata VM Cluster.
          *
          * @param cloudAutonomousVmClusterId the value to set
@@ -142,14 +142,14 @@ public final class CreateDedicatedCatalogDetail
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * peer cloud Autonomous Exadata VM Cluster.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("peerCloudAutonomousVmClusterId")
         private String peerCloudAutonomousVmClusterId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * peer cloud Autonomous Exadata VM Cluster.
          *
          * @param peerCloudAutonomousVmClusterId the value to set
@@ -276,14 +276,14 @@ public final class CreateDedicatedCatalogDetail
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * cloud Autonomous Exadata VM Cluster.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("cloudAutonomousVmClusterId")
     private final String cloudAutonomousVmClusterId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * cloud Autonomous Exadata VM Cluster.
      *
      * @return the value
@@ -293,15 +293,15 @@ public final class CreateDedicatedCatalogDetail
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * peer cloud Autonomous Exadata VM Cluster.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer
+     * cloud Autonomous Exadata VM Cluster.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("peerCloudAutonomousVmClusterId")
     private final String peerCloudAutonomousVmClusterId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * peer cloud Autonomous Exadata VM Cluster.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer
+     * cloud Autonomous Exadata VM Cluster.
      *
      * @return the value
      */

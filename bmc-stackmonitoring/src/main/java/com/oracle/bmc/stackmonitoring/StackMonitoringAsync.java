@@ -472,7 +472,7 @@ public interface StackMonitoringAsync extends AutoCloseable {
 
     /**
      * Delete monitored resource by the given identifier
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm). By default,
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). By default,
      * only the specified resource is deleted. If the parameter 'isDeleteMembers' is set to true,
      * then the member resources will be deleted too. If the operation fails partially, the deleted
      * entries will not be rolled back.
@@ -492,7 +492,7 @@ public interface StackMonitoringAsync extends AutoCloseable {
 
     /**
      * Deletes a monitored resource type by identifier
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -718,7 +718,7 @@ public interface StackMonitoringAsync extends AutoCloseable {
 
     /**
      * Get maintenance window for the given identifier
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -751,7 +751,7 @@ public interface StackMonitoringAsync extends AutoCloseable {
 
     /**
      * Get monitored resource for the given identifier
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -768,7 +768,7 @@ public interface StackMonitoringAsync extends AutoCloseable {
 
     /**
      * Gets stack monitoring resource task details by identifier
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -785,7 +785,7 @@ public interface StackMonitoringAsync extends AutoCloseable {
 
     /**
      * Gets a monitored resource type by identifier
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -1252,7 +1252,7 @@ public interface StackMonitoringAsync extends AutoCloseable {
 
     /**
      * List the member resources for the given monitored resource identifier
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -1354,7 +1354,7 @@ public interface StackMonitoringAsync extends AutoCloseable {
      * resources. Resources to be updated are identified based on association types specified. If
      * association types not specified, then tags will be updated only for the resource identified
      * by the given monitored resource identifier
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -1402,7 +1402,7 @@ public interface StackMonitoringAsync extends AutoCloseable {
 
     /**
      * Update maintenance window by the given identifier
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -1435,7 +1435,7 @@ public interface StackMonitoringAsync extends AutoCloseable {
 
     /**
      * Update monitored resource by the given identifier
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm). Note that
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Note that
      * \"properties\" object, if specified, will entirely replace the existing object, as part this
      * operation.
      *
@@ -1454,7 +1454,7 @@ public interface StackMonitoringAsync extends AutoCloseable {
 
     /**
      * Update stack monitoring resource task by the given identifier
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -1471,7 +1471,7 @@ public interface StackMonitoringAsync extends AutoCloseable {
 
     /**
      * Update the Monitored Resource Type identified by the identifier
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.

@@ -7,7 +7,7 @@ package com.oracle.bmc.databasetools.requests;
 import com.oracle.bmc.databasetools.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasetools/AddDatabaseToolsConnectionLockExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasetools/AddDatabaseToolsConnectionLockExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * AddDatabaseToolsConnectionLockRequest.
  */
@@ -17,13 +17,13 @@ public class AddDatabaseToolsConnectionLockRequest
                 com.oracle.bmc.databasetools.model.AddResourceLockDetails> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
      * Database Tools connection.
      */
     private String databaseToolsConnectionId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
      * Database Tools connection.
      */
     public String getDatabaseToolsConnectionId() {
@@ -86,13 +86,13 @@ public class AddDatabaseToolsConnectionLockRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
          * Database Tools connection.
          */
         private String databaseToolsConnectionId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
          * Database Tools connection.
          *
          * @param databaseToolsConnectionId the value to set

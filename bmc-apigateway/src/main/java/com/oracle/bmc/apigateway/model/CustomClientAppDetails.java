@@ -43,14 +43,14 @@ public final class CustomClientAppDetails extends ClientAppDetails {
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Oracle Vault Service secret resource.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("clientSecretId")
         private String clientSecretId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Oracle Vault Service secret resource.
          *
          * @param clientSecretId the value to set
@@ -137,14 +137,14 @@ public final class CustomClientAppDetails extends ClientAppDetails {
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Oracle Vault Service secret resource.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("clientSecretId")
     private final String clientSecretId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Oracle Vault Service secret resource.
      *
      * @return the value

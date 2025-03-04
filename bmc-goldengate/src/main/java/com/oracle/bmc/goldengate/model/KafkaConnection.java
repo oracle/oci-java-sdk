@@ -213,14 +213,14 @@ public final class KafkaConnection extends Connection {
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * stream pool being referenced.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("streamPoolId")
         private String streamPoolId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * stream pool being referenced.
          *
          * @param streamPoolId the value to set
@@ -291,7 +291,7 @@ public final class KafkaConnection extends Connection {
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Secret where the password is stored. The password Oracle GoldenGate uses to connect the
          * associated system of the given technology. It must conform to the specific security
          * requirements including length, case sensitivity, and so on. If secretId is used plaintext
@@ -301,7 +301,7 @@ public final class KafkaConnection extends Connection {
         private String passwordSecretId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Secret where the password is stored. The password Oracle GoldenGate uses to connect the
          * associated system of the given technology. It must conform to the specific security
          * requirements including length, case sensitivity, and so on. If secretId is used plaintext
@@ -316,7 +316,7 @@ public final class KafkaConnection extends Connection {
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Secret where the content of the TrustStore file is stored. Note: When provided,
          * 'trustStore' field must not be provided.
          */
@@ -324,7 +324,7 @@ public final class KafkaConnection extends Connection {
         private String trustStoreSecretId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Secret where the content of the TrustStore file is stored. Note: When provided,
          * 'trustStore' field must not be provided.
          *
@@ -337,7 +337,7 @@ public final class KafkaConnection extends Connection {
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Secret where the kafka TrustStore password is stored. Note: When provided,
          * 'trustStorePassword' field must not be provided.
          */
@@ -345,7 +345,7 @@ public final class KafkaConnection extends Connection {
         private String trustStorePasswordSecretId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Secret where the kafka TrustStore password is stored. Note: When provided,
          * 'trustStorePassword' field must not be provided.
          *
@@ -358,7 +358,7 @@ public final class KafkaConnection extends Connection {
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Secret where the content of the KeyStore file is stored. Note: When provided, 'keyStore'
          * field must not be provided.
          */
@@ -366,7 +366,7 @@ public final class KafkaConnection extends Connection {
         private String keyStoreSecretId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Secret where the content of the KeyStore file is stored. Note: When provided, 'keyStore'
          * field must not be provided.
          *
@@ -379,7 +379,7 @@ public final class KafkaConnection extends Connection {
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Secret where the kafka KeyStore password is stored. Note: When provided,
          * 'keyStorePassword' field must not be provided.
          */
@@ -387,7 +387,7 @@ public final class KafkaConnection extends Connection {
         private String keyStorePasswordSecretId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Secret where the kafka KeyStore password is stored. Note: When provided,
          * 'keyStorePassword' field must not be provided.
          *
@@ -400,7 +400,7 @@ public final class KafkaConnection extends Connection {
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Secret where the kafka Ssl Key password is stored. Note: When provided, 'sslKeyPassword'
          * field must not be provided.
          */
@@ -408,7 +408,7 @@ public final class KafkaConnection extends Connection {
         private String sslKeyPasswordSecretId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Secret where the kafka Ssl Key password is stored. Note: When provided, 'sslKeyPassword'
          * field must not be provided.
          *
@@ -737,14 +737,14 @@ public final class KafkaConnection extends Connection {
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * stream pool being referenced.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("streamPoolId")
     private final String streamPoolId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * stream pool being referenced.
      *
      * @return the value
@@ -855,7 +855,7 @@ public final class KafkaConnection extends Connection {
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Secret where the password is stored. The password Oracle GoldenGate uses to connect the
      * associated system of the given technology. It must conform to the specific security
      * requirements including length, case sensitivity, and so on. If secretId is used plaintext
@@ -865,7 +865,7 @@ public final class KafkaConnection extends Connection {
     private final String passwordSecretId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Secret where the password is stored. The password Oracle GoldenGate uses to connect the
      * associated system of the given technology. It must conform to the specific security
      * requirements including length, case sensitivity, and so on. If secretId is used plaintext
@@ -878,7 +878,7 @@ public final class KafkaConnection extends Connection {
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Secret where the content of the TrustStore file is stored. Note: When provided, 'trustStore'
      * field must not be provided.
      */
@@ -886,7 +886,7 @@ public final class KafkaConnection extends Connection {
     private final String trustStoreSecretId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Secret where the content of the TrustStore file is stored. Note: When provided, 'trustStore'
      * field must not be provided.
      *
@@ -897,7 +897,7 @@ public final class KafkaConnection extends Connection {
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Secret where the kafka TrustStore password is stored. Note: When provided,
      * 'trustStorePassword' field must not be provided.
      */
@@ -905,7 +905,7 @@ public final class KafkaConnection extends Connection {
     private final String trustStorePasswordSecretId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Secret where the kafka TrustStore password is stored. Note: When provided,
      * 'trustStorePassword' field must not be provided.
      *
@@ -916,7 +916,7 @@ public final class KafkaConnection extends Connection {
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Secret where the content of the KeyStore file is stored. Note: When provided, 'keyStore'
      * field must not be provided.
      */
@@ -924,7 +924,7 @@ public final class KafkaConnection extends Connection {
     private final String keyStoreSecretId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Secret where the content of the KeyStore file is stored. Note: When provided, 'keyStore'
      * field must not be provided.
      *
@@ -935,7 +935,7 @@ public final class KafkaConnection extends Connection {
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Secret where the kafka KeyStore password is stored. Note: When provided, 'keyStorePassword'
      * field must not be provided.
      */
@@ -943,7 +943,7 @@ public final class KafkaConnection extends Connection {
     private final String keyStorePasswordSecretId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Secret where the kafka KeyStore password is stored. Note: When provided, 'keyStorePassword'
      * field must not be provided.
      *
@@ -954,7 +954,7 @@ public final class KafkaConnection extends Connection {
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Secret where the kafka Ssl Key password is stored. Note: When provided, 'sslKeyPassword'
      * field must not be provided.
      */
@@ -962,7 +962,7 @@ public final class KafkaConnection extends Connection {
     private final String sslKeyPasswordSecretId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Secret where the kafka Ssl Key password is stored. Note: When provided, 'sslKeyPassword'
      * field must not be provided.
      *

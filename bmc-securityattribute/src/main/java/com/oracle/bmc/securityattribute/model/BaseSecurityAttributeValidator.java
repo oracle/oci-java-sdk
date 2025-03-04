@@ -7,7 +7,7 @@ package com.oracle.bmc.securityattribute.model;
 /**
  * Validates a security attribute value. Each validator performs validation steps in addition to the
  * standard validation for security attribute values. For more information, see [Limits on Security
- * Attributes](https://docs.cloud.oracle.com/Content/zero-trust-packet-routing/overview.htm).
+ * Attributes](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm).
  *
  * <p>If you define a validator after a value has been set for a security attribute, then any
  * updates that attempt to change the value must pass the additional validation defined by the
@@ -16,7 +16,7 @@ package com.oracle.bmc.securityattribute.model;
  * attribute.
  *
  * <p>To clear the validator call UpdateSecurityAttribute with
- * [DefaultSecuirtyAttributeValidator](https://docs.cloud.oracle.com/api/#/en/securityattribute/latest/datatypes/DefaultTagDefinitionValidator).
+ * [DefaultSecuirtyAttributeValidator](https://docs.oracle.com/iaas/api/#/en/securityattribute/latest/datatypes/DefaultTagDefinitionValidator).
  * <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly

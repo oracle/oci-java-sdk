@@ -10,7 +10,7 @@ import com.oracle.bmc.usage.responses.*;
 /**
  * Use the Usage Proxy API to list Oracle Support Rewards, view related detailed usage information,
  * and manage users who redeem rewards. For more information, see [Oracle Support Rewards
- * Overview](https://docs.cloud.oracle.com/iaas/Content/Billing/Concepts/supportrewardsoverview.htm).
+ * Overview](https://docs.oracle.com/iaas/Content/Billing/Concepts/supportrewardsoverview.htm).
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190111")
 public interface UsagelimitsAsync extends AutoCloseable {

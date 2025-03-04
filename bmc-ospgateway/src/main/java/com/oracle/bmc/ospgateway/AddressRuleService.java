@@ -73,7 +73,7 @@ public interface AddressRuleService extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ospgateway/GetAddressRuleExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ospgateway/GetAddressRuleExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetAddressRule API.
      */
     GetAddressRuleResponse getAddressRule(GetAddressRuleRequest request);

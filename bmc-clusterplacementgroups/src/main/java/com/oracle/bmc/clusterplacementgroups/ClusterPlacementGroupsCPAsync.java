@@ -98,7 +98,7 @@ public interface ClusterPlacementGroupsCPAsync extends AutoCloseable {
      * Moves a cluster placement group resource from one compartment to another in the same tenancy.
      * For information about moving resources between compartments, see [Moving Resources to a
      * Different
-     * Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
      * <p>When provided, If-Match is checked against ETag values of the resource.
      *

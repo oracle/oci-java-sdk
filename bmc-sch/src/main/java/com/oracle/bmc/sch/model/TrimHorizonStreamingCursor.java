@@ -7,7 +7,7 @@ package com.oracle.bmc.sch.model;
 /**
  * {@code TRIM_HORIZON} cursor type. Starts reading from the oldest available message in the stream.
  * For configuration instructions, see [Creating a Connector with a Streaming
- * Source](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector-streaming-source.htm).
+ * Source](https://docs.oracle.com/iaas/Content/connector-hub/create-service-connector-streaming-source.htm).
  * <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly

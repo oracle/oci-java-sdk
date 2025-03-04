@@ -10,7 +10,7 @@ import com.oracle.bmc.events.responses.*;
 /**
  * API for the Events Service. Use this API to manage rules and actions that create automation in
  * your tenancy. For more information, see [Overview of
- * Events](https://docs.cloud.oracle.com/iaas/Content/Events/Concepts/eventsoverview.htm).
+ * Events](https://docs.oracle.com/iaas/Content/Events/Concepts/eventsoverview.htm).
  *
  * <p>This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by
  * default if no circuit breaker configuration is defined by the user.
@@ -69,7 +69,7 @@ public interface Events extends AutoCloseable {
     /**
      * Moves a rule into a different compartment within the same tenancy. For information about
      * moving resources between compartments, see [Moving Resources to a Different
-     * Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -78,7 +78,7 @@ public interface Events extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/events/ChangeRuleCompartmentExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/events/ChangeRuleCompartmentExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ChangeRuleCompartment API.
      */
@@ -94,7 +94,7 @@ public interface Events extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/events/CreateRuleExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/events/CreateRuleExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateRule API.
      */
     CreateRuleResponse createRule(CreateRuleRequest request);
@@ -109,7 +109,7 @@ public interface Events extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/events/DeleteRuleExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/events/DeleteRuleExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteRule API.
      */
     DeleteRuleResponse deleteRule(DeleteRuleRequest request);
@@ -124,7 +124,7 @@ public interface Events extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/events/GetRuleExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/events/GetRuleExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetRule API.
      */
     GetRuleResponse getRule(GetRuleRequest request);
@@ -139,7 +139,7 @@ public interface Events extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/events/ListRulesExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/events/ListRulesExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListRules API.
      */
     ListRulesResponse listRules(ListRulesRequest request);
@@ -154,7 +154,7 @@ public interface Events extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/events/UpdateRuleExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/events/UpdateRuleExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateRule API.
      */
     UpdateRuleResponse updateRule(UpdateRuleRequest request);

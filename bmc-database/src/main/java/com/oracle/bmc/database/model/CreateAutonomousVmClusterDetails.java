@@ -89,14 +89,14 @@ public final class CreateAutonomousVmClusterDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * compartment.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * compartment.
          *
          * @param compartmentId the value to set
@@ -127,14 +127,14 @@ public final class CreateAutonomousVmClusterDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Exadata infrastructure.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("exadataInfrastructureId")
         private String exadataInfrastructureId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Exadata infrastructure.
          *
          * @param exadataInfrastructureId the value to set
@@ -146,14 +146,14 @@ public final class CreateAutonomousVmClusterDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * VM cluster network.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("vmClusterNetworkId")
         private String vmClusterNetworkId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * VM cluster network.
          *
          * @param vmClusterNetworkId the value to set
@@ -166,14 +166,14 @@ public final class CreateAutonomousVmClusterDetails
         }
         /**
          * The time zone to use for the Autonomous VM cluster. For details, see [DB System Time
-         * Zones](https://docs.cloud.oracle.com/Content/Database/References/timezones.htm).
+         * Zones](https://docs.oracle.com/iaas/Content/Database/References/timezones.htm).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("timeZone")
         private String timeZone;
 
         /**
          * The time zone to use for the Autonomous VM cluster. For details, see [DB System Time
-         * Zones](https://docs.cloud.oracle.com/Content/Database/References/timezones.htm).
+         * Zones](https://docs.oracle.com/iaas/Content/Database/References/timezones.htm).
          *
          * @param timeZone the value to set
          * @return this builder
@@ -313,7 +313,7 @@ public final class CreateAutonomousVmClusterDetails
         }
         /**
          * The list of
-         * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Db
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Db
          * servers.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("dbServers")
@@ -321,7 +321,7 @@ public final class CreateAutonomousVmClusterDetails
 
         /**
          * The list of
-         * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Db
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Db
          * servers.
          *
          * @param dbServers the value to set
@@ -335,7 +335,7 @@ public final class CreateAutonomousVmClusterDetails
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          */
@@ -345,7 +345,7 @@ public final class CreateAutonomousVmClusterDetails
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          *
@@ -360,7 +360,7 @@ public final class CreateAutonomousVmClusterDetails
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
@@ -368,7 +368,7 @@ public final class CreateAutonomousVmClusterDetails
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * @param definedTags the value to set
          * @return this builder
@@ -533,14 +533,14 @@ public final class CreateAutonomousVmClusterDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment.
      *
      * @return the value
@@ -565,14 +565,14 @@ public final class CreateAutonomousVmClusterDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Exadata infrastructure.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("exadataInfrastructureId")
     private final String exadataInfrastructureId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Exadata infrastructure.
      *
      * @return the value
@@ -582,14 +582,14 @@ public final class CreateAutonomousVmClusterDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VM
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM
      * cluster network.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("vmClusterNetworkId")
     private final String vmClusterNetworkId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VM
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM
      * cluster network.
      *
      * @return the value
@@ -600,14 +600,14 @@ public final class CreateAutonomousVmClusterDetails
 
     /**
      * The time zone to use for the Autonomous VM cluster. For details, see [DB System Time
-     * Zones](https://docs.cloud.oracle.com/Content/Database/References/timezones.htm).
+     * Zones](https://docs.oracle.com/iaas/Content/Database/References/timezones.htm).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("timeZone")
     private final String timeZone;
 
     /**
      * The time zone to use for the Autonomous VM cluster. For details, see [DB System Time
-     * Zones](https://docs.cloud.oracle.com/Content/Database/References/timezones.htm).
+     * Zones](https://docs.oracle.com/iaas/Content/Database/References/timezones.htm).
      *
      * @return the value
      */
@@ -800,15 +800,15 @@ public final class CreateAutonomousVmClusterDetails
     }
 
     /**
-     * The list of [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
-     * of the Db servers.
+     * The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the Db servers.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("dbServers")
     private final java.util.List<String> dbServers;
 
     /**
-     * The list of [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
-     * of the Db servers.
+     * The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the Db servers.
      *
      * @return the value
      */
@@ -819,7 +819,7 @@ public final class CreateAutonomousVmClusterDetails
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      */
@@ -829,7 +829,7 @@ public final class CreateAutonomousVmClusterDetails
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      *
@@ -842,7 +842,7 @@ public final class CreateAutonomousVmClusterDetails
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
@@ -850,7 +850,7 @@ public final class CreateAutonomousVmClusterDetails
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * @return the value
      */

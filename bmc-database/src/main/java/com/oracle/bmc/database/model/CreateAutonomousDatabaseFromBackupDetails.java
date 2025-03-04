@@ -511,7 +511,7 @@ public final class CreateAutonomousDatabaseFromBackupDetails extends CreateAuton
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * source Autonomous Database Backup that you will clone to create a new Autonomous
          * Database.
          */
@@ -519,7 +519,7 @@ public final class CreateAutonomousDatabaseFromBackupDetails extends CreateAuton
         private String autonomousDatabaseBackupId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * source Autonomous Database Backup that you will clone to create a new Autonomous
          * Database.
          *
@@ -937,14 +937,14 @@ public final class CreateAutonomousDatabaseFromBackupDetails extends CreateAuton
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * source Autonomous Database Backup that you will clone to create a new Autonomous Database.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("autonomousDatabaseBackupId")
     private final String autonomousDatabaseBackupId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * source Autonomous Database Backup that you will clone to create a new Autonomous Database.
      *
      * @return the value

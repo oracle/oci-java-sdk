@@ -32,14 +32,14 @@ public final class ChangeKeyStoreTypeDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * key store.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("keyStoreId")
         private String keyStoreId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * key store.
          *
          * @param keyStoreId the value to set
@@ -81,14 +81,14 @@ public final class ChangeKeyStoreTypeDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the key
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key
      * store.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("keyStoreId")
     private final String keyStoreId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the key
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key
      * store.
      *
      * @return the value

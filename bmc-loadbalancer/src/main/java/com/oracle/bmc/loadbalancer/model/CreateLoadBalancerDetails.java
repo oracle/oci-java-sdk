@@ -101,14 +101,14 @@ public final class CreateLoadBalancerDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * compartment in which to create the load balancer.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * compartment in which to create the load balancer.
          *
          * @param compartmentId the value to set
@@ -197,9 +197,9 @@ public final class CreateLoadBalancerDetails
          *
          * <p>A public load balancer is accessible from the internet, depending on your VCN's
          * [security list
-         * rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securitylists.htm). For
-         * more information about public and private load balancers, see [How Load Balancing
-         * Works](https://docs.cloud.oracle.com/Content/Balance/Concepts/balanceoverview.htm#how-load-balancing-works).
+         * rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securitylists.htm). For more
+         * information about public and private load balancers, see [How Load Balancing
+         * Works](https://docs.oracle.com/iaas/Content/Balance/Concepts/balanceoverview.htm#how-load-balancing-works).
          *
          * <p>Example: {@code true}
          */
@@ -215,9 +215,9 @@ public final class CreateLoadBalancerDetails
          *
          * <p>A public load balancer is accessible from the internet, depending on your VCN's
          * [security list
-         * rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securitylists.htm). For
-         * more information about public and private load balancers, see [How Load Balancing
-         * Works](https://docs.cloud.oracle.com/Content/Balance/Concepts/balanceoverview.htm#how-load-balancing-works).
+         * rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securitylists.htm). For more
+         * information about public and private load balancers, see [How Load Balancing
+         * Works](https://docs.oracle.com/iaas/Content/Balance/Concepts/balanceoverview.htm#how-load-balancing-works).
          *
          * <p>Example: {@code true}
          *
@@ -429,8 +429,8 @@ public final class CreateLoadBalancerDetails
         }
         /**
          * An array of NSG
-         * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
-         * associated with this load balancer.
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated
+         * with this load balancer.
          *
          * <p>During the load balancer's creation, the service adds the new load balancer to the
          * specified NSGs.
@@ -450,8 +450,8 @@ public final class CreateLoadBalancerDetails
 
         /**
          * An array of NSG
-         * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
-         * associated with this load balancer.
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated
+         * with this load balancer.
          *
          * <p>During the load balancer's creation, the service adds the new load balancer to the
          * specified NSGs.
@@ -476,14 +476,14 @@ public final class CreateLoadBalancerDetails
         }
         /**
          * An array of subnet
-         * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("subnetIds")
         private java.util.List<String> subnetIds;
 
         /**
          * An array of subnet
-         * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          * @param subnetIds the value to set
          * @return this builder
@@ -524,7 +524,7 @@ public final class CreateLoadBalancerDetails
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          */
@@ -534,7 +534,7 @@ public final class CreateLoadBalancerDetails
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          *
@@ -549,7 +549,7 @@ public final class CreateLoadBalancerDetails
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
          */
@@ -559,7 +559,7 @@ public final class CreateLoadBalancerDetails
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
@@ -724,14 +724,14 @@ public final class CreateLoadBalancerDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment in which to create the load balancer.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment in which to create the load balancer.
      *
      * @return the value
@@ -811,9 +811,9 @@ public final class CreateLoadBalancerDetails
      * <p>If "false", the service assigns a public IP address to the load balancer.
      *
      * <p>A public load balancer is accessible from the internet, depending on your VCN's [security
-     * list rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securitylists.htm). For
+     * list rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securitylists.htm). For
      * more information about public and private load balancers, see [How Load Balancing
-     * Works](https://docs.cloud.oracle.com/Content/Balance/Concepts/balanceoverview.htm#how-load-balancing-works).
+     * Works](https://docs.oracle.com/iaas/Content/Balance/Concepts/balanceoverview.htm#how-load-balancing-works).
      *
      * <p>Example: {@code true}
      */
@@ -828,9 +828,9 @@ public final class CreateLoadBalancerDetails
      * <p>If "false", the service assigns a public IP address to the load balancer.
      *
      * <p>A public load balancer is accessible from the internet, depending on your VCN's [security
-     * list rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securitylists.htm). For
+     * list rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securitylists.htm). For
      * more information about public and private load balancers, see [How Load Balancing
-     * Works](https://docs.cloud.oracle.com/Content/Balance/Concepts/balanceoverview.htm#how-load-balancing-works).
+     * Works](https://docs.oracle.com/iaas/Content/Balance/Concepts/balanceoverview.htm#how-load-balancing-works).
      *
      * <p>Example: {@code true}
      *
@@ -1063,7 +1063,7 @@ public final class CreateLoadBalancerDetails
 
     /**
      * An array of NSG
-     * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) associated
+     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated
      * with this load balancer.
      *
      * <p>During the load balancer's creation, the service adds the new load balancer to the
@@ -1084,7 +1084,7 @@ public final class CreateLoadBalancerDetails
 
     /**
      * An array of NSG
-     * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) associated
+     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated
      * with this load balancer.
      *
      * <p>During the load balancer's creation, the service adds the new load balancer to the
@@ -1108,14 +1108,14 @@ public final class CreateLoadBalancerDetails
 
     /**
      * An array of subnet
-     * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("subnetIds")
     private final java.util.List<String> subnetIds;
 
     /**
      * An array of subnet
-     * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      * @return the value
      */
@@ -1147,7 +1147,7 @@ public final class CreateLoadBalancerDetails
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      */
@@ -1157,7 +1157,7 @@ public final class CreateLoadBalancerDetails
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      *
@@ -1170,7 +1170,7 @@ public final class CreateLoadBalancerDetails
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
      */
@@ -1180,7 +1180,7 @@ public final class CreateLoadBalancerDetails
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
      *

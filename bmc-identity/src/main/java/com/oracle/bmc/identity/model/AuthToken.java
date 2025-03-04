@@ -17,7 +17,7 @@ package com.oracle.bmc.identity.model;
  * your choice.
  *
  * <p>For more information, see [Managing User
- * Credentials](https://docs.cloud.oracle.com/Content/Identity/access/managing-user-credentials.htm).
+ * Credentials](https://docs.oracle.com/iaas/Content/Identity/access/managing-user-credentials.htm).
  * <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly

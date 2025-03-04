@@ -24,8 +24,8 @@ import java.util.stream.Collectors;
  *
  * <ul>
  *   <li>Updating database with backupDestination. See: <a
- *       href="https://docs.cloud.oracle.com/Content/Database/Concepts/overview.htm">overview</a>
- *       for more information
+ *       href="https://docs.oracle.com/iaas/Content/Database/Concepts/overview.htm">overview</a> for
+ *       more information
  * </ul>
  */
 public class UpdateDbBackupDestinationExample {

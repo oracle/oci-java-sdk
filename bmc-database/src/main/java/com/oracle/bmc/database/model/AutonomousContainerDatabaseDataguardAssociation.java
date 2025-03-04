@@ -105,7 +105,7 @@ public final class AutonomousContainerDatabaseDataguardAssociation
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Autonomous Container Database that has a relationship with the peer Autonomous Container
          * Database. Used only by Autonomous Database on Dedicated Exadata Infrastructure.
          */
@@ -113,7 +113,7 @@ public final class AutonomousContainerDatabaseDataguardAssociation
         private String autonomousContainerDatabaseId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Autonomous Container Database that has a relationship with the peer Autonomous Container
          * Database. Used only by Autonomous Database on Dedicated Exadata Infrastructure.
          *
@@ -193,14 +193,14 @@ public final class AutonomousContainerDatabaseDataguardAssociation
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * peer Autonomous Container Database.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("peerAutonomousContainerDatabaseId")
         private String peerAutonomousContainerDatabaseId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * peer Autonomous Container Database.
          *
          * @param peerAutonomousContainerDatabaseId the value to set
@@ -541,7 +541,7 @@ public final class AutonomousContainerDatabaseDataguardAssociation
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Autonomous Container Database that has a relationship with the peer Autonomous Container
      * Database. Used only by Autonomous Database on Dedicated Exadata Infrastructure.
      */
@@ -549,7 +549,7 @@ public final class AutonomousContainerDatabaseDataguardAssociation
     private final String autonomousContainerDatabaseId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Autonomous Container Database that has a relationship with the peer Autonomous Container
      * Database. Used only by Autonomous Database on Dedicated Exadata Infrastructure.
      *
@@ -719,15 +719,15 @@ public final class AutonomousContainerDatabaseDataguardAssociation
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * peer Autonomous Container Database.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer
+     * Autonomous Container Database.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("peerAutonomousContainerDatabaseId")
     private final String peerAutonomousContainerDatabaseId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * peer Autonomous Container Database.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer
+     * Autonomous Container Database.
      *
      * @return the value
      */

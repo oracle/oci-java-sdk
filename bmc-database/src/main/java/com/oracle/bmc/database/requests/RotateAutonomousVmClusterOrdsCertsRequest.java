@@ -7,7 +7,7 @@ package com.oracle.bmc.database.requests;
 import com.oracle.bmc.database.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/RotateAutonomousVmClusterOrdsCertsExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/RotateAutonomousVmClusterOrdsCertsExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * RotateAutonomousVmClusterOrdsCertsRequest.
  */
@@ -33,13 +33,13 @@ public class RotateAutonomousVmClusterOrdsCertsRequest
     }
     /**
      * The autonomous VM cluster
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     private String autonomousVmClusterId;
 
     /**
      * The autonomous VM cluster
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     public String getAutonomousVmClusterId() {
         return autonomousVmClusterId;
@@ -130,13 +130,13 @@ public class RotateAutonomousVmClusterOrdsCertsRequest
 
         /**
          * The autonomous VM cluster
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          */
         private String autonomousVmClusterId = null;
 
         /**
          * The autonomous VM cluster
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          * @param autonomousVmClusterId the value to set
          * @return this builder instance

@@ -79,15 +79,15 @@ public final class UpdateSubnetDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the set of DHCP options the subnet will use.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * set of DHCP options the subnet will use.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("dhcpOptionsId")
         private String dhcpOptionsId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the set of DHCP options the subnet will use.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * set of DHCP options the subnet will use.
          *
          * @param dhcpOptionsId the value to set
          * @return this builder
@@ -136,15 +136,15 @@ public final class UpdateSubnetDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the route table the subnet will use.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * route table the subnet will use.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("routeTableId")
         private String routeTableId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the route table the subnet will use.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * route table the subnet will use.
          *
          * @param routeTableId the value to set
          * @return this builder
@@ -217,8 +217,8 @@ public final class UpdateSubnetDetails
         /**
          * This is the IPv6 CIDR block for the subnet's IP address space. The subnet size is always
          * /64. See [IPv6
-         * Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm). The
-         * provided CIDR must maintain the following rules -
+         * Addresses](https://docs.oracle.com/iaas/Content/Network/Concepts/ipv6.htm). The provided
+         * CIDR must maintain the following rules -
          *
          * <p>a. The IPv6 CIDR block is valid and correctly formatted. b. The IPv6 CIDR is within
          * the parent VCN IPv6 range.
@@ -231,8 +231,8 @@ public final class UpdateSubnetDetails
         /**
          * This is the IPv6 CIDR block for the subnet's IP address space. The subnet size is always
          * /64. See [IPv6
-         * Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm). The
-         * provided CIDR must maintain the following rules -
+         * Addresses](https://docs.oracle.com/iaas/Content/Network/Concepts/ipv6.htm). The provided
+         * CIDR must maintain the following rules -
          *
          * <p>a. The IPv6 CIDR block is valid and correctly formatted. b. The IPv6 CIDR is within
          * the parent VCN IPv6 range.
@@ -354,15 +354,15 @@ public final class UpdateSubnetDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the set of DHCP options the subnet will use.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the set
+     * of DHCP options the subnet will use.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("dhcpOptionsId")
     private final String dhcpOptionsId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the set of DHCP options the subnet will use.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the set
+     * of DHCP options the subnet will use.
      *
      * @return the value
      */
@@ -405,15 +405,15 @@ public final class UpdateSubnetDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the route table the subnet will use.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * route table the subnet will use.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("routeTableId")
     private final String routeTableId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the route table the subnet will use.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * route table the subnet will use.
      *
      * @return the value
      */
@@ -479,8 +479,8 @@ public final class UpdateSubnetDetails
 
     /**
      * This is the IPv6 CIDR block for the subnet's IP address space. The subnet size is always /64.
-     * See [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
-     * The provided CIDR must maintain the following rules -
+     * See [IPv6 Addresses](https://docs.oracle.com/iaas/Content/Network/Concepts/ipv6.htm). The
+     * provided CIDR must maintain the following rules -
      *
      * <p>a. The IPv6 CIDR block is valid and correctly formatted. b. The IPv6 CIDR is within the
      * parent VCN IPv6 range.
@@ -492,8 +492,8 @@ public final class UpdateSubnetDetails
 
     /**
      * This is the IPv6 CIDR block for the subnet's IP address space. The subnet size is always /64.
-     * See [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
-     * The provided CIDR must maintain the following rules -
+     * See [IPv6 Addresses](https://docs.oracle.com/iaas/Content/Network/Concepts/ipv6.htm). The
+     * provided CIDR must maintain the following rules -
      *
      * <p>a. The IPv6 CIDR block is valid and correctly formatted. b. The IPv6 CIDR is within the
      * parent VCN IPv6 range.

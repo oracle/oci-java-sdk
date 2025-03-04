@@ -8,17 +8,15 @@ package com.oracle.bmc.core.model;
  * A dynamic routing gateway (DRG) is a virtual router that provides a path for private network
  * traffic between networks. You use it with other Networking Service components to create a
  * connection to your on-premises network using [Site-to-Site
- * VPN](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingIPsec.htm) or a connection
- * that uses
- * [FastConnect](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm). For
+ * VPN](https://docs.oracle.com/iaas/Content/Network/Tasks/managingIPsec.htm) or a connection that
+ * uses [FastConnect](https://docs.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm). For
  * more information, see [Networking
- * Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/overview.htm).
+ * Overview](https://docs.oracle.com/iaas/Content/Network/Concepts/overview.htm).
  *
  * <p>To use any of the API operations, you must be authorized in an IAM policy. If you're not
  * authorized, talk to an administrator. If you're an administrator who needs to write policies to
  * give users access, see [Getting Started with
- * Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
- * <br>
+ * Policies](https://docs.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm). <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -70,15 +68,15 @@ public final class Drg extends com.oracle.bmc.http.client.internal.ExplicitlySet
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compartment containing the DRG.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment containing the DRG.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compartment containing the DRG.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment containing the DRG.
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -91,7 +89,7 @@ public final class Drg extends com.oracle.bmc.http.client.internal.ExplicitlySet
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
          */
@@ -101,7 +99,7 @@ public final class Drg extends com.oracle.bmc.http.client.internal.ExplicitlySet
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
@@ -136,7 +134,7 @@ public final class Drg extends com.oracle.bmc.http.client.internal.ExplicitlySet
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          */
@@ -146,7 +144,7 @@ public final class Drg extends com.oracle.bmc.http.client.internal.ExplicitlySet
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          *
@@ -160,14 +158,14 @@ public final class Drg extends com.oracle.bmc.http.client.internal.ExplicitlySet
         }
         /**
          * The DRG's Oracle ID
-         * ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
+         * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * The DRG's Oracle ID
-         * ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
+         * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
          *
          * @param id the value to set
          * @return this builder
@@ -225,15 +223,15 @@ public final class Drg extends com.oracle.bmc.http.client.internal.ExplicitlySet
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of this DRG's default export route distribution for the DRG attachments.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this
+         * DRG's default export route distribution for the DRG attachments.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("defaultExportDrgRouteDistributionId")
         private String defaultExportDrgRouteDistributionId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of this DRG's default export route distribution for the DRG attachments.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this
+         * DRG's default export route distribution for the DRG attachments.
          *
          * @param defaultExportDrgRouteDistributionId the value to set
          * @return this builder
@@ -310,15 +308,15 @@ public final class Drg extends com.oracle.bmc.http.client.internal.ExplicitlySet
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compartment containing the DRG.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment containing the DRG.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compartment containing the DRG.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment containing the DRG.
      *
      * @return the value
      */
@@ -329,7 +327,7 @@ public final class Drg extends com.oracle.bmc.http.client.internal.ExplicitlySet
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
      */
@@ -339,7 +337,7 @@ public final class Drg extends com.oracle.bmc.http.client.internal.ExplicitlySet
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
@@ -369,7 +367,7 @@ public final class Drg extends com.oracle.bmc.http.client.internal.ExplicitlySet
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      */
@@ -379,7 +377,7 @@ public final class Drg extends com.oracle.bmc.http.client.internal.ExplicitlySet
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      *
@@ -391,14 +389,14 @@ public final class Drg extends com.oracle.bmc.http.client.internal.ExplicitlySet
 
     /**
      * The DRG's Oracle ID
-     * ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
+     * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The DRG's Oracle ID
-     * ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
+     * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
      *
      * @return the value
      */
@@ -496,15 +494,15 @@ public final class Drg extends com.oracle.bmc.http.client.internal.ExplicitlySet
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * this DRG's default export route distribution for the DRG attachments.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this
+     * DRG's default export route distribution for the DRG attachments.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("defaultExportDrgRouteDistributionId")
     private final String defaultExportDrgRouteDistributionId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * this DRG's default export route distribution for the DRG attachments.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this
+     * DRG's default export route distribution for the DRG attachments.
      *
      * @return the value
      */

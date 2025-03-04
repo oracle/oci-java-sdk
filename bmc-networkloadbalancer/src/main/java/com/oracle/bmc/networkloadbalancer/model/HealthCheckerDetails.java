@@ -7,7 +7,7 @@ package com.oracle.bmc.networkloadbalancer.model;
 /**
  * The health check policy configuration. For more information, see [Editing Network Load Balancer
  * Health Check
- * Policies](https://docs.cloud.oracle.com/Content/NetworkLoadBalancer/HealthCheckPolicies/update-health-check-policy.htm).
+ * Policies](https://docs.oracle.com/iaas/Content/NetworkLoadBalancer/HealthCheckPolicies/update-health-check-policy.htm).
  * <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly

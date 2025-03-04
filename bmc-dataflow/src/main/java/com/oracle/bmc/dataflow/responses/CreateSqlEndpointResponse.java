@@ -38,13 +38,13 @@ public class CreateSqlEndpointResponse extends com.oracle.bmc.responses.BmcRespo
 
     /**
      * For optimistic concurrency control. See [ETags for Optimistic Concurrency
-     * Control](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven).
+     * Control](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven).
      */
     private String etag;
 
     /**
      * For optimistic concurrency control. See [ETags for Optimistic Concurrency
-     * Control](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven).
+     * Control](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven).
      *
      * @return the value
      */
@@ -138,13 +138,13 @@ public class CreateSqlEndpointResponse extends com.oracle.bmc.responses.BmcRespo
 
         /**
          * For optimistic concurrency control. See [ETags for Optimistic Concurrency
-         * Control](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven).
+         * Control](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven).
          */
         private String etag;
 
         /**
          * For optimistic concurrency control. See [ETags for Optimistic Concurrency
-         * Control](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven).
+         * Control](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven).
          *
          * @param etag the value to set
          * @return this builder

@@ -35,14 +35,14 @@ public final class GenerateAgentDeployScriptDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * install key for which to generate the script.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("installKeyId")
         private String installKeyId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * install key for which to generate the script.
          *
          * @param installKeyId the value to set
@@ -126,14 +126,14 @@ public final class GenerateAgentDeployScriptDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * install key for which to generate the script.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("installKeyId")
     private final String installKeyId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * install key for which to generate the script.
      *
      * @return the value

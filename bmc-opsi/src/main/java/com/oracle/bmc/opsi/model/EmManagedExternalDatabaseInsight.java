@@ -245,15 +245,15 @@ public final class EmManagedExternalDatabaseInsight extends DatabaseInsight {
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the Exadata insight.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Exadata insight.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("exadataInsightId")
         private String exadataInsightId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the Exadata insight.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Exadata insight.
          *
          * @param exadataInsightId the value to set
          * @return this builder
@@ -503,15 +503,15 @@ public final class EmManagedExternalDatabaseInsight extends DatabaseInsight {
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the Exadata insight.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Exadata insight.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("exadataInsightId")
     private final String exadataInsightId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the Exadata insight.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Exadata insight.
      *
      * @return the value
      */

@@ -7,7 +7,7 @@ package com.oracle.bmc.loganalytics.requests;
 import com.oracle.bmc.loganalytics.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/DeleteSourceExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/DeleteSourceExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use DeleteSourceRequest.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")

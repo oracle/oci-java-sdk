@@ -33,15 +33,15 @@ public final class SetOriginAsnDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the {@code Byoasn} Resource to be associated.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * {@code Byoasn} Resource to be associated.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("byoasnId")
         private String byoasnId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the {@code Byoasn} Resource to be associated.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * {@code Byoasn} Resource to be associated.
          *
          * @param byoasnId the value to set
          * @return this builder
@@ -101,15 +101,15 @@ public final class SetOriginAsnDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the {@code Byoasn} Resource to be associated.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * {@code Byoasn} Resource to be associated.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("byoasnId")
     private final String byoasnId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the {@code Byoasn} Resource to be associated.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * {@code Byoasn} Resource to be associated.
      *
      * @return the value
      */

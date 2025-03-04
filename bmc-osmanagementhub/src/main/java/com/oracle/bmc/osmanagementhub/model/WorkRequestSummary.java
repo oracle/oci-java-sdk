@@ -104,15 +104,15 @@ public final class WorkRequestSummary
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the work request.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * work request.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the work request.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * work request.
          *
          * @param id the value to set
          * @return this builder
@@ -168,15 +168,15 @@ public final class WorkRequestSummary
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the parent work request, if there is any.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * parent work request, if there is any.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("parentId")
         private String parentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the parent work request, if there is any.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * parent work request, if there is any.
          *
          * @param parentId the value to set
          * @return this builder
@@ -188,16 +188,16 @@ public final class WorkRequestSummary
         }
         /**
          * The list of
-         * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for
-         * child work requests.
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for child
+         * work requests.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("childrenId")
         private java.util.List<String> childrenId;
 
         /**
          * The list of
-         * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for
-         * child work requests.
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for child
+         * work requests.
          *
          * @param childrenId the value to set
          * @return this builder
@@ -208,21 +208,19 @@ public final class WorkRequestSummary
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compartment that contains the work request. Work requests should be scoped to the
-         * same compartment as the resource it affects. If the work request affects multiple
-         * resources the different compartments, the services selects the compartment of the primary
-         * resource.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment that contains the work request. Work requests should be scoped to the same
+         * compartment as the resource it affects. If the work request affects multiple resources
+         * the different compartments, the services selects the compartment of the primary resource.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compartment that contains the work request. Work requests should be scoped to the
-         * same compartment as the resource it affects. If the work request affects multiple
-         * resources the different compartments, the services selects the compartment of the primary
-         * resource.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment that contains the work request. Work requests should be scoped to the same
+         * compartment as the resource it affects. If the work request affects multiple resources
+         * the different compartments, the services selects the compartment of the primary resource.
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -430,15 +428,15 @@ public final class WorkRequestSummary
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the work request.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the work
+     * request.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the work request.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the work
+     * request.
      *
      * @return the value
      */
@@ -486,15 +484,15 @@ public final class WorkRequestSummary
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the parent work request, if there is any.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * parent work request, if there is any.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("parentId")
     private final String parentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the parent work request, if there is any.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * parent work request, if there is any.
      *
      * @return the value
      */
@@ -503,17 +501,15 @@ public final class WorkRequestSummary
     }
 
     /**
-     * The list of
-     * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for
-     * child work requests.
+     * The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * for child work requests.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("childrenId")
     private final java.util.List<String> childrenId;
 
     /**
-     * The list of
-     * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for
-     * child work requests.
+     * The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * for child work requests.
      *
      * @return the value
      */
@@ -522,8 +518,8 @@ public final class WorkRequestSummary
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compartment that contains the work request. Work requests should be scoped to the same
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment that contains the work request. Work requests should be scoped to the same
      * compartment as the resource it affects. If the work request affects multiple resources the
      * different compartments, the services selects the compartment of the primary resource.
      */
@@ -531,8 +527,8 @@ public final class WorkRequestSummary
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compartment that contains the work request. Work requests should be scoped to the same
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment that contains the work request. Work requests should be scoped to the same
      * compartment as the resource it affects. If the work request affects multiple resources the
      * different compartments, the services selects the compartment of the primary resource.
      *

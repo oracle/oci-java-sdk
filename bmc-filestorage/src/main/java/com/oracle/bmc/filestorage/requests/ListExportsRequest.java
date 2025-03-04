@@ -7,20 +7,20 @@ package com.oracle.bmc.filestorage.requests;
 import com.oracle.bmc.filestorage.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/ListExportsExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/ListExportsExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListExportsRequest.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20171215")
 public class ListExportsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment.
      */
     private String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment.
      */
     public String getCompartmentId() {
@@ -31,7 +31,7 @@ public class ListExportsRequest extends com.oracle.bmc.requests.BmcRequest<java.
      * paginated "List" call. 1 is the minimum, 4096 is the maximum.
      *
      * <p>For important details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      * <p>Example: {@code 500}
      */
@@ -42,7 +42,7 @@ public class ListExportsRequest extends com.oracle.bmc.requests.BmcRequest<java.
      * paginated "List" call. 1 is the minimum, 4096 is the maximum.
      *
      * <p>For important details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      * <p>Example: {@code 500}
      */
@@ -54,7 +54,7 @@ public class ListExportsRequest extends com.oracle.bmc.requests.BmcRequest<java.
      * "List" call.
      *
      * <p>For important details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private String page;
 
@@ -63,33 +63,33 @@ public class ListExportsRequest extends com.oracle.bmc.requests.BmcRequest<java.
      * "List" call.
      *
      * <p>For important details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     public String getPage() {
         return page;
     }
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * export set.
      */
     private String exportSetId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * export set.
      */
     public String getExportSetId() {
         return exportSetId;
     }
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * file system.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file
+     * system.
      */
     private String fileSystemId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * file system.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file
+     * system.
      */
     public String getFileSystemId() {
         return fileSystemId;
@@ -147,14 +147,14 @@ public class ListExportsRequest extends com.oracle.bmc.requests.BmcRequest<java.
     }
     /**
      * Filter results by
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm). Must be an
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an
      * OCID of the correct type for the resouce type.
      */
     private String id;
 
     /**
      * Filter results by
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm). Must be an
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an
      * OCID of the correct type for the resouce type.
      */
     public String getId() {
@@ -284,13 +284,13 @@ public class ListExportsRequest extends com.oracle.bmc.requests.BmcRequest<java.
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * compartment.
          */
         private String compartmentId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * compartment.
          *
          * @param compartmentId the value to set
@@ -306,7 +306,7 @@ public class ListExportsRequest extends com.oracle.bmc.requests.BmcRequest<java.
          * paginated "List" call. 1 is the minimum, 4096 is the maximum.
          *
          * <p>For important details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * <p>Example: {@code 500}
          */
@@ -317,7 +317,7 @@ public class ListExportsRequest extends com.oracle.bmc.requests.BmcRequest<java.
          * paginated "List" call. 1 is the minimum, 4096 is the maximum.
          *
          * <p>For important details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * <p>Example: {@code 500}
          *
@@ -334,7 +334,7 @@ public class ListExportsRequest extends com.oracle.bmc.requests.BmcRequest<java.
          * previous "List" call.
          *
          * <p>For important details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private String page = null;
 
@@ -343,7 +343,7 @@ public class ListExportsRequest extends com.oracle.bmc.requests.BmcRequest<java.
          * previous "List" call.
          *
          * <p>For important details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param page the value to set
          * @return this builder instance
@@ -354,13 +354,13 @@ public class ListExportsRequest extends com.oracle.bmc.requests.BmcRequest<java.
         }
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * export set.
          */
         private String exportSetId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * export set.
          *
          * @param exportSetId the value to set
@@ -372,13 +372,13 @@ public class ListExportsRequest extends com.oracle.bmc.requests.BmcRequest<java.
         }
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * file system.
          */
         private String fileSystemId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * file system.
          *
          * @param fileSystemId the value to set
@@ -409,15 +409,15 @@ public class ListExportsRequest extends com.oracle.bmc.requests.BmcRequest<java.
 
         /**
          * Filter results by
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm). Must be
-         * an OCID of the correct type for the resouce type.
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an
+         * OCID of the correct type for the resouce type.
          */
         private String id = null;
 
         /**
          * Filter results by
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm). Must be
-         * an OCID of the correct type for the resouce type.
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an
+         * OCID of the correct type for the resouce type.
          *
          * @param id the value to set
          * @return this builder instance

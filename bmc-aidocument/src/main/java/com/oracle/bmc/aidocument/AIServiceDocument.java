@@ -74,7 +74,7 @@ public interface AIServiceDocument extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aidocument/AddModelLockExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aidocument/AddModelLockExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use AddModelLock API.
      */
     AddModelLockResponse addModelLock(AddModelLockRequest request);
@@ -89,7 +89,7 @@ public interface AIServiceDocument extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aidocument/AddProjectLockExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aidocument/AddProjectLockExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use AddProjectLock API.
      */
     AddProjectLockResponse addProjectLock(AddProjectLockRequest request);
@@ -104,7 +104,7 @@ public interface AIServiceDocument extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aidocument/AnalyzeDocumentExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aidocument/AnalyzeDocumentExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use AnalyzeDocument
      *     API.
      */
@@ -120,7 +120,7 @@ public interface AIServiceDocument extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aidocument/CancelProcessorJobExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aidocument/CancelProcessorJobExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CancelProcessorJob
      *     API.
      */
@@ -136,7 +136,7 @@ public interface AIServiceDocument extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aidocument/CancelWorkRequestExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aidocument/CancelWorkRequestExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CancelWorkRequest
      *     API.
      */
@@ -153,7 +153,7 @@ public interface AIServiceDocument extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aidocument/ChangeModelCompartmentExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aidocument/ChangeModelCompartmentExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ChangeModelCompartment API.
      */
@@ -170,7 +170,7 @@ public interface AIServiceDocument extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aidocument/ChangeProjectCompartmentExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aidocument/ChangeProjectCompartmentExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ChangeProjectCompartment API.
      */
@@ -187,7 +187,7 @@ public interface AIServiceDocument extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aidocument/CreateModelExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aidocument/CreateModelExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateModel API.
      */
     CreateModelResponse createModel(CreateModelRequest request);
@@ -202,7 +202,7 @@ public interface AIServiceDocument extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aidocument/CreateProcessorJobExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aidocument/CreateProcessorJobExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateProcessorJob
      *     API.
      */
@@ -218,7 +218,7 @@ public interface AIServiceDocument extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aidocument/CreateProjectExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aidocument/CreateProjectExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateProject API.
      */
     CreateProjectResponse createProject(CreateProjectRequest request);
@@ -233,7 +233,7 @@ public interface AIServiceDocument extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aidocument/DeleteModelExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aidocument/DeleteModelExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteModel API.
      */
     DeleteModelResponse deleteModel(DeleteModelRequest request);
@@ -248,7 +248,7 @@ public interface AIServiceDocument extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aidocument/DeleteProjectExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aidocument/DeleteProjectExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteProject API.
      */
     DeleteProjectResponse deleteProject(DeleteProjectRequest request);
@@ -263,7 +263,7 @@ public interface AIServiceDocument extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aidocument/GetModelExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aidocument/GetModelExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetModel API.
      */
     GetModelResponse getModel(GetModelRequest request);
@@ -278,7 +278,7 @@ public interface AIServiceDocument extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aidocument/GetProcessorJobExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aidocument/GetProcessorJobExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetProcessorJob
      *     API.
      */
@@ -294,7 +294,7 @@ public interface AIServiceDocument extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aidocument/GetProjectExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aidocument/GetProjectExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetProject API.
      */
     GetProjectResponse getProject(GetProjectRequest request);
@@ -309,7 +309,7 @@ public interface AIServiceDocument extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aidocument/GetWorkRequestExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aidocument/GetWorkRequestExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetWorkRequest API.
      */
     GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request);
@@ -324,7 +324,7 @@ public interface AIServiceDocument extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aidocument/ListModelsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aidocument/ListModelsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListModels API.
      */
     ListModelsResponse listModels(ListModelsRequest request);
@@ -339,7 +339,7 @@ public interface AIServiceDocument extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aidocument/ListProjectsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aidocument/ListProjectsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListProjects API.
      */
     ListProjectsResponse listProjects(ListProjectsRequest request);
@@ -354,7 +354,7 @@ public interface AIServiceDocument extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aidocument/ListWorkRequestErrorsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aidocument/ListWorkRequestErrorsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ListWorkRequestErrors API.
      */
@@ -370,7 +370,7 @@ public interface AIServiceDocument extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aidocument/ListWorkRequestLogsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aidocument/ListWorkRequestLogsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequestLogs
      *     API.
      */
@@ -386,7 +386,7 @@ public interface AIServiceDocument extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aidocument/ListWorkRequestsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aidocument/ListWorkRequestsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequests
      *     API.
      */
@@ -402,7 +402,7 @@ public interface AIServiceDocument extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aidocument/PatchModelExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aidocument/PatchModelExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use PatchModel API.
      */
     PatchModelResponse patchModel(PatchModelRequest request);
@@ -417,7 +417,7 @@ public interface AIServiceDocument extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aidocument/RemoveModelLockExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aidocument/RemoveModelLockExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use RemoveModelLock
      *     API.
      */
@@ -433,7 +433,7 @@ public interface AIServiceDocument extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aidocument/RemoveProjectLockExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aidocument/RemoveProjectLockExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use RemoveProjectLock
      *     API.
      */
@@ -449,7 +449,7 @@ public interface AIServiceDocument extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aidocument/UpdateModelExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aidocument/UpdateModelExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateModel API.
      */
     UpdateModelResponse updateModel(UpdateModelRequest request);
@@ -464,7 +464,7 @@ public interface AIServiceDocument extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aidocument/UpdateProjectExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aidocument/UpdateProjectExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateProject API.
      */
     UpdateProjectResponse updateProject(UpdateProjectRequest request);

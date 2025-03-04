@@ -31,15 +31,15 @@ public final class ComponentModel
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of active custom Key Value model that need to be composed.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+         * active custom Key Value model that need to be composed.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("modelId")
         private String modelId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of active custom Key Value model that need to be composed.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+         * active custom Key Value model that need to be composed.
          *
          * @param modelId the value to set
          * @return this builder
@@ -80,15 +80,15 @@ public final class ComponentModel
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * active custom Key Value model that need to be composed.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of active
+     * custom Key Value model that need to be composed.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("modelId")
     private final String modelId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * active custom Key Value model that need to be composed.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of active
+     * custom Key Value model that need to be composed.
      *
      * @return the value
      */

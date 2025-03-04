@@ -7,7 +7,7 @@ package com.oracle.bmc.core.requests;
 import com.oracle.bmc.core.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ChangeRemotePeeringConnectionCompartmentExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ChangeRemotePeeringConnectionCompartmentExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * ChangeRemotePeeringConnectionCompartmentRequest.
  */
@@ -17,14 +17,14 @@ public class ChangeRemotePeeringConnectionCompartmentRequest
                 com.oracle.bmc.core.model.ChangeRemotePeeringConnectionCompartmentDetails> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the remote peering connection (RPC).
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * remote peering connection (RPC).
      */
     private String remotePeeringConnectionId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the remote peering connection (RPC).
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * remote peering connection (RPC).
      */
     public String getRemotePeeringConnectionId() {
         return remotePeeringConnectionId;
@@ -90,14 +90,14 @@ public class ChangeRemotePeeringConnectionCompartmentRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the remote peering connection (RPC).
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * remote peering connection (RPC).
          */
         private String remotePeeringConnectionId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the remote peering connection (RPC).
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * remote peering connection (RPC).
          *
          * @param remotePeeringConnectionId the value to set
          * @return this builder instance

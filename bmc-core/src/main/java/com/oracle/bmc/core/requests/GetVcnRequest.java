@@ -7,23 +7,21 @@ package com.oracle.bmc.core.requests;
 import com.oracle.bmc.core.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetVcnExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetVcnExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use GetVcnRequest.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class GetVcnRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * Specify the
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * VCN.
+     * Specify the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the VCN.
      */
     private String vcnId;
 
     /**
-     * Specify the
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * VCN.
+     * Specify the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the VCN.
      */
     public String getVcnId() {
         return vcnId;
@@ -35,16 +33,14 @@ public class GetVcnRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * Specify the
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-         * the VCN.
+         * Specify the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the VCN.
          */
         private String vcnId = null;
 
         /**
-         * Specify the
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-         * the VCN.
+         * Specify the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the VCN.
          *
          * @param vcnId the value to set
          * @return this builder instance

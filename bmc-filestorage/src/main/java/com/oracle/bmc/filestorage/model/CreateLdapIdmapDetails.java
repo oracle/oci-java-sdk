@@ -166,14 +166,14 @@ public final class CreateLdapIdmapDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * first connector to use to communicate with the LDAP server.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("outboundConnector1Id")
         private String outboundConnector1Id;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * first connector to use to communicate with the LDAP server.
          *
          * @param outboundConnector1Id the value to set
@@ -185,14 +185,14 @@ public final class CreateLdapIdmapDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * second connector to use to communicate with the LDAP server.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("outboundConnector2Id")
         private String outboundConnector2Id;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * second connector to use to communicate with the LDAP server.
          *
          * @param outboundConnector2Id the value to set
@@ -394,14 +394,14 @@ public final class CreateLdapIdmapDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * first connector to use to communicate with the LDAP server.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("outboundConnector1Id")
     private final String outboundConnector1Id;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * first connector to use to communicate with the LDAP server.
      *
      * @return the value
@@ -411,14 +411,14 @@ public final class CreateLdapIdmapDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * second connector to use to communicate with the LDAP server.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("outboundConnector2Id")
     private final String outboundConnector2Id;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * second connector to use to communicate with the LDAP server.
      *
      * @return the value

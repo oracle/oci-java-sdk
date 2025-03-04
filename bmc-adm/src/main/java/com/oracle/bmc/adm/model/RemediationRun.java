@@ -79,7 +79,7 @@ public final class RemediationRun
     public static class Builder {
         /**
          * The Oracle Cloud Identifier
-         * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the
+         * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the
          * remediation run.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
@@ -87,7 +87,7 @@ public final class RemediationRun
 
         /**
          * The Oracle Cloud Identifier
-         * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the
+         * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the
          * remediation run.
          *
          * @param id the value to set
@@ -130,7 +130,7 @@ public final class RemediationRun
         }
         /**
          * The Oracle Cloud Identifier
-         * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the
+         * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the
          * Remediation Recipe.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("remediationRecipeId")
@@ -138,7 +138,7 @@ public final class RemediationRun
 
         /**
          * The Oracle Cloud Identifier
-         * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the
+         * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the
          * Remediation Recipe.
          *
          * @param remediationRecipeId the value to set
@@ -257,7 +257,7 @@ public final class RemediationRun
         }
         /**
          * The compartment Oracle Cloud Identifier
-         * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the
+         * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the
          * remediation run.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
@@ -265,7 +265,7 @@ public final class RemediationRun
 
         /**
          * The compartment Oracle Cloud Identifier
-         * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the
+         * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the
          * remediation run.
          *
          * @param compartmentId the value to set
@@ -439,7 +439,7 @@ public final class RemediationRun
 
     /**
      * The Oracle Cloud Identifier
-     * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the
+     * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the
      * remediation run.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
@@ -447,7 +447,7 @@ public final class RemediationRun
 
     /**
      * The Oracle Cloud Identifier
-     * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the
+     * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the
      * remediation run.
      *
      * @return the value
@@ -484,7 +484,7 @@ public final class RemediationRun
 
     /**
      * The Oracle Cloud Identifier
-     * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the
+     * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the
      * Remediation Recipe.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("remediationRecipeId")
@@ -492,7 +492,7 @@ public final class RemediationRun
 
     /**
      * The Oracle Cloud Identifier
-     * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the
+     * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the
      * Remediation Recipe.
      *
      * @return the value
@@ -643,7 +643,7 @@ public final class RemediationRun
 
     /**
      * The compartment Oracle Cloud Identifier
-     * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the
+     * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the
      * remediation run.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
@@ -651,7 +651,7 @@ public final class RemediationRun
 
     /**
      * The compartment Oracle Cloud Identifier
-     * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the
+     * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the
      * remediation run.
      *
      * @return the value

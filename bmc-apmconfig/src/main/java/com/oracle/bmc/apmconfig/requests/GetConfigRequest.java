@@ -7,7 +7,7 @@ package com.oracle.bmc.apmconfig.requests;
 import com.oracle.bmc.apmconfig.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmconfig/GetConfigExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmconfig/GetConfigExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use GetConfigRequest.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210201")
@@ -21,13 +21,13 @@ public class GetConfigRequest extends com.oracle.bmc.requests.BmcRequest<java.la
         return apmDomainId;
     }
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * configuration item.
      */
     private String configId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * configuration item.
      */
     public String getConfigId() {
@@ -68,13 +68,13 @@ public class GetConfigRequest extends com.oracle.bmc.requests.BmcRequest<java.la
         }
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * configuration item.
          */
         private String configId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * configuration item.
          *
          * @param configId the value to set

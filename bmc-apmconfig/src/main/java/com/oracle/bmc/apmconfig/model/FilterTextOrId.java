@@ -6,7 +6,7 @@ package com.oracle.bmc.apmconfig.model;
 
 /**
  * A span filter written in text, or as the
- * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a SpanFilter
+ * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a SpanFilter
  * resource. If both are given, the filterText is used. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
@@ -34,7 +34,7 @@ public final class FilterTextOrId
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
          * Span Filter. The filterId is mandatory for the creation of MetricGroups. A filterId is
          * generated when a Span Filter is created.
          */
@@ -42,7 +42,7 @@ public final class FilterTextOrId
         private String filterId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
          * Span Filter. The filterId is mandatory for the creation of MetricGroups. A filterId is
          * generated when a Span Filter is created.
          *
@@ -103,7 +103,7 @@ public final class FilterTextOrId
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a Span
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Span
      * Filter. The filterId is mandatory for the creation of MetricGroups. A filterId is generated
      * when a Span Filter is created.
      */
@@ -111,7 +111,7 @@ public final class FilterTextOrId
     private final String filterId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a Span
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Span
      * Filter. The filterId is mandatory for the creation of MetricGroups. A filterId is generated
      * when a Span Filter is created.
      *

@@ -28,14 +28,14 @@ public final class IngressSecurityListConfiguration extends AllowedSecurityConfi
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * security list that allowed the traffic.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("securityListId")
         private String securityListId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * security list that allowed the traffic.
          *
          * @param securityListId the value to set
@@ -98,14 +98,14 @@ public final class IngressSecurityListConfiguration extends AllowedSecurityConfi
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * security list that allowed the traffic.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("securityListId")
     private final String securityListId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * security list that allowed the traffic.
      *
      * @return the value

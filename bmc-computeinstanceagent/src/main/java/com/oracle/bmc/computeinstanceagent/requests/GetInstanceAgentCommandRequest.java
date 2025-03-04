@@ -7,7 +7,7 @@ package com.oracle.bmc.computeinstanceagent.requests;
 import com.oracle.bmc.computeinstanceagent.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/computeinstanceagent/GetInstanceAgentCommandExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/computeinstanceagent/GetInstanceAgentCommandExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * GetInstanceAgentCommandRequest.
  */
@@ -16,13 +16,13 @@ public class GetInstanceAgentCommandRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * command.
      */
     private String instanceAgentCommandId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * command.
      */
     public String getInstanceAgentCommandId() {
@@ -49,13 +49,13 @@ public class GetInstanceAgentCommandRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * command.
          */
         private String instanceAgentCommandId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * command.
          *
          * @param instanceAgentCommandId the value to set

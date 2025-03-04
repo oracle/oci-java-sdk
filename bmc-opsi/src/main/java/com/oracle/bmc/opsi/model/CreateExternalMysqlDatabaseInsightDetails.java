@@ -55,15 +55,15 @@ public final class CreateExternalMysqlDatabaseInsightDetails extends CreateDatab
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the database.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * database.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("databaseId")
         private String databaseId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the database.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * database.
          *
          * @param databaseId the value to set
          * @return this builder
@@ -75,7 +75,7 @@ public final class CreateExternalMysqlDatabaseInsightDetails extends CreateDatab
         }
         /**
          * The DBM owned database connector
-         * [OCID](https://docs.cloud.oracle.com/iaas/database-management/doc/view-connector-details.html)
+         * [OCID](https://docs.oracle.com/iaas/database-management/doc/view-connector-details.html)
          * mapping to the database credentials and connection details.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("databaseConnectorId")
@@ -83,7 +83,7 @@ public final class CreateExternalMysqlDatabaseInsightDetails extends CreateDatab
 
         /**
          * The DBM owned database connector
-         * [OCID](https://docs.cloud.oracle.com/iaas/database-management/doc/view-connector-details.html)
+         * [OCID](https://docs.oracle.com/iaas/database-management/doc/view-connector-details.html)
          * mapping to the database credentials and connection details.
          *
          * @param databaseConnectorId the value to set
@@ -155,15 +155,15 @@ public final class CreateExternalMysqlDatabaseInsightDetails extends CreateDatab
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the database.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * database.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("databaseId")
     private final String databaseId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the database.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * database.
      *
      * @return the value
      */
@@ -173,7 +173,7 @@ public final class CreateExternalMysqlDatabaseInsightDetails extends CreateDatab
 
     /**
      * The DBM owned database connector
-     * [OCID](https://docs.cloud.oracle.com/iaas/database-management/doc/view-connector-details.html)
+     * [OCID](https://docs.oracle.com/iaas/database-management/doc/view-connector-details.html)
      * mapping to the database credentials and connection details.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("databaseConnectorId")
@@ -181,7 +181,7 @@ public final class CreateExternalMysqlDatabaseInsightDetails extends CreateDatab
 
     /**
      * The DBM owned database connector
-     * [OCID](https://docs.cloud.oracle.com/iaas/database-management/doc/view-connector-details.html)
+     * [OCID](https://docs.oracle.com/iaas/database-management/doc/view-connector-details.html)
      * mapping to the database credentials and connection details.
      *
      * @return the value

@@ -36,7 +36,7 @@ public final class CreateInclusionCriterionDetails
     public static class Builder {
         /**
          * The Oracle ID
-         * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the
+         * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the
          * governance rule. Every inclusion criterion is associated with a governance rule.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("governanceRuleId")
@@ -44,7 +44,7 @@ public final class CreateInclusionCriterionDetails
 
         /**
          * The Oracle ID
-         * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the
+         * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the
          * governance rule. Every inclusion criterion is associated with a governance rule.
          *
          * @param governanceRuleId the value to set
@@ -120,17 +120,15 @@ public final class CreateInclusionCriterionDetails
     }
 
     /**
-     * The Oracle ID
-     * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the
-     * governance rule. Every inclusion criterion is associated with a governance rule.
+     * The Oracle ID ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm))
+     * of the governance rule. Every inclusion criterion is associated with a governance rule.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("governanceRuleId")
     private final String governanceRuleId;
 
     /**
-     * The Oracle ID
-     * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the
-     * governance rule. Every inclusion criterion is associated with a governance rule.
+     * The Oracle ID ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm))
+     * of the governance rule. Every inclusion criterion is associated with a governance rule.
      *
      * @return the value
      */

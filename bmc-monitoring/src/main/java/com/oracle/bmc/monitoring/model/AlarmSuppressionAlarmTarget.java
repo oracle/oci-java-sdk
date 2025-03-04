@@ -28,15 +28,15 @@ public final class AlarmSuppressionAlarmTarget extends AlarmSuppressionTarget {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the alarm that is the target of the alarm suppression.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * alarm that is the target of the alarm suppression.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("alarmId")
         private String alarmId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the alarm that is the target of the alarm suppression.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * alarm that is the target of the alarm suppression.
          *
          * @param alarmId the value to set
          * @return this builder
@@ -83,15 +83,15 @@ public final class AlarmSuppressionAlarmTarget extends AlarmSuppressionTarget {
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the alarm that is the target of the alarm suppression.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * alarm that is the target of the alarm suppression.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("alarmId")
     private final String alarmId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the alarm that is the target of the alarm suppression.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * alarm that is the target of the alarm suppression.
      *
      * @return the value
      */

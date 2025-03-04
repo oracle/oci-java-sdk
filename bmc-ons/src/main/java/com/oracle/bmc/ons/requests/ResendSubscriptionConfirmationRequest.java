@@ -7,7 +7,7 @@ package com.oracle.bmc.ons.requests;
 import com.oracle.bmc.ons.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ons/ResendSubscriptionConfirmationExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ons/ResendSubscriptionConfirmationExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * ResendSubscriptionConfirmationRequest.
  */
@@ -16,14 +16,14 @@ public class ResendSubscriptionConfirmationRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the subscription to resend the confirmation for.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * subscription to resend the confirmation for.
      */
     private String id;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the subscription to resend the confirmation for.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * subscription to resend the confirmation for.
      */
     public String getId() {
         return id;
@@ -49,14 +49,14 @@ public class ResendSubscriptionConfirmationRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the subscription to resend the confirmation for.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * subscription to resend the confirmation for.
          */
         private String id = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the subscription to resend the confirmation for.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * subscription to resend the confirmation for.
          *
          * @param id the value to set
          * @return this builder instance

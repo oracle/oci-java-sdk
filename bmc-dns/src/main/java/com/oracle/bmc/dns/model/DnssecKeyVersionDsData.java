@@ -35,7 +35,7 @@ public final class DnssecKeyVersionDsData
         /**
          * Presentation-format DS record data that must be added to the parent zone. For more
          * information about RDATA, see [Supported DNS Resource Record
-         * Types](https://docs.cloud.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm)
+         * Types](https://docs.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm)
          */
         @com.fasterxml.jackson.annotation.JsonProperty("rdata")
         private String rdata;
@@ -43,7 +43,7 @@ public final class DnssecKeyVersionDsData
         /**
          * Presentation-format DS record data that must be added to the parent zone. For more
          * information about RDATA, see [Supported DNS Resource Record
-         * Types](https://docs.cloud.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm)
+         * Types](https://docs.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm)
          *
          * @param rdata the value to set
          * @return this builder
@@ -104,7 +104,7 @@ public final class DnssecKeyVersionDsData
     /**
      * Presentation-format DS record data that must be added to the parent zone. For more
      * information about RDATA, see [Supported DNS Resource Record
-     * Types](https://docs.cloud.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm)
+     * Types](https://docs.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm)
      */
     @com.fasterxml.jackson.annotation.JsonProperty("rdata")
     private final String rdata;
@@ -112,7 +112,7 @@ public final class DnssecKeyVersionDsData
     /**
      * Presentation-format DS record data that must be added to the parent zone. For more
      * information about RDATA, see [Supported DNS Resource Record
-     * Types](https://docs.cloud.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm)
+     * Types](https://docs.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm)
      *
      * @return the value
      */

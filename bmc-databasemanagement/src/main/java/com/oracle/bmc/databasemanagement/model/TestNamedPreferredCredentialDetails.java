@@ -28,14 +28,14 @@ public final class TestNamedPreferredCredentialDetails extends TestPreferredCred
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Named Credential that contains the database user password metadata.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("namedCredentialId")
         private String namedCredentialId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Named Credential that contains the database user password metadata.
          *
          * @param namedCredentialId the value to set
@@ -84,14 +84,14 @@ public final class TestNamedPreferredCredentialDetails extends TestPreferredCred
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Named Credential that contains the database user password metadata.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("namedCredentialId")
     private final String namedCredentialId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Named Credential that contains the database user password metadata.
      *
      * @return the value

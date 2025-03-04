@@ -62,14 +62,14 @@ public final class ExecutionActionMember
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * parent resource the execution action belongs to.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("memberId")
         private String memberId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * parent resource the execution action belongs to.
          *
          * @param memberId the value to set
@@ -193,14 +193,14 @@ public final class ExecutionActionMember
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * parent resource the execution action belongs to.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("memberId")
     private final String memberId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * parent resource the execution action belongs to.
      *
      * @return the value

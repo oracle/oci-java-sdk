@@ -33,7 +33,7 @@ public final class EnableExternalNonContainerDatabaseOperationsInsightsDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * {@link
          * #createExternalDatabaseConnectorDetails(CreateExternalDatabaseConnectorDetailsRequest)
          * createExternalDatabaseConnectorDetails}.
@@ -42,7 +42,7 @@ public final class EnableExternalNonContainerDatabaseOperationsInsightsDetails
         private String externalDatabaseConnectorId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * {@link
          * #createExternalDatabaseConnectorDetails(CreateExternalDatabaseConnectorDetailsRequest)
          * createExternalDatabaseConnectorDetails}.
@@ -88,7 +88,7 @@ public final class EnableExternalNonContainerDatabaseOperationsInsightsDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * {@link #createExternalDatabaseConnectorDetails(CreateExternalDatabaseConnectorDetailsRequest)
      * createExternalDatabaseConnectorDetails}.
      */
@@ -96,7 +96,7 @@ public final class EnableExternalNonContainerDatabaseOperationsInsightsDetails
     private final String externalDatabaseConnectorId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * {@link #createExternalDatabaseConnectorDetails(CreateExternalDatabaseConnectorDetailsRequest)
      * createExternalDatabaseConnectorDetails}.
      *

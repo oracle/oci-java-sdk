@@ -30,15 +30,15 @@ public final class KeyDetails extends com.oracle.bmc.http.client.internal.Explic
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s
-         * of the KMS key that will be used to verify the image signature.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the
+         * KMS key that will be used to verify the image signature.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
         private String kmsKeyId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s
-         * of the KMS key that will be used to verify the image signature.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the
+         * KMS key that will be used to verify the image signature.
          *
          * @param kmsKeyId the value to set
          * @return this builder
@@ -79,15 +79,15 @@ public final class KeyDetails extends com.oracle.bmc.http.client.internal.Explic
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of
-     * the KMS key that will be used to verify the image signature.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the KMS
+     * key that will be used to verify the image signature.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
     private final String kmsKeyId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of
-     * the KMS key that will be used to verify the image signature.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the KMS
+     * key that will be used to verify the image signature.
      *
      * @return the value
      */

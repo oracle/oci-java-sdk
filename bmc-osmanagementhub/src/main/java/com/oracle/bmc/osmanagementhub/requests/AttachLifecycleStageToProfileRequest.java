@@ -7,7 +7,7 @@ package com.oracle.bmc.osmanagementhub.requests;
 import com.oracle.bmc.osmanagementhub.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/AttachLifecycleStageToProfileExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/AttachLifecycleStageToProfileExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * AttachLifecycleStageToProfileRequest.
  */
@@ -17,30 +17,30 @@ public class AttachLifecycleStageToProfileRequest
                 com.oracle.bmc.osmanagementhub.model.AttachLifecycleStageToProfileDetails> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the registration profile.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * registration profile.
      */
     private String profileId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the registration profile.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * registration profile.
      */
     public String getProfileId() {
         return profileId;
     }
     /**
      * The lifecycle stage
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to attach
-     * to the profile
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to attach to
+     * the profile
      */
     private com.oracle.bmc.osmanagementhub.model.AttachLifecycleStageToProfileDetails
             attachLifecycleStageToProfileDetails;
 
     /**
      * The lifecycle stage
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to attach
-     * to the profile
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to attach to
+     * the profile
      */
     public com.oracle.bmc.osmanagementhub.model.AttachLifecycleStageToProfileDetails
             getAttachLifecycleStageToProfileDetails() {
@@ -115,14 +115,14 @@ public class AttachLifecycleStageToProfileRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the registration profile.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * registration profile.
          */
         private String profileId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the registration profile.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * registration profile.
          *
          * @param profileId the value to set
          * @return this builder instance
@@ -134,16 +134,16 @@ public class AttachLifecycleStageToProfileRequest
 
         /**
          * The lifecycle stage
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to
-         * attach to the profile
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to attach
+         * to the profile
          */
         private com.oracle.bmc.osmanagementhub.model.AttachLifecycleStageToProfileDetails
                 attachLifecycleStageToProfileDetails = null;
 
         /**
          * The lifecycle stage
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to
-         * attach to the profile
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to attach
+         * to the profile
          *
          * @param attachLifecycleStageToProfileDetails the value to set
          * @return this builder instance

@@ -52,17 +52,17 @@ public final class AutonomousSettings
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the restricted scheduled job associated with this instance. This value cannot be
-         * deleted by the user.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * restricted scheduled job associated with this instance. This value cannot be deleted by
+         * the user.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("scheduledJobId")
         private String scheduledJobId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the restricted scheduled job associated with this instance. This value cannot be
-         * deleted by the user.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * restricted scheduled job associated with this instance. This value cannot be deleted by
+         * the user.
          *
          * @param scheduledJobId the value to set
          * @return this builder
@@ -124,17 +124,17 @@ public final class AutonomousSettings
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the restricted scheduled job associated with this instance. This value cannot be deleted by
-     * the user.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * restricted scheduled job associated with this instance. This value cannot be deleted by the
+     * user.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("scheduledJobId")
     private final String scheduledJobId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the restricted scheduled job associated with this instance. This value cannot be deleted by
-     * the user.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * restricted scheduled job associated with this instance. This value cannot be deleted by the
+     * user.
      *
      * @return the value
      */

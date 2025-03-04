@@ -37,7 +37,7 @@ public final class ReplicatedRegionDetails
     public static class Builder {
         /**
          * A REPLICATION_ENABLED region, e.g. us-ashburn-1. See [Regions and Availability
-         * Domains](https://docs.cloud.oracle.com/Content/General/Concepts/regions.htm) for the full
+         * Domains](https://docs.oracle.com/iaas/Content/General/Concepts/regions.htm) for the full
          * list of supported region names.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("region")
@@ -45,7 +45,7 @@ public final class ReplicatedRegionDetails
 
         /**
          * A REPLICATION_ENABLED region, e.g. us-ashburn-1. See [Regions and Availability
-         * Domains](https://docs.cloud.oracle.com/Content/General/Concepts/regions.htm) for the full
+         * Domains](https://docs.oracle.com/iaas/Content/General/Concepts/regions.htm) for the full
          * list of supported region names.
          *
          * @param region the value to set
@@ -144,16 +144,16 @@ public final class ReplicatedRegionDetails
 
     /**
      * A REPLICATION_ENABLED region, e.g. us-ashburn-1. See [Regions and Availability
-     * Domains](https://docs.cloud.oracle.com/Content/General/Concepts/regions.htm) for the full
-     * list of supported region names.
+     * Domains](https://docs.oracle.com/iaas/Content/General/Concepts/regions.htm) for the full list
+     * of supported region names.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("region")
     private final String region;
 
     /**
      * A REPLICATION_ENABLED region, e.g. us-ashburn-1. See [Regions and Availability
-     * Domains](https://docs.cloud.oracle.com/Content/General/Concepts/regions.htm) for the full
-     * list of supported region names.
+     * Domains](https://docs.oracle.com/iaas/Content/General/Concepts/regions.htm) for the full list
+     * of supported region names.
      *
      * @return the value
      */

@@ -62,14 +62,14 @@ public final class CreateApplicationVipDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * DB node associated with the application virtual IP (VIP) address.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("dbNodeId")
         private String dbNodeId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * DB node associated with the application virtual IP (VIP) address.
          *
          * @param dbNodeId the value to set
@@ -81,14 +81,14 @@ public final class CreateApplicationVipDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * cloud VM cluster associated with the application virtual IP (VIP) address.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("cloudVmClusterId")
         private String cloudVmClusterId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * cloud VM cluster associated with the application virtual IP (VIP) address.
          *
          * @param cloudVmClusterId the value to set
@@ -100,14 +100,14 @@ public final class CreateApplicationVipDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * subnet associated with the application virtual IP (VIP) address.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
         private String subnetId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * subnet associated with the application virtual IP (VIP) address.
          *
          * @param subnetId the value to set
@@ -195,14 +195,14 @@ public final class CreateApplicationVipDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the DB
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB
      * node associated with the application virtual IP (VIP) address.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("dbNodeId")
     private final String dbNodeId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the DB
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB
      * node associated with the application virtual IP (VIP) address.
      *
      * @return the value
@@ -212,14 +212,14 @@ public final class CreateApplicationVipDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * cloud VM cluster associated with the application virtual IP (VIP) address.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("cloudVmClusterId")
     private final String cloudVmClusterId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * cloud VM cluster associated with the application virtual IP (VIP) address.
      *
      * @return the value
@@ -229,14 +229,14 @@ public final class CreateApplicationVipDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * subnet associated with the application virtual IP (VIP) address.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
     private final String subnetId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * subnet associated with the application virtual IP (VIP) address.
      *
      * @return the value

@@ -7,7 +7,7 @@ package com.oracle.bmc.jms.requests;
 import com.oracle.bmc.jms.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/ListJavaMigrationAnalysisResultsExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/ListJavaMigrationAnalysisResultsExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * ListJavaMigrationAnalysisResultsRequest.
  */
@@ -16,13 +16,13 @@ public class ListJavaMigrationAnalysisResultsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Fleet.
      */
     private String fleetId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Fleet.
      */
     public String getFleetId() {
@@ -36,14 +36,14 @@ public class ListJavaMigrationAnalysisResultsRequest
         return managedInstanceId;
     }
     /**
-     * The host [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of
-     * the managed instance.
+     * The host [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * managed instance.
      */
     private String hostName;
 
     /**
-     * The host [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of
-     * the managed instance.
+     * The host [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * managed instance.
      */
     public String getHostName() {
         return hostName;
@@ -138,13 +138,13 @@ public class ListJavaMigrationAnalysisResultsRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Fleet.
          */
         private String fleetId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Fleet.
          *
          * @param fleetId the value to set
@@ -170,14 +170,14 @@ public class ListJavaMigrationAnalysisResultsRequest
         }
 
         /**
-         * The host [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
-         * of the managed instance.
+         * The host [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+         * the managed instance.
          */
         private String hostName = null;
 
         /**
-         * The host [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
-         * of the managed instance.
+         * The host [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+         * the managed instance.
          *
          * @param hostName the value to set
          * @return this builder instance

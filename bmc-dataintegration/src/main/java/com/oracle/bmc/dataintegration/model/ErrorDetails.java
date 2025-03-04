@@ -32,14 +32,14 @@ public final class ErrorDetails extends com.oracle.bmc.http.client.internal.Expl
     public static class Builder {
         /**
          * A short error code that defines the error, meant for programmatic parsing. See [API
-         * Errors](https://docs.cloud.oracle.com/Content/API/References/apierrors.htm).
+         * Errors](https://docs.oracle.com/iaas/Content/API/References/apierrors.htm).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("code")
         private String code;
 
         /**
          * A short error code that defines the error, meant for programmatic parsing. See [API
-         * Errors](https://docs.cloud.oracle.com/Content/API/References/apierrors.htm).
+         * Errors](https://docs.oracle.com/iaas/Content/API/References/apierrors.htm).
          *
          * @param code the value to set
          * @return this builder
@@ -99,14 +99,14 @@ public final class ErrorDetails extends com.oracle.bmc.http.client.internal.Expl
 
     /**
      * A short error code that defines the error, meant for programmatic parsing. See [API
-     * Errors](https://docs.cloud.oracle.com/Content/API/References/apierrors.htm).
+     * Errors](https://docs.oracle.com/iaas/Content/API/References/apierrors.htm).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("code")
     private final String code;
 
     /**
      * A short error code that defines the error, meant for programmatic parsing. See [API
-     * Errors](https://docs.cloud.oracle.com/Content/API/References/apierrors.htm).
+     * Errors](https://docs.oracle.com/iaas/Content/API/References/apierrors.htm).
      *
      * @return the value
      */

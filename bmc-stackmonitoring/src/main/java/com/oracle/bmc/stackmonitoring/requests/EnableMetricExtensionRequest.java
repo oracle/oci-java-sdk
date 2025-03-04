@@ -7,7 +7,7 @@ package com.oracle.bmc.stackmonitoring.requests;
 import com.oracle.bmc.stackmonitoring.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/stackmonitoring/EnableMetricExtensionExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/stackmonitoring/EnableMetricExtensionExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * EnableMetricExtensionRequest.
  */
@@ -17,13 +17,13 @@ public class EnableMetricExtensionRequest
                 com.oracle.bmc.stackmonitoring.model.EnableMetricExtensionDetails> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * metric extension resource.
      */
     private String metricExtensionId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * metric extension resource.
      */
     public String getMetricExtensionId() {
@@ -107,13 +107,13 @@ public class EnableMetricExtensionRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * metric extension resource.
          */
         private String metricExtensionId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * metric extension resource.
          *
          * @param metricExtensionId the value to set

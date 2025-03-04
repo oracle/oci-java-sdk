@@ -7,7 +7,7 @@ package com.oracle.bmc.core.requests;
 import com.oracle.bmc.core.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateIPSecConnectionTunnelSharedSecretExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateIPSecConnectionTunnelSharedSecretExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * UpdateIPSecConnectionTunnelSharedSecretRequest.
  */
@@ -17,27 +17,27 @@ public class UpdateIPSecConnectionTunnelSharedSecretRequest
                 com.oracle.bmc.core.model.UpdateIPSecConnectionTunnelSharedSecretDetails> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the IPSec connection.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * IPSec connection.
      */
     private String ipscId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the IPSec connection.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * IPSec connection.
      */
     public String getIpscId() {
         return ipscId;
     }
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the tunnel.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * tunnel.
      */
     private String tunnelId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the tunnel.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * tunnel.
      */
     public String getTunnelId() {
         return tunnelId;
@@ -88,14 +88,14 @@ public class UpdateIPSecConnectionTunnelSharedSecretRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the IPSec connection.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * IPSec connection.
          */
         private String ipscId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the IPSec connection.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * IPSec connection.
          *
          * @param ipscId the value to set
          * @return this builder instance
@@ -106,14 +106,14 @@ public class UpdateIPSecConnectionTunnelSharedSecretRequest
         }
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the tunnel.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * tunnel.
          */
         private String tunnelId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the tunnel.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * tunnel.
          *
          * @param tunnelId the value to set
          * @return this builder instance

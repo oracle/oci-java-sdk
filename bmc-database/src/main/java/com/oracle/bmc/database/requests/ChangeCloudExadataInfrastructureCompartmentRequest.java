@@ -7,7 +7,7 @@ package com.oracle.bmc.database.requests;
 import com.oracle.bmc.database.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ChangeCloudExadataInfrastructureCompartmentExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ChangeCloudExadataInfrastructureCompartmentExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * ChangeCloudExadataInfrastructureCompartmentRequest.
  */
@@ -27,13 +27,13 @@ public class ChangeCloudExadataInfrastructureCompartmentRequest
     }
     /**
      * The cloud Exadata infrastructure
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     private String cloudExadataInfrastructureId;
 
     /**
      * The cloud Exadata infrastructure
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     public String getCloudExadataInfrastructureId() {
         return cloudExadataInfrastructureId;
@@ -122,13 +122,13 @@ public class ChangeCloudExadataInfrastructureCompartmentRequest
 
         /**
          * The cloud Exadata infrastructure
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          */
         private String cloudExadataInfrastructureId = null;
 
         /**
          * The cloud Exadata infrastructure
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          * @param cloudExadataInfrastructureId the value to set
          * @return this builder instance

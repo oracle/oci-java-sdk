@@ -34,15 +34,15 @@ public final class CreateOdaPrivateEndpointAttachmentDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the attached ODA Instance.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * attached ODA Instance.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("odaInstanceId")
         private String odaInstanceId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the attached ODA Instance.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * attached ODA Instance.
          *
          * @param odaInstanceId the value to set
          * @return this builder
@@ -53,15 +53,15 @@ public final class CreateOdaPrivateEndpointAttachmentDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the ODA Private Endpoint.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * ODA Private Endpoint.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("odaPrivateEndpointId")
         private String odaPrivateEndpointId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the ODA Private Endpoint.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * ODA Private Endpoint.
          *
          * @param odaPrivateEndpointId the value to set
          * @return this builder
@@ -107,15 +107,15 @@ public final class CreateOdaPrivateEndpointAttachmentDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the attached ODA Instance.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * attached ODA Instance.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("odaInstanceId")
     private final String odaInstanceId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the attached ODA Instance.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * attached ODA Instance.
      *
      * @return the value
      */
@@ -124,15 +124,15 @@ public final class CreateOdaPrivateEndpointAttachmentDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the ODA Private Endpoint.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ODA
+     * Private Endpoint.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("odaPrivateEndpointId")
     private final String odaPrivateEndpointId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the ODA Private Endpoint.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ODA
+     * Private Endpoint.
      *
      * @return the value
      */

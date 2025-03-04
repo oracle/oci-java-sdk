@@ -80,9 +80,9 @@ public final class VaultSummary extends com.oracle.bmc.http.client.internal.Expl
         /**
          * The service endpoint to perform cryptographic operations against. Cryptographic
          * operations include
-         * [Encrypt](https://docs.cloud.oracle.com/api/#/en/key/latest/EncryptedData/Encrypt),
-         * [Decrypt](https://docs.cloud.oracle.com/api/#/en/key/latest/DecryptedData/Decrypt), and
-         * [GenerateDataEncryptionKey](https://docs.cloud.oracle.com/api/#/en/key/latest/GeneratedKey/GenerateDataEncryptionKey)
+         * [Encrypt](https://docs.oracle.com/iaas/api/#/en/key/latest/EncryptedData/Encrypt),
+         * [Decrypt](https://docs.oracle.com/iaas/api/#/en/key/latest/DecryptedData/Decrypt), and
+         * [GenerateDataEncryptionKey](https://docs.oracle.com/iaas/api/#/en/key/latest/GeneratedKey/GenerateDataEncryptionKey)
          * operations.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("cryptoEndpoint")
@@ -91,9 +91,9 @@ public final class VaultSummary extends com.oracle.bmc.http.client.internal.Expl
         /**
          * The service endpoint to perform cryptographic operations against. Cryptographic
          * operations include
-         * [Encrypt](https://docs.cloud.oracle.com/api/#/en/key/latest/EncryptedData/Encrypt),
-         * [Decrypt](https://docs.cloud.oracle.com/api/#/en/key/latest/DecryptedData/Decrypt), and
-         * [GenerateDataEncryptionKey](https://docs.cloud.oracle.com/api/#/en/key/latest/GeneratedKey/GenerateDataEncryptionKey)
+         * [Encrypt](https://docs.oracle.com/iaas/api/#/en/key/latest/EncryptedData/Encrypt),
+         * [Decrypt](https://docs.oracle.com/iaas/api/#/en/key/latest/DecryptedData/Decrypt), and
+         * [GenerateDataEncryptionKey](https://docs.oracle.com/iaas/api/#/en/key/latest/GeneratedKey/GenerateDataEncryptionKey)
          * operations.
          *
          * @param cryptoEndpoint the value to set
@@ -107,7 +107,7 @@ public final class VaultSummary extends com.oracle.bmc.http.client.internal.Expl
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
          * {@code {"Operations": {"CostCenter": "42"}}}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -116,7 +116,7 @@ public final class VaultSummary extends com.oracle.bmc.http.client.internal.Expl
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
          * {@code {"Operations": {"CostCenter": "42"}}}
          *
          * @param definedTags the value to set
@@ -150,7 +150,7 @@ public final class VaultSummary extends com.oracle.bmc.http.client.internal.Expl
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
          * {@code {"Department": "Finance"}}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -159,7 +159,7 @@ public final class VaultSummary extends com.oracle.bmc.http.client.internal.Expl
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
          * {@code {"Department": "Finance"}}
          *
          * @param freeformTags the value to set
@@ -365,9 +365,9 @@ public final class VaultSummary extends com.oracle.bmc.http.client.internal.Expl
 
     /**
      * The service endpoint to perform cryptographic operations against. Cryptographic operations
-     * include [Encrypt](https://docs.cloud.oracle.com/api/#/en/key/latest/EncryptedData/Encrypt),
-     * [Decrypt](https://docs.cloud.oracle.com/api/#/en/key/latest/DecryptedData/Decrypt), and
-     * [GenerateDataEncryptionKey](https://docs.cloud.oracle.com/api/#/en/key/latest/GeneratedKey/GenerateDataEncryptionKey)
+     * include [Encrypt](https://docs.oracle.com/iaas/api/#/en/key/latest/EncryptedData/Encrypt),
+     * [Decrypt](https://docs.oracle.com/iaas/api/#/en/key/latest/DecryptedData/Decrypt), and
+     * [GenerateDataEncryptionKey](https://docs.oracle.com/iaas/api/#/en/key/latest/GeneratedKey/GenerateDataEncryptionKey)
      * operations.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("cryptoEndpoint")
@@ -375,9 +375,9 @@ public final class VaultSummary extends com.oracle.bmc.http.client.internal.Expl
 
     /**
      * The service endpoint to perform cryptographic operations against. Cryptographic operations
-     * include [Encrypt](https://docs.cloud.oracle.com/api/#/en/key/latest/EncryptedData/Encrypt),
-     * [Decrypt](https://docs.cloud.oracle.com/api/#/en/key/latest/DecryptedData/Decrypt), and
-     * [GenerateDataEncryptionKey](https://docs.cloud.oracle.com/api/#/en/key/latest/GeneratedKey/GenerateDataEncryptionKey)
+     * include [Encrypt](https://docs.oracle.com/iaas/api/#/en/key/latest/EncryptedData/Encrypt),
+     * [Decrypt](https://docs.oracle.com/iaas/api/#/en/key/latest/DecryptedData/Decrypt), and
+     * [GenerateDataEncryptionKey](https://docs.oracle.com/iaas/api/#/en/key/latest/GeneratedKey/GenerateDataEncryptionKey)
      * operations.
      *
      * @return the value
@@ -389,7 +389,7 @@ public final class VaultSummary extends com.oracle.bmc.http.client.internal.Expl
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Operations": {"CostCenter": "42"}}}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -398,7 +398,7 @@ public final class VaultSummary extends com.oracle.bmc.http.client.internal.Expl
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Operations": {"CostCenter": "42"}}}
      *
      * @return the value
@@ -427,7 +427,7 @@ public final class VaultSummary extends com.oracle.bmc.http.client.internal.Expl
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Department": "Finance"}}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -436,7 +436,7 @@ public final class VaultSummary extends com.oracle.bmc.http.client.internal.Expl
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Department": "Finance"}}
      *
      * @return the value

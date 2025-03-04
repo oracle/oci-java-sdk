@@ -7,20 +7,20 @@ package com.oracle.bmc.filestorage.requests;
 import com.oracle.bmc.filestorage.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/ListFileSystemsExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/ListFileSystemsExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListFileSystemsRequest.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20171215")
 public class ListFileSystemsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment.
      */
     private String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment.
      */
     public String getCompartmentId() {
@@ -46,7 +46,7 @@ public class ListFileSystemsRequest extends com.oracle.bmc.requests.BmcRequest<j
      * paginated "List" call. 1 is the minimum, 4096 is the maximum.
      *
      * <p>For important details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      * <p>Example: {@code 500}
      */
@@ -57,7 +57,7 @@ public class ListFileSystemsRequest extends com.oracle.bmc.requests.BmcRequest<j
      * paginated "List" call. 1 is the minimum, 4096 is the maximum.
      *
      * <p>For important details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      * <p>Example: {@code 500}
      */
@@ -69,7 +69,7 @@ public class ListFileSystemsRequest extends com.oracle.bmc.requests.BmcRequest<j
      * "List" call.
      *
      * <p>For important details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private String page;
 
@@ -78,7 +78,7 @@ public class ListFileSystemsRequest extends com.oracle.bmc.requests.BmcRequest<j
      * "List" call.
      *
      * <p>For important details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     public String getPage() {
         return page;
@@ -151,58 +151,58 @@ public class ListFileSystemsRequest extends com.oracle.bmc.requests.BmcRequest<j
     }
     /**
      * Filter results by
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm). Must be an
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an
      * OCID of the correct type for the resouce type.
      */
     private String id;
 
     /**
      * Filter results by
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm). Must be an
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an
      * OCID of the correct type for the resouce type.
      */
     public String getId() {
         return id;
     }
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * snapshot used to create a cloned file system. See [Cloning a File
-     * System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
+     * System](https://docs.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
      */
     private String sourceSnapshotId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * snapshot used to create a cloned file system. See [Cloning a File
-     * System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
+     * System](https://docs.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
      */
     public String getSourceSnapshotId() {
         return sourceSnapshotId;
     }
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * file system that contains the source snapshot of a cloned file system. See [Cloning a File
-     * System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file
+     * system that contains the source snapshot of a cloned file system. See [Cloning a File
+     * System](https://docs.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
      */
     private String parentFileSystemId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * file system that contains the source snapshot of a cloned file system. See [Cloning a File
-     * System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file
+     * system that contains the source snapshot of a cloned file system. See [Cloning a File
+     * System](https://docs.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
      */
     public String getParentFileSystemId() {
         return parentFileSystemId;
     }
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * file system snapshot policy that is associated with the file systems.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file
+     * system snapshot policy that is associated with the file systems.
      */
     private String filesystemSnapshotPolicyId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * file system snapshot policy that is associated with the file systems.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file
+     * system snapshot policy that is associated with the file systems.
      */
     public String getFilesystemSnapshotPolicyId() {
         return filesystemSnapshotPolicyId;
@@ -331,13 +331,13 @@ public class ListFileSystemsRequest extends com.oracle.bmc.requests.BmcRequest<j
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * compartment.
          */
         private String compartmentId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * compartment.
          *
          * @param compartmentId the value to set
@@ -373,7 +373,7 @@ public class ListFileSystemsRequest extends com.oracle.bmc.requests.BmcRequest<j
          * paginated "List" call. 1 is the minimum, 4096 is the maximum.
          *
          * <p>For important details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * <p>Example: {@code 500}
          */
@@ -384,7 +384,7 @@ public class ListFileSystemsRequest extends com.oracle.bmc.requests.BmcRequest<j
          * paginated "List" call. 1 is the minimum, 4096 is the maximum.
          *
          * <p>For important details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * <p>Example: {@code 500}
          *
@@ -401,7 +401,7 @@ public class ListFileSystemsRequest extends com.oracle.bmc.requests.BmcRequest<j
          * previous "List" call.
          *
          * <p>For important details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private String page = null;
 
@@ -410,7 +410,7 @@ public class ListFileSystemsRequest extends com.oracle.bmc.requests.BmcRequest<j
          * previous "List" call.
          *
          * <p>For important details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param page the value to set
          * @return this builder instance
@@ -460,15 +460,15 @@ public class ListFileSystemsRequest extends com.oracle.bmc.requests.BmcRequest<j
 
         /**
          * Filter results by
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm). Must be
-         * an OCID of the correct type for the resouce type.
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an
+         * OCID of the correct type for the resouce type.
          */
         private String id = null;
 
         /**
          * Filter results by
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm). Must be
-         * an OCID of the correct type for the resouce type.
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an
+         * OCID of the correct type for the resouce type.
          *
          * @param id the value to set
          * @return this builder instance
@@ -479,16 +479,16 @@ public class ListFileSystemsRequest extends com.oracle.bmc.requests.BmcRequest<j
         }
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * snapshot used to create a cloned file system. See [Cloning a File
-         * System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
+         * System](https://docs.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
          */
         private String sourceSnapshotId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * snapshot used to create a cloned file system. See [Cloning a File
-         * System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
+         * System](https://docs.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
          *
          * @param sourceSnapshotId the value to set
          * @return this builder instance
@@ -499,16 +499,16 @@ public class ListFileSystemsRequest extends com.oracle.bmc.requests.BmcRequest<j
         }
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * file system that contains the source snapshot of a cloned file system. See [Cloning a
-         * File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
+         * File System](https://docs.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
          */
         private String parentFileSystemId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * file system that contains the source snapshot of a cloned file system. See [Cloning a
-         * File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
+         * File System](https://docs.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
          *
          * @param parentFileSystemId the value to set
          * @return this builder instance
@@ -519,13 +519,13 @@ public class ListFileSystemsRequest extends com.oracle.bmc.requests.BmcRequest<j
         }
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * file system snapshot policy that is associated with the file systems.
          */
         private String filesystemSnapshotPolicyId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * file system snapshot policy that is associated with the file systems.
          *
          * @param filesystemSnapshotPolicyId the value to set

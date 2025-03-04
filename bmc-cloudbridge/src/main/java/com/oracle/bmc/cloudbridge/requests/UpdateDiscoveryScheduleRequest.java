@@ -7,7 +7,7 @@ package com.oracle.bmc.cloudbridge.requests;
 import com.oracle.bmc.cloudbridge.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/UpdateDiscoveryScheduleExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/UpdateDiscoveryScheduleExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * UpdateDiscoveryScheduleRequest.
  */
@@ -26,13 +26,13 @@ public class UpdateDiscoveryScheduleRequest
         return updateDiscoveryScheduleDetails;
     }
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * discovery schedule.
      */
     private String discoveryScheduleId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * discovery schedule.
      */
     public String getDiscoveryScheduleId() {
@@ -99,13 +99,13 @@ public class UpdateDiscoveryScheduleRequest
         }
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * discovery schedule.
          */
         private String discoveryScheduleId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * discovery schedule.
          *
          * @param discoveryScheduleId the value to set

@@ -120,7 +120,7 @@ public final class UpdateDatabaseToolsPrivateEndpointDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * network security groups that the private endpoint's VNIC belongs to. For more information
          * about NSGs, see {@link NetworkSecurityGroup}.
          */
@@ -128,7 +128,7 @@ public final class UpdateDatabaseToolsPrivateEndpointDetails
         private java.util.List<String> nsgIds;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * network security groups that the private endpoint's VNIC belongs to. For more information
          * about NSGs, see {@link NetworkSecurityGroup}.
          *
@@ -253,7 +253,7 @@ public final class UpdateDatabaseToolsPrivateEndpointDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * network security groups that the private endpoint's VNIC belongs to. For more information
      * about NSGs, see {@link NetworkSecurityGroup}.
      */
@@ -261,7 +261,7 @@ public final class UpdateDatabaseToolsPrivateEndpointDetails
     private final java.util.List<String> nsgIds;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * network security groups that the private endpoint's VNIC belongs to. For more information
      * about NSGs, see {@link NetworkSecurityGroup}.
      *

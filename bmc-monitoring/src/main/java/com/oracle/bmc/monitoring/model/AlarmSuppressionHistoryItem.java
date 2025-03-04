@@ -59,15 +59,15 @@ public final class AlarmSuppressionHistoryItem
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the alarm suppression.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * alarm suppression.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("suppressionId")
         private String suppressionId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the alarm suppression.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * alarm suppression.
          *
          * @param suppressionId the value to set
          * @return this builder
@@ -311,15 +311,15 @@ public final class AlarmSuppressionHistoryItem
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the alarm suppression.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * alarm suppression.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("suppressionId")
     private final String suppressionId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the alarm suppression.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * alarm suppression.
      *
      * @return the value
      */

@@ -190,15 +190,15 @@ public final class ExternalMysqlDatabaseInsightSummary extends DatabaseInsightSu
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the Management Agent
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Management Agent
          */
         @com.fasterxml.jackson.annotation.JsonProperty("agentId")
         private String agentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the Management Agent
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Management Agent
          *
          * @param agentId the value to set
          * @return this builder
@@ -225,7 +225,7 @@ public final class ExternalMysqlDatabaseInsightSummary extends DatabaseInsightSu
         }
         /**
          * The DBM owned database connector
-         * [OCID](https://docs.cloud.oracle.com/iaas/database-management/doc/view-connector-details.html)
+         * [OCID](https://docs.oracle.com/iaas/database-management/doc/view-connector-details.html)
          * mapping to the database credentials and connection details.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("databaseConnectorId")
@@ -233,7 +233,7 @@ public final class ExternalMysqlDatabaseInsightSummary extends DatabaseInsightSu
 
         /**
          * The DBM owned database connector
-         * [OCID](https://docs.cloud.oracle.com/iaas/database-management/doc/view-connector-details.html)
+         * [OCID](https://docs.oracle.com/iaas/database-management/doc/view-connector-details.html)
          * mapping to the database credentials and connection details.
          *
          * @param databaseConnectorId the value to set
@@ -404,15 +404,15 @@ public final class ExternalMysqlDatabaseInsightSummary extends DatabaseInsightSu
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the Management Agent
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Management Agent
      */
     @com.fasterxml.jackson.annotation.JsonProperty("agentId")
     private final String agentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the Management Agent
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Management Agent
      *
      * @return the value
      */
@@ -435,7 +435,7 @@ public final class ExternalMysqlDatabaseInsightSummary extends DatabaseInsightSu
 
     /**
      * The DBM owned database connector
-     * [OCID](https://docs.cloud.oracle.com/iaas/database-management/doc/view-connector-details.html)
+     * [OCID](https://docs.oracle.com/iaas/database-management/doc/view-connector-details.html)
      * mapping to the database credentials and connection details.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("databaseConnectorId")
@@ -443,7 +443,7 @@ public final class ExternalMysqlDatabaseInsightSummary extends DatabaseInsightSu
 
     /**
      * The DBM owned database connector
-     * [OCID](https://docs.cloud.oracle.com/iaas/database-management/doc/view-connector-details.html)
+     * [OCID](https://docs.oracle.com/iaas/database-management/doc/view-connector-details.html)
      * mapping to the database credentials and connection details.
      *
      * @return the value

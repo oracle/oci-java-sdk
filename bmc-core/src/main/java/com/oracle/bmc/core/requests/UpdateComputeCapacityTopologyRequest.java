@@ -7,7 +7,7 @@ package com.oracle.bmc.core.requests;
 import com.oracle.bmc.core.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateComputeCapacityTopologyExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateComputeCapacityTopologyExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * UpdateComputeCapacityTopologyRequest.
  */
@@ -17,14 +17,14 @@ public class UpdateComputeCapacityTopologyRequest
                 com.oracle.bmc.core.model.UpdateComputeCapacityTopologyDetails> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compute capacity topology.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compute capacity topology.
      */
     private String computeCapacityTopologyId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compute capacity topology.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compute capacity topology.
      */
     public String getComputeCapacityTopologyId() {
         return computeCapacityTopologyId;
@@ -88,14 +88,14 @@ public class UpdateComputeCapacityTopologyRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compute capacity topology.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compute capacity topology.
          */
         private String computeCapacityTopologyId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compute capacity topology.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compute capacity topology.
          *
          * @param computeCapacityTopologyId the value to set
          * @return this builder instance

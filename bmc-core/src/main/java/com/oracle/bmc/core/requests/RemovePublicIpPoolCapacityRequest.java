@@ -7,7 +7,7 @@ package com.oracle.bmc.core.requests;
 import com.oracle.bmc.core.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/RemovePublicIpPoolCapacityExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/RemovePublicIpPoolCapacityExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * RemovePublicIpPoolCapacityRequest.
  */
@@ -17,14 +17,14 @@ public class RemovePublicIpPoolCapacityRequest
                 com.oracle.bmc.core.model.RemovePublicIpPoolCapacityDetails> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the public IP pool.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * public IP pool.
      */
     private String publicIpPoolId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the public IP pool.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * public IP pool.
      */
     public String getPublicIpPoolId() {
         return publicIpPoolId;
@@ -90,14 +90,14 @@ public class RemovePublicIpPoolCapacityRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the public IP pool.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * public IP pool.
          */
         private String publicIpPoolId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the public IP pool.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * public IP pool.
          *
          * @param publicIpPoolId the value to set
          * @return this builder instance

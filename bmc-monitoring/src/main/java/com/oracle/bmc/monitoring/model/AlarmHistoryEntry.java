@@ -47,9 +47,9 @@ public final class AlarmHistoryEntry
     public static class Builder {
         /**
          * Customizable alarm summary ({@code alarmSummary} [alarm message
-         * parameter](https://docs.cloud.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm)).
+         * parameter](https://docs.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm)).
          * Optionally include [dynamic
-         * variables](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm).
+         * variables](https://docs.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm).
          * The alarm summary appears within the body of the alarm message and in responses to {@link
          * #listAlarmsStatus(ListAlarmsStatusRequest) listAlarmsStatus} {@link
          * #getAlarmHistory(GetAlarmHistoryRequest) getAlarmHistory} and {@link
@@ -60,9 +60,9 @@ public final class AlarmHistoryEntry
 
         /**
          * Customizable alarm summary ({@code alarmSummary} [alarm message
-         * parameter](https://docs.cloud.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm)).
+         * parameter](https://docs.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm)).
          * Optionally include [dynamic
-         * variables](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm).
+         * variables](https://docs.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm).
          * The alarm summary appears within the body of the alarm message and in responses to {@link
          * #listAlarmsStatus(ListAlarmsStatusRequest) listAlarmsStatus} {@link
          * #getAlarmHistory(GetAlarmHistoryRequest) getAlarmHistory} and {@link
@@ -195,9 +195,9 @@ public final class AlarmHistoryEntry
 
     /**
      * Customizable alarm summary ({@code alarmSummary} [alarm message
-     * parameter](https://docs.cloud.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm)).
+     * parameter](https://docs.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm)).
      * Optionally include [dynamic
-     * variables](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm).
+     * variables](https://docs.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm).
      * The alarm summary appears within the body of the alarm message and in responses to {@link
      * #listAlarmsStatus(ListAlarmsStatusRequest) listAlarmsStatus} {@link
      * #getAlarmHistory(GetAlarmHistoryRequest) getAlarmHistory} and {@link
@@ -208,9 +208,9 @@ public final class AlarmHistoryEntry
 
     /**
      * Customizable alarm summary ({@code alarmSummary} [alarm message
-     * parameter](https://docs.cloud.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm)).
+     * parameter](https://docs.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm)).
      * Optionally include [dynamic
-     * variables](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm).
+     * variables](https://docs.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm).
      * The alarm summary appears within the body of the alarm message and in responses to {@link
      * #listAlarmsStatus(ListAlarmsStatusRequest) listAlarmsStatus} {@link
      * #getAlarmHistory(GetAlarmHistoryRequest) getAlarmHistory} and {@link

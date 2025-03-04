@@ -176,7 +176,7 @@ public final class InstanceConfigurationCreateVolumeDetails
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
          */
@@ -186,7 +186,7 @@ public final class InstanceConfigurationCreateVolumeDetails
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
@@ -221,7 +221,7 @@ public final class InstanceConfigurationCreateVolumeDetails
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          */
@@ -231,7 +231,7 @@ public final class InstanceConfigurationCreateVolumeDetails
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          *
@@ -264,7 +264,7 @@ public final class InstanceConfigurationCreateVolumeDetails
          * The number of volume performance units (VPUs) that will be applied to this volume per GB,
          * representing the Block Volume service's elastic performance options. See [Block Volume
          * Performance
-         * Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels)
+         * Levels](https://docs.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels)
          * for more information.
          *
          * <p>Allowed values:
@@ -286,7 +286,7 @@ public final class InstanceConfigurationCreateVolumeDetails
          * The number of volume performance units (VPUs) that will be applied to this volume per GB,
          * representing the Block Volume service's elastic performance options. See [Block Volume
          * Performance
-         * Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels)
+         * Levels](https://docs.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels)
          * for more information.
          *
          * <p>Allowed values:
@@ -369,9 +369,8 @@ public final class InstanceConfigurationCreateVolumeDetails
          * cross region backups, which will be used in the destination region to encrypt the
          * backup's encryption keys. For more information about the Vault service and encryption
          * keys, see [Overview of Vault
-         * service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm)
-         * and [Using
-         * Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+         * service](https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and
+         * [Using Keys](https://docs.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("xrcKmsKeyId")
         private String xrcKmsKeyId;
@@ -381,9 +380,8 @@ public final class InstanceConfigurationCreateVolumeDetails
          * cross region backups, which will be used in the destination region to encrypt the
          * backup's encryption keys. For more information about the Vault service and encryption
          * keys, see [Overview of Vault
-         * service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm)
-         * and [Using
-         * Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+         * service](https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and
+         * [Using Keys](https://docs.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
          *
          * @param xrcKmsKeyId the value to set
          * @return this builder
@@ -570,7 +568,7 @@ public final class InstanceConfigurationCreateVolumeDetails
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
      */
@@ -580,7 +578,7 @@ public final class InstanceConfigurationCreateVolumeDetails
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
@@ -610,7 +608,7 @@ public final class InstanceConfigurationCreateVolumeDetails
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      */
@@ -620,7 +618,7 @@ public final class InstanceConfigurationCreateVolumeDetails
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      *
@@ -647,7 +645,7 @@ public final class InstanceConfigurationCreateVolumeDetails
      * The number of volume performance units (VPUs) that will be applied to this volume per GB,
      * representing the Block Volume service's elastic performance options. See [Block Volume
      * Performance
-     * Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels)
+     * Levels](https://docs.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels)
      * for more information.
      *
      * <p>Allowed values:
@@ -669,7 +667,7 @@ public final class InstanceConfigurationCreateVolumeDetails
      * The number of volume performance units (VPUs) that will be applied to this volume per GB,
      * representing the Block Volume service's elastic performance options. See [Block Volume
      * Performance
-     * Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels)
+     * Levels](https://docs.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels)
      * for more information.
      *
      * <p>Allowed values:
@@ -741,9 +739,8 @@ public final class InstanceConfigurationCreateVolumeDetails
      * cross region backups, which will be used in the destination region to encrypt the backup's
      * encryption keys. For more information about the Vault service and encryption keys, see
      * [Overview of Vault
-     * service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm)
-     * and [Using
-     * Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+     * service](https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and
+     * [Using Keys](https://docs.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("xrcKmsKeyId")
     private final String xrcKmsKeyId;
@@ -753,9 +750,8 @@ public final class InstanceConfigurationCreateVolumeDetails
      * cross region backups, which will be used in the destination region to encrypt the backup's
      * encryption keys. For more information about the Vault service and encryption keys, see
      * [Overview of Vault
-     * service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm)
-     * and [Using
-     * Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+     * service](https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and
+     * [Using Keys](https://docs.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
      *
      * @return the value
      */

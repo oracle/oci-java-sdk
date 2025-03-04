@@ -7,7 +7,7 @@ package com.oracle.bmc.identity.model;
 /**
  * A special type of {@link IdentityProvider} that supports the SAML 2.0 protocol. For more
  * information, see [Identity Providers and
- * Federation](https://docs.cloud.oracle.com/Content/Identity/Concepts/federation.htm). <br>
+ * Federation](https://docs.oracle.com/iaas/Content/Identity/Concepts/federation.htm). <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a

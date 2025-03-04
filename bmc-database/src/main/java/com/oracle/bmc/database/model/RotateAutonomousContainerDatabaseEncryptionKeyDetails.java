@@ -33,14 +33,14 @@ public final class RotateAutonomousContainerDatabaseEncryptionKeyDetails
     public static class Builder {
         /**
          * Key version ocid of the key provided by the user for rotate operation.
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("keyVersionId")
         private String keyVersionId;
 
         /**
          * Key version ocid of the key provided by the user for rotate operation.
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          * @param keyVersionId the value to set
          * @return this builder
@@ -83,14 +83,14 @@ public final class RotateAutonomousContainerDatabaseEncryptionKeyDetails
 
     /**
      * Key version ocid of the key provided by the user for rotate operation.
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("keyVersionId")
     private final String keyVersionId;
 
     /**
      * Key version ocid of the key provided by the user for rotate operation.
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      * @return the value
      */

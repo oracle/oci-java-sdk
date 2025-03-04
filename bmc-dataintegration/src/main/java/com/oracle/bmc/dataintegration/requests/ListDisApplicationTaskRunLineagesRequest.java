@@ -7,7 +7,7 @@ package com.oracle.bmc.dataintegration.requests;
 import com.oracle.bmc.dataintegration.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/ListDisApplicationTaskRunLineagesExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/ListDisApplicationTaskRunLineagesExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * ListDisApplicationTaskRunLineagesRequest.
  */
@@ -52,14 +52,14 @@ public class ListDisApplicationTaskRunLineagesRequest
     /**
      * For list pagination. The value for this parameter is the {@code opc-next-page} or the {@code
      * opc-prev-page} response header from the previous {@code List} call. See [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private String page;
 
     /**
      * For list pagination. The value for this parameter is the {@code opc-next-page} or the {@code
      * opc-prev-page} response header from the previous {@code List} call. See [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     public String getPage() {
         return page;
@@ -67,14 +67,14 @@ public class ListDisApplicationTaskRunLineagesRequest
     /**
      * Sets the maximum number of results per page, or items to return in a paginated {@code List}
      * call. See [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private Integer limit;
 
     /**
      * Sets the maximum number of results per page, or items to return in a paginated {@code List}
      * call. See [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     public Integer getLimit() {
         return limit;
@@ -336,14 +336,14 @@ public class ListDisApplicationTaskRunLineagesRequest
         /**
          * For list pagination. The value for this parameter is the {@code opc-next-page} or the
          * {@code opc-prev-page} response header from the previous {@code List} call. See [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private String page = null;
 
         /**
          * For list pagination. The value for this parameter is the {@code opc-next-page} or the
          * {@code opc-prev-page} response header from the previous {@code List} call. See [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param page the value to set
          * @return this builder instance
@@ -356,14 +356,14 @@ public class ListDisApplicationTaskRunLineagesRequest
         /**
          * Sets the maximum number of results per page, or items to return in a paginated {@code
          * List} call. See [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private Integer limit = null;
 
         /**
          * Sets the maximum number of results per page, or items to return in a paginated {@code
          * List} call. See [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param limit the value to set
          * @return this builder instance

@@ -32,7 +32,7 @@ public final class ChangeResolverCompartmentDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * compartment into which the resolver, along with its protected default view and resolver
          * endpoints, should be moved.
          */
@@ -40,7 +40,7 @@ public final class ChangeResolverCompartmentDetails
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * compartment into which the resolver, along with its protected default view and resolver
          * endpoints, should be moved.
          *
@@ -84,7 +84,7 @@ public final class ChangeResolverCompartmentDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment into which the resolver, along with its protected default view and resolver
      * endpoints, should be moved.
      */
@@ -92,7 +92,7 @@ public final class ChangeResolverCompartmentDetails
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment into which the resolver, along with its protected default view and resolver
      * endpoints, should be moved.
      *

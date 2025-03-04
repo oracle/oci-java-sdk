@@ -7,7 +7,7 @@ package com.oracle.bmc.database.requests;
 import com.oracle.bmc.database.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ConfigureSaasAdminUserExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ConfigureSaasAdminUserExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * ConfigureSaasAdminUserRequest.
  */
@@ -17,12 +17,12 @@ public class ConfigureSaasAdminUserRequest
                 com.oracle.bmc.database.model.ConfigureSaasAdminUserDetails> {
 
     /**
-     * The database [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * The database [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     private String autonomousDatabaseId;
 
     /**
-     * The database [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * The database [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     public String getAutonomousDatabaseId() {
         return autonomousDatabaseId;
@@ -81,13 +81,13 @@ public class ConfigureSaasAdminUserRequest
 
         /**
          * The database
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          */
         private String autonomousDatabaseId = null;
 
         /**
          * The database
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          * @param autonomousDatabaseId the value to set
          * @return this builder instance

@@ -28,14 +28,14 @@ public final class CertificatesCaBundle extends CaBundle {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * resource.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("caBundleId")
         private String caBundleId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * resource.
          *
          * @param caBundleId the value to set
@@ -83,14 +83,14 @@ public final class CertificatesCaBundle extends CaBundle {
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * resource.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("caBundleId")
     private final String caBundleId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * resource.
      *
      * @return the value

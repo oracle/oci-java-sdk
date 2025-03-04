@@ -21,16 +21,16 @@ public class EnableDatabaseManagementResponse extends com.oracle.bmc.responses.B
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * work request. Multiple OCID values are returned in a comma-separated list. Use {@link
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the work
+     * request. Multiple OCID values are returned in a comma-separated list. Use {@link
      * #getWorkRequest(GetWorkRequestRequest) getWorkRequest} with a work request OCID to track the
      * status of the request.
      */
     private String opcWorkRequestId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * work request. Multiple OCID values are returned in a comma-separated list. Use {@link
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the work
+     * request. Multiple OCID values are returned in a comma-separated list. Use {@link
      * #getWorkRequest(GetWorkRequestRequest) getWorkRequest} with a work request OCID to track the
      * status of the request.
      *
@@ -124,7 +124,7 @@ public class EnableDatabaseManagementResponse extends com.oracle.bmc.responses.B
         }
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * work request. Multiple OCID values are returned in a comma-separated list. Use {@link
          * #getWorkRequest(GetWorkRequestRequest) getWorkRequest} with a work request OCID to track
          * the status of the request.
@@ -132,7 +132,7 @@ public class EnableDatabaseManagementResponse extends com.oracle.bmc.responses.B
         private String opcWorkRequestId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * work request. Multiple OCID values are returned in a comma-separated list. Use {@link
          * #getWorkRequest(GetWorkRequestRequest) getWorkRequest} with a work request OCID to track
          * the status of the request.

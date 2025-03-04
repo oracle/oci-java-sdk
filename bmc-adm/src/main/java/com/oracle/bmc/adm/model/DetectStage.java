@@ -100,7 +100,7 @@ public final class DetectStage extends RemediationRunStage {
         }
         /**
          * The Oracle Cloud identifier
-         * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the
+         * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the
          * vulnerability audit.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("auditId")
@@ -108,7 +108,7 @@ public final class DetectStage extends RemediationRunStage {
 
         /**
          * The Oracle Cloud identifier
-         * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the
+         * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the
          * vulnerability audit.
          *
          * @param auditId the value to set
@@ -208,7 +208,7 @@ public final class DetectStage extends RemediationRunStage {
 
     /**
      * The Oracle Cloud identifier
-     * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the
+     * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the
      * vulnerability audit.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("auditId")
@@ -216,7 +216,7 @@ public final class DetectStage extends RemediationRunStage {
 
     /**
      * The Oracle Cloud identifier
-     * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the
+     * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the
      * vulnerability audit.
      *
      * @return the value

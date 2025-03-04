@@ -150,9 +150,6 @@ public class SubscriptionClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         CreateSubscriptionMappingResponse.Builder::subscriptionMapping)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateSubscriptionMappingResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        CreateSubscriptionMappingResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString("etag", CreateSubscriptionMappingResponse.Builder::etag)
                 .callSync();
     }

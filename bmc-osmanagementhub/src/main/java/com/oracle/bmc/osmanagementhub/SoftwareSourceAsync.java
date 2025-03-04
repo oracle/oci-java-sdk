@@ -10,7 +10,7 @@ import com.oracle.bmc.osmanagementhub.responses.*;
 /**
  * Use the OS Management Hub API to manage and monitor updates and patches for instances in OCI,
  * your private data center, or 3rd-party clouds. For more information, see [Overview of OS
- * Management Hub](https://docs.cloud.oracle.com/iaas/osmh/doc/overview.htm).
+ * Management Hub](https://docs.oracle.com/iaas/osmh/doc/overview.htm).
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
 public interface SoftwareSourceAsync extends AutoCloseable {
@@ -107,7 +107,7 @@ public interface SoftwareSourceAsync extends AutoCloseable {
     /**
      * Moves the specified software sources to a different compartment within the same tenancy. For
      * information about moving resources between compartments, see [Moving Resources to a Different
-     * Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -336,8 +336,8 @@ public interface SoftwareSourceAsync extends AutoCloseable {
 
     /**
      * Lists entitlements in the specified tenancy
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Filter
-     * the list against a variety of criteria including but not limited to its Customer Support
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Filter the
+     * list against a variety of criteria including but not limited to its Customer Support
      * Identifier (CSI), and vendor name.
      *
      * @param request The request object containing the details to send
@@ -369,9 +369,9 @@ public interface SoftwareSourceAsync extends AutoCloseable {
 
     /**
      * Lists module stream profiles from the specified software source
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Filter
-     * the list against a variety of criteria including but not limited to its module name, stream
-     * name, and profile name.
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Filter the
+     * list against a variety of criteria including but not limited to its module name, stream name,
+     * and profile name.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -388,9 +388,9 @@ public interface SoftwareSourceAsync extends AutoCloseable {
 
     /**
      * Lists module streams from the specified software source
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Filter
-     * the list against a variety of criteria including but not limited to its module name and
-     * (stream) name.
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Filter the
+     * list against a variety of criteria including but not limited to its module name and (stream)
+     * name.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -407,9 +407,9 @@ public interface SoftwareSourceAsync extends AutoCloseable {
 
     /**
      * Lists package groups that are associated with the specified software source
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Filter
-     * the list against a variety of criteria including but not limited to its name, and package
-     * group type.
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Filter the
+     * list against a variety of criteria including but not limited to its name, and package group
+     * type.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -480,8 +480,8 @@ public interface SoftwareSourceAsync extends AutoCloseable {
 
     /**
      * Lists software sources that match the specified tenancy or software source
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Filter
-     * the list against a variety of criteria including but not limited to its name, status,
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Filter the
+     * list against a variety of criteria including but not limited to its name, status,
      * architecture, and OS family.
      *
      * @param request The request object containing the details to send

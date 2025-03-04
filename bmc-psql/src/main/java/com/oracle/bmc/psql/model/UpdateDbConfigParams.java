@@ -54,14 +54,14 @@ public final class UpdateDbConfigParams
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * configuration.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("configId")
         private String configId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * configuration.
          *
          * @param configId the value to set
@@ -162,14 +162,14 @@ public final class UpdateDbConfigParams
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * configuration.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("configId")
     private final String configId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * configuration.
      *
      * @return the value

@@ -51,7 +51,7 @@ public final class GitHubActionsConfiguration extends VerifyConfiguration {
         }
         /**
          * The Oracle Cloud Identifier
-         * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the
+         * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the
          * Private Access Token (PAT) Secret. The PAT provides the credentials to access the GitHub
          * Action.
          */
@@ -60,7 +60,7 @@ public final class GitHubActionsConfiguration extends VerifyConfiguration {
 
         /**
          * The Oracle Cloud Identifier
-         * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the
+         * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the
          * Private Access Token (PAT) Secret. The PAT provides the credentials to access the GitHub
          * Action.
          *
@@ -205,7 +205,7 @@ public final class GitHubActionsConfiguration extends VerifyConfiguration {
 
     /**
      * The Oracle Cloud Identifier
-     * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the
+     * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the
      * Private Access Token (PAT) Secret. The PAT provides the credentials to access the GitHub
      * Action.
      */
@@ -214,7 +214,7 @@ public final class GitHubActionsConfiguration extends VerifyConfiguration {
 
     /**
      * The Oracle Cloud Identifier
-     * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the
+     * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the
      * Private Access Token (PAT) Secret. The PAT provides the credentials to access the GitHub
      * Action.
      *

@@ -7,7 +7,7 @@ package com.oracle.bmc.resourcemanager.model;
 /**
  * Job details that are specific to a plan rollback job. For more information about plan rollback
  * jobs, see [Creating a Plan Rollback
- * Job](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/create-job-plan-rollback.htm).
+ * Job](https://docs.oracle.com/iaas/Content/ResourceManager/Tasks/create-job-plan-rollback.htm).
  * <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
@@ -40,15 +40,15 @@ public final class PlanRollbackJobOperationDetails extends JobOperationDetails {
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of a successful apply job to use for the plan rollback job.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
+         * successful apply job to use for the plan rollback job.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("targetRollbackJobId")
         private String targetRollbackJobId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of a successful apply job to use for the plan rollback job.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
+         * successful apply job to use for the plan rollback job.
          *
          * @param targetRollbackJobId the value to set
          * @return this builder
@@ -109,14 +109,14 @@ public final class PlanRollbackJobOperationDetails extends JobOperationDetails {
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
      * successful apply job to use for the plan rollback job.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("targetRollbackJobId")
     private final String targetRollbackJobId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
      * successful apply job to use for the plan rollback job.
      *
      * @return the value

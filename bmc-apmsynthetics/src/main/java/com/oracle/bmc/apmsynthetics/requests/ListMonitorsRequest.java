@@ -7,7 +7,7 @@ package com.oracle.bmc.apmsynthetics.requests;
 import com.oracle.bmc.apmsynthetics.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmsynthetics/ListMonitorsExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmsynthetics/ListMonitorsExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListMonitorsRequest.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
@@ -71,7 +71,7 @@ public class ListMonitorsRequest extends com.oracle.bmc.requests.BmcRequest<java
     /**
      * The maximum number of results per page, or items to return in a paginated "List" call. For
      * information on how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      * <p>Example: {@code 50}
      */
@@ -80,7 +80,7 @@ public class ListMonitorsRequest extends com.oracle.bmc.requests.BmcRequest<java
     /**
      * The maximum number of results per page, or items to return in a paginated "List" call. For
      * information on how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      * <p>Example: {@code 50}
      */
@@ -296,7 +296,7 @@ public class ListMonitorsRequest extends com.oracle.bmc.requests.BmcRequest<java
         /**
          * The maximum number of results per page, or items to return in a paginated "List" call.
          * For information on how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * <p>Example: {@code 50}
          */
@@ -305,7 +305,7 @@ public class ListMonitorsRequest extends com.oracle.bmc.requests.BmcRequest<java
         /**
          * The maximum number of results per page, or items to return in a paginated "List" call.
          * For information on how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * <p>Example: {@code 50}
          *

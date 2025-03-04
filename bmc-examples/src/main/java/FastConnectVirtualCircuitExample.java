@@ -49,10 +49,10 @@ import java.util.concurrent.TimeUnit;
  * experience compared to internet-based connections.
  *
  * <p>Details information on FastConnect:
- * https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm
+ * https://docs.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm
  *
  * <p>Details virtual circuit API:
- * https://docs.cloud.oracle.com/api/#/en/iaas/20160918/VirtualCircuit
+ * https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VirtualCircuit
  */
 public class FastConnectVirtualCircuitExample {
     // Set this with your own compartment ID

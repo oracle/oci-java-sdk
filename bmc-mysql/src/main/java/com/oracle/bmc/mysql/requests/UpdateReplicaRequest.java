@@ -7,7 +7,7 @@ package com.oracle.bmc.mysql.requests;
 import com.oracle.bmc.mysql.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/UpdateReplicaExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/UpdateReplicaExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateReplicaRequest.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190415")
@@ -16,12 +16,12 @@ public class UpdateReplicaRequest
                 com.oracle.bmc.mysql.model.UpdateReplicaDetails> {
 
     /**
-     * The Replica [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * The Replica [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     private String replicaId;
 
     /**
-     * The Replica [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * The Replica [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     public String getReplicaId() {
         return replicaId;
@@ -85,13 +85,13 @@ public class UpdateReplicaRequest
 
         /**
          * The Replica
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          */
         private String replicaId = null;
 
         /**
          * The Replica
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          * @param replicaId the value to set
          * @return this builder instance

@@ -35,16 +35,16 @@ public final class DetachSoftwareSourcesFromManagedInstanceGroupDetails
     public static class Builder {
         /**
          * List of software source
-         * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to
-         * detach from the group.
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to detach
+         * from the group.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("softwareSources")
         private java.util.List<String> softwareSources;
 
         /**
          * List of software source
-         * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to
-         * detach from the group.
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to detach
+         * from the group.
          *
          * @param softwareSources the value to set
          * @return this builder
@@ -100,16 +100,16 @@ public final class DetachSoftwareSourcesFromManagedInstanceGroupDetails
 
     /**
      * List of software source
-     * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to
-     * detach from the group.
+     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to detach from
+     * the group.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("softwareSources")
     private final java.util.List<String> softwareSources;
 
     /**
      * List of software source
-     * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to
-     * detach from the group.
+     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to detach from
+     * the group.
      *
      * @return the value
      */

@@ -5,7 +5,7 @@
   <parent>
     <groupId>com.oracle.oci.sdk</groupId>
     <artifactId>oci-java-sdk</artifactId>
-    <version>3.58.0</version>
+    <version>3.59.0</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
 
@@ -13,7 +13,7 @@
   <packaging>pom</packaging>
   <name>Oracle Cloud Infrastructure SDK - Shaded Parent</name>
   <description>This project contains modules for shading the Oracle Cloud Infrastructure SDK</description>
-  <url>https://docs.cloud.oracle.com/Content/API/SDKDocs/javasdk.htm</url>
+  <url>https://docs.oracle.com/iaas/Content/API/SDKDocs/javasdk.htm</url>
 
   <modules>
     <module>bmc-shaded-full</module>

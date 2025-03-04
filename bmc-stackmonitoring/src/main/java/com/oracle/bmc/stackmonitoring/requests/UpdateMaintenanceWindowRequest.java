@@ -7,7 +7,7 @@ package com.oracle.bmc.stackmonitoring.requests;
 import com.oracle.bmc.stackmonitoring.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/stackmonitoring/UpdateMaintenanceWindowExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/stackmonitoring/UpdateMaintenanceWindowExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * UpdateMaintenanceWindowRequest.
  */
@@ -17,13 +17,13 @@ public class UpdateMaintenanceWindowRequest
                 com.oracle.bmc.stackmonitoring.model.UpdateMaintenanceWindowDetails> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
      * maintenance window.
      */
     private String maintenanceWindowId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
      * maintenance window.
      */
     public String getMaintenanceWindowId() {
@@ -88,13 +88,13 @@ public class UpdateMaintenanceWindowRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
          * maintenance window.
          */
         private String maintenanceWindowId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
          * maintenance window.
          *
          * @param maintenanceWindowId the value to set

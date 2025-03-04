@@ -109,14 +109,14 @@ public final class RuleSummary extends com.oracle.bmc.http.client.internal.Expli
         }
         /**
          * Compartment Identifier [OCID]
-         * (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * (https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * Compartment Identifier [OCID]
-         * (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * (https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -418,14 +418,14 @@ public final class RuleSummary extends com.oracle.bmc.http.client.internal.Expli
 
     /**
      * Compartment Identifier [OCID]
-     * (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * (https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * Compartment Identifier [OCID]
-     * (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * (https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      * @return the value
      */

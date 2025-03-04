@@ -9,14 +9,14 @@ import com.oracle.bmc.loadbalancer.model.*;
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
 public class ChangeLoadBalancerCompartmentResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the work request.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the work
+     * request.
      */
     private String opcWorkRequestId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the work request.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the work
+     * request.
      *
      * @return the value
      */
@@ -76,14 +76,14 @@ public class ChangeLoadBalancerCompartmentResponse extends com.oracle.bmc.respon
         }
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the work request.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * work request.
          */
         private String opcWorkRequestId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the work request.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * work request.
          *
          * @param opcWorkRequestId the value to set
          * @return this builder

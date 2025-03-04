@@ -97,8 +97,8 @@ public final class UpdatePublicIpDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the private IP to assign the public IP to. * If the public IP is already assigned to a
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * private IP to assign the public IP to. * If the public IP is already assigned to a
          * different private IP, it will be unassigned and then reassigned to the specified private
          * IP. * If you set this field to an empty string, the public IP will be unassigned from the
          * private IP it is currently assigned to.
@@ -107,8 +107,8 @@ public final class UpdatePublicIpDetails
         private String privateIpId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the private IP to assign the public IP to. * If the public IP is already assigned to a
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * private IP to assign the public IP to. * If the public IP is already assigned to a
          * different private IP, it will be unassigned and then reassigned to the specified private
          * IP. * If you set this field to an empty string, the public IP will be unassigned from the
          * private IP it is currently assigned to.
@@ -217,21 +217,21 @@ public final class UpdatePublicIpDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the private IP to assign the public IP to. * If the public IP is already assigned to a
-     * different private IP, it will be unassigned and then reassigned to the specified private IP.
-     * * If you set this field to an empty string, the public IP will be unassigned from the private
-     * IP it is currently assigned to.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * private IP to assign the public IP to. * If the public IP is already assigned to a different
+     * private IP, it will be unassigned and then reassigned to the specified private IP. * If you
+     * set this field to an empty string, the public IP will be unassigned from the private IP it is
+     * currently assigned to.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("privateIpId")
     private final String privateIpId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the private IP to assign the public IP to. * If the public IP is already assigned to a
-     * different private IP, it will be unassigned and then reassigned to the specified private IP.
-     * * If you set this field to an empty string, the public IP will be unassigned from the private
-     * IP it is currently assigned to.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * private IP to assign the public IP to. * If the public IP is already assigned to a different
+     * private IP, it will be unassigned and then reassigned to the specified private IP. * If you
+     * set this field to an empty string, the public IP will be unassigned from the private IP it is
+     * currently assigned to.
      *
      * @return the value
      */

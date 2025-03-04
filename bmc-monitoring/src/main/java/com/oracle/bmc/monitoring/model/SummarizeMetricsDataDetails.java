@@ -115,11 +115,10 @@ public final class SummarizeMetricsDataDetails
          * MetricData}.
          *
          * <p>For details about Monitoring Query Language (MQL), see [Monitoring Query Language
-         * (MQL)
-         * Reference](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm). For
+         * (MQL) Reference](https://docs.oracle.com/iaas/Content/Monitoring/Reference/mql.htm). For
          * available dimensions, review the metric definition for the supported service. See
          * [Supported
-         * Services](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
+         * Services](https://docs.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
          *
          * <p>Example 1: {@code CpuUtilization[1m].sum()}
          *
@@ -142,11 +141,10 @@ public final class SummarizeMetricsDataDetails
          * MetricData}.
          *
          * <p>For details about Monitoring Query Language (MQL), see [Monitoring Query Language
-         * (MQL)
-         * Reference](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm). For
+         * (MQL) Reference](https://docs.oracle.com/iaas/Content/Monitoring/Reference/mql.htm). For
          * available dimensions, review the metric definition for the supported service. See
          * [Supported
-         * Services](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
+         * Services](https://docs.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
          *
          * <p>Example 1: {@code CpuUtilization[1m].sum()}
          *
@@ -352,9 +350,9 @@ public final class SummarizeMetricsDataDetails
      * <p>Construct your query to avoid exceeding limits on returned data. See {@link MetricData}.
      *
      * <p>For details about Monitoring Query Language (MQL), see [Monitoring Query Language (MQL)
-     * Reference](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm). For
-     * available dimensions, review the metric definition for the supported service. See [Supported
-     * Services](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
+     * Reference](https://docs.oracle.com/iaas/Content/Monitoring/Reference/mql.htm). For available
+     * dimensions, review the metric definition for the supported service. See [Supported
+     * Services](https://docs.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
      *
      * <p>Example 1: {@code CpuUtilization[1m].sum()}
      *
@@ -376,9 +374,9 @@ public final class SummarizeMetricsDataDetails
      * <p>Construct your query to avoid exceeding limits on returned data. See {@link MetricData}.
      *
      * <p>For details about Monitoring Query Language (MQL), see [Monitoring Query Language (MQL)
-     * Reference](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm). For
-     * available dimensions, review the metric definition for the supported service. See [Supported
-     * Services](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
+     * Reference](https://docs.oracle.com/iaas/Content/Monitoring/Reference/mql.htm). For available
+     * dimensions, review the metric definition for the supported service. See [Supported
+     * Services](https://docs.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
      *
      * <p>Example 1: {@code CpuUtilization[1m].sum()}
      *

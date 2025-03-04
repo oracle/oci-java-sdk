@@ -58,7 +58,7 @@ import java.util.Map;
  *   <li>Creating, retrieving, updating, moving, listing, and deleting approved senders
  *   <li>Creating, retrieving, listing, and deleting email suppressions
  *   <li>Creating, updating, listing, and deleting SMTP credentials See <a
- *       href="https://docs.cloud.oracle.com/iaas/Content/Email/Tasks/configuresmtpconnection.htm">here</a>
+ *       href="https://docs.oracle.com/iaas/Content/Email/Tasks/configuresmtpconnection.htm">here</a>
  *       for more information on sending emails with your IAM user
  * </ul>
  *

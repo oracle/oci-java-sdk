@@ -33,16 +33,16 @@ public final class AttachSoftwareSourcesToProfileDetails
     public static class Builder {
         /**
          * List of software source
-         * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to
-         * attach to the profile.
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to attach
+         * to the profile.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("softwareSources")
         private java.util.List<String> softwareSources;
 
         /**
          * List of software source
-         * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to
-         * attach to the profile.
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to attach
+         * to the profile.
          *
          * @param softwareSources the value to set
          * @return this builder
@@ -85,16 +85,16 @@ public final class AttachSoftwareSourcesToProfileDetails
 
     /**
      * List of software source
-     * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to
-     * attach to the profile.
+     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to attach to
+     * the profile.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("softwareSources")
     private final java.util.List<String> softwareSources;
 
     /**
      * List of software source
-     * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to
-     * attach to the profile.
+     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to attach to
+     * the profile.
      *
      * @return the value
      */

@@ -83,17 +83,17 @@ public final class SynthesizeSpeechDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compartment where the user has access to call {@code SpeechSynthesize} api. But
-         * default user access will be checked at tenancy level.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment where the user has access to call {@code SpeechSynthesize} api. But default
+         * user access will be checked at tenancy level.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compartment where the user has access to call {@code SpeechSynthesize} api. But
-         * default user access will be checked at tenancy level.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment where the user has access to call {@code SpeechSynthesize} api. But default
+         * user access will be checked at tenancy level.
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -202,17 +202,17 @@ public final class SynthesizeSpeechDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compartment where the user has access to call {@code SpeechSynthesize} api. But default
-     * user access will be checked at tenancy level.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment where the user has access to call {@code SpeechSynthesize} api. But default user
+     * access will be checked at tenancy level.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compartment where the user has access to call {@code SpeechSynthesize} api. But default
-     * user access will be checked at tenancy level.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment where the user has access to call {@code SpeechSynthesize} api. But default user
+     * access will be checked at tenancy level.
      *
      * @return the value
      */

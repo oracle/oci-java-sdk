@@ -94,7 +94,7 @@ public final class UpdateLaunchOptions
          *
          * <p>The image must have paravirtualized drivers installed. For more information, see
          * [Editing an
-         * Instance](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/resizinginstances.htm).
+         * Instance](https://docs.oracle.com/iaas/Content/Compute/Tasks/resizinginstances.htm).
          *
          * <p>If the instance is running when you change the network type, it will be rebooted.
          *
@@ -117,7 +117,7 @@ public final class UpdateLaunchOptions
          *
          * <p>The image must have paravirtualized drivers installed. For more information, see
          * [Editing an
-         * Instance](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/resizinginstances.htm).
+         * Instance](https://docs.oracle.com/iaas/Content/Compute/Tasks/resizinginstances.htm).
          *
          * <p>If the instance is running when you change the network type, it will be rebooted.
          *
@@ -147,7 +147,7 @@ public final class UpdateLaunchOptions
          * <p>All boot volumes and block volumes are encrypted at rest.
          *
          * <p>For more information, see [Block Volume
-         * Encryption](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/overview.htm#Encrypti).
+         * Encryption](https://docs.oracle.com/iaas/Content/Block/Concepts/overview.htm#Encrypti).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("isPvEncryptionInTransitEnabled")
         private Boolean isPvEncryptionInTransitEnabled;
@@ -165,7 +165,7 @@ public final class UpdateLaunchOptions
          * <p>All boot volumes and block volumes are encrypted at rest.
          *
          * <p>For more information, see [Block Volume
-         * Encryption](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/overview.htm#Encrypti).
+         * Encryption](https://docs.oracle.com/iaas/Content/Block/Concepts/overview.htm#Encrypti).
          *
          * @param isPvEncryptionInTransitEnabled the value to set
          * @return this builder
@@ -314,7 +314,7 @@ public final class UpdateLaunchOptions
      * primary VNIC and the boot volume.
      *
      * <p>The image must have paravirtualized drivers installed. For more information, see [Editing
-     * an Instance](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/resizinginstances.htm).
+     * an Instance](https://docs.oracle.com/iaas/Content/Compute/Tasks/resizinginstances.htm).
      *
      * <p>If the instance is running when you change the network type, it will be rebooted.
      *
@@ -365,7 +365,7 @@ public final class UpdateLaunchOptions
      * primary VNIC and the boot volume.
      *
      * <p>The image must have paravirtualized drivers installed. For more information, see [Editing
-     * an Instance](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/resizinginstances.htm).
+     * an Instance](https://docs.oracle.com/iaas/Content/Compute/Tasks/resizinginstances.htm).
      *
      * <p>If the instance is running when you change the network type, it will be rebooted.
      *
@@ -387,7 +387,7 @@ public final class UpdateLaunchOptions
      * primary VNIC and the boot volume.
      *
      * <p>The image must have paravirtualized drivers installed. For more information, see [Editing
-     * an Instance](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/resizinginstances.htm).
+     * an Instance](https://docs.oracle.com/iaas/Content/Compute/Tasks/resizinginstances.htm).
      *
      * <p>If the instance is running when you change the network type, it will be rebooted.
      *
@@ -415,7 +415,7 @@ public final class UpdateLaunchOptions
      * <p>All boot volumes and block volumes are encrypted at rest.
      *
      * <p>For more information, see [Block Volume
-     * Encryption](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/overview.htm#Encrypti).
+     * Encryption](https://docs.oracle.com/iaas/Content/Block/Concepts/overview.htm#Encrypti).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("isPvEncryptionInTransitEnabled")
     private final Boolean isPvEncryptionInTransitEnabled;
@@ -433,7 +433,7 @@ public final class UpdateLaunchOptions
      * <p>All boot volumes and block volumes are encrypted at rest.
      *
      * <p>For more information, see [Block Volume
-     * Encryption](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/overview.htm#Encrypti).
+     * Encryption](https://docs.oracle.com/iaas/Content/Block/Concepts/overview.htm#Encrypti).
      *
      * @return the value
      */

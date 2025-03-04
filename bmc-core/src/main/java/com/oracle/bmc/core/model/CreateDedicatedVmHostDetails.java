@@ -112,7 +112,7 @@ public final class CreateDedicatedVmHostDetails
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
          */
@@ -122,7 +122,7 @@ public final class CreateDedicatedVmHostDetails
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
@@ -157,14 +157,14 @@ public final class CreateDedicatedVmHostDetails
         /**
          * The fault domain for the dedicated virtual machine host's assigned instances. For more
          * information, see [Fault
-         * Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm#fault).
-         * If you do not specify the fault domain, the system selects one for you. To change the
-         * fault domain for a dedicated virtual machine host, delete it and create a new dedicated
-         * virtual machine host in the preferred fault domain.
+         * Domains](https://docs.oracle.com/iaas/Content/General/Concepts/regions.htm#fault). If you
+         * do not specify the fault domain, the system selects one for you. To change the fault
+         * domain for a dedicated virtual machine host, delete it and create a new dedicated virtual
+         * machine host in the preferred fault domain.
          *
          * <p>To get a list of fault domains, use the {@code ListFaultDomains} operation in the
          * [Identity and Access Management Service
-         * API](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/).
+         * API](https://docs.oracle.com/iaas/api/#/en/identity/20160918/).
          *
          * <p>Example: {@code FAULT-DOMAIN-1}
          */
@@ -174,14 +174,14 @@ public final class CreateDedicatedVmHostDetails
         /**
          * The fault domain for the dedicated virtual machine host's assigned instances. For more
          * information, see [Fault
-         * Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm#fault).
-         * If you do not specify the fault domain, the system selects one for you. To change the
-         * fault domain for a dedicated virtual machine host, delete it and create a new dedicated
-         * virtual machine host in the preferred fault domain.
+         * Domains](https://docs.oracle.com/iaas/Content/General/Concepts/regions.htm#fault). If you
+         * do not specify the fault domain, the system selects one for you. To change the fault
+         * domain for a dedicated virtual machine host, delete it and create a new dedicated virtual
+         * machine host in the preferred fault domain.
          *
          * <p>To get a list of fault domains, use the {@code ListFaultDomains} operation in the
          * [Identity and Access Management Service
-         * API](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/).
+         * API](https://docs.oracle.com/iaas/api/#/en/identity/20160918/).
          *
          * <p>Example: {@code FAULT-DOMAIN-1}
          *
@@ -196,7 +196,7 @@ public final class CreateDedicatedVmHostDetails
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          */
@@ -206,7 +206,7 @@ public final class CreateDedicatedVmHostDetails
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          *
@@ -326,7 +326,7 @@ public final class CreateDedicatedVmHostDetails
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
      */
@@ -336,7 +336,7 @@ public final class CreateDedicatedVmHostDetails
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
@@ -366,14 +366,14 @@ public final class CreateDedicatedVmHostDetails
     /**
      * The fault domain for the dedicated virtual machine host's assigned instances. For more
      * information, see [Fault
-     * Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm#fault). If
-     * you do not specify the fault domain, the system selects one for you. To change the fault
-     * domain for a dedicated virtual machine host, delete it and create a new dedicated virtual
-     * machine host in the preferred fault domain.
+     * Domains](https://docs.oracle.com/iaas/Content/General/Concepts/regions.htm#fault). If you do
+     * not specify the fault domain, the system selects one for you. To change the fault domain for
+     * a dedicated virtual machine host, delete it and create a new dedicated virtual machine host
+     * in the preferred fault domain.
      *
      * <p>To get a list of fault domains, use the {@code ListFaultDomains} operation in the
      * [Identity and Access Management Service
-     * API](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/).
+     * API](https://docs.oracle.com/iaas/api/#/en/identity/20160918/).
      *
      * <p>Example: {@code FAULT-DOMAIN-1}
      */
@@ -383,14 +383,14 @@ public final class CreateDedicatedVmHostDetails
     /**
      * The fault domain for the dedicated virtual machine host's assigned instances. For more
      * information, see [Fault
-     * Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm#fault). If
-     * you do not specify the fault domain, the system selects one for you. To change the fault
-     * domain for a dedicated virtual machine host, delete it and create a new dedicated virtual
-     * machine host in the preferred fault domain.
+     * Domains](https://docs.oracle.com/iaas/Content/General/Concepts/regions.htm#fault). If you do
+     * not specify the fault domain, the system selects one for you. To change the fault domain for
+     * a dedicated virtual machine host, delete it and create a new dedicated virtual machine host
+     * in the preferred fault domain.
      *
      * <p>To get a list of fault domains, use the {@code ListFaultDomains} operation in the
      * [Identity and Access Management Service
-     * API](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/).
+     * API](https://docs.oracle.com/iaas/api/#/en/identity/20160918/).
      *
      * <p>Example: {@code FAULT-DOMAIN-1}
      *
@@ -403,7 +403,7 @@ public final class CreateDedicatedVmHostDetails
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      */
@@ -413,7 +413,7 @@ public final class CreateDedicatedVmHostDetails
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      *

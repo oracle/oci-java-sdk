@@ -38,7 +38,7 @@ public final class DatabaseUpgradeWithDatabaseSoftwareImageDetails
         }
         /**
          * The database software image
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * image to be used to upgrade a database.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("databaseSoftwareImageId")
@@ -46,7 +46,7 @@ public final class DatabaseUpgradeWithDatabaseSoftwareImageDetails
 
         /**
          * The database software image
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * image to be used to upgrade a database.
          *
          * @param databaseSoftwareImageId the value to set
@@ -101,16 +101,16 @@ public final class DatabaseUpgradeWithDatabaseSoftwareImageDetails
 
     /**
      * The database software image
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the image
-     * to be used to upgrade a database.
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the image to
+     * be used to upgrade a database.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("databaseSoftwareImageId")
     private final String databaseSoftwareImageId;
 
     /**
      * The database software image
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the image
-     * to be used to upgrade a database.
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the image to
+     * be used to upgrade a database.
      *
      * @return the value
      */

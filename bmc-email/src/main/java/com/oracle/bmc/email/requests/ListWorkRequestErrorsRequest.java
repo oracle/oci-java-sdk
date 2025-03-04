@@ -7,7 +7,7 @@ package com.oracle.bmc.email.requests;
 import com.oracle.bmc.email.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/ListWorkRequestErrorsExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/ListWorkRequestErrorsExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * ListWorkRequestErrorsRequest.
  */
@@ -32,14 +32,14 @@ public class ListWorkRequestErrorsRequest
     /**
      * For list pagination. The value of the opc-next-page response header from the previous "List"
      * call. For important details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private String page;
 
     /**
      * For list pagination. The value of the opc-next-page response header from the previous "List"
      * call. For important details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     public String getPage() {
         return page;
@@ -48,7 +48,7 @@ public class ListWorkRequestErrorsRequest
      * For list pagination. The maximum number of results per page, or items to return in a
      * paginated "List" call. {@code 1} is the minimum, {@code 1000} is the maximum. For important
      * details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private Integer limit;
 
@@ -56,7 +56,7 @@ public class ListWorkRequestErrorsRequest
      * For list pagination. The maximum number of results per page, or items to return in a
      * paginated "List" call. {@code 1} is the minimum, {@code 1000} is the maximum. For important
      * details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     public Integer getLimit() {
         return limit;
@@ -99,14 +99,14 @@ public class ListWorkRequestErrorsRequest
         /**
          * For list pagination. The value of the opc-next-page response header from the previous
          * "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private String page = null;
 
         /**
          * For list pagination. The value of the opc-next-page response header from the previous
          * "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param page the value to set
          * @return this builder instance
@@ -120,7 +120,7 @@ public class ListWorkRequestErrorsRequest
          * For list pagination. The maximum number of results per page, or items to return in a
          * paginated "List" call. {@code 1} is the minimum, {@code 1000} is the maximum. For
          * important details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private Integer limit = null;
 
@@ -128,7 +128,7 @@ public class ListWorkRequestErrorsRequest
          * For list pagination. The maximum number of results per page, or items to return in a
          * paginated "List" call. {@code 1} is the minimum, {@code 1000} is the maximum. For
          * important details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param limit the value to set
          * @return this builder instance

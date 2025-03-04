@@ -7,7 +7,7 @@ package com.oracle.bmc.ons.requests;
 import com.oracle.bmc.ons.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ons/UpdateSubscriptionExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ons/UpdateSubscriptionExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateSubscriptionRequest.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
@@ -16,14 +16,14 @@ public class UpdateSubscriptionRequest
                 com.oracle.bmc.ons.model.UpdateSubscriptionDetails> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the subscription to update.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * subscription to update.
      */
     private String subscriptionId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the subscription to update.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * subscription to update.
      */
     public String getSubscriptionId() {
         return subscriptionId;
@@ -84,14 +84,14 @@ public class UpdateSubscriptionRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the subscription to update.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * subscription to update.
          */
         private String subscriptionId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the subscription to update.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * subscription to update.
          *
          * @param subscriptionId the value to set
          * @return this builder instance

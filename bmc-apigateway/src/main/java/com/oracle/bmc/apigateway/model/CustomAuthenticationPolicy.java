@@ -37,14 +37,14 @@ public final class CustomAuthenticationPolicy extends AuthenticationPolicy {
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Oracle Functions function resource.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("functionId")
         private String functionId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Oracle Functions function resource.
          *
          * @param functionId the value to set
@@ -209,14 +209,14 @@ public final class CustomAuthenticationPolicy extends AuthenticationPolicy {
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Oracle Functions function resource.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("functionId")
     private final String functionId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Oracle Functions function resource.
      *
      * @return the value

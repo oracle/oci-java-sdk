@@ -147,15 +147,15 @@ public final class WorkRequest extends com.oracle.bmc.http.client.internal.Expli
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the work request.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * work request.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the work request.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * work request.
          *
          * @param id the value to set
          * @return this builder
@@ -211,15 +211,15 @@ public final class WorkRequest extends com.oracle.bmc.http.client.internal.Expli
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the parent work request, if there is any.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * parent work request, if there is any.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("parentId")
         private String parentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the parent work request, if there is any.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * parent work request, if there is any.
          *
          * @param parentId the value to set
          * @return this builder
@@ -231,16 +231,16 @@ public final class WorkRequest extends com.oracle.bmc.http.client.internal.Expli
         }
         /**
          * The list of
-         * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for
-         * the child work requests.
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
+         * child work requests.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("childrenId")
         private java.util.List<String> childrenId;
 
         /**
          * The list of
-         * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for
-         * the child work requests.
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
+         * child work requests.
          *
          * @param childrenId the value to set
          * @return this builder
@@ -251,21 +251,19 @@ public final class WorkRequest extends com.oracle.bmc.http.client.internal.Expli
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compartment that contains the work request. Work requests should be scoped to the
-         * same compartment as the resource it affects. If the work request affects multiple
-         * resources the different compartments, the services selects the compartment of the primary
-         * resource.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment that contains the work request. Work requests should be scoped to the same
+         * compartment as the resource it affects. If the work request affects multiple resources
+         * the different compartments, the services selects the compartment of the primary resource.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compartment that contains the work request. Work requests should be scoped to the
-         * same compartment as the resource it affects. If the work request affects multiple
-         * resources the different compartments, the services selects the compartment of the primary
-         * resource.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment that contains the work request. Work requests should be scoped to the same
+         * compartment as the resource it affects. If the work request affects multiple resources
+         * the different compartments, the services selects the compartment of the primary resource.
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -277,16 +275,16 @@ public final class WorkRequest extends com.oracle.bmc.http.client.internal.Expli
         }
         /**
          * The list of
-         * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for
-         * the resources affected by the work request.
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
+         * resources affected by the work request.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("resources")
         private java.util.List<WorkRequestResource> resources;
 
         /**
          * The list of
-         * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for
-         * the resources affected by the work request.
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
+         * resources affected by the work request.
          *
          * @param resources the value to set
          * @return this builder
@@ -437,15 +435,15 @@ public final class WorkRequest extends com.oracle.bmc.http.client.internal.Expli
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the resource that initiated the work request.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * resource that initiated the work request.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("initiatorId")
         private String initiatorId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the resource that initiated the work request.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * resource that initiated the work request.
          *
          * @param initiatorId the value to set
          * @return this builder
@@ -541,15 +539,15 @@ public final class WorkRequest extends com.oracle.bmc.http.client.internal.Expli
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the original work request that is being retried.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * original work request that is being retried.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("retryOfId")
         private String retryOfId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the original work request that is being retried.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * original work request that is being retried.
          *
          * @param retryOfId the value to set
          * @return this builder
@@ -560,15 +558,15 @@ public final class WorkRequest extends com.oracle.bmc.http.client.internal.Expli
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the original work request that is being rerun.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * original work request that is being rerun.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("rerunOfId")
         private String rerunOfId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the original work request that is being rerun.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * original work request that is being rerun.
          *
          * @param rerunOfId the value to set
          * @return this builder
@@ -808,15 +806,15 @@ public final class WorkRequest extends com.oracle.bmc.http.client.internal.Expli
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the work request.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the work
+     * request.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the work request.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the work
+     * request.
      *
      * @return the value
      */
@@ -864,15 +862,15 @@ public final class WorkRequest extends com.oracle.bmc.http.client.internal.Expli
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the parent work request, if there is any.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * parent work request, if there is any.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("parentId")
     private final String parentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the parent work request, if there is any.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * parent work request, if there is any.
      *
      * @return the value
      */
@@ -881,17 +879,15 @@ public final class WorkRequest extends com.oracle.bmc.http.client.internal.Expli
     }
 
     /**
-     * The list of
-     * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
-     * child work requests.
+     * The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * for the child work requests.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("childrenId")
     private final java.util.List<String> childrenId;
 
     /**
-     * The list of
-     * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
-     * child work requests.
+     * The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * for the child work requests.
      *
      * @return the value
      */
@@ -900,8 +896,8 @@ public final class WorkRequest extends com.oracle.bmc.http.client.internal.Expli
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compartment that contains the work request. Work requests should be scoped to the same
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment that contains the work request. Work requests should be scoped to the same
      * compartment as the resource it affects. If the work request affects multiple resources the
      * different compartments, the services selects the compartment of the primary resource.
      */
@@ -909,8 +905,8 @@ public final class WorkRequest extends com.oracle.bmc.http.client.internal.Expli
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compartment that contains the work request. Work requests should be scoped to the same
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment that contains the work request. Work requests should be scoped to the same
      * compartment as the resource it affects. If the work request affects multiple resources the
      * different compartments, the services selects the compartment of the primary resource.
      *
@@ -921,17 +917,15 @@ public final class WorkRequest extends com.oracle.bmc.http.client.internal.Expli
     }
 
     /**
-     * The list of
-     * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
-     * resources affected by the work request.
+     * The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * for the resources affected by the work request.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("resources")
     private final java.util.List<WorkRequestResource> resources;
 
     /**
-     * The list of
-     * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
-     * resources affected by the work request.
+     * The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * for the resources affected by the work request.
      *
      * @return the value
      */
@@ -1064,15 +1058,15 @@ public final class WorkRequest extends com.oracle.bmc.http.client.internal.Expli
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the resource that initiated the work request.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * resource that initiated the work request.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("initiatorId")
     private final String initiatorId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the resource that initiated the work request.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * resource that initiated the work request.
      *
      * @return the value
      */
@@ -1154,15 +1148,15 @@ public final class WorkRequest extends com.oracle.bmc.http.client.internal.Expli
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the original work request that is being retried.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * original work request that is being retried.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("retryOfId")
     private final String retryOfId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the original work request that is being retried.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * original work request that is being retried.
      *
      * @return the value
      */
@@ -1171,15 +1165,15 @@ public final class WorkRequest extends com.oracle.bmc.http.client.internal.Expli
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the original work request that is being rerun.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * original work request that is being rerun.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("rerunOfId")
     private final String rerunOfId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the original work request that is being rerun.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * original work request that is being rerun.
      *
      * @return the value
      */

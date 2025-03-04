@@ -7,7 +7,7 @@ package com.oracle.bmc.mysql.requests;
 import com.oracle.bmc.mysql.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/GetBackupExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/GetBackupExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use GetBackupRequest.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190415")

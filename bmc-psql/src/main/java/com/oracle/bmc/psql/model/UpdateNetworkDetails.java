@@ -34,16 +34,16 @@ public final class UpdateNetworkDetails
     public static class Builder {
         /**
          * List of Network Security Group
-         * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
-         * associated with the database system.
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated
+         * with the database system.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
         private java.util.List<String> nsgIds;
 
         /**
          * List of Network Security Group
-         * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
-         * associated with the database system.
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated
+         * with the database system.
          *
          * @param nsgIds the value to set
          * @return this builder
@@ -104,7 +104,7 @@ public final class UpdateNetworkDetails
 
     /**
      * List of Network Security Group
-     * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) associated
+     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated
      * with the database system.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
@@ -112,7 +112,7 @@ public final class UpdateNetworkDetails
 
     /**
      * List of Network Security Group
-     * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) associated
+     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated
      * with the database system.
      *
      * @return the value

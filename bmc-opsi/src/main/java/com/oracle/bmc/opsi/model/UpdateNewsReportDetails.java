@@ -125,15 +125,15 @@ public final class UpdateNewsReportDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the ONS topic.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * ONS topic.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("onsTopicId")
         private String onsTopicId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the ONS topic.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * ONS topic.
          *
          * @param onsTopicId the value to set
          * @return this builder
@@ -407,15 +407,15 @@ public final class UpdateNewsReportDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the ONS topic.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ONS
+     * topic.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("onsTopicId")
     private final String onsTopicId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the ONS topic.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ONS
+     * topic.
      *
      * @return the value
      */

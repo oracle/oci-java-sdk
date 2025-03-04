@@ -33,14 +33,14 @@ public final class ValidateKeyTabsDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * mount target whose keytabs are to be validated.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("mountTargetId")
         private String mountTargetId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * mount target whose keytabs are to be validated.
          *
          * @param mountTargetId the value to set
@@ -95,14 +95,14 @@ public final class ValidateKeyTabsDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * mount target whose keytabs are to be validated.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("mountTargetId")
     private final String mountTargetId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * mount target whose keytabs are to be validated.
      *
      * @return the value

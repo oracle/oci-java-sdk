@@ -510,14 +510,14 @@ public final class UndeleteAutonomousDatabaseDetails extends CreateAutonomousDat
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Autonomous Database that you want to undelete.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("sourceId")
         private String sourceId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Autonomous Database that you want to undelete.
          *
          * @param sourceId the value to set
@@ -888,14 +888,14 @@ public final class UndeleteAutonomousDatabaseDetails extends CreateAutonomousDat
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Autonomous Database that you want to undelete.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("sourceId")
     private final String sourceId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Autonomous Database that you want to undelete.
      *
      * @return the value

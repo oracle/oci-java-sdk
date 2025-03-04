@@ -11,7 +11,7 @@ import com.oracle.bmc.opsi.responses.*;
  * Use the Ops Insights API to perform data extraction operations to obtain database resource
  * utilization, performance statistics, and reference information. For more information, see [About
  * Oracle Cloud Infrastructure Ops
- * Insights](https://docs.cloud.oracle.com/en-us/iaas/operations-insights/doc/operations-insights.html).
+ * Insights](https://docs.oracle.com/iaas/en-us/iaas/operations-insights/doc/operations-insights.html).
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 public interface OperationsInsightsAsync extends AutoCloseable {

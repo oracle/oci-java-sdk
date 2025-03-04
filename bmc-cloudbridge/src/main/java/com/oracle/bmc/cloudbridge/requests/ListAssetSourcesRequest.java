@@ -7,7 +7,7 @@ package com.oracle.bmc.cloudbridge.requests;
 import com.oracle.bmc.cloudbridge.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/ListAssetSourcesExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/ListAssetSourcesExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListAssetSourcesRequest.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220509")
@@ -21,13 +21,13 @@ public class ListAssetSourcesRequest extends com.oracle.bmc.requests.BmcRequest<
         return compartmentId;
     }
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * asset source.
      */
     private String assetSourceId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * asset source.
      */
     public String getAssetSourceId() {
@@ -153,13 +153,13 @@ public class ListAssetSourcesRequest extends com.oracle.bmc.requests.BmcRequest<
         }
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * asset source.
          */
         private String assetSourceId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * asset source.
          *
          * @param assetSourceId the value to set

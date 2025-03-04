@@ -139,7 +139,7 @@ public final class UpdateGoogleCloudStorageConnectionDetails extends UpdateConne
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Secret where the content of the service account key file is stored, which containing the
          * credentials required to use Google Cloud Storage. Note: When provided,
          * 'serviceAccountKeyFile' field must not be provided.
@@ -148,7 +148,7 @@ public final class UpdateGoogleCloudStorageConnectionDetails extends UpdateConne
         private String serviceAccountKeyFileSecretId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Secret where the content of the service account key file is stored, which containing the
          * credentials required to use Google Cloud Storage. Note: When provided,
          * 'serviceAccountKeyFile' field must not be provided.
@@ -286,7 +286,7 @@ public final class UpdateGoogleCloudStorageConnectionDetails extends UpdateConne
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Secret where the content of the service account key file is stored, which containing the
      * credentials required to use Google Cloud Storage. Note: When provided,
      * 'serviceAccountKeyFile' field must not be provided.
@@ -295,7 +295,7 @@ public final class UpdateGoogleCloudStorageConnectionDetails extends UpdateConne
     private final String serviceAccountKeyFileSecretId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Secret where the content of the service account key file is stored, which containing the
      * credentials required to use Google Cloud Storage. Note: When provided,
      * 'serviceAccountKeyFile' field must not be provided.

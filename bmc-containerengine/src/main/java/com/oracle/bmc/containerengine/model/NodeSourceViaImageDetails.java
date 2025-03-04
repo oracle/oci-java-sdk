@@ -44,7 +44,7 @@ public final class NodeSourceViaImageDetails extends NodeSourceDetails {
         }
         /**
          * The size of the boot volume in GBs. Minimum value is 50 GB. See
-         * [here](https://docs.cloud.oracle.com/en-us/iaas/Content/Block/Concepts/bootvolumes.htm)
+         * [here](https://docs.oracle.com/iaas/en-us/iaas/Content/Block/Concepts/bootvolumes.htm)
          * for max custom boot volume sizing and OS-specific requirements.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("bootVolumeSizeInGBs")
@@ -52,7 +52,7 @@ public final class NodeSourceViaImageDetails extends NodeSourceDetails {
 
         /**
          * The size of the boot volume in GBs. Minimum value is 50 GB. See
-         * [here](https://docs.cloud.oracle.com/en-us/iaas/Content/Block/Concepts/bootvolumes.htm)
+         * [here](https://docs.oracle.com/iaas/en-us/iaas/Content/Block/Concepts/bootvolumes.htm)
          * for max custom boot volume sizing and OS-specific requirements.
          *
          * @param bootVolumeSizeInGBs the value to set
@@ -119,7 +119,7 @@ public final class NodeSourceViaImageDetails extends NodeSourceDetails {
 
     /**
      * The size of the boot volume in GBs. Minimum value is 50 GB. See
-     * [here](https://docs.cloud.oracle.com/en-us/iaas/Content/Block/Concepts/bootvolumes.htm) for
+     * [here](https://docs.oracle.com/iaas/en-us/iaas/Content/Block/Concepts/bootvolumes.htm) for
      * max custom boot volume sizing and OS-specific requirements.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("bootVolumeSizeInGBs")
@@ -127,7 +127,7 @@ public final class NodeSourceViaImageDetails extends NodeSourceDetails {
 
     /**
      * The size of the boot volume in GBs. Minimum value is 50 GB. See
-     * [here](https://docs.cloud.oracle.com/en-us/iaas/Content/Block/Concepts/bootvolumes.htm) for
+     * [here](https://docs.oracle.com/iaas/en-us/iaas/Content/Block/Concepts/bootvolumes.htm) for
      * max custom boot volume sizing and OS-specific requirements.
      *
      * @return the value

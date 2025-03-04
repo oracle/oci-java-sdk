@@ -11,7 +11,7 @@ import com.oracle.bmc.email.responses.*;
  * Use the Email Delivery API to do the necessary set up to send high-volume and
  * application-generated emails through the OCI Email Delivery service. For more information, see
  * [Overview of the Email Delivery
- * Service](https://docs.cloud.oracle.com/iaas/Content/Email/Concepts/overview.htm).
+ * Service](https://docs.oracle.com/iaas/Content/Email/Concepts/overview.htm).
  *
  * <p>*Note:** Write actions (POST, UPDATE, DELETE) may take several minutes to propagate and be
  * reflected by the API. If a subsequent read request fails to reflect your changes, wait a few
@@ -72,7 +72,7 @@ public interface EmailAsync extends AutoCloseable {
      * Moves an email domain into a different compartment. When provided, If-Match is checked
      * against ETag value of the resource. For information about moving resources between
      * compartments, see [Moving Resources to a Different
-     * Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
      * <p>*Note:** All DKIM objects associated with this email domain will also be moved into the
      * provided compartment.
@@ -552,7 +552,7 @@ public interface EmailAsync extends AutoCloseable {
      * tags are omitted, the tags for that set remain the same. Each set must include the full set
      * of tags for the sender, partial updates are not permitted. For more information about
      * tagging, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.

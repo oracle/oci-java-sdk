@@ -84,7 +84,7 @@ public final class CreateWebAppAccelerationLoadBalancerDetails
         }
         /**
          * LoadBalancer
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) to which
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to which
          * the WebAppAccelerationPolicy is attached to.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("loadBalancerId")
@@ -92,7 +92,7 @@ public final class CreateWebAppAccelerationLoadBalancerDetails
 
         /**
          * LoadBalancer
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) to which
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to which
          * the WebAppAccelerationPolicy is attached to.
          *
          * @param loadBalancerId the value to set
@@ -179,15 +179,15 @@ public final class CreateWebAppAccelerationLoadBalancerDetails
     }
 
     /**
-     * LoadBalancer [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
-     * to which the WebAppAccelerationPolicy is attached to.
+     * LoadBalancer [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to
+     * which the WebAppAccelerationPolicy is attached to.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("loadBalancerId")
     private final String loadBalancerId;
 
     /**
-     * LoadBalancer [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
-     * to which the WebAppAccelerationPolicy is attached to.
+     * LoadBalancer [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to
+     * which the WebAppAccelerationPolicy is attached to.
      *
      * @return the value
      */

@@ -7,7 +7,7 @@ package com.oracle.bmc.mysql.requests;
 import com.oracle.bmc.mysql.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/ListReplicasExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/ListReplicasExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListReplicasRequest.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190415")
@@ -15,13 +15,13 @@ public class ListReplicasRequest extends com.oracle.bmc.requests.BmcRequest<java
 
     /**
      * The compartment
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     private String compartmentId;
 
     /**
      * The compartment
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     public String getCompartmentId() {
         return compartmentId;
@@ -44,14 +44,14 @@ public class ListReplicasRequest extends com.oracle.bmc.requests.BmcRequest<java
     /**
      * The maximum number of items to return in a paginated list call. For information about
      * pagination, see [List
-     * Pagination](https://docs.cloud.oracle.com/#API/Concepts/usingapi.htm#List_Pagination).
+     * Pagination](https://docs.oracle.com/iaas/#API/Concepts/usingapi.htm#List_Pagination).
      */
     private Integer limit;
 
     /**
      * The maximum number of items to return in a paginated list call. For information about
      * pagination, see [List
-     * Pagination](https://docs.cloud.oracle.com/#API/Concepts/usingapi.htm#List_Pagination).
+     * Pagination](https://docs.oracle.com/iaas/#API/Concepts/usingapi.htm#List_Pagination).
      */
     public Integer getLimit() {
         return limit;
@@ -59,14 +59,14 @@ public class ListReplicasRequest extends com.oracle.bmc.requests.BmcRequest<java
     /**
      * The value of the {@code opc-next-page} or {@code opc-prev-page} response header from the
      * previous list call. For information about pagination, see [List
-     * Pagination](https://docs.cloud.oracle.com/#API/Concepts/usingapi.htm#List_Pagination).
+     * Pagination](https://docs.oracle.com/iaas/#API/Concepts/usingapi.htm#List_Pagination).
      */
     private String page;
 
     /**
      * The value of the {@code opc-next-page} or {@code opc-prev-page} response header from the
      * previous list call. For information about pagination, see [List
-     * Pagination](https://docs.cloud.oracle.com/#API/Concepts/usingapi.htm#List_Pagination).
+     * Pagination](https://docs.oracle.com/iaas/#API/Concepts/usingapi.htm#List_Pagination).
      */
     public String getPage() {
         return page;
@@ -79,12 +79,12 @@ public class ListReplicasRequest extends com.oracle.bmc.requests.BmcRequest<java
         return displayName;
     }
     /**
-     * The DB System [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * The DB System [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     private String dbSystemId;
 
     /**
-     * The DB System [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * The DB System [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     public String getDbSystemId() {
         return dbSystemId;
@@ -98,13 +98,13 @@ public class ListReplicasRequest extends com.oracle.bmc.requests.BmcRequest<java
     }
     /**
      * The read replica
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     private String replicaId;
 
     /**
      * The read replica
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     public String getReplicaId() {
         return replicaId;
@@ -229,13 +229,13 @@ public class ListReplicasRequest extends com.oracle.bmc.requests.BmcRequest<java
 
         /**
          * The compartment
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          */
         private String compartmentId = null;
 
         /**
          * The compartment
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          * @param compartmentId the value to set
          * @return this builder instance
@@ -268,14 +268,14 @@ public class ListReplicasRequest extends com.oracle.bmc.requests.BmcRequest<java
         /**
          * The maximum number of items to return in a paginated list call. For information about
          * pagination, see [List
-         * Pagination](https://docs.cloud.oracle.com/#API/Concepts/usingapi.htm#List_Pagination).
+         * Pagination](https://docs.oracle.com/iaas/#API/Concepts/usingapi.htm#List_Pagination).
          */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return in a paginated list call. For information about
          * pagination, see [List
-         * Pagination](https://docs.cloud.oracle.com/#API/Concepts/usingapi.htm#List_Pagination).
+         * Pagination](https://docs.oracle.com/iaas/#API/Concepts/usingapi.htm#List_Pagination).
          *
          * @param limit the value to set
          * @return this builder instance
@@ -288,14 +288,14 @@ public class ListReplicasRequest extends com.oracle.bmc.requests.BmcRequest<java
         /**
          * The value of the {@code opc-next-page} or {@code opc-prev-page} response header from the
          * previous list call. For information about pagination, see [List
-         * Pagination](https://docs.cloud.oracle.com/#API/Concepts/usingapi.htm#List_Pagination).
+         * Pagination](https://docs.oracle.com/iaas/#API/Concepts/usingapi.htm#List_Pagination).
          */
         private String page = null;
 
         /**
          * The value of the {@code opc-next-page} or {@code opc-prev-page} response header from the
          * previous list call. For information about pagination, see [List
-         * Pagination](https://docs.cloud.oracle.com/#API/Concepts/usingapi.htm#List_Pagination).
+         * Pagination](https://docs.oracle.com/iaas/#API/Concepts/usingapi.htm#List_Pagination).
          *
          * @param page the value to set
          * @return this builder instance
@@ -321,13 +321,13 @@ public class ListReplicasRequest extends com.oracle.bmc.requests.BmcRequest<java
 
         /**
          * The DB System
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          */
         private String dbSystemId = null;
 
         /**
          * The DB System
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          * @param dbSystemId the value to set
          * @return this builder instance
@@ -354,13 +354,13 @@ public class ListReplicasRequest extends com.oracle.bmc.requests.BmcRequest<java
 
         /**
          * The read replica
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          */
         private String replicaId = null;
 
         /**
          * The read replica
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          * @param replicaId the value to set
          * @return this builder instance

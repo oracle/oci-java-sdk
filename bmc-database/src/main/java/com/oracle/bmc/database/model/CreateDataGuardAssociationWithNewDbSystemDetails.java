@@ -192,7 +192,7 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
         /**
          * The block storage volume performance level. Valid values are {@code BALANCED} and {@code
          * HIGH_PERFORMANCE}. See [Block Volume
-         * Performance](https://docs.cloud.oracle.com/Content/Block/Concepts/blockvolumeperformance.htm)
+         * Performance](https://docs.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm)
          * for more information.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("storageVolumePerformanceMode")
@@ -201,7 +201,7 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
         /**
          * The block storage volume performance level. Valid values are {@code BALANCED} and {@code
          * HIGH_PERFORMANCE}. See [Block Volume
-         * Performance](https://docs.cloud.oracle.com/Content/Block/Concepts/blockvolumeperformance.htm)
+         * Performance](https://docs.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm)
          * for more information.
          *
          * @param storageVolumePerformanceMode the value to set
@@ -263,24 +263,24 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
         }
         /**
          * The list of
-         * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) for the
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
          * network security groups (NSGs) to which this resource belongs. Setting this to an empty
          * list removes all resources from all NSGs. For more information about NSGs, see [Security
-         * Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm).
-         * **NsgIds restrictions:** - A network security group (NSG) is optional for Autonomous
-         * Databases with private access. The nsgIds list can be empty.
+         * Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds
+         * restrictions:** - A network security group (NSG) is optional for Autonomous Databases
+         * with private access. The nsgIds list can be empty.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
         private java.util.List<String> nsgIds;
 
         /**
          * The list of
-         * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) for the
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
          * network security groups (NSGs) to which this resource belongs. Setting this to an empty
          * list removes all resources from all NSGs. For more information about NSGs, see [Security
-         * Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm).
-         * **NsgIds restrictions:** - A network security group (NSG) is optional for Autonomous
-         * Databases with private access. The nsgIds list can be empty.
+         * Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds
+         * restrictions:** - A network security group (NSG) is optional for Autonomous Databases
+         * with private access. The nsgIds list can be empty.
          *
          * @param nsgIds the value to set
          * @return this builder
@@ -292,11 +292,11 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
         }
         /**
          * A list of the
-         * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * network security groups (NSGs) that the backup network of this DB system belongs to.
          * Setting this to an empty array after the list is created removes the resource from all
          * NSGs. For more information about NSGs, see [Security
-         * Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm).
+         * Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
          * Applicable only to Exadata systems.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("backupNetworkNsgIds")
@@ -304,11 +304,11 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
 
         /**
          * A list of the
-         * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * network security groups (NSGs) that the backup network of this DB system belongs to.
          * Setting this to an empty array after the list is created removes the resource from all
          * NSGs. For more information about NSGs, see [Security
-         * Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm).
+         * Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
          * Applicable only to Exadata systems.
          *
          * @param backupNetworkNsgIds the value to set
@@ -357,14 +357,14 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
         }
         /**
          * The time zone of the dataguard standby DB system. For details, see [DB System Time
-         * Zones](https://docs.cloud.oracle.com/Content/Database/References/timezones.htm).
+         * Zones](https://docs.oracle.com/iaas/Content/Database/References/timezones.htm).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("timeZone")
         private String timeZone;
 
         /**
          * The time zone of the dataguard standby DB system. For details, see [DB System Time
-         * Zones](https://docs.cloud.oracle.com/Content/Database/References/timezones.htm).
+         * Zones](https://docs.oracle.com/iaas/Content/Database/References/timezones.htm).
          *
          * @param timeZone the value to set
          * @return this builder
@@ -487,7 +487,7 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          */
@@ -497,7 +497,7 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          *
@@ -512,7 +512,7 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("dbSystemDefinedTags")
         private java.util.Map<String, java.util.Map<String, Object>> dbSystemDefinedTags;
@@ -520,7 +520,7 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * @param dbSystemDefinedTags the value to set
          * @return this builder
@@ -534,8 +534,8 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
         /**
          * Security Attributes for this resource. Each key is predefined and scoped to a namespace.
          * For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+         * {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("dbSystemSecurityAttributes")
         private java.util.Map<String, java.util.Map<String, Object>> dbSystemSecurityAttributes;
@@ -543,8 +543,8 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
         /**
          * Security Attributes for this resource. Each key is predefined and scoped to a namespace.
          * For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+         * {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
          *
          * @param dbSystemSecurityAttributes the value to set
          * @return this builder
@@ -558,7 +558,7 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          */
@@ -568,7 +568,7 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          *
@@ -583,7 +583,7 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("databaseDefinedTags")
         private java.util.Map<String, java.util.Map<String, Object>> databaseDefinedTags;
@@ -591,7 +591,7 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * @param databaseDefinedTags the value to set
          * @return this builder
@@ -902,7 +902,7 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
     /**
      * The block storage volume performance level. Valid values are {@code BALANCED} and {@code
      * HIGH_PERFORMANCE}. See [Block Volume
-     * Performance](https://docs.cloud.oracle.com/Content/Block/Concepts/blockvolumeperformance.htm)
+     * Performance](https://docs.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm)
      * for more information.
      */
     public enum StorageVolumePerformanceMode implements com.oracle.bmc.http.internal.BmcEnum {
@@ -940,7 +940,7 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
     /**
      * The block storage volume performance level. Valid values are {@code BALANCED} and {@code
      * HIGH_PERFORMANCE}. See [Block Volume
-     * Performance](https://docs.cloud.oracle.com/Content/Block/Concepts/blockvolumeperformance.htm)
+     * Performance](https://docs.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm)
      * for more information.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("storageVolumePerformanceMode")
@@ -949,7 +949,7 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
     /**
      * The block storage volume performance level. Valid values are {@code BALANCED} and {@code
      * HIGH_PERFORMANCE}. See [Block Volume
-     * Performance](https://docs.cloud.oracle.com/Content/Block/Concepts/blockvolumeperformance.htm)
+     * Performance](https://docs.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm)
      * for more information.
      *
      * @return the value
@@ -1003,10 +1003,10 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
     }
 
     /**
-     * The list of [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     * The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      * for the network security groups (NSGs) to which this resource belongs. Setting this to an
      * empty list removes all resources from all NSGs. For more information about NSGs, see
-     * [Security Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm).
+     * [Security Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
      * **NsgIds restrictions:** - A network security group (NSG) is optional for Autonomous
      * Databases with private access. The nsgIds list can be empty.
      */
@@ -1014,10 +1014,10 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
     private final java.util.List<String> nsgIds;
 
     /**
-     * The list of [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     * The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      * for the network security groups (NSGs) to which this resource belongs. Setting this to an
      * empty list removes all resources from all NSGs. For more information about NSGs, see
-     * [Security Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm).
+     * [Security Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
      * **NsgIds restrictions:** - A network security group (NSG) is optional for Autonomous
      * Databases with private access. The nsgIds list can be empty.
      *
@@ -1028,22 +1028,22 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
     }
 
     /**
-     * A list of the [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     * A list of the [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      * of the network security groups (NSGs) that the backup network of this DB system belongs to.
      * Setting this to an empty array after the list is created removes the resource from all NSGs.
      * For more information about NSGs, see [Security
-     * Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm). Applicable
+     * Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable
      * only to Exadata systems.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("backupNetworkNsgIds")
     private final java.util.List<String> backupNetworkNsgIds;
 
     /**
-     * A list of the [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     * A list of the [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      * of the network security groups (NSGs) that the backup network of this DB system belongs to.
      * Setting this to an empty array after the list is created removes the resource from all NSGs.
      * For more information about NSGs, see [Security
-     * Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm). Applicable
+     * Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable
      * only to Exadata systems.
      *
      * @return the value
@@ -1086,14 +1086,14 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
 
     /**
      * The time zone of the dataguard standby DB system. For details, see [DB System Time
-     * Zones](https://docs.cloud.oracle.com/Content/Database/References/timezones.htm).
+     * Zones](https://docs.oracle.com/iaas/Content/Database/References/timezones.htm).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("timeZone")
     private final String timeZone;
 
     /**
      * The time zone of the dataguard standby DB system. For details, see [DB System Time
-     * Zones](https://docs.cloud.oracle.com/Content/Database/References/timezones.htm).
+     * Zones](https://docs.oracle.com/iaas/Content/Database/References/timezones.htm).
      *
      * @return the value
      */
@@ -1241,7 +1241,7 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      */
@@ -1251,7 +1251,7 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      *
@@ -1264,7 +1264,7 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("dbSystemDefinedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> dbSystemDefinedTags;
@@ -1272,7 +1272,7 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * @return the value
      */
@@ -1283,7 +1283,7 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
     /**
      * Security Attributes for this resource. Each key is predefined and scoped to a namespace. For
      * more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("dbSystemSecurityAttributes")
@@ -1292,7 +1292,7 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
     /**
      * Security Attributes for this resource. Each key is predefined and scoped to a namespace. For
      * more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
      *
      * @return the value
@@ -1304,7 +1304,7 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      */
@@ -1314,7 +1314,7 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      *
@@ -1327,7 +1327,7 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("databaseDefinedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> databaseDefinedTags;
@@ -1335,7 +1335,7 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * @return the value
      */

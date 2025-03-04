@@ -110,7 +110,7 @@ public final class CreateMaintenanceRunDetails
          *
          * <p>IMPORTANT*: Non-rolling infrastructure patching involves system down time. See
          * [Oracle-Managed Infrastructure Maintenance
-         * Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle)
+         * Updates](https://docs.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle)
          * for more information.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("patchingMode")
@@ -122,7 +122,7 @@ public final class CreateMaintenanceRunDetails
          *
          * <p>IMPORTANT*: Non-rolling infrastructure patching involves system down time. See
          * [Oracle-Managed Infrastructure Maintenance
-         * Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle)
+         * Updates](https://docs.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle)
          * for more information.
          *
          * @param patchingMode the value to set
@@ -149,14 +149,14 @@ public final class CreateMaintenanceRunDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * compartment containing the Maintenance Run.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * compartment containing the Maintenance Run.
          *
          * @param compartmentId the value to set
@@ -169,14 +169,14 @@ public final class CreateMaintenanceRunDetails
         }
         /**
          * The Autonomous Database Software Image
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
          */
         @com.fasterxml.jackson.annotation.JsonProperty("databaseSoftwareImageId")
         private String databaseSoftwareImageId;
 
         /**
          * The Autonomous Database Software Image
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
          *
          * @param databaseSoftwareImageId the value to set
          * @return this builder
@@ -293,7 +293,7 @@ public final class CreateMaintenanceRunDetails
      *
      * <p>IMPORTANT*: Non-rolling infrastructure patching involves system down time. See
      * [Oracle-Managed Infrastructure Maintenance
-     * Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle)
+     * Updates](https://docs.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle)
      * for more information.
      */
     public enum PatchingMode implements com.oracle.bmc.http.internal.BmcEnum {
@@ -334,7 +334,7 @@ public final class CreateMaintenanceRunDetails
      *
      * <p>IMPORTANT*: Non-rolling infrastructure patching involves system down time. See
      * [Oracle-Managed Infrastructure Maintenance
-     * Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle)
+     * Updates](https://docs.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle)
      * for more information.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("patchingMode")
@@ -346,7 +346,7 @@ public final class CreateMaintenanceRunDetails
      *
      * <p>IMPORTANT*: Non-rolling infrastructure patching involves system down time. See
      * [Oracle-Managed Infrastructure Maintenance
-     * Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle)
+     * Updates](https://docs.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle)
      * for more information.
      *
      * @return the value
@@ -403,14 +403,14 @@ public final class CreateMaintenanceRunDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment containing the Maintenance Run.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment containing the Maintenance Run.
      *
      * @return the value
@@ -421,14 +421,14 @@ public final class CreateMaintenanceRunDetails
 
     /**
      * The Autonomous Database Software Image
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      */
     @com.fasterxml.jackson.annotation.JsonProperty("databaseSoftwareImageId")
     private final String databaseSoftwareImageId;
 
     /**
      * The Autonomous Database Software Image
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      *
      * @return the value
      */

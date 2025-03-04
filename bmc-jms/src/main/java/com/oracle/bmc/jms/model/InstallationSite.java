@@ -84,14 +84,14 @@ public final class InstallationSite
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * related managed instance.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("managedInstanceId")
         private String managedInstanceId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * related managed instance.
          *
          * @param managedInstanceId the value to set
@@ -323,14 +323,14 @@ public final class InstallationSite
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * related managed instance.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("managedInstanceId")
     private final String managedInstanceId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * related managed instance.
      *
      * @return the value

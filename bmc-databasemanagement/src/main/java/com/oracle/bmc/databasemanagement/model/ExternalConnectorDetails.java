@@ -28,14 +28,14 @@ public final class ExternalConnectorDetails extends ConnectorDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * external database connector.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("databaseConnectorId")
         private String databaseConnectorId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * external database connector.
          *
          * @param databaseConnectorId the value to set
@@ -83,14 +83,14 @@ public final class ExternalConnectorDetails extends ConnectorDetails {
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * external database connector.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("databaseConnectorId")
     private final String databaseConnectorId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * external database connector.
      *
      * @return the value

@@ -8,7 +8,7 @@ package com.oracle.bmc.securityattribute.model;
  * A security attribute that belongs to a specific security attribute namespace. Security attributes
  * must be created in a tenancy before a user can apply them to resources. For more information, see
  * [Managing Security
- * Attributes](https://docs.cloud.oracle.com/Content/zero-trust-packet-routing/managing-security-attributes.htm).
+ * Attributes](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/managing-security-attributes.htm).
  *
  * <p>*Warning:** Oracle recommends that you avoid using any confidential information when you
  * supply string values using the API. <br>
@@ -187,14 +187,14 @@ public final class SecurityAttribute
         }
         /**
          * Indicates whether the security attribute is retired. See [Managing Security Attribute
-         * Namespaces](https://docs.cloud.oracle.com/Content/zero-trust-packet-routing/managing-security-attribute-namespaces.htm).
+         * Namespaces](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/managing-security-attribute-namespaces.htm).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("isRetired")
         private Boolean isRetired;
 
         /**
          * Indicates whether the security attribute is retired. See [Managing Security Attribute
-         * Namespaces](https://docs.cloud.oracle.com/Content/zero-trust-packet-routing/managing-security-attribute-namespaces.htm).
+         * Namespaces](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/managing-security-attribute-namespaces.htm).
          *
          * @param isRetired the value to set
          * @return this builder
@@ -430,14 +430,14 @@ public final class SecurityAttribute
 
     /**
      * Indicates whether the security attribute is retired. See [Managing Security Attribute
-     * Namespaces](https://docs.cloud.oracle.com/Content/zero-trust-packet-routing/managing-security-attribute-namespaces.htm).
+     * Namespaces](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/managing-security-attribute-namespaces.htm).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("isRetired")
     private final Boolean isRetired;
 
     /**
      * Indicates whether the security attribute is retired. See [Managing Security Attribute
-     * Namespaces](https://docs.cloud.oracle.com/Content/zero-trust-packet-routing/managing-security-attribute-namespaces.htm).
+     * Namespaces](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/managing-security-attribute-namespaces.htm).
      *
      * @return the value
      */

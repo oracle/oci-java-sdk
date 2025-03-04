@@ -48,7 +48,7 @@ public final class AssetSourceCredentials
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * secret in a vault. If the type of the credentials is {@code BASIC}, the secret must
          * contain the username and password in JSON format, which is in the form of {@code {
          * "username": "<User>", "password": "example-password" }}. If the type of the credentials
@@ -60,7 +60,7 @@ public final class AssetSourceCredentials
         private String secretId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * secret in a vault. If the type of the credentials is {@code BASIC}, the secret must
          * contain the username and password in JSON format, which is in the form of {@code {
          * "username": "<User>", "password": "example-password" }}. If the type of the credentials
@@ -123,7 +123,7 @@ public final class AssetSourceCredentials
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * secret in a vault. If the type of the credentials is {@code BASIC}, the secret must contain
      * the username and password in JSON format, which is in the form of {@code { "username":
      * "<User>", "password": "example-password" }}. If the type of the credentials is {@code
@@ -135,7 +135,7 @@ public final class AssetSourceCredentials
     private final String secretId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * secret in a vault. If the type of the credentials is {@code BASIC}, the secret must contain
      * the username and password in JSON format, which is in the form of {@code { "username":
      * "<User>", "password": "example-password" }}. If the type of the credentials is {@code

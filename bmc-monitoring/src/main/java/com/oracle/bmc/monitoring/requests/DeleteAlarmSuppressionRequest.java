@@ -7,7 +7,7 @@ package com.oracle.bmc.monitoring.requests;
 import com.oracle.bmc.monitoring.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/monitoring/DeleteAlarmSuppressionExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/monitoring/DeleteAlarmSuppressionExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * DeleteAlarmSuppressionRequest.
  */
@@ -16,14 +16,14 @@ public class DeleteAlarmSuppressionRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the alarm suppression.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * alarm suppression.
      */
     private String alarmSuppressionId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the alarm suppression.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * alarm suppression.
      */
     public String getAlarmSuppressionId() {
         return alarmSuppressionId;
@@ -66,14 +66,14 @@ public class DeleteAlarmSuppressionRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the alarm suppression.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * alarm suppression.
          */
         private String alarmSuppressionId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the alarm suppression.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * alarm suppression.
          *
          * @param alarmSuppressionId the value to set
          * @return this builder instance

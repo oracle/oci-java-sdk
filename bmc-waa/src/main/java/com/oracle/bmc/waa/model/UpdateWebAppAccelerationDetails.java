@@ -62,7 +62,7 @@ public final class UpdateWebAppAccelerationDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
          * WebAppAccelerationPolicy, which is attached to the resource. This update guarantees that
          * the resource always has WebAppAccelerationPolicy attached at any time.
          */
@@ -70,7 +70,7 @@ public final class UpdateWebAppAccelerationDetails
         private String webAppAccelerationPolicyId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
          * WebAppAccelerationPolicy, which is attached to the resource. This update guarantees that
          * the resource always has WebAppAccelerationPolicy attached at any time.
          *
@@ -202,7 +202,7 @@ public final class UpdateWebAppAccelerationDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
      * WebAppAccelerationPolicy, which is attached to the resource. This update guarantees that the
      * resource always has WebAppAccelerationPolicy attached at any time.
      */
@@ -210,7 +210,7 @@ public final class UpdateWebAppAccelerationDetails
     private final String webAppAccelerationPolicyId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
      * WebAppAccelerationPolicy, which is attached to the resource. This update guarantees that the
      * resource always has WebAppAccelerationPolicy attached at any time.
      *

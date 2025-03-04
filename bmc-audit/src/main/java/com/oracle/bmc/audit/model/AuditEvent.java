@@ -6,7 +6,7 @@ package com.oracle.bmc.audit.model;
 
 /**
  * All the attributes of an audit event. For more information, see [Viewing Audit Log
- * Events](https://docs.cloud.oracle.com/iaas/Content/Audit/Tasks/viewinglogevents.htm). <br>
+ * Events](https://docs.oracle.com/iaas/Content/Audit/Tasks/viewinglogevents.htm). <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a

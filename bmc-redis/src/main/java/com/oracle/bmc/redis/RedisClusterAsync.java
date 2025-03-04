@@ -10,7 +10,7 @@ import com.oracle.bmc.redis.responses.*;
 /**
  * Use the OCI Cache API to create and manage clusters. A cluster is a memory-based storage
  * solution. For more information, see [OCI
- * Cache](https://docs.cloud.oracle.com/iaas/Content/ocicache/home.htm).
+ * Cache](https://docs.oracle.com/iaas/Content/ocicache/home.htm).
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220315")
 public interface RedisClusterAsync extends AutoCloseable {
@@ -82,7 +82,7 @@ public interface RedisClusterAsync extends AutoCloseable {
     /**
      * Moves an OCI Cache cluster into a different compartment within the same tenancy. A cluster is
      * a memory-based storage solution. For more information, see [OCI
-     * Cache](https://docs.cloud.oracle.com/iaas/Content/ocicache/home.htm).
+     * Cache](https://docs.oracle.com/iaas/Content/ocicache/home.htm).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -101,7 +101,7 @@ public interface RedisClusterAsync extends AutoCloseable {
 
     /**
      * Creates a new OCI Cache cluster. A cluster is a memory-based storage solution. For more
-     * information, see [OCI Cache](https://docs.cloud.oracle.com/iaas/Content/ocicache/home.htm).
+     * information, see [OCI Cache](https://docs.oracle.com/iaas/Content/ocicache/home.htm).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -118,8 +118,7 @@ public interface RedisClusterAsync extends AutoCloseable {
 
     /**
      * Deletes the specified OCI Cache cluster. A cluster is a memory-based storage solution. For
-     * more information, see [OCI
-     * Cache](https://docs.cloud.oracle.com/iaas/Content/ocicache/home.htm).
+     * more information, see [OCI Cache](https://docs.oracle.com/iaas/Content/ocicache/home.htm).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -136,8 +135,7 @@ public interface RedisClusterAsync extends AutoCloseable {
 
     /**
      * Retrieves the specified OCI Cache cluster. A cluster is a memory-based storage solution. For
-     * more information, see [OCI
-     * Cache](https://docs.cloud.oracle.com/iaas/Content/ocicache/home.htm).
+     * more information, see [OCI Cache](https://docs.oracle.com/iaas/Content/ocicache/home.htm).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -185,7 +183,7 @@ public interface RedisClusterAsync extends AutoCloseable {
     /**
      * Lists the OCI Cache clusters in the specified compartment. A cluster is a memory-based
      * storage solution. For more information, see [OCI
-     * Cache](https://docs.cloud.oracle.com/iaas/Content/ocicache/home.htm).
+     * Cache](https://docs.oracle.com/iaas/Content/ocicache/home.htm).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -249,8 +247,7 @@ public interface RedisClusterAsync extends AutoCloseable {
 
     /**
      * Updates the specified OCI Cache cluster. A cluster is a memory-based storage solution. For
-     * more information, see [OCI
-     * Cache](https://docs.cloud.oracle.com/iaas/Content/ocicache/home.htm).
+     * more information, see [OCI Cache](https://docs.oracle.com/iaas/Content/ocicache/home.htm).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.

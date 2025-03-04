@@ -54,14 +54,14 @@ public final class ReinstateDataGuardDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * source (primary) database in the Data Guard group.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("sourceDatabaseId")
         private String sourceDatabaseId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * source (primary) database in the Data Guard group.
          *
          * @param sourceDatabaseId the value to set
@@ -127,14 +127,14 @@ public final class ReinstateDataGuardDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * source (primary) database in the Data Guard group.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("sourceDatabaseId")
     private final String sourceDatabaseId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * source (primary) database in the Data Guard group.
      *
      * @return the value

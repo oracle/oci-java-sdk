@@ -9,15 +9,15 @@ import com.oracle.bmc.resourcescheduler.model.*;
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20240430")
 public class UpdateScheduleResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the asynchronous work request. Use GetWorkRequest with this ID to track the status of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * asynchronous work request. Use GetWorkRequest with this ID to track the status of the
      * request.
      */
     private String opcWorkRequestId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the asynchronous work request. Use GetWorkRequest with this ID to track the status of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * asynchronous work request. Use GetWorkRequest with this ID to track the status of the
      * request.
      *
      * @return the value
@@ -77,16 +77,16 @@ public class UpdateScheduleResponse extends com.oracle.bmc.responses.BmcResponse
         }
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the asynchronous work request. Use GetWorkRequest with this ID to track the status of
-         * the request.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * asynchronous work request. Use GetWorkRequest with this ID to track the status of the
+         * request.
          */
         private String opcWorkRequestId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the asynchronous work request. Use GetWorkRequest with this ID to track the status of
-         * the request.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * asynchronous work request. Use GetWorkRequest with this ID to track the status of the
+         * request.
          *
          * @param opcWorkRequestId the value to set
          * @return this builder

@@ -52,15 +52,15 @@ public final class ByoipAllocatedRangeSummary
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the IP pool containing the CIDR block.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * IP pool containing the CIDR block.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("publicIpPoolId")
         private String publicIpPoolId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the IP pool containing the CIDR block.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * IP pool containing the CIDR block.
          *
          * @param publicIpPoolId the value to set
          * @return this builder
@@ -122,15 +122,15 @@ public final class ByoipAllocatedRangeSummary
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the IP pool containing the CIDR block.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IP
+     * pool containing the CIDR block.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("publicIpPoolId")
     private final String publicIpPoolId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the IP pool containing the CIDR block.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IP
+     * pool containing the CIDR block.
      *
      * @return the value
      */

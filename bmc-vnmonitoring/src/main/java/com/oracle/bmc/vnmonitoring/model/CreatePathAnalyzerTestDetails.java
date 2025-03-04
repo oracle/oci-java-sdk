@@ -78,15 +78,15 @@ public final class CreatePathAnalyzerTestDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * for the {@code PathAnalyzerTest} resource's compartment.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
+         * {@code PathAnalyzerTest} resource's compartment.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * for the {@code PathAnalyzerTest} resource's compartment.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
+         * {@code PathAnalyzerTest} resource's compartment.
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -268,15 +268,15 @@ public final class CreatePathAnalyzerTestDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for
-     * the {@code PathAnalyzerTest} resource's compartment.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
+     * {@code PathAnalyzerTest} resource's compartment.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for
-     * the {@code PathAnalyzerTest} resource's compartment.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
+     * {@code PathAnalyzerTest} resource's compartment.
      *
      * @return the value
      */

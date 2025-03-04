@@ -154,14 +154,14 @@ public final class RollbackCycleFsuJobSummary extends FsuJobSummary {
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Exadata Fleet Update Collection that the job is executing on.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("fsuCollectionId")
         private String fsuCollectionId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Exadata Fleet Update Collection that the job is executing on.
          *
          * @param fsuCollectionId the value to set
@@ -173,14 +173,14 @@ public final class RollbackCycleFsuJobSummary extends FsuJobSummary {
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Exadata Fleet Update Cycle that this job is part of.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("fsuCycleId")
         private String fsuCycleId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Exadata Fleet Update Cycle that this job is part of.
          *
          * @param fsuCycleId the value to set
@@ -342,14 +342,14 @@ public final class RollbackCycleFsuJobSummary extends FsuJobSummary {
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Exadata Fleet Update Collection that the job is executing on.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("fsuCollectionId")
     private final String fsuCollectionId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Exadata Fleet Update Collection that the job is executing on.
      *
      * @return the value
@@ -359,14 +359,14 @@ public final class RollbackCycleFsuJobSummary extends FsuJobSummary {
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Exadata Fleet Update Cycle that this job is part of.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("fsuCycleId")
     private final String fsuCycleId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Exadata Fleet Update Cycle that this job is part of.
      *
      * @return the value

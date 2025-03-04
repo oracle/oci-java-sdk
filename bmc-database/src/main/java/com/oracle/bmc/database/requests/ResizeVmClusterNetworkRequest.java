@@ -7,7 +7,7 @@ package com.oracle.bmc.database.requests;
 import com.oracle.bmc.database.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ResizeVmClusterNetworkExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ResizeVmClusterNetworkExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * ResizeVmClusterNetworkRequest.
  */
@@ -18,26 +18,26 @@ public class ResizeVmClusterNetworkRequest
 
     /**
      * The Exadata infrastructure
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     private String exadataInfrastructureId;
 
     /**
      * The Exadata infrastructure
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     public String getExadataInfrastructureId() {
         return exadataInfrastructureId;
     }
     /**
      * The VM cluster network
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     private String vmClusterNetworkId;
 
     /**
      * The VM cluster network
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     public String getVmClusterNetworkId() {
         return vmClusterNetworkId;
@@ -115,13 +115,13 @@ public class ResizeVmClusterNetworkRequest
 
         /**
          * The Exadata infrastructure
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          */
         private String exadataInfrastructureId = null;
 
         /**
          * The Exadata infrastructure
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          * @param exadataInfrastructureId the value to set
          * @return this builder instance
@@ -133,13 +133,13 @@ public class ResizeVmClusterNetworkRequest
 
         /**
          * The VM cluster network
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          */
         private String vmClusterNetworkId = null;
 
         /**
          * The VM cluster network
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          * @param vmClusterNetworkId the value to set
          * @return this builder instance

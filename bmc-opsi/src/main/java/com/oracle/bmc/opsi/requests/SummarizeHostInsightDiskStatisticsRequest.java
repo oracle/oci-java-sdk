@@ -7,7 +7,7 @@ package com.oracle.bmc.opsi.requests;
 import com.oracle.bmc.opsi.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/SummarizeHostInsightDiskStatisticsExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/SummarizeHostInsightDiskStatisticsExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * SummarizeHostInsightDiskStatisticsRequest.
  */
@@ -16,27 +16,27 @@ public class SummarizeHostInsightDiskStatisticsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compartment.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment.
      */
     private String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compartment.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment.
      */
     public String getCompartmentId() {
         return compartmentId;
     }
     /**
-     * Required [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-     * of the host insight resource.
+     * Required [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * host insight resource.
      */
     private String id;
 
     /**
-     * Required [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-     * of the host insight resource.
+     * Required [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * host insight resource.
      */
     public String getId() {
         return id;
@@ -91,14 +91,14 @@ public class SummarizeHostInsightDiskStatisticsRequest
         return timeIntervalEnd;
     }
     /**
-     * Optional [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-     * of the host (Compute Id)
+     * Optional [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * host (Compute Id)
      */
     private String hostId;
 
     /**
-     * Optional [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-     * of the host (Compute Id)
+     * Optional [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * host (Compute Id)
      */
     public String getHostId() {
         return hostId;
@@ -172,14 +172,14 @@ public class SummarizeHostInsightDiskStatisticsRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compartment.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment.
          */
         private String compartmentId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compartment.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment.
          *
          * @param compartmentId the value to set
          * @return this builder instance
@@ -190,15 +190,13 @@ public class SummarizeHostInsightDiskStatisticsRequest
         }
 
         /**
-         * Required
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+         * Required [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
          * the host insight resource.
          */
         private String id = null;
 
         /**
-         * Required
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+         * Required [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
          * the host insight resource.
          *
          * @param id the value to set
@@ -276,15 +274,13 @@ public class SummarizeHostInsightDiskStatisticsRequest
         }
 
         /**
-         * Optional
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+         * Optional [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
          * the host (Compute Id)
          */
         private String hostId = null;
 
         /**
-         * Optional
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+         * Optional [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
          * the host (Compute Id)
          *
          * @param hostId the value to set

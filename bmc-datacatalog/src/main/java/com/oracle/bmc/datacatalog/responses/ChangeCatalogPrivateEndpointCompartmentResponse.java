@@ -11,14 +11,14 @@ public class ChangeCatalogPrivateEndpointCompartmentResponse
         extends com.oracle.bmc.responses.BmcResponse {
     /**
      * The OCID of the asynchronous request. Use
-     * [GetWorkRequest](https://docs.cloud.oracle.com/api/#/en/workrequests/20160918/WorkRequest/GetWorkRequest)
+     * [GetWorkRequest](https://docs.oracle.com/iaas/api/#/en/workrequests/20160918/WorkRequest/GetWorkRequest)
      * with this OCID to track the status of the asynchronous request.
      */
     private String opcWorkRequestId;
 
     /**
      * The OCID of the asynchronous request. Use
-     * [GetWorkRequest](https://docs.cloud.oracle.com/api/#/en/workrequests/20160918/WorkRequest/GetWorkRequest)
+     * [GetWorkRequest](https://docs.oracle.com/iaas/api/#/en/workrequests/20160918/WorkRequest/GetWorkRequest)
      * with this OCID to track the status of the asynchronous request.
      *
      * @return the value
@@ -80,14 +80,14 @@ public class ChangeCatalogPrivateEndpointCompartmentResponse
 
         /**
          * The OCID of the asynchronous request. Use
-         * [GetWorkRequest](https://docs.cloud.oracle.com/api/#/en/workrequests/20160918/WorkRequest/GetWorkRequest)
+         * [GetWorkRequest](https://docs.oracle.com/iaas/api/#/en/workrequests/20160918/WorkRequest/GetWorkRequest)
          * with this OCID to track the status of the asynchronous request.
          */
         private String opcWorkRequestId;
 
         /**
          * The OCID of the asynchronous request. Use
-         * [GetWorkRequest](https://docs.cloud.oracle.com/api/#/en/workrequests/20160918/WorkRequest/GetWorkRequest)
+         * [GetWorkRequest](https://docs.oracle.com/iaas/api/#/en/workrequests/20160918/WorkRequest/GetWorkRequest)
          * with this OCID to track the status of the asynchronous request.
          *
          * @param opcWorkRequestId the value to set

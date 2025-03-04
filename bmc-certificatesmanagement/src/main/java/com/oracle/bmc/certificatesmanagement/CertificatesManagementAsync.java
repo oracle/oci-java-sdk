@@ -136,7 +136,7 @@ public interface CertificatesManagementAsync extends AutoCloseable {
     /**
      * Moves a CA bundle to a different compartment in the same tenancy. For information about
      * moving resources between compartments, see [Moving Resources to a Different
-     * Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
      * <p>When provided, if-match is checked against the ETag values of the secret.
      *
@@ -156,7 +156,7 @@ public interface CertificatesManagementAsync extends AutoCloseable {
     /**
      * Moves a certificate authority (CA) to a different compartment within the same tenancy. For
      * information about moving resources between compartments, see [Moving Resources to a Different
-     * Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
      * <p>When provided, If-Match is checked against the ETag values of the source.
      *
@@ -178,7 +178,7 @@ public interface CertificatesManagementAsync extends AutoCloseable {
     /**
      * Moves a certificate to a different compartment within the same tenancy. For information about
      * moving resources between compartments, see [Moving Resources to a Different
-     * Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
      * <p>When provided, if-match is checked against the ETag values of the secret.
      *

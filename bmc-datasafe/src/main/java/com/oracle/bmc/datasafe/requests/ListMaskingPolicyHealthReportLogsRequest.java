@@ -7,7 +7,7 @@ package com.oracle.bmc.datasafe.requests;
 import com.oracle.bmc.datasafe.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/ListMaskingPolicyHealthReportLogsExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/ListMaskingPolicyHealthReportLogsExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * ListMaskingPolicyHealthReportLogsRequest.
  */
@@ -25,14 +25,14 @@ public class ListMaskingPolicyHealthReportLogsRequest
     /**
      * For list pagination. The maximum number of items to return per page in a paginated "List"
      * call. For details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private Integer limit;
 
     /**
      * For list pagination. The maximum number of items to return per page in a paginated "List"
      * call. For details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     public Integer getLimit() {
         return limit;
@@ -41,7 +41,7 @@ public class ListMaskingPolicyHealthReportLogsRequest
      * For list pagination. The page token representing the page at which to start retrieving
      * results. It is usually retrieved from a previous "List" call. For details about how
      * pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private String page;
 
@@ -49,7 +49,7 @@ public class ListMaskingPolicyHealthReportLogsRequest
      * For list pagination. The page token representing the page at which to start retrieving
      * results. It is usually retrieved from a previous "List" call. For details about how
      * pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     public String getPage() {
         return page;
@@ -208,14 +208,14 @@ public class ListMaskingPolicyHealthReportLogsRequest
         /**
          * For list pagination. The maximum number of items to return per page in a paginated "List"
          * call. For details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private Integer limit = null;
 
         /**
          * For list pagination. The maximum number of items to return per page in a paginated "List"
          * call. For details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param limit the value to set
          * @return this builder instance
@@ -229,7 +229,7 @@ public class ListMaskingPolicyHealthReportLogsRequest
          * For list pagination. The page token representing the page at which to start retrieving
          * results. It is usually retrieved from a previous "List" call. For details about how
          * pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private String page = null;
 
@@ -237,7 +237,7 @@ public class ListMaskingPolicyHealthReportLogsRequest
          * For list pagination. The page token representing the page at which to start retrieving
          * results. It is usually retrieved from a previous "List" call. For details about how
          * pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param page the value to set
          * @return this builder instance

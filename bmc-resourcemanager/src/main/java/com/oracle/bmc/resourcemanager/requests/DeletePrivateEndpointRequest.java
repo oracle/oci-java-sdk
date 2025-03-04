@@ -7,7 +7,7 @@ package com.oracle.bmc.resourcemanager.requests;
 import com.oracle.bmc.resourcemanager.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/DeletePrivateEndpointExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/DeletePrivateEndpointExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * DeletePrivateEndpointRequest.
  */
@@ -16,14 +16,14 @@ public class DeletePrivateEndpointRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the private endpoint.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * private endpoint.
      */
     private String privateEndpointId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the private endpoint.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * private endpoint.
      */
     public String getPrivateEndpointId() {
         return privateEndpointId;
@@ -66,14 +66,14 @@ public class DeletePrivateEndpointRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the private endpoint.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * private endpoint.
          */
         private String privateEndpointId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the private endpoint.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * private endpoint.
          *
          * @param privateEndpointId the value to set
          * @return this builder instance

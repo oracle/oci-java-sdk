@@ -34,15 +34,15 @@ public final class ByoipRangeOriginAsn
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the {@code Byoasn} resource.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * {@code Byoasn} resource.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("byoasnId")
         private String byoasnId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the {@code Byoasn} resource.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * {@code Byoasn} resource.
          *
          * @param byoasnId the value to set
          * @return this builder
@@ -120,15 +120,15 @@ public final class ByoipRangeOriginAsn
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the {@code Byoasn} resource.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * {@code Byoasn} resource.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("byoasnId")
     private final String byoasnId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the {@code Byoasn} resource.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * {@code Byoasn} resource.
      *
      * @return the value
      */

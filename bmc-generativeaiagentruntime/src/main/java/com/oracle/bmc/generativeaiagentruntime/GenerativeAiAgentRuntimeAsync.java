@@ -27,7 +27,7 @@ import com.oracle.bmc.generativeaiagentruntime.responses.*;
  * eNGenerative-ai-agentsLatest}.
  *
  * <p>To learn more about the service, see the [Generative AI Agents
- * documentation](https://docs.cloud.oracle.com/iaas/Content/generative-ai-agents/home.htm).
+ * documentation](https://docs.oracle.com/iaas/Content/generative-ai-agents/home.htm).
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20240531")
 public interface GenerativeAiAgentRuntimeAsync extends AutoCloseable {

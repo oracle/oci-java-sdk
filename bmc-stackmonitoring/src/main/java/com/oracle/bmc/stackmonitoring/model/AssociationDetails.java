@@ -34,14 +34,14 @@ public final class AssociationDetails
     public static class Builder {
         /**
          * Source Monitored Resource Identifier
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("sourceResourceId")
         private String sourceResourceId;
 
         /**
          * Source Monitored Resource Identifier
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          * @param sourceResourceId the value to set
          * @return this builder
@@ -102,14 +102,14 @@ public final class AssociationDetails
 
     /**
      * Source Monitored Resource Identifier
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("sourceResourceId")
     private final String sourceResourceId;
 
     /**
      * Source Monitored Resource Identifier
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      * @return the value
      */

@@ -48,14 +48,14 @@ public final class ActionOrderDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * action resource.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("actionResourceId")
         private String actionResourceId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * action resource.
          *
          * @param actionResourceId the value to set
@@ -114,14 +114,14 @@ public final class ActionOrderDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * action resource.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("actionResourceId")
     private final String actionResourceId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * action resource.
      *
      * @return the value

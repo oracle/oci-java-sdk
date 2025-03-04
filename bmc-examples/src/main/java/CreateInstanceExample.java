@@ -117,9 +117,8 @@ public class CreateInstanceExample {
      * new boot volume based on existing boot volume. 4) Launch another instance based on the newly
      * created boot volume.
      *
-     * <p>Please refer to
-     * https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/launchinginstance.htm for more
-     * information about what is necessary for using API to launch a VM instance.
+     * <p>Please refer to https://docs.oracle.com/iaas/Content/Compute/Tasks/launchinginstance.htm
+     * for more information about what is necessary for using API to launch a VM instance.
      *
      * <p>This script takes the following arguments:
      *

@@ -15,7 +15,7 @@ import com.oracle.bmc.workrequests.responses.*;
  *
  * <p>For more information about work requests and the operations that spawn work requests, see
  * [Viewing the State of a Compute Work
- * Request](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/viewingworkrequestcompute.htm).
+ * Request](https://docs.oracle.com/iaas/Content/Compute/Tasks/viewingworkrequestcompute.htm).
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public interface WorkRequestAsync extends AutoCloseable {

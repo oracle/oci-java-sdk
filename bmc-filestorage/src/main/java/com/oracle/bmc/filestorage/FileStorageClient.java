@@ -710,6 +710,39 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
     }
 
     @Override
+    public CreateQuotaRuleResponse createQuotaRule(CreateQuotaRuleRequest request) {
+        Objects.requireNonNull(
+                request.getCreateQuotaRuleDetails(), "createQuotaRuleDetails is required");
+
+        Validate.notBlank(request.getFileSystemId(), "fileSystemId must not be blank");
+
+        return clientCall(request, CreateQuotaRuleResponse::builder)
+                .logger(LOG, "createQuotaRule")
+                .serviceDetails(
+                        "FileStorage",
+                        "CreateQuotaRule",
+                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/FileSystem/CreateQuotaRule")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateQuotaRuleRequest::builder)
+                .basePath("/20171215")
+                .appendPathParam("fileSystems")
+                .appendPathParam(request.getFileSystemId())
+                .appendPathParam("quotaRules")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.filestorage.model.QuotaRule.class,
+                        CreateQuotaRuleResponse.Builder::quotaRule)
+                .handleResponseHeaderString("etag", CreateQuotaRuleResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateQuotaRuleResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public CreateReplicationResponse createReplication(CreateReplicationRequest request) {
         Objects.requireNonNull(
                 request.getCreateReplicationDetails(), "createReplicationDetails is required");
@@ -894,6 +927,34 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteOutboundConnectorResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public DeleteQuotaRuleResponse deleteQuotaRule(DeleteQuotaRuleRequest request) {
+
+        Validate.notBlank(request.getFileSystemId(), "fileSystemId must not be blank");
+
+        Validate.notBlank(request.getQuotaRuleId(), "quotaRuleId must not be blank");
+
+        return clientCall(request, DeleteQuotaRuleResponse::builder)
+                .logger(LOG, "deleteQuotaRule")
+                .serviceDetails(
+                        "FileStorage",
+                        "DeleteQuotaRule",
+                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/FileSystem/DeleteQuotaRule")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteQuotaRuleRequest::builder)
+                .basePath("/20171215")
+                .appendPathParam("fileSystems")
+                .appendPathParam(request.getFileSystemId())
+                .appendPathParam("quotaRules")
+                .appendPathParam(request.getQuotaRuleId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteQuotaRuleResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -1196,6 +1257,38 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .handleResponseHeaderString("etag", GetOutboundConnectorResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetOutboundConnectorResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GetQuotaRuleResponse getQuotaRule(GetQuotaRuleRequest request) {
+
+        Validate.notBlank(request.getFileSystemId(), "fileSystemId must not be blank");
+
+        Validate.notBlank(request.getQuotaRuleId(), "quotaRuleId must not be blank");
+
+        return clientCall(request, GetQuotaRuleResponse::builder)
+                .logger(LOG, "getQuotaRule")
+                .serviceDetails(
+                        "FileStorage",
+                        "GetQuotaRule",
+                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/FileSystem/GetQuotaRule")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetQuotaRuleRequest::builder)
+                .basePath("/20171215")
+                .appendPathParam("fileSystems")
+                .appendPathParam(request.getFileSystemId())
+                .appendPathParam("quotaRules")
+                .appendPathParam(request.getQuotaRuleId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.filestorage.model.QuotaRule.class,
+                        GetQuotaRuleResponse.Builder::quotaRule)
+                .handleResponseHeaderString("etag", GetQuotaRuleResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetQuotaRuleResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -1506,6 +1599,43 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         "opc-next-page", ListOutboundConnectorsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListOutboundConnectorsResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public ListQuotaRulesResponse listQuotaRules(ListQuotaRulesRequest request) {
+
+        Validate.notBlank(request.getFileSystemId(), "fileSystemId must not be blank");
+        Objects.requireNonNull(request.getPrincipalType(), "principalType is required");
+
+        return clientCall(request, ListQuotaRulesResponse::builder)
+                .logger(LOG, "listQuotaRules")
+                .serviceDetails(
+                        "FileStorage",
+                        "ListQuotaRules",
+                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/FileSystem/ListQuotaRules")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListQuotaRulesRequest::builder)
+                .basePath("/20171215")
+                .appendPathParam("fileSystems")
+                .appendPathParam(request.getFileSystemId())
+                .appendPathParam("quotaRules")
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("principalType", request.getPrincipalType())
+                .appendQueryParam("principalId", request.getPrincipalId())
+                .appendQueryParam("areViolatorsOnly", request.getAreViolatorsOnly())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.filestorage.model.QuotaRuleSummary.class,
+                        ListQuotaRulesResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListQuotaRulesResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListQuotaRulesResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -1940,6 +2070,36 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
     }
 
     @Override
+    public ToggleQuotaRulesResponse toggleQuotaRules(ToggleQuotaRulesRequest request) {
+
+        Validate.notBlank(request.getFileSystemId(), "fileSystemId must not be blank");
+        Objects.requireNonNull(
+                request.getToggleQuotaRulesDetails(), "toggleQuotaRulesDetails is required");
+
+        return clientCall(request, ToggleQuotaRulesResponse::builder)
+                .logger(LOG, "toggleQuotaRules")
+                .serviceDetails(
+                        "FileStorage",
+                        "ToggleQuotaRules",
+                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/FileSystem/ToggleQuotaRules")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ToggleQuotaRulesRequest::builder)
+                .basePath("/20171215")
+                .appendPathParam("fileSystems")
+                .appendPathParam(request.getFileSystemId())
+                .appendPathParam("actions")
+                .appendPathParam("toggleQuotaRules")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", ToggleQuotaRulesResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public UnpauseFilesystemSnapshotPolicyResponse unpauseFilesystemSnapshotPolicy(
             UnpauseFilesystemSnapshotPolicyRequest request) {
 
@@ -2171,6 +2331,41 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .handleResponseHeaderString("etag", UpdateOutboundConnectorResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateOutboundConnectorResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public UpdateQuotaRuleResponse updateQuotaRule(UpdateQuotaRuleRequest request) {
+        Objects.requireNonNull(
+                request.getUpdateQuotaRuleDetails(), "updateQuotaRuleDetails is required");
+
+        Validate.notBlank(request.getFileSystemId(), "fileSystemId must not be blank");
+
+        Validate.notBlank(request.getQuotaRuleId(), "quotaRuleId must not be blank");
+
+        return clientCall(request, UpdateQuotaRuleResponse::builder)
+                .logger(LOG, "updateQuotaRule")
+                .serviceDetails(
+                        "FileStorage",
+                        "UpdateQuotaRule",
+                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/FileSystem/UpdateQuotaRule")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateQuotaRuleRequest::builder)
+                .basePath("/20171215")
+                .appendPathParam("fileSystems")
+                .appendPathParam(request.getFileSystemId())
+                .appendPathParam("quotaRules")
+                .appendPathParam(request.getQuotaRuleId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.filestorage.model.QuotaRule.class,
+                        UpdateQuotaRuleResponse.Builder::quotaRule)
+                .handleResponseHeaderString("etag", UpdateQuotaRuleResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateQuotaRuleResponse.Builder::opcRequestId)
                 .callSync();
     }
 

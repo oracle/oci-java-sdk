@@ -7,7 +7,7 @@ package com.oracle.bmc.networkloadbalancer.model;
 /**
  * The configuration of the listener. For more information about listener configuration, see
  * [Listeners for Network Load
- * Balancers](https://docs.cloud.oracle.com/Content/NetworkLoadBalancer/Listeners/listener-management.htm).
+ * Balancers](https://docs.oracle.com/iaas/Content/NetworkLoadBalancer/Listeners/listener-management.htm).
  * <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly

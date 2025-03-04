@@ -36,31 +36,31 @@ public final class VcnDrgAttachmentNetworkDetails extends DrgAttachmentNetworkDe
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the route table the DRG attachment is using.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * route table the DRG attachment is using.
          *
          * <p>For information about why you would associate a route table with a DRG attachment,
          * see:
          *
          * <p>[Transit Routing: Access to Multiple VCNs in Same
-         * Region](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm) *
-         * [Transit Routing: Private Access to Oracle
-         * Services](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm)
+         * Region](https://docs.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm) * [Transit
+         * Routing: Private Access to Oracle
+         * Services](https://docs.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm)
          */
         @com.fasterxml.jackson.annotation.JsonProperty("routeTableId")
         private String routeTableId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the route table the DRG attachment is using.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * route table the DRG attachment is using.
          *
          * <p>For information about why you would associate a route table with a DRG attachment,
          * see:
          *
          * <p>[Transit Routing: Access to Multiple VCNs in Same
-         * Region](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm) *
-         * [Transit Routing: Private Access to Oracle
-         * Services](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm)
+         * Region](https://docs.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm) * [Transit
+         * Routing: Private Access to Oracle
+         * Services](https://docs.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm)
          *
          * @param routeTableId the value to set
          * @return this builder
@@ -136,29 +136,29 @@ public final class VcnDrgAttachmentNetworkDetails extends DrgAttachmentNetworkDe
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the route table the DRG attachment is using.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * route table the DRG attachment is using.
      *
      * <p>For information about why you would associate a route table with a DRG attachment, see:
      *
      * <p>[Transit Routing: Access to Multiple VCNs in Same
-     * Region](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm) *
-     * [Transit Routing: Private Access to Oracle
-     * Services](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm)
+     * Region](https://docs.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm) * [Transit
+     * Routing: Private Access to Oracle
+     * Services](https://docs.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm)
      */
     @com.fasterxml.jackson.annotation.JsonProperty("routeTableId")
     private final String routeTableId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the route table the DRG attachment is using.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * route table the DRG attachment is using.
      *
      * <p>For information about why you would associate a route table with a DRG attachment, see:
      *
      * <p>[Transit Routing: Access to Multiple VCNs in Same
-     * Region](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm) *
-     * [Transit Routing: Private Access to Oracle
-     * Services](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm)
+     * Region](https://docs.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm) * [Transit
+     * Routing: Private Access to Oracle
+     * Services](https://docs.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm)
      *
      * @return the value
      */

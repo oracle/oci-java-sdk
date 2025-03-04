@@ -7,7 +7,7 @@ package com.oracle.bmc.database.requests;
 import com.oracle.bmc.database.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetExadbVmClusterExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetExadbVmClusterExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use GetExadbVmClusterRequest.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
@@ -15,14 +15,14 @@ public class GetExadbVmClusterRequest extends com.oracle.bmc.requests.BmcRequest
 
     /**
      * The Exadata VM cluster
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) on Exascale
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) on Exascale
      * Infrastructure.
      */
     private String exadbVmClusterId;
 
     /**
      * The Exadata VM cluster
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) on Exascale
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) on Exascale
      * Infrastructure.
      */
     public String getExadbVmClusterId() {
@@ -44,15 +44,15 @@ public class GetExadbVmClusterRequest extends com.oracle.bmc.requests.BmcRequest
 
         /**
          * The Exadata VM cluster
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) on
-         * Exascale Infrastructure.
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) on Exascale
+         * Infrastructure.
          */
         private String exadbVmClusterId = null;
 
         /**
          * The Exadata VM cluster
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) on
-         * Exascale Infrastructure.
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) on Exascale
+         * Infrastructure.
          *
          * @param exadbVmClusterId the value to set
          * @return this builder instance

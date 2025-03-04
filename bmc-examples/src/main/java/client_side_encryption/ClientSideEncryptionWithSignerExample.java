@@ -54,7 +54,7 @@ public class ClientSideEncryptionWithSignerExample {
                     || e.getCause() instanceof ConnectException
                     || e.getCause() instanceof ConnectTimeoutException) {
                 System.out.println(
-                        "This sample only works when running on an OCI instance. Are you sure you’re running on an OCI instance? For more info see: https://docs.cloud.oracle.com/Content/Identity/Tasks/callingservicesfrominstances.htm");
+                        "This sample only works when running on an OCI instance. Are you sure you’re running on an OCI instance? For more info see: https://docs.oracle.com/iaas/Content/Identity/Tasks/callingservicesfrominstances.htm");
                 return;
             }
             throw e;

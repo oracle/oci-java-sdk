@@ -7,7 +7,7 @@ package com.oracle.bmc.core.model;
 /**
  * Represents an attachment between a VNIC and an instance. For more information, see [Virtual
  * Network Interface Cards
- * (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
+ * (VNICs)](https://docs.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
  *
  * <p>*Warning:** Oracle recommends that you avoid using any confidential information when you
  * supply string values using the API. <br>
@@ -180,7 +180,7 @@ public final class VnicAttachment
          * shapes have two active physical NICs (0 and 1). If you add a secondary VNIC to one of
          * these instances, you can specify which NIC the VNIC will use. For more information, see
          * [Virtual Network Interface Cards
-         * (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
+         * (VNICs)](https://docs.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("nicIndex")
         private Integer nicIndex;
@@ -190,7 +190,7 @@ public final class VnicAttachment
          * shapes have two active physical NICs (0 and 1). If you add a secondary VNIC to one of
          * these instances, you can specify which NIC the VNIC will use. For more information, see
          * [Virtual Network Interface Cards
-         * (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
+         * (VNICs)](https://docs.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
          *
          * @param nicIndex the value to set
          * @return this builder
@@ -530,7 +530,7 @@ public final class VnicAttachment
      * have two active physical NICs (0 and 1). If you add a secondary VNIC to one of these
      * instances, you can specify which NIC the VNIC will use. For more information, see [Virtual
      * Network Interface Cards
-     * (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
+     * (VNICs)](https://docs.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("nicIndex")
     private final Integer nicIndex;
@@ -540,7 +540,7 @@ public final class VnicAttachment
      * have two active physical NICs (0 and 1). If you add a secondary VNIC to one of these
      * instances, you can specify which NIC the VNIC will use. For more information, see [Virtual
      * Network Interface Cards
-     * (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
+     * (VNICs)](https://docs.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
      *
      * @return the value
      */

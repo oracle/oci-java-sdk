@@ -33,7 +33,7 @@ public final class NodeShapeConfig
     public static class Builder {
         /**
          * The total number of OCPUs available to each node in the node pool. See
-         * [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for
+         * [here](https://docs.oracle.com/iaas/en-us/iaas/api/#/en/iaas/20160918/Shape/) for
          * details.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("ocpus")
@@ -41,7 +41,7 @@ public final class NodeShapeConfig
 
         /**
          * The total number of OCPUs available to each node in the node pool. See
-         * [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for
+         * [here](https://docs.oracle.com/iaas/en-us/iaas/api/#/en/iaas/20160918/Shape/) for
          * details.
          *
          * @param ocpus the value to set
@@ -102,14 +102,14 @@ public final class NodeShapeConfig
 
     /**
      * The total number of OCPUs available to each node in the node pool. See
-     * [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+     * [here](https://docs.oracle.com/iaas/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("ocpus")
     private final Float ocpus;
 
     /**
      * The total number of OCPUs available to each node in the node pool. See
-     * [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+     * [here](https://docs.oracle.com/iaas/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
      *
      * @return the value
      */

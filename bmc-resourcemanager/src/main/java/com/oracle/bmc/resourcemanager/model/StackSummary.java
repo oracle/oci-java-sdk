@@ -138,7 +138,7 @@ public final class StackSummary extends com.oracle.bmc.http.client.internal.Expl
         /**
          * The current lifecycle state of the stack. For more information about stack lifecycle
          * states in Resource Manager, see [Key
-         * Concepts](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts__StackStates).
+         * Concepts](https://docs.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts__StackStates).
          *
          * <p>Allowable values: - CREATING - ACTIVE - DELETING - DELETED - FAILED
          */
@@ -148,7 +148,7 @@ public final class StackSummary extends com.oracle.bmc.http.client.internal.Expl
         /**
          * The current lifecycle state of the stack. For more information about stack lifecycle
          * states in Resource Manager, see [Key
-         * Concepts](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts__StackStates).
+         * Concepts](https://docs.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts__StackStates).
          *
          * <p>Allowable values: - CREATING - ACTIVE - DELETING - DELETED - FAILED
          *
@@ -178,8 +178,8 @@ public final class StackSummary extends com.oracle.bmc.http.client.internal.Expl
         /**
          * Free-form tags associated with this resource. Each tag is a key-value pair with no
          * predefined name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         * Example: {@code {"Department": "Finance"}}
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+         * {@code {"Department": "Finance"}}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
@@ -187,8 +187,8 @@ public final class StackSummary extends com.oracle.bmc.http.client.internal.Expl
         /**
          * Free-form tags associated with this resource. Each tag is a key-value pair with no
          * predefined name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         * Example: {@code {"Department": "Finance"}}
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+         * {@code {"Department": "Finance"}}
          *
          * @param freeformTags the value to set
          * @return this builder
@@ -201,8 +201,8 @@ public final class StackSummary extends com.oracle.bmc.http.client.internal.Expl
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+         * {@code {"Operations": {"CostCenter": "42"}}}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
@@ -210,8 +210,8 @@ public final class StackSummary extends com.oracle.bmc.http.client.internal.Expl
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+         * {@code {"Operations": {"CostCenter": "42"}}}
          *
          * @param definedTags the value to set
          * @return this builder
@@ -358,7 +358,7 @@ public final class StackSummary extends com.oracle.bmc.http.client.internal.Expl
     /**
      * The current lifecycle state of the stack. For more information about stack lifecycle states
      * in Resource Manager, see [Key
-     * Concepts](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts__StackStates).
+     * Concepts](https://docs.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts__StackStates).
      *
      * <p>Allowable values: - CREATING - ACTIVE - DELETING - DELETED - FAILED
      */
@@ -368,7 +368,7 @@ public final class StackSummary extends com.oracle.bmc.http.client.internal.Expl
     /**
      * The current lifecycle state of the stack. For more information about stack lifecycle states
      * in Resource Manager, see [Key
-     * Concepts](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts__StackStates).
+     * Concepts](https://docs.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts__StackStates).
      *
      * <p>Allowable values: - CREATING - ACTIVE - DELETING - DELETED - FAILED
      *
@@ -394,7 +394,7 @@ public final class StackSummary extends com.oracle.bmc.http.client.internal.Expl
     /**
      * Free-form tags associated with this resource. Each tag is a key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Department": "Finance"}}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -403,7 +403,7 @@ public final class StackSummary extends com.oracle.bmc.http.client.internal.Expl
     /**
      * Free-form tags associated with this resource. Each tag is a key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Department": "Finance"}}
      *
      * @return the value
@@ -415,7 +415,7 @@ public final class StackSummary extends com.oracle.bmc.http.client.internal.Expl
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Operations": {"CostCenter": "42"}}}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -424,7 +424,7 @@ public final class StackSummary extends com.oracle.bmc.http.client.internal.Expl
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Operations": {"CostCenter": "42"}}}
      *
      * @return the value

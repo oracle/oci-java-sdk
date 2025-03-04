@@ -34,16 +34,16 @@ public final class DetachManagedInstancesFromManagedInstanceGroupDetails
     public static class Builder {
         /**
          * List of managed instance
-         * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to
-         * detach from the group.
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to detach
+         * from the group.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("managedInstances")
         private java.util.List<String> managedInstances;
 
         /**
          * List of managed instance
-         * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to
-         * detach from the group.
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to detach
+         * from the group.
          *
          * @param managedInstances the value to set
          * @return this builder
@@ -87,16 +87,16 @@ public final class DetachManagedInstancesFromManagedInstanceGroupDetails
 
     /**
      * List of managed instance
-     * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to
-     * detach from the group.
+     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to detach from
+     * the group.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("managedInstances")
     private final java.util.List<String> managedInstances;
 
     /**
      * List of managed instance
-     * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to
-     * detach from the group.
+     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to detach from
+     * the group.
      *
      * @return the value
      */

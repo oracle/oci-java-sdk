@@ -49,14 +49,14 @@ public final class BulkMoveResourcesDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * destination compartment into which to move the resources.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("targetCompartmentId")
         private String targetCompartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * destination compartment into which to move the resources.
          *
          * @param targetCompartmentId the value to set
@@ -115,14 +115,14 @@ public final class BulkMoveResourcesDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * destination compartment into which to move the resources.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("targetCompartmentId")
     private final String targetCompartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * destination compartment into which to move the resources.
      *
      * @return the value

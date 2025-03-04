@@ -62,7 +62,7 @@ public final class ChangeDataguardRoleDetails
         }
         /**
          * The Autonomous Container Database-Autonomous Data Guard association
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          */
         @com.fasterxml.jackson.annotation.JsonProperty(
                 "autonomousContainerDatabaseDataguardAssociationId")
@@ -70,7 +70,7 @@ public final class ChangeDataguardRoleDetails
 
         /**
          * The Autonomous Container Database-Autonomous Data Guard association
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          * @param autonomousContainerDatabaseDataguardAssociationId the value to set
          * @return this builder
@@ -197,7 +197,7 @@ public final class ChangeDataguardRoleDetails
 
     /**
      * The Autonomous Container Database-Autonomous Data Guard association
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     @com.fasterxml.jackson.annotation.JsonProperty(
             "autonomousContainerDatabaseDataguardAssociationId")
@@ -205,7 +205,7 @@ public final class ChangeDataguardRoleDetails
 
     /**
      * The Autonomous Container Database-Autonomous Data Guard association
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      * @return the value
      */

@@ -7,7 +7,7 @@ package com.oracle.bmc.artifacts.requests;
 import com.oracle.bmc.artifacts.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/artifacts/UpdateContainerImageSignatureExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/artifacts/UpdateContainerImageSignatureExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * UpdateContainerImageSignatureRequest.
  */
@@ -17,16 +17,16 @@ public class UpdateContainerImageSignatureRequest
                 com.oracle.bmc.artifacts.model.UpdateContainerImageSignatureDetails> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the container image signature.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * container image signature.
      *
      * <p>Example: {@code ocid1.containersignature.oc1..exampleuniqueID}
      */
     private String imageSignatureId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the container image signature.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * container image signature.
      *
      * <p>Example: {@code ocid1.containersignature.oc1..exampleuniqueID}
      */
@@ -92,16 +92,16 @@ public class UpdateContainerImageSignatureRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the container image signature.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * container image signature.
          *
          * <p>Example: {@code ocid1.containersignature.oc1..exampleuniqueID}
          */
         private String imageSignatureId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the container image signature.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * container image signature.
          *
          * <p>Example: {@code ocid1.containersignature.oc1..exampleuniqueID}
          *

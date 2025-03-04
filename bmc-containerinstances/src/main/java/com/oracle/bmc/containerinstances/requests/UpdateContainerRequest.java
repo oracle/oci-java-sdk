@@ -7,7 +7,7 @@ package com.oracle.bmc.containerinstances.requests;
 import com.oracle.bmc.containerinstances.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/containerinstances/UpdateContainerExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/containerinstances/UpdateContainerExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateContainerRequest.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210415")
@@ -16,14 +16,14 @@ public class UpdateContainerRequest
                 com.oracle.bmc.containerinstances.model.UpdateContainerDetails> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the container.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * container.
      */
     private String containerId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the container.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * container.
      */
     public String getContainerId() {
         return containerId;
@@ -86,14 +86,14 @@ public class UpdateContainerRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the container.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * container.
          */
         private String containerId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the container.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * container.
          *
          * @param containerId the value to set
          * @return this builder instance

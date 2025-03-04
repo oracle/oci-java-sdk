@@ -34,14 +34,14 @@ public final class WorkRequestError
     public static class Builder {
         /**
          * A machine-usable error code. For a list of common errors, see [API
-         * Errors](https://docs.us-phoenix-1.oraclecloud.com/Content/API/References/apierrors.htm).
+         * Errors](https://docs.oracle.com/iaas/Content/API/References/apierrors.htm).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("code")
         private String code;
 
         /**
          * A machine-usable error code. For a list of common errors, see [API
-         * Errors](https://docs.us-phoenix-1.oraclecloud.com/Content/API/References/apierrors.htm).
+         * Errors](https://docs.oracle.com/iaas/Content/API/References/apierrors.htm).
          *
          * @param code the value to set
          * @return this builder
@@ -123,14 +123,14 @@ public final class WorkRequestError
 
     /**
      * A machine-usable error code. For a list of common errors, see [API
-     * Errors](https://docs.us-phoenix-1.oraclecloud.com/Content/API/References/apierrors.htm).
+     * Errors](https://docs.oracle.com/iaas/Content/API/References/apierrors.htm).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("code")
     private final String code;
 
     /**
      * A machine-usable error code. For a list of common errors, see [API
-     * Errors](https://docs.us-phoenix-1.oraclecloud.com/Content/API/References/apierrors.htm).
+     * Errors](https://docs.oracle.com/iaas/Content/API/References/apierrors.htm).
      *
      * @return the value
      */

@@ -7,21 +7,17 @@ package com.oracle.bmc.database.requests;
 import com.oracle.bmc.database.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetExternalBackupJobExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetExternalBackupJobExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use GetExternalBackupJobRequest.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class GetExternalBackupJobRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /**
-     * The backup [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
-     */
+    /** The backup [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). */
     private String backupId;
 
-    /**
-     * The backup [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
-     */
+    /** The backup [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). */
     public String getBackupId() {
         return backupId;
     }
@@ -33,14 +29,12 @@ public class GetExternalBackupJobRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The backup
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * The backup [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          */
         private String backupId = null;
 
         /**
-         * The backup
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * The backup [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          * @param backupId the value to set
          * @return this builder instance

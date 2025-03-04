@@ -44,10 +44,9 @@ import java.util.concurrent.TimeUnit;
  * experience compared to internet-based connections.
  *
  * <p>Details information on FastConnect:
- * https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm
+ * https://docs.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm
  *
- * <p>Details CrossConnect API:
- * https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnect
+ * <p>Details CrossConnect API: https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnect
  */
 public class FastConnectCrossConnectExample {
     // Set this with your own compartment ID

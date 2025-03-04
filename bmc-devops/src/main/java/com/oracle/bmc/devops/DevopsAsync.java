@@ -11,7 +11,7 @@ import com.oracle.bmc.devops.responses.*;
  * Use the DevOps API to create DevOps projects, configure code repositories, add artifacts to
  * deploy, build and test software applications, configure target deployment environments, and
  * deploy software applications. For more information, see
- * [DevOps](https://docs.cloud.oracle.com/Content/devops/using/home.htm).
+ * [DevOps](https://docs.oracle.com/iaas/Content/devops/using/home.htm).
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
 public interface DevopsAsync extends AutoCloseable {

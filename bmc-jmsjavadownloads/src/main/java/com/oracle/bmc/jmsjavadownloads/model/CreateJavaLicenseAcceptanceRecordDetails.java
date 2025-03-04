@@ -47,17 +47,15 @@ public final class CreateJavaLicenseAcceptanceRecordDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The tenancy
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-         * user accepting the license.
+         * The tenancy [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the user accepting the license.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The tenancy
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-         * user accepting the license.
+         * The tenancy [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the user accepting the license.
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -101,7 +99,7 @@ public final class CreateJavaLicenseAcceptanceRecordDetails
          * Simple key-value pair that is applied without any predefined name, type, or scope. Exists
          * for cross-compatibility only. Example: {@code {"bar-key": "value"}}. (See [Managing Tags
          * and Tag
-         * Namespaces](https://docs.cloud.oracle.com/Content/Tagging/Concepts/understandingfreeformtags.htm).)
+         * Namespaces](https://docs.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
          */
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
@@ -110,7 +108,7 @@ public final class CreateJavaLicenseAcceptanceRecordDetails
          * Simple key-value pair that is applied without any predefined name, type, or scope. Exists
          * for cross-compatibility only. Example: {@code {"bar-key": "value"}}. (See [Managing Tags
          * and Tag
-         * Namespaces](https://docs.cloud.oracle.com/Content/Tagging/Concepts/understandingfreeformtags.htm).)
+         * Namespaces](https://docs.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
          *
          * @param freeformTags the value to set
          * @return this builder
@@ -123,7 +121,7 @@ public final class CreateJavaLicenseAcceptanceRecordDetails
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
          * Example: {@code {"foo-namespace": {"bar-key": "value"}}}. (See [Understanding Free-form
-         * Tags](https://docs.cloud.oracle.com/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
+         * Tags](https://docs.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
@@ -131,7 +129,7 @@ public final class CreateJavaLicenseAcceptanceRecordDetails
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
          * Example: {@code {"foo-namespace": {"bar-key": "value"}}}. (See [Understanding Free-form
-         * Tags](https://docs.cloud.oracle.com/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
+         * Tags](https://docs.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
          *
          * @param definedTags the value to set
          * @return this builder
@@ -191,14 +189,14 @@ public final class CreateJavaLicenseAcceptanceRecordDetails
     }
 
     /**
-     * The tenancy [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of
+     * The tenancy [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
      * the user accepting the license.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The tenancy [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of
+     * The tenancy [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
      * the user accepting the license.
      *
      * @return the value
@@ -236,7 +234,7 @@ public final class CreateJavaLicenseAcceptanceRecordDetails
     /**
      * Simple key-value pair that is applied without any predefined name, type, or scope. Exists for
      * cross-compatibility only. Example: {@code {"bar-key": "value"}}. (See [Managing Tags and Tag
-     * Namespaces](https://docs.cloud.oracle.com/Content/Tagging/Concepts/understandingfreeformtags.htm).)
+     * Namespaces](https://docs.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
      */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
@@ -244,7 +242,7 @@ public final class CreateJavaLicenseAcceptanceRecordDetails
     /**
      * Simple key-value pair that is applied without any predefined name, type, or scope. Exists for
      * cross-compatibility only. Example: {@code {"bar-key": "value"}}. (See [Managing Tags and Tag
-     * Namespaces](https://docs.cloud.oracle.com/Content/Tagging/Concepts/understandingfreeformtags.htm).)
+     * Namespaces](https://docs.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
      *
      * @return the value
      */
@@ -255,7 +253,7 @@ public final class CreateJavaLicenseAcceptanceRecordDetails
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
      * {@code {"foo-namespace": {"bar-key": "value"}}}. (See [Understanding Free-form
-     * Tags](https://docs.cloud.oracle.com/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
+     * Tags](https://docs.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
@@ -263,7 +261,7 @@ public final class CreateJavaLicenseAcceptanceRecordDetails
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
      * {@code {"foo-namespace": {"bar-key": "value"}}}. (See [Understanding Free-form
-     * Tags](https://docs.cloud.oracle.com/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
+     * Tags](https://docs.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
      *
      * @return the value
      */

@@ -54,7 +54,7 @@ public final class ScriptSummary extends com.oracle.bmc.http.client.internal.Exp
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * script. scriptId is mandatory for creation of SCRIPTED_BROWSER and SCRIPTED_REST monitor
          * types. For other monitor types, it should be set to null.
          */
@@ -62,7 +62,7 @@ public final class ScriptSummary extends com.oracle.bmc.http.client.internal.Exp
         private String id;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * script. scriptId is mandatory for creation of SCRIPTED_BROWSER and SCRIPTED_REST monitor
          * types. For other monitor types, it should be set to null.
          *
@@ -257,7 +257,7 @@ public final class ScriptSummary extends com.oracle.bmc.http.client.internal.Exp
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * script. scriptId is mandatory for creation of SCRIPTED_BROWSER and SCRIPTED_REST monitor
      * types. For other monitor types, it should be set to null.
      */
@@ -265,7 +265,7 @@ public final class ScriptSummary extends com.oracle.bmc.http.client.internal.Exp
     private final String id;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * script. scriptId is mandatory for creation of SCRIPTED_BROWSER and SCRIPTED_REST monitor
      * types. For other monitor types, it should be set to null.
      *

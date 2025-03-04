@@ -45,7 +45,7 @@ public final class UpdateCpeDetails
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
          */
@@ -55,7 +55,7 @@ public final class UpdateCpeDetails
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
@@ -90,7 +90,7 @@ public final class UpdateCpeDetails
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          */
@@ -100,7 +100,7 @@ public final class UpdateCpeDetails
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          *
@@ -113,10 +113,10 @@ public final class UpdateCpeDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the CPE device type. You can provide a value if you want to generate CPE device
-         * configuration content for IPSec connections that use this CPE. For a list of possible
-         * values, see {@link #listCpeDeviceShapes(ListCpeDeviceShapesRequest) listCpeDeviceShapes}.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * CPE device type. You can provide a value if you want to generate CPE device configuration
+         * content for IPSec connections that use this CPE. For a list of possible values, see
+         * {@link #listCpeDeviceShapes(ListCpeDeviceShapesRequest) listCpeDeviceShapes}.
          *
          * <p>For more information about generating CPE device configuration content, see:
          *
@@ -132,10 +132,10 @@ public final class UpdateCpeDetails
         private String cpeDeviceShapeId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the CPE device type. You can provide a value if you want to generate CPE device
-         * configuration content for IPSec connections that use this CPE. For a list of possible
-         * values, see {@link #listCpeDeviceShapes(ListCpeDeviceShapesRequest) listCpeDeviceShapes}.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * CPE device type. You can provide a value if you want to generate CPE device configuration
+         * content for IPSec connections that use this CPE. For a list of possible values, see
+         * {@link #listCpeDeviceShapes(ListCpeDeviceShapesRequest) listCpeDeviceShapes}.
          *
          * <p>For more information about generating CPE device configuration content, see:
          *
@@ -202,7 +202,7 @@ public final class UpdateCpeDetails
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
      */
@@ -212,7 +212,7 @@ public final class UpdateCpeDetails
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
@@ -242,7 +242,7 @@ public final class UpdateCpeDetails
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      */
@@ -252,7 +252,7 @@ public final class UpdateCpeDetails
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      *
@@ -263,9 +263,9 @@ public final class UpdateCpeDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the CPE device type. You can provide a value if you want to generate CPE device configuration
-     * content for IPSec connections that use this CPE. For a list of possible values, see {@link
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CPE
+     * device type. You can provide a value if you want to generate CPE device configuration content
+     * for IPSec connections that use this CPE. For a list of possible values, see {@link
      * #listCpeDeviceShapes(ListCpeDeviceShapesRequest) listCpeDeviceShapes}.
      *
      * <p>For more information about generating CPE device configuration content, see:
@@ -282,9 +282,9 @@ public final class UpdateCpeDetails
     private final String cpeDeviceShapeId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the CPE device type. You can provide a value if you want to generate CPE device configuration
-     * content for IPSec connections that use this CPE. For a list of possible values, see {@link
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CPE
+     * device type. You can provide a value if you want to generate CPE device configuration content
+     * for IPSec connections that use this CPE. For a list of possible values, see {@link
      * #listCpeDeviceShapes(ListCpeDeviceShapesRequest) listCpeDeviceShapes}.
      *
      * <p>For more information about generating CPE device configuration content, see:

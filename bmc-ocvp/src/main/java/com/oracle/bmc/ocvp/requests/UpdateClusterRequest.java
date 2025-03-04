@@ -7,7 +7,7 @@ package com.oracle.bmc.ocvp.requests;
 import com.oracle.bmc.ocvp.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ocvp/UpdateClusterExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ocvp/UpdateClusterExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateClusterRequest.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230701")
@@ -15,14 +15,14 @@ public class UpdateClusterRequest
         extends com.oracle.bmc.requests.BmcRequest<com.oracle.bmc.ocvp.model.UpdateClusterDetails> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * SDDC Cluster.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC
+     * Cluster.
      */
     private String clusterId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * SDDC Cluster.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC
+     * Cluster.
      */
     public String getClusterId() {
         return clusterId;
@@ -83,13 +83,13 @@ public class UpdateClusterRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * SDDC Cluster.
          */
         private String clusterId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * SDDC Cluster.
          *
          * @param clusterId the value to set

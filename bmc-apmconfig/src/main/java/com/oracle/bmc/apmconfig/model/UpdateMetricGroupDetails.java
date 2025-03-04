@@ -63,7 +63,7 @@ public final class UpdateMetricGroupDetails extends UpdateConfigDetails {
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
          * Span Filter. The filterId is mandatory for the creation of MetricGroups. A filterId is
          * generated when a Span Filter is created.
          */
@@ -71,7 +71,7 @@ public final class UpdateMetricGroupDetails extends UpdateConfigDetails {
         private String filterId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
          * Span Filter. The filterId is mandatory for the creation of MetricGroups. A filterId is
          * generated when a Span Filter is created.
          *
@@ -219,7 +219,7 @@ public final class UpdateMetricGroupDetails extends UpdateConfigDetails {
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a Span
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Span
      * Filter. The filterId is mandatory for the creation of MetricGroups. A filterId is generated
      * when a Span Filter is created.
      */
@@ -227,7 +227,7 @@ public final class UpdateMetricGroupDetails extends UpdateConfigDetails {
     private final String filterId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a Span
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Span
      * Filter. The filterId is mandatory for the creation of MetricGroups. A filterId is generated
      * when a Span Filter is created.
      *

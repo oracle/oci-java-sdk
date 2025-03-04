@@ -29,7 +29,7 @@ public final class TenancyAssociation extends Association {
     public static class Builder {
         /**
          * The Oracle ID
-         * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the
+         * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the
          * tenancy to which the governance rule will be applied as part of this tenancy inclusion
          * criterion.
          */
@@ -38,7 +38,7 @@ public final class TenancyAssociation extends Association {
 
         /**
          * The Oracle ID
-         * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the
+         * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the
          * tenancy to which the governance rule will be applied as part of this tenancy inclusion
          * criterion.
          *
@@ -87,18 +87,16 @@ public final class TenancyAssociation extends Association {
     }
 
     /**
-     * The Oracle ID
-     * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the
-     * tenancy to which the governance rule will be applied as part of this tenancy inclusion
+     * The Oracle ID ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm))
+     * of the tenancy to which the governance rule will be applied as part of this tenancy inclusion
      * criterion.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("tenancyId")
     private final String tenancyId;
 
     /**
-     * The Oracle ID
-     * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the
-     * tenancy to which the governance rule will be applied as part of this tenancy inclusion
+     * The Oracle ID ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm))
+     * of the tenancy to which the governance rule will be applied as part of this tenancy inclusion
      * criterion.
      *
      * @return the value

@@ -50,15 +50,15 @@ public final class CustomizationInferenceEntity
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the customization to use.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * customization to use.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("customizationId")
         private String customizationId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the customization to use.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * customization to use.
          *
          * @param customizationId the value to set
          * @return this builder
@@ -135,15 +135,15 @@ public final class CustomizationInferenceEntity
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the customization to use.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * customization to use.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("customizationId")
     private final String customizationId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the customization to use.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * customization to use.
      *
      * @return the value
      */

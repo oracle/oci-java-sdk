@@ -64,15 +64,15 @@ public final class RotateAutonomousVmClusterOrdsCertsDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the certificate to use.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * certificate to use.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("certificateId")
         private String certificateId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the certificate to use.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * certificate to use.
          *
          * @param certificateId the value to set
          * @return this builder
@@ -83,15 +83,15 @@ public final class RotateAutonomousVmClusterOrdsCertsDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the certificate authority.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * certificate authority.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("certificateAuthorityId")
         private String certificateAuthorityId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the certificate authority.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * certificate authority.
          *
          * @param certificateAuthorityId the value to set
          * @return this builder
@@ -102,15 +102,15 @@ public final class RotateAutonomousVmClusterOrdsCertsDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the certificate bundle.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * certificate bundle.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("caBundleId")
         private String caBundleId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the certificate bundle.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * certificate bundle.
          *
          * @param caBundleId the value to set
          * @return this builder
@@ -218,15 +218,15 @@ public final class RotateAutonomousVmClusterOrdsCertsDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the certificate to use.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * certificate to use.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("certificateId")
     private final String certificateId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the certificate to use.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * certificate to use.
      *
      * @return the value
      */
@@ -235,15 +235,15 @@ public final class RotateAutonomousVmClusterOrdsCertsDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the certificate authority.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * certificate authority.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("certificateAuthorityId")
     private final String certificateAuthorityId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the certificate authority.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * certificate authority.
      *
      * @return the value
      */
@@ -252,15 +252,15 @@ public final class RotateAutonomousVmClusterOrdsCertsDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the certificate bundle.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * certificate bundle.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("caBundleId")
     private final String caBundleId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the certificate bundle.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * certificate bundle.
      *
      * @return the value
      */

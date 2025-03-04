@@ -7,7 +7,7 @@ package com.oracle.bmc.sch.requests;
 import com.oracle.bmc.sch.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/sch/UpdateServiceConnectorExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/sch/UpdateServiceConnectorExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * UpdateServiceConnectorRequest.
  */
@@ -17,14 +17,14 @@ public class UpdateServiceConnectorRequest
                 com.oracle.bmc.sch.model.UpdateServiceConnectorDetails> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the connector.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * connector.
      */
     private String serviceConnectorId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the connector.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * connector.
      */
     public String getServiceConnectorId() {
         return serviceConnectorId;
@@ -87,14 +87,14 @@ public class UpdateServiceConnectorRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the connector.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * connector.
          */
         private String serviceConnectorId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the connector.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * connector.
          *
          * @param serviceConnectorId the value to set
          * @return this builder instance

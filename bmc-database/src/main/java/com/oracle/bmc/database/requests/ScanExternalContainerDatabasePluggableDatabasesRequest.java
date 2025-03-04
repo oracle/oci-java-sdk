@@ -7,7 +7,7 @@ package com.oracle.bmc.database.requests;
 import com.oracle.bmc.database.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ScanExternalContainerDatabasePluggableDatabasesExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ScanExternalContainerDatabasePluggableDatabasesExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * ScanExternalContainerDatabasePluggableDatabasesRequest.
  */
@@ -17,25 +17,25 @@ public class ScanExternalContainerDatabasePluggableDatabasesRequest
 
     /**
      * The ExternalContainerDatabase
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     private String externalContainerDatabaseId;
 
     /**
      * The ExternalContainerDatabase
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     public String getExternalContainerDatabaseId() {
         return externalContainerDatabaseId;
     }
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * external database connector resource ({@code ExternalDatabaseConnectorId}).
      */
     private String externalDatabaseConnectorId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * external database connector resource ({@code ExternalDatabaseConnectorId}).
      */
     public String getExternalDatabaseConnectorId() {
@@ -76,13 +76,13 @@ public class ScanExternalContainerDatabasePluggableDatabasesRequest
 
         /**
          * The ExternalContainerDatabase
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          */
         private String externalContainerDatabaseId = null;
 
         /**
          * The ExternalContainerDatabase
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          * @param externalContainerDatabaseId the value to set
          * @return this builder instance
@@ -93,13 +93,13 @@ public class ScanExternalContainerDatabasePluggableDatabasesRequest
         }
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * external database connector resource ({@code ExternalDatabaseConnectorId}).
          */
         private String externalDatabaseConnectorId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * external database connector resource ({@code ExternalDatabaseConnectorId}).
          *
          * @param externalDatabaseConnectorId the value to set

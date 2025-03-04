@@ -9,13 +9,12 @@ package com.oracle.bmc.core.model;
  * The {@code Cpe} is a virtual representation of your customer-premises equipment, which is the
  * actual router on-premises at your site at your end of the Site-to-Site VPN IPSec connection. For
  * more information, see [Overview of the Networking
- * Service](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/overview.htm).
+ * Service](https://docs.oracle.com/iaas/Content/Network/Concepts/overview.htm).
  *
  * <p>To use any of the API operations, you must be authorized in an IAM policy. If you're not
  * authorized, talk to an administrator. If you're an administrator who needs to write policies to
  * give users access, see [Getting Started with
- * Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
- * <br>
+ * Policies](https://docs.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm). <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -67,15 +66,15 @@ public final class Cpe extends com.oracle.bmc.http.client.internal.ExplicitlySet
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compartment containing the CPE.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment containing the CPE.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compartment containing the CPE.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment containing the CPE.
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -88,7 +87,7 @@ public final class Cpe extends com.oracle.bmc.http.client.internal.ExplicitlySet
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
          */
@@ -98,7 +97,7 @@ public final class Cpe extends com.oracle.bmc.http.client.internal.ExplicitlySet
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
@@ -133,7 +132,7 @@ public final class Cpe extends com.oracle.bmc.http.client.internal.ExplicitlySet
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          */
@@ -143,7 +142,7 @@ public final class Cpe extends com.oracle.bmc.http.client.internal.ExplicitlySet
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          *
@@ -186,13 +185,13 @@ public final class Cpe extends com.oracle.bmc.http.client.internal.ExplicitlySet
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the CPE's device type. The Networking service maintains a general list of CPE device
-         * types (for example, Cisco ASA). For each type, Oracle provides CPE configuration content
-         * that can help a network engineer configure the CPE. The
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * uniquely identifies the type of device. To get the OCIDs for the device types on the
-         * list, see {@link #listCpeDeviceShapes(ListCpeDeviceShapesRequest) listCpeDeviceShapes}.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * CPE's device type. The Networking service maintains a general list of CPE device types
+         * (for example, Cisco ASA). For each type, Oracle provides CPE configuration content that
+         * can help a network engineer configure the CPE. The
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) uniquely
+         * identifies the type of device. To get the OCIDs for the device types on the list, see
+         * {@link #listCpeDeviceShapes(ListCpeDeviceShapesRequest) listCpeDeviceShapes}.
          *
          * <p>For information about how to generate CPE configuration content for a CPE device type,
          * see:
@@ -209,13 +208,13 @@ public final class Cpe extends com.oracle.bmc.http.client.internal.ExplicitlySet
         private String cpeDeviceShapeId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the CPE's device type. The Networking service maintains a general list of CPE device
-         * types (for example, Cisco ASA). For each type, Oracle provides CPE configuration content
-         * that can help a network engineer configure the CPE. The
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * uniquely identifies the type of device. To get the OCIDs for the device types on the
-         * list, see {@link #listCpeDeviceShapes(ListCpeDeviceShapesRequest) listCpeDeviceShapes}.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * CPE's device type. The Networking service maintains a general list of CPE device types
+         * (for example, Cisco ASA). For each type, Oracle provides CPE configuration content that
+         * can help a network engineer configure the CPE. The
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) uniquely
+         * identifies the type of device. To get the OCIDs for the device types on the list, see
+         * {@link #listCpeDeviceShapes(ListCpeDeviceShapesRequest) listCpeDeviceShapes}.
          *
          * <p>For information about how to generate CPE configuration content for a CPE device type,
          * see:
@@ -339,15 +338,15 @@ public final class Cpe extends com.oracle.bmc.http.client.internal.ExplicitlySet
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compartment containing the CPE.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment containing the CPE.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compartment containing the CPE.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment containing the CPE.
      *
      * @return the value
      */
@@ -358,7 +357,7 @@ public final class Cpe extends com.oracle.bmc.http.client.internal.ExplicitlySet
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
      */
@@ -368,7 +367,7 @@ public final class Cpe extends com.oracle.bmc.http.client.internal.ExplicitlySet
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
@@ -398,7 +397,7 @@ public final class Cpe extends com.oracle.bmc.http.client.internal.ExplicitlySet
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      */
@@ -408,7 +407,7 @@ public final class Cpe extends com.oracle.bmc.http.client.internal.ExplicitlySet
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      *
@@ -445,11 +444,11 @@ public final class Cpe extends com.oracle.bmc.http.client.internal.ExplicitlySet
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the CPE's device type. The Networking service maintains a general list of CPE device types
-     * (for example, Cisco ASA). For each type, Oracle provides CPE configuration content that can
-     * help a network engineer configure the CPE. The
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) uniquely
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * CPE's device type. The Networking service maintains a general list of CPE device types (for
+     * example, Cisco ASA). For each type, Oracle provides CPE configuration content that can help a
+     * network engineer configure the CPE. The
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) uniquely
      * identifies the type of device. To get the OCIDs for the device types on the list, see {@link
      * #listCpeDeviceShapes(ListCpeDeviceShapesRequest) listCpeDeviceShapes}.
      *
@@ -468,11 +467,11 @@ public final class Cpe extends com.oracle.bmc.http.client.internal.ExplicitlySet
     private final String cpeDeviceShapeId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the CPE's device type. The Networking service maintains a general list of CPE device types
-     * (for example, Cisco ASA). For each type, Oracle provides CPE configuration content that can
-     * help a network engineer configure the CPE. The
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) uniquely
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * CPE's device type. The Networking service maintains a general list of CPE device types (for
+     * example, Cisco ASA). For each type, Oracle provides CPE configuration content that can help a
+     * network engineer configure the CPE. The
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) uniquely
      * identifies the type of device. To get the OCIDs for the device types on the list, see {@link
      * #listCpeDeviceShapes(ListCpeDeviceShapesRequest) listCpeDeviceShapes}.
      *

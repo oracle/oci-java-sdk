@@ -7,7 +7,7 @@ package com.oracle.bmc.identity.model;
 /**
  * A tag definition that belongs to a specific tag namespace. "Defined tags" must be set up in your
  * tenancy before you can apply them to resources. For more information, see [Managing Tags and Tag
- * Namespaces](https://docs.cloud.oracle.com/Content/Identity/Concepts/taggingoverview.htm).
+ * Namespaces](https://docs.oracle.com/iaas/Content/Identity/Concepts/taggingoverview.htm).
  *
  * <p>*Warning:** Oracle recommends that you avoid using any confidential information when you
  * supply string values using the API. <br>
@@ -170,7 +170,7 @@ public final class Tag extends com.oracle.bmc.http.client.internal.ExplicitlySet
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          */
@@ -180,7 +180,7 @@ public final class Tag extends com.oracle.bmc.http.client.internal.ExplicitlySet
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          *
@@ -195,7 +195,7 @@ public final class Tag extends com.oracle.bmc.http.client.internal.ExplicitlySet
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
          */
@@ -205,7 +205,7 @@ public final class Tag extends com.oracle.bmc.http.client.internal.ExplicitlySet
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
@@ -220,14 +220,14 @@ public final class Tag extends com.oracle.bmc.http.client.internal.ExplicitlySet
         }
         /**
          * Indicates whether the tag is retired. See [Retiring Key Definitions and Namespace
-         * Definitions](https://docs.cloud.oracle.com/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm#retiringkeys).
+         * Definitions](https://docs.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm#retiringkeys).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("isRetired")
         private Boolean isRetired;
 
         /**
          * Indicates whether the tag is retired. See [Retiring Key Definitions and Namespace
-         * Definitions](https://docs.cloud.oracle.com/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm#retiringkeys).
+         * Definitions](https://docs.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm#retiringkeys).
          *
          * @param isRetired the value to set
          * @return this builder
@@ -470,7 +470,7 @@ public final class Tag extends com.oracle.bmc.http.client.internal.ExplicitlySet
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      */
@@ -480,7 +480,7 @@ public final class Tag extends com.oracle.bmc.http.client.internal.ExplicitlySet
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      *
@@ -493,7 +493,7 @@ public final class Tag extends com.oracle.bmc.http.client.internal.ExplicitlySet
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
      */
@@ -503,7 +503,7 @@ public final class Tag extends com.oracle.bmc.http.client.internal.ExplicitlySet
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
@@ -515,14 +515,14 @@ public final class Tag extends com.oracle.bmc.http.client.internal.ExplicitlySet
 
     /**
      * Indicates whether the tag is retired. See [Retiring Key Definitions and Namespace
-     * Definitions](https://docs.cloud.oracle.com/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm#retiringkeys).
+     * Definitions](https://docs.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm#retiringkeys).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("isRetired")
     private final Boolean isRetired;
 
     /**
      * Indicates whether the tag is retired. See [Retiring Key Definitions and Namespace
-     * Definitions](https://docs.cloud.oracle.com/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm#retiringkeys).
+     * Definitions](https://docs.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm#retiringkeys).
      *
      * @return the value
      */

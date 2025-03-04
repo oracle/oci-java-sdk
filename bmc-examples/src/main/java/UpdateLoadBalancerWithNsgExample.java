@@ -18,10 +18,10 @@ import java.util.stream.Collectors;
  * A network security group (NSG) provides virtual firewall rules for a specified set of VNICs and
  * load balancers in a VCN. Compare NSGs with SecurityLists, which provide virtual firewall rules to
  * all the VNICs in a subnet. Please refer to
- * https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/ for more
- * information about creating network security groups using the API. After creating an NSG, you can
- * add load balancers to it with UpdateNetworkSecurityGroups. Please refer to
- * https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/methods/UpdateNetworkSecurityGroups
+ * https://docs.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/ for more information
+ * about creating network security groups using the API. After creating an NSG, you can add load
+ * balancers to it with UpdateNetworkSecurityGroups. Please refer to
+ * https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/methods/UpdateNetworkSecurityGroups
  * for more information about the LB NSG API. This example requires an existing load balancer OCID
  * and a comma-separated list of NSG OCIDs. It will place the load balancer into the NSGs provided.
  */

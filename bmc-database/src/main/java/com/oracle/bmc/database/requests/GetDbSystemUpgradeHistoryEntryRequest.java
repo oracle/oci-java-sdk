@@ -7,7 +7,7 @@ package com.oracle.bmc.database.requests;
 import com.oracle.bmc.database.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetDbSystemUpgradeHistoryEntryExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetDbSystemUpgradeHistoryEntryExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * GetDbSystemUpgradeHistoryEntryRequest.
  */
@@ -16,25 +16,25 @@ public class GetDbSystemUpgradeHistoryEntryRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The DB system [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * The DB system [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     private String dbSystemId;
 
     /**
-     * The DB system [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * The DB system [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     public String getDbSystemId() {
         return dbSystemId;
     }
     /**
      * The database/db system upgrade History
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     private String upgradeHistoryEntryId;
 
     /**
      * The database/db system upgrade History
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     public String getUpgradeHistoryEntryId() {
         return upgradeHistoryEntryId;
@@ -55,13 +55,13 @@ public class GetDbSystemUpgradeHistoryEntryRequest
 
         /**
          * The DB system
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          */
         private String dbSystemId = null;
 
         /**
          * The DB system
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          * @param dbSystemId the value to set
          * @return this builder instance
@@ -73,13 +73,13 @@ public class GetDbSystemUpgradeHistoryEntryRequest
 
         /**
          * The database/db system upgrade History
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          */
         private String upgradeHistoryEntryId = null;
 
         /**
          * The database/db system upgrade History
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          * @param upgradeHistoryEntryId the value to set
          * @return this builder instance

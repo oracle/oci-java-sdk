@@ -187,7 +187,7 @@ public final class CreateAmazonS3ConnectionDetails extends CreateConnectionDetai
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Secret where the Secret Access Key is stored. Note: When provided, 'secretAccessKey'
          * field must not be provided.
          */
@@ -195,7 +195,7 @@ public final class CreateAmazonS3ConnectionDetails extends CreateConnectionDetai
         private String secretAccessKeySecretId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Secret where the Secret Access Key is stored. Note: When provided, 'secretAccessKey'
          * field must not be provided.
          *
@@ -382,7 +382,7 @@ public final class CreateAmazonS3ConnectionDetails extends CreateConnectionDetai
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Secret where the Secret Access Key is stored. Note: When provided, 'secretAccessKey' field
      * must not be provided.
      */
@@ -390,7 +390,7 @@ public final class CreateAmazonS3ConnectionDetails extends CreateConnectionDetai
     private final String secretAccessKeySecretId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Secret where the Secret Access Key is stored. Note: When provided, 'secretAccessKey' field
      * must not be provided.
      *

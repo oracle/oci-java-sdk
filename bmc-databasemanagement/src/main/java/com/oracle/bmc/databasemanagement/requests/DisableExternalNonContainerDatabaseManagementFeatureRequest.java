@@ -7,7 +7,7 @@ package com.oracle.bmc.databasemanagement.requests;
 import com.oracle.bmc.databasemanagement.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/DisableExternalNonContainerDatabaseManagementFeatureExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/DisableExternalNonContainerDatabaseManagementFeatureExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * DisableExternalNonContainerDatabaseManagementFeatureRequest.
  */
@@ -18,13 +18,13 @@ public class DisableExternalNonContainerDatabaseManagementFeatureRequest
                         .DisableExternalNonContainerDatabaseManagementFeatureDetails> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * external non-container database.
      */
     private String externalNonContainerDatabaseId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * external non-container database.
      */
     public String getExternalNonContainerDatabaseId() {
@@ -113,13 +113,13 @@ public class DisableExternalNonContainerDatabaseManagementFeatureRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * external non-container database.
          */
         private String externalNonContainerDatabaseId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * external non-container database.
          *
          * @param externalNonContainerDatabaseId the value to set

@@ -7,7 +7,7 @@ package com.oracle.bmc.goldengate.requests;
 import com.oracle.bmc.goldengate.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/goldengate/ListDeploymentBackupsExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/goldengate/ListDeploymentBackupsExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * ListDeploymentBackupsRequest.
  */
@@ -33,13 +33,13 @@ public class ListDeploymentBackupsRequest
         return compartmentId;
     }
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * deployment in which to list resources.
      */
     private String deploymentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * deployment in which to list resources.
      */
     public String getDeploymentId() {
@@ -178,13 +178,13 @@ public class ListDeploymentBackupsRequest
         }
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * deployment in which to list resources.
          */
         private String deploymentId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * deployment in which to list resources.
          *
          * @param deploymentId the value to set

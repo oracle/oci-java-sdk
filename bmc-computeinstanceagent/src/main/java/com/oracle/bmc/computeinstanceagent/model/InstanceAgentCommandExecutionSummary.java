@@ -59,14 +59,14 @@ public final class InstanceAgentCommandExecutionSummary
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * command.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("instanceAgentCommandId")
         private String instanceAgentCommandId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * command.
          *
          * @param instanceAgentCommandId the value to set
@@ -78,14 +78,14 @@ public final class InstanceAgentCommandExecutionSummary
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * instance.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("instanceId")
         private String instanceId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * instance.
          *
          * @param instanceId the value to set
@@ -298,14 +298,14 @@ public final class InstanceAgentCommandExecutionSummary
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * command.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("instanceAgentCommandId")
     private final String instanceAgentCommandId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * command.
      *
      * @return the value
@@ -315,14 +315,14 @@ public final class InstanceAgentCommandExecutionSummary
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * instance.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("instanceId")
     private final String instanceId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * instance.
      *
      * @return the value

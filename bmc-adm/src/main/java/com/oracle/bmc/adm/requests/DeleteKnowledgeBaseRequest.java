@@ -7,7 +7,7 @@ package com.oracle.bmc.adm.requests;
 import com.oracle.bmc.adm.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/adm/DeleteKnowledgeBaseExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/adm/DeleteKnowledgeBaseExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use DeleteKnowledgeBaseRequest.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220421")
@@ -15,14 +15,14 @@ public class DeleteKnowledgeBaseRequest extends com.oracle.bmc.requests.BmcReque
 
     /**
      * The Oracle Cloud Identifier
-     * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of a
+     * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of a
      * Knowledge Base, as a URL path parameter.
      */
     private String knowledgeBaseId;
 
     /**
      * The Oracle Cloud Identifier
-     * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of a
+     * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of a
      * Knowledge Base, as a URL path parameter.
      */
     public String getKnowledgeBaseId() {
@@ -61,14 +61,14 @@ public class DeleteKnowledgeBaseRequest extends com.oracle.bmc.requests.BmcReque
 
         /**
          * The Oracle Cloud Identifier
-         * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of a
+         * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of a
          * Knowledge Base, as a URL path parameter.
          */
         private String knowledgeBaseId = null;
 
         /**
          * The Oracle Cloud Identifier
-         * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of a
+         * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of a
          * Knowledge Base, as a URL path parameter.
          *
          * @param knowledgeBaseId the value to set

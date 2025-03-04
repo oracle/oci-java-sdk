@@ -61,7 +61,7 @@ public final class InstanceConfigurationInstanceSourceImageFilterDetails
         /**
          * Filter based on these defined tags. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTagsFilter")
         private java.util.Map<String, java.util.Map<String, Object>> definedTagsFilter;
@@ -69,7 +69,7 @@ public final class InstanceConfigurationInstanceSourceImageFilterDetails
         /**
          * Filter based on these defined tags. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * @param definedTagsFilter the value to set
          * @return this builder
@@ -182,7 +182,7 @@ public final class InstanceConfigurationInstanceSourceImageFilterDetails
     /**
      * Filter based on these defined tags. Each key is predefined and scoped to a namespace. For
      * more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTagsFilter")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTagsFilter;
@@ -190,7 +190,7 @@ public final class InstanceConfigurationInstanceSourceImageFilterDetails
     /**
      * Filter based on these defined tags. Each key is predefined and scoped to a namespace. For
      * more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * @return the value
      */
