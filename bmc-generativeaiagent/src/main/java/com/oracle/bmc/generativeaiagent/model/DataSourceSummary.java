@@ -68,15 +68,15 @@ public final class DataSourceSummary
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the data source.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * data source.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the data source.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * data source.
          *
          * @param id the value to set
          * @return this builder
@@ -117,15 +117,15 @@ public final class DataSourceSummary
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the parent KnowledgeBase.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * parent KnowledgeBase.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("knowledgeBaseId")
         private String knowledgeBaseId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the parent KnowledgeBase.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * parent KnowledgeBase.
          *
          * @param knowledgeBaseId the value to set
          * @return this builder
@@ -136,15 +136,15 @@ public final class DataSourceSummary
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compartment.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compartment.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment.
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -239,7 +239,7 @@ public final class DataSourceSummary
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          */
@@ -249,7 +249,7 @@ public final class DataSourceSummary
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          *
@@ -264,7 +264,7 @@ public final class DataSourceSummary
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
          */
@@ -274,7 +274,7 @@ public final class DataSourceSummary
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
@@ -385,15 +385,15 @@ public final class DataSourceSummary
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the data source.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the data
+     * source.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the data source.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the data
+     * source.
      *
      * @return the value
      */
@@ -428,15 +428,15 @@ public final class DataSourceSummary
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the parent KnowledgeBase.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * parent KnowledgeBase.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("knowledgeBaseId")
     private final String knowledgeBaseId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the parent KnowledgeBase.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * parent KnowledgeBase.
      *
      * @return the value
      */
@@ -445,15 +445,15 @@ public final class DataSourceSummary
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compartment.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compartment.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment.
      *
      * @return the value
      */
@@ -536,7 +536,7 @@ public final class DataSourceSummary
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      */
@@ -546,7 +546,7 @@ public final class DataSourceSummary
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      *
@@ -559,7 +559,7 @@ public final class DataSourceSummary
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
      */
@@ -569,7 +569,7 @@ public final class DataSourceSummary
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
      *

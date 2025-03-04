@@ -33,16 +33,16 @@ public final class ScanLibraryUsageDetails
     public static class Builder {
         /**
          * The list of
-         * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of
-         * managed instances to scan.
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of managed
+         * instances to scan.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("managedInstanceIds")
         private java.util.List<String> managedInstanceIds;
 
         /**
          * The list of
-         * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of
-         * managed instances to scan.
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of managed
+         * instances to scan.
          *
          * @param managedInstanceIds the value to set
          * @return this builder
@@ -83,15 +83,15 @@ public final class ScanLibraryUsageDetails
     }
 
     /**
-     * The list of [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
-     * of managed instances to scan.
+     * The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * managed instances to scan.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("managedInstanceIds")
     private final java.util.List<String> managedInstanceIds;
 
     /**
-     * The list of [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
-     * of managed instances to scan.
+     * The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * managed instances to scan.
      *
      * @return the value
      */

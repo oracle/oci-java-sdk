@@ -39,8 +39,8 @@ public final class UpdateNetworkSecurityGroupsDetails
     public static class Builder {
         /**
          * An array of network security group
-         * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
-         * associated with the network load balancer.
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated
+         * with the network load balancer.
          *
          * <p>During the creation of the network load balancer, the service adds the new network
          * load balancer to the specified network security groups.
@@ -59,8 +59,8 @@ public final class UpdateNetworkSecurityGroupsDetails
 
         /**
          * An array of network security group
-         * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
-         * associated with the network load balancer.
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated
+         * with the network load balancer.
          *
          * <p>During the creation of the network load balancer, the service adds the new network
          * load balancer to the specified network security groups.
@@ -115,7 +115,7 @@ public final class UpdateNetworkSecurityGroupsDetails
 
     /**
      * An array of network security group
-     * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) associated
+     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated
      * with the network load balancer.
      *
      * <p>During the creation of the network load balancer, the service adds the new network load
@@ -135,7 +135,7 @@ public final class UpdateNetworkSecurityGroupsDetails
 
     /**
      * An array of network security group
-     * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) associated
+     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated
      * with the network load balancer.
      *
      * <p>During the creation of the network load balancer, the service adds the new network load

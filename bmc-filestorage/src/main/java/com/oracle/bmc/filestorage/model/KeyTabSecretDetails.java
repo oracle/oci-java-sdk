@@ -41,14 +41,14 @@ public final class KeyTabSecretDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * keytab secret in the Vault.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("keyTabSecretId")
         private String keyTabSecretId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * keytab secret in the Vault.
          *
          * @param keyTabSecretId the value to set
@@ -130,14 +130,14 @@ public final class KeyTabSecretDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * keytab secret in the Vault.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("keyTabSecretId")
     private final String keyTabSecretId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * keytab secret in the Vault.
      *
      * @return the value

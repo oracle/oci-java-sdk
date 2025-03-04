@@ -27,14 +27,14 @@ public class SummarizeAlarmSuppressionHistoryResponse extends com.oracle.bmc.res
     /**
      * For list pagination. When this header appears in the response, next page of results remains.
      * For important details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private String opcNextPage;
 
     /**
      * For list pagination. When this header appears in the response, next page of results remains.
      * For important details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      * @return the value
      */
@@ -45,14 +45,14 @@ public class SummarizeAlarmSuppressionHistoryResponse extends com.oracle.bmc.res
     /**
      * For list pagination. When this header appears in the response, previous pages of results
      * remains. For important details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private String opcPreviousPage;
 
     /**
      * For list pagination. When this header appears in the response, previous pages of results
      * remains. For important details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      * @return the value
      */
@@ -137,14 +137,14 @@ public class SummarizeAlarmSuppressionHistoryResponse extends com.oracle.bmc.res
         /**
          * For list pagination. When this header appears in the response, next page of results
          * remains. For important details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private String opcNextPage;
 
         /**
          * For list pagination. When this header appears in the response, next page of results
          * remains. For important details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param opcNextPage the value to set
          * @return this builder
@@ -157,14 +157,14 @@ public class SummarizeAlarmSuppressionHistoryResponse extends com.oracle.bmc.res
         /**
          * For list pagination. When this header appears in the response, previous pages of results
          * remains. For important details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private String opcPreviousPage;
 
         /**
          * For list pagination. When this header appears in the response, previous pages of results
          * remains. For important details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param opcPreviousPage the value to set
          * @return this builder

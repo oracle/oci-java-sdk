@@ -8,8 +8,8 @@ package com.oracle.bmc.core.model;
  * A single DHCP option according to [RFC 1533](https://tools.ietf.org/html/rfc1533). The two
  * options available to use are {@link DhcpDnsOption} and {@link DhcpSearchDomainOption}. For more
  * information, see [DNS in Your Virtual Cloud
- * Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm) and [DHCP
- * Options](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingDHCP.htm). <br>
+ * Network](https://docs.oracle.com/iaas/Content/Network/Concepts/dns.htm) and [DHCP
+ * Options](https://docs.oracle.com/iaas/Content/Network/Tasks/managingDHCP.htm). <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a

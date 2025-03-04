@@ -218,14 +218,14 @@ public final class DatabaseToolsConnectionMySql extends DatabaseToolsConnection 
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Database Tools private endpoint used to access the database in the customer VCN.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("privateEndpointId")
         private String privateEndpointId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Database Tools private endpoint used to access the database in the customer VCN.
          *
          * @param privateEndpointId the value to set
@@ -454,14 +454,14 @@ public final class DatabaseToolsConnectionMySql extends DatabaseToolsConnection 
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Database Tools private endpoint used to access the database in the customer VCN.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("privateEndpointId")
     private final String privateEndpointId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Database Tools private endpoint used to access the database in the customer VCN.
      *
      * @return the value

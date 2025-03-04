@@ -7,20 +7,20 @@ package com.oracle.bmc.jmsjavadownloads.requests;
 import com.oracle.bmc.jmsjavadownloads.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jmsjavadownloads/ListWorkRequestsExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jmsjavadownloads/ListWorkRequestsExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListWorkRequestsRequest.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230601")
 public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * tenancy.
      */
     private String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * tenancy.
      */
     public String getCompartmentId() {
@@ -138,13 +138,13 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * tenancy.
          */
         private String compartmentId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * tenancy.
          *
          * @param compartmentId the value to set

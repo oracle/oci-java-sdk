@@ -7,7 +7,7 @@ package com.oracle.bmc.cims.requests;
 import com.oracle.bmc.cims.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cims/ListIncidentsExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cims/ListIncidentsExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListIncidentsRequest.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181231")
@@ -36,14 +36,14 @@ public class ListIncidentsRequest extends com.oracle.bmc.requests.BmcRequest<jav
     /**
      * For list pagination. The maximum number of results per page, or items to return in a
      * paginated "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private Integer limit;
 
     /**
      * For list pagination. The maximum number of results per page, or items to return in a
      * paginated "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     public Integer getLimit() {
         return limit;
@@ -72,14 +72,14 @@ public class ListIncidentsRequest extends com.oracle.bmc.requests.BmcRequest<jav
     /**
      * For list pagination. The value of the {@code opc-next-page} response header from the previous
      * "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private String page;
 
     /**
      * For list pagination. The value of the {@code opc-next-page} response header from the previous
      * "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     public String getPage() {
         return page;
@@ -202,14 +202,14 @@ public class ListIncidentsRequest extends com.oracle.bmc.requests.BmcRequest<jav
         /**
          * For list pagination. The maximum number of results per page, or items to return in a
          * paginated "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private Integer limit = null;
 
         /**
          * For list pagination. The maximum number of results per page, or items to return in a
          * paginated "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param limit the value to set
          * @return this builder instance
@@ -264,14 +264,14 @@ public class ListIncidentsRequest extends com.oracle.bmc.requests.BmcRequest<jav
         /**
          * For list pagination. The value of the {@code opc-next-page} response header from the
          * previous "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private String page = null;
 
         /**
          * For list pagination. The value of the {@code opc-next-page} response header from the
          * previous "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param page the value to set
          * @return this builder instance

@@ -36,14 +36,14 @@ public final class AssociatedDatabaseSummary
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * database.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * database.
          *
          * @param id the value to set
@@ -71,7 +71,7 @@ public final class AssociatedDatabaseSummary
         }
         /**
          * The compartment
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * database.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
@@ -79,7 +79,7 @@ public final class AssociatedDatabaseSummary
 
         /**
          * The compartment
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * database.
          *
          * @param compartmentId the value to set
@@ -147,14 +147,14 @@ public final class AssociatedDatabaseSummary
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * database.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * database.
      *
      * @return the value
@@ -177,17 +177,15 @@ public final class AssociatedDatabaseSummary
     }
 
     /**
-     * The compartment
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * database.
+     * The compartment [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * of the database.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The compartment
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * database.
+     * The compartment [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * of the database.
      *
      * @return the value
      */

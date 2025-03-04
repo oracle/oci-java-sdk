@@ -80,14 +80,14 @@ public final class MonitoringTemplateSummary
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * monitoringTemplate
          */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * monitoringTemplate
          *
          * @param id the value to set
@@ -115,14 +115,14 @@ public final class MonitoringTemplateSummary
         }
         /**
          * Tenant Identifier
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
          */
         @com.fasterxml.jackson.annotation.JsonProperty("tenantId")
         private String tenantId;
 
         /**
          * Tenant Identifier
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
          *
          * @param tenantId the value to set
          * @return this builder
@@ -439,14 +439,14 @@ public final class MonitoringTemplateSummary
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * monitoringTemplate
      */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * monitoringTemplate
      *
      * @return the value
@@ -470,14 +470,14 @@ public final class MonitoringTemplateSummary
 
     /**
      * Tenant Identifier
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      */
     @com.fasterxml.jackson.annotation.JsonProperty("tenantId")
     private final String tenantId;
 
     /**
      * Tenant Identifier
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      *
      * @return the value
      */

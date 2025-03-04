@@ -14,7 +14,7 @@ package com.oracle.bmc.generativeaiagent.model;
  * <p>To use any of the API operations, you must be authorized in an IAM policy. If you're not
  * authorized, talk to an administrator. If you're an administrator who needs to write policies to
  * give users access, see [Getting Started with
- * Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/policiesgs/get-started-with-policies.htm).
+ * Policies](https://docs.oracle.com/iaas/Content/Identity/policiesgs/get-started-with-policies.htm).
  * <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
@@ -83,15 +83,15 @@ public final class DataIngestionJob
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the DataIngestionJob.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * DataIngestionJob.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the DataIngestionJob.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * DataIngestionJob.
          *
          * @param id the value to set
          * @return this builder
@@ -132,15 +132,15 @@ public final class DataIngestionJob
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compartment.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compartment.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment.
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -151,15 +151,15 @@ public final class DataIngestionJob
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the parent DataSource.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * parent DataSource.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("dataSourceId")
         private String dataSourceId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the parent DataSource.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * parent DataSource.
          *
          * @param dataSourceId the value to set
          * @return this builder
@@ -170,15 +170,15 @@ public final class DataIngestionJob
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the parent KnowledgeBase.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * parent KnowledgeBase.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("knowledgeBaseId")
         private String knowledgeBaseId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the parent KnowledgeBase.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * parent KnowledgeBase.
          *
          * @param knowledgeBaseId the value to set
          * @return this builder
@@ -283,7 +283,7 @@ public final class DataIngestionJob
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          */
@@ -293,7 +293,7 @@ public final class DataIngestionJob
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          *
@@ -308,7 +308,7 @@ public final class DataIngestionJob
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
          */
@@ -318,7 +318,7 @@ public final class DataIngestionJob
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
@@ -437,15 +437,15 @@ public final class DataIngestionJob
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the DataIngestionJob.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * DataIngestionJob.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the DataIngestionJob.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * DataIngestionJob.
      *
      * @return the value
      */
@@ -480,15 +480,15 @@ public final class DataIngestionJob
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compartment.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compartment.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment.
      *
      * @return the value
      */
@@ -497,15 +497,15 @@ public final class DataIngestionJob
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the parent DataSource.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * parent DataSource.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("dataSourceId")
     private final String dataSourceId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the parent DataSource.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * parent DataSource.
      *
      * @return the value
      */
@@ -514,15 +514,15 @@ public final class DataIngestionJob
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the parent KnowledgeBase.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * parent KnowledgeBase.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("knowledgeBaseId")
     private final String knowledgeBaseId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the parent KnowledgeBase.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * parent KnowledgeBase.
      *
      * @return the value
      */
@@ -663,7 +663,7 @@ public final class DataIngestionJob
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      */
@@ -673,7 +673,7 @@ public final class DataIngestionJob
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      *
@@ -686,7 +686,7 @@ public final class DataIngestionJob
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
      */
@@ -696,7 +696,7 @@ public final class DataIngestionJob
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
      *

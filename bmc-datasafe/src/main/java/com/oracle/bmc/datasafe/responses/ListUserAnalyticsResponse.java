@@ -28,7 +28,7 @@ public class ListUserAnalyticsResponse extends com.oracle.bmc.responses.BmcRespo
      * For list pagination. When this header appears in the response, additional pages of results
      * remain. Include opc-next-page value as the page parameter for the subsequent GET request to
      * get the next batch of items. For details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private String opcNextPage;
 
@@ -36,7 +36,7 @@ public class ListUserAnalyticsResponse extends com.oracle.bmc.responses.BmcRespo
      * For list pagination. When this header appears in the response, additional pages of results
      * remain. Include opc-next-page value as the page parameter for the subsequent GET request to
      * get the next batch of items. For details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      * @return the value
      */
@@ -115,7 +115,7 @@ public class ListUserAnalyticsResponse extends com.oracle.bmc.responses.BmcRespo
          * For list pagination. When this header appears in the response, additional pages of
          * results remain. Include opc-next-page value as the page parameter for the subsequent GET
          * request to get the next batch of items. For details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private String opcNextPage;
 
@@ -123,7 +123,7 @@ public class ListUserAnalyticsResponse extends com.oracle.bmc.responses.BmcRespo
          * For list pagination. When this header appears in the response, additional pages of
          * results remain. Include opc-next-page value as the page parameter for the subsequent GET
          * request to get the next batch of items. For details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param opcNextPage the value to set
          * @return this builder

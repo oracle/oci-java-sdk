@@ -7,7 +7,7 @@ package com.oracle.bmc.ons.model;
 /**
  * The backoff retry portion of the subscription delivery policy. For information about retry
  * durations for subscriptions, see [How Notifications
- * Works](https://docs.cloud.oracle.com/iaas/Content/Notification/Concepts/notificationoverview.htm#how).
+ * Works](https://docs.oracle.com/iaas/Content/Notification/Concepts/notificationoverview.htm#how).
  * <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly

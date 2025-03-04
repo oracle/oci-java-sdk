@@ -8,7 +8,7 @@ package com.oracle.bmc.core.model;
  * Oracle offers the ability to Bring Your Own Autonomous System Number (BYOASN), importing AS
  * Numbers you currently own to Oracle Cloud Infrastructure. A {@code Byoasn} resource is a record
  * of the imported AS Number and also some associated metadata. The process used to [Bring Your Own
- * ASN](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/BYOASN.htm) is explained in the
+ * ASN](https://docs.oracle.com/iaas/Content/Network/Concepts/BYOASN.htm) is explained in the
  * documentation. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
@@ -87,7 +87,7 @@ public final class Byoasn extends com.oracle.bmc.http.client.internal.Explicitly
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
          */
@@ -97,7 +97,7 @@ public final class Byoasn extends com.oracle.bmc.http.client.internal.Explicitly
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
@@ -132,7 +132,7 @@ public final class Byoasn extends com.oracle.bmc.http.client.internal.Explicitly
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          */
@@ -142,7 +142,7 @@ public final class Byoasn extends com.oracle.bmc.http.client.internal.Explicitly
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          *
@@ -155,15 +155,15 @@ public final class Byoasn extends com.oracle.bmc.http.client.internal.Explicitly
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the {@code Byoasn} resource.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * {@code Byoasn} resource.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the {@code Byoasn} resource.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * {@code Byoasn} resource.
          *
          * @param id the value to set
          * @return this builder
@@ -189,15 +189,15 @@ public final class Byoasn extends com.oracle.bmc.http.client.internal.Explicitly
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compartment containing the {@code Byoasn} resource.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment containing the {@code Byoasn} resource.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compartment containing the {@code Byoasn} resource.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment containing the {@code Byoasn} resource.
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -233,8 +233,7 @@ public final class Byoasn extends com.oracle.bmc.http.client.internal.Explicitly
         /**
          * The validation token is an internally-generated ASCII string used in the validation
          * process. See [Importing a
-         * Byoasn](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/BYOASN.htm) for
-         * details.
+         * Byoasn](https://docs.oracle.com/iaas/Content/Network/Concepts/BYOASN.htm) for details.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("validationToken")
         private String validationToken;
@@ -242,8 +241,7 @@ public final class Byoasn extends com.oracle.bmc.http.client.internal.Explicitly
         /**
          * The validation token is an internally-generated ASCII string used in the validation
          * process. See [Importing a
-         * Byoasn](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/BYOASN.htm) for
-         * details.
+         * Byoasn](https://docs.oracle.com/iaas/Content/Network/Concepts/BYOASN.htm) for details.
          *
          * @param validationToken the value to set
          * @return this builder
@@ -455,7 +453,7 @@ public final class Byoasn extends com.oracle.bmc.http.client.internal.Explicitly
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
      */
@@ -465,7 +463,7 @@ public final class Byoasn extends com.oracle.bmc.http.client.internal.Explicitly
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
@@ -495,7 +493,7 @@ public final class Byoasn extends com.oracle.bmc.http.client.internal.Explicitly
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      */
@@ -505,7 +503,7 @@ public final class Byoasn extends com.oracle.bmc.http.client.internal.Explicitly
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      *
@@ -516,15 +514,15 @@ public final class Byoasn extends com.oracle.bmc.http.client.internal.Explicitly
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the {@code Byoasn} resource.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * {@code Byoasn} resource.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the {@code Byoasn} resource.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * {@code Byoasn} resource.
      *
      * @return the value
      */
@@ -546,15 +544,15 @@ public final class Byoasn extends com.oracle.bmc.http.client.internal.Explicitly
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compartment containing the {@code Byoasn} resource.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment containing the {@code Byoasn} resource.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compartment containing the {@code Byoasn} resource.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment containing the {@code Byoasn} resource.
      *
      * @return the value
      */
@@ -585,16 +583,16 @@ public final class Byoasn extends com.oracle.bmc.http.client.internal.Explicitly
 
     /**
      * The validation token is an internally-generated ASCII string used in the validation process.
-     * See [Importing a
-     * Byoasn](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/BYOASN.htm) for details.
+     * See [Importing a Byoasn](https://docs.oracle.com/iaas/Content/Network/Concepts/BYOASN.htm)
+     * for details.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("validationToken")
     private final String validationToken;
 
     /**
      * The validation token is an internally-generated ASCII string used in the validation process.
-     * See [Importing a
-     * Byoasn](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/BYOASN.htm) for details.
+     * See [Importing a Byoasn](https://docs.oracle.com/iaas/Content/Network/Concepts/BYOASN.htm)
+     * for details.
      *
      * @return the value
      */

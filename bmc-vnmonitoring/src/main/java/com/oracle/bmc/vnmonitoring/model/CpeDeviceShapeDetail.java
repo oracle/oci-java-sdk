@@ -45,15 +45,15 @@ public final class CpeDeviceShapeDetail
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the CPE device shape. This value uniquely identifies the type of CPE device.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * CPE device shape. This value uniquely identifies the type of CPE device.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("cpeDeviceShapeId")
         private String cpeDeviceShapeId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the CPE device shape. This value uniquely identifies the type of CPE device.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * CPE device shape. This value uniquely identifies the type of CPE device.
          *
          * @param cpeDeviceShapeId the value to set
          * @return this builder
@@ -179,15 +179,15 @@ public final class CpeDeviceShapeDetail
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the CPE device shape. This value uniquely identifies the type of CPE device.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CPE
+     * device shape. This value uniquely identifies the type of CPE device.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("cpeDeviceShapeId")
     private final String cpeDeviceShapeId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the CPE device shape. This value uniquely identifies the type of CPE device.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CPE
+     * device shape. This value uniquely identifies the type of CPE device.
      *
      * @return the value
      */

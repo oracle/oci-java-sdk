@@ -199,15 +199,15 @@ public final class MacsManagedExternalHostConfigurationSummary extends HostConfi
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the Management Agent
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Management Agent
          */
         @com.fasterxml.jackson.annotation.JsonProperty("managementAgentId")
         private String managementAgentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the Management Agent
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Management Agent
          *
          * @param managementAgentId the value to set
          * @return this builder
@@ -218,15 +218,15 @@ public final class MacsManagedExternalHostConfigurationSummary extends HostConfi
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of External Database Connector
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+         * External Database Connector
          */
         @com.fasterxml.jackson.annotation.JsonProperty("connectorId")
         private String connectorId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of External Database Connector
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+         * External Database Connector
          *
          * @param connectorId the value to set
          * @return this builder
@@ -396,15 +396,15 @@ public final class MacsManagedExternalHostConfigurationSummary extends HostConfi
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the Management Agent
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Management Agent
      */
     @com.fasterxml.jackson.annotation.JsonProperty("managementAgentId")
     private final String managementAgentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the Management Agent
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Management Agent
      *
      * @return the value
      */
@@ -413,15 +413,15 @@ public final class MacsManagedExternalHostConfigurationSummary extends HostConfi
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * External Database Connector
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of External
+     * Database Connector
      */
     @com.fasterxml.jackson.annotation.JsonProperty("connectorId")
     private final String connectorId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * External Database Connector
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of External
+     * Database Connector
      *
      * @return the value
      */

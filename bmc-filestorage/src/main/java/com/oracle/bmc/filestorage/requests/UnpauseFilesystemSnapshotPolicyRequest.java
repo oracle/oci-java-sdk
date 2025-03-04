@@ -7,7 +7,7 @@ package com.oracle.bmc.filestorage.requests;
 import com.oracle.bmc.filestorage.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/UnpauseFilesystemSnapshotPolicyExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/UnpauseFilesystemSnapshotPolicyExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * UnpauseFilesystemSnapshotPolicyRequest.
  */
@@ -16,14 +16,14 @@ public class UnpauseFilesystemSnapshotPolicyRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * file system snapshot policy.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file
+     * system snapshot policy.
      */
     private String filesystemSnapshotPolicyId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * file system snapshot policy.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file
+     * system snapshot policy.
      */
     public String getFilesystemSnapshotPolicyId() {
         return filesystemSnapshotPolicyId;
@@ -73,13 +73,13 @@ public class UnpauseFilesystemSnapshotPolicyRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * file system snapshot policy.
          */
         private String filesystemSnapshotPolicyId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * file system snapshot policy.
          *
          * @param filesystemSnapshotPolicyId the value to set

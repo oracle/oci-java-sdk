@@ -8,7 +8,7 @@ package com.oracle.bmc.identity.model;
  * A mapping between a single group defined by the identity provider (IdP) you're federating with
  * and a single IAM Service {@link Group} in Oracle Cloud Infrastructure. For more information about
  * group mappings and what they're for, see [Identity Providers and
- * Federation](https://docs.cloud.oracle.com/Content/Identity/Concepts/federation.htm).
+ * Federation](https://docs.oracle.com/iaas/Content/Identity/Concepts/federation.htm).
  *
  * <p>A given IdP group can be mapped to zero, one, or multiple IAM Service groups, and vice versa.
  * But each {@code IdPGroupMapping} object is between only a single IdP group and IAM Service group.

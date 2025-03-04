@@ -72,7 +72,7 @@ public interface IntegrationInstance extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/integration/AddOracleManagedCustomEndpointExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/integration/AddOracleManagedCustomEndpointExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     AddOracleManagedCustomEndpoint API.
      */
@@ -89,7 +89,7 @@ public interface IntegrationInstance extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/integration/ChangeIntegrationInstanceCompartmentExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/integration/ChangeIntegrationInstanceCompartmentExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ChangeIntegrationInstanceCompartment API.
      */
@@ -107,7 +107,7 @@ public interface IntegrationInstance extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/integration/ChangeIntegrationInstanceNetworkEndpointExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/integration/ChangeIntegrationInstanceNetworkEndpointExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ChangeIntegrationInstanceNetworkEndpoint API.
      */
@@ -125,7 +125,7 @@ public interface IntegrationInstance extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/integration/ChangePrivateEndpointOutboundConnectionExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/integration/ChangePrivateEndpointOutboundConnectionExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ChangePrivateEndpointOutboundConnection API.
      */
@@ -142,7 +142,7 @@ public interface IntegrationInstance extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/integration/CreateIntegrationInstanceExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/integration/CreateIntegrationInstanceExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     CreateIntegrationInstance API.
      */
@@ -159,7 +159,7 @@ public interface IntegrationInstance extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/integration/DeleteIntegrationInstanceExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/integration/DeleteIntegrationInstanceExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     DeleteIntegrationInstance API.
      */
@@ -179,7 +179,7 @@ public interface IntegrationInstance extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/integration/DisasterRecoveryFailoverExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/integration/DisasterRecoveryFailoverExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     DisasterRecoveryFailover API.
      */
@@ -196,7 +196,7 @@ public interface IntegrationInstance extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/integration/EnableProcessAutomationExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/integration/EnableProcessAutomationExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     EnableProcessAutomation API.
      */
@@ -212,7 +212,7 @@ public interface IntegrationInstance extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/integration/ExtendDataRetentionExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/integration/ExtendDataRetentionExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ExtendDataRetention
      *     API.
      */
@@ -228,7 +228,7 @@ public interface IntegrationInstance extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/integration/GetIntegrationInstanceExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/integration/GetIntegrationInstanceExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     GetIntegrationInstance API.
      */
@@ -244,7 +244,7 @@ public interface IntegrationInstance extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/integration/GetWorkRequestExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/integration/GetWorkRequestExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetWorkRequest API.
      */
     GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request);
@@ -259,7 +259,7 @@ public interface IntegrationInstance extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/integration/ListIntegrationInstancesExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/integration/ListIntegrationInstancesExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ListIntegrationInstances API.
      */
@@ -276,7 +276,7 @@ public interface IntegrationInstance extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/integration/ListWorkRequestErrorsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/integration/ListWorkRequestErrorsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ListWorkRequestErrors API.
      */
@@ -292,7 +292,7 @@ public interface IntegrationInstance extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/integration/ListWorkRequestLogsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/integration/ListWorkRequestLogsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequestLogs
      *     API.
      */
@@ -308,7 +308,7 @@ public interface IntegrationInstance extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/integration/ListWorkRequestsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/integration/ListWorkRequestsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequests
      *     API.
      */
@@ -325,7 +325,7 @@ public interface IntegrationInstance extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/integration/RemoveOracleManagedCustomEndpointExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/integration/RemoveOracleManagedCustomEndpointExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     RemoveOracleManagedCustomEndpoint API.
      */
@@ -342,7 +342,7 @@ public interface IntegrationInstance extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/integration/StartIntegrationInstanceExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/integration/StartIntegrationInstanceExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     StartIntegrationInstance API.
      */
@@ -359,7 +359,7 @@ public interface IntegrationInstance extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/integration/StopIntegrationInstanceExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/integration/StopIntegrationInstanceExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     StopIntegrationInstance API.
      */
@@ -375,7 +375,7 @@ public interface IntegrationInstance extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/integration/UpdateIntegrationInstanceExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/integration/UpdateIntegrationInstanceExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     UpdateIntegrationInstance API.
      */

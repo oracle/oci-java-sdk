@@ -36,7 +36,7 @@ import com.oracle.bmc.generativeaiinference.responses.*;
  * #eNGenerative-aiLatest(ENGenerative-aiLatestRequest) eNGenerative-aiLatest}.
  *
  * <p>To learn more about the service, see the [Generative AI
- * documentation](https://docs.cloud.oracle.com/iaas/Content/generative-ai/home.htm).
+ * documentation](https://docs.oracle.com/iaas/Content/generative-ai/home.htm).
  *
  * <p>This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by
  * default if no circuit breaker configuration is defined by the user.
@@ -102,7 +102,7 @@ public interface GenerativeAiInference extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeaiinference/ChatExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeaiinference/ChatExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use Chat API.
      */
     ChatResponse chat(ChatRequest request);
@@ -125,7 +125,7 @@ public interface GenerativeAiInference extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeaiinference/EmbedTextExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeaiinference/EmbedTextExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use EmbedText API.
      */
     EmbedTextResponse embedText(EmbedTextRequest request);
@@ -140,7 +140,7 @@ public interface GenerativeAiInference extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeaiinference/GenerateTextExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeaiinference/GenerateTextExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GenerateText API.
      */
     GenerateTextResponse generateText(GenerateTextRequest request);
@@ -158,7 +158,7 @@ public interface GenerativeAiInference extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeaiinference/RerankTextExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeaiinference/RerankTextExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use RerankText API.
      */
     RerankTextResponse rerankText(RerankTextRequest request);
@@ -173,7 +173,7 @@ public interface GenerativeAiInference extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeaiinference/SummarizeTextExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeaiinference/SummarizeTextExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use SummarizeText API.
      */
     SummarizeTextResponse summarizeText(SummarizeTextRequest request);

@@ -10,7 +10,7 @@ import com.oracle.bmc.ocvp.responses.*;
 /**
  * Use the Oracle Cloud VMware API to create SDDCs and manage ESXi hosts and software. For more
  * information, see [Oracle Cloud VMware
- * Solution](https://docs.cloud.oracle.com/iaas/Content/VMware/Concepts/ocvsoverview.htm).
+ * Solution](https://docs.oracle.com/iaas/Content/VMware/Concepts/ocvsoverview.htm).
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230701")
 public interface EsxiHostAsync extends AutoCloseable {

@@ -7,7 +7,7 @@ package com.oracle.bmc.osmanagementhub.requests;
 import com.oracle.bmc.osmanagementhub.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/ChangeManagedInstanceGroupCompartmentExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/ChangeManagedInstanceGroupCompartmentExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * ChangeManagedInstanceGroupCompartmentRequest.
  */
@@ -17,28 +17,28 @@ public class ChangeManagedInstanceGroupCompartmentRequest
                 com.oracle.bmc.osmanagementhub.model.ChangeManagedInstanceGroupCompartmentDetails> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the managed instance group.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * managed instance group.
      */
     private String managedInstanceGroupId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the managed instance group.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * managed instance group.
      */
     public String getManagedInstanceGroupId() {
         return managedInstanceGroupId;
     }
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compartment to move the group to.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment to move the group to.
      */
     private com.oracle.bmc.osmanagementhub.model.ChangeManagedInstanceGroupCompartmentDetails
             changeManagedInstanceGroupCompartmentDetails;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compartment to move the group to.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment to move the group to.
      */
     public com.oracle.bmc.osmanagementhub.model.ChangeManagedInstanceGroupCompartmentDetails
             getChangeManagedInstanceGroupCompartmentDetails() {
@@ -115,14 +115,14 @@ public class ChangeManagedInstanceGroupCompartmentRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the managed instance group.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * managed instance group.
          */
         private String managedInstanceGroupId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the managed instance group.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * managed instance group.
          *
          * @param managedInstanceGroupId the value to set
          * @return this builder instance
@@ -133,15 +133,15 @@ public class ChangeManagedInstanceGroupCompartmentRequest
         }
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compartment to move the group to.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment to move the group to.
          */
         private com.oracle.bmc.osmanagementhub.model.ChangeManagedInstanceGroupCompartmentDetails
                 changeManagedInstanceGroupCompartmentDetails = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compartment to move the group to.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment to move the group to.
          *
          * @param changeManagedInstanceGroupCompartmentDetails the value to set
          * @return this builder instance

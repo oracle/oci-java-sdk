@@ -72,8 +72,8 @@ public final class UpdateDrgAttachmentDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the DRG route table that is assigned to this attachment.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * DRG route table that is assigned to this attachment.
          *
          * <p>The DRG route table manages traffic inside the DRG.
          *
@@ -84,8 +84,8 @@ public final class UpdateDrgAttachmentDetails
         private String drgRouteTableId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the DRG route table that is assigned to this attachment.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * DRG route table that is assigned to this attachment.
          *
          * <p>The DRG route table manages traffic inside the DRG.
          *
@@ -112,7 +112,7 @@ public final class UpdateDrgAttachmentDetails
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
          */
@@ -122,7 +122,7 @@ public final class UpdateDrgAttachmentDetails
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
@@ -138,7 +138,7 @@ public final class UpdateDrgAttachmentDetails
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          */
@@ -148,7 +148,7 @@ public final class UpdateDrgAttachmentDetails
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          *
@@ -161,19 +161,19 @@ public final class UpdateDrgAttachmentDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the export route distribution used to specify how routes in the assigned DRG route
-         * table are advertised out through the attachment. If this value is null, no routes are
-         * advertised through this attachment.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * export route distribution used to specify how routes in the assigned DRG route table are
+         * advertised out through the attachment. If this value is null, no routes are advertised
+         * through this attachment.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("exportDrgRouteDistributionId")
         private String exportDrgRouteDistributionId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the export route distribution used to specify how routes in the assigned DRG route
-         * table are advertised out through the attachment. If this value is null, no routes are
-         * advertised through this attachment.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * export route distribution used to specify how routes in the assigned DRG route table are
+         * advertised out through the attachment. If this value is null, no routes are advertised
+         * through this attachment.
          *
          * @param exportDrgRouteDistributionId the value to set
          * @return this builder
@@ -184,35 +184,33 @@ public final class UpdateDrgAttachmentDetails
             return this;
         }
         /**
-         * This is the
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-         * the route table that is used to route the traffic as it enters a VCN through this
+         * This is the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the route table that is used to route the traffic as it enters a VCN through this
          * attachment.
          *
          * <p>For information about why you would associate a route table with a DRG attachment,
          * see:
          *
          * <p>[Transit Routing: Access to Multiple VCNs in Same
-         * Region](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm) *
-         * [Transit Routing: Private Access to Oracle
-         * Services](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm)
+         * Region](https://docs.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm) * [Transit
+         * Routing: Private Access to Oracle
+         * Services](https://docs.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm)
          */
         @com.fasterxml.jackson.annotation.JsonProperty("routeTableId")
         private String routeTableId;
 
         /**
-         * This is the
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-         * the route table that is used to route the traffic as it enters a VCN through this
+         * This is the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the route table that is used to route the traffic as it enters a VCN through this
          * attachment.
          *
          * <p>For information about why you would associate a route table with a DRG attachment,
          * see:
          *
          * <p>[Transit Routing: Access to Multiple VCNs in Same
-         * Region](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm) *
-         * [Transit Routing: Private Access to Oracle
-         * Services](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm)
+         * Region](https://docs.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm) * [Transit
+         * Routing: Private Access to Oracle
+         * Services](https://docs.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm)
          *
          * @param routeTableId the value to set
          * @return this builder
@@ -296,8 +294,8 @@ public final class UpdateDrgAttachmentDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the DRG route table that is assigned to this attachment.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG
+     * route table that is assigned to this attachment.
      *
      * <p>The DRG route table manages traffic inside the DRG.
      *
@@ -308,8 +306,8 @@ public final class UpdateDrgAttachmentDetails
     private final String drgRouteTableId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the DRG route table that is assigned to this attachment.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG
+     * route table that is assigned to this attachment.
      *
      * <p>The DRG route table manages traffic inside the DRG.
      *
@@ -332,7 +330,7 @@ public final class UpdateDrgAttachmentDetails
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
      */
@@ -342,7 +340,7 @@ public final class UpdateDrgAttachmentDetails
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
@@ -355,7 +353,7 @@ public final class UpdateDrgAttachmentDetails
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      */
@@ -365,7 +363,7 @@ public final class UpdateDrgAttachmentDetails
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      *
@@ -376,8 +374,8 @@ public final class UpdateDrgAttachmentDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the export route distribution used to specify how routes in the assigned DRG route table are
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * export route distribution used to specify how routes in the assigned DRG route table are
      * advertised out through the attachment. If this value is null, no routes are advertised
      * through this attachment.
      */
@@ -385,8 +383,8 @@ public final class UpdateDrgAttachmentDetails
     private final String exportDrgRouteDistributionId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the export route distribution used to specify how routes in the assigned DRG route table are
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * export route distribution used to specify how routes in the assigned DRG route table are
      * advertised out through the attachment. If this value is null, no routes are advertised
      * through this attachment.
      *
@@ -397,31 +395,29 @@ public final class UpdateDrgAttachmentDetails
     }
 
     /**
-     * This is the
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * route table that is used to route the traffic as it enters a VCN through this attachment.
+     * This is the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the route table that is used to route the traffic as it enters a VCN through this attachment.
      *
      * <p>For information about why you would associate a route table with a DRG attachment, see:
      *
      * <p>[Transit Routing: Access to Multiple VCNs in Same
-     * Region](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm) *
-     * [Transit Routing: Private Access to Oracle
-     * Services](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm)
+     * Region](https://docs.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm) * [Transit
+     * Routing: Private Access to Oracle
+     * Services](https://docs.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm)
      */
     @com.fasterxml.jackson.annotation.JsonProperty("routeTableId")
     private final String routeTableId;
 
     /**
-     * This is the
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * route table that is used to route the traffic as it enters a VCN through this attachment.
+     * This is the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the route table that is used to route the traffic as it enters a VCN through this attachment.
      *
      * <p>For information about why you would associate a route table with a DRG attachment, see:
      *
      * <p>[Transit Routing: Access to Multiple VCNs in Same
-     * Region](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm) *
-     * [Transit Routing: Private Access to Oracle
-     * Services](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm)
+     * Region](https://docs.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm) * [Transit
+     * Routing: Private Access to Oracle
+     * Services](https://docs.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm)
      *
      * @return the value
      */

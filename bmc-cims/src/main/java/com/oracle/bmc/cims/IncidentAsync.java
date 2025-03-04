@@ -10,10 +10,10 @@ import com.oracle.bmc.cims.responses.*;
 /**
  * Use the Support Management API to manage support requests. For more information, see [Getting
  * Help and Contacting
- * Support](https://docs.cloud.oracle.com/iaas/Content/GSG/Tasks/contactingsupport.htm). *Note**:
- * Before you can create service requests with this API, complete user registration at My Oracle
- * Cloud Support and then ask your tenancy administrator to provide you authorization for the
- * related user groups.
+ * Support](https://docs.oracle.com/iaas/Content/GSG/Tasks/contactingsupport.htm). *Note**: Before
+ * you can create service requests with this API, complete user registration at My Oracle Cloud
+ * Support and then ask your tenancy administrator to provide you authorization for the related user
+ * groups.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181231")
 public interface IncidentAsync extends AutoCloseable {
@@ -68,8 +68,7 @@ public interface IncidentAsync extends AutoCloseable {
 
     /**
      * Creates a support ticket in the specified tenancy. For more information, see [Creating
-     * Support
-     * Requests](https://docs.cloud.oracle.com/iaas/Content/GSG/support/create-incident.htm).
+     * Support Requests](https://docs.oracle.com/iaas/Content/GSG/support/create-incident.htm).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -85,7 +84,7 @@ public interface IncidentAsync extends AutoCloseable {
 
     /**
      * Gets the specified support ticket. For more information, see [Getting Details for a Support
-     * Request](https://docs.cloud.oracle.com/iaas/Content/GSG/support/get-incident.htm).
+     * Request](https://docs.oracle.com/iaas/Content/GSG/support/get-incident.htm).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -104,9 +103,9 @@ public interface IncidentAsync extends AutoCloseable {
      * limits and current usage for limit increase tickets. This operation is called during creation
      * of technical support and limit increase tickets. For more information about listing products,
      * see [Listing Products for Support
-     * Requests](https://docs.cloud.oracle.com/iaas/Content/GSG/support/list-incident-resource-types-taxonomy.htm).
+     * Requests](https://docs.oracle.com/iaas/Content/GSG/support/list-incident-resource-types-taxonomy.htm).
      * For more information about listing limits, see [Listing Limits for Service Limit Increase
-     * Requests](https://docs.cloud.oracle.com/iaas/Content/GSG/support/list-incident-resource-types-limit.htm).
+     * Requests](https://docs.oracle.com/iaas/Content/GSG/support/list-incident-resource-types-limit.htm).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -123,7 +122,7 @@ public interface IncidentAsync extends AutoCloseable {
 
     /**
      * Lists support tickets for the specified tenancy. For more information, see [Listing Support
-     * Requests](https://docs.cloud.oracle.com/iaas/Content/GSG/support/list-incidents.htm).
+     * Requests](https://docs.oracle.com/iaas/Content/GSG/support/list-incidents.htm).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -139,7 +138,7 @@ public interface IncidentAsync extends AutoCloseable {
 
     /**
      * Updates the specified support ticket. For more information, see [Updating Support
-     * Requests](https://docs.cloud.oracle.com/iaas/Content/GSG/support/update-incident.htm).
+     * Requests](https://docs.oracle.com/iaas/Content/GSG/support/update-incident.htm).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -155,7 +154,7 @@ public interface IncidentAsync extends AutoCloseable {
 
     /**
      * Checks whether the requested user is valid. For more information, see [Validating a
-     * User](https://docs.cloud.oracle.com/iaas/Content/GSG/support/validate-user.htm).
+     * User](https://docs.oracle.com/iaas/Content/GSG/support/validate-user.htm).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.

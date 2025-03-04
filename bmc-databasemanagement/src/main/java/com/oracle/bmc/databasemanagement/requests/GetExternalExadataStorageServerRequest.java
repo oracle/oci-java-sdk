@@ -7,7 +7,7 @@ package com.oracle.bmc.databasemanagement.requests;
 import com.oracle.bmc.databasemanagement.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/GetExternalExadataStorageServerExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/GetExternalExadataStorageServerExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * GetExternalExadataStorageServerRequest.
  */
@@ -16,13 +16,13 @@ public class GetExternalExadataStorageServerRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Exadata storage server.
      */
     private String externalExadataStorageServerId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Exadata storage server.
      */
     public String getExternalExadataStorageServerId() {
@@ -43,13 +43,13 @@ public class GetExternalExadataStorageServerRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Exadata storage server.
          */
         private String externalExadataStorageServerId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Exadata storage server.
          *
          * @param externalExadataStorageServerId the value to set

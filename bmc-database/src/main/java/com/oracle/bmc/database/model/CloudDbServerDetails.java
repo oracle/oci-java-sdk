@@ -32,14 +32,14 @@ public final class CloudDbServerDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
          * ExaDB-D DB server.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("dbServerId")
         private String dbServerId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
          * ExaDB-D DB server.
          *
          * @param dbServerId the value to set
@@ -81,14 +81,14 @@ public final class CloudDbServerDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of ExaDB-D
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of ExaDB-D
      * DB server.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("dbServerId")
     private final String dbServerId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of ExaDB-D
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of ExaDB-D
      * DB server.
      *
      * @return the value

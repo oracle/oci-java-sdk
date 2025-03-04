@@ -54,14 +54,14 @@ public final class CloudExadataInfrastructureUnallocatedResources
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Cloud Exadata infrastructure.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("cloudExadataInfrastructureId")
         private String cloudExadataInfrastructureId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Cloud Exadata infrastructure.
          *
          * @param cloudExadataInfrastructureId the value to set
@@ -240,14 +240,14 @@ public final class CloudExadataInfrastructureUnallocatedResources
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Cloud Exadata infrastructure.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("cloudExadataInfrastructureId")
     private final String cloudExadataInfrastructureId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Cloud Exadata infrastructure.
      *
      * @return the value

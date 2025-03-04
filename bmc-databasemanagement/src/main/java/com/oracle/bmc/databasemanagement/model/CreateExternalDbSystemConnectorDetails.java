@@ -53,14 +53,14 @@ public class CreateExternalDbSystemConnectorDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * external DB system.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("externalDbSystemId")
     private final String externalDbSystemId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * external DB system.
      *
      * @return the value

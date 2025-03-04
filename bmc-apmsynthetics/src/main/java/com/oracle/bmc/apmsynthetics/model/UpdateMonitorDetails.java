@@ -124,7 +124,7 @@ public final class UpdateMonitorDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * script. scriptId is mandatory for creation of SCRIPTED_BROWSER and SCRIPTED_REST monitor
          * types. For other monitor types, it should be set to null.
          */
@@ -132,7 +132,7 @@ public final class UpdateMonitorDetails
         private String scriptId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * script. scriptId is mandatory for creation of SCRIPTED_BROWSER and SCRIPTED_REST monitor
          * types. For other monitor types, it should be set to null.
          *
@@ -537,7 +537,7 @@ public final class UpdateMonitorDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * script. scriptId is mandatory for creation of SCRIPTED_BROWSER and SCRIPTED_REST monitor
      * types. For other monitor types, it should be set to null.
      */
@@ -545,7 +545,7 @@ public final class UpdateMonitorDetails
     private final String scriptId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * script. scriptId is mandatory for creation of SCRIPTED_BROWSER and SCRIPTED_REST monitor
      * types. For other monitor types, it should be set to null.
      *

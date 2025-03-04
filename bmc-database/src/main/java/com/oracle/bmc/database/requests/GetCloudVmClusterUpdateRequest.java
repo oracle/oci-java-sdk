@@ -7,7 +7,7 @@ package com.oracle.bmc.database.requests;
 import com.oracle.bmc.database.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetCloudVmClusterUpdateExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetCloudVmClusterUpdateExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * GetCloudVmClusterUpdateRequest.
  */
@@ -17,25 +17,25 @@ public class GetCloudVmClusterUpdateRequest
 
     /**
      * The cloud VM cluster
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     private String cloudVmClusterId;
 
     /**
      * The cloud VM cluster
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     public String getCloudVmClusterId() {
         return cloudVmClusterId;
     }
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * maintenance update.
      */
     private String updateId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * maintenance update.
      */
     public String getUpdateId() {
@@ -57,13 +57,13 @@ public class GetCloudVmClusterUpdateRequest
 
         /**
          * The cloud VM cluster
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          */
         private String cloudVmClusterId = null;
 
         /**
          * The cloud VM cluster
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          * @param cloudVmClusterId the value to set
          * @return this builder instance
@@ -74,13 +74,13 @@ public class GetCloudVmClusterUpdateRequest
         }
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * maintenance update.
          */
         private String updateId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * maintenance update.
          *
          * @param updateId the value to set

@@ -69,9 +69,8 @@ public final class CreateVolumeBackupPolicyAssignmentDetails
          * volume cross region backups, which will be used in the destination region to encrypt the
          * backup's encryption keys. For more information about the Vault service and encryption
          * keys, see [Overview of Vault
-         * service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm)
-         * and [Using
-         * Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+         * service](https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and
+         * [Using Keys](https://docs.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("xrcKmsKeyId")
         private String xrcKmsKeyId;
@@ -81,9 +80,8 @@ public final class CreateVolumeBackupPolicyAssignmentDetails
          * volume cross region backups, which will be used in the destination region to encrypt the
          * backup's encryption keys. For more information about the Vault service and encryption
          * keys, see [Overview of Vault
-         * service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm)
-         * and [Using
-         * Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+         * service](https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and
+         * [Using Keys](https://docs.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
          *
          * @param xrcKmsKeyId the value to set
          * @return this builder
@@ -162,9 +160,8 @@ public final class CreateVolumeBackupPolicyAssignmentDetails
      * volume cross region backups, which will be used in the destination region to encrypt the
      * backup's encryption keys. For more information about the Vault service and encryption keys,
      * see [Overview of Vault
-     * service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm)
-     * and [Using
-     * Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+     * service](https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and
+     * [Using Keys](https://docs.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("xrcKmsKeyId")
     private final String xrcKmsKeyId;
@@ -174,9 +171,8 @@ public final class CreateVolumeBackupPolicyAssignmentDetails
      * volume cross region backups, which will be used in the destination region to encrypt the
      * backup's encryption keys. For more information about the Vault service and encryption keys,
      * see [Overview of Vault
-     * service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm)
-     * and [Using
-     * Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+     * service](https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and
+     * [Using Keys](https://docs.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
      *
      * @return the value
      */

@@ -72,15 +72,15 @@ public final class PipelineDataflowStepRun extends PipelineStepRun {
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the dataflow run triggered for this step run.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * dataflow run triggered for this step run.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("dataflowRunId")
         private String dataflowRunId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the dataflow run triggered for this step run.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * dataflow run triggered for this step run.
          *
          * @param dataflowRunId the value to set
          * @return this builder
@@ -155,15 +155,15 @@ public final class PipelineDataflowStepRun extends PipelineStepRun {
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the dataflow run triggered for this step run.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * dataflow run triggered for this step run.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("dataflowRunId")
     private final String dataflowRunId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the dataflow run triggered for this step run.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * dataflow run triggered for this step run.
      *
      * @return the value
      */

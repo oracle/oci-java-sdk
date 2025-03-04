@@ -62,15 +62,15 @@ public final class SubnetTopology extends Topology {
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the subnet for which the visualization is generated.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * subnet for which the visualization is generated.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
         private String subnetId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the subnet for which the visualization is generated.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * subnet for which the visualization is generated.
          *
          * @param subnetId the value to set
          * @return this builder
@@ -140,15 +140,15 @@ public final class SubnetTopology extends Topology {
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the subnet for which the visualization is generated.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * subnet for which the visualization is generated.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
     private final String subnetId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the subnet for which the visualization is generated.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * subnet for which the visualization is generated.
      *
      * @return the value
      */

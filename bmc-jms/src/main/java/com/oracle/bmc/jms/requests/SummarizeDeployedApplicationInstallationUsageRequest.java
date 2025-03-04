@@ -7,7 +7,7 @@ package com.oracle.bmc.jms.requests;
 import com.oracle.bmc.jms.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/SummarizeDeployedApplicationInstallationUsageExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/SummarizeDeployedApplicationInstallationUsageExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * SummarizeDeployedApplicationInstallationUsageRequest.
  */
@@ -16,13 +16,13 @@ public class SummarizeDeployedApplicationInstallationUsageRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Fleet.
      */
     private String fleetId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Fleet.
      */
     public String getFleetId() {
@@ -172,13 +172,13 @@ public class SummarizeDeployedApplicationInstallationUsageRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Fleet.
          */
         private String fleetId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Fleet.
          *
          * @param fleetId the value to set

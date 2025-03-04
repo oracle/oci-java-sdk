@@ -36,15 +36,15 @@ public final class Byoipv6CidrDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the {@code ByoipRange} resource to which the CIDR block belongs.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * {@code ByoipRange} resource to which the CIDR block belongs.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("byoipv6RangeId")
         private String byoipv6RangeId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the {@code ByoipRange} resource to which the CIDR block belongs.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * {@code ByoipRange} resource to which the CIDR block belongs.
          *
          * @param byoipv6RangeId the value to set
          * @return this builder
@@ -108,15 +108,15 @@ public final class Byoipv6CidrDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the {@code ByoipRange} resource to which the CIDR block belongs.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * {@code ByoipRange} resource to which the CIDR block belongs.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("byoipv6RangeId")
     private final String byoipv6RangeId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the {@code ByoipRange} resource to which the CIDR block belongs.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * {@code ByoipRange} resource to which the CIDR block belongs.
      *
      * @return the value
      */

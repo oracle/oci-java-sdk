@@ -56,15 +56,13 @@ public final class CreateDatabaseFromBackupDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The backup
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * The backup [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("backupId")
         private String backupId;
 
         /**
-         * The backup
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * The backup [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          * @param backupId the value to set
          * @return this builder
@@ -247,14 +245,12 @@ public final class CreateDatabaseFromBackupDetails
         return new Builder().copy(this);
     }
 
-    /**
-     * The backup [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
-     */
+    /** The backup [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). */
     @com.fasterxml.jackson.annotation.JsonProperty("backupId")
     private final String backupId;
 
     /**
-     * The backup [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * The backup [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      * @return the value
      */

@@ -112,6 +112,72 @@ public class DatabaseWaiters {
      * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<
+                    AddStandbyAutonomousContainerDatabaseRequest,
+                    AddStandbyAutonomousContainerDatabaseResponse>
+            forAddStandbyAutonomousContainerDatabase(
+                    AddStandbyAutonomousContainerDatabaseRequest request) {
+        return forAddStandbyAutonomousContainerDatabase(
+                request,
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_TERMINATION_STRATEGY,
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_DELAY_STRATEGY);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    AddStandbyAutonomousContainerDatabaseRequest,
+                    AddStandbyAutonomousContainerDatabaseResponse>
+            forAddStandbyAutonomousContainerDatabase(
+                    AddStandbyAutonomousContainerDatabaseRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        if (workRequestClient == null) {
+            throw new IllegalStateException(
+                    "A WorkRequestClient must be supplied to this waiter for this operation");
+        }
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                new java.util.concurrent.Callable<AddStandbyAutonomousContainerDatabaseResponse>() {
+                    @Override
+                    public AddStandbyAutonomousContainerDatabaseResponse call() throws Exception {
+                        final AddStandbyAutonomousContainerDatabaseResponse response =
+                                client.addStandbyAutonomousContainerDatabase(request);
+
+                        if (response.getOpcWorkRequestId() != null) {
+                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                    getWorkRequestRequest =
+                                            com.oracle.bmc.workrequests.requests
+                                                    .GetWorkRequestRequest.builder()
+                                                    .workRequestId(response.getOpcWorkRequestId())
+                                                    .build();
+                            workRequestClient
+                                    .getWaiters()
+                                    .forWorkRequest(
+                                            getWorkRequestRequest,
+                                            terminationStrategy,
+                                            delayStrategy)
+                                    .execute();
+                        }
+                        return response;
+                    }
+                },
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
                     AddStorageCapacityCloudExadataInfrastructureRequest,
                     AddStorageCapacityCloudExadataInfrastructureResponse>
             forAddStorageCapacityCloudExadataInfrastructure(
@@ -1871,6 +1937,71 @@ public class DatabaseWaiters {
      * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<
+                    ChangeExadbVmClusterSubscriptionRequest,
+                    ChangeExadbVmClusterSubscriptionResponse>
+            forChangeExadbVmClusterSubscription(ChangeExadbVmClusterSubscriptionRequest request) {
+        return forChangeExadbVmClusterSubscription(
+                request,
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_TERMINATION_STRATEGY,
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_DELAY_STRATEGY);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    ChangeExadbVmClusterSubscriptionRequest,
+                    ChangeExadbVmClusterSubscriptionResponse>
+            forChangeExadbVmClusterSubscription(
+                    ChangeExadbVmClusterSubscriptionRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        if (workRequestClient == null) {
+            throw new IllegalStateException(
+                    "A WorkRequestClient must be supplied to this waiter for this operation");
+        }
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                new java.util.concurrent.Callable<ChangeExadbVmClusterSubscriptionResponse>() {
+                    @Override
+                    public ChangeExadbVmClusterSubscriptionResponse call() throws Exception {
+                        final ChangeExadbVmClusterSubscriptionResponse response =
+                                client.changeExadbVmClusterSubscription(request);
+
+                        if (response.getOpcWorkRequestId() != null) {
+                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                    getWorkRequestRequest =
+                                            com.oracle.bmc.workrequests.requests
+                                                    .GetWorkRequestRequest.builder()
+                                                    .workRequestId(response.getOpcWorkRequestId())
+                                                    .build();
+                            workRequestClient
+                                    .getWaiters()
+                                    .forWorkRequest(
+                                            getWorkRequestRequest,
+                                            terminationStrategy,
+                                            delayStrategy)
+                                    .execute();
+                        }
+                        return response;
+                    }
+                },
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
                     ChangeExascaleDbStorageVaultCompartmentRequest,
                     ChangeExascaleDbStorageVaultCompartmentResponse>
             forChangeExascaleDbStorageVaultCompartment(
@@ -1909,6 +2040,74 @@ public class DatabaseWaiters {
                     public ChangeExascaleDbStorageVaultCompartmentResponse call() throws Exception {
                         final ChangeExascaleDbStorageVaultCompartmentResponse response =
                                 client.changeExascaleDbStorageVaultCompartment(request);
+
+                        if (response.getOpcWorkRequestId() != null) {
+                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                    getWorkRequestRequest =
+                                            com.oracle.bmc.workrequests.requests
+                                                    .GetWorkRequestRequest.builder()
+                                                    .workRequestId(response.getOpcWorkRequestId())
+                                                    .build();
+                            workRequestClient
+                                    .getWaiters()
+                                    .forWorkRequest(
+                                            getWorkRequestRequest,
+                                            terminationStrategy,
+                                            delayStrategy)
+                                    .execute();
+                        }
+                        return response;
+                    }
+                },
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    ChangeExascaleDbStorageVaultSubscriptionRequest,
+                    ChangeExascaleDbStorageVaultSubscriptionResponse>
+            forChangeExascaleDbStorageVaultSubscription(
+                    ChangeExascaleDbStorageVaultSubscriptionRequest request) {
+        return forChangeExascaleDbStorageVaultSubscription(
+                request,
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_TERMINATION_STRATEGY,
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_DELAY_STRATEGY);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    ChangeExascaleDbStorageVaultSubscriptionRequest,
+                    ChangeExascaleDbStorageVaultSubscriptionResponse>
+            forChangeExascaleDbStorageVaultSubscription(
+                    ChangeExascaleDbStorageVaultSubscriptionRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        if (workRequestClient == null) {
+            throw new IllegalStateException(
+                    "A WorkRequestClient must be supplied to this waiter for this operation");
+        }
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                new java.util.concurrent.Callable<
+                        ChangeExascaleDbStorageVaultSubscriptionResponse>() {
+                    @Override
+                    public ChangeExascaleDbStorageVaultSubscriptionResponse call()
+                            throws Exception {
+                        final ChangeExascaleDbStorageVaultSubscriptionResponse response =
+                                client.changeExascaleDbStorageVaultSubscription(request);
 
                         if (response.getOpcWorkRequestId() != null) {
                             final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
@@ -2883,6 +3082,74 @@ public class DatabaseWaiters {
                     public ConfirmKeyStoreDetailsAreCorrectResponse call() throws Exception {
                         final ConfirmKeyStoreDetailsAreCorrectResponse response =
                                 client.confirmKeyStoreDetailsAreCorrect(request);
+
+                        if (response.getOpcWorkRequestId() != null) {
+                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                    getWorkRequestRequest =
+                                            com.oracle.bmc.workrequests.requests
+                                                    .GetWorkRequestRequest.builder()
+                                                    .workRequestId(response.getOpcWorkRequestId())
+                                                    .build();
+                            workRequestClient
+                                    .getWaiters()
+                                    .forWorkRequest(
+                                            getWorkRequestRequest,
+                                            terminationStrategy,
+                                            delayStrategy)
+                                    .execute();
+                        }
+                        return response;
+                    }
+                },
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    ConvertStandbyAutonomousContainerDatabaseRequest,
+                    ConvertStandbyAutonomousContainerDatabaseResponse>
+            forConvertStandbyAutonomousContainerDatabase(
+                    ConvertStandbyAutonomousContainerDatabaseRequest request) {
+        return forConvertStandbyAutonomousContainerDatabase(
+                request,
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_TERMINATION_STRATEGY,
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_DELAY_STRATEGY);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    ConvertStandbyAutonomousContainerDatabaseRequest,
+                    ConvertStandbyAutonomousContainerDatabaseResponse>
+            forConvertStandbyAutonomousContainerDatabase(
+                    ConvertStandbyAutonomousContainerDatabaseRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        if (workRequestClient == null) {
+            throw new IllegalStateException(
+                    "A WorkRequestClient must be supplied to this waiter for this operation");
+        }
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                new java.util.concurrent.Callable<
+                        ConvertStandbyAutonomousContainerDatabaseResponse>() {
+                    @Override
+                    public ConvertStandbyAutonomousContainerDatabaseResponse call()
+                            throws Exception {
+                        final ConvertStandbyAutonomousContainerDatabaseResponse response =
+                                client.convertStandbyAutonomousContainerDatabase(request);
 
                         if (response.getOpcWorkRequestId() != null) {
                             final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
@@ -7968,6 +8235,74 @@ public class DatabaseWaiters {
      * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<
+                    EditAutonomousContainerDatabaseDataguardRequest,
+                    EditAutonomousContainerDatabaseDataguardResponse>
+            forEditAutonomousContainerDatabaseDataguard(
+                    EditAutonomousContainerDatabaseDataguardRequest request) {
+        return forEditAutonomousContainerDatabaseDataguard(
+                request,
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_TERMINATION_STRATEGY,
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_DELAY_STRATEGY);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    EditAutonomousContainerDatabaseDataguardRequest,
+                    EditAutonomousContainerDatabaseDataguardResponse>
+            forEditAutonomousContainerDatabaseDataguard(
+                    EditAutonomousContainerDatabaseDataguardRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        if (workRequestClient == null) {
+            throw new IllegalStateException(
+                    "A WorkRequestClient must be supplied to this waiter for this operation");
+        }
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                new java.util.concurrent.Callable<
+                        EditAutonomousContainerDatabaseDataguardResponse>() {
+                    @Override
+                    public EditAutonomousContainerDatabaseDataguardResponse call()
+                            throws Exception {
+                        final EditAutonomousContainerDatabaseDataguardResponse response =
+                                client.editAutonomousContainerDatabaseDataguard(request);
+
+                        if (response.getOpcWorkRequestId() != null) {
+                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                    getWorkRequestRequest =
+                                            com.oracle.bmc.workrequests.requests
+                                                    .GetWorkRequestRequest.builder()
+                                                    .workRequestId(response.getOpcWorkRequestId())
+                                                    .build();
+                            workRequestClient
+                                    .getWaiters()
+                                    .forWorkRequest(
+                                            getWorkRequestRequest,
+                                            terminationStrategy,
+                                            delayStrategy)
+                                    .execute();
+                        }
+                        return response;
+                    }
+                },
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
                     EnableAutonomousDatabaseManagementRequest,
                     EnableAutonomousDatabaseManagementResponse>
             forEnableAutonomousDatabaseManagement(
@@ -8812,6 +9147,74 @@ public class DatabaseWaiters {
                     public FailOverAutonomousDatabaseResponse call() throws Exception {
                         final FailOverAutonomousDatabaseResponse response =
                                 client.failOverAutonomousDatabase(request);
+
+                        if (response.getOpcWorkRequestId() != null) {
+                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                    getWorkRequestRequest =
+                                            com.oracle.bmc.workrequests.requests
+                                                    .GetWorkRequestRequest.builder()
+                                                    .workRequestId(response.getOpcWorkRequestId())
+                                                    .build();
+                            workRequestClient
+                                    .getWaiters()
+                                    .forWorkRequest(
+                                            getWorkRequestRequest,
+                                            terminationStrategy,
+                                            delayStrategy)
+                                    .execute();
+                        }
+                        return response;
+                    }
+                },
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    FailoverAutonomousContainerDatabaseDataguardRequest,
+                    FailoverAutonomousContainerDatabaseDataguardResponse>
+            forFailoverAutonomousContainerDatabaseDataguard(
+                    FailoverAutonomousContainerDatabaseDataguardRequest request) {
+        return forFailoverAutonomousContainerDatabaseDataguard(
+                request,
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_TERMINATION_STRATEGY,
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_DELAY_STRATEGY);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    FailoverAutonomousContainerDatabaseDataguardRequest,
+                    FailoverAutonomousContainerDatabaseDataguardResponse>
+            forFailoverAutonomousContainerDatabaseDataguard(
+                    FailoverAutonomousContainerDatabaseDataguardRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        if (workRequestClient == null) {
+            throw new IllegalStateException(
+                    "A WorkRequestClient must be supplied to this waiter for this operation");
+        }
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                new java.util.concurrent.Callable<
+                        FailoverAutonomousContainerDatabaseDataguardResponse>() {
+                    @Override
+                    public FailoverAutonomousContainerDatabaseDataguardResponse call()
+                            throws Exception {
+                        final FailoverAutonomousContainerDatabaseDataguardResponse response =
+                                client.failoverAutonomousContainerDatabaseDataguard(request);
 
                         if (response.getOpcWorkRequestId() != null) {
                             final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
@@ -15105,6 +15508,77 @@ public class DatabaseWaiters {
      * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<
+                    MigrateAutonomousContainerDatabaseDataguardAssociationRequest,
+                    MigrateAutonomousContainerDatabaseDataguardAssociationResponse>
+            forMigrateAutonomousContainerDatabaseDataguardAssociation(
+                    MigrateAutonomousContainerDatabaseDataguardAssociationRequest request) {
+        return forMigrateAutonomousContainerDatabaseDataguardAssociation(
+                request,
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_TERMINATION_STRATEGY,
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_DELAY_STRATEGY);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    MigrateAutonomousContainerDatabaseDataguardAssociationRequest,
+                    MigrateAutonomousContainerDatabaseDataguardAssociationResponse>
+            forMigrateAutonomousContainerDatabaseDataguardAssociation(
+                    MigrateAutonomousContainerDatabaseDataguardAssociationRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        if (workRequestClient == null) {
+            throw new IllegalStateException(
+                    "A WorkRequestClient must be supplied to this waiter for this operation");
+        }
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                new java.util.concurrent.Callable<
+                        MigrateAutonomousContainerDatabaseDataguardAssociationResponse>() {
+                    @Override
+                    public MigrateAutonomousContainerDatabaseDataguardAssociationResponse call()
+                            throws Exception {
+                        final MigrateAutonomousContainerDatabaseDataguardAssociationResponse
+                                response =
+                                        client
+                                                .migrateAutonomousContainerDatabaseDataguardAssociation(
+                                                        request);
+
+                        if (response.getOpcWorkRequestId() != null) {
+                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                    getWorkRequestRequest =
+                                            com.oracle.bmc.workrequests.requests
+                                                    .GetWorkRequestRequest.builder()
+                                                    .workRequestId(response.getOpcWorkRequestId())
+                                                    .build();
+                            workRequestClient
+                                    .getWaiters()
+                                    .forWorkRequest(
+                                            getWorkRequestRequest,
+                                            terminationStrategy,
+                                            delayStrategy)
+                                    .execute();
+                        }
+                        return response;
+                    }
+                },
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
                     MigrateDataGuardAssociationToMultiDataGuardsRequest,
                     MigrateDataGuardAssociationToMultiDataGuardsResponse>
             forMigrateDataGuardAssociationToMultiDataGuards(
@@ -15590,6 +16064,74 @@ public class DatabaseWaiters {
                     public RegisterAutonomousDatabaseDataSafeResponse call() throws Exception {
                         final RegisterAutonomousDatabaseDataSafeResponse response =
                                 client.registerAutonomousDatabaseDataSafe(request);
+
+                        if (response.getOpcWorkRequestId() != null) {
+                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                    getWorkRequestRequest =
+                                            com.oracle.bmc.workrequests.requests
+                                                    .GetWorkRequestRequest.builder()
+                                                    .workRequestId(response.getOpcWorkRequestId())
+                                                    .build();
+                            workRequestClient
+                                    .getWaiters()
+                                    .forWorkRequest(
+                                            getWorkRequestRequest,
+                                            terminationStrategy,
+                                            delayStrategy)
+                                    .execute();
+                        }
+                        return response;
+                    }
+                },
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    ReinstateAutonomousContainerDatabaseDataguardRequest,
+                    ReinstateAutonomousContainerDatabaseDataguardResponse>
+            forReinstateAutonomousContainerDatabaseDataguard(
+                    ReinstateAutonomousContainerDatabaseDataguardRequest request) {
+        return forReinstateAutonomousContainerDatabaseDataguard(
+                request,
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_TERMINATION_STRATEGY,
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_DELAY_STRATEGY);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    ReinstateAutonomousContainerDatabaseDataguardRequest,
+                    ReinstateAutonomousContainerDatabaseDataguardResponse>
+            forReinstateAutonomousContainerDatabaseDataguard(
+                    ReinstateAutonomousContainerDatabaseDataguardRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        if (workRequestClient == null) {
+            throw new IllegalStateException(
+                    "A WorkRequestClient must be supplied to this waiter for this operation");
+        }
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                new java.util.concurrent.Callable<
+                        ReinstateAutonomousContainerDatabaseDataguardResponse>() {
+                    @Override
+                    public ReinstateAutonomousContainerDatabaseDataguardResponse call()
+                            throws Exception {
+                        final ReinstateAutonomousContainerDatabaseDataguardResponse response =
+                                client.reinstateAutonomousContainerDatabaseDataguard(request);
 
                         if (response.getOpcWorkRequestId() != null) {
                             final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
@@ -17724,6 +18266,74 @@ public class DatabaseWaiters {
      * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<
+                    SwitchoverAutonomousContainerDatabaseDataguardRequest,
+                    SwitchoverAutonomousContainerDatabaseDataguardResponse>
+            forSwitchoverAutonomousContainerDatabaseDataguard(
+                    SwitchoverAutonomousContainerDatabaseDataguardRequest request) {
+        return forSwitchoverAutonomousContainerDatabaseDataguard(
+                request,
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_TERMINATION_STRATEGY,
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_DELAY_STRATEGY);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    SwitchoverAutonomousContainerDatabaseDataguardRequest,
+                    SwitchoverAutonomousContainerDatabaseDataguardResponse>
+            forSwitchoverAutonomousContainerDatabaseDataguard(
+                    SwitchoverAutonomousContainerDatabaseDataguardRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        if (workRequestClient == null) {
+            throw new IllegalStateException(
+                    "A WorkRequestClient must be supplied to this waiter for this operation");
+        }
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                new java.util.concurrent.Callable<
+                        SwitchoverAutonomousContainerDatabaseDataguardResponse>() {
+                    @Override
+                    public SwitchoverAutonomousContainerDatabaseDataguardResponse call()
+                            throws Exception {
+                        final SwitchoverAutonomousContainerDatabaseDataguardResponse response =
+                                client.switchoverAutonomousContainerDatabaseDataguard(request);
+
+                        if (response.getOpcWorkRequestId() != null) {
+                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                    getWorkRequestRequest =
+                                            com.oracle.bmc.workrequests.requests
+                                                    .GetWorkRequestRequest.builder()
+                                                    .workRequestId(response.getOpcWorkRequestId())
+                                                    .build();
+                            workRequestClient
+                                    .getWaiters()
+                                    .forWorkRequest(
+                                            getWorkRequestRequest,
+                                            terminationStrategy,
+                                            delayStrategy)
+                                    .execute();
+                        }
+                        return response;
+                    }
+                },
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
                     SwitchoverAutonomousContainerDatabaseDataguardAssociationRequest,
                     SwitchoverAutonomousContainerDatabaseDataguardAssociationResponse>
             forSwitchoverAutonomousContainerDatabaseDataguardAssociation(
@@ -18608,6 +19218,65 @@ public class DatabaseWaiters {
                     public UpdateAutonomousVmClusterResponse call() throws Exception {
                         final UpdateAutonomousVmClusterResponse response =
                                 client.updateAutonomousVmCluster(request);
+
+                        if (response.getOpcWorkRequestId() != null) {
+                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                    getWorkRequestRequest =
+                                            com.oracle.bmc.workrequests.requests
+                                                    .GetWorkRequestRequest.builder()
+                                                    .workRequestId(response.getOpcWorkRequestId())
+                                                    .build();
+                            workRequestClient
+                                    .getWaiters()
+                                    .forWorkRequest(
+                                            getWorkRequestRequest,
+                                            terminationStrategy,
+                                            delayStrategy)
+                                    .execute();
+                        }
+                        return response;
+                    }
+                },
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<UpdateBackupRequest, UpdateBackupResponse> forUpdateBackup(
+            UpdateBackupRequest request) {
+        return forUpdateBackup(
+                request,
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_TERMINATION_STRATEGY,
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_DELAY_STRATEGY);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<UpdateBackupRequest, UpdateBackupResponse> forUpdateBackup(
+            UpdateBackupRequest request,
+            com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+            com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        if (workRequestClient == null) {
+            throw new IllegalStateException(
+                    "A WorkRequestClient must be supplied to this waiter for this operation");
+        }
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                new java.util.concurrent.Callable<UpdateBackupResponse>() {
+                    @Override
+                    public UpdateBackupResponse call() throws Exception {
+                        final UpdateBackupResponse response = client.updateBackup(request);
 
                         if (response.getOpcWorkRequestId() != null) {
                             final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest

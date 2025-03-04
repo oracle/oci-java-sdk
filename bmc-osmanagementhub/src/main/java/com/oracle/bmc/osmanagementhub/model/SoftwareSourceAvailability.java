@@ -6,7 +6,7 @@ package com.oracle.bmc.osmanagementhub.model;
 
 /**
  * An object that defines the
- * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) and the
+ * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) and the
  * availability of a vendor software source. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
@@ -37,15 +37,15 @@ public final class SoftwareSourceAvailability
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the vendor software source.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * vendor software source.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("softwareSourceId")
         private String softwareSourceId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the vendor software source.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * vendor software source.
          *
          * @param softwareSourceId the value to set
          * @return this builder
@@ -128,15 +128,15 @@ public final class SoftwareSourceAvailability
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the vendor software source.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * vendor software source.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("softwareSourceId")
     private final String softwareSourceId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the vendor software source.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * vendor software source.
      *
      * @return the value
      */

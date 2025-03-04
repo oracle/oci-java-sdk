@@ -33,7 +33,7 @@ public final class SynchronizeMirrorsDetails
     public static class Builder {
         /**
          * List of software source
-         * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to
          * synchronize.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("softwareSourceList")
@@ -41,7 +41,7 @@ public final class SynchronizeMirrorsDetails
 
         /**
          * List of software source
-         * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to
          * synchronize.
          *
          * @param softwareSourceList the value to set
@@ -85,7 +85,7 @@ public final class SynchronizeMirrorsDetails
 
     /**
      * List of software source
-     * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to
+     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to
      * synchronize.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("softwareSourceList")
@@ -93,7 +93,7 @@ public final class SynchronizeMirrorsDetails
 
     /**
      * List of software source
-     * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to
+     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to
      * synchronize.
      *
      * @return the value

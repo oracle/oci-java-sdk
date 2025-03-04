@@ -7,7 +7,7 @@ package com.oracle.bmc.databasemanagement.requests;
 import com.oracle.bmc.databasemanagement.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/UpdateExternalClusterExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/UpdateExternalClusterExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * UpdateExternalClusterRequest.
  */
@@ -17,13 +17,13 @@ public class UpdateExternalClusterRequest
                 com.oracle.bmc.databasemanagement.model.UpdateExternalClusterDetails> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * external cluster.
      */
     private String externalClusterId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * external cluster.
      */
     public String getExternalClusterId() {
@@ -82,13 +82,13 @@ public class UpdateExternalClusterRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * external cluster.
          */
         private String externalClusterId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * external cluster.
          *
          * @param externalClusterId the value to set

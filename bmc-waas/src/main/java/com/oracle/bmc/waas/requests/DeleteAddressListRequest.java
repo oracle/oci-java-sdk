@@ -7,20 +7,20 @@ package com.oracle.bmc.waas.requests;
 import com.oracle.bmc.waas.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/DeleteAddressListExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/DeleteAddressListExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use DeleteAddressListRequest.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181116")
 public class DeleteAddressListRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * address list. This number is generated when the address list is added to the compartment.
      */
     private String addressListId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * address list. This number is generated when the address list is added to the compartment.
      */
     public String getAddressListId() {
@@ -83,13 +83,13 @@ public class DeleteAddressListRequest extends com.oracle.bmc.requests.BmcRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * address list. This number is generated when the address list is added to the compartment.
          */
         private String addressListId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * address list. This number is generated when the address list is added to the compartment.
          *
          * @param addressListId the value to set

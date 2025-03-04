@@ -7,21 +7,21 @@ package com.oracle.bmc.waas.requests;
 import com.oracle.bmc.waas.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/ListWafLogsExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/ListWafLogsExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListWafLogsRequest.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181116")
 public class ListWafLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * WAAS policy.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the WAAS
+     * policy.
      */
     private String waasPolicyId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * WAAS policy.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the WAAS
+     * policy.
      */
     public String getWaasPolicyId() {
         return waasPolicyId;
@@ -235,7 +235,7 @@ public class ListWafLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.
     }
     /**
      * Filter by log type. For more information about WAF logs, see
-     * [Logs](https://docs.cloud.oracle.com/iaas/Content/WAF/Tasks/logs.htm).
+     * [Logs](https://docs.oracle.com/iaas/Content/WAF/Tasks/logs.htm).
      */
     private java.util.List<LogType> logType;
 
@@ -285,7 +285,7 @@ public class ListWafLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.
 
     /**
      * Filter by log type. For more information about WAF logs, see
-     * [Logs](https://docs.cloud.oracle.com/iaas/Content/WAF/Tasks/logs.htm).
+     * [Logs](https://docs.oracle.com/iaas/Content/WAF/Tasks/logs.htm).
      */
     public java.util.List<LogType> getLogType() {
         return logType;
@@ -347,13 +347,13 @@ public class ListWafLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * WAAS policy.
          */
         private String waasPolicyId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * WAAS policy.
          *
          * @param waasPolicyId the value to set
@@ -669,13 +669,13 @@ public class ListWafLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.
 
         /**
          * Filter by log type. For more information about WAF logs, see
-         * [Logs](https://docs.cloud.oracle.com/iaas/Content/WAF/Tasks/logs.htm).
+         * [Logs](https://docs.oracle.com/iaas/Content/WAF/Tasks/logs.htm).
          */
         private java.util.List<LogType> logType = null;
 
         /**
          * Filter by log type. For more information about WAF logs, see
-         * [Logs](https://docs.cloud.oracle.com/iaas/Content/WAF/Tasks/logs.htm).
+         * [Logs](https://docs.oracle.com/iaas/Content/WAF/Tasks/logs.htm).
          *
          * @param logType the value to set
          * @return this builder instance
@@ -687,7 +687,7 @@ public class ListWafLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.
 
         /**
          * Singular setter. Filter by log type. For more information about WAF logs, see
-         * [Logs](https://docs.cloud.oracle.com/iaas/Content/WAF/Tasks/logs.htm).
+         * [Logs](https://docs.oracle.com/iaas/Content/WAF/Tasks/logs.htm).
          *
          * @param singularValue the singular value to set
          * @return this builder instance

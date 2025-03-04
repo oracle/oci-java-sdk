@@ -78,7 +78,7 @@ public interface OperatorControlAssignment extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/operatoraccesscontrol/ChangeOperatorControlAssignmentCompartmentExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/operatoraccesscontrol/ChangeOperatorControlAssignmentCompartmentExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ChangeOperatorControlAssignmentCompartment API.
      */
@@ -96,7 +96,7 @@ public interface OperatorControlAssignment extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/operatoraccesscontrol/CreateOperatorControlAssignmentExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/operatoraccesscontrol/CreateOperatorControlAssignmentExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     CreateOperatorControlAssignment API.
      */
@@ -114,7 +114,7 @@ public interface OperatorControlAssignment extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/operatoraccesscontrol/DeleteOperatorControlAssignmentExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/operatoraccesscontrol/DeleteOperatorControlAssignmentExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     DeleteOperatorControlAssignment API.
      */
@@ -132,7 +132,7 @@ public interface OperatorControlAssignment extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/operatoraccesscontrol/GetAssignmentValidationStatusExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/operatoraccesscontrol/GetAssignmentValidationStatusExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     GetAssignmentValidationStatus API.
      */
@@ -149,7 +149,7 @@ public interface OperatorControlAssignment extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/operatoraccesscontrol/GetOperatorControlAssignmentExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/operatoraccesscontrol/GetOperatorControlAssignmentExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     GetOperatorControlAssignment API.
      */
@@ -166,7 +166,7 @@ public interface OperatorControlAssignment extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/operatoraccesscontrol/ListOperatorControlAssignmentsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/operatoraccesscontrol/ListOperatorControlAssignmentsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ListOperatorControlAssignments API.
      */
@@ -184,7 +184,7 @@ public interface OperatorControlAssignment extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/operatoraccesscontrol/UpdateOperatorControlAssignmentExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/operatoraccesscontrol/UpdateOperatorControlAssignmentExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     UpdateOperatorControlAssignment API.
      */
@@ -201,7 +201,7 @@ public interface OperatorControlAssignment extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/operatoraccesscontrol/ValidateOperatorAssignmentExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/operatoraccesscontrol/ValidateOperatorAssignmentExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ValidateOperatorAssignment API.
      */

@@ -7,7 +7,7 @@ package com.oracle.bmc.core.requests;
 import com.oracle.bmc.core.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetFastConnectProviderServiceExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetFastConnectProviderServiceExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * GetFastConnectProviderServiceRequest.
  */
@@ -16,14 +16,14 @@ public class GetFastConnectProviderServiceRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the provider service.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * provider service.
      */
     private String providerServiceId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the provider service.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * provider service.
      */
     public String getProviderServiceId() {
         return providerServiceId;
@@ -36,14 +36,14 @@ public class GetFastConnectProviderServiceRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the provider service.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * provider service.
          */
         private String providerServiceId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the provider service.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * provider service.
          *
          * @param providerServiceId the value to set
          * @return this builder instance

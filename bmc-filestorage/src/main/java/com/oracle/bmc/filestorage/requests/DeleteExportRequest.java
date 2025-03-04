@@ -7,20 +7,20 @@ package com.oracle.bmc.filestorage.requests;
 import com.oracle.bmc.filestorage.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/DeleteExportExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/DeleteExportExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use DeleteExportRequest.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20171215")
 public class DeleteExportRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * export.
      */
     private String exportId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * export.
      */
     public String getExportId() {
@@ -71,13 +71,13 @@ public class DeleteExportRequest extends com.oracle.bmc.requests.BmcRequest<java
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * export.
          */
         private String exportId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * export.
          *
          * @param exportId the value to set

@@ -80,14 +80,14 @@ public final class DatabaseSslConnectionCredentials extends DatabaseConnectionCr
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * secret containing the user password.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("passwordSecretId")
         private String passwordSecretId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * secret containing the user password.
          *
          * @param passwordSecretId the value to set
@@ -114,14 +114,14 @@ public final class DatabaseSslConnectionCredentials extends DatabaseConnectionCr
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * secret containing the SSL keystore and truststore details.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("sslSecretId")
         private String sslSecretId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * secret containing the SSL keystore and truststore details.
          *
          * @param sslSecretId the value to set
@@ -242,14 +242,14 @@ public final class DatabaseSslConnectionCredentials extends DatabaseConnectionCr
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * secret containing the user password.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("passwordSecretId")
     private final String passwordSecretId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * secret containing the user password.
      *
      * @return the value
@@ -317,14 +317,14 @@ public final class DatabaseSslConnectionCredentials extends DatabaseConnectionCr
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * secret containing the SSL keystore and truststore details.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("sslSecretId")
     private final String sslSecretId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * secret containing the SSL keystore and truststore details.
      *
      * @return the value

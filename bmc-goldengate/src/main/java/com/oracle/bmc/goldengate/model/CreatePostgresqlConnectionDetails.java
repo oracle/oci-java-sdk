@@ -240,7 +240,7 @@ public final class CreatePostgresqlConnectionDetails extends CreateConnectionDet
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Secret where the password is stored. The password Oracle GoldenGate uses to connect the
          * associated system of the given technology. It must conform to the specific security
          * requirements including length, case sensitivity, and so on. If secretId is used plaintext
@@ -250,7 +250,7 @@ public final class CreatePostgresqlConnectionDetails extends CreateConnectionDet
         private String passwordSecretId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Secret where the password is stored. The password Oracle GoldenGate uses to connect the
          * associated system of the given technology. It must conform to the specific security
          * requirements including length, case sensitivity, and so on. If secretId is used plaintext
@@ -392,7 +392,7 @@ public final class CreatePostgresqlConnectionDetails extends CreateConnectionDet
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Secret that stores the private key of the PostgreSQL server. The supported file formats
          * are .pem and .crt. Note: When provided, 'sslKey' field must not be provided.
          */
@@ -400,7 +400,7 @@ public final class CreatePostgresqlConnectionDetails extends CreateConnectionDet
         private String sslKeySecretId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Secret that stores the private key of the PostgreSQL server. The supported file formats
          * are .pem and .crt. Note: When provided, 'sslKey' field must not be provided.
          *
@@ -448,14 +448,14 @@ public final class CreatePostgresqlConnectionDetails extends CreateConnectionDet
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * database system being referenced.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("dbSystemId")
         private String dbSystemId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * database system being referenced.
          *
          * @param dbSystemId the value to set
@@ -766,7 +766,7 @@ public final class CreatePostgresqlConnectionDetails extends CreateConnectionDet
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Secret where the password is stored. The password Oracle GoldenGate uses to connect the
      * associated system of the given technology. It must conform to the specific security
      * requirements including length, case sensitivity, and so on. If secretId is used plaintext
@@ -776,7 +776,7 @@ public final class CreatePostgresqlConnectionDetails extends CreateConnectionDet
     private final String passwordSecretId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Secret where the password is stored. The password Oracle GoldenGate uses to connect the
      * associated system of the given technology. It must conform to the specific security
      * requirements including length, case sensitivity, and so on. If secretId is used plaintext
@@ -902,7 +902,7 @@ public final class CreatePostgresqlConnectionDetails extends CreateConnectionDet
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Secret that stores the private key of the PostgreSQL server. The supported file formats are
      * .pem and .crt. Note: When provided, 'sslKey' field must not be provided.
      */
@@ -910,7 +910,7 @@ public final class CreatePostgresqlConnectionDetails extends CreateConnectionDet
     private final String sslKeySecretId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Secret that stores the private key of the PostgreSQL server. The supported file formats are
      * .pem and .crt. Note: When provided, 'sslKey' field must not be provided.
      *
@@ -954,14 +954,14 @@ public final class CreatePostgresqlConnectionDetails extends CreateConnectionDet
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * database system being referenced.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("dbSystemId")
     private final String dbSystemId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * database system being referenced.
      *
      * @return the value

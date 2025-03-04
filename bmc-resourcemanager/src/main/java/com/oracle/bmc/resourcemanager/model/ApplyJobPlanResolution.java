@@ -36,15 +36,15 @@ public final class ApplyJobPlanResolution
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * that specifies the most recently executed plan job.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that
+         * specifies the most recently executed plan job.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("planJobId")
         private String planJobId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * that specifies the most recently executed plan job.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that
+         * specifies the most recently executed plan job.
          *
          * @param planJobId the value to set
          * @return this builder
@@ -56,20 +56,20 @@ public final class ApplyJobPlanResolution
         }
         /**
          * Specifies whether to use the
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-         * the most recently run plan job. {@code True} if using the latest job
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must
-         * be a plan job that completed successfully.
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the most
+         * recently run plan job. {@code True} if using the latest job
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be a
+         * plan job that completed successfully.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("isUseLatestJobId")
         private Boolean isUseLatestJobId;
 
         /**
          * Specifies whether to use the
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-         * the most recently run plan job. {@code True} if using the latest job
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must
-         * be a plan job that completed successfully.
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the most
+         * recently run plan job. {@code True} if using the latest job
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be a
+         * plan job that completed successfully.
          *
          * @param isUseLatestJobId the value to set
          * @return this builder
@@ -139,14 +139,14 @@ public final class ApplyJobPlanResolution
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that
      * specifies the most recently executed plan job.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("planJobId")
     private final String planJobId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that
      * specifies the most recently executed plan job.
      *
      * @return the value
@@ -157,20 +157,20 @@ public final class ApplyJobPlanResolution
 
     /**
      * Specifies whether to use the
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * most recently run plan job. {@code True} if using the latest job
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be
-     * a plan job that completed successfully.
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the most
+     * recently run plan job. {@code True} if using the latest job
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be a plan
+     * job that completed successfully.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("isUseLatestJobId")
     private final Boolean isUseLatestJobId;
 
     /**
      * Specifies whether to use the
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * most recently run plan job. {@code True} if using the latest job
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be
-     * a plan job that completed successfully.
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the most
+     * recently run plan job. {@code True} if using the latest job
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be a plan
+     * job that completed successfully.
      *
      * @return the value
      */

@@ -7,7 +7,7 @@ package com.oracle.bmc.core.requests;
 import com.oracle.bmc.core.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListNetworkSecurityGroupsExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListNetworkSecurityGroupsExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * ListNetworkSecurityGroupsRequest.
  */
@@ -16,40 +16,38 @@ public class ListNetworkSecurityGroupsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compartment.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment.
      */
     private String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compartment.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment.
      */
     public String getCompartmentId() {
         return compartmentId;
     }
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the VLAN.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * VLAN.
      */
     private String vlanId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the VLAN.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * VLAN.
      */
     public String getVlanId() {
         return vlanId;
     }
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the VCN.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
      */
     private String vcnId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the VCN.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
      */
     public String getVcnId() {
         return vcnId;
@@ -57,7 +55,7 @@ public class ListNetworkSecurityGroupsRequest
     /**
      * For list pagination. The maximum number of results per page, or items to return in a
      * paginated "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      * <p>Example: {@code 50}
      */
@@ -66,7 +64,7 @@ public class ListNetworkSecurityGroupsRequest
     /**
      * For list pagination. The maximum number of results per page, or items to return in a
      * paginated "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      * <p>Example: {@code 50}
      */
@@ -76,14 +74,14 @@ public class ListNetworkSecurityGroupsRequest
     /**
      * For list pagination. The value of the {@code opc-next-page} response header from the previous
      * "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private String page;
 
     /**
      * For list pagination. The value of the {@code opc-next-page} response header from the previous
      * "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     public String getPage() {
         return page;
@@ -234,14 +232,14 @@ public class ListNetworkSecurityGroupsRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compartment.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment.
          */
         private String compartmentId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compartment.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment.
          *
          * @param compartmentId the value to set
          * @return this builder instance
@@ -252,14 +250,14 @@ public class ListNetworkSecurityGroupsRequest
         }
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the VLAN.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * VLAN.
          */
         private String vlanId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the VLAN.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * VLAN.
          *
          * @param vlanId the value to set
          * @return this builder instance
@@ -270,14 +268,14 @@ public class ListNetworkSecurityGroupsRequest
         }
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the VCN.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * VCN.
          */
         private String vcnId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the VCN.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * VCN.
          *
          * @param vcnId the value to set
          * @return this builder instance
@@ -290,7 +288,7 @@ public class ListNetworkSecurityGroupsRequest
         /**
          * For list pagination. The maximum number of results per page, or items to return in a
          * paginated "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * <p>Example: {@code 50}
          */
@@ -299,7 +297,7 @@ public class ListNetworkSecurityGroupsRequest
         /**
          * For list pagination. The maximum number of results per page, or items to return in a
          * paginated "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * <p>Example: {@code 50}
          *
@@ -314,14 +312,14 @@ public class ListNetworkSecurityGroupsRequest
         /**
          * For list pagination. The value of the {@code opc-next-page} response header from the
          * previous "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private String page = null;
 
         /**
          * For list pagination. The value of the {@code opc-next-page} response header from the
          * previous "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param page the value to set
          * @return this builder instance

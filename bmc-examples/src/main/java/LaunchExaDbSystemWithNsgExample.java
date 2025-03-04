@@ -38,7 +38,7 @@ import java.util.concurrent.TimeUnit;
  * <ul>
  *   <li>Create a VCN and subnets needed for the DB system and its related resources
  *   <li>Launch a DB system with Exadata shape and sparse disk group option. See: <a
- *       href="https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm">overview</a>
+ *       href="https://docs.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm">overview</a>
  *       for more information
  * </ul>
  *

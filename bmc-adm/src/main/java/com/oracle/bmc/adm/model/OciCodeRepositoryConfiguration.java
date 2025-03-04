@@ -56,7 +56,7 @@ public final class OciCodeRepositoryConfiguration extends ScmConfiguration {
         }
         /**
          * The Oracle Cloud Identifier
-         * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the
+         * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the
          * OCI DevOps repository.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("ociCodeRepositoryId")
@@ -64,7 +64,7 @@ public final class OciCodeRepositoryConfiguration extends ScmConfiguration {
 
         /**
          * The Oracle Cloud Identifier
-         * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the
+         * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the
          * OCI DevOps repository.
          *
          * @param ociCodeRepositoryId the value to set
@@ -131,7 +131,7 @@ public final class OciCodeRepositoryConfiguration extends ScmConfiguration {
 
     /**
      * The Oracle Cloud Identifier
-     * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the OCI
+     * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the OCI
      * DevOps repository.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("ociCodeRepositoryId")
@@ -139,7 +139,7 @@ public final class OciCodeRepositoryConfiguration extends ScmConfiguration {
 
     /**
      * The Oracle Cloud Identifier
-     * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the OCI
+     * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the OCI
      * DevOps repository.
      *
      * @return the value

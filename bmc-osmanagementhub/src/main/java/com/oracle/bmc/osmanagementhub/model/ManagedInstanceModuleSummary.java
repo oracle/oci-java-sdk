@@ -125,15 +125,15 @@ public final class ManagedInstanceModuleSummary
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the software source that provides this module and the associated streams.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * software source that provides this module and the associated streams.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("softwareSourceId")
         private String softwareSourceId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the software source that provides this module and the associated streams.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * software source that provides this module and the associated streams.
          *
          * @param softwareSourceId the value to set
          * @return this builder
@@ -261,15 +261,15 @@ public final class ManagedInstanceModuleSummary
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the software source that provides this module and the associated streams.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * software source that provides this module and the associated streams.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("softwareSourceId")
     private final String softwareSourceId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the software source that provides this module and the associated streams.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * software source that provides this module and the associated streams.
      *
      * @return the value
      */

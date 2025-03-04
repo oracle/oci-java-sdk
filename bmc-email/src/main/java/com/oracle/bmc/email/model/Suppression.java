@@ -108,7 +108,7 @@ public final class Suppression extends com.oracle.bmc.http.client.internal.Expli
         /**
          * The reason that the email address was suppressed. For more information on the types of
          * bounces, see [Suppression
-         * List](https://docs.us-phoenix-1.oraclecloud.com/Content/Email/Concepts/overview.htm#components).
+         * List](https://docs.oracle.com/iaas/Content/Email/Concepts/overview.htm#components).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("reason")
         private SuppressionReason reason;
@@ -116,7 +116,7 @@ public final class Suppression extends com.oracle.bmc.http.client.internal.Expli
         /**
          * The reason that the email address was suppressed. For more information on the types of
          * bounces, see [Suppression
-         * List](https://docs.us-phoenix-1.oraclecloud.com/Content/Email/Concepts/overview.htm#components).
+         * List](https://docs.oracle.com/iaas/Content/Email/Concepts/overview.htm#components).
          *
          * @param reason the value to set
          * @return this builder
@@ -343,7 +343,7 @@ public final class Suppression extends com.oracle.bmc.http.client.internal.Expli
     /**
      * The reason that the email address was suppressed. For more information on the types of
      * bounces, see [Suppression
-     * List](https://docs.us-phoenix-1.oraclecloud.com/Content/Email/Concepts/overview.htm#components).
+     * List](https://docs.oracle.com/iaas/Content/Email/Concepts/overview.htm#components).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("reason")
     private final SuppressionReason reason;
@@ -351,7 +351,7 @@ public final class Suppression extends com.oracle.bmc.http.client.internal.Expli
     /**
      * The reason that the email address was suppressed. For more information on the types of
      * bounces, see [Suppression
-     * List](https://docs.us-phoenix-1.oraclecloud.com/Content/Email/Concepts/overview.htm#components).
+     * List](https://docs.oracle.com/iaas/Content/Email/Concepts/overview.htm#components).
      *
      * @return the value
      */

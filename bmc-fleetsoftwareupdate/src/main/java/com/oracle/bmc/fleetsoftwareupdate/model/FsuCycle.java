@@ -199,14 +199,14 @@ public class FsuCycle extends com.oracle.bmc.http.client.internal.ExplicitlySetB
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * latest Action in the Exadata Fleet Update Cycle.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("lastCompletedActionId")
     private final String lastCompletedActionId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * latest Action in the Exadata Fleet Update Cycle.
      *
      * @return the value

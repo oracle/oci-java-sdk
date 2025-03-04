@@ -7,7 +7,7 @@ package com.oracle.bmc.database.requests;
 import com.oracle.bmc.database.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ChangeCloudAutonomousVmClusterCompartmentExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ChangeCloudAutonomousVmClusterCompartmentExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * ChangeCloudAutonomousVmClusterCompartmentRequest.
  */
@@ -27,13 +27,13 @@ public class ChangeCloudAutonomousVmClusterCompartmentRequest
     }
     /**
      * The Cloud VM cluster
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     private String cloudAutonomousVmClusterId;
 
     /**
      * The Cloud VM cluster
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     public String getCloudAutonomousVmClusterId() {
         return cloudAutonomousVmClusterId;
@@ -122,13 +122,13 @@ public class ChangeCloudAutonomousVmClusterCompartmentRequest
 
         /**
          * The Cloud VM cluster
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          */
         private String cloudAutonomousVmClusterId = null;
 
         /**
          * The Cloud VM cluster
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          * @param cloudAutonomousVmClusterId the value to set
          * @return this builder instance

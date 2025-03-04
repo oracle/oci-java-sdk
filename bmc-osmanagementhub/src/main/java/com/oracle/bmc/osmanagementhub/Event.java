@@ -10,7 +10,7 @@ import com.oracle.bmc.osmanagementhub.responses.*;
 /**
  * Use the OS Management Hub API to manage and monitor updates and patches for instances in OCI,
  * your private data center, or 3rd-party clouds. For more information, see [Overview of OS
- * Management Hub](https://docs.cloud.oracle.com/iaas/osmh/doc/overview.htm).
+ * Management Hub](https://docs.oracle.com/iaas/osmh/doc/overview.htm).
  *
  * <p>This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by
  * default if no circuit breaker configuration is defined by the user.
@@ -69,7 +69,7 @@ public interface Event extends AutoCloseable {
     /**
      * Moves an event into a different compartment within the same tenancy. For information about
      * moving resources between compartments, see [Moving Resources to a Different
-     * Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -78,7 +78,7 @@ public interface Event extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/ChangeEventCompartmentExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/ChangeEventCompartmentExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ChangeEventCompartment API.
      */
@@ -94,7 +94,7 @@ public interface Event extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/DeleteEventExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/DeleteEventExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteEvent API.
      */
     DeleteEventResponse deleteEvent(DeleteEventRequest request);
@@ -109,7 +109,7 @@ public interface Event extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/DeleteEventContentExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/DeleteEventContentExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteEventContent
      *     API.
      */
@@ -125,7 +125,7 @@ public interface Event extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/GetEventExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/GetEventExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetEvent API.
      */
     GetEventResponse getEvent(GetEventRequest request);
@@ -141,7 +141,7 @@ public interface Event extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/GetEventContentExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/GetEventContentExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetEventContent
      *     API.
      */
@@ -157,7 +157,7 @@ public interface Event extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/ImportEventContentExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/ImportEventContentExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ImportEventContent
      *     API.
      */
@@ -173,7 +173,7 @@ public interface Event extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/ListEventsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/ListEventsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListEvents API.
      */
     ListEventsResponse listEvents(ListEventsRequest request);
@@ -188,7 +188,7 @@ public interface Event extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/UpdateEventExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/UpdateEventExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateEvent API.
      */
     UpdateEventResponse updateEvent(UpdateEventRequest request);

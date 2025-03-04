@@ -7,7 +7,7 @@ package com.oracle.bmc.aispeech.requests;
 import com.oracle.bmc.aispeech.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aispeech/CreateRealtimeSessionTokenExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aispeech/CreateRealtimeSessionTokenExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * CreateRealtimeSessionTokenRequest.
  */

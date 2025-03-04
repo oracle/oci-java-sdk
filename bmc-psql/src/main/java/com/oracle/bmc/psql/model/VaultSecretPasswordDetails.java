@@ -28,14 +28,14 @@ public final class VaultSecretPasswordDetails extends PasswordDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * secret where the password is stored.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("secretId")
         private String secretId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * secret where the password is stored.
          *
          * @param secretId the value to set
@@ -103,14 +103,14 @@ public final class VaultSecretPasswordDetails extends PasswordDetails {
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * secret where the password is stored.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("secretId")
     private final String secretId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * secret where the password is stored.
      *
      * @return the value

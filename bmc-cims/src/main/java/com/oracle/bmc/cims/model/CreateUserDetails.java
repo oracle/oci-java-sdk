@@ -163,12 +163,12 @@ public final class CreateUserDetails
         /**
          * The kind of support ticket (type of support request). For information about {@code
          * ACCOUNT} support tickets, see [Creating a Billing Support
-         * Request](https://docs.cloud.oracle.com/iaas/Content/GSG/support/create-incident-billing.htm).
+         * Request](https://docs.oracle.com/iaas/Content/GSG/support/create-incident-billing.htm).
          * For information about {@code LIMIT} support tickets, see [Creating a Service Limit
          * Increase
-         * Request](https://docs.cloud.oracle.com/iaas/Content/GSG/support/create-incident-limit.htm).
-         * For information about {@code TECH} support tickets, see [Creating a Technical Support
-         * Request](https://docs.cloud.oracle.com/iaas/Content/GSG/support/create-incident-technical.htm).
+         * Request](https://docs.oracle.com/iaas/Content/GSG/support/create-incident-limit.htm). For
+         * information about {@code TECH} support tickets, see [Creating a Technical Support
+         * Request](https://docs.oracle.com/iaas/Content/GSG/support/create-incident-technical.htm).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("problemType")
         private ProblemType problemType;
@@ -176,12 +176,12 @@ public final class CreateUserDetails
         /**
          * The kind of support ticket (type of support request). For information about {@code
          * ACCOUNT} support tickets, see [Creating a Billing Support
-         * Request](https://docs.cloud.oracle.com/iaas/Content/GSG/support/create-incident-billing.htm).
+         * Request](https://docs.oracle.com/iaas/Content/GSG/support/create-incident-billing.htm).
          * For information about {@code LIMIT} support tickets, see [Creating a Service Limit
          * Increase
-         * Request](https://docs.cloud.oracle.com/iaas/Content/GSG/support/create-incident-limit.htm).
-         * For information about {@code TECH} support tickets, see [Creating a Technical Support
-         * Request](https://docs.cloud.oracle.com/iaas/Content/GSG/support/create-incident-technical.htm).
+         * Request](https://docs.oracle.com/iaas/Content/GSG/support/create-incident-limit.htm). For
+         * information about {@code TECH} support tickets, see [Creating a Technical Support
+         * Request](https://docs.oracle.com/iaas/Content/GSG/support/create-incident-technical.htm).
          *
          * @param problemType the value to set
          * @return this builder
@@ -345,11 +345,11 @@ public final class CreateUserDetails
     /**
      * The kind of support ticket (type of support request). For information about {@code ACCOUNT}
      * support tickets, see [Creating a Billing Support
-     * Request](https://docs.cloud.oracle.com/iaas/Content/GSG/support/create-incident-billing.htm).
-     * For information about {@code LIMIT} support tickets, see [Creating a Service Limit Increase
-     * Request](https://docs.cloud.oracle.com/iaas/Content/GSG/support/create-incident-limit.htm).
-     * For information about {@code TECH} support tickets, see [Creating a Technical Support
-     * Request](https://docs.cloud.oracle.com/iaas/Content/GSG/support/create-incident-technical.htm).
+     * Request](https://docs.oracle.com/iaas/Content/GSG/support/create-incident-billing.htm). For
+     * information about {@code LIMIT} support tickets, see [Creating a Service Limit Increase
+     * Request](https://docs.oracle.com/iaas/Content/GSG/support/create-incident-limit.htm). For
+     * information about {@code TECH} support tickets, see [Creating a Technical Support
+     * Request](https://docs.oracle.com/iaas/Content/GSG/support/create-incident-technical.htm).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("problemType")
     private final ProblemType problemType;
@@ -357,11 +357,11 @@ public final class CreateUserDetails
     /**
      * The kind of support ticket (type of support request). For information about {@code ACCOUNT}
      * support tickets, see [Creating a Billing Support
-     * Request](https://docs.cloud.oracle.com/iaas/Content/GSG/support/create-incident-billing.htm).
-     * For information about {@code LIMIT} support tickets, see [Creating a Service Limit Increase
-     * Request](https://docs.cloud.oracle.com/iaas/Content/GSG/support/create-incident-limit.htm).
-     * For information about {@code TECH} support tickets, see [Creating a Technical Support
-     * Request](https://docs.cloud.oracle.com/iaas/Content/GSG/support/create-incident-technical.htm).
+     * Request](https://docs.oracle.com/iaas/Content/GSG/support/create-incident-billing.htm). For
+     * information about {@code LIMIT} support tickets, see [Creating a Service Limit Increase
+     * Request](https://docs.oracle.com/iaas/Content/GSG/support/create-incident-limit.htm). For
+     * information about {@code TECH} support tickets, see [Creating a Technical Support
+     * Request](https://docs.oracle.com/iaas/Content/GSG/support/create-incident-technical.htm).
      *
      * @return the value
      */

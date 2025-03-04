@@ -133,7 +133,7 @@ public final class InstanceConfigurationLaunchInstanceAgentConfigDetails
          * #listInstanceagentAvailablePlugins(ListInstanceagentAvailablePluginsRequest)
          * listInstanceagentAvailablePlugins} operation in the Oracle Cloud Agent API. For more
          * information about the available plugins, see [Managing Plugins with Oracle Cloud
-         * Agent](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm).
+         * Agent](https://docs.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("areAllPluginsDisabled")
         private Boolean areAllPluginsDisabled;
@@ -146,7 +146,7 @@ public final class InstanceConfigurationLaunchInstanceAgentConfigDetails
          * #listInstanceagentAvailablePlugins(ListInstanceagentAvailablePluginsRequest)
          * listInstanceagentAvailablePlugins} operation in the Oracle Cloud Agent API. For more
          * information about the available plugins, see [Managing Plugins with Oracle Cloud
-         * Agent](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm).
+         * Agent](https://docs.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm).
          *
          * @param areAllPluginsDisabled the value to set
          * @return this builder
@@ -300,7 +300,7 @@ public final class InstanceConfigurationLaunchInstanceAgentConfigDetails
      * #listInstanceagentAvailablePlugins(ListInstanceagentAvailablePluginsRequest)
      * listInstanceagentAvailablePlugins} operation in the Oracle Cloud Agent API. For more
      * information about the available plugins, see [Managing Plugins with Oracle Cloud
-     * Agent](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm).
+     * Agent](https://docs.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("areAllPluginsDisabled")
     private final Boolean areAllPluginsDisabled;
@@ -313,7 +313,7 @@ public final class InstanceConfigurationLaunchInstanceAgentConfigDetails
      * #listInstanceagentAvailablePlugins(ListInstanceagentAvailablePluginsRequest)
      * listInstanceagentAvailablePlugins} operation in the Oracle Cloud Agent API. For more
      * information about the available plugins, see [Managing Plugins with Oracle Cloud
-     * Agent](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm).
+     * Agent](https://docs.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm).
      *
      * @return the value
      */

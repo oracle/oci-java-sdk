@@ -33,15 +33,15 @@ public final class ScheduleLogDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the log group.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * log group.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("logGroupId")
         private String logGroupId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the log group.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * log group.
          *
          * @param logGroupId the value to set
          * @return this builder
@@ -52,15 +52,15 @@ public final class ScheduleLogDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the custom log to be used for Schedule logging.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * custom log to be used for Schedule logging.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("logId")
         private String logId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the custom log to be used for Schedule logging.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * custom log to be used for Schedule logging.
          *
          * @param logId the value to set
          * @return this builder
@@ -104,15 +104,15 @@ public final class ScheduleLogDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the log group.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log
+     * group.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("logGroupId")
     private final String logGroupId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the log group.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log
+     * group.
      *
      * @return the value
      */
@@ -121,15 +121,15 @@ public final class ScheduleLogDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the custom log to be used for Schedule logging.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * custom log to be used for Schedule logging.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("logId")
     private final String logId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the custom log to be used for Schedule logging.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * custom log to be used for Schedule logging.
      *
      * @return the value
      */

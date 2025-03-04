@@ -7,7 +7,7 @@ package com.oracle.bmc.ons.requests;
 import com.oracle.bmc.ons.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ons/ChangeSubscriptionCompartmentExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ons/ChangeSubscriptionCompartmentExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * ChangeSubscriptionCompartmentRequest.
  */
@@ -17,14 +17,14 @@ public class ChangeSubscriptionCompartmentRequest
                 com.oracle.bmc.ons.model.ChangeCompartmentDetails> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the subscription to move.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * subscription to move.
      */
     private String subscriptionId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the subscription to move.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * subscription to move.
      */
     public String getSubscriptionId() {
         return subscriptionId;
@@ -106,14 +106,14 @@ public class ChangeSubscriptionCompartmentRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the subscription to move.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * subscription to move.
          */
         private String subscriptionId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the subscription to move.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * subscription to move.
          *
          * @param subscriptionId the value to set
          * @return this builder instance

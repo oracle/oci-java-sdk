@@ -130,15 +130,15 @@ public final class CreateVlanDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compartment to contain the VLAN.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment to contain the VLAN.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compartment to contain the VLAN.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment to contain the VLAN.
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -226,17 +226,17 @@ public final class CreateVlanDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the route table the VLAN will use. If you don't provide a value, the VLAN uses the
-         * VCN's default route table.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * route table the VLAN will use. If you don't provide a value, the VLAN uses the VCN's
+         * default route table.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("routeTableId")
         private String routeTableId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the route table the VLAN will use. If you don't provide a value, the VLAN uses the
-         * VCN's default route table.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * route table the VLAN will use. If you don't provide a value, the VLAN uses the VCN's
+         * default route table.
          *
          * @param routeTableId the value to set
          * @return this builder
@@ -247,15 +247,15 @@ public final class CreateVlanDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the VCN to contain the VLAN.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * VCN to contain the VLAN.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("vcnId")
         private String vcnId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the VCN to contain the VLAN.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * VCN to contain the VLAN.
          *
          * @param vcnId the value to set
          * @return this builder
@@ -417,15 +417,15 @@ public final class CreateVlanDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compartment to contain the VLAN.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment to contain the VLAN.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compartment to contain the VLAN.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment to contain the VLAN.
      *
      * @return the value
      */
@@ -502,17 +502,17 @@ public final class CreateVlanDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the route table the VLAN will use. If you don't provide a value, the VLAN uses the VCN's
-     * default route table.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * route table the VLAN will use. If you don't provide a value, the VLAN uses the VCN's default
+     * route table.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("routeTableId")
     private final String routeTableId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the route table the VLAN will use. If you don't provide a value, the VLAN uses the VCN's
-     * default route table.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * route table the VLAN will use. If you don't provide a value, the VLAN uses the VCN's default
+     * route table.
      *
      * @return the value
      */
@@ -521,15 +521,15 @@ public final class CreateVlanDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the VCN to contain the VLAN.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN
+     * to contain the VLAN.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("vcnId")
     private final String vcnId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the VCN to contain the VLAN.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN
+     * to contain the VLAN.
      *
      * @return the value
      */

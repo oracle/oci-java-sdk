@@ -7,7 +7,7 @@ package com.oracle.bmc.loganalytics.requests;
 import com.oracle.bmc.loganalytics.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ListFieldsExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ListFieldsExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListFieldsRequest.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")

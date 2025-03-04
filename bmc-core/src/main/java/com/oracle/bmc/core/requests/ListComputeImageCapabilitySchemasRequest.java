@@ -7,7 +7,7 @@ package com.oracle.bmc.core.requests;
 import com.oracle.bmc.core.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListComputeImageCapabilitySchemasExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListComputeImageCapabilitySchemasExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * ListComputeImageCapabilitySchemasRequest.
  */
@@ -23,13 +23,13 @@ public class ListComputeImageCapabilitySchemasRequest
         return compartmentId;
     }
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of an
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of an
      * image.
      */
     private String imageId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of an
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of an
      * image.
      */
     public String getImageId() {
@@ -45,7 +45,7 @@ public class ListComputeImageCapabilitySchemasRequest
     /**
      * For list pagination. The maximum number of results per page, or items to return in a
      * paginated "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      * <p>Example: {@code 50}
      */
@@ -54,7 +54,7 @@ public class ListComputeImageCapabilitySchemasRequest
     /**
      * For list pagination. The maximum number of results per page, or items to return in a
      * paginated "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      * <p>Example: {@code 50}
      */
@@ -64,14 +64,14 @@ public class ListComputeImageCapabilitySchemasRequest
     /**
      * For list pagination. The value of the {@code opc-next-page} response header from the previous
      * "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private String page;
 
     /**
      * For list pagination. The value of the {@code opc-next-page} response header from the previous
      * "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     public String getPage() {
         return page;
@@ -216,14 +216,14 @@ public class ListComputeImageCapabilitySchemasRequest
         }
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of an image.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of an
+         * image.
          */
         private String imageId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of an image.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of an
+         * image.
          *
          * @param imageId the value to set
          * @return this builder instance
@@ -250,7 +250,7 @@ public class ListComputeImageCapabilitySchemasRequest
         /**
          * For list pagination. The maximum number of results per page, or items to return in a
          * paginated "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * <p>Example: {@code 50}
          */
@@ -259,7 +259,7 @@ public class ListComputeImageCapabilitySchemasRequest
         /**
          * For list pagination. The maximum number of results per page, or items to return in a
          * paginated "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * <p>Example: {@code 50}
          *
@@ -274,14 +274,14 @@ public class ListComputeImageCapabilitySchemasRequest
         /**
          * For list pagination. The value of the {@code opc-next-page} response header from the
          * previous "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private String page = null;
 
         /**
          * For list pagination. The value of the {@code opc-next-page} response header from the
          * previous "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param page the value to set
          * @return this builder instance

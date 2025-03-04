@@ -8,7 +8,7 @@ package com.oracle.bmc.core.model;
  * A set of virtual firewall rules for your VCN. Security lists are configured at the subnet level,
  * but the rules are applied to the ingress and egress traffic for the individual instances in the
  * subnet. The rules can be stateful or stateless. For more information, see [Security
- * Lists](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securitylists.htm). **Note:**
+ * Lists](https://docs.oracle.com/iaas/Content/Network/Concepts/securitylists.htm). **Note:**
  * Compare security lists to {@link NetworkSecurityGroup}s, which let you apply a set of security
  * rules to a *specific set of VNICs* instead of an entire subnet. Oracle recommends using network
  * security groups instead of security lists, although you can use either or both together.
@@ -21,8 +21,7 @@ package com.oracle.bmc.core.model;
  * <p>To use any of the API operations, you must be authorized in an IAM policy. If you're not
  * authorized, talk to an administrator. If you're an administrator who needs to write policies to
  * give users access, see [Getting Started with
- * Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
- * <br>
+ * Policies](https://docs.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm). <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -77,15 +76,15 @@ public final class SecurityList extends com.oracle.bmc.http.client.internal.Expl
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compartment containing the security list.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment containing the security list.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compartment containing the security list.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment containing the security list.
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -98,7 +97,7 @@ public final class SecurityList extends com.oracle.bmc.http.client.internal.Expl
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
          */
@@ -108,7 +107,7 @@ public final class SecurityList extends com.oracle.bmc.http.client.internal.Expl
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
@@ -158,7 +157,7 @@ public final class SecurityList extends com.oracle.bmc.http.client.internal.Expl
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          */
@@ -168,7 +167,7 @@ public final class SecurityList extends com.oracle.bmc.http.client.internal.Expl
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          *
@@ -182,14 +181,14 @@ public final class SecurityList extends com.oracle.bmc.http.client.internal.Expl
         }
         /**
          * The security list's Oracle Cloud ID
-         * ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
+         * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * The security list's Oracle Cloud ID
-         * ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
+         * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
          *
          * @param id the value to set
          * @return this builder
@@ -254,15 +253,15 @@ public final class SecurityList extends com.oracle.bmc.http.client.internal.Expl
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the VCN the security list belongs to.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * VCN the security list belongs to.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("vcnId")
         private String vcnId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the VCN the security list belongs to.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * VCN the security list belongs to.
          *
          * @param vcnId the value to set
          * @return this builder
@@ -341,15 +340,15 @@ public final class SecurityList extends com.oracle.bmc.http.client.internal.Expl
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compartment containing the security list.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment containing the security list.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compartment containing the security list.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment containing the security list.
      *
      * @return the value
      */
@@ -360,7 +359,7 @@ public final class SecurityList extends com.oracle.bmc.http.client.internal.Expl
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
      */
@@ -370,7 +369,7 @@ public final class SecurityList extends com.oracle.bmc.http.client.internal.Expl
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
@@ -413,7 +412,7 @@ public final class SecurityList extends com.oracle.bmc.http.client.internal.Expl
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      */
@@ -423,7 +422,7 @@ public final class SecurityList extends com.oracle.bmc.http.client.internal.Expl
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      *
@@ -435,14 +434,14 @@ public final class SecurityList extends com.oracle.bmc.http.client.internal.Expl
 
     /**
      * The security list's Oracle Cloud ID
-     * ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
+     * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The security list's Oracle Cloud ID
-     * ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
+     * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
      *
      * @return the value
      */
@@ -546,15 +545,15 @@ public final class SecurityList extends com.oracle.bmc.http.client.internal.Expl
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the VCN the security list belongs to.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN
+     * the security list belongs to.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("vcnId")
     private final String vcnId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the VCN the security list belongs to.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN
+     * the security list belongs to.
      *
      * @return the value
      */

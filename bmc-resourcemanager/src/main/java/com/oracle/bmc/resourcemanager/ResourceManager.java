@@ -12,7 +12,7 @@ import com.oracle.bmc.resourcemanager.responses.*;
  * Infrastructure resources. Using the infrastructure-as-code (IaC) model, the service is based on
  * Terraform, an open source industry standard that lets DevOps engineers develop and deploy their
  * infrastructure anywhere. For more information, see [the Resource Manager
- * documentation](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/home.htm).
+ * documentation](https://docs.oracle.com/iaas/Content/ResourceManager/home.htm).
  *
  * <p>This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by
  * default if no circuit breaker configuration is defined by the user.
@@ -82,7 +82,7 @@ public interface ResourceManager extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/CancelJobExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/CancelJobExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CancelJob API.
      */
     CancelJobResponse cancelJob(CancelJobRequest request);
@@ -91,7 +91,7 @@ public interface ResourceManager extends AutoCloseable {
      * Moves a configuration source provider into a different compartment within the same tenancy.
      * For information about moving resources between compartments, see [Moving Resources to a
      * Different
-     * Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -100,7 +100,7 @@ public interface ResourceManager extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/ChangeConfigurationSourceProviderCompartmentExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/ChangeConfigurationSourceProviderCompartmentExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ChangeConfigurationSourceProviderCompartment API.
      */
@@ -111,7 +111,7 @@ public interface ResourceManager extends AutoCloseable {
     /**
      * Moves a private endpoint to a different compartment within the same tenancy. For information
      * about moving resources between compartments, see [Moving Resources to a Different
-     * Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -120,7 +120,7 @@ public interface ResourceManager extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/ChangePrivateEndpointCompartmentExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/ChangePrivateEndpointCompartmentExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ChangePrivateEndpointCompartment API.
      */
@@ -131,7 +131,7 @@ public interface ResourceManager extends AutoCloseable {
      * Moves a stack (and its associated jobs) into a different compartment within the same tenancy.
      * For information about moving resources between compartments, see [Moving Resources to a
      * Different
-     * Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -140,7 +140,7 @@ public interface ResourceManager extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/ChangeStackCompartmentExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/ChangeStackCompartmentExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ChangeStackCompartment API.
      */
@@ -149,7 +149,7 @@ public interface ResourceManager extends AutoCloseable {
     /**
      * Moves a template into a different compartment within the same tenancy. For information about
      * moving resources between compartments, see [Moving Resources to a Different
-     * Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -158,7 +158,7 @@ public interface ResourceManager extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/ChangeTemplateCompartmentExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/ChangeTemplateCompartmentExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ChangeTemplateCompartment API.
      */
@@ -168,7 +168,7 @@ public interface ResourceManager extends AutoCloseable {
     /**
      * Creates a configuration source provider in the specified compartment. For more information,
      * see [To create a configuration source
-     * provider](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/managingconfigurationsourceproviders.htm#CreateConfigurationSourceProvider).
+     * provider](https://docs.oracle.com/iaas/Content/ResourceManager/Tasks/managingconfigurationsourceproviders.htm#CreateConfigurationSourceProvider).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -177,7 +177,7 @@ public interface ResourceManager extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/CreateConfigurationSourceProviderExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/CreateConfigurationSourceProviderExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     CreateConfigurationSourceProvider API.
      */
@@ -194,7 +194,7 @@ public interface ResourceManager extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/CreateJobExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/CreateJobExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateJob API.
      */
     CreateJobResponse createJob(CreateJobRequest request);
@@ -209,7 +209,7 @@ public interface ResourceManager extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/CreatePrivateEndpointExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/CreatePrivateEndpointExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     CreatePrivateEndpoint API.
      */
@@ -221,7 +221,7 @@ public interface ResourceManager extends AutoCloseable {
      * source code control system. You can also create a stack from an existing compartment, which
      * generates a Terraform configuration. You can also upload the Terraform configuration from an
      * Object Storage bucket. For more information, see [Creating
-     * Stacks](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/create-stack.htm).
+     * Stacks](https://docs.oracle.com/iaas/Content/ResourceManager/Tasks/create-stack.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -230,7 +230,7 @@ public interface ResourceManager extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/CreateStackExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/CreateStackExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateStack API.
      */
     CreateStackResponse createStack(CreateStackRequest request);
@@ -245,7 +245,7 @@ public interface ResourceManager extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/CreateTemplateExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/CreateTemplateExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateTemplate API.
      */
     CreateTemplateResponse createTemplate(CreateTemplateRequest request);
@@ -260,7 +260,7 @@ public interface ResourceManager extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/DeleteConfigurationSourceProviderExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/DeleteConfigurationSourceProviderExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     DeleteConfigurationSourceProvider API.
      */
@@ -277,7 +277,7 @@ public interface ResourceManager extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/DeletePrivateEndpointExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/DeletePrivateEndpointExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     DeletePrivateEndpoint API.
      */
@@ -293,7 +293,7 @@ public interface ResourceManager extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/DeleteStackExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/DeleteStackExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteStack API.
      */
     DeleteStackResponse deleteStack(DeleteStackRequest request);
@@ -308,7 +308,7 @@ public interface ResourceManager extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/DeleteTemplateExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/DeleteTemplateExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteTemplate API.
      */
     DeleteTemplateResponse deleteTemplate(DeleteTemplateRequest request);
@@ -323,7 +323,7 @@ public interface ResourceManager extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/DetectStackDriftExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/DetectStackDriftExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DetectStackDrift
      *     API.
      */
@@ -339,7 +339,7 @@ public interface ResourceManager extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/GetConfigurationSourceProviderExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/GetConfigurationSourceProviderExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     GetConfigurationSourceProvider API.
      */
@@ -356,7 +356,7 @@ public interface ResourceManager extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/GetJobExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/GetJobExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetJob API.
      */
     GetJobResponse getJob(GetJobRequest request);
@@ -372,7 +372,7 @@ public interface ResourceManager extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/GetJobDetailedLogContentExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/GetJobDetailedLogContentExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     GetJobDetailedLogContent API.
      */
@@ -389,7 +389,7 @@ public interface ResourceManager extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/GetJobLogsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/GetJobLogsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetJobLogs API.
      */
     GetJobLogsResponse getJobLogs(GetJobLogsRequest request);
@@ -405,7 +405,7 @@ public interface ResourceManager extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/GetJobLogsContentExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/GetJobLogsContentExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetJobLogsContent
      *     API.
      */
@@ -422,7 +422,7 @@ public interface ResourceManager extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/GetJobTfConfigExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/GetJobTfConfigExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetJobTfConfig API.
      */
     GetJobTfConfigResponse getJobTfConfig(GetJobTfConfigRequest request);
@@ -430,7 +430,7 @@ public interface ResourceManager extends AutoCloseable {
     /**
      * Returns the output of the specified Terraform plan job in binary or JSON format. For
      * information about running Terraform plan jobs, see [Creating Plan
-     * Jobs](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/create-job.htm).
+     * Jobs](https://docs.oracle.com/iaas/Content/ResourceManager/Tasks/create-job.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -439,7 +439,7 @@ public interface ResourceManager extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/GetJobTfPlanExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/GetJobTfPlanExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetJobTfPlan API.
      */
     GetJobTfPlanResponse getJobTfPlan(GetJobTfPlanRequest request);
@@ -454,7 +454,7 @@ public interface ResourceManager extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/GetJobTfStateExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/GetJobTfStateExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetJobTfState API.
      */
     GetJobTfStateResponse getJobTfState(GetJobTfStateRequest request);
@@ -469,7 +469,7 @@ public interface ResourceManager extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/GetPrivateEndpointExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/GetPrivateEndpointExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetPrivateEndpoint
      *     API.
      */
@@ -487,7 +487,7 @@ public interface ResourceManager extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/GetReachableIpExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/GetReachableIpExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetReachableIp API.
      */
     GetReachableIpResponse getReachableIp(GetReachableIpRequest request);
@@ -502,7 +502,7 @@ public interface ResourceManager extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/GetStackExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/GetStackExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetStack API.
      */
     GetStackResponse getStack(GetStackRequest request);
@@ -518,7 +518,7 @@ public interface ResourceManager extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/GetStackTfConfigExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/GetStackTfConfigExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetStackTfConfig
      *     API.
      */
@@ -534,7 +534,7 @@ public interface ResourceManager extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/GetStackTfStateExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/GetStackTfStateExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetStackTfState
      *     API.
      */
@@ -550,7 +550,7 @@ public interface ResourceManager extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/GetTemplateExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/GetTemplateExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetTemplate API.
      */
     GetTemplateResponse getTemplate(GetTemplateRequest request);
@@ -566,7 +566,7 @@ public interface ResourceManager extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/GetTemplateLogoExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/GetTemplateLogoExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetTemplateLogo
      *     API.
      */
@@ -583,7 +583,7 @@ public interface ResourceManager extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/GetTemplateTfConfigExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/GetTemplateTfConfigExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetTemplateTfConfig
      *     API.
      */
@@ -599,7 +599,7 @@ public interface ResourceManager extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/GetWorkRequestExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/GetWorkRequestExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetWorkRequest API.
      */
     GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request);
@@ -616,7 +616,7 @@ public interface ResourceManager extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/ListConfigurationSourceProvidersExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/ListConfigurationSourceProvidersExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ListConfigurationSourceProviders API.
      */
@@ -633,7 +633,7 @@ public interface ResourceManager extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/ListJobAssociatedResourcesExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/ListJobAssociatedResourcesExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ListJobAssociatedResources API.
      */
@@ -650,7 +650,7 @@ public interface ResourceManager extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/ListJobOutputsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/ListJobOutputsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListJobOutputs API.
      */
     ListJobOutputsResponse listJobOutputs(ListJobOutputsRequest request);
@@ -660,12 +660,12 @@ public interface ResourceManager extends AutoCloseable {
      * created.
      *
      * <p>- To list all jobs in a stack, provide the stack
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). - To
-     * list all jobs in a compartment, provide the compartment
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). - To
-     * return a specific job, provide the job
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-     * (Equivalent to {@link #getStack(GetStackRequest) getStack}.)
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). - To list all
+     * jobs in a compartment, provide the compartment
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). - To return a
+     * specific job, provide the job
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). (Equivalent to
+     * {@link #getStack(GetStackRequest) getStack}.)
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -674,7 +674,7 @@ public interface ResourceManager extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/ListJobsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/ListJobsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListJobs API.
      */
     ListJobsResponse listJobs(ListJobsRequest request);
@@ -691,7 +691,7 @@ public interface ResourceManager extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/ListPrivateEndpointsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/ListPrivateEndpointsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ListPrivateEndpoints API.
      */
@@ -699,7 +699,7 @@ public interface ResourceManager extends AutoCloseable {
 
     /**
      * Returns a list of supported services for [Resource
-     * Discovery](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resource-discovery.htm).
+     * Discovery](https://docs.oracle.com/iaas/Content/ResourceManager/Concepts/resource-discovery.htm).
      * For reference on service names, see the [Terraform provider
      * documentation](https://www.terraform.io/docs/providers/oci/guides/resource_discovery.html#services).
      *
@@ -710,7 +710,7 @@ public interface ResourceManager extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/ListResourceDiscoveryServicesExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/ListResourceDiscoveryServicesExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ListResourceDiscoveryServices API.
      */
@@ -727,7 +727,7 @@ public interface ResourceManager extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/ListStackAssociatedResourcesExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/ListStackAssociatedResourcesExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ListStackAssociatedResources API.
      */
@@ -748,7 +748,7 @@ public interface ResourceManager extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/ListStackResourceDriftDetailsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/ListStackResourceDriftDetailsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ListStackResourceDriftDetails API.
      */
@@ -767,7 +767,7 @@ public interface ResourceManager extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/ListStacksExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/ListStacksExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListStacks API.
      */
     ListStacksResponse listStacks(ListStacksRequest request);
@@ -782,7 +782,7 @@ public interface ResourceManager extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/ListTemplateCategoriesExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/ListTemplateCategoriesExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ListTemplateCategories API.
      */
@@ -799,7 +799,7 @@ public interface ResourceManager extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/ListTemplatesExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/ListTemplatesExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListTemplates API.
      */
     ListTemplatesResponse listTemplates(ListTemplatesRequest request);
@@ -814,7 +814,7 @@ public interface ResourceManager extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/ListTerraformVersionsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/ListTerraformVersionsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ListTerraformVersions API.
      */
@@ -830,7 +830,7 @@ public interface ResourceManager extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/ListWorkRequestErrorsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/ListWorkRequestErrorsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ListWorkRequestErrors API.
      */
@@ -846,7 +846,7 @@ public interface ResourceManager extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/ListWorkRequestLogsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/ListWorkRequestLogsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequestLogs
      *     API.
      */
@@ -862,7 +862,7 @@ public interface ResourceManager extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/ListWorkRequestsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/ListWorkRequestsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequests
      *     API.
      */
@@ -871,7 +871,7 @@ public interface ResourceManager extends AutoCloseable {
     /**
      * Updates the properties of the specified configuration source provider. For more information,
      * see [To edit a configuration source
-     * provider](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/managingconfigurationsourceproviders.htm#EditConfigurationSourceProvider).
+     * provider](https://docs.oracle.com/iaas/Content/ResourceManager/Tasks/managingconfigurationsourceproviders.htm#EditConfigurationSourceProvider).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -880,7 +880,7 @@ public interface ResourceManager extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/UpdateConfigurationSourceProviderExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/UpdateConfigurationSourceProviderExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     UpdateConfigurationSourceProvider API.
      */
@@ -897,7 +897,7 @@ public interface ResourceManager extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/UpdateJobExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/UpdateJobExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateJob API.
      */
     UpdateJobResponse updateJob(UpdateJobRequest request);
@@ -912,7 +912,7 @@ public interface ResourceManager extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/UpdatePrivateEndpointExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/UpdatePrivateEndpointExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     UpdatePrivateEndpoint API.
      */
@@ -922,7 +922,7 @@ public interface ResourceManager extends AutoCloseable {
      * Updates the specified stack. Use `UpdateStack` when you update your Terraform configuration
      * and want your changes to be reflected in the execution plan. For more information, see
      * [Updating
-     * Stacks](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/update-stack.htm).
+     * Stacks](https://docs.oracle.com/iaas/Content/ResourceManager/Tasks/update-stack.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -931,7 +931,7 @@ public interface ResourceManager extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/UpdateStackExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/UpdateStackExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateStack API.
      */
     UpdateStackResponse updateStack(UpdateStackRequest request);
@@ -946,7 +946,7 @@ public interface ResourceManager extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/UpdateTemplateExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/UpdateTemplateExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateTemplate API.
      */
     UpdateTemplateResponse updateTemplate(UpdateTemplateRequest request);

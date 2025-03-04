@@ -7,7 +7,7 @@ package com.oracle.bmc.aivision.requests;
 import com.oracle.bmc.aivision.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aivision/CancelWorkRequestExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aivision/CancelWorkRequestExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use CancelWorkRequestRequest.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")

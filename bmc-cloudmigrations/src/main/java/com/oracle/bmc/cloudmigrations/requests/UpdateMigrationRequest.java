@@ -7,7 +7,7 @@ package com.oracle.bmc.cloudmigrations.requests;
 import com.oracle.bmc.cloudmigrations.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudmigrations/UpdateMigrationExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudmigrations/UpdateMigrationExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateMigrationRequest.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220919")

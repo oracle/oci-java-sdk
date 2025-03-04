@@ -163,7 +163,7 @@ public interface GoldenGateAsync extends AutoCloseable {
      * Moves the Connection into a different compartment within the same tenancy. When provided,
      * If-Match is checked against ETag values of the resource. For information about moving
      * resources between compartments, see [Moving Resources Between
-     * Compartments](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * Compartments](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -183,7 +183,7 @@ public interface GoldenGateAsync extends AutoCloseable {
      * different compartment within the same tenancy. When provided, If-Match is checked against
      * ETag values of the resource. For information about moving resources between compartments, see
      * [Moving Resources Between
-     * Compartments](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * Compartments](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -204,7 +204,7 @@ public interface GoldenGateAsync extends AutoCloseable {
      * Moves a DeploymentBackup into a different compartment within the same tenancy. When provided,
      * If-Match is checked against ETag values of the resource. For information about moving
      * resources between compartments, see [Moving Resources Between
-     * Compartments](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * Compartments](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -225,7 +225,7 @@ public interface GoldenGateAsync extends AutoCloseable {
      * Moves the Deployment into a different compartment within the same tenancy. When provided,
      * If-Match is checked against ETag values of the resource. For information about moving
      * resources between compartments, see [Moving Resources Between
-     * Compartments](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * Compartments](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -244,7 +244,7 @@ public interface GoldenGateAsync extends AutoCloseable {
      * Moves the Pipeline into a different compartment within the same tenancy. When provided,
      * If-Match is checked against ETag values of the resource. For information about moving
      * resources between compartments, see [Moving Resources Between
-     * Compartments](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * Compartments](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.

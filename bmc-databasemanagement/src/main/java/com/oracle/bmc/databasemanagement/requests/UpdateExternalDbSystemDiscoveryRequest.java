@@ -7,7 +7,7 @@ package com.oracle.bmc.databasemanagement.requests;
 import com.oracle.bmc.databasemanagement.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/UpdateExternalDbSystemDiscoveryExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/UpdateExternalDbSystemDiscoveryExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * UpdateExternalDbSystemDiscoveryRequest.
  */
@@ -17,13 +17,13 @@ public class UpdateExternalDbSystemDiscoveryRequest
                 com.oracle.bmc.databasemanagement.model.UpdateExternalDbSystemDiscoveryDetails> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * external DB system discovery.
      */
     private String externalDbSystemDiscoveryId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * external DB system discovery.
      */
     public String getExternalDbSystemDiscoveryId() {
@@ -84,13 +84,13 @@ public class UpdateExternalDbSystemDiscoveryRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * external DB system discovery.
          */
         private String externalDbSystemDiscoveryId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * external DB system discovery.
          *
          * @param externalDbSystemDiscoveryId the value to set

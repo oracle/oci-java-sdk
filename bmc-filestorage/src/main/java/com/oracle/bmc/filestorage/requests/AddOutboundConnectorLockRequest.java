@@ -7,7 +7,7 @@ package com.oracle.bmc.filestorage.requests;
 import com.oracle.bmc.filestorage.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/AddOutboundConnectorLockExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/AddOutboundConnectorLockExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * AddOutboundConnectorLockRequest.
  */
@@ -16,13 +16,13 @@ public class AddOutboundConnectorLockRequest
         extends com.oracle.bmc.requests.BmcRequest<com.oracle.bmc.filestorage.model.ResourceLock> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * outbound connector.
      */
     private String outboundConnectorId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * outbound connector.
      */
     public String getOutboundConnectorId() {
@@ -85,13 +85,13 @@ public class AddOutboundConnectorLockRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * outbound connector.
          */
         private String outboundConnectorId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * outbound connector.
          *
          * @param outboundConnectorId the value to set

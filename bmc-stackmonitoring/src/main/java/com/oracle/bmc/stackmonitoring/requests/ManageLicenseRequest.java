@@ -7,7 +7,7 @@ package com.oracle.bmc.stackmonitoring.requests;
 import com.oracle.bmc.stackmonitoring.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/stackmonitoring/ManageLicenseExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/stackmonitoring/ManageLicenseExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use ManageLicenseRequest.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
@@ -16,13 +16,13 @@ public class ManageLicenseRequest
                 com.oracle.bmc.stackmonitoring.model.ManageLicenseDetails> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
      * monitored resource.
      */
     private String monitoredResourceId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
      * monitored resource.
      */
     public String getMonitoredResourceId() {
@@ -104,13 +104,13 @@ public class ManageLicenseRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
          * monitored resource.
          */
         private String monitoredResourceId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
          * monitored resource.
          *
          * @param monitoredResourceId the value to set

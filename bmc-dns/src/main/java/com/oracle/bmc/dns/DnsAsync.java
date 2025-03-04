@@ -10,7 +10,7 @@ import com.oracle.bmc.dns.responses.*;
 /**
  * API for the DNS service. Use this API to manage DNS zones, records, and other DNS resources. For
  * more information, see [Overview of the DNS
- * Service](https://docs.cloud.oracle.com/iaas/Content/DNS/Concepts/dnszonemanagement.htm).
+ * Service](https://docs.oracle.com/iaas/Content/DNS/Concepts/dnszonemanagement.htm).
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180115")
 public interface DnsAsync extends AutoCloseable {
@@ -179,7 +179,7 @@ public interface DnsAsync extends AutoCloseable {
     /**
      * Creates a new steering policy in the specified compartment. For more information on creating
      * policies with templates, see [Traffic Management API
-     * Guide](https://docs.cloud.oracle.com/iaas/Content/TrafficManagement/Concepts/trafficmanagementapi.htm).
+     * Guide](https://docs.oracle.com/iaas/Content/TrafficManagement/Concepts/trafficmanagementapi.htm).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -832,7 +832,7 @@ public interface DnsAsync extends AutoCloseable {
      * disruption, remove the old DS record as soon as its TTL (time to live) expires.
      *
      * <p>For more information, see
-     * [DNSSEC](https://docs.cloud.oracle.com/iaas/Content/DNS/Concepts/dnssec.htm).
+     * [DNSSEC](https://docs.oracle.com/iaas/Content/DNS/Concepts/dnssec.htm).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -853,7 +853,7 @@ public interface DnsAsync extends AutoCloseable {
      * new key-signing key (KSK) version is inert until you update the parent zone DS records.
      *
      * <p>For more information, see the
-     * [DNSSEC](https://docs.cloud.oracle.com/iaas/Content/DNS/Concepts/dnssec.htm) documentation.
+     * [DNSSEC](https://docs.oracle.com/iaas/Content/DNS/Concepts/dnssec.htm) documentation.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -1007,9 +1007,9 @@ public interface DnsAsync extends AutoCloseable {
      *
      * <p>Global secondary zones may have their external masters updated. For more information about
      * secondary zones, see [Manage DNS Service
-     * Zone](https://docs.cloud.oracle.com/iaas/Content/DNS/Tasks/managingdnszones.htm). When the
-     * zone name is provided as a path parameter and `PRIVATE` is used for the scope query parameter
-     * then the viewId query parameter is required.
+     * Zone](https://docs.oracle.com/iaas/Content/DNS/Tasks/managingdnszones.htm). When the zone
+     * name is provided as a path parameter and `PRIVATE` is used for the scope query parameter then
+     * the viewId query parameter is required.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.

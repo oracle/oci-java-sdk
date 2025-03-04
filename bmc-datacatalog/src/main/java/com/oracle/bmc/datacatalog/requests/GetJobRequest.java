@@ -7,7 +7,7 @@ package com.oracle.bmc.datacatalog.requests;
 import com.oracle.bmc.datacatalog.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/GetJobExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/GetJobExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use GetJobRequest.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")

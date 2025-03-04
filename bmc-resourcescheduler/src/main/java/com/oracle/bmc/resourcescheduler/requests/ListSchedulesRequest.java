@@ -7,23 +7,21 @@ package com.oracle.bmc.resourcescheduler.requests;
 import com.oracle.bmc.resourcescheduler.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcescheduler/ListSchedulesExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcescheduler/ListSchedulesExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListSchedulesRequest.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20240430")
 public class ListSchedulesRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * This is the
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment in which to list resources.
+     * This is the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the compartment in which to list resources.
      */
     private String compartmentId;
 
     /**
-     * This is the
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment in which to list resources.
+     * This is the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the compartment in which to list resources.
      */
     public String getCompartmentId() {
         return compartmentId;
@@ -49,16 +47,14 @@ public class ListSchedulesRequest extends com.oracle.bmc.requests.BmcRequest<jav
         return displayName;
     }
     /**
-     * This is the
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * schedule.
+     * This is the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the schedule.
      */
     private String scheduleId;
 
     /**
-     * This is the
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * schedule.
+     * This is the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the schedule.
      */
     public String getScheduleId() {
         return scheduleId;
@@ -66,14 +62,14 @@ public class ListSchedulesRequest extends com.oracle.bmc.requests.BmcRequest<jav
     /**
      * For list pagination. The maximum number of results per page, or items to return in a
      * paginated "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private Integer limit;
 
     /**
      * For list pagination. The maximum number of results per page, or items to return in a
      * paginated "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     public Integer getLimit() {
         return limit;
@@ -81,14 +77,14 @@ public class ListSchedulesRequest extends com.oracle.bmc.requests.BmcRequest<jav
     /**
      * This used for list pagination. The value of the opc-next-page response header from the
      * previous "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private String page;
 
     /**
      * This used for list pagination. The value of the opc-next-page response header from the
      * previous "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     public String getPage() {
         return page;
@@ -179,16 +175,14 @@ public class ListSchedulesRequest extends com.oracle.bmc.requests.BmcRequest<jav
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * This is the
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-         * the compartment in which to list resources.
+         * This is the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the compartment in which to list resources.
          */
         private String compartmentId = null;
 
         /**
-         * This is the
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-         * the compartment in which to list resources.
+         * This is the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the compartment in which to list resources.
          *
          * @param compartmentId the value to set
          * @return this builder instance
@@ -233,16 +227,14 @@ public class ListSchedulesRequest extends com.oracle.bmc.requests.BmcRequest<jav
         }
 
         /**
-         * This is the
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-         * the schedule.
+         * This is the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the schedule.
          */
         private String scheduleId = null;
 
         /**
-         * This is the
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-         * the schedule.
+         * This is the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the schedule.
          *
          * @param scheduleId the value to set
          * @return this builder instance
@@ -255,14 +247,14 @@ public class ListSchedulesRequest extends com.oracle.bmc.requests.BmcRequest<jav
         /**
          * For list pagination. The maximum number of results per page, or items to return in a
          * paginated "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private Integer limit = null;
 
         /**
          * For list pagination. The maximum number of results per page, or items to return in a
          * paginated "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param limit the value to set
          * @return this builder instance
@@ -275,14 +267,14 @@ public class ListSchedulesRequest extends com.oracle.bmc.requests.BmcRequest<jav
         /**
          * This used for list pagination. The value of the opc-next-page response header from the
          * previous "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private String page = null;
 
         /**
          * This used for list pagination. The value of the opc-next-page response header from the
          * previous "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param page the value to set
          * @return this builder instance

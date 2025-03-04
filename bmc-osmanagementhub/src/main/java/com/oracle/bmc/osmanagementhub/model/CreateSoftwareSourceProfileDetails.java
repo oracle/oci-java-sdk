@@ -146,16 +146,16 @@ public final class CreateSoftwareSourceProfileDetails extends CreateProfileDetai
         }
         /**
          * The list of software source
-         * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that
-         * the registration profile will use.
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that the
+         * registration profile will use.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("softwareSourceIds")
         private java.util.List<String> softwareSourceIds;
 
         /**
          * The list of software source
-         * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that
-         * the registration profile will use.
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that the
+         * registration profile will use.
          *
          * @param softwareSourceIds the value to set
          * @return this builder
@@ -311,7 +311,7 @@ public final class CreateSoftwareSourceProfileDetails extends CreateProfileDetai
 
     /**
      * The list of software source
-     * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that the
+     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that the
      * registration profile will use.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("softwareSourceIds")
@@ -319,7 +319,7 @@ public final class CreateSoftwareSourceProfileDetails extends CreateProfileDetai
 
     /**
      * The list of software source
-     * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that the
+     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that the
      * registration profile will use.
      *
      * @return the value

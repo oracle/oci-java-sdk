@@ -7,21 +7,21 @@ package com.oracle.bmc.osmanagementhub.requests;
 import com.oracle.bmc.osmanagementhub.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/ListMirrorsExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/ListMirrorsExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListMirrorsRequest.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
 public class ListMirrorsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the management station.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * management station.
      */
     private String managementStationId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the management station.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * management station.
      */
     public String getManagementStationId() {
         return managementStationId;
@@ -43,7 +43,7 @@ public class ListMirrorsRequest extends com.oracle.bmc.requests.BmcRequest<java.
     /**
      * For list pagination. The maximum number of results per page, or items to return in a
      * paginated "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      * <p>Example: {@code 50}
      */
@@ -52,7 +52,7 @@ public class ListMirrorsRequest extends com.oracle.bmc.requests.BmcRequest<java.
     /**
      * For list pagination. The maximum number of results per page, or items to return in a
      * paginated "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      * <p>Example: {@code 50}
      */
@@ -62,7 +62,7 @@ public class ListMirrorsRequest extends com.oracle.bmc.requests.BmcRequest<java.
     /**
      * For list pagination. The value of the {@code opc-next-page} response header from the previous
      * "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      * <p>Example: {@code 3}
      */
@@ -71,7 +71,7 @@ public class ListMirrorsRequest extends com.oracle.bmc.requests.BmcRequest<java.
     /**
      * For list pagination. The value of the {@code opc-next-page} response header from the previous
      * "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      * <p>Example: {@code 3}
      */
@@ -166,14 +166,14 @@ public class ListMirrorsRequest extends com.oracle.bmc.requests.BmcRequest<java.
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the management station.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * management station.
          */
         private String managementStationId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the management station.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * management station.
          *
          * @param managementStationId the value to set
          * @return this builder instance
@@ -214,7 +214,7 @@ public class ListMirrorsRequest extends com.oracle.bmc.requests.BmcRequest<java.
         /**
          * For list pagination. The maximum number of results per page, or items to return in a
          * paginated "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * <p>Example: {@code 50}
          */
@@ -223,7 +223,7 @@ public class ListMirrorsRequest extends com.oracle.bmc.requests.BmcRequest<java.
         /**
          * For list pagination. The maximum number of results per page, or items to return in a
          * paginated "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * <p>Example: {@code 50}
          *
@@ -238,7 +238,7 @@ public class ListMirrorsRequest extends com.oracle.bmc.requests.BmcRequest<java.
         /**
          * For list pagination. The value of the {@code opc-next-page} response header from the
          * previous "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * <p>Example: {@code 3}
          */
@@ -247,7 +247,7 @@ public class ListMirrorsRequest extends com.oracle.bmc.requests.BmcRequest<java.
         /**
          * For list pagination. The value of the {@code opc-next-page} response header from the
          * previous "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * <p>Example: {@code 3}
          *

@@ -28,15 +28,15 @@ public final class DatabaseToolConnection extends DatabaseConnection {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the Database Tools Connection.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Database Tools Connection.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("connectionId")
         private String connectionId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the Database Tools Connection.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Database Tools Connection.
          *
          * @param connectionId the value to set
          * @return this builder
@@ -83,15 +83,15 @@ public final class DatabaseToolConnection extends DatabaseConnection {
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the Database Tools Connection.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Database Tools Connection.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("connectionId")
     private final String connectionId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the Database Tools Connection.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Database Tools Connection.
      *
      * @return the value
      */

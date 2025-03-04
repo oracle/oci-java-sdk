@@ -7,7 +7,7 @@ package com.oracle.bmc.computecloudatcustomer.requests;
 import com.oracle.bmc.computecloudatcustomer.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/computecloudatcustomer/ChangeCccInfrastructureCompartmentExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/computecloudatcustomer/ChangeCccInfrastructureCompartmentExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * ChangeCccInfrastructureCompartmentRequest.
  */
@@ -18,13 +18,13 @@ public class ChangeCccInfrastructureCompartmentRequest
                         .ChangeCccInfrastructureCompartmentDetails> {
 
     /**
-     * An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for a
+     * An [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for a
      * Compute Cloud@Customer Infrastructure.
      */
     private String cccInfrastructureId;
 
     /**
-     * An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for a
+     * An [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for a
      * Compute Cloud@Customer Infrastructure.
      */
     public String getCccInfrastructureId() {
@@ -33,7 +33,7 @@ public class ChangeCccInfrastructureCompartmentRequest
     /**
      * Details about the compartment change operation including the destination compartment
      * specified by the resource
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     private com.oracle.bmc.computecloudatcustomer.model.ChangeCccInfrastructureCompartmentDetails
             changeCccInfrastructureCompartmentDetails;
@@ -41,7 +41,7 @@ public class ChangeCccInfrastructureCompartmentRequest
     /**
      * Details about the compartment change operation including the destination compartment
      * specified by the resource
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     public com.oracle.bmc.computecloudatcustomer.model.ChangeCccInfrastructureCompartmentDetails
             getChangeCccInfrastructureCompartmentDetails() {
@@ -85,15 +85,13 @@ public class ChangeCccInfrastructureCompartmentRequest
     }
     /**
      * The client request
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for
-     * tracing.
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for tracing.
      */
     private String opcRequestId;
 
     /**
      * The client request
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for
-     * tracing.
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for tracing.
      */
     public String getOpcRequestId() {
         return opcRequestId;
@@ -120,14 +118,14 @@ public class ChangeCccInfrastructureCompartmentRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * for a Compute Cloud@Customer Infrastructure.
+         * An [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for a
+         * Compute Cloud@Customer Infrastructure.
          */
         private String cccInfrastructureId = null;
 
         /**
-         * An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * for a Compute Cloud@Customer Infrastructure.
+         * An [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for a
+         * Compute Cloud@Customer Infrastructure.
          *
          * @param cccInfrastructureId the value to set
          * @return this builder instance
@@ -140,7 +138,7 @@ public class ChangeCccInfrastructureCompartmentRequest
         /**
          * Details about the compartment change operation including the destination compartment
          * specified by the resource
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          */
         private com.oracle.bmc.computecloudatcustomer.model
                         .ChangeCccInfrastructureCompartmentDetails
@@ -149,7 +147,7 @@ public class ChangeCccInfrastructureCompartmentRequest
         /**
          * Details about the compartment change operation including the destination compartment
          * specified by the resource
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          * @param changeCccInfrastructureCompartmentDetails the value to set
          * @return this builder instance
@@ -211,14 +209,14 @@ public class ChangeCccInfrastructureCompartmentRequest
 
         /**
          * The client request
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for
          * tracing.
          */
         private String opcRequestId = null;
 
         /**
          * The client request
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for
          * tracing.
          *
          * @param opcRequestId the value to set

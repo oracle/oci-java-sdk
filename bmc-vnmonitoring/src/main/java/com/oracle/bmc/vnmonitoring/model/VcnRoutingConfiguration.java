@@ -28,14 +28,14 @@ public final class VcnRoutingConfiguration extends ForwardedRoutingConfiguration
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * VCN route table that allowed the traffic.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("vcnRouteTableId")
         private String vcnRouteTableId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * VCN route table that allowed the traffic.
          *
          * @param vcnRouteTableId the value to set
@@ -97,14 +97,14 @@ public final class VcnRoutingConfiguration extends ForwardedRoutingConfiguration
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VCN
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN
      * route table that allowed the traffic.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("vcnRouteTableId")
     private final String vcnRouteTableId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VCN
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN
      * route table that allowed the traffic.
      *
      * @return the value

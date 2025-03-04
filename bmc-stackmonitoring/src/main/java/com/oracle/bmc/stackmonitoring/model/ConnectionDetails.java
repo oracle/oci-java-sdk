@@ -84,14 +84,14 @@ public final class ConnectionDetails
         }
         /**
          * Database connector Identifier
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("connectorId")
         private String connectorId;
 
         /**
          * Database connector Identifier
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          * @param connectorId the value to set
          * @return this builder
@@ -148,14 +148,14 @@ public final class ConnectionDetails
         }
         /**
          * SSL Secret Identifier for TCPS connector in OCI
-         * Vault[OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * Vault[OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("sslSecretId")
         private String sslSecretId;
 
         /**
          * SSL Secret Identifier for TCPS connector in OCI
-         * Vault[OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * Vault[OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          * @param sslSecretId the value to set
          * @return this builder
@@ -295,14 +295,14 @@ public final class ConnectionDetails
 
     /**
      * Database connector Identifier
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("connectorId")
     private final String connectorId;
 
     /**
      * Database connector Identifier
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      * @return the value
      */
@@ -351,14 +351,14 @@ public final class ConnectionDetails
 
     /**
      * SSL Secret Identifier for TCPS connector in OCI
-     * Vault[OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * Vault[OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("sslSecretId")
     private final String sslSecretId;
 
     /**
      * SSL Secret Identifier for TCPS connector in OCI
-     * Vault[OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * Vault[OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      * @return the value
      */

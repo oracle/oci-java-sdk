@@ -7,21 +7,21 @@ package com.oracle.bmc.email.requests;
 import com.oracle.bmc.email.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/GetEmailReturnPathExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/GetEmailReturnPathExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use GetEmailReturnPathRequest.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170907")
 public class GetEmailReturnPathRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * this email return path.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this
+     * email return path.
      */
     private String emailReturnPathId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * this email return path.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this
+     * email return path.
      */
     public String getEmailReturnPathId() {
         return emailReturnPathId;
@@ -41,14 +41,14 @@ public class GetEmailReturnPathRequest extends com.oracle.bmc.requests.BmcReques
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of this email return path.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this
+         * email return path.
          */
         private String emailReturnPathId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of this email return path.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this
+         * email return path.
          *
          * @param emailReturnPathId the value to set
          * @return this builder instance

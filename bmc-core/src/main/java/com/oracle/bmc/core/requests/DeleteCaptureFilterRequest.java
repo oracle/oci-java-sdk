@@ -7,21 +7,21 @@ package com.oracle.bmc.core.requests;
 import com.oracle.bmc.core.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteCaptureFilterExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteCaptureFilterExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use DeleteCaptureFilterRequest.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class DeleteCaptureFilterRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the capture filter.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * capture filter.
      */
     private String captureFilterId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the capture filter.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * capture filter.
      */
     public String getCaptureFilterId() {
         return captureFilterId;
@@ -64,14 +64,14 @@ public class DeleteCaptureFilterRequest extends com.oracle.bmc.requests.BmcReque
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the capture filter.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * capture filter.
          */
         private String captureFilterId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the capture filter.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * capture filter.
          *
          * @param captureFilterId the value to set
          * @return this builder instance

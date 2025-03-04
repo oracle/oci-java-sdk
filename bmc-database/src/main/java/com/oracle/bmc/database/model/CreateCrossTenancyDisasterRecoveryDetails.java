@@ -521,7 +521,7 @@ public final class CreateCrossTenancyDisasterRecoveryDetails extends CreateAuton
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * source Autonomous Database that will be used to create a new peer database for the DR
          * association.
          */
@@ -529,7 +529,7 @@ public final class CreateCrossTenancyDisasterRecoveryDetails extends CreateAuton
         private String sourceId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * source Autonomous Database that will be used to create a new peer database for the DR
          * association.
          *
@@ -958,7 +958,7 @@ public final class CreateCrossTenancyDisasterRecoveryDetails extends CreateAuton
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * source Autonomous Database that will be used to create a new peer database for the DR
      * association.
      */
@@ -966,7 +966,7 @@ public final class CreateCrossTenancyDisasterRecoveryDetails extends CreateAuton
     private final String sourceId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * source Autonomous Database that will be used to create a new peer database for the DR
      * association.
      *

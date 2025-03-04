@@ -53,19 +53,19 @@ public final class CreatePublicIpDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compartment to contain the public IP. For ephemeral public IPs, you must set this
-         * to the private IP's compartment
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment to contain the public IP. For ephemeral public IPs, you must set this to the
+         * private IP's compartment
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compartment to contain the public IP. For ephemeral public IPs, you must set this
-         * to the private IP's compartment
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment to contain the public IP. For ephemeral public IPs, you must set this to the
+         * private IP's compartment
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -136,7 +136,7 @@ public final class CreatePublicIpDetails
         /**
          * Defines when the public IP is deleted and released back to the Oracle Cloud
          * Infrastructure public IP pool. For more information, see [Public IP
-         * Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm).
+         * Addresses](https://docs.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("lifetime")
         private Lifetime lifetime;
@@ -144,7 +144,7 @@ public final class CreatePublicIpDetails
         /**
          * Defines when the public IP is deleted and released back to the Oracle Cloud
          * Infrastructure public IP pool. For more information, see [Public IP
-         * Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm).
+         * Addresses](https://docs.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm).
          *
          * @param lifetime the value to set
          * @return this builder
@@ -155,8 +155,8 @@ public final class CreatePublicIpDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the private IP to assign the public IP to.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * private IP to assign the public IP to.
          *
          * <p>Required for an ephemeral public IP because it must always be assigned to a private IP
          * (specifically a *primary* private IP).
@@ -169,8 +169,8 @@ public final class CreatePublicIpDetails
         private String privateIpId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the private IP to assign the public IP to.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * private IP to assign the public IP to.
          *
          * <p>Required for an ephemeral public IP because it must always be assigned to a private IP
          * (specifically a *primary* private IP).
@@ -188,15 +188,15 @@ public final class CreatePublicIpDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the public IP pool.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * public IP pool.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("publicIpPoolId")
         private String publicIpPoolId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the public IP pool.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * public IP pool.
          *
          * @param publicIpPoolId the value to set
          * @return this builder
@@ -263,19 +263,19 @@ public final class CreatePublicIpDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compartment to contain the public IP. For ephemeral public IPs, you must set this to the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment to contain the public IP. For ephemeral public IPs, you must set this to the
      * private IP's compartment
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compartment to contain the public IP. For ephemeral public IPs, you must set this to the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment to contain the public IP. For ephemeral public IPs, you must set this to the
      * private IP's compartment
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      * @return the value
      */
@@ -337,7 +337,7 @@ public final class CreatePublicIpDetails
     /**
      * Defines when the public IP is deleted and released back to the Oracle Cloud Infrastructure
      * public IP pool. For more information, see [Public IP
-     * Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm).
+     * Addresses](https://docs.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm).
      */
     public enum Lifetime implements com.oracle.bmc.http.internal.BmcEnum {
         Ephemeral("EPHEMERAL"),
@@ -374,7 +374,7 @@ public final class CreatePublicIpDetails
     /**
      * Defines when the public IP is deleted and released back to the Oracle Cloud Infrastructure
      * public IP pool. For more information, see [Public IP
-     * Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm).
+     * Addresses](https://docs.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("lifetime")
     private final Lifetime lifetime;
@@ -382,7 +382,7 @@ public final class CreatePublicIpDetails
     /**
      * Defines when the public IP is deleted and released back to the Oracle Cloud Infrastructure
      * public IP pool. For more information, see [Public IP
-     * Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm).
+     * Addresses](https://docs.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm).
      *
      * @return the value
      */
@@ -391,8 +391,8 @@ public final class CreatePublicIpDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the private IP to assign the public IP to.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * private IP to assign the public IP to.
      *
      * <p>Required for an ephemeral public IP because it must always be assigned to a private IP
      * (specifically a *primary* private IP).
@@ -405,8 +405,8 @@ public final class CreatePublicIpDetails
     private final String privateIpId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the private IP to assign the public IP to.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * private IP to assign the public IP to.
      *
      * <p>Required for an ephemeral public IP because it must always be assigned to a private IP
      * (specifically a *primary* private IP).
@@ -422,15 +422,15 @@ public final class CreatePublicIpDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the public IP pool.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * public IP pool.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("publicIpPoolId")
     private final String publicIpPoolId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the public IP pool.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * public IP pool.
      *
      * @return the value
      */

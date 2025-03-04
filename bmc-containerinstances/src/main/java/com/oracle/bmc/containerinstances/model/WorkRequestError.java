@@ -34,7 +34,7 @@ public final class WorkRequestError
     public static class Builder {
         /**
          * A machine-usable code for the error that occured. See [API
-         * Errors](https://docs.cloud.oracle.com/Content/API/References/apierrors.htm) for a list of
+         * Errors](https://docs.oracle.com/iaas/Content/API/References/apierrors.htm) for a list of
          * error codes.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("code")
@@ -42,7 +42,7 @@ public final class WorkRequestError
 
         /**
          * A machine-usable code for the error that occured. See [API
-         * Errors](https://docs.cloud.oracle.com/Content/API/References/apierrors.htm) for a list of
+         * Errors](https://docs.oracle.com/iaas/Content/API/References/apierrors.htm) for a list of
          * error codes.
          *
          * @param code the value to set
@@ -125,7 +125,7 @@ public final class WorkRequestError
 
     /**
      * A machine-usable code for the error that occured. See [API
-     * Errors](https://docs.cloud.oracle.com/Content/API/References/apierrors.htm) for a list of
+     * Errors](https://docs.oracle.com/iaas/Content/API/References/apierrors.htm) for a list of
      * error codes.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("code")
@@ -133,7 +133,7 @@ public final class WorkRequestError
 
     /**
      * A machine-usable code for the error that occured. See [API
-     * Errors](https://docs.cloud.oracle.com/Content/API/References/apierrors.htm) for a list of
+     * Errors](https://docs.oracle.com/iaas/Content/API/References/apierrors.htm) for a list of
      * error codes.
      *
      * @return the value

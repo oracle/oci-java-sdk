@@ -13,7 +13,7 @@ package com.oracle.bmc.core.model;
  *
  * <p>*Note:** IPv6 addressing is supported for all commercial and government regions. For important
  * details about IPv6 addressing in a VCN, see [IPv6
- * Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm). <br>
+ * Addresses](https://docs.oracle.com/iaas/Content/Network/Concepts/ipv6.htm). <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -77,15 +77,15 @@ public final class Ipv6 extends com.oracle.bmc.http.client.internal.ExplicitlySe
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compartment containing the IPv6. This is the same as the VNIC's compartment.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment containing the IPv6. This is the same as the VNIC's compartment.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compartment containing the IPv6. This is the same as the VNIC's compartment.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment containing the IPv6. This is the same as the VNIC's compartment.
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -98,7 +98,7 @@ public final class Ipv6 extends com.oracle.bmc.http.client.internal.ExplicitlySe
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
          */
@@ -108,7 +108,7 @@ public final class Ipv6 extends com.oracle.bmc.http.client.internal.ExplicitlySe
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
@@ -143,7 +143,7 @@ public final class Ipv6 extends com.oracle.bmc.http.client.internal.ExplicitlySe
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          */
@@ -153,7 +153,7 @@ public final class Ipv6 extends com.oracle.bmc.http.client.internal.ExplicitlySe
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          *
@@ -166,15 +166,15 @@ public final class Ipv6 extends com.oracle.bmc.http.client.internal.ExplicitlySe
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the IPv6.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * IPv6.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the IPv6.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * IPv6.
          *
          * @param id the value to set
          * @return this builder
@@ -223,15 +223,15 @@ public final class Ipv6 extends com.oracle.bmc.http.client.internal.ExplicitlySe
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the subnet the VNIC is in.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * subnet the VNIC is in.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
         private String subnetId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the subnet the VNIC is in.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * subnet the VNIC is in.
          *
          * @param subnetId the value to set
          * @return this builder
@@ -265,15 +265,15 @@ public final class Ipv6 extends com.oracle.bmc.http.client.internal.ExplicitlySe
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the VNIC the IPv6 is assigned to. The VNIC and IPv6 must be in the same subnet.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * VNIC the IPv6 is assigned to. The VNIC and IPv6 must be in the same subnet.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("vnicId")
         private String vnicId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the VNIC the IPv6 is assigned to. The VNIC and IPv6 must be in the same subnet.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * VNIC the IPv6 is assigned to. The VNIC and IPv6 must be in the same subnet.
          *
          * @param vnicId the value to set
          * @return this builder
@@ -318,18 +318,16 @@ public final class Ipv6 extends com.oracle.bmc.http.client.internal.ExplicitlySe
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the route table the IP address or VNIC will use. For more information, see [Source
-         * Based
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * route table the IP address or VNIC will use. For more information, see [Source Based
          * Routing](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("routeTableId")
         private String routeTableId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the route table the IP address or VNIC will use. For more information, see [Source
-         * Based
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * route table the IP address or VNIC will use. For more information, see [Source Based
          * Routing](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing).
          *
          * @param routeTableId the value to set
@@ -421,15 +419,15 @@ public final class Ipv6 extends com.oracle.bmc.http.client.internal.ExplicitlySe
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compartment containing the IPv6. This is the same as the VNIC's compartment.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment containing the IPv6. This is the same as the VNIC's compartment.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compartment containing the IPv6. This is the same as the VNIC's compartment.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment containing the IPv6. This is the same as the VNIC's compartment.
      *
      * @return the value
      */
@@ -440,7 +438,7 @@ public final class Ipv6 extends com.oracle.bmc.http.client.internal.ExplicitlySe
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
      */
@@ -450,7 +448,7 @@ public final class Ipv6 extends com.oracle.bmc.http.client.internal.ExplicitlySe
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
@@ -480,7 +478,7 @@ public final class Ipv6 extends com.oracle.bmc.http.client.internal.ExplicitlySe
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      */
@@ -490,7 +488,7 @@ public final class Ipv6 extends com.oracle.bmc.http.client.internal.ExplicitlySe
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      *
@@ -501,15 +499,15 @@ public final class Ipv6 extends com.oracle.bmc.http.client.internal.ExplicitlySe
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the IPv6.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * IPv6.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the IPv6.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * IPv6.
      *
      * @return the value
      */
@@ -600,15 +598,15 @@ public final class Ipv6 extends com.oracle.bmc.http.client.internal.ExplicitlySe
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the subnet the VNIC is in.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * subnet the VNIC is in.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
     private final String subnetId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the subnet the VNIC is in.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * subnet the VNIC is in.
      *
      * @return the value
      */
@@ -638,15 +636,15 @@ public final class Ipv6 extends com.oracle.bmc.http.client.internal.ExplicitlySe
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the VNIC the IPv6 is assigned to. The VNIC and IPv6 must be in the same subnet.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC
+     * the IPv6 is assigned to. The VNIC and IPv6 must be in the same subnet.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("vnicId")
     private final String vnicId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the VNIC the IPv6 is assigned to. The VNIC and IPv6 must be in the same subnet.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC
+     * the IPv6 is assigned to. The VNIC and IPv6 must be in the same subnet.
      *
      * @return the value
      */
@@ -780,16 +778,16 @@ public final class Ipv6 extends com.oracle.bmc.http.client.internal.ExplicitlySe
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the route table the IP address or VNIC will use. For more information, see [Source Based
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * route table the IP address or VNIC will use. For more information, see [Source Based
      * Routing](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("routeTableId")
     private final String routeTableId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the route table the IP address or VNIC will use. For more information, see [Source Based
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * route table the IP address or VNIC will use. For more information, see [Source Based
      * Routing](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing).
      *
      * @return the value

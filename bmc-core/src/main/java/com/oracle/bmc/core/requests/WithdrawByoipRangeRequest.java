@@ -7,21 +7,21 @@ package com.oracle.bmc.core.requests;
 import com.oracle.bmc.core.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/WithdrawByoipRangeExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/WithdrawByoipRangeExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use WithdrawByoipRangeRequest.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class WithdrawByoipRangeRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the {@code ByoipRange} resource containing the BYOIP CIDR block.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * {@code ByoipRange} resource containing the BYOIP CIDR block.
      */
     private String byoipRangeId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the {@code ByoipRange} resource containing the BYOIP CIDR block.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * {@code ByoipRange} resource containing the BYOIP CIDR block.
      */
     public String getByoipRangeId() {
         return byoipRangeId;
@@ -47,14 +47,14 @@ public class WithdrawByoipRangeRequest extends com.oracle.bmc.requests.BmcReques
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the {@code ByoipRange} resource containing the BYOIP CIDR block.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * {@code ByoipRange} resource containing the BYOIP CIDR block.
          */
         private String byoipRangeId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the {@code ByoipRange} resource containing the BYOIP CIDR block.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * {@code ByoipRange} resource containing the BYOIP CIDR block.
          *
          * @param byoipRangeId the value to set
          * @return this builder instance

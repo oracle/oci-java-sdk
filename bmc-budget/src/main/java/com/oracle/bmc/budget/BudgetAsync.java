@@ -9,7 +9,7 @@ import com.oracle.bmc.budget.responses.*;
 
 /**
  * Use the Budgets API to manage budgets and budget alerts. For more information, see [Budgets
- * Overview](https://docs.cloud.oracle.com/iaas/Content/Billing/Concepts/budgetsoverview.htm).
+ * Overview](https://docs.oracle.com/iaas/Content/Billing/Concepts/budgetsoverview.htm).
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190111")
 public interface BudgetAsync extends AutoCloseable {

@@ -98,15 +98,15 @@ public final class ManagedInstanceGroup
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the managed instance group.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * managed instance group.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the managed instance group.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * managed instance group.
          *
          * @param id the value to set
          * @return this builder
@@ -117,15 +117,15 @@ public final class ManagedInstanceGroup
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compartment that contains the managed instance group.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment that contains the managed instance group.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compartment that contains the managed instance group.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment that contains the managed instance group.
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -265,16 +265,16 @@ public final class ManagedInstanceGroup
         }
         /**
          * The list of software source
-         * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that
-         * the managed instance group will use.
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that the
+         * managed instance group will use.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("softwareSourceIds")
         private java.util.List<SoftwareSourceDetails> softwareSourceIds;
 
         /**
          * The list of software source
-         * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that
-         * the managed instance group will use.
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that the
+         * managed instance group will use.
          *
          * @param softwareSourceIds the value to set
          * @return this builder
@@ -301,16 +301,16 @@ public final class ManagedInstanceGroup
         }
         /**
          * The list of managed instance
-         * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * attached to the managed instance group.
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) attached
+         * to the managed instance group.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("managedInstanceIds")
         private java.util.List<String> managedInstanceIds;
 
         /**
          * The list of managed instance
-         * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * attached to the managed instance group.
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) attached
+         * to the managed instance group.
          *
          * @param managedInstanceIds the value to set
          * @return this builder
@@ -366,17 +366,17 @@ public final class ManagedInstanceGroup
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * for the Oracle Notifications service (ONS) topic. ONS is the channel used to send
-         * notifications to the customer.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
+         * Oracle Notifications service (ONS) topic. ONS is the channel used to send notifications
+         * to the customer.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("notificationTopicId")
         private String notificationTopicId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * for the Oracle Notifications service (ONS) topic. ONS is the channel used to send
-         * notifications to the customer.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
+         * Oracle Notifications service (ONS) topic. ONS is the channel used to send notifications
+         * to the customer.
          *
          * @param notificationTopicId the value to set
          * @return this builder
@@ -413,8 +413,8 @@ public final class ManagedInstanceGroup
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         * Example: {@code {"Department": "Finance"}}
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+         * {@code {"Department": "Finance"}}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
@@ -422,8 +422,8 @@ public final class ManagedInstanceGroup
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         * Example: {@code {"Department": "Finance"}}
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+         * {@code {"Department": "Finance"}}
          *
          * @param freeformTags the value to set
          * @return this builder
@@ -436,8 +436,8 @@ public final class ManagedInstanceGroup
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+         * {@code {"Operations": {"CostCenter": "42"}}}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
@@ -445,8 +445,8 @@ public final class ManagedInstanceGroup
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+         * {@code {"Operations": {"CostCenter": "42"}}}
          *
          * @param definedTags the value to set
          * @return this builder
@@ -593,15 +593,15 @@ public final class ManagedInstanceGroup
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the managed instance group.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * managed instance group.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the managed instance group.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * managed instance group.
      *
      * @return the value
      */
@@ -610,15 +610,15 @@ public final class ManagedInstanceGroup
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compartment that contains the managed instance group.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment that contains the managed instance group.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compartment that contains the managed instance group.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment that contains the managed instance group.
      *
      * @return the value
      */
@@ -790,7 +790,7 @@ public final class ManagedInstanceGroup
 
     /**
      * The list of software source
-     * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that the
+     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that the
      * managed instance group will use.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("softwareSourceIds")
@@ -798,7 +798,7 @@ public final class ManagedInstanceGroup
 
     /**
      * The list of software source
-     * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that the
+     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that the
      * managed instance group will use.
      *
      * @return the value
@@ -822,16 +822,16 @@ public final class ManagedInstanceGroup
 
     /**
      * The list of managed instance
-     * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) attached
-     * to the managed instance group.
+     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) attached to
+     * the managed instance group.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("managedInstanceIds")
     private final java.util.List<String> managedInstanceIds;
 
     /**
      * The list of managed instance
-     * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) attached
-     * to the managed instance group.
+     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) attached to
+     * the managed instance group.
      *
      * @return the value
      */
@@ -879,17 +879,17 @@ public final class ManagedInstanceGroup
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for
-     * the Oracle Notifications service (ONS) topic. ONS is the channel used to send notifications
-     * to the customer.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
+     * Oracle Notifications service (ONS) topic. ONS is the channel used to send notifications to
+     * the customer.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("notificationTopicId")
     private final String notificationTopicId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for
-     * the Oracle Notifications service (ONS) topic. ONS is the channel used to send notifications
-     * to the customer.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
+     * Oracle Notifications service (ONS) topic. ONS is the channel used to send notifications to
+     * the customer.
      *
      * @return the value
      */
@@ -920,7 +920,7 @@ public final class ManagedInstanceGroup
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Department": "Finance"}}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -929,7 +929,7 @@ public final class ManagedInstanceGroup
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Department": "Finance"}}
      *
      * @return the value
@@ -941,7 +941,7 @@ public final class ManagedInstanceGroup
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Operations": {"CostCenter": "42"}}}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -950,7 +950,7 @@ public final class ManagedInstanceGroup
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Operations": {"CostCenter": "42"}}}
      *
      * @return the value

@@ -84,7 +84,7 @@ public final class InstanceSourceViaImageDetails extends InstanceSourceDetails {
          * The number of volume performance units (VPUs) that will be applied to this volume per GB
          * that represents the Block Volume service's elastic performance options. See [Block Volume
          * Performance
-         * Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels)
+         * Levels](https://docs.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels)
          * for more information.
          *
          * <p>Allowed values:
@@ -105,7 +105,7 @@ public final class InstanceSourceViaImageDetails extends InstanceSourceDetails {
          * The number of volume performance units (VPUs) that will be applied to this volume per GB
          * that represents the Block Volume service's elastic performance options. See [Block Volume
          * Performance
-         * Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels)
+         * Levels](https://docs.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels)
          * for more information.
          *
          * <p>Allowed values:
@@ -232,7 +232,7 @@ public final class InstanceSourceViaImageDetails extends InstanceSourceDetails {
      * The number of volume performance units (VPUs) that will be applied to this volume per GB that
      * represents the Block Volume service's elastic performance options. See [Block Volume
      * Performance
-     * Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels)
+     * Levels](https://docs.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels)
      * for more information.
      *
      * <p>Allowed values:
@@ -253,7 +253,7 @@ public final class InstanceSourceViaImageDetails extends InstanceSourceDetails {
      * The number of volume performance units (VPUs) that will be applied to this volume per GB that
      * represents the Block Volume service's elastic performance options. See [Block Volume
      * Performance
-     * Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels)
+     * Levels](https://docs.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels)
      * for more information.
      *
      * <p>Allowed values:

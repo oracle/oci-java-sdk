@@ -135,14 +135,14 @@ public final class CreateCloudVmClusterDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * compartment.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * compartment.
          *
          * @param compartmentId the value to set
@@ -154,14 +154,14 @@ public final class CreateCloudVmClusterDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * subscription with which resource needs to be associated with.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
         private String subscriptionId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * subscription with which resource needs to be associated with.
          *
          * @param subscriptionId the value to set
@@ -173,14 +173,14 @@ public final class CreateCloudVmClusterDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * subnet associated with the cloud VM cluster.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
         private String subnetId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * subnet associated with the cloud VM cluster.
          *
          * @param subnetId the value to set
@@ -192,14 +192,14 @@ public final class CreateCloudVmClusterDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * backup network subnet associated with the cloud VM cluster.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("backupSubnetId")
         private String backupSubnetId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * backup network subnet associated with the cloud VM cluster.
          *
          * @param backupSubnetId the value to set
@@ -348,7 +348,7 @@ public final class CreateCloudVmClusterDetails
          * percentage is assigned to RECO storage (database redo logs, archive logs, and recovery
          * manager backups). Accepted values are 35, 40, 60 and 80. The default is 80 percent
          * assigned to DATA storage. See [Storage
-         * Configuration](https://docs.cloud.oracle.com/Content/Database/Concepts/exaoverview.htm#Exadata)
+         * Configuration](https://docs.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata)
          * in the Exadata documentation for details on the impact of the configuration settings on
          * storage.
          */
@@ -360,7 +360,7 @@ public final class CreateCloudVmClusterDetails
          * percentage is assigned to RECO storage (database redo logs, archive logs, and recovery
          * manager backups). Accepted values are 35, 40, 60 and 80. The default is 80 percent
          * assigned to DATA storage. See [Storage
-         * Configuration](https://docs.cloud.oracle.com/Content/Database/Concepts/exaoverview.htm#Exadata)
+         * Configuration](https://docs.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata)
          * in the Exadata documentation for details on the impact of the configuration settings on
          * storage.
          *
@@ -388,14 +388,14 @@ public final class CreateCloudVmClusterDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * cloud Exadata infrastructure resource.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("cloudExadataInfrastructureId")
         private String cloudExadataInfrastructureId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * cloud Exadata infrastructure resource.
          *
          * @param cloudExadataInfrastructureId the value to set
@@ -542,14 +542,14 @@ public final class CreateCloudVmClusterDetails
         }
         /**
          * The time zone to use for the cloud VM cluster. For details, see [Time
-         * Zones](https://docs.cloud.oracle.com/Content/Database/References/timezones.htm).
+         * Zones](https://docs.oracle.com/iaas/Content/Database/References/timezones.htm).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("timeZone")
         private String timeZone;
 
         /**
          * The time zone to use for the cloud VM cluster. For details, see [Time
-         * Zones](https://docs.cloud.oracle.com/Content/Database/References/timezones.htm).
+         * Zones](https://docs.oracle.com/iaas/Content/Database/References/timezones.htm).
          *
          * @param timeZone the value to set
          * @return this builder
@@ -606,24 +606,24 @@ public final class CreateCloudVmClusterDetails
         }
         /**
          * The list of
-         * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) for the
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
          * network security groups (NSGs) to which this resource belongs. Setting this to an empty
          * list removes all resources from all NSGs. For more information about NSGs, see [Security
-         * Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm).
-         * **NsgIds restrictions:** - A network security group (NSG) is optional for Autonomous
-         * Databases with private access. The nsgIds list can be empty.
+         * Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds
+         * restrictions:** - A network security group (NSG) is optional for Autonomous Databases
+         * with private access. The nsgIds list can be empty.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
         private java.util.List<String> nsgIds;
 
         /**
          * The list of
-         * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) for the
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
          * network security groups (NSGs) to which this resource belongs. Setting this to an empty
          * list removes all resources from all NSGs. For more information about NSGs, see [Security
-         * Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm).
-         * **NsgIds restrictions:** - A network security group (NSG) is optional for Autonomous
-         * Databases with private access. The nsgIds list can be empty.
+         * Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds
+         * restrictions:** - A network security group (NSG) is optional for Autonomous Databases
+         * with private access. The nsgIds list can be empty.
          *
          * @param nsgIds the value to set
          * @return this builder
@@ -635,11 +635,11 @@ public final class CreateCloudVmClusterDetails
         }
         /**
          * A list of the
-         * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * network security groups (NSGs) that the backup network of this DB system belongs to.
          * Setting this to an empty array after the list is created removes the resource from all
          * NSGs. For more information about NSGs, see [Security
-         * Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm).
+         * Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
          * Applicable only to Exadata systems.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("backupNetworkNsgIds")
@@ -647,11 +647,11 @@ public final class CreateCloudVmClusterDetails
 
         /**
          * A list of the
-         * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * network security groups (NSGs) that the backup network of this DB system belongs to.
          * Setting this to an empty array after the list is created removes the resource from all
          * NSGs. For more information about NSGs, see [Security
-         * Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm).
+         * Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
          * Applicable only to Exadata systems.
          *
          * @param backupNetworkNsgIds the value to set
@@ -680,7 +680,7 @@ public final class CreateCloudVmClusterDetails
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          */
@@ -690,7 +690,7 @@ public final class CreateCloudVmClusterDetails
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          *
@@ -705,7 +705,7 @@ public final class CreateCloudVmClusterDetails
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
@@ -713,7 +713,7 @@ public final class CreateCloudVmClusterDetails
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * @param definedTags the value to set
          * @return this builder
@@ -727,8 +727,8 @@ public final class CreateCloudVmClusterDetails
         /**
          * Security Attributes for this resource. Each key is predefined and scoped to a namespace.
          * For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+         * {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
         private java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
@@ -736,8 +736,8 @@ public final class CreateCloudVmClusterDetails
         /**
          * Security Attributes for this resource. Each key is predefined and scoped to a namespace.
          * For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+         * {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
          *
          * @param securityAttributes the value to set
          * @return this builder
@@ -963,14 +963,14 @@ public final class CreateCloudVmClusterDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment.
      *
      * @return the value
@@ -980,14 +980,14 @@ public final class CreateCloudVmClusterDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * subscription with which resource needs to be associated with.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
     private final String subscriptionId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * subscription with which resource needs to be associated with.
      *
      * @return the value
@@ -997,14 +997,14 @@ public final class CreateCloudVmClusterDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * subnet associated with the cloud VM cluster.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
     private final String subnetId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * subnet associated with the cloud VM cluster.
      *
      * @return the value
@@ -1014,14 +1014,14 @@ public final class CreateCloudVmClusterDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * backup network subnet associated with the cloud VM cluster.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("backupSubnetId")
     private final String backupSubnetId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * backup network subnet associated with the cloud VM cluster.
      *
      * @return the value
@@ -1152,7 +1152,7 @@ public final class CreateCloudVmClusterDetails
      * percentage is assigned to RECO storage (database redo logs, archive logs, and recovery
      * manager backups). Accepted values are 35, 40, 60 and 80. The default is 80 percent assigned
      * to DATA storage. See [Storage
-     * Configuration](https://docs.cloud.oracle.com/Content/Database/Concepts/exaoverview.htm#Exadata)
+     * Configuration](https://docs.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata)
      * in the Exadata documentation for details on the impact of the configuration settings on
      * storage.
      */
@@ -1164,7 +1164,7 @@ public final class CreateCloudVmClusterDetails
      * percentage is assigned to RECO storage (database redo logs, archive logs, and recovery
      * manager backups). Accepted values are 35, 40, 60 and 80. The default is 80 percent assigned
      * to DATA storage. See [Storage
-     * Configuration](https://docs.cloud.oracle.com/Content/Database/Concepts/exaoverview.htm#Exadata)
+     * Configuration](https://docs.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata)
      * in the Exadata documentation for details on the impact of the configuration settings on
      * storage.
      *
@@ -1188,14 +1188,14 @@ public final class CreateCloudVmClusterDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * cloud Exadata infrastructure resource.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("cloudExadataInfrastructureId")
     private final String cloudExadataInfrastructureId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * cloud Exadata infrastructure resource.
      *
      * @return the value
@@ -1360,14 +1360,14 @@ public final class CreateCloudVmClusterDetails
 
     /**
      * The time zone to use for the cloud VM cluster. For details, see [Time
-     * Zones](https://docs.cloud.oracle.com/Content/Database/References/timezones.htm).
+     * Zones](https://docs.oracle.com/iaas/Content/Database/References/timezones.htm).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("timeZone")
     private final String timeZone;
 
     /**
      * The time zone to use for the cloud VM cluster. For details, see [Time
-     * Zones](https://docs.cloud.oracle.com/Content/Database/References/timezones.htm).
+     * Zones](https://docs.oracle.com/iaas/Content/Database/References/timezones.htm).
      *
      * @return the value
      */
@@ -1415,10 +1415,10 @@ public final class CreateCloudVmClusterDetails
     }
 
     /**
-     * The list of [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     * The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      * for the network security groups (NSGs) to which this resource belongs. Setting this to an
      * empty list removes all resources from all NSGs. For more information about NSGs, see
-     * [Security Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm).
+     * [Security Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
      * **NsgIds restrictions:** - A network security group (NSG) is optional for Autonomous
      * Databases with private access. The nsgIds list can be empty.
      */
@@ -1426,10 +1426,10 @@ public final class CreateCloudVmClusterDetails
     private final java.util.List<String> nsgIds;
 
     /**
-     * The list of [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     * The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      * for the network security groups (NSGs) to which this resource belongs. Setting this to an
      * empty list removes all resources from all NSGs. For more information about NSGs, see
-     * [Security Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm).
+     * [Security Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
      * **NsgIds restrictions:** - A network security group (NSG) is optional for Autonomous
      * Databases with private access. The nsgIds list can be empty.
      *
@@ -1440,22 +1440,22 @@ public final class CreateCloudVmClusterDetails
     }
 
     /**
-     * A list of the [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     * A list of the [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      * of the network security groups (NSGs) that the backup network of this DB system belongs to.
      * Setting this to an empty array after the list is created removes the resource from all NSGs.
      * For more information about NSGs, see [Security
-     * Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm). Applicable
+     * Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable
      * only to Exadata systems.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("backupNetworkNsgIds")
     private final java.util.List<String> backupNetworkNsgIds;
 
     /**
-     * A list of the [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     * A list of the [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      * of the network security groups (NSGs) that the backup network of this DB system belongs to.
      * Setting this to an empty array after the list is created removes the resource from all NSGs.
      * For more information about NSGs, see [Security
-     * Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm). Applicable
+     * Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable
      * only to Exadata systems.
      *
      * @return the value
@@ -1480,7 +1480,7 @@ public final class CreateCloudVmClusterDetails
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      */
@@ -1490,7 +1490,7 @@ public final class CreateCloudVmClusterDetails
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      *
@@ -1503,7 +1503,7 @@ public final class CreateCloudVmClusterDetails
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
@@ -1511,7 +1511,7 @@ public final class CreateCloudVmClusterDetails
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * @return the value
      */
@@ -1522,7 +1522,7 @@ public final class CreateCloudVmClusterDetails
     /**
      * Security Attributes for this resource. Each key is predefined and scoped to a namespace. For
      * more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
@@ -1531,7 +1531,7 @@ public final class CreateCloudVmClusterDetails
     /**
      * Security Attributes for this resource. Each key is predefined and scoped to a namespace. For
      * more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
      *
      * @return the value

@@ -7,7 +7,7 @@ package com.oracle.bmc.generativeaiagent.requests;
 import com.oracle.bmc.generativeaiagent.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeaiagent/ChangeAgentEndpointCompartmentExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeaiagent/ChangeAgentEndpointCompartmentExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * ChangeAgentEndpointCompartmentRequest.
  */
@@ -17,14 +17,14 @@ public class ChangeAgentEndpointCompartmentRequest
                 com.oracle.bmc.generativeaiagent.model.ChangeAgentEndpointCompartmentDetails> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the endpoint.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * endpoint.
      */
     private String agentEndpointId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the endpoint.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * endpoint.
      */
     public String getAgentEndpointId() {
         return agentEndpointId;
@@ -109,14 +109,14 @@ public class ChangeAgentEndpointCompartmentRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the endpoint.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * endpoint.
          */
         private String agentEndpointId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the endpoint.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * endpoint.
          *
          * @param agentEndpointId the value to set
          * @return this builder instance

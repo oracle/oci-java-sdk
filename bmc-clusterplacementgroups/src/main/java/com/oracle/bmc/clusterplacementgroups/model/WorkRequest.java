@@ -105,8 +105,8 @@ public final class WorkRequest extends com.oracle.bmc.http.client.internal.Expli
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compartment that contains the work request. Work requests are scoped to the same
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment that contains the work request. Work requests are scoped to the same
          * compartment as the resource that the work request affects. If the work request affects
          * multiple resources and those resources are not in the same compartment, the OCID of the
          * resource designated as the primary resource is used.
@@ -115,8 +115,8 @@ public final class WorkRequest extends com.oracle.bmc.http.client.internal.Expli
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compartment that contains the work request. Work requests are scoped to the same
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment that contains the work request. Work requests are scoped to the same
          * compartment as the resource that the work request affects. If the work request affects
          * multiple resources and those resources are not in the same compartment, the OCID of the
          * resource designated as the primary resource is used.
@@ -343,21 +343,21 @@ public final class WorkRequest extends com.oracle.bmc.http.client.internal.Expli
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compartment that contains the work request. Work requests are scoped to the same
-     * compartment as the resource that the work request affects. If the work request affects
-     * multiple resources and those resources are not in the same compartment, the OCID of the
-     * resource designated as the primary resource is used.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment that contains the work request. Work requests are scoped to the same compartment
+     * as the resource that the work request affects. If the work request affects multiple resources
+     * and those resources are not in the same compartment, the OCID of the resource designated as
+     * the primary resource is used.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compartment that contains the work request. Work requests are scoped to the same
-     * compartment as the resource that the work request affects. If the work request affects
-     * multiple resources and those resources are not in the same compartment, the OCID of the
-     * resource designated as the primary resource is used.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment that contains the work request. Work requests are scoped to the same compartment
+     * as the resource that the work request affects. If the work request affects multiple resources
+     * and those resources are not in the same compartment, the OCID of the resource designated as
+     * the primary resource is used.
      *
      * @return the value
      */

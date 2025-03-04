@@ -55,7 +55,7 @@ public final class UpdatePrivateIpDetails
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
          */
@@ -65,7 +65,7 @@ public final class UpdatePrivateIpDetails
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
@@ -100,7 +100,7 @@ public final class UpdatePrivateIpDetails
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          */
@@ -110,7 +110,7 @@ public final class UpdatePrivateIpDetails
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          *
@@ -130,7 +130,7 @@ public final class UpdatePrivateIpDetails
          * 1123](https://tools.ietf.org/html/rfc1123).
          *
          * <p>For more information, see [DNS in Your Virtual Cloud
-         * Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
+         * Network](https://docs.oracle.com/iaas/Content/Network/Concepts/dns.htm).
          *
          * <p>Example: {@code bminstance1}
          */
@@ -145,7 +145,7 @@ public final class UpdatePrivateIpDetails
          * 1123](https://tools.ietf.org/html/rfc1123).
          *
          * <p>For more information, see [DNS in Your Virtual Cloud
-         * Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
+         * Network](https://docs.oracle.com/iaas/Content/Network/Concepts/dns.htm).
          *
          * <p>Example: {@code bminstance1}
          *
@@ -158,17 +158,17 @@ public final class UpdatePrivateIpDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the VNIC to reassign the private IP to. The VNIC must be in the same subnet as the
-         * current VNIC.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * VNIC to reassign the private IP to. The VNIC must be in the same subnet as the current
+         * VNIC.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("vnicId")
         private String vnicId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the VNIC to reassign the private IP to. The VNIC must be in the same subnet as the
-         * current VNIC.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * VNIC to reassign the private IP to. The VNIC must be in the same subnet as the current
+         * VNIC.
          *
          * @param vnicId the value to set
          * @return this builder
@@ -194,18 +194,16 @@ public final class UpdatePrivateIpDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the route table the IP address or VNIC will use. For more information, see [Source
-         * Based
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * route table the IP address or VNIC will use. For more information, see [Source Based
          * Routing](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("routeTableId")
         private String routeTableId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the route table the IP address or VNIC will use. For more information, see [Source
-         * Based
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * route table the IP address or VNIC will use. For more information, see [Source Based
          * Routing](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing).
          *
          * @param routeTableId the value to set
@@ -275,7 +273,7 @@ public final class UpdatePrivateIpDetails
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
      */
@@ -285,7 +283,7 @@ public final class UpdatePrivateIpDetails
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
@@ -315,7 +313,7 @@ public final class UpdatePrivateIpDetails
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      */
@@ -325,7 +323,7 @@ public final class UpdatePrivateIpDetails
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      *
@@ -343,7 +341,7 @@ public final class UpdatePrivateIpDetails
      * 1123](https://tools.ietf.org/html/rfc1123).
      *
      * <p>For more information, see [DNS in Your Virtual Cloud
-     * Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
+     * Network](https://docs.oracle.com/iaas/Content/Network/Concepts/dns.htm).
      *
      * <p>Example: {@code bminstance1}
      */
@@ -358,7 +356,7 @@ public final class UpdatePrivateIpDetails
      * 1123](https://tools.ietf.org/html/rfc1123).
      *
      * <p>For more information, see [DNS in Your Virtual Cloud
-     * Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
+     * Network](https://docs.oracle.com/iaas/Content/Network/Concepts/dns.htm).
      *
      * <p>Example: {@code bminstance1}
      *
@@ -369,17 +367,15 @@ public final class UpdatePrivateIpDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the VNIC to reassign the private IP to. The VNIC must be in the same subnet as the current
-     * VNIC.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC
+     * to reassign the private IP to. The VNIC must be in the same subnet as the current VNIC.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("vnicId")
     private final String vnicId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the VNIC to reassign the private IP to. The VNIC must be in the same subnet as the current
-     * VNIC.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC
+     * to reassign the private IP to. The VNIC must be in the same subnet as the current VNIC.
      *
      * @return the value
      */
@@ -434,16 +430,16 @@ public final class UpdatePrivateIpDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the route table the IP address or VNIC will use. For more information, see [Source Based
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * route table the IP address or VNIC will use. For more information, see [Source Based
      * Routing](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("routeTableId")
     private final String routeTableId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the route table the IP address or VNIC will use. For more information, see [Source Based
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * route table the IP address or VNIC will use. For more information, see [Source Based
      * Routing](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing).
      *
      * @return the value

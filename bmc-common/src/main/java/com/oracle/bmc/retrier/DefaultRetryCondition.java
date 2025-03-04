@@ -17,12 +17,12 @@ import jakarta.annotation.Nonnull;
 
 /**
  * Class that represents the conditions documented in
- * https://docs.cloud.oracle.com/iaas/Content/API/References/apierrors.htm for which the operation
- * may be retried.
+ * https://docs.oracle.com/iaas/Content/API/References/apierrors.htm for which the operation may be
+ * retried.
  */
 public class DefaultRetryCondition implements RetryCondition {
     // List of retryable errors from
-    // https://docs.cloud.oracle.com/iaas/Content/API/References/apierrors.htm
+    // https://docs.oracle.com/iaas/Content/API/References/apierrors.htm
     private static final Map<Integer, Set<String>> RETRYABLE_SERVICE_ERRORS;
 
     static {

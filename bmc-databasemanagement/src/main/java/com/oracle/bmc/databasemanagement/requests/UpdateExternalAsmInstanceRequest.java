@@ -7,7 +7,7 @@ package com.oracle.bmc.databasemanagement.requests;
 import com.oracle.bmc.databasemanagement.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/UpdateExternalAsmInstanceExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/UpdateExternalAsmInstanceExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * UpdateExternalAsmInstanceRequest.
  */
@@ -17,13 +17,13 @@ public class UpdateExternalAsmInstanceRequest
                 com.oracle.bmc.databasemanagement.model.UpdateExternalAsmInstanceDetails> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * external ASM instance.
      */
     private String externalAsmInstanceId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * external ASM instance.
      */
     public String getExternalAsmInstanceId() {
@@ -82,13 +82,13 @@ public class UpdateExternalAsmInstanceRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * external ASM instance.
          */
         private String externalAsmInstanceId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * external ASM instance.
          *
          * @param externalAsmInstanceId the value to set

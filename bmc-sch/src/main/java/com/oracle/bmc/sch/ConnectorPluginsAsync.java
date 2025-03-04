@@ -10,8 +10,8 @@ import com.oracle.bmc.sch.responses.*;
 /**
  * Use the Connector Hub API to transfer data between services in Oracle Cloud Infrastructure. For
  * more information about Connector Hub, see [the Connector Hub
- * documentation](https://docs.cloud.oracle.com/iaas/Content/connector-hub/home.htm). Connector Hub
- * is formerly known as Service Connector Hub.
+ * documentation](https://docs.oracle.com/iaas/Content/connector-hub/home.htm). Connector Hub is
+ * formerly known as Service Connector Hub.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200909")
 public interface ConnectorPluginsAsync extends AutoCloseable {

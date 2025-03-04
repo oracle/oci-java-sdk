@@ -7,21 +7,21 @@ package com.oracle.bmc.datascience.requests;
 import com.oracle.bmc.datascience.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/GetNotebookSessionExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/GetNotebookSessionExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use GetNotebookSessionRequest.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
 public class GetNotebookSessionRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the notebook session.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * notebook session.
      */
     private String notebookSessionId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the notebook session.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * notebook session.
      */
     public String getNotebookSessionId() {
         return notebookSessionId;
@@ -47,14 +47,14 @@ public class GetNotebookSessionRequest extends com.oracle.bmc.requests.BmcReques
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the notebook session.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * notebook session.
          */
         private String notebookSessionId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the notebook session.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * notebook session.
          *
          * @param notebookSessionId the value to set
          * @return this builder instance

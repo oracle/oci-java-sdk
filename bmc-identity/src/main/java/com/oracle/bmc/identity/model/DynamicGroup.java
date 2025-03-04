@@ -15,7 +15,7 @@ package com.oracle.bmc.identity.model;
  * <p>This works like regular user/group membership. But in that case, the membership is a static
  * relationship, whereas in a dynamic group, the membership of an instance certificate to a dynamic
  * group is determined during runtime. For more information, see [Managing Dynamic
- * Groups](https://docs.cloud.oracle.com/Content/Identity/dynamicgroups/managingdynamicgroups.htm).
+ * Groups](https://docs.oracle.com/iaas/Content/Identity/dynamicgroups/managingdynamicgroups.htm).
  *
  * <p>*Warning:** Oracle recommends that you avoid using any confidential information when you
  * supply string values using the API. <br>
@@ -145,7 +145,7 @@ public final class DynamicGroup extends com.oracle.bmc.http.client.internal.Expl
         /**
          * A rule string that defines which instance certificates will be matched. For syntax, see
          * [Managing Dynamic
-         * Groups](https://docs.cloud.oracle.com/Content/Identity/dynamicgroups/managingdynamicgroups.htm).
+         * Groups](https://docs.oracle.com/iaas/Content/Identity/dynamicgroups/managingdynamicgroups.htm).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("matchingRule")
         private String matchingRule;
@@ -153,7 +153,7 @@ public final class DynamicGroup extends com.oracle.bmc.http.client.internal.Expl
         /**
          * A rule string that defines which instance certificates will be matched. For syntax, see
          * [Managing Dynamic
-         * Groups](https://docs.cloud.oracle.com/Content/Identity/dynamicgroups/managingdynamicgroups.htm).
+         * Groups](https://docs.oracle.com/iaas/Content/Identity/dynamicgroups/managingdynamicgroups.htm).
          *
          * @param matchingRule the value to set
          * @return this builder
@@ -221,7 +221,7 @@ public final class DynamicGroup extends com.oracle.bmc.http.client.internal.Expl
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
          * {@code {"Department": "Finance"}}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -230,7 +230,7 @@ public final class DynamicGroup extends com.oracle.bmc.http.client.internal.Expl
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
          * {@code {"Department": "Finance"}}
          *
          * @param freeformTags the value to set
@@ -244,7 +244,7 @@ public final class DynamicGroup extends com.oracle.bmc.http.client.internal.Expl
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
          * {@code {"Operations": {"CostCenter": "42"}}}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -253,7 +253,7 @@ public final class DynamicGroup extends com.oracle.bmc.http.client.internal.Expl
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
          * {@code {"Operations": {"CostCenter": "42"}}}
          *
          * @param definedTags the value to set
@@ -398,7 +398,7 @@ public final class DynamicGroup extends com.oracle.bmc.http.client.internal.Expl
     /**
      * A rule string that defines which instance certificates will be matched. For syntax, see
      * [Managing Dynamic
-     * Groups](https://docs.cloud.oracle.com/Content/Identity/dynamicgroups/managingdynamicgroups.htm).
+     * Groups](https://docs.oracle.com/iaas/Content/Identity/dynamicgroups/managingdynamicgroups.htm).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("matchingRule")
     private final String matchingRule;
@@ -406,7 +406,7 @@ public final class DynamicGroup extends com.oracle.bmc.http.client.internal.Expl
     /**
      * A rule string that defines which instance certificates will be matched. For syntax, see
      * [Managing Dynamic
-     * Groups](https://docs.cloud.oracle.com/Content/Identity/dynamicgroups/managingdynamicgroups.htm).
+     * Groups](https://docs.oracle.com/iaas/Content/Identity/dynamicgroups/managingdynamicgroups.htm).
      *
      * @return the value
      */
@@ -518,7 +518,7 @@ public final class DynamicGroup extends com.oracle.bmc.http.client.internal.Expl
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Department": "Finance"}}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -527,7 +527,7 @@ public final class DynamicGroup extends com.oracle.bmc.http.client.internal.Expl
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Department": "Finance"}}
      *
      * @return the value
@@ -539,7 +539,7 @@ public final class DynamicGroup extends com.oracle.bmc.http.client.internal.Expl
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Operations": {"CostCenter": "42"}}}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -548,7 +548,7 @@ public final class DynamicGroup extends com.oracle.bmc.http.client.internal.Expl
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Operations": {"CostCenter": "42"}}}
      *
      * @return the value

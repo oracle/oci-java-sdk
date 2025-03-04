@@ -7,19 +7,18 @@ package com.oracle.bmc.identity.model;
 /**
  * A collection of users who all need the same type of access to a particular set of resources or
  * compartment. For conceptual information about groups and other IAM Service components, see
- * [Overview of
- * IAM](https://docs.cloud.oracle.com/Content/Identity/getstarted/identity-domains.htm).
+ * [Overview of IAM](https://docs.oracle.com/iaas/Content/Identity/getstarted/identity-domains.htm).
  *
  * <p>If you're federating with an identity provider (IdP), you need to create mappings between the
  * groups defined in the IdP and groups you define in the IAM service. For more information, see
  * [Identity Providers and
- * Federation](https://docs.cloud.oracle.com/Content/Identity/Concepts/federation.htm). Also see
+ * Federation](https://docs.oracle.com/iaas/Content/Identity/Concepts/federation.htm). Also see
  * {@link IdentityProvider} and {@link IdpGroupMapping}.
  *
  * <p>To use any of the API operations, you must be authorized in an IAM policy. If you're not
  * authorized, talk to an administrator. If you're an administrator who needs to write policies to
  * give users access, see [Get Started with
- * Policies](https://docs.cloud.oracle.com/Content/Identity/policiesgs/get-started-with-policies.htm).
+ * Policies](https://docs.oracle.com/iaas/Content/Identity/policiesgs/get-started-with-policies.htm).
  *
  * <p>*Warning:** Oracle recommends that you avoid using any confidential information when you
  * supply string values using the API. <br>
@@ -201,7 +200,7 @@ public final class Group extends com.oracle.bmc.http.client.internal.ExplicitlyS
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
          * {@code {"Department": "Finance"}}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -210,7 +209,7 @@ public final class Group extends com.oracle.bmc.http.client.internal.ExplicitlyS
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
          * {@code {"Department": "Finance"}}
          *
          * @param freeformTags the value to set
@@ -224,7 +223,7 @@ public final class Group extends com.oracle.bmc.http.client.internal.ExplicitlyS
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
          * {@code {"Operations": {"CostCenter": "42"}}}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -233,7 +232,7 @@ public final class Group extends com.oracle.bmc.http.client.internal.ExplicitlyS
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
          * {@code {"Operations": {"CostCenter": "42"}}}
          *
          * @param definedTags the value to set
@@ -475,7 +474,7 @@ public final class Group extends com.oracle.bmc.http.client.internal.ExplicitlyS
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Department": "Finance"}}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -484,7 +483,7 @@ public final class Group extends com.oracle.bmc.http.client.internal.ExplicitlyS
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Department": "Finance"}}
      *
      * @return the value
@@ -496,7 +495,7 @@ public final class Group extends com.oracle.bmc.http.client.internal.ExplicitlyS
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Operations": {"CostCenter": "42"}}}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -505,7 +504,7 @@ public final class Group extends com.oracle.bmc.http.client.internal.ExplicitlyS
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Operations": {"CostCenter": "42"}}}
      *
      * @return the value

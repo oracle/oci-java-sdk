@@ -48,14 +48,14 @@ public final class AddmTasksCollection
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Managed Database.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("managedDatabaseId")
         private String managedDatabaseId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Managed Database.
          *
          * @param managedDatabaseId the value to set
@@ -113,14 +113,14 @@ public final class AddmTasksCollection
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Managed Database.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("managedDatabaseId")
     private final String managedDatabaseId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Managed Database.
      *
      * @return the value

@@ -7,7 +7,7 @@ package com.oracle.bmc.opsi.requests;
 import com.oracle.bmc.opsi.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/UpdateExadataInsightExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/UpdateExadataInsightExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateExadataInsightRequest.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")

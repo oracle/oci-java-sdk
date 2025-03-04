@@ -7,7 +7,7 @@ package com.oracle.bmc.networkloadbalancer.requests;
 import com.oracle.bmc.networkloadbalancer.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkloadbalancer/CreateBackendExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkloadbalancer/CreateBackendExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use CreateBackendRequest.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
@@ -16,13 +16,13 @@ public class CreateBackendRequest
                 com.oracle.bmc.networkloadbalancer.model.CreateBackendDetails> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * network load balancer to update.
      */
     private String networkLoadBalancerId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * network load balancer to update.
      */
     public String getNetworkLoadBalancerId() {
@@ -119,13 +119,13 @@ public class CreateBackendRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * network load balancer to update.
          */
         private String networkLoadBalancerId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * network load balancer to update.
          *
          * @param networkLoadBalancerId the value to set

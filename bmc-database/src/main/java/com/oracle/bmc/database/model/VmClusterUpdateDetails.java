@@ -36,14 +36,14 @@ public final class VmClusterUpdateDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * maintenance update.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("updateId")
         private String updateId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * maintenance update.
          *
          * @param updateId the value to set
@@ -70,7 +70,7 @@ public final class VmClusterUpdateDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
          * grid infrastructure software image. This is a database software image of the type {@code
          * GRID_IMAGE}.
          */
@@ -78,7 +78,7 @@ public final class VmClusterUpdateDetails
         private String giSoftwareImageId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
          * grid infrastructure software image. This is a database software image of the type {@code
          * GRID_IMAGE}.
          *
@@ -129,14 +129,14 @@ public final class VmClusterUpdateDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * maintenance update.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("updateId")
     private final String updateId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * maintenance update.
      *
      * @return the value
@@ -193,7 +193,7 @@ public final class VmClusterUpdateDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a grid
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a grid
      * infrastructure software image. This is a database software image of the type {@code
      * GRID_IMAGE}.
      */
@@ -201,7 +201,7 @@ public final class VmClusterUpdateDetails
     private final String giSoftwareImageId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a grid
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a grid
      * infrastructure software image. This is a database software image of the type {@code
      * GRID_IMAGE}.
      *

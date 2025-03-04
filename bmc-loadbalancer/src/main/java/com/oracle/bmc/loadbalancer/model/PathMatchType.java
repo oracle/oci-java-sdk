@@ -47,7 +47,7 @@ public final class PathMatchType extends com.oracle.bmc.http.client.internal.Exp
          *
          * <p>For a full description of how the system handles {@code matchType} in a path route set
          * containing multiple rules, see [Managing Request
-         * Routing](https://docs.cloud.oracle.com/Content/Balance/Tasks/managingrequest.htm).
+         * Routing](https://docs.oracle.com/iaas/Content/Balance/Tasks/managingrequest.htm).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("matchType")
         private MatchType matchType;
@@ -70,7 +70,7 @@ public final class PathMatchType extends com.oracle.bmc.http.client.internal.Exp
          *
          * <p>For a full description of how the system handles {@code matchType} in a path route set
          * containing multiple rules, see [Managing Request
-         * Routing](https://docs.cloud.oracle.com/Content/Balance/Tasks/managingrequest.htm).
+         * Routing](https://docs.oracle.com/iaas/Content/Balance/Tasks/managingrequest.htm).
          *
          * @param matchType the value to set
          * @return this builder
@@ -128,7 +128,7 @@ public final class PathMatchType extends com.oracle.bmc.http.client.internal.Exp
      *
      * <p>For a full description of how the system handles {@code matchType} in a path route set
      * containing multiple rules, see [Managing Request
-     * Routing](https://docs.cloud.oracle.com/Content/Balance/Tasks/managingrequest.htm).
+     * Routing](https://docs.oracle.com/iaas/Content/Balance/Tasks/managingrequest.htm).
      */
     public enum MatchType implements com.oracle.bmc.http.internal.BmcEnum {
         ExactMatch("EXACT_MATCH"),
@@ -195,7 +195,7 @@ public final class PathMatchType extends com.oracle.bmc.http.client.internal.Exp
      *
      * <p>For a full description of how the system handles {@code matchType} in a path route set
      * containing multiple rules, see [Managing Request
-     * Routing](https://docs.cloud.oracle.com/Content/Balance/Tasks/managingrequest.htm).
+     * Routing](https://docs.oracle.com/iaas/Content/Balance/Tasks/managingrequest.htm).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("matchType")
     private final MatchType matchType;
@@ -218,7 +218,7 @@ public final class PathMatchType extends com.oracle.bmc.http.client.internal.Exp
      *
      * <p>For a full description of how the system handles {@code matchType} in a path route set
      * containing multiple rules, see [Managing Request
-     * Routing](https://docs.cloud.oracle.com/Content/Balance/Tasks/managingrequest.htm).
+     * Routing](https://docs.oracle.com/iaas/Content/Balance/Tasks/managingrequest.htm).
      *
      * @return the value
      */

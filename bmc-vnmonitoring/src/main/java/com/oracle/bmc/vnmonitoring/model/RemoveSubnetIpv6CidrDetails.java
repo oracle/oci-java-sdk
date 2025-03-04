@@ -34,7 +34,7 @@ public final class RemoveSubnetIpv6CidrDetails
         /**
          * This field is not required and should only be specified when removing an IPv6 CIDR from a
          * subnet's IPv6 address space. See[IPv6
-         * Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+         * Addresses](https://docs.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
          *
          * <p>Example: {@code 2001:0db8:0123::/64}
          */
@@ -44,7 +44,7 @@ public final class RemoveSubnetIpv6CidrDetails
         /**
          * This field is not required and should only be specified when removing an IPv6 CIDR from a
          * subnet's IPv6 address space. See[IPv6
-         * Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+         * Addresses](https://docs.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
          *
          * <p>Example: {@code 2001:0db8:0123::/64}
          *
@@ -89,7 +89,7 @@ public final class RemoveSubnetIpv6CidrDetails
     /**
      * This field is not required and should only be specified when removing an IPv6 CIDR from a
      * subnet's IPv6 address space. See[IPv6
-     * Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+     * Addresses](https://docs.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
      *
      * <p>Example: {@code 2001:0db8:0123::/64}
      */
@@ -99,7 +99,7 @@ public final class RemoveSubnetIpv6CidrDetails
     /**
      * This field is not required and should only be specified when removing an IPv6 CIDR from a
      * subnet's IPv6 address space. See[IPv6
-     * Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+     * Addresses](https://docs.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
      *
      * <p>Example: {@code 2001:0db8:0123::/64}
      *

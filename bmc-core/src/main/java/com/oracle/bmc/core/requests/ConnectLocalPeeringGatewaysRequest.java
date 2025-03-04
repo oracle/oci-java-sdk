@@ -7,7 +7,7 @@ package com.oracle.bmc.core.requests;
 import com.oracle.bmc.core.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ConnectLocalPeeringGatewaysExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ConnectLocalPeeringGatewaysExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * ConnectLocalPeeringGatewaysRequest.
  */
@@ -17,14 +17,14 @@ public class ConnectLocalPeeringGatewaysRequest
                 com.oracle.bmc.core.model.ConnectLocalPeeringGatewaysDetails> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the local peering gateway.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * local peering gateway.
      */
     private String localPeeringGatewayId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the local peering gateway.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * local peering gateway.
      */
     public String getLocalPeeringGatewayId() {
         return localPeeringGatewayId;
@@ -58,14 +58,14 @@ public class ConnectLocalPeeringGatewaysRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the local peering gateway.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * local peering gateway.
          */
         private String localPeeringGatewayId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the local peering gateway.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * local peering gateway.
          *
          * @param localPeeringGatewayId the value to set
          * @return this builder instance

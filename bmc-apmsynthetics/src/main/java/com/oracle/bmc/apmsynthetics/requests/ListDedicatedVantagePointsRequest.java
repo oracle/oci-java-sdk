@@ -7,7 +7,7 @@ package com.oracle.bmc.apmsynthetics.requests;
 import com.oracle.bmc.apmsynthetics.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmsynthetics/ListDedicatedVantagePointsExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmsynthetics/ListDedicatedVantagePointsExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * ListDedicatedVantagePointsRequest.
  */
@@ -32,7 +32,7 @@ public class ListDedicatedVantagePointsRequest
     /**
      * The maximum number of results per page, or items to return in a paginated "List" call. For
      * information on how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      * <p>Example: {@code 50}
      */
@@ -41,7 +41,7 @@ public class ListDedicatedVantagePointsRequest
     /**
      * The maximum number of results per page, or items to return in a paginated "List" call. For
      * information on how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      * <p>Example: {@code 50}
      */
@@ -189,7 +189,7 @@ public class ListDedicatedVantagePointsRequest
         /**
          * The maximum number of results per page, or items to return in a paginated "List" call.
          * For information on how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * <p>Example: {@code 50}
          */
@@ -198,7 +198,7 @@ public class ListDedicatedVantagePointsRequest
         /**
          * The maximum number of results per page, or items to return in a paginated "List" call.
          * For information on how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * <p>Example: {@code 50}
          *

@@ -88,18 +88,18 @@ public final class NotebookSessionConfigurationDetails
         }
         /**
          * A notebook session instance is provided with a VNIC for network access. This specifies
-         * the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the subnet to create a VNIC in. The subnet should be in a VCN with a NAT gateway for
-         * egress to the internet.
+         * the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * subnet to create a VNIC in. The subnet should be in a VCN with a NAT gateway for egress
+         * to the internet.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
         private String subnetId;
 
         /**
          * A notebook session instance is provided with a VNIC for network access. This specifies
-         * the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the subnet to create a VNIC in. The subnet should be in a VCN with a NAT gateway for
-         * egress to the internet.
+         * the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * subnet to create a VNIC in. The subnet should be in a VCN with a NAT gateway for egress
+         * to the internet.
          *
          * @param subnetId the value to set
          * @return this builder
@@ -219,18 +219,18 @@ public final class NotebookSessionConfigurationDetails
 
     /**
      * A notebook session instance is provided with a VNIC for network access. This specifies the
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * subnet to create a VNIC in. The subnet should be in a VCN with a NAT gateway for egress to
-     * the internet.
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet
+     * to create a VNIC in. The subnet should be in a VCN with a NAT gateway for egress to the
+     * internet.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
     private final String subnetId;
 
     /**
      * A notebook session instance is provided with a VNIC for network access. This specifies the
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * subnet to create a VNIC in. The subnet should be in a VCN with a NAT gateway for egress to
-     * the internet.
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet
+     * to create a VNIC in. The subnet should be in a VCN with a NAT gateway for egress to the
+     * internet.
      *
      * @return the value
      */

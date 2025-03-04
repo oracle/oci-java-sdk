@@ -29,14 +29,14 @@ public final class PersistedGetPathAnalysisDetails extends GetPathAnalysisDetail
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * {@code PathAnalyzerTest} resource.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("pathAnalyzerTestId")
         private String pathAnalyzerTestId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * {@code PathAnalyzerTest} resource.
          *
          * @param pathAnalyzerTestId the value to set
@@ -85,14 +85,14 @@ public final class PersistedGetPathAnalysisDetails extends GetPathAnalysisDetail
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * {@code PathAnalyzerTest} resource.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("pathAnalyzerTestId")
     private final String pathAnalyzerTestId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * {@code PathAnalyzerTest} resource.
      *
      * @return the value

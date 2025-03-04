@@ -104,7 +104,7 @@ public final class RecordDetails extends com.oracle.bmc.http.client.internal.Exp
          * The record's data, as whitespace-delimited tokens in type-specific presentation format.
          * All RDATA is normalized and the returned presentation of your RDATA may differ from its
          * initial input. For more information about RDATA, see [Supported DNS Resource Record
-         * Types](https://docs.cloud.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm)
+         * Types](https://docs.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm)
          */
         @com.fasterxml.jackson.annotation.JsonProperty("rdata")
         private String rdata;
@@ -113,7 +113,7 @@ public final class RecordDetails extends com.oracle.bmc.http.client.internal.Exp
          * The record's data, as whitespace-delimited tokens in type-specific presentation format.
          * All RDATA is normalized and the returned presentation of your RDATA may differ from its
          * initial input. For more information about RDATA, see [Supported DNS Resource Record
-         * Types](https://docs.cloud.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm)
+         * Types](https://docs.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm)
          *
          * @param rdata the value to set
          * @return this builder
@@ -285,7 +285,7 @@ public final class RecordDetails extends com.oracle.bmc.http.client.internal.Exp
      * The record's data, as whitespace-delimited tokens in type-specific presentation format. All
      * RDATA is normalized and the returned presentation of your RDATA may differ from its initial
      * input. For more information about RDATA, see [Supported DNS Resource Record
-     * Types](https://docs.cloud.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm)
+     * Types](https://docs.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm)
      */
     @com.fasterxml.jackson.annotation.JsonProperty("rdata")
     private final String rdata;
@@ -294,7 +294,7 @@ public final class RecordDetails extends com.oracle.bmc.http.client.internal.Exp
      * The record's data, as whitespace-delimited tokens in type-specific presentation format. All
      * RDATA is normalized and the returned presentation of your RDATA may differ from its initial
      * input. For more information about RDATA, see [Supported DNS Resource Record
-     * Types](https://docs.cloud.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm)
+     * Types](https://docs.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm)
      *
      * @return the value
      */

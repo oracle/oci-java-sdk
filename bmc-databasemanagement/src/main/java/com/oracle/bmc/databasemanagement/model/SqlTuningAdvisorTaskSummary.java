@@ -69,14 +69,14 @@ public final class SqlTuningAdvisorTaskSummary
     public static class Builder {
         /**
          * The unique identifier of the SQL Tuning Advisor task. This is not the
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("sqlTuningAdvisorTaskId")
         private Long sqlTuningAdvisorTaskId;
 
         /**
          * The unique identifier of the SQL Tuning Advisor task. This is not the
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          * @param sqlTuningAdvisorTaskId the value to set
          * @return this builder
@@ -88,14 +88,14 @@ public final class SqlTuningAdvisorTaskSummary
         }
         /**
          * The instance ID of the SQL Tuning Advisor task. This is not the
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("instanceId")
         private Integer instanceId;
 
         /**
          * The instance ID of the SQL Tuning Advisor task. This is not the
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          * @param instanceId the value to set
          * @return this builder
@@ -337,14 +337,14 @@ public final class SqlTuningAdvisorTaskSummary
 
     /**
      * The unique identifier of the SQL Tuning Advisor task. This is not the
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("sqlTuningAdvisorTaskId")
     private final Long sqlTuningAdvisorTaskId;
 
     /**
      * The unique identifier of the SQL Tuning Advisor task. This is not the
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      * @return the value
      */
@@ -354,14 +354,14 @@ public final class SqlTuningAdvisorTaskSummary
 
     /**
      * The instance ID of the SQL Tuning Advisor task. This is not the
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("instanceId")
     private final Integer instanceId;
 
     /**
      * The instance ID of the SQL Tuning Advisor task. This is not the
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      * @return the value
      */

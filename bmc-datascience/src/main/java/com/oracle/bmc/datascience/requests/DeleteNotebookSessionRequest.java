@@ -7,7 +7,7 @@ package com.oracle.bmc.datascience.requests;
 import com.oracle.bmc.datascience.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/DeleteNotebookSessionExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/DeleteNotebookSessionExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * DeleteNotebookSessionRequest.
  */
@@ -16,14 +16,14 @@ public class DeleteNotebookSessionRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the notebook session.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * notebook session.
      */
     private String notebookSessionId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the notebook session.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * notebook session.
      */
     public String getNotebookSessionId() {
         return notebookSessionId;
@@ -66,14 +66,14 @@ public class DeleteNotebookSessionRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the notebook session.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * notebook session.
          */
         private String notebookSessionId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the notebook session.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * notebook session.
          *
          * @param notebookSessionId the value to set
          * @return this builder instance

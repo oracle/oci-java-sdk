@@ -77,15 +77,15 @@ public final class UpdateOperationsInsightsPrivateEndpointDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the network security groups that the Private service accessed the database.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * network security groups that the Private service accessed the database.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
         private java.util.List<String> nsgIds;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the network security groups that the Private service accessed the database.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * network security groups that the Private service accessed the database.
          *
          * @param nsgIds the value to set
          * @return this builder
@@ -209,15 +209,15 @@ public final class UpdateOperationsInsightsPrivateEndpointDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the network security groups that the Private service accessed the database.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * network security groups that the Private service accessed the database.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
     private final java.util.List<String> nsgIds;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the network security groups that the Private service accessed the database.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * network security groups that the Private service accessed the database.
      *
      * @return the value
      */

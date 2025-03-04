@@ -45,7 +45,7 @@ public final class CreateKnowledgeBaseDetails
     public static class Builder {
         /**
          * The compartment Oracle Cloud Identifier
-         * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the
+         * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the
          * knowledge base.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
@@ -53,7 +53,7 @@ public final class CreateKnowledgeBaseDetails
 
         /**
          * The compartment Oracle Cloud Identifier
-         * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the
+         * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the
          * knowledge base.
          *
          * @param compartmentId the value to set
@@ -164,7 +164,7 @@ public final class CreateKnowledgeBaseDetails
 
     /**
      * The compartment Oracle Cloud Identifier
-     * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the
+     * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the
      * knowledge base.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
@@ -172,7 +172,7 @@ public final class CreateKnowledgeBaseDetails
 
     /**
      * The compartment Oracle Cloud Identifier
-     * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the
+     * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the
      * knowledge base.
      *
      * @return the value

@@ -35,15 +35,15 @@ public final class VcnDnsResolverAssociation
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the VCN in the association.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * VCN in the association.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("vcnId")
         private String vcnId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the VCN in the association.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * VCN in the association.
          *
          * @param vcnId the value to set
          * @return this builder
@@ -54,15 +54,15 @@ public final class VcnDnsResolverAssociation
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the DNS resolver in the association.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * DNS resolver in the association.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("dnsResolverId")
         private String dnsResolverId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the DNS resolver in the association.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * DNS resolver in the association.
          *
          * @param dnsResolverId the value to set
          * @return this builder
@@ -126,15 +126,15 @@ public final class VcnDnsResolverAssociation
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the VCN in the association.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN
+     * in the association.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("vcnId")
     private final String vcnId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the VCN in the association.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN
+     * in the association.
      *
      * @return the value
      */
@@ -143,15 +143,15 @@ public final class VcnDnsResolverAssociation
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the DNS resolver in the association.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DNS
+     * resolver in the association.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("dnsResolverId")
     private final String dnsResolverId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the DNS resolver in the association.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DNS
+     * resolver in the association.
      *
      * @return the value
      */

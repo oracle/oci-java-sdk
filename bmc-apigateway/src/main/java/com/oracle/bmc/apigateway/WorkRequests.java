@@ -10,7 +10,7 @@ import com.oracle.bmc.apigateway.responses.*;
 /**
  * API for the API Gateway service. Use this API to manage gateways, deployments, and related items.
  * For more information, see [Overview of API
- * Gateway](https://docs.cloud.oracle.com/iaas/Content/APIGateway/Concepts/apigatewayoverview.htm).
+ * Gateway](https://docs.oracle.com/iaas/Content/APIGateway/Concepts/apigatewayoverview.htm).
  *
  * <p>This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by
  * default if no circuit breaker configuration is defined by the user.
@@ -76,7 +76,7 @@ public interface WorkRequests extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apigateway/CancelWorkRequestExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apigateway/CancelWorkRequestExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CancelWorkRequest
      *     API.
      */
@@ -92,7 +92,7 @@ public interface WorkRequests extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apigateway/GetWorkRequestExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apigateway/GetWorkRequestExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetWorkRequest API.
      */
     GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request);
@@ -107,7 +107,7 @@ public interface WorkRequests extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apigateway/ListWorkRequestErrorsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apigateway/ListWorkRequestErrorsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ListWorkRequestErrors API.
      */
@@ -123,7 +123,7 @@ public interface WorkRequests extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apigateway/ListWorkRequestLogsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apigateway/ListWorkRequestLogsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequestLogs
      *     API.
      */
@@ -139,7 +139,7 @@ public interface WorkRequests extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apigateway/ListWorkRequestsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apigateway/ListWorkRequestsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequests
      *     API.
      */

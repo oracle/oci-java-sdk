@@ -78,7 +78,7 @@ public interface VbInstance extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/visualbuilder/ChangeVbInstanceCompartmentExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/visualbuilder/ChangeVbInstanceCompartmentExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ChangeVbInstanceCompartment API.
      */
@@ -95,7 +95,7 @@ public interface VbInstance extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/visualbuilder/CreateVbInstanceExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/visualbuilder/CreateVbInstanceExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateVbInstance
      *     API.
      */
@@ -111,7 +111,7 @@ public interface VbInstance extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/visualbuilder/DeleteVbInstanceExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/visualbuilder/DeleteVbInstanceExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteVbInstance
      *     API.
      */
@@ -127,7 +127,7 @@ public interface VbInstance extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/visualbuilder/GetVbInstanceExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/visualbuilder/GetVbInstanceExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetVbInstance API.
      */
     GetVbInstanceResponse getVbInstance(GetVbInstanceRequest request);
@@ -142,7 +142,7 @@ public interface VbInstance extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/visualbuilder/GetWorkRequestExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/visualbuilder/GetWorkRequestExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetWorkRequest API.
      */
     GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request);
@@ -157,7 +157,7 @@ public interface VbInstance extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/visualbuilder/ListVbInstancesExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/visualbuilder/ListVbInstancesExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListVbInstances
      *     API.
      */
@@ -173,7 +173,7 @@ public interface VbInstance extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/visualbuilder/ListWorkRequestErrorsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/visualbuilder/ListWorkRequestErrorsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ListWorkRequestErrors API.
      */
@@ -189,7 +189,7 @@ public interface VbInstance extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/visualbuilder/ListWorkRequestLogsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/visualbuilder/ListWorkRequestLogsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequestLogs
      *     API.
      */
@@ -205,7 +205,7 @@ public interface VbInstance extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/visualbuilder/ListWorkRequestsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/visualbuilder/ListWorkRequestsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequests
      *     API.
      */
@@ -225,7 +225,7 @@ public interface VbInstance extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/visualbuilder/ReconfigurePrivateEndpointVbInstanceExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/visualbuilder/ReconfigurePrivateEndpointVbInstanceExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ReconfigurePrivateEndpointVbInstance API.
      */
@@ -242,7 +242,7 @@ public interface VbInstance extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/visualbuilder/RequestSummarizedApplicationsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/visualbuilder/RequestSummarizedApplicationsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     RequestSummarizedApplications API.
      */
@@ -260,7 +260,7 @@ public interface VbInstance extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/visualbuilder/StartVbInstanceExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/visualbuilder/StartVbInstanceExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use StartVbInstance
      *     API.
      */
@@ -277,7 +277,7 @@ public interface VbInstance extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/visualbuilder/StopVbInstanceExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/visualbuilder/StopVbInstanceExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use StopVbInstance API.
      */
     StopVbInstanceResponse stopVbInstance(StopVbInstanceRequest request);
@@ -292,7 +292,7 @@ public interface VbInstance extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/visualbuilder/UpdateVbInstanceExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/visualbuilder/UpdateVbInstanceExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateVbInstance
      *     API.
      */

@@ -7,7 +7,7 @@ package com.oracle.bmc.vbsinst.requests;
 import com.oracle.bmc.vbsinst.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/vbsinst/ListVbsInstancesExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/vbsinst/ListVbsInstancesExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListVbsInstancesRequest.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180828")

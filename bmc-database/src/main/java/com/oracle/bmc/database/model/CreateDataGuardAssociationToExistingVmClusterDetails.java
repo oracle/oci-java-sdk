@@ -103,7 +103,7 @@ public final class CreateDataGuardAssociationToExistingVmClusterDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * VM Cluster in which to create the standby database. You must supply this value if
          * creationType is {@code ExistingVmCluster}.
          */
@@ -111,7 +111,7 @@ public final class CreateDataGuardAssociationToExistingVmClusterDetails
         private String peerVmClusterId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * VM Cluster in which to create the standby database. You must supply this value if
          * creationType is {@code ExistingVmCluster}.
          *
@@ -124,7 +124,7 @@ public final class CreateDataGuardAssociationToExistingVmClusterDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * DB home in which to create the standby database. You must supply this value to create
          * standby database with an existing DB home
          */
@@ -132,7 +132,7 @@ public final class CreateDataGuardAssociationToExistingVmClusterDetails
         private String peerDbHomeId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * DB home in which to create the standby database. You must supply this value to create
          * standby database with an existing DB home
          *
@@ -239,7 +239,7 @@ public final class CreateDataGuardAssociationToExistingVmClusterDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VM
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM
      * Cluster in which to create the standby database. You must supply this value if creationType
      * is {@code ExistingVmCluster}.
      */
@@ -247,7 +247,7 @@ public final class CreateDataGuardAssociationToExistingVmClusterDetails
     private final String peerVmClusterId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VM
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM
      * Cluster in which to create the standby database. You must supply this value if creationType
      * is {@code ExistingVmCluster}.
      *
@@ -258,7 +258,7 @@ public final class CreateDataGuardAssociationToExistingVmClusterDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the DB
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB
      * home in which to create the standby database. You must supply this value to create standby
      * database with an existing DB home
      */
@@ -266,7 +266,7 @@ public final class CreateDataGuardAssociationToExistingVmClusterDetails
     private final String peerDbHomeId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the DB
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB
      * home in which to create the standby database. You must supply this value to create standby
      * database with an existing DB home
      *

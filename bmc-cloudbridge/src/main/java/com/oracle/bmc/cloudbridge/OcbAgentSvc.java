@@ -74,7 +74,7 @@ public interface OcbAgentSvc extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/AddAgentDependencyExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/AddAgentDependencyExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use AddAgentDependency
      *     API.
      */
@@ -91,7 +91,7 @@ public interface OcbAgentSvc extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/ChangeAgentCompartmentExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/ChangeAgentCompartmentExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ChangeAgentCompartment API.
      */
@@ -108,7 +108,7 @@ public interface OcbAgentSvc extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/ChangeAgentDependencyCompartmentExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/ChangeAgentDependencyCompartmentExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ChangeAgentDependencyCompartment API.
      */
@@ -126,7 +126,7 @@ public interface OcbAgentSvc extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/ChangeEnvironmentCompartmentExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/ChangeEnvironmentCompartmentExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ChangeEnvironmentCompartment API.
      */
@@ -143,7 +143,7 @@ public interface OcbAgentSvc extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/CreateAgentExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/CreateAgentExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateAgent API.
      */
     CreateAgentResponse createAgent(CreateAgentRequest request);
@@ -158,7 +158,7 @@ public interface OcbAgentSvc extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/CreateAgentDependencyExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/CreateAgentDependencyExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     CreateAgentDependency API.
      */
@@ -174,7 +174,7 @@ public interface OcbAgentSvc extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/CreateEnvironmentExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/CreateEnvironmentExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateEnvironment
      *     API.
      */
@@ -190,7 +190,7 @@ public interface OcbAgentSvc extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/DeleteAgentExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/DeleteAgentExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteAgent API.
      */
     DeleteAgentResponse deleteAgent(DeleteAgentRequest request);
@@ -205,7 +205,7 @@ public interface OcbAgentSvc extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/DeleteAgentDependencyExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/DeleteAgentDependencyExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     DeleteAgentDependency API.
      */
@@ -221,7 +221,7 @@ public interface OcbAgentSvc extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/DeleteEnvironmentExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/DeleteEnvironmentExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteEnvironment
      *     API.
      */
@@ -237,7 +237,7 @@ public interface OcbAgentSvc extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/GetAgentExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/GetAgentExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetAgent API.
      */
     GetAgentResponse getAgent(GetAgentRequest request);
@@ -252,7 +252,7 @@ public interface OcbAgentSvc extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/GetAgentDependencyExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/GetAgentDependencyExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetAgentDependency
      *     API.
      */
@@ -268,7 +268,7 @@ public interface OcbAgentSvc extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/GetEnvironmentExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/GetEnvironmentExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetEnvironment API.
      */
     GetEnvironmentResponse getEnvironment(GetEnvironmentRequest request);
@@ -283,7 +283,7 @@ public interface OcbAgentSvc extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/GetPluginExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/GetPluginExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetPlugin API.
      */
     GetPluginResponse getPlugin(GetPluginRequest request);
@@ -298,7 +298,7 @@ public interface OcbAgentSvc extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/ListAgentDependenciesExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/ListAgentDependenciesExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ListAgentDependencies API.
      */
@@ -314,7 +314,7 @@ public interface OcbAgentSvc extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/ListAgentsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/ListAgentsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListAgents API.
      */
     ListAgentsResponse listAgents(ListAgentsRequest request);
@@ -329,7 +329,7 @@ public interface OcbAgentSvc extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/ListApplianceImagesExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/ListApplianceImagesExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListApplianceImages
      *     API.
      */
@@ -345,7 +345,7 @@ public interface OcbAgentSvc extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/ListEnvironmentsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/ListEnvironmentsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListEnvironments
      *     API.
      */
@@ -362,7 +362,7 @@ public interface OcbAgentSvc extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/RemoveAgentDependencyExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/RemoveAgentDependencyExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     RemoveAgentDependency API.
      */
@@ -378,7 +378,7 @@ public interface OcbAgentSvc extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/UpdateAgentExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/UpdateAgentExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateAgent API.
      */
     UpdateAgentResponse updateAgent(UpdateAgentRequest request);
@@ -393,7 +393,7 @@ public interface OcbAgentSvc extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/UpdateAgentDependencyExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/UpdateAgentDependencyExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     UpdateAgentDependency API.
      */
@@ -409,7 +409,7 @@ public interface OcbAgentSvc extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/UpdateEnvironmentExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/UpdateEnvironmentExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateEnvironment
      *     API.
      */
@@ -425,7 +425,7 @@ public interface OcbAgentSvc extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/UpdatePluginExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/UpdatePluginExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdatePlugin API.
      */
     UpdatePluginResponse updatePlugin(UpdatePluginRequest request);

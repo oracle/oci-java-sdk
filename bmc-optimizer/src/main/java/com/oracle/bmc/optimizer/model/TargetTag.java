@@ -8,7 +8,7 @@ package com.oracle.bmc.optimizer.model;
  * A tag key definition used in the current profile override, including the tag namespace, tag key,
  * tag value type, and tag values. Only defined tags are supported. For more information about
  * tagging, see [Tagging
- * Overview](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/taggingoverview.htm) <br>
+ * Overview](https://docs.oracle.com/iaas/Content/Tagging/Concepts/taggingoverview.htm) <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a

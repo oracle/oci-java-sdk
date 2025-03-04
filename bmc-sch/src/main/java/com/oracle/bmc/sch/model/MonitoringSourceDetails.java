@@ -7,7 +7,7 @@ package com.oracle.bmc.sch.model;
 /**
  * The Monitoring source. For configuration instructions, see [Creating a Connector with a
  * Monitoring
- * Source](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector-monitoring-source.htm).
+ * Source](https://docs.oracle.com/iaas/Content/connector-hub/create-service-connector-monitoring-source.htm).
  * <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly

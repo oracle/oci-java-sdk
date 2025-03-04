@@ -511,14 +511,14 @@ public final class CreateRefreshableAutonomousDatabaseCloneDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * source Autonomous Database that you will clone to create a new Autonomous Database.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("sourceId")
         private String sourceId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * source Autonomous Database that you will clone to create a new Autonomous Database.
          *
          * @param sourceId the value to set
@@ -1032,14 +1032,14 @@ public final class CreateRefreshableAutonomousDatabaseCloneDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * source Autonomous Database that you will clone to create a new Autonomous Database.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("sourceId")
     private final String sourceId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * source Autonomous Database that you will clone to create a new Autonomous Database.
      *
      * @return the value

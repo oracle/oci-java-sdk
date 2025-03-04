@@ -219,14 +219,14 @@ public class FsuCollectionSummary
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of last
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of last
      * completed FSU Cycle.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("lastCompletedFsuCycleId")
     private final String lastCompletedFsuCycleId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of last
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of last
      * completed FSU Cycle.
      *
      * @return the value

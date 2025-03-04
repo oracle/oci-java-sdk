@@ -6,17 +6,17 @@ package com.oracle.bmc.loadbalancer.model;
 
 /**
  * The properties that define a load balancer. For more information, see [Managing a Load
- * Balancer](https://docs.cloud.oracle.com/Content/Balance/Tasks/managingloadbalancer.htm).
+ * Balancer](https://docs.oracle.com/iaas/Content/Balance/Tasks/managingloadbalancer.htm).
  *
  * <p>To use any of the API operations, you must be authorized in an IAM policy. If you're not
  * authorized, talk to an administrator. If you're an administrator who needs to write policies to
  * give users access, see [Getting Started with
- * Policies](https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm).
+ * Policies](https://docs.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
  *
  * <p>For information about endpoints and signing API requests, see [About the
- * API](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm). For information about
+ * API](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm). For information about
  * available SDKs and tools, see [SDKS and Other
- * Tools](https://docs.cloud.oracle.com/Content/API/Concepts/sdks.htm). <br>
+ * Tools](https://docs.oracle.com/iaas/Content/API/Concepts/sdks.htm). <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -119,14 +119,14 @@ public final class LoadBalancer extends com.oracle.bmc.http.client.internal.Expl
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * load balancer.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * load balancer.
          *
          * @param id the value to set
@@ -138,14 +138,14 @@ public final class LoadBalancer extends com.oracle.bmc.http.client.internal.Expl
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * compartment containing the load balancer.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * compartment containing the load balancer.
          *
          * @param compartmentId the value to set
@@ -271,9 +271,9 @@ public final class LoadBalancer extends com.oracle.bmc.http.client.internal.Expl
          *
          * <p>A public load balancer is accessible from the internet, depending on your VCN's
          * [security list
-         * rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securitylists.htm). For
-         * more information about public and private load balancers, see [How Load Balancing
-         * Works](https://docs.cloud.oracle.com/Content/Balance/Concepts/balanceoverview.htm#how-load-balancing-works).
+         * rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securitylists.htm). For more
+         * information about public and private load balancers, see [How Load Balancing
+         * Works](https://docs.oracle.com/iaas/Content/Balance/Concepts/balanceoverview.htm#how-load-balancing-works).
          *
          * <p>Example: {@code true}
          */
@@ -289,9 +289,9 @@ public final class LoadBalancer extends com.oracle.bmc.http.client.internal.Expl
          *
          * <p>A public load balancer is accessible from the internet, depending on your VCN's
          * [security list
-         * rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securitylists.htm). For
-         * more information about public and private load balancers, see [How Load Balancing
-         * Works](https://docs.cloud.oracle.com/Content/Balance/Concepts/balanceoverview.htm#how-load-balancing-works).
+         * rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securitylists.htm). For more
+         * information about public and private load balancers, see [How Load Balancing
+         * Works](https://docs.oracle.com/iaas/Content/Balance/Concepts/balanceoverview.htm#how-load-balancing-works).
          *
          * <p>Example: {@code true}
          *
@@ -412,14 +412,14 @@ public final class LoadBalancer extends com.oracle.bmc.http.client.internal.Expl
         }
         /**
          * An array of subnet
-         * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("subnetIds")
         private java.util.List<String> subnetIds;
 
         /**
          * An array of subnet
-         * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          * @param subnetIds the value to set
          * @return this builder
@@ -431,8 +431,8 @@ public final class LoadBalancer extends com.oracle.bmc.http.client.internal.Expl
         }
         /**
          * An array of NSG
-         * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
-         * associated with the load balancer.
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated
+         * with the load balancer.
          *
          * <p>During the load balancer's creation, the service adds the new load balancer to the
          * specified NSGs.
@@ -452,8 +452,8 @@ public final class LoadBalancer extends com.oracle.bmc.http.client.internal.Expl
 
         /**
          * An array of NSG
-         * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
-         * associated with the load balancer.
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated
+         * with the load balancer.
          *
          * <p>During the load balancer's creation, the service adds the new load balancer to the
          * specified NSGs.
@@ -533,7 +533,7 @@ public final class LoadBalancer extends com.oracle.bmc.http.client.internal.Expl
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          */
@@ -543,7 +543,7 @@ public final class LoadBalancer extends com.oracle.bmc.http.client.internal.Expl
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          *
@@ -558,7 +558,7 @@ public final class LoadBalancer extends com.oracle.bmc.http.client.internal.Expl
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
          */
@@ -568,7 +568,7 @@ public final class LoadBalancer extends com.oracle.bmc.http.client.internal.Expl
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
@@ -610,7 +610,7 @@ public final class LoadBalancer extends com.oracle.bmc.http.client.internal.Expl
         /**
          * System tags for this resource. Each key is predefined and scoped to a namespace. For more
          * information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). System
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System
          * tags can be viewed by users, but can only be created by the system.
          *
          * <p>Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
@@ -621,7 +621,7 @@ public final class LoadBalancer extends com.oracle.bmc.http.client.internal.Expl
         /**
          * System tags for this resource. Each key is predefined and scoped to a namespace. For more
          * information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). System
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System
          * tags can be viewed by users, but can only be created by the system.
          *
          * <p>Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
@@ -785,15 +785,15 @@ public final class LoadBalancer extends com.oracle.bmc.http.client.internal.Expl
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * load balancer.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load
+     * balancer.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * load balancer.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load
+     * balancer.
      *
      * @return the value
      */
@@ -802,14 +802,14 @@ public final class LoadBalancer extends com.oracle.bmc.http.client.internal.Expl
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment containing the load balancer.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment containing the load balancer.
      *
      * @return the value
@@ -969,9 +969,9 @@ public final class LoadBalancer extends com.oracle.bmc.http.client.internal.Expl
      * <p>If "false", the service assigns a public IP address to the load balancer.
      *
      * <p>A public load balancer is accessible from the internet, depending on your VCN's [security
-     * list rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securitylists.htm). For
+     * list rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securitylists.htm). For
      * more information about public and private load balancers, see [How Load Balancing
-     * Works](https://docs.cloud.oracle.com/Content/Balance/Concepts/balanceoverview.htm#how-load-balancing-works).
+     * Works](https://docs.oracle.com/iaas/Content/Balance/Concepts/balanceoverview.htm#how-load-balancing-works).
      *
      * <p>Example: {@code true}
      */
@@ -986,9 +986,9 @@ public final class LoadBalancer extends com.oracle.bmc.http.client.internal.Expl
      * <p>If "false", the service assigns a public IP address to the load balancer.
      *
      * <p>A public load balancer is accessible from the internet, depending on your VCN's [security
-     * list rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securitylists.htm). For
+     * list rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securitylists.htm). For
      * more information about public and private load balancers, see [How Load Balancing
-     * Works](https://docs.cloud.oracle.com/Content/Balance/Concepts/balanceoverview.htm#how-load-balancing-works).
+     * Works](https://docs.oracle.com/iaas/Content/Balance/Concepts/balanceoverview.htm#how-load-balancing-works).
      *
      * <p>Example: {@code true}
      *
@@ -1097,14 +1097,14 @@ public final class LoadBalancer extends com.oracle.bmc.http.client.internal.Expl
 
     /**
      * An array of subnet
-     * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("subnetIds")
     private final java.util.List<String> subnetIds;
 
     /**
      * An array of subnet
-     * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      * @return the value
      */
@@ -1114,7 +1114,7 @@ public final class LoadBalancer extends com.oracle.bmc.http.client.internal.Expl
 
     /**
      * An array of NSG
-     * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) associated
+     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated
      * with the load balancer.
      *
      * <p>During the load balancer's creation, the service adds the new load balancer to the
@@ -1135,7 +1135,7 @@ public final class LoadBalancer extends com.oracle.bmc.http.client.internal.Expl
 
     /**
      * An array of NSG
-     * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) associated
+     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated
      * with the load balancer.
      *
      * <p>During the load balancer's creation, the service adds the new load balancer to the
@@ -1202,7 +1202,7 @@ public final class LoadBalancer extends com.oracle.bmc.http.client.internal.Expl
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      */
@@ -1212,7 +1212,7 @@ public final class LoadBalancer extends com.oracle.bmc.http.client.internal.Expl
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      *
@@ -1225,7 +1225,7 @@ public final class LoadBalancer extends com.oracle.bmc.http.client.internal.Expl
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
      */
@@ -1235,7 +1235,7 @@ public final class LoadBalancer extends com.oracle.bmc.http.client.internal.Expl
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
@@ -1271,7 +1271,7 @@ public final class LoadBalancer extends com.oracle.bmc.http.client.internal.Expl
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). System tags
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags
      * can be viewed by users, but can only be created by the system.
      *
      * <p>Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
@@ -1282,7 +1282,7 @@ public final class LoadBalancer extends com.oracle.bmc.http.client.internal.Expl
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). System tags
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags
      * can be viewed by users, but can only be created by the system.
      *
      * <p>Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}

@@ -64,7 +64,7 @@ public final class EgressSecurityRule
          * <p>IP address range in CIDR notation. For example: {@code 192.168.1.0/24} or {@code
          * 2001:0db8:0123:45::/56} Note that IPv6 addressing is currently supported only in certain
          * regions. See [IPv6
-         * Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+         * Addresses](https://docs.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
          *
          * <p>The {@code cidrBlock} value for a {@link Service}, if you're setting up a security
          * list rule for traffic destined for a particular {@code Service} through a service
@@ -82,7 +82,7 @@ public final class EgressSecurityRule
          * <p>IP address range in CIDR notation. For example: {@code 192.168.1.0/24} or {@code
          * 2001:0db8:0123:45::/56} Note that IPv6 addressing is currently supported only in certain
          * regions. See [IPv6
-         * Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+         * Addresses](https://docs.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
          *
          * <p>The {@code cidrBlock} value for a {@link Service}, if you're setting up a security
          * list rule for traffic destined for a particular {@code Service} through a service
@@ -290,7 +290,7 @@ public final class EgressSecurityRule
      * <p>IP address range in CIDR notation. For example: {@code 192.168.1.0/24} or {@code
      * 2001:0db8:0123:45::/56} Note that IPv6 addressing is currently supported only in certain
      * regions. See [IPv6
-     * Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+     * Addresses](https://docs.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
      *
      * <p>The {@code cidrBlock} value for a {@link Service}, if you're setting up a security list
      * rule for traffic destined for a particular {@code Service} through a service gateway. For
@@ -308,7 +308,7 @@ public final class EgressSecurityRule
      * <p>IP address range in CIDR notation. For example: {@code 192.168.1.0/24} or {@code
      * 2001:0db8:0123:45::/56} Note that IPv6 addressing is currently supported only in certain
      * regions. See [IPv6
-     * Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+     * Addresses](https://docs.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
      *
      * <p>The {@code cidrBlock} value for a {@link Service}, if you're setting up a security list
      * rule for traffic destined for a particular {@code Service} through a service gateway. For

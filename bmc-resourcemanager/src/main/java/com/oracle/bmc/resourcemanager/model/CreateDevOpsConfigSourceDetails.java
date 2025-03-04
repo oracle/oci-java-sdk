@@ -5,7 +5,7 @@
 package com.oracle.bmc.resourcemanager.model;
 
 /**
- * Creation details for a [DevOps](https://docs.cloud.oracle.com/iaas/Content/devops/using/home.htm)
+ * Creation details for a [DevOps](https://docs.oracle.com/iaas/Content/devops/using/home.htm)
  * configuration source. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
@@ -37,15 +37,15 @@ public final class CreateDevOpsConfigSourceDetails extends CreateConfigSourceDet
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the {@link Project}.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * {@link Project}.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("projectId")
         private String projectId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the {@link Project}.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * {@link Project}.
          *
          * @param projectId the value to set
          * @return this builder
@@ -56,15 +56,15 @@ public final class CreateDevOpsConfigSourceDetails extends CreateConfigSourceDet
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the {@link Repository}.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * {@link Repository}.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("repositoryId")
         private String repositoryId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the {@link Repository}.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * {@link Repository}.
          *
          * @param repositoryId the value to set
          * @return this builder
@@ -143,15 +143,15 @@ public final class CreateDevOpsConfigSourceDetails extends CreateConfigSourceDet
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the {@link Project}.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * {@link Project}.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("projectId")
     private final String projectId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the {@link Project}.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * {@link Project}.
      *
      * @return the value
      */
@@ -160,15 +160,15 @@ public final class CreateDevOpsConfigSourceDetails extends CreateConfigSourceDet
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the {@link Repository}.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * {@link Repository}.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("repositoryId")
     private final String repositoryId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the {@link Repository}.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * {@link Repository}.
      *
      * @return the value
      */

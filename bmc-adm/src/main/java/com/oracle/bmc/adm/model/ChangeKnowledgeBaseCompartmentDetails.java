@@ -33,7 +33,7 @@ public final class ChangeKnowledgeBaseCompartmentDetails
     public static class Builder {
         /**
          * The compartment Oracle Cloud Identifier
-         * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) to which
+         * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) to which
          * the resource must be moved.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
@@ -41,7 +41,7 @@ public final class ChangeKnowledgeBaseCompartmentDetails
 
         /**
          * The compartment Oracle Cloud Identifier
-         * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) to which
+         * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) to which
          * the resource must be moved.
          *
          * @param compartmentId the value to set
@@ -85,7 +85,7 @@ public final class ChangeKnowledgeBaseCompartmentDetails
 
     /**
      * The compartment Oracle Cloud Identifier
-     * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) to which the
+     * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) to which the
      * resource must be moved.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
@@ -93,7 +93,7 @@ public final class ChangeKnowledgeBaseCompartmentDetails
 
     /**
      * The compartment Oracle Cloud Identifier
-     * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) to which the
+     * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) to which the
      * resource must be moved.
      *
      * @return the value

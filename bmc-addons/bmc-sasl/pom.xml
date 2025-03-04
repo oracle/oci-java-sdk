@@ -5,14 +5,14 @@
   <parent>
     <groupId>com.oracle.oci.sdk</groupId>
     <artifactId>oci-java-sdk-addons</artifactId>
-    <version>3.58.0</version>
+    <version>3.59.0</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
 
   <artifactId>oci-java-sdk-addons-sasl</artifactId>
   <name>Oracle Cloud Infrastructure SDK - SASL Client</name>
   <description>This project contains the SASL client used for Oracle Cloud Infrastructure</description>
-  <url>https://docs.us-phoenix-1.oraclecloud.com/Content/API/SDKDocs/javasdk.htm</url>
+  <url>https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/SDKDocs/javasdk.htm</url>
 
 
   <build>
@@ -60,7 +60,7 @@
     <dependency>
       <groupId>com.oracle.oci.sdk</groupId>
       <artifactId>oci-java-sdk-common</artifactId>
-      <version>3.58.0</version>
+      <version>3.59.0</version>
     </dependency>
   </dependencies>
 

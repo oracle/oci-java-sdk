@@ -49,14 +49,14 @@ public final class CreateDatabaseToolsRelatedResourceDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * related resource.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("identifier")
         private String identifier;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * related resource.
          *
          * @param identifier the value to set
@@ -115,14 +115,14 @@ public final class CreateDatabaseToolsRelatedResourceDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * related resource.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("identifier")
     private final String identifier;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * related resource.
      *
      * @return the value

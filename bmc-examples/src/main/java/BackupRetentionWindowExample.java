@@ -52,9 +52,9 @@ import java.util.concurrent.TimeUnit;
  * <ul>
  *   <li>Create a VCN and subnet for the DB system and its related resources
  *   <li>Launch a DB system containing a single DB home and database. See: <a
- *       href="https://docs.cloud.oracle.com/Content/Database/Concepts/overview.htm">overview</a>
- *       and <a href="https://docs.cloud.oracle.com/Content/Database/Tasks/launchingDB.htm">managing
- *       DB systems</a> for more information
+ *       href="https://docs.oracle.com/iaas/Content/Database/Concepts/overview.htm">overview</a> and
+ *       <a href="https://docs.oracle.com/iaas/Content/Database/Tasks/launchingDB.htm">managing DB
+ *       systems</a> for more information
  * </ul>
  *
  * <p>Resources created by this class will be removed when this example is done.

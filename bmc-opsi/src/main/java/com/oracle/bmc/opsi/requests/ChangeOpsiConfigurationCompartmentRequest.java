@@ -7,7 +7,7 @@ package com.oracle.bmc.opsi.requests;
 import com.oracle.bmc.opsi.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/ChangeOpsiConfigurationCompartmentExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/ChangeOpsiConfigurationCompartmentExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * ChangeOpsiConfigurationCompartmentRequest.
  */
@@ -17,13 +17,13 @@ public class ChangeOpsiConfigurationCompartmentRequest
                 com.oracle.bmc.opsi.model.ChangeOpsiConfigurationCompartmentDetails> {
 
     /**
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of OPSI
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of OPSI
      * configuration resource.
      */
     private String opsiConfigurationId;
 
     /**
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of OPSI
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of OPSI
      * configuration resource.
      */
     public String getOpsiConfigurationId() {
@@ -107,14 +107,14 @@ public class ChangeOpsiConfigurationCompartmentRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-         * OPSI configuration resource.
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of OPSI
+         * configuration resource.
          */
         private String opsiConfigurationId = null;
 
         /**
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-         * OPSI configuration resource.
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of OPSI
+         * configuration resource.
          *
          * @param opsiConfigurationId the value to set
          * @return this builder instance

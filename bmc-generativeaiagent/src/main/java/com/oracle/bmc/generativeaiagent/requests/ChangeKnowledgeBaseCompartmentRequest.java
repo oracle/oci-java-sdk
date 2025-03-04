@@ -7,7 +7,7 @@ package com.oracle.bmc.generativeaiagent.requests;
 import com.oracle.bmc.generativeaiagent.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeaiagent/ChangeKnowledgeBaseCompartmentExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeaiagent/ChangeKnowledgeBaseCompartmentExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * ChangeKnowledgeBaseCompartmentRequest.
  */
@@ -17,14 +17,14 @@ public class ChangeKnowledgeBaseCompartmentRequest
                 com.oracle.bmc.generativeaiagent.model.ChangeKnowledgeBaseCompartmentDetails> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the knowledge base.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * knowledge base.
      */
     private String knowledgeBaseId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the knowledge base.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * knowledge base.
      */
     public String getKnowledgeBaseId() {
         return knowledgeBaseId;
@@ -109,14 +109,14 @@ public class ChangeKnowledgeBaseCompartmentRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the knowledge base.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * knowledge base.
          */
         private String knowledgeBaseId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the knowledge base.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * knowledge base.
          *
          * @param knowledgeBaseId the value to set
          * @return this builder instance

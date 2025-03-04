@@ -79,17 +79,17 @@ public final class AddDrgRouteRuleDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the next hop DRG attachment. The next hop DRG attachment is responsible for reaching
-         * the network destination.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * next hop DRG attachment. The next hop DRG attachment is responsible for reaching the
+         * network destination.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("nextHopDrgAttachmentId")
         private String nextHopDrgAttachmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the next hop DRG attachment. The next hop DRG attachment is responsible for reaching
-         * the network destination.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * next hop DRG attachment. The next hop DRG attachment is responsible for reaching the
+         * network destination.
          *
          * @param nextHopDrgAttachmentId the value to set
          * @return this builder
@@ -213,17 +213,17 @@ public final class AddDrgRouteRuleDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the next hop DRG attachment. The next hop DRG attachment is responsible for reaching the
-     * network destination.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next
+     * hop DRG attachment. The next hop DRG attachment is responsible for reaching the network
+     * destination.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("nextHopDrgAttachmentId")
     private final String nextHopDrgAttachmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the next hop DRG attachment. The next hop DRG attachment is responsible for reaching the
-     * network destination.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next
+     * hop DRG attachment. The next hop DRG attachment is responsible for reaching the network
+     * destination.
      *
      * @return the value
      */

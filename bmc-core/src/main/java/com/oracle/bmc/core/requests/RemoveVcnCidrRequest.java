@@ -7,7 +7,7 @@ package com.oracle.bmc.core.requests;
 import com.oracle.bmc.core.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/RemoveVcnCidrExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/RemoveVcnCidrExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use RemoveVcnCidrRequest.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
@@ -15,16 +15,14 @@ public class RemoveVcnCidrRequest
         extends com.oracle.bmc.requests.BmcRequest<com.oracle.bmc.core.model.RemoveVcnCidrDetails> {
 
     /**
-     * Specify the
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * VCN.
+     * Specify the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the VCN.
      */
     private String vcnId;
 
     /**
-     * Specify the
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * VCN.
+     * Specify the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the VCN.
      */
     public String getVcnId() {
         return vcnId;
@@ -104,16 +102,14 @@ public class RemoveVcnCidrRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * Specify the
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-         * the VCN.
+         * Specify the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the VCN.
          */
         private String vcnId = null;
 
         /**
-         * Specify the
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-         * the VCN.
+         * Specify the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the VCN.
          *
          * @param vcnId the value to set
          * @return this builder instance

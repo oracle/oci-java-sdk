@@ -7,7 +7,7 @@ package com.oracle.bmc.opsi.requests;
 import com.oracle.bmc.opsi.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/SummarizeExadataInsightResourceForecastTrendAggregatedExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/SummarizeExadataInsightResourceForecastTrendAggregatedExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * SummarizeExadataInsightResourceForecastTrendAggregatedRequest.
  */
@@ -34,14 +34,14 @@ public class SummarizeExadataInsightResourceForecastTrendAggregatedRequest
         return resourceMetric;
     }
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compartment.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment.
      */
     private String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compartment.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment.
      */
     public String getCompartmentId() {
         return compartmentId;
@@ -97,13 +97,13 @@ public class SummarizeExadataInsightResourceForecastTrendAggregatedRequest
     }
     /**
      * Optional list of exadata insight resource
-     * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     private java.util.List<String> exadataInsightId;
 
     /**
      * Optional list of exadata insight resource
-     * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     public java.util.List<String> getExadataInsightId() {
         return exadataInsightId;
@@ -261,14 +261,14 @@ public class SummarizeExadataInsightResourceForecastTrendAggregatedRequest
     /**
      * For list pagination. The value of the {@code opc-next-page} response header from the previous
      * "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private String page;
 
     /**
      * For list pagination. The value of the {@code opc-next-page} response header from the previous
      * "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     public String getPage() {
         return page;
@@ -411,14 +411,14 @@ public class SummarizeExadataInsightResourceForecastTrendAggregatedRequest
         }
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compartment.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment.
          */
         private String compartmentId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compartment.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment.
          *
          * @param compartmentId the value to set
          * @return this builder instance
@@ -496,13 +496,13 @@ public class SummarizeExadataInsightResourceForecastTrendAggregatedRequest
 
         /**
          * Optional list of exadata insight resource
-         * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          */
         private java.util.List<String> exadataInsightId = null;
 
         /**
          * Optional list of exadata insight resource
-         * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          * @param exadataInsightId the value to set
          * @return this builder instance
@@ -514,7 +514,7 @@ public class SummarizeExadataInsightResourceForecastTrendAggregatedRequest
 
         /**
          * Singular setter. Optional list of exadata insight resource
-         * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          * @param singularValue the singular value to set
          * @return this builder instance
@@ -685,14 +685,14 @@ public class SummarizeExadataInsightResourceForecastTrendAggregatedRequest
         /**
          * For list pagination. The value of the {@code opc-next-page} response header from the
          * previous "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private String page = null;
 
         /**
          * For list pagination. The value of the {@code opc-next-page} response header from the
          * previous "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param page the value to set
          * @return this builder instance

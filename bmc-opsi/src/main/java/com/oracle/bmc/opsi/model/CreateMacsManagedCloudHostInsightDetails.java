@@ -55,15 +55,15 @@ public final class CreateMacsManagedCloudHostInsightDetails extends CreateHostIn
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the Compute Instance
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Compute Instance
          */
         @com.fasterxml.jackson.annotation.JsonProperty("computeId")
         private String computeId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the Compute Instance
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Compute Instance
          *
          * @param computeId the value to set
          * @return this builder
@@ -128,15 +128,15 @@ public final class CreateMacsManagedCloudHostInsightDetails extends CreateHostIn
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the Compute Instance
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Compute Instance
      */
     @com.fasterxml.jackson.annotation.JsonProperty("computeId")
     private final String computeId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the Compute Instance
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Compute Instance
      *
      * @return the value
      */

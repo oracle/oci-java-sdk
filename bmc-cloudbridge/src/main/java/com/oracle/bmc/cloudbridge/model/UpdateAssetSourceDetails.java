@@ -76,14 +76,14 @@ public class UpdateAssetSourceDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment that is going to be used to create assets.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("assetsCompartmentId")
     private final String assetsCompartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment that is going to be used to create assets.
      *
      * @return the value
@@ -93,14 +93,14 @@ public class UpdateAssetSourceDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * discovery schedule that is going to be assigned to an asset source.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("discoveryScheduleId")
     private final String discoveryScheduleId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * discovery schedule that is going to be assigned to an asset source.
      *
      * @return the value
@@ -112,7 +112,7 @@ public class UpdateAssetSourceDetails
     /**
      * The freeform tags associated with this resource, if any. Each tag is a simple key-value pair
      * with no predefined name, type, or namespace/scope. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Department": "Finance"}}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -121,7 +121,7 @@ public class UpdateAssetSourceDetails
     /**
      * The freeform tags associated with this resource, if any. Each tag is a simple key-value pair
      * with no predefined name, type, or namespace/scope. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Department": "Finance"}}
      *
      * @return the value
@@ -133,7 +133,7 @@ public class UpdateAssetSourceDetails
     /**
      * The defined tags associated with this resource, if any. Each key is predefined and scoped to
      * namespaces. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Operations": {"CostCenter": "42"}}}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -142,7 +142,7 @@ public class UpdateAssetSourceDetails
     /**
      * The defined tags associated with this resource, if any. Each key is predefined and scoped to
      * namespaces. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Operations": {"CostCenter": "42"}}}
      *
      * @return the value
@@ -155,7 +155,7 @@ public class UpdateAssetSourceDetails
      * The system tags associated with this resource, if any. The system tags are set by Oracle
      * cloud infrastructure services. Each key is predefined and scoped to namespaces. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {orcl-cloud: {free-tier-retain: true}}}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
@@ -165,7 +165,7 @@ public class UpdateAssetSourceDetails
      * The system tags associated with this resource, if any. The system tags are set by Oracle
      * cloud infrastructure services. Each key is predefined and scoped to namespaces. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {orcl-cloud: {free-tier-retain: true}}}
      *
      * @return the value

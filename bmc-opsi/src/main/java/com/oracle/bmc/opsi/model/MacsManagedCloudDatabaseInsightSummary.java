@@ -205,15 +205,15 @@ public final class MacsManagedCloudDatabaseInsightSummary extends DatabaseInsigh
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the Management Agent
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Management Agent
          */
         @com.fasterxml.jackson.annotation.JsonProperty("managementAgentId")
         private String managementAgentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the Management Agent
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Management Agent
          *
          * @param managementAgentId the value to set
          * @return this builder
@@ -224,17 +224,15 @@ public final class MacsManagedCloudDatabaseInsightSummary extends DatabaseInsigh
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the VM Cluster or DB System ID, depending on which configuration the resource belongs
-         * to.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * VM Cluster or DB System ID, depending on which configuration the resource belongs to.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("parentId")
         private String parentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the VM Cluster or DB System ID, depending on which configuration the resource belongs
-         * to.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * VM Cluster or DB System ID, depending on which configuration the resource belongs to.
          *
          * @param parentId the value to set
          * @return this builder
@@ -245,17 +243,17 @@ public final class MacsManagedCloudDatabaseInsightSummary extends DatabaseInsigh
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the root resource for a composite target. e.g. for ExaCS members the rootId will be
-         * the OCID of the Exadata Infrastructure resource.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * root resource for a composite target. e.g. for ExaCS members the rootId will be the OCID
+         * of the Exadata Infrastructure resource.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("rootId")
         private String rootId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the root resource for a composite target. e.g. for ExaCS members the rootId will be
-         * the OCID of the Exadata Infrastructure resource.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * root resource for a composite target. e.g. for ExaCS members the rootId will be the OCID
+         * of the Exadata Infrastructure resource.
          *
          * @param rootId the value to set
          * @return this builder
@@ -444,15 +442,15 @@ public final class MacsManagedCloudDatabaseInsightSummary extends DatabaseInsigh
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the Management Agent
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Management Agent
      */
     @com.fasterxml.jackson.annotation.JsonProperty("managementAgentId")
     private final String managementAgentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the Management Agent
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Management Agent
      *
      * @return the value
      */
@@ -461,15 +459,15 @@ public final class MacsManagedCloudDatabaseInsightSummary extends DatabaseInsigh
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the VM Cluster or DB System ID, depending on which configuration the resource belongs to.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM
+     * Cluster or DB System ID, depending on which configuration the resource belongs to.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("parentId")
     private final String parentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the VM Cluster or DB System ID, depending on which configuration the resource belongs to.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM
+     * Cluster or DB System ID, depending on which configuration the resource belongs to.
      *
      * @return the value
      */
@@ -478,17 +476,17 @@ public final class MacsManagedCloudDatabaseInsightSummary extends DatabaseInsigh
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the root resource for a composite target. e.g. for ExaCS members the rootId will be the OCID
-     * of the Exadata Infrastructure resource.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the root
+     * resource for a composite target. e.g. for ExaCS members the rootId will be the OCID of the
+     * Exadata Infrastructure resource.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("rootId")
     private final String rootId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the root resource for a composite target. e.g. for ExaCS members the rootId will be the OCID
-     * of the Exadata Infrastructure resource.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the root
+     * resource for a composite target. e.g. for ExaCS members the rootId will be the OCID of the
+     * Exadata Infrastructure resource.
      *
      * @return the value
      */

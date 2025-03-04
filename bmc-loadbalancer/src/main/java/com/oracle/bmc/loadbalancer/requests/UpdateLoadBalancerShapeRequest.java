@@ -7,7 +7,7 @@ package com.oracle.bmc.loadbalancer.requests;
 import com.oracle.bmc.loadbalancer.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/UpdateLoadBalancerShapeExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/UpdateLoadBalancerShapeExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * UpdateLoadBalancerShapeRequest.
  */
@@ -17,14 +17,14 @@ public class UpdateLoadBalancerShapeRequest
                 com.oracle.bmc.loadbalancer.model.UpdateLoadBalancerShapeDetails> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the load balancer whose shape will be updated.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load
+     * balancer whose shape will be updated.
      */
     private String loadBalancerId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the load balancer whose shape will be updated.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load
+     * balancer whose shape will be updated.
      */
     public String getLoadBalancerId() {
         return loadBalancerId;
@@ -121,14 +121,14 @@ public class UpdateLoadBalancerShapeRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the load balancer whose shape will be updated.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * load balancer whose shape will be updated.
          */
         private String loadBalancerId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the load balancer whose shape will be updated.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * load balancer whose shape will be updated.
          *
          * @param loadBalancerId the value to set
          * @return this builder instance

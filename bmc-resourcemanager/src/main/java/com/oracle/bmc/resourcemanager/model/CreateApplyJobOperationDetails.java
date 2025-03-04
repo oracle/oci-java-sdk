@@ -65,16 +65,16 @@ public final class CreateApplyJobOperationDetails extends CreateJobOperationDeta
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of a plan job, for use when specifying {@code FROM_PLAN_JOB_ID} as the {@code
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
+         * plan job, for use when specifying {@code FROM_PLAN_JOB_ID} as the {@code
          * executionPlanStrategy}.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("executionPlanJobId")
         private String executionPlanJobId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of a plan job, for use when specifying {@code FROM_PLAN_JOB_ID} as the {@code
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
+         * plan job, for use when specifying {@code FROM_PLAN_JOB_ID} as the {@code
          * executionPlanStrategy}.
          *
          * @param executionPlanJobId the value to set
@@ -166,17 +166,15 @@ public final class CreateApplyJobOperationDetails extends CreateJobOperationDeta
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
-     * plan job, for use when specifying {@code FROM_PLAN_JOB_ID} as the {@code
-     * executionPlanStrategy}.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a plan
+     * job, for use when specifying {@code FROM_PLAN_JOB_ID} as the {@code executionPlanStrategy}.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("executionPlanJobId")
     private final String executionPlanJobId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
-     * plan job, for use when specifying {@code FROM_PLAN_JOB_ID} as the {@code
-     * executionPlanStrategy}.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a plan
+     * job, for use when specifying {@code FROM_PLAN_JOB_ID} as the {@code executionPlanStrategy}.
      *
      * @return the value
      */

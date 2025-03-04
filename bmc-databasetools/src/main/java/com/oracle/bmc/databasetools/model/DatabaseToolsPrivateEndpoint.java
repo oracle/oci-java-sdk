@@ -96,14 +96,14 @@ public final class DatabaseToolsPrivateEndpoint
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * compartment containing the Database Tools private endpoint.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * compartment containing the Database Tools private endpoint.
          *
          * @param compartmentId the value to set
@@ -222,14 +222,14 @@ public final class DatabaseToolsPrivateEndpoint
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Database Tools private endpoint.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Database Tools private endpoint.
          *
          * @param id the value to set
@@ -241,14 +241,14 @@ public final class DatabaseToolsPrivateEndpoint
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Database Tools Endpoint Service.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("endpointServiceId")
         private String endpointServiceId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Database Tools Endpoint Service.
          *
          * @param endpointServiceId the value to set
@@ -298,14 +298,14 @@ public final class DatabaseToolsPrivateEndpoint
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * VCN that the private endpoint belongs to.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("vcnId")
         private String vcnId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * VCN that the private endpoint belongs to.
          *
          * @param vcnId the value to set
@@ -317,14 +317,14 @@ public final class DatabaseToolsPrivateEndpoint
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * subnet that the private endpoint belongs to.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
         private String subnetId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * subnet that the private endpoint belongs to.
          *
          * @param subnetId the value to set
@@ -336,14 +336,14 @@ public final class DatabaseToolsPrivateEndpoint
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * private endpoint's VNIC.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("privateEndpointVnicId")
         private String privateEndpointVnicId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * private endpoint's VNIC.
          *
          * @param privateEndpointVnicId the value to set
@@ -438,7 +438,7 @@ public final class DatabaseToolsPrivateEndpoint
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * network security groups that the private endpoint's VNIC belongs to. For more information
          * about NSGs, see {@link NetworkSecurityGroup}.
          */
@@ -446,7 +446,7 @@ public final class DatabaseToolsPrivateEndpoint
         private java.util.List<String> nsgIds;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * network security groups that the private endpoint's VNIC belongs to. For more information
          * about NSGs, see {@link NetworkSecurityGroup}.
          *
@@ -583,14 +583,14 @@ public final class DatabaseToolsPrivateEndpoint
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment containing the Database Tools private endpoint.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment containing the Database Tools private endpoint.
      *
      * @return the value
@@ -694,14 +694,14 @@ public final class DatabaseToolsPrivateEndpoint
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Database Tools private endpoint.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Database Tools private endpoint.
      *
      * @return the value
@@ -711,14 +711,14 @@ public final class DatabaseToolsPrivateEndpoint
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Database Tools Endpoint Service.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("endpointServiceId")
     private final String endpointServiceId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Database Tools Endpoint Service.
      *
      * @return the value
@@ -762,14 +762,14 @@ public final class DatabaseToolsPrivateEndpoint
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VCN
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN
      * that the private endpoint belongs to.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("vcnId")
     private final String vcnId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VCN
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN
      * that the private endpoint belongs to.
      *
      * @return the value
@@ -779,14 +779,14 @@ public final class DatabaseToolsPrivateEndpoint
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * subnet that the private endpoint belongs to.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
     private final String subnetId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * subnet that the private endpoint belongs to.
      *
      * @return the value
@@ -796,14 +796,14 @@ public final class DatabaseToolsPrivateEndpoint
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * private endpoint's VNIC.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("privateEndpointVnicId")
     private final String privateEndpointVnicId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * private endpoint's VNIC.
      *
      * @return the value
@@ -884,7 +884,7 @@ public final class DatabaseToolsPrivateEndpoint
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * network security groups that the private endpoint's VNIC belongs to. For more information
      * about NSGs, see {@link NetworkSecurityGroup}.
      */
@@ -892,7 +892,7 @@ public final class DatabaseToolsPrivateEndpoint
     private final java.util.List<String> nsgIds;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * network security groups that the private endpoint's VNIC belongs to. For more information
      * about NSGs, see {@link NetworkSecurityGroup}.
      *

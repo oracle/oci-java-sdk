@@ -7,7 +7,7 @@ package com.oracle.bmc.marketplace.requests;
 import com.oracle.bmc.marketplace.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplace/DeleteAcceptedAgreementExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplace/DeleteAcceptedAgreementExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * DeleteAcceptedAgreementRequest.
  */

@@ -72,7 +72,7 @@ public final class SearchLogsDetails
          * Query corresponding to the search operation. This query is parsed and validated before
          * execution and should follow the specification. For more information on the query language
          * specification, see [Logging Query Language
-         * Specification](https://docs.cloud.oracle.com/Content/Logging/Reference/query_language_specification.htm).
+         * Specification](https://docs.oracle.com/iaas/Content/Logging/Reference/query_language_specification.htm).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("searchQuery")
         private String searchQuery;
@@ -81,7 +81,7 @@ public final class SearchLogsDetails
          * Query corresponding to the search operation. This query is parsed and validated before
          * execution and should follow the specification. For more information on the query language
          * specification, see [Logging Query Language
-         * Specification](https://docs.cloud.oracle.com/Content/Logging/Reference/query_language_specification.htm).
+         * Specification](https://docs.oracle.com/iaas/Content/Logging/Reference/query_language_specification.htm).
          *
          * @param searchQuery the value to set
          * @return this builder
@@ -179,7 +179,7 @@ public final class SearchLogsDetails
      * Query corresponding to the search operation. This query is parsed and validated before
      * execution and should follow the specification. For more information on the query language
      * specification, see [Logging Query Language
-     * Specification](https://docs.cloud.oracle.com/Content/Logging/Reference/query_language_specification.htm).
+     * Specification](https://docs.oracle.com/iaas/Content/Logging/Reference/query_language_specification.htm).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("searchQuery")
     private final String searchQuery;
@@ -188,7 +188,7 @@ public final class SearchLogsDetails
      * Query corresponding to the search operation. This query is parsed and validated before
      * execution and should follow the specification. For more information on the query language
      * specification, see [Logging Query Language
-     * Specification](https://docs.cloud.oracle.com/Content/Logging/Reference/query_language_specification.htm).
+     * Specification](https://docs.oracle.com/iaas/Content/Logging/Reference/query_language_specification.htm).
      *
      * @return the value
      */

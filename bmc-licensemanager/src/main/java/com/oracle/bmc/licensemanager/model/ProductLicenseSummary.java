@@ -96,14 +96,14 @@ public final class ProductLicenseSummary
     public static class Builder {
         /**
          * The product license
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * The product license
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          * @param id the value to set
          * @return this builder
@@ -115,16 +115,16 @@ public final class ProductLicenseSummary
         }
         /**
          * The compartment
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) where
-         * the product license is created.
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) where the
+         * product license is created.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * The compartment
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) where
-         * the product license is created.
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) where the
+         * product license is created.
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -558,14 +558,14 @@ public final class ProductLicenseSummary
 
     /**
      * The product license
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The product license
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      * @return the value
      */
@@ -574,17 +574,15 @@ public final class ProductLicenseSummary
     }
 
     /**
-     * The compartment
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) where the
-     * product license is created.
+     * The compartment [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * where the product license is created.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The compartment
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) where the
-     * product license is created.
+     * The compartment [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * where the product license is created.
      *
      * @return the value
      */

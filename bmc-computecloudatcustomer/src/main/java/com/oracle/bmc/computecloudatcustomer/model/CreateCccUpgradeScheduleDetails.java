@@ -72,17 +72,15 @@ public final class CreateCccUpgradeScheduleDetails
             return this;
         }
         /**
-         * Compartment
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for
-         * the Compute Cloud@Customer Upgrade Schedule.
+         * Compartment [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * for the Compute Cloud@Customer Upgrade Schedule.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * Compartment
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for
-         * the Compute Cloud@Customer Upgrade Schedule.
+         * Compartment [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * for the Compute Cloud@Customer Upgrade Schedule.
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -235,17 +233,15 @@ public final class CreateCccUpgradeScheduleDetails
     }
 
     /**
-     * Compartment
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
-     * Compute Cloud@Customer Upgrade Schedule.
+     * Compartment [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for
+     * the Compute Cloud@Customer Upgrade Schedule.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * Compartment
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
-     * Compute Cloud@Customer Upgrade Schedule.
+     * Compartment [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for
+     * the Compute Cloud@Customer Upgrade Schedule.
      *
      * @return the value
      */

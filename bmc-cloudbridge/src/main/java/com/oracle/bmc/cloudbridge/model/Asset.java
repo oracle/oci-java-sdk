@@ -261,7 +261,7 @@ public class Asset extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcM
     /**
      * The freeform tags associated with this resource, if any. Each tag is a simple key-value pair
      * with no predefined name, type, or namespace/scope. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Department": "Finance"}}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -270,7 +270,7 @@ public class Asset extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcM
     /**
      * The freeform tags associated with this resource, if any. Each tag is a simple key-value pair
      * with no predefined name, type, or namespace/scope. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Department": "Finance"}}
      *
      * @return the value
@@ -282,7 +282,7 @@ public class Asset extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcM
     /**
      * The defined tags associated with this resource, if any. Each key is predefined and scoped to
      * namespaces. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Operations": {"CostCenter": "42"}}}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -291,7 +291,7 @@ public class Asset extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcM
     /**
      * The defined tags associated with this resource, if any. Each key is predefined and scoped to
      * namespaces. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Operations": {"CostCenter": "42"}}}
      *
      * @return the value
@@ -304,7 +304,7 @@ public class Asset extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcM
      * The system tags associated with this resource, if any. The system tags are set by Oracle
      * cloud infrastructure services. Each key is predefined and scoped to namespaces. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {orcl-cloud: {free-tier-retain: true}}}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
@@ -314,7 +314,7 @@ public class Asset extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcM
      * The system tags associated with this resource, if any. The system tags are set by Oracle
      * cloud infrastructure services. Each key is predefined and scoped to namespaces. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {orcl-cloud: {free-tier-retain: true}}}
      *
      * @return the value

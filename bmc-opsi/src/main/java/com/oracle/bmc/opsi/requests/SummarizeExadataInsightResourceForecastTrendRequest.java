@@ -7,7 +7,7 @@ package com.oracle.bmc.opsi.requests;
 import com.oracle.bmc.opsi.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/SummarizeExadataInsightResourceForecastTrendExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/SummarizeExadataInsightResourceForecastTrendExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * SummarizeExadataInsightResourceForecastTrendRequest.
  */
@@ -34,14 +34,14 @@ public class SummarizeExadataInsightResourceForecastTrendRequest
         return resourceMetric;
     }
     /**
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * exadata insight resource.
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of exadata
+     * insight resource.
      */
     private String exadataInsightId;
 
     /**
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * exadata insight resource.
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of exadata
+     * insight resource.
      */
     public String getExadataInsightId() {
         return exadataInsightId;
@@ -97,26 +97,26 @@ public class SummarizeExadataInsightResourceForecastTrendRequest
     }
     /**
      * Optional list of database insight resource
-     * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     private java.util.List<String> databaseInsightId;
 
     /**
      * Optional list of database insight resource
-     * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     public java.util.List<String> getDatabaseInsightId() {
         return databaseInsightId;
     }
     /**
      * Optional list of host insight resource
-     * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     private java.util.List<String> hostInsightId;
 
     /**
      * Optional list of host insight resource
-     * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     public java.util.List<String> getHostInsightId() {
         return hostInsightId;
@@ -264,7 +264,7 @@ public class SummarizeExadataInsightResourceForecastTrendRequest
     /**
      * For list pagination. The maximum number of results per page, or items to return in a
      * paginated "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine). Example:
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine). Example:
      * {@code 50}
      */
     private Integer limit;
@@ -272,7 +272,7 @@ public class SummarizeExadataInsightResourceForecastTrendRequest
     /**
      * For list pagination. The maximum number of results per page, or items to return in a
      * paginated "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine). Example:
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine). Example:
      * {@code 50}
      */
     public Integer getLimit() {
@@ -347,14 +347,14 @@ public class SummarizeExadataInsightResourceForecastTrendRequest
     /**
      * For list pagination. The value of the {@code opc-next-page} response header from the previous
      * "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private String page;
 
     /**
      * For list pagination. The value of the {@code opc-next-page} response header from the previous
      * "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     public String getPage() {
         return page;
@@ -412,14 +412,14 @@ public class SummarizeExadataInsightResourceForecastTrendRequest
         }
 
         /**
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-         * exadata insight resource.
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of exadata
+         * insight resource.
          */
         private String exadataInsightId = null;
 
         /**
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-         * exadata insight resource.
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of exadata
+         * insight resource.
          *
          * @param exadataInsightId the value to set
          * @return this builder instance
@@ -497,13 +497,13 @@ public class SummarizeExadataInsightResourceForecastTrendRequest
 
         /**
          * Optional list of database insight resource
-         * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          */
         private java.util.List<String> databaseInsightId = null;
 
         /**
          * Optional list of database insight resource
-         * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          * @param databaseInsightId the value to set
          * @return this builder instance
@@ -515,7 +515,7 @@ public class SummarizeExadataInsightResourceForecastTrendRequest
 
         /**
          * Singular setter. Optional list of database insight resource
-         * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          * @param singularValue the singular value to set
          * @return this builder instance
@@ -526,13 +526,13 @@ public class SummarizeExadataInsightResourceForecastTrendRequest
 
         /**
          * Optional list of host insight resource
-         * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          */
         private java.util.List<String> hostInsightId = null;
 
         /**
          * Optional list of host insight resource
-         * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          * @param hostInsightId the value to set
          * @return this builder instance
@@ -544,7 +544,7 @@ public class SummarizeExadataInsightResourceForecastTrendRequest
 
         /**
          * Singular setter. Optional list of host insight resource
-         * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          * @param singularValue the singular value to set
          * @return this builder instance
@@ -717,7 +717,7 @@ public class SummarizeExadataInsightResourceForecastTrendRequest
         /**
          * For list pagination. The maximum number of results per page, or items to return in a
          * paginated "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          * Example: {@code 50}
          */
         private Integer limit = null;
@@ -725,7 +725,7 @@ public class SummarizeExadataInsightResourceForecastTrendRequest
         /**
          * For list pagination. The maximum number of results per page, or items to return in a
          * paginated "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          * Example: {@code 50}
          *
          * @param limit the value to set
@@ -789,14 +789,14 @@ public class SummarizeExadataInsightResourceForecastTrendRequest
         /**
          * For list pagination. The value of the {@code opc-next-page} response header from the
          * previous "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private String page = null;
 
         /**
          * For list pagination. The value of the {@code opc-next-page} response header from the
          * previous "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param page the value to set
          * @return this builder instance

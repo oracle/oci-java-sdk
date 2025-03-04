@@ -12,7 +12,7 @@ import com.oracle.bmc.ocicontrolcenter.responses.*;
  * provides the region-level capacity data, in realms where OCC is available. Use the OCI Control
  * Center (OCC) API to explore region-level capacity and utilization information about core
  * services. For more information, see [OCI Control
- * Center](https://docs.cloud.oracle.com/iaas/Content/control-center/home.htm).
+ * Center](https://docs.oracle.com/iaas/Content/control-center/home.htm).
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230515")
 public interface OccMetricsAsync extends AutoCloseable {

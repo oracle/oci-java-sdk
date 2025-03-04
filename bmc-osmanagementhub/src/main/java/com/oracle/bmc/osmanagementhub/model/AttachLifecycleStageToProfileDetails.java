@@ -32,15 +32,15 @@ public final class AttachLifecycleStageToProfileDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the lifecycle stage that the instance will be associated with.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * lifecycle stage that the instance will be associated with.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleStageId")
         private String lifecycleStageId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the lifecycle stage that the instance will be associated with.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * lifecycle stage that the instance will be associated with.
          *
          * @param lifecycleStageId the value to set
          * @return this builder
@@ -82,15 +82,15 @@ public final class AttachLifecycleStageToProfileDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the lifecycle stage that the instance will be associated with.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * lifecycle stage that the instance will be associated with.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleStageId")
     private final String lifecycleStageId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the lifecycle stage that the instance will be associated with.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * lifecycle stage that the instance will be associated with.
      *
      * @return the value
      */

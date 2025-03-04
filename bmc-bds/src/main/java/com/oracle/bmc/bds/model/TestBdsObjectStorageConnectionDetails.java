@@ -36,14 +36,14 @@ public final class TestBdsObjectStorageConnectionDetails
     public static class Builder {
         /**
          * An Oracle Cloud Infrastructure URI to which this connection must be attempted. See
-         * https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
+         * https://docs.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("objectStorageUri")
         private String objectStorageUri;
 
         /**
          * An Oracle Cloud Infrastructure URI to which this connection must be attempted. See
-         * https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
+         * https://docs.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
          *
          * @param objectStorageUri the value to set
          * @return this builder
@@ -127,14 +127,14 @@ public final class TestBdsObjectStorageConnectionDetails
 
     /**
      * An Oracle Cloud Infrastructure URI to which this connection must be attempted. See
-     * https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
+     * https://docs.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("objectStorageUri")
     private final String objectStorageUri;
 
     /**
      * An Oracle Cloud Infrastructure URI to which this connection must be attempted. See
-     * https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
+     * https://docs.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
      *
      * @return the value
      */

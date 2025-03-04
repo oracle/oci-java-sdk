@@ -9,14 +9,14 @@ import com.oracle.bmc.loadbalancer.model.*;
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
 public class UpdateNetworkSecurityGroupsResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * work request.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the work
+     * request.
      */
     private String opcWorkRequestId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * work request.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the work
+     * request.
      *
      * @return the value
      */
@@ -76,13 +76,13 @@ public class UpdateNetworkSecurityGroupsResponse extends com.oracle.bmc.response
         }
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * work request.
          */
         private String opcWorkRequestId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * work request.
          *
          * @param opcWorkRequestId the value to set

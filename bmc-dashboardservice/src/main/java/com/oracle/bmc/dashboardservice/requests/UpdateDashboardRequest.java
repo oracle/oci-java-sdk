@@ -7,7 +7,7 @@ package com.oracle.bmc.dashboardservice.requests;
 import com.oracle.bmc.dashboardservice.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dashboardservice/UpdateDashboardExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dashboardservice/UpdateDashboardExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateDashboardRequest.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210731")
@@ -16,14 +16,14 @@ public class UpdateDashboardRequest
                 com.oracle.bmc.dashboardservice.model.UpdateDashboardDetails> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the dashboard.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * dashboard.
      */
     private String dashboardId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the dashboard.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * dashboard.
      */
     public String getDashboardId() {
         return dashboardId;
@@ -103,14 +103,14 @@ public class UpdateDashboardRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the dashboard.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * dashboard.
          */
         private String dashboardId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the dashboard.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * dashboard.
          *
          * @param dashboardId the value to set
          * @return this builder instance

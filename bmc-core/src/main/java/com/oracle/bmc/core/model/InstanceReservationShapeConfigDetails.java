@@ -16,8 +16,7 @@ package com.oracle.bmc.core.model;
  *
  * <p>For more information about customizing the resources that are allocated to flexible shapes,
  * see [Flexible
- * Shapes](https://docs.cloud.oracle.com/iaas/Content/Compute/References/computeshapes.htm#flexible).
- * <br>
+ * Shapes](https://docs.oracle.com/iaas/Content/Compute/References/computeshapes.htm#flexible). <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a

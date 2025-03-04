@@ -7,7 +7,7 @@ package com.oracle.bmc.database.requests;
 import com.oracle.bmc.database.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListCloudAutonomousVmClusterAcdResourceUsageExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListCloudAutonomousVmClusterAcdResourceUsageExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * ListCloudAutonomousVmClusterAcdResourceUsageRequest.
  */
@@ -17,26 +17,26 @@ public class ListCloudAutonomousVmClusterAcdResourceUsageRequest
 
     /**
      * The Cloud VM cluster
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     private String cloudAutonomousVmClusterId;
 
     /**
      * The Cloud VM cluster
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     public String getCloudAutonomousVmClusterId() {
         return cloudAutonomousVmClusterId;
     }
     /**
      * The compartment
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     private String compartmentId;
 
     /**
      * The compartment
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     public String getCompartmentId() {
         return compartmentId;
@@ -71,13 +71,13 @@ public class ListCloudAutonomousVmClusterAcdResourceUsageRequest
 
         /**
          * The Cloud VM cluster
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          */
         private String cloudAutonomousVmClusterId = null;
 
         /**
          * The Cloud VM cluster
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          * @param cloudAutonomousVmClusterId the value to set
          * @return this builder instance
@@ -89,13 +89,13 @@ public class ListCloudAutonomousVmClusterAcdResourceUsageRequest
 
         /**
          * The compartment
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          */
         private String compartmentId = null;
 
         /**
          * The compartment
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          * @param compartmentId the value to set
          * @return this builder instance

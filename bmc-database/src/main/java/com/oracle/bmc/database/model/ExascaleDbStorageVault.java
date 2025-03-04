@@ -40,7 +40,9 @@ public final class ExascaleDbStorageVault
         "exadataInfrastructureId",
         "systemTags",
         "highCapacityDatabaseStorage",
-        "additionalFlashCacheInPercent"
+        "additionalFlashCacheInPercent",
+        "clusterPlacementGroupId",
+        "subscriptionId"
     })
     public ExascaleDbStorageVault(
             String id,
@@ -59,7 +61,9 @@ public final class ExascaleDbStorageVault
             String exadataInfrastructureId,
             java.util.Map<String, java.util.Map<String, Object>> systemTags,
             ExascaleDbStorageDetails highCapacityDatabaseStorage,
-            Integer additionalFlashCacheInPercent) {
+            Integer additionalFlashCacheInPercent,
+            String clusterPlacementGroupId,
+            String subscriptionId) {
         super();
         this.id = id;
         this.compartmentId = compartmentId;
@@ -78,19 +82,21 @@ public final class ExascaleDbStorageVault
         this.systemTags = systemTags;
         this.highCapacityDatabaseStorage = highCapacityDatabaseStorage;
         this.additionalFlashCacheInPercent = additionalFlashCacheInPercent;
+        this.clusterPlacementGroupId = clusterPlacementGroupId;
+        this.subscriptionId = subscriptionId;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Exadata Database Storage Vault.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Exadata Database Storage Vault.
          *
          * @param id the value to set
@@ -102,14 +108,14 @@ public final class ExascaleDbStorageVault
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * compartment.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * compartment.
          *
          * @param compartmentId the value to set
@@ -220,16 +226,14 @@ public final class ExascaleDbStorageVault
         }
         /**
          * The time zone that you want to use for the Exadata Database Storage Vault. For details,
-         * see [Time
-         * Zones](https://docs.cloud.oracle.com/Content/Database/References/timezones.htm).
+         * see [Time Zones](https://docs.oracle.com/iaas/Content/Database/References/timezones.htm).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("timeZone")
         private String timeZone;
 
         /**
          * The time zone that you want to use for the Exadata Database Storage Vault. For details,
-         * see [Time
-         * Zones](https://docs.cloud.oracle.com/Content/Database/References/timezones.htm).
+         * see [Time Zones](https://docs.oracle.com/iaas/Content/Database/References/timezones.htm).
          *
          * @param timeZone the value to set
          * @return this builder
@@ -241,7 +245,7 @@ public final class ExascaleDbStorageVault
         }
         /**
          * The List of Exadata VM cluster on Exascale Infrastructure
-         * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) **Note:**
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) **Note:**
          * If Exadata Database Storage Vault is not used for any Exadata VM cluster on Exascale
          * Infrastructure, this list is empty.
          */
@@ -250,7 +254,7 @@ public final class ExascaleDbStorageVault
 
         /**
          * The List of Exadata VM cluster on Exascale Infrastructure
-         * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) **Note:**
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) **Note:**
          * If Exadata Database Storage Vault is not used for any Exadata VM cluster on Exascale
          * Infrastructure, this list is empty.
          *
@@ -280,7 +284,7 @@ public final class ExascaleDbStorageVault
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          */
@@ -290,7 +294,7 @@ public final class ExascaleDbStorageVault
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          *
@@ -305,7 +309,7 @@ public final class ExascaleDbStorageVault
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
@@ -313,7 +317,7 @@ public final class ExascaleDbStorageVault
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * @param definedTags the value to set
          * @return this builder
@@ -325,14 +329,14 @@ public final class ExascaleDbStorageVault
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Exadata infrastructure.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("exadataInfrastructureId")
         private String exadataInfrastructureId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Exadata infrastructure.
          *
          * @param exadataInfrastructureId the value to set
@@ -346,7 +350,7 @@ public final class ExascaleDbStorageVault
         /**
          * System tags for this resource. Each key is predefined and scoped to a namespace. For more
          * information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
         private java.util.Map<String, java.util.Map<String, Object>> systemTags;
@@ -354,7 +358,7 @@ public final class ExascaleDbStorageVault
         /**
          * System tags for this resource. Each key is predefined and scoped to a namespace. For more
          * information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * @param systemTags the value to set
          * @return this builder
@@ -389,6 +393,44 @@ public final class ExascaleDbStorageVault
             this.__explicitlySet__.add("additionalFlashCacheInPercent");
             return this;
         }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * cluster placement group of the Exadata Infrastructure.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("clusterPlacementGroupId")
+        private String clusterPlacementGroupId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * cluster placement group of the Exadata Infrastructure.
+         *
+         * @param clusterPlacementGroupId the value to set
+         * @return this builder
+         */
+        public Builder clusterPlacementGroupId(String clusterPlacementGroupId) {
+            this.clusterPlacementGroupId = clusterPlacementGroupId;
+            this.__explicitlySet__.add("clusterPlacementGroupId");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * subscription with which resource needs to be associated with.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
+        private String subscriptionId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * subscription with which resource needs to be associated with.
+         *
+         * @param subscriptionId the value to set
+         * @return this builder
+         */
+        public Builder subscriptionId(String subscriptionId) {
+            this.subscriptionId = subscriptionId;
+            this.__explicitlySet__.add("subscriptionId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -412,7 +454,9 @@ public final class ExascaleDbStorageVault
                             this.exadataInfrastructureId,
                             this.systemTags,
                             this.highCapacityDatabaseStorage,
-                            this.additionalFlashCacheInPercent);
+                            this.additionalFlashCacheInPercent,
+                            this.clusterPlacementGroupId,
+                            this.subscriptionId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -472,6 +516,12 @@ public final class ExascaleDbStorageVault
             if (model.wasPropertyExplicitlySet("additionalFlashCacheInPercent")) {
                 this.additionalFlashCacheInPercent(model.getAdditionalFlashCacheInPercent());
             }
+            if (model.wasPropertyExplicitlySet("clusterPlacementGroupId")) {
+                this.clusterPlacementGroupId(model.getClusterPlacementGroupId());
+            }
+            if (model.wasPropertyExplicitlySet("subscriptionId")) {
+                this.subscriptionId(model.getSubscriptionId());
+            }
             return this;
         }
     }
@@ -486,14 +536,14 @@ public final class ExascaleDbStorageVault
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Exadata Database Storage Vault.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Exadata Database Storage Vault.
      *
      * @return the value
@@ -503,14 +553,14 @@ public final class ExascaleDbStorageVault
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment.
      *
      * @return the value
@@ -655,14 +705,14 @@ public final class ExascaleDbStorageVault
 
     /**
      * The time zone that you want to use for the Exadata Database Storage Vault. For details, see
-     * [Time Zones](https://docs.cloud.oracle.com/Content/Database/References/timezones.htm).
+     * [Time Zones](https://docs.oracle.com/iaas/Content/Database/References/timezones.htm).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("timeZone")
     private final String timeZone;
 
     /**
      * The time zone that you want to use for the Exadata Database Storage Vault. For details, see
-     * [Time Zones](https://docs.cloud.oracle.com/Content/Database/References/timezones.htm).
+     * [Time Zones](https://docs.oracle.com/iaas/Content/Database/References/timezones.htm).
      *
      * @return the value
      */
@@ -672,7 +722,7 @@ public final class ExascaleDbStorageVault
 
     /**
      * The List of Exadata VM cluster on Exascale Infrastructure
-     * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) **Note:** If
+     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) **Note:** If
      * Exadata Database Storage Vault is not used for any Exadata VM cluster on Exascale
      * Infrastructure, this list is empty.
      */
@@ -681,7 +731,7 @@ public final class ExascaleDbStorageVault
 
     /**
      * The List of Exadata VM cluster on Exascale Infrastructure
-     * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) **Note:** If
+     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) **Note:** If
      * Exadata Database Storage Vault is not used for any Exadata VM cluster on Exascale
      * Infrastructure, this list is empty.
      *
@@ -707,7 +757,7 @@ public final class ExascaleDbStorageVault
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      */
@@ -717,7 +767,7 @@ public final class ExascaleDbStorageVault
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      *
@@ -730,7 +780,7 @@ public final class ExascaleDbStorageVault
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
@@ -738,7 +788,7 @@ public final class ExascaleDbStorageVault
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * @return the value
      */
@@ -747,14 +797,14 @@ public final class ExascaleDbStorageVault
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Exadata infrastructure.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("exadataInfrastructureId")
     private final String exadataInfrastructureId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Exadata infrastructure.
      *
      * @return the value
@@ -766,7 +816,7 @@ public final class ExascaleDbStorageVault
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
     private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
@@ -774,7 +824,7 @@ public final class ExascaleDbStorageVault
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * @return the value
      */
@@ -800,6 +850,40 @@ public final class ExascaleDbStorageVault
      */
     public Integer getAdditionalFlashCacheInPercent() {
         return additionalFlashCacheInPercent;
+    }
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * cluster placement group of the Exadata Infrastructure.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("clusterPlacementGroupId")
+    private final String clusterPlacementGroupId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * cluster placement group of the Exadata Infrastructure.
+     *
+     * @return the value
+     */
+    public String getClusterPlacementGroupId() {
+        return clusterPlacementGroupId;
+    }
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * subscription with which resource needs to be associated with.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
+    private final String subscriptionId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * subscription with which resource needs to be associated with.
+     *
+     * @return the value
+     */
+    public String getSubscriptionId() {
+        return subscriptionId;
     }
 
     @Override
@@ -837,6 +921,9 @@ public final class ExascaleDbStorageVault
                 .append(String.valueOf(this.highCapacityDatabaseStorage));
         sb.append(", additionalFlashCacheInPercent=")
                 .append(String.valueOf(this.additionalFlashCacheInPercent));
+        sb.append(", clusterPlacementGroupId=")
+                .append(String.valueOf(this.clusterPlacementGroupId));
+        sb.append(", subscriptionId=").append(String.valueOf(this.subscriptionId));
         sb.append(")");
         return sb.toString();
     }
@@ -871,6 +958,9 @@ public final class ExascaleDbStorageVault
                         this.highCapacityDatabaseStorage, other.highCapacityDatabaseStorage)
                 && java.util.Objects.equals(
                         this.additionalFlashCacheInPercent, other.additionalFlashCacheInPercent)
+                && java.util.Objects.equals(
+                        this.clusterPlacementGroupId, other.clusterPlacementGroupId)
+                && java.util.Objects.equals(this.subscriptionId, other.subscriptionId)
                 && super.equals(other);
     }
 
@@ -919,6 +1009,14 @@ public final class ExascaleDbStorageVault
                         + (this.additionalFlashCacheInPercent == null
                                 ? 43
                                 : this.additionalFlashCacheInPercent.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.clusterPlacementGroupId == null
+                                ? 43
+                                : this.clusterPlacementGroupId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.subscriptionId == null ? 43 : this.subscriptionId.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

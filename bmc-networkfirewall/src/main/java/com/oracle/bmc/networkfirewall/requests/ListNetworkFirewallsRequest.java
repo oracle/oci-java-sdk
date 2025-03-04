@@ -7,7 +7,7 @@ package com.oracle.bmc.networkfirewall.requests;
 import com.oracle.bmc.networkfirewall.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkfirewall/ListNetworkFirewallsExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkfirewall/ListNetworkFirewallsExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListNetworkFirewallsRequest.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230501")
@@ -36,14 +36,14 @@ public class ListNetworkFirewallsRequest
         return networkFirewallPolicyId;
     }
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the Network Firewall resource.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Network Firewall resource.
      */
     private String id;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the Network Firewall resource.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Network Firewall resource.
      */
     public String getId() {
         return id;
@@ -208,14 +208,14 @@ public class ListNetworkFirewallsRequest
         }
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the Network Firewall resource.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Network Firewall resource.
          */
         private String id = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the Network Firewall resource.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Network Firewall resource.
          *
          * @param id the value to set
          * @return this builder instance

@@ -9,8 +9,8 @@ import com.oracle.bmc.artifacts.responses.*;
 
 /**
  * API covering the Artifacts and
- * [Registry](https://docs.cloud.oracle.com/iaas/Content/Registry/Concepts/registryoverview.htm)
- * services. Use this API to manage resources such as generic artifacts and container images.
+ * [Registry](https://docs.oracle.com/iaas/Content/Registry/Concepts/registryoverview.htm) services.
+ * Use this API to manage resources such as generic artifacts and container images.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public interface ArtifactsAsync extends AutoCloseable {
@@ -66,7 +66,7 @@ public interface ArtifactsAsync extends AutoCloseable {
     /**
      * Moves a container repository into a different compartment within the same tenancy. For
      * information about moving resources between compartments, see [Moving Resources to a Different
-     * Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -86,7 +86,7 @@ public interface ArtifactsAsync extends AutoCloseable {
     /**
      * Moves a repository into a different compartment within the same tenancy. For information
      * about moving resources between compartments, see [Moving Resources to a Different
-     * Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -202,7 +202,7 @@ public interface ArtifactsAsync extends AutoCloseable {
 
     /**
      * Deletes an artifact with a specified
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -315,7 +315,7 @@ public interface ArtifactsAsync extends AutoCloseable {
 
     /**
      * Gets information about an artifact with a specified
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -543,8 +543,8 @@ public interface ArtifactsAsync extends AutoCloseable {
 
     /**
      * Updates the artifact with the specified
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). You can
-     * only update the tags of an artifact.
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). You can only
+     * update the tags of an artifact.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.

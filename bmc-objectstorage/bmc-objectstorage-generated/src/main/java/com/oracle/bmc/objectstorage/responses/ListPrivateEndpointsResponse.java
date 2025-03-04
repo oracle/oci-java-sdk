@@ -48,7 +48,7 @@ public class ListPrivateEndpointsResponse extends com.oracle.bmc.responses.BmcRe
      * GET request to get the next batch of PEs. Repeat this process to retrieve the entire list of
      * Private Endpoint's. By default, the page limit is set to 25 Private Endpoint's per page, but
      * you can specify a value from 1 to 1000. For more details about how pagination works, see
-     * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private String opcNextPage;
 
@@ -60,7 +60,7 @@ public class ListPrivateEndpointsResponse extends com.oracle.bmc.responses.BmcRe
      * GET request to get the next batch of PEs. Repeat this process to retrieve the entire list of
      * Private Endpoint's. By default, the page limit is set to 25 Private Endpoint's per page, but
      * you can specify a value from 1 to 1000. For more details about how pagination works, see
-     * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      * @return the value
      */
@@ -165,7 +165,7 @@ public class ListPrivateEndpointsResponse extends com.oracle.bmc.responses.BmcRe
          * the entire list of Private Endpoint's. By default, the page limit is set to 25 Private
          * Endpoint's per page, but you can specify a value from 1 to 1000. For more details about
          * how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private String opcNextPage;
 
@@ -178,7 +178,7 @@ public class ListPrivateEndpointsResponse extends com.oracle.bmc.responses.BmcRe
          * the entire list of Private Endpoint's. By default, the page limit is set to 25 Private
          * Endpoint's per page, but you can specify a value from 1 to 1000. For more details about
          * how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param opcNextPage the value to set
          * @return this builder

@@ -74,17 +74,15 @@ public final class WorkRequestResource
             return this;
         }
         /**
-         * This is an
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) or
-         * other unique identifier for the resource.
+         * This is an [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * or other unique identifier for the resource.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("identifier")
         private String identifier;
 
         /**
-         * This is an
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) or
-         * other unique identifier for the resource.
+         * This is an [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * or other unique identifier for the resource.
          *
          * @param identifier the value to set
          * @return this builder
@@ -187,17 +185,15 @@ public final class WorkRequestResource
     }
 
     /**
-     * This is an
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) or other
-     * unique identifier for the resource.
+     * This is an [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) or
+     * other unique identifier for the resource.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("identifier")
     private final String identifier;
 
     /**
-     * This is an
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) or other
-     * unique identifier for the resource.
+     * This is an [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) or
+     * other unique identifier for the resource.
      *
      * @return the value
      */

@@ -4,14 +4,14 @@
   <parent>
     <groupId>com.oracle.oci.sdk</groupId>
     <artifactId>oci-java-sdk-common-httpclient-choices</artifactId>
-    <version>3.58.0</version>
+    <version>3.59.0</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
 
   <artifactId>oci-java-sdk-common-httpclient-jersey</artifactId>
   <name>Oracle Cloud Infrastructure SDK - Common HTTP client - Jersey implementation</name>
   <description>This project contains the HTTP client jersey implementation of the SDK used for Oracle Cloud Infrastructure</description>
-  <url>https://docs.cloud.oracle.com/Content/API/SDKDocs/javasdk.htm</url>
+  <url>https://docs.oracle.com/iaas/Content/API/SDKDocs/javasdk.htm</url>
 
   <build>
     <!-- Substitutes maven properties into the SDK properties -->
@@ -68,7 +68,7 @@
       <dependency>
         <groupId>com.oracle.oci.sdk</groupId>
         <artifactId>oci-java-sdk-addons-apache-configurator-jersey</artifactId>
-        <version>3.58.0</version>
+        <version>3.59.0</version>
       </dependency>
     </dependencies>
   </dependencyManagement>
@@ -77,7 +77,7 @@
     <dependency>
       <groupId>com.oracle.oci.sdk</groupId>
       <artifactId>oci-java-sdk-common-httpclient</artifactId>
-      <version>3.58.0</version>
+      <version>3.59.0</version>
     </dependency>
     <dependency>
       <groupId>org.glassfish.jersey.core</groupId>

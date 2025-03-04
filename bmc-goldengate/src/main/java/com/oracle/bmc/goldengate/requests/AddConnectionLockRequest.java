@@ -7,7 +7,7 @@ package com.oracle.bmc.goldengate.requests;
 import com.oracle.bmc.goldengate.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/goldengate/AddConnectionLockExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/goldengate/AddConnectionLockExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use AddConnectionLockRequest.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
@@ -16,13 +16,13 @@ public class AddConnectionLockRequest
                 com.oracle.bmc.goldengate.model.AddResourceLockDetails> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
      * Connection.
      */
     private String connectionId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
      * Connection.
      */
     public String getConnectionId() {
@@ -85,13 +85,13 @@ public class AddConnectionLockRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
          * Connection.
          */
         private String connectionId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
          * Connection.
          *
          * @param connectionId the value to set

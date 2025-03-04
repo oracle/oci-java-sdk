@@ -50,15 +50,15 @@ public final class VirtualCircuitAssociatedTunnelDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of IPSec connection associated with the virtual circuit.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+         * IPSec connection associated with the virtual circuit.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("ipsecConnectionId")
         private String ipsecConnectionId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of IPSec connection associated with the virtual circuit.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+         * IPSec connection associated with the virtual circuit.
          *
          * @param ipsecConnectionId the value to set
          * @return this builder
@@ -69,15 +69,15 @@ public final class VirtualCircuitAssociatedTunnelDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the IPSec tunnel associated with the virtual circuit.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * IPSec tunnel associated with the virtual circuit.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("tunnelId")
         private String tunnelId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the IPSec tunnel associated with the virtual circuit.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * IPSec tunnel associated with the virtual circuit.
          *
          * @param tunnelId the value to set
          * @return this builder
@@ -184,15 +184,15 @@ public final class VirtualCircuitAssociatedTunnelDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * IPSec connection associated with the virtual circuit.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of IPSec
+     * connection associated with the virtual circuit.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("ipsecConnectionId")
     private final String ipsecConnectionId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * IPSec connection associated with the virtual circuit.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of IPSec
+     * connection associated with the virtual circuit.
      *
      * @return the value
      */
@@ -201,15 +201,15 @@ public final class VirtualCircuitAssociatedTunnelDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the IPSec tunnel associated with the virtual circuit.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * IPSec tunnel associated with the virtual circuit.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("tunnelId")
     private final String tunnelId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the IPSec tunnel associated with the virtual circuit.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * IPSec tunnel associated with the virtual circuit.
      *
      * @return the value
      */

@@ -89,14 +89,14 @@ public final class WorkRequestSummary
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
          * identifying this work request.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
          * identifying this work request.
          *
          * @param id the value to set
@@ -109,16 +109,16 @@ public final class WorkRequestSummary
         }
         /**
          * Unique identifier
-         * ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of
-         * the compartment that contains the work request.
+         * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the
+         * compartment that contains the work request.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * Unique identifier
-         * ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of
-         * the compartment that contains the work request.
+         * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the
+         * compartment that contains the work request.
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -306,15 +306,15 @@ public final class WorkRequestSummary
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-     * identifying this work request.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) identifying
+     * this work request.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-     * identifying this work request.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) identifying
+     * this work request.
      *
      * @return the value
      */
@@ -324,7 +324,7 @@ public final class WorkRequestSummary
 
     /**
      * Unique identifier
-     * ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the
+     * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the
      * compartment that contains the work request.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
@@ -332,7 +332,7 @@ public final class WorkRequestSummary
 
     /**
      * Unique identifier
-     * ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the
+     * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the
      * compartment that contains the work request.
      *
      * @return the value

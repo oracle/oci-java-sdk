@@ -7,7 +7,7 @@ package com.oracle.bmc.osmanagementhub.requests;
 import com.oracle.bmc.osmanagementhub.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/ListManagementStationsExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/ListManagementStationsExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * ListManagementStationsRequest.
  */
@@ -51,14 +51,14 @@ public class ListManagementStationsRequest
         return lifecycleState;
     }
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the managed instance. This filter returns resources associated with this managed instance.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * managed instance. This filter returns resources associated with this managed instance.
      */
     private String managedInstanceId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the managed instance. This filter returns resources associated with this managed instance.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * managed instance. This filter returns resources associated with this managed instance.
      */
     public String getManagedInstanceId() {
         return managedInstanceId;
@@ -66,7 +66,7 @@ public class ListManagementStationsRequest
     /**
      * For list pagination. The maximum number of results per page, or items to return in a
      * paginated "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      * <p>Example: {@code 50}
      */
@@ -75,7 +75,7 @@ public class ListManagementStationsRequest
     /**
      * For list pagination. The maximum number of results per page, or items to return in a
      * paginated "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      * <p>Example: {@code 50}
      */
@@ -85,7 +85,7 @@ public class ListManagementStationsRequest
     /**
      * For list pagination. The value of the {@code opc-next-page} response header from the previous
      * "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      * <p>Example: {@code 3}
      */
@@ -94,7 +94,7 @@ public class ListManagementStationsRequest
     /**
      * For list pagination. The value of the {@code opc-next-page} response header from the previous
      * "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      * <p>Example: {@code 3}
      */
@@ -192,16 +192,14 @@ public class ListManagementStationsRequest
         return opcRequestId;
     }
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the management station. A filter that returns information about the specified management
-     * station.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * management station. A filter that returns information about the specified management station.
      */
     private String id;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the management station. A filter that returns information about the specified management
-     * station.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * management station. A filter that returns information about the specified management station.
      */
     public String getId() {
         return id;
@@ -277,16 +275,14 @@ public class ListManagementStationsRequest
         }
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the managed instance. This filter returns resources associated with this managed
-         * instance.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * managed instance. This filter returns resources associated with this managed instance.
          */
         private String managedInstanceId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the managed instance. This filter returns resources associated with this managed
-         * instance.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * managed instance. This filter returns resources associated with this managed instance.
          *
          * @param managedInstanceId the value to set
          * @return this builder instance
@@ -299,7 +295,7 @@ public class ListManagementStationsRequest
         /**
          * For list pagination. The maximum number of results per page, or items to return in a
          * paginated "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * <p>Example: {@code 50}
          */
@@ -308,7 +304,7 @@ public class ListManagementStationsRequest
         /**
          * For list pagination. The maximum number of results per page, or items to return in a
          * paginated "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * <p>Example: {@code 50}
          *
@@ -323,7 +319,7 @@ public class ListManagementStationsRequest
         /**
          * For list pagination. The value of the {@code opc-next-page} response header from the
          * previous "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * <p>Example: {@code 3}
          */
@@ -332,7 +328,7 @@ public class ListManagementStationsRequest
         /**
          * For list pagination. The value of the {@code opc-next-page} response header from the
          * previous "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * <p>Example: {@code 3}
          *
@@ -453,16 +449,16 @@ public class ListManagementStationsRequest
         }
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the management station. A filter that returns information about the specified
-         * management station.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * management station. A filter that returns information about the specified management
+         * station.
          */
         private String id = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the management station. A filter that returns information about the specified
-         * management station.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * management station. A filter that returns information about the specified management
+         * station.
          *
          * @param id the value to set
          * @return this builder instance

@@ -111,16 +111,16 @@ public final class CreateInstancePoolPlacementConfigurationDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the primary subnet in which to place instances. This field is deprecated. Use {@code
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * primary subnet in which to place instances. This field is deprecated. Use {@code
          * primaryVnicSubnets} instead to set VNIC data for instances in the pool.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("primarySubnetId")
         private String primarySubnetId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the primary subnet in which to place instances. This field is deprecated. Use {@code
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * primary subnet in which to place instances. This field is deprecated. Use {@code
          * primaryVnicSubnets} instead to set VNIC data for instances in the pool.
          *
          * @param primarySubnetId the value to set
@@ -263,16 +263,16 @@ public final class CreateInstancePoolPlacementConfigurationDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the primary subnet in which to place instances. This field is deprecated. Use {@code
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * primary subnet in which to place instances. This field is deprecated. Use {@code
      * primaryVnicSubnets} instead to set VNIC data for instances in the pool.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("primarySubnetId")
     private final String primarySubnetId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the primary subnet in which to place instances. This field is deprecated. Use {@code
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * primary subnet in which to place instances. This field is deprecated. Use {@code
      * primaryVnicSubnets} instead to set VNIC data for instances in the pool.
      *
      * @return the value

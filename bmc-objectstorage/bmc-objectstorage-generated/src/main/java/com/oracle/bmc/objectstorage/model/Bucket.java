@@ -8,12 +8,12 @@ package com.oracle.bmc.objectstorage.model;
  * A bucket is a container for storing objects in a compartment within a namespace. A bucket is
  * associated with a single compartment. The compartment has policies that indicate what actions a
  * user can perform on a bucket and all the objects in the bucket. For more information, see
- * [Managing Buckets](https://docs.cloud.oracle.com/Content/Object/Tasks/managingbuckets.htm).
+ * [Managing Buckets](https://docs.oracle.com/iaas/Content/Object/Tasks/managingbuckets.htm).
  *
  * <p>To use any of the API operations, you must be authorized in an IAM policy. If you are not
  * authorized, talk to an administrator. If you are an administrator who needs to write policies to
  * give users access, see [Getting Started with
- * Policies](https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm). <br>
+ * Policies](https://docs.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm). <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -163,14 +163,14 @@ public final class Bucket extends com.oracle.bmc.http.client.internal.Explicitly
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * user who created the bucket.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("createdBy")
         private String createdBy;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * user who created the bucket.
          *
          * @param createdBy the value to set
@@ -272,7 +272,7 @@ public final class Bucket extends com.oracle.bmc.http.client.internal.Explicitly
          * {@code objectEventsEnabled} is set to {@code false}. Set {@code objectEventsEnabled} to
          * {@code true} to emit events for object state changes. For more information about events,
          * see [Overview of
-         * Events](https://docs.cloud.oracle.com/Content/Events/Concepts/eventsoverview.htm).
+         * Events](https://docs.oracle.com/iaas/Content/Events/Concepts/eventsoverview.htm).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("objectEventsEnabled")
         private Boolean objectEventsEnabled;
@@ -282,7 +282,7 @@ public final class Bucket extends com.oracle.bmc.http.client.internal.Explicitly
          * {@code objectEventsEnabled} is set to {@code false}. Set {@code objectEventsEnabled} to
          * {@code true} to emit events for object state changes. For more information about events,
          * see [Overview of
-         * Events](https://docs.cloud.oracle.com/Content/Events/Concepts/eventsoverview.htm).
+         * Events](https://docs.oracle.com/iaas/Content/Events/Concepts/eventsoverview.htm).
          *
          * @param objectEventsEnabled the value to set
          * @return this builder
@@ -295,7 +295,7 @@ public final class Bucket extends com.oracle.bmc.http.client.internal.Explicitly
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
          * {@code {"Department": "Finance"}}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -304,7 +304,7 @@ public final class Bucket extends com.oracle.bmc.http.client.internal.Explicitly
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
          * {@code {"Department": "Finance"}}
          *
          * @param freeformTags the value to set
@@ -318,7 +318,7 @@ public final class Bucket extends com.oracle.bmc.http.client.internal.Explicitly
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
          * {@code {"Operations": {"CostCenter": "42"}}}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -327,7 +327,7 @@ public final class Bucket extends com.oracle.bmc.http.client.internal.Explicitly
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
          * {@code {"Operations": {"CostCenter": "42"}}}
          *
          * @param definedTags the value to set
@@ -340,7 +340,7 @@ public final class Bucket extends com.oracle.bmc.http.client.internal.Explicitly
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
          * master encryption key used to call the Key Management service to generate a data
          * encryption key or to encrypt or decrypt a data encryption key.
          */
@@ -348,7 +348,7 @@ public final class Bucket extends com.oracle.bmc.http.client.internal.Explicitly
         private String kmsKeyId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
          * master encryption key used to call the Key Management service to generate a data
          * encryption key or to encrypt or decrypt a data encryption key.
          *
@@ -458,14 +458,14 @@ public final class Bucket extends com.oracle.bmc.http.client.internal.Explicitly
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * bucket.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * bucket.
          *
          * @param id the value to set
@@ -689,15 +689,15 @@ public final class Bucket extends com.oracle.bmc.http.client.internal.Explicitly
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * user who created the bucket.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user
+     * who created the bucket.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("createdBy")
     private final String createdBy;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * user who created the bucket.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user
+     * who created the bucket.
      *
      * @return the value
      */
@@ -893,7 +893,7 @@ public final class Bucket extends com.oracle.bmc.http.client.internal.Explicitly
      * Whether or not events are emitted for object state changes in this bucket. By default, {@code
      * objectEventsEnabled} is set to {@code false}. Set {@code objectEventsEnabled} to {@code true}
      * to emit events for object state changes. For more information about events, see [Overview of
-     * Events](https://docs.cloud.oracle.com/Content/Events/Concepts/eventsoverview.htm).
+     * Events](https://docs.oracle.com/iaas/Content/Events/Concepts/eventsoverview.htm).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("objectEventsEnabled")
     private final Boolean objectEventsEnabled;
@@ -902,7 +902,7 @@ public final class Bucket extends com.oracle.bmc.http.client.internal.Explicitly
      * Whether or not events are emitted for object state changes in this bucket. By default, {@code
      * objectEventsEnabled} is set to {@code false}. Set {@code objectEventsEnabled} to {@code true}
      * to emit events for object state changes. For more information about events, see [Overview of
-     * Events](https://docs.cloud.oracle.com/Content/Events/Concepts/eventsoverview.htm).
+     * Events](https://docs.oracle.com/iaas/Content/Events/Concepts/eventsoverview.htm).
      *
      * @return the value
      */
@@ -913,7 +913,7 @@ public final class Bucket extends com.oracle.bmc.http.client.internal.Explicitly
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Department": "Finance"}}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -922,7 +922,7 @@ public final class Bucket extends com.oracle.bmc.http.client.internal.Explicitly
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Department": "Finance"}}
      *
      * @return the value
@@ -934,7 +934,7 @@ public final class Bucket extends com.oracle.bmc.http.client.internal.Explicitly
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Operations": {"CostCenter": "42"}}}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -943,7 +943,7 @@ public final class Bucket extends com.oracle.bmc.http.client.internal.Explicitly
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Operations": {"CostCenter": "42"}}}
      *
      * @return the value
@@ -953,17 +953,17 @@ public final class Bucket extends com.oracle.bmc.http.client.internal.Explicitly
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a
-     * master encryption key used to call the Key Management service to generate a data encryption
-     * key or to encrypt or decrypt a data encryption key.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a master
+     * encryption key used to call the Key Management service to generate a data encryption key or
+     * to encrypt or decrypt a data encryption key.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
     private final String kmsKeyId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a
-     * master encryption key used to call the Key Management service to generate a data encryption
-     * key or to encrypt or decrypt a data encryption key.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a master
+     * encryption key used to call the Key Management service to generate a data encryption key or
+     * to encrypt or decrypt a data encryption key.
      *
      * @return the value
      */
@@ -1059,14 +1059,14 @@ public final class Bucket extends com.oracle.bmc.http.client.internal.Explicitly
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * bucket.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * bucket.
      *
      * @return the value

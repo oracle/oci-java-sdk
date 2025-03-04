@@ -33,7 +33,7 @@ public final class SqlTuningTaskReturn
     public static class Builder {
         /**
          * The identifier of the task being started or cloned. This is not the
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm). It can be
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). It can be
          * retrieved from the following endpoint {@link
          * #listSqlTuningAdvisorTasks(ListSqlTuningAdvisorTasksRequest) listSqlTuningAdvisorTasks}.
          */
@@ -42,7 +42,7 @@ public final class SqlTuningTaskReturn
 
         /**
          * The identifier of the task being started or cloned. This is not the
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm). It can be
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). It can be
          * retrieved from the following endpoint {@link
          * #listSqlTuningAdvisorTasks(ListSqlTuningAdvisorTasksRequest) listSqlTuningAdvisorTasks}.
          *
@@ -86,7 +86,7 @@ public final class SqlTuningTaskReturn
 
     /**
      * The identifier of the task being started or cloned. This is not the
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm). It can be
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). It can be
      * retrieved from the following endpoint {@link
      * #listSqlTuningAdvisorTasks(ListSqlTuningAdvisorTasksRequest) listSqlTuningAdvisorTasks}.
      */
@@ -95,7 +95,7 @@ public final class SqlTuningTaskReturn
 
     /**
      * The identifier of the task being started or cloned. This is not the
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm). It can be
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). It can be
      * retrieved from the following endpoint {@link
      * #listSqlTuningAdvisorTasks(ListSqlTuningAdvisorTasksRequest) listSqlTuningAdvisorTasks}.
      *

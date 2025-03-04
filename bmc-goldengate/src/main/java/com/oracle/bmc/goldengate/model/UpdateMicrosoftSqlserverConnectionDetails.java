@@ -203,7 +203,7 @@ public final class UpdateMicrosoftSqlserverConnectionDetails extends UpdateConne
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Secret that stores the password Oracle GoldenGate uses to connect the associated
          * Microsoft SQL Server. Note: When provided, 'password' field must not be provided.
          */
@@ -211,7 +211,7 @@ public final class UpdateMicrosoftSqlserverConnectionDetails extends UpdateConne
         private String passwordSecretId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Secret that stores the password Oracle GoldenGate uses to connect the associated
          * Microsoft SQL Server. Note: When provided, 'password' field must not be provided.
          *
@@ -564,7 +564,7 @@ public final class UpdateMicrosoftSqlserverConnectionDetails extends UpdateConne
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Secret that stores the password Oracle GoldenGate uses to connect the associated Microsoft
      * SQL Server. Note: When provided, 'password' field must not be provided.
      */
@@ -572,7 +572,7 @@ public final class UpdateMicrosoftSqlserverConnectionDetails extends UpdateConne
     private final String passwordSecretId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Secret that stores the password Oracle GoldenGate uses to connect the associated Microsoft
      * SQL Server. Note: When provided, 'password' field must not be provided.
      *

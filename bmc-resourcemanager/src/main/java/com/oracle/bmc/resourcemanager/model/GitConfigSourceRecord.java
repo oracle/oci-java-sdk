@@ -29,16 +29,16 @@ public final class GitConfigSourceRecord extends ConfigSourceRecord {
     public static class Builder {
         /**
          * Unique identifier
-         * ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) for
-         * the Git configuration source.
+         * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) for the
+         * Git configuration source.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("configurationSourceProviderId")
         private String configurationSourceProviderId;
 
         /**
          * Unique identifier
-         * ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) for
-         * the Git configuration source.
+         * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) for the
+         * Git configuration source.
          *
          * @param configurationSourceProviderId the value to set
          * @return this builder
@@ -152,16 +152,16 @@ public final class GitConfigSourceRecord extends ConfigSourceRecord {
 
     /**
      * Unique identifier
-     * ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) for the
-     * Git configuration source.
+     * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) for the Git
+     * configuration source.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("configurationSourceProviderId")
     private final String configurationSourceProviderId;
 
     /**
      * Unique identifier
-     * ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) for the
-     * Git configuration source.
+     * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) for the Git
+     * configuration source.
      *
      * @return the value
      */

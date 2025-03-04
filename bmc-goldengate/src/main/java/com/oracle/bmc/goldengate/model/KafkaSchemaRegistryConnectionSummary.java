@@ -299,7 +299,7 @@ public final class KafkaSchemaRegistryConnectionSummary extends ConnectionSummar
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Secret where the Kafka Schema Registry password is stored, The password to access Schema
          * Registry using basic authentication. This value is injected into
          * 'schema.registry.basic.auth.user.info=user:password' configuration property. Note: When
@@ -309,7 +309,7 @@ public final class KafkaSchemaRegistryConnectionSummary extends ConnectionSummar
         private String passwordSecretId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Secret where the Kafka Schema Registry password is stored, The password to access Schema
          * Registry using basic authentication. This value is injected into
          * 'schema.registry.basic.auth.user.info=user:password' configuration property. Note: When
@@ -324,7 +324,7 @@ public final class KafkaSchemaRegistryConnectionSummary extends ConnectionSummar
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Secret that stores the content of the TrustStore file. Note: When provided, 'trustStore'
          * field must not be provided.
          */
@@ -332,7 +332,7 @@ public final class KafkaSchemaRegistryConnectionSummary extends ConnectionSummar
         private String trustStoreSecretId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Secret that stores the content of the TrustStore file. Note: When provided, 'trustStore'
          * field must not be provided.
          *
@@ -345,7 +345,7 @@ public final class KafkaSchemaRegistryConnectionSummary extends ConnectionSummar
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Secret where the kafka Ssl TrustStore password is stored. Note: When provided,
          * 'trustStorePassword' field must not be provided.
          */
@@ -353,7 +353,7 @@ public final class KafkaSchemaRegistryConnectionSummary extends ConnectionSummar
         private String trustStorePasswordSecretId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Secret where the kafka Ssl TrustStore password is stored. Note: When provided,
          * 'trustStorePassword' field must not be provided.
          *
@@ -366,7 +366,7 @@ public final class KafkaSchemaRegistryConnectionSummary extends ConnectionSummar
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Secret that stores the content of the KeyStore file. Note: When provided, 'keyStore'
          * field must not be provided.
          */
@@ -374,7 +374,7 @@ public final class KafkaSchemaRegistryConnectionSummary extends ConnectionSummar
         private String keyStoreSecretId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Secret that stores the content of the KeyStore file. Note: When provided, 'keyStore'
          * field must not be provided.
          *
@@ -387,7 +387,7 @@ public final class KafkaSchemaRegistryConnectionSummary extends ConnectionSummar
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Secret where the kafka Ssl KeyStore password is stored. Note: When provided,
          * 'keyStorePassword' field must not be provided.
          */
@@ -395,7 +395,7 @@ public final class KafkaSchemaRegistryConnectionSummary extends ConnectionSummar
         private String keyStorePasswordSecretId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Secret where the kafka Ssl KeyStore password is stored. Note: When provided,
          * 'keyStorePassword' field must not be provided.
          *
@@ -408,7 +408,7 @@ public final class KafkaSchemaRegistryConnectionSummary extends ConnectionSummar
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Secret that stores the password for the cert inside the KeyStore. In case it differs from
          * the KeyStore password, it should be provided. Note: When provided, 'sslKeyPassword' field
          * must not be provided.
@@ -417,7 +417,7 @@ public final class KafkaSchemaRegistryConnectionSummary extends ConnectionSummar
         private String sslKeyPasswordSecretId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Secret that stores the password for the cert inside the KeyStore. In case it differs from
          * the KeyStore password, it should be provided. Note: When provided, 'sslKeyPassword' field
          * must not be provided.
@@ -733,7 +733,7 @@ public final class KafkaSchemaRegistryConnectionSummary extends ConnectionSummar
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Secret where the Kafka Schema Registry password is stored, The password to access Schema
      * Registry using basic authentication. This value is injected into
      * 'schema.registry.basic.auth.user.info=user:password' configuration property. Note: When
@@ -743,7 +743,7 @@ public final class KafkaSchemaRegistryConnectionSummary extends ConnectionSummar
     private final String passwordSecretId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Secret where the Kafka Schema Registry password is stored, The password to access Schema
      * Registry using basic authentication. This value is injected into
      * 'schema.registry.basic.auth.user.info=user:password' configuration property. Note: When
@@ -756,7 +756,7 @@ public final class KafkaSchemaRegistryConnectionSummary extends ConnectionSummar
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Secret that stores the content of the TrustStore file. Note: When provided, 'trustStore'
      * field must not be provided.
      */
@@ -764,7 +764,7 @@ public final class KafkaSchemaRegistryConnectionSummary extends ConnectionSummar
     private final String trustStoreSecretId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Secret that stores the content of the TrustStore file. Note: When provided, 'trustStore'
      * field must not be provided.
      *
@@ -775,7 +775,7 @@ public final class KafkaSchemaRegistryConnectionSummary extends ConnectionSummar
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Secret where the kafka Ssl TrustStore password is stored. Note: When provided,
      * 'trustStorePassword' field must not be provided.
      */
@@ -783,7 +783,7 @@ public final class KafkaSchemaRegistryConnectionSummary extends ConnectionSummar
     private final String trustStorePasswordSecretId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Secret where the kafka Ssl TrustStore password is stored. Note: When provided,
      * 'trustStorePassword' field must not be provided.
      *
@@ -794,7 +794,7 @@ public final class KafkaSchemaRegistryConnectionSummary extends ConnectionSummar
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Secret that stores the content of the KeyStore file. Note: When provided, 'keyStore' field
      * must not be provided.
      */
@@ -802,7 +802,7 @@ public final class KafkaSchemaRegistryConnectionSummary extends ConnectionSummar
     private final String keyStoreSecretId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Secret that stores the content of the KeyStore file. Note: When provided, 'keyStore' field
      * must not be provided.
      *
@@ -813,7 +813,7 @@ public final class KafkaSchemaRegistryConnectionSummary extends ConnectionSummar
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Secret where the kafka Ssl KeyStore password is stored. Note: When provided,
      * 'keyStorePassword' field must not be provided.
      */
@@ -821,7 +821,7 @@ public final class KafkaSchemaRegistryConnectionSummary extends ConnectionSummar
     private final String keyStorePasswordSecretId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Secret where the kafka Ssl KeyStore password is stored. Note: When provided,
      * 'keyStorePassword' field must not be provided.
      *
@@ -832,7 +832,7 @@ public final class KafkaSchemaRegistryConnectionSummary extends ConnectionSummar
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Secret that stores the password for the cert inside the KeyStore. In case it differs from the
      * KeyStore password, it should be provided. Note: When provided, 'sslKeyPassword' field must
      * not be provided.
@@ -841,7 +841,7 @@ public final class KafkaSchemaRegistryConnectionSummary extends ConnectionSummar
     private final String sslKeyPasswordSecretId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Secret that stores the password for the cert inside the KeyStore. In case it differs from the
      * KeyStore password, it should be provided. Note: When provided, 'sslKeyPassword' field must
      * not be provided.

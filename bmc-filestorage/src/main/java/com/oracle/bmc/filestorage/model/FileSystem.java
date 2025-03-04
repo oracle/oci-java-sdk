@@ -12,7 +12,7 @@ package com.oracle.bmc.filestorage.model;
  * <p>To use any of the API operations, you must be authorized in an IAM policy. If you're not
  * authorized, talk to an administrator. If you're an administrator who needs to write policies to
  * give users access, see [Getting Started with
- * Policies](https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm). <br>
+ * Policies](https://docs.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm). <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -49,7 +49,10 @@ public final class FileSystem extends com.oracle.bmc.http.client.internal.Explic
         "lifecycleDetails",
         "isTargetable",
         "replicationTargetId",
-        "filesystemSnapshotPolicyId"
+        "filesystemSnapshotPolicyId",
+        "areQuotaRulesEnabled",
+        "quotaEnforcementState",
+        "replicationSourceCount"
     })
     public FileSystem(
             String availabilityDomain,
@@ -72,7 +75,10 @@ public final class FileSystem extends com.oracle.bmc.http.client.internal.Explic
             String lifecycleDetails,
             Boolean isTargetable,
             String replicationTargetId,
-            String filesystemSnapshotPolicyId) {
+            String filesystemSnapshotPolicyId,
+            Boolean areQuotaRulesEnabled,
+            QuotaEnforcementState quotaEnforcementState,
+            Integer replicationSourceCount) {
         super();
         this.availabilityDomain = availabilityDomain;
         this.meteredBytes = meteredBytes;
@@ -95,6 +101,9 @@ public final class FileSystem extends com.oracle.bmc.http.client.internal.Explic
         this.isTargetable = isTargetable;
         this.replicationTargetId = replicationTargetId;
         this.filesystemSnapshotPolicyId = filesystemSnapshotPolicyId;
+        this.areQuotaRulesEnabled = areQuotaRulesEnabled;
+        this.quotaEnforcementState = quotaEnforcementState;
+        this.replicationSourceCount = replicationSourceCount;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -124,7 +133,7 @@ public final class FileSystem extends com.oracle.bmc.http.client.internal.Explic
          * The number of bytes consumed by the file system, including any snapshots. This number
          * reflects the metered size of the file system and is updated asynchronously with respect
          * to updates to the file system. For more information, see [File System Usage and
-         * Metering](https://docs.cloud.oracle.com/Content/File/Concepts/FSutilization.htm).
+         * Metering](https://docs.oracle.com/iaas/Content/File/Concepts/FSutilization.htm).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("meteredBytes")
         private Long meteredBytes;
@@ -133,7 +142,7 @@ public final class FileSystem extends com.oracle.bmc.http.client.internal.Explic
          * The number of bytes consumed by the file system, including any snapshots. This number
          * reflects the metered size of the file system and is updated asynchronously with respect
          * to updates to the file system. For more information, see [File System Usage and
-         * Metering](https://docs.cloud.oracle.com/Content/File/Concepts/FSutilization.htm).
+         * Metering](https://docs.oracle.com/iaas/Content/File/Concepts/FSutilization.htm).
          *
          * @param meteredBytes the value to set
          * @return this builder
@@ -144,14 +153,14 @@ public final class FileSystem extends com.oracle.bmc.http.client.internal.Explic
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * compartment that contains the file system.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * compartment that contains the file system.
          *
          * @param compartmentId the value to set
@@ -186,14 +195,14 @@ public final class FileSystem extends com.oracle.bmc.http.client.internal.Explic
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * file system.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * file system.
          *
          * @param id the value to set
@@ -245,7 +254,7 @@ public final class FileSystem extends com.oracle.bmc.http.client.internal.Explic
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
          * {@code {"Department": "Finance"}}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -254,7 +263,7 @@ public final class FileSystem extends com.oracle.bmc.http.client.internal.Explic
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
          * {@code {"Department": "Finance"}}
          *
          * @param freeformTags the value to set
@@ -268,7 +277,7 @@ public final class FileSystem extends com.oracle.bmc.http.client.internal.Explic
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
          * {@code {"Operations": {"CostCenter": "42"}}}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -277,7 +286,7 @@ public final class FileSystem extends com.oracle.bmc.http.client.internal.Explic
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
          * {@code {"Operations": {"CostCenter": "42"}}}
          *
          * @param definedTags the value to set
@@ -309,14 +318,14 @@ public final class FileSystem extends com.oracle.bmc.http.client.internal.Explic
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * KMS key which is the master encryption key for the file system.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
         private String kmsKeyId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * KMS key which is the master encryption key for the file system.
          *
          * @param kmsKeyId the value to set
@@ -338,14 +347,14 @@ public final class FileSystem extends com.oracle.bmc.http.client.internal.Explic
         }
         /**
          * Specifies whether the file system has been cloned. See [Cloning a File
-         * System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
+         * System](https://docs.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("isCloneParent")
         private Boolean isCloneParent;
 
         /**
          * Specifies whether the file system has been cloned. See [Cloning a File
-         * System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
+         * System](https://docs.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
          *
          * @param isCloneParent the value to set
          * @return this builder
@@ -360,7 +369,7 @@ public final class FileSystem extends com.oracle.bmc.http.client.internal.Explic
          * can take up to several hours to complete depending on the size of the source. The source
          * and clone remain available during hydration, but there may be some performance impact.
          * See [Cloning a File
-         * System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm#hydration).
+         * System](https://docs.oracle.com/iaas/Content/File/Tasks/cloningFS.htm#hydration).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("isHydrated")
         private Boolean isHydrated;
@@ -370,7 +379,7 @@ public final class FileSystem extends com.oracle.bmc.http.client.internal.Explic
          * can take up to several hours to complete depending on the size of the source. The source
          * and clone remain available during hydration, but there may be some performance impact.
          * See [Cloning a File
-         * System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm#hydration).
+         * System](https://docs.oracle.com/iaas/Content/File/Tasks/cloningFS.htm#hydration).
          *
          * @param isHydrated the value to set
          * @return this builder
@@ -447,7 +456,7 @@ public final class FileSystem extends com.oracle.bmc.http.client.internal.Explic
          * snapshots. After the file system has been specified as a target in a replication, or if
          * the file system contains user snapshots, the system sets this value to {@code false}. For
          * more information, see [Using
-         * Replication](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/using-replication.htm).
+         * Replication](https://docs.oracle.com/iaas/Content/File/Tasks/using-replication.htm).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("isTargetable")
         private Boolean isTargetable;
@@ -459,7 +468,7 @@ public final class FileSystem extends com.oracle.bmc.http.client.internal.Explic
          * snapshots. After the file system has been specified as a target in a replication, or if
          * the file system contains user snapshots, the system sets this value to {@code false}. For
          * more information, see [Using
-         * Replication](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/using-replication.htm).
+         * Replication](https://docs.oracle.com/iaas/Content/File/Tasks/using-replication.htm).
          *
          * @param isTargetable the value to set
          * @return this builder
@@ -470,7 +479,7 @@ public final class FileSystem extends com.oracle.bmc.http.client.internal.Explic
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * replication target associated with the file system. Empty if the file system is not being
          * used as target in a replication.
          */
@@ -478,7 +487,7 @@ public final class FileSystem extends com.oracle.bmc.http.client.internal.Explic
         private String replicationTargetId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * replication target associated with the file system. Empty if the file system is not being
          * used as target in a replication.
          *
@@ -491,7 +500,7 @@ public final class FileSystem extends com.oracle.bmc.http.client.internal.Explic
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * associated file system snapshot policy, which controls the frequency of snapshot creation
          * and retention period of the taken snapshots.
          */
@@ -499,7 +508,7 @@ public final class FileSystem extends com.oracle.bmc.http.client.internal.Explic
         private String filesystemSnapshotPolicyId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * associated file system snapshot policy, which controls the frequency of snapshot creation
          * and retention period of the taken snapshots.
          *
@@ -509,6 +518,51 @@ public final class FileSystem extends com.oracle.bmc.http.client.internal.Explic
         public Builder filesystemSnapshotPolicyId(String filesystemSnapshotPolicyId) {
             this.filesystemSnapshotPolicyId = filesystemSnapshotPolicyId;
             this.__explicitlySet__.add("filesystemSnapshotPolicyId");
+            return this;
+        }
+        /** Specifies the enforcement of quota rules on the file system. */
+        @com.fasterxml.jackson.annotation.JsonProperty("areQuotaRulesEnabled")
+        private Boolean areQuotaRulesEnabled;
+
+        /**
+         * Specifies the enforcement of quota rules on the file system.
+         *
+         * @param areQuotaRulesEnabled the value to set
+         * @return this builder
+         */
+        public Builder areQuotaRulesEnabled(Boolean areQuotaRulesEnabled) {
+            this.areQuotaRulesEnabled = areQuotaRulesEnabled;
+            this.__explicitlySet__.add("areQuotaRulesEnabled");
+            return this;
+        }
+        /** Displays the state of enforcement of quota rules on the file system. */
+        @com.fasterxml.jackson.annotation.JsonProperty("quotaEnforcementState")
+        private QuotaEnforcementState quotaEnforcementState;
+
+        /**
+         * Displays the state of enforcement of quota rules on the file system.
+         *
+         * @param quotaEnforcementState the value to set
+         * @return this builder
+         */
+        public Builder quotaEnforcementState(QuotaEnforcementState quotaEnforcementState) {
+            this.quotaEnforcementState = quotaEnforcementState;
+            this.__explicitlySet__.add("quotaEnforcementState");
+            return this;
+        }
+        /** Specifies the total number of replications for which this file system is a source. */
+        @com.fasterxml.jackson.annotation.JsonProperty("replicationSourceCount")
+        private Integer replicationSourceCount;
+
+        /**
+         * Specifies the total number of replications for which this file system is a source.
+         *
+         * @param replicationSourceCount the value to set
+         * @return this builder
+         */
+        public Builder replicationSourceCount(Integer replicationSourceCount) {
+            this.replicationSourceCount = replicationSourceCount;
+            this.__explicitlySet__.add("replicationSourceCount");
             return this;
         }
 
@@ -538,7 +592,10 @@ public final class FileSystem extends com.oracle.bmc.http.client.internal.Explic
                             this.lifecycleDetails,
                             this.isTargetable,
                             this.replicationTargetId,
-                            this.filesystemSnapshotPolicyId);
+                            this.filesystemSnapshotPolicyId,
+                            this.areQuotaRulesEnabled,
+                            this.quotaEnforcementState,
+                            this.replicationSourceCount);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -610,6 +667,15 @@ public final class FileSystem extends com.oracle.bmc.http.client.internal.Explic
             if (model.wasPropertyExplicitlySet("filesystemSnapshotPolicyId")) {
                 this.filesystemSnapshotPolicyId(model.getFilesystemSnapshotPolicyId());
             }
+            if (model.wasPropertyExplicitlySet("areQuotaRulesEnabled")) {
+                this.areQuotaRulesEnabled(model.getAreQuotaRulesEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("quotaEnforcementState")) {
+                this.quotaEnforcementState(model.getQuotaEnforcementState());
+            }
+            if (model.wasPropertyExplicitlySet("replicationSourceCount")) {
+                this.replicationSourceCount(model.getReplicationSourceCount());
+            }
             return this;
         }
     }
@@ -646,7 +712,7 @@ public final class FileSystem extends com.oracle.bmc.http.client.internal.Explic
      * The number of bytes consumed by the file system, including any snapshots. This number
      * reflects the metered size of the file system and is updated asynchronously with respect to
      * updates to the file system. For more information, see [File System Usage and
-     * Metering](https://docs.cloud.oracle.com/Content/File/Concepts/FSutilization.htm).
+     * Metering](https://docs.oracle.com/iaas/Content/File/Concepts/FSutilization.htm).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("meteredBytes")
     private final Long meteredBytes;
@@ -655,7 +721,7 @@ public final class FileSystem extends com.oracle.bmc.http.client.internal.Explic
      * The number of bytes consumed by the file system, including any snapshots. This number
      * reflects the metered size of the file system and is updated asynchronously with respect to
      * updates to the file system. For more information, see [File System Usage and
-     * Metering](https://docs.cloud.oracle.com/Content/File/Concepts/FSutilization.htm).
+     * Metering](https://docs.oracle.com/iaas/Content/File/Concepts/FSutilization.htm).
      *
      * @return the value
      */
@@ -664,14 +730,14 @@ public final class FileSystem extends com.oracle.bmc.http.client.internal.Explic
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment that contains the file system.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment that contains the file system.
      *
      * @return the value
@@ -702,15 +768,15 @@ public final class FileSystem extends com.oracle.bmc.http.client.internal.Explic
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * file system.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file
+     * system.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * file system.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file
+     * system.
      *
      * @return the value
      */
@@ -805,7 +871,7 @@ public final class FileSystem extends com.oracle.bmc.http.client.internal.Explic
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Department": "Finance"}}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -814,7 +880,7 @@ public final class FileSystem extends com.oracle.bmc.http.client.internal.Explic
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Department": "Finance"}}
      *
      * @return the value
@@ -826,7 +892,7 @@ public final class FileSystem extends com.oracle.bmc.http.client.internal.Explic
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Operations": {"CostCenter": "42"}}}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -835,7 +901,7 @@ public final class FileSystem extends com.oracle.bmc.http.client.internal.Explic
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Operations": {"CostCenter": "42"}}}
      *
      * @return the value
@@ -860,14 +926,14 @@ public final class FileSystem extends com.oracle.bmc.http.client.internal.Explic
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the KMS
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the KMS
      * key which is the master encryption key for the file system.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
     private final String kmsKeyId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the KMS
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the KMS
      * key which is the master encryption key for the file system.
      *
      * @return the value
@@ -885,14 +951,14 @@ public final class FileSystem extends com.oracle.bmc.http.client.internal.Explic
 
     /**
      * Specifies whether the file system has been cloned. See [Cloning a File
-     * System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
+     * System](https://docs.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("isCloneParent")
     private final Boolean isCloneParent;
 
     /**
      * Specifies whether the file system has been cloned. See [Cloning a File
-     * System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
+     * System](https://docs.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
      *
      * @return the value
      */
@@ -905,7 +971,7 @@ public final class FileSystem extends com.oracle.bmc.http.client.internal.Explic
      * take up to several hours to complete depending on the size of the source. The source and
      * clone remain available during hydration, but there may be some performance impact. See
      * [Cloning a File
-     * System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm#hydration).
+     * System](https://docs.oracle.com/iaas/Content/File/Tasks/cloningFS.htm#hydration).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("isHydrated")
     private final Boolean isHydrated;
@@ -915,7 +981,7 @@ public final class FileSystem extends com.oracle.bmc.http.client.internal.Explic
      * take up to several hours to complete depending on the size of the source. The source and
      * clone remain available during hydration, but there may be some performance impact. See
      * [Cloning a File
-     * System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm#hydration).
+     * System](https://docs.oracle.com/iaas/Content/File/Tasks/cloningFS.htm#hydration).
      *
      * @return the value
      */
@@ -1029,7 +1095,7 @@ public final class FileSystem extends com.oracle.bmc.http.client.internal.Explic
      * After the file system has been specified as a target in a replication, or if the file system
      * contains user snapshots, the system sets this value to {@code false}. For more information,
      * see [Using
-     * Replication](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/using-replication.htm).
+     * Replication](https://docs.oracle.com/iaas/Content/File/Tasks/using-replication.htm).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("isTargetable")
     private final Boolean isTargetable;
@@ -1041,7 +1107,7 @@ public final class FileSystem extends com.oracle.bmc.http.client.internal.Explic
      * After the file system has been specified as a target in a replication, or if the file system
      * contains user snapshots, the system sets this value to {@code false}. For more information,
      * see [Using
-     * Replication](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/using-replication.htm).
+     * Replication](https://docs.oracle.com/iaas/Content/File/Tasks/using-replication.htm).
      *
      * @return the value
      */
@@ -1050,7 +1116,7 @@ public final class FileSystem extends com.oracle.bmc.http.client.internal.Explic
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * replication target associated with the file system. Empty if the file system is not being
      * used as target in a replication.
      */
@@ -1058,7 +1124,7 @@ public final class FileSystem extends com.oracle.bmc.http.client.internal.Explic
     private final String replicationTargetId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * replication target associated with the file system. Empty if the file system is not being
      * used as target in a replication.
      *
@@ -1069,7 +1135,7 @@ public final class FileSystem extends com.oracle.bmc.http.client.internal.Explic
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * associated file system snapshot policy, which controls the frequency of snapshot creation and
      * retention period of the taken snapshots.
      */
@@ -1077,7 +1143,7 @@ public final class FileSystem extends com.oracle.bmc.http.client.internal.Explic
     private final String filesystemSnapshotPolicyId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * associated file system snapshot policy, which controls the frequency of snapshot creation and
      * retention period of the taken snapshots.
      *
@@ -1085,6 +1151,95 @@ public final class FileSystem extends com.oracle.bmc.http.client.internal.Explic
      */
     public String getFilesystemSnapshotPolicyId() {
         return filesystemSnapshotPolicyId;
+    }
+
+    /** Specifies the enforcement of quota rules on the file system. */
+    @com.fasterxml.jackson.annotation.JsonProperty("areQuotaRulesEnabled")
+    private final Boolean areQuotaRulesEnabled;
+
+    /**
+     * Specifies the enforcement of quota rules on the file system.
+     *
+     * @return the value
+     */
+    public Boolean getAreQuotaRulesEnabled() {
+        return areQuotaRulesEnabled;
+    }
+
+    /** Displays the state of enforcement of quota rules on the file system. */
+    public enum QuotaEnforcementState implements com.oracle.bmc.http.internal.BmcEnum {
+        Enabling("ENABLING"),
+        Enabled("ENABLED"),
+        Disabling("DISABLING"),
+        Disabled("DISABLED"),
+        Syncing("SYNCING"),
+        Failed("FAILED"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(QuotaEnforcementState.class);
+
+        private final String value;
+        private static java.util.Map<String, QuotaEnforcementState> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (QuotaEnforcementState v : QuotaEnforcementState.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        QuotaEnforcementState(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static QuotaEnforcementState create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'QuotaEnforcementState', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /** Displays the state of enforcement of quota rules on the file system. */
+    @com.fasterxml.jackson.annotation.JsonProperty("quotaEnforcementState")
+    private final QuotaEnforcementState quotaEnforcementState;
+
+    /**
+     * Displays the state of enforcement of quota rules on the file system.
+     *
+     * @return the value
+     */
+    public QuotaEnforcementState getQuotaEnforcementState() {
+        return quotaEnforcementState;
+    }
+
+    /** Specifies the total number of replications for which this file system is a source. */
+    @com.fasterxml.jackson.annotation.JsonProperty("replicationSourceCount")
+    private final Integer replicationSourceCount;
+
+    /**
+     * Specifies the total number of replications for which this file system is a source.
+     *
+     * @return the value
+     */
+    public Integer getReplicationSourceCount() {
+        return replicationSourceCount;
     }
 
     @Override
@@ -1124,6 +1279,9 @@ public final class FileSystem extends com.oracle.bmc.http.client.internal.Explic
         sb.append(", replicationTargetId=").append(String.valueOf(this.replicationTargetId));
         sb.append(", filesystemSnapshotPolicyId=")
                 .append(String.valueOf(this.filesystemSnapshotPolicyId));
+        sb.append(", areQuotaRulesEnabled=").append(String.valueOf(this.areQuotaRulesEnabled));
+        sb.append(", quotaEnforcementState=").append(String.valueOf(this.quotaEnforcementState));
+        sb.append(", replicationSourceCount=").append(String.valueOf(this.replicationSourceCount));
         sb.append(")");
         return sb.toString();
     }
@@ -1160,6 +1318,10 @@ public final class FileSystem extends com.oracle.bmc.http.client.internal.Explic
                 && java.util.Objects.equals(this.replicationTargetId, other.replicationTargetId)
                 && java.util.Objects.equals(
                         this.filesystemSnapshotPolicyId, other.filesystemSnapshotPolicyId)
+                && java.util.Objects.equals(this.areQuotaRulesEnabled, other.areQuotaRulesEnabled)
+                && java.util.Objects.equals(this.quotaEnforcementState, other.quotaEnforcementState)
+                && java.util.Objects.equals(
+                        this.replicationSourceCount, other.replicationSourceCount)
                 && super.equals(other);
     }
 
@@ -1212,6 +1374,21 @@ public final class FileSystem extends com.oracle.bmc.http.client.internal.Explic
                         + (this.filesystemSnapshotPolicyId == null
                                 ? 43
                                 : this.filesystemSnapshotPolicyId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.areQuotaRulesEnabled == null
+                                ? 43
+                                : this.areQuotaRulesEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.quotaEnforcementState == null
+                                ? 43
+                                : this.quotaEnforcementState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.replicationSourceCount == null
+                                ? 43
+                                : this.replicationSourceCount.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

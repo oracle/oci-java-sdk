@@ -61,7 +61,7 @@ public final class CreateIpv6Details
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
          */
@@ -71,7 +71,7 @@ public final class CreateIpv6Details
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
@@ -106,7 +106,7 @@ public final class CreateIpv6Details
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          */
@@ -116,7 +116,7 @@ public final class CreateIpv6Details
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          *
@@ -154,15 +154,15 @@ public final class CreateIpv6Details
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the VNIC to assign the IPv6 to. The IPv6 will be in the VNIC's subnet.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * VNIC to assign the IPv6 to. The IPv6 will be in the VNIC's subnet.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("vnicId")
         private String vnicId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the VNIC to assign the IPv6 to. The IPv6 will be in the VNIC's subnet.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * VNIC to assign the IPv6 to. The IPv6 will be in the VNIC's subnet.
          *
          * @param vnicId the value to set
          * @return this builder
@@ -173,17 +173,17 @@ public final class CreateIpv6Details
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the subnet from which the IPv6 is to be drawn. The IP address, *if supplied*, must be
-         * valid for the given subnet, only valid for reserved IPs currently.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * subnet from which the IPv6 is to be drawn. The IP address, *if supplied*, must be valid
+         * for the given subnet, only valid for reserved IPs currently.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
         private String subnetId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the subnet from which the IPv6 is to be drawn. The IP address, *if supplied*, must be
-         * valid for the given subnet, only valid for reserved IPs currently.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * subnet from which the IPv6 is to be drawn. The IP address, *if supplied*, must be valid
+         * for the given subnet, only valid for reserved IPs currently.
          *
          * @param subnetId the value to set
          * @return this builder
@@ -209,18 +209,16 @@ public final class CreateIpv6Details
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the route table the IP address or VNIC will use. For more information, see [Source
-         * Based
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * route table the IP address or VNIC will use. For more information, see [Source Based
          * Routing](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("routeTableId")
         private String routeTableId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the route table the IP address or VNIC will use. For more information, see [Source
-         * Based
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * route table the IP address or VNIC will use. For more information, see [Source Based
          * Routing](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing).
          *
          * @param routeTableId the value to set
@@ -317,7 +315,7 @@ public final class CreateIpv6Details
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
      */
@@ -327,7 +325,7 @@ public final class CreateIpv6Details
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
@@ -357,7 +355,7 @@ public final class CreateIpv6Details
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      */
@@ -367,7 +365,7 @@ public final class CreateIpv6Details
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      *
@@ -401,15 +399,15 @@ public final class CreateIpv6Details
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the VNIC to assign the IPv6 to. The IPv6 will be in the VNIC's subnet.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC
+     * to assign the IPv6 to. The IPv6 will be in the VNIC's subnet.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("vnicId")
     private final String vnicId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the VNIC to assign the IPv6 to. The IPv6 will be in the VNIC's subnet.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC
+     * to assign the IPv6 to. The IPv6 will be in the VNIC's subnet.
      *
      * @return the value
      */
@@ -418,17 +416,17 @@ public final class CreateIpv6Details
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the subnet from which the IPv6 is to be drawn. The IP address, *if supplied*, must be valid
-     * for the given subnet, only valid for reserved IPs currently.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * subnet from which the IPv6 is to be drawn. The IP address, *if supplied*, must be valid for
+     * the given subnet, only valid for reserved IPs currently.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
     private final String subnetId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the subnet from which the IPv6 is to be drawn. The IP address, *if supplied*, must be valid
-     * for the given subnet, only valid for reserved IPs currently.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * subnet from which the IPv6 is to be drawn. The IP address, *if supplied*, must be valid for
+     * the given subnet, only valid for reserved IPs currently.
      *
      * @return the value
      */
@@ -483,16 +481,16 @@ public final class CreateIpv6Details
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the route table the IP address or VNIC will use. For more information, see [Source Based
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * route table the IP address or VNIC will use. For more information, see [Source Based
      * Routing](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("routeTableId")
     private final String routeTableId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the route table the IP address or VNIC will use. For more information, see [Source Based
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * route table the IP address or VNIC will use. For more information, see [Source Based
      * Routing](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing).
      *
      * @return the value

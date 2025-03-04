@@ -91,14 +91,14 @@ public class Pipeline extends com.oracle.bmc.http.client.internal.ExplicitlySetB
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * pipeline. This option applies when retrieving a pipeline.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * pipeline. This option applies when retrieving a pipeline.
      *
      * @return the value
@@ -134,14 +134,14 @@ public class Pipeline extends com.oracle.bmc.http.client.internal.ExplicitlySetB
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment being referenced.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment being referenced.
      *
      * @return the value
@@ -247,7 +247,7 @@ public class Pipeline extends com.oracle.bmc.http.client.internal.ExplicitlySetB
      * The system tags associated with this resource, if any. The system tags are set by Oracle
      * Cloud Infrastructure services. Each key is predefined and scoped to namespaces. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {orcl-cloud: {free-tier-retain: true}}}
      */
@@ -258,7 +258,7 @@ public class Pipeline extends com.oracle.bmc.http.client.internal.ExplicitlySetB
      * The system tags associated with this resource, if any. The system tags are set by Oracle
      * Cloud Infrastructure services. Each key is predefined and scoped to namespaces. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {orcl-cloud: {free-tier-retain: true}}}
      *

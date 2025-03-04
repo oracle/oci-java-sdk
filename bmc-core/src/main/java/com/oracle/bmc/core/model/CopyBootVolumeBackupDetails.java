@@ -82,9 +82,8 @@ public final class CopyBootVolumeBackupDetails
          *
          * <p>For more information about the Vault service and encryption keys, see [Overview of
          * Vault
-         * service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm)
-         * and [Using
-         * Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+         * service](https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and
+         * [Using Keys](https://docs.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
         private String kmsKeyId;
@@ -97,9 +96,8 @@ public final class CopyBootVolumeBackupDetails
          *
          * <p>For more information about the Vault service and encryption keys, see [Overview of
          * Vault
-         * service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm)
-         * and [Using
-         * Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+         * service](https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and
+         * [Using Keys](https://docs.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
          *
          * @param kmsKeyId the value to set
          * @return this builder
@@ -190,9 +188,8 @@ public final class CopyBootVolumeBackupDetails
      * copied to the destination region.
      *
      * <p>For more information about the Vault service and encryption keys, see [Overview of Vault
-     * service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm)
-     * and [Using
-     * Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+     * service](https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and
+     * [Using Keys](https://docs.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
     private final String kmsKeyId;
@@ -204,9 +201,8 @@ public final class CopyBootVolumeBackupDetails
      * copied to the destination region.
      *
      * <p>For more information about the Vault service and encryption keys, see [Overview of Vault
-     * service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm)
-     * and [Using
-     * Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+     * service](https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and
+     * [Using Keys](https://docs.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
      *
      * @return the value
      */

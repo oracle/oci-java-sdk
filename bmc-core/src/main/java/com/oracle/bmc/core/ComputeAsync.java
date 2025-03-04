@@ -10,11 +10,11 @@ import com.oracle.bmc.core.responses.*;
 /**
  * Use the Core Services API to manage resources such as virtual cloud networks (VCNs), compute
  * instances, and block storage volumes. For more information, see the console documentation for the
- * [Networking](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/overview.htm),
- * [Compute](https://docs.cloud.oracle.com/iaas/Content/Compute/Concepts/computeoverview.htm), and
- * [Block Volume](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/overview.htm) services.
- * The required permissions are documented in the [Details for the Core
- * Services](https://docs.cloud.oracle.com/iaas/Content/Identity/Reference/corepolicyreference.htm)
+ * [Networking](https://docs.oracle.com/iaas/Content/Network/Concepts/overview.htm),
+ * [Compute](https://docs.oracle.com/iaas/Content/Compute/Concepts/computeoverview.htm), and [Block
+ * Volume](https://docs.oracle.com/iaas/Content/Block/Concepts/overview.htm) services. The required
+ * permissions are documented in the [Details for the Core
+ * Services](https://docs.oracle.com/iaas/Content/Identity/Reference/corepolicyreference.htm)
  * article.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
@@ -122,7 +122,7 @@ public interface ComputeAsync extends AutoCloseable {
     /**
      * Creates a secondary VNIC and attaches it to the specified instance. For more information
      * about secondary VNICs, see [Virtual Network Interface Cards
-     * (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
+     * (VNICs)](https://docs.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -181,7 +181,7 @@ public interface ComputeAsync extends AutoCloseable {
     /**
      * Moves a compute capacity reservation into a different compartment. For information about
      * moving resources between compartments, see [Moving Resources to a Different
-     * Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -201,7 +201,7 @@ public interface ComputeAsync extends AutoCloseable {
     /**
      * Moves a compute capacity topology into a different compartment. For information about moving
      * resources between compartments, see [Moving Resources to a Different
-     * Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -220,12 +220,12 @@ public interface ComputeAsync extends AutoCloseable {
 
     /**
      * Moves a compute cluster into a different compartment within the same tenancy. A [compute
-     * cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) is a
-     * remote direct memory access (RDMA) network group.
+     * cluster](https://docs.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) is a remote
+     * direct memory access (RDMA) network group.
      *
      * <p>For information about moving resources between compartments, see [Moving Resources to a
      * Different
-     * Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -246,7 +246,7 @@ public interface ComputeAsync extends AutoCloseable {
      * Moves a compute image capability schema into a different compartment within the same tenancy.
      * For information about moving resources between compartments, see [Moving Resources to a
      * Different
-     * Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -284,7 +284,7 @@ public interface ComputeAsync extends AutoCloseable {
     /**
      * Moves an image into a different compartment within the same tenancy. For information about
      * moving resources between compartments, see [Moving Resources to a Different
-     * Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -302,7 +302,7 @@ public interface ComputeAsync extends AutoCloseable {
     /**
      * Moves an instance into a different compartment within the same tenancy. For information about
      * moving resources between compartments, see [Moving Resources to a Different
-     * Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
      * <p>When you move an instance to a different compartment, associated resources such as boot
      * volumes and VNICs are not moved.
@@ -364,7 +364,7 @@ public interface ComputeAsync extends AutoCloseable {
      * domain. Compute capacity reservations let you reserve instances in a compartment. When you
      * launch an instance using this reservation, you are assured that you have enough space for
      * your instance, and you won't get out of capacity errors. For more information, see [Reserved
-     * Capacity](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm).
+     * Capacity](https://docs.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -406,8 +406,8 @@ public interface ComputeAsync extends AutoCloseable {
 
     /**
      * Creates an empty [compute
-     * cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm). A
-     * compute cluster is a remote direct memory access (RDMA) network group.
+     * cluster](https://docs.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm). A compute
+     * cluster is a remote direct memory access (RDMA) network group.
      *
      * <p>After the compute cluster is created, you can use the compute cluster's OCID with the
      * {@link #launchInstance(LaunchInstanceRequest, Consumer, Consumer) launchInstance} operation
@@ -458,7 +458,7 @@ public interface ComputeAsync extends AutoCloseable {
      * availability domain. Dedicated virtual machine hosts enable you to run your Compute virtual
      * machine (VM) instances on dedicated servers that are a single tenant and not shared with
      * other customers. For more information, see [Dedicated Virtual Machine
-     * Hosts](https://docs.cloud.oracle.com/iaas/Content/Compute/Concepts/dedicatedvmhosts.htm).
+     * Hosts](https://docs.oracle.com/iaas/Content/Compute/Concepts/dedicatedvmhosts.htm).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -480,7 +480,7 @@ public interface ComputeAsync extends AutoCloseable {
      * <p>When creating a new image, you must provide the OCID of the instance you want to use as
      * the basis for the image, and the OCID of the compartment containing that instance. For more
      * information about images, see [Managing Custom
-     * Images](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/managingcustomimages.htm).
+     * Images](https://docs.oracle.com/iaas/Content/Compute/Tasks/managingcustomimages.htm).
      *
      * <p>When importing an exported image from Object Storage, you specify the source information
      * in {@link #imageSourceDetails(ImageSourceDetailsRequest, Consumer, Consumer)
@@ -493,13 +493,13 @@ public interface ComputeAsync extends AutoCloseable {
      * <p>When importing an image based on the Object Storage URL, use {@link
      * #imageSourceViaObjectStorageUriDetails(ImageSourceViaObjectStorageUriDetailsRequest,
      * Consumer, Consumer) imageSourceViaObjectStorageUriDetails}. See [Object Storage
-     * URLs](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/imageimportexport.htm#URLs)
-     * and [Using Pre-Authenticated
-     * Requests](https://docs.cloud.oracle.com/iaas/Content/Object/Tasks/usingpreauthenticatedrequests.htm)
+     * URLs](https://docs.oracle.com/iaas/Content/Compute/Tasks/imageimportexport.htm#URLs) and
+     * [Using Pre-Authenticated
+     * Requests](https://docs.oracle.com/iaas/Content/Object/Tasks/usingpreauthenticatedrequests.htm)
      * for constructing URLs for image import/export.
      *
      * <p>For more information about importing exported images, see [Image
-     * Import/Export](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/imageimportexport.htm).
+     * Import/Export](https://docs.oracle.com/iaas/Content/Compute/Tasks/imageimportexport.htm).
      *
      * <p>You may optionally specify a *display name* for the image, which is simply a friendly name
      * or description. It does not have to be unique, and you can change it. See {@link
@@ -523,7 +523,7 @@ public interface ComputeAsync extends AutoCloseable {
      *
      * <p>For more information about instance console connections, see [Troubleshooting Instances
      * Using Instance Console
-     * Connections](https://docs.cloud.oracle.com/iaas/Content/Compute/References/serialconsole.htm).
+     * Connections](https://docs.oracle.com/iaas/Content/Compute/References/serialconsole.htm).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -595,8 +595,8 @@ public interface ComputeAsync extends AutoCloseable {
 
     /**
      * Deletes a compute cluster. A [compute
-     * cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) is a
-     * remote direct memory access (RDMA) network group.
+     * cluster](https://docs.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) is a remote
+     * direct memory access (RDMA) network group.
      *
      * <p>Before you delete a compute cluster, first delete all instances in the cluster by using
      * the {@link #terminateInstance(TerminateInstanceRequest, Consumer, Consumer)
@@ -725,7 +725,7 @@ public interface ComputeAsync extends AutoCloseable {
      * secondary) are automatically detached and deleted.
      *
      * <p>*Important:** If the VNIC has a {@link PrivateIp} that is the [target of a route
-     * rule](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip),
+     * rule](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip),
      * deleting the VNIC causes that route rule to blackhole and the traffic will be dropped.
      *
      * @param request The request object containing the details to send
@@ -764,16 +764,16 @@ public interface ComputeAsync extends AutoCloseable {
      * specifying the location to export to.
      *
      * <p>For more information about exporting images, see [Image
-     * Import/Export](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/imageimportexport.htm).
+     * Import/Export](https://docs.oracle.com/iaas/Content/Compute/Tasks/imageimportexport.htm).
      *
      * <p>To perform an image export, you need write access to the Object Storage bucket for the
      * image, see [Let Users Write Objects to Object Storage
-     * Buckets](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/commonpolicies.htm#Let4).
+     * Buckets](https://docs.oracle.com/iaas/Content/Identity/Concepts/commonpolicies.htm#Let4).
      *
      * <p>See [Object Storage
-     * URLs](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/imageimportexport.htm#URLs)
-     * and [Using Pre-Authenticated
-     * Requests](https://docs.cloud.oracle.com/iaas/Content/Object/Tasks/usingpreauthenticatedrequests.htm)
+     * URLs](https://docs.oracle.com/iaas/Content/Compute/Tasks/imageimportexport.htm#URLs) and
+     * [Using Pre-Authenticated
+     * Requests](https://docs.oracle.com/iaas/Content/Object/Tasks/usingpreauthenticatedrequests.htm)
      * for constructing URLs for image import/export.
      *
      * @param request The request object containing the details to send
@@ -891,8 +891,8 @@ public interface ComputeAsync extends AutoCloseable {
 
     /**
      * Gets information about a compute cluster. A [compute
-     * cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) is a
-     * remote direct memory access (RDMA) network group.
+     * cluster](https://docs.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) is a remote
+     * direct memory access (RDMA) network group.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -1100,7 +1100,7 @@ public interface ComputeAsync extends AutoCloseable {
     /**
      * Gets the maximum possible date that a maintenance reboot can be extended. For more
      * information, see [Infrastructure
-     * Maintenance](https://docs.cloud.oracle.com/iaas/Content/Compute/References/infrastructure-maintenance.htm).
+     * Maintenance](https://docs.oracle.com/iaas/Content/Compute/References/infrastructure-maintenance.htm).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -1210,25 +1210,24 @@ public interface ComputeAsync extends AutoCloseable {
      * crashes. The crash dump captures information about the state of the OS at the time of the
      * crash. After the OS restarts, you can analyze the crash dump to diagnose the issue. For more
      * information, see [Sending a Diagnostic
-     * Interrupt](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/sendingdiagnosticinterrupt.htm).
+     * Interrupt](https://docs.oracle.com/iaas/Content/Compute/Tasks/sendingdiagnosticinterrupt.htm).
      *
      * <p>
      *
      * <p>- **DIAGNOSTICREBOOT** - Powers off the instance, rebuilds it, and then powers it back on.
      * Before you send a diagnostic reboot, restart the instance's OS, confirm that the instance and
      * networking settings are configured correctly, and try other [troubleshooting
-     * steps](https://docs.cloud.oracle.com/iaas/Content/Compute/References/troubleshooting-compute-instances.htm).
+     * steps](https://docs.oracle.com/iaas/Content/Compute/References/troubleshooting-compute-instances.htm).
      * Use diagnostic reboot as a final attempt to troubleshoot an unreachable instance. For virtual
      * machine (VM) instances only. For more information, see [Performing a Diagnostic
-     * Reboot](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/diagnostic-reboot.htm).
+     * Reboot](https://docs.oracle.com/iaas/Content/Compute/Tasks/diagnostic-reboot.htm).
      *
      * <p>- **REBOOTMIGRATE** - Powers off the instance, moves it to new hardware, and then powers
      * it back on. For more information, see [Infrastructure
-     * Maintenance](https://docs.cloud.oracle.com/iaas/Content/Compute/References/infrastructure-maintenance.htm).
+     * Maintenance](https://docs.oracle.com/iaas/Content/Compute/References/infrastructure-maintenance.htm).
      *
      * <p>For more information about managing instance lifecycle states, see [Stopping and Starting
-     * an
-     * Instance](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/restartinginstance.htm).
+     * an Instance](https://docs.oracle.com/iaas/Content/Compute/Tasks/restartinginstance.htm).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -1245,15 +1244,15 @@ public interface ComputeAsync extends AutoCloseable {
     /**
      * Creates a new instance in the specified compartment and the specified availability domain.
      * For general information about instances, see [Overview of the Compute
-     * Service](https://docs.cloud.oracle.com/iaas/Content/Compute/Concepts/computeoverview.htm).
+     * Service](https://docs.oracle.com/iaas/Content/Compute/Concepts/computeoverview.htm).
      *
      * <p>For information about access control and compartments, see [Overview of the IAM
-     * Service](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm).
+     * Service](https://docs.oracle.com/iaas/Content/Identity/Concepts/overview.htm).
      *
      * <p>For information about availability domains, see [Regions and Availability
-     * Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm). To get a
-     * list of availability domains, use the `ListAvailabilityDomains` operation in the Identity and
-     * Access Management Service API.
+     * Domains](https://docs.oracle.com/iaas/Content/General/Concepts/regions.htm). To get a list of
+     * availability domains, use the `ListAvailabilityDomains` operation in the Identity and Access
+     * Management Service API.
      *
      * <p>All Oracle Cloud Infrastructure resources, including instances, get an Oracle-assigned,
      * unique ID called an Oracle Cloud Identifier (OCID). When you create a resource, you can find
@@ -1273,7 +1272,7 @@ public interface ComputeAsync extends AutoCloseable {
      *
      * <p>You can later add secondary VNICs to an instance. For more information, see [Virtual
      * Network Interface Cards
-     * (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
+     * (VNICs)](https://docs.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
      *
      * <p>To launch an instance from a Marketplace image listing, you must provide the image ID of
      * the listing resource version that you want, but you also must subscribe to the listing before
@@ -1508,8 +1507,8 @@ public interface ComputeAsync extends AutoCloseable {
 
     /**
      * Lists the compute clusters in the specified compartment. A [compute
-     * cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) is a
-     * remote direct memory access (RDMA) network group.
+     * cluster](https://docs.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) is a remote
+     * direct memory access (RDMA) network group.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -1691,9 +1690,9 @@ public interface ComputeAsync extends AutoCloseable {
 
     /**
      * Lists a subset of images available in the specified compartment, including [platform
-     * images](https://docs.cloud.oracle.com/iaas/Content/Compute/References/images.htm) and [custom
-     * images](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/managingcustomimages.htm).
-     * The list of platform images includes the three most recently published versions of each major
+     * images](https://docs.oracle.com/iaas/Content/Compute/References/images.htm) and [custom
+     * images](https://docs.oracle.com/iaas/Content/Compute/Tasks/managingcustomimages.htm). The
+     * list of platform images includes the three most recently published versions of each major
      * distribution. The list does not support filtering based on image tags.
      *
      * <p>The list of images returned is ordered to first show the recent platform images, then all
@@ -1719,7 +1718,7 @@ public interface ComputeAsync extends AutoCloseable {
      *
      * <p>For more information about instance console connections, see [Troubleshooting Instances
      * Using Instance Console
-     * Connections](https://docs.cloud.oracle.com/iaas/Content/Compute/References/serialconsole.htm).
+     * Connections](https://docs.oracle.com/iaas/Content/Compute/References/serialconsole.htm).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -1935,8 +1934,8 @@ public interface ComputeAsync extends AutoCloseable {
 
     /**
      * Updates a compute cluster. A [compute
-     * cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) is a
-     * remote direct memory access (RDMA) network group.
+     * cluster](https://docs.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) is a remote
+     * direct memory access (RDMA) network group.
      *
      * <p>To create instances within a compute cluster, use the {@link
      * #launchInstance(LaunchInstanceRequest, Consumer, Consumer) launchInstance} operation.

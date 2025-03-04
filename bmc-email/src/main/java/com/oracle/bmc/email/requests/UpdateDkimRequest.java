@@ -7,7 +7,7 @@ package com.oracle.bmc.email.requests;
 import com.oracle.bmc.email.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/UpdateDkimExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/UpdateDkimExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateDkimRequest.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170907")
@@ -15,14 +15,14 @@ public class UpdateDkimRequest
         extends com.oracle.bmc.requests.BmcRequest<com.oracle.bmc.email.model.UpdateDkimDetails> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * this DKIM.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this
+     * DKIM.
      */
     private String dkimId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * this DKIM.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this
+     * DKIM.
      */
     public String getDkimId() {
         return dkimId;
@@ -77,14 +77,14 @@ public class UpdateDkimRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of this DKIM.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this
+         * DKIM.
          */
         private String dkimId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of this DKIM.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this
+         * DKIM.
          *
          * @param dkimId the value to set
          * @return this builder instance

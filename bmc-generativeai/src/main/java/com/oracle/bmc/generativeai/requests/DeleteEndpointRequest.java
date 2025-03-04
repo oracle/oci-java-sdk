@@ -7,21 +7,21 @@ package com.oracle.bmc.generativeai.requests;
 import com.oracle.bmc.generativeai.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeai/DeleteEndpointExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeai/DeleteEndpointExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use DeleteEndpointRequest.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20231130")
 public class DeleteEndpointRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the endpoint.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * endpoint.
      */
     private String endpointId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the endpoint.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * endpoint.
      */
     public String getEndpointId() {
         return endpointId;
@@ -66,14 +66,14 @@ public class DeleteEndpointRequest extends com.oracle.bmc.requests.BmcRequest<ja
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the endpoint.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * endpoint.
          */
         private String endpointId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the endpoint.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * endpoint.
          *
          * @param endpointId the value to set
          * @return this builder instance

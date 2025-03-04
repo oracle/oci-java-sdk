@@ -49,7 +49,7 @@ public class ListPreauthenticatedRequestsResponse extends com.oracle.bmc.respons
      * Repeat this process to retrieve the entire list of pre-authenticated requests.
      *
      * <p>For more details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private String opcNextPage;
 
@@ -62,7 +62,7 @@ public class ListPreauthenticatedRequestsResponse extends com.oracle.bmc.respons
      * Repeat this process to retrieve the entire list of pre-authenticated requests.
      *
      * <p>For more details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      * @return the value
      */
@@ -175,7 +175,7 @@ public class ListPreauthenticatedRequestsResponse extends com.oracle.bmc.respons
          * pre-authenticated requests.
          *
          * <p>For more details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private String opcNextPage;
 
@@ -189,7 +189,7 @@ public class ListPreauthenticatedRequestsResponse extends com.oracle.bmc.respons
          * pre-authenticated requests.
          *
          * <p>For more details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param opcNextPage the value to set
          * @return this builder

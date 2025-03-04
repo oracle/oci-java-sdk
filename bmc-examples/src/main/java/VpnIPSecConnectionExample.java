@@ -71,11 +71,10 @@ import java.util.concurrent.TimeUnit;
  * <p>Vpn provides higher-bandwidth options, and a more reliable and consistent networking
  * experience compared to internet-based connections.
  *
- * <p>Details information on Vpn:
- * https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/Vpn.htm
+ * <p>Details information on Vpn: https://docs.oracle.com/iaas/Content/Network/Concepts/Vpn.htm
  *
  * <p>Details IPSecConnection API:
- * https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnection
+ * https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnection
  */
 public class VpnIPSecConnectionExample {
     // Set this with your own compartment ID

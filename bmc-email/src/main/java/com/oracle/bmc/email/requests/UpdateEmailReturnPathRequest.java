@@ -7,7 +7,7 @@ package com.oracle.bmc.email.requests;
 import com.oracle.bmc.email.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/UpdateEmailReturnPathExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/UpdateEmailReturnPathExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * UpdateEmailReturnPathRequest.
  */
@@ -17,14 +17,14 @@ public class UpdateEmailReturnPathRequest
                 com.oracle.bmc.email.model.UpdateEmailReturnPathDetails> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * this email return path.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this
+     * email return path.
      */
     private String emailReturnPathId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * this email return path.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this
+     * email return path.
      */
     public String getEmailReturnPathId() {
         return emailReturnPathId;
@@ -81,14 +81,14 @@ public class UpdateEmailReturnPathRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of this email return path.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this
+         * email return path.
          */
         private String emailReturnPathId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of this email return path.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this
+         * email return path.
          *
          * @param emailReturnPathId the value to set
          * @return this builder instance

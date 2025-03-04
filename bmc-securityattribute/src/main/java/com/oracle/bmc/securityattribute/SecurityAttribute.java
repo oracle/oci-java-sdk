@@ -10,9 +10,9 @@ import com.oracle.bmc.securityattribute.responses.*;
 /**
  * Use the Security Attributes API to manage security attributes and security attribute namespaces.
  * For more information, see the documentation for [Security
- * Attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/managing-security-attributes.htm)
+ * Attributes](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/managing-security-attributes.htm)
  * and [Security Attribute
- * Nampespaces](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/managing-security-attribute-namespaces.htm).
+ * Nampespaces](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/managing-security-attribute-namespaces.htm).
  * This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by
  * default if no circuit breaker configuration is defined by the user.
  */
@@ -99,7 +99,7 @@ public interface SecurityAttribute extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/securityattribute/BulkDeleteSecurityAttributesExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/securityattribute/BulkDeleteSecurityAttributesExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     BulkDeleteSecurityAttributes API.
      */
@@ -127,7 +127,7 @@ public interface SecurityAttribute extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/securityattribute/BulkEditSecurityAttributesExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/securityattribute/BulkEditSecurityAttributesExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     BulkEditSecurityAttributes API.
      */
@@ -170,7 +170,7 @@ public interface SecurityAttribute extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/securityattribute/CascadingDeleteSecurityAttributeNamespaceExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/securityattribute/CascadingDeleteSecurityAttributeNamespaceExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     CascadingDeleteSecurityAttributeNamespace API.
      */
@@ -183,7 +183,7 @@ public interface SecurityAttribute extends AutoCloseable {
      *
      * <p>To move the security attribute namespace, you must have the manage security-attributes
      * permission on both compartments. For more information about IAM policies, see [Details for
-     * IAM](https://docs.cloud.oracle.com/Content/Identity/policyreference/iampolicyreference.htm).
+     * IAM](https://docs.oracle.com/iaas/Content/Identity/policyreference/iampolicyreference.htm).
      *
      * <p>Moving a security attribute namespace moves all the security attributes contained in the
      * security attribute namespace.
@@ -195,7 +195,7 @@ public interface SecurityAttribute extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/securityattribute/ChangeSecurityAttributeNamespaceCompartmentExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/securityattribute/ChangeSecurityAttributeNamespaceCompartmentExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ChangeSecurityAttributeNamespaceCompartment API.
      */
@@ -231,7 +231,7 @@ public interface SecurityAttribute extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/securityattribute/CreateSecurityAttributeExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/securityattribute/CreateSecurityAttributeExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     CreateSecurityAttribute API.
      */
@@ -261,7 +261,7 @@ public interface SecurityAttribute extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/securityattribute/CreateSecurityAttributeNamespaceExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/securityattribute/CreateSecurityAttributeNamespaceExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     CreateSecurityAttributeNamespace API.
      */
@@ -298,7 +298,7 @@ public interface SecurityAttribute extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/securityattribute/DeleteSecurityAttributeExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/securityattribute/DeleteSecurityAttributeExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     DeleteSecurityAttribute API.
      */
@@ -318,7 +318,7 @@ public interface SecurityAttribute extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/securityattribute/DeleteSecurityAttributeNamespaceExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/securityattribute/DeleteSecurityAttributeNamespaceExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     DeleteSecurityAttributeNamespace API.
      */
@@ -335,7 +335,7 @@ public interface SecurityAttribute extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/securityattribute/GetSecurityAttributeExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/securityattribute/GetSecurityAttributeExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     GetSecurityAttribute API.
      */
@@ -351,7 +351,7 @@ public interface SecurityAttribute extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/securityattribute/GetSecurityAttributeNamespaceExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/securityattribute/GetSecurityAttributeNamespaceExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     GetSecurityAttributeNamespace API.
      */
@@ -369,7 +369,7 @@ public interface SecurityAttribute extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/securityattribute/GetSecurityAttributeWorkRequestExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/securityattribute/GetSecurityAttributeWorkRequestExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     GetSecurityAttributeWorkRequest API.
      */
@@ -386,7 +386,7 @@ public interface SecurityAttribute extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/securityattribute/ListSecurityAttributeNamespacesExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/securityattribute/ListSecurityAttributeNamespacesExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ListSecurityAttributeNamespaces API.
      */
@@ -403,7 +403,7 @@ public interface SecurityAttribute extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/securityattribute/ListSecurityAttributeWorkRequestErrorsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/securityattribute/ListSecurityAttributeWorkRequestErrorsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ListSecurityAttributeWorkRequestErrors API.
      */
@@ -420,7 +420,7 @@ public interface SecurityAttribute extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/securityattribute/ListSecurityAttributeWorkRequestLogsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/securityattribute/ListSecurityAttributeWorkRequestLogsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ListSecurityAttributeWorkRequestLogs API.
      */
@@ -437,7 +437,7 @@ public interface SecurityAttribute extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/securityattribute/ListSecurityAttributeWorkRequestsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/securityattribute/ListSecurityAttributeWorkRequestsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ListSecurityAttributeWorkRequests API.
      */
@@ -454,7 +454,7 @@ public interface SecurityAttribute extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/securityattribute/ListSecurityAttributesExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/securityattribute/ListSecurityAttributesExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ListSecurityAttributes API.
      */
@@ -470,7 +470,7 @@ public interface SecurityAttribute extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/securityattribute/UpdateSecurityAttributeExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/securityattribute/UpdateSecurityAttributeExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     UpdateSecurityAttribute API.
      */
@@ -485,7 +485,7 @@ public interface SecurityAttribute extends AutoCloseable {
      * reactivate each one individually *after* you reactivate the namespace, using {@link
      * #updateTag(UpdateTagRequest) updateTag}. For more information about retiring security
      * attribute namespaces, see [Managing Security Attribute
-     * Namespaces](https://docs.cloud.oracle.com/Content/zero-trust-packet-routing/managing-security-attribute-namespaces.htm).
+     * Namespaces](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/managing-security-attribute-namespaces.htm).
      *
      * <p>You can't add a namespace with the same name as a retired namespace in the same tenancy.
      *
@@ -496,7 +496,7 @@ public interface SecurityAttribute extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/securityattribute/UpdateSecurityAttributeNamespaceExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/securityattribute/UpdateSecurityAttributeNamespaceExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     UpdateSecurityAttributeNamespace API.
      */

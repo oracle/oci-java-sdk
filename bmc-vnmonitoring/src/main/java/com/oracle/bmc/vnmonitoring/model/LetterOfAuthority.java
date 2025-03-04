@@ -84,15 +84,15 @@ public final class LetterOfAuthority
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the cross-connect.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * cross-connect.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("crossConnectId")
         private String crossConnectId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the cross-connect.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * cross-connect.
          *
          * @param crossConnectId the value to set
          * @return this builder
@@ -290,15 +290,15 @@ public final class LetterOfAuthority
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the cross-connect.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * cross-connect.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("crossConnectId")
     private final String crossConnectId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the cross-connect.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * cross-connect.
      *
      * @return the value
      */

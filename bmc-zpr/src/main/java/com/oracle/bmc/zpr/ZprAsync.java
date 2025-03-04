@@ -10,8 +10,8 @@ import com.oracle.bmc.zpr.responses.*;
 /**
  * Use the Zero Trust Packet Routing Control Plane API to manage ZPR configuration and policy. See
  * the [Zero Trust Packet
- * Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/home.htm)
- * documentation for more information.
+ * Routing](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/home.htm) documentation
+ * for more information.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20240301")
 public interface ZprAsync extends AutoCloseable {

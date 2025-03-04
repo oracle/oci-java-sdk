@@ -125,9 +125,6 @@ public class SubscriptionAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                         CreateSubscriptionMappingResponse.Builder::subscriptionMapping)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateSubscriptionMappingResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        CreateSubscriptionMappingResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString("etag", CreateSubscriptionMappingResponse.Builder::etag)
                 .callAsync(handler);
     }

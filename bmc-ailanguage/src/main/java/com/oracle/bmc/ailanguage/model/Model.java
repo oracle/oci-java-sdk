@@ -115,15 +115,15 @@ public final class Model extends com.oracle.bmc.http.client.internal.ExplicitlyS
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) for
-         * the model's compartment.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
+         * model's compartment.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) for
-         * the model's compartment.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
+         * model's compartment.
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -134,15 +134,15 @@ public final class Model extends com.oracle.bmc.http.client.internal.ExplicitlyS
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the project to associate with the model.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * project to associate with the model.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("projectId")
         private String projectId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the project to associate with the model.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * project to associate with the model.
          *
          * @param projectId the value to set
          * @return this builder
@@ -477,14 +477,14 @@ public final class Model extends com.oracle.bmc.http.client.internal.ExplicitlyS
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) for the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
      * model's compartment.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) for the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
      * model's compartment.
      *
      * @return the value
@@ -494,15 +494,15 @@ public final class Model extends com.oracle.bmc.http.client.internal.ExplicitlyS
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the project to associate with the model.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * project to associate with the model.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("projectId")
     private final String projectId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the project to associate with the model.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * project to associate with the model.
      *
      * @return the value
      */

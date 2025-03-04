@@ -53,15 +53,15 @@ public final class CreateDhcpDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compartment to contain the set of DHCP options.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment to contain the set of DHCP options.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compartment to contain the set of DHCP options.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment to contain the set of DHCP options.
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -145,15 +145,15 @@ public final class CreateDhcpDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the VCN the set of DHCP options belongs to.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * VCN the set of DHCP options belongs to.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("vcnId")
         private String vcnId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the VCN the set of DHCP options belongs to.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * VCN the set of DHCP options belongs to.
          *
          * @param vcnId the value to set
          * @return this builder
@@ -235,15 +235,15 @@ public final class CreateDhcpDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compartment to contain the set of DHCP options.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment to contain the set of DHCP options.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compartment to contain the set of DHCP options.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment to contain the set of DHCP options.
      *
      * @return the value
      */
@@ -316,15 +316,15 @@ public final class CreateDhcpDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the VCN the set of DHCP options belongs to.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN
+     * the set of DHCP options belongs to.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("vcnId")
     private final String vcnId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the VCN the set of DHCP options belongs to.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN
+     * the set of DHCP options belongs to.
      *
      * @return the value
      */

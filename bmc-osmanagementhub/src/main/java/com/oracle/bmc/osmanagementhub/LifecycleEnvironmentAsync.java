@@ -10,7 +10,7 @@ import com.oracle.bmc.osmanagementhub.responses.*;
 /**
  * Use the OS Management Hub API to manage and monitor updates and patches for instances in OCI,
  * your private data center, or 3rd-party clouds. For more information, see [Overview of OS
- * Management Hub](https://docs.cloud.oracle.com/iaas/osmh/doc/overview.htm).
+ * Management Hub](https://docs.oracle.com/iaas/osmh/doc/overview.htm).
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
 public interface LifecycleEnvironmentAsync extends AutoCloseable {
@@ -85,7 +85,7 @@ public interface LifecycleEnvironmentAsync extends AutoCloseable {
     /**
      * Moves a lifecycle environment into a different compartment within the same tenancy. For
      * information about moving resources between compartments, see [Moving Resources to a Different
-     * Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -224,8 +224,8 @@ public interface LifecycleEnvironmentAsync extends AutoCloseable {
 
     /**
      * Lists lifecycle stages that match the specified compartment or lifecycle stage
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Filter
-     * the list against
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Filter the
+     * list against
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.

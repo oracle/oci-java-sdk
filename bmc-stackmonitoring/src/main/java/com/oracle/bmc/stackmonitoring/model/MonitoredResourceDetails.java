@@ -36,14 +36,14 @@ public final class MonitoredResourceDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
          * monitored resource part of the Maintenance window.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("resourceId")
         private String resourceId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
          * monitored resource part of the Maintenance window.
          *
          * @param resourceId the value to set
@@ -141,14 +141,14 @@ public final class MonitoredResourceDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
      * monitored resource part of the Maintenance window.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("resourceId")
     private final String resourceId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
      * monitored resource part of the Maintenance window.
      *
      * @return the value

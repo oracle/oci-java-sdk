@@ -291,14 +291,14 @@ public final class LaunchDbSystemFromDbSystemDetails extends LaunchDbSystemBase 
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * DB system.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("sourceDbSystemId")
         private String sourceDbSystemId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * DB system.
          *
          * @param sourceDbSystemId the value to set
@@ -563,14 +563,14 @@ public final class LaunchDbSystemFromDbSystemDetails extends LaunchDbSystemBase 
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the DB
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB
      * system.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("sourceDbSystemId")
     private final String sourceDbSystemId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the DB
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB
      * system.
      *
      * @return the value

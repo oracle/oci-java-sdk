@@ -7,7 +7,7 @@ package com.oracle.bmc.fusionapps.requests;
 import com.oracle.bmc.fusionapps.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fusionapps/GetScheduledActivityExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fusionapps/GetScheduledActivityExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use GetScheduledActivityRequest.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211201")

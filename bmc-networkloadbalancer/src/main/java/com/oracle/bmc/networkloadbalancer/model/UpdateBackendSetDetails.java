@@ -7,7 +7,7 @@ package com.oracle.bmc.networkloadbalancer.model;
 /**
  * The configuration details for updating a load balancer backend set. For more information about
  * backend set configuration, see [Backend Sets for Network Load
- * Balancers](https://docs.cloud.oracle.com/Content/NetworkLoadBalancer/BackendSets/backend-set-management.htm).
+ * Balancers](https://docs.oracle.com/iaas/Content/NetworkLoadBalancer/BackendSets/backend-set-management.htm).
  *
  * <p>*Caution:** Oracle recommends that you avoid using any confidential information when you
  * supply string values using the API. <br>

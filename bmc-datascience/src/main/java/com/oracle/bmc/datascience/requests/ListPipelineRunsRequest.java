@@ -7,7 +7,7 @@ package com.oracle.bmc.datascience.requests;
 import com.oracle.bmc.datascience.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/ListPipelineRunsExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/ListPipelineRunsExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListPipelineRunsRequest.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
@@ -15,14 +15,14 @@ public class ListPipelineRunsRequest extends com.oracle.bmc.requests.BmcRequest<
 
     /**
      * <b>Filter</b> results by the
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment.
      */
     private String compartmentId;
 
     /**
      * <b>Filter</b> results by the
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment.
      */
     public String getCompartmentId() {
@@ -30,28 +30,28 @@ public class ListPipelineRunsRequest extends com.oracle.bmc.requests.BmcRequest<
     }
     /**
      * <b>Filter</b> results by
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be
-     * an OCID of the correct type for the resource type.
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an
+     * OCID of the correct type for the resource type.
      */
     private String id;
 
     /**
      * <b>Filter</b> results by
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be
-     * an OCID of the correct type for the resource type.
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an
+     * OCID of the correct type for the resource type.
      */
     public String getId() {
         return id;
     }
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the pipeline.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * pipeline.
      */
     private String pipelineId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the pipeline.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * pipeline.
      */
     public String getPipelineId() {
         return pipelineId;
@@ -72,15 +72,15 @@ public class ListPipelineRunsRequest extends com.oracle.bmc.requests.BmcRequest<
     }
     /**
      * <b>Filter</b> results by the
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * user who created the resource.
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who
+     * created the resource.
      */
     private String createdBy;
 
     /**
      * <b>Filter</b> results by the
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * user who created the resource.
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who
+     * created the resource.
      */
     public String getCreatedBy() {
         return createdBy;
@@ -88,7 +88,7 @@ public class ListPipelineRunsRequest extends com.oracle.bmc.requests.BmcRequest<
     /**
      * For list pagination. The maximum number of results per page, or items to return in a
      * paginated "List" call. 1 is the minimum, 100 is the maximum. See [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine).
      *
      * <p>Example: {@code 50}
      */
@@ -97,7 +97,7 @@ public class ListPipelineRunsRequest extends com.oracle.bmc.requests.BmcRequest<
     /**
      * For list pagination. The maximum number of results per page, or items to return in a
      * paginated "List" call. 1 is the minimum, 100 is the maximum. See [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine).
      *
      * <p>Example: {@code 50}
      */
@@ -109,7 +109,7 @@ public class ListPipelineRunsRequest extends com.oracle.bmc.requests.BmcRequest<
      * "List" call.
      *
      * <p>See [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine).
      */
     private String page;
 
@@ -118,7 +118,7 @@ public class ListPipelineRunsRequest extends com.oracle.bmc.requests.BmcRequest<
      * "List" call.
      *
      * <p>See [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine).
      */
     public String getPage() {
         return page;
@@ -242,15 +242,15 @@ public class ListPipelineRunsRequest extends com.oracle.bmc.requests.BmcRequest<
 
         /**
          * <b>Filter</b> results by the
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-         * the compartment.
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment.
          */
         private String compartmentId = null;
 
         /**
          * <b>Filter</b> results by the
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-         * the compartment.
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment.
          *
          * @param compartmentId the value to set
          * @return this builder instance
@@ -262,15 +262,15 @@ public class ListPipelineRunsRequest extends com.oracle.bmc.requests.BmcRequest<
 
         /**
          * <b>Filter</b> results by
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must
-         * be an OCID of the correct type for the resource type.
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an
+         * OCID of the correct type for the resource type.
          */
         private String id = null;
 
         /**
          * <b>Filter</b> results by
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must
-         * be an OCID of the correct type for the resource type.
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an
+         * OCID of the correct type for the resource type.
          *
          * @param id the value to set
          * @return this builder instance
@@ -281,14 +281,14 @@ public class ListPipelineRunsRequest extends com.oracle.bmc.requests.BmcRequest<
         }
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the pipeline.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * pipeline.
          */
         private String pipelineId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the pipeline.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * pipeline.
          *
          * @param pipelineId the value to set
          * @return this builder instance
@@ -329,15 +329,15 @@ public class ListPipelineRunsRequest extends com.oracle.bmc.requests.BmcRequest<
 
         /**
          * <b>Filter</b> results by the
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-         * the user who created the resource.
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user
+         * who created the resource.
          */
         private String createdBy = null;
 
         /**
          * <b>Filter</b> results by the
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-         * the user who created the resource.
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user
+         * who created the resource.
          *
          * @param createdBy the value to set
          * @return this builder instance
@@ -350,7 +350,7 @@ public class ListPipelineRunsRequest extends com.oracle.bmc.requests.BmcRequest<
         /**
          * For list pagination. The maximum number of results per page, or items to return in a
          * paginated "List" call. 1 is the minimum, 100 is the maximum. See [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine).
          *
          * <p>Example: {@code 50}
          */
@@ -359,7 +359,7 @@ public class ListPipelineRunsRequest extends com.oracle.bmc.requests.BmcRequest<
         /**
          * For list pagination. The maximum number of results per page, or items to return in a
          * paginated "List" call. 1 is the minimum, 100 is the maximum. See [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine).
          *
          * <p>Example: {@code 50}
          *
@@ -376,7 +376,7 @@ public class ListPipelineRunsRequest extends com.oracle.bmc.requests.BmcRequest<
          * previous "List" call.
          *
          * <p>See [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine).
          */
         private String page = null;
 
@@ -385,7 +385,7 @@ public class ListPipelineRunsRequest extends com.oracle.bmc.requests.BmcRequest<
          * previous "List" call.
          *
          * <p>See [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine).
          *
          * @param page the value to set
          * @return this builder instance

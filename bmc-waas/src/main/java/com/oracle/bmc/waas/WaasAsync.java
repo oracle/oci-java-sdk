@@ -68,8 +68,7 @@ public interface WaasAsync extends AutoCloseable {
      *
      * <p>Use the `GET /waasPolicies/{waasPolicyId}/wafConfig/recommendations` method to view a list
      * of recommended Web Application Firewall protection rules. For more information, see [WAF
-     * Protection
-     * Rules](https://docs.cloud.oracle.com/iaas/Content/WAF/Tasks/wafprotectionrules.htm).
+     * Protection Rules](https://docs.oracle.com/iaas/Content/WAF/Tasks/wafprotectionrules.htm).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -104,7 +103,7 @@ public interface WaasAsync extends AutoCloseable {
      * Moves address list into a different compartment. When provided, If-Match is checked against
      * ETag values of the address list. For information about moving resources between compartments,
      * see [Moving Resources to a Different
-     * Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -124,7 +123,7 @@ public interface WaasAsync extends AutoCloseable {
      * Moves certificate into a different compartment. When provided, If-Match is checked against
      * ETag values of the certificate. For information about moving resources between compartments,
      * see [Moving Resources to a Different
-     * Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -144,7 +143,7 @@ public interface WaasAsync extends AutoCloseable {
      * Moves a custom protection rule into a different compartment within the same tenancy. When
      * provided, If-Match is checked against ETag values of the custom protection rule. For
      * information about moving resources between compartments, see [Moving Resources to a Different
-     * Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -165,7 +164,7 @@ public interface WaasAsync extends AutoCloseable {
      * Moves WAAS policy into a different compartment. When provided, If-Match is checked against
      * ETag values of the WAAS policy. For information about moving resources between compartments,
      * see [Moving Resources to a Different
-     * Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -203,7 +202,7 @@ public interface WaasAsync extends AutoCloseable {
      * before sending them to the origin for fulfillment.
      *
      * <p>For more information, see [WAF
-     * Settings](https://docs.cloud.oracle.com/iaas/Content/WAF/Tasks/wafsettings.htm).
+     * Settings](https://docs.oracle.com/iaas/Content/WAF/Tasks/wafsettings.htm).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -225,8 +224,7 @@ public interface WaasAsync extends AutoCloseable {
      * the Web Application Firewall service, including rules from
      * [ModSecurity](https://modsecurity.org/). The syntax for custom rules is based on the
      * ModSecurity syntax. For more information about custom protection rules, see [Custom
-     * Protection
-     * Rules](https://docs.cloud.oracle.com/iaas/Content/WAF/Tasks/customprotectionrules.htm).
+     * Protection Rules](https://docs.oracle.com/iaas/Content/WAF/Tasks/customprotectionrules.htm).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -258,7 +256,7 @@ public interface WaasAsync extends AutoCloseable {
      * <p>For the purposes of access control, you must provide the OCID of the compartment where you
      * want the service to reside. For information about access control and compartments, see
      * [Overview of the IAM
-     * Service](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm).
+     * Service](https://docs.oracle.com/iaas/Content/Identity/Concepts/overview.htm).
      *
      * <p>You must specify a display name and domain for the WAAS policy. The display name does not
      * have to be unique and can be changed. The domain name should be different from every origin
@@ -269,7 +267,7 @@ public interface WaasAsync extends AutoCloseable {
      * can find its OCID in the response. You can also retrieve a resource's OCID by using a list
      * API operation for that resource type, or by viewing the resource in the Console. Fore more
      * information, see [Resource
-     * Identifiers](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * Identifiers](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      * <p>*Note:** After sending the POST request, the new object's state will temporarily be
      * `CREATING`. Ensure that the resource's state has changed to `ACTIVE` before use.
@@ -717,8 +715,8 @@ public interface WaasAsync extends AutoCloseable {
      * <p>Use the `POST /waasPolicies/{waasPolicyId}/actions/acceptWafConfigRecommendations` method
      * to accept recommended Web Application Firewall protection rules. For more information, see
      * [WAF Protection
-     * Rules](https://docs.cloud.oracle.com/iaas/Content/WAF/Tasks/wafprotectionrules.htm). The list
-     * is sorted by `key`, in ascending order.
+     * Rules](https://docs.oracle.com/iaas/Content/WAF/Tasks/wafprotectionrules.htm). The list is
+     * sorted by `key`, in ascending order.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -883,7 +881,7 @@ public interface WaasAsync extends AutoCloseable {
     /**
      * Performs a purge of the cache for each specified resource. If no resources are passed, the
      * cache for the entire Web Application Firewall will be purged. For more information, see
-     * [Caching Rules](https://docs.cloud.oracle.com/iaas/Content/WAF/Tasks/cachingrules.htm#purge).
+     * [Caching Rules](https://docs.oracle.com/iaas/Content/WAF/Tasks/cachingrules.htm#purge).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -952,7 +950,7 @@ public interface WaasAsync extends AutoCloseable {
      * <p>Caching rules WAF policies allow you to selectively cache content on Oracle Cloud
      * Infrastructure's edge servers, such as webpages or certain file types. For more information
      * about caching rules, see [Caching
-     * Rules](https://docs.cloud.oracle.com/iaas/Content/WAF/Tasks/cachingrules.htm).
+     * Rules](https://docs.oracle.com/iaas/Content/WAF/Tasks/cachingrules.htm).
      *
      * <p>This operation can create, delete, update, and/or reorder caching rules depending on the
      * structure of the request body. Caching rules can be updated by changing the properties of the
@@ -1076,7 +1074,7 @@ public interface WaasAsync extends AutoCloseable {
      *
      * <p>Good bots allows you to manage access for bots from known providers, such as Google or
      * Baidu. For more information about good bots, see [Bot
-     * Management](https://docs.cloud.oracle.com/iaas/Content/WAF/Tasks/botmanagement.htm).
+     * Management](https://docs.oracle.com/iaas/Content/WAF/Tasks/botmanagement.htm).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -1114,7 +1112,7 @@ public interface WaasAsync extends AutoCloseable {
      * Updates the JavaScript challenge settings in the Web Application Firewall configuration for a
      * WAAS policy. JavaScript Challenge validates that the client can accept JavaScript with a
      * binary decision. For more information, see [Bot
-     * Management](https://docs.cloud.oracle.com/iaas/Content/WAF/Tasks/botmanagement.htm).
+     * Management](https://docs.oracle.com/iaas/Content/WAF/Tasks/botmanagement.htm).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -1150,10 +1148,10 @@ public interface WaasAsync extends AutoCloseable {
      * Updates the action for each specified protection rule. Requests can either be allowed,
      * blocked, or trigger an alert if they meet the parameters of an applied rule. For more
      * information on protection rules, see [WAF Protection
-     * Rules](https://docs.cloud.oracle.com/iaas/Content/WAF/Tasks/wafprotectionrules.htm). This
-     * operation can update or disable protection rules depending on the structure of the request
-     * body. Protection rules can be updated by changing the properties of the protection rule
-     * object with the rule's key specified in the key field.
+     * Rules](https://docs.oracle.com/iaas/Content/WAF/Tasks/wafprotectionrules.htm). This operation
+     * can update or disable protection rules depending on the structure of the request body.
+     * Protection rules can be updated by changing the properties of the protection rule object with
+     * the rule's key specified in the key field.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -1230,7 +1228,7 @@ public interface WaasAsync extends AutoCloseable {
      * Updates the action for each specified custom protection rule. Only the `DETECT` and `BLOCK`
      * actions can be set. Disabled rules should not be included in the list. For more information
      * on protection rules, see [WAF Protection
-     * Rules](https://docs.cloud.oracle.com/iaas/Content/WAF/Tasks/wafprotectionrules.htm).
+     * Rules](https://docs.oracle.com/iaas/Content/WAF/Tasks/wafprotectionrules.htm).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.

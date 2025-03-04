@@ -7,7 +7,7 @@ package com.oracle.bmc.database.requests;
 import com.oracle.bmc.database.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ConfigureAutonomousDatabaseVaultKeyExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ConfigureAutonomousDatabaseVaultKeyExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * ConfigureAutonomousDatabaseVaultKeyRequest.
  */
@@ -17,26 +17,26 @@ public class ConfigureAutonomousDatabaseVaultKeyRequest
                 com.oracle.bmc.database.model.ConfigureAutonomousDatabaseVaultKeyDetails> {
 
     /**
-     * The database [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * The database [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     private String autonomousDatabaseId;
 
     /**
-     * The database [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * The database [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     public String getAutonomousDatabaseId() {
         return autonomousDatabaseId;
     }
     /**
      * Configuration details for the Autonomous Database Vault service
-     * [key](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+     * [key](https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
      */
     private com.oracle.bmc.database.model.ConfigureAutonomousDatabaseVaultKeyDetails
             configureAutonomousDatabaseVaultKeyDetails;
 
     /**
      * Configuration details for the Autonomous Database Vault service
-     * [key](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+     * [key](https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
      */
     public com.oracle.bmc.database.model.ConfigureAutonomousDatabaseVaultKeyDetails
             getConfigureAutonomousDatabaseVaultKeyDetails() {
@@ -106,13 +106,13 @@ public class ConfigureAutonomousDatabaseVaultKeyRequest
 
         /**
          * The database
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          */
         private String autonomousDatabaseId = null;
 
         /**
          * The database
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          * @param autonomousDatabaseId the value to set
          * @return this builder instance
@@ -124,14 +124,14 @@ public class ConfigureAutonomousDatabaseVaultKeyRequest
 
         /**
          * Configuration details for the Autonomous Database Vault service
-         * [key](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+         * [key](https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
          */
         private com.oracle.bmc.database.model.ConfigureAutonomousDatabaseVaultKeyDetails
                 configureAutonomousDatabaseVaultKeyDetails = null;
 
         /**
          * Configuration details for the Autonomous Database Vault service
-         * [key](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+         * [key](https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
          *
          * @param configureAutonomousDatabaseVaultKeyDetails the value to set
          * @return this builder instance

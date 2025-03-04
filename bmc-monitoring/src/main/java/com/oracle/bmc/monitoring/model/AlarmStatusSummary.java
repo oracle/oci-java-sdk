@@ -7,17 +7,17 @@ package com.oracle.bmc.monitoring.model;
 /**
  * A summary of properties for the specified alarm and its current evaluation status. For
  * information about alarms, see [Alarms
- * Overview](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#AlarmsOverview).
+ * Overview](https://docs.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#AlarmsOverview).
  *
  * <p>To use any of the API operations, you must be authorized in an IAM policy. If you're not
  * authorized, talk to an administrator. If you're an administrator who needs to write policies to
  * give users access, see [Getting Started with
- * Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
+ * Policies](https://docs.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
  *
  * <p>For information about endpoints and signing API requests, see [About the
- * API](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm). For information about
+ * API](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm). For information about
  * available SDKs and tools, see [SDKS and Other
- * Tools](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/sdks.htm). <br>
+ * Tools](https://docs.oracle.com/iaas/Content/API/Concepts/sdks.htm). <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -68,15 +68,15 @@ public final class AlarmStatusSummary
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the alarm.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * alarm.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the alarm.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * alarm.
          *
          * @param id the value to set
          * @return this builder
@@ -176,9 +176,9 @@ public final class AlarmStatusSummary
         }
         /**
          * Customizable alarm summary ({@code alarmSummary} [alarm message
-         * parameter](https://docs.cloud.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm)).
+         * parameter](https://docs.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm)).
          * Optionally include [dynamic
-         * variables](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm).
+         * variables](https://docs.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm).
          * The alarm summary appears within the body of the alarm message and in responses to {@link
          * #listAlarmsStatus(ListAlarmsStatusRequest) listAlarmsStatus} {@link
          * #getAlarmHistory(GetAlarmHistoryRequest) getAlarmHistory} and {@link
@@ -189,9 +189,9 @@ public final class AlarmStatusSummary
 
         /**
          * Customizable alarm summary ({@code alarmSummary} [alarm message
-         * parameter](https://docs.cloud.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm)).
+         * parameter](https://docs.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm)).
          * Optionally include [dynamic
-         * variables](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm).
+         * variables](https://docs.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm).
          * The alarm summary appears within the body of the alarm message and in responses to {@link
          * #listAlarmsStatus(ListAlarmsStatusRequest) listAlarmsStatus} {@link
          * #getAlarmHistory(GetAlarmHistoryRequest) getAlarmHistory} and {@link
@@ -306,15 +306,15 @@ public final class AlarmStatusSummary
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the alarm.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * alarm.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the alarm.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * alarm.
      *
      * @return the value
      */
@@ -456,9 +456,9 @@ public final class AlarmStatusSummary
 
     /**
      * Customizable alarm summary ({@code alarmSummary} [alarm message
-     * parameter](https://docs.cloud.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm)).
+     * parameter](https://docs.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm)).
      * Optionally include [dynamic
-     * variables](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm).
+     * variables](https://docs.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm).
      * The alarm summary appears within the body of the alarm message and in responses to {@link
      * #listAlarmsStatus(ListAlarmsStatusRequest) listAlarmsStatus} {@link
      * #getAlarmHistory(GetAlarmHistoryRequest) getAlarmHistory} and {@link
@@ -469,9 +469,9 @@ public final class AlarmStatusSummary
 
     /**
      * Customizable alarm summary ({@code alarmSummary} [alarm message
-     * parameter](https://docs.cloud.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm)).
+     * parameter](https://docs.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm)).
      * Optionally include [dynamic
-     * variables](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm).
+     * variables](https://docs.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm).
      * The alarm summary appears within the body of the alarm message and in responses to {@link
      * #listAlarmsStatus(ListAlarmsStatusRequest) listAlarmsStatus} {@link
      * #getAlarmHistory(GetAlarmHistoryRequest) getAlarmHistory} and {@link

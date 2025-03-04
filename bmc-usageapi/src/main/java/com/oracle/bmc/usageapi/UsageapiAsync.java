@@ -12,9 +12,9 @@ import com.oracle.bmc.usageapi.responses.*;
  * that meets the specified filter criteria, and to group that data by the chosen dimension. The
  * Usage API is used by the Cost Analysis and Carbon Emissions Analysis tools in the Console. See
  * [Cost Analysis
- * Overview](https://docs.cloud.oracle.com/Content/Billing/Concepts/costanalysisoverview.htm) and
+ * Overview](https://docs.oracle.com/iaas/Content/Billing/Concepts/costanalysisoverview.htm) and
  * [Using the Usage
- * API](https://docs.cloud.oracle.com/Content/Billing/Concepts/costanalysisoverview.htm#cost_analysis_using_the_api)
+ * API](https://docs.oracle.com/iaas/Content/Billing/Concepts/costanalysisoverview.htm#cost_analysis_using_the_api)
  * for more information.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200107")

@@ -10,7 +10,7 @@ import com.oracle.bmc.psql.responses.*;
 /**
  * Use the OCI Database with PostgreSQL API to manage resources such as database systems, database
  * nodes, backups, and configurations. For information, see the user guide documentation for the
- * [service](https://docs.cloud.oracle.com/iaas/Content/postgresql/home.htm).
+ * [service](https://docs.oracle.com/iaas/Content/postgresql/home.htm).
  *
  * <p>This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by
  * default if no circuit breaker configuration is defined by the user.
@@ -67,6 +67,22 @@ public interface Postgresql extends AutoCloseable {
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
+     * Backup Copy Request to copy back up in remote region. When provided, If-Match is checked
+     * against ETag values of the resource.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/psql/BackupCopyExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use BackupCopy API.
+     */
+    BackupCopyResponse backupCopy(BackupCopyRequest request);
+
+    /**
      * Moves a backup from one compartment to another. When provided, If-Match is checked against
      * ETag values of the resource.
      *
@@ -77,7 +93,7 @@ public interface Postgresql extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/psql/ChangeBackupCompartmentExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/psql/ChangeBackupCompartmentExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ChangeBackupCompartment API.
      */
@@ -94,7 +110,7 @@ public interface Postgresql extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/psql/ChangeConfigurationCompartmentExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/psql/ChangeConfigurationCompartmentExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ChangeConfigurationCompartment API.
      */
@@ -112,7 +128,7 @@ public interface Postgresql extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/psql/ChangeDbSystemCompartmentExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/psql/ChangeDbSystemCompartmentExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ChangeDbSystemCompartment API.
      */
@@ -129,7 +145,7 @@ public interface Postgresql extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/psql/CreateBackupExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/psql/CreateBackupExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateBackup API.
      */
     CreateBackupResponse createBackup(CreateBackupRequest request);
@@ -144,7 +160,7 @@ public interface Postgresql extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/psql/CreateConfigurationExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/psql/CreateConfigurationExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateConfiguration
      *     API.
      */
@@ -160,7 +176,7 @@ public interface Postgresql extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/psql/CreateDbSystemExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/psql/CreateDbSystemExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateDbSystem API.
      */
     CreateDbSystemResponse createDbSystem(CreateDbSystemRequest request);
@@ -175,7 +191,7 @@ public interface Postgresql extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/psql/DeleteBackupExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/psql/DeleteBackupExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteBackup API.
      */
     DeleteBackupResponse deleteBackup(DeleteBackupRequest request);
@@ -190,7 +206,7 @@ public interface Postgresql extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/psql/DeleteConfigurationExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/psql/DeleteConfigurationExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteConfiguration
      *     API.
      */
@@ -206,7 +222,7 @@ public interface Postgresql extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/psql/DeleteDbSystemExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/psql/DeleteDbSystemExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteDbSystem API.
      */
     DeleteDbSystemResponse deleteDbSystem(DeleteDbSystemRequest request);
@@ -221,7 +237,7 @@ public interface Postgresql extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/psql/FailoverDbSystemExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/psql/FailoverDbSystemExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use FailoverDbSystem
      *     API.
      */
@@ -237,7 +253,7 @@ public interface Postgresql extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/psql/GetBackupExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/psql/GetBackupExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetBackup API.
      */
     GetBackupResponse getBackup(GetBackupRequest request);
@@ -252,7 +268,7 @@ public interface Postgresql extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/psql/GetConfigurationExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/psql/GetConfigurationExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetConfiguration
      *     API.
      */
@@ -268,7 +284,7 @@ public interface Postgresql extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/psql/GetConnectionDetailsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/psql/GetConnectionDetailsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     GetConnectionDetails API.
      */
@@ -284,7 +300,7 @@ public interface Postgresql extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/psql/GetDbSystemExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/psql/GetDbSystemExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetDbSystem API.
      */
     GetDbSystemResponse getDbSystem(GetDbSystemRequest request);
@@ -299,7 +315,7 @@ public interface Postgresql extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/psql/GetDefaultConfigurationExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/psql/GetDefaultConfigurationExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     GetDefaultConfiguration API.
      */
@@ -315,7 +331,7 @@ public interface Postgresql extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/psql/GetPrimaryDbInstanceExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/psql/GetPrimaryDbInstanceExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     GetPrimaryDbInstance API.
      */
@@ -331,7 +347,7 @@ public interface Postgresql extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/psql/GetWorkRequestExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/psql/GetWorkRequestExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetWorkRequest API.
      */
     GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request);
@@ -346,7 +362,7 @@ public interface Postgresql extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/psql/ListBackupsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/psql/ListBackupsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListBackups API.
      */
     ListBackupsResponse listBackups(ListBackupsRequest request);
@@ -361,7 +377,7 @@ public interface Postgresql extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/psql/ListConfigurationsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/psql/ListConfigurationsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListConfigurations
      *     API.
      */
@@ -377,7 +393,7 @@ public interface Postgresql extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/psql/ListDbSystemsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/psql/ListDbSystemsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDbSystems API.
      */
     ListDbSystemsResponse listDbSystems(ListDbSystemsRequest request);
@@ -392,7 +408,7 @@ public interface Postgresql extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/psql/ListDefaultConfigurationsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/psql/ListDefaultConfigurationsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ListDefaultConfigurations API.
      */
@@ -409,7 +425,7 @@ public interface Postgresql extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/psql/ListShapesExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/psql/ListShapesExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListShapes API.
      */
     ListShapesResponse listShapes(ListShapesRequest request);
@@ -424,7 +440,7 @@ public interface Postgresql extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/psql/ListWorkRequestErrorsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/psql/ListWorkRequestErrorsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ListWorkRequestErrors API.
      */
@@ -440,7 +456,7 @@ public interface Postgresql extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/psql/ListWorkRequestLogsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/psql/ListWorkRequestLogsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequestLogs
      *     API.
      */
@@ -456,7 +472,7 @@ public interface Postgresql extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/psql/ListWorkRequestsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/psql/ListWorkRequestsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequests
      *     API.
      */
@@ -472,7 +488,7 @@ public interface Postgresql extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/psql/PatchDbSystemExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/psql/PatchDbSystemExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use PatchDbSystem API.
      */
     PatchDbSystemResponse patchDbSystem(PatchDbSystemRequest request);
@@ -487,7 +503,7 @@ public interface Postgresql extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/psql/ResetMasterUserPasswordExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/psql/ResetMasterUserPasswordExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ResetMasterUserPassword API.
      */
@@ -503,7 +519,7 @@ public interface Postgresql extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/psql/RestartDbInstanceInDbSystemExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/psql/RestartDbInstanceInDbSystemExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     RestartDbInstanceInDbSystem API.
      */
@@ -520,7 +536,7 @@ public interface Postgresql extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/psql/RestoreDbSystemExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/psql/RestoreDbSystemExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use RestoreDbSystem
      *     API.
      */
@@ -536,7 +552,7 @@ public interface Postgresql extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/psql/UpdateBackupExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/psql/UpdateBackupExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateBackup API.
      */
     UpdateBackupResponse updateBackup(UpdateBackupRequest request);
@@ -551,7 +567,7 @@ public interface Postgresql extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/psql/UpdateConfigurationExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/psql/UpdateConfigurationExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateConfiguration
      *     API.
      */
@@ -567,7 +583,7 @@ public interface Postgresql extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/psql/UpdateDbSystemExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/psql/UpdateDbSystemExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateDbSystem API.
      */
     UpdateDbSystemResponse updateDbSystem(UpdateDbSystemRequest request);
@@ -582,7 +598,7 @@ public interface Postgresql extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/psql/UpdateDbSystemDbInstanceExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/psql/UpdateDbSystemDbInstanceExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     UpdateDbSystemDbInstance API.
      */

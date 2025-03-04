@@ -7,7 +7,7 @@ package com.oracle.bmc.loadbalancer.requests;
 import com.oracle.bmc.loadbalancer.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/UpdateNetworkSecurityGroupsExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/UpdateNetworkSecurityGroupsExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * UpdateNetworkSecurityGroupsRequest.
  */
@@ -26,14 +26,14 @@ public class UpdateNetworkSecurityGroupsRequest
         return updateNetworkSecurityGroupsDetails;
     }
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * load balancer to update the NSGs for.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load
+     * balancer to update the NSGs for.
      */
     private String loadBalancerId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * load balancer to update the NSGs for.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load
+     * balancer to update the NSGs for.
      */
     public String getLoadBalancerId() {
         return loadBalancerId;
@@ -138,13 +138,13 @@ public class UpdateNetworkSecurityGroupsRequest
         }
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * load balancer to update the NSGs for.
          */
         private String loadBalancerId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * load balancer to update the NSGs for.
          *
          * @param loadBalancerId the value to set

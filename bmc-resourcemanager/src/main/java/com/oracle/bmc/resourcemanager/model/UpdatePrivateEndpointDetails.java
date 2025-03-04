@@ -89,15 +89,15 @@ public final class UpdatePrivateEndpointDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the VCN for the private endpoint.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * VCN for the private endpoint.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("vcnId")
         private String vcnId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the VCN for the private endpoint.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * VCN for the private endpoint.
          *
          * @param vcnId the value to set
          * @return this builder
@@ -108,15 +108,15 @@ public final class UpdatePrivateEndpointDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the subnet within the VCN for the private endpoint.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * subnet within the VCN for the private endpoint.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
         private String subnetId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the subnet within the VCN for the private endpoint.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * subnet within the VCN for the private endpoint.
          *
          * @param subnetId the value to set
          * @return this builder
@@ -148,18 +148,18 @@ public final class UpdatePrivateEndpointDetails
             return this;
         }
         /**
-         * The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of [network security groups
-         * (NSGs)](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/networksecuritygroups.htm)
+         * The [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+         * [network security groups
+         * (NSGs)](https://docs.oracle.com/iaas/Content/Network/Concepts/networksecuritygroups.htm)
          * for the private endpoint. Order does not matter.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("nsgIdList")
         private java.util.List<String> nsgIdList;
 
         /**
-         * The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of [network security groups
-         * (NSGs)](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/networksecuritygroups.htm)
+         * The [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+         * [network security groups
+         * (NSGs)](https://docs.oracle.com/iaas/Content/Network/Concepts/networksecuritygroups.htm)
          * for the private endpoint. Order does not matter.
          *
          * @param nsgIdList the value to set
@@ -193,8 +193,8 @@ public final class UpdatePrivateEndpointDetails
         /**
          * Free-form tags associated with the resource. Each tag is a key-value pair with no
          * predefined name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         * Example: {@code {"Department": "Finance"}}
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+         * {@code {"Department": "Finance"}}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
@@ -202,8 +202,8 @@ public final class UpdatePrivateEndpointDetails
         /**
          * Free-form tags associated with the resource. Each tag is a key-value pair with no
          * predefined name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         * Example: {@code {"Department": "Finance"}}
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+         * {@code {"Department": "Finance"}}
          *
          * @param freeformTags the value to set
          * @return this builder
@@ -216,8 +216,8 @@ public final class UpdatePrivateEndpointDetails
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+         * {@code {"Operations": {"CostCenter": "42"}}}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
@@ -225,8 +225,8 @@ public final class UpdatePrivateEndpointDetails
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+         * {@code {"Operations": {"CostCenter": "42"}}}
          *
          * @param definedTags the value to set
          * @return this builder
@@ -329,15 +329,15 @@ public final class UpdatePrivateEndpointDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the VCN for the private endpoint.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN
+     * for the private endpoint.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("vcnId")
     private final String vcnId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the VCN for the private endpoint.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN
+     * for the private endpoint.
      *
      * @return the value
      */
@@ -346,15 +346,15 @@ public final class UpdatePrivateEndpointDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the subnet within the VCN for the private endpoint.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * subnet within the VCN for the private endpoint.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
     private final String subnetId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the subnet within the VCN for the private endpoint.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * subnet within the VCN for the private endpoint.
      *
      * @return the value
      */
@@ -380,19 +380,19 @@ public final class UpdatePrivateEndpointDetails
     }
 
     /**
-     * The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * The [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
      * [network security groups
-     * (NSGs)](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/networksecuritygroups.htm)
-     * for the private endpoint. Order does not matter.
+     * (NSGs)](https://docs.oracle.com/iaas/Content/Network/Concepts/networksecuritygroups.htm) for
+     * the private endpoint. Order does not matter.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("nsgIdList")
     private final java.util.List<String> nsgIdList;
 
     /**
-     * The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * The [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
      * [network security groups
-     * (NSGs)](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/networksecuritygroups.htm)
-     * for the private endpoint. Order does not matter.
+     * (NSGs)](https://docs.oracle.com/iaas/Content/Network/Concepts/networksecuritygroups.htm) for
+     * the private endpoint. Order does not matter.
      *
      * @return the value
      */
@@ -420,7 +420,7 @@ public final class UpdatePrivateEndpointDetails
     /**
      * Free-form tags associated with the resource. Each tag is a key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Department": "Finance"}}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -429,7 +429,7 @@ public final class UpdatePrivateEndpointDetails
     /**
      * Free-form tags associated with the resource. Each tag is a key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Department": "Finance"}}
      *
      * @return the value
@@ -441,7 +441,7 @@ public final class UpdatePrivateEndpointDetails
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Operations": {"CostCenter": "42"}}}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -450,7 +450,7 @@ public final class UpdatePrivateEndpointDetails
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Operations": {"CostCenter": "42"}}}
      *
      * @return the value

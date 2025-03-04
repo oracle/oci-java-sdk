@@ -76,7 +76,7 @@ public interface FleetAppsManagementOperations extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/CreatePatchExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/CreatePatchExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreatePatch API.
      */
     CreatePatchResponse createPatch(CreatePatchRequest request);
@@ -91,7 +91,7 @@ public interface FleetAppsManagementOperations extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/CreateSchedulerDefinitionExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/CreateSchedulerDefinitionExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     CreateSchedulerDefinition API.
      */
@@ -108,7 +108,7 @@ public interface FleetAppsManagementOperations extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/DeletePatchExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/DeletePatchExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeletePatch API.
      */
     DeletePatchResponse deletePatch(DeletePatchRequest request);
@@ -123,7 +123,7 @@ public interface FleetAppsManagementOperations extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/DeleteSchedulerDefinitionExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/DeleteSchedulerDefinitionExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     DeleteSchedulerDefinition API.
      */
@@ -140,7 +140,7 @@ public interface FleetAppsManagementOperations extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/DeleteSchedulerJobExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/DeleteSchedulerJobExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteSchedulerJob
      *     API.
      */
@@ -156,7 +156,7 @@ public interface FleetAppsManagementOperations extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/ExportComplianceReportExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/ExportComplianceReportExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ExportComplianceReport API.
      */
@@ -172,7 +172,7 @@ public interface FleetAppsManagementOperations extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/GetExecutionExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/GetExecutionExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetExecution API.
      */
     GetExecutionResponse getExecution(GetExecutionRequest request);
@@ -187,7 +187,7 @@ public interface FleetAppsManagementOperations extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/GetJobActivityExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/GetJobActivityExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetJobActivity API.
      */
     GetJobActivityResponse getJobActivity(GetJobActivityRequest request);
@@ -202,7 +202,7 @@ public interface FleetAppsManagementOperations extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/GetPatchExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/GetPatchExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetPatch API.
      */
     GetPatchResponse getPatch(GetPatchRequest request);
@@ -217,7 +217,7 @@ public interface FleetAppsManagementOperations extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/GetSchedulerDefinitionExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/GetSchedulerDefinitionExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     GetSchedulerDefinition API.
      */
@@ -233,7 +233,7 @@ public interface FleetAppsManagementOperations extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/GetSchedulerJobExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/GetSchedulerJobExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetSchedulerJob
      *     API.
      */
@@ -249,7 +249,7 @@ public interface FleetAppsManagementOperations extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/ListComplianceRecordsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/ListComplianceRecordsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ListComplianceRecords API.
      */
@@ -265,7 +265,7 @@ public interface FleetAppsManagementOperations extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/ListExecutionsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/ListExecutionsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListExecutions API.
      */
     ListExecutionsResponse listExecutions(ListExecutionsRequest request);
@@ -280,7 +280,7 @@ public interface FleetAppsManagementOperations extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/ListPatchesExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/ListPatchesExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListPatches API.
      */
     ListPatchesResponse listPatches(ListPatchesRequest request);
@@ -295,7 +295,7 @@ public interface FleetAppsManagementOperations extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/ListResourcesExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/ListResourcesExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListResources API.
      */
     ListResourcesResponse listResources(ListResourcesRequest request);
@@ -310,7 +310,7 @@ public interface FleetAppsManagementOperations extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/ListScheduledFleetsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/ListScheduledFleetsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListScheduledFleets
      *     API.
      */
@@ -326,7 +326,7 @@ public interface FleetAppsManagementOperations extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/ListSchedulerDefinitionsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/ListSchedulerDefinitionsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ListSchedulerDefinitions API.
      */
@@ -343,7 +343,7 @@ public interface FleetAppsManagementOperations extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/ListSchedulerJobsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/ListSchedulerJobsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSchedulerJobs
      *     API.
      */
@@ -359,7 +359,7 @@ public interface FleetAppsManagementOperations extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/ListStepsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/ListStepsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSteps API.
      */
     ListStepsResponse listSteps(ListStepsRequest request);
@@ -374,7 +374,7 @@ public interface FleetAppsManagementOperations extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/ManageJobExecutionExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/ManageJobExecutionExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ManageJobExecution
      *     API.
      */
@@ -390,7 +390,7 @@ public interface FleetAppsManagementOperations extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/SummarizeComplianceRecordCountsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/SummarizeComplianceRecordCountsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     SummarizeComplianceRecordCounts API.
      */
@@ -407,7 +407,7 @@ public interface FleetAppsManagementOperations extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/SummarizeManagedEntityCountsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/SummarizeManagedEntityCountsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     SummarizeManagedEntityCounts API.
      */
@@ -424,7 +424,7 @@ public interface FleetAppsManagementOperations extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/SummarizeSchedulerJobCountsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/SummarizeSchedulerJobCountsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     SummarizeSchedulerJobCounts API.
      */
@@ -441,7 +441,7 @@ public interface FleetAppsManagementOperations extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/UpdatePatchExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/UpdatePatchExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdatePatch API.
      */
     UpdatePatchResponse updatePatch(UpdatePatchRequest request);
@@ -456,7 +456,7 @@ public interface FleetAppsManagementOperations extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/UpdateSchedulerDefinitionExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/UpdateSchedulerDefinitionExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     UpdateSchedulerDefinition API.
      */
@@ -473,7 +473,7 @@ public interface FleetAppsManagementOperations extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/UpdateSchedulerJobExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/UpdateSchedulerJobExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateSchedulerJob
      *     API.
      */

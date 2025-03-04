@@ -152,7 +152,7 @@ public final class UpdateAmazonKinesisConnectionDetails extends UpdateConnection
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Secret where the secret access key is stored. Note: When provided, 'secretAccessKey'
          * field must not be provided.
          */
@@ -160,7 +160,7 @@ public final class UpdateAmazonKinesisConnectionDetails extends UpdateConnection
         private String secretAccessKeySecretId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Secret where the secret access key is stored. Note: When provided, 'secretAccessKey'
          * field must not be provided.
          *
@@ -314,7 +314,7 @@ public final class UpdateAmazonKinesisConnectionDetails extends UpdateConnection
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Secret where the secret access key is stored. Note: When provided, 'secretAccessKey' field
      * must not be provided.
      */
@@ -322,7 +322,7 @@ public final class UpdateAmazonKinesisConnectionDetails extends UpdateConnection
     private final String secretAccessKeySecretId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Secret where the secret access key is stored. Note: When provided, 'secretAccessKey' field
      * must not be provided.
      *

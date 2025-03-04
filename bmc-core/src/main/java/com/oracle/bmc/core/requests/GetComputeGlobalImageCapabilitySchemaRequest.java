@@ -7,7 +7,7 @@ package com.oracle.bmc.core.requests;
 import com.oracle.bmc.core.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetComputeGlobalImageCapabilitySchemaExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetComputeGlobalImageCapabilitySchemaExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * GetComputeGlobalImageCapabilitySchemaRequest.
  */
@@ -16,14 +16,14 @@ public class GetComputeGlobalImageCapabilitySchemaRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compute global image capability schema
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compute global image capability schema
      */
     private String computeGlobalImageCapabilitySchemaId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compute global image capability schema
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compute global image capability schema
      */
     public String getComputeGlobalImageCapabilitySchemaId() {
         return computeGlobalImageCapabilitySchemaId;
@@ -36,14 +36,14 @@ public class GetComputeGlobalImageCapabilitySchemaRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compute global image capability schema
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compute global image capability schema
          */
         private String computeGlobalImageCapabilitySchemaId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compute global image capability schema
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compute global image capability schema
          *
          * @param computeGlobalImageCapabilitySchemaId the value to set
          * @return this builder instance

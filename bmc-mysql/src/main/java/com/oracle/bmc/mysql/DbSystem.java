@@ -73,7 +73,7 @@ public interface DbSystem extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/AddHeatWaveClusterExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/AddHeatWaveClusterExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use AddHeatWaveCluster
      *     API.
      */
@@ -89,7 +89,7 @@ public interface DbSystem extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/CreateDbSystemExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/CreateDbSystemExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateDbSystem API.
      */
     CreateDbSystemResponse createDbSystem(CreateDbSystemRequest request);
@@ -105,7 +105,7 @@ public interface DbSystem extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/DeleteDbSystemExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/DeleteDbSystemExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteDbSystem API.
      */
     DeleteDbSystemResponse deleteDbSystem(DeleteDbSystemRequest request);
@@ -121,7 +121,7 @@ public interface DbSystem extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/DeleteHeatWaveClusterExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/DeleteHeatWaveClusterExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     DeleteHeatWaveCluster API.
      */
@@ -138,7 +138,7 @@ public interface DbSystem extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/GenerateHeatWaveClusterMemoryEstimateExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/GenerateHeatWaveClusterMemoryEstimateExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     GenerateHeatWaveClusterMemoryEstimate API.
      */
@@ -155,7 +155,7 @@ public interface DbSystem extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/GetDbSystemExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/GetDbSystemExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetDbSystem API.
      */
     GetDbSystemResponse getDbSystem(GetDbSystemRequest request);
@@ -170,7 +170,7 @@ public interface DbSystem extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/GetHeatWaveClusterExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/GetHeatWaveClusterExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetHeatWaveCluster
      *     API.
      */
@@ -187,7 +187,7 @@ public interface DbSystem extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/GetHeatWaveClusterMemoryEstimateExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/GetHeatWaveClusterMemoryEstimateExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     GetHeatWaveClusterMemoryEstimate API.
      */
@@ -205,7 +205,7 @@ public interface DbSystem extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/ListDbSystemsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/ListDbSystemsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDbSystems API.
      */
     ListDbSystemsResponse listDbSystems(ListDbSystemsRequest request);
@@ -220,7 +220,7 @@ public interface DbSystem extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/RestartDbSystemExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/RestartDbSystemExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use RestartDbSystem
      *     API.
      */
@@ -236,7 +236,7 @@ public interface DbSystem extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/RestartHeatWaveClusterExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/RestartHeatWaveClusterExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     RestartHeatWaveCluster API.
      */
@@ -252,7 +252,7 @@ public interface DbSystem extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/StartDbSystemExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/StartDbSystemExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use StartDbSystem API.
      */
     StartDbSystemResponse startDbSystem(StartDbSystemRequest request);
@@ -267,7 +267,7 @@ public interface DbSystem extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/StartHeatWaveClusterExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/StartHeatWaveClusterExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     StartHeatWaveCluster API.
      */
@@ -285,7 +285,7 @@ public interface DbSystem extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/StopDbSystemExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/StopDbSystemExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use StopDbSystem API.
      */
     StopDbSystemResponse stopDbSystem(StopDbSystemRequest request);
@@ -300,7 +300,7 @@ public interface DbSystem extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/StopHeatWaveClusterExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/StopHeatWaveClusterExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use StopHeatWaveCluster
      *     API.
      */
@@ -322,7 +322,7 @@ public interface DbSystem extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/UpdateDbSystemExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/UpdateDbSystemExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateDbSystem API.
      */
     UpdateDbSystemResponse updateDbSystem(UpdateDbSystemRequest request);
@@ -337,7 +337,7 @@ public interface DbSystem extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/UpdateHeatWaveClusterExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/UpdateHeatWaveClusterExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     UpdateHeatWaveCluster API.
      */

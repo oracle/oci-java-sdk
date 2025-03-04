@@ -12,14 +12,14 @@ import com.oracle.bmc.util.internal.Validate;
 /**
  * The configuration for the {@code UploadManager}. For more information, please refer to the online
  * documentation found <a
- * href="https://docs.cloud.oracle.com/iaas/Content/Object/Tasks/usingmultipartuploads.htm">here</a>.
+ * href="https://docs.oracle.com/iaas/Content/Object/Tasks/usingmultipartuploads.htm">here</a>.
  */
 public class UploadConfiguration {
     private static final org.slf4j.Logger LOG =
             org.slf4j.LoggerFactory.getLogger(UploadConfiguration.class);
     /*
      * Max supported sizes are specified @
-     * https://docs.cloud.oracle.com/iaas/Content/Object/Tasks/usingmultipartuploads.htm
+     * https://docs.oracle.com/iaas/Content/Object/Tasks/usingmultipartuploads.htm
      */
     public static final int MAXIMUM_NUM_ALLOWED_PARTS = 10000;
     public static final long MINIMUM_ALLOWED_LENGTH_PER_PART_MB = 1L; // 1 MiB

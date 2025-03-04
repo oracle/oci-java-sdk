@@ -32,7 +32,7 @@ public final class ChangeReplicationCompartmentDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * compartment to move the replication to. Also changes the replication target's compartment
          * in the target region.
          */
@@ -40,7 +40,7 @@ public final class ChangeReplicationCompartmentDetails
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * compartment to move the replication to. Also changes the replication target's compartment
          * in the target region.
          *
@@ -84,7 +84,7 @@ public final class ChangeReplicationCompartmentDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment to move the replication to. Also changes the replication target's compartment in
      * the target region.
      */
@@ -92,7 +92,7 @@ public final class ChangeReplicationCompartmentDetails
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment to move the replication to. Also changes the replication target's compartment in
      * the target region.
      *

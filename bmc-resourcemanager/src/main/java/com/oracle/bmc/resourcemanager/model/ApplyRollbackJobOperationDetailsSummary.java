@@ -7,7 +7,7 @@ package com.oracle.bmc.resourcemanager.model;
 /**
  * Job details that are specific to an apply rollback job. For more information about apply rollback
  * jobs, see [Creating an Apply Rollback
- * Job](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/create-job-apply-rollback.htm).
+ * Job](https://docs.oracle.com/iaas/Content/ResourceManager/Tasks/create-job-apply-rollback.htm).
  * <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
@@ -53,17 +53,17 @@ public final class ApplyRollbackJobOperationDetailsSummary extends JobOperationD
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of a plan rollback job, for use when specifying {@code "FROM_PLAN_ROLLBACK_JOB_ID"} as
-         * the {@code executionPlanRollbackStrategy}.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
+         * plan rollback job, for use when specifying {@code "FROM_PLAN_ROLLBACK_JOB_ID"} as the
+         * {@code executionPlanRollbackStrategy}.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("executionPlanRollbackJobId")
         private String executionPlanRollbackJobId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of a plan rollback job, for use when specifying {@code "FROM_PLAN_ROLLBACK_JOB_ID"} as
-         * the {@code executionPlanRollbackStrategy}.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
+         * plan rollback job, for use when specifying {@code "FROM_PLAN_ROLLBACK_JOB_ID"} as the
+         * {@code executionPlanRollbackStrategy}.
          *
          * @param executionPlanRollbackJobId the value to set
          * @return this builder
@@ -74,16 +74,16 @@ public final class ApplyRollbackJobOperationDetailsSummary extends JobOperationD
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of a successful apply job, for use when specifying {@code "AUTO_APPROVED"} as the {@code
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
+         * successful apply job, for use when specifying {@code "AUTO_APPROVED"} as the {@code
          * executionPlanRollbackStrategy}.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("targetRollbackJobId")
         private String targetRollbackJobId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of a successful apply job, for use when specifying {@code "AUTO_APPROVED"} as the {@code
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
+         * successful apply job, for use when specifying {@code "AUTO_APPROVED"} as the {@code
          * executionPlanRollbackStrategy}.
          *
          * @param targetRollbackJobId the value to set
@@ -166,16 +166,16 @@ public final class ApplyRollbackJobOperationDetailsSummary extends JobOperationD
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
-     * plan rollback job, for use when specifying {@code "FROM_PLAN_ROLLBACK_JOB_ID"} as the {@code
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a plan
+     * rollback job, for use when specifying {@code "FROM_PLAN_ROLLBACK_JOB_ID"} as the {@code
      * executionPlanRollbackStrategy}.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("executionPlanRollbackJobId")
     private final String executionPlanRollbackJobId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
-     * plan rollback job, for use when specifying {@code "FROM_PLAN_ROLLBACK_JOB_ID"} as the {@code
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a plan
+     * rollback job, for use when specifying {@code "FROM_PLAN_ROLLBACK_JOB_ID"} as the {@code
      * executionPlanRollbackStrategy}.
      *
      * @return the value
@@ -185,7 +185,7 @@ public final class ApplyRollbackJobOperationDetailsSummary extends JobOperationD
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
      * successful apply job, for use when specifying {@code "AUTO_APPROVED"} as the {@code
      * executionPlanRollbackStrategy}.
      */
@@ -193,7 +193,7 @@ public final class ApplyRollbackJobOperationDetailsSummary extends JobOperationD
     private final String targetRollbackJobId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
      * successful apply job, for use when specifying {@code "AUTO_APPROVED"} as the {@code
      * executionPlanRollbackStrategy}.
      *

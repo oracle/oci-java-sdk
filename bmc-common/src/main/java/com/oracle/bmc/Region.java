@@ -219,13 +219,13 @@ public final class Region implements Serializable, Comparable<Region> {
 
     /**
      * The region identifier as defined in
-     * https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm
+     * https://docs.oracle.com/iaas/Content/General/Concepts/regions.htm
      */
     private final String regionId;
 
     /**
      * The region key as defined in
-     * https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm or null if none.
+     * https://docs.oracle.com/iaas/Content/General/Concepts/regions.htm or null if none.
      *
      * <p>Not using Optional<String> here, since that is not serializable.
      */

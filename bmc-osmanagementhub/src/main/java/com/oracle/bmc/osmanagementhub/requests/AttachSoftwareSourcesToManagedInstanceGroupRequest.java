@@ -7,7 +7,7 @@ package com.oracle.bmc.osmanagementhub.requests;
 import com.oracle.bmc.osmanagementhub.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/AttachSoftwareSourcesToManagedInstanceGroupExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/AttachSoftwareSourcesToManagedInstanceGroupExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * AttachSoftwareSourcesToManagedInstanceGroupRequest.
  */
@@ -18,30 +18,30 @@ public class AttachSoftwareSourcesToManagedInstanceGroupRequest
                         .AttachSoftwareSourcesToManagedInstanceGroupDetails> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the managed instance group.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * managed instance group.
      */
     private String managedInstanceGroupId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the managed instance group.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * managed instance group.
      */
     public String getManagedInstanceGroupId() {
         return managedInstanceGroupId;
     }
     /**
      * The software source
-     * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to
-     * attach to the managed instance group.
+     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to attach to
+     * the managed instance group.
      */
     private com.oracle.bmc.osmanagementhub.model.AttachSoftwareSourcesToManagedInstanceGroupDetails
             attachSoftwareSourcesToManagedInstanceGroupDetails;
 
     /**
      * The software source
-     * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to
-     * attach to the managed instance group.
+     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to attach to
+     * the managed instance group.
      */
     public com.oracle.bmc.osmanagementhub.model.AttachSoftwareSourcesToManagedInstanceGroupDetails
             getAttachSoftwareSourcesToManagedInstanceGroupDetails() {
@@ -118,14 +118,14 @@ public class AttachSoftwareSourcesToManagedInstanceGroupRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the managed instance group.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * managed instance group.
          */
         private String managedInstanceGroupId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the managed instance group.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * managed instance group.
          *
          * @param managedInstanceGroupId the value to set
          * @return this builder instance
@@ -137,8 +137,8 @@ public class AttachSoftwareSourcesToManagedInstanceGroupRequest
 
         /**
          * The software source
-         * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to
-         * attach to the managed instance group.
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to attach
+         * to the managed instance group.
          */
         private com.oracle.bmc.osmanagementhub.model
                         .AttachSoftwareSourcesToManagedInstanceGroupDetails
@@ -146,8 +146,8 @@ public class AttachSoftwareSourcesToManagedInstanceGroupRequest
 
         /**
          * The software source
-         * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to
-         * attach to the managed instance group.
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to attach
+         * to the managed instance group.
          *
          * @param attachSoftwareSourcesToManagedInstanceGroupDetails the value to set
          * @return this builder instance

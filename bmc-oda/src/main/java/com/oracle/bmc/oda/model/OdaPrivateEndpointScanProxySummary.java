@@ -50,15 +50,15 @@ public final class OdaPrivateEndpointScanProxySummary
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the ODA Private Endpoint Scan Proxy.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * ODA Private Endpoint Scan Proxy.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the ODA Private Endpoint Scan Proxy.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * ODA Private Endpoint Scan Proxy.
          *
          * @param id the value to set
          * @return this builder
@@ -207,15 +207,15 @@ public final class OdaPrivateEndpointScanProxySummary
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the ODA Private Endpoint Scan Proxy.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ODA
+     * Private Endpoint Scan Proxy.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the ODA Private Endpoint Scan Proxy.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ODA
+     * Private Endpoint Scan Proxy.
      *
      * @return the value
      */

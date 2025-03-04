@@ -136,7 +136,7 @@ public final class SqlTuningTaskSqlExecutionPlanStep
         /**
          * The identification number of a step in the SQL execution plan. This is unique within the
          * SQL execution plan. This is not the
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("stepId")
         private Integer stepId;
@@ -144,7 +144,7 @@ public final class SqlTuningTaskSqlExecutionPlanStep
         /**
          * The identification number of a step in the SQL execution plan. This is unique within the
          * SQL execution plan. This is not the
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          * @param stepId the value to set
          * @return this builder
@@ -156,14 +156,14 @@ public final class SqlTuningTaskSqlExecutionPlanStep
         }
         /**
          * The ID of the next step that operates on the results of this step. This is not the
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("parentStepId")
         private Integer parentStepId;
 
         /**
          * The ID of the next step that operates on the results of this step. This is not the
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          * @param parentStepId the value to set
          * @return this builder
@@ -755,7 +755,7 @@ public final class SqlTuningTaskSqlExecutionPlanStep
     /**
      * The identification number of a step in the SQL execution plan. This is unique within the SQL
      * execution plan. This is not the
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("stepId")
     private final Integer stepId;
@@ -763,7 +763,7 @@ public final class SqlTuningTaskSqlExecutionPlanStep
     /**
      * The identification number of a step in the SQL execution plan. This is unique within the SQL
      * execution plan. This is not the
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      * @return the value
      */
@@ -773,14 +773,14 @@ public final class SqlTuningTaskSqlExecutionPlanStep
 
     /**
      * The ID of the next step that operates on the results of this step. This is not the
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("parentStepId")
     private final Integer parentStepId;
 
     /**
      * The ID of the next step that operates on the results of this step. This is not the
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      * @return the value
      */

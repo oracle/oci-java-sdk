@@ -54,7 +54,7 @@ public final class AwrDatabaseSnapshotSummary
     public static class Builder {
         /**
          * Internal ID of the database. The internal ID of the database is not the
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm). It can be
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). It can be
          * retrieved from the following endpoint: /awrHubs/{awrHubId}/awrDatabases
          */
         @com.fasterxml.jackson.annotation.JsonProperty("awrSourceDatabaseIdentifier")
@@ -62,7 +62,7 @@ public final class AwrDatabaseSnapshotSummary
 
         /**
          * Internal ID of the database. The internal ID of the database is not the
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm). It can be
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). It can be
          * retrieved from the following endpoint: /awrHubs/{awrHubId}/awrDatabases
          *
          * @param awrSourceDatabaseIdentifier the value to set
@@ -135,7 +135,7 @@ public final class AwrDatabaseSnapshotSummary
         }
         /**
          * The ID of the snapshot. The snapshot identifier is not the
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm). It can be
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). It can be
          * retrieved from the following endpoint: /awrHubs/{awrHubId}/awrDbSnapshots
          */
         @com.fasterxml.jackson.annotation.JsonProperty("snapshotIdentifier")
@@ -143,7 +143,7 @@ public final class AwrDatabaseSnapshotSummary
 
         /**
          * The ID of the snapshot. The snapshot identifier is not the
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm). It can be
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). It can be
          * retrieved from the following endpoint: /awrHubs/{awrHubId}/awrDbSnapshots
          *
          * @param snapshotIdentifier the value to set
@@ -227,7 +227,7 @@ public final class AwrDatabaseSnapshotSummary
 
     /**
      * Internal ID of the database. The internal ID of the database is not the
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm). It can be
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). It can be
      * retrieved from the following endpoint: /awrHubs/{awrHubId}/awrDatabases
      */
     @com.fasterxml.jackson.annotation.JsonProperty("awrSourceDatabaseIdentifier")
@@ -235,7 +235,7 @@ public final class AwrDatabaseSnapshotSummary
 
     /**
      * Internal ID of the database. The internal ID of the database is not the
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm). It can be
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). It can be
      * retrieved from the following endpoint: /awrHubs/{awrHubId}/awrDatabases
      *
      * @return the value
@@ -298,7 +298,7 @@ public final class AwrDatabaseSnapshotSummary
 
     /**
      * The ID of the snapshot. The snapshot identifier is not the
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm). It can be
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). It can be
      * retrieved from the following endpoint: /awrHubs/{awrHubId}/awrDbSnapshots
      */
     @com.fasterxml.jackson.annotation.JsonProperty("snapshotIdentifier")
@@ -306,7 +306,7 @@ public final class AwrDatabaseSnapshotSummary
 
     /**
      * The ID of the snapshot. The snapshot identifier is not the
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm). It can be
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). It can be
      * retrieved from the following endpoint: /awrHubs/{awrHubId}/awrDbSnapshots
      *
      * @return the value

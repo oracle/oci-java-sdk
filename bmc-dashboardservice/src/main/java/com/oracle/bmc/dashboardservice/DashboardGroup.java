@@ -11,7 +11,7 @@ import com.oracle.bmc.dashboardservice.responses.*;
  * Use the Oracle Cloud Infrastructure Dashboards service API to manage dashboards in the Console.
  * Dashboards provide an organized and customizable view of resources and their metrics in the
  * Console. For more information, see
- * [Dashboards](https://docs.cloud.oracle.com/Content/Dashboards/home.htm).
+ * [Dashboards](https://docs.oracle.com/iaas/Content/Dashboards/home.htm).
  *
  * <p>*Important:** Resources for the Dashboards service are created in the tenacy's home region.
  * Although it is possible to create dashboard and dashboard group resources in regions other than
@@ -83,7 +83,7 @@ public interface DashboardGroup extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dashboardservice/ChangeDashboardGroupCompartmentExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dashboardservice/ChangeDashboardGroupCompartmentExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ChangeDashboardGroupCompartment API.
      */
@@ -105,7 +105,7 @@ public interface DashboardGroup extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dashboardservice/CreateDashboardGroupExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dashboardservice/CreateDashboardGroupExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     CreateDashboardGroup API.
      */
@@ -122,7 +122,7 @@ public interface DashboardGroup extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dashboardservice/DeleteDashboardGroupExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dashboardservice/DeleteDashboardGroupExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     DeleteDashboardGroup API.
      */
@@ -139,7 +139,7 @@ public interface DashboardGroup extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dashboardservice/GetDashboardGroupExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dashboardservice/GetDashboardGroupExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetDashboardGroup
      *     API.
      */
@@ -155,7 +155,7 @@ public interface DashboardGroup extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dashboardservice/ListDashboardGroupsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dashboardservice/ListDashboardGroupsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDashboardGroups
      *     API.
      */
@@ -172,7 +172,7 @@ public interface DashboardGroup extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dashboardservice/UpdateDashboardGroupExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dashboardservice/UpdateDashboardGroupExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     UpdateDashboardGroup API.
      */

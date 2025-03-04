@@ -7,7 +7,7 @@ package com.oracle.bmc.waas.requests;
 import com.oracle.bmc.waas.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/ChangeCertificateCompartmentExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/ChangeCertificateCompartmentExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * ChangeCertificateCompartmentRequest.
  */
@@ -17,14 +17,14 @@ public class ChangeCertificateCompartmentRequest
                 com.oracle.bmc.waas.model.ChangeCertificateCompartmentDetails> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the SSL
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SSL
      * certificate used in the WAAS policy. This number is generated when the certificate is added
      * to the policy.
      */
     private String certificateId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the SSL
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SSL
      * certificate used in the WAAS policy. This number is generated when the certificate is added
      * to the policy.
      */
@@ -108,14 +108,14 @@ public class ChangeCertificateCompartmentRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * SSL certificate used in the WAAS policy. This number is generated when the certificate is
          * added to the policy.
          */
         private String certificateId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * SSL certificate used in the WAAS policy. This number is generated when the certificate is
          * added to the policy.
          *

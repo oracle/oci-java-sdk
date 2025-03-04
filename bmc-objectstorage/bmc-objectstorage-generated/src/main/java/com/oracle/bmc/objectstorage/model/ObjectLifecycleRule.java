@@ -8,7 +8,7 @@ package com.oracle.bmc.objectstorage.model;
  * To use any of the API operations, you must be authorized in an IAM policy. If you are not
  * authorized, talk to an administrator. If you are an administrator who needs to write policies to
  * give users access, see [Getting Started with
- * Policies](https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm). <br>
+ * Policies](https://docs.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm). <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -102,7 +102,7 @@ public final class ObjectLifecycleRule
         /**
          * The action of the object lifecycle policy rule. Rules using the action 'ARCHIVE' move
          * objects from Standard and InfrequentAccess storage tiers into the [Archive storage
-         * tier](https://docs.cloud.oracle.com/Content/Archive/Concepts/archivestorageoverview.htm).
+         * tier](https://docs.oracle.com/iaas/Content/Archive/Concepts/archivestorageoverview.htm).
          * Rules using the action 'INFREQUENT_ACCESS' move objects from Standard storage tier into
          * the Infrequent Access Storage tier. Objects that are already in InfrequentAccess tier or
          * in Archive tier are left untouched. Rules using the action 'DELETE' permanently delete
@@ -115,7 +115,7 @@ public final class ObjectLifecycleRule
         /**
          * The action of the object lifecycle policy rule. Rules using the action 'ARCHIVE' move
          * objects from Standard and InfrequentAccess storage tiers into the [Archive storage
-         * tier](https://docs.cloud.oracle.com/Content/Archive/Concepts/archivestorageoverview.htm).
+         * tier](https://docs.oracle.com/iaas/Content/Archive/Concepts/archivestorageoverview.htm).
          * Rules using the action 'INFREQUENT_ACCESS' move objects from Standard storage tier into
          * the Infrequent Access Storage tier. Objects that are already in InfrequentAccess tier or
          * in Archive tier are left untouched. Rules using the action 'DELETE' permanently delete
@@ -295,7 +295,7 @@ public final class ObjectLifecycleRule
     /**
      * The action of the object lifecycle policy rule. Rules using the action 'ARCHIVE' move objects
      * from Standard and InfrequentAccess storage tiers into the [Archive storage
-     * tier](https://docs.cloud.oracle.com/Content/Archive/Concepts/archivestorageoverview.htm).
+     * tier](https://docs.oracle.com/iaas/Content/Archive/Concepts/archivestorageoverview.htm).
      * Rules using the action 'INFREQUENT_ACCESS' move objects from Standard storage tier into the
      * Infrequent Access Storage tier. Objects that are already in InfrequentAccess tier or in
      * Archive tier are left untouched. Rules using the action 'DELETE' permanently delete objects
@@ -308,7 +308,7 @@ public final class ObjectLifecycleRule
     /**
      * The action of the object lifecycle policy rule. Rules using the action 'ARCHIVE' move objects
      * from Standard and InfrequentAccess storage tiers into the [Archive storage
-     * tier](https://docs.cloud.oracle.com/Content/Archive/Concepts/archivestorageoverview.htm).
+     * tier](https://docs.oracle.com/iaas/Content/Archive/Concepts/archivestorageoverview.htm).
      * Rules using the action 'INFREQUENT_ACCESS' move objects from Standard storage tier into the
      * Infrequent Access Storage tier. Objects that are already in InfrequentAccess tier or in
      * Archive tier are left untouched. Rules using the action 'DELETE' permanently delete objects

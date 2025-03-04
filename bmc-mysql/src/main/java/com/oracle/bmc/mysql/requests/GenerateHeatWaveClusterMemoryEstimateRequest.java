@@ -7,7 +7,7 @@ package com.oracle.bmc.mysql.requests;
 import com.oracle.bmc.mysql.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/GenerateHeatWaveClusterMemoryEstimateExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/GenerateHeatWaveClusterMemoryEstimateExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * GenerateHeatWaveClusterMemoryEstimateRequest.
  */
@@ -16,12 +16,12 @@ public class GenerateHeatWaveClusterMemoryEstimateRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The DB System [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * The DB System [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     private String dbSystemId;
 
     /**
-     * The DB System [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * The DB System [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     public String getDbSystemId() {
         return dbSystemId;
@@ -69,13 +69,13 @@ public class GenerateHeatWaveClusterMemoryEstimateRequest
 
         /**
          * The DB System
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          */
         private String dbSystemId = null;
 
         /**
          * The DB System
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          * @param dbSystemId the value to set
          * @return this builder instance

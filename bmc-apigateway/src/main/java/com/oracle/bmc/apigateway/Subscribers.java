@@ -10,7 +10,7 @@ import com.oracle.bmc.apigateway.responses.*;
 /**
  * API for the API Gateway service. Use this API to manage gateways, deployments, and related items.
  * For more information, see [Overview of API
- * Gateway](https://docs.cloud.oracle.com/iaas/Content/APIGateway/Concepts/apigatewayoverview.htm).
+ * Gateway](https://docs.oracle.com/iaas/Content/APIGateway/Concepts/apigatewayoverview.htm).
  *
  * <p>This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by
  * default if no circuit breaker configuration is defined by the user.
@@ -76,7 +76,7 @@ public interface Subscribers extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apigateway/ChangeSubscriberCompartmentExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apigateway/ChangeSubscriberCompartmentExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ChangeSubscriberCompartment API.
      */
@@ -93,7 +93,7 @@ public interface Subscribers extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apigateway/CreateSubscriberExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apigateway/CreateSubscriberExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateSubscriber
      *     API.
      */
@@ -109,7 +109,7 @@ public interface Subscribers extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apigateway/DeleteSubscriberExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apigateway/DeleteSubscriberExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteSubscriber
      *     API.
      */
@@ -125,7 +125,7 @@ public interface Subscribers extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apigateway/GetSubscriberExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apigateway/GetSubscriberExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetSubscriber API.
      */
     GetSubscriberResponse getSubscriber(GetSubscriberRequest request);
@@ -140,7 +140,7 @@ public interface Subscribers extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apigateway/ListSubscribersExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apigateway/ListSubscribersExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSubscribers
      *     API.
      */
@@ -156,7 +156,7 @@ public interface Subscribers extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apigateway/UpdateSubscriberExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apigateway/UpdateSubscriberExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateSubscriber
      *     API.
      */

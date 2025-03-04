@@ -6,7 +6,7 @@ package com.oracle.bmc.core.model;
 
 /**
  * A service offering from a supported provider. For more information, see [FastConnect
- * Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm). <br>
+ * Overview](https://docs.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm). <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -96,15 +96,15 @@ public final class FastConnectProviderService
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the service offered by the provider.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * service offered by the provider.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the service offered by the provider.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * service offered by the provider.
          *
          * @param id the value to set
          * @return this builder
@@ -376,15 +376,15 @@ public final class FastConnectProviderService
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the service offered by the provider.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * service offered by the provider.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the service offered by the provider.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * service offered by the provider.
      *
      * @return the value
      */

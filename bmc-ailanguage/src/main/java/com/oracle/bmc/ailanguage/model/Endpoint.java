@@ -146,15 +146,15 @@ public final class Endpoint extends com.oracle.bmc.http.client.internal.Explicit
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) for
-         * the endpoint compartment.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
+         * endpoint compartment.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) for
-         * the endpoint compartment.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
+         * endpoint compartment.
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -165,15 +165,15 @@ public final class Endpoint extends com.oracle.bmc.http.client.internal.Explicit
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the project to associate with the Endpoint.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * project to associate with the Endpoint.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("projectId")
         private String projectId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the project to associate with the Endpoint.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * project to associate with the Endpoint.
          *
          * @param projectId the value to set
          * @return this builder
@@ -278,15 +278,15 @@ public final class Endpoint extends com.oracle.bmc.http.client.internal.Explicit
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the model to associate with the endpoint.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * model to associate with the endpoint.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("modelId")
         private String modelId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the model to associate with the endpoint.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * model to associate with the endpoint.
          *
          * @param modelId the value to set
          * @return this builder
@@ -553,14 +553,14 @@ public final class Endpoint extends com.oracle.bmc.http.client.internal.Explicit
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) for the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
      * endpoint compartment.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) for the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
      * endpoint compartment.
      *
      * @return the value
@@ -570,15 +570,15 @@ public final class Endpoint extends com.oracle.bmc.http.client.internal.Explicit
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the project to associate with the Endpoint.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * project to associate with the Endpoint.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("projectId")
     private final String projectId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the project to associate with the Endpoint.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * project to associate with the Endpoint.
      *
      * @return the value
      */
@@ -719,15 +719,15 @@ public final class Endpoint extends com.oracle.bmc.http.client.internal.Explicit
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the model to associate with the endpoint.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * model to associate with the endpoint.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("modelId")
     private final String modelId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the model to associate with the endpoint.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * model to associate with the endpoint.
      *
      * @return the value
      */

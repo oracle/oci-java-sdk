@@ -78,14 +78,14 @@ public final class MonitoredResourceMemberSummary
     public static class Builder {
         /**
          * Monitored resource identifier
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("resourceId")
         private String resourceId;
 
         /**
          * Monitored resource identifier
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          * @param resourceId the value to set
          * @return this builder
@@ -157,7 +157,7 @@ public final class MonitoredResourceMemberSummary
         }
         /**
          * External resource is any OCI resource identifier
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) which is
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is
          * not a Stack Monitoring service resource. Currently supports only following resource types
          * - Container database, non-container database, pluggable database and OCI compute
          * instance.
@@ -167,7 +167,7 @@ public final class MonitoredResourceMemberSummary
 
         /**
          * External resource is any OCI resource identifier
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) which is
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is
          * not a Stack Monitoring service resource. Currently supports only following resource types
          * - Container database, non-container database, pluggable database and OCI compute
          * instance.
@@ -182,14 +182,14 @@ public final class MonitoredResourceMemberSummary
         }
         /**
          * Compartment Identifier
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * Compartment Identifier
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -201,14 +201,14 @@ public final class MonitoredResourceMemberSummary
         }
         /**
          * Parent monitored resource identifier
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("parentId")
         private String parentId;
 
         /**
          * Parent monitored resource identifier
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          * @param parentId the value to set
          * @return this builder
@@ -430,14 +430,14 @@ public final class MonitoredResourceMemberSummary
 
     /**
      * Monitored resource identifier
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("resourceId")
     private final String resourceId;
 
     /**
      * Monitored resource identifier
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      * @return the value
      */
@@ -499,7 +499,7 @@ public final class MonitoredResourceMemberSummary
 
     /**
      * External resource is any OCI resource identifier
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) which is not a
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a
      * Stack Monitoring service resource. Currently supports only following resource types -
      * Container database, non-container database, pluggable database and OCI compute instance.
      */
@@ -508,7 +508,7 @@ public final class MonitoredResourceMemberSummary
 
     /**
      * External resource is any OCI resource identifier
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) which is not a
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a
      * Stack Monitoring service resource. Currently supports only following resource types -
      * Container database, non-container database, pluggable database and OCI compute instance.
      *
@@ -520,14 +520,14 @@ public final class MonitoredResourceMemberSummary
 
     /**
      * Compartment Identifier
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * Compartment Identifier
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      * @return the value
      */
@@ -537,14 +537,14 @@ public final class MonitoredResourceMemberSummary
 
     /**
      * Parent monitored resource identifier
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("parentId")
     private final String parentId;
 
     /**
      * Parent monitored resource identifier
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      * @return the value
      */

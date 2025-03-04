@@ -7,7 +7,7 @@ package com.oracle.bmc.servicemesh.requests;
 import com.oracle.bmc.servicemesh.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicemesh/GetVirtualServiceExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicemesh/GetVirtualServiceExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use GetVirtualServiceRequest.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220615")

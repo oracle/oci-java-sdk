@@ -101,9 +101,8 @@ public final class BootVolumeReplicaInfo
         /**
          * The OCID of the Vault service key to assign as the master encryption key for the block
          * volume replica, see [Overview of Vault
-         * service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm)
-         * and [Using
-         * Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+         * service](https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and
+         * [Using Keys](https://docs.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
         private String kmsKeyId;
@@ -111,9 +110,8 @@ public final class BootVolumeReplicaInfo
         /**
          * The OCID of the Vault service key to assign as the master encryption key for the block
          * volume replica, see [Overview of Vault
-         * service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm)
-         * and [Using
-         * Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+         * service](https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and
+         * [Using Keys](https://docs.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
          *
          * @param kmsKeyId the value to set
          * @return this builder
@@ -219,9 +217,8 @@ public final class BootVolumeReplicaInfo
     /**
      * The OCID of the Vault service key to assign as the master encryption key for the block volume
      * replica, see [Overview of Vault
-     * service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm)
-     * and [Using
-     * Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+     * service](https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and
+     * [Using Keys](https://docs.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
     private final String kmsKeyId;
@@ -229,9 +226,8 @@ public final class BootVolumeReplicaInfo
     /**
      * The OCID of the Vault service key to assign as the master encryption key for the block volume
      * replica, see [Overview of Vault
-     * service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm)
-     * and [Using
-     * Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+     * service](https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and
+     * [Using Keys](https://docs.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
      *
      * @return the value
      */

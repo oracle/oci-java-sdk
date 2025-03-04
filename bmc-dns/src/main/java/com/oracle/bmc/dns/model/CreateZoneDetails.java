@@ -183,7 +183,7 @@ public final class CreateZoneDetails extends CreateZoneBaseDetails {
          * size and can cause higher response latency.
          *
          * <p>For more information, see
-         * [DNSSEC](https://docs.cloud.oracle.com/iaas/Content/DNS/Concepts/dnssec.htm).
+         * [DNSSEC](https://docs.oracle.com/iaas/Content/DNS/Concepts/dnssec.htm).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("dnssecState")
         private ZoneDnssecState dnssecState;
@@ -218,7 +218,7 @@ public final class CreateZoneDetails extends CreateZoneBaseDetails {
          * size and can cause higher response latency.
          *
          * <p>For more information, see
-         * [DNSSEC](https://docs.cloud.oracle.com/iaas/Content/DNS/Concepts/dnssec.htm).
+         * [DNSSEC](https://docs.oracle.com/iaas/Content/DNS/Concepts/dnssec.htm).
          *
          * @param dnssecState the value to set
          * @return this builder
@@ -459,7 +459,7 @@ public final class CreateZoneDetails extends CreateZoneBaseDetails {
      * and can cause higher response latency.
      *
      * <p>For more information, see
-     * [DNSSEC](https://docs.cloud.oracle.com/iaas/Content/DNS/Concepts/dnssec.htm).
+     * [DNSSEC](https://docs.oracle.com/iaas/Content/DNS/Concepts/dnssec.htm).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("dnssecState")
     private final ZoneDnssecState dnssecState;
@@ -493,7 +493,7 @@ public final class CreateZoneDetails extends CreateZoneBaseDetails {
      * and can cause higher response latency.
      *
      * <p>For more information, see
-     * [DNSSEC](https://docs.cloud.oracle.com/iaas/Content/DNS/Concepts/dnssec.htm).
+     * [DNSSEC](https://docs.oracle.com/iaas/Content/DNS/Concepts/dnssec.htm).
      *
      * @return the value
      */

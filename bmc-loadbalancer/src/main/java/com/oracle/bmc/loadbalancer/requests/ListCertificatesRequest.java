@@ -7,21 +7,21 @@ package com.oracle.bmc.loadbalancer.requests;
 import com.oracle.bmc.loadbalancer.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/ListCertificatesExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/ListCertificatesExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListCertificatesRequest.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
 public class ListCertificatesRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * load balancer associated with the certificate bundles to be listed.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load
+     * balancer associated with the certificate bundles to be listed.
      */
     private String loadBalancerId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * load balancer associated with the certificate bundles to be listed.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load
+     * balancer associated with the certificate bundles to be listed.
      */
     public String getLoadBalancerId() {
         return loadBalancerId;
@@ -78,13 +78,13 @@ public class ListCertificatesRequest extends com.oracle.bmc.requests.BmcRequest<
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * load balancer associated with the certificate bundles to be listed.
          */
         private String loadBalancerId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * load balancer associated with the certificate bundles to be listed.
          *
          * @param loadBalancerId the value to set

@@ -103,15 +103,15 @@ public final class CreateExportDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of
-         * this export's export set.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this
+         * export's export set.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("exportSetId")
         private String exportSetId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of
-         * this export's export set.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this
+         * export's export set.
          *
          * @param exportSetId the value to set
          * @return this builder
@@ -122,15 +122,15 @@ public final class CreateExportDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of
-         * this export's file system.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this
+         * export's file system.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("fileSystemId")
         private String fileSystemId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of
-         * this export's file system.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this
+         * export's file system.
          *
          * @param fileSystemId the value to set
          * @return this builder
@@ -313,14 +313,14 @@ public final class CreateExportDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of this
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this
      * export's export set.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("exportSetId")
     private final String exportSetId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of this
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this
      * export's export set.
      *
      * @return the value
@@ -330,14 +330,14 @@ public final class CreateExportDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of this
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this
      * export's file system.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("fileSystemId")
     private final String fileSystemId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of this
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this
      * export's file system.
      *
      * @return the value

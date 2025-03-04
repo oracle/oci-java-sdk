@@ -89,14 +89,14 @@ public final class ExternalDatabaseSummary
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * external DB system.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * external DB system.
          *
          * @param id the value to set
@@ -123,14 +123,14 @@ public final class ExternalDatabaseSummary
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * compartment.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * compartment.
          *
          * @param compartmentId the value to set
@@ -191,14 +191,14 @@ public final class ExternalDatabaseSummary
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * parent Container Database (CDB) if this is a Pluggable Database (PDB).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("externalContainerDatabaseId")
         private String externalContainerDatabaseId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * parent Container Database (CDB) if this is a Pluggable Database (PDB).
          *
          * @param externalContainerDatabaseId the value to set
@@ -210,14 +210,14 @@ public final class ExternalDatabaseSummary
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * external DB home.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("externalDbHomeId")
         private String externalDbHomeId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * external DB home.
          *
          * @param externalDbHomeId the value to set
@@ -294,7 +294,7 @@ public final class ExternalDatabaseSummary
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
          * {@code {"Department": "Finance"}}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -303,7 +303,7 @@ public final class ExternalDatabaseSummary
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
          * {@code {"Department": "Finance"}}
          *
          * @param freeformTags the value to set
@@ -317,7 +317,7 @@ public final class ExternalDatabaseSummary
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
          * {@code {"Operations": {"CostCenter": "42"}}}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -326,7 +326,7 @@ public final class ExternalDatabaseSummary
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
          * {@code {"Operations": {"CostCenter": "42"}}}
          *
          * @param definedTags the value to set
@@ -341,7 +341,7 @@ public final class ExternalDatabaseSummary
         /**
          * System tags for this resource. Each key is predefined and scoped to a namespace. For more
          * information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). System
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System
          * tags can be viewed by users, but can only be created by the system.
          *
          * <p>Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
@@ -352,7 +352,7 @@ public final class ExternalDatabaseSummary
         /**
          * System tags for this resource. Each key is predefined and scoped to a namespace. For more
          * information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). System
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System
          * tags can be viewed by users, but can only be created by the system.
          *
          * <p>Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
@@ -516,14 +516,14 @@ public final class ExternalDatabaseSummary
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * external DB system.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * external DB system.
      *
      * @return the value
@@ -546,14 +546,14 @@ public final class ExternalDatabaseSummary
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment.
      *
      * @return the value
@@ -606,14 +606,14 @@ public final class ExternalDatabaseSummary
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * parent Container Database (CDB) if this is a Pluggable Database (PDB).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("externalContainerDatabaseId")
     private final String externalContainerDatabaseId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * parent Container Database (CDB) if this is a Pluggable Database (PDB).
      *
      * @return the value
@@ -623,14 +623,14 @@ public final class ExternalDatabaseSummary
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * external DB home.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("externalDbHomeId")
     private final String externalDbHomeId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * external DB home.
      *
      * @return the value
@@ -746,7 +746,7 @@ public final class ExternalDatabaseSummary
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Department": "Finance"}}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -755,7 +755,7 @@ public final class ExternalDatabaseSummary
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Department": "Finance"}}
      *
      * @return the value
@@ -767,7 +767,7 @@ public final class ExternalDatabaseSummary
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Operations": {"CostCenter": "42"}}}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -776,7 +776,7 @@ public final class ExternalDatabaseSummary
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Operations": {"CostCenter": "42"}}}
      *
      * @return the value
@@ -788,7 +788,7 @@ public final class ExternalDatabaseSummary
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). System tags
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags
      * can be viewed by users, but can only be created by the system.
      *
      * <p>Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
@@ -799,7 +799,7 @@ public final class ExternalDatabaseSummary
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). System tags
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags
      * can be viewed by users, but can only be created by the system.
      *
      * <p>Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}

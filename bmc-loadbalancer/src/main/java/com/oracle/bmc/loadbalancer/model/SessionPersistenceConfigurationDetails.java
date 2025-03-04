@@ -11,7 +11,7 @@ package com.oracle.bmc.loadbalancer.model;
  * <p>Session persistence enables the Load Balancing service to direct any number of requests that
  * originate from a single logical client to a single backend web server. For more information, see
  * [Session
- * Persistence](https://docs.cloud.oracle.com/Content/Balance/Reference/sessionpersistence.htm).
+ * Persistence](https://docs.oracle.com/iaas/Content/Balance/Reference/sessionpersistence.htm).
  *
  * <p>With application cookie stickiness, the load balancer enables session persistence only when
  * the response from a backend application server includes a {@code Set-cookie} header with the

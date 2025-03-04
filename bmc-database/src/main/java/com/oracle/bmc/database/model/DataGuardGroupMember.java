@@ -60,14 +60,14 @@ public final class DataGuardGroupMember
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * DB system, Cloud VM cluster or VM cluster.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("dbSystemId")
         private String dbSystemId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * DB system, Cloud VM cluster or VM cluster.
          *
          * @param dbSystemId the value to set
@@ -79,14 +79,14 @@ public final class DataGuardGroupMember
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Database.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("databaseId")
         private String databaseId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Database.
          *
          * @param databaseId the value to set
@@ -311,14 +311,14 @@ public final class DataGuardGroupMember
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the DB
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB
      * system, Cloud VM cluster or VM cluster.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("dbSystemId")
     private final String dbSystemId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the DB
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB
      * system, Cloud VM cluster or VM cluster.
      *
      * @return the value
@@ -328,14 +328,14 @@ public final class DataGuardGroupMember
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Database.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("databaseId")
     private final String databaseId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Database.
      *
      * @return the value

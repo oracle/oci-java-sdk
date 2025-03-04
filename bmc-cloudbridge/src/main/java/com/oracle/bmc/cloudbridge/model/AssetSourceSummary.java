@@ -79,14 +79,14 @@ public class AssetSourceSummary extends com.oracle.bmc.http.client.internal.Expl
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * resource.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * resource.
      *
      * @return the value
@@ -96,14 +96,14 @@ public class AssetSourceSummary extends com.oracle.bmc.http.client.internal.Expl
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment for the resource.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment for the resource.
      *
      * @return the value
@@ -113,14 +113,14 @@ public class AssetSourceSummary extends com.oracle.bmc.http.client.internal.Expl
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * environment.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("environmentId")
     private final String environmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * environment.
      *
      * @return the value
@@ -173,14 +173,14 @@ public class AssetSourceSummary extends com.oracle.bmc.http.client.internal.Expl
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * inventory that will contain created assets.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("inventoryId")
     private final String inventoryId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * inventory that will contain created assets.
      *
      * @return the value
@@ -190,14 +190,14 @@ public class AssetSourceSummary extends com.oracle.bmc.http.client.internal.Expl
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment that is going to be used to create assets.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("assetsCompartmentId")
     private final String assetsCompartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment that is going to be used to create assets.
      *
      * @return the value
@@ -235,7 +235,7 @@ public class AssetSourceSummary extends com.oracle.bmc.http.client.internal.Expl
     /**
      * The freeform tags associated with this resource, if any. Each tag is a simple key-value pair
      * with no predefined name, type, or namespace/scope. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Department": "Finance"}}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -244,7 +244,7 @@ public class AssetSourceSummary extends com.oracle.bmc.http.client.internal.Expl
     /**
      * The freeform tags associated with this resource, if any. Each tag is a simple key-value pair
      * with no predefined name, type, or namespace/scope. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Department": "Finance"}}
      *
      * @return the value
@@ -256,7 +256,7 @@ public class AssetSourceSummary extends com.oracle.bmc.http.client.internal.Expl
     /**
      * The defined tags associated with this resource, if any. Each key is predefined and scoped to
      * namespaces. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Operations": {"CostCenter": "42"}}}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -265,7 +265,7 @@ public class AssetSourceSummary extends com.oracle.bmc.http.client.internal.Expl
     /**
      * The defined tags associated with this resource, if any. Each key is predefined and scoped to
      * namespaces. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Operations": {"CostCenter": "42"}}}
      *
      * @return the value
@@ -278,7 +278,7 @@ public class AssetSourceSummary extends com.oracle.bmc.http.client.internal.Expl
      * The system tags associated with this resource, if any. The system tags are set by Oracle
      * cloud infrastructure services. Each key is predefined and scoped to namespaces. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {orcl-cloud: {free-tier-retain: true}}}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
@@ -288,7 +288,7 @@ public class AssetSourceSummary extends com.oracle.bmc.http.client.internal.Expl
      * The system tags associated with this resource, if any. The system tags are set by Oracle
      * cloud infrastructure services. Each key is predefined and scoped to namespaces. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {orcl-cloud: {free-tier-retain: true}}}
      *
      * @return the value

@@ -43,7 +43,7 @@ public final class DedicatedShardOrCatalogEncryptionKeyDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * vault in customer tenancy where KMS key is present. For shard or catalog with
          * cross-region data guard enabled, user needs to make sure to provide virtual private vault
          * only, which is also replicated in the region of standby shard.
@@ -52,7 +52,7 @@ public final class DedicatedShardOrCatalogEncryptionKeyDetails
         private String vaultId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * vault in customer tenancy where KMS key is present. For shard or catalog with
          * cross-region data guard enabled, user needs to make sure to provide virtual private vault
          * only, which is also replicated in the region of standby shard.
@@ -66,7 +66,7 @@ public final class DedicatedShardOrCatalogEncryptionKeyDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * KMS key in vault identified by vaultId in customer tenancy that is used as the master
          * encryption key.
          */
@@ -74,7 +74,7 @@ public final class DedicatedShardOrCatalogEncryptionKeyDetails
         private String kmsKeyId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * KMS key in vault identified by vaultId in customer tenancy that is used as the master
          * encryption key.
          *
@@ -87,7 +87,7 @@ public final class DedicatedShardOrCatalogEncryptionKeyDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * KMS key version for key identified by kmsKeyId that is used in data encryption (TDE)
          * operations.
          */
@@ -95,7 +95,7 @@ public final class DedicatedShardOrCatalogEncryptionKeyDetails
         private String kmsKeyVersionId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * KMS key version for key identified by kmsKeyId that is used in data encryption (TDE)
          * operations.
          *
@@ -146,7 +146,7 @@ public final class DedicatedShardOrCatalogEncryptionKeyDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * vault in customer tenancy where KMS key is present. For shard or catalog with cross-region
      * data guard enabled, user needs to make sure to provide virtual private vault only, which is
      * also replicated in the region of standby shard.
@@ -155,7 +155,7 @@ public final class DedicatedShardOrCatalogEncryptionKeyDetails
     private final String vaultId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * vault in customer tenancy where KMS key is present. For shard or catalog with cross-region
      * data guard enabled, user needs to make sure to provide virtual private vault only, which is
      * also replicated in the region of standby shard.
@@ -167,7 +167,7 @@ public final class DedicatedShardOrCatalogEncryptionKeyDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the KMS
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the KMS
      * key in vault identified by vaultId in customer tenancy that is used as the master encryption
      * key.
      */
@@ -175,7 +175,7 @@ public final class DedicatedShardOrCatalogEncryptionKeyDetails
     private final String kmsKeyId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the KMS
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the KMS
      * key in vault identified by vaultId in customer tenancy that is used as the master encryption
      * key.
      *
@@ -186,14 +186,14 @@ public final class DedicatedShardOrCatalogEncryptionKeyDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the KMS
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the KMS
      * key version for key identified by kmsKeyId that is used in data encryption (TDE) operations.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyVersionId")
     private final String kmsKeyVersionId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the KMS
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the KMS
      * key version for key identified by kmsKeyId that is used in data encryption (TDE) operations.
      *
      * @return the value

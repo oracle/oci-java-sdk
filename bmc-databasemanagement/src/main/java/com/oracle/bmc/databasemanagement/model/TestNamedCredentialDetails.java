@@ -5,7 +5,7 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+ * The The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
  * database against which the credential is to be tested. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
@@ -33,14 +33,14 @@ public final class TestNamedCredentialDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Managed Database.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("managedDatabaseId")
         private String managedDatabaseId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Managed Database.
          *
          * @param managedDatabaseId the value to set
@@ -83,14 +83,14 @@ public final class TestNamedCredentialDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Managed Database.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("managedDatabaseId")
     private final String managedDatabaseId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Managed Database.
      *
      * @return the value

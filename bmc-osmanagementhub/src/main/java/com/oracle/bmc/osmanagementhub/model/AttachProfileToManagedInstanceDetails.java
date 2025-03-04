@@ -32,17 +32,15 @@ public final class AttachProfileToManagedInstanceDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The profile
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to
-         * attach to the managed instance.
+         * The profile [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * to attach to the managed instance.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("profileId")
         private String profileId;
 
         /**
-         * The profile
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to
-         * attach to the managed instance.
+         * The profile [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * to attach to the managed instance.
          *
          * @param profileId the value to set
          * @return this builder
@@ -84,17 +82,15 @@ public final class AttachProfileToManagedInstanceDetails
     }
 
     /**
-     * The profile
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to attach
-     * to the managed instance.
+     * The profile [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to
+     * attach to the managed instance.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("profileId")
     private final String profileId;
 
     /**
-     * The profile
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to attach
-     * to the managed instance.
+     * The profile [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to
+     * attach to the managed instance.
      *
      * @return the value
      */

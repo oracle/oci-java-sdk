@@ -5,7 +5,7 @@
     <parent>
         <groupId>com.oracle.oci.sdk</groupId>
         <artifactId>oci-java-sdk-addons</artifactId>
-        <version>3.58.0</version>
+        <version>3.59.0</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
@@ -14,7 +14,7 @@
     <name>Oracle Cloud Infrastructure SDK - AI Speech Realtime Client</name>
     <description>This project adds a Java client to utilize the realtime speech service</description>
 
-    <url>https://docs.cloud.oracle.com/Content/API/SDKDocs/javasdk.htm</url>
+    <url>https://docs.oracle.com/iaas/Content/API/SDKDocs/javasdk.htm</url>
 
 
     <build>
@@ -53,12 +53,12 @@
         <dependency>
             <groupId>com.oracle.oci.sdk</groupId>
             <artifactId>oci-java-sdk-aispeech</artifactId>
-            <version>3.58.0</version>
+            <version>3.59.0</version>
         </dependency>
         <dependency>
             <groupId>com.oracle.oci.sdk</groupId>
             <artifactId>oci-java-sdk-common-httpclient-jersey</artifactId>
-            <version>3.58.0</version>
+            <version>3.59.0</version>
             <scope>compile</scope>
         </dependency>
         <dependency>

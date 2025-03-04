@@ -29,14 +29,14 @@ public final class DatabaseNamedCredentialDetails extends DatabaseCredentialDeta
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * named credential where the database password metadata is stored.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("namedCredentialId")
         private String namedCredentialId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * named credential where the database password metadata is stored.
          *
          * @param namedCredentialId the value to set
@@ -85,14 +85,14 @@ public final class DatabaseNamedCredentialDetails extends DatabaseCredentialDeta
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * named credential where the database password metadata is stored.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("namedCredentialId")
     private final String namedCredentialId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * named credential where the database password metadata is stored.
      *
      * @return the value

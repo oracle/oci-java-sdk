@@ -56,15 +56,15 @@ public final class UpdateQueueDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the queue.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * queue.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the queue.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * queue.
          *
          * @param displayName the value to set
          * @return this builder
@@ -153,17 +153,17 @@ public final class UpdateQueueDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the custom encryption key to be used to encrypt messages content. A string with a
-         * length of 0 means the custom key should be removed from queue.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * custom encryption key to be used to encrypt messages content. A string with a length of 0
+         * means the custom key should be removed from queue.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("customEncryptionKeyId")
         private String customEncryptionKeyId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the custom encryption key to be used to encrypt messages content. A string with a
-         * length of 0 means the custom key should be removed from queue.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * custom encryption key to be used to encrypt messages content. A string with a length of 0
+         * means the custom key should be removed from queue.
          *
          * @param customEncryptionKeyId the value to set
          * @return this builder
@@ -273,15 +273,15 @@ public final class UpdateQueueDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the queue.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * queue.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the queue.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * queue.
      *
      * @return the value
      */
@@ -356,16 +356,16 @@ public final class UpdateQueueDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the custom encryption key to be used to encrypt messages content. A string with a length of 0
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * custom encryption key to be used to encrypt messages content. A string with a length of 0
      * means the custom key should be removed from queue.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("customEncryptionKeyId")
     private final String customEncryptionKeyId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the custom encryption key to be used to encrypt messages content. A string with a length of 0
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * custom encryption key to be used to encrypt messages content. A string with a length of 0
      * means the custom key should be removed from queue.
      *
      * @return the value

@@ -23,7 +23,7 @@ import com.oracle.bmc.generativeaiagent.responses.*;
  * eNGenerative-ai-agents-clientLatest}.
  *
  * <p>To learn more about the service, see the [Generative AI Agents
- * documentation](https://docs.cloud.oracle.com/iaas/Content/generative-ai-agents/home.htm).
+ * documentation](https://docs.oracle.com/iaas/Content/generative-ai-agents/home.htm).
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20240531")
 public interface GenerativeAiAgentAsync extends AutoCloseable {
@@ -95,7 +95,7 @@ public interface GenerativeAiAgentAsync extends AutoCloseable {
     /**
      * Moves an agent into a different compartment within the same tenancy. For information about
      * moving resources between compartments, see [Moving Resources to a Different
-     * Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -113,7 +113,7 @@ public interface GenerativeAiAgentAsync extends AutoCloseable {
     /**
      * Moves an endpoint into a different compartment within the same tenancy. For information about
      * moving resources between compartments, see [Moving Resources to a Different
-     * Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -133,7 +133,7 @@ public interface GenerativeAiAgentAsync extends AutoCloseable {
     /**
      * Moves a knowledge base into a different compartment within the same tenancy. For information
      * about moving resources between compartments, see [Moving Resources to a Different
-     * Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.

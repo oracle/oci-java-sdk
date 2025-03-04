@@ -7,7 +7,7 @@ package com.oracle.bmc.generativeaiagentruntime.requests;
 import com.oracle.bmc.generativeaiagentruntime.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeaiagentruntime/UpdateSessionExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeaiagentruntime/UpdateSessionExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateSessionRequest.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20240531")

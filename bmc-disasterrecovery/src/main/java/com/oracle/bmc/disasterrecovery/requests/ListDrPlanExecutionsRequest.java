@@ -7,7 +7,7 @@ package com.oracle.bmc.disasterrecovery.requests;
 import com.oracle.bmc.disasterrecovery.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/disasterrecovery/ListDrPlanExecutionsExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/disasterrecovery/ListDrPlanExecutionsExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListDrPlanExecutionsRequest.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
@@ -71,7 +71,7 @@ public class ListDrPlanExecutionsRequest
      * paginated "List" call. 1 is the minimum, 1000 is the maximum.
      *
      * <p>For important details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      * <p>Example: {@code 100}
      */
@@ -82,7 +82,7 @@ public class ListDrPlanExecutionsRequest
      * paginated "List" call. 1 is the minimum, 1000 is the maximum.
      *
      * <p>For important details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      * <p>Example: {@code 100}
      */
@@ -94,7 +94,7 @@ public class ListDrPlanExecutionsRequest
      * "List" call.
      *
      * <p>For important details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private String page;
 
@@ -103,7 +103,7 @@ public class ListDrPlanExecutionsRequest
      * "List" call.
      *
      * <p>For important details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     public String getPage() {
         return page;
@@ -270,7 +270,7 @@ public class ListDrPlanExecutionsRequest
          * paginated "List" call. 1 is the minimum, 1000 is the maximum.
          *
          * <p>For important details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * <p>Example: {@code 100}
          */
@@ -281,7 +281,7 @@ public class ListDrPlanExecutionsRequest
          * paginated "List" call. 1 is the minimum, 1000 is the maximum.
          *
          * <p>For important details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * <p>Example: {@code 100}
          *
@@ -298,7 +298,7 @@ public class ListDrPlanExecutionsRequest
          * previous "List" call.
          *
          * <p>For important details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private String page = null;
 
@@ -307,7 +307,7 @@ public class ListDrPlanExecutionsRequest
          * previous "List" call.
          *
          * <p>For important details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param page the value to set
          * @return this builder instance

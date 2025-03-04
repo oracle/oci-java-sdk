@@ -34,15 +34,15 @@ public final class WorkRequestEventDataAdditionalDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the resource that triggered the event, such as scheduled job id.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * resource that triggered the event, such as scheduled job id.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("initiatorId")
         private String initiatorId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the resource that triggered the event, such as scheduled job id.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * resource that triggered the event, such as scheduled job id.
          *
          * @param initiatorId the value to set
          * @return this builder
@@ -54,16 +54,16 @@ public final class WorkRequestEventDataAdditionalDetails
         }
         /**
          * List of all work request
-         * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * associated with the event.
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated
+         * with the event.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("workRequestIds")
         private java.util.List<String> workRequestIds;
 
         /**
          * List of all work request
-         * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * associated with the event.
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated
+         * with the event.
          *
          * @param workRequestIds the value to set
          * @return this builder
@@ -109,15 +109,15 @@ public final class WorkRequestEventDataAdditionalDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the resource that triggered the event, such as scheduled job id.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * resource that triggered the event, such as scheduled job id.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("initiatorId")
     private final String initiatorId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the resource that triggered the event, such as scheduled job id.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * resource that triggered the event, such as scheduled job id.
      *
      * @return the value
      */
@@ -127,16 +127,16 @@ public final class WorkRequestEventDataAdditionalDetails
 
     /**
      * List of all work request
-     * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-     * associated with the event.
+     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated
+     * with the event.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("workRequestIds")
     private final java.util.List<String> workRequestIds;
 
     /**
      * List of all work request
-     * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-     * associated with the event.
+     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated
+     * with the event.
      *
      * @return the value
      */

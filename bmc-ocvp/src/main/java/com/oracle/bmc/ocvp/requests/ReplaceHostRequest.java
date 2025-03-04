@@ -7,7 +7,7 @@ package com.oracle.bmc.ocvp.requests;
 import com.oracle.bmc.ocvp.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ocvp/ReplaceHostExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ocvp/ReplaceHostExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use ReplaceHostRequest.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230701")
@@ -15,14 +15,14 @@ public class ReplaceHostRequest
         extends com.oracle.bmc.requests.BmcRequest<com.oracle.bmc.ocvp.model.ReplaceHostDetails> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * ESXi host.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi
+     * host.
      */
     private String esxiHostId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * ESXi host.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi
+     * host.
      */
     public String getEsxiHostId() {
         return esxiHostId;
@@ -102,13 +102,13 @@ public class ReplaceHostRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * ESXi host.
          */
         private String esxiHostId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * ESXi host.
          *
          * @param esxiHostId the value to set

@@ -7,21 +7,21 @@ package com.oracle.bmc.events.requests;
 import com.oracle.bmc.events.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/events/DeleteRuleExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/events/DeleteRuleExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use DeleteRuleRequest.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 public class DeleteRuleRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * this rule.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this
+     * rule.
      */
     private String ruleId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * this rule.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this
+     * rule.
      */
     public String getRuleId() {
         return ruleId;
@@ -64,14 +64,14 @@ public class DeleteRuleRequest extends com.oracle.bmc.requests.BmcRequest<java.l
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of this rule.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this
+         * rule.
          */
         private String ruleId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of this rule.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this
+         * rule.
          *
          * @param ruleId the value to set
          * @return this builder instance

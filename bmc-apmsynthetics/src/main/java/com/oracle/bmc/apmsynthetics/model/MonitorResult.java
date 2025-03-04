@@ -93,14 +93,14 @@ public final class MonitorResult extends com.oracle.bmc.http.client.internal.Exp
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * monitor.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("monitorId")
         private String monitorId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * monitor.
          *
          * @param monitorId the value to set
@@ -233,14 +233,14 @@ public final class MonitorResult extends com.oracle.bmc.http.client.internal.Exp
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * monitor.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("monitorId")
     private final String monitorId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * monitor.
      *
      * @return the value

@@ -118,14 +118,14 @@ public final class UpdateGoldenGateConnectionDetails extends UpdateConnectionDet
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * deployment being referenced.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("deploymentId")
         private String deploymentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * deployment being referenced.
          *
          * @param deploymentId the value to set
@@ -203,7 +203,7 @@ public final class UpdateGoldenGateConnectionDetails extends UpdateConnectionDet
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Secret where the password is stored, which is used to connect to the Oracle GoldenGate
          * accessed trough this connection. Note: When provided, 'password' field must not be
          * provided.
@@ -212,7 +212,7 @@ public final class UpdateGoldenGateConnectionDetails extends UpdateConnectionDet
         private String passwordSecretId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Secret where the password is stored, which is used to connect to the Oracle GoldenGate
          * accessed trough this connection. Note: When provided, 'password' field must not be
          * provided.
@@ -396,14 +396,14 @@ public final class UpdateGoldenGateConnectionDetails extends UpdateConnectionDet
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * deployment being referenced.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("deploymentId")
     private final String deploymentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * deployment being referenced.
      *
      * @return the value
@@ -471,7 +471,7 @@ public final class UpdateGoldenGateConnectionDetails extends UpdateConnectionDet
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Secret where the password is stored, which is used to connect to the Oracle GoldenGate
      * accessed trough this connection. Note: When provided, 'password' field must not be provided.
      */
@@ -479,7 +479,7 @@ public final class UpdateGoldenGateConnectionDetails extends UpdateConnectionDet
     private final String passwordSecretId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Secret where the password is stored, which is used to connect to the Oracle GoldenGate
      * accessed trough this connection. Note: When provided, 'password' field must not be provided.
      *

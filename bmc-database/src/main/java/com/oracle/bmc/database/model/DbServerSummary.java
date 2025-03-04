@@ -97,14 +97,14 @@ public final class DbServerSummary
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Db server.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Db server.
          *
          * @param id the value to set
@@ -131,14 +131,14 @@ public final class DbServerSummary
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * compartment.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * compartment.
          *
          * @param compartmentId the value to set
@@ -150,14 +150,14 @@ public final class DbServerSummary
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Exadata infrastructure.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("exadataInfrastructureId")
         private String exadataInfrastructureId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Exadata infrastructure.
          *
          * @param exadataInfrastructureId the value to set
@@ -214,14 +214,14 @@ public final class DbServerSummary
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * VM Clusters associated with the Db server.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("vmClusterIds")
         private java.util.List<String> vmClusterIds;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * VM Clusters associated with the Db server.
          *
          * @param vmClusterIds the value to set
@@ -234,7 +234,7 @@ public final class DbServerSummary
         }
         /**
          * The list of
-         * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Autonomous VM Clusters associated with the Db server.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("autonomousVmClusterIds")
@@ -242,7 +242,7 @@ public final class DbServerSummary
 
         /**
          * The list of
-         * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Autonomous VM Clusters associated with the Db server.
          *
          * @param autonomousVmClusterIds the value to set
@@ -255,7 +255,7 @@ public final class DbServerSummary
         }
         /**
          * The list of
-         * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Autonomous Virtual Machines associated with the Db server.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("autonomousVirtualMachineIds")
@@ -263,7 +263,7 @@ public final class DbServerSummary
 
         /**
          * The list of
-         * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Autonomous Virtual Machines associated with the Db server.
          *
          * @param autonomousVirtualMachineIds the value to set
@@ -276,14 +276,14 @@ public final class DbServerSummary
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Db nodes associated with the Db server.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("dbNodeIds")
         private java.util.List<String> dbNodeIds;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Db nodes associated with the Db server.
          *
          * @param dbNodeIds the value to set
@@ -415,7 +415,7 @@ public final class DbServerSummary
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          */
@@ -425,7 +425,7 @@ public final class DbServerSummary
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          *
@@ -440,7 +440,7 @@ public final class DbServerSummary
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
@@ -448,7 +448,7 @@ public final class DbServerSummary
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * @param definedTags the value to set
          * @return this builder
@@ -599,14 +599,14 @@ public final class DbServerSummary
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Db
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Db
      * server.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Db
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Db
      * server.
      *
      * @return the value
@@ -629,14 +629,14 @@ public final class DbServerSummary
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment.
      *
      * @return the value
@@ -646,14 +646,14 @@ public final class DbServerSummary
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Exadata infrastructure.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("exadataInfrastructureId")
     private final String exadataInfrastructureId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Exadata infrastructure.
      *
      * @return the value
@@ -702,14 +702,14 @@ public final class DbServerSummary
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VM
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM
      * Clusters associated with the Db server.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("vmClusterIds")
     private final java.util.List<String> vmClusterIds;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VM
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM
      * Clusters associated with the Db server.
      *
      * @return the value
@@ -719,15 +719,15 @@ public final class DbServerSummary
     }
 
     /**
-     * The list of [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
-     * of the Autonomous VM Clusters associated with the Db server.
+     * The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the Autonomous VM Clusters associated with the Db server.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("autonomousVmClusterIds")
     private final java.util.List<String> autonomousVmClusterIds;
 
     /**
-     * The list of [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
-     * of the Autonomous VM Clusters associated with the Db server.
+     * The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the Autonomous VM Clusters associated with the Db server.
      *
      * @return the value
      */
@@ -736,15 +736,15 @@ public final class DbServerSummary
     }
 
     /**
-     * The list of [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
-     * of the Autonomous Virtual Machines associated with the Db server.
+     * The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the Autonomous Virtual Machines associated with the Db server.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("autonomousVirtualMachineIds")
     private final java.util.List<String> autonomousVirtualMachineIds;
 
     /**
-     * The list of [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
-     * of the Autonomous Virtual Machines associated with the Db server.
+     * The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the Autonomous Virtual Machines associated with the Db server.
      *
      * @return the value
      */
@@ -753,14 +753,14 @@ public final class DbServerSummary
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Db
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Db
      * nodes associated with the Db server.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("dbNodeIds")
     private final java.util.List<String> dbNodeIds;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Db
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Db
      * nodes associated with the Db server.
      *
      * @return the value
@@ -924,7 +924,7 @@ public final class DbServerSummary
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      */
@@ -934,7 +934,7 @@ public final class DbServerSummary
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      *
@@ -947,7 +947,7 @@ public final class DbServerSummary
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
@@ -955,7 +955,7 @@ public final class DbServerSummary
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * @return the value
      */

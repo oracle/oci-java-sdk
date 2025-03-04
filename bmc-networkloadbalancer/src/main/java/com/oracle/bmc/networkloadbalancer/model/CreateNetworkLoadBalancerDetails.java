@@ -7,17 +7,17 @@ package com.oracle.bmc.networkloadbalancer.model;
 /**
  * The properties that define a network load balancer. For more information, see [Introduction to
  * Network Load
- * Balancer](https://docs.cloud.oracle.com/Content/NetworkLoadBalancer/introduction.htm).
+ * Balancer](https://docs.oracle.com/iaas/Content/NetworkLoadBalancer/introduction.htm).
  *
  * <p>To use any of the API operations, you must be authorized in an IAM policy. If you are not
  * authorized, then contact an administrator. If you are an administrator who writes policies to
  * give users access, then see [Getting Started with
- * Policies](https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm).
+ * Policies](https://docs.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
  *
  * <p>For information about endpoints and signing API requests, see [About the
- * API](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm). For information about
+ * API](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm). For information about
  * available SDKs and tools, see [SDKS and Other
- * Tools](https://docs.cloud.oracle.com/Content/API/Concepts/sdks.htm). <br>
+ * Tools](https://docs.oracle.com/iaas/Content/API/Concepts/sdks.htm). <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -95,14 +95,14 @@ public final class CreateNetworkLoadBalancerDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * compartment containing the network load balancer.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * compartment containing the network load balancer.
          *
          * @param compartmentId the value to set
@@ -194,10 +194,10 @@ public final class CreateNetworkLoadBalancerDetails
          *
          * <p>A public network load balancer is accessible from the internet, depending on the
          * [security list
-         * rules](https://docs.cloud.oracle.com/Content/network/Concepts/securitylists.htm) for your
+         * rules](https://docs.oracle.com/iaas/Content/network/Concepts/securitylists.htm) for your
          * virtual cloud network. For more information about public and private network load
          * balancers, see [Network Load Balancer
-         * Types](https://docs.cloud.oracle.com/Content/NetworkLoadBalancer/introduction.htm#NetworkLoadBalancerTypes).
+         * Types](https://docs.oracle.com/iaas/Content/NetworkLoadBalancer/introduction.htm#NetworkLoadBalancerTypes).
          * This value is true by default.
          *
          * <p>Example: {@code true}
@@ -214,10 +214,10 @@ public final class CreateNetworkLoadBalancerDetails
          *
          * <p>A public network load balancer is accessible from the internet, depending on the
          * [security list
-         * rules](https://docs.cloud.oracle.com/Content/network/Concepts/securitylists.htm) for your
+         * rules](https://docs.oracle.com/iaas/Content/network/Concepts/securitylists.htm) for your
          * virtual cloud network. For more information about public and private network load
          * balancers, see [Network Load Balancer
-         * Types](https://docs.cloud.oracle.com/Content/NetworkLoadBalancer/introduction.htm#NetworkLoadBalancerTypes).
+         * Types](https://docs.oracle.com/iaas/Content/NetworkLoadBalancer/introduction.htm#NetworkLoadBalancerTypes).
          * This value is true by default.
          *
          * <p>Example: {@code true}
@@ -232,14 +232,14 @@ public final class CreateNetworkLoadBalancerDetails
         }
         /**
          * The subnet in which the network load balancer is spawned
-         * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
         private String subnetId;
 
         /**
          * The subnet in which the network load balancer is spawned
-         * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          * @param subnetId the value to set
          * @return this builder
@@ -251,8 +251,8 @@ public final class CreateNetworkLoadBalancerDetails
         }
         /**
          * An array of network security groups
-         * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
-         * associated with the network load balancer.
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated
+         * with the network load balancer.
          *
          * <p>During the creation of the network load balancer, the service adds the new load
          * balancer to the specified network security groups.
@@ -273,8 +273,8 @@ public final class CreateNetworkLoadBalancerDetails
 
         /**
          * An array of network security groups
-         * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
-         * associated with the network load balancer.
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated
+         * with the network load balancer.
          *
          * <p>During the creation of the network load balancer, the service adds the new load
          * balancer to the specified network security groups.
@@ -446,7 +446,7 @@ public final class CreateNetworkLoadBalancerDetails
         /**
          * ZPR tags for this resource. Each tag is a simple key-value pair with no predefined name,
          * type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"oracle-zpr": {"td": {"value": "42", "mode": "audit"}}}}
          */
@@ -456,7 +456,7 @@ public final class CreateNetworkLoadBalancerDetails
         /**
          * ZPR tags for this resource. Each tag is a simple key-value pair with no predefined name,
          * type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"oracle-zpr": {"td": {"value": "42", "mode": "audit"}}}}
          *
@@ -566,14 +566,14 @@ public final class CreateNetworkLoadBalancerDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment containing the network load balancer.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment containing the network load balancer.
      *
      * @return the value
@@ -654,10 +654,10 @@ public final class CreateNetworkLoadBalancerDetails
      * <p>If "false", then the service assigns a public IP address to the network load balancer.
      *
      * <p>A public network load balancer is accessible from the internet, depending on the [security
-     * list rules](https://docs.cloud.oracle.com/Content/network/Concepts/securitylists.htm) for
-     * your virtual cloud network. For more information about public and private network load
-     * balancers, see [Network Load Balancer
-     * Types](https://docs.cloud.oracle.com/Content/NetworkLoadBalancer/introduction.htm#NetworkLoadBalancerTypes).
+     * list rules](https://docs.oracle.com/iaas/Content/network/Concepts/securitylists.htm) for your
+     * virtual cloud network. For more information about public and private network load balancers,
+     * see [Network Load Balancer
+     * Types](https://docs.oracle.com/iaas/Content/NetworkLoadBalancer/introduction.htm#NetworkLoadBalancerTypes).
      * This value is true by default.
      *
      * <p>Example: {@code true}
@@ -673,10 +673,10 @@ public final class CreateNetworkLoadBalancerDetails
      * <p>If "false", then the service assigns a public IP address to the network load balancer.
      *
      * <p>A public network load balancer is accessible from the internet, depending on the [security
-     * list rules](https://docs.cloud.oracle.com/Content/network/Concepts/securitylists.htm) for
-     * your virtual cloud network. For more information about public and private network load
-     * balancers, see [Network Load Balancer
-     * Types](https://docs.cloud.oracle.com/Content/NetworkLoadBalancer/introduction.htm#NetworkLoadBalancerTypes).
+     * list rules](https://docs.oracle.com/iaas/Content/network/Concepts/securitylists.htm) for your
+     * virtual cloud network. For more information about public and private network load balancers,
+     * see [Network Load Balancer
+     * Types](https://docs.oracle.com/iaas/Content/NetworkLoadBalancer/introduction.htm#NetworkLoadBalancerTypes).
      * This value is true by default.
      *
      * <p>Example: {@code true}
@@ -689,14 +689,14 @@ public final class CreateNetworkLoadBalancerDetails
 
     /**
      * The subnet in which the network load balancer is spawned
-     * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
     private final String subnetId;
 
     /**
      * The subnet in which the network load balancer is spawned
-     * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      * @return the value
      */
@@ -706,7 +706,7 @@ public final class CreateNetworkLoadBalancerDetails
 
     /**
      * An array of network security groups
-     * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) associated
+     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated
      * with the network load balancer.
      *
      * <p>During the creation of the network load balancer, the service adds the new load balancer
@@ -728,7 +728,7 @@ public final class CreateNetworkLoadBalancerDetails
 
     /**
      * An array of network security groups
-     * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) associated
+     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated
      * with the network load balancer.
      *
      * <p>During the creation of the network load balancer, the service adds the new load balancer
@@ -882,7 +882,7 @@ public final class CreateNetworkLoadBalancerDetails
     /**
      * ZPR tags for this resource. Each tag is a simple key-value pair with no predefined name,
      * type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"oracle-zpr": {"td": {"value": "42", "mode": "audit"}}}}
      */
@@ -892,7 +892,7 @@ public final class CreateNetworkLoadBalancerDetails
     /**
      * ZPR tags for this resource. Each tag is a simple key-value pair with no predefined name,
      * type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"oracle-zpr": {"td": {"value": "42", "mode": "audit"}}}}
      *

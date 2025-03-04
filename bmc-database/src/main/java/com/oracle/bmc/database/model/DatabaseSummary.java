@@ -7,12 +7,12 @@ package com.oracle.bmc.database.model;
 /**
  * An Oracle Database on a bare metal or virtual machine DB system. For more information, see [Bare
  * Metal and Virtual Machine DB
- * Systems](https://docs.cloud.oracle.com/Content/Database/Concepts/overview.htm).
+ * Systems](https://docs.oracle.com/iaas/Content/Database/Concepts/overview.htm).
  *
  * <p>To use any of the API operations, you must be authorized in an IAM policy. If you're not
  * authorized, talk to an administrator. If you're an administrator who needs to write policies to
  * give users access, see [Getting Started with
- * Policies](https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm).
+ * Policies](https://docs.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
  *
  * <p>*Warning:** Oracle recommends that you avoid using any confidential information when you
  * supply string values using the API. <br>
@@ -141,14 +141,14 @@ public final class DatabaseSummary
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * database.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * database.
          *
          * @param id the value to set
@@ -160,14 +160,14 @@ public final class DatabaseSummary
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * compartment.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * compartment.
          *
          * @param compartmentId the value to set
@@ -209,14 +209,14 @@ public final class DatabaseSummary
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Database Home.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("dbHomeId")
         private String dbHomeId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Database Home.
          *
          * @param dbHomeId the value to set
@@ -228,14 +228,14 @@ public final class DatabaseSummary
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * DB system.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("dbSystemId")
         private String dbSystemId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * DB system.
          *
          * @param dbSystemId the value to set
@@ -247,14 +247,14 @@ public final class DatabaseSummary
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * VM cluster.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("vmClusterId")
         private String vmClusterId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * VM cluster.
          *
          * @param vmClusterId the value to set
@@ -451,7 +451,7 @@ public final class DatabaseSummary
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          */
@@ -461,7 +461,7 @@ public final class DatabaseSummary
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          *
@@ -476,7 +476,7 @@ public final class DatabaseSummary
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
@@ -484,7 +484,7 @@ public final class DatabaseSummary
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * @param definedTags the value to set
          * @return this builder
@@ -555,18 +555,18 @@ public final class DatabaseSummary
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Oracle Cloud Infrastructure
-         * [vault](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+         * [vault](https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
          * This parameter and {@code secretId} are required for Customer Managed Keys.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("vaultId")
         private String vaultId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Oracle Cloud Infrastructure
-         * [vault](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+         * [vault](https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
          * This parameter and {@code secretId} are required for Customer Managed Keys.
          *
          * @param vaultId the value to set
@@ -602,14 +602,14 @@ public final class DatabaseSummary
         }
         /**
          * The database software image
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
          */
         @com.fasterxml.jackson.annotation.JsonProperty("databaseSoftwareImageId")
         private String databaseSoftwareImageId;
 
         /**
          * The database software image
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
          *
          * @param databaseSoftwareImageId the value to set
          * @return this builder
@@ -660,14 +660,14 @@ public final class DatabaseSummary
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * key store of Oracle Vault.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("keyStoreId")
         private String keyStoreId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * key store of Oracle Vault.
          *
          * @param keyStoreId the value to set
@@ -874,14 +874,14 @@ public final class DatabaseSummary
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * database.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * database.
      *
      * @return the value
@@ -891,14 +891,14 @@ public final class DatabaseSummary
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment.
      *
      * @return the value
@@ -934,14 +934,14 @@ public final class DatabaseSummary
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Database Home.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("dbHomeId")
     private final String dbHomeId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Database Home.
      *
      * @return the value
@@ -951,14 +951,14 @@ public final class DatabaseSummary
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the DB
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB
      * system.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("dbSystemId")
     private final String dbSystemId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the DB
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB
      * system.
      *
      * @return the value
@@ -968,14 +968,14 @@ public final class DatabaseSummary
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VM
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM
      * cluster.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("vmClusterId")
     private final String vmClusterId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VM
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM
      * cluster.
      *
      * @return the value
@@ -1202,7 +1202,7 @@ public final class DatabaseSummary
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      */
@@ -1212,7 +1212,7 @@ public final class DatabaseSummary
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      *
@@ -1225,7 +1225,7 @@ public final class DatabaseSummary
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
@@ -1233,7 +1233,7 @@ public final class DatabaseSummary
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * @return the value
      */
@@ -1295,18 +1295,18 @@ public final class DatabaseSummary
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Oracle Cloud Infrastructure
-     * [vault](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+     * [vault](https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
      * This parameter and {@code secretId} are required for Customer Managed Keys.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("vaultId")
     private final String vaultId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Oracle Cloud Infrastructure
-     * [vault](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+     * [vault](https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
      * This parameter and {@code secretId} are required for Customer Managed Keys.
      *
      * @return the value
@@ -1336,14 +1336,14 @@ public final class DatabaseSummary
 
     /**
      * The database software image
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      */
     @com.fasterxml.jackson.annotation.JsonProperty("databaseSoftwareImageId")
     private final String databaseSoftwareImageId;
 
     /**
      * The database software image
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      *
      * @return the value
      */
@@ -1385,14 +1385,14 @@ public final class DatabaseSummary
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the key
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key
      * store of Oracle Vault.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("keyStoreId")
     private final String keyStoreId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the key
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key
      * store of Oracle Vault.
      *
      * @return the value

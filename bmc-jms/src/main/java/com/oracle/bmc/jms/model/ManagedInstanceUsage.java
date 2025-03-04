@@ -80,14 +80,14 @@ public final class ManagedInstanceUsage
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * related managed instance.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("managedInstanceId")
         private String managedInstanceId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * related managed instance.
          *
          * @param managedInstanceId the value to set
@@ -129,15 +129,15 @@ public final class ManagedInstanceUsage
             return this;
         }
         /**
-         * The host [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
-         * of the related managed instance.
+         * The host [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+         * the related managed instance.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("hostId")
         private String hostId;
 
         /**
-         * The host [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
-         * of the related managed instance.
+         * The host [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+         * the related managed instance.
          *
          * @param hostId the value to set
          * @return this builder
@@ -417,14 +417,14 @@ public final class ManagedInstanceUsage
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * related managed instance.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("managedInstanceId")
     private final String managedInstanceId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * related managed instance.
      *
      * @return the value
@@ -460,15 +460,15 @@ public final class ManagedInstanceUsage
     }
 
     /**
-     * The host [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of
-     * the related managed instance.
+     * The host [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * related managed instance.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("hostId")
     private final String hostId;
 
     /**
-     * The host [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of
-     * the related managed instance.
+     * The host [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * related managed instance.
      *
      * @return the value
      */

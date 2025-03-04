@@ -107,14 +107,14 @@ public final class ImportDeploymentWalletDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * compartment, where the secret will be created in.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("walletBackupSecretCompartmentId")
         private String walletBackupSecretCompartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * compartment, where the secret will be created in.
          *
          * @param walletBackupSecretCompartmentId the value to set
@@ -263,14 +263,14 @@ public final class ImportDeploymentWalletDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment, where the secret will be created in.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("walletBackupSecretCompartmentId")
     private final String walletBackupSecretCompartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment, where the secret will be created in.
      *
      * @return the value

@@ -71,14 +71,14 @@ public final class UpdateOggDeploymentDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Identity Domain when IAM credential store is used.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("identityDomainId")
         private String identityDomainId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Identity Domain when IAM credential store is used.
          *
          * @param identityDomainId the value to set
@@ -90,14 +90,14 @@ public final class UpdateOggDeploymentDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Secret where the deployment password is stored.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("passwordSecretId")
         private String passwordSecretId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Secret where the deployment password is stored.
          *
          * @param passwordSecretId the value to set
@@ -259,14 +259,14 @@ public final class UpdateOggDeploymentDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Identity Domain when IAM credential store is used.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("identityDomainId")
     private final String identityDomainId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Identity Domain when IAM credential store is used.
      *
      * @return the value
@@ -276,14 +276,14 @@ public final class UpdateOggDeploymentDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Secret where the deployment password is stored.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("passwordSecretId")
     private final String passwordSecretId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Secret where the deployment password is stored.
      *
      * @return the value

@@ -45,15 +45,15 @@ public final class CreateStreamingServiceActionDetails extends ActionDetails {
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the stream to which messages are delivered.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * stream to which messages are delivered.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("streamId")
         private String streamId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the stream to which messages are delivered.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * stream to which messages are delivered.
          *
          * @param streamId the value to set
          * @return this builder
@@ -109,15 +109,15 @@ public final class CreateStreamingServiceActionDetails extends ActionDetails {
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the stream to which messages are delivered.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * stream to which messages are delivered.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("streamId")
     private final String streamId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the stream to which messages are delivered.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * stream to which messages are delivered.
      *
      * @return the value
      */

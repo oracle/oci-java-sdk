@@ -9,7 +9,7 @@ package com.oracle.bmc.auth;
  * components used to create the keyId.
  *
  * <p>The {@link #getKeyId()} method should be implemented as "tentantId/userId/fingerprint". See <a
- * href="https://docs.cloud.oracle.com/Content/API/Concepts/signingrequests.htm">docs </a> for more
+ * href="https://docs.oracle.com/iaas/Content/API/Concepts/signingrequests.htm">docs </a> for more
  * information.
  */
 public interface AuthenticationDetailsProvider extends BasicAuthenticationDetailsProvider {

@@ -7,21 +7,21 @@ package com.oracle.bmc.generativeaiagent.requests;
 import com.oracle.bmc.generativeaiagent.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeaiagent/GetDataIngestionJobExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeaiagent/GetDataIngestionJobExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use GetDataIngestionJobRequest.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20240531")
 public class GetDataIngestionJobRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the data ingestion job.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the data
+     * ingestion job.
      */
     private String dataIngestionJobId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the data ingestion job.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the data
+     * ingestion job.
      */
     public String getDataIngestionJobId() {
         return dataIngestionJobId;
@@ -49,14 +49,14 @@ public class GetDataIngestionJobRequest extends com.oracle.bmc.requests.BmcReque
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the data ingestion job.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * data ingestion job.
          */
         private String dataIngestionJobId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the data ingestion job.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * data ingestion job.
          *
          * @param dataIngestionJobId the value to set
          * @return this builder instance

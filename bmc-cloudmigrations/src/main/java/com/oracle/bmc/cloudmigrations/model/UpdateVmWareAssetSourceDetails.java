@@ -148,14 +148,14 @@ public final class UpdateVmWareAssetSourceDetails extends UpdateAssetSourceDetai
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * discovery schedule that is going to be assigned to an asset source.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("discoveryScheduleId")
         private String discoveryScheduleId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * discovery schedule that is going to be assigned to an asset source.
          *
          * @param discoveryScheduleId the value to set
@@ -326,14 +326,14 @@ public final class UpdateVmWareAssetSourceDetails extends UpdateAssetSourceDetai
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * discovery schedule that is going to be assigned to an asset source.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("discoveryScheduleId")
     private final String discoveryScheduleId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * discovery schedule that is going to be assigned to an asset source.
      *
      * @return the value

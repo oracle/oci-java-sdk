@@ -57,14 +57,14 @@ public final class SqlTuningAdvisorTaskSummaryReportTaskInfo
     public static class Builder {
         /**
          * The ID of the SQL Tuning Advisor task. This is not the
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private Long id;
 
         /**
          * The ID of the SQL Tuning Advisor task. This is not the
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          * @param id the value to set
          * @return this builder
@@ -247,14 +247,14 @@ public final class SqlTuningAdvisorTaskSummaryReportTaskInfo
 
     /**
      * The ID of the SQL Tuning Advisor task. This is not the
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final Long id;
 
     /**
      * The ID of the SQL Tuning Advisor task. This is not the
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      * @return the value
      */

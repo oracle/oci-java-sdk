@@ -8,7 +8,7 @@ package com.oracle.bmc.bds.model;
  * Policy definition for the autoscale configuration.
  *
  * <p>An autoscaling policy is part of an autoscaling configuration. For more information, see
- * [Autoscaling](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-autoscale)
+ * [Autoscaling](https://docs.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-autoscale)
  *
  * <p>You can create following type of autoscaling policies:
  *

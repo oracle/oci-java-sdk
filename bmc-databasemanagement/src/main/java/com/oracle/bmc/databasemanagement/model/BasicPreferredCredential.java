@@ -84,14 +84,14 @@ public final class BasicPreferredCredential extends PreferredCredential {
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Vault service secret that contains the database user password.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("passwordSecretId")
         private String passwordSecretId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Vault service secret that contains the database user password.
          *
          * @param passwordSecretId the value to set
@@ -195,14 +195,14 @@ public final class BasicPreferredCredential extends PreferredCredential {
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Vault service secret that contains the database user password.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("passwordSecretId")
     private final String passwordSecretId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Vault service secret that contains the database user password.
      *
      * @return the value

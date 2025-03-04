@@ -41,15 +41,15 @@ public final class TestMacsManagedCloudDatabaseInsightConnectionDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the Management Agent
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Management Agent
          */
         @com.fasterxml.jackson.annotation.JsonProperty("managementAgentId")
         private String managementAgentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the Management Agent
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Management Agent
          *
          * @param managementAgentId the value to set
          * @return this builder
@@ -118,15 +118,15 @@ public final class TestMacsManagedCloudDatabaseInsightConnectionDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the Management Agent
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Management Agent
      */
     @com.fasterxml.jackson.annotation.JsonProperty("managementAgentId")
     private final String managementAgentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the Management Agent
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Management Agent
      *
      * @return the value
      */

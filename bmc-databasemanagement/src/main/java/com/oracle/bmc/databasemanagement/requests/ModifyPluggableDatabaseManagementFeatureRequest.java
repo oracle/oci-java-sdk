@@ -7,7 +7,7 @@ package com.oracle.bmc.databasemanagement.requests;
 import com.oracle.bmc.databasemanagement.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/ModifyPluggableDatabaseManagementFeatureExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/ModifyPluggableDatabaseManagementFeatureExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * ModifyPluggableDatabaseManagementFeatureRequest.
  */
@@ -18,13 +18,13 @@ public class ModifyPluggableDatabaseManagementFeatureRequest
                         .ModifyPluggableDatabaseManagementFeatureDetails> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Oracle cloud pluggable database.
      */
     private String pluggableDatabaseId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Oracle cloud pluggable database.
      */
     public String getPluggableDatabaseId() {
@@ -110,13 +110,13 @@ public class ModifyPluggableDatabaseManagementFeatureRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Oracle cloud pluggable database.
          */
         private String pluggableDatabaseId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Oracle cloud pluggable database.
          *
          * @param pluggableDatabaseId the value to set

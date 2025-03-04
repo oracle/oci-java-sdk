@@ -7,7 +7,7 @@ package com.oracle.bmc.monitoring.requests;
 import com.oracle.bmc.monitoring.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/monitoring/SummarizeMetricsDataExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/monitoring/SummarizeMetricsDataExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use SummarizeMetricsDataRequest.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180401")
@@ -16,18 +16,18 @@ public class SummarizeMetricsDataRequest
                 com.oracle.bmc.monitoring.model.SummarizeMetricsDataDetails> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compartment containing the resources monitored by the metric that you are searching for.
-     * Use tenancyId to search in the root compartment.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment containing the resources monitored by the metric that you are searching for. Use
+     * tenancyId to search in the root compartment.
      *
      * <p>Example: {@code ocid1.compartment.oc1..exampleuniqueID}
      */
     private String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compartment containing the resources monitored by the metric that you are searching for.
-     * Use tenancyId to search in the root compartment.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment containing the resources monitored by the metric that you are searching for. Use
+     * tenancyId to search in the root compartment.
      *
      * <p>Example: {@code ocid1.compartment.oc1..exampleuniqueID}
      */
@@ -94,18 +94,18 @@ public class SummarizeMetricsDataRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compartment containing the resources monitored by the metric that you are
-         * searching for. Use tenancyId to search in the root compartment.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment containing the resources monitored by the metric that you are searching for.
+         * Use tenancyId to search in the root compartment.
          *
          * <p>Example: {@code ocid1.compartment.oc1..exampleuniqueID}
          */
         private String compartmentId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compartment containing the resources monitored by the metric that you are
-         * searching for. Use tenancyId to search in the root compartment.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment containing the resources monitored by the metric that you are searching for.
+         * Use tenancyId to search in the root compartment.
          *
          * <p>Example: {@code ocid1.compartment.oc1..exampleuniqueID}
          *

@@ -7,7 +7,7 @@ package com.oracle.bmc.osmanagementhub.requests;
 import com.oracle.bmc.osmanagementhub.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/AttachManagementStationToProfileExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/AttachManagementStationToProfileExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * AttachManagementStationToProfileRequest.
  */
@@ -17,30 +17,30 @@ public class AttachManagementStationToProfileRequest
                 com.oracle.bmc.osmanagementhub.model.AttachManagementStationToProfileDetails> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the registration profile.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * registration profile.
      */
     private String profileId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the registration profile.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * registration profile.
      */
     public String getProfileId() {
         return profileId;
     }
     /**
      * The management station
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to attach
-     * to the profile
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to attach to
+     * the profile
      */
     private com.oracle.bmc.osmanagementhub.model.AttachManagementStationToProfileDetails
             attachManagementStationToProfileDetails;
 
     /**
      * The management station
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to attach
-     * to the profile
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to attach to
+     * the profile
      */
     public com.oracle.bmc.osmanagementhub.model.AttachManagementStationToProfileDetails
             getAttachManagementStationToProfileDetails() {
@@ -115,14 +115,14 @@ public class AttachManagementStationToProfileRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the registration profile.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * registration profile.
          */
         private String profileId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the registration profile.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * registration profile.
          *
          * @param profileId the value to set
          * @return this builder instance
@@ -134,16 +134,16 @@ public class AttachManagementStationToProfileRequest
 
         /**
          * The management station
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to
-         * attach to the profile
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to attach
+         * to the profile
          */
         private com.oracle.bmc.osmanagementhub.model.AttachManagementStationToProfileDetails
                 attachManagementStationToProfileDetails = null;
 
         /**
          * The management station
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to
-         * attach to the profile
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to attach
+         * to the profile
          *
          * @param attachManagementStationToProfileDetails the value to set
          * @return this builder instance

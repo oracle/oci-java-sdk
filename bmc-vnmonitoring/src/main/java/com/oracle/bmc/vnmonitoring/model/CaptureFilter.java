@@ -63,15 +63,15 @@ public final class CaptureFilter extends com.oracle.bmc.http.client.internal.Exp
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compartment containing the capture filter.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment containing the capture filter.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compartment containing the capture filter.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment containing the capture filter.
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -141,14 +141,14 @@ public final class CaptureFilter extends com.oracle.bmc.http.client.internal.Exp
         }
         /**
          * The capture filter's Oracle ID
-         * ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
+         * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * The capture filter's Oracle ID
-         * ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
+         * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
          *
          * @param id the value to set
          * @return this builder
@@ -316,15 +316,15 @@ public final class CaptureFilter extends com.oracle.bmc.http.client.internal.Exp
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compartment containing the capture filter.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment containing the capture filter.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compartment containing the capture filter.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment containing the capture filter.
      *
      * @return the value
      */
@@ -385,14 +385,14 @@ public final class CaptureFilter extends com.oracle.bmc.http.client.internal.Exp
 
     /**
      * The capture filter's Oracle ID
-     * ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
+     * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The capture filter's Oracle ID
-     * ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
+     * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
      *
      * @return the value
      */

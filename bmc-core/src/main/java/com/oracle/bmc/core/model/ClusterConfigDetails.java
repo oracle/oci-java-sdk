@@ -39,15 +39,15 @@ public final class ClusterConfigDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the HPC island.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * HPC island.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("hpcIslandId")
         private String hpcIslandId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the HPC island.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * HPC island.
          *
          * @param hpcIslandId the value to set
          * @return this builder
@@ -107,15 +107,15 @@ public final class ClusterConfigDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the HPC island.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HPC
+     * island.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("hpcIslandId")
     private final String hpcIslandId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the HPC island.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HPC
+     * island.
      *
      * @return the value
      */

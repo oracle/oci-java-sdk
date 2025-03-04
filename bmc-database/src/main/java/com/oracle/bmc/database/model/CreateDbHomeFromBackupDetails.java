@@ -85,7 +85,7 @@ public final class CreateDbHomeFromBackupDetails
         }
         /**
          * The database software image
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * image to be used to restore a database.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("databaseSoftwareImageId")
@@ -93,7 +93,7 @@ public final class CreateDbHomeFromBackupDetails
 
         /**
          * The database software image
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * image to be used to restore a database.
          *
          * @param databaseSoftwareImageId the value to set
@@ -116,7 +116,7 @@ public final class CreateDbHomeFromBackupDetails
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          */
@@ -126,7 +126,7 @@ public final class CreateDbHomeFromBackupDetails
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          *
@@ -141,7 +141,7 @@ public final class CreateDbHomeFromBackupDetails
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
@@ -149,7 +149,7 @@ public final class CreateDbHomeFromBackupDetails
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * @param definedTags the value to set
          * @return this builder
@@ -240,16 +240,16 @@ public final class CreateDbHomeFromBackupDetails
 
     /**
      * The database software image
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the image
-     * to be used to restore a database.
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the image to
+     * be used to restore a database.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("databaseSoftwareImageId")
     private final String databaseSoftwareImageId;
 
     /**
      * The database software image
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the image
-     * to be used to restore a database.
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the image to
+     * be used to restore a database.
      *
      * @return the value
      */
@@ -267,7 +267,7 @@ public final class CreateDbHomeFromBackupDetails
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      */
@@ -277,7 +277,7 @@ public final class CreateDbHomeFromBackupDetails
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      *
@@ -290,7 +290,7 @@ public final class CreateDbHomeFromBackupDetails
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
@@ -298,7 +298,7 @@ public final class CreateDbHomeFromBackupDetails
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * @return the value
      */

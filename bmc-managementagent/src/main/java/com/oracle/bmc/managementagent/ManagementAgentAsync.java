@@ -10,7 +10,7 @@ import com.oracle.bmc.managementagent.responses.*;
 /**
  * Use the Management Agent API to manage your infrastructure's management agents, including their
  * plugins and install keys. For more information, see [Management
- * Agent](https://docs.cloud.oracle.com/iaas/management-agents/index.html).
+ * Agent](https://docs.oracle.com/iaas/management-agents/index.html).
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200202")
 public interface ManagementAgentAsync extends AutoCloseable {

@@ -163,15 +163,15 @@ public final class MacsManagedExternalHostInsightSummary extends HostInsightSumm
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the Management Agent
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Management Agent
          */
         @com.fasterxml.jackson.annotation.JsonProperty("managementAgentId")
         private String managementAgentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the Management Agent
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Management Agent
          *
          * @param managementAgentId the value to set
          * @return this builder
@@ -340,15 +340,15 @@ public final class MacsManagedExternalHostInsightSummary extends HostInsightSumm
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the Management Agent
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Management Agent
      */
     @com.fasterxml.jackson.annotation.JsonProperty("managementAgentId")
     private final String managementAgentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the Management Agent
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Management Agent
      *
      * @return the value
      */

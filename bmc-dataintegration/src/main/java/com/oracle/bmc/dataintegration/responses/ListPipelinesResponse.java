@@ -27,14 +27,14 @@ public class ListPipelinesResponse extends com.oracle.bmc.responses.BmcResponse 
     /**
      * Retrieves the next page of results. When this header appears in the response, additional
      * pages of results remain. See [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private String opcNextPage;
 
     /**
      * Retrieves the next page of results. When this header appears in the response, additional
      * pages of results remain. See [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      * @return the value
      */
@@ -45,14 +45,14 @@ public class ListPipelinesResponse extends com.oracle.bmc.responses.BmcResponse 
     /**
      * Retrieves the previous page of results. When this header appears in the response, previous
      * pages of results exist. See [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private String opcPrevPage;
 
     /**
      * Retrieves the previous page of results. When this header appears in the response, previous
      * pages of results exist. See [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      * @return the value
      */
@@ -151,14 +151,14 @@ public class ListPipelinesResponse extends com.oracle.bmc.responses.BmcResponse 
         /**
          * Retrieves the next page of results. When this header appears in the response, additional
          * pages of results remain. See [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private String opcNextPage;
 
         /**
          * Retrieves the next page of results. When this header appears in the response, additional
          * pages of results remain. See [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param opcNextPage the value to set
          * @return this builder
@@ -171,14 +171,14 @@ public class ListPipelinesResponse extends com.oracle.bmc.responses.BmcResponse 
         /**
          * Retrieves the previous page of results. When this header appears in the response,
          * previous pages of results exist. See [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private String opcPrevPage;
 
         /**
          * Retrieves the previous page of results. When this header appears in the response,
          * previous pages of results exist. See [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param opcPrevPage the value to set
          * @return this builder

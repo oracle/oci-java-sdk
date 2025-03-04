@@ -7,7 +7,7 @@ package com.oracle.bmc.loadbalancer.model;
 /**
  * The listener's configuration. For more information on backend set configuration, see [Managing
  * Load Balancer
- * Listeners](https://docs.cloud.oracle.com/Content/Balance/Tasks/managinglisteners.htm). <br>
+ * Listeners](https://docs.oracle.com/iaas/Content/Balance/Tasks/managinglisteners.htm). <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a

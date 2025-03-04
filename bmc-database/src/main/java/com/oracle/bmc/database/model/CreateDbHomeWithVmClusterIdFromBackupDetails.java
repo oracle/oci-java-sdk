@@ -101,14 +101,14 @@ public final class CreateDbHomeWithVmClusterIdFromBackupDetails extends CreateDb
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * VM cluster.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("vmClusterId")
         private String vmClusterId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * VM cluster.
          *
          * @param vmClusterId the value to set
@@ -222,14 +222,14 @@ public final class CreateDbHomeWithVmClusterIdFromBackupDetails extends CreateDb
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VM
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM
      * cluster.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("vmClusterId")
     private final String vmClusterId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VM
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM
      * cluster.
      *
      * @return the value

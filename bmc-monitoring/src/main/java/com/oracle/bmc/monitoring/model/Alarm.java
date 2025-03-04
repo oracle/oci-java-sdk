@@ -6,17 +6,17 @@ package com.oracle.bmc.monitoring.model;
 
 /**
  * The properties that define an alarm. For information about alarms, see [Alarms
- * Overview](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#AlarmsOverview).
+ * Overview](https://docs.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#AlarmsOverview).
  *
  * <p>To use any of the API operations, you must be authorized in an IAM policy. If you're not
  * authorized, talk to an administrator. If you're an administrator who needs to write policies to
  * give users access, see [Getting Started with
- * Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
+ * Policies](https://docs.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
  *
  * <p>For information about endpoints and signing API requests, see [About the
- * API](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm). For information about
+ * API](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm). For information about
  * available SDKs and tools, see [SDKS and Other
- * Tools](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/sdks.htm). <br>
+ * Tools](https://docs.oracle.com/iaas/Content/API/Concepts/sdks.htm). <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -128,15 +128,15 @@ public final class Alarm extends com.oracle.bmc.http.client.internal.ExplicitlyS
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the alarm.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * alarm.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the alarm.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * alarm.
          *
          * @param id the value to set
          * @return this builder
@@ -172,15 +172,15 @@ public final class Alarm extends com.oracle.bmc.http.client.internal.ExplicitlyS
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compartment containing the alarm.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment containing the alarm.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compartment containing the alarm.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment containing the alarm.
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -191,15 +191,15 @@ public final class Alarm extends com.oracle.bmc.http.client.internal.ExplicitlyS
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compartment containing the metric being evaluated by the alarm.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment containing the metric being evaluated by the alarm.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("metricCompartmentId")
         private String metricCompartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compartment containing the metric being evaluated by the alarm.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment containing the metric being evaluated by the alarm.
          *
          * @param metricCompartmentId the value to set
          * @return this builder
@@ -299,15 +299,15 @@ public final class Alarm extends com.oracle.bmc.http.client.internal.ExplicitlyS
          * for interval depend on the specified time range. More interval values are supported for
          * smaller time ranges. You can optionally specify dimensions and grouping functions. Also,
          * you can customize the [absence detection
-         * period](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/create-edit-alarm-query-absence-detection-period.htm).
+         * period](https://docs.oracle.com/iaas/Content/Monitoring/Tasks/create-edit-alarm-query-absence-detection-period.htm).
          * Supported grouping functions: {@code grouping()}, {@code groupBy()}. For information
          * about writing MQL expressions, see [Editing the MQL Expression for a
-         * Query](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/query-metric-mql.htm).
-         * For details about MQL, see [Monitoring Query Language (MQL)
-         * Reference](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm). For
+         * Query](https://docs.oracle.com/iaas/Content/Monitoring/Tasks/query-metric-mql.htm). For
+         * details about MQL, see [Monitoring Query Language (MQL)
+         * Reference](https://docs.oracle.com/iaas/Content/Monitoring/Reference/mql.htm). For
          * available dimensions, review the metric definition for the supported service. See
          * [Supported
-         * Services](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
+         * Services](https://docs.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
          *
          * <p>Example of threshold alarm:
          *
@@ -344,15 +344,15 @@ public final class Alarm extends com.oracle.bmc.http.client.internal.ExplicitlyS
          * for interval depend on the specified time range. More interval values are supported for
          * smaller time ranges. You can optionally specify dimensions and grouping functions. Also,
          * you can customize the [absence detection
-         * period](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/create-edit-alarm-query-absence-detection-period.htm).
+         * period](https://docs.oracle.com/iaas/Content/Monitoring/Tasks/create-edit-alarm-query-absence-detection-period.htm).
          * Supported grouping functions: {@code grouping()}, {@code groupBy()}. For information
          * about writing MQL expressions, see [Editing the MQL Expression for a
-         * Query](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/query-metric-mql.htm).
-         * For details about MQL, see [Monitoring Query Language (MQL)
-         * Reference](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm). For
+         * Query](https://docs.oracle.com/iaas/Content/Monitoring/Tasks/query-metric-mql.htm). For
+         * details about MQL, see [Monitoring Query Language (MQL)
+         * Reference](https://docs.oracle.com/iaas/Content/Monitoring/Reference/mql.htm). For
          * available dimensions, review the metric definition for the supported service. See
          * [Supported
-         * Services](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
+         * Services](https://docs.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
          *
          * <p>Example of threshold alarm:
          *
@@ -473,7 +473,7 @@ public final class Alarm extends com.oracle.bmc.http.client.internal.ExplicitlyS
         /**
          * The human-readable content of the delivered alarm notification. Optionally include
          * [dynamic
-         * variables](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm).
+         * variables](https://docs.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm).
          * Oracle recommends providing guidance to operators for resolving the alarm condition.
          * Consider adding links to standard runbook practices. Avoid entering confidential
          * information.
@@ -486,7 +486,7 @@ public final class Alarm extends com.oracle.bmc.http.client.internal.ExplicitlyS
         /**
          * The human-readable content of the delivered alarm notification. Optionally include
          * [dynamic
-         * variables](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm).
+         * variables](https://docs.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm).
          * Oracle recommends providing guidance to operators for resolving the alarm condition.
          * Consider adding links to standard runbook practices. Avoid entering confidential
          * information.
@@ -553,7 +553,7 @@ public final class Alarm extends com.oracle.bmc.http.client.internal.ExplicitlyS
         }
         /**
          * A list of destinations for alarm notifications. Each destination is represented by the
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
          * related resource, such as a {@link NotificationTopic}. Supported destination services:
          * Notifications, Streaming. Limit: One destination per supported destination service.
          */
@@ -562,7 +562,7 @@ public final class Alarm extends com.oracle.bmc.http.client.internal.ExplicitlyS
 
         /**
          * A list of destinations for alarm notifications. Each destination is represented by the
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
          * related resource, such as a {@link NotificationTopic}. Supported destination services:
          * Notifications, Streaming. Limit: One destination per supported destination service.
          *
@@ -749,9 +749,9 @@ public final class Alarm extends com.oracle.bmc.http.client.internal.ExplicitlyS
         }
         /**
          * Customizable notification title ({@code title} [alarm message
-         * parameter](https://docs.cloud.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm)).
+         * parameter](https://docs.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm)).
          * Optionally include [dynamic
-         * variables](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm).
+         * variables](https://docs.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm).
          * The notification title appears as the subject line in a formatted email message and as
          * the title in a Slack message.
          */
@@ -760,9 +760,9 @@ public final class Alarm extends com.oracle.bmc.http.client.internal.ExplicitlyS
 
         /**
          * Customizable notification title ({@code title} [alarm message
-         * parameter](https://docs.cloud.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm)).
+         * parameter](https://docs.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm)).
          * Optionally include [dynamic
-         * variables](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm).
+         * variables](https://docs.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm).
          * The notification title appears as the subject line in a formatted email message and as
          * the title in a Slack message.
          *
@@ -779,7 +779,7 @@ public final class Alarm extends com.oracle.bmc.http.client.internal.ExplicitlyS
          * Specify a string in ISO 8601 format ({@code PT10M} for ten minutes or {@code PT1H} for
          * one hour). Minimum: PT3M. Maximum: PT2H. Default: PT3M. For more information about the
          * slack period, see [About the Internal Reset
-         * Period](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#reset).
+         * Period](https://docs.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#reset).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("evaluationSlackDuration")
         private String evaluationSlackDuration;
@@ -789,7 +789,7 @@ public final class Alarm extends com.oracle.bmc.http.client.internal.ExplicitlyS
          * Specify a string in ISO 8601 format ({@code PT10M} for ten minutes or {@code PT1H} for
          * one hour). Minimum: PT3M. Maximum: PT2H. Default: PT3M. For more information about the
          * slack period, see [About the Internal Reset
-         * Period](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#reset).
+         * Period](https://docs.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#reset).
          *
          * @param evaluationSlackDuration the value to set
          * @return this builder
@@ -801,9 +801,9 @@ public final class Alarm extends com.oracle.bmc.http.client.internal.ExplicitlyS
         }
         /**
          * Customizable alarm summary ({@code alarmSummary} [alarm message
-         * parameter](https://docs.cloud.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm)).
+         * parameter](https://docs.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm)).
          * Optionally include [dynamic
-         * variables](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm).
+         * variables](https://docs.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm).
          * The alarm summary appears within the body of the alarm message and in responses to {@link
          * #listAlarmsStatus(ListAlarmsStatusRequest) listAlarmsStatus} {@link
          * #getAlarmHistory(GetAlarmHistoryRequest) getAlarmHistory} and {@link
@@ -814,9 +814,9 @@ public final class Alarm extends com.oracle.bmc.http.client.internal.ExplicitlyS
 
         /**
          * Customizable alarm summary ({@code alarmSummary} [alarm message
-         * parameter](https://docs.cloud.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm)).
+         * parameter](https://docs.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm)).
          * Optionally include [dynamic
-         * variables](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm).
+         * variables](https://docs.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm).
          * The alarm summary appears within the body of the alarm message and in responses to {@link
          * #listAlarmsStatus(ListAlarmsStatusRequest) listAlarmsStatus} {@link
          * #getAlarmHistory(GetAlarmHistoryRequest) getAlarmHistory} and {@link
@@ -1039,15 +1039,15 @@ public final class Alarm extends com.oracle.bmc.http.client.internal.ExplicitlyS
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the alarm.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * alarm.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the alarm.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * alarm.
      *
      * @return the value
      */
@@ -1079,15 +1079,15 @@ public final class Alarm extends com.oracle.bmc.http.client.internal.ExplicitlyS
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compartment containing the alarm.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment containing the alarm.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compartment containing the alarm.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment containing the alarm.
      *
      * @return the value
      */
@@ -1096,15 +1096,15 @@ public final class Alarm extends com.oracle.bmc.http.client.internal.ExplicitlyS
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compartment containing the metric being evaluated by the alarm.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment containing the metric being evaluated by the alarm.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("metricCompartmentId")
     private final String metricCompartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compartment containing the metric being evaluated by the alarm.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment containing the metric being evaluated by the alarm.
      *
      * @return the value
      */
@@ -1194,14 +1194,14 @@ public final class Alarm extends com.oracle.bmc.http.client.internal.ExplicitlyS
      * specified time range. More interval values are supported for smaller time ranges. You can
      * optionally specify dimensions and grouping functions. Also, you can customize the [absence
      * detection
-     * period](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/create-edit-alarm-query-absence-detection-period.htm).
+     * period](https://docs.oracle.com/iaas/Content/Monitoring/Tasks/create-edit-alarm-query-absence-detection-period.htm).
      * Supported grouping functions: {@code grouping()}, {@code groupBy()}. For information about
      * writing MQL expressions, see [Editing the MQL Expression for a
-     * Query](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/query-metric-mql.htm). For
+     * Query](https://docs.oracle.com/iaas/Content/Monitoring/Tasks/query-metric-mql.htm). For
      * details about MQL, see [Monitoring Query Language (MQL)
-     * Reference](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm). For
-     * available dimensions, review the metric definition for the supported service. See [Supported
-     * Services](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
+     * Reference](https://docs.oracle.com/iaas/Content/Monitoring/Reference/mql.htm). For available
+     * dimensions, review the metric definition for the supported service. See [Supported
+     * Services](https://docs.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
      *
      * <p>Example of threshold alarm:
      *
@@ -1238,14 +1238,14 @@ public final class Alarm extends com.oracle.bmc.http.client.internal.ExplicitlyS
      * specified time range. More interval values are supported for smaller time ranges. You can
      * optionally specify dimensions and grouping functions. Also, you can customize the [absence
      * detection
-     * period](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/create-edit-alarm-query-absence-detection-period.htm).
+     * period](https://docs.oracle.com/iaas/Content/Monitoring/Tasks/create-edit-alarm-query-absence-detection-period.htm).
      * Supported grouping functions: {@code grouping()}, {@code groupBy()}. For information about
      * writing MQL expressions, see [Editing the MQL Expression for a
-     * Query](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/query-metric-mql.htm). For
+     * Query](https://docs.oracle.com/iaas/Content/Monitoring/Tasks/query-metric-mql.htm). For
      * details about MQL, see [Monitoring Query Language (MQL)
-     * Reference](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm). For
-     * available dimensions, review the metric definition for the supported service. See [Supported
-     * Services](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
+     * Reference](https://docs.oracle.com/iaas/Content/Monitoring/Reference/mql.htm). For available
+     * dimensions, review the metric definition for the supported service. See [Supported
+     * Services](https://docs.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
      *
      * <p>Example of threshold alarm:
      *
@@ -1407,7 +1407,7 @@ public final class Alarm extends com.oracle.bmc.http.client.internal.ExplicitlyS
 
     /**
      * The human-readable content of the delivered alarm notification. Optionally include [dynamic
-     * variables](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm).
+     * variables](https://docs.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm).
      * Oracle recommends providing guidance to operators for resolving the alarm condition. Consider
      * adding links to standard runbook practices. Avoid entering confidential information.
      *
@@ -1418,7 +1418,7 @@ public final class Alarm extends com.oracle.bmc.http.client.internal.ExplicitlyS
 
     /**
      * The human-readable content of the delivered alarm notification. Optionally include [dynamic
-     * variables](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm).
+     * variables](https://docs.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm).
      * Oracle recommends providing guidance to operators for resolving the alarm condition. Consider
      * adding links to standard runbook practices. Avoid entering confidential information.
      *
@@ -1531,18 +1531,18 @@ public final class Alarm extends com.oracle.bmc.http.client.internal.ExplicitlyS
 
     /**
      * A list of destinations for alarm notifications. Each destination is represented by the
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
-     * related resource, such as a {@link NotificationTopic}. Supported destination services:
-     * Notifications, Streaming. Limit: One destination per supported destination service.
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a related
+     * resource, such as a {@link NotificationTopic}. Supported destination services: Notifications,
+     * Streaming. Limit: One destination per supported destination service.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("destinations")
     private final java.util.List<String> destinations;
 
     /**
      * A list of destinations for alarm notifications. Each destination is represented by the
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
-     * related resource, such as a {@link NotificationTopic}. Supported destination services:
-     * Notifications, Streaming. Limit: One destination per supported destination service.
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a related
+     * resource, such as a {@link NotificationTopic}. Supported destination services: Notifications,
+     * Streaming. Limit: One destination per supported destination service.
      *
      * @return the value
      */
@@ -1706,9 +1706,9 @@ public final class Alarm extends com.oracle.bmc.http.client.internal.ExplicitlyS
 
     /**
      * Customizable notification title ({@code title} [alarm message
-     * parameter](https://docs.cloud.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm)).
+     * parameter](https://docs.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm)).
      * Optionally include [dynamic
-     * variables](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm).
+     * variables](https://docs.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm).
      * The notification title appears as the subject line in a formatted email message and as the
      * title in a Slack message.
      */
@@ -1717,9 +1717,9 @@ public final class Alarm extends com.oracle.bmc.http.client.internal.ExplicitlyS
 
     /**
      * Customizable notification title ({@code title} [alarm message
-     * parameter](https://docs.cloud.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm)).
+     * parameter](https://docs.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm)).
      * Optionally include [dynamic
-     * variables](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm).
+     * variables](https://docs.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm).
      * The notification title appears as the subject line in a formatted email message and as the
      * title in a Slack message.
      *
@@ -1734,7 +1734,7 @@ public final class Alarm extends com.oracle.bmc.http.client.internal.ExplicitlyS
      * string in ISO 8601 format ({@code PT10M} for ten minutes or {@code PT1H} for one hour).
      * Minimum: PT3M. Maximum: PT2H. Default: PT3M. For more information about the slack period, see
      * [About the Internal Reset
-     * Period](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#reset).
+     * Period](https://docs.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#reset).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("evaluationSlackDuration")
     private final String evaluationSlackDuration;
@@ -1744,7 +1744,7 @@ public final class Alarm extends com.oracle.bmc.http.client.internal.ExplicitlyS
      * string in ISO 8601 format ({@code PT10M} for ten minutes or {@code PT1H} for one hour).
      * Minimum: PT3M. Maximum: PT2H. Default: PT3M. For more information about the slack period, see
      * [About the Internal Reset
-     * Period](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#reset).
+     * Period](https://docs.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#reset).
      *
      * @return the value
      */
@@ -1754,9 +1754,9 @@ public final class Alarm extends com.oracle.bmc.http.client.internal.ExplicitlyS
 
     /**
      * Customizable alarm summary ({@code alarmSummary} [alarm message
-     * parameter](https://docs.cloud.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm)).
+     * parameter](https://docs.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm)).
      * Optionally include [dynamic
-     * variables](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm).
+     * variables](https://docs.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm).
      * The alarm summary appears within the body of the alarm message and in responses to {@link
      * #listAlarmsStatus(ListAlarmsStatusRequest) listAlarmsStatus} {@link
      * #getAlarmHistory(GetAlarmHistoryRequest) getAlarmHistory} and {@link
@@ -1767,9 +1767,9 @@ public final class Alarm extends com.oracle.bmc.http.client.internal.ExplicitlyS
 
     /**
      * Customizable alarm summary ({@code alarmSummary} [alarm message
-     * parameter](https://docs.cloud.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm)).
+     * parameter](https://docs.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm)).
      * Optionally include [dynamic
-     * variables](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm).
+     * variables](https://docs.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm).
      * The alarm summary appears within the body of the alarm message and in responses to {@link
      * #listAlarmsStatus(ListAlarmsStatusRequest) listAlarmsStatus} {@link
      * #getAlarmHistory(GetAlarmHistoryRequest) getAlarmHistory} and {@link

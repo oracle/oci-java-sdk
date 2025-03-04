@@ -7,7 +7,7 @@ package com.oracle.bmc.database.requests;
 import com.oracle.bmc.database.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/CreateCloudExadataInfrastructureExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/CreateCloudExadataInfrastructureExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * CreateCloudExadataInfrastructureRequest.
  */
@@ -18,14 +18,14 @@ public class CreateCloudExadataInfrastructureRequest
 
     /**
      * Request to create a cloud Exadata infrastructure resource in an [Exadata Cloud
-     * Service](https://docs.cloud.oracle.com/Content/Database/Concepts/exaoverview.htm) instance.
+     * Service](https://docs.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm) instance.
      */
     private com.oracle.bmc.database.model.CreateCloudExadataInfrastructureDetails
             createCloudExadataInfrastructureDetails;
 
     /**
      * Request to create a cloud Exadata infrastructure resource in an [Exadata Cloud
-     * Service](https://docs.cloud.oracle.com/Content/Database/Concepts/exaoverview.htm) instance.
+     * Service](https://docs.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm) instance.
      */
     public com.oracle.bmc.database.model.CreateCloudExadataInfrastructureDetails
             getCreateCloudExadataInfrastructureDetails() {
@@ -78,7 +78,7 @@ public class CreateCloudExadataInfrastructureRequest
 
         /**
          * Request to create a cloud Exadata infrastructure resource in an [Exadata Cloud
-         * Service](https://docs.cloud.oracle.com/Content/Database/Concepts/exaoverview.htm)
+         * Service](https://docs.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm)
          * instance.
          */
         private com.oracle.bmc.database.model.CreateCloudExadataInfrastructureDetails
@@ -86,7 +86,7 @@ public class CreateCloudExadataInfrastructureRequest
 
         /**
          * Request to create a cloud Exadata infrastructure resource in an [Exadata Cloud
-         * Service](https://docs.cloud.oracle.com/Content/Database/Concepts/exaoverview.htm)
+         * Service](https://docs.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm)
          * instance.
          *
          * @param createCloudExadataInfrastructureDetails the value to set

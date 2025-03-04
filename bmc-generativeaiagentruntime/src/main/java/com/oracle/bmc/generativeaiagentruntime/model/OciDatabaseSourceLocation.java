@@ -29,14 +29,14 @@ public final class OciDatabaseSourceLocation extends SourceLocation {
     public static class Builder {
         /**
          * The OCID of the [OCI Database Tools
-         * Connection](https://docs.cloud.oracle.com/iaas/database-tools/home.htm).
+         * Connection](https://docs.oracle.com/iaas/database-tools/home.htm).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * The OCID of the [OCI Database Tools
-         * Connection](https://docs.cloud.oracle.com/iaas/database-tools/home.htm).
+         * Connection](https://docs.oracle.com/iaas/database-tools/home.htm).
          *
          * @param id the value to set
          * @return this builder
@@ -123,14 +123,14 @@ public final class OciDatabaseSourceLocation extends SourceLocation {
 
     /**
      * The OCID of the [OCI Database Tools
-     * Connection](https://docs.cloud.oracle.com/iaas/database-tools/home.htm).
+     * Connection](https://docs.oracle.com/iaas/database-tools/home.htm).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The OCID of the [OCI Database Tools
-     * Connection](https://docs.cloud.oracle.com/iaas/database-tools/home.htm).
+     * Connection](https://docs.oracle.com/iaas/database-tools/home.htm).
      *
      * @return the value
      */

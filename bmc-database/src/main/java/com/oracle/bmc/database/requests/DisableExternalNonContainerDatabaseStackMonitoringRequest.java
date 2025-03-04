@@ -7,7 +7,7 @@ package com.oracle.bmc.database.requests;
 import com.oracle.bmc.database.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DisableExternalNonContainerDatabaseStackMonitoringExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DisableExternalNonContainerDatabaseStackMonitoringExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * DisableExternalNonContainerDatabaseStackMonitoringRequest.
  */
@@ -17,13 +17,13 @@ public class DisableExternalNonContainerDatabaseStackMonitoringRequest
 
     /**
      * The external non-container database
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     private String externalNonContainerDatabaseId;
 
     /**
      * The external non-container database
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     public String getExternalNonContainerDatabaseId() {
         return externalNonContainerDatabaseId;
@@ -80,13 +80,13 @@ public class DisableExternalNonContainerDatabaseStackMonitoringRequest
 
         /**
          * The external non-container database
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          */
         private String externalNonContainerDatabaseId = null;
 
         /**
          * The external non-container database
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          * @param externalNonContainerDatabaseId the value to set
          * @return this builder instance

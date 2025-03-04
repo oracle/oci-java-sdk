@@ -133,15 +133,15 @@ public final class CreateIpv6Details
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the VNIC to assign the IPv6 to. The IPv6 will be in the VNIC's subnet.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * VNIC to assign the IPv6 to. The IPv6 will be in the VNIC's subnet.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("vnicId")
         private String vnicId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the VNIC to assign the IPv6 to. The IPv6 will be in the VNIC's subnet.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * VNIC to assign the IPv6 to. The IPv6 will be in the VNIC's subnet.
          *
          * @param vnicId the value to set
          * @return this builder
@@ -297,15 +297,15 @@ public final class CreateIpv6Details
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the VNIC to assign the IPv6 to. The IPv6 will be in the VNIC's subnet.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC
+     * to assign the IPv6 to. The IPv6 will be in the VNIC's subnet.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("vnicId")
     private final String vnicId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the VNIC to assign the IPv6 to. The IPv6 will be in the VNIC's subnet.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC
+     * to assign the IPv6 to. The IPv6 will be in the VNIC's subnet.
      *
      * @return the value
      */

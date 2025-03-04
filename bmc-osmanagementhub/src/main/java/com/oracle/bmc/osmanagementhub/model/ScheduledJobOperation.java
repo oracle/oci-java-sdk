@@ -128,8 +128,8 @@ public final class ScheduledJobOperation
         }
         /**
          * The software source
-         * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-         * This parameter only applies when the scheduled job is for attaching or detaching software
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). This
+         * parameter only applies when the scheduled job is for attaching or detaching software
          * sources.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("softwareSourceIds")
@@ -137,8 +137,8 @@ public final class ScheduledJobOperation
 
         /**
          * The software source
-         * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-         * This parameter only applies when the scheduled job is for attaching or detaching software
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). This
+         * parameter only applies when the scheduled job is for attaching or detaching software
          * sources.
          *
          * @param softwareSourceIds the value to set
@@ -289,7 +289,7 @@ public final class ScheduledJobOperation
 
     /**
      * The software source
-     * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). This
+     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). This
      * parameter only applies when the scheduled job is for attaching or detaching software sources.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("softwareSourceIds")
@@ -297,7 +297,7 @@ public final class ScheduledJobOperation
 
     /**
      * The software source
-     * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). This
+     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). This
      * parameter only applies when the scheduled job is for attaching or detaching software sources.
      *
      * @return the value

@@ -103,14 +103,14 @@ public final class CreateMetricExtensionDetails
         }
         /**
          * Compartment Identifier
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * Compartment Identifier
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -283,14 +283,14 @@ public final class CreateMetricExtensionDetails
 
     /**
      * Compartment Identifier
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * Compartment Identifier
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      *
      * @return the value
      */

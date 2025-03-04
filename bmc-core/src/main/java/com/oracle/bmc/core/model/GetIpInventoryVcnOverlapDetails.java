@@ -49,17 +49,15 @@ public final class GetIpInventoryVcnOverlapDetails
             return this;
         }
         /**
-         * The list of
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-         * the compartments.
+         * The list of [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the compartments.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentList")
         private java.util.List<String> compartmentList;
 
         /**
-         * The list of
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-         * the compartments.
+         * The list of [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the compartments.
          *
          * @param compartmentList the value to set
          * @return this builder
@@ -117,17 +115,15 @@ public final class GetIpInventoryVcnOverlapDetails
     }
 
     /**
-     * The list of
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartments.
+     * The list of [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the compartments.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentList")
     private final java.util.List<String> compartmentList;
 
     /**
-     * The list of
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartments.
+     * The list of [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the compartments.
      *
      * @return the value
      */

@@ -6,8 +6,8 @@ package com.oracle.bmc.databasemanagement.model;
 
 /**
  * The details of an external DB system connector that uses the [Management Agent Cloud Service
- * (MACS)](https://docs.cloud.oracle.com/iaas/management-agents/index.html) to connect to an
- * external DB system component. <br>
+ * (MACS)](https://docs.oracle.com/iaas/management-agents/index.html) to connect to an external DB
+ * system component. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -67,14 +67,14 @@ public final class ExternalDbSystemDiscoveryMacsConnector
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * management agent used for the external DB system connector.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("agentId")
         private String agentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * management agent used for the external DB system connector.
          *
          * @param agentId the value to set
@@ -164,14 +164,14 @@ public final class ExternalDbSystemDiscoveryMacsConnector
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * management agent used for the external DB system connector.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("agentId")
     private final String agentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * management agent used for the external DB system connector.
      *
      * @return the value

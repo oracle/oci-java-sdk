@@ -115,15 +115,15 @@ public final class Queue extends com.oracle.bmc.http.client.internal.ExplicitlyS
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compartment containing the queue.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment containing the queue.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compartment containing the queue.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment containing the queue.
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -289,15 +289,15 @@ public final class Queue extends com.oracle.bmc.http.client.internal.ExplicitlyS
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the custom encryption key to be used to encrypt messages content.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * custom encryption key to be used to encrypt messages content.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("customEncryptionKeyId")
         private String customEncryptionKeyId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the custom encryption key to be used to encrypt messages content.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * custom encryption key to be used to encrypt messages content.
          *
          * @param customEncryptionKeyId the value to set
          * @return this builder
@@ -517,15 +517,15 @@ public final class Queue extends com.oracle.bmc.http.client.internal.ExplicitlyS
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compartment containing the queue.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment containing the queue.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compartment containing the queue.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment containing the queue.
      *
      * @return the value
      */
@@ -722,15 +722,15 @@ public final class Queue extends com.oracle.bmc.http.client.internal.ExplicitlyS
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the custom encryption key to be used to encrypt messages content.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * custom encryption key to be used to encrypt messages content.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("customEncryptionKeyId")
     private final String customEncryptionKeyId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the custom encryption key to be used to encrypt messages content.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * custom encryption key to be used to encrypt messages content.
      *
      * @return the value
      */

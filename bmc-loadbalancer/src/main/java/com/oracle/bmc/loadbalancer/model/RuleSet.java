@@ -8,7 +8,7 @@ package com.oracle.bmc.loadbalancer.model;
  * A named set of rules associated with a load balancer. Rules are objects that represent actions to
  * apply to a listener, such as adding, altering, or removing HTTP headers. For more information,
  * see [Managing Rule
- * Sets](https://docs.cloud.oracle.com/Content/Balance/Tasks/managingrulesets.htm). <br>
+ * Sets](https://docs.oracle.com/iaas/Content/Balance/Tasks/managingrulesets.htm). <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a

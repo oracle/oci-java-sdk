@@ -125,7 +125,7 @@ public final class AppCatalogListingResourceVersion
          * List of regions that this listing resource version is available.
          *
          * <p>For information about regions, see [Regions and Availability
-         * Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
+         * Domains](https://docs.oracle.com/iaas/Content/General/Concepts/regions.htm).
          *
          * <p>Example: {@code ["us-ashburn-1", "us-phoenix-1"]}
          */
@@ -136,7 +136,7 @@ public final class AppCatalogListingResourceVersion
          * List of regions that this listing resource version is available.
          *
          * <p>For information about regions, see [Regions and Availability
-         * Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
+         * Domains](https://docs.oracle.com/iaas/Content/General/Concepts/regions.htm).
          *
          * <p>Example: {@code ["us-ashburn-1", "us-phoenix-1"]}
          *
@@ -327,7 +327,7 @@ public final class AppCatalogListingResourceVersion
      * List of regions that this listing resource version is available.
      *
      * <p>For information about regions, see [Regions and Availability
-     * Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
+     * Domains](https://docs.oracle.com/iaas/Content/General/Concepts/regions.htm).
      *
      * <p>Example: {@code ["us-ashburn-1", "us-phoenix-1"]}
      */
@@ -338,7 +338,7 @@ public final class AppCatalogListingResourceVersion
      * List of regions that this listing resource version is available.
      *
      * <p>For information about regions, see [Regions and Availability
-     * Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
+     * Domains](https://docs.oracle.com/iaas/Content/General/Concepts/regions.htm).
      *
      * <p>Example: {@code ["us-ashburn-1", "us-phoenix-1"]}
      *

@@ -7,7 +7,7 @@ package com.oracle.bmc.waa.requests;
 import com.oracle.bmc.waa.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waa/DeleteWebAppAccelerationExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waa/DeleteWebAppAccelerationExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * DeleteWebAppAccelerationRequest.
  */
@@ -16,13 +16,13 @@ public class DeleteWebAppAccelerationRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * WebAppAcceleration.
      */
     private String webAppAccelerationId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * WebAppAcceleration.
      */
     public String getWebAppAccelerationId() {
@@ -60,13 +60,13 @@ public class DeleteWebAppAccelerationRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * WebAppAcceleration.
          */
         private String webAppAccelerationId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * WebAppAcceleration.
          *
          * @param webAppAccelerationId the value to set

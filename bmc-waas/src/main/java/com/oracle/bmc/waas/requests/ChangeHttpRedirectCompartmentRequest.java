@@ -7,7 +7,7 @@ package com.oracle.bmc.waas.requests;
 import com.oracle.bmc.waas.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/ChangeHttpRedirectCompartmentExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/ChangeHttpRedirectCompartmentExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * ChangeHttpRedirectCompartmentRequest.
  */
@@ -17,14 +17,14 @@ public class ChangeHttpRedirectCompartmentRequest
                 com.oracle.bmc.waas.model.ChangeHttpRedirectCompartmentDetails> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * HTTP Redirect.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HTTP
+     * Redirect.
      */
     private String httpRedirectId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * HTTP Redirect.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HTTP
+     * Redirect.
      */
     public String getHttpRedirectId() {
         return httpRedirectId;
@@ -106,13 +106,13 @@ public class ChangeHttpRedirectCompartmentRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * HTTP Redirect.
          */
         private String httpRedirectId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * HTTP Redirect.
          *
          * @param httpRedirectId the value to set

@@ -211,7 +211,7 @@ public class DeployEnvironmentSummary
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
      * cross-compatibility only. See [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"bar-key": "value"}}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -220,7 +220,7 @@ public class DeployEnvironmentSummary
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
      * cross-compatibility only. See [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"bar-key": "value"}}
      *
      * @return the value
@@ -231,7 +231,7 @@ public class DeployEnvironmentSummary
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. See
-     * [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -239,7 +239,7 @@ public class DeployEnvironmentSummary
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. See
-     * [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      * @return the value
@@ -250,7 +250,7 @@ public class DeployEnvironmentSummary
 
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
@@ -258,7 +258,7 @@ public class DeployEnvironmentSummary
 
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
      *
      * @return the value

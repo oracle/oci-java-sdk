@@ -41,14 +41,14 @@ public final class ExadataDbSystemMigrationSummary
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * DB system.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("dbSystemId")
         private String dbSystemId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * DB system.
          *
          * @param dbSystemId the value to set
@@ -60,14 +60,14 @@ public final class ExadataDbSystemMigrationSummary
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * cloud VM cluster.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("cloudVmClusterId")
         private String cloudVmClusterId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * cloud VM cluster.
          *
          * @param cloudVmClusterId the value to set
@@ -79,14 +79,14 @@ public final class ExadataDbSystemMigrationSummary
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * cloud Exadata infrastructure.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("cloudExadataInfrastructureId")
         private String cloudExadataInfrastructureId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * cloud Exadata infrastructure.
          *
          * @param cloudExadataInfrastructureId the value to set
@@ -138,14 +138,14 @@ public final class ExadataDbSystemMigrationSummary
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the DB
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB
      * system.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("dbSystemId")
     private final String dbSystemId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the DB
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB
      * system.
      *
      * @return the value
@@ -155,14 +155,14 @@ public final class ExadataDbSystemMigrationSummary
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * cloud VM cluster.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("cloudVmClusterId")
     private final String cloudVmClusterId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * cloud VM cluster.
      *
      * @return the value
@@ -172,14 +172,14 @@ public final class ExadataDbSystemMigrationSummary
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * cloud Exadata infrastructure.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("cloudExadataInfrastructureId")
     private final String cloudExadataInfrastructureId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * cloud Exadata infrastructure.
      *
      * @return the value

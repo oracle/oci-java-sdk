@@ -7,7 +7,7 @@ package com.oracle.bmc.waf.requests;
 import com.oracle.bmc.waf.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waf/ListNetworkAddressListsExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waf/ListNetworkAddressListsExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * ListNetworkAddressListsRequest.
  */
@@ -16,13 +16,13 @@ public class ListNetworkAddressListsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment in which to list resources.
      */
     private String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment in which to list resources.
      */
     public String getCompartmentId() {
@@ -46,13 +46,13 @@ public class ListNetworkAddressListsRequest
     }
     /**
      * A filter to return only the NetworkAddressList with the given
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     private String id;
 
     /**
      * A filter to return only the NetworkAddressList with the given
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     public String getId() {
         return id;
@@ -152,13 +152,13 @@ public class ListNetworkAddressListsRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * compartment in which to list resources.
          */
         private String compartmentId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * compartment in which to list resources.
          *
          * @param compartmentId the value to set
@@ -213,13 +213,13 @@ public class ListNetworkAddressListsRequest
 
         /**
          * A filter to return only the NetworkAddressList with the given
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          */
         private String id = null;
 
         /**
          * A filter to return only the NetworkAddressList with the given
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          * @param id the value to set
          * @return this builder instance

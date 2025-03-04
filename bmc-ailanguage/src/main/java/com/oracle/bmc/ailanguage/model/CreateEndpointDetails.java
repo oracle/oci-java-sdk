@@ -127,14 +127,14 @@ public final class CreateEndpointDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
          * compartment identifier for the endpoint
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
          * compartment identifier for the endpoint
          *
          * @param compartmentId the value to set
@@ -146,15 +146,15 @@ public final class CreateEndpointDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the model to associate with the endpoint.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * model to associate with the endpoint.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("modelId")
         private String modelId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the model to associate with the endpoint.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * model to associate with the endpoint.
          *
          * @param modelId the value to set
          * @return this builder
@@ -380,15 +380,15 @@ public final class CreateEndpointDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
-     * compartment identifier for the endpoint
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) compartment
+     * identifier for the endpoint
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
-     * compartment identifier for the endpoint
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) compartment
+     * identifier for the endpoint
      *
      * @return the value
      */
@@ -397,15 +397,15 @@ public final class CreateEndpointDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the model to associate with the endpoint.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * model to associate with the endpoint.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("modelId")
     private final String modelId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the model to associate with the endpoint.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * model to associate with the endpoint.
      *
      * @return the value
      */

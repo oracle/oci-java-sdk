@@ -7,7 +7,7 @@ package com.oracle.bmc.generativeaiagent.requests;
 import com.oracle.bmc.generativeaiagent.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeaiagent/DeleteDataIngestionJobExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeaiagent/DeleteDataIngestionJobExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * DeleteDataIngestionJobRequest.
  */
@@ -16,14 +16,14 @@ public class DeleteDataIngestionJobRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the data ingestion job.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the data
+     * ingestion job.
      */
     private String dataIngestionJobId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the data ingestion job.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the data
+     * ingestion job.
      */
     public String getDataIngestionJobId() {
         return dataIngestionJobId;
@@ -68,14 +68,14 @@ public class DeleteDataIngestionJobRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the data ingestion job.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * data ingestion job.
          */
         private String dataIngestionJobId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the data ingestion job.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * data ingestion job.
          *
          * @param dataIngestionJobId the value to set
          * @return this builder instance

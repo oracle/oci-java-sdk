@@ -42,7 +42,7 @@ public final class SubnetEndpoint extends Endpoint {
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * subnet containing the IP address. This can be used to disambiguate which subnet is
          * intended, in case the IP address is used in more than one subnet (when there are subnets
          * with overlapping IP ranges).
@@ -51,7 +51,7 @@ public final class SubnetEndpoint extends Endpoint {
         private String subnetId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * subnet containing the IP address. This can be used to disambiguate which subnet is
          * intended, in case the IP address is used in more than one subnet (when there are subnets
          * with overlapping IP ranges).
@@ -118,7 +118,7 @@ public final class SubnetEndpoint extends Endpoint {
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * subnet containing the IP address. This can be used to disambiguate which subnet is intended,
      * in case the IP address is used in more than one subnet (when there are subnets with
      * overlapping IP ranges).
@@ -127,7 +127,7 @@ public final class SubnetEndpoint extends Endpoint {
     private final String subnetId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * subnet containing the IP address. This can be used to disambiguate which subnet is intended,
      * in case the IP address is used in more than one subnet (when there are subnets with
      * overlapping IP ranges).

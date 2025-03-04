@@ -54,14 +54,14 @@ public final class CreateDatabaseFromAnotherDatabaseDetails
     public static class Builder {
         /**
          * The database
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("databaseId")
         private String databaseId;
 
         /**
          * The database
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          * @param databaseId the value to set
          * @return this builder
@@ -235,13 +235,13 @@ public final class CreateDatabaseFromAnotherDatabaseDetails
     }
 
     /**
-     * The database [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * The database [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("databaseId")
     private final String databaseId;
 
     /**
-     * The database [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * The database [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      * @return the value
      */

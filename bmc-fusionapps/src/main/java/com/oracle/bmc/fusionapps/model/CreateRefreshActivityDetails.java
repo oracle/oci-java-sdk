@@ -41,15 +41,15 @@ public final class CreateRefreshActivityDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the source environment
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * source environment
          */
         @com.fasterxml.jackson.annotation.JsonProperty("sourceFusionEnvironmentId")
         private String sourceFusionEnvironmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the source environment
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * source environment
          *
          * @param sourceFusionEnvironmentId the value to set
          * @return this builder
@@ -134,15 +134,15 @@ public final class CreateRefreshActivityDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the source environment
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * source environment
      */
     @com.fasterxml.jackson.annotation.JsonProperty("sourceFusionEnvironmentId")
     private final String sourceFusionEnvironmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the source environment
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * source environment
      *
      * @return the value
      */

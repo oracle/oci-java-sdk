@@ -11,7 +11,7 @@ import com.oracle.bmc.apmcontrolplane.responses.*;
  * Use the Application Performance Monitoring Control Plane API to perform operations such as
  * creating, updating, deleting and listing APM domains and monitoring the progress of these
  * operations using the work request APIs. For more information, see [Application Performance
- * Monitoring](https://docs.cloud.oracle.com/iaas/application-performance-monitoring/index.html).
+ * Monitoring](https://docs.oracle.com/iaas/application-performance-monitoring/index.html).
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 public interface ApmDomainAsync extends AutoCloseable {

@@ -7,21 +7,21 @@ package com.oracle.bmc.waas.requests;
 import com.oracle.bmc.waas.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/ListHttpRedirectsExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/ListHttpRedirectsExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListHttpRedirectsRequest.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181116")
 public class ListHttpRedirectsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compartment. This number is generated when the compartment is created.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment. This number is generated when the compartment is created.
      */
     private String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compartment. This number is generated when the compartment is created.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment. This number is generated when the compartment is created.
      */
     public String getCompartmentId() {
         return compartmentId;
@@ -201,14 +201,14 @@ public class ListHttpRedirectsRequest extends com.oracle.bmc.requests.BmcRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compartment. This number is generated when the compartment is created.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment. This number is generated when the compartment is created.
          */
         private String compartmentId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compartment. This number is generated when the compartment is created.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment. This number is generated when the compartment is created.
          *
          * @param compartmentId the value to set
          * @return this builder instance

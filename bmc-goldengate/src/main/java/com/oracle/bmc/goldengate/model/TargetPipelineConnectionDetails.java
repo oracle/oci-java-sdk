@@ -32,14 +32,14 @@ public final class TargetPipelineConnectionDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * connection being referenced.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("connectionId")
         private String connectionId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * connection being referenced.
          *
          * @param connectionId the value to set
@@ -82,14 +82,14 @@ public final class TargetPipelineConnectionDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * connection being referenced.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("connectionId")
     private final String connectionId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * connection being referenced.
      *
      * @return the value

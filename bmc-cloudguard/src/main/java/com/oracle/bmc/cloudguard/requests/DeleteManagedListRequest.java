@@ -7,7 +7,7 @@ package com.oracle.bmc.cloudguard.requests;
 import com.oracle.bmc.cloudguard.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/DeleteManagedListExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/DeleteManagedListExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use DeleteManagedListRequest.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")

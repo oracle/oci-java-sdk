@@ -9,7 +9,7 @@ package com.oracle.bmc.core.model;
  * addresses that you currently own to Oracle Cloud Infrastructure. A {@code ByoipRange} resource is
  * a record of the imported address block (a BYOIP CIDR block) and also some associated metadata.
  * The process used to [Bring Your Own
- * IP](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/BYOIP.htm) is explained in the
+ * IP](https://docs.oracle.com/iaas/Content/Network/Concepts/BYOIP.htm) is explained in the
  * documentation. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
@@ -114,15 +114,15 @@ public final class ByoipRange extends com.oracle.bmc.http.client.internal.Explic
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compartment containing the BYOIP CIDR block.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment containing the BYOIP CIDR block.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compartment containing the BYOIP CIDR block.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment containing the BYOIP CIDR block.
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -135,7 +135,7 @@ public final class ByoipRange extends com.oracle.bmc.http.client.internal.Explic
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
          */
@@ -145,7 +145,7 @@ public final class ByoipRange extends com.oracle.bmc.http.client.internal.Explic
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
@@ -180,7 +180,7 @@ public final class ByoipRange extends com.oracle.bmc.http.client.internal.Explic
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          */
@@ -190,7 +190,7 @@ public final class ByoipRange extends com.oracle.bmc.http.client.internal.Explic
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          *
@@ -212,15 +212,15 @@ public final class ByoipRange extends com.oracle.bmc.http.client.internal.Explic
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the {@code ByoipRange} resource.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * {@code ByoipRange} resource.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the {@code ByoipRange} resource.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * {@code ByoipRange} resource.
          *
          * @param id the value to set
          * @return this builder
@@ -380,8 +380,8 @@ public final class ByoipRange extends com.oracle.bmc.http.client.internal.Explic
         /**
          * The validation token is an internally-generated ASCII string used in the validation
          * process. See [Importing a CIDR
-         * block](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/BYOIP.htm#import_cidr)
-         * for details.
+         * block](https://docs.oracle.com/iaas/Content/Network/Concepts/BYOIP.htm#import_cidr) for
+         * details.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("validationToken")
         private String validationToken;
@@ -389,8 +389,8 @@ public final class ByoipRange extends com.oracle.bmc.http.client.internal.Explic
         /**
          * The validation token is an internally-generated ASCII string used in the validation
          * process. See [Importing a CIDR
-         * block](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/BYOIP.htm#import_cidr)
-         * for details.
+         * block](https://docs.oracle.com/iaas/Content/Network/Concepts/BYOIP.htm#import_cidr) for
+         * details.
          *
          * @param validationToken the value to set
          * @return this builder
@@ -519,15 +519,15 @@ public final class ByoipRange extends com.oracle.bmc.http.client.internal.Explic
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compartment containing the BYOIP CIDR block.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment containing the BYOIP CIDR block.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compartment containing the BYOIP CIDR block.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment containing the BYOIP CIDR block.
      *
      * @return the value
      */
@@ -538,7 +538,7 @@ public final class ByoipRange extends com.oracle.bmc.http.client.internal.Explic
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
      */
@@ -548,7 +548,7 @@ public final class ByoipRange extends com.oracle.bmc.http.client.internal.Explic
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
@@ -578,7 +578,7 @@ public final class ByoipRange extends com.oracle.bmc.http.client.internal.Explic
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      */
@@ -588,7 +588,7 @@ public final class ByoipRange extends com.oracle.bmc.http.client.internal.Explic
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      *
@@ -606,15 +606,15 @@ public final class ByoipRange extends com.oracle.bmc.http.client.internal.Explic
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the {@code ByoipRange} resource.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * {@code ByoipRange} resource.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the {@code ByoipRange} resource.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * {@code ByoipRange} resource.
      *
      * @return the value
      */
@@ -860,7 +860,7 @@ public final class ByoipRange extends com.oracle.bmc.http.client.internal.Explic
     /**
      * The validation token is an internally-generated ASCII string used in the validation process.
      * See [Importing a CIDR
-     * block](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/BYOIP.htm#import_cidr) for
+     * block](https://docs.oracle.com/iaas/Content/Network/Concepts/BYOIP.htm#import_cidr) for
      * details.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("validationToken")
@@ -869,7 +869,7 @@ public final class ByoipRange extends com.oracle.bmc.http.client.internal.Explic
     /**
      * The validation token is an internally-generated ASCII string used in the validation process.
      * See [Importing a CIDR
-     * block](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/BYOIP.htm#import_cidr) for
+     * block](https://docs.oracle.com/iaas/Content/Network/Concepts/BYOIP.htm#import_cidr) for
      * details.
      *
      * @return the value

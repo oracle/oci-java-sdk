@@ -142,17 +142,17 @@ public final class ModelProvenance
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of a training session(Job or NotebookSession) in which the model was trained. It is used
-         * for model reproducibility purposes.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
+         * training session(Job or NotebookSession) in which the model was trained. It is used for
+         * model reproducibility purposes.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("trainingId")
         private String trainingId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of a training session(Job or NotebookSession) in which the model was trained. It is used
-         * for model reproducibility purposes.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
+         * training session(Job or NotebookSession) in which the model was trained. It is used for
+         * model reproducibility purposes.
          *
          * @param trainingId the value to set
          * @return this builder
@@ -294,7 +294,7 @@ public final class ModelProvenance
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
      * training session(Job or NotebookSession) in which the model was trained. It is used for model
      * reproducibility purposes.
      */
@@ -302,7 +302,7 @@ public final class ModelProvenance
     private final String trainingId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
      * training session(Job or NotebookSession) in which the model was trained. It is used for model
      * reproducibility purposes.
      *

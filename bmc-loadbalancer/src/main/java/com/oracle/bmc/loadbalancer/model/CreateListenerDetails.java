@@ -7,7 +7,7 @@ package com.oracle.bmc.loadbalancer.model;
 /**
  * The configuration details for adding a listener to a backend set. For more information on
  * listener configuration, see [Managing Load Balancer
- * Listeners](https://docs.cloud.oracle.com/Content/Balance/Tasks/managinglisteners.htm).
+ * Listeners](https://docs.oracle.com/iaas/Content/Balance/Tasks/managinglisteners.htm).
  *
  * <p>*Warning:** Oracle recommends that you avoid using any confidential information when you
  * supply string values using the API. <br>

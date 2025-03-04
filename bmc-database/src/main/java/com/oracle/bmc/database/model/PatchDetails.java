@@ -34,14 +34,14 @@ public final class PatchDetails extends com.oracle.bmc.http.client.internal.Expl
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * patch.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("patchId")
         private String patchId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * patch.
          *
          * @param patchId the value to set
@@ -53,14 +53,14 @@ public final class PatchDetails extends com.oracle.bmc.http.client.internal.Expl
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * database software image.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("databaseSoftwareImageId")
         private String databaseSoftwareImageId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * database software image.
          *
          * @param databaseSoftwareImageId the value to set
@@ -124,14 +124,14 @@ public final class PatchDetails extends com.oracle.bmc.http.client.internal.Expl
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * patch.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("patchId")
     private final String patchId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * patch.
      *
      * @return the value
@@ -141,14 +141,14 @@ public final class PatchDetails extends com.oracle.bmc.http.client.internal.Expl
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * database software image.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("databaseSoftwareImageId")
     private final String databaseSoftwareImageId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * database software image.
      *
      * @return the value

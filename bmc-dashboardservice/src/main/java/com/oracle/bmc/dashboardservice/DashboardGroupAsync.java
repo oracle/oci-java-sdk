@@ -11,7 +11,7 @@ import com.oracle.bmc.dashboardservice.responses.*;
  * Use the Oracle Cloud Infrastructure Dashboards service API to manage dashboards in the Console.
  * Dashboards provide an organized and customizable view of resources and their metrics in the
  * Console. For more information, see
- * [Dashboards](https://docs.cloud.oracle.com/Content/Dashboards/home.htm).
+ * [Dashboards](https://docs.oracle.com/iaas/Content/Dashboards/home.htm).
  *
  * <p>*Important:** Resources for the Dashboards service are created in the tenacy's home region.
  * Although it is possible to create dashboard and dashboard group resources in regions other than

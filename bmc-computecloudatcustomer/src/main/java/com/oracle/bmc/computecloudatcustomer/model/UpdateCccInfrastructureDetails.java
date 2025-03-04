@@ -96,17 +96,15 @@ public final class UpdateCccInfrastructureDetails
             return this;
         }
         /**
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for
-         * the network subnet that is used to communicate with Compute Cloud@Customer
-         * infrastructure.
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
+         * network subnet that is used to communicate with Compute Cloud@Customer infrastructure.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
         private String subnetId;
 
         /**
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for
-         * the network subnet that is used to communicate with Compute Cloud@Customer
-         * infrastructure.
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
+         * network subnet that is used to communicate with Compute Cloud@Customer infrastructure.
          *
          * @param subnetId the value to set
          * @return this builder
@@ -301,15 +299,15 @@ public final class UpdateCccInfrastructureDetails
     }
 
     /**
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
-     * network subnet that is used to communicate with Compute Cloud@Customer infrastructure.
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network
+     * subnet that is used to communicate with Compute Cloud@Customer infrastructure.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
     private final String subnetId;
 
     /**
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
-     * network subnet that is used to communicate with Compute Cloud@Customer infrastructure.
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network
+     * subnet that is used to communicate with Compute Cloud@Customer infrastructure.
      *
      * @return the value
      */

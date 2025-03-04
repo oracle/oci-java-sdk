@@ -118,15 +118,15 @@ public final class AutonomousDatabaseConfigurationSummary extends DatabaseConfig
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the database.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * database.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("databaseId")
         private String databaseId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the database.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * database.
          *
          * @param databaseId the value to set
          * @return this builder
@@ -236,15 +236,15 @@ public final class AutonomousDatabaseConfigurationSummary extends DatabaseConfig
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the database.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * database.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("databaseId")
     private final String databaseId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the database.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * database.
      *
      * @return the value
      */

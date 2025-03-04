@@ -10,7 +10,7 @@ import com.oracle.bmc.osmanagementhub.responses.*;
 /**
  * Use the OS Management Hub API to manage and monitor updates and patches for instances in OCI,
  * your private data center, or 3rd-party clouds. For more information, see [Overview of OS
- * Management Hub](https://docs.cloud.oracle.com/iaas/osmh/doc/overview.htm).
+ * Management Hub](https://docs.oracle.com/iaas/osmh/doc/overview.htm).
  *
  * <p>This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by
  * default if no circuit breaker configuration is defined by the user.
@@ -76,7 +76,7 @@ public interface ScheduledJob extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/ChangeScheduledJobCompartmentExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/ChangeScheduledJobCompartmentExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ChangeScheduledJobCompartment API.
      */
@@ -93,7 +93,7 @@ public interface ScheduledJob extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/CreateScheduledJobExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/CreateScheduledJobExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateScheduledJob
      *     API.
      */
@@ -109,7 +109,7 @@ public interface ScheduledJob extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/DeleteScheduledJobExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/DeleteScheduledJobExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteScheduledJob
      *     API.
      */
@@ -125,7 +125,7 @@ public interface ScheduledJob extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/GetScheduledJobExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/GetScheduledJobExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetScheduledJob
      *     API.
      */
@@ -133,7 +133,7 @@ public interface ScheduledJob extends AutoCloseable {
 
     /**
      * Lists scheduled jobs that match the specified compartment or scheduled job
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -142,7 +142,7 @@ public interface ScheduledJob extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/ListScheduledJobsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/ListScheduledJobsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListScheduledJobs
      *     API.
      */
@@ -160,7 +160,7 @@ public interface ScheduledJob extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/RunScheduledJobNowExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/RunScheduledJobNowExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use RunScheduledJobNow
      *     API.
      */
@@ -177,7 +177,7 @@ public interface ScheduledJob extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/UpdateScheduledJobExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/UpdateScheduledJobExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateScheduledJob
      *     API.
      */

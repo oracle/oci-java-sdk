@@ -7,21 +7,21 @@ package com.oracle.bmc.functions.requests;
 import com.oracle.bmc.functions.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/functions/ListFunctionsExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/functions/ListFunctionsExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListFunctionsRequest.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 public class ListFunctionsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the application to which this function belongs.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * application to which this function belongs.
      */
     private String applicationId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the application to which this function belongs.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * application to which this function belongs.
      */
     public String getApplicationId() {
         return applicationId;
@@ -218,14 +218,14 @@ public class ListFunctionsRequest extends com.oracle.bmc.requests.BmcRequest<jav
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the application to which this function belongs.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * application to which this function belongs.
          */
         private String applicationId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the application to which this function belongs.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * application to which this function belongs.
          *
          * @param applicationId the value to set
          * @return this builder instance

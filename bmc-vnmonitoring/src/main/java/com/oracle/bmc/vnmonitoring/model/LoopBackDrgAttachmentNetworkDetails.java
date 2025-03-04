@@ -38,15 +38,15 @@ public final class LoopBackDrgAttachmentNetworkDetails extends DrgAttachmentNetw
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the target IPSec tunnel attachment.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * target IPSec tunnel attachment.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("ids")
         private java.util.List<String> ids;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the target IPSec tunnel attachment.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * target IPSec tunnel attachment.
          *
          * @param ids the value to set
          * @return this builder
@@ -97,15 +97,15 @@ public final class LoopBackDrgAttachmentNetworkDetails extends DrgAttachmentNetw
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the target IPSec tunnel attachment.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * target IPSec tunnel attachment.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("ids")
     private final java.util.List<String> ids;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the target IPSec tunnel attachment.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * target IPSec tunnel attachment.
      *
      * @return the value
      */

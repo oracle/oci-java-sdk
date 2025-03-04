@@ -31,10 +31,10 @@ import com.oracle.bmc.waiter.MaxTimeTerminationStrategy;
  * <ul>
  *   <li>Create a VCN and subnets needed for the DB system and its related resources
  *   <li>Launch a DB system with Exadata shape. See: <a
- *       href="https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm">overview</a>
+ *       href="https://docs.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm">overview</a>
  *       and <a
- *       href="https://docs.cloud.oracle.com/iaas/Content/Database/Tasks/exalaunchingDB.htm">managing
- *       DB systems</a> for more information
+ *       href="https://docs.oracle.com/iaas/Content/Database/Tasks/exalaunchingDB.htm">managing DB
+ *       systems</a> for more information
  * </ul>
  *
  * <p>Resources created by this class will be removed when this example is done.

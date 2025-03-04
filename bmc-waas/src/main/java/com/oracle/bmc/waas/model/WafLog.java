@@ -9,7 +9,7 @@ package com.oracle.bmc.waas.model;
  * timestamp property and other fields varying based on log type. Logs record what rules and
  * countermeasures are triggered by requests and are used as a basis to move request handling into
  * block mode. For more information about WAF logs, see
- * [Logs](https://docs.cloud.oracle.com/iaas/Content/WAF/Tasks/logs.htm). <br>
+ * [Logs](https://docs.oracle.com/iaas/Content/WAF/Tasks/logs.htm). <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -535,14 +535,14 @@ public final class WafLog extends com.oracle.bmc.http.client.internal.Explicitly
         }
         /**
          * The type of log of the request. For more about log types, see
-         * [Logs](https://docs.cloud.oracle.com/iaas/Content/WAF/Tasks/logs.htm).
+         * [Logs](https://docs.oracle.com/iaas/Content/WAF/Tasks/logs.htm).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("logType")
         private String logType;
 
         /**
          * The type of log of the request. For more about log types, see
-         * [Logs](https://docs.cloud.oracle.com/iaas/Content/WAF/Tasks/logs.htm).
+         * [Logs](https://docs.oracle.com/iaas/Content/WAF/Tasks/logs.htm).
          *
          * @param logType the value to set
          * @return this builder
@@ -1085,14 +1085,14 @@ public final class WafLog extends com.oracle.bmc.http.client.internal.Explicitly
 
     /**
      * The type of log of the request. For more about log types, see
-     * [Logs](https://docs.cloud.oracle.com/iaas/Content/WAF/Tasks/logs.htm).
+     * [Logs](https://docs.oracle.com/iaas/Content/WAF/Tasks/logs.htm).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("logType")
     private final String logType;
 
     /**
      * The type of log of the request. For more about log types, see
-     * [Logs](https://docs.cloud.oracle.com/iaas/Content/WAF/Tasks/logs.htm).
+     * [Logs](https://docs.oracle.com/iaas/Content/WAF/Tasks/logs.htm).
      *
      * @return the value
      */

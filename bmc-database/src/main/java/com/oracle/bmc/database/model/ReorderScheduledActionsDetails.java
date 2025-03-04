@@ -34,14 +34,14 @@ public final class ReorderScheduledActionsDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Scheduling Window.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("schedulingWindowId")
         private String schedulingWindowId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Scheduling Window.
          *
          * @param schedulingWindowId the value to set
@@ -108,14 +108,14 @@ public final class ReorderScheduledActionsDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Scheduling Window.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("schedulingWindowId")
     private final String schedulingWindowId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Scheduling Window.
      *
      * @return the value

@@ -102,15 +102,15 @@ public final class ModuleStream extends com.oracle.bmc.http.client.internal.Expl
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the software source that provides this module stream.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * software source that provides this module stream.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("softwareSourceId")
         private String softwareSourceId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the software source that provides this module stream.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * software source that provides this module stream.
          *
          * @param softwareSourceId the value to set
          * @return this builder
@@ -311,15 +311,15 @@ public final class ModuleStream extends com.oracle.bmc.http.client.internal.Expl
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the software source that provides this module stream.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * software source that provides this module stream.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("softwareSourceId")
     private final String softwareSourceId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the software source that provides this module stream.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * software source that provides this module stream.
      *
      * @return the value
      */

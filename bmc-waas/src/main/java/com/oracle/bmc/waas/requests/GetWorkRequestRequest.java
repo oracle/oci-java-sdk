@@ -7,21 +7,21 @@ package com.oracle.bmc.waas.requests;
 import com.oracle.bmc.waas.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/GetWorkRequestExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/GetWorkRequestExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use GetWorkRequestRequest.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181116")
 public class GetWorkRequestRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * work request. This number is generated when work request is created.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the work
+     * request. This number is generated when work request is created.
      */
     private String workRequestId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * work request. This number is generated when work request is created.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the work
+     * request. This number is generated when work request is created.
      */
     public String getWorkRequestId() {
         return workRequestId;
@@ -47,13 +47,13 @@ public class GetWorkRequestRequest extends com.oracle.bmc.requests.BmcRequest<ja
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * work request. This number is generated when work request is created.
          */
         private String workRequestId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * work request. This number is generated when work request is created.
          *
          * @param workRequestId the value to set

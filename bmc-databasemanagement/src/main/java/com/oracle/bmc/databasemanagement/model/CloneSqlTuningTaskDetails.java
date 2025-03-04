@@ -69,7 +69,7 @@ public final class CloneSqlTuningTaskDetails
         }
         /**
          * The identifier of the SQL tuning task being cloned. This is not the
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm). It can be
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). It can be
          * retrieved from the following endpoint {@link
          * #listSqlTuningAdvisorTasks(ListSqlTuningAdvisorTasksRequest) listSqlTuningAdvisorTasks}.
          */
@@ -78,7 +78,7 @@ public final class CloneSqlTuningTaskDetails
 
         /**
          * The identifier of the SQL tuning task being cloned. This is not the
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm). It can be
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). It can be
          * retrieved from the following endpoint {@link
          * #listSqlTuningAdvisorTasks(ListSqlTuningAdvisorTasksRequest) listSqlTuningAdvisorTasks}.
          *
@@ -190,7 +190,7 @@ public final class CloneSqlTuningTaskDetails
 
     /**
      * The identifier of the SQL tuning task being cloned. This is not the
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm). It can be
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). It can be
      * retrieved from the following endpoint {@link
      * #listSqlTuningAdvisorTasks(ListSqlTuningAdvisorTasksRequest) listSqlTuningAdvisorTasks}.
      */
@@ -199,7 +199,7 @@ public final class CloneSqlTuningTaskDetails
 
     /**
      * The identifier of the SQL tuning task being cloned. This is not the
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm). It can be
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). It can be
      * retrieved from the following endpoint {@link
      * #listSqlTuningAdvisorTasks(ListSqlTuningAdvisorTasksRequest) listSqlTuningAdvisorTasks}.
      *

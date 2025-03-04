@@ -7,7 +7,7 @@ package com.oracle.bmc.apmconfig.requests;
 import com.oracle.bmc.apmconfig.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmconfig/ListConfigsExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmconfig/ListConfigsExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListConfigsRequest.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210201")
@@ -63,16 +63,16 @@ public class ListConfigsRequest extends com.oracle.bmc.requests.BmcRequest<java.
     /**
      * The maximum number of results per page, or items to return in a paginated "List" call. For
      * information on how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
-     * Example: {@code 50}
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine). Example:
+     * {@code 50}
      */
     private String page;
 
     /**
      * The maximum number of results per page, or items to return in a paginated "List" call. For
      * information on how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
-     * Example: {@code 50}
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine). Example:
+     * {@code 50}
      */
     public String getPage() {
         return page;
@@ -314,7 +314,7 @@ public class ListConfigsRequest extends com.oracle.bmc.requests.BmcRequest<java.
         /**
          * The maximum number of results per page, or items to return in a paginated "List" call.
          * For information on how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          * Example: {@code 50}
          */
         private String page = null;
@@ -322,7 +322,7 @@ public class ListConfigsRequest extends com.oracle.bmc.requests.BmcRequest<java.
         /**
          * The maximum number of results per page, or items to return in a paginated "List" call.
          * For information on how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          * Example: {@code 50}
          *
          * @param page the value to set

@@ -57,7 +57,7 @@ public final class ObjectLifecyclePolicy
          * The live lifecycle policy on the bucket.
          *
          * <p>For an example of this value, see the [PutObjectLifecyclePolicy API
-         * documentation](https://docs.cloud.oracle.com/iaas/api/#/en/objectstorage/20160918/ObjectLifecyclePolicy/PutObjectLifecyclePolicy).
+         * documentation](https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/ObjectLifecyclePolicy/PutObjectLifecyclePolicy).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<ObjectLifecycleRule> items;
@@ -66,7 +66,7 @@ public final class ObjectLifecyclePolicy
          * The live lifecycle policy on the bucket.
          *
          * <p>For an example of this value, see the [PutObjectLifecyclePolicy API
-         * documentation](https://docs.cloud.oracle.com/iaas/api/#/en/objectstorage/20160918/ObjectLifecyclePolicy/PutObjectLifecyclePolicy).
+         * documentation](https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/ObjectLifecyclePolicy/PutObjectLifecyclePolicy).
          *
          * @param items the value to set
          * @return this builder
@@ -130,7 +130,7 @@ public final class ObjectLifecyclePolicy
      * The live lifecycle policy on the bucket.
      *
      * <p>For an example of this value, see the [PutObjectLifecyclePolicy API
-     * documentation](https://docs.cloud.oracle.com/iaas/api/#/en/objectstorage/20160918/ObjectLifecyclePolicy/PutObjectLifecyclePolicy).
+     * documentation](https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/ObjectLifecyclePolicy/PutObjectLifecyclePolicy).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<ObjectLifecycleRule> items;
@@ -139,7 +139,7 @@ public final class ObjectLifecyclePolicy
      * The live lifecycle policy on the bucket.
      *
      * <p>For an example of this value, see the [PutObjectLifecyclePolicy API
-     * documentation](https://docs.cloud.oracle.com/iaas/api/#/en/objectstorage/20160918/ObjectLifecyclePolicy/PutObjectLifecyclePolicy).
+     * documentation](https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/ObjectLifecyclePolicy/PutObjectLifecyclePolicy).
      *
      * @return the value
      */

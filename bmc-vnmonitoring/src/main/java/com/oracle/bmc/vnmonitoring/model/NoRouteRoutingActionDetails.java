@@ -56,14 +56,14 @@ public final class NoRouteRoutingActionDetails
             return this;
         }
         /**
-         * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * evaluated VCN route table.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("evaluatedVcnRouteTableId")
         private String evaluatedVcnRouteTableId;
 
         /**
-         * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * evaluated VCN route table.
          *
          * @param evaluatedVcnRouteTableId the value to set
@@ -75,14 +75,14 @@ public final class NoRouteRoutingActionDetails
             return this;
         }
         /**
-         * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
          * evaluated DRG route table.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("evaluatedDrgRouteTableId")
         private String evaluatedDrgRouteTableId;
 
         /**
-         * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
          * evaluated DRG route table.
          *
          * @param evaluatedDrgRouteTableId the value to set
@@ -147,14 +147,14 @@ public final class NoRouteRoutingActionDetails
     }
 
     /**
-     * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * evaluated VCN route table.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("evaluatedVcnRouteTableId")
     private final String evaluatedVcnRouteTableId;
 
     /**
-     * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * evaluated VCN route table.
      *
      * @return the value
@@ -164,14 +164,14 @@ public final class NoRouteRoutingActionDetails
     }
 
     /**
-     * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of evaluated
+     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of evaluated
      * DRG route table.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("evaluatedDrgRouteTableId")
     private final String evaluatedDrgRouteTableId;
 
     /**
-     * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of evaluated
+     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of evaluated
      * DRG route table.
      *
      * @return the value

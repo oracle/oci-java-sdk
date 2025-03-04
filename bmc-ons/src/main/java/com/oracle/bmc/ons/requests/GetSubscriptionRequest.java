@@ -7,21 +7,21 @@ package com.oracle.bmc.ons.requests;
 import com.oracle.bmc.ons.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ons/GetSubscriptionExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ons/GetSubscriptionExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use GetSubscriptionRequest.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 public class GetSubscriptionRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the subscription to retrieve.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * subscription to retrieve.
      */
     private String subscriptionId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the subscription to retrieve.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * subscription to retrieve.
      */
     public String getSubscriptionId() {
         return subscriptionId;
@@ -47,14 +47,14 @@ public class GetSubscriptionRequest extends com.oracle.bmc.requests.BmcRequest<j
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the subscription to retrieve.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * subscription to retrieve.
          */
         private String subscriptionId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the subscription to retrieve.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * subscription to retrieve.
          *
          * @param subscriptionId the value to set
          * @return this builder instance

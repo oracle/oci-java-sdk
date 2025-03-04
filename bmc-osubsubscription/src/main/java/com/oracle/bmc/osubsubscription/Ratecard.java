@@ -75,7 +75,7 @@ public interface Ratecard extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osubsubscription/ListRateCardsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osubsubscription/ListRateCardsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListRateCards API.
      */
     ListRateCardsResponse listRateCards(ListRateCardsRequest request);

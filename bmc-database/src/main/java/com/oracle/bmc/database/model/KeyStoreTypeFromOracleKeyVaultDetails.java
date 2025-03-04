@@ -58,18 +58,18 @@ public final class KeyStoreTypeFromOracleKeyVaultDetails extends KeyStoreTypeDet
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Oracle Cloud Infrastructure
-         * [vault](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+         * [vault](https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
          * This parameter and {@code secretId} are required for Customer Managed Keys.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("vaultId")
         private String vaultId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Oracle Cloud Infrastructure
-         * [vault](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+         * [vault](https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
          * This parameter and {@code secretId} are required for Customer Managed Keys.
          *
          * @param vaultId the value to set
@@ -81,17 +81,17 @@ public final class KeyStoreTypeFromOracleKeyVaultDetails extends KeyStoreTypeDet
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Oracle Cloud Infrastructure
-         * [secret](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+         * [secret](https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("secretId")
         private String secretId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Oracle Cloud Infrastructure
-         * [secret](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+         * [secret](https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
          *
          * @param secretId the value to set
          * @return this builder
@@ -182,18 +182,18 @@ public final class KeyStoreTypeFromOracleKeyVaultDetails extends KeyStoreTypeDet
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Oracle Cloud Infrastructure
-     * [vault](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+     * [vault](https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
      * This parameter and {@code secretId} are required for Customer Managed Keys.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("vaultId")
     private final String vaultId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Oracle Cloud Infrastructure
-     * [vault](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+     * [vault](https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
      * This parameter and {@code secretId} are required for Customer Managed Keys.
      *
      * @return the value
@@ -203,17 +203,17 @@ public final class KeyStoreTypeFromOracleKeyVaultDetails extends KeyStoreTypeDet
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Oracle Cloud Infrastructure
-     * [secret](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+     * [secret](https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("secretId")
     private final String secretId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Oracle Cloud Infrastructure
-     * [secret](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+     * [secret](https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
      *
      * @return the value
      */

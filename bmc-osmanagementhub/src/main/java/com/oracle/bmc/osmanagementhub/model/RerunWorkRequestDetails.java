@@ -35,7 +35,7 @@ public final class RerunWorkRequestDetails
     public static class Builder {
         /**
          * List of managed instance
-         * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to
          * affected by the rerun of the work request.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("managedInstances")
@@ -43,7 +43,7 @@ public final class RerunWorkRequestDetails
 
         /**
          * List of managed instance
-         * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to
          * affected by the rerun of the work request.
          *
          * @param managedInstances the value to set
@@ -99,16 +99,16 @@ public final class RerunWorkRequestDetails
 
     /**
      * List of managed instance
-     * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to
-     * affected by the rerun of the work request.
+     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to affected by
+     * the rerun of the work request.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("managedInstances")
     private final java.util.List<String> managedInstances;
 
     /**
      * List of managed instance
-     * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to
-     * affected by the rerun of the work request.
+     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to affected by
+     * the rerun of the work request.
      *
      * @return the value
      */

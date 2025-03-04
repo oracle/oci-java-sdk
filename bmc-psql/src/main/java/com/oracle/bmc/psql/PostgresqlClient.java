@@ -123,6 +123,38 @@ public class PostgresqlClient extends com.oracle.bmc.http.internal.BaseSyncClien
     }
 
     @Override
+    public BackupCopyResponse backupCopy(BackupCopyRequest request) {
+
+        Validate.notBlank(request.getBackupId(), "backupId must not be blank");
+        Objects.requireNonNull(request.getBackupCopyDetails(), "backupCopyDetails is required");
+
+        return clientCall(request, BackupCopyResponse::builder)
+                .logger(LOG, "backupCopy")
+                .serviceDetails(
+                        "Postgresql",
+                        "BackupCopy",
+                        "https://docs.oracle.com/iaas/api/#/en/postgresql/20220915/Backup/BackupCopy")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(BackupCopyRequest::builder)
+                .basePath("/20220915")
+                .appendPathParam("backups")
+                .appendPathParam(request.getBackupId())
+                .appendPathParam("actions")
+                .appendPathParam("copy")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id", BackupCopyResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", BackupCopyResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public ChangeBackupCompartmentResponse changeBackupCompartment(
             ChangeBackupCompartmentRequest request) {
 
@@ -683,6 +715,7 @@ public class PostgresqlClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .appendPathParam("configurations")
                 .appendQueryParam("compartmentId", request.getCompartmentId())
                 .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendEnumQueryParam("configType", request.getConfigType())
                 .appendQueryParam("displayName", request.getDisplayName())
                 .appendQueryParam("dbVersion", request.getDbVersion())
                 .appendQueryParam("shape", request.getShape())

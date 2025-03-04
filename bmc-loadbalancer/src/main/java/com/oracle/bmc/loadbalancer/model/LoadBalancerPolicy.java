@@ -7,7 +7,7 @@ package com.oracle.bmc.loadbalancer.model;
 /**
  * A policy that determines how traffic is distributed among backend servers. For more information
  * on load balancing policies, see [How Load Balancing Policies
- * Work](https://docs.cloud.oracle.com/Content/Balance/Reference/lbpolicies.htm). <br>
+ * Work](https://docs.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm). <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a

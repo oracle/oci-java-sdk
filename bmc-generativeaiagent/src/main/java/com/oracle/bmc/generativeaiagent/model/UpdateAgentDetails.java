@@ -84,16 +84,14 @@ public final class UpdateAgentDetails
             return this;
         }
         /**
-         * List of
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+         * List of [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
          * the knowledgeBases associated with agent.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("knowledgeBaseIds")
         private java.util.List<String> knowledgeBaseIds;
 
         /**
-         * List of
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+         * List of [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
          * the knowledgeBases associated with agent.
          *
          * @param knowledgeBaseIds the value to set
@@ -122,7 +120,7 @@ public final class UpdateAgentDetails
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          */
@@ -132,7 +130,7 @@ public final class UpdateAgentDetails
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          *
@@ -147,7 +145,7 @@ public final class UpdateAgentDetails
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
          */
@@ -157,7 +155,7 @@ public final class UpdateAgentDetails
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
@@ -253,15 +251,15 @@ public final class UpdateAgentDetails
     }
 
     /**
-     * List of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-     * of the knowledgeBases associated with agent.
+     * List of [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * knowledgeBases associated with agent.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("knowledgeBaseIds")
     private final java.util.List<String> knowledgeBaseIds;
 
     /**
-     * List of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-     * of the knowledgeBases associated with agent.
+     * List of [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * knowledgeBases associated with agent.
      *
      * @return the value
      */
@@ -285,7 +283,7 @@ public final class UpdateAgentDetails
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      */
@@ -295,7 +293,7 @@ public final class UpdateAgentDetails
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      *
@@ -308,7 +306,7 @@ public final class UpdateAgentDetails
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
      */
@@ -318,7 +316,7 @@ public final class UpdateAgentDetails
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
      *

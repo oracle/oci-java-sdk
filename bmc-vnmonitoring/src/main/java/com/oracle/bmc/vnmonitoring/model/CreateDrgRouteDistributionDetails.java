@@ -105,15 +105,15 @@ public final class CreateDrgRouteDistributionDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the DRG the DRG route table belongs to.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * DRG the DRG route table belongs to.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("drgId")
         private String drgId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the DRG the DRG route table belongs to.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * DRG the DRG route table belongs to.
          *
          * @param drgId the value to set
          * @return this builder
@@ -242,15 +242,15 @@ public final class CreateDrgRouteDistributionDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the DRG the DRG route table belongs to.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG
+     * the DRG route table belongs to.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("drgId")
     private final String drgId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the DRG the DRG route table belongs to.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG
+     * the DRG route table belongs to.
      *
      * @return the value
      */

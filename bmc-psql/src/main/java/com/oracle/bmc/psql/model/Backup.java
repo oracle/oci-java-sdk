@@ -28,6 +28,7 @@ public final class Backup extends com.oracle.bmc.http.client.internal.Explicitly
         "compartmentId",
         "sourceType",
         "timeCreated",
+        "timeCreatedPrecise",
         "timeUpdated",
         "lifecycleState",
         "lifecycleDetails",
@@ -35,8 +36,10 @@ public final class Backup extends com.oracle.bmc.http.client.internal.Explicitly
         "backupSize",
         "dbSystemId",
         "dbSystemDetails",
+        "sourceBackupDetails",
         "lastAcceptedRequestToken",
         "lastCompletedRequestToken",
+        "copyStatus",
         "freeformTags",
         "definedTags",
         "systemTags"
@@ -48,6 +51,7 @@ public final class Backup extends com.oracle.bmc.http.client.internal.Explicitly
             String compartmentId,
             SourceType sourceType,
             java.util.Date timeCreated,
+            java.util.Date timeCreatedPrecise,
             java.util.Date timeUpdated,
             LifecycleState lifecycleState,
             String lifecycleDetails,
@@ -55,8 +59,10 @@ public final class Backup extends com.oracle.bmc.http.client.internal.Explicitly
             Integer backupSize,
             String dbSystemId,
             DbSystemDetails dbSystemDetails,
+            SourceBackupDetails sourceBackupDetails,
             String lastAcceptedRequestToken,
             String lastCompletedRequestToken,
+            java.util.List<BackupCopyStatusDetails> copyStatus,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags) {
@@ -67,6 +73,7 @@ public final class Backup extends com.oracle.bmc.http.client.internal.Explicitly
         this.compartmentId = compartmentId;
         this.sourceType = sourceType;
         this.timeCreated = timeCreated;
+        this.timeCreatedPrecise = timeCreatedPrecise;
         this.timeUpdated = timeUpdated;
         this.lifecycleState = lifecycleState;
         this.lifecycleDetails = lifecycleDetails;
@@ -74,8 +81,10 @@ public final class Backup extends com.oracle.bmc.http.client.internal.Explicitly
         this.backupSize = backupSize;
         this.dbSystemId = dbSystemId;
         this.dbSystemDetails = dbSystemDetails;
+        this.sourceBackupDetails = sourceBackupDetails;
         this.lastAcceptedRequestToken = lastAcceptedRequestToken;
         this.lastCompletedRequestToken = lastCompletedRequestToken;
+        this.copyStatus = copyStatus;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.systemTags = systemTags;
@@ -84,14 +93,14 @@ public final class Backup extends com.oracle.bmc.http.client.internal.Explicitly
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * backup.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * backup.
          *
          * @param id the value to set
@@ -133,14 +142,14 @@ public final class Backup extends com.oracle.bmc.http.client.internal.Explicitly
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * compartment that contains the backup.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * compartment that contains the backup.
          *
          * @param compartmentId the value to set
@@ -151,12 +160,16 @@ public final class Backup extends com.oracle.bmc.http.client.internal.Explicitly
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** Specifies whether the backup was created manually, or by a management policy. */
+        /**
+         * Specifies whether the backup was created manually, taken on schedule defined in the a
+         * backup policy, or copied from the remote location.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("sourceType")
         private SourceType sourceType;
 
         /**
-         * Specifies whether the backup was created manually, or by a management policy.
+         * Specifies whether the backup was created manually, taken on schedule defined in the a
+         * backup policy, or copied from the remote location.
          *
          * @param sourceType the value to set
          * @return this builder
@@ -187,6 +200,31 @@ public final class Backup extends com.oracle.bmc.http.client.internal.Explicitly
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
+            return this;
+        }
+        /**
+         * The date and time the backup was created. This is the time the actual point-in-time data
+         * snapshot was taken, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp
+         * format.
+         *
+         * <p>Example: {@code 2016-08-25T21:10:29.600Z}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("timeCreatedPrecise")
+        private java.util.Date timeCreatedPrecise;
+
+        /**
+         * The date and time the backup was created. This is the time the actual point-in-time data
+         * snapshot was taken, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp
+         * format.
+         *
+         * <p>Example: {@code 2016-08-25T21:10:29.600Z}
+         *
+         * @param timeCreatedPrecise the value to set
+         * @return this builder
+         */
+        public Builder timeCreatedPrecise(java.util.Date timeCreatedPrecise) {
+            this.timeCreatedPrecise = timeCreatedPrecise;
+            this.__explicitlySet__.add("timeCreatedPrecise");
             return this;
         }
         /**
@@ -277,14 +315,14 @@ public final class Backup extends com.oracle.bmc.http.client.internal.Explicitly
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * backup's source database system.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("dbSystemId")
         private String dbSystemId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * backup's source database system.
          *
          * @param dbSystemId the value to set
@@ -302,6 +340,15 @@ public final class Backup extends com.oracle.bmc.http.client.internal.Explicitly
         public Builder dbSystemDetails(DbSystemDetails dbSystemDetails) {
             this.dbSystemDetails = dbSystemDetails;
             this.__explicitlySet__.add("dbSystemDetails");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("sourceBackupDetails")
+        private SourceBackupDetails sourceBackupDetails;
+
+        public Builder sourceBackupDetails(SourceBackupDetails sourceBackupDetails) {
+            this.sourceBackupDetails = sourceBackupDetails;
+            this.__explicitlySet__.add("sourceBackupDetails");
             return this;
         }
         /** lastAcceptedRequestToken from MP. */
@@ -332,6 +379,21 @@ public final class Backup extends com.oracle.bmc.http.client.internal.Explicitly
         public Builder lastCompletedRequestToken(String lastCompletedRequestToken) {
             this.lastCompletedRequestToken = lastCompletedRequestToken;
             this.__explicitlySet__.add("lastCompletedRequestToken");
+            return this;
+        }
+        /** List of status for Backup Copy */
+        @com.fasterxml.jackson.annotation.JsonProperty("copyStatus")
+        private java.util.List<BackupCopyStatusDetails> copyStatus;
+
+        /**
+         * List of status for Backup Copy
+         *
+         * @param copyStatus the value to set
+         * @return this builder
+         */
+        public Builder copyStatus(java.util.List<BackupCopyStatusDetails> copyStatus) {
+            this.copyStatus = copyStatus;
+            this.__explicitlySet__.add("copyStatus");
             return this;
         }
         /**
@@ -405,6 +467,7 @@ public final class Backup extends com.oracle.bmc.http.client.internal.Explicitly
                             this.compartmentId,
                             this.sourceType,
                             this.timeCreated,
+                            this.timeCreatedPrecise,
                             this.timeUpdated,
                             this.lifecycleState,
                             this.lifecycleDetails,
@@ -412,8 +475,10 @@ public final class Backup extends com.oracle.bmc.http.client.internal.Explicitly
                             this.backupSize,
                             this.dbSystemId,
                             this.dbSystemDetails,
+                            this.sourceBackupDetails,
                             this.lastAcceptedRequestToken,
                             this.lastCompletedRequestToken,
+                            this.copyStatus,
                             this.freeformTags,
                             this.definedTags,
                             this.systemTags);
@@ -443,6 +508,9 @@ public final class Backup extends com.oracle.bmc.http.client.internal.Explicitly
             if (model.wasPropertyExplicitlySet("timeCreated")) {
                 this.timeCreated(model.getTimeCreated());
             }
+            if (model.wasPropertyExplicitlySet("timeCreatedPrecise")) {
+                this.timeCreatedPrecise(model.getTimeCreatedPrecise());
+            }
             if (model.wasPropertyExplicitlySet("timeUpdated")) {
                 this.timeUpdated(model.getTimeUpdated());
             }
@@ -464,11 +532,17 @@ public final class Backup extends com.oracle.bmc.http.client.internal.Explicitly
             if (model.wasPropertyExplicitlySet("dbSystemDetails")) {
                 this.dbSystemDetails(model.getDbSystemDetails());
             }
+            if (model.wasPropertyExplicitlySet("sourceBackupDetails")) {
+                this.sourceBackupDetails(model.getSourceBackupDetails());
+            }
             if (model.wasPropertyExplicitlySet("lastAcceptedRequestToken")) {
                 this.lastAcceptedRequestToken(model.getLastAcceptedRequestToken());
             }
             if (model.wasPropertyExplicitlySet("lastCompletedRequestToken")) {
                 this.lastCompletedRequestToken(model.getLastCompletedRequestToken());
+            }
+            if (model.wasPropertyExplicitlySet("copyStatus")) {
+                this.copyStatus(model.getCopyStatus());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -493,14 +567,14 @@ public final class Backup extends com.oracle.bmc.http.client.internal.Explicitly
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * backup.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * backup.
      *
      * @return the value
@@ -536,14 +610,14 @@ public final class Backup extends com.oracle.bmc.http.client.internal.Explicitly
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment that contains the backup.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment that contains the backup.
      *
      * @return the value
@@ -552,10 +626,14 @@ public final class Backup extends com.oracle.bmc.http.client.internal.Explicitly
         return compartmentId;
     }
 
-    /** Specifies whether the backup was created manually, or by a management policy. */
+    /**
+     * Specifies whether the backup was created manually, taken on schedule defined in the a backup
+     * policy, or copied from the remote location.
+     */
     public enum SourceType implements com.oracle.bmc.http.internal.BmcEnum {
         Scheduled("SCHEDULED"),
         Manual("MANUAL"),
+        Copied("COPIED"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by
@@ -598,12 +676,16 @@ public final class Backup extends com.oracle.bmc.http.client.internal.Explicitly
             return UnknownEnumValue;
         }
     };
-    /** Specifies whether the backup was created manually, or by a management policy. */
+    /**
+     * Specifies whether the backup was created manually, taken on schedule defined in the a backup
+     * policy, or copied from the remote location.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("sourceType")
     private final SourceType sourceType;
 
     /**
-     * Specifies whether the backup was created manually, or by a management policy.
+     * Specifies whether the backup was created manually, taken on schedule defined in the a backup
+     * policy, or copied from the remote location.
      *
      * @return the value
      */
@@ -630,6 +712,29 @@ public final class Backup extends com.oracle.bmc.http.client.internal.Explicitly
      */
     public java.util.Date getTimeCreated() {
         return timeCreated;
+    }
+
+    /**
+     * The date and time the backup was created. This is the time the actual point-in-time data
+     * snapshot was taken, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp
+     * format.
+     *
+     * <p>Example: {@code 2016-08-25T21:10:29.600Z}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("timeCreatedPrecise")
+    private final java.util.Date timeCreatedPrecise;
+
+    /**
+     * The date and time the backup was created. This is the time the actual point-in-time data
+     * snapshot was taken, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp
+     * format.
+     *
+     * <p>Example: {@code 2016-08-25T21:10:29.600Z}
+     *
+     * @return the value
+     */
+    public java.util.Date getTimeCreatedPrecise() {
+        return timeCreatedPrecise;
     }
 
     /**
@@ -759,14 +864,14 @@ public final class Backup extends com.oracle.bmc.http.client.internal.Explicitly
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * backup's source database system.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("dbSystemId")
     private final String dbSystemId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * backup's source database system.
      *
      * @return the value
@@ -780,6 +885,13 @@ public final class Backup extends com.oracle.bmc.http.client.internal.Explicitly
 
     public DbSystemDetails getDbSystemDetails() {
         return dbSystemDetails;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("sourceBackupDetails")
+    private final SourceBackupDetails sourceBackupDetails;
+
+    public SourceBackupDetails getSourceBackupDetails() {
+        return sourceBackupDetails;
     }
 
     /** lastAcceptedRequestToken from MP. */
@@ -806,6 +918,19 @@ public final class Backup extends com.oracle.bmc.http.client.internal.Explicitly
      */
     public String getLastCompletedRequestToken() {
         return lastCompletedRequestToken;
+    }
+
+    /** List of status for Backup Copy */
+    @com.fasterxml.jackson.annotation.JsonProperty("copyStatus")
+    private final java.util.List<BackupCopyStatusDetails> copyStatus;
+
+    /**
+     * List of status for Backup Copy
+     *
+     * @return the value
+     */
+    public java.util.List<BackupCopyStatusDetails> getCopyStatus() {
+        return copyStatus;
     }
 
     /**
@@ -880,6 +1005,7 @@ public final class Backup extends com.oracle.bmc.http.client.internal.Explicitly
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", sourceType=").append(String.valueOf(this.sourceType));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", timeCreatedPrecise=").append(String.valueOf(this.timeCreatedPrecise));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
@@ -887,10 +1013,12 @@ public final class Backup extends com.oracle.bmc.http.client.internal.Explicitly
         sb.append(", backupSize=").append(String.valueOf(this.backupSize));
         sb.append(", dbSystemId=").append(String.valueOf(this.dbSystemId));
         sb.append(", dbSystemDetails=").append(String.valueOf(this.dbSystemDetails));
+        sb.append(", sourceBackupDetails=").append(String.valueOf(this.sourceBackupDetails));
         sb.append(", lastAcceptedRequestToken=")
                 .append(String.valueOf(this.lastAcceptedRequestToken));
         sb.append(", lastCompletedRequestToken=")
                 .append(String.valueOf(this.lastCompletedRequestToken));
+        sb.append(", copyStatus=").append(String.valueOf(this.copyStatus));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
@@ -914,6 +1042,7 @@ public final class Backup extends com.oracle.bmc.http.client.internal.Explicitly
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.sourceType, other.sourceType)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.timeCreatedPrecise, other.timeCreatedPrecise)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
@@ -921,10 +1050,12 @@ public final class Backup extends com.oracle.bmc.http.client.internal.Explicitly
                 && java.util.Objects.equals(this.backupSize, other.backupSize)
                 && java.util.Objects.equals(this.dbSystemId, other.dbSystemId)
                 && java.util.Objects.equals(this.dbSystemDetails, other.dbSystemDetails)
+                && java.util.Objects.equals(this.sourceBackupDetails, other.sourceBackupDetails)
                 && java.util.Objects.equals(
                         this.lastAcceptedRequestToken, other.lastAcceptedRequestToken)
                 && java.util.Objects.equals(
                         this.lastCompletedRequestToken, other.lastCompletedRequestToken)
+                && java.util.Objects.equals(this.copyStatus, other.copyStatus)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
@@ -943,6 +1074,11 @@ public final class Backup extends com.oracle.bmc.http.client.internal.Explicitly
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         result = (result * PRIME) + (this.sourceType == null ? 43 : this.sourceType.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeCreatedPrecise == null
+                                ? 43
+                                : this.timeCreatedPrecise.hashCode());
         result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
         result =
                 (result * PRIME)
@@ -960,6 +1096,11 @@ public final class Backup extends com.oracle.bmc.http.client.internal.Explicitly
                         + (this.dbSystemDetails == null ? 43 : this.dbSystemDetails.hashCode());
         result =
                 (result * PRIME)
+                        + (this.sourceBackupDetails == null
+                                ? 43
+                                : this.sourceBackupDetails.hashCode());
+        result =
+                (result * PRIME)
                         + (this.lastAcceptedRequestToken == null
                                 ? 43
                                 : this.lastAcceptedRequestToken.hashCode());
@@ -968,6 +1109,7 @@ public final class Backup extends com.oracle.bmc.http.client.internal.Explicitly
                         + (this.lastCompletedRequestToken == null
                                 ? 43
                                 : this.lastCompletedRequestToken.hashCode());
+        result = (result * PRIME) + (this.copyStatus == null ? 43 : this.copyStatus.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());

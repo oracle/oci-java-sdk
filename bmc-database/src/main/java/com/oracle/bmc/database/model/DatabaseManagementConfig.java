@@ -56,7 +56,7 @@ public final class DatabaseManagementConfig
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * {@link
          * #createExternalDatabaseConnectorDetails(CreateExternalDatabaseConnectorDetailsRequest)
          * createExternalDatabaseConnectorDetails}.
@@ -65,7 +65,7 @@ public final class DatabaseManagementConfig
         private String databaseManagementConnectionId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * {@link
          * #createExternalDatabaseConnectorDetails(CreateExternalDatabaseConnectorDetailsRequest)
          * createExternalDatabaseConnectorDetails}.
@@ -197,7 +197,7 @@ public final class DatabaseManagementConfig
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * {@link #createExternalDatabaseConnectorDetails(CreateExternalDatabaseConnectorDetailsRequest)
      * createExternalDatabaseConnectorDetails}.
      */
@@ -205,7 +205,7 @@ public final class DatabaseManagementConfig
     private final String databaseManagementConnectionId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * {@link #createExternalDatabaseConnectorDetails(CreateExternalDatabaseConnectorDetailsRequest)
      * createExternalDatabaseConnectorDetails}.
      *

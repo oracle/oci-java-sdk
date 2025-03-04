@@ -64,15 +64,15 @@ public final class PipelineDataflowStepDetails extends PipelineStepDetails {
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the dataflow application to be used as a step.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * dataflow application to be used as a step.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("applicationId")
         private String applicationId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the dataflow application to be used as a step.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * dataflow application to be used as a step.
          *
          * @param applicationId the value to set
          * @return this builder
@@ -158,15 +158,15 @@ public final class PipelineDataflowStepDetails extends PipelineStepDetails {
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the dataflow application to be used as a step.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * dataflow application to be used as a step.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("applicationId")
     private final String applicationId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the dataflow application to be used as a step.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * dataflow application to be used as a step.
      *
      * @return the value
      */

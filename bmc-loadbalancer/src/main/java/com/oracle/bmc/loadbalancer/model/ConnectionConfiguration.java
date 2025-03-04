@@ -47,7 +47,7 @@ public final class ConnectionConfiguration
          * for send operations.
          *
          * <p>For more information, see [Connection
-         * Configuration](https://docs.cloud.oracle.com/Content/Balance/Reference/connectionreuse.htm#ConnectionConfiguration).
+         * Configuration](https://docs.oracle.com/iaas/Content/Balance/Reference/connectionreuse.htm#ConnectionConfiguration).
          *
          * <p>Example: {@code 1200}
          */
@@ -61,7 +61,7 @@ public final class ConnectionConfiguration
          * for send operations.
          *
          * <p>For more information, see [Connection
-         * Configuration](https://docs.cloud.oracle.com/Content/Balance/Reference/connectionreuse.htm#ConnectionConfiguration).
+         * Configuration](https://docs.oracle.com/iaas/Content/Balance/Reference/connectionreuse.htm#ConnectionConfiguration).
          *
          * <p>Example: {@code 1200}
          *
@@ -161,7 +161,7 @@ public final class ConnectionConfiguration
      * operations.
      *
      * <p>For more information, see [Connection
-     * Configuration](https://docs.cloud.oracle.com/Content/Balance/Reference/connectionreuse.htm#ConnectionConfiguration).
+     * Configuration](https://docs.oracle.com/iaas/Content/Balance/Reference/connectionreuse.htm#ConnectionConfiguration).
      *
      * <p>Example: {@code 1200}
      */
@@ -175,7 +175,7 @@ public final class ConnectionConfiguration
      * operations.
      *
      * <p>For more information, see [Connection
-     * Configuration](https://docs.cloud.oracle.com/Content/Balance/Reference/connectionreuse.htm#ConnectionConfiguration).
+     * Configuration](https://docs.oracle.com/iaas/Content/Balance/Reference/connectionreuse.htm#ConnectionConfiguration).
      *
      * <p>Example: {@code 1200}
      *

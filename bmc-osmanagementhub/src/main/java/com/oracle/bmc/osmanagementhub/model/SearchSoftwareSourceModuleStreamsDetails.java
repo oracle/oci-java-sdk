@@ -41,14 +41,14 @@ public final class SearchSoftwareSourceModuleStreamsDetails
     public static class Builder {
         /**
          * List of software source
-         * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("softwareSourceIds")
         private java.util.List<String> softwareSourceIds;
 
         /**
          * List of software source
-         * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          * @param softwareSourceIds the value to set
          * @return this builder
@@ -146,14 +146,14 @@ public final class SearchSoftwareSourceModuleStreamsDetails
 
     /**
      * List of software source
-     * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("softwareSourceIds")
     private final java.util.List<String> softwareSourceIds;
 
     /**
      * List of software source
-     * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      * @return the value
      */

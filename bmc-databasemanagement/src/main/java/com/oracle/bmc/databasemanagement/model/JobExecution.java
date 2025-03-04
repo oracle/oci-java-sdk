@@ -132,14 +132,14 @@ public final class JobExecution extends com.oracle.bmc.http.client.internal.Expl
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * compartment in which the parent job resides.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * compartment in which the parent job resides.
          *
          * @param compartmentId the value to set
@@ -151,14 +151,14 @@ public final class JobExecution extends com.oracle.bmc.http.client.internal.Expl
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Managed Database Group where the parent job has to be executed.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("managedDatabaseGroupId")
         private String managedDatabaseGroupId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Managed Database Group where the parent job has to be executed.
          *
          * @param managedDatabaseGroupId the value to set
@@ -170,14 +170,14 @@ public final class JobExecution extends com.oracle.bmc.http.client.internal.Expl
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Managed Database associated with the job execution.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("managedDatabaseId")
         private String managedDatabaseId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Managed Database associated with the job execution.
          *
          * @param managedDatabaseId the value to set
@@ -283,14 +283,14 @@ public final class JobExecution extends com.oracle.bmc.http.client.internal.Expl
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * parent job.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("jobId")
         private String jobId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * parent job.
          *
          * @param jobId the value to set
@@ -612,14 +612,14 @@ public final class JobExecution extends com.oracle.bmc.http.client.internal.Expl
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment in which the parent job resides.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment in which the parent job resides.
      *
      * @return the value
@@ -629,14 +629,14 @@ public final class JobExecution extends com.oracle.bmc.http.client.internal.Expl
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Managed Database Group where the parent job has to be executed.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("managedDatabaseGroupId")
     private final String managedDatabaseGroupId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Managed Database Group where the parent job has to be executed.
      *
      * @return the value
@@ -646,14 +646,14 @@ public final class JobExecution extends com.oracle.bmc.http.client.internal.Expl
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Managed Database associated with the job execution.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("managedDatabaseId")
     private final String managedDatabaseId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Managed Database associated with the job execution.
      *
      * @return the value
@@ -745,14 +745,14 @@ public final class JobExecution extends com.oracle.bmc.http.client.internal.Expl
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * parent job.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("jobId")
     private final String jobId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * parent job.
      *
      * @return the value

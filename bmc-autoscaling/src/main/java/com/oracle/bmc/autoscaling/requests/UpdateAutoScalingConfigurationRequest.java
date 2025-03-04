@@ -7,7 +7,7 @@ package com.oracle.bmc.autoscaling.requests;
 import com.oracle.bmc.autoscaling.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/autoscaling/UpdateAutoScalingConfigurationExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/autoscaling/UpdateAutoScalingConfigurationExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * UpdateAutoScalingConfigurationRequest.
  */
@@ -17,13 +17,13 @@ public class UpdateAutoScalingConfigurationRequest
                 com.oracle.bmc.autoscaling.model.UpdateAutoScalingConfigurationDetails> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * autoscaling configuration.
      */
     private String autoScalingConfigurationId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * autoscaling configuration.
      */
     public String getAutoScalingConfigurationId() {
@@ -100,13 +100,13 @@ public class UpdateAutoScalingConfigurationRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * autoscaling configuration.
          */
         private String autoScalingConfigurationId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * autoscaling configuration.
          *
          * @param autoScalingConfigurationId the value to set

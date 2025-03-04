@@ -108,16 +108,16 @@ public final class HealthEntityDocumentResult
         }
         /**
          * Language code of the document. Please refer to respective model [API
-         * documentation](https://docs.cloud.oracle.com/iaas/language/using/overview.htm) for
-         * supported languages.
+         * documentation](https://docs.oracle.com/iaas/language/using/overview.htm) for supported
+         * languages.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("languageCode")
         private String languageCode;
 
         /**
          * Language code of the document. Please refer to respective model [API
-         * documentation](https://docs.cloud.oracle.com/iaas/language/using/overview.htm) for
-         * supported languages.
+         * documentation](https://docs.oracle.com/iaas/language/using/overview.htm) for supported
+         * languages.
          *
          * @param languageCode the value to set
          * @return this builder
@@ -229,7 +229,7 @@ public final class HealthEntityDocumentResult
 
     /**
      * Language code of the document. Please refer to respective model [API
-     * documentation](https://docs.cloud.oracle.com/iaas/language/using/overview.htm) for supported
+     * documentation](https://docs.oracle.com/iaas/language/using/overview.htm) for supported
      * languages.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("languageCode")
@@ -237,7 +237,7 @@ public final class HealthEntityDocumentResult
 
     /**
      * Language code of the document. Please refer to respective model [API
-     * documentation](https://docs.cloud.oracle.com/iaas/language/using/overview.htm) for supported
+     * documentation](https://docs.oracle.com/iaas/language/using/overview.htm) for supported
      * languages.
      *
      * @return the value

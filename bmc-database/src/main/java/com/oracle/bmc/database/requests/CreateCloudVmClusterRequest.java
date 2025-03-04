@@ -7,7 +7,7 @@ package com.oracle.bmc.database.requests;
 import com.oracle.bmc.database.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/CreateCloudVmClusterExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/CreateCloudVmClusterExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use CreateCloudVmClusterRequest.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
@@ -18,7 +18,7 @@ public class CreateCloudVmClusterRequest
     /**
      * Request to create a cloud VM cluster. Applies to Exadata Cloud Service instances only. See
      * [The New Exadata Cloud Service Resource
-     * Model](https://docs.cloud.oracle.com/iaas/Content/Database/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model)
+     * Model](https://docs.oracle.com/iaas/Content/Database/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model)
      * for information on this resource type.
      */
     private com.oracle.bmc.database.model.CreateCloudVmClusterDetails createCloudVmClusterDetails;
@@ -26,7 +26,7 @@ public class CreateCloudVmClusterRequest
     /**
      * Request to create a cloud VM cluster. Applies to Exadata Cloud Service instances only. See
      * [The New Exadata Cloud Service Resource
-     * Model](https://docs.cloud.oracle.com/iaas/Content/Database/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model)
+     * Model](https://docs.oracle.com/iaas/Content/Database/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model)
      * for information on this resource type.
      */
     public com.oracle.bmc.database.model.CreateCloudVmClusterDetails
@@ -81,7 +81,7 @@ public class CreateCloudVmClusterRequest
         /**
          * Request to create a cloud VM cluster. Applies to Exadata Cloud Service instances only.
          * See [The New Exadata Cloud Service Resource
-         * Model](https://docs.cloud.oracle.com/iaas/Content/Database/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model)
+         * Model](https://docs.oracle.com/iaas/Content/Database/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model)
          * for information on this resource type.
          */
         private com.oracle.bmc.database.model.CreateCloudVmClusterDetails
@@ -90,7 +90,7 @@ public class CreateCloudVmClusterRequest
         /**
          * Request to create a cloud VM cluster. Applies to Exadata Cloud Service instances only.
          * See [The New Exadata Cloud Service Resource
-         * Model](https://docs.cloud.oracle.com/iaas/Content/Database/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model)
+         * Model](https://docs.oracle.com/iaas/Content/Database/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model)
          * for information on this resource type.
          *
          * @param createCloudVmClusterDetails the value to set

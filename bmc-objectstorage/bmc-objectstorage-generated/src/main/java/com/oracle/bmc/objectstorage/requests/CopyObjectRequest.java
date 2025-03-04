@@ -7,7 +7,7 @@ package com.oracle.bmc.objectstorage.requests;
 import com.oracle.bmc.objectstorage.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/CopyObjectExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/CopyObjectExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use CopyObjectRequest.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
@@ -52,14 +52,14 @@ public class CopyObjectRequest
     /**
      * The optional header that specifies "AES256" as the encryption algorithm. For more
      * information, see [Using Your Own Keys for Server-Side
-     * Encryption](https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourencryptionkeys.htm).
+     * Encryption](https://docs.oracle.com/iaas/Content/Object/Tasks/usingyourencryptionkeys.htm).
      */
     private String opcSseCustomerAlgorithm;
 
     /**
      * The optional header that specifies "AES256" as the encryption algorithm. For more
      * information, see [Using Your Own Keys for Server-Side
-     * Encryption](https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourencryptionkeys.htm).
+     * Encryption](https://docs.oracle.com/iaas/Content/Object/Tasks/usingyourencryptionkeys.htm).
      */
     public String getOpcSseCustomerAlgorithm() {
         return opcSseCustomerAlgorithm;
@@ -67,14 +67,14 @@ public class CopyObjectRequest
     /**
      * The optional header that specifies the base64-encoded 256-bit encryption key to use to
      * encrypt or decrypt the data. For more information, see [Using Your Own Keys for Server-Side
-     * Encryption](https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourencryptionkeys.htm).
+     * Encryption](https://docs.oracle.com/iaas/Content/Object/Tasks/usingyourencryptionkeys.htm).
      */
     private String opcSseCustomerKey;
 
     /**
      * The optional header that specifies the base64-encoded 256-bit encryption key to use to
      * encrypt or decrypt the data. For more information, see [Using Your Own Keys for Server-Side
-     * Encryption](https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourencryptionkeys.htm).
+     * Encryption](https://docs.oracle.com/iaas/Content/Object/Tasks/usingyourencryptionkeys.htm).
      */
     public String getOpcSseCustomerKey() {
         return opcSseCustomerKey;
@@ -83,7 +83,7 @@ public class CopyObjectRequest
      * The optional header that specifies the base64-encoded SHA256 hash of the encryption key. This
      * value is used to check the integrity of the encryption key. For more information, see [Using
      * Your Own Keys for Server-Side
-     * Encryption](https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourencryptionkeys.htm).
+     * Encryption](https://docs.oracle.com/iaas/Content/Object/Tasks/usingyourencryptionkeys.htm).
      */
     private String opcSseCustomerKeySha256;
 
@@ -91,7 +91,7 @@ public class CopyObjectRequest
      * The optional header that specifies the base64-encoded SHA256 hash of the encryption key. This
      * value is used to check the integrity of the encryption key. For more information, see [Using
      * Your Own Keys for Server-Side
-     * Encryption](https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourencryptionkeys.htm).
+     * Encryption](https://docs.oracle.com/iaas/Content/Object/Tasks/usingyourencryptionkeys.htm).
      */
     public String getOpcSseCustomerKeySha256() {
         return opcSseCustomerKeySha256;
@@ -99,14 +99,14 @@ public class CopyObjectRequest
     /**
      * The optional header that specifies "AES256" as the encryption algorithm to use to decrypt the
      * source object. For more information, see [Using Your Own Keys for Server-Side
-     * Encryption](https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourencryptionkeys.htm).
+     * Encryption](https://docs.oracle.com/iaas/Content/Object/Tasks/usingyourencryptionkeys.htm).
      */
     private String opcSourceSseCustomerAlgorithm;
 
     /**
      * The optional header that specifies "AES256" as the encryption algorithm to use to decrypt the
      * source object. For more information, see [Using Your Own Keys for Server-Side
-     * Encryption](https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourencryptionkeys.htm).
+     * Encryption](https://docs.oracle.com/iaas/Content/Object/Tasks/usingyourencryptionkeys.htm).
      */
     public String getOpcSourceSseCustomerAlgorithm() {
         return opcSourceSseCustomerAlgorithm;
@@ -114,14 +114,14 @@ public class CopyObjectRequest
     /**
      * The optional header that specifies the base64-encoded 256-bit encryption key to use to
      * decrypt the source object. For more information, see [Using Your Own Keys for Server-Side
-     * Encryption](https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourencryptionkeys.htm).
+     * Encryption](https://docs.oracle.com/iaas/Content/Object/Tasks/usingyourencryptionkeys.htm).
      */
     private String opcSourceSseCustomerKey;
 
     /**
      * The optional header that specifies the base64-encoded 256-bit encryption key to use to
      * decrypt the source object. For more information, see [Using Your Own Keys for Server-Side
-     * Encryption](https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourencryptionkeys.htm).
+     * Encryption](https://docs.oracle.com/iaas/Content/Object/Tasks/usingyourencryptionkeys.htm).
      */
     public String getOpcSourceSseCustomerKey() {
         return opcSourceSseCustomerKey;
@@ -130,7 +130,7 @@ public class CopyObjectRequest
      * The optional header that specifies the base64-encoded SHA256 hash of the encryption key used
      * to decrypt the source object. This value is used to check the integrity of the encryption
      * key. For more information, see [Using Your Own Keys for Server-Side
-     * Encryption](https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourencryptionkeys.htm).
+     * Encryption](https://docs.oracle.com/iaas/Content/Object/Tasks/usingyourencryptionkeys.htm).
      */
     private String opcSourceSseCustomerKeySha256;
 
@@ -138,22 +138,22 @@ public class CopyObjectRequest
      * The optional header that specifies the base64-encoded SHA256 hash of the encryption key used
      * to decrypt the source object. This value is used to check the integrity of the encryption
      * key. For more information, see [Using Your Own Keys for Server-Side
-     * Encryption](https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourencryptionkeys.htm).
+     * Encryption](https://docs.oracle.com/iaas/Content/Object/Tasks/usingyourencryptionkeys.htm).
      */
     public String getOpcSourceSseCustomerKeySha256() {
         return opcSourceSseCustomerKeySha256;
     }
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a
-     * master encryption key used to call the Key Management service to generate a data encryption
-     * key or to encrypt or decrypt a data encryption key.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a master
+     * encryption key used to call the Key Management service to generate a data encryption key or
+     * to encrypt or decrypt a data encryption key.
      */
     private String opcSseKmsKeyId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a
-     * master encryption key used to call the Key Management service to generate a data encryption
-     * key or to encrypt or decrypt a data encryption key.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a master
+     * encryption key used to call the Key Management service to generate a data encryption key or
+     * to encrypt or decrypt a data encryption key.
      */
     public String getOpcSseKmsKeyId() {
         return opcSseKmsKeyId;
@@ -240,14 +240,14 @@ public class CopyObjectRequest
         /**
          * The optional header that specifies "AES256" as the encryption algorithm. For more
          * information, see [Using Your Own Keys for Server-Side
-         * Encryption](https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourencryptionkeys.htm).
+         * Encryption](https://docs.oracle.com/iaas/Content/Object/Tasks/usingyourencryptionkeys.htm).
          */
         private String opcSseCustomerAlgorithm = null;
 
         /**
          * The optional header that specifies "AES256" as the encryption algorithm. For more
          * information, see [Using Your Own Keys for Server-Side
-         * Encryption](https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourencryptionkeys.htm).
+         * Encryption](https://docs.oracle.com/iaas/Content/Object/Tasks/usingyourencryptionkeys.htm).
          *
          * @param opcSseCustomerAlgorithm the value to set
          * @return this builder instance
@@ -261,7 +261,7 @@ public class CopyObjectRequest
          * The optional header that specifies the base64-encoded 256-bit encryption key to use to
          * encrypt or decrypt the data. For more information, see [Using Your Own Keys for
          * Server-Side
-         * Encryption](https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourencryptionkeys.htm).
+         * Encryption](https://docs.oracle.com/iaas/Content/Object/Tasks/usingyourencryptionkeys.htm).
          */
         private String opcSseCustomerKey = null;
 
@@ -269,7 +269,7 @@ public class CopyObjectRequest
          * The optional header that specifies the base64-encoded 256-bit encryption key to use to
          * encrypt or decrypt the data. For more information, see [Using Your Own Keys for
          * Server-Side
-         * Encryption](https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourencryptionkeys.htm).
+         * Encryption](https://docs.oracle.com/iaas/Content/Object/Tasks/usingyourencryptionkeys.htm).
          *
          * @param opcSseCustomerKey the value to set
          * @return this builder instance
@@ -283,7 +283,7 @@ public class CopyObjectRequest
          * The optional header that specifies the base64-encoded SHA256 hash of the encryption key.
          * This value is used to check the integrity of the encryption key. For more information,
          * see [Using Your Own Keys for Server-Side
-         * Encryption](https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourencryptionkeys.htm).
+         * Encryption](https://docs.oracle.com/iaas/Content/Object/Tasks/usingyourencryptionkeys.htm).
          */
         private String opcSseCustomerKeySha256 = null;
 
@@ -291,7 +291,7 @@ public class CopyObjectRequest
          * The optional header that specifies the base64-encoded SHA256 hash of the encryption key.
          * This value is used to check the integrity of the encryption key. For more information,
          * see [Using Your Own Keys for Server-Side
-         * Encryption](https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourencryptionkeys.htm).
+         * Encryption](https://docs.oracle.com/iaas/Content/Object/Tasks/usingyourencryptionkeys.htm).
          *
          * @param opcSseCustomerKeySha256 the value to set
          * @return this builder instance
@@ -304,14 +304,14 @@ public class CopyObjectRequest
         /**
          * The optional header that specifies "AES256" as the encryption algorithm to use to decrypt
          * the source object. For more information, see [Using Your Own Keys for Server-Side
-         * Encryption](https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourencryptionkeys.htm).
+         * Encryption](https://docs.oracle.com/iaas/Content/Object/Tasks/usingyourencryptionkeys.htm).
          */
         private String opcSourceSseCustomerAlgorithm = null;
 
         /**
          * The optional header that specifies "AES256" as the encryption algorithm to use to decrypt
          * the source object. For more information, see [Using Your Own Keys for Server-Side
-         * Encryption](https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourencryptionkeys.htm).
+         * Encryption](https://docs.oracle.com/iaas/Content/Object/Tasks/usingyourencryptionkeys.htm).
          *
          * @param opcSourceSseCustomerAlgorithm the value to set
          * @return this builder instance
@@ -324,14 +324,14 @@ public class CopyObjectRequest
         /**
          * The optional header that specifies the base64-encoded 256-bit encryption key to use to
          * decrypt the source object. For more information, see [Using Your Own Keys for Server-Side
-         * Encryption](https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourencryptionkeys.htm).
+         * Encryption](https://docs.oracle.com/iaas/Content/Object/Tasks/usingyourencryptionkeys.htm).
          */
         private String opcSourceSseCustomerKey = null;
 
         /**
          * The optional header that specifies the base64-encoded 256-bit encryption key to use to
          * decrypt the source object. For more information, see [Using Your Own Keys for Server-Side
-         * Encryption](https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourencryptionkeys.htm).
+         * Encryption](https://docs.oracle.com/iaas/Content/Object/Tasks/usingyourencryptionkeys.htm).
          *
          * @param opcSourceSseCustomerKey the value to set
          * @return this builder instance
@@ -345,7 +345,7 @@ public class CopyObjectRequest
          * The optional header that specifies the base64-encoded SHA256 hash of the encryption key
          * used to decrypt the source object. This value is used to check the integrity of the
          * encryption key. For more information, see [Using Your Own Keys for Server-Side
-         * Encryption](https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourencryptionkeys.htm).
+         * Encryption](https://docs.oracle.com/iaas/Content/Object/Tasks/usingyourencryptionkeys.htm).
          */
         private String opcSourceSseCustomerKeySha256 = null;
 
@@ -353,7 +353,7 @@ public class CopyObjectRequest
          * The optional header that specifies the base64-encoded SHA256 hash of the encryption key
          * used to decrypt the source object. This value is used to check the integrity of the
          * encryption key. For more information, see [Using Your Own Keys for Server-Side
-         * Encryption](https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourencryptionkeys.htm).
+         * Encryption](https://docs.oracle.com/iaas/Content/Object/Tasks/usingyourencryptionkeys.htm).
          *
          * @param opcSourceSseCustomerKeySha256 the value to set
          * @return this builder instance
@@ -364,14 +364,14 @@ public class CopyObjectRequest
         }
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
          * master encryption key used to call the Key Management service to generate a data
          * encryption key or to encrypt or decrypt a data encryption key.
          */
         private String opcSseKmsKeyId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
          * master encryption key used to call the Key Management service to generate a data
          * encryption key or to encrypt or decrypt a data encryption key.
          *

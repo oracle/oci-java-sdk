@@ -7,7 +7,7 @@ package com.oracle.bmc.core.model;
 /**
  * Contains the properties of the VNIC for an instance configuration. See {@link CreateVnicDetails}
  * and [Instance
- * Configurations](https://docs.cloud.oracle.com/iaas/Content/Compute/Concepts/instancemanagement.htm#config)
+ * Configurations](https://docs.oracle.com/iaas/Content/Compute/Concepts/instancemanagement.htm#config)
  * for more information. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
@@ -138,7 +138,7 @@ public final class InstanceConfigurationCreateVnicDetails
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
          */
@@ -148,7 +148,7 @@ public final class InstanceConfigurationCreateVnicDetails
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
@@ -183,7 +183,7 @@ public final class InstanceConfigurationCreateVnicDetails
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          */
@@ -193,7 +193,7 @@ public final class InstanceConfigurationCreateVnicDetails
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          *
@@ -207,9 +207,9 @@ public final class InstanceConfigurationCreateVnicDetails
         }
         /**
          * [Security
-         * attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes)
+         * attributes](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes)
          * are labels for a resource that can be referenced in a [Zero Trust Packet
-         * Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm)
+         * Routing](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm)
          * (ZPR) policy to control access to ZPR-supported resources.
          *
          * <p>Example: {@code {"Oracle-DataSecurity-ZPR": {"MaxEgressCount":
@@ -220,9 +220,9 @@ public final class InstanceConfigurationCreateVnicDetails
 
         /**
          * [Security
-         * attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes)
+         * attributes](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes)
          * are labels for a resource that can be referenced in a [Zero Trust Packet
-         * Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm)
+         * Routing](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm)
          * (ZPR) policy to control access to ZPR-supported resources.
          *
          * <p>Example: {@code {"Oracle-DataSecurity-ZPR": {"MaxEgressCount":
@@ -497,7 +497,7 @@ public final class InstanceConfigurationCreateVnicDetails
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
      */
@@ -507,7 +507,7 @@ public final class InstanceConfigurationCreateVnicDetails
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
@@ -537,7 +537,7 @@ public final class InstanceConfigurationCreateVnicDetails
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      */
@@ -547,7 +547,7 @@ public final class InstanceConfigurationCreateVnicDetails
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      *
@@ -559,10 +559,10 @@ public final class InstanceConfigurationCreateVnicDetails
 
     /**
      * [Security
-     * attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes)
+     * attributes](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes)
      * are labels for a resource that can be referenced in a [Zero Trust Packet
-     * Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm)
-     * (ZPR) policy to control access to ZPR-supported resources.
+     * Routing](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR)
+     * policy to control access to ZPR-supported resources.
      *
      * <p>Example: {@code {"Oracle-DataSecurity-ZPR": {"MaxEgressCount":
      * {"value":"42","mode":"audit"}}}}
@@ -572,10 +572,10 @@ public final class InstanceConfigurationCreateVnicDetails
 
     /**
      * [Security
-     * attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes)
+     * attributes](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes)
      * are labels for a resource that can be referenced in a [Zero Trust Packet
-     * Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm)
-     * (ZPR) policy to control access to ZPR-supported resources.
+     * Routing](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR)
+     * policy to control access to ZPR-supported resources.
      *
      * <p>Example: {@code {"Oracle-DataSecurity-ZPR": {"MaxEgressCount":
      * {"value":"42","mode":"audit"}}}}

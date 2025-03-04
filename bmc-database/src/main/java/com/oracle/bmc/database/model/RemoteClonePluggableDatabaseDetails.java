@@ -56,14 +56,14 @@ public final class RemoteClonePluggableDatabaseDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * target CDB
          */
         @com.fasterxml.jackson.annotation.JsonProperty("targetContainerDatabaseId")
         private String targetContainerDatabaseId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * target CDB
          *
          * @param targetContainerDatabaseId the value to set
@@ -222,14 +222,14 @@ public final class RemoteClonePluggableDatabaseDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * target CDB
      */
     @com.fasterxml.jackson.annotation.JsonProperty("targetContainerDatabaseId")
     private final String targetContainerDatabaseId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * target CDB
      *
      * @return the value

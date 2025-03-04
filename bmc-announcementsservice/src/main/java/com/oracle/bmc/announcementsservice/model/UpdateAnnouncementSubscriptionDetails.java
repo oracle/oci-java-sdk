@@ -89,23 +89,23 @@ public final class UpdateAnnouncementSubscriptionDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Notifications service topic that is the target for publishing announcements that match
          * the configured announcement subscription. The caller of the operation needs the
          * ONS_TOPIC_PUBLISH permission for the targeted Notifications service topic. For more
          * information about Notifications permissions, see [Details for
-         * Notifications](https://docs.cloud.oracle.com/Content/Identity/policyreference/notificationpolicyreference.htm).
+         * Notifications](https://docs.oracle.com/iaas/Content/Identity/policyreference/notificationpolicyreference.htm).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("onsTopicId")
         private String onsTopicId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Notifications service topic that is the target for publishing announcements that match
          * the configured announcement subscription. The caller of the operation needs the
          * ONS_TOPIC_PUBLISH permission for the targeted Notifications service topic. For more
          * information about Notifications permissions, see [Details for
-         * Notifications](https://docs.cloud.oracle.com/Content/Identity/policyreference/notificationpolicyreference.htm).
+         * Notifications](https://docs.oracle.com/iaas/Content/Identity/policyreference/notificationpolicyreference.htm).
          *
          * @param onsTopicId the value to set
          * @return this builder
@@ -285,23 +285,23 @@ public final class UpdateAnnouncementSubscriptionDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Notifications service topic that is the target for publishing announcements that match the
      * configured announcement subscription. The caller of the operation needs the ONS_TOPIC_PUBLISH
      * permission for the targeted Notifications service topic. For more information about
      * Notifications permissions, see [Details for
-     * Notifications](https://docs.cloud.oracle.com/Content/Identity/policyreference/notificationpolicyreference.htm).
+     * Notifications](https://docs.oracle.com/iaas/Content/Identity/policyreference/notificationpolicyreference.htm).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("onsTopicId")
     private final String onsTopicId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Notifications service topic that is the target for publishing announcements that match the
      * configured announcement subscription. The caller of the operation needs the ONS_TOPIC_PUBLISH
      * permission for the targeted Notifications service topic. For more information about
      * Notifications permissions, see [Details for
-     * Notifications](https://docs.cloud.oracle.com/Content/Identity/policyreference/notificationpolicyreference.htm).
+     * Notifications](https://docs.oracle.com/iaas/Content/Identity/policyreference/notificationpolicyreference.htm).
      *
      * @return the value
      */

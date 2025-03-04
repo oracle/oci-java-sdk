@@ -35,16 +35,16 @@ public final class AttachManagedInstancesToManagedInstanceGroupDetails
     public static class Builder {
         /**
          * List of managed instance
-         * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to
-         * attach to the group.
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to attach
+         * to the group.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("managedInstances")
         private java.util.List<String> managedInstances;
 
         /**
          * List of managed instance
-         * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to
-         * attach to the group.
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to attach
+         * to the group.
          *
          * @param managedInstances the value to set
          * @return this builder
@@ -100,16 +100,16 @@ public final class AttachManagedInstancesToManagedInstanceGroupDetails
 
     /**
      * List of managed instance
-     * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to
-     * attach to the group.
+     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to attach to
+     * the group.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("managedInstances")
     private final java.util.List<String> managedInstances;
 
     /**
      * List of managed instance
-     * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to
-     * attach to the group.
+     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to attach to
+     * the group.
      *
      * @return the value
      */

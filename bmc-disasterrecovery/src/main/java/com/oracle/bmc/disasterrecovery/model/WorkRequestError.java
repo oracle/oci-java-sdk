@@ -34,7 +34,7 @@ public final class WorkRequestError
     public static class Builder {
         /**
          * A machine-usable code for the error that occured. Error codes are listed here --
-         * (https://docs.cloud.oracle.com/Content/API/References/apierrors.htm).
+         * (https://docs.oracle.com/iaas/Content/API/References/apierrors.htm).
          *
          * <p>Example: {@code 429}
          */
@@ -43,7 +43,7 @@ public final class WorkRequestError
 
         /**
          * A machine-usable code for the error that occured. Error codes are listed here --
-         * (https://docs.cloud.oracle.com/Content/API/References/apierrors.htm).
+         * (https://docs.oracle.com/iaas/Content/API/References/apierrors.htm).
          *
          * <p>Example: {@code 429}
          *
@@ -135,7 +135,7 @@ public final class WorkRequestError
 
     /**
      * A machine-usable code for the error that occured. Error codes are listed here --
-     * (https://docs.cloud.oracle.com/Content/API/References/apierrors.htm).
+     * (https://docs.oracle.com/iaas/Content/API/References/apierrors.htm).
      *
      * <p>Example: {@code 429}
      */
@@ -144,7 +144,7 @@ public final class WorkRequestError
 
     /**
      * A machine-usable code for the error that occured. Error codes are listed here --
-     * (https://docs.cloud.oracle.com/Content/API/References/apierrors.htm).
+     * (https://docs.oracle.com/iaas/Content/API/References/apierrors.htm).
      *
      * <p>Example: {@code 429}
      *

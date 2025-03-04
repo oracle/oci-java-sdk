@@ -7,7 +7,7 @@ package com.oracle.bmc.databasemanagement.requests;
 import com.oracle.bmc.databasemanagement.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/UpdateDbManagementPrivateEndpointExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/UpdateDbManagementPrivateEndpointExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * UpdateDbManagementPrivateEndpointRequest.
  */
@@ -17,13 +17,13 @@ public class UpdateDbManagementPrivateEndpointRequest
                 com.oracle.bmc.databasemanagement.model.UpdateDbManagementPrivateEndpointDetails> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Database Management private endpoint.
      */
     private String dbManagementPrivateEndpointId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Database Management private endpoint.
      */
     public String getDbManagementPrivateEndpointId() {
@@ -84,13 +84,13 @@ public class UpdateDbManagementPrivateEndpointRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Database Management private endpoint.
          */
         private String dbManagementPrivateEndpointId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Database Management private endpoint.
          *
          * @param dbManagementPrivateEndpointId the value to set

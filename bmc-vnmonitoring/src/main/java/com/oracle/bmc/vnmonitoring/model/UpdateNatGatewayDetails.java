@@ -126,8 +126,8 @@ public final class UpdateNatGatewayDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the route table used by the NAT gateway.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * route table used by the NAT gateway.
          *
          * <p>If you don't specify a route table here, the NAT gateway is created without an
          * associated route table. The Networking service does NOT automatically associate the
@@ -137,8 +137,8 @@ public final class UpdateNatGatewayDetails
         private String routeTableId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the route table used by the NAT gateway.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * route table used by the NAT gateway.
          *
          * <p>If you don't specify a route table here, the NAT gateway is created without an
          * associated route table. The Networking service does NOT automatically associate the
@@ -271,8 +271,8 @@ public final class UpdateNatGatewayDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the route table used by the NAT gateway.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * route table used by the NAT gateway.
      *
      * <p>If you don't specify a route table here, the NAT gateway is created without an associated
      * route table. The Networking service does NOT automatically associate the attached VCN's
@@ -282,8 +282,8 @@ public final class UpdateNatGatewayDetails
     private final String routeTableId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the route table used by the NAT gateway.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * route table used by the NAT gateway.
      *
      * <p>If you don't specify a route table here, the NAT gateway is created without an associated
      * route table. The Networking service does NOT automatically associate the attached VCN's

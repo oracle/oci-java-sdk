@@ -7,7 +7,7 @@ package com.oracle.bmc.logging.requests;
 import com.oracle.bmc.logging.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/logging/ListWorkRequestsExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/logging/ListWorkRequestsExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListWorkRequestsRequest.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200531")
@@ -35,15 +35,15 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
     }
     /**
      * <b>Filter</b> results by
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/identifiers.htm). Must be an
-     * OCID of the correct type for the resource type.
+     * [OCID](https://docs.oracle.com/iaas/Content/API/Concepts/identifiers.htm). Must be an OCID of
+     * the correct type for the resource type.
      */
     private String id;
 
     /**
      * <b>Filter</b> results by
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/identifiers.htm). Must be an
-     * OCID of the correct type for the resource type.
+     * [OCID](https://docs.oracle.com/iaas/Content/API/Concepts/identifiers.htm). Must be an OCID of
+     * the correct type for the resource type.
      */
     public String getId() {
         return id;
@@ -65,7 +65,7 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
      * For list pagination. The value of the {@code opc-next-page} or {@code opc-previous-page}
      * response header from the previous "List" call. For important details about how pagination
      * works, see [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private String page;
 
@@ -73,7 +73,7 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
      * For list pagination. The value of the {@code opc-next-page} or {@code opc-previous-page}
      * response header from the previous "List" call. For important details about how pagination
      * works, see [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     public String getPage() {
         return page;
@@ -218,15 +218,15 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
 
         /**
          * <b>Filter</b> results by
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/identifiers.htm). Must be
-         * an OCID of the correct type for the resource type.
+         * [OCID](https://docs.oracle.com/iaas/Content/API/Concepts/identifiers.htm). Must be an
+         * OCID of the correct type for the resource type.
          */
         private String id = null;
 
         /**
          * <b>Filter</b> results by
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/identifiers.htm). Must be
-         * an OCID of the correct type for the resource type.
+         * [OCID](https://docs.oracle.com/iaas/Content/API/Concepts/identifiers.htm). Must be an
+         * OCID of the correct type for the resource type.
          *
          * @param id the value to set
          * @return this builder instance
@@ -258,7 +258,7 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
          * For list pagination. The value of the {@code opc-next-page} or {@code opc-previous-page}
          * response header from the previous "List" call. For important details about how pagination
          * works, see [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private String page = null;
 
@@ -266,7 +266,7 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
          * For list pagination. The value of the {@code opc-next-page} or {@code opc-previous-page}
          * response header from the previous "List" call. For important details about how pagination
          * works, see [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param page the value to set
          * @return this builder instance

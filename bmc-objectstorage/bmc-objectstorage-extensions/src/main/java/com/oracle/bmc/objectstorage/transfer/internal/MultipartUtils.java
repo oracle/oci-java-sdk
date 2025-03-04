@@ -20,7 +20,7 @@ public final class MultipartUtils {
 
     /*
      * Max supported sizes are specified @
-     * https://docs.cloud.oracle.com/iaas/Content/Object/Tasks/usingmultipartuploads.htm
+     * https://docs.oracle.com/iaas/Content/Object/Tasks/usingmultipartuploads.htm
      */
     static final long MAX_SUPPORTED_CONTENT_LENGTH = 10L * MiB * MiB; // 10 TiB
 

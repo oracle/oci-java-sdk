@@ -28,14 +28,14 @@ public final class PrivateEndPointConnectorDetails extends ConnectorDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * private endpoint.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("privateEndPointId")
         private String privateEndPointId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * private endpoint.
          *
          * @param privateEndPointId the value to set
@@ -84,14 +84,14 @@ public final class PrivateEndPointConnectorDetails extends ConnectorDetails {
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * private endpoint.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("privateEndPointId")
     private final String privateEndPointId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * private endpoint.
      *
      * @return the value

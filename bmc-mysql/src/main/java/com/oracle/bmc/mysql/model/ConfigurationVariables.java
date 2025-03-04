@@ -1015,7 +1015,7 @@ public final class ConfigurationVariables
          *
          * <p>The default and maximum values depend on the amount of RAM provisioned by the shape.
          * See [Default User
-         * Variables](https://docs.cloud.oracle.com/mysql-database/doc/configuring-db-system.html#GUID-B5504C19-F6F4-4DAB-8506-189A4E8F4A6A).
+         * Variables](https://docs.oracle.com/iaas/mysql-database/doc/configuring-db-system.html#GUID-B5504C19-F6F4-4DAB-8506-189A4E8F4A6A).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("innodbBufferPoolSize")
         private Long innodbBufferPoolSize;
@@ -1029,7 +1029,7 @@ public final class ConfigurationVariables
          *
          * <p>The default and maximum values depend on the amount of RAM provisioned by the shape.
          * See [Default User
-         * Variables](https://docs.cloud.oracle.com/mysql-database/doc/configuring-db-system.html#GUID-B5504C19-F6F4-4DAB-8506-189A4E8F4A6A).
+         * Variables](https://docs.oracle.com/iaas/mysql-database/doc/configuring-db-system.html#GUID-B5504C19-F6F4-4DAB-8506-189A4E8F4A6A).
          *
          * @param innodbBufferPoolSize the value to set
          * @return this builder
@@ -5101,7 +5101,7 @@ public final class ConfigurationVariables
      *
      * <p>The default and maximum values depend on the amount of RAM provisioned by the shape. See
      * [Default User
-     * Variables](https://docs.cloud.oracle.com/mysql-database/doc/configuring-db-system.html#GUID-B5504C19-F6F4-4DAB-8506-189A4E8F4A6A).
+     * Variables](https://docs.oracle.com/iaas/mysql-database/doc/configuring-db-system.html#GUID-B5504C19-F6F4-4DAB-8506-189A4E8F4A6A).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("innodbBufferPoolSize")
     private final Long innodbBufferPoolSize;
@@ -5115,7 +5115,7 @@ public final class ConfigurationVariables
      *
      * <p>The default and maximum values depend on the amount of RAM provisioned by the shape. See
      * [Default User
-     * Variables](https://docs.cloud.oracle.com/mysql-database/doc/configuring-db-system.html#GUID-B5504C19-F6F4-4DAB-8506-189A4E8F4A6A).
+     * Variables](https://docs.oracle.com/iaas/mysql-database/doc/configuring-db-system.html#GUID-B5504C19-F6F4-4DAB-8506-189A4E8F4A6A).
      *
      * @return the value
      */

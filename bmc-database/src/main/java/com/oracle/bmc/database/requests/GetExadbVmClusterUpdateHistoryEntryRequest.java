@@ -7,7 +7,7 @@ package com.oracle.bmc.database.requests;
 import com.oracle.bmc.database.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetExadbVmClusterUpdateHistoryEntryExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetExadbVmClusterUpdateHistoryEntryExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * GetExadbVmClusterUpdateHistoryEntryRequest.
  */
@@ -17,27 +17,27 @@ public class GetExadbVmClusterUpdateHistoryEntryRequest
 
     /**
      * The Exadata VM cluster
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) on Exascale
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) on Exascale
      * Infrastructure.
      */
     private String exadbVmClusterId;
 
     /**
      * The Exadata VM cluster
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) on Exascale
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) on Exascale
      * Infrastructure.
      */
     public String getExadbVmClusterId() {
         return exadbVmClusterId;
     }
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * maintenance update history entry.
      */
     private String updateHistoryEntryId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * maintenance update history entry.
      */
     public String getUpdateHistoryEntryId() {
@@ -59,15 +59,15 @@ public class GetExadbVmClusterUpdateHistoryEntryRequest
 
         /**
          * The Exadata VM cluster
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) on
-         * Exascale Infrastructure.
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) on Exascale
+         * Infrastructure.
          */
         private String exadbVmClusterId = null;
 
         /**
          * The Exadata VM cluster
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) on
-         * Exascale Infrastructure.
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) on Exascale
+         * Infrastructure.
          *
          * @param exadbVmClusterId the value to set
          * @return this builder instance
@@ -78,13 +78,13 @@ public class GetExadbVmClusterUpdateHistoryEntryRequest
         }
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * maintenance update history entry.
          */
         private String updateHistoryEntryId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * maintenance update history entry.
          *
          * @param updateHistoryEntryId the value to set

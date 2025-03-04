@@ -18,9 +18,9 @@ package com.oracle.bmc.loadbalancer.model;
  *
  * <p>Oracle created the following predefined cipher suites that you can specify when you define a
  * resource's [SSL
- * configuration](https://docs.cloud.oracle.com/api/#/en/loadbalancer/20170115/datatypes/SSLConfigurationDetails).
+ * configuration](https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/datatypes/SSLConfigurationDetails).
  * You can [create custom cipher
- * suites](https://docs.cloud.oracle.com/api/#/en/loadbalancer/20170115/SSLCipherSuite/CreateSSLCipherSuite)
+ * suites](https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/SSLCipherSuite/CreateSSLCipherSuite)
  * if the predefined cipher suites do not meet your requirements.
  *
  * <p>* __oci-default-ssl-cipher-suite-v1__

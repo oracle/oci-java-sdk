@@ -150,7 +150,7 @@ public final class LaunchInstanceDetails
          * The OCID of the compute capacity reservation this instance is launched under. You can opt
          * out of all default reservations by specifying an empty string as input for this field.
          * For more information, see [Capacity
-         * Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
+         * Reservations](https://docs.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("capacityReservationId")
         private String capacityReservationId;
@@ -159,7 +159,7 @@ public final class LaunchInstanceDetails
          * The OCID of the compute capacity reservation this instance is launched under. You can opt
          * out of all default reservations by specifying an empty string as input for this field.
          * For more information, see [Capacity
-         * Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
+         * Reservations](https://docs.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
          *
          * @param capacityReservationId the value to set
          * @return this builder
@@ -211,7 +211,7 @@ public final class LaunchInstanceDetails
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
          */
@@ -221,7 +221,7 @@ public final class LaunchInstanceDetails
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
@@ -236,9 +236,9 @@ public final class LaunchInstanceDetails
         }
         /**
          * [Security
-         * attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes)
+         * attributes](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes)
          * are labels for a resource that can be referenced in a [Zero Trust Packet
-         * Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm)
+         * Routing](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm)
          * (ZPR) policy to control access to ZPR-supported resources.
          *
          * <p>Example: {@code {"Oracle-DataSecurity-ZPR": {"MaxEgressCount":
@@ -249,9 +249,9 @@ public final class LaunchInstanceDetails
 
         /**
          * [Security
-         * attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes)
+         * attributes](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes)
          * are labels for a resource that can be referenced in a [Zero Trust Packet
-         * Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm)
+         * Routing](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm)
          * (ZPR) policy to control access to ZPR-supported resources.
          *
          * <p>Example: {@code {"Oracle-DataSecurity-ZPR": {"MaxEgressCount":
@@ -375,7 +375,7 @@ public final class LaunchInstanceDetails
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          */
@@ -385,7 +385,7 @@ public final class LaunchInstanceDetails
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          *
@@ -398,19 +398,19 @@ public final class LaunchInstanceDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the [compute
-         * cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm)
-         * that the instance will be created in.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * [compute
+         * cluster](https://docs.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that
+         * the instance will be created in.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("computeClusterId")
         private String computeClusterId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the [compute
-         * cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm)
-         * that the instance will be created in.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * [compute
+         * cluster](https://docs.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that
+         * the instance will be created in.
          *
          * @param computeClusterId the value to set
          * @return this builder
@@ -486,7 +486,7 @@ public final class LaunchInstanceDetails
          *
          * <p>For more information about the Bring Your Own Image feature of Oracle Cloud
          * Infrastructure, see [Bring Your Own
-         * Image](https://docs.cloud.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm).
+         * Image](https://docs.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm).
          *
          * <p>For more information about iPXE, see http://ipxe.org.
          */
@@ -517,7 +517,7 @@ public final class LaunchInstanceDetails
          *
          * <p>For more information about the Bring Your Own Image feature of Oracle Cloud
          * Infrastructure, see [Bring Your Own
-         * Image](https://docs.cloud.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm).
+         * Image](https://docs.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm).
          *
          * <p>For more information about iPXE, see http://ipxe.org.
          *
@@ -1001,7 +1001,7 @@ public final class LaunchInstanceDetails
      * The OCID of the compute capacity reservation this instance is launched under. You can opt out
      * of all default reservations by specifying an empty string as input for this field. For more
      * information, see [Capacity
-     * Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
+     * Reservations](https://docs.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("capacityReservationId")
     private final String capacityReservationId;
@@ -1010,7 +1010,7 @@ public final class LaunchInstanceDetails
      * The OCID of the compute capacity reservation this instance is launched under. You can opt out
      * of all default reservations by specifying an empty string as input for this field. For more
      * information, see [Capacity
-     * Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
+     * Reservations](https://docs.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
      *
      * @return the value
      */
@@ -1054,7 +1054,7 @@ public final class LaunchInstanceDetails
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
      */
@@ -1064,7 +1064,7 @@ public final class LaunchInstanceDetails
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
@@ -1076,10 +1076,10 @@ public final class LaunchInstanceDetails
 
     /**
      * [Security
-     * attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes)
+     * attributes](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes)
      * are labels for a resource that can be referenced in a [Zero Trust Packet
-     * Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm)
-     * (ZPR) policy to control access to ZPR-supported resources.
+     * Routing](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR)
+     * policy to control access to ZPR-supported resources.
      *
      * <p>Example: {@code {"Oracle-DataSecurity-ZPR": {"MaxEgressCount":
      * {"value":"42","mode":"audit"}}}}
@@ -1089,10 +1089,10 @@ public final class LaunchInstanceDetails
 
     /**
      * [Security
-     * attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes)
+     * attributes](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes)
      * are labels for a resource that can be referenced in a [Zero Trust Packet
-     * Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm)
-     * (ZPR) policy to control access to ZPR-supported resources.
+     * Routing](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR)
+     * policy to control access to ZPR-supported resources.
      *
      * <p>Example: {@code {"Oracle-DataSecurity-ZPR": {"MaxEgressCount":
      * {"value":"42","mode":"audit"}}}}
@@ -1202,7 +1202,7 @@ public final class LaunchInstanceDetails
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      */
@@ -1212,7 +1212,7 @@ public final class LaunchInstanceDetails
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      *
@@ -1223,19 +1223,17 @@ public final class LaunchInstanceDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the [compute
-     * cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that
-     * the instance will be created in.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * [compute cluster](https://docs.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm)
+     * that the instance will be created in.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("computeClusterId")
     private final String computeClusterId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the [compute
-     * cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that
-     * the instance will be created in.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * [compute cluster](https://docs.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm)
+     * that the instance will be created in.
      *
      * @return the value
      */
@@ -1304,7 +1302,7 @@ public final class LaunchInstanceDetails
      *
      * <p>For more information about the Bring Your Own Image feature of Oracle Cloud
      * Infrastructure, see [Bring Your Own
-     * Image](https://docs.cloud.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm).
+     * Image](https://docs.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm).
      *
      * <p>For more information about iPXE, see http://ipxe.org.
      */
@@ -1334,7 +1332,7 @@ public final class LaunchInstanceDetails
      *
      * <p>For more information about the Bring Your Own Image feature of Oracle Cloud
      * Infrastructure, see [Bring Your Own
-     * Image](https://docs.cloud.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm).
+     * Image](https://docs.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm).
      *
      * <p>For more information about iPXE, see http://ipxe.org.
      *

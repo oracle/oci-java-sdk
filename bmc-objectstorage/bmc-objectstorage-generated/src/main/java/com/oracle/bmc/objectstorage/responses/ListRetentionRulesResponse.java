@@ -48,7 +48,7 @@ public class ListRetentionRulesResponse extends com.oracle.bmc.responses.BmcResp
      * retrieve the entire list of retention rules.
      *
      * <p>For more details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private String opcNextPage;
 
@@ -60,7 +60,7 @@ public class ListRetentionRulesResponse extends com.oracle.bmc.responses.BmcResp
      * retrieve the entire list of retention rules.
      *
      * <p>For more details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      * @return the value
      */
@@ -164,7 +164,7 @@ public class ListRetentionRulesResponse extends com.oracle.bmc.responses.BmcResp
          * to retrieve the entire list of retention rules.
          *
          * <p>For more details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private String opcNextPage;
 
@@ -176,7 +176,7 @@ public class ListRetentionRulesResponse extends com.oracle.bmc.responses.BmcResp
          * to retrieve the entire list of retention rules.
          *
          * <p>For more details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param opcNextPage the value to set
          * @return this builder

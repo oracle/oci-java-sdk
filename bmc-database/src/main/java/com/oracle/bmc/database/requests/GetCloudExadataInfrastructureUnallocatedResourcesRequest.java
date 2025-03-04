@@ -7,7 +7,7 @@ package com.oracle.bmc.database.requests;
 import com.oracle.bmc.database.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetCloudExadataInfrastructureUnallocatedResourcesExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetCloudExadataInfrastructureUnallocatedResourcesExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * GetCloudExadataInfrastructureUnallocatedResourcesRequest.
  */
@@ -17,13 +17,13 @@ public class GetCloudExadataInfrastructureUnallocatedResourcesRequest
 
     /**
      * The cloud Exadata infrastructure
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     private String cloudExadataInfrastructureId;
 
     /**
      * The cloud Exadata infrastructure
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     public String getCloudExadataInfrastructureId() {
         return cloudExadataInfrastructureId;
@@ -36,14 +36,14 @@ public class GetCloudExadataInfrastructureUnallocatedResourcesRequest
         return opcRequestId;
     }
     /**
-     * The list of [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
-     * of the Db servers.
+     * The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the Db servers.
      */
     private java.util.List<String> dbServers;
 
     /**
-     * The list of [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
-     * of the Db servers.
+     * The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the Db servers.
      */
     public java.util.List<String> getDbServers() {
         return dbServers;
@@ -57,13 +57,13 @@ public class GetCloudExadataInfrastructureUnallocatedResourcesRequest
 
         /**
          * The cloud Exadata infrastructure
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          */
         private String cloudExadataInfrastructureId = null;
 
         /**
          * The cloud Exadata infrastructure
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          * @param cloudExadataInfrastructureId the value to set
          * @return this builder instance
@@ -89,14 +89,14 @@ public class GetCloudExadataInfrastructureUnallocatedResourcesRequest
 
         /**
          * The list of
-         * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Db
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Db
          * servers.
          */
         private java.util.List<String> dbServers = null;
 
         /**
          * The list of
-         * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Db
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Db
          * servers.
          *
          * @param dbServers the value to set
@@ -109,7 +109,7 @@ public class GetCloudExadataInfrastructureUnallocatedResourcesRequest
 
         /**
          * Singular setter. The list of
-         * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Db
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Db
          * servers.
          *
          * @param singularValue the singular value to set

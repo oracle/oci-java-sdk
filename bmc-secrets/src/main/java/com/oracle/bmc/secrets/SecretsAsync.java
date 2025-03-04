@@ -10,7 +10,7 @@ import com.oracle.bmc.secrets.responses.*;
 /**
  * Use the Secret Retrieval API to retrieve secrets and secret versions from vaults. For more
  * information, see [Managing
- * Secrets](https://docs.cloud.oracle.com/Content/KeyManagement/Tasks/managingsecrets.htm).
+ * Secrets](https://docs.oracle.com/iaas/Content/KeyManagement/Tasks/managingsecrets.htm).
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190301")
 public interface SecretsAsync extends AutoCloseable {

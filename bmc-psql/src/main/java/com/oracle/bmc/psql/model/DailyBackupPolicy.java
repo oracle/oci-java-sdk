@@ -35,6 +35,15 @@ public final class DailyBackupPolicy extends BackupPolicy {
             this.__explicitlySet__.add("retentionDays");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("copyPolicy")
+        private BackupCopyPolicy copyPolicy;
+
+        public Builder copyPolicy(BackupCopyPolicy copyPolicy) {
+            this.copyPolicy = copyPolicy;
+            this.__explicitlySet__.add("copyPolicy");
+            return this;
+        }
         /** Hour of the day when the backup starts. */
         @com.fasterxml.jackson.annotation.JsonProperty("backupStart")
         private String backupStart;
@@ -55,7 +64,8 @@ public final class DailyBackupPolicy extends BackupPolicy {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DailyBackupPolicy build() {
-            DailyBackupPolicy model = new DailyBackupPolicy(this.retentionDays, this.backupStart);
+            DailyBackupPolicy model =
+                    new DailyBackupPolicy(this.retentionDays, this.copyPolicy, this.backupStart);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -66,6 +76,9 @@ public final class DailyBackupPolicy extends BackupPolicy {
         public Builder copy(DailyBackupPolicy model) {
             if (model.wasPropertyExplicitlySet("retentionDays")) {
                 this.retentionDays(model.getRetentionDays());
+            }
+            if (model.wasPropertyExplicitlySet("copyPolicy")) {
+                this.copyPolicy(model.getCopyPolicy());
             }
             if (model.wasPropertyExplicitlySet("backupStart")) {
                 this.backupStart(model.getBackupStart());
@@ -84,8 +97,9 @@ public final class DailyBackupPolicy extends BackupPolicy {
     }
 
     @Deprecated
-    public DailyBackupPolicy(Integer retentionDays, String backupStart) {
-        super(retentionDays);
+    public DailyBackupPolicy(
+            Integer retentionDays, BackupCopyPolicy copyPolicy, String backupStart) {
+        super(retentionDays, copyPolicy);
         this.backupStart = backupStart;
     }
 

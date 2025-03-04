@@ -63,14 +63,14 @@ public final class MonitoredResourceTaskSummary
     public static class Builder {
         /**
          * Task identifier
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * Task identifier
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          * @param id the value to set
          * @return this builder
@@ -105,17 +105,15 @@ public final class MonitoredResourceTaskSummary
             return this;
         }
         /**
-         * Identifiers
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) for work
-         * requests submitted for this task.
+         * Identifiers [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * for work requests submitted for this task.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("workRequestIds")
         private java.util.List<String> workRequestIds;
 
         /**
-         * Identifiers
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) for work
-         * requests submitted for this task.
+         * Identifiers [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * for work requests submitted for this task.
          *
          * @param workRequestIds the value to set
          * @return this builder
@@ -306,14 +304,14 @@ public final class MonitoredResourceTaskSummary
 
     /**
      * Task identifier
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * Task identifier
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      * @return the value
      */
@@ -342,15 +340,15 @@ public final class MonitoredResourceTaskSummary
     }
 
     /**
-     * Identifiers [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
-     * for work requests submitted for this task.
+     * Identifiers [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for
+     * work requests submitted for this task.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("workRequestIds")
     private final java.util.List<String> workRequestIds;
 
     /**
-     * Identifiers [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
-     * for work requests submitted for this task.
+     * Identifiers [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for
+     * work requests submitted for this task.
      *
      * @return the value
      */

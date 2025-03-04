@@ -11,7 +11,7 @@ import com.oracle.bmc.tenantmanagercontrolplane.responses.*;
  * Use the Organizations API to consolidate multiple OCI tenancies into an organization, and
  * centrally manage your tenancies and organization resources. For more information, see
  * [Organization Management
- * Overview](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/organization_management_overview.htm).
+ * Overview](https://docs.oracle.com/iaas/Content/General/Concepts/organization_management_overview.htm).
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230401")
 public interface SubscriptionAsync extends AutoCloseable {

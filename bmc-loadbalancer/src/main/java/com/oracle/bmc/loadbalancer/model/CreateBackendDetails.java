@@ -7,7 +7,7 @@ package com.oracle.bmc.loadbalancer.model;
 /**
  * The configuration details for creating a backend server in a backend set. For more information on
  * backend server configuration, see [Managing Backend
- * Servers](https://docs.cloud.oracle.com/Content/Balance/Tasks/managingbackendservers.htm). <br>
+ * Servers](https://docs.oracle.com/iaas/Content/Balance/Tasks/managingbackendservers.htm). <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -101,7 +101,7 @@ public final class CreateBackendDetails
          * weight receive a larger proportion of incoming traffic. For example, a server weighted
          * '3' receives 3 times the number of new connections as a server weighted '1'. For more
          * information on load balancing policies, see [How Load Balancing Policies
-         * Work](https://docs.cloud.oracle.com/Content/Balance/Reference/lbpolicies.htm).
+         * Work](https://docs.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).
          *
          * <p>Example: {@code 3}
          */
@@ -113,7 +113,7 @@ public final class CreateBackendDetails
          * weight receive a larger proportion of incoming traffic. For example, a server weighted
          * '3' receives 3 times the number of new connections as a server weighted '1'. For more
          * information on load balancing policies, see [How Load Balancing Policies
-         * Work](https://docs.cloud.oracle.com/Content/Balance/Reference/lbpolicies.htm).
+         * Work](https://docs.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).
          *
          * <p>Example: {@code 3}
          *
@@ -326,7 +326,7 @@ public final class CreateBackendDetails
      * receive a larger proportion of incoming traffic. For example, a server weighted '3' receives
      * 3 times the number of new connections as a server weighted '1'. For more information on load
      * balancing policies, see [How Load Balancing Policies
-     * Work](https://docs.cloud.oracle.com/Content/Balance/Reference/lbpolicies.htm).
+     * Work](https://docs.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).
      *
      * <p>Example: {@code 3}
      */
@@ -338,7 +338,7 @@ public final class CreateBackendDetails
      * receive a larger proportion of incoming traffic. For example, a server weighted '3' receives
      * 3 times the number of new connections as a server weighted '1'. For more information on load
      * balancing policies, see [How Load Balancing Policies
-     * Work](https://docs.cloud.oracle.com/Content/Balance/Reference/lbpolicies.htm).
+     * Work](https://docs.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).
      *
      * <p>Example: {@code 3}
      *

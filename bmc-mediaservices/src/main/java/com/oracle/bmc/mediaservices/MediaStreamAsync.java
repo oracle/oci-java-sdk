@@ -14,8 +14,8 @@ import com.oracle.bmc.mediaservices.responses.*;
  *
  * <p>Use the Media Services API to configure media workflows and run Media Flow jobs, create
  * distribution channels, ingest assets, create Preview URLs and play assets. For more information,
- * see [Media Flow](https://docs.cloud.oracle.com/iaas/Content/dms-mediaflow/home.htm) and [Media
- * Streams](https://docs.cloud.oracle.com/iaas/Content/dms-mediastream/home.htm).
+ * see [Media Flow](https://docs.oracle.com/iaas/Content/dms-mediaflow/home.htm) and [Media
+ * Streams](https://docs.oracle.com/iaas/Content/dms-mediastream/home.htm).
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211101")
 public interface MediaStreamAsync extends AutoCloseable {

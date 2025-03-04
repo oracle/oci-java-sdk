@@ -167,7 +167,7 @@ public final class UpdateMicrosoftFabricConnectionDetails extends UpdateConnecti
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Secret where the client secret is stored. Note: When provided, 'clientSecret' field must
          * not be provided.
          */
@@ -175,7 +175,7 @@ public final class UpdateMicrosoftFabricConnectionDetails extends UpdateConnecti
         private String clientSecretSecretId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Secret where the client secret is stored. Note: When provided, 'clientSecret' field must
          * not be provided.
          *
@@ -373,7 +373,7 @@ public final class UpdateMicrosoftFabricConnectionDetails extends UpdateConnecti
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Secret where the client secret is stored. Note: When provided, 'clientSecret' field must not
      * be provided.
      */
@@ -381,7 +381,7 @@ public final class UpdateMicrosoftFabricConnectionDetails extends UpdateConnecti
     private final String clientSecretSecretId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Secret where the client secret is stored. Note: When provided, 'clientSecret' field must not
      * be provided.
      *

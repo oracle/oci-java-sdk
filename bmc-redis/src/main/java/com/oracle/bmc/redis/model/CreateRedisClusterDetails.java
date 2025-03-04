@@ -7,7 +7,7 @@ package com.oracle.bmc.redis.model;
 /**
  * The configuration details for a new OCI Cache cluster. An OCI Cache cluster is a memory-based
  * storage solution. For more information, see [OCI
- * Cache](https://docs.cloud.oracle.com/iaas/Content/ocicache/home.htm). <br>
+ * Cache](https://docs.oracle.com/iaas/Content/ocicache/home.htm). <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -116,16 +116,14 @@ public final class CreateRedisClusterDetails
             return this;
         }
         /**
-         * The
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle)
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle)
          * of the compartment that contains the cluster.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle)
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle)
          * of the compartment that contains the cluster.
          *
          * @param compartmentId the value to set
@@ -186,16 +184,14 @@ public final class CreateRedisClusterDetails
             return this;
         }
         /**
-         * The
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle)
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle)
          * of the cluster's subnet.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
         private String subnetId;
 
         /**
-         * The
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle)
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle)
          * of the cluster's subnet.
          *
          * @param subnetId the value to set
@@ -208,18 +204,18 @@ public final class CreateRedisClusterDetails
         }
         /**
          * A list of Network Security Group (NSG)
-         * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * associated with this cluster. For more information, see [Using an NSG for
-         * Clusters](https://docs.cloud.oracle.com/iaas/Content/ocicache/connecttocluster.htm#connecttocluster__networksecuritygroup).
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated
+         * with this cluster. For more information, see [Using an NSG for
+         * Clusters](https://docs.oracle.com/iaas/Content/ocicache/connecttocluster.htm#connecttocluster__networksecuritygroup).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
         private java.util.List<String> nsgIds;
 
         /**
          * A list of Network Security Group (NSG)
-         * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * associated with this cluster. For more information, see [Using an NSG for
-         * Clusters](https://docs.cloud.oracle.com/iaas/Content/ocicache/connecttocluster.htm#connecttocluster__networksecuritygroup).
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated
+         * with this cluster. For more information, see [Using an NSG for
+         * Clusters](https://docs.oracle.com/iaas/Content/ocicache/connecttocluster.htm#connecttocluster__networksecuritygroup).
          *
          * @param nsgIds the value to set
          * @return this builder
@@ -384,16 +380,14 @@ public final class CreateRedisClusterDetails
     }
 
     /**
-     * The
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of
      * the compartment that contains the cluster.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of
      * the compartment that contains the cluster.
      *
      * @return the value
@@ -446,16 +440,14 @@ public final class CreateRedisClusterDetails
     }
 
     /**
-     * The
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of
      * the cluster's subnet.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
     private final String subnetId;
 
     /**
-     * The
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of
      * the cluster's subnet.
      *
      * @return the value
@@ -466,18 +458,18 @@ public final class CreateRedisClusterDetails
 
     /**
      * A list of Network Security Group (NSG)
-     * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-     * associated with this cluster. For more information, see [Using an NSG for
-     * Clusters](https://docs.cloud.oracle.com/iaas/Content/ocicache/connecttocluster.htm#connecttocluster__networksecuritygroup).
+     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated
+     * with this cluster. For more information, see [Using an NSG for
+     * Clusters](https://docs.oracle.com/iaas/Content/ocicache/connecttocluster.htm#connecttocluster__networksecuritygroup).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
     private final java.util.List<String> nsgIds;
 
     /**
      * A list of Network Security Group (NSG)
-     * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-     * associated with this cluster. For more information, see [Using an NSG for
-     * Clusters](https://docs.cloud.oracle.com/iaas/Content/ocicache/connecttocluster.htm#connecttocluster__networksecuritygroup).
+     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated
+     * with this cluster. For more information, see [Using an NSG for
+     * Clusters](https://docs.oracle.com/iaas/Content/ocicache/connecttocluster.htm#connecttocluster__networksecuritygroup).
      *
      * @return the value
      */

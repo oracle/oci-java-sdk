@@ -33,16 +33,16 @@ public final class ChangeOperationsInsightsPrivateEndpointCompartmentDetails
     public static class Builder {
         /**
          * The new compartment
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-         * the Private service accessed database.
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Private service accessed database.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * The new compartment
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-         * the Private service accessed database.
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Private service accessed database.
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -86,16 +86,16 @@ public final class ChangeOperationsInsightsPrivateEndpointCompartmentDetails
 
     /**
      * The new compartment
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Private service accessed database.
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Private
+     * service accessed database.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * The new compartment
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Private service accessed database.
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Private
+     * service accessed database.
      *
      * @return the value
      */

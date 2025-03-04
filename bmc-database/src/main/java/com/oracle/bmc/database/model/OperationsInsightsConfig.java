@@ -50,7 +50,7 @@ public final class OperationsInsightsConfig
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * {@link
          * #createExternalDatabaseConnectorDetails(CreateExternalDatabaseConnectorDetailsRequest)
          * createExternalDatabaseConnectorDetails}.
@@ -59,7 +59,7 @@ public final class OperationsInsightsConfig
         private String operationsInsightsConnectorId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * {@link
          * #createExternalDatabaseConnectorDetails(CreateExternalDatabaseConnectorDetailsRequest)
          * createExternalDatabaseConnectorDetails}.
@@ -171,7 +171,7 @@ public final class OperationsInsightsConfig
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * {@link #createExternalDatabaseConnectorDetails(CreateExternalDatabaseConnectorDetailsRequest)
      * createExternalDatabaseConnectorDetails}.
      */
@@ -179,7 +179,7 @@ public final class OperationsInsightsConfig
     private final String operationsInsightsConnectorId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * {@link #createExternalDatabaseConnectorDetails(CreateExternalDatabaseConnectorDetailsRequest)
      * createExternalDatabaseConnectorDetails}.
      *

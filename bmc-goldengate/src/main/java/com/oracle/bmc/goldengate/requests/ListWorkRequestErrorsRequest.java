@@ -7,7 +7,7 @@ package com.oracle.bmc.goldengate.requests;
 import com.oracle.bmc.goldengate.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/goldengate/ListWorkRequestErrorsExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/goldengate/ListWorkRequestErrorsExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * ListWorkRequestErrorsRequest.
  */
@@ -16,13 +16,13 @@ public class ListWorkRequestErrorsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * asynchronous request.
      */
     private String workRequestId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * asynchronous request.
      */
     public String getWorkRequestId() {
@@ -63,13 +63,13 @@ public class ListWorkRequestErrorsRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * asynchronous request.
          */
         private String workRequestId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * asynchronous request.
          *
          * @param workRequestId the value to set

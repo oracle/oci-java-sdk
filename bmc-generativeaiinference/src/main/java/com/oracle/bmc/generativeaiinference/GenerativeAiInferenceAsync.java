@@ -36,7 +36,7 @@ import com.oracle.bmc.generativeaiinference.responses.*;
  * #eNGenerative-aiLatest(ENGenerative-aiLatestRequest) eNGenerative-aiLatest}.
  *
  * <p>To learn more about the service, see the [Generative AI
- * documentation](https://docs.cloud.oracle.com/iaas/Content/generative-ai/home.htm).
+ * documentation](https://docs.oracle.com/iaas/Content/generative-ai/home.htm).
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20231130")
 public interface GenerativeAiInferenceAsync extends AutoCloseable {

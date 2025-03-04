@@ -6,10 +6,10 @@ package com.oracle.bmc.sch.model;
 
 /**
  * The [read
- * setting](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector-streaming-source.htm),
+ * setting](https://docs.oracle.com/iaas/Content/connector-hub/create-service-connector-streaming-source.htm),
  * which determines where in the stream to start moving data. For configuration instructions, see
  * [Creating a Connector with a Streaming
- * Source](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector-streaming-source.htm).
+ * Source](https://docs.oracle.com/iaas/Content/connector-hub/create-service-connector-streaming-source.htm).
  * <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly

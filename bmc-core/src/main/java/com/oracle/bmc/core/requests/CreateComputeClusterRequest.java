@@ -7,7 +7,7 @@ package com.oracle.bmc.core.requests;
 import com.oracle.bmc.core.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateComputeClusterExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateComputeClusterExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use CreateComputeClusterRequest.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
@@ -17,8 +17,8 @@ public class CreateComputeClusterRequest
 
     /**
      * The data for creating a [compute
-     * cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm). A
-     * compute cluster is an empty remote direct memory access (RDMA) network group.
+     * cluster](https://docs.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm). A compute
+     * cluster is an empty remote direct memory access (RDMA) network group.
      *
      * <p>After the compute cluster is created, you can use the compute cluster's OCID with the
      * {@link #launchInstance(LaunchInstanceRequest) launchInstance} operation to create instances
@@ -37,8 +37,8 @@ public class CreateComputeClusterRequest
 
     /**
      * The data for creating a [compute
-     * cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm). A
-     * compute cluster is an empty remote direct memory access (RDMA) network group.
+     * cluster](https://docs.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm). A compute
+     * cluster is an empty remote direct memory access (RDMA) network group.
      *
      * <p>After the compute cluster is created, you can use the compute cluster's OCID with the
      * {@link #launchInstance(LaunchInstanceRequest) launchInstance} operation to create instances
@@ -109,8 +109,8 @@ public class CreateComputeClusterRequest
 
         /**
          * The data for creating a [compute
-         * cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm).
-         * A compute cluster is an empty remote direct memory access (RDMA) network group.
+         * cluster](https://docs.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm). A
+         * compute cluster is an empty remote direct memory access (RDMA) network group.
          *
          * <p>After the compute cluster is created, you can use the compute cluster's OCID with the
          * {@link #launchInstance(LaunchInstanceRequest) launchInstance} operation to create
@@ -130,8 +130,8 @@ public class CreateComputeClusterRequest
 
         /**
          * The data for creating a [compute
-         * cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm).
-         * A compute cluster is an empty remote direct memory access (RDMA) network group.
+         * cluster](https://docs.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm). A
+         * compute cluster is an empty remote direct memory access (RDMA) network group.
          *
          * <p>After the compute cluster is created, you can use the compute cluster's OCID with the
          * {@link #launchInstance(LaunchInstanceRequest) launchInstance} operation to create

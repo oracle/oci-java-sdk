@@ -7,7 +7,7 @@ package com.oracle.bmc.adm.requests;
 import com.oracle.bmc.adm.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/adm/CancelWorkRequestExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/adm/CancelWorkRequestExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use CancelWorkRequestRequest.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220421")
@@ -15,14 +15,14 @@ public class CancelWorkRequestRequest extends com.oracle.bmc.requests.BmcRequest
 
     /**
      * The Oracle Cloud Identifier
-     * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the
+     * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the
      * asynchronous request.
      */
     private String workRequestId;
 
     /**
      * The Oracle Cloud Identifier
-     * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the
+     * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the
      * asynchronous request.
      */
     public String getWorkRequestId() {
@@ -61,14 +61,14 @@ public class CancelWorkRequestRequest extends com.oracle.bmc.requests.BmcRequest
 
         /**
          * The Oracle Cloud Identifier
-         * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the
+         * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the
          * asynchronous request.
          */
         private String workRequestId = null;
 
         /**
          * The Oracle Cloud Identifier
-         * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the
+         * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the
          * asynchronous request.
          *
          * @param workRequestId the value to set

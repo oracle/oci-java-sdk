@@ -7,7 +7,7 @@ package com.oracle.bmc.mysql.requests;
 import com.oracle.bmc.mysql.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/DeleteConfigurationExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/DeleteConfigurationExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use DeleteConfigurationRequest.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190415")

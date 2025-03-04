@@ -10,7 +10,7 @@ import com.oracle.bmc.licensemanager.responses.*;
 /**
  * Use the License Manager API to manage product licenses and license records. For more information,
  * see [License Manager
- * Overview](https://docs.cloud.oracle.com/iaas/Content/LicenseManager/Concepts/licensemanageroverview.htm).
+ * Overview](https://docs.oracle.com/iaas/Content/LicenseManager/Concepts/licensemanageroverview.htm).
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220430")
 public interface LicenseManagerAsync extends AutoCloseable {

@@ -34,16 +34,16 @@ public final class Configuration extends com.oracle.bmc.http.client.internal.Exp
     public static class Builder {
         /**
          * The root compartment
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) (same
-         * as the tenancy OCID)
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) (same as
+         * the tenancy OCID)
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * The root compartment
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) (same
-         * as the tenancy OCID)
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) (same as
+         * the tenancy OCID)
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -127,16 +127,16 @@ public final class Configuration extends com.oracle.bmc.http.client.internal.Exp
 
     /**
      * The root compartment
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) (same as
-     * the tenancy OCID)
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) (same as the
+     * tenancy OCID)
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * The root compartment
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) (same as
-     * the tenancy OCID)
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) (same as the
+     * tenancy OCID)
      *
      * @return the value
      */

@@ -29,7 +29,7 @@ public class SummarizeDeployedApplicationInstallationUsageResponse
      * For list pagination, when this header appears in the response, additional pages of results
      * remain. Include this value as the {@code page} parameter for the subsequent GET request to
      * get the next batch of items. For important details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private String opcNextPage;
 
@@ -37,7 +37,7 @@ public class SummarizeDeployedApplicationInstallationUsageResponse
      * For list pagination, when this header appears in the response, additional pages of results
      * remain. Include this value as the {@code page} parameter for the subsequent GET request to
      * get the next batch of items. For important details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      * @return the value
      */
@@ -122,7 +122,7 @@ public class SummarizeDeployedApplicationInstallationUsageResponse
          * results remain. Include this value as the {@code page} parameter for the subsequent GET
          * request to get the next batch of items. For important details about how pagination works,
          * see [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private String opcNextPage;
 
@@ -131,7 +131,7 @@ public class SummarizeDeployedApplicationInstallationUsageResponse
          * results remain. Include this value as the {@code page} parameter for the subsequent GET
          * request to get the next batch of items. For important details about how pagination works,
          * see [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param opcNextPage the value to set
          * @return this builder

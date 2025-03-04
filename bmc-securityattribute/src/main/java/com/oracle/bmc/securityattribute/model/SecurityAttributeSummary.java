@@ -174,14 +174,14 @@ public final class SecurityAttributeSummary
         }
         /**
          * Whether the security attribute is retired. See [Managing Security
-         * Attributes](https://docs.cloud.oracle.com/Content/zero-trust-packet-routing/managing-security-attributes.htm).
+         * Attributes](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/managing-security-attributes.htm).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("isRetired")
         private Boolean isRetired;
 
         /**
          * Whether the security attribute is retired. See [Managing Security
-         * Attributes](https://docs.cloud.oracle.com/Content/zero-trust-packet-routing/managing-security-attributes.htm).
+         * Attributes](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/managing-security-attributes.htm).
          *
          * @param isRetired the value to set
          * @return this builder
@@ -400,14 +400,14 @@ public final class SecurityAttributeSummary
 
     /**
      * Whether the security attribute is retired. See [Managing Security
-     * Attributes](https://docs.cloud.oracle.com/Content/zero-trust-packet-routing/managing-security-attributes.htm).
+     * Attributes](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/managing-security-attributes.htm).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("isRetired")
     private final Boolean isRetired;
 
     /**
      * Whether the security attribute is retired. See [Managing Security
-     * Attributes](https://docs.cloud.oracle.com/Content/zero-trust-packet-routing/managing-security-attributes.htm).
+     * Attributes](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/managing-security-attributes.htm).
      *
      * @return the value
      */

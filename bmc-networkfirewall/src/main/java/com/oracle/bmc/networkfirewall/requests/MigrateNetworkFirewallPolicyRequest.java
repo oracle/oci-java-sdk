@@ -7,7 +7,7 @@ package com.oracle.bmc.networkfirewall.requests;
 import com.oracle.bmc.networkfirewall.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkfirewall/MigrateNetworkFirewallPolicyExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkfirewall/MigrateNetworkFirewallPolicyExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * MigrateNetworkFirewallPolicyRequest.
  */

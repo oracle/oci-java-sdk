@@ -28,14 +28,14 @@ public final class DrgRoutingConfiguration extends ForwardedRoutingConfiguration
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * DRG route table that allowed the traffic.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("drgRouteTableId")
         private String drgRouteTableId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * DRG route table that allowed the traffic.
          *
          * @param drgRouteTableId the value to set
@@ -97,14 +97,14 @@ public final class DrgRoutingConfiguration extends ForwardedRoutingConfiguration
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the DRG
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG
      * route table that allowed the traffic.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("drgRouteTableId")
     private final String drgRouteTableId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the DRG
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG
      * route table that allowed the traffic.
      *
      * @return the value

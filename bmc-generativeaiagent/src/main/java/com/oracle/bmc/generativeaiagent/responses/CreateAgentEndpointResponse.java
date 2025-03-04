@@ -47,15 +47,15 @@ public class CreateAgentEndpointResponse extends com.oracle.bmc.responses.BmcRes
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the asynchronous work request. Use GetWorkRequest with this ID to track the status of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * asynchronous work request. Use GetWorkRequest with this ID to track the status of the
      * request.
      */
     private String opcWorkRequestId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the asynchronous work request. Use GetWorkRequest with this ID to track the status of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * asynchronous work request. Use GetWorkRequest with this ID to track the status of the
      * request.
      *
      * @return the value
@@ -185,16 +185,16 @@ public class CreateAgentEndpointResponse extends com.oracle.bmc.responses.BmcRes
         }
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the asynchronous work request. Use GetWorkRequest with this ID to track the status of
-         * the request.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * asynchronous work request. Use GetWorkRequest with this ID to track the status of the
+         * request.
          */
         private String opcWorkRequestId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the asynchronous work request. Use GetWorkRequest with this ID to track the status of
-         * the request.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * asynchronous work request. Use GetWorkRequest with this ID to track the status of the
+         * request.
          *
          * @param opcWorkRequestId the value to set
          * @return this builder

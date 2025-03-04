@@ -92,18 +92,18 @@ public final class CreatePolicyDetails
         }
         /**
          * An array of policy statements written in the policy language. See [How Policies
-         * Work](https://docs.cloud.oracle.com/Content/Identity/policieshow/how-policies-work.htm)
+         * Work](https://docs.oracle.com/iaas/Content/Identity/policieshow/how-policies-work.htm)
          * and [Common
-         * Policies](https://docs.cloud.oracle.com/Content/Identity/policiescommon/commonpolicies.htm).
+         * Policies](https://docs.oracle.com/iaas/Content/Identity/policiescommon/commonpolicies.htm).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("statements")
         private java.util.List<String> statements;
 
         /**
          * An array of policy statements written in the policy language. See [How Policies
-         * Work](https://docs.cloud.oracle.com/Content/Identity/policieshow/how-policies-work.htm)
+         * Work](https://docs.oracle.com/iaas/Content/Identity/policieshow/how-policies-work.htm)
          * and [Common
-         * Policies](https://docs.cloud.oracle.com/Content/Identity/policiescommon/commonpolicies.htm).
+         * Policies](https://docs.oracle.com/iaas/Content/Identity/policiescommon/commonpolicies.htm).
          *
          * @param statements the value to set
          * @return this builder
@@ -158,7 +158,7 @@ public final class CreatePolicyDetails
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
          * {@code {"Department": "Finance"}}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -167,7 +167,7 @@ public final class CreatePolicyDetails
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
          * {@code {"Department": "Finance"}}
          *
          * @param freeformTags the value to set
@@ -181,7 +181,7 @@ public final class CreatePolicyDetails
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
          * {@code {"Operations": {"CostCenter": "42"}}}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -190,7 +190,7 @@ public final class CreatePolicyDetails
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
          * {@code {"Operations": {"CostCenter": "42"}}}
          *
          * @param definedTags the value to set
@@ -294,18 +294,18 @@ public final class CreatePolicyDetails
 
     /**
      * An array of policy statements written in the policy language. See [How Policies
-     * Work](https://docs.cloud.oracle.com/Content/Identity/policieshow/how-policies-work.htm) and
+     * Work](https://docs.oracle.com/iaas/Content/Identity/policieshow/how-policies-work.htm) and
      * [Common
-     * Policies](https://docs.cloud.oracle.com/Content/Identity/policiescommon/commonpolicies.htm).
+     * Policies](https://docs.oracle.com/iaas/Content/Identity/policiescommon/commonpolicies.htm).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("statements")
     private final java.util.List<String> statements;
 
     /**
      * An array of policy statements written in the policy language. See [How Policies
-     * Work](https://docs.cloud.oracle.com/Content/Identity/policieshow/how-policies-work.htm) and
+     * Work](https://docs.oracle.com/iaas/Content/Identity/policieshow/how-policies-work.htm) and
      * [Common
-     * Policies](https://docs.cloud.oracle.com/Content/Identity/policiescommon/commonpolicies.htm).
+     * Policies](https://docs.oracle.com/iaas/Content/Identity/policiescommon/commonpolicies.htm).
      *
      * @return the value
      */
@@ -354,7 +354,7 @@ public final class CreatePolicyDetails
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Department": "Finance"}}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -363,7 +363,7 @@ public final class CreatePolicyDetails
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Department": "Finance"}}
      *
      * @return the value
@@ -375,7 +375,7 @@ public final class CreatePolicyDetails
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Operations": {"CostCenter": "42"}}}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -384,7 +384,7 @@ public final class CreatePolicyDetails
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Operations": {"CostCenter": "42"}}}
      *
      * @return the value

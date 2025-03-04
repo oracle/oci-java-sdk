@@ -216,7 +216,7 @@ public final class UpdateElasticsearchConnectionDetails extends UpdateConnection
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Secret where the password is stored. The password Oracle GoldenGate uses to connect the
          * associated system of the given technology. It must conform to the specific security
          * requirements including length, case sensitivity, and so on. If secretId is used plaintext
@@ -226,7 +226,7 @@ public final class UpdateElasticsearchConnectionDetails extends UpdateConnection
         private String passwordSecretId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Secret where the password is stored. The password Oracle GoldenGate uses to connect the
          * associated system of the given technology. It must conform to the specific security
          * requirements including length, case sensitivity, and so on. If secretId is used plaintext
@@ -482,7 +482,7 @@ public final class UpdateElasticsearchConnectionDetails extends UpdateConnection
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Secret where the password is stored. The password Oracle GoldenGate uses to connect the
      * associated system of the given technology. It must conform to the specific security
      * requirements including length, case sensitivity, and so on. If secretId is used plaintext
@@ -492,7 +492,7 @@ public final class UpdateElasticsearchConnectionDetails extends UpdateConnection
     private final String passwordSecretId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Secret where the password is stored. The password Oracle GoldenGate uses to connect the
      * associated system of the given technology. It must conform to the specific security
      * requirements including length, case sensitivity, and so on. If secretId is used plaintext

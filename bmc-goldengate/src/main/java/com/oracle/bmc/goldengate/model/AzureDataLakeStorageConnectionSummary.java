@@ -299,7 +299,7 @@ public final class AzureDataLakeStorageConnectionSummary extends ConnectionSumma
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Secret where the account key is stored. Note: When provided, 'accountKey' field must not
          * be provided.
          */
@@ -307,7 +307,7 @@ public final class AzureDataLakeStorageConnectionSummary extends ConnectionSumma
         private String accountKeySecretId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Secret where the account key is stored. Note: When provided, 'accountKey' field must not
          * be provided.
          *
@@ -320,7 +320,7 @@ public final class AzureDataLakeStorageConnectionSummary extends ConnectionSumma
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Secret where the sas token is stored. Note: When provided, 'sasToken' field must not be
          * provided.
          */
@@ -328,7 +328,7 @@ public final class AzureDataLakeStorageConnectionSummary extends ConnectionSumma
         private String sasTokenSecretId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Secret where the sas token is stored. Note: When provided, 'sasToken' field must not be
          * provided.
          *
@@ -341,7 +341,7 @@ public final class AzureDataLakeStorageConnectionSummary extends ConnectionSumma
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Secret where the client secret is stored. Note: When provided, 'clientSecret' field must
          * not be provided.
          */
@@ -349,7 +349,7 @@ public final class AzureDataLakeStorageConnectionSummary extends ConnectionSumma
         private String clientSecretSecretId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Secret where the client secret is stored. Note: When provided, 'clientSecret' field must
          * not be provided.
          *
@@ -649,7 +649,7 @@ public final class AzureDataLakeStorageConnectionSummary extends ConnectionSumma
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Secret where the account key is stored. Note: When provided, 'accountKey' field must not be
      * provided.
      */
@@ -657,7 +657,7 @@ public final class AzureDataLakeStorageConnectionSummary extends ConnectionSumma
     private final String accountKeySecretId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Secret where the account key is stored. Note: When provided, 'accountKey' field must not be
      * provided.
      *
@@ -668,7 +668,7 @@ public final class AzureDataLakeStorageConnectionSummary extends ConnectionSumma
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Secret where the sas token is stored. Note: When provided, 'sasToken' field must not be
      * provided.
      */
@@ -676,7 +676,7 @@ public final class AzureDataLakeStorageConnectionSummary extends ConnectionSumma
     private final String sasTokenSecretId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Secret where the sas token is stored. Note: When provided, 'sasToken' field must not be
      * provided.
      *
@@ -687,7 +687,7 @@ public final class AzureDataLakeStorageConnectionSummary extends ConnectionSumma
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Secret where the client secret is stored. Note: When provided, 'clientSecret' field must not
      * be provided.
      */
@@ -695,7 +695,7 @@ public final class AzureDataLakeStorageConnectionSummary extends ConnectionSumma
     private final String clientSecretSecretId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Secret where the client secret is stored. Note: When provided, 'clientSecret' field must not
      * be provided.
      *

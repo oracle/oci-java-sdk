@@ -10,7 +10,7 @@ import com.oracle.bmc.loadbalancer.responses.*;
 /**
  * API for the Load Balancing service. Use this API to manage load balancers, backend sets, and
  * related items. For more information, see [Overview of Load
- * Balancing](https://docs.cloud.oracle.com/iaas/Content/Balance/Concepts/balanceoverview.htm).
+ * Balancing](https://docs.oracle.com/iaas/Content/Balance/Concepts/balanceoverview.htm).
  *
  * <p>This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by
  * default if no circuit breaker configuration is defined by the user.
@@ -69,7 +69,7 @@ public interface LoadBalancer extends AutoCloseable {
     /**
      * Moves a load balancer into a different compartment within the same tenancy. For information
      * about moving resources between compartments, see [Moving Resources to a Different
-     * Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -78,7 +78,7 @@ public interface LoadBalancer extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/ChangeLoadBalancerCompartmentExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/ChangeLoadBalancerCompartmentExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ChangeLoadBalancerCompartment API.
      */
@@ -95,7 +95,7 @@ public interface LoadBalancer extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/CreateBackendExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/CreateBackendExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateBackend API.
      */
     CreateBackendResponse createBackend(CreateBackendRequest request);
@@ -110,7 +110,7 @@ public interface LoadBalancer extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/CreateBackendSetExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/CreateBackendSetExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateBackendSet
      *     API.
      */
@@ -126,7 +126,7 @@ public interface LoadBalancer extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/CreateCertificateExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/CreateCertificateExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateCertificate
      *     API.
      */
@@ -134,7 +134,7 @@ public interface LoadBalancer extends AutoCloseable {
 
     /**
      * Adds a hostname resource to the specified load balancer. For more information, see [Managing
-     * Request Routing](https://docs.cloud.oracle.com/Content/Balance/Tasks/managingrequest.htm).
+     * Request Routing](https://docs.oracle.com/iaas/Content/Balance/Tasks/managingrequest.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -143,7 +143,7 @@ public interface LoadBalancer extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/CreateHostnameExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/CreateHostnameExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateHostname API.
      */
     CreateHostnameResponse createHostname(CreateHostnameRequest request);
@@ -158,7 +158,7 @@ public interface LoadBalancer extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/CreateListenerExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/CreateListenerExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateListener API.
      */
     CreateListenerResponse createListener(CreateListenerRequest request);
@@ -166,29 +166,29 @@ public interface LoadBalancer extends AutoCloseable {
     /**
      * Creates a new load balancer in the specified compartment. For general information about load
      * balancers, see [Overview of the Load Balancing
-     * Service](https://docs.cloud.oracle.com/Content/Balance/Concepts/balanceoverview.htm).
+     * Service](https://docs.oracle.com/iaas/Content/Balance/Concepts/balanceoverview.htm).
      *
      * <p>For the purposes of access control, you must provide the OCID of the compartment where you
      * want the load balancer to reside. Notice that the load balancer doesn't have to be in the
      * same compartment as the VCN or backend set. If you're not sure which compartment to use, put
      * the load balancer in the same compartment as the VCN. For information about access control
      * and compartments, see [Overview of the IAM
-     * Service](https://docs.cloud.oracle.com/Content/Identity/Concepts/overview.htm).
+     * Service](https://docs.oracle.com/iaas/Content/Identity/Concepts/overview.htm).
      *
      * <p>You must specify a display name for the load balancer. It does not have to be unique, and
      * you can change it.
      *
      * <p>For information about Availability Domains, see [Regions and Availability
-     * Domains](https://docs.cloud.oracle.com/Content/General/Concepts/regions.htm). To get a list
-     * of Availability Domains, use the `ListAvailabilityDomains` operation in the Identity and
-     * Access Management Service API.
+     * Domains](https://docs.oracle.com/iaas/Content/General/Concepts/regions.htm). To get a list of
+     * Availability Domains, use the `ListAvailabilityDomains` operation in the Identity and Access
+     * Management Service API.
      *
      * <p>All Oracle Cloud Infrastructure resources, including load balancers, get an
      * Oracle-assigned, unique ID called an Oracle Cloud Identifier (OCID). When you create a
      * resource, you can find its OCID in the response. You can also retrieve a resource's OCID by
      * using a List API operation on that resource type, or by viewing the resource in the Console.
      * Fore more information, see [Resource
-     * Identifiers](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * Identifiers](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      * <p>After you send your request, the new object's state will temporarily be PROVISIONING.
      * Before using the object, first make sure its state has changed to RUNNING.
@@ -203,7 +203,7 @@ public interface LoadBalancer extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/CreateLoadBalancerExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/CreateLoadBalancerExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateLoadBalancer
      *     API.
      */
@@ -211,7 +211,7 @@ public interface LoadBalancer extends AutoCloseable {
 
     /**
      * Adds a path route set to a load balancer. For more information, see [Managing Request
-     * Routing](https://docs.cloud.oracle.com/Content/Balance/Tasks/managingrequest.htm).
+     * Routing](https://docs.oracle.com/iaas/Content/Balance/Tasks/managingrequest.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -220,7 +220,7 @@ public interface LoadBalancer extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/CreatePathRouteSetExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/CreatePathRouteSetExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreatePathRouteSet
      *     API.
      */
@@ -228,7 +228,7 @@ public interface LoadBalancer extends AutoCloseable {
 
     /**
      * Adds a routing policy to a load balancer. For more information, see [Managing Request
-     * Routing](https://docs.cloud.oracle.com/Content/Balance/Tasks/managingrequest.htm).
+     * Routing](https://docs.oracle.com/iaas/Content/Balance/Tasks/managingrequest.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -237,7 +237,7 @@ public interface LoadBalancer extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/CreateRoutingPolicyExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/CreateRoutingPolicyExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateRoutingPolicy
      *     API.
      */
@@ -246,7 +246,7 @@ public interface LoadBalancer extends AutoCloseable {
     /**
      * Creates a new rule set associated with the specified load balancer. For more information, see
      * [Managing Rule
-     * Sets](https://docs.cloud.oracle.com/Content/Balance/Tasks/managingrulesets.htm).
+     * Sets](https://docs.oracle.com/iaas/Content/Balance/Tasks/managingrulesets.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -255,7 +255,7 @@ public interface LoadBalancer extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/CreateRuleSetExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/CreateRuleSetExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateRuleSet API.
      */
     CreateRuleSetResponse createRuleSet(CreateRuleSetRequest request);
@@ -270,7 +270,7 @@ public interface LoadBalancer extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/CreateSSLCipherSuiteExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/CreateSSLCipherSuiteExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     CreateSSLCipherSuite API.
      */
@@ -286,7 +286,7 @@ public interface LoadBalancer extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/DeleteBackendExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/DeleteBackendExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteBackend API.
      */
     DeleteBackendResponse deleteBackend(DeleteBackendRequest request);
@@ -304,7 +304,7 @@ public interface LoadBalancer extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/DeleteBackendSetExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/DeleteBackendSetExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteBackendSet
      *     API.
      */
@@ -320,7 +320,7 @@ public interface LoadBalancer extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/DeleteCertificateExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/DeleteCertificateExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteCertificate
      *     API.
      */
@@ -336,7 +336,7 @@ public interface LoadBalancer extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/DeleteHostnameExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/DeleteHostnameExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteHostname API.
      */
     DeleteHostnameResponse deleteHostname(DeleteHostnameRequest request);
@@ -351,7 +351,7 @@ public interface LoadBalancer extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/DeleteListenerExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/DeleteListenerExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteListener API.
      */
     DeleteListenerResponse deleteListener(DeleteListenerRequest request);
@@ -366,7 +366,7 @@ public interface LoadBalancer extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/DeleteLoadBalancerExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/DeleteLoadBalancerExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteLoadBalancer
      *     API.
      */
@@ -385,7 +385,7 @@ public interface LoadBalancer extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/DeletePathRouteSetExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/DeletePathRouteSetExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeletePathRouteSet
      *     API.
      */
@@ -404,7 +404,7 @@ public interface LoadBalancer extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/DeleteRoutingPolicyExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/DeleteRoutingPolicyExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteRoutingPolicy
      *     API.
      */
@@ -423,7 +423,7 @@ public interface LoadBalancer extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/DeleteRuleSetExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/DeleteRuleSetExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteRuleSet API.
      */
     DeleteRuleSetResponse deleteRuleSet(DeleteRuleSetRequest request);
@@ -438,7 +438,7 @@ public interface LoadBalancer extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/DeleteSSLCipherSuiteExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/DeleteSSLCipherSuiteExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     DeleteSSLCipherSuite API.
      */
@@ -454,7 +454,7 @@ public interface LoadBalancer extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/GetBackendExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/GetBackendExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetBackend API.
      */
     GetBackendResponse getBackend(GetBackendRequest request);
@@ -469,7 +469,7 @@ public interface LoadBalancer extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/GetBackendHealthExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/GetBackendHealthExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetBackendHealth
      *     API.
      */
@@ -485,7 +485,7 @@ public interface LoadBalancer extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/GetBackendSetExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/GetBackendSetExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetBackendSet API.
      */
     GetBackendSetResponse getBackendSet(GetBackendSetRequest request);
@@ -500,7 +500,7 @@ public interface LoadBalancer extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/GetBackendSetHealthExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/GetBackendSetHealthExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetBackendSetHealth
      *     API.
      */
@@ -516,7 +516,7 @@ public interface LoadBalancer extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/GetHealthCheckerExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/GetHealthCheckerExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetHealthChecker
      *     API.
      */
@@ -532,7 +532,7 @@ public interface LoadBalancer extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/GetHostnameExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/GetHostnameExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetHostname API.
      */
     GetHostnameResponse getHostname(GetHostnameRequest request);
@@ -547,7 +547,7 @@ public interface LoadBalancer extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/GetLoadBalancerExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/GetLoadBalancerExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetLoadBalancer
      *     API.
      */
@@ -563,7 +563,7 @@ public interface LoadBalancer extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/GetLoadBalancerHealthExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/GetLoadBalancerHealthExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     GetLoadBalancerHealth API.
      */
@@ -579,7 +579,7 @@ public interface LoadBalancer extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/GetPathRouteSetExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/GetPathRouteSetExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetPathRouteSet
      *     API.
      */
@@ -595,7 +595,7 @@ public interface LoadBalancer extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/GetRoutingPolicyExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/GetRoutingPolicyExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetRoutingPolicy
      *     API.
      */
@@ -611,7 +611,7 @@ public interface LoadBalancer extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/GetRuleSetExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/GetRuleSetExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetRuleSet API.
      */
     GetRuleSetResponse getRuleSet(GetRuleSetRequest request);
@@ -626,7 +626,7 @@ public interface LoadBalancer extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/GetSSLCipherSuiteExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/GetSSLCipherSuiteExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetSSLCipherSuite
      *     API.
      */
@@ -642,7 +642,7 @@ public interface LoadBalancer extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/GetWorkRequestExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/GetWorkRequestExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetWorkRequest API.
      */
     GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request);
@@ -657,7 +657,7 @@ public interface LoadBalancer extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/ListBackendSetsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/ListBackendSetsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListBackendSets
      *     API.
      */
@@ -673,7 +673,7 @@ public interface LoadBalancer extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/ListBackendsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/ListBackendsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListBackends API.
      */
     ListBackendsResponse listBackends(ListBackendsRequest request);
@@ -688,7 +688,7 @@ public interface LoadBalancer extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/ListCertificatesExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/ListCertificatesExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListCertificates
      *     API.
      */
@@ -704,7 +704,7 @@ public interface LoadBalancer extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/ListHostnamesExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/ListHostnamesExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListHostnames API.
      */
     ListHostnamesResponse listHostnames(ListHostnamesRequest request);
@@ -722,7 +722,7 @@ public interface LoadBalancer extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/ListListenerRulesExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/ListListenerRulesExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListListenerRules
      *     API.
      */
@@ -738,7 +738,7 @@ public interface LoadBalancer extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/ListLoadBalancerHealthsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/ListLoadBalancerHealthsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ListLoadBalancerHealths API.
      */
@@ -754,7 +754,7 @@ public interface LoadBalancer extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/ListLoadBalancersExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/ListLoadBalancersExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListLoadBalancers
      *     API.
      */
@@ -770,7 +770,7 @@ public interface LoadBalancer extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/ListPathRouteSetsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/ListPathRouteSetsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListPathRouteSets
      *     API.
      */
@@ -786,7 +786,7 @@ public interface LoadBalancer extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/ListPoliciesExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/ListPoliciesExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListPolicies API.
      */
     ListPoliciesResponse listPolicies(ListPoliciesRequest request);
@@ -801,7 +801,7 @@ public interface LoadBalancer extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/ListProtocolsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/ListProtocolsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListProtocols API.
      */
     ListProtocolsResponse listProtocols(ListProtocolsRequest request);
@@ -816,7 +816,7 @@ public interface LoadBalancer extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/ListRoutingPoliciesExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/ListRoutingPoliciesExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListRoutingPolicies
      *     API.
      */
@@ -832,7 +832,7 @@ public interface LoadBalancer extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/ListRuleSetsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/ListRuleSetsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListRuleSets API.
      */
     ListRuleSetsResponse listRuleSets(ListRuleSetsRequest request);
@@ -847,7 +847,7 @@ public interface LoadBalancer extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/ListSSLCipherSuitesExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/ListSSLCipherSuitesExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSSLCipherSuites
      *     API.
      */
@@ -863,7 +863,7 @@ public interface LoadBalancer extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/ListShapesExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/ListShapesExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListShapes API.
      */
     ListShapesResponse listShapes(ListShapesRequest request);
@@ -878,7 +878,7 @@ public interface LoadBalancer extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/ListWorkRequestsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/ListWorkRequestsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequests
      *     API.
      */
@@ -894,7 +894,7 @@ public interface LoadBalancer extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/UpdateBackendExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/UpdateBackendExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateBackend API.
      */
     UpdateBackendResponse updateBackend(UpdateBackendRequest request);
@@ -909,7 +909,7 @@ public interface LoadBalancer extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/UpdateBackendSetExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/UpdateBackendSetExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateBackendSet
      *     API.
      */
@@ -925,7 +925,7 @@ public interface LoadBalancer extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/UpdateHealthCheckerExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/UpdateHealthCheckerExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateHealthChecker
      *     API.
      */
@@ -942,7 +942,7 @@ public interface LoadBalancer extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/UpdateHostnameExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/UpdateHostnameExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateHostname API.
      */
     UpdateHostnameResponse updateHostname(UpdateHostnameRequest request);
@@ -957,7 +957,7 @@ public interface LoadBalancer extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/UpdateListenerExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/UpdateListenerExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateListener API.
      */
     UpdateListenerResponse updateListener(UpdateListenerRequest request);
@@ -972,7 +972,7 @@ public interface LoadBalancer extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/UpdateLoadBalancerExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/UpdateLoadBalancerExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateLoadBalancer
      *     API.
      */
@@ -994,7 +994,7 @@ public interface LoadBalancer extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/UpdateLoadBalancerShapeExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/UpdateLoadBalancerShapeExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     UpdateLoadBalancerShape API.
      */
@@ -1010,7 +1010,7 @@ public interface LoadBalancer extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/UpdateNetworkSecurityGroupsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/UpdateNetworkSecurityGroupsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     UpdateNetworkSecurityGroups API.
      */
@@ -1033,7 +1033,7 @@ public interface LoadBalancer extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/UpdatePathRouteSetExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/UpdatePathRouteSetExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdatePathRouteSet
      *     API.
      */
@@ -1053,7 +1053,7 @@ public interface LoadBalancer extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/UpdateRoutingPolicyExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/UpdateRoutingPolicyExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateRoutingPolicy
      *     API.
      */
@@ -1073,7 +1073,7 @@ public interface LoadBalancer extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/UpdateRuleSetExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/UpdateRuleSetExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateRuleSet API.
      */
     UpdateRuleSetResponse updateRuleSet(UpdateRuleSetRequest request);
@@ -1088,7 +1088,7 @@ public interface LoadBalancer extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/UpdateSSLCipherSuiteExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/UpdateSSLCipherSuiteExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     UpdateSSLCipherSuite API.
      */

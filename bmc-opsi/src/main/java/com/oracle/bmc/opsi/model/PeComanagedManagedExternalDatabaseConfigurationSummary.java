@@ -119,15 +119,15 @@ public final class PeComanagedManagedExternalDatabaseConfigurationSummary
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the database.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * database.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("databaseId")
         private String databaseId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the database.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * database.
          *
          * @param databaseId the value to set
          * @return this builder
@@ -138,15 +138,15 @@ public final class PeComanagedManagedExternalDatabaseConfigurationSummary
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the database.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * database.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("parentId")
         private String parentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the database.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * database.
          *
          * @param parentId the value to set
          * @return this builder
@@ -157,15 +157,15 @@ public final class PeComanagedManagedExternalDatabaseConfigurationSummary
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the OPSI private endpoint
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * OPSI private endpoint
          */
         @com.fasterxml.jackson.annotation.JsonProperty("opsiPrivateEndpointId")
         private String opsiPrivateEndpointId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the OPSI private endpoint
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * OPSI private endpoint
          *
          * @param opsiPrivateEndpointId the value to set
          * @return this builder
@@ -323,15 +323,15 @@ public final class PeComanagedManagedExternalDatabaseConfigurationSummary
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the database.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * database.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("databaseId")
     private final String databaseId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the database.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * database.
      *
      * @return the value
      */
@@ -340,15 +340,15 @@ public final class PeComanagedManagedExternalDatabaseConfigurationSummary
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the database.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * database.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("parentId")
     private final String parentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the database.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * database.
      *
      * @return the value
      */
@@ -357,15 +357,15 @@ public final class PeComanagedManagedExternalDatabaseConfigurationSummary
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the OPSI private endpoint
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OPSI
+     * private endpoint
      */
     @com.fasterxml.jackson.annotation.JsonProperty("opsiPrivateEndpointId")
     private final String opsiPrivateEndpointId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the OPSI private endpoint
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OPSI
+     * private endpoint
      *
      * @return the value
      */

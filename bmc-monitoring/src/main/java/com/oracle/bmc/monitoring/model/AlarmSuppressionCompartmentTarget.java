@@ -28,17 +28,17 @@ public final class AlarmSuppressionCompartmentTarget extends AlarmSuppressionTar
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compartment or tenancy that is the target of the alarm suppression. Example:
-         * {@code ocid1.compartment.oc1..exampleuniqueID}
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment or tenancy that is the target of the alarm suppression. Example: {@code
+         * ocid1.compartment.oc1..exampleuniqueID}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compartment or tenancy that is the target of the alarm suppression. Example:
-         * {@code ocid1.compartment.oc1..exampleuniqueID}
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment or tenancy that is the target of the alarm suppression. Example: {@code
+         * ocid1.compartment.oc1..exampleuniqueID}
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -114,16 +114,16 @@ public final class AlarmSuppressionCompartmentTarget extends AlarmSuppressionTar
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compartment or tenancy that is the target of the alarm suppression. Example: {@code
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment or tenancy that is the target of the alarm suppression. Example: {@code
      * ocid1.compartment.oc1..exampleuniqueID}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compartment or tenancy that is the target of the alarm suppression. Example: {@code
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment or tenancy that is the target of the alarm suppression. Example: {@code
      * ocid1.compartment.oc1..exampleuniqueID}
      *
      * @return the value

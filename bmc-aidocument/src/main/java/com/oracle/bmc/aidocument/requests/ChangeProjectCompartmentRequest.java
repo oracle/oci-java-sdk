@@ -7,7 +7,7 @@ package com.oracle.bmc.aidocument.requests;
 import com.oracle.bmc.aidocument.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aidocument/ChangeProjectCompartmentExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aidocument/ChangeProjectCompartmentExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * ChangeProjectCompartmentRequest.
  */

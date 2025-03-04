@@ -157,7 +157,7 @@ public class ObjectLifecyclePolicyExample {
                 System.out.println(
                         "Please see the object lifecycle policy authorization documentation:");
                 System.out.println(
-                        "https://docs.cloud.oracle.com/iaas/Content/Object/Tasks/usinglifecyclepolicies.htm");
+                        "https://docs.oracle.com/iaas/Content/Object/Tasks/usinglifecyclepolicies.htm");
                 System.out.println("-----");
                 System.exit(-1);
             } else {

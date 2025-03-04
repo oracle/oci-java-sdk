@@ -120,8 +120,8 @@ public final class DrgRouteRule extends com.oracle.bmc.http.client.internal.Expl
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the next hop DRG attachment responsible for reaching the network destination.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * next hop DRG attachment responsible for reaching the network destination.
          *
          * <p>A value of {@code BLACKHOLE} means traffic for this route is discarded without
          * notification.
@@ -130,8 +130,8 @@ public final class DrgRouteRule extends com.oracle.bmc.http.client.internal.Expl
         private String nextHopDrgAttachmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the next hop DRG attachment responsible for reaching the network destination.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * next hop DRG attachment responsible for reaching the network destination.
          *
          * <p>A value of {@code BLACKHOLE} means traffic for this route is discarded without
          * notification.
@@ -432,8 +432,8 @@ public final class DrgRouteRule extends com.oracle.bmc.http.client.internal.Expl
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the next hop DRG attachment responsible for reaching the network destination.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next
+     * hop DRG attachment responsible for reaching the network destination.
      *
      * <p>A value of {@code BLACKHOLE} means traffic for this route is discarded without
      * notification.
@@ -442,8 +442,8 @@ public final class DrgRouteRule extends com.oracle.bmc.http.client.internal.Expl
     private final String nextHopDrgAttachmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the next hop DRG attachment responsible for reaching the network destination.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next
+     * hop DRG attachment responsible for reaching the network destination.
      *
      * <p>A value of {@code BLACKHOLE} means traffic for this route is discarded without
      * notification.

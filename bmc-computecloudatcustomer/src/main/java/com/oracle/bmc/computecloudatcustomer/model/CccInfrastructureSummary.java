@@ -66,7 +66,7 @@ public final class CccInfrastructureSummary
     public static class Builder {
         /**
          * The Compute Cloud@Customer infrastructure
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). This
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). This
          * cannot be changed once created.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
@@ -74,7 +74,7 @@ public final class CccInfrastructureSummary
 
         /**
          * The Compute Cloud@Customer infrastructure
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). This
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). This
          * cannot be changed once created.
          *
          * @param id the value to set
@@ -129,16 +129,16 @@ public final class CccInfrastructureSummary
         }
         /**
          * The compartment
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * associated with the infrastructure.
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated
+         * with the infrastructure.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * The compartment
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * associated with the infrastructure.
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated
+         * with the infrastructure.
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -149,17 +149,15 @@ public final class CccInfrastructureSummary
             return this;
         }
         /**
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for
-         * the network subnet that is used to communicate with Compute Cloud@Customer
-         * infrastructure.
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
+         * network subnet that is used to communicate with Compute Cloud@Customer infrastructure.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
         private String subnetId;
 
         /**
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for
-         * the network subnet that is used to communicate with Compute Cloud@Customer
-         * infrastructure.
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
+         * network subnet that is used to communicate with Compute Cloud@Customer infrastructure.
          *
          * @param subnetId the value to set
          * @return this builder
@@ -350,16 +348,16 @@ public final class CccInfrastructureSummary
 
     /**
      * The Compute Cloud@Customer infrastructure
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). This
-     * cannot be changed once created.
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). This cannot be
+     * changed once created.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The Compute Cloud@Customer infrastructure
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). This
-     * cannot be changed once created.
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). This cannot be
+     * changed once created.
      *
      * @return the value
      */
@@ -406,16 +404,14 @@ public final class CccInfrastructureSummary
     }
 
     /**
-     * The compartment
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * The compartment [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      * associated with the infrastructure.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The compartment
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * The compartment [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      * associated with the infrastructure.
      *
      * @return the value
@@ -425,15 +421,15 @@ public final class CccInfrastructureSummary
     }
 
     /**
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
-     * network subnet that is used to communicate with Compute Cloud@Customer infrastructure.
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network
+     * subnet that is used to communicate with Compute Cloud@Customer infrastructure.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
     private final String subnetId;
 
     /**
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
-     * network subnet that is used to communicate with Compute Cloud@Customer infrastructure.
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network
+     * subnet that is used to communicate with Compute Cloud@Customer infrastructure.
      *
      * @return the value
      */

@@ -11,7 +11,7 @@ import com.oracle.bmc.bastion.responses.*;
  * Use the Bastion API to provide restricted and time-limited access to target resources that don't
  * have public endpoints. Bastions let authorized users connect from specific IP addresses to target
  * resources using Secure Shell (SSH) sessions. For more information, see [the Bastion
- * documentation](https://docs.cloud.oracle.com/iaas/Content/Bastion/home.htm).
+ * documentation](https://docs.oracle.com/iaas/Content/Bastion/home.htm).
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210331")
 public interface BastionAsync extends AutoCloseable {

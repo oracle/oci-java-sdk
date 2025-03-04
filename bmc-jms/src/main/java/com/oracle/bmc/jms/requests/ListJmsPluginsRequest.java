@@ -7,20 +7,20 @@ package com.oracle.bmc.jms.requests;
 import com.oracle.bmc.jms.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/ListJmsPluginsExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/ListJmsPluginsExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListJmsPluginsRequest.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
 public class ListJmsPluginsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment in which to list resources.
      */
     private String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment in which to list resources.
      */
     public String getCompartmentId() {
@@ -40,13 +40,13 @@ public class ListJmsPluginsRequest extends com.oracle.bmc.requests.BmcRequest<ja
         return compartmentIdInSubtree;
     }
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * JmsPlugin.
      */
     private String id;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * JmsPlugin.
      */
     public String getId() {
@@ -61,15 +61,15 @@ public class ListJmsPluginsRequest extends com.oracle.bmc.requests.BmcRequest<ja
     }
     /**
      * The ManagementAgent (OMA) or Instance (OCA)
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) that
-     * identifies the Agent.
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that identifies
+     * the Agent.
      */
     private String agentId;
 
     /**
      * The ManagementAgent (OMA) or Instance (OCA)
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) that
-     * identifies the Agent.
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that identifies
+     * the Agent.
      */
     public String getAgentId() {
         return agentId;
@@ -183,13 +183,13 @@ public class ListJmsPluginsRequest extends com.oracle.bmc.requests.BmcRequest<ja
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * compartment in which to list resources.
          */
         private String compartmentId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * compartment in which to list resources.
          *
          * @param compartmentId the value to set
@@ -219,13 +219,13 @@ public class ListJmsPluginsRequest extends com.oracle.bmc.requests.BmcRequest<ja
         }
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * JmsPlugin.
          */
         private String id = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * JmsPlugin.
          *
          * @param id the value to set
@@ -252,14 +252,14 @@ public class ListJmsPluginsRequest extends com.oracle.bmc.requests.BmcRequest<ja
 
         /**
          * The ManagementAgent (OMA) or Instance (OCA)
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) that
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that
          * identifies the Agent.
          */
         private String agentId = null;
 
         /**
          * The ManagementAgent (OMA) or Instance (OCA)
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) that
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that
          * identifies the Agent.
          *
          * @param agentId the value to set

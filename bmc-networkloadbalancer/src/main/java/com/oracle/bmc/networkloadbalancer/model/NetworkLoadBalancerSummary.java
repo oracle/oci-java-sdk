@@ -92,14 +92,14 @@ public final class NetworkLoadBalancerSummary
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * network load balancer.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * network load balancer.
          *
          * @param id the value to set
@@ -111,14 +111,14 @@ public final class NetworkLoadBalancerSummary
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * compartment containing the network load balancer.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * compartment containing the network load balancer.
          *
          * @param compartmentId the value to set
@@ -267,10 +267,10 @@ public final class NetworkLoadBalancerSummary
          *
          * <p>A public network load balancer is accessible from the internet, depending the
          * [security list
-         * rules](https://docs.cloud.oracle.com/Content/network/Concepts/securitylists.htm) for your
+         * rules](https://docs.oracle.com/iaas/Content/network/Concepts/securitylists.htm) for your
          * virtual cloudn network. For more information about public and private network load
          * balancers, see [Network Load Balancer
-         * Types](https://docs.cloud.oracle.com/Content/NetworkLoadBalancer/introduction.htm#NetworkLoadBalancerTypes).
+         * Types](https://docs.oracle.com/iaas/Content/NetworkLoadBalancer/introduction.htm#NetworkLoadBalancerTypes).
          * This value is true by default.
          *
          * <p>Example: {@code true}
@@ -287,10 +287,10 @@ public final class NetworkLoadBalancerSummary
          *
          * <p>A public network load balancer is accessible from the internet, depending the
          * [security list
-         * rules](https://docs.cloud.oracle.com/Content/network/Concepts/securitylists.htm) for your
+         * rules](https://docs.oracle.com/iaas/Content/network/Concepts/securitylists.htm) for your
          * virtual cloudn network. For more information about public and private network load
          * balancers, see [Network Load Balancer
-         * Types](https://docs.cloud.oracle.com/Content/NetworkLoadBalancer/introduction.htm#NetworkLoadBalancerTypes).
+         * Types](https://docs.oracle.com/iaas/Content/NetworkLoadBalancer/introduction.htm#NetworkLoadBalancerTypes).
          * This value is true by default.
          *
          * <p>Example: {@code true}
@@ -347,14 +347,14 @@ public final class NetworkLoadBalancerSummary
         }
         /**
          * The subnet in which the network load balancer is spawned
-         * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
         private String subnetId;
 
         /**
          * The subnet in which the network load balancer is spawned
-         * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          * @param subnetId the value to set
          * @return this builder
@@ -366,8 +366,8 @@ public final class NetworkLoadBalancerSummary
         }
         /**
          * An array of network security groups
-         * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
-         * associated with the network load balancer.
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated
+         * with the network load balancer.
          *
          * <p>During the creation of the network load balancer, the service adds the new load
          * balancer to the specified network security groups.
@@ -388,8 +388,8 @@ public final class NetworkLoadBalancerSummary
 
         /**
          * An array of network security groups
-         * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
-         * associated with the network load balancer.
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated
+         * with the network load balancer.
          *
          * <p>During the creation of the network load balancer, the service adds the new load
          * balancer to the specified network security groups.
@@ -446,7 +446,7 @@ public final class NetworkLoadBalancerSummary
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          */
@@ -456,7 +456,7 @@ public final class NetworkLoadBalancerSummary
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          *
@@ -471,7 +471,7 @@ public final class NetworkLoadBalancerSummary
         /**
          * ZPR tags for this resource. Each tag is a simple key-value pair with no predefined name,
          * type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code { "oracle-zpr": { "td": { "value": "42", "mode": "audit" } } }}
          */
@@ -481,7 +481,7 @@ public final class NetworkLoadBalancerSummary
         /**
          * ZPR tags for this resource. Each tag is a simple key-value pair with no predefined name,
          * type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code { "oracle-zpr": { "td": { "value": "42", "mode": "audit" } } }}
          *
@@ -497,7 +497,7 @@ public final class NetworkLoadBalancerSummary
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
          */
@@ -507,7 +507,7 @@ public final class NetworkLoadBalancerSummary
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
@@ -648,14 +648,14 @@ public final class NetworkLoadBalancerSummary
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * network load balancer.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * network load balancer.
      *
      * @return the value
@@ -665,14 +665,14 @@ public final class NetworkLoadBalancerSummary
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment containing the network load balancer.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment containing the network load balancer.
      *
      * @return the value
@@ -802,10 +802,10 @@ public final class NetworkLoadBalancerSummary
      * <p>If "false", then the service assigns a public IP address to the network load balancer.
      *
      * <p>A public network load balancer is accessible from the internet, depending the [security
-     * list rules](https://docs.cloud.oracle.com/Content/network/Concepts/securitylists.htm) for
-     * your virtual cloudn network. For more information about public and private network load
-     * balancers, see [Network Load Balancer
-     * Types](https://docs.cloud.oracle.com/Content/NetworkLoadBalancer/introduction.htm#NetworkLoadBalancerTypes).
+     * list rules](https://docs.oracle.com/iaas/Content/network/Concepts/securitylists.htm) for your
+     * virtual cloudn network. For more information about public and private network load balancers,
+     * see [Network Load Balancer
+     * Types](https://docs.oracle.com/iaas/Content/NetworkLoadBalancer/introduction.htm#NetworkLoadBalancerTypes).
      * This value is true by default.
      *
      * <p>Example: {@code true}
@@ -821,10 +821,10 @@ public final class NetworkLoadBalancerSummary
      * <p>If "false", then the service assigns a public IP address to the network load balancer.
      *
      * <p>A public network load balancer is accessible from the internet, depending the [security
-     * list rules](https://docs.cloud.oracle.com/Content/network/Concepts/securitylists.htm) for
-     * your virtual cloudn network. For more information about public and private network load
-     * balancers, see [Network Load Balancer
-     * Types](https://docs.cloud.oracle.com/Content/NetworkLoadBalancer/introduction.htm#NetworkLoadBalancerTypes).
+     * list rules](https://docs.oracle.com/iaas/Content/network/Concepts/securitylists.htm) for your
+     * virtual cloudn network. For more information about public and private network load balancers,
+     * see [Network Load Balancer
+     * Types](https://docs.oracle.com/iaas/Content/NetworkLoadBalancer/introduction.htm#NetworkLoadBalancerTypes).
      * This value is true by default.
      *
      * <p>Example: {@code true}
@@ -875,14 +875,14 @@ public final class NetworkLoadBalancerSummary
 
     /**
      * The subnet in which the network load balancer is spawned
-     * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
     private final String subnetId;
 
     /**
      * The subnet in which the network load balancer is spawned
-     * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      * @return the value
      */
@@ -892,7 +892,7 @@ public final class NetworkLoadBalancerSummary
 
     /**
      * An array of network security groups
-     * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) associated
+     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated
      * with the network load balancer.
      *
      * <p>During the creation of the network load balancer, the service adds the new load balancer
@@ -914,7 +914,7 @@ public final class NetworkLoadBalancerSummary
 
     /**
      * An array of network security groups
-     * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) associated
+     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated
      * with the network load balancer.
      *
      * <p>During the creation of the network load balancer, the service adds the new load balancer
@@ -966,7 +966,7 @@ public final class NetworkLoadBalancerSummary
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      */
@@ -976,7 +976,7 @@ public final class NetworkLoadBalancerSummary
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      *
@@ -989,7 +989,7 @@ public final class NetworkLoadBalancerSummary
     /**
      * ZPR tags for this resource. Each tag is a simple key-value pair with no predefined name,
      * type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code { "oracle-zpr": { "td": { "value": "42", "mode": "audit" } } }}
      */
@@ -999,7 +999,7 @@ public final class NetworkLoadBalancerSummary
     /**
      * ZPR tags for this resource. Each tag is a simple key-value pair with no predefined name,
      * type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code { "oracle-zpr": { "td": { "value": "42", "mode": "audit" } } }}
      *
@@ -1012,7 +1012,7 @@ public final class NetworkLoadBalancerSummary
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
      */
@@ -1022,7 +1022,7 @@ public final class NetworkLoadBalancerSummary
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
      *

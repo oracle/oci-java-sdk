@@ -33,15 +33,15 @@ public final class AddPublicIpPoolCapacityDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the {@code ByoipRange} resource to which the CIDR block belongs.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * {@code ByoipRange} resource to which the CIDR block belongs.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("byoipRangeId")
         private String byoipRangeId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the {@code ByoipRange} resource to which the CIDR block belongs.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * {@code ByoipRange} resource to which the CIDR block belongs.
          *
          * @param byoipRangeId the value to set
          * @return this builder
@@ -105,15 +105,15 @@ public final class AddPublicIpPoolCapacityDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the {@code ByoipRange} resource to which the CIDR block belongs.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * {@code ByoipRange} resource to which the CIDR block belongs.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("byoipRangeId")
     private final String byoipRangeId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the {@code ByoipRange} resource to which the CIDR block belongs.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * {@code ByoipRange} resource to which the CIDR block belongs.
      *
      * @return the value
      */

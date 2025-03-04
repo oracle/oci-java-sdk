@@ -10,10 +10,9 @@ import com.oracle.bmc.zpr.responses.*;
 /**
  * Use the Zero Trust Packet Routing Control Plane API to manage ZPR configuration and policy. See
  * the [Zero Trust Packet
- * Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/home.htm)
- * documentation for more information. This service client uses
- * CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by default if no circuit
- * breaker configuration is defined by the user.
+ * Routing](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/home.htm) documentation
+ * for more information. This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for
+ * all the operations by default if no circuit breaker configuration is defined by the user.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20240301")
 public interface Zpr extends AutoCloseable {
@@ -77,7 +76,7 @@ public interface Zpr extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/zpr/CreateConfigurationExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/zpr/CreateConfigurationExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateConfiguration
      *     API.
      */
@@ -93,7 +92,7 @@ public interface Zpr extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/zpr/CreateZprPolicyExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/zpr/CreateZprPolicyExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateZprPolicy
      *     API.
      */
@@ -109,7 +108,7 @@ public interface Zpr extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/zpr/DeleteZprPolicyExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/zpr/DeleteZprPolicyExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteZprPolicy
      *     API.
      */
@@ -127,7 +126,7 @@ public interface Zpr extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/zpr/GetConfigurationExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/zpr/GetConfigurationExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetConfiguration
      *     API.
      */
@@ -143,7 +142,7 @@ public interface Zpr extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/zpr/GetZprConfigurationWorkRequestExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/zpr/GetZprConfigurationWorkRequestExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     GetZprConfigurationWorkRequest API.
      */
@@ -160,7 +159,7 @@ public interface Zpr extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/zpr/GetZprPolicyExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/zpr/GetZprPolicyExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetZprPolicy API.
      */
     GetZprPolicyResponse getZprPolicy(GetZprPolicyRequest request);
@@ -175,7 +174,7 @@ public interface Zpr extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/zpr/GetZprPolicyWorkRequestExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/zpr/GetZprPolicyWorkRequestExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     GetZprPolicyWorkRequest API.
      */
@@ -191,7 +190,7 @@ public interface Zpr extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/zpr/ListZprConfigurationWorkRequestErrorsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/zpr/ListZprConfigurationWorkRequestErrorsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ListZprConfigurationWorkRequestErrors API.
      */
@@ -208,7 +207,7 @@ public interface Zpr extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/zpr/ListZprConfigurationWorkRequestLogsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/zpr/ListZprConfigurationWorkRequestLogsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ListZprConfigurationWorkRequestLogs API.
      */
@@ -225,7 +224,7 @@ public interface Zpr extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/zpr/ListZprConfigurationWorkRequestsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/zpr/ListZprConfigurationWorkRequestsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ListZprConfigurationWorkRequests API.
      */
@@ -242,7 +241,7 @@ public interface Zpr extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/zpr/ListZprPoliciesExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/zpr/ListZprPoliciesExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListZprPolicies
      *     API.
      */
@@ -258,7 +257,7 @@ public interface Zpr extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/zpr/ListZprPolicyWorkRequestErrorsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/zpr/ListZprPolicyWorkRequestErrorsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ListZprPolicyWorkRequestErrors API.
      */
@@ -275,7 +274,7 @@ public interface Zpr extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/zpr/ListZprPolicyWorkRequestLogsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/zpr/ListZprPolicyWorkRequestLogsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ListZprPolicyWorkRequestLogs API.
      */
@@ -292,7 +291,7 @@ public interface Zpr extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/zpr/ListZprPolicyWorkRequestsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/zpr/ListZprPolicyWorkRequestsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ListZprPolicyWorkRequests API.
      */
@@ -310,7 +309,7 @@ public interface Zpr extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/zpr/UpdateZprPolicyExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/zpr/UpdateZprPolicyExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateZprPolicy
      *     API.
      */

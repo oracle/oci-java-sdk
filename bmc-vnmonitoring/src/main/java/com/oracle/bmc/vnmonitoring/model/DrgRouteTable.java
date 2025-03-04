@@ -70,15 +70,15 @@ public final class DrgRouteTable extends com.oracle.bmc.http.client.internal.Exp
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the DRG route table.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * DRG route table.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the DRG route table.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * DRG route table.
          *
          * @param id the value to set
          * @return this builder
@@ -89,17 +89,17 @@ public final class DrgRouteTable extends com.oracle.bmc.http.client.internal.Exp
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compartment the DRG is in. The DRG route table is always in the same compartment
-         * as the DRG.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment the DRG is in. The DRG route table is always in the same compartment as the
+         * DRG.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compartment the DRG is in. The DRG route table is always in the same compartment
-         * as the DRG.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment the DRG is in. The DRG route table is always in the same compartment as the
+         * DRG.
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -110,15 +110,15 @@ public final class DrgRouteTable extends com.oracle.bmc.http.client.internal.Exp
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the DRG the DRG that contains this route table.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * DRG the DRG that contains this route table.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("drgId")
         private String drgId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the DRG the DRG that contains this route table.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * DRG the DRG that contains this route table.
          *
          * @param drgId the value to set
          * @return this builder
@@ -225,16 +225,16 @@ public final class DrgRouteTable extends com.oracle.bmc.http.client.internal.Exp
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the import route distribution used to specify how incoming route advertisements from
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * import route distribution used to specify how incoming route advertisements from
          * referenced attachments are inserted into the DRG route table.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("importDrgRouteDistributionId")
         private String importDrgRouteDistributionId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the import route distribution used to specify how incoming route advertisements from
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * import route distribution used to specify how incoming route advertisements from
          * referenced attachments are inserted into the DRG route table.
          *
          * @param importDrgRouteDistributionId the value to set
@@ -335,15 +335,15 @@ public final class DrgRouteTable extends com.oracle.bmc.http.client.internal.Exp
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the DRG route table.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG
+     * route table.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the DRG route table.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG
+     * route table.
      *
      * @return the value
      */
@@ -352,17 +352,15 @@ public final class DrgRouteTable extends com.oracle.bmc.http.client.internal.Exp
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compartment the DRG is in. The DRG route table is always in the same compartment as the
-     * DRG.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment the DRG is in. The DRG route table is always in the same compartment as the DRG.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compartment the DRG is in. The DRG route table is always in the same compartment as the
-     * DRG.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment the DRG is in. The DRG route table is always in the same compartment as the DRG.
      *
      * @return the value
      */
@@ -371,15 +369,15 @@ public final class DrgRouteTable extends com.oracle.bmc.http.client.internal.Exp
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the DRG the DRG that contains this route table.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG
+     * the DRG that contains this route table.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("drgId")
     private final String drgId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the DRG the DRG that contains this route table.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG
+     * the DRG that contains this route table.
      *
      * @return the value
      */
@@ -508,17 +506,17 @@ public final class DrgRouteTable extends com.oracle.bmc.http.client.internal.Exp
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the import route distribution used to specify how incoming route advertisements from
-     * referenced attachments are inserted into the DRG route table.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * import route distribution used to specify how incoming route advertisements from referenced
+     * attachments are inserted into the DRG route table.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("importDrgRouteDistributionId")
     private final String importDrgRouteDistributionId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the import route distribution used to specify how incoming route advertisements from
-     * referenced attachments are inserted into the DRG route table.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * import route distribution used to specify how incoming route advertisements from referenced
+     * attachments are inserted into the DRG route table.
      *
      * @return the value
      */

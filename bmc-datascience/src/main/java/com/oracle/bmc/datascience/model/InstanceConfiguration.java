@@ -72,18 +72,18 @@ public final class InstanceConfiguration
         }
         /**
          * A model deployment instance is provided with a VNIC for network access. This specifies
-         * the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the subnet to create a VNIC in. The subnet should be in a VCN with a NAT/SGW gateway
-         * for egress.
+         * the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * subnet to create a VNIC in. The subnet should be in a VCN with a NAT/SGW gateway for
+         * egress.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
         private String subnetId;
 
         /**
          * A model deployment instance is provided with a VNIC for network access. This specifies
-         * the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the subnet to create a VNIC in. The subnet should be in a VCN with a NAT/SGW gateway
-         * for egress.
+         * the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * subnet to create a VNIC in. The subnet should be in a VCN with a NAT/SGW gateway for
+         * egress.
          *
          * @param subnetId the value to set
          * @return this builder
@@ -177,16 +177,16 @@ public final class InstanceConfiguration
 
     /**
      * A model deployment instance is provided with a VNIC for network access. This specifies the
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * subnet to create a VNIC in. The subnet should be in a VCN with a NAT/SGW gateway for egress.
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet
+     * to create a VNIC in. The subnet should be in a VCN with a NAT/SGW gateway for egress.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
     private final String subnetId;
 
     /**
      * A model deployment instance is provided with a VNIC for network access. This specifies the
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * subnet to create a VNIC in. The subnet should be in a VCN with a NAT/SGW gateway for egress.
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet
+     * to create a VNIC in. The subnet should be in a VCN with a NAT/SGW gateway for egress.
      *
      * @return the value
      */

@@ -126,7 +126,7 @@ public final class AwrDatabaseWaitEventSummary
         }
         /**
          * The ID of the snapshot. The snapshot identifier is not the
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm). It can be
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). It can be
          * retrieved from the following endpoint: /awrHubs/{awrHubId}/awrDatabaseSnapshots
          */
         @com.fasterxml.jackson.annotation.JsonProperty("snapshotIdentifier")
@@ -134,7 +134,7 @@ public final class AwrDatabaseWaitEventSummary
 
         /**
          * The ID of the snapshot. The snapshot identifier is not the
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm). It can be
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). It can be
          * retrieved from the following endpoint: /awrHubs/{awrHubId}/awrDatabaseSnapshots
          *
          * @param snapshotIdentifier the value to set
@@ -264,7 +264,7 @@ public final class AwrDatabaseWaitEventSummary
 
     /**
      * The ID of the snapshot. The snapshot identifier is not the
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm). It can be
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). It can be
      * retrieved from the following endpoint: /awrHubs/{awrHubId}/awrDatabaseSnapshots
      */
     @com.fasterxml.jackson.annotation.JsonProperty("snapshotIdentifier")
@@ -272,7 +272,7 @@ public final class AwrDatabaseWaitEventSummary
 
     /**
      * The ID of the snapshot. The snapshot identifier is not the
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm). It can be
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). It can be
      * retrieved from the following endpoint: /awrHubs/{awrHubId}/awrDatabaseSnapshots
      *
      * @return the value

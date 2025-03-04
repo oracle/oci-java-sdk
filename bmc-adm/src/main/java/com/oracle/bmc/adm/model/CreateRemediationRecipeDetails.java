@@ -63,7 +63,7 @@ public final class CreateRemediationRecipeDetails
     public static class Builder {
         /**
          * The compartment Oracle Cloud Identifier
-         * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the
+         * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the
          * remediation recipe.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
@@ -71,7 +71,7 @@ public final class CreateRemediationRecipeDetails
 
         /**
          * The compartment Oracle Cloud Identifier
-         * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the
+         * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the
          * remediation recipe.
          *
          * @param compartmentId the value to set
@@ -135,7 +135,7 @@ public final class CreateRemediationRecipeDetails
         }
         /**
          * The Oracle Cloud Identifier
-         * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the
+         * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the
          * knowledge base.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("knowledgeBaseId")
@@ -143,7 +143,7 @@ public final class CreateRemediationRecipeDetails
 
         /**
          * The Oracle Cloud Identifier
-         * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the
+         * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the
          * knowledge base.
          *
          * @param knowledgeBaseId the value to set
@@ -282,7 +282,7 @@ public final class CreateRemediationRecipeDetails
 
     /**
      * The compartment Oracle Cloud Identifier
-     * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the
+     * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the
      * remediation recipe.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
@@ -290,7 +290,7 @@ public final class CreateRemediationRecipeDetails
 
     /**
      * The compartment Oracle Cloud Identifier
-     * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the
+     * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the
      * remediation recipe.
      *
      * @return the value
@@ -342,7 +342,7 @@ public final class CreateRemediationRecipeDetails
 
     /**
      * The Oracle Cloud Identifier
-     * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the
+     * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the
      * knowledge base.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("knowledgeBaseId")
@@ -350,7 +350,7 @@ public final class CreateRemediationRecipeDetails
 
     /**
      * The Oracle Cloud Identifier
-     * ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the
+     * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the
      * knowledge base.
      *
      * @return the value

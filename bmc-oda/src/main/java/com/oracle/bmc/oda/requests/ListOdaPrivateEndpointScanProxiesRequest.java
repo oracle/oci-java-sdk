@@ -7,7 +7,7 @@ package com.oracle.bmc.oda.requests;
 import com.oracle.bmc.oda.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/ListOdaPrivateEndpointScanProxiesExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/ListOdaPrivateEndpointScanProxiesExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * ListOdaPrivateEndpointScanProxiesRequest.
  */
@@ -17,13 +17,13 @@ public class ListOdaPrivateEndpointScanProxiesRequest
 
     /**
      * Unique ODA Private Endpoint identifier which is the
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     private String odaPrivateEndpointId;
 
     /**
      * Unique ODA Private Endpoint identifier which is the
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     public String getOdaPrivateEndpointId() {
         return odaPrivateEndpointId;
@@ -194,13 +194,13 @@ public class ListOdaPrivateEndpointScanProxiesRequest
 
         /**
          * Unique ODA Private Endpoint identifier which is the
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          */
         private String odaPrivateEndpointId = null;
 
         /**
          * Unique ODA Private Endpoint identifier which is the
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          * @param odaPrivateEndpointId the value to set
          * @return this builder instance

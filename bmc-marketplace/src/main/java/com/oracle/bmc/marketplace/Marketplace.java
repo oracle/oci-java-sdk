@@ -10,7 +10,7 @@ import com.oracle.bmc.marketplace.responses.*;
 /**
  * Use the Marketplace API to manage applications in Oracle Cloud Infrastructure Marketplace. For
  * more information, see [Overview of
- * Marketplace](https://docs.cloud.oracle.com/Content/Marketplace/Concepts/marketoverview.htm) This
+ * Marketplace](https://docs.oracle.com/iaas/Content/Marketplace/Concepts/marketoverview.htm) This
  * service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by default
  * if no circuit breaker configuration is defined by the user.
  */
@@ -75,7 +75,7 @@ public interface Marketplace extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplace/ChangePublicationCompartmentExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplace/ChangePublicationCompartmentExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ChangePublicationCompartment API.
      */
@@ -93,7 +93,7 @@ public interface Marketplace extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplace/CreateAcceptedAgreementExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplace/CreateAcceptedAgreementExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     CreateAcceptedAgreement API.
      */
@@ -109,7 +109,7 @@ public interface Marketplace extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplace/CreatePublicationExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplace/CreatePublicationExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreatePublication
      *     API.
      */
@@ -128,7 +128,7 @@ public interface Marketplace extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplace/DeleteAcceptedAgreementExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplace/DeleteAcceptedAgreementExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     DeleteAcceptedAgreement API.
      */
@@ -145,7 +145,7 @@ public interface Marketplace extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplace/DeletePublicationExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplace/DeletePublicationExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeletePublication
      *     API.
      */
@@ -161,7 +161,7 @@ public interface Marketplace extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplace/ExportListingExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplace/ExportListingExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ExportListing API.
      */
     ExportListingResponse exportListing(ExportListingRequest request);
@@ -176,7 +176,7 @@ public interface Marketplace extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplace/GetAcceptedAgreementExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplace/GetAcceptedAgreementExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     GetAcceptedAgreement API.
      */
@@ -193,7 +193,7 @@ public interface Marketplace extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplace/GetAgreementExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplace/GetAgreementExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetAgreement API.
      */
     GetAgreementResponse getAgreement(GetAgreementRequest request);
@@ -208,20 +208,20 @@ public interface Marketplace extends AutoCloseable {
      *
      * <p>Subscribing to the listing requires you to first get a signature from the terms of use
      * agreement for the listing resource version. To get the signature, issue a
-     * [GetAppCatalogListingAgreements](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogListingResourceVersionAgreements/GetAppCatalogListingAgreements)
+     * [GetAppCatalogListingAgreements](https://docs.oracle.com/iaas/en-us/iaas/api/#/en/iaas/latest/AppCatalogListingResourceVersionAgreements/GetAppCatalogListingAgreements)
      * API call. The
-     * [AppCatalogListingResourceVersionAgreements](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogListingResourceVersionAgreements)
+     * [AppCatalogListingResourceVersionAgreements](https://docs.oracle.com/iaas/en-us/iaas/api/#/en/iaas/latest/AppCatalogListingResourceVersionAgreements)
      * object, including its signature, is returned in the response. With the signature for the
      * terms of use agreement for the desired listing resource version, create a subscription by
      * issuing a
-     * [CreateAppCatalogSubscription](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogSubscription/CreateAppCatalogSubscription)
+     * [CreateAppCatalogSubscription](https://docs.oracle.com/iaas/en-us/iaas/api/#/en/iaas/latest/AppCatalogSubscription/CreateAppCatalogSubscription)
      * API call.
      *
      * <p>To get the image ID to launch an instance, issue a
-     * [GetAppCatalogListingResourceVersion](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogListingResourceVersion/GetAppCatalogListingResourceVersion)
+     * [GetAppCatalogListingResourceVersion](https://docs.oracle.com/iaas/en-us/iaas/api/#/en/iaas/latest/AppCatalogListingResourceVersion/GetAppCatalogListingResourceVersion)
      * API call. Lastly, to launch the instance, use the image ID of the listing resource version to
      * issue a
-     * [LaunchInstance](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/Instance/LaunchInstance)
+     * [LaunchInstance](https://docs.oracle.com/iaas/en-us/iaas/api/#/en/iaas/latest/Instance/LaunchInstance)
      * API call.
      *
      * @param request The request object containing the details to send
@@ -231,7 +231,7 @@ public interface Marketplace extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplace/GetListingExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplace/GetListingExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetListing API.
      */
     GetListingResponse getListing(GetListingRequest request);
@@ -246,20 +246,20 @@ public interface Marketplace extends AutoCloseable {
      *
      * <p>Subscribing to the listing requires you to first get a signature from the terms of use
      * agreement for the listing resource version. To get the signature, issue a
-     * [GetAppCatalogListingAgreements](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogListingResourceVersionAgreements/GetAppCatalogListingAgreements)
+     * [GetAppCatalogListingAgreements](https://docs.oracle.com/iaas/en-us/iaas/api/#/en/iaas/latest/AppCatalogListingResourceVersionAgreements/GetAppCatalogListingAgreements)
      * API call. The
-     * [AppCatalogListingResourceVersionAgreements](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogListingResourceVersionAgreements)
+     * [AppCatalogListingResourceVersionAgreements](https://docs.oracle.com/iaas/en-us/iaas/api/#/en/iaas/latest/AppCatalogListingResourceVersionAgreements)
      * object, including its signature, is returned in the response. With the signature for the
      * terms of use agreement for the desired listing resource version, create a subscription by
      * issuing a
-     * [CreateAppCatalogSubscription](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogSubscription/CreateAppCatalogSubscription)
+     * [CreateAppCatalogSubscription](https://docs.oracle.com/iaas/en-us/iaas/api/#/en/iaas/latest/AppCatalogSubscription/CreateAppCatalogSubscription)
      * API call.
      *
      * <p>To get the image ID to launch an instance, issue a
-     * [GetAppCatalogListingResourceVersion](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogListingResourceVersion/GetAppCatalogListingResourceVersion)
+     * [GetAppCatalogListingResourceVersion](https://docs.oracle.com/iaas/en-us/iaas/api/#/en/iaas/latest/AppCatalogListingResourceVersion/GetAppCatalogListingResourceVersion)
      * API call. Lastly, to launch the instance, use the image ID of the listing resource version to
      * issue a
-     * [LaunchInstance](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/Instance/LaunchInstance)
+     * [LaunchInstance](https://docs.oracle.com/iaas/en-us/iaas/api/#/en/iaas/latest/Instance/LaunchInstance)
      * API call.
      *
      * @param request The request object containing the details to send
@@ -269,7 +269,7 @@ public interface Marketplace extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplace/GetPackageExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplace/GetPackageExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetPackage API.
      */
     GetPackageResponse getPackage(GetPackageRequest request);
@@ -284,7 +284,7 @@ public interface Marketplace extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplace/GetPublicationExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplace/GetPublicationExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetPublication API.
      */
     GetPublicationResponse getPublication(GetPublicationRequest request);
@@ -299,7 +299,7 @@ public interface Marketplace extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplace/GetPublicationPackageExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplace/GetPublicationPackageExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     GetPublicationPackage API.
      */
@@ -315,7 +315,7 @@ public interface Marketplace extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplace/GetWorkRequestExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplace/GetWorkRequestExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetWorkRequest API.
      */
     GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request);
@@ -331,7 +331,7 @@ public interface Marketplace extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplace/ListAcceptedAgreementsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplace/ListAcceptedAgreementsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ListAcceptedAgreements API.
      */
@@ -348,7 +348,7 @@ public interface Marketplace extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplace/ListAgreementsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplace/ListAgreementsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListAgreements API.
      */
     ListAgreementsResponse listAgreements(ListAgreementsRequest request);
@@ -364,7 +364,7 @@ public interface Marketplace extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplace/ListCategoriesExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplace/ListCategoriesExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListCategories API.
      */
     ListCategoriesResponse listCategories(ListCategoriesRequest request);
@@ -379,20 +379,20 @@ public interface Marketplace extends AutoCloseable {
      *
      * <p>Subscribing to the listing requires you to first get a signature from the terms of use
      * agreement for the listing resource version. To get the signature, issue a
-     * [GetAppCatalogListingAgreements](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogListingResourceVersionAgreements/GetAppCatalogListingAgreements)
+     * [GetAppCatalogListingAgreements](https://docs.oracle.com/iaas/en-us/iaas/api/#/en/iaas/latest/AppCatalogListingResourceVersionAgreements/GetAppCatalogListingAgreements)
      * API call. The
-     * [AppCatalogListingResourceVersionAgreements](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogListingResourceVersionAgreements)
+     * [AppCatalogListingResourceVersionAgreements](https://docs.oracle.com/iaas/en-us/iaas/api/#/en/iaas/latest/AppCatalogListingResourceVersionAgreements)
      * object, including its signature, is returned in the response. With the signature for the
      * terms of use agreement for the desired listing resource version, create a subscription by
      * issuing a
-     * [CreateAppCatalogSubscription](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogSubscription/CreateAppCatalogSubscription)
+     * [CreateAppCatalogSubscription](https://docs.oracle.com/iaas/en-us/iaas/api/#/en/iaas/latest/AppCatalogSubscription/CreateAppCatalogSubscription)
      * API call.
      *
      * <p>To get the image ID to launch an instance, issue a
-     * [GetAppCatalogListingResourceVersion](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogListingResourceVersion/GetAppCatalogListingResourceVersion)
+     * [GetAppCatalogListingResourceVersion](https://docs.oracle.com/iaas/en-us/iaas/api/#/en/iaas/latest/AppCatalogListingResourceVersion/GetAppCatalogListingResourceVersion)
      * API call. Lastly, to launch the instance, use the image ID of the listing resource version to
      * issue a
-     * [LaunchInstance](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/Instance/LaunchInstance)
+     * [LaunchInstance](https://docs.oracle.com/iaas/en-us/iaas/api/#/en/iaas/latest/Instance/LaunchInstance)
      * API call.
      *
      * @param request The request object containing the details to send
@@ -402,7 +402,7 @@ public interface Marketplace extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplace/ListListingsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplace/ListListingsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListListings API.
      */
     ListListingsResponse listListings(ListListingsRequest request);
@@ -416,20 +416,20 @@ public interface Marketplace extends AutoCloseable {
      *
      * <p>Subscribing to the listing requires you to first get a signature from the terms of use
      * agreement for the listing resource version. To get the signature, issue a
-     * [GetAppCatalogListingAgreements](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogListingResourceVersionAgreements/GetAppCatalogListingAgreements)
+     * [GetAppCatalogListingAgreements](https://docs.oracle.com/iaas/en-us/iaas/api/#/en/iaas/latest/AppCatalogListingResourceVersionAgreements/GetAppCatalogListingAgreements)
      * API call. The
-     * [AppCatalogListingResourceVersionAgreements](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogListingResourceVersionAgreements)
+     * [AppCatalogListingResourceVersionAgreements](https://docs.oracle.com/iaas/en-us/iaas/api/#/en/iaas/latest/AppCatalogListingResourceVersionAgreements)
      * object, including its signature, is returned in the response. With the signature for the
      * terms of use agreement for the desired listing resource version, create a subscription by
      * issuing a
-     * [CreateAppCatalogSubscription](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogSubscription/CreateAppCatalogSubscription)
+     * [CreateAppCatalogSubscription](https://docs.oracle.com/iaas/en-us/iaas/api/#/en/iaas/latest/AppCatalogSubscription/CreateAppCatalogSubscription)
      * API call.
      *
      * <p>To get the image ID to launch an instance, issue a
-     * [GetAppCatalogListingResourceVersion](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogListingResourceVersion/GetAppCatalogListingResourceVersion)
+     * [GetAppCatalogListingResourceVersion](https://docs.oracle.com/iaas/en-us/iaas/api/#/en/iaas/latest/AppCatalogListingResourceVersion/GetAppCatalogListingResourceVersion)
      * API call. Lastly, to launch the instance, use the image ID of the listing resource version to
      * issue a
-     * [LaunchInstance](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/Instance/LaunchInstance)
+     * [LaunchInstance](https://docs.oracle.com/iaas/en-us/iaas/api/#/en/iaas/latest/Instance/LaunchInstance)
      * API call.
      *
      * @param request The request object containing the details to send
@@ -439,7 +439,7 @@ public interface Marketplace extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplace/ListPackagesExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplace/ListPackagesExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListPackages API.
      */
     ListPackagesResponse listPackages(ListPackagesRequest request);
@@ -454,7 +454,7 @@ public interface Marketplace extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplace/ListPublicationPackagesExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplace/ListPublicationPackagesExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ListPublicationPackages API.
      */
@@ -470,7 +470,7 @@ public interface Marketplace extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplace/ListPublicationsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplace/ListPublicationsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListPublications
      *     API.
      */
@@ -487,7 +487,7 @@ public interface Marketplace extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplace/ListPublishersExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplace/ListPublishersExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListPublishers API.
      */
     ListPublishersResponse listPublishers(ListPublishersRequest request);
@@ -502,7 +502,7 @@ public interface Marketplace extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplace/ListReportTypesExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplace/ListReportTypesExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListReportTypes
      *     API.
      */
@@ -518,7 +518,7 @@ public interface Marketplace extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplace/ListReportsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplace/ListReportsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListReports API.
      */
     ListReportsResponse listReports(ListReportsRequest request);
@@ -534,7 +534,7 @@ public interface Marketplace extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplace/ListTaxesExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplace/ListTaxesExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListTaxes API.
      */
     ListTaxesResponse listTaxes(ListTaxesRequest request);
@@ -549,7 +549,7 @@ public interface Marketplace extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplace/ListWorkRequestErrorsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplace/ListWorkRequestErrorsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ListWorkRequestErrors API.
      */
@@ -565,7 +565,7 @@ public interface Marketplace extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplace/ListWorkRequestLogsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplace/ListWorkRequestLogsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequestLogs
      *     API.
      */
@@ -581,7 +581,7 @@ public interface Marketplace extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplace/ListWorkRequestsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplace/ListWorkRequestsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequests
      *     API.
      */
@@ -598,7 +598,7 @@ public interface Marketplace extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplace/SearchListingsExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplace/SearchListingsExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use SearchListings API.
      */
     SearchListingsResponse searchListings(SearchListingsRequest request);
@@ -614,7 +614,7 @@ public interface Marketplace extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplace/UpdateAcceptedAgreementExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplace/UpdateAcceptedAgreementExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     UpdateAcceptedAgreement API.
      */
@@ -630,7 +630,7 @@ public interface Marketplace extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplace/UpdatePublicationExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplace/UpdatePublicationExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdatePublication
      *     API.
      */

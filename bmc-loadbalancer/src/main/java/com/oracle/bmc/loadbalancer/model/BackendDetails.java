@@ -98,7 +98,7 @@ public final class BackendDetails
          * weight receive a larger proportion of incoming traffic. For example, a server weighted
          * '3' receives 3 times the number of new connections as a server weighted '1'. For more
          * information on load balancing policies, see [How Load Balancing Policies
-         * Work](https://docs.cloud.oracle.com/Content/Balance/Reference/lbpolicies.htm).
+         * Work](https://docs.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).
          *
          * <p>Example: {@code 3}
          */
@@ -110,7 +110,7 @@ public final class BackendDetails
          * weight receive a larger proportion of incoming traffic. For example, a server weighted
          * '3' receives 3 times the number of new connections as a server weighted '1'. For more
          * information on load balancing policies, see [How Load Balancing Policies
-         * Work](https://docs.cloud.oracle.com/Content/Balance/Reference/lbpolicies.htm).
+         * Work](https://docs.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).
          *
          * <p>Example: {@code 3}
          *
@@ -323,7 +323,7 @@ public final class BackendDetails
      * receive a larger proportion of incoming traffic. For example, a server weighted '3' receives
      * 3 times the number of new connections as a server weighted '1'. For more information on load
      * balancing policies, see [How Load Balancing Policies
-     * Work](https://docs.cloud.oracle.com/Content/Balance/Reference/lbpolicies.htm).
+     * Work](https://docs.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).
      *
      * <p>Example: {@code 3}
      */
@@ -335,7 +335,7 @@ public final class BackendDetails
      * receive a larger proportion of incoming traffic. For example, a server weighted '3' receives
      * 3 times the number of new connections as a server weighted '1'. For more information on load
      * balancing policies, see [How Load Balancing Policies
-     * Work](https://docs.cloud.oracle.com/Content/Balance/Reference/lbpolicies.htm).
+     * Work](https://docs.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).
      *
      * <p>Example: {@code 3}
      *

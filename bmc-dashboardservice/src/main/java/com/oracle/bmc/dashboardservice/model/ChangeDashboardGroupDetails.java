@@ -32,14 +32,14 @@ public final class ChangeDashboardGroupDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * dashboardGroup into which the resource should be moved.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("dashboardGroupId")
         private String dashboardGroupId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * dashboardGroup into which the resource should be moved.
          *
          * @param dashboardGroupId the value to set
@@ -82,14 +82,14 @@ public final class ChangeDashboardGroupDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * dashboardGroup into which the resource should be moved.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("dashboardGroupId")
     private final String dashboardGroupId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * dashboardGroup into which the resource should be moved.
      *
      * @return the value

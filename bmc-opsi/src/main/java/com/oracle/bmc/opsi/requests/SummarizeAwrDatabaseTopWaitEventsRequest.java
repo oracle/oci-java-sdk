@@ -7,7 +7,7 @@ package com.oracle.bmc.opsi.requests;
 import com.oracle.bmc.opsi.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/SummarizeAwrDatabaseTopWaitEventsExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/SummarizeAwrDatabaseTopWaitEventsExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * SummarizeAwrDatabaseTopWaitEventsRequest.
  */
@@ -24,14 +24,14 @@ public class SummarizeAwrDatabaseTopWaitEventsRequest
     }
     /**
      * The internal ID of the database. The internal ID of the database is not the
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm). It can be
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). It can be
      * retrieved from the following endpoint: /awrHubs/{awrHubId}/awrDatabases
      */
     private String awrSourceDatabaseIdentifier;
 
     /**
      * The internal ID of the database. The internal ID of the database is not the
-     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm). It can be
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). It can be
      * retrieved from the following endpoint: /awrHubs/{awrHubId}/awrDatabases
      */
     public String getAwrSourceDatabaseIdentifier() {
@@ -217,14 +217,14 @@ public class SummarizeAwrDatabaseTopWaitEventsRequest
 
         /**
          * The internal ID of the database. The internal ID of the database is not the
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm). It can be
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). It can be
          * retrieved from the following endpoint: /awrHubs/{awrHubId}/awrDatabases
          */
         private String awrSourceDatabaseIdentifier = null;
 
         /**
          * The internal ID of the database. The internal ID of the database is not the
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm). It can be
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). It can be
          * retrieved from the following endpoint: /awrHubs/{awrHubId}/awrDatabases
          *
          * @param awrSourceDatabaseIdentifier the value to set

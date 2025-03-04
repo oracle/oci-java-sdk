@@ -3,11 +3,11 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.oracle.oci.sdk</groupId>
   <artifactId>oci-java-sdk</artifactId>
-  <version>3.58.0</version>
+  <version>3.59.0</version>
   <packaging>pom</packaging>
   <name>Oracle Cloud Infrastructure SDK</name>
   <description>This project contains the SDK used for Oracle Cloud Infrastructure</description>
-  <url>https://docs.cloud.oracle.com/Content/API/SDKDocs/javasdk.htm</url>
+  <url>https://docs.oracle.com/iaas/Content/API/SDKDocs/javasdk.htm</url>
   <inceptionYear>2016</inceptionYear>
   <licenses>
     <license>
@@ -60,7 +60,7 @@
     <dev.profile.skip.javadoc>true</dev.profile.skip.javadoc>
     <exec.skip>true</exec.skip>
     <exec.mainClass>com.acme.Undefined</exec.mainClass>
-    <oci.codegen.version>2.118</oci.codegen.version>
+    <oci.codegen.version>2.119</oci.codegen.version>
   </properties>
   <profiles>
     <profile>
@@ -99,7 +99,11 @@
                 <phase>process-sources</phase>
                 <configuration>
                   <target>
-                    <replace dir="src/main/java" token="{{DOC_SERVER_URL}}" value="https://docs.cloud.oracle.com" />
+                    <replace dir="src/main/java" token="{{DOC_SERVER_URL}}/iaas" value="https://docs.oracle.com/iaas" />
+                    <replace dir="src/main/java" token="{{DOC_SERVER_URL}}" value="https://docs.oracle.com/iaas" />
+                    <replace dir="src/main/java" token="https://docs.cloud.oracle.com/iaas" value="https://docs.oracle.com/iaas" />
+                    <replace dir="src/main/java" token="https://docs.cloud.oracle.com" value="https://docs.oracle.com/iaas" />
+                    <replace dir="src/main/java" token="https://docs.us-phoenix-1.oraclecloud.com" value="https://docs.oracle.com/iaas" />
                   </target>
                   <failOnError>false</failOnError>
                 </configuration>

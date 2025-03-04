@@ -21,14 +21,14 @@ public class CreateStackResponse extends com.oracle.bmc.responses.BmcResponse {
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the work request.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the work
+     * request.
      */
     private String opcWorkRequestId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the work request.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the work
+     * request.
      *
      * @return the value
      */
@@ -115,14 +115,14 @@ public class CreateStackResponse extends com.oracle.bmc.responses.BmcResponse {
         }
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the work request.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * work request.
          */
         private String opcWorkRequestId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the work request.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * work request.
          *
          * @param opcWorkRequestId the value to set
          * @return this builder

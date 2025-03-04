@@ -58,7 +58,7 @@ public final class UpdateVnicDetails
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
          */
@@ -68,7 +68,7 @@ public final class UpdateVnicDetails
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
@@ -103,7 +103,7 @@ public final class UpdateVnicDetails
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          */
@@ -113,7 +113,7 @@ public final class UpdateVnicDetails
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          *
@@ -127,9 +127,9 @@ public final class UpdateVnicDetails
         }
         /**
          * [Security
-         * attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes)
+         * attributes](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes)
          * are labels for a resource that can be referenced in a [Zero Trust Packet
-         * Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm)
+         * Routing](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm)
          * (ZPR) policy to control access to ZPR-supported resources.
          *
          * <p>Example: {@code {"Oracle-DataSecurity-ZPR": {"MaxEgressCount":
@@ -140,9 +140,9 @@ public final class UpdateVnicDetails
 
         /**
          * [Security
-         * attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes)
+         * attributes](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes)
          * are labels for a resource that can be referenced in a [Zero Trust Packet
-         * Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm)
+         * Routing](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm)
          * (ZPR) policy to control access to ZPR-supported resources.
          *
          * <p>Example: {@code {"Oracle-DataSecurity-ZPR": {"MaxEgressCount":
@@ -169,7 +169,7 @@ public final class UpdateVnicDetails
          * #getPrivateIp(GetPrivateIpRequest) getPrivateIp}.
          *
          * <p>For more information, see [DNS in Your Virtual Cloud
-         * Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
+         * Network](https://docs.oracle.com/iaas/Content/Network/Concepts/dns.htm).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("hostnameLabel")
         private String hostnameLabel;
@@ -186,7 +186,7 @@ public final class UpdateVnicDetails
          * #getPrivateIp(GetPrivateIpRequest) getPrivateIp}.
          *
          * <p>For more information, see [DNS in Your Virtual Cloud
-         * Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
+         * Network](https://docs.oracle.com/iaas/Content/Network/Concepts/dns.htm).
          *
          * @param hostnameLabel the value to set
          * @return this builder
@@ -231,7 +231,7 @@ public final class UpdateVnicDetails
          * Whether the source/destination check is disabled on the VNIC. Defaults to {@code false},
          * which means the check is performed. For information about why you would skip the
          * source/destination check, see [Using a Private IP as a Route
-         * Target](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip).
+         * Target](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip).
          *
          * <p>If the VNIC belongs to a VLAN as part of the Oracle Cloud VMware Solution (instead of
          * belonging to a subnet), the value of the {@code skipSourceDestCheck} attribute is
@@ -245,7 +245,7 @@ public final class UpdateVnicDetails
          * Whether the source/destination check is disabled on the VNIC. Defaults to {@code false},
          * which means the check is performed. For information about why you would skip the
          * source/destination check, see [Using a Private IP as a Route
-         * Target](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip).
+         * Target](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip).
          *
          * <p>If the VNIC belongs to a VLAN as part of the Oracle Cloud VMware Solution (instead of
          * belonging to a subnet), the value of the {@code skipSourceDestCheck} attribute is
@@ -261,18 +261,16 @@ public final class UpdateVnicDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the route table the IP address or VNIC will use. For more information, see [Source
-         * Based
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * route table the IP address or VNIC will use. For more information, see [Source Based
          * Routing](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("routeTableId")
         private String routeTableId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the route table the IP address or VNIC will use. For more information, see [Source
-         * Based
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * route table the IP address or VNIC will use. For more information, see [Source Based
          * Routing](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing).
          *
          * @param routeTableId the value to set
@@ -346,7 +344,7 @@ public final class UpdateVnicDetails
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
      */
@@ -356,7 +354,7 @@ public final class UpdateVnicDetails
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
@@ -386,7 +384,7 @@ public final class UpdateVnicDetails
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      */
@@ -396,7 +394,7 @@ public final class UpdateVnicDetails
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      *
@@ -408,10 +406,10 @@ public final class UpdateVnicDetails
 
     /**
      * [Security
-     * attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes)
+     * attributes](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes)
      * are labels for a resource that can be referenced in a [Zero Trust Packet
-     * Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm)
-     * (ZPR) policy to control access to ZPR-supported resources.
+     * Routing](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR)
+     * policy to control access to ZPR-supported resources.
      *
      * <p>Example: {@code {"Oracle-DataSecurity-ZPR": {"MaxEgressCount":
      * {"value":"42","mode":"audit"}}}}
@@ -421,10 +419,10 @@ public final class UpdateVnicDetails
 
     /**
      * [Security
-     * attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes)
+     * attributes](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes)
      * are labels for a resource that can be referenced in a [Zero Trust Packet
-     * Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm)
-     * (ZPR) policy to control access to ZPR-supported resources.
+     * Routing](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR)
+     * policy to control access to ZPR-supported resources.
      *
      * <p>Example: {@code {"Oracle-DataSecurity-ZPR": {"MaxEgressCount":
      * {"value":"42","mode":"audit"}}}}
@@ -446,7 +444,7 @@ public final class UpdateVnicDetails
      * #getPrivateIp(GetPrivateIpRequest) getPrivateIp}.
      *
      * <p>For more information, see [DNS in Your Virtual Cloud
-     * Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
+     * Network](https://docs.oracle.com/iaas/Content/Network/Concepts/dns.htm).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("hostnameLabel")
     private final String hostnameLabel;
@@ -462,7 +460,7 @@ public final class UpdateVnicDetails
      * #getPrivateIp(GetPrivateIpRequest) getPrivateIp}.
      *
      * <p>For more information, see [DNS in Your Virtual Cloud
-     * Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
+     * Network](https://docs.oracle.com/iaas/Content/Network/Concepts/dns.htm).
      *
      * @return the value
      */
@@ -503,7 +501,7 @@ public final class UpdateVnicDetails
      * Whether the source/destination check is disabled on the VNIC. Defaults to {@code false},
      * which means the check is performed. For information about why you would skip the
      * source/destination check, see [Using a Private IP as a Route
-     * Target](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip).
+     * Target](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip).
      *
      * <p>If the VNIC belongs to a VLAN as part of the Oracle Cloud VMware Solution (instead of
      * belonging to a subnet), the value of the {@code skipSourceDestCheck} attribute is ignored.
@@ -517,7 +515,7 @@ public final class UpdateVnicDetails
      * Whether the source/destination check is disabled on the VNIC. Defaults to {@code false},
      * which means the check is performed. For information about why you would skip the
      * source/destination check, see [Using a Private IP as a Route
-     * Target](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip).
+     * Target](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip).
      *
      * <p>If the VNIC belongs to a VLAN as part of the Oracle Cloud VMware Solution (instead of
      * belonging to a subnet), the value of the {@code skipSourceDestCheck} attribute is ignored.
@@ -531,16 +529,16 @@ public final class UpdateVnicDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the route table the IP address or VNIC will use. For more information, see [Source Based
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * route table the IP address or VNIC will use. For more information, see [Source Based
      * Routing](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("routeTableId")
     private final String routeTableId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the route table the IP address or VNIC will use. For more information, see [Source Based
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * route table the IP address or VNIC will use. For more information, see [Source Based
      * Routing](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing).
      *
      * @return the value

@@ -34,14 +34,14 @@ public final class ApproveDeploymentDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * stage which is marked for approval.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("deployStageId")
         private String deployStageId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * stage which is marked for approval.
          *
          * @param deployStageId the value to set
@@ -120,14 +120,14 @@ public final class ApproveDeploymentDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * stage which is marked for approval.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("deployStageId")
     private final String deployStageId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * stage which is marked for approval.
      *
      * @return the value

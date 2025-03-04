@@ -246,7 +246,7 @@ public final class Metastore extends com.oracle.bmc.http.client.internal.Explici
         /**
          * System tags for this resource. Each key is predefined and scoped to a namespace. For more
          * information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). System
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System
          * tags can be viewed by users, but can only be created by the system.
          *
          * <p>Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
@@ -257,7 +257,7 @@ public final class Metastore extends com.oracle.bmc.http.client.internal.Explici
         /**
          * System tags for this resource. Each key is predefined and scoped to a namespace. For more
          * information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). System
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System
          * tags can be viewed by users, but can only be created by the system.
          *
          * <p>Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
@@ -542,7 +542,7 @@ public final class Metastore extends com.oracle.bmc.http.client.internal.Explici
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). System tags
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags
      * can be viewed by users, but can only be created by the system.
      *
      * <p>Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
@@ -553,7 +553,7 @@ public final class Metastore extends com.oracle.bmc.http.client.internal.Explici
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). System tags
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags
      * can be viewed by users, but can only be created by the system.
      *
      * <p>Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}

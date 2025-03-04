@@ -7,7 +7,7 @@ package com.oracle.bmc.psql.requests;
 import com.oracle.bmc.psql.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/psql/ListConfigurationsExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/psql/ListConfigurationsExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListConfigurationsRequest.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220915")
@@ -32,6 +32,19 @@ public class ListConfigurationsRequest extends com.oracle.bmc.requests.BmcReques
      */
     public com.oracle.bmc.psql.model.Configuration.LifecycleState getLifecycleState() {
         return lifecycleState;
+    }
+    /**
+     * A filter to return only resources if their {@code configType} matches the given {@code
+     * configType}.
+     */
+    private com.oracle.bmc.psql.model.Configuration.ConfigType configType;
+
+    /**
+     * A filter to return only resources if their {@code configType} matches the given {@code
+     * configType}.
+     */
+    public com.oracle.bmc.psql.model.Configuration.ConfigType getConfigType() {
+        return configType;
     }
     /** A filter to return only resources that match the entire display name given. */
     private String displayName;
@@ -182,6 +195,24 @@ public class ListConfigurationsRequest extends com.oracle.bmc.requests.BmcReques
         public Builder lifecycleState(
                 com.oracle.bmc.psql.model.Configuration.LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
+            return this;
+        }
+
+        /**
+         * A filter to return only resources if their {@code configType} matches the given {@code
+         * configType}.
+         */
+        private com.oracle.bmc.psql.model.Configuration.ConfigType configType = null;
+
+        /**
+         * A filter to return only resources if their {@code configType} matches the given {@code
+         * configType}.
+         *
+         * @param configType the value to set
+         * @return this builder instance
+         */
+        public Builder configType(com.oracle.bmc.psql.model.Configuration.ConfigType configType) {
+            this.configType = configType;
             return this;
         }
 
@@ -351,6 +382,7 @@ public class ListConfigurationsRequest extends com.oracle.bmc.requests.BmcReques
         public Builder copy(ListConfigurationsRequest o) {
             compartmentId(o.getCompartmentId());
             lifecycleState(o.getLifecycleState());
+            configType(o.getConfigType());
             displayName(o.getDisplayName());
             dbVersion(o.getDbVersion());
             shape(o.getShape());
@@ -396,6 +428,7 @@ public class ListConfigurationsRequest extends com.oracle.bmc.requests.BmcReques
             ListConfigurationsRequest request = new ListConfigurationsRequest();
             request.compartmentId = compartmentId;
             request.lifecycleState = lifecycleState;
+            request.configType = configType;
             request.displayName = displayName;
             request.dbVersion = dbVersion;
             request.shape = shape;
@@ -406,8 +439,8 @@ public class ListConfigurationsRequest extends com.oracle.bmc.requests.BmcReques
             request.sortBy = sortBy;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListConfigurationsRequest(compartmentId, lifecycleState, displayName, dbVersion,
-            // shape, configurationId, limit, page, sortOrder, sortBy, opcRequestId);
+            // new ListConfigurationsRequest(compartmentId, lifecycleState, configType, displayName,
+            // dbVersion, shape, configurationId, limit, page, sortOrder, sortBy, opcRequestId);
         }
     }
 
@@ -420,6 +453,7 @@ public class ListConfigurationsRequest extends com.oracle.bmc.requests.BmcReques
         return new Builder()
                 .compartmentId(compartmentId)
                 .lifecycleState(lifecycleState)
+                .configType(configType)
                 .displayName(displayName)
                 .dbVersion(dbVersion)
                 .shape(shape)
@@ -447,6 +481,7 @@ public class ListConfigurationsRequest extends com.oracle.bmc.requests.BmcReques
         sb.append("super=").append(super.toString());
         sb.append(",compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(",lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(",configType=").append(String.valueOf(this.configType));
         sb.append(",displayName=").append(String.valueOf(this.displayName));
         sb.append(",dbVersion=").append(String.valueOf(this.dbVersion));
         sb.append(",shape=").append(String.valueOf(this.shape));
@@ -473,6 +508,7 @@ public class ListConfigurationsRequest extends com.oracle.bmc.requests.BmcReques
         return super.equals(o)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.configType, other.configType)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.dbVersion, other.dbVersion)
                 && java.util.Objects.equals(this.shape, other.shape)
@@ -494,6 +530,7 @@ public class ListConfigurationsRequest extends com.oracle.bmc.requests.BmcReques
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result = (result * PRIME) + (this.configType == null ? 43 : this.configType.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.dbVersion == null ? 43 : this.dbVersion.hashCode());
         result = (result * PRIME) + (this.shape == null ? 43 : this.shape.hashCode());

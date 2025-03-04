@@ -70,14 +70,14 @@ public class UpdateAssetSourceDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment that is going to be used to create assets.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("assetsCompartmentId")
     private final String assetsCompartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compartment that is going to be used to create assets.
      *
      * @return the value

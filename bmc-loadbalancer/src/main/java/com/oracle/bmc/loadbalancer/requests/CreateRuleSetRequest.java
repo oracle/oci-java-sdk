@@ -7,7 +7,7 @@ package com.oracle.bmc.loadbalancer.requests;
 import com.oracle.bmc.loadbalancer.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/CreateRuleSetExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/CreateRuleSetExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use CreateRuleSetRequest.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
@@ -16,13 +16,13 @@ public class CreateRuleSetRequest
                 com.oracle.bmc.loadbalancer.model.CreateRuleSetDetails> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * specified load balancer.
      */
     private String loadBalancerId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * specified load balancer.
      */
     public String getLoadBalancerId() {
@@ -117,13 +117,13 @@ public class CreateRuleSetRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * specified load balancer.
          */
         private String loadBalancerId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * specified load balancer.
          *
          * @param loadBalancerId the value to set

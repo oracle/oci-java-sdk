@@ -7,7 +7,7 @@ package com.oracle.bmc.demandsignal.requests;
 import com.oracle.bmc.demandsignal.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/demandsignal/ChangeOccDemandSignalCompartmentExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/demandsignal/ChangeOccDemandSignalCompartmentExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * ChangeOccDemandSignalCompartmentRequest.
  */
@@ -17,14 +17,14 @@ public class ChangeOccDemandSignalCompartmentRequest
                 com.oracle.bmc.demandsignal.model.ChangeOccDemandSignalCompartmentDetails> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the OccDemandSignal.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * OccDemandSignal.
      */
     private String occDemandSignalId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the OccDemandSignal.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * OccDemandSignal.
      */
     public String getOccDemandSignalId() {
         return occDemandSignalId;
@@ -90,14 +90,14 @@ public class ChangeOccDemandSignalCompartmentRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the OccDemandSignal.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * OccDemandSignal.
          */
         private String occDemandSignalId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the OccDemandSignal.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * OccDemandSignal.
          *
          * @param occDemandSignalId the value to set
          * @return this builder instance

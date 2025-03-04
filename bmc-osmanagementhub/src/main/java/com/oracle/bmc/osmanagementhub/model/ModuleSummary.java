@@ -62,15 +62,15 @@ public final class ModuleSummary extends com.oracle.bmc.http.client.internal.Exp
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the software source.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * software source.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("softwareSourceId")
         private String softwareSourceId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the software source.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * software source.
          *
          * @param softwareSourceId the value to set
          * @return this builder
@@ -143,15 +143,15 @@ public final class ModuleSummary extends com.oracle.bmc.http.client.internal.Exp
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the software source.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * software source.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("softwareSourceId")
     private final String softwareSourceId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the software source.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * software source.
      *
      * @return the value
      */

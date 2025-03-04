@@ -8,7 +8,7 @@ package com.oracle.bmc.opensearch.model;
  * An OpenSearch cluster resource. An OpenSearch cluster is set of instances that provide OpenSearch
  * functionality in OCI Search Service with OpenSearch. For more information, see [About Search
  * Service with
- * OpenSearch](https://docs.cloud.oracle.com/iaas/Content/search-opensearch/Concepts/ociopensearch.htm).
+ * OpenSearch](https://docs.oracle.com/iaas/Content/search-opensearch/Concepts/ociopensearch.htm).
  * <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly

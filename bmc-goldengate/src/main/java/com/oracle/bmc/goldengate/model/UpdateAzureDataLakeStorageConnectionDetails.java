@@ -174,7 +174,7 @@ public final class UpdateAzureDataLakeStorageConnectionDetails extends UpdateCon
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Secret where the account key is stored. Note: When provided, 'accountKey' field must not
          * be provided.
          */
@@ -182,7 +182,7 @@ public final class UpdateAzureDataLakeStorageConnectionDetails extends UpdateCon
         private String accountKeySecretId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Secret where the account key is stored. Note: When provided, 'accountKey' field must not
          * be provided.
          *
@@ -222,7 +222,7 @@ public final class UpdateAzureDataLakeStorageConnectionDetails extends UpdateCon
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Secret where the sas token is stored. Note: When provided, 'sasToken' field must not be
          * provided.
          */
@@ -230,7 +230,7 @@ public final class UpdateAzureDataLakeStorageConnectionDetails extends UpdateCon
         private String sasTokenSecretId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Secret where the sas token is stored. Note: When provided, 'sasToken' field must not be
          * provided.
          *
@@ -304,7 +304,7 @@ public final class UpdateAzureDataLakeStorageConnectionDetails extends UpdateCon
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Secret where the client secret is stored. Note: When provided, 'clientSecret' field must
          * not be provided.
          */
@@ -312,7 +312,7 @@ public final class UpdateAzureDataLakeStorageConnectionDetails extends UpdateCon
         private String clientSecretSecretId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Secret where the client secret is stored. Note: When provided, 'clientSecret' field must
          * not be provided.
          *
@@ -548,7 +548,7 @@ public final class UpdateAzureDataLakeStorageConnectionDetails extends UpdateCon
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Secret where the account key is stored. Note: When provided, 'accountKey' field must not be
      * provided.
      */
@@ -556,7 +556,7 @@ public final class UpdateAzureDataLakeStorageConnectionDetails extends UpdateCon
     private final String accountKeySecretId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Secret where the account key is stored. Note: When provided, 'accountKey' field must not be
      * provided.
      *
@@ -592,7 +592,7 @@ public final class UpdateAzureDataLakeStorageConnectionDetails extends UpdateCon
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Secret where the sas token is stored. Note: When provided, 'sasToken' field must not be
      * provided.
      */
@@ -600,7 +600,7 @@ public final class UpdateAzureDataLakeStorageConnectionDetails extends UpdateCon
     private final String sasTokenSecretId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Secret where the sas token is stored. Note: When provided, 'sasToken' field must not be
      * provided.
      *
@@ -666,7 +666,7 @@ public final class UpdateAzureDataLakeStorageConnectionDetails extends UpdateCon
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Secret where the client secret is stored. Note: When provided, 'clientSecret' field must not
      * be provided.
      */
@@ -674,7 +674,7 @@ public final class UpdateAzureDataLakeStorageConnectionDetails extends UpdateCon
     private final String clientSecretSecretId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Secret where the client secret is stored. Note: When provided, 'clientSecret' field must not
      * be provided.
      *

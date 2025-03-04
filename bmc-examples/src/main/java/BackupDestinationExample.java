@@ -31,8 +31,8 @@ import java.util.stream.Collectors;
  *
  * <ul>
  *   <li>For general documentation refer to :- <a
- *       href="https://docs.cloud.oracle.com/Content/Database/Concepts/overview.htm">overview</a>
- *       for more information
+ *       href="https://docs.oracle.com/iaas/Content/Database/Concepts/overview.htm">overview</a> for
+ *       more information
  * </ul>
  */
 public class BackupDestinationExample {

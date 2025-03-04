@@ -73,7 +73,7 @@ public interface Quotas extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/limits/AddQuotaLockExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/limits/AddQuotaLockExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use AddQuotaLock API.
      */
     AddQuotaLockResponse addQuotaLock(AddQuotaLockRequest request);
@@ -88,7 +88,7 @@ public interface Quotas extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/limits/CreateQuotaExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/limits/CreateQuotaExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateQuota API.
      */
     CreateQuotaResponse createQuota(CreateQuotaRequest request);
@@ -103,7 +103,7 @@ public interface Quotas extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/limits/DeleteQuotaExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/limits/DeleteQuotaExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteQuota API.
      */
     DeleteQuotaResponse deleteQuota(DeleteQuotaRequest request);
@@ -118,7 +118,7 @@ public interface Quotas extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/limits/GetQuotaExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/limits/GetQuotaExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetQuota API.
      */
     GetQuotaResponse getQuota(GetQuotaRequest request);
@@ -133,7 +133,7 @@ public interface Quotas extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/limits/ListQuotasExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/limits/ListQuotasExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListQuotas API.
      */
     ListQuotasResponse listQuotas(ListQuotasRequest request);
@@ -148,7 +148,7 @@ public interface Quotas extends AutoCloseable {
      *     enable retries for it. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/limits/RemoveQuotaLockExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/limits/RemoveQuotaLockExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use RemoveQuotaLock
      *     API.
      */
@@ -164,7 +164,7 @@ public interface Quotas extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/limits/UpdateQuotaExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/limits/UpdateQuotaExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateQuota API.
      */
     UpdateQuotaResponse updateQuota(UpdateQuotaRequest request);

@@ -10,9 +10,9 @@ import com.oracle.bmc.securityattribute.responses.*;
 /**
  * Use the Security Attributes API to manage security attributes and security attribute namespaces.
  * For more information, see the documentation for [Security
- * Attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/managing-security-attributes.htm)
+ * Attributes](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/managing-security-attributes.htm)
  * and [Security Attribute
- * Nampespaces](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/managing-security-attribute-namespaces.htm).
+ * Nampespaces](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/managing-security-attribute-namespaces.htm).
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20240815")
 public interface SecurityAttributeAsync extends AutoCloseable {
@@ -183,7 +183,7 @@ public interface SecurityAttributeAsync extends AutoCloseable {
      *
      * <p>To move the security attribute namespace, you must have the manage security-attributes
      * permission on both compartments. For more information about IAM policies, see [Details for
-     * IAM](https://docs.cloud.oracle.com/Content/Identity/policyreference/iampolicyreference.htm).
+     * IAM](https://docs.oracle.com/iaas/Content/Identity/policyreference/iampolicyreference.htm).
      *
      * <p>Moving a security attribute namespace moves all the security attributes contained in the
      * security attribute namespace.
@@ -495,7 +495,7 @@ public interface SecurityAttributeAsync extends AutoCloseable {
      * reactivate each one individually *after* you reactivate the namespace, using {@link
      * #updateTag(UpdateTagRequest, Consumer, Consumer) updateTag}. For more information about
      * retiring security attribute namespaces, see [Managing Security Attribute
-     * Namespaces](https://docs.cloud.oracle.com/Content/zero-trust-packet-routing/managing-security-attribute-namespaces.htm).
+     * Namespaces](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/managing-security-attribute-namespaces.htm).
      *
      * <p>You can't add a namespace with the same name as a retired namespace in the same tenancy.
      *

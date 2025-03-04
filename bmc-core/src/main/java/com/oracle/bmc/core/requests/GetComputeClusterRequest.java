@@ -7,25 +7,25 @@ package com.oracle.bmc.core.requests;
 import com.oracle.bmc.core.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetComputeClusterExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetComputeClusterExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use GetComputeClusterRequest.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class GetComputeClusterRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compute cluster. A [compute
-     * cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) is a
-     * remote direct memory access (RDMA) network group.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compute cluster. A [compute
+     * cluster](https://docs.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) is a remote
+     * direct memory access (RDMA) network group.
      */
     private String computeClusterId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compute cluster. A [compute
-     * cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) is a
-     * remote direct memory access (RDMA) network group.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compute cluster. A [compute
+     * cluster](https://docs.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) is a remote
+     * direct memory access (RDMA) network group.
      */
     public String getComputeClusterId() {
         return computeClusterId;
@@ -51,18 +51,18 @@ public class GetComputeClusterRequest extends com.oracle.bmc.requests.BmcRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compute cluster. A [compute
-         * cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm)
-         * is a remote direct memory access (RDMA) network group.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compute cluster. A [compute
+         * cluster](https://docs.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) is a
+         * remote direct memory access (RDMA) network group.
          */
         private String computeClusterId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compute cluster. A [compute
-         * cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm)
-         * is a remote direct memory access (RDMA) network group.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compute cluster. A [compute
+         * cluster](https://docs.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) is a
+         * remote direct memory access (RDMA) network group.
          *
          * @param computeClusterId the value to set
          * @return this builder instance

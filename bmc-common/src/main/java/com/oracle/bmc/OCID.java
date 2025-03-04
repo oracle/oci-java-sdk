@@ -12,7 +12,7 @@ import com.oracle.bmc.util.internal.StringUtils;
  * Oracle Cloud Infrastructure unique ID.
  *
  * <p>See <a
- * href="https://docs.cloud.oracle.com/Content/GSG/Concepts/concepts.htm#ocid">documentation</a>.
+ * href="https://docs.oracle.com/iaas/Content/GSG/Concepts/concepts.htm#ocid">documentation</a>.
  */
 @InternalSdk
 public class OCID {

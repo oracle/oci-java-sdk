@@ -45,15 +45,15 @@ public class TopologyEntityRelationship
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the first entity in the relationship.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * first entity in the relationship.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("id1")
     private final String id1;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the first entity in the relationship.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * first entity in the relationship.
      *
      * @return the value
      */
@@ -62,15 +62,15 @@ public class TopologyEntityRelationship
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the second entity in the relationship.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * second entity in the relationship.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("id2")
     private final String id2;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the second entity in the relationship.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * second entity in the relationship.
      *
      * @return the value
      */

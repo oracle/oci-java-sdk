@@ -49,7 +49,7 @@ public class ListWorkRequestLogsResponse extends com.oracle.bmc.responses.BmcRes
      * retrieve the entire list of work requests.
      *
      * <p>For more details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private String opcNextPage;
 
@@ -62,7 +62,7 @@ public class ListWorkRequestLogsResponse extends com.oracle.bmc.responses.BmcRes
      * retrieve the entire list of work requests.
      *
      * <p>For more details about how pagination works, see [List
-     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      * @return the value
      */
@@ -167,7 +167,7 @@ public class ListWorkRequestLogsResponse extends com.oracle.bmc.responses.BmcRes
          * to retrieve the entire list of work requests.
          *
          * <p>For more details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private String opcNextPage;
 
@@ -180,7 +180,7 @@ public class ListWorkRequestLogsResponse extends com.oracle.bmc.responses.BmcRes
          * to retrieve the entire list of work requests.
          *
          * <p>For more details about how pagination works, see [List
-         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param opcNextPage the value to set
          * @return this builder

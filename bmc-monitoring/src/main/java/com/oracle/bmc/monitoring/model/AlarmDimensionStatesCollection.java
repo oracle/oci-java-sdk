@@ -44,15 +44,15 @@ public final class AlarmDimensionStatesCollection
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the alarm to retrieve alarm state entries for.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * alarm to retrieve alarm state entries for.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("alarmId")
         private String alarmId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the alarm to retrieve alarm state entries for.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * alarm to retrieve alarm state entries for.
          *
          * @param alarmId the value to set
          * @return this builder
@@ -165,15 +165,15 @@ public final class AlarmDimensionStatesCollection
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the alarm to retrieve alarm state entries for.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * alarm to retrieve alarm state entries for.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("alarmId")
     private final String alarmId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the alarm to retrieve alarm state entries for.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * alarm to retrieve alarm state entries for.
      *
      * @return the value
      */

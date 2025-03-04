@@ -11,7 +11,7 @@ import com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory;
 /**
  * Class that exposes a way to create a {@link RequestSigner} for use with OCI. The returned signers
  * implement signing strategies outlined by <a href=
- * "https://docs.cloud.oracle.com/Content/API/Concepts/signingrequests.htm">the signing
+ * "https://docs.oracle.com/iaas/Content/API/Concepts/signingrequests.htm">the signing
  * guidelines</a>.
  *
  * <p>This is only exposed so clients can write REST calls directly against OCI without using the

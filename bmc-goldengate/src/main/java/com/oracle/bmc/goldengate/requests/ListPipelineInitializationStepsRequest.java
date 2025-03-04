@@ -7,7 +7,7 @@ package com.oracle.bmc.goldengate.requests;
 import com.oracle.bmc.goldengate.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/goldengate/ListPipelineInitializationStepsExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/goldengate/ListPipelineInitializationStepsExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * ListPipelineInitializationStepsRequest.
  */
@@ -16,13 +16,13 @@ public class ListPipelineInitializationStepsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * pipeline created.
      */
     private String pipelineId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * pipeline created.
      */
     public String getPipelineId() {
@@ -43,13 +43,13 @@ public class ListPipelineInitializationStepsRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * pipeline created.
          */
         private String pipelineId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * pipeline created.
          *
          * @param pipelineId the value to set

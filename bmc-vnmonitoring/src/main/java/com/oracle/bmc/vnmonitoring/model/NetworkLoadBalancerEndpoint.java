@@ -28,14 +28,14 @@ public final class NetworkLoadBalancerEndpoint extends Endpoint {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * network load balancer.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("networkLoadBalancerId")
         private String networkLoadBalancerId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * network load balancer.
          *
          * @param networkLoadBalancerId the value to set
@@ -84,14 +84,14 @@ public final class NetworkLoadBalancerEndpoint extends Endpoint {
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * network load balancer.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("networkLoadBalancerId")
     private final String networkLoadBalancerId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * network load balancer.
      *
      * @return the value

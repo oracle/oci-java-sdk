@@ -49,14 +49,14 @@ public final class PreDeployedLanguageModels
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
          * Compartment Identifier
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
          * Compartment Identifier
          *
          * @param compartmentId the value to set
@@ -133,15 +133,15 @@ public final class PreDeployedLanguageModels
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
-     * Compartment Identifier
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) Compartment
+     * Identifier
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
-     * Compartment Identifier
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) Compartment
+     * Identifier
      *
      * @return the value
      */

@@ -32,15 +32,15 @@ public final class AttachManagedInstanceGroupToProfileDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the managed instance group that the instance will be associated with.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * managed instance group that the instance will be associated with.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("managedInstanceGroupId")
         private String managedInstanceGroupId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the managed instance group that the instance will be associated with.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * managed instance group that the instance will be associated with.
          *
          * @param managedInstanceGroupId the value to set
          * @return this builder
@@ -82,15 +82,15 @@ public final class AttachManagedInstanceGroupToProfileDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the managed instance group that the instance will be associated with.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * managed instance group that the instance will be associated with.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("managedInstanceGroupId")
     private final String managedInstanceGroupId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the managed instance group that the instance will be associated with.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * managed instance group that the instance will be associated with.
      *
      * @return the value
      */

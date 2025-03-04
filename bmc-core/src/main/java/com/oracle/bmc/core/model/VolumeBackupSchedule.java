@@ -7,8 +7,7 @@ package com.oracle.bmc.core.model;
 /**
  * Defines the backup frequency and retention period for a volume backup policy. For more
  * information, see [Policy-Based
- * Backups](https://docs.cloud.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm).
- * <br>
+ * Backups](https://docs.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm). <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a

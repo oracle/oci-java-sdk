@@ -28,7 +28,7 @@ import java.util.List;
  * set must define a list of backend servers, a policy for distribution of traffic, and establish a
  * method for periodically determining the health state of each of the backend servers. At least one
  * properly configured backend set is a requirement for a functioning load balancer. Please refer to
- * https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/BackendSet/CreateBackendSet for
+ * https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/BackendSet/CreateBackendSet for
  * information about using the API to create a backend set. This example requires an existing load
  * balancer and will do the following 1) Create a new backend set with one backend, the "round
  * robin" distribution policy, a health check on port 80 of the backend at the location

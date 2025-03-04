@@ -73,7 +73,7 @@ public interface InvoiceService extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ospgateway/DownloadPdfContentExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ospgateway/DownloadPdfContentExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DownloadPdfContent
      *     API.
      */
@@ -89,7 +89,7 @@ public interface InvoiceService extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ospgateway/GetInvoiceExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ospgateway/GetInvoiceExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetInvoice API.
      */
     GetInvoiceResponse getInvoice(GetInvoiceRequest request);
@@ -104,7 +104,7 @@ public interface InvoiceService extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ospgateway/ListInvoiceLinesExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ospgateway/ListInvoiceLinesExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListInvoiceLines
      *     API.
      */
@@ -120,7 +120,7 @@ public interface InvoiceService extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ospgateway/ListInvoicesExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ospgateway/ListInvoicesExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListInvoices API.
      */
     ListInvoicesResponse listInvoices(ListInvoicesRequest request);
@@ -135,7 +135,7 @@ public interface InvoiceService extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ospgateway/PayInvoiceExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ospgateway/PayInvoiceExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use PayInvoice API.
      */
     PayInvoiceResponse payInvoice(PayInvoiceRequest request);

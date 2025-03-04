@@ -49,7 +49,7 @@ public final class StackMonitoringConfig
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * {@link
          * #createExternalDatabaseConnectorDetails(CreateExternalDatabaseConnectorDetailsRequest)
          * createExternalDatabaseConnectorDetails}.
@@ -58,7 +58,7 @@ public final class StackMonitoringConfig
         private String stackMonitoringConnectorId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * {@link
          * #createExternalDatabaseConnectorDetails(CreateExternalDatabaseConnectorDetailsRequest)
          * createExternalDatabaseConnectorDetails}.
@@ -170,7 +170,7 @@ public final class StackMonitoringConfig
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * {@link #createExternalDatabaseConnectorDetails(CreateExternalDatabaseConnectorDetailsRequest)
      * createExternalDatabaseConnectorDetails}.
      */
@@ -178,7 +178,7 @@ public final class StackMonitoringConfig
     private final String stackMonitoringConnectorId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * {@link #createExternalDatabaseConnectorDetails(CreateExternalDatabaseConnectorDetailsRequest)
      * createExternalDatabaseConnectorDetails}.
      *

@@ -136,14 +136,14 @@ public final class ExternalExadataStorageConnectorSummary extends DbmResource {
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Exadata storage server.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("storageServerId")
         private String storageServerId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Exadata storage server.
          *
          * @param storageServerId the value to set
@@ -155,14 +155,14 @@ public final class ExternalExadataStorageConnectorSummary extends DbmResource {
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * agent for the Exadata storage server.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("agentId")
         private String agentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * agent for the Exadata storage server.
          *
          * @param agentId the value to set
@@ -176,7 +176,7 @@ public final class ExternalExadataStorageConnectorSummary extends DbmResource {
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
          * {@code {"Department": "Finance"}}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -185,7 +185,7 @@ public final class ExternalExadataStorageConnectorSummary extends DbmResource {
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
          * {@code {"Department": "Finance"}}
          *
          * @param freeformTags the value to set
@@ -199,7 +199,7 @@ public final class ExternalExadataStorageConnectorSummary extends DbmResource {
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
          * {@code {"Operations": {"CostCenter": "42"}}}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -208,7 +208,7 @@ public final class ExternalExadataStorageConnectorSummary extends DbmResource {
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
          * {@code {"Operations": {"CostCenter": "42"}}}
          *
          * @param definedTags the value to set
@@ -223,7 +223,7 @@ public final class ExternalExadataStorageConnectorSummary extends DbmResource {
         /**
          * System tags for this resource. Each key is predefined and scoped to a namespace. For more
          * information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). System
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System
          * tags can be viewed by users, but can only be created by the system.
          *
          * <p>Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
@@ -234,7 +234,7 @@ public final class ExternalExadataStorageConnectorSummary extends DbmResource {
         /**
          * System tags for this resource. Each key is predefined and scoped to a namespace. For more
          * information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). System
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System
          * tags can be viewed by users, but can only be created by the system.
          *
          * <p>Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
@@ -394,14 +394,14 @@ public final class ExternalExadataStorageConnectorSummary extends DbmResource {
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Exadata storage server.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("storageServerId")
     private final String storageServerId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Exadata storage server.
      *
      * @return the value
@@ -411,14 +411,14 @@ public final class ExternalExadataStorageConnectorSummary extends DbmResource {
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * agent for the Exadata storage server.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("agentId")
     private final String agentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * agent for the Exadata storage server.
      *
      * @return the value
@@ -430,7 +430,7 @@ public final class ExternalExadataStorageConnectorSummary extends DbmResource {
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Department": "Finance"}}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -439,7 +439,7 @@ public final class ExternalExadataStorageConnectorSummary extends DbmResource {
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Department": "Finance"}}
      *
      * @return the value
@@ -451,7 +451,7 @@ public final class ExternalExadataStorageConnectorSummary extends DbmResource {
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Operations": {"CostCenter": "42"}}}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -460,7 +460,7 @@ public final class ExternalExadataStorageConnectorSummary extends DbmResource {
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
      * {@code {"Operations": {"CostCenter": "42"}}}
      *
      * @return the value
@@ -472,7 +472,7 @@ public final class ExternalExadataStorageConnectorSummary extends DbmResource {
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). System tags
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags
      * can be viewed by users, but can only be created by the system.
      *
      * <p>Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
@@ -483,7 +483,7 @@ public final class ExternalExadataStorageConnectorSummary extends DbmResource {
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). System tags
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags
      * can be viewed by users, but can only be created by the system.
      *
      * <p>Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}

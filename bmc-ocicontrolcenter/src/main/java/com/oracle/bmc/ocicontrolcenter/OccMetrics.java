@@ -12,7 +12,7 @@ import com.oracle.bmc.ocicontrolcenter.responses.*;
  * provides the region-level capacity data, in realms where OCC is available. Use the OCI Control
  * Center (OCC) API to explore region-level capacity and utilization information about core
  * services. For more information, see [OCI Control
- * Center](https://docs.cloud.oracle.com/iaas/Content/control-center/home.htm).
+ * Center](https://docs.oracle.com/iaas/Content/control-center/home.htm).
  *
  * <p>This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by
  * default if no circuit breaker configuration is defined by the user.
@@ -81,7 +81,7 @@ public interface OccMetrics extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ocicontrolcenter/ListMetricPropertiesExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ocicontrolcenter/ListMetricPropertiesExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     ListMetricProperties API.
      */
@@ -98,7 +98,7 @@ public interface OccMetrics extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ocicontrolcenter/ListNamespacesExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ocicontrolcenter/ListNamespacesExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListNamespaces API.
      */
     ListNamespacesResponse listNamespaces(ListNamespacesRequest request);
@@ -116,7 +116,7 @@ public interface OccMetrics extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ocicontrolcenter/RequestSummarizedMetricDataExample.java.html"
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ocicontrolcenter/RequestSummarizedMetricDataExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     RequestSummarizedMetricData API.
      */

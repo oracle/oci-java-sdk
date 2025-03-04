@@ -10,7 +10,7 @@ import com.oracle.bmc.ocvp.responses.*;
 /**
  * Use the Oracle Cloud VMware API to create SDDCs and manage ESXi hosts and software. For more
  * information, see [Oracle Cloud VMware
- * Solution](https://docs.cloud.oracle.com/iaas/Content/VMware/Concepts/ocvsoverview.htm).
+ * Solution](https://docs.oracle.com/iaas/Content/VMware/Concepts/ocvsoverview.htm).
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230701")
 public interface SddcAsync extends AutoCloseable {
@@ -82,7 +82,7 @@ public interface SddcAsync extends AutoCloseable {
     /**
      * Moves an SDDC into a different compartment within the same tenancy. For information about
      * moving resources between compartments, see [Moving Resources to a Different
-     * Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -104,7 +104,7 @@ public interface SddcAsync extends AutoCloseable {
      *
      * <p>*Important:** You must configure the SDDC's networking resources with the security rules
      * detailed in [Security Rules for Oracle Cloud VMware Solution
-     * SDDCs](https://docs.cloud.oracle.com/iaas/Content/VMware/Reference/ocvssecurityrules.htm).
+     * SDDCs](https://docs.oracle.com/iaas/Content/VMware/Reference/ocvssecurityrules.htm).
      * Otherwise, provisioning the SDDC will fail. The rules are based on the requirements set by
      * VMware.
      *

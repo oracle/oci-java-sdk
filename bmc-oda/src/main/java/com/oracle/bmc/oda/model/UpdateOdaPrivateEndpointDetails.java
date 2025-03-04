@@ -81,19 +81,17 @@ public final class UpdateOdaPrivateEndpointDetails
             return this;
         }
         /**
-         * List of
-         * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+         * List of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
          * [network security
-         * groups](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/networksecuritygroups.htm)
+         * groups](https://docs.oracle.com/iaas/Content/Network/Concepts/networksecuritygroups.htm)
          */
         @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
         private java.util.List<String> nsgIds;
 
         /**
-         * List of
-         * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+         * List of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
          * [network security
-         * groups](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/networksecuritygroups.htm)
+         * groups](https://docs.oracle.com/iaas/Content/Network/Concepts/networksecuritygroups.htm)
          *
          * @param nsgIds the value to set
          * @return this builder
@@ -221,17 +219,17 @@ public final class UpdateOdaPrivateEndpointDetails
     }
 
     /**
-     * List of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-     * of [network security
-     * groups](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/networksecuritygroups.htm)
+     * List of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * [network security
+     * groups](https://docs.oracle.com/iaas/Content/Network/Concepts/networksecuritygroups.htm)
      */
     @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
     private final java.util.List<String> nsgIds;
 
     /**
-     * List of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-     * of [network security
-     * groups](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/networksecuritygroups.htm)
+     * List of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * [network security
+     * groups](https://docs.oracle.com/iaas/Content/Network/Concepts/networksecuritygroups.htm)
      *
      * @return the value
      */

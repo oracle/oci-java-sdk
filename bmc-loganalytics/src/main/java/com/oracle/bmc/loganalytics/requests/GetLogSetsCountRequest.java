@@ -7,7 +7,7 @@ package com.oracle.bmc.loganalytics.requests;
 import com.oracle.bmc.loganalytics.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/GetLogSetsCountExample.java.html"
+ * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/GetLogSetsCountExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use GetLogSetsCountRequest.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")

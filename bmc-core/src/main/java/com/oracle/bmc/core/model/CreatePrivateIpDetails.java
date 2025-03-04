@@ -64,7 +64,7 @@ public final class CreatePrivateIpDetails
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
          */
@@ -74,7 +74,7 @@ public final class CreatePrivateIpDetails
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
@@ -109,7 +109,7 @@ public final class CreatePrivateIpDetails
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          */
@@ -119,7 +119,7 @@ public final class CreatePrivateIpDetails
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * <p>Example: {@code {"Department": "Finance"}}
          *
@@ -139,7 +139,7 @@ public final class CreatePrivateIpDetails
          * 1123](https://tools.ietf.org/html/rfc1123).
          *
          * <p>For more information, see [DNS in Your Virtual Cloud
-         * Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
+         * Network](https://docs.oracle.com/iaas/Content/Network/Concepts/dns.htm).
          *
          * <p>Example: {@code bminstance1}
          */
@@ -154,7 +154,7 @@ public final class CreatePrivateIpDetails
          * 1123](https://tools.ietf.org/html/rfc1123).
          *
          * <p>For more information, see [DNS in Your Virtual Cloud
-         * Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
+         * Network](https://docs.oracle.com/iaas/Content/Network/Concepts/dns.htm).
          *
          * <p>Example: {@code bminstance1}
          *
@@ -192,17 +192,15 @@ public final class CreatePrivateIpDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the VNIC to assign the private IP to. The VNIC and private IP must be in the same
-         * subnet.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * VNIC to assign the private IP to. The VNIC and private IP must be in the same subnet.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("vnicId")
         private String vnicId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the VNIC to assign the private IP to. The VNIC and private IP must be in the same
-         * subnet.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * VNIC to assign the private IP to. The VNIC and private IP must be in the same subnet.
          *
          * @param vnicId the value to set
          * @return this builder
@@ -215,8 +213,7 @@ public final class CreatePrivateIpDetails
         /**
          * Use this attribute only with the Oracle Cloud VMware Solution.
          *
-         * <p>The
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+         * <p>The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
          * the VLAN from which the private IP is to be drawn. The IP address, *if supplied*, must be
          * valid for the given VLAN. See {@link Vlan}.
          */
@@ -226,8 +223,7 @@ public final class CreatePrivateIpDetails
         /**
          * Use this attribute only with the Oracle Cloud VMware Solution.
          *
-         * <p>The
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+         * <p>The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
          * the VLAN from which the private IP is to be drawn. The IP address, *if supplied*, must be
          * valid for the given VLAN. See {@link Vlan}.
          *
@@ -240,17 +236,17 @@ public final class CreatePrivateIpDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the subnet from which the private IP is to be drawn. The IP address, *if supplied*,
-         * must be valid for the given subnet.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * subnet from which the private IP is to be drawn. The IP address, *if supplied*, must be
+         * valid for the given subnet.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
         private String subnetId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the subnet from which the private IP is to be drawn. The IP address, *if supplied*,
-         * must be valid for the given subnet.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * subnet from which the private IP is to be drawn. The IP address, *if supplied*, must be
+         * valid for the given subnet.
          *
          * @param subnetId the value to set
          * @return this builder
@@ -276,18 +272,16 @@ public final class CreatePrivateIpDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the route table the IP address or VNIC will use. For more information, see [Source
-         * Based
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * route table the IP address or VNIC will use. For more information, see [Source Based
          * Routing](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("routeTableId")
         private String routeTableId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the route table the IP address or VNIC will use. For more information, see [Source
-         * Based
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * route table the IP address or VNIC will use. For more information, see [Source Based
          * Routing](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing).
          *
          * @param routeTableId the value to set
@@ -369,7 +363,7 @@ public final class CreatePrivateIpDetails
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
      */
@@ -379,7 +373,7 @@ public final class CreatePrivateIpDetails
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
@@ -409,7 +403,7 @@ public final class CreatePrivateIpDetails
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      */
@@ -419,7 +413,7 @@ public final class CreatePrivateIpDetails
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * <p>Example: {@code {"Department": "Finance"}}
      *
@@ -437,7 +431,7 @@ public final class CreatePrivateIpDetails
      * 1123](https://tools.ietf.org/html/rfc1123).
      *
      * <p>For more information, see [DNS in Your Virtual Cloud
-     * Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
+     * Network](https://docs.oracle.com/iaas/Content/Network/Concepts/dns.htm).
      *
      * <p>Example: {@code bminstance1}
      */
@@ -452,7 +446,7 @@ public final class CreatePrivateIpDetails
      * 1123](https://tools.ietf.org/html/rfc1123).
      *
      * <p>For more information, see [DNS in Your Virtual Cloud
-     * Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
+     * Network](https://docs.oracle.com/iaas/Content/Network/Concepts/dns.htm).
      *
      * <p>Example: {@code bminstance1}
      *
@@ -486,15 +480,15 @@ public final class CreatePrivateIpDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the VNIC to assign the private IP to. The VNIC and private IP must be in the same subnet.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC
+     * to assign the private IP to. The VNIC and private IP must be in the same subnet.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("vnicId")
     private final String vnicId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the VNIC to assign the private IP to. The VNIC and private IP must be in the same subnet.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC
+     * to assign the private IP to. The VNIC and private IP must be in the same subnet.
      *
      * @return the value
      */
@@ -505,9 +499,9 @@ public final class CreatePrivateIpDetails
     /**
      * Use this attribute only with the Oracle Cloud VMware Solution.
      *
-     * <p>The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the VLAN from which the private IP is to be drawn. The IP address, *if supplied*, must be
-     * valid for the given VLAN. See {@link Vlan}.
+     * <p>The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * VLAN from which the private IP is to be drawn. The IP address, *if supplied*, must be valid
+     * for the given VLAN. See {@link Vlan}.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("vlanId")
     private final String vlanId;
@@ -515,9 +509,9 @@ public final class CreatePrivateIpDetails
     /**
      * Use this attribute only with the Oracle Cloud VMware Solution.
      *
-     * <p>The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the VLAN from which the private IP is to be drawn. The IP address, *if supplied*, must be
-     * valid for the given VLAN. See {@link Vlan}.
+     * <p>The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * VLAN from which the private IP is to be drawn. The IP address, *if supplied*, must be valid
+     * for the given VLAN. See {@link Vlan}.
      *
      * @return the value
      */
@@ -526,17 +520,17 @@ public final class CreatePrivateIpDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the subnet from which the private IP is to be drawn. The IP address, *if supplied*, must be
-     * valid for the given subnet.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * subnet from which the private IP is to be drawn. The IP address, *if supplied*, must be valid
+     * for the given subnet.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
     private final String subnetId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the subnet from which the private IP is to be drawn. The IP address, *if supplied*, must be
-     * valid for the given subnet.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * subnet from which the private IP is to be drawn. The IP address, *if supplied*, must be valid
+     * for the given subnet.
      *
      * @return the value
      */
@@ -591,16 +585,16 @@ public final class CreatePrivateIpDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the route table the IP address or VNIC will use. For more information, see [Source Based
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * route table the IP address or VNIC will use. For more information, see [Source Based
      * Routing](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("routeTableId")
     private final String routeTableId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the route table the IP address or VNIC will use. For more information, see [Source Based
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * route table the IP address or VNIC will use. For more information, see [Source Based
      * Routing](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing).
      *
      * @return the value

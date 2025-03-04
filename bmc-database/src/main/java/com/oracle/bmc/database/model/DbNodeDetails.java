@@ -31,14 +31,14 @@ public final class DbNodeDetails extends com.oracle.bmc.http.client.internal.Exp
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
          * ExaCS Db node.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("dbNodeId")
         private String dbNodeId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
          * ExaCS Db node.
          *
          * @param dbNodeId the value to set
@@ -80,15 +80,15 @@ public final class DbNodeDetails extends com.oracle.bmc.http.client.internal.Exp
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of ExaCS
-     * Db node.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of ExaCS Db
+     * node.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("dbNodeId")
     private final String dbNodeId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of ExaCS
-     * Db node.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of ExaCS Db
+     * node.
      *
      * @return the value
      */

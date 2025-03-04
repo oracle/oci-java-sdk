@@ -106,15 +106,15 @@ public final class UpdateEndpointDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the model to associate with the endpoint.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * model to associate with the endpoint.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("modelId")
         private String modelId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the model to associate with the endpoint.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * model to associate with the endpoint.
          *
          * @param modelId the value to set
          * @return this builder
@@ -282,15 +282,15 @@ public final class UpdateEndpointDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the model to associate with the endpoint.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * model to associate with the endpoint.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("modelId")
     private final String modelId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the model to associate with the endpoint.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * model to associate with the endpoint.
      *
      * @return the value
      */
