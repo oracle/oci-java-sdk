@@ -3,6 +3,40 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 3.60.0 - 2025-03-11
+### Added 
+- Support for pipelines in the OpenSearch service 
+- Support for uploading and downloading the model metadata artifacts in the Data Science service 
+- Support for model references via native API in the Data Science service 
+- Support for scheduling cross-region database backups in the HeatWave service 
+- Support for specifying backup retention days for manual cross-region backups in the HeatWave service 
+- Support for IPv6 addresses for dedicated infrastructure in the Database service 
+- Support for NewDev edition for the development community in the Database service 
+- Support for grouping sensitive types across the tenancies and reuse of groups in the discovery workflow in the Data Safe service 
+- Support for generating custom assessment reports in the Data Safe service   
+
+### Breaking Changes 
+- Method `public java.lang.Integer getMaxMemoryGB()` has been removed from the model `com.oracle.bmc.opensearch.model.CreateOpensearchClusterPipelineDetails` in the OpenSearch service 
+- Method `public java.lang.Integer getMaxOcpuCount()` has been removed from the model `com.oracle.bmc.opensearch.model.CreateOpensearchClusterPipelineDetails` in the OpenSearch service 
+- Method `public java.lang.Integer getMinMemoryGB()` has been removed from the model `com.oracle.bmc.opensearch.model.CreateOpensearchClusterPipelineDetails` in the OpenSearch service 
+- Method `public java.lang.Integer getMinOcpuCount()` has been removed from the model `com.oracle.bmc.opensearch.model.CreateOpensearchClusterPipelineDetails` in the OpenSearch service 
+- Method `public java.util.Map getSystemTags()` has been removed from the model `com.oracle.bmc.opensearch.model.CreateOpensearchClusterPipelineDetails` in the OpenSearch service 
+- Method `public java.lang.Integer getMaxMemoryGB()` has been removed from the model `com.oracle.bmc.opensearch.model.OpensearchClusterPipeline` in the OpenSearch service 
+- Method `public java.lang.Integer getMaxOcpuCount()` has been removed from the model `com.oracle.bmc.opensearch.model.OpensearchClusterPipeline` in the OpenSearch service 
+- Method `public java.lang.Integer getMinMemoryGB()` has been removed from the model `com.oracle.bmc.opensearch.model.OpensearchClusterPipeline` in the OpenSearch service 
+- Method `public java.lang.Integer getMinOcpuCount()` has been removed from the model `com.oracle.bmc.opensearch.model.OpensearchClusterPipeline` in the OpenSearch service 
+- Method `public java.lang.Integer getMaxMemoryGB()` has been removed from the model `com.oracle.bmc.opensearch.model.OpensearchClusterPipelineSummary` in the OpenSearch service 
+- Method `public java.lang.Integer getMaxOcpuCount()` has been removed from the model `com.oracle.bmc.opensearch.model.OpensearchClusterPipelineSummary` in the OpenSearch service 
+- Method `public java.lang.Integer getMinMemoryGB()` has been removed from the model `com.oracle.bmc.opensearch.model.OpensearchClusterPipelineSummary` in the OpenSearch service 
+- Method `public java.lang.Integer getMinOcpuCount()` has been removed from the model `com.oracle.bmc.opensearch.model.OpensearchClusterPipelineSummary` in the OpenSearch service 
+- Class `com.oracle.bmc.opensearch.model.OpensearchPipelineValidationResponse` has been removed from the OpenSearch service 
+- Class `com.oracle.bmc.opensearch.model.PipelineValidationErrorDetails` has been removed from the OpenSearch service 
+- Method `public java.lang.Integer getMaxMemoryGB()` has been removed from the model `com.oracle.bmc.opensearch.model.UpdateOpensearchClusterPipelineDetails` in the OpenSearch service 
+- Method `public java.lang.Integer getMaxOcpuCount()` has been removed from the model `com.oracle.bmc.opensearch.model.UpdateOpensearchClusterPipelineDetails` in the OpenSearch service 
+- Method `public java.lang.Integer getMinMemoryGB()` has been removed from the model `com.oracle.bmc.opensearch.model.UpdateOpensearchClusterPipelineDetails` in the OpenSearch service 
+- Method `public java.lang.Integer getMinOcpuCount()` has been removed from the model `com.oracle.bmc.opensearch.model.UpdateOpensearchClusterPipelineDetails` in the OpenSearch service 
+- Class `com.oracle.bmc.opensearch.model.ValidateOpensearchPipelineDetails` has been removed from the OpenSearch service
+
 ## 3.59.0 - 2025-03-04
 ### Added 
 - Support for user quotas on file system resources in the File Storage service 

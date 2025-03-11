@@ -42,7 +42,10 @@ public final class MaskingReportSummary
         "isRedoLoggingEnabled",
         "isRefreshStatsEnabled",
         "parallelDegree",
-        "recompile"
+        "recompile",
+        "maskingStatus",
+        "totalPreMaskingScriptErrors",
+        "totalPostMaskingScriptErrors"
     })
     public MaskingReportSummary(
             String id,
@@ -63,7 +66,10 @@ public final class MaskingReportSummary
             Boolean isRedoLoggingEnabled,
             Boolean isRefreshStatsEnabled,
             String parallelDegree,
-            String recompile) {
+            String recompile,
+            MaskingStatus maskingStatus,
+            Long totalPreMaskingScriptErrors,
+            Long totalPostMaskingScriptErrors) {
         super();
         this.id = id;
         this.compartmentId = compartmentId;
@@ -84,6 +90,9 @@ public final class MaskingReportSummary
         this.isRefreshStatsEnabled = isRefreshStatsEnabled;
         this.parallelDegree = parallelDegree;
         this.recompile = recompile;
+        this.maskingStatus = maskingStatus;
+        this.totalPreMaskingScriptErrors = totalPreMaskingScriptErrors;
+        this.totalPostMaskingScriptErrors = totalPostMaskingScriptErrors;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -393,6 +402,51 @@ public final class MaskingReportSummary
             this.__explicitlySet__.add("recompile");
             return this;
         }
+        /** The status of the masking job. */
+        @com.fasterxml.jackson.annotation.JsonProperty("maskingStatus")
+        private MaskingStatus maskingStatus;
+
+        /**
+         * The status of the masking job.
+         *
+         * @param maskingStatus the value to set
+         * @return this builder
+         */
+        public Builder maskingStatus(MaskingStatus maskingStatus) {
+            this.maskingStatus = maskingStatus;
+            this.__explicitlySet__.add("maskingStatus");
+            return this;
+        }
+        /** The total number of errors in pre-masking script. */
+        @com.fasterxml.jackson.annotation.JsonProperty("totalPreMaskingScriptErrors")
+        private Long totalPreMaskingScriptErrors;
+
+        /**
+         * The total number of errors in pre-masking script.
+         *
+         * @param totalPreMaskingScriptErrors the value to set
+         * @return this builder
+         */
+        public Builder totalPreMaskingScriptErrors(Long totalPreMaskingScriptErrors) {
+            this.totalPreMaskingScriptErrors = totalPreMaskingScriptErrors;
+            this.__explicitlySet__.add("totalPreMaskingScriptErrors");
+            return this;
+        }
+        /** The total number of errors in post-masking script. */
+        @com.fasterxml.jackson.annotation.JsonProperty("totalPostMaskingScriptErrors")
+        private Long totalPostMaskingScriptErrors;
+
+        /**
+         * The total number of errors in post-masking script.
+         *
+         * @param totalPostMaskingScriptErrors the value to set
+         * @return this builder
+         */
+        public Builder totalPostMaskingScriptErrors(Long totalPostMaskingScriptErrors) {
+            this.totalPostMaskingScriptErrors = totalPostMaskingScriptErrors;
+            this.__explicitlySet__.add("totalPostMaskingScriptErrors");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -418,7 +472,10 @@ public final class MaskingReportSummary
                             this.isRedoLoggingEnabled,
                             this.isRefreshStatsEnabled,
                             this.parallelDegree,
-                            this.recompile);
+                            this.recompile,
+                            this.maskingStatus,
+                            this.totalPreMaskingScriptErrors,
+                            this.totalPostMaskingScriptErrors);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -483,6 +540,15 @@ public final class MaskingReportSummary
             }
             if (model.wasPropertyExplicitlySet("recompile")) {
                 this.recompile(model.getRecompile());
+            }
+            if (model.wasPropertyExplicitlySet("maskingStatus")) {
+                this.maskingStatus(model.getMaskingStatus());
+            }
+            if (model.wasPropertyExplicitlySet("totalPreMaskingScriptErrors")) {
+                this.totalPreMaskingScriptErrors(model.getTotalPreMaskingScriptErrors());
+            }
+            if (model.wasPropertyExplicitlySet("totalPostMaskingScriptErrors")) {
+                this.totalPostMaskingScriptErrors(model.getTotalPostMaskingScriptErrors());
             }
             return this;
         }
@@ -764,6 +830,91 @@ public final class MaskingReportSummary
         return recompile;
     }
 
+    /** The status of the masking job. */
+    public enum MaskingStatus implements com.oracle.bmc.http.internal.BmcEnum {
+        Failed("FAILED"),
+        Success("SUCCESS"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(MaskingStatus.class);
+
+        private final String value;
+        private static java.util.Map<String, MaskingStatus> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (MaskingStatus v : MaskingStatus.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        MaskingStatus(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static MaskingStatus create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'MaskingStatus', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /** The status of the masking job. */
+    @com.fasterxml.jackson.annotation.JsonProperty("maskingStatus")
+    private final MaskingStatus maskingStatus;
+
+    /**
+     * The status of the masking job.
+     *
+     * @return the value
+     */
+    public MaskingStatus getMaskingStatus() {
+        return maskingStatus;
+    }
+
+    /** The total number of errors in pre-masking script. */
+    @com.fasterxml.jackson.annotation.JsonProperty("totalPreMaskingScriptErrors")
+    private final Long totalPreMaskingScriptErrors;
+
+    /**
+     * The total number of errors in pre-masking script.
+     *
+     * @return the value
+     */
+    public Long getTotalPreMaskingScriptErrors() {
+        return totalPreMaskingScriptErrors;
+    }
+
+    /** The total number of errors in post-masking script. */
+    @com.fasterxml.jackson.annotation.JsonProperty("totalPostMaskingScriptErrors")
+    private final Long totalPostMaskingScriptErrors;
+
+    /**
+     * The total number of errors in post-masking script.
+     *
+     * @return the value
+     */
+    public Long getTotalPostMaskingScriptErrors() {
+        return totalPostMaskingScriptErrors;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -800,6 +951,11 @@ public final class MaskingReportSummary
         sb.append(", isRefreshStatsEnabled=").append(String.valueOf(this.isRefreshStatsEnabled));
         sb.append(", parallelDegree=").append(String.valueOf(this.parallelDegree));
         sb.append(", recompile=").append(String.valueOf(this.recompile));
+        sb.append(", maskingStatus=").append(String.valueOf(this.maskingStatus));
+        sb.append(", totalPreMaskingScriptErrors=")
+                .append(String.valueOf(this.totalPreMaskingScriptErrors));
+        sb.append(", totalPostMaskingScriptErrors=")
+                .append(String.valueOf(this.totalPostMaskingScriptErrors));
         sb.append(")");
         return sb.toString();
     }
@@ -835,6 +991,11 @@ public final class MaskingReportSummary
                 && java.util.Objects.equals(this.isRefreshStatsEnabled, other.isRefreshStatsEnabled)
                 && java.util.Objects.equals(this.parallelDegree, other.parallelDegree)
                 && java.util.Objects.equals(this.recompile, other.recompile)
+                && java.util.Objects.equals(this.maskingStatus, other.maskingStatus)
+                && java.util.Objects.equals(
+                        this.totalPreMaskingScriptErrors, other.totalPreMaskingScriptErrors)
+                && java.util.Objects.equals(
+                        this.totalPostMaskingScriptErrors, other.totalPostMaskingScriptErrors)
                 && super.equals(other);
     }
 
@@ -911,6 +1072,19 @@ public final class MaskingReportSummary
                 (result * PRIME)
                         + (this.parallelDegree == null ? 43 : this.parallelDegree.hashCode());
         result = (result * PRIME) + (this.recompile == null ? 43 : this.recompile.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.maskingStatus == null ? 43 : this.maskingStatus.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.totalPreMaskingScriptErrors == null
+                                ? 43
+                                : this.totalPreMaskingScriptErrors.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.totalPostMaskingScriptErrors == null
+                                ? 43
+                                : this.totalPostMaskingScriptErrors.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

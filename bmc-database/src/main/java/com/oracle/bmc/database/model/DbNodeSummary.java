@@ -36,6 +36,8 @@ public final class DbNodeSummary extends com.oracle.bmc.http.client.internal.Exp
         "backupVnicId",
         "hostIpId",
         "backupIpId",
+        "hostIpv6Id",
+        "backupIpv6Id",
         "vnic2Id",
         "backupVnic2Id",
         "lifecycleState",
@@ -63,6 +65,8 @@ public final class DbNodeSummary extends com.oracle.bmc.http.client.internal.Exp
             String backupVnicId,
             String hostIpId,
             String backupIpId,
+            String hostIpv6Id,
+            String backupIpv6Id,
             String vnic2Id,
             String backupVnic2Id,
             LifecycleState lifecycleState,
@@ -89,6 +93,8 @@ public final class DbNodeSummary extends com.oracle.bmc.http.client.internal.Exp
         this.backupVnicId = backupVnicId;
         this.hostIpId = hostIpId;
         this.backupIpId = backupIpId;
+        this.hostIpv6Id = hostIpv6Id;
+        this.backupIpv6Id = backupIpv6Id;
         this.vnic2Id = vnic2Id;
         this.backupVnic2Id = backupVnic2Id;
         this.lifecycleState = lifecycleState;
@@ -190,10 +196,10 @@ public final class DbNodeSummary extends com.oracle.bmc.http.client.internal.Exp
         }
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * host IP address associated with the database node. Use this OCID with either the {@link
+         * host IPv4 address associated with the database node. Use this OCID with either the {@link
          * #getPrivateIp(GetPrivateIpRequest) getPrivateIp} or the {@link
          * #getPublicIpByPrivateIpId(GetPublicIpByPrivateIpIdRequest) getPublicIpByPrivateIpId} API
-         * to get the IP address needed to make a database connection.
+         * to get the IPv4 address needed to make a database connection.
          *
          * <p>*Note:** Applies only to Exadata Cloud Service.
          */
@@ -202,10 +208,10 @@ public final class DbNodeSummary extends com.oracle.bmc.http.client.internal.Exp
 
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * host IP address associated with the database node. Use this OCID with either the {@link
+         * host IPv4 address associated with the database node. Use this OCID with either the {@link
          * #getPrivateIp(GetPrivateIpRequest) getPrivateIp} or the {@link
          * #getPublicIpByPrivateIpId(GetPublicIpByPrivateIpIdRequest) getPublicIpByPrivateIpId} API
-         * to get the IP address needed to make a database connection.
+         * to get the IPv4 address needed to make a database connection.
          *
          * <p>*Note:** Applies only to Exadata Cloud Service.
          *
@@ -219,10 +225,10 @@ public final class DbNodeSummary extends com.oracle.bmc.http.client.internal.Exp
         }
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * backup IP address associated with the database node. Use this OCID with either the {@link
-         * #getPrivateIp(GetPrivateIpRequest) getPrivateIp} or the {@link
+         * backup IPv4 address associated with the database node. Use this OCID with either the
+         * {@link #getPrivateIp(GetPrivateIpRequest) getPrivateIp} or the {@link
          * #getPublicIpByPrivateIpId(GetPublicIpByPrivateIpIdRequest) getPublicIpByPrivateIpId} API
-         * to get the IP address needed to make a database connection.
+         * to get the IPv4 address needed to make a database connection.
          *
          * <p>*Note:** Applies only to Exadata Cloud Service.
          */
@@ -231,10 +237,10 @@ public final class DbNodeSummary extends com.oracle.bmc.http.client.internal.Exp
 
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * backup IP address associated with the database node. Use this OCID with either the {@link
-         * #getPrivateIp(GetPrivateIpRequest) getPrivateIp} or the {@link
+         * backup IPv4 address associated with the database node. Use this OCID with either the
+         * {@link #getPrivateIp(GetPrivateIpRequest) getPrivateIp} or the {@link
          * #getPublicIpByPrivateIpId(GetPublicIpByPrivateIpIdRequest) getPublicIpByPrivateIpId} API
-         * to get the IP address needed to make a database connection.
+         * to get the IPv4 address needed to make a database connection.
          *
          * <p>*Note:** Applies only to Exadata Cloud Service.
          *
@@ -244,6 +250,60 @@ public final class DbNodeSummary extends com.oracle.bmc.http.client.internal.Exp
         public Builder backupIpId(String backupIpId) {
             this.backupIpId = backupIpId;
             this.__explicitlySet__.add("backupIpId");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * host IPv6 address associated with the database node. Use this OCID with the {@link
+         * #getIpv6(GetIpv6Request) getIpv6} API to get the IPv6 address needed to make a database
+         * connection.
+         *
+         * <p>*Note:** Applies only to Exadata Cloud Service.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("hostIpv6Id")
+        private String hostIpv6Id;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * host IPv6 address associated with the database node. Use this OCID with the {@link
+         * #getIpv6(GetIpv6Request) getIpv6} API to get the IPv6 address needed to make a database
+         * connection.
+         *
+         * <p>*Note:** Applies only to Exadata Cloud Service.
+         *
+         * @param hostIpv6Id the value to set
+         * @return this builder
+         */
+        public Builder hostIpv6Id(String hostIpv6Id) {
+            this.hostIpv6Id = hostIpv6Id;
+            this.__explicitlySet__.add("hostIpv6Id");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * backup IPv6 address associated with the database node. Use this OCID with the {@link
+         * #getIpv6(GetIpv6Request) getIpv6} API to get the IPv6 address needed to make a database
+         * connection.
+         *
+         * <p>*Note:** Applies only to Exadata Cloud Service.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("backupIpv6Id")
+        private String backupIpv6Id;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * backup IPv6 address associated with the database node. Use this OCID with the {@link
+         * #getIpv6(GetIpv6Request) getIpv6} API to get the IPv6 address needed to make a database
+         * connection.
+         *
+         * <p>*Note:** Applies only to Exadata Cloud Service.
+         *
+         * @param backupIpv6Id the value to set
+         * @return this builder
+         */
+        public Builder backupIpv6Id(String backupIpv6Id) {
+            this.backupIpv6Id = backupIpv6Id;
+            this.__explicitlySet__.add("backupIpv6Id");
             return this;
         }
         /**
@@ -585,6 +645,8 @@ public final class DbNodeSummary extends com.oracle.bmc.http.client.internal.Exp
                             this.backupVnicId,
                             this.hostIpId,
                             this.backupIpId,
+                            this.hostIpv6Id,
+                            this.backupIpv6Id,
                             this.vnic2Id,
                             this.backupVnic2Id,
                             this.lifecycleState,
@@ -629,6 +691,12 @@ public final class DbNodeSummary extends com.oracle.bmc.http.client.internal.Exp
             }
             if (model.wasPropertyExplicitlySet("backupIpId")) {
                 this.backupIpId(model.getBackupIpId());
+            }
+            if (model.wasPropertyExplicitlySet("hostIpv6Id")) {
+                this.hostIpv6Id(model.getHostIpv6Id());
+            }
+            if (model.wasPropertyExplicitlySet("backupIpv6Id")) {
+                this.backupIpv6Id(model.getBackupIpv6Id());
             }
             if (model.wasPropertyExplicitlySet("vnic2Id")) {
                 this.vnic2Id(model.getVnic2Id());
@@ -770,10 +838,10 @@ public final class DbNodeSummary extends com.oracle.bmc.http.client.internal.Exp
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host
-     * IP address associated with the database node. Use this OCID with either the {@link
+     * IPv4 address associated with the database node. Use this OCID with either the {@link
      * #getPrivateIp(GetPrivateIpRequest) getPrivateIp} or the {@link
      * #getPublicIpByPrivateIpId(GetPublicIpByPrivateIpIdRequest) getPublicIpByPrivateIpId} API to
-     * get the IP address needed to make a database connection.
+     * get the IPv4 address needed to make a database connection.
      *
      * <p>*Note:** Applies only to Exadata Cloud Service.
      */
@@ -782,10 +850,10 @@ public final class DbNodeSummary extends com.oracle.bmc.http.client.internal.Exp
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host
-     * IP address associated with the database node. Use this OCID with either the {@link
+     * IPv4 address associated with the database node. Use this OCID with either the {@link
      * #getPrivateIp(GetPrivateIpRequest) getPrivateIp} or the {@link
      * #getPublicIpByPrivateIpId(GetPublicIpByPrivateIpIdRequest) getPublicIpByPrivateIpId} API to
-     * get the IP address needed to make a database connection.
+     * get the IPv4 address needed to make a database connection.
      *
      * <p>*Note:** Applies only to Exadata Cloud Service.
      *
@@ -797,10 +865,10 @@ public final class DbNodeSummary extends com.oracle.bmc.http.client.internal.Exp
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * backup IP address associated with the database node. Use this OCID with either the {@link
+     * backup IPv4 address associated with the database node. Use this OCID with either the {@link
      * #getPrivateIp(GetPrivateIpRequest) getPrivateIp} or the {@link
      * #getPublicIpByPrivateIpId(GetPublicIpByPrivateIpIdRequest) getPublicIpByPrivateIpId} API to
-     * get the IP address needed to make a database connection.
+     * get the IPv4 address needed to make a database connection.
      *
      * <p>*Note:** Applies only to Exadata Cloud Service.
      */
@@ -809,10 +877,10 @@ public final class DbNodeSummary extends com.oracle.bmc.http.client.internal.Exp
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * backup IP address associated with the database node. Use this OCID with either the {@link
+     * backup IPv4 address associated with the database node. Use this OCID with either the {@link
      * #getPrivateIp(GetPrivateIpRequest) getPrivateIp} or the {@link
      * #getPublicIpByPrivateIpId(GetPublicIpByPrivateIpIdRequest) getPublicIpByPrivateIpId} API to
-     * get the IP address needed to make a database connection.
+     * get the IPv4 address needed to make a database connection.
      *
      * <p>*Note:** Applies only to Exadata Cloud Service.
      *
@@ -820,6 +888,56 @@ public final class DbNodeSummary extends com.oracle.bmc.http.client.internal.Exp
      */
     public String getBackupIpId() {
         return backupIpId;
+    }
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host
+     * IPv6 address associated with the database node. Use this OCID with the {@link
+     * #getIpv6(GetIpv6Request) getIpv6} API to get the IPv6 address needed to make a database
+     * connection.
+     *
+     * <p>*Note:** Applies only to Exadata Cloud Service.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("hostIpv6Id")
+    private final String hostIpv6Id;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host
+     * IPv6 address associated with the database node. Use this OCID with the {@link
+     * #getIpv6(GetIpv6Request) getIpv6} API to get the IPv6 address needed to make a database
+     * connection.
+     *
+     * <p>*Note:** Applies only to Exadata Cloud Service.
+     *
+     * @return the value
+     */
+    public String getHostIpv6Id() {
+        return hostIpv6Id;
+    }
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * backup IPv6 address associated with the database node. Use this OCID with the {@link
+     * #getIpv6(GetIpv6Request) getIpv6} API to get the IPv6 address needed to make a database
+     * connection.
+     *
+     * <p>*Note:** Applies only to Exadata Cloud Service.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("backupIpv6Id")
+    private final String backupIpv6Id;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * backup IPv6 address associated with the database node. Use this OCID with the {@link
+     * #getIpv6(GetIpv6Request) getIpv6} API to get the IPv6 address needed to make a database
+     * connection.
+     *
+     * <p>*Note:** Applies only to Exadata Cloud Service.
+     *
+     * @return the value
+     */
+    public String getBackupIpv6Id() {
+        return backupIpv6Id;
     }
 
     /**
@@ -1229,6 +1347,8 @@ public final class DbNodeSummary extends com.oracle.bmc.http.client.internal.Exp
         sb.append(", backupVnicId=").append(String.valueOf(this.backupVnicId));
         sb.append(", hostIpId=").append(String.valueOf(this.hostIpId));
         sb.append(", backupIpId=").append(String.valueOf(this.backupIpId));
+        sb.append(", hostIpv6Id=").append(String.valueOf(this.hostIpv6Id));
+        sb.append(", backupIpv6Id=").append(String.valueOf(this.backupIpv6Id));
         sb.append(", vnic2Id=").append(String.valueOf(this.vnic2Id));
         sb.append(", backupVnic2Id=").append(String.valueOf(this.backupVnic2Id));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
@@ -1271,6 +1391,8 @@ public final class DbNodeSummary extends com.oracle.bmc.http.client.internal.Exp
                 && java.util.Objects.equals(this.backupVnicId, other.backupVnicId)
                 && java.util.Objects.equals(this.hostIpId, other.hostIpId)
                 && java.util.Objects.equals(this.backupIpId, other.backupIpId)
+                && java.util.Objects.equals(this.hostIpv6Id, other.hostIpv6Id)
+                && java.util.Objects.equals(this.backupIpv6Id, other.backupIpv6Id)
                 && java.util.Objects.equals(this.vnic2Id, other.vnic2Id)
                 && java.util.Objects.equals(this.backupVnic2Id, other.backupVnic2Id)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
@@ -1307,6 +1429,8 @@ public final class DbNodeSummary extends com.oracle.bmc.http.client.internal.Exp
         result = (result * PRIME) + (this.backupVnicId == null ? 43 : this.backupVnicId.hashCode());
         result = (result * PRIME) + (this.hostIpId == null ? 43 : this.hostIpId.hashCode());
         result = (result * PRIME) + (this.backupIpId == null ? 43 : this.backupIpId.hashCode());
+        result = (result * PRIME) + (this.hostIpv6Id == null ? 43 : this.hostIpv6Id.hashCode());
+        result = (result * PRIME) + (this.backupIpv6Id == null ? 43 : this.backupIpv6Id.hashCode());
         result = (result * PRIME) + (this.vnic2Id == null ? 43 : this.vnic2Id.hashCode());
         result =
                 (result * PRIME)

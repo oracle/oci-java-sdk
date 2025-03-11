@@ -9126,6 +9126,7 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
                 .appendQueryParam("displayName", request.getDisplayName())
+                .appendEnumQueryParam("vmClusterType", request.getVmClusterType())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleBodyList(
@@ -9296,6 +9297,7 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendEnumQueryParam("imageShapeFamily", request.getImageShapeFamily())
                 .appendQueryParam(
                         "patchSetGreaterThanOrEqualTo", request.getPatchSetGreaterThanOrEqualTo())
+                .appendQueryParam("dbSystemId", request.getDbSystemId())
                 .appendQueryParam("isUpgradeSupported", request.getIsUpgradeSupported())
                 .accept("application/json")
                 .handleBodyList(
@@ -10960,6 +10962,7 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
                 .appendQueryParam("displayName", request.getDisplayName())
+                .appendEnumQueryParam("vmClusterType", request.getVmClusterType())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleBodyList(

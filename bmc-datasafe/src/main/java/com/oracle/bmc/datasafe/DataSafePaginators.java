@@ -3423,6 +3423,130 @@ public class DataSafePaginators {
 
     /**
      * Creates a new iterable which will iterate over the responses received from the
+     * listGroupedSensitiveTypes operation. This iterable will fetch more data from the server as
+     * needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListGroupedSensitiveTypesResponse> listGroupedSensitiveTypesResponseIterator(
+            final ListGroupedSensitiveTypesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListGroupedSensitiveTypesRequest.Builder,
+                ListGroupedSensitiveTypesRequest,
+                ListGroupedSensitiveTypesResponse>(
+                new java.util.function.Supplier<ListGroupedSensitiveTypesRequest.Builder>() {
+                    @Override
+                    public ListGroupedSensitiveTypesRequest.Builder get() {
+                        return ListGroupedSensitiveTypesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListGroupedSensitiveTypesResponse, String>() {
+                    @Override
+                    public String apply(ListGroupedSensitiveTypesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListGroupedSensitiveTypesRequest.Builder>,
+                        ListGroupedSensitiveTypesRequest>() {
+                    @Override
+                    public ListGroupedSensitiveTypesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListGroupedSensitiveTypesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListGroupedSensitiveTypesRequest, ListGroupedSensitiveTypesResponse>() {
+                    @Override
+                    public ListGroupedSensitiveTypesResponse apply(
+                            ListGroupedSensitiveTypesRequest request) {
+                        return client.listGroupedSensitiveTypes(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.datasafe.model.GroupedSensitiveTypeSummary} objects contained in responses
+     * from the listGroupedSensitiveTypes operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.datasafe.model.GroupedSensitiveTypeSummary} objects contained in responses
+     *     received from the service.
+     */
+    public Iterable<com.oracle.bmc.datasafe.model.GroupedSensitiveTypeSummary>
+            listGroupedSensitiveTypesRecordIterator(
+                    final ListGroupedSensitiveTypesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListGroupedSensitiveTypesRequest.Builder,
+                ListGroupedSensitiveTypesRequest,
+                ListGroupedSensitiveTypesResponse,
+                com.oracle.bmc.datasafe.model.GroupedSensitiveTypeSummary>(
+                new java.util.function.Supplier<ListGroupedSensitiveTypesRequest.Builder>() {
+                    @Override
+                    public ListGroupedSensitiveTypesRequest.Builder get() {
+                        return ListGroupedSensitiveTypesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListGroupedSensitiveTypesResponse, String>() {
+                    @Override
+                    public String apply(ListGroupedSensitiveTypesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListGroupedSensitiveTypesRequest.Builder>,
+                        ListGroupedSensitiveTypesRequest>() {
+                    @Override
+                    public ListGroupedSensitiveTypesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListGroupedSensitiveTypesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListGroupedSensitiveTypesRequest, ListGroupedSensitiveTypesResponse>() {
+                    @Override
+                    public ListGroupedSensitiveTypesResponse apply(
+                            ListGroupedSensitiveTypesRequest request) {
+                        return client.listGroupedSensitiveTypes(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListGroupedSensitiveTypesResponse,
+                        java.util.List<
+                                com.oracle.bmc.datasafe.model.GroupedSensitiveTypeSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.datasafe.model.GroupedSensitiveTypeSummary>
+                            apply(ListGroupedSensitiveTypesResponse response) {
+                        return response.getGroupedSensitiveTypeCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
      * listLibraryMaskingFormats operation. This iterable will fetch more data from the server as
      * needed.
      *
@@ -3896,6 +4020,124 @@ public class DataSafePaginators {
                     public java.util.List<com.oracle.bmc.datasafe.model.MaskingColumnSummary> apply(
                             ListMaskingColumnsResponse response) {
                         return response.getMaskingColumnCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
+     * listMaskingErrors operation. This iterable will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListMaskingErrorsResponse> listMaskingErrorsResponseIterator(
+            final ListMaskingErrorsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListMaskingErrorsRequest.Builder,
+                ListMaskingErrorsRequest,
+                ListMaskingErrorsResponse>(
+                new java.util.function.Supplier<ListMaskingErrorsRequest.Builder>() {
+                    @Override
+                    public ListMaskingErrorsRequest.Builder get() {
+                        return ListMaskingErrorsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListMaskingErrorsResponse, String>() {
+                    @Override
+                    public String apply(ListMaskingErrorsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListMaskingErrorsRequest.Builder>,
+                        ListMaskingErrorsRequest>() {
+                    @Override
+                    public ListMaskingErrorsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListMaskingErrorsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListMaskingErrorsRequest, ListMaskingErrorsResponse>() {
+                    @Override
+                    public ListMaskingErrorsResponse apply(ListMaskingErrorsRequest request) {
+                        return client.listMaskingErrors(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.datasafe.model.MaskingErrorSummary} objects contained in responses from the
+     * listMaskingErrors operation. This iterable will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.datasafe.model.MaskingErrorSummary} objects contained in responses
+     *     received from the service.
+     */
+    public Iterable<com.oracle.bmc.datasafe.model.MaskingErrorSummary>
+            listMaskingErrorsRecordIterator(final ListMaskingErrorsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListMaskingErrorsRequest.Builder,
+                ListMaskingErrorsRequest,
+                ListMaskingErrorsResponse,
+                com.oracle.bmc.datasafe.model.MaskingErrorSummary>(
+                new java.util.function.Supplier<ListMaskingErrorsRequest.Builder>() {
+                    @Override
+                    public ListMaskingErrorsRequest.Builder get() {
+                        return ListMaskingErrorsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListMaskingErrorsResponse, String>() {
+                    @Override
+                    public String apply(ListMaskingErrorsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListMaskingErrorsRequest.Builder>,
+                        ListMaskingErrorsRequest>() {
+                    @Override
+                    public ListMaskingErrorsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListMaskingErrorsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListMaskingErrorsRequest, ListMaskingErrorsResponse>() {
+                    @Override
+                    public ListMaskingErrorsResponse apply(ListMaskingErrorsRequest request) {
+                        return client.listMaskingErrors(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListMaskingErrorsResponse,
+                        java.util.List<com.oracle.bmc.datasafe.model.MaskingErrorSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.datasafe.model.MaskingErrorSummary> apply(
+                            ListMaskingErrorsResponse response) {
+                        return response.getMaskingErrorCollection().getItems();
                     }
                 });
     }
@@ -6817,6 +7059,134 @@ public class DataSafePaginators {
 
     /**
      * Creates a new iterable which will iterate over the responses received from the
+     * listSensitiveColumnAnalytics operation. This iterable will fetch more data from the server as
+     * needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListSensitiveColumnAnalyticsResponse>
+            listSensitiveColumnAnalyticsResponseIterator(
+                    final ListSensitiveColumnAnalyticsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListSensitiveColumnAnalyticsRequest.Builder,
+                ListSensitiveColumnAnalyticsRequest,
+                ListSensitiveColumnAnalyticsResponse>(
+                new java.util.function.Supplier<ListSensitiveColumnAnalyticsRequest.Builder>() {
+                    @Override
+                    public ListSensitiveColumnAnalyticsRequest.Builder get() {
+                        return ListSensitiveColumnAnalyticsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListSensitiveColumnAnalyticsResponse, String>() {
+                    @Override
+                    public String apply(ListSensitiveColumnAnalyticsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListSensitiveColumnAnalyticsRequest.Builder>,
+                        ListSensitiveColumnAnalyticsRequest>() {
+                    @Override
+                    public ListSensitiveColumnAnalyticsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListSensitiveColumnAnalyticsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListSensitiveColumnAnalyticsRequest,
+                        ListSensitiveColumnAnalyticsResponse>() {
+                    @Override
+                    public ListSensitiveColumnAnalyticsResponse apply(
+                            ListSensitiveColumnAnalyticsRequest request) {
+                        return client.listSensitiveColumnAnalytics(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.datasafe.model.SensitiveColumnAnalyticsSummary} objects contained in responses
+     * from the listSensitiveColumnAnalytics operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.datasafe.model.SensitiveColumnAnalyticsSummary} objects contained in
+     *     responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.datasafe.model.SensitiveColumnAnalyticsSummary>
+            listSensitiveColumnAnalyticsRecordIterator(
+                    final ListSensitiveColumnAnalyticsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListSensitiveColumnAnalyticsRequest.Builder,
+                ListSensitiveColumnAnalyticsRequest,
+                ListSensitiveColumnAnalyticsResponse,
+                com.oracle.bmc.datasafe.model.SensitiveColumnAnalyticsSummary>(
+                new java.util.function.Supplier<ListSensitiveColumnAnalyticsRequest.Builder>() {
+                    @Override
+                    public ListSensitiveColumnAnalyticsRequest.Builder get() {
+                        return ListSensitiveColumnAnalyticsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListSensitiveColumnAnalyticsResponse, String>() {
+                    @Override
+                    public String apply(ListSensitiveColumnAnalyticsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListSensitiveColumnAnalyticsRequest.Builder>,
+                        ListSensitiveColumnAnalyticsRequest>() {
+                    @Override
+                    public ListSensitiveColumnAnalyticsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListSensitiveColumnAnalyticsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListSensitiveColumnAnalyticsRequest,
+                        ListSensitiveColumnAnalyticsResponse>() {
+                    @Override
+                    public ListSensitiveColumnAnalyticsResponse apply(
+                            ListSensitiveColumnAnalyticsRequest request) {
+                        return client.listSensitiveColumnAnalytics(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListSensitiveColumnAnalyticsResponse,
+                        java.util.List<
+                                com.oracle.bmc.datasafe.model.SensitiveColumnAnalyticsSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.datasafe.model.SensitiveColumnAnalyticsSummary>
+                            apply(ListSensitiveColumnAnalyticsResponse response) {
+                        return response.getSensitiveColumnAnalyticsCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
      * listSensitiveColumns operation. This iterable will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
@@ -7421,6 +7791,128 @@ public class DataSafePaginators {
                     public java.util.List<com.oracle.bmc.datasafe.model.SensitiveSchemaSummary>
                             apply(ListSensitiveSchemasResponse response) {
                         return response.getSensitiveSchemaCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
+     * listSensitiveTypeGroups operation. This iterable will fetch more data from the server as
+     * needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListSensitiveTypeGroupsResponse> listSensitiveTypeGroupsResponseIterator(
+            final ListSensitiveTypeGroupsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListSensitiveTypeGroupsRequest.Builder,
+                ListSensitiveTypeGroupsRequest,
+                ListSensitiveTypeGroupsResponse>(
+                new java.util.function.Supplier<ListSensitiveTypeGroupsRequest.Builder>() {
+                    @Override
+                    public ListSensitiveTypeGroupsRequest.Builder get() {
+                        return ListSensitiveTypeGroupsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListSensitiveTypeGroupsResponse, String>() {
+                    @Override
+                    public String apply(ListSensitiveTypeGroupsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListSensitiveTypeGroupsRequest.Builder>,
+                        ListSensitiveTypeGroupsRequest>() {
+                    @Override
+                    public ListSensitiveTypeGroupsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListSensitiveTypeGroupsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListSensitiveTypeGroupsRequest, ListSensitiveTypeGroupsResponse>() {
+                    @Override
+                    public ListSensitiveTypeGroupsResponse apply(
+                            ListSensitiveTypeGroupsRequest request) {
+                        return client.listSensitiveTypeGroups(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.datasafe.model.SensitiveTypeGroupSummary} objects contained in responses from
+     * the listSensitiveTypeGroups operation. This iterable will fetch more data from the server as
+     * needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.datasafe.model.SensitiveTypeGroupSummary} objects contained in responses
+     *     received from the service.
+     */
+    public Iterable<com.oracle.bmc.datasafe.model.SensitiveTypeGroupSummary>
+            listSensitiveTypeGroupsRecordIterator(final ListSensitiveTypeGroupsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListSensitiveTypeGroupsRequest.Builder,
+                ListSensitiveTypeGroupsRequest,
+                ListSensitiveTypeGroupsResponse,
+                com.oracle.bmc.datasafe.model.SensitiveTypeGroupSummary>(
+                new java.util.function.Supplier<ListSensitiveTypeGroupsRequest.Builder>() {
+                    @Override
+                    public ListSensitiveTypeGroupsRequest.Builder get() {
+                        return ListSensitiveTypeGroupsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListSensitiveTypeGroupsResponse, String>() {
+                    @Override
+                    public String apply(ListSensitiveTypeGroupsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListSensitiveTypeGroupsRequest.Builder>,
+                        ListSensitiveTypeGroupsRequest>() {
+                    @Override
+                    public ListSensitiveTypeGroupsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListSensitiveTypeGroupsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListSensitiveTypeGroupsRequest, ListSensitiveTypeGroupsResponse>() {
+                    @Override
+                    public ListSensitiveTypeGroupsResponse apply(
+                            ListSensitiveTypeGroupsRequest request) {
+                        return client.listSensitiveTypeGroups(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListSensitiveTypeGroupsResponse,
+                        java.util.List<com.oracle.bmc.datasafe.model.SensitiveTypeGroupSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.datasafe.model.SensitiveTypeGroupSummary>
+                            apply(ListSensitiveTypeGroupsResponse response) {
+                        return response.getSensitiveTypeGroupCollection().getItems();
                     }
                 });
     }

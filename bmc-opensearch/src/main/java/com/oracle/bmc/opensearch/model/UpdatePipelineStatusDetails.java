@@ -5,7 +5,7 @@
 package com.oracle.bmc.opensearch.model;
 
 /**
- * Details for validation of customer input pipeline configuration. <br>
+ * update pipeline status. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -17,61 +17,58 @@ package com.oracle.bmc.opensearch.model;
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180828")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = OpensearchPipelineValidationResponse.Builder.class)
+        builder = UpdatePipelineStatusDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(
         com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class OpensearchPipelineValidationResponse
+public final class UpdatePipelineStatusDetails
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"errors", "isValid"})
-    public OpensearchPipelineValidationResponse(
-            java.util.List<PipelineValidationErrorDetails> errors, Boolean isValid) {
+    @java.beans.ConstructorProperties({"pipelineId", "lifecycleState"})
+    public UpdatePipelineStatusDetails(String pipelineId, String lifecycleState) {
         super();
-        this.errors = errors;
-        this.isValid = isValid;
+        this.pipelineId = pipelineId;
+        this.lifecycleState = lifecycleState;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** An array of errors in the pipeline configuration which is given for validation. */
-        @com.fasterxml.jackson.annotation.JsonProperty("errors")
-        private java.util.List<PipelineValidationErrorDetails> errors;
+        /** OCID of the OpenSearch Pipeline. */
+        @com.fasterxml.jackson.annotation.JsonProperty("pipelineId")
+        private String pipelineId;
 
         /**
-         * An array of errors in the pipeline configuration which is given for validation.
+         * OCID of the OpenSearch Pipeline.
          *
-         * @param errors the value to set
+         * @param pipelineId the value to set
          * @return this builder
          */
-        public Builder errors(java.util.List<PipelineValidationErrorDetails> errors) {
-            this.errors = errors;
-            this.__explicitlySet__.add("errors");
+        public Builder pipelineId(String pipelineId) {
+            this.pipelineId = pipelineId;
+            this.__explicitlySet__.add("pipelineId");
             return this;
         }
-        /**
-         * Boolean value which tells us if the pipeline configuration given by user is valid or not.
-         */
-        @com.fasterxml.jackson.annotation.JsonProperty("isValid")
-        private Boolean isValid;
+        /** the new status of the OpenSearch Pipeline */
+        @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
+        private String lifecycleState;
 
         /**
-         * Boolean value which tells us if the pipeline configuration given by user is valid or not.
+         * the new status of the OpenSearch Pipeline
          *
-         * @param isValid the value to set
+         * @param lifecycleState the value to set
          * @return this builder
          */
-        public Builder isValid(Boolean isValid) {
-            this.isValid = isValid;
-            this.__explicitlySet__.add("isValid");
+        public Builder lifecycleState(String lifecycleState) {
+            this.lifecycleState = lifecycleState;
+            this.__explicitlySet__.add("lifecycleState");
             return this;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
-        public OpensearchPipelineValidationResponse build() {
-            OpensearchPipelineValidationResponse model =
-                    new OpensearchPipelineValidationResponse(this.errors, this.isValid);
+        public UpdatePipelineStatusDetails build() {
+            UpdatePipelineStatusDetails model =
+                    new UpdatePipelineStatusDetails(this.pipelineId, this.lifecycleState);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -79,12 +76,12 @@ public final class OpensearchPipelineValidationResponse
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(OpensearchPipelineValidationResponse model) {
-            if (model.wasPropertyExplicitlySet("errors")) {
-                this.errors(model.getErrors());
+        public Builder copy(UpdatePipelineStatusDetails model) {
+            if (model.wasPropertyExplicitlySet("pipelineId")) {
+                this.pipelineId(model.getPipelineId());
             }
-            if (model.wasPropertyExplicitlySet("isValid")) {
-                this.isValid(model.getIsValid());
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
             }
             return this;
         }
@@ -99,30 +96,30 @@ public final class OpensearchPipelineValidationResponse
         return new Builder().copy(this);
     }
 
-    /** An array of errors in the pipeline configuration which is given for validation. */
-    @com.fasterxml.jackson.annotation.JsonProperty("errors")
-    private final java.util.List<PipelineValidationErrorDetails> errors;
+    /** OCID of the OpenSearch Pipeline. */
+    @com.fasterxml.jackson.annotation.JsonProperty("pipelineId")
+    private final String pipelineId;
 
     /**
-     * An array of errors in the pipeline configuration which is given for validation.
+     * OCID of the OpenSearch Pipeline.
      *
      * @return the value
      */
-    public java.util.List<PipelineValidationErrorDetails> getErrors() {
-        return errors;
+    public String getPipelineId() {
+        return pipelineId;
     }
 
-    /** Boolean value which tells us if the pipeline configuration given by user is valid or not. */
-    @com.fasterxml.jackson.annotation.JsonProperty("isValid")
-    private final Boolean isValid;
+    /** the new status of the OpenSearch Pipeline */
+    @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
+    private final String lifecycleState;
 
     /**
-     * Boolean value which tells us if the pipeline configuration given by user is valid or not.
+     * the new status of the OpenSearch Pipeline
      *
      * @return the value
      */
-    public Boolean getIsValid() {
-        return isValid;
+    public String getLifecycleState() {
+        return lifecycleState;
     }
 
     @Override
@@ -138,10 +135,10 @@ public final class OpensearchPipelineValidationResponse
      */
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
-        sb.append("OpensearchPipelineValidationResponse(");
+        sb.append("UpdatePipelineStatusDetails(");
         sb.append("super=").append(super.toString());
-        sb.append("errors=").append(String.valueOf(this.errors));
-        sb.append(", isValid=").append(String.valueOf(this.isValid));
+        sb.append("pipelineId=").append(String.valueOf(this.pipelineId));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(")");
         return sb.toString();
     }
@@ -151,13 +148,13 @@ public final class OpensearchPipelineValidationResponse
         if (this == o) {
             return true;
         }
-        if (!(o instanceof OpensearchPipelineValidationResponse)) {
+        if (!(o instanceof UpdatePipelineStatusDetails)) {
             return false;
         }
 
-        OpensearchPipelineValidationResponse other = (OpensearchPipelineValidationResponse) o;
-        return java.util.Objects.equals(this.errors, other.errors)
-                && java.util.Objects.equals(this.isValid, other.isValid)
+        UpdatePipelineStatusDetails other = (UpdatePipelineStatusDetails) o;
+        return java.util.Objects.equals(this.pipelineId, other.pipelineId)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && super.equals(other);
     }
 
@@ -165,8 +162,10 @@ public final class OpensearchPipelineValidationResponse
     public int hashCode() {
         final int PRIME = 59;
         int result = 1;
-        result = (result * PRIME) + (this.errors == null ? 43 : this.errors.hashCode());
-        result = (result * PRIME) + (this.isValid == null ? 43 : this.isValid.hashCode());
+        result = (result * PRIME) + (this.pipelineId == null ? 43 : this.pipelineId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

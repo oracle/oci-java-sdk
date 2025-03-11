@@ -56,7 +56,7 @@ public class DataScienceAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
             LOG.warn(
                     com.oracle.bmc.util.StreamUtils.getStreamWarningMessage(
                             "DataScienceAsyncClient",
-                            "getJobArtifactContent,getModelArtifactContent,getStepArtifactContent"));
+                            "getJobArtifactContent,getModelArtifactContent,getModelCustomMetadatumArtifactContent,getModelDefinedMetadatumArtifactContent,getStepArtifactContent"));
         }
     }
 
@@ -955,6 +955,98 @@ public class DataScienceAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
     }
 
     @Override
+    public java.util.concurrent.Future<CreateModelCustomMetadatumArtifactResponse>
+            createModelCustomMetadatumArtifact(
+                    CreateModelCustomMetadatumArtifactRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    CreateModelCustomMetadatumArtifactRequest,
+                                    CreateModelCustomMetadatumArtifactResponse>
+                            handler) {
+
+        Validate.notBlank(request.getModelId(), "modelId must not be blank");
+
+        Validate.notBlank(request.getMetadatumKeyName(), "metadatumKeyName must not be blank");
+        Objects.requireNonNull(
+                request.getModelCustomMetadatumArtifact(),
+                "modelCustomMetadatumArtifact is required");
+
+        return clientCall(request, CreateModelCustomMetadatumArtifactResponse::builder)
+                .logger(LOG, "createModelCustomMetadatumArtifact")
+                .serviceDetails(
+                        "DataScience",
+                        "CreateModelCustomMetadatumArtifact",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Model/CreateModelCustomMetadatumArtifact")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateModelCustomMetadatumArtifactRequest::builder)
+                .obmcsSigningStrategy(com.oracle.bmc.http.signing.SigningStrategy.EXCLUDE_BODY)
+                .basePath("/20190101")
+                .appendPathParam("models")
+                .appendPathParam(request.getModelId())
+                .appendPathParam("customMetadata")
+                .appendPathParam(request.getMetadatumKeyName())
+                .appendPathParam("artifact")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("content-length", request.getContentLength())
+                .appendHeader("content-disposition", request.getContentDisposition())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBinaryRequestBody()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "etag", CreateModelCustomMetadatumArtifactResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        CreateModelCustomMetadatumArtifactResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateModelDefinedMetadatumArtifactResponse>
+            createModelDefinedMetadatumArtifact(
+                    CreateModelDefinedMetadatumArtifactRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    CreateModelDefinedMetadatumArtifactRequest,
+                                    CreateModelDefinedMetadatumArtifactResponse>
+                            handler) {
+
+        Validate.notBlank(request.getModelId(), "modelId must not be blank");
+
+        Validate.notBlank(request.getMetadatumKeyName(), "metadatumKeyName must not be blank");
+        Objects.requireNonNull(
+                request.getModelDefinedMetadatumArtifact(),
+                "modelDefinedMetadatumArtifact is required");
+
+        return clientCall(request, CreateModelDefinedMetadatumArtifactResponse::builder)
+                .logger(LOG, "createModelDefinedMetadatumArtifact")
+                .serviceDetails(
+                        "DataScience",
+                        "CreateModelDefinedMetadatumArtifact",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Model/CreateModelDefinedMetadatumArtifact")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateModelDefinedMetadatumArtifactRequest::builder)
+                .obmcsSigningStrategy(com.oracle.bmc.http.signing.SigningStrategy.EXCLUDE_BODY)
+                .basePath("/20190101")
+                .appendPathParam("models")
+                .appendPathParam(request.getModelId())
+                .appendPathParam("definedMetadata")
+                .appendPathParam(request.getMetadatumKeyName())
+                .appendPathParam("artifact")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("content-length", request.getContentLength())
+                .appendHeader("content-disposition", request.getContentDisposition())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBinaryRequestBody()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "etag", CreateModelDefinedMetadatumArtifactResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        CreateModelDefinedMetadatumArtifactResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateModelDeploymentResponse> createModelDeployment(
             CreateModelDeploymentRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -1528,6 +1620,78 @@ public class DataScienceAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteModelCustomMetadatumArtifactResponse>
+            deleteModelCustomMetadatumArtifact(
+                    DeleteModelCustomMetadatumArtifactRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteModelCustomMetadatumArtifactRequest,
+                                    DeleteModelCustomMetadatumArtifactResponse>
+                            handler) {
+
+        Validate.notBlank(request.getModelId(), "modelId must not be blank");
+
+        Validate.notBlank(request.getMetadatumKeyName(), "metadatumKeyName must not be blank");
+
+        return clientCall(request, DeleteModelCustomMetadatumArtifactResponse::builder)
+                .logger(LOG, "deleteModelCustomMetadatumArtifact")
+                .serviceDetails(
+                        "DataScience",
+                        "DeleteModelCustomMetadatumArtifact",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Model/DeleteModelCustomMetadatumArtifact")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteModelCustomMetadatumArtifactRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("models")
+                .appendPathParam(request.getModelId())
+                .appendPathParam("customMetadata")
+                .appendPathParam(request.getMetadatumKeyName())
+                .appendPathParam("artifact")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        DeleteModelCustomMetadatumArtifactResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteModelDefinedMetadatumArtifactResponse>
+            deleteModelDefinedMetadatumArtifact(
+                    DeleteModelDefinedMetadatumArtifactRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteModelDefinedMetadatumArtifactRequest,
+                                    DeleteModelDefinedMetadatumArtifactResponse>
+                            handler) {
+
+        Validate.notBlank(request.getModelId(), "modelId must not be blank");
+
+        Validate.notBlank(request.getMetadatumKeyName(), "metadatumKeyName must not be blank");
+
+        return clientCall(request, DeleteModelDefinedMetadatumArtifactResponse::builder)
+                .logger(LOG, "deleteModelDefinedMetadatumArtifact")
+                .serviceDetails(
+                        "DataScience",
+                        "DeleteModelDefinedMetadatumArtifact",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Model/DeleteModelDefinedMetadatumArtifact")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteModelDefinedMetadatumArtifactRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("models")
+                .appendPathParam(request.getModelId())
+                .appendPathParam("definedMetadata")
+                .appendPathParam(request.getMetadatumKeyName())
+                .appendPathParam("artifact")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        DeleteModelDefinedMetadatumArtifactResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteModelDeploymentResponse> deleteModelDeployment(
             DeleteModelDeploymentRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -1989,6 +2153,114 @@ public class DataScienceAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
     }
 
     @Override
+    public java.util.concurrent.Future<GetModelCustomMetadatumArtifactContentResponse>
+            getModelCustomMetadatumArtifactContent(
+                    GetModelCustomMetadatumArtifactContentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetModelCustomMetadatumArtifactContentRequest,
+                                    GetModelCustomMetadatumArtifactContentResponse>
+                            handler) {
+
+        Validate.notBlank(request.getModelId(), "modelId must not be blank");
+
+        Validate.notBlank(request.getMetadatumKeyName(), "metadatumKeyName must not be blank");
+
+        return clientCall(request, GetModelCustomMetadatumArtifactContentResponse::builder)
+                .logger(LOG, "getModelCustomMetadatumArtifactContent")
+                .serviceDetails(
+                        "DataScience",
+                        "GetModelCustomMetadatumArtifactContent",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Model/GetModelCustomMetadatumArtifactContent")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetModelCustomMetadatumArtifactContentRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("models")
+                .appendPathParam(request.getModelId())
+                .appendPathParam("customMetadata")
+                .appendPathParam(request.getMetadatumKeyName())
+                .appendPathParam("artifact")
+                .appendPathParam("content")
+                .accept("application/octet-stream")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("range", request.getRange())
+                .handleBody(
+                        java.io.InputStream.class,
+                        GetModelCustomMetadatumArtifactContentResponse.Builder::inputStream)
+                .handleResponseHeaderString(
+                        "etag", GetModelCustomMetadatumArtifactContentResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        GetModelCustomMetadatumArtifactContentResponse.Builder::opcRequestId)
+                .handleResponseHeaderLong(
+                        "content-length",
+                        GetModelCustomMetadatumArtifactContentResponse.Builder::contentLength)
+                .handleResponseHeaderString(
+                        "content-disposition",
+                        GetModelCustomMetadatumArtifactContentResponse.Builder::contentDisposition)
+                .handleResponseHeaderString(
+                        "content-md5",
+                        GetModelCustomMetadatumArtifactContentResponse.Builder::contentMd5)
+                .handleResponseHeaderDate(
+                        "last-modified",
+                        GetModelCustomMetadatumArtifactContentResponse.Builder::lastModified)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetModelDefinedMetadatumArtifactContentResponse>
+            getModelDefinedMetadatumArtifactContent(
+                    GetModelDefinedMetadatumArtifactContentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetModelDefinedMetadatumArtifactContentRequest,
+                                    GetModelDefinedMetadatumArtifactContentResponse>
+                            handler) {
+
+        Validate.notBlank(request.getModelId(), "modelId must not be blank");
+
+        Validate.notBlank(request.getMetadatumKeyName(), "metadatumKeyName must not be blank");
+
+        return clientCall(request, GetModelDefinedMetadatumArtifactContentResponse::builder)
+                .logger(LOG, "getModelDefinedMetadatumArtifactContent")
+                .serviceDetails(
+                        "DataScience",
+                        "GetModelDefinedMetadatumArtifactContent",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Model/GetModelDefinedMetadatumArtifactContent")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetModelDefinedMetadatumArtifactContentRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("models")
+                .appendPathParam(request.getModelId())
+                .appendPathParam("definedMetadata")
+                .appendPathParam(request.getMetadatumKeyName())
+                .appendPathParam("artifact")
+                .appendPathParam("content")
+                .accept("application/octet-stream")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("range", request.getRange())
+                .handleBody(
+                        java.io.InputStream.class,
+                        GetModelDefinedMetadatumArtifactContentResponse.Builder::inputStream)
+                .handleResponseHeaderString(
+                        "etag", GetModelDefinedMetadatumArtifactContentResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        GetModelDefinedMetadatumArtifactContentResponse.Builder::opcRequestId)
+                .handleResponseHeaderLong(
+                        "content-length",
+                        GetModelDefinedMetadatumArtifactContentResponse.Builder::contentLength)
+                .handleResponseHeaderString(
+                        "content-disposition",
+                        GetModelDefinedMetadatumArtifactContentResponse.Builder::contentDisposition)
+                .handleResponseHeaderString(
+                        "content-md5",
+                        GetModelDefinedMetadatumArtifactContentResponse.Builder::contentMd5)
+                .handleResponseHeaderDate(
+                        "last-modified",
+                        GetModelDefinedMetadatumArtifactContentResponse.Builder::lastModified)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<GetModelDeploymentResponse> getModelDeployment(
             GetModelDeploymentRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -2389,6 +2661,105 @@ public class DataScienceAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
                         "content-md5", HeadModelArtifactResponse.Builder::contentMd5)
                 .handleResponseHeaderDate(
                         "last-modified", HeadModelArtifactResponse.Builder::lastModified)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<HeadModelCustomMetadatumArtifactResponse>
+            headModelCustomMetadatumArtifact(
+                    HeadModelCustomMetadatumArtifactRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    HeadModelCustomMetadatumArtifactRequest,
+                                    HeadModelCustomMetadatumArtifactResponse>
+                            handler) {
+
+        Validate.notBlank(request.getModelId(), "modelId must not be blank");
+
+        Validate.notBlank(request.getMetadatumKeyName(), "metadatumKeyName must not be blank");
+
+        return clientCall(request, HeadModelCustomMetadatumArtifactResponse::builder)
+                .logger(LOG, "headModelCustomMetadatumArtifact")
+                .serviceDetails(
+                        "DataScience",
+                        "HeadModelCustomMetadatumArtifact",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Model/HeadModelCustomMetadatumArtifact")
+                .method(com.oracle.bmc.http.client.Method.HEAD)
+                .requestBuilder(HeadModelCustomMetadatumArtifactRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("models")
+                .appendPathParam(request.getModelId())
+                .appendPathParam("customMetadata")
+                .appendPathParam(request.getMetadatumKeyName())
+                .appendPathParam("artifact")
+                .appendPathParam("content")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "etag", HeadModelCustomMetadatumArtifactResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        HeadModelCustomMetadatumArtifactResponse.Builder::opcRequestId)
+                .handleResponseHeaderLong(
+                        "content-length",
+                        HeadModelCustomMetadatumArtifactResponse.Builder::contentLength)
+                .handleResponseHeaderString(
+                        "content-disposition",
+                        HeadModelCustomMetadatumArtifactResponse.Builder::contentDisposition)
+                .handleResponseHeaderString(
+                        "content-md5", HeadModelCustomMetadatumArtifactResponse.Builder::contentMd5)
+                .handleResponseHeaderDate(
+                        "last-modified",
+                        HeadModelCustomMetadatumArtifactResponse.Builder::lastModified)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<HeadModelDefinedMetadatumArtifactResponse>
+            headModelDefinedMetadatumArtifact(
+                    HeadModelDefinedMetadatumArtifactRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    HeadModelDefinedMetadatumArtifactRequest,
+                                    HeadModelDefinedMetadatumArtifactResponse>
+                            handler) {
+
+        Validate.notBlank(request.getModelId(), "modelId must not be blank");
+
+        Validate.notBlank(request.getMetadatumKeyName(), "metadatumKeyName must not be blank");
+
+        return clientCall(request, HeadModelDefinedMetadatumArtifactResponse::builder)
+                .logger(LOG, "headModelDefinedMetadatumArtifact")
+                .serviceDetails(
+                        "DataScience",
+                        "HeadModelDefinedMetadatumArtifact",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Model/HeadModelDefinedMetadatumArtifact")
+                .method(com.oracle.bmc.http.client.Method.HEAD)
+                .requestBuilder(HeadModelDefinedMetadatumArtifactRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("models")
+                .appendPathParam(request.getModelId())
+                .appendPathParam("definedMetadata")
+                .appendPathParam(request.getMetadatumKeyName())
+                .appendPathParam("artifact")
+                .appendPathParam("content")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "etag", HeadModelDefinedMetadatumArtifactResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        HeadModelDefinedMetadatumArtifactResponse.Builder::opcRequestId)
+                .handleResponseHeaderLong(
+                        "content-length",
+                        HeadModelDefinedMetadatumArtifactResponse.Builder::contentLength)
+                .handleResponseHeaderString(
+                        "content-disposition",
+                        HeadModelDefinedMetadatumArtifactResponse.Builder::contentDisposition)
+                .handleResponseHeaderString(
+                        "content-md5",
+                        HeadModelDefinedMetadatumArtifactResponse.Builder::contentMd5)
+                .handleResponseHeaderDate(
+                        "last-modified",
+                        HeadModelDefinedMetadatumArtifactResponse.Builder::lastModified)
                 .callAsync(handler);
     }
 
@@ -2802,6 +3173,7 @@ public class DataScienceAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
                 .basePath("/20190101")
                 .appendPathParam("modelVersionSets")
                 .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendEnumQueryParam("category", request.getCategory())
                 .appendQueryParam("id", request.getId())
                 .appendQueryParam("projectId", request.getProjectId())
                 .appendQueryParam("name", request.getName())
@@ -2845,6 +3217,7 @@ public class DataScienceAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
                 .appendQueryParam("compartmentId", request.getCompartmentId())
                 .appendQueryParam("modelVersionSetName", request.getModelVersionSetName())
                 .appendQueryParam("versionLabel", request.getVersionLabel())
+                .appendEnumQueryParam("category", request.getCategory())
                 .appendQueryParam("id", request.getId())
                 .appendQueryParam("projectId", request.getProjectId())
                 .appendQueryParam("displayName", request.getDisplayName())
@@ -3221,6 +3594,47 @@ public class DataScienceAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
     }
 
     @Override
+    public java.util.concurrent.Future<RegisterModelArtifactReferenceResponse>
+            registerModelArtifactReference(
+                    RegisterModelArtifactReferenceRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    RegisterModelArtifactReferenceRequest,
+                                    RegisterModelArtifactReferenceResponse>
+                            handler) {
+        Objects.requireNonNull(
+                request.getRegisterModelArtifactReferenceDetails(),
+                "registerModelArtifactReferenceDetails is required");
+
+        Validate.notBlank(request.getModelId(), "modelId must not be blank");
+
+        return clientCall(request, RegisterModelArtifactReferenceResponse::builder)
+                .logger(LOG, "registerModelArtifactReference")
+                .serviceDetails(
+                        "DataScience",
+                        "RegisterModelArtifactReference",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/RegisterModelArtifactReferenceDetails/RegisterModelArtifactReference")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RegisterModelArtifactReferenceRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("models")
+                .appendPathParam(request.getModelId())
+                .appendPathParam("actions")
+                .appendPathParam("registerArtifactReference")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        RegisterModelArtifactReferenceResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        RegisterModelArtifactReferenceResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<RestoreArchivedModelArtifactResponse>
             restoreArchivedModelArtifact(
                     RestoreArchivedModelArtifactRequest request,
@@ -3397,6 +3811,98 @@ public class DataScienceAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
                 .handleResponseHeaderString("etag", UpdateModelResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateModelResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateModelCustomMetadatumArtifactResponse>
+            updateModelCustomMetadatumArtifact(
+                    UpdateModelCustomMetadatumArtifactRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateModelCustomMetadatumArtifactRequest,
+                                    UpdateModelCustomMetadatumArtifactResponse>
+                            handler) {
+
+        Validate.notBlank(request.getModelId(), "modelId must not be blank");
+
+        Validate.notBlank(request.getMetadatumKeyName(), "metadatumKeyName must not be blank");
+        Objects.requireNonNull(
+                request.getModelCustomMetadatumArtifact(),
+                "modelCustomMetadatumArtifact is required");
+
+        return clientCall(request, UpdateModelCustomMetadatumArtifactResponse::builder)
+                .logger(LOG, "updateModelCustomMetadatumArtifact")
+                .serviceDetails(
+                        "DataScience",
+                        "UpdateModelCustomMetadatumArtifact",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Model/UpdateModelCustomMetadatumArtifact")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateModelCustomMetadatumArtifactRequest::builder)
+                .obmcsSigningStrategy(com.oracle.bmc.http.signing.SigningStrategy.EXCLUDE_BODY)
+                .basePath("/20190101")
+                .appendPathParam("models")
+                .appendPathParam(request.getModelId())
+                .appendPathParam("customMetadata")
+                .appendPathParam(request.getMetadatumKeyName())
+                .appendPathParam("artifact")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("content-length", request.getContentLength())
+                .appendHeader("content-disposition", request.getContentDisposition())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBinaryRequestBody()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "etag", UpdateModelCustomMetadatumArtifactResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        UpdateModelCustomMetadatumArtifactResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateModelDefinedMetadatumArtifactResponse>
+            updateModelDefinedMetadatumArtifact(
+                    UpdateModelDefinedMetadatumArtifactRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateModelDefinedMetadatumArtifactRequest,
+                                    UpdateModelDefinedMetadatumArtifactResponse>
+                            handler) {
+
+        Validate.notBlank(request.getModelId(), "modelId must not be blank");
+
+        Validate.notBlank(request.getMetadatumKeyName(), "metadatumKeyName must not be blank");
+        Objects.requireNonNull(
+                request.getModelDefinedMetadatumArtifact(),
+                "modelDefinedMetadatumArtifact is required");
+
+        return clientCall(request, UpdateModelDefinedMetadatumArtifactResponse::builder)
+                .logger(LOG, "updateModelDefinedMetadatumArtifact")
+                .serviceDetails(
+                        "DataScience",
+                        "UpdateModelDefinedMetadatumArtifact",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Model/UpdateModelDefinedMetadatumArtifact")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateModelDefinedMetadatumArtifactRequest::builder)
+                .obmcsSigningStrategy(com.oracle.bmc.http.signing.SigningStrategy.EXCLUDE_BODY)
+                .basePath("/20190101")
+                .appendPathParam("models")
+                .appendPathParam(request.getModelId())
+                .appendPathParam("definedMetadata")
+                .appendPathParam(request.getMetadatumKeyName())
+                .appendPathParam("artifact")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("content-length", request.getContentLength())
+                .appendHeader("content-disposition", request.getContentDisposition())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBinaryRequestBody()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "etag", UpdateModelDefinedMetadatumArtifactResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        UpdateModelDefinedMetadatumArtifactResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 

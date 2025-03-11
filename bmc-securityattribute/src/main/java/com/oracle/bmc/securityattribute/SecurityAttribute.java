@@ -12,7 +12,7 @@ import com.oracle.bmc.securityattribute.responses.*;
  * For more information, see the documentation for [Security
  * Attributes](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/managing-security-attributes.htm)
  * and [Security Attribute
- * Nampespaces](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/managing-security-attribute-namespaces.htm).
+ * Namespaces](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/managing-security-attribute-namespaces.htm).
  * This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by
  * default if no circuit breaker configuration is defined by the user.
  */
@@ -85,12 +85,12 @@ public interface SecurityAttribute extends AutoCloseable {
      * <p>After you start this operation, you cannot start either the {@link
      * #deleteSecurityAttribute(DeleteSecurityAttributeRequest) deleteSecurityAttribute} or the
      * {@link
-     * #cascadeDeleteSecurityAttributeNamespace(CascadeDeleteSecurityAttributeNamespaceRequest)
-     * cascadeDeleteSecurityAttributeNamespace} operation until this process completes.
+     * #cascadingDeleteSecurityAttributeNamespace(CascadingDeleteSecurityAttributeNamespaceRequest)
+     * cascadingDeleteSecurityAttributeNamespace} operation until this process completes.
      *
      * <p>In order to delete security attribute, you must first retire the security attribute. Use
-     * {@link #updateSecurityAttribute(UpdateSecurityAttributeRequest) updateSecurityAttribute} to
-     * retire a security attribute.
+     * {@link #updateSecurityAttributeNamespace(UpdateSecurityAttributeNamespaceRequest)
+     * updateSecurityAttributeNamespace} to retire a security attribute.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -252,7 +252,8 @@ public interface SecurityAttribute extends AutoCloseable {
      *
      * <p>You must also specify a *description* for the namespace. It does not have to be unique,
      * and you can change it with {@link
-     * #securityAttributeNamespace(SecurityAttributeNamespaceRequest) securityAttributeNamespace}.
+     * #updateSecurityAttributeNamespace(UpdateSecurityAttributeNamespaceRequest)
+     * updateSecurityAttributeNamespace}.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -284,8 +285,8 @@ public interface SecurityAttribute extends AutoCloseable {
      * <p>After you start this operation, you cannot start either the {@link
      * #bulkDeleteSecurityAttributes(BulkDeleteSecurityAttributesRequest)
      * bulkDeleteSecurityAttributes} or the {@link
-     * #cascadeDeleteTagNamespace(CascadeDeleteTagNamespaceRequest) cascadeDeleteTagNamespace}
-     * operation until this process completes.
+     * #cascadingDeleteSecurityAttributeNamespace(CascadingDeleteSecurityAttributeNamespaceRequest)
+     * cascadingDeleteSecurityAttributeNamespace} operation until this process completes.
      *
      * <p>To delete a security attribute, you must first retire it. Use {@link
      * #updateSecurityAttribute(UpdateSecurityAttributeRequest) updateSecurityAttribute} to retire a
@@ -483,8 +484,8 @@ public interface SecurityAttribute extends AutoCloseable {
      * the namespace. Reactivating a namespace (changing `isRetired` from 'true' to 'false') does
      * not reactivate security attributes. To reactivate the security attributes, you must
      * reactivate each one individually *after* you reactivate the namespace, using {@link
-     * #updateTag(UpdateTagRequest) updateTag}. For more information about retiring security
-     * attribute namespaces, see [Managing Security Attribute
+     * #updateSecurityAttribute(UpdateSecurityAttributeRequest) updateSecurityAttribute}. For more
+     * information about retiring security attribute namespaces, see [Managing Security Attribute
      * Namespaces](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/managing-security-attribute-namespaces.htm).
      *
      * <p>You can't add a namespace with the same name as a retired namespace in the same tenancy.
