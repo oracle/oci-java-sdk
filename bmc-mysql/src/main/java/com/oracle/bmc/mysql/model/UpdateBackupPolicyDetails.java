@@ -25,6 +25,7 @@ public final class UpdateBackupPolicyDetails
     @Deprecated
     @java.beans.ConstructorProperties({
         "isEnabled",
+        "copyPolicies",
         "windowStartTime",
         "retentionInDays",
         "freeformTags",
@@ -33,6 +34,7 @@ public final class UpdateBackupPolicyDetails
     })
     public UpdateBackupPolicyDetails(
             Boolean isEnabled,
+            java.util.List<CopyPolicy> copyPolicies,
             String windowStartTime,
             Integer retentionInDays,
             java.util.Map<String, String> freeformTags,
@@ -40,6 +42,7 @@ public final class UpdateBackupPolicyDetails
             PitrPolicy pitrPolicy) {
         super();
         this.isEnabled = isEnabled;
+        this.copyPolicies = copyPolicies;
         this.windowStartTime = windowStartTime;
         this.retentionInDays = retentionInDays;
         this.freeformTags = freeformTags;
@@ -62,6 +65,35 @@ public final class UpdateBackupPolicyDetails
         public Builder isEnabled(Boolean isEnabled) {
             this.isEnabled = isEnabled;
             this.__explicitlySet__.add("isEnabled");
+            return this;
+        }
+        /**
+         * List of policies of a DB system to schedule cross-region DB system backup copy.
+         *
+         * <p>The policy includes the name of the destination region to which the DB system backup
+         * will be copied, and an optional parameter which specifies the retention period of the
+         * copied DB system backup in days.
+         *
+         * <p>*Note:** Currently, only one policy can be specified in the list.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("copyPolicies")
+        private java.util.List<CopyPolicy> copyPolicies;
+
+        /**
+         * List of policies of a DB system to schedule cross-region DB system backup copy.
+         *
+         * <p>The policy includes the name of the destination region to which the DB system backup
+         * will be copied, and an optional parameter which specifies the retention period of the
+         * copied DB system backup in days.
+         *
+         * <p>*Note:** Currently, only one policy can be specified in the list.
+         *
+         * @param copyPolicies the value to set
+         * @return this builder
+         */
+        public Builder copyPolicies(java.util.List<CopyPolicy> copyPolicies) {
+            this.copyPolicies = copyPolicies;
+            this.__explicitlySet__.add("copyPolicies");
             return this;
         }
         /**
@@ -182,6 +214,7 @@ public final class UpdateBackupPolicyDetails
             UpdateBackupPolicyDetails model =
                     new UpdateBackupPolicyDetails(
                             this.isEnabled,
+                            this.copyPolicies,
                             this.windowStartTime,
                             this.retentionInDays,
                             this.freeformTags,
@@ -197,6 +230,9 @@ public final class UpdateBackupPolicyDetails
         public Builder copy(UpdateBackupPolicyDetails model) {
             if (model.wasPropertyExplicitlySet("isEnabled")) {
                 this.isEnabled(model.getIsEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("copyPolicies")) {
+                this.copyPolicies(model.getCopyPolicies());
             }
             if (model.wasPropertyExplicitlySet("windowStartTime")) {
                 this.windowStartTime(model.getWindowStartTime());
@@ -237,6 +273,33 @@ public final class UpdateBackupPolicyDetails
      */
     public Boolean getIsEnabled() {
         return isEnabled;
+    }
+
+    /**
+     * List of policies of a DB system to schedule cross-region DB system backup copy.
+     *
+     * <p>The policy includes the name of the destination region to which the DB system backup will
+     * be copied, and an optional parameter which specifies the retention period of the copied DB
+     * system backup in days.
+     *
+     * <p>*Note:** Currently, only one policy can be specified in the list.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("copyPolicies")
+    private final java.util.List<CopyPolicy> copyPolicies;
+
+    /**
+     * List of policies of a DB system to schedule cross-region DB system backup copy.
+     *
+     * <p>The policy includes the name of the destination region to which the DB system backup will
+     * be copied, and an optional parameter which specifies the retention period of the copied DB
+     * system backup in days.
+     *
+     * <p>*Note:** Currently, only one policy can be specified in the list.
+     *
+     * @return the value
+     */
+    public java.util.List<CopyPolicy> getCopyPolicies() {
+        return copyPolicies;
     }
 
     /**
@@ -354,6 +417,7 @@ public final class UpdateBackupPolicyDetails
         sb.append("UpdateBackupPolicyDetails(");
         sb.append("super=").append(super.toString());
         sb.append("isEnabled=").append(String.valueOf(this.isEnabled));
+        sb.append(", copyPolicies=").append(String.valueOf(this.copyPolicies));
         sb.append(", windowStartTime=").append(String.valueOf(this.windowStartTime));
         sb.append(", retentionInDays=").append(String.valueOf(this.retentionInDays));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
@@ -374,6 +438,7 @@ public final class UpdateBackupPolicyDetails
 
         UpdateBackupPolicyDetails other = (UpdateBackupPolicyDetails) o;
         return java.util.Objects.equals(this.isEnabled, other.isEnabled)
+                && java.util.Objects.equals(this.copyPolicies, other.copyPolicies)
                 && java.util.Objects.equals(this.windowStartTime, other.windowStartTime)
                 && java.util.Objects.equals(this.retentionInDays, other.retentionInDays)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
@@ -387,6 +452,7 @@ public final class UpdateBackupPolicyDetails
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.isEnabled == null ? 43 : this.isEnabled.hashCode());
+        result = (result * PRIME) + (this.copyPolicies == null ? 43 : this.copyPolicies.hashCode());
         result =
                 (result * PRIME)
                         + (this.windowStartTime == null ? 43 : this.windowStartTime.hashCode());

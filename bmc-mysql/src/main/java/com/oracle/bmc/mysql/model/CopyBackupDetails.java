@@ -27,6 +27,7 @@ public final class CopyBackupDetails
         "compartmentId",
         "description",
         "displayName",
+        "backupCopyRetentionInDays",
         "sourceBackupId",
         "sourceRegion"
     })
@@ -34,12 +35,14 @@ public final class CopyBackupDetails
             String compartmentId,
             String description,
             String displayName,
+            Integer backupCopyRetentionInDays,
             String sourceBackupId,
             String sourceRegion) {
         super();
         this.compartmentId = compartmentId;
         this.description = description;
         this.displayName = displayName;
+        this.backupCopyRetentionInDays = backupCopyRetentionInDays;
         this.sourceBackupId = sourceBackupId;
         this.sourceRegion = sourceRegion;
     }
@@ -107,6 +110,29 @@ public final class CopyBackupDetails
             this.__explicitlySet__.add("displayName");
             return this;
         }
+        /**
+         * Number of days to retain the copied DB system backup.
+         *
+         * <p>*Note:** The maximum value for an automatic backup is 35, and the maximum value for a
+         * manual backup is 365.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("backupCopyRetentionInDays")
+        private Integer backupCopyRetentionInDays;
+
+        /**
+         * Number of days to retain the copied DB system backup.
+         *
+         * <p>*Note:** The maximum value for an automatic backup is 35, and the maximum value for a
+         * manual backup is 365.
+         *
+         * @param backupCopyRetentionInDays the value to set
+         * @return this builder
+         */
+        public Builder backupCopyRetentionInDays(Integer backupCopyRetentionInDays) {
+            this.backupCopyRetentionInDays = backupCopyRetentionInDays;
+            this.__explicitlySet__.add("backupCopyRetentionInDays");
+            return this;
+        }
         /** The OCID of DB system backup to be copied. */
         @com.fasterxml.jackson.annotation.JsonProperty("sourceBackupId")
         private String sourceBackupId;
@@ -153,6 +179,7 @@ public final class CopyBackupDetails
                             this.compartmentId,
                             this.description,
                             this.displayName,
+                            this.backupCopyRetentionInDays,
                             this.sourceBackupId,
                             this.sourceRegion);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -171,6 +198,9 @@ public final class CopyBackupDetails
             }
             if (model.wasPropertyExplicitlySet("displayName")) {
                 this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("backupCopyRetentionInDays")) {
+                this.backupCopyRetentionInDays(model.getBackupCopyRetentionInDays());
             }
             if (model.wasPropertyExplicitlySet("sourceBackupId")) {
                 this.sourceBackupId(model.getSourceBackupId());
@@ -246,6 +276,27 @@ public final class CopyBackupDetails
         return displayName;
     }
 
+    /**
+     * Number of days to retain the copied DB system backup.
+     *
+     * <p>*Note:** The maximum value for an automatic backup is 35, and the maximum value for a
+     * manual backup is 365.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("backupCopyRetentionInDays")
+    private final Integer backupCopyRetentionInDays;
+
+    /**
+     * Number of days to retain the copied DB system backup.
+     *
+     * <p>*Note:** The maximum value for an automatic backup is 35, and the maximum value for a
+     * manual backup is 365.
+     *
+     * @return the value
+     */
+    public Integer getBackupCopyRetentionInDays() {
+        return backupCopyRetentionInDays;
+    }
+
     /** The OCID of DB system backup to be copied. */
     @com.fasterxml.jackson.annotation.JsonProperty("sourceBackupId")
     private final String sourceBackupId;
@@ -296,6 +347,8 @@ public final class CopyBackupDetails
         sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", backupCopyRetentionInDays=")
+                .append(String.valueOf(this.backupCopyRetentionInDays));
         sb.append(", sourceBackupId=").append(String.valueOf(this.sourceBackupId));
         sb.append(", sourceRegion=").append(String.valueOf(this.sourceRegion));
         sb.append(")");
@@ -315,6 +368,8 @@ public final class CopyBackupDetails
         return java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(
+                        this.backupCopyRetentionInDays, other.backupCopyRetentionInDays)
                 && java.util.Objects.equals(this.sourceBackupId, other.sourceBackupId)
                 && java.util.Objects.equals(this.sourceRegion, other.sourceRegion)
                 && super.equals(other);
@@ -329,6 +384,11 @@ public final class CopyBackupDetails
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.backupCopyRetentionInDays == null
+                                ? 43
+                                : this.backupCopyRetentionInDays.hashCode());
         result =
                 (result * PRIME)
                         + (this.sourceBackupId == null ? 43 : this.sourceBackupId.hashCode());

@@ -74,12 +74,16 @@ public final class FtpMonitorConfiguration extends MonitorConfiguration {
             this.__explicitlySet__.add("ftpRequestType");
             return this;
         }
-        /** If enabled, Active mode will be used for the FTP connection. */
+        /**
+         * If enabled, Active mode will be used for the FTP connection. Not supported for SFTP
+         * protocol.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("isActiveMode")
         private Boolean isActiveMode;
 
         /**
-         * If enabled, Active mode will be used for the FTP connection.
+         * If enabled, Active mode will be used for the FTP connection. Not supported for SFTP
+         * protocol.
          *
          * @param isActiveMode the value to set
          * @return this builder
@@ -301,12 +305,14 @@ public final class FtpMonitorConfiguration extends MonitorConfiguration {
         return ftpRequestType;
     }
 
-    /** If enabled, Active mode will be used for the FTP connection. */
+    /**
+     * If enabled, Active mode will be used for the FTP connection. Not supported for SFTP protocol.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("isActiveMode")
     private final Boolean isActiveMode;
 
     /**
-     * If enabled, Active mode will be used for the FTP connection.
+     * If enabled, Active mode will be used for the FTP connection. Not supported for SFTP protocol.
      *
      * @return the value
      */

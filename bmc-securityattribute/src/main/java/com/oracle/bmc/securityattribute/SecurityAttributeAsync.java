@@ -12,7 +12,7 @@ import com.oracle.bmc.securityattribute.responses.*;
  * For more information, see the documentation for [Security
  * Attributes](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/managing-security-attributes.htm)
  * and [Security Attribute
- * Nampespaces](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/managing-security-attribute-namespaces.htm).
+ * Namespaces](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/managing-security-attribute-namespaces.htm).
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20240815")
 public interface SecurityAttributeAsync extends AutoCloseable {
@@ -83,13 +83,13 @@ public interface SecurityAttributeAsync extends AutoCloseable {
      * <p>After you start this operation, you cannot start either the {@link
      * #deleteSecurityAttribute(DeleteSecurityAttributeRequest, Consumer, Consumer)
      * deleteSecurityAttribute} or the {@link
-     * #cascadeDeleteSecurityAttributeNamespace(CascadeDeleteSecurityAttributeNamespaceRequest,
-     * Consumer, Consumer) cascadeDeleteSecurityAttributeNamespace} operation until this process
+     * #cascadingDeleteSecurityAttributeNamespace(CascadingDeleteSecurityAttributeNamespaceRequest,
+     * Consumer, Consumer) cascadingDeleteSecurityAttributeNamespace} operation until this process
      * completes.
      *
      * <p>In order to delete security attribute, you must first retire the security attribute. Use
-     * {@link #updateSecurityAttribute(UpdateSecurityAttributeRequest, Consumer, Consumer)
-     * updateSecurityAttribute} to retire a security attribute.
+     * {@link #updateSecurityAttributeNamespace(UpdateSecurityAttributeNamespaceRequest, Consumer,
+     * Consumer) updateSecurityAttributeNamespace} to retire a security attribute.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -253,8 +253,8 @@ public interface SecurityAttributeAsync extends AutoCloseable {
      *
      * <p>You must also specify a *description* for the namespace. It does not have to be unique,
      * and you can change it with {@link
-     * #securityAttributeNamespace(SecurityAttributeNamespaceRequest, Consumer, Consumer)
-     * securityAttributeNamespace}.
+     * #updateSecurityAttributeNamespace(UpdateSecurityAttributeNamespaceRequest, Consumer,
+     * Consumer) updateSecurityAttributeNamespace}.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -287,8 +287,9 @@ public interface SecurityAttributeAsync extends AutoCloseable {
      * <p>After you start this operation, you cannot start either the {@link
      * #bulkDeleteSecurityAttributes(BulkDeleteSecurityAttributesRequest, Consumer, Consumer)
      * bulkDeleteSecurityAttributes} or the {@link
-     * #cascadeDeleteTagNamespace(CascadeDeleteTagNamespaceRequest, Consumer, Consumer)
-     * cascadeDeleteTagNamespace} operation until this process completes.
+     * #cascadingDeleteSecurityAttributeNamespace(CascadingDeleteSecurityAttributeNamespaceRequest,
+     * Consumer, Consumer) cascadingDeleteSecurityAttributeNamespace} operation until this process
+     * completes.
      *
      * <p>To delete a security attribute, you must first retire it. Use {@link
      * #updateSecurityAttribute(UpdateSecurityAttributeRequest, Consumer, Consumer)
@@ -493,8 +494,9 @@ public interface SecurityAttributeAsync extends AutoCloseable {
      * the namespace. Reactivating a namespace (changing `isRetired` from 'true' to 'false') does
      * not reactivate security attributes. To reactivate the security attributes, you must
      * reactivate each one individually *after* you reactivate the namespace, using {@link
-     * #updateTag(UpdateTagRequest, Consumer, Consumer) updateTag}. For more information about
-     * retiring security attribute namespaces, see [Managing Security Attribute
+     * #updateSecurityAttribute(UpdateSecurityAttributeRequest, Consumer, Consumer)
+     * updateSecurityAttribute}. For more information about retiring security attribute namespaces,
+     * see [Managing Security Attribute
      * Namespaces](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/managing-security-attribute-namespaces.htm).
      *
      * <p>You can't add a namespace with the same name as a retired namespace in the same tenancy.

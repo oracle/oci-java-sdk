@@ -2,10 +2,10 @@
  * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
-package com.oracle.bmc.opensearch.model;
+package com.oracle.bmc.datasafe.model;
 
 /**
- * The configuration details for validating pipeline configuration provided as input. <br>
+ * A collection of masking error objects. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -15,37 +15,43 @@ package com.oracle.bmc.opensearch.model;
  * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
  * null}).
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180828")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = PipelineValidationErrorDetails.Builder.class)
+        builder = MaskingErrorCollection.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(
         com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class PipelineValidationErrorDetails
+public final class MaskingErrorCollection
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"message"})
-    public PipelineValidationErrorDetails(String message) {
+    @java.beans.ConstructorProperties({"items"})
+    public MaskingErrorCollection(java.util.List<MaskingErrorSummary> items) {
         super();
-        this.message = message;
+        this.items = items;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /** An array of masking error objects. */
+        @com.fasterxml.jackson.annotation.JsonProperty("items")
+        private java.util.List<MaskingErrorSummary> items;
 
-        @com.fasterxml.jackson.annotation.JsonProperty("message")
-        private String message;
-
-        public Builder message(String message) {
-            this.message = message;
-            this.__explicitlySet__.add("message");
+        /**
+         * An array of masking error objects.
+         *
+         * @param items the value to set
+         * @return this builder
+         */
+        public Builder items(java.util.List<MaskingErrorSummary> items) {
+            this.items = items;
+            this.__explicitlySet__.add("items");
             return this;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
-        public PipelineValidationErrorDetails build() {
-            PipelineValidationErrorDetails model = new PipelineValidationErrorDetails(this.message);
+        public MaskingErrorCollection build() {
+            MaskingErrorCollection model = new MaskingErrorCollection(this.items);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -53,9 +59,9 @@ public final class PipelineValidationErrorDetails
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(PipelineValidationErrorDetails model) {
-            if (model.wasPropertyExplicitlySet("message")) {
-                this.message(model.getMessage());
+        public Builder copy(MaskingErrorCollection model) {
+            if (model.wasPropertyExplicitlySet("items")) {
+                this.items(model.getItems());
             }
             return this;
         }
@@ -70,11 +76,17 @@ public final class PipelineValidationErrorDetails
         return new Builder().copy(this);
     }
 
-    @com.fasterxml.jackson.annotation.JsonProperty("message")
-    private final String message;
+    /** An array of masking error objects. */
+    @com.fasterxml.jackson.annotation.JsonProperty("items")
+    private final java.util.List<MaskingErrorSummary> items;
 
-    public String getMessage() {
-        return message;
+    /**
+     * An array of masking error objects.
+     *
+     * @return the value
+     */
+    public java.util.List<MaskingErrorSummary> getItems() {
+        return items;
     }
 
     @Override
@@ -90,9 +102,9 @@ public final class PipelineValidationErrorDetails
      */
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
-        sb.append("PipelineValidationErrorDetails(");
+        sb.append("MaskingErrorCollection(");
         sb.append("super=").append(super.toString());
-        sb.append("message=").append(String.valueOf(this.message));
+        sb.append("items=").append(String.valueOf(this.items));
         sb.append(")");
         return sb.toString();
     }
@@ -102,19 +114,19 @@ public final class PipelineValidationErrorDetails
         if (this == o) {
             return true;
         }
-        if (!(o instanceof PipelineValidationErrorDetails)) {
+        if (!(o instanceof MaskingErrorCollection)) {
             return false;
         }
 
-        PipelineValidationErrorDetails other = (PipelineValidationErrorDetails) o;
-        return java.util.Objects.equals(this.message, other.message) && super.equals(other);
+        MaskingErrorCollection other = (MaskingErrorCollection) o;
+        return java.util.Objects.equals(this.items, other.items) && super.equals(other);
     }
 
     @Override
     public int hashCode() {
         final int PRIME = 59;
         int result = 1;
-        result = (result * PRIME) + (this.message == null ? 43 : this.message.hashCode());
+        result = (result * PRIME) + (this.items == null ? 43 : this.items.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

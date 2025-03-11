@@ -53,6 +53,7 @@ public final class VmClusterSummary
         "dataCollectionOptions",
         "giSoftwareImageId",
         "fileSystemConfigurationDetails",
+        "vmClusterType",
         "cloudAutomationUpdateDetails",
         "exascaleDbStorageVaultId",
         "storageManagementType",
@@ -89,6 +90,7 @@ public final class VmClusterSummary
             DataCollectionOptions dataCollectionOptions,
             String giSoftwareImageId,
             java.util.List<FileSystemConfigurationDetail> fileSystemConfigurationDetails,
+            VmClusterType vmClusterType,
             CloudAutomationUpdateDetails cloudAutomationUpdateDetails,
             String exascaleDbStorageVaultId,
             StorageManagementType storageManagementType,
@@ -124,6 +126,7 @@ public final class VmClusterSummary
         this.dataCollectionOptions = dataCollectionOptions;
         this.giSoftwareImageId = giSoftwareImageId;
         this.fileSystemConfigurationDetails = fileSystemConfigurationDetails;
+        this.vmClusterType = vmClusterType;
         this.cloudAutomationUpdateDetails = cloudAutomationUpdateDetails;
         this.exascaleDbStorageVaultId = exascaleDbStorageVaultId;
         this.storageManagementType = storageManagementType;
@@ -644,6 +647,21 @@ public final class VmClusterSummary
             this.__explicitlySet__.add("fileSystemConfigurationDetails");
             return this;
         }
+        /** The vmcluster type for the VM cluster/Cloud VM cluster. */
+        @com.fasterxml.jackson.annotation.JsonProperty("vmClusterType")
+        private VmClusterType vmClusterType;
+
+        /**
+         * The vmcluster type for the VM cluster/Cloud VM cluster.
+         *
+         * @param vmClusterType the value to set
+         * @return this builder
+         */
+        public Builder vmClusterType(VmClusterType vmClusterType) {
+            this.vmClusterType = vmClusterType;
+            this.__explicitlySet__.add("vmClusterType");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("cloudAutomationUpdateDetails")
         private CloudAutomationUpdateDetails cloudAutomationUpdateDetails;
@@ -750,6 +768,7 @@ public final class VmClusterSummary
                             this.dataCollectionOptions,
                             this.giSoftwareImageId,
                             this.fileSystemConfigurationDetails,
+                            this.vmClusterType,
                             this.cloudAutomationUpdateDetails,
                             this.exascaleDbStorageVaultId,
                             this.storageManagementType,
@@ -851,6 +870,9 @@ public final class VmClusterSummary
             }
             if (model.wasPropertyExplicitlySet("fileSystemConfigurationDetails")) {
                 this.fileSystemConfigurationDetails(model.getFileSystemConfigurationDetails());
+            }
+            if (model.wasPropertyExplicitlySet("vmClusterType")) {
+                this.vmClusterType(model.getVmClusterType());
             }
             if (model.wasPropertyExplicitlySet("cloudAutomationUpdateDetails")) {
                 this.cloudAutomationUpdateDetails(model.getCloudAutomationUpdateDetails());
@@ -1420,6 +1442,65 @@ public final class VmClusterSummary
         return fileSystemConfigurationDetails;
     }
 
+    /** The vmcluster type for the VM cluster/Cloud VM cluster. */
+    public enum VmClusterType implements com.oracle.bmc.http.internal.BmcEnum {
+        Regular("REGULAR"),
+        Developer("DEVELOPER"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(VmClusterType.class);
+
+        private final String value;
+        private static java.util.Map<String, VmClusterType> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (VmClusterType v : VmClusterType.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        VmClusterType(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static VmClusterType create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'VmClusterType', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /** The vmcluster type for the VM cluster/Cloud VM cluster. */
+    @com.fasterxml.jackson.annotation.JsonProperty("vmClusterType")
+    private final VmClusterType vmClusterType;
+
+    /**
+     * The vmcluster type for the VM cluster/Cloud VM cluster.
+     *
+     * @return the value
+     */
+    public VmClusterType getVmClusterType() {
+        return vmClusterType;
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("cloudAutomationUpdateDetails")
     private final CloudAutomationUpdateDetails cloudAutomationUpdateDetails;
 
@@ -1624,6 +1705,7 @@ public final class VmClusterSummary
         sb.append(", giSoftwareImageId=").append(String.valueOf(this.giSoftwareImageId));
         sb.append(", fileSystemConfigurationDetails=")
                 .append(String.valueOf(this.fileSystemConfigurationDetails));
+        sb.append(", vmClusterType=").append(String.valueOf(this.vmClusterType));
         sb.append(", cloudAutomationUpdateDetails=")
                 .append(String.valueOf(this.cloudAutomationUpdateDetails));
         sb.append(", exascaleDbStorageVaultId=")
@@ -1679,6 +1761,7 @@ public final class VmClusterSummary
                 && java.util.Objects.equals(this.giSoftwareImageId, other.giSoftwareImageId)
                 && java.util.Objects.equals(
                         this.fileSystemConfigurationDetails, other.fileSystemConfigurationDetails)
+                && java.util.Objects.equals(this.vmClusterType, other.vmClusterType)
                 && java.util.Objects.equals(
                         this.cloudAutomationUpdateDetails, other.cloudAutomationUpdateDetails)
                 && java.util.Objects.equals(
@@ -1780,6 +1863,9 @@ public final class VmClusterSummary
                         + (this.fileSystemConfigurationDetails == null
                                 ? 43
                                 : this.fileSystemConfigurationDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.vmClusterType == null ? 43 : this.vmClusterType.hashCode());
         result =
                 (result * PRIME)
                         + (this.cloudAutomationUpdateDetails == null

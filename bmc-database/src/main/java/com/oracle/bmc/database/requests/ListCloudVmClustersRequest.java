@@ -168,6 +168,17 @@ public class ListCloudVmClustersRequest extends com.oracle.bmc.requests.BmcReque
     public String getOpcRequestId() {
         return opcRequestId;
     }
+    /**
+     * A filter to return only cloud vmclusters that match the given cloud vmcluster type exactly.
+     */
+    private com.oracle.bmc.database.model.CloudVmClusterSummary.VmClusterType vmClusterType;
+
+    /**
+     * A filter to return only cloud vmclusters that match the given cloud vmcluster type exactly.
+     */
+    public com.oracle.bmc.database.model.CloudVmClusterSummary.VmClusterType getVmClusterType() {
+        return vmClusterType;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -320,6 +331,26 @@ public class ListCloudVmClustersRequest extends com.oracle.bmc.requests.BmcReque
         }
 
         /**
+         * A filter to return only cloud vmclusters that match the given cloud vmcluster type
+         * exactly.
+         */
+        private com.oracle.bmc.database.model.CloudVmClusterSummary.VmClusterType vmClusterType =
+                null;
+
+        /**
+         * A filter to return only cloud vmclusters that match the given cloud vmcluster type
+         * exactly.
+         *
+         * @param vmClusterType the value to set
+         * @return this builder instance
+         */
+        public Builder vmClusterType(
+                com.oracle.bmc.database.model.CloudVmClusterSummary.VmClusterType vmClusterType) {
+            this.vmClusterType = vmClusterType;
+            return this;
+        }
+
+        /**
          * Set the invocation callback for the request to be built.
          *
          * @param invocationCallback the invocation callback to be set for the request
@@ -358,6 +389,7 @@ public class ListCloudVmClustersRequest extends com.oracle.bmc.requests.BmcReque
             lifecycleState(o.getLifecycleState());
             displayName(o.getDisplayName());
             opcRequestId(o.getOpcRequestId());
+            vmClusterType(o.getVmClusterType());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -401,9 +433,10 @@ public class ListCloudVmClustersRequest extends com.oracle.bmc.requests.BmcReque
             request.lifecycleState = lifecycleState;
             request.displayName = displayName;
             request.opcRequestId = opcRequestId;
+            request.vmClusterType = vmClusterType;
             return request;
             // new ListCloudVmClustersRequest(compartmentId, cloudExadataInfrastructureId, limit,
-            // page, sortBy, sortOrder, lifecycleState, displayName, opcRequestId);
+            // page, sortBy, sortOrder, lifecycleState, displayName, opcRequestId, vmClusterType);
         }
     }
 
@@ -422,7 +455,8 @@ public class ListCloudVmClustersRequest extends com.oracle.bmc.requests.BmcReque
                 .sortOrder(sortOrder)
                 .lifecycleState(lifecycleState)
                 .displayName(displayName)
-                .opcRequestId(opcRequestId);
+                .opcRequestId(opcRequestId)
+                .vmClusterType(vmClusterType);
     }
 
     /**
@@ -449,6 +483,7 @@ public class ListCloudVmClustersRequest extends com.oracle.bmc.requests.BmcReque
         sb.append(",lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(",displayName=").append(String.valueOf(this.displayName));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",vmClusterType=").append(String.valueOf(this.vmClusterType));
         sb.append(")");
         return sb.toString();
     }
@@ -473,7 +508,8 @@ public class ListCloudVmClustersRequest extends com.oracle.bmc.requests.BmcReque
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.displayName, other.displayName)
-                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.vmClusterType, other.vmClusterType);
     }
 
     @Override
@@ -497,6 +533,9 @@ public class ListCloudVmClustersRequest extends com.oracle.bmc.requests.BmcReque
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.vmClusterType == null ? 43 : this.vmClusterType.hashCode());
         return result;
     }
 }

@@ -187,6 +187,21 @@ public class ListDatabaseSoftwareImagesRequest
         return patchSetGreaterThanOrEqualTo;
     }
     /**
+     * The DB system [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * If provided, filters the results to the set of database versions which are supported for the
+     * DB system.
+     */
+    private String dbSystemId;
+
+    /**
+     * The DB system [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * If provided, filters the results to the set of database versions which are supported for the
+     * DB system.
+     */
+    public String getDbSystemId() {
+        return dbSystemId;
+    }
+    /**
      * If provided, filters the results to the set of database versions which are supported for
      * Upgrade.
      */
@@ -373,6 +388,28 @@ public class ListDatabaseSoftwareImagesRequest
         }
 
         /**
+         * The DB system
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). If
+         * provided, filters the results to the set of database versions which are supported for the
+         * DB system.
+         */
+        private String dbSystemId = null;
+
+        /**
+         * The DB system
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). If
+         * provided, filters the results to the set of database versions which are supported for the
+         * DB system.
+         *
+         * @param dbSystemId the value to set
+         * @return this builder instance
+         */
+        public Builder dbSystemId(String dbSystemId) {
+            this.dbSystemId = dbSystemId;
+            return this;
+        }
+
+        /**
          * If provided, filters the results to the set of database versions which are supported for
          * Upgrade.
          */
@@ -430,6 +467,7 @@ public class ListDatabaseSoftwareImagesRequest
             imageType(o.getImageType());
             imageShapeFamily(o.getImageShapeFamily());
             patchSetGreaterThanOrEqualTo(o.getPatchSetGreaterThanOrEqualTo());
+            dbSystemId(o.getDbSystemId());
             isUpgradeSupported(o.getIsUpgradeSupported());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
@@ -475,11 +513,12 @@ public class ListDatabaseSoftwareImagesRequest
             request.imageType = imageType;
             request.imageShapeFamily = imageShapeFamily;
             request.patchSetGreaterThanOrEqualTo = patchSetGreaterThanOrEqualTo;
+            request.dbSystemId = dbSystemId;
             request.isUpgradeSupported = isUpgradeSupported;
             return request;
             // new ListDatabaseSoftwareImagesRequest(compartmentId, limit, page, sortBy, sortOrder,
             // lifecycleState, displayName, imageType, imageShapeFamily,
-            // patchSetGreaterThanOrEqualTo, isUpgradeSupported);
+            // patchSetGreaterThanOrEqualTo, dbSystemId, isUpgradeSupported);
         }
     }
 
@@ -500,6 +539,7 @@ public class ListDatabaseSoftwareImagesRequest
                 .imageType(imageType)
                 .imageShapeFamily(imageShapeFamily)
                 .patchSetGreaterThanOrEqualTo(patchSetGreaterThanOrEqualTo)
+                .dbSystemId(dbSystemId)
                 .isUpgradeSupported(isUpgradeSupported);
     }
 
@@ -528,6 +568,7 @@ public class ListDatabaseSoftwareImagesRequest
         sb.append(",imageShapeFamily=").append(String.valueOf(this.imageShapeFamily));
         sb.append(",patchSetGreaterThanOrEqualTo=")
                 .append(String.valueOf(this.patchSetGreaterThanOrEqualTo));
+        sb.append(",dbSystemId=").append(String.valueOf(this.dbSystemId));
         sb.append(",isUpgradeSupported=").append(String.valueOf(this.isUpgradeSupported));
         sb.append(")");
         return sb.toString();
@@ -555,6 +596,7 @@ public class ListDatabaseSoftwareImagesRequest
                 && java.util.Objects.equals(this.imageShapeFamily, other.imageShapeFamily)
                 && java.util.Objects.equals(
                         this.patchSetGreaterThanOrEqualTo, other.patchSetGreaterThanOrEqualTo)
+                && java.util.Objects.equals(this.dbSystemId, other.dbSystemId)
                 && java.util.Objects.equals(this.isUpgradeSupported, other.isUpgradeSupported);
     }
 
@@ -582,6 +624,7 @@ public class ListDatabaseSoftwareImagesRequest
                         + (this.patchSetGreaterThanOrEqualTo == null
                                 ? 43
                                 : this.patchSetGreaterThanOrEqualTo.hashCode());
+        result = (result * PRIME) + (this.dbSystemId == null ? 43 : this.dbSystemId.hashCode());
         result =
                 (result * PRIME)
                         + (this.isUpgradeSupported == null

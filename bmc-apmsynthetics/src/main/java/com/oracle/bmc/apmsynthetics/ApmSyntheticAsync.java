@@ -8,8 +8,8 @@ import com.oracle.bmc.apmsynthetics.requests.*;
 import com.oracle.bmc.apmsynthetics.responses.*;
 
 /**
- * Use the Application Performance Monitoring Synthetic Monitoring API to query synthetic scripts
- * and monitors. For more information, see [Application Performance
+ * Use the APM Availability Monitoring API to query Scripts, Monitors, Dedicated Vantage Points and
+ * On-Premise Vantage Points resources. For more information, see [Application Performance
  * Monitoring](https://docs.oracle.com/iaas/application-performance-monitoring/index.html).
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")

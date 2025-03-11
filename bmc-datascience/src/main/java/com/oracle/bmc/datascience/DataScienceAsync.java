@@ -456,6 +456,42 @@ public interface DataScienceAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Creates model custom metadata artifact for specified model.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateModelCustomMetadatumArtifactResponse>
+            createModelCustomMetadatumArtifact(
+                    CreateModelCustomMetadatumArtifactRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    CreateModelCustomMetadatumArtifactRequest,
+                                    CreateModelCustomMetadatumArtifactResponse>
+                            handler);
+
+    /**
+     * Creates model defined metadata artifact for specified model.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateModelDefinedMetadatumArtifactResponse>
+            createModelDefinedMetadatumArtifact(
+                    CreateModelDefinedMetadatumArtifactRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    CreateModelDefinedMetadatumArtifactRequest,
+                                    CreateModelDefinedMetadatumArtifactResponse>
+                            handler);
+
+    /**
      * Creates a new model deployment.
      *
      * @param request The request object containing the details to send
@@ -721,6 +757,42 @@ public interface DataScienceAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<DeleteModelRequest, DeleteModelResponse> handler);
 
     /**
+     * Deletes model custom metadata artifact for specified model metadata key.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteModelCustomMetadatumArtifactResponse>
+            deleteModelCustomMetadatumArtifact(
+                    DeleteModelCustomMetadatumArtifactRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteModelCustomMetadatumArtifactRequest,
+                                    DeleteModelCustomMetadatumArtifactResponse>
+                            handler);
+
+    /**
+     * Deletes model defined metadata artifact for specified model metadata key.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteModelDefinedMetadatumArtifactResponse>
+            deleteModelDefinedMetadatumArtifact(
+                    DeleteModelDefinedMetadatumArtifactRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteModelDefinedMetadatumArtifactRequest,
+                                    DeleteModelDefinedMetadatumArtifactResponse>
+                            handler);
+
+    /**
      * Deletes the specified model deployment. Any unsaved work in this model deployment is lost.
      *
      * @param request The request object containing the details to send
@@ -940,6 +1012,42 @@ public interface DataScienceAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Downloads model custom metadata artifact content for specified model metadata key.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetModelCustomMetadatumArtifactContentResponse>
+            getModelCustomMetadatumArtifactContent(
+                    GetModelCustomMetadatumArtifactContentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    GetModelCustomMetadatumArtifactContentRequest,
+                                    GetModelCustomMetadatumArtifactContentResponse>
+                            handler);
+
+    /**
+     * Downloads model defined metadata artifact content for specified model metadata key.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetModelDefinedMetadatumArtifactContentResponse>
+            getModelDefinedMetadatumArtifactContent(
+                    GetModelDefinedMetadatumArtifactContentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    GetModelDefinedMetadatumArtifactContentRequest,
+                                    GetModelDefinedMetadatumArtifactContentResponse>
+                            handler);
+
+    /**
      * Retrieves the model deployment for the specified `modelDeploymentId`.
      *
      * @param request The request object containing the details to send
@@ -1121,6 +1229,42 @@ public interface DataScienceAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             HeadModelArtifactRequest, HeadModelArtifactResponse>
                     handler);
+
+    /**
+     * Gets custom metadata artifact metadata for specified model metadata key.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<HeadModelCustomMetadatumArtifactResponse>
+            headModelCustomMetadatumArtifact(
+                    HeadModelCustomMetadatumArtifactRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    HeadModelCustomMetadatumArtifactRequest,
+                                    HeadModelCustomMetadatumArtifactResponse>
+                            handler);
+
+    /**
+     * Gets defined metadata artifact metadata for specified model metadata key.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<HeadModelDefinedMetadatumArtifactResponse>
+            headModelDefinedMetadatumArtifact(
+                    HeadModelDefinedMetadatumArtifactRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    HeadModelDefinedMetadatumArtifactRequest,
+                                    HeadModelDefinedMetadatumArtifactResponse>
+                            handler);
 
     /**
      * Get the artifact metadata for a step in the pipeline.
@@ -1453,6 +1597,24 @@ public interface DataScienceAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Registers model artifact reference metadata
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<RegisterModelArtifactReferenceResponse>
+            registerModelArtifactReference(
+                    RegisterModelArtifactReferenceRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    RegisterModelArtifactReferenceRequest,
+                                    RegisterModelArtifactReferenceResponse>
+                            handler);
+
+    /**
      * Restore archived model artifact
      *
      * @param request The request object containing the details to send
@@ -1532,6 +1694,42 @@ public interface DataScienceAsync extends AutoCloseable {
     java.util.concurrent.Future<UpdateModelResponse> updateModel(
             UpdateModelRequest request,
             com.oracle.bmc.responses.AsyncHandler<UpdateModelRequest, UpdateModelResponse> handler);
+
+    /**
+     * Updates model custom metadata artifact for specified model metadata key.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateModelCustomMetadatumArtifactResponse>
+            updateModelCustomMetadatumArtifact(
+                    UpdateModelCustomMetadatumArtifactRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateModelCustomMetadatumArtifactRequest,
+                                    UpdateModelCustomMetadatumArtifactResponse>
+                            handler);
+
+    /**
+     * Updates model defined metadata artifact for specified model metadata key.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateModelDefinedMetadatumArtifactResponse>
+            updateModelDefinedMetadatumArtifact(
+                    UpdateModelDefinedMetadatumArtifactRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateModelDefinedMetadatumArtifactRequest,
+                                    UpdateModelDefinedMetadatumArtifactResponse>
+                            handler);
 
     /**
      * Updates the properties of a model deployment. Some of the properties of

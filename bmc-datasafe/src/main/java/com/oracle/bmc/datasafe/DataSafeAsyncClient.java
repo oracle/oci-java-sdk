@@ -1364,6 +1364,45 @@ public class DataSafeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
     }
 
     @Override
+    public java.util.concurrent.Future<ChangeSensitiveTypeGroupCompartmentResponse>
+            changeSensitiveTypeGroupCompartment(
+                    ChangeSensitiveTypeGroupCompartmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeSensitiveTypeGroupCompartmentRequest,
+                                    ChangeSensitiveTypeGroupCompartmentResponse>
+                            handler) {
+
+        Validate.notBlank(
+                request.getSensitiveTypeGroupId(), "sensitiveTypeGroupId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeSensitiveTypeGroupCompartmentDetails(),
+                "changeSensitiveTypeGroupCompartmentDetails is required");
+
+        return clientCall(request, ChangeSensitiveTypeGroupCompartmentResponse::builder)
+                .logger(LOG, "changeSensitiveTypeGroupCompartment")
+                .serviceDetails(
+                        "DataSafe",
+                        "ChangeSensitiveTypeGroupCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SensitiveTypeGroup/ChangeSensitiveTypeGroupCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeSensitiveTypeGroupCompartmentRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("sensitiveTypeGroups")
+                .appendPathParam(request.getSensitiveTypeGroupId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeSensitiveTypeGroupCompartmentResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<ChangeSensitiveTypesExportCompartmentResponse>
             changeSensitiveTypesExportCompartment(
                     ChangeSensitiveTypesExportCompartmentRequest request,
@@ -2321,6 +2360,44 @@ public class DataSafeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
     }
 
     @Override
+    public java.util.concurrent.Future<CreateSensitiveTypeGroupResponse> createSensitiveTypeGroup(
+            CreateSensitiveTypeGroupRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateSensitiveTypeGroupRequest, CreateSensitiveTypeGroupResponse>
+                    handler) {
+        Objects.requireNonNull(
+                request.getCreateSensitiveTypeGroupDetails(),
+                "createSensitiveTypeGroupDetails is required");
+
+        return clientCall(request, CreateSensitiveTypeGroupResponse::builder)
+                .logger(LOG, "createSensitiveTypeGroup")
+                .serviceDetails(
+                        "DataSafe",
+                        "CreateSensitiveTypeGroup",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SensitiveTypeGroup/CreateSensitiveTypeGroup")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateSensitiveTypeGroupRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("sensitiveTypeGroups")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.datasafe.model.SensitiveTypeGroup.class,
+                        CreateSensitiveTypeGroupResponse.Builder::sensitiveTypeGroup)
+                .handleResponseHeaderString("etag", CreateSensitiveTypeGroupResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CreateSensitiveTypeGroupResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateSensitiveTypeGroupResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "location", CreateSensitiveTypeGroupResponse.Builder::location)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateSensitiveTypesExportResponse>
             createSensitiveTypesExport(
                     CreateSensitiveTypesExportRequest request,
@@ -2909,6 +2986,37 @@ public class DataSafeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteMaskingReportResponse> deleteMaskingReport(
+            DeleteMaskingReportRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteMaskingReportRequest, DeleteMaskingReportResponse>
+                    handler) {
+
+        Validate.notBlank(request.getMaskingReportId(), "maskingReportId must not be blank");
+
+        return clientCall(request, DeleteMaskingReportResponse::builder)
+                .logger(LOG, "deleteMaskingReport")
+                .serviceDetails(
+                        "DataSafe",
+                        "DeleteMaskingReport",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/MaskingReport/DeleteMaskingReport")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteMaskingReportRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("maskingReports")
+                .appendPathParam(request.getMaskingReportId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeleteMaskingReportResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteMaskingReportResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteOnPremConnectorResponse> deleteOnPremConnector(
             DeleteOnPremConnectorRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -3195,6 +3303,38 @@ public class DataSafeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteSensitiveTypeResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteSensitiveTypeGroupResponse> deleteSensitiveTypeGroup(
+            DeleteSensitiveTypeGroupRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteSensitiveTypeGroupRequest, DeleteSensitiveTypeGroupResponse>
+                    handler) {
+
+        Validate.notBlank(
+                request.getSensitiveTypeGroupId(), "sensitiveTypeGroupId must not be blank");
+
+        return clientCall(request, DeleteSensitiveTypeGroupResponse::builder)
+                .logger(LOG, "deleteSensitiveTypeGroup")
+                .serviceDetails(
+                        "DataSafe",
+                        "DeleteSensitiveTypeGroup",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SensitiveTypeGroup/DeleteSensitiveTypeGroup")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteSensitiveTypeGroupRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("sensitiveTypeGroups")
+                .appendPathParam(request.getSensitiveTypeGroupId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeleteSensitiveTypeGroupResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteSensitiveTypeGroupResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 
@@ -5597,6 +5737,38 @@ public class DataSafeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
     }
 
     @Override
+    public java.util.concurrent.Future<GetSensitiveTypeGroupResponse> getSensitiveTypeGroup(
+            GetSensitiveTypeGroupRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetSensitiveTypeGroupRequest, GetSensitiveTypeGroupResponse>
+                    handler) {
+
+        Validate.notBlank(
+                request.getSensitiveTypeGroupId(), "sensitiveTypeGroupId must not be blank");
+
+        return clientCall(request, GetSensitiveTypeGroupResponse::builder)
+                .logger(LOG, "getSensitiveTypeGroup")
+                .serviceDetails(
+                        "DataSafe",
+                        "GetSensitiveTypeGroup",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SensitiveTypeGroup/GetSensitiveTypeGroup")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetSensitiveTypeGroupRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("sensitiveTypeGroups")
+                .appendPathParam(request.getSensitiveTypeGroupId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.datasafe.model.SensitiveTypeGroup.class,
+                        GetSensitiveTypeGroupResponse.Builder::sensitiveTypeGroup)
+                .handleResponseHeaderString("etag", GetSensitiveTypeGroupResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetSensitiveTypeGroupResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<GetSensitiveTypesExportResponse> getSensitiveTypesExport(
             GetSensitiveTypesExportRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -7086,6 +7258,12 @@ public class DataSafeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                 .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
                 .appendEnumQueryParam("accessLevel", request.getAccessLevel())
                 .appendQueryParam("targetId", request.getTargetId())
+                .appendQueryParam("scimQuery", request.getScimQuery())
+                .appendListQueryParam(
+                        "field",
+                        request.getField(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendEnumQueryParam("sortBy", request.getSortBy())
                 .appendQueryParam("findingKey", request.getFindingKey())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
@@ -7205,6 +7383,46 @@ public class DataSafeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                         "opc-next-page", ListGrantsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-prev-page", ListGrantsResponse.Builder::opcPrevPage)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListGroupedSensitiveTypesResponse> listGroupedSensitiveTypes(
+            ListGroupedSensitiveTypesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListGroupedSensitiveTypesRequest, ListGroupedSensitiveTypesResponse>
+                    handler) {
+
+        Validate.notBlank(
+                request.getSensitiveTypeGroupId(), "sensitiveTypeGroupId must not be blank");
+
+        return clientCall(request, ListGroupedSensitiveTypesResponse::builder)
+                .logger(LOG, "listGroupedSensitiveTypes")
+                .serviceDetails(
+                        "DataSafe",
+                        "ListGroupedSensitiveTypes",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SensitiveTypeGroup/ListGroupedSensitiveTypes")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListGroupedSensitiveTypesRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("sensitiveTypeGroups")
+                .appendPathParam(request.getSensitiveTypeGroupId())
+                .appendPathParam("groupedSensitiveTypes")
+                .appendQueryParam("sensitiveTypeId", request.getSensitiveTypeId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.datasafe.model.GroupedSensitiveTypeCollection.class,
+                        ListGroupedSensitiveTypesResponse.Builder::groupedSensitiveTypeCollection)
+                .handleResponseHeaderString("etag", ListGroupedSensitiveTypesResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListGroupedSensitiveTypesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListGroupedSensitiveTypesResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-prev-page", ListGroupedSensitiveTypesResponse.Builder::opcPrevPage)
                 .callAsync(handler);
     }
 
@@ -7428,6 +7646,46 @@ public class DataSafeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                         "opc-next-page", ListMaskingColumnsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-prev-page", ListMaskingColumnsResponse.Builder::opcPrevPage)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListMaskingErrorsResponse> listMaskingErrors(
+            ListMaskingErrorsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListMaskingErrorsRequest, ListMaskingErrorsResponse>
+                    handler) {
+
+        Validate.notBlank(request.getMaskingReportId(), "maskingReportId must not be blank");
+
+        return clientCall(request, ListMaskingErrorsResponse::builder)
+                .logger(LOG, "listMaskingErrors")
+                .serviceDetails(
+                        "DataSafe",
+                        "ListMaskingErrors",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/MaskingErrorSummary/ListMaskingErrors")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListMaskingErrorsRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("maskingReports")
+                .appendPathParam(request.getMaskingReportId())
+                .appendPathParam("maskingErrors")
+                .appendEnumQueryParam("stepName", request.getStepName())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.datasafe.model.MaskingErrorCollection.class,
+                        ListMaskingErrorsResponse.Builder::maskingErrorCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListMaskingErrorsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListMaskingErrorsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-prev-page", ListMaskingErrorsResponse.Builder::opcPrevPage)
                 .callAsync(handler);
     }
 
@@ -8668,6 +8926,70 @@ public class DataSafeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
     }
 
     @Override
+    public java.util.concurrent.Future<ListSensitiveColumnAnalyticsResponse>
+            listSensitiveColumnAnalytics(
+                    ListSensitiveColumnAnalyticsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListSensitiveColumnAnalyticsRequest,
+                                    ListSensitiveColumnAnalyticsResponse>
+                            handler) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListSensitiveColumnAnalyticsResponse::builder)
+                .logger(LOG, "listSensitiveColumnAnalytics")
+                .serviceDetails(
+                        "DataSafe",
+                        "ListSensitiveColumnAnalytics",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SensitiveDataModel/ListSensitiveColumnAnalytics")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListSensitiveColumnAnalyticsRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("sensitiveColumnAnalytics")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
+                .appendEnumQueryParam("accessLevel", request.getAccessLevel())
+                .appendQueryParam("targetId", request.getTargetId())
+                .appendListQueryParam(
+                        "sensitiveTypeId",
+                        request.getSensitiveTypeId(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("sensitiveTypeGroupId", request.getSensitiveTypeGroupId())
+                .appendQueryParam("sensitiveDataModelId", request.getSensitiveDataModelId())
+                .appendListQueryParam(
+                        "groupBy",
+                        request.getGroupBy(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "schemaName",
+                        request.getSchemaName(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "objectName",
+                        request.getObjectName(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "columnName",
+                        request.getColumnName(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.datasafe.model.SensitiveColumnAnalyticsCollection.class,
+                        ListSensitiveColumnAnalyticsResponse.Builder
+                                ::sensitiveColumnAnalyticsCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListSensitiveColumnAnalyticsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListSensitiveColumnAnalyticsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-prev-page", ListSensitiveColumnAnalyticsResponse.Builder::opcPrevPage)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<ListSensitiveColumnsResponse> listSensitiveColumns(
             ListSensitiveColumnsRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -8943,6 +9265,52 @@ public class DataSafeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                         "opc-next-page", ListSensitiveSchemasResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-prev-page", ListSensitiveSchemasResponse.Builder::opcPrevPage)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSensitiveTypeGroupsResponse> listSensitiveTypeGroups(
+            ListSensitiveTypeGroupsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListSensitiveTypeGroupsRequest, ListSensitiveTypeGroupsResponse>
+                    handler) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListSensitiveTypeGroupsResponse::builder)
+                .logger(LOG, "listSensitiveTypeGroups")
+                .serviceDetails(
+                        "DataSafe",
+                        "ListSensitiveTypeGroups",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SensitiveTypeGroupSummary/ListSensitiveTypeGroups")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListSensitiveTypeGroupsRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("sensitiveTypeGroups")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
+                .appendEnumQueryParam("accessLevel", request.getAccessLevel())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("sensitiveTypeGroupId", request.getSensitiveTypeGroupId())
+                .appendQueryParam(
+                        "timeCreatedGreaterThanOrEqualTo",
+                        request.getTimeCreatedGreaterThanOrEqualTo())
+                .appendQueryParam("timeCreatedLessThan", request.getTimeCreatedLessThan())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.datasafe.model.SensitiveTypeGroupCollection.class,
+                        ListSensitiveTypeGroupsResponse.Builder::sensitiveTypeGroupCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListSensitiveTypeGroupsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListSensitiveTypeGroupsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-prev-page", ListSensitiveTypeGroupsResponse.Builder::opcPrevPage)
                 .callAsync(handler);
     }
 
@@ -9983,6 +10351,7 @@ public class DataSafeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                 .appendPathParam("actions")
                 .appendPathParam("mask")
                 .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .hasBody()
                 .handleResponseHeaderString(
@@ -10093,6 +10462,45 @@ public class DataSafeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                         PatchDiscoveryJobResultsResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", PatchDiscoveryJobResultsResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PatchGroupedSensitiveTypesResponse>
+            patchGroupedSensitiveTypes(
+                    PatchGroupedSensitiveTypesRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    PatchGroupedSensitiveTypesRequest,
+                                    PatchGroupedSensitiveTypesResponse>
+                            handler) {
+
+        Validate.notBlank(
+                request.getSensitiveTypeGroupId(), "sensitiveTypeGroupId must not be blank");
+        Objects.requireNonNull(
+                request.getPatchGroupedSensitiveTypesDetails(),
+                "patchGroupedSensitiveTypesDetails is required");
+
+        return clientCall(request, PatchGroupedSensitiveTypesResponse::builder)
+                .logger(LOG, "patchGroupedSensitiveTypes")
+                .serviceDetails(
+                        "DataSafe",
+                        "PatchGroupedSensitiveTypes",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SensitiveTypeGroup/PatchGroupedSensitiveTypes")
+                .method(com.oracle.bmc.http.client.Method.PATCH)
+                .requestBuilder(PatchGroupedSensitiveTypesRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("sensitiveTypeGroups")
+                .appendPathParam(request.getSensitiveTypeGroupId())
+                .appendPathParam("groupedSensitiveTypes")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        PatchGroupedSensitiveTypesResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", PatchGroupedSensitiveTypesResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 
@@ -11931,6 +12339,42 @@ public class DataSafeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                         UpdateSensitiveTypeResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateSensitiveTypeResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateSensitiveTypeGroupResponse> updateSensitiveTypeGroup(
+            UpdateSensitiveTypeGroupRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateSensitiveTypeGroupRequest, UpdateSensitiveTypeGroupResponse>
+                    handler) {
+
+        Validate.notBlank(
+                request.getSensitiveTypeGroupId(), "sensitiveTypeGroupId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateSensitiveTypeGroupDetails(),
+                "updateSensitiveTypeGroupDetails is required");
+
+        return clientCall(request, UpdateSensitiveTypeGroupResponse::builder)
+                .logger(LOG, "updateSensitiveTypeGroup")
+                .serviceDetails(
+                        "DataSafe",
+                        "UpdateSensitiveTypeGroup",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SensitiveTypeGroup/UpdateSensitiveTypeGroup")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateSensitiveTypeGroupRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("sensitiveTypeGroups")
+                .appendPathParam(request.getSensitiveTypeGroupId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        UpdateSensitiveTypeGroupResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateSensitiveTypeGroupResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 

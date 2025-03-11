@@ -58,7 +58,8 @@ public final class CreateCloudVmClusterDetails
         "dataCollectionOptions",
         "systemVersion",
         "fileSystemConfigurationDetails",
-        "cloudAutomationUpdateDetails"
+        "cloudAutomationUpdateDetails",
+        "vmClusterType"
     })
     public CreateCloudVmClusterDetails(
             String compartmentId,
@@ -94,7 +95,8 @@ public final class CreateCloudVmClusterDetails
             DataCollectionOptions dataCollectionOptions,
             String systemVersion,
             java.util.List<FileSystemConfigurationDetail> fileSystemConfigurationDetails,
-            CloudAutomationUpdateDetails cloudAutomationUpdateDetails) {
+            CloudAutomationUpdateDetails cloudAutomationUpdateDetails,
+            VmClusterType vmClusterType) {
         super();
         this.compartmentId = compartmentId;
         this.subscriptionId = subscriptionId;
@@ -130,6 +132,7 @@ public final class CreateCloudVmClusterDetails
         this.systemVersion = systemVersion;
         this.fileSystemConfigurationDetails = fileSystemConfigurationDetails;
         this.cloudAutomationUpdateDetails = cloudAutomationUpdateDetails;
+        this.vmClusterType = vmClusterType;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -798,6 +801,21 @@ public final class CreateCloudVmClusterDetails
             this.__explicitlySet__.add("cloudAutomationUpdateDetails");
             return this;
         }
+        /** The vmcluster type for the VM cluster/Cloud VM cluster. */
+        @com.fasterxml.jackson.annotation.JsonProperty("vmClusterType")
+        private VmClusterType vmClusterType;
+
+        /**
+         * The vmcluster type for the VM cluster/Cloud VM cluster.
+         *
+         * @param vmClusterType the value to set
+         * @return this builder
+         */
+        public Builder vmClusterType(VmClusterType vmClusterType) {
+            this.vmClusterType = vmClusterType;
+            this.__explicitlySet__.add("vmClusterType");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -838,7 +856,8 @@ public final class CreateCloudVmClusterDetails
                             this.dataCollectionOptions,
                             this.systemVersion,
                             this.fileSystemConfigurationDetails,
-                            this.cloudAutomationUpdateDetails);
+                            this.cloudAutomationUpdateDetails,
+                            this.vmClusterType);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -948,6 +967,9 @@ public final class CreateCloudVmClusterDetails
             }
             if (model.wasPropertyExplicitlySet("cloudAutomationUpdateDetails")) {
                 this.cloudAutomationUpdateDetails(model.getCloudAutomationUpdateDetails());
+            }
+            if (model.wasPropertyExplicitlySet("vmClusterType")) {
+                this.vmClusterType(model.getVmClusterType());
             }
             return this;
         }
@@ -1580,6 +1602,52 @@ public final class CreateCloudVmClusterDetails
         return cloudAutomationUpdateDetails;
     }
 
+    /** The vmcluster type for the VM cluster/Cloud VM cluster. */
+    public enum VmClusterType implements com.oracle.bmc.http.internal.BmcEnum {
+        Regular("REGULAR"),
+        Developer("DEVELOPER"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, VmClusterType> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (VmClusterType v : VmClusterType.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        VmClusterType(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static VmClusterType create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid VmClusterType: " + key);
+        }
+    };
+    /** The vmcluster type for the VM cluster/Cloud VM cluster. */
+    @com.fasterxml.jackson.annotation.JsonProperty("vmClusterType")
+    private final VmClusterType vmClusterType;
+
+    /**
+     * The vmcluster type for the VM cluster/Cloud VM cluster.
+     *
+     * @return the value
+     */
+    public VmClusterType getVmClusterType() {
+        return vmClusterType;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1633,6 +1701,7 @@ public final class CreateCloudVmClusterDetails
                 .append(String.valueOf(this.fileSystemConfigurationDetails));
         sb.append(", cloudAutomationUpdateDetails=")
                 .append(String.valueOf(this.cloudAutomationUpdateDetails));
+        sb.append(", vmClusterType=").append(String.valueOf(this.vmClusterType));
         sb.append(")");
         return sb.toString();
     }
@@ -1687,6 +1756,7 @@ public final class CreateCloudVmClusterDetails
                         this.fileSystemConfigurationDetails, other.fileSystemConfigurationDetails)
                 && java.util.Objects.equals(
                         this.cloudAutomationUpdateDetails, other.cloudAutomationUpdateDetails)
+                && java.util.Objects.equals(this.vmClusterType, other.vmClusterType)
                 && super.equals(other);
     }
 
@@ -1794,6 +1864,9 @@ public final class CreateCloudVmClusterDetails
                         + (this.cloudAutomationUpdateDetails == null
                                 ? 43
                                 : this.cloudAutomationUpdateDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.vmClusterType == null ? 43 : this.vmClusterType.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

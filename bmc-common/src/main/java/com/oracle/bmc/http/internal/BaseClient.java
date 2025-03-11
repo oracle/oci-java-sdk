@@ -133,7 +133,8 @@ abstract class BaseClient implements AutoCloseable {
         }
         List<ClientConfigurator> additionalClientConfigurators =
                 InternalBuilderAccess.getAdditionalClientConfigurators(builder);
-
+        // Adding all default Client configurators
+        additionalClientConfigurators.addAll(authenticationDetailsConfigurators);
         List<SpiClientConfigurator> additionalSpiClientConfigurator =
                 SpiClientConfigurator.getSpiClientConfigurators();
         HashSet<String> disabledSpiClasses =

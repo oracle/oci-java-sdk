@@ -21,13 +21,28 @@ package com.oracle.bmc.datascience.model;
         com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
 public final class Metadata extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"key", "value", "description", "category"})
-    public Metadata(String key, String value, String description, String category) {
+    @java.beans.ConstructorProperties({
+        "key",
+        "value",
+        "description",
+        "category",
+        "keywords",
+        "hasArtifact"
+    })
+    public Metadata(
+            String key,
+            String value,
+            String description,
+            String category,
+            java.util.List<String> keywords,
+            Boolean hasArtifact) {
         super();
         this.key = key;
         this.value = value;
         this.description = description;
         this.category = category;
+        this.keywords = keywords;
+        this.hasArtifact = hasArtifact;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -35,7 +50,8 @@ public final class Metadata extends com.oracle.bmc.http.client.internal.Explicit
         /**
          * Key of the model Metadata. The key can either be user defined or OCI defined. List of OCI
          * defined keys: * useCaseType * libraryName * libraryVersion * estimatorClass *
-         * hyperParameters * testArtifactresults
+         * hyperParameters * testArtifactresults * fineTuningConfiguration * deploymentConfiguration
+         * * readme * license * evaluationConfiguration
          */
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
@@ -43,7 +59,8 @@ public final class Metadata extends com.oracle.bmc.http.client.internal.Explicit
         /**
          * Key of the model Metadata. The key can either be user defined or OCI defined. List of OCI
          * defined keys: * useCaseType * libraryName * libraryVersion * estimatorClass *
-         * hyperParameters * testArtifactresults
+         * hyperParameters * testArtifactresults * fineTuningConfiguration * deploymentConfiguration
+         * * readme * license * evaluationConfiguration
          *
          * @param key the value to set
          * @return this builder
@@ -120,12 +137,49 @@ public final class Metadata extends com.oracle.bmc.http.client.internal.Explicit
             this.__explicitlySet__.add("category");
             return this;
         }
+        /** list of keywords for searching */
+        @com.fasterxml.jackson.annotation.JsonProperty("keywords")
+        private java.util.List<String> keywords;
+
+        /**
+         * list of keywords for searching
+         *
+         * @param keywords the value to set
+         * @return this builder
+         */
+        public Builder keywords(java.util.List<String> keywords) {
+            this.keywords = keywords;
+            this.__explicitlySet__.add("keywords");
+            return this;
+        }
+        /** Is there any artifact present for the metadata. */
+        @com.fasterxml.jackson.annotation.JsonProperty("hasArtifact")
+        private Boolean hasArtifact;
+
+        /**
+         * Is there any artifact present for the metadata.
+         *
+         * @param hasArtifact the value to set
+         * @return this builder
+         */
+        public Builder hasArtifact(Boolean hasArtifact) {
+            this.hasArtifact = hasArtifact;
+            this.__explicitlySet__.add("hasArtifact");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public Metadata build() {
-            Metadata model = new Metadata(this.key, this.value, this.description, this.category);
+            Metadata model =
+                    new Metadata(
+                            this.key,
+                            this.value,
+                            this.description,
+                            this.category,
+                            this.keywords,
+                            this.hasArtifact);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -146,6 +200,12 @@ public final class Metadata extends com.oracle.bmc.http.client.internal.Explicit
             if (model.wasPropertyExplicitlySet("category")) {
                 this.category(model.getCategory());
             }
+            if (model.wasPropertyExplicitlySet("keywords")) {
+                this.keywords(model.getKeywords());
+            }
+            if (model.wasPropertyExplicitlySet("hasArtifact")) {
+                this.hasArtifact(model.getHasArtifact());
+            }
             return this;
         }
     }
@@ -162,7 +222,8 @@ public final class Metadata extends com.oracle.bmc.http.client.internal.Explicit
     /**
      * Key of the model Metadata. The key can either be user defined or OCI defined. List of OCI
      * defined keys: * useCaseType * libraryName * libraryVersion * estimatorClass * hyperParameters
-     * * testArtifactresults
+     * * testArtifactresults * fineTuningConfiguration * deploymentConfiguration * readme * license
+     * * evaluationConfiguration
      */
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
@@ -170,7 +231,8 @@ public final class Metadata extends com.oracle.bmc.http.client.internal.Explicit
     /**
      * Key of the model Metadata. The key can either be user defined or OCI defined. List of OCI
      * defined keys: * useCaseType * libraryName * libraryVersion * estimatorClass * hyperParameters
-     * * testArtifactresults
+     * * testArtifactresults * fineTuningConfiguration * deploymentConfiguration * readme * license
+     * * evaluationConfiguration
      *
      * @return the value
      */
@@ -239,6 +301,32 @@ public final class Metadata extends com.oracle.bmc.http.client.internal.Explicit
         return category;
     }
 
+    /** list of keywords for searching */
+    @com.fasterxml.jackson.annotation.JsonProperty("keywords")
+    private final java.util.List<String> keywords;
+
+    /**
+     * list of keywords for searching
+     *
+     * @return the value
+     */
+    public java.util.List<String> getKeywords() {
+        return keywords;
+    }
+
+    /** Is there any artifact present for the metadata. */
+    @com.fasterxml.jackson.annotation.JsonProperty("hasArtifact")
+    private final Boolean hasArtifact;
+
+    /**
+     * Is there any artifact present for the metadata.
+     *
+     * @return the value
+     */
+    public Boolean getHasArtifact() {
+        return hasArtifact;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -258,6 +346,8 @@ public final class Metadata extends com.oracle.bmc.http.client.internal.Explicit
         sb.append(", value=").append(String.valueOf(this.value));
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", category=").append(String.valueOf(this.category));
+        sb.append(", keywords=").append(String.valueOf(this.keywords));
+        sb.append(", hasArtifact=").append(String.valueOf(this.hasArtifact));
         sb.append(")");
         return sb.toString();
     }
@@ -276,6 +366,8 @@ public final class Metadata extends com.oracle.bmc.http.client.internal.Explicit
                 && java.util.Objects.equals(this.value, other.value)
                 && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.category, other.category)
+                && java.util.Objects.equals(this.keywords, other.keywords)
+                && java.util.Objects.equals(this.hasArtifact, other.hasArtifact)
                 && super.equals(other);
     }
 
@@ -287,6 +379,8 @@ public final class Metadata extends com.oracle.bmc.http.client.internal.Explicit
         result = (result * PRIME) + (this.value == null ? 43 : this.value.hashCode());
         result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
         result = (result * PRIME) + (this.category == null ? 43 : this.category.hashCode());
+        result = (result * PRIME) + (this.keywords == null ? 43 : this.keywords.hashCode());
+        result = (result * PRIME) + (this.hasArtifact == null ? 43 : this.hasArtifact.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }
