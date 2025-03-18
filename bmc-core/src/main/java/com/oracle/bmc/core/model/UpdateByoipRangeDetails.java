@@ -23,25 +23,15 @@ package com.oracle.bmc.core.model;
 public final class UpdateByoipRangeDetails
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({
-        "definedTags",
-        "displayName",
-        "freeformTags",
-        "ipAnycastId",
-        "monitorIp"
-    })
+    @java.beans.ConstructorProperties({"definedTags", "displayName", "freeformTags"})
     public UpdateByoipRangeDetails(
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             String displayName,
-            java.util.Map<String, String> freeformTags,
-            String ipAnycastId,
-            String monitorIp) {
+            java.util.Map<String, String> freeformTags) {
         super();
         this.definedTags = definedTags;
         this.displayName = displayName;
         this.freeformTags = freeformTags;
-        this.ipAnycastId = ipAnycastId;
-        this.monitorIp = monitorIp;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -116,40 +106,6 @@ public final class UpdateByoipRangeDetails
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
-        /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * {@code IpAnycast} resource.
-         */
-        @com.fasterxml.jackson.annotation.JsonProperty("ipAnycastId")
-        private String ipAnycastId;
-
-        /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * {@code IpAnycast} resource.
-         *
-         * @param ipAnycastId the value to set
-         * @return this builder
-         */
-        public Builder ipAnycastId(String ipAnycastId) {
-            this.ipAnycastId = ipAnycastId;
-            this.__explicitlySet__.add("ipAnycastId");
-            return this;
-        }
-        /** The IP address of the CIDR for Prefix Monitoring. */
-        @com.fasterxml.jackson.annotation.JsonProperty("monitorIp")
-        private String monitorIp;
-
-        /**
-         * The IP address of the CIDR for Prefix Monitoring.
-         *
-         * @param monitorIp the value to set
-         * @return this builder
-         */
-        public Builder monitorIp(String monitorIp) {
-            this.monitorIp = monitorIp;
-            this.__explicitlySet__.add("monitorIp");
-            return this;
-        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -157,11 +113,7 @@ public final class UpdateByoipRangeDetails
         public UpdateByoipRangeDetails build() {
             UpdateByoipRangeDetails model =
                     new UpdateByoipRangeDetails(
-                            this.definedTags,
-                            this.displayName,
-                            this.freeformTags,
-                            this.ipAnycastId,
-                            this.monitorIp);
+                            this.definedTags, this.displayName, this.freeformTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -178,12 +130,6 @@ public final class UpdateByoipRangeDetails
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
-            }
-            if (model.wasPropertyExplicitlySet("ipAnycastId")) {
-                this.ipAnycastId(model.getIpAnycastId());
-            }
-            if (model.wasPropertyExplicitlySet("monitorIp")) {
-                this.monitorIp(model.getMonitorIp());
             }
             return this;
         }
@@ -261,36 +207,6 @@ public final class UpdateByoipRangeDetails
         return freeformTags;
     }
 
-    /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * {@code IpAnycast} resource.
-     */
-    @com.fasterxml.jackson.annotation.JsonProperty("ipAnycastId")
-    private final String ipAnycastId;
-
-    /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * {@code IpAnycast} resource.
-     *
-     * @return the value
-     */
-    public String getIpAnycastId() {
-        return ipAnycastId;
-    }
-
-    /** The IP address of the CIDR for Prefix Monitoring. */
-    @com.fasterxml.jackson.annotation.JsonProperty("monitorIp")
-    private final String monitorIp;
-
-    /**
-     * The IP address of the CIDR for Prefix Monitoring.
-     *
-     * @return the value
-     */
-    public String getMonitorIp() {
-        return monitorIp;
-    }
-
     @Override
     public String toString() {
         return this.toString(true);
@@ -309,8 +225,6 @@ public final class UpdateByoipRangeDetails
         sb.append("definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
-        sb.append(", ipAnycastId=").append(String.valueOf(this.ipAnycastId));
-        sb.append(", monitorIp=").append(String.valueOf(this.monitorIp));
         sb.append(")");
         return sb.toString();
     }
@@ -328,8 +242,6 @@ public final class UpdateByoipRangeDetails
         return java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
-                && java.util.Objects.equals(this.ipAnycastId, other.ipAnycastId)
-                && java.util.Objects.equals(this.monitorIp, other.monitorIp)
                 && super.equals(other);
     }
 
@@ -340,8 +252,6 @@ public final class UpdateByoipRangeDetails
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
-        result = (result * PRIME) + (this.ipAnycastId == null ? 43 : this.ipAnycastId.hashCode());
-        result = (result * PRIME) + (this.monitorIp == null ? 43 : this.monitorIp.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

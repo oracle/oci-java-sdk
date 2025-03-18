@@ -243,6 +243,44 @@ public interface Compute extends AutoCloseable {
             ChangeComputeClusterCompartmentRequest request);
 
     /**
+     * Moves a compute GPU memory cluster into a different compartment. For information about moving
+     * resources between compartments, see [Moving Resources to a Different
+     * Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ChangeComputeGpuMemoryClusterCompartmentExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ChangeComputeGpuMemoryClusterCompartment API.
+     */
+    ChangeComputeGpuMemoryClusterCompartmentResponse changeComputeGpuMemoryClusterCompartment(
+            ChangeComputeGpuMemoryClusterCompartmentRequest request);
+
+    /**
+     * Moves a compute GPU memory fabric into a different compartment. For information about moving
+     * resources between compartments, see [Moving Resources to a Different
+     * Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ChangeComputeGpuMemoryFabricCompartmentExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ChangeComputeGpuMemoryFabricCompartment API.
+     */
+    ChangeComputeGpuMemoryFabricCompartmentResponse changeComputeGpuMemoryFabricCompartment(
+            ChangeComputeGpuMemoryFabricCompartmentRequest request);
+
+    /**
      * Moves a compute image capability schema into a different compartment within the same tenancy.
      * For information about moving resources between compartments, see [Moving Resources to a
      * Different
@@ -434,6 +472,23 @@ public interface Compute extends AutoCloseable {
     CreateComputeClusterResponse createComputeCluster(CreateComputeClusterRequest request);
 
     /**
+     * Create a compute GPU memory cluster instance on a specific compute GPU memory fabric
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateComputeGpuMemoryClusterExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     CreateComputeGpuMemoryCluster API.
+     */
+    CreateComputeGpuMemoryClusterResponse createComputeGpuMemoryCluster(
+            CreateComputeGpuMemoryClusterRequest request);
+
+    /**
      * Creates compute image capability schema.
      *
      * @param request The request object containing the details to send
@@ -606,6 +661,23 @@ public interface Compute extends AutoCloseable {
      *     DeleteComputeCluster API.
      */
     DeleteComputeClusterResponse deleteComputeCluster(DeleteComputeClusterRequest request);
+
+    /**
+     * Terminates and deletes the specified compute GPU memory cluster and underlying instances.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteComputeGpuMemoryClusterExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     DeleteComputeGpuMemoryCluster API.
+     */
+    DeleteComputeGpuMemoryClusterResponse deleteComputeGpuMemoryCluster(
+            DeleteComputeGpuMemoryClusterRequest request);
 
     /**
      * Deletes the specified Compute Image Capability Schema
@@ -933,6 +1005,40 @@ public interface Compute extends AutoCloseable {
     GetComputeGlobalImageCapabilitySchemaVersionResponse
             getComputeGlobalImageCapabilitySchemaVersion(
                     GetComputeGlobalImageCapabilitySchemaVersionRequest request);
+
+    /**
+     * Gets information about the specified compute GPU memory cluster
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetComputeGpuMemoryClusterExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     GetComputeGpuMemoryCluster API.
+     */
+    GetComputeGpuMemoryClusterResponse getComputeGpuMemoryCluster(
+            GetComputeGpuMemoryClusterRequest request);
+
+    /**
+     * Gets information about the specified compute GPU memory fabric
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetComputeGpuMemoryFabricExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     GetComputeGpuMemoryFabric API.
+     */
+    GetComputeGpuMemoryFabricResponse getComputeGpuMemoryFabric(
+            GetComputeGpuMemoryFabricRequest request);
 
     /**
      * Gets the specified Compute Image Capability Schema
@@ -1549,6 +1655,57 @@ public interface Compute extends AutoCloseable {
             ListComputeGlobalImageCapabilitySchemasRequest request);
 
     /**
+     * List all of the GPU memory cluster instances.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListComputeGpuMemoryClusterInstancesExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListComputeGpuMemoryClusterInstances API.
+     */
+    ListComputeGpuMemoryClusterInstancesResponse listComputeGpuMemoryClusterInstances(
+            ListComputeGpuMemoryClusterInstancesRequest request);
+
+    /**
+     * List all of the compute GPU memory clusters.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListComputeGpuMemoryClustersExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListComputeGpuMemoryClusters API.
+     */
+    ListComputeGpuMemoryClustersResponse listComputeGpuMemoryClusters(
+            ListComputeGpuMemoryClustersRequest request);
+
+    /**
+     * Lists the compute GPU memory fabrics that match the specified criteria and compartmentId.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListComputeGpuMemoryFabricsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListComputeGpuMemoryFabrics API.
+     */
+    ListComputeGpuMemoryFabricsResponse listComputeGpuMemoryFabrics(
+            ListComputeGpuMemoryFabricsRequest request);
+
+    /**
      * Lists Compute Image Capability Schema in the specified compartment. You can also query by a
      * specific imageId.
      *
@@ -1939,6 +2096,40 @@ public interface Compute extends AutoCloseable {
      *     UpdateComputeCluster API.
      */
     UpdateComputeClusterResponse updateComputeCluster(UpdateComputeClusterRequest request);
+
+    /**
+     * Updates a compute gpu memory cluster resource.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateComputeGpuMemoryClusterExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     UpdateComputeGpuMemoryCluster API.
+     */
+    UpdateComputeGpuMemoryClusterResponse updateComputeGpuMemoryCluster(
+            UpdateComputeGpuMemoryClusterRequest request);
+
+    /**
+     * Customer can update displayName and tags for compute GPU memory fabric record
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateComputeGpuMemoryFabricExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     UpdateComputeGpuMemoryFabric API.
+     */
+    UpdateComputeGpuMemoryFabricResponse updateComputeGpuMemoryFabric(
+            UpdateComputeGpuMemoryFabricRequest request);
 
     /**
      * Updates the specified Compute Image Capability Schema

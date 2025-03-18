@@ -43,7 +43,8 @@ public final class CreateDeploymentDetails
         "deploymentType",
         "oggData",
         "maintenanceWindow",
-        "maintenanceConfiguration"
+        "maintenanceConfiguration",
+        "backupSchedule"
     })
     public CreateDeploymentDetails(
             String displayName,
@@ -65,7 +66,8 @@ public final class CreateDeploymentDetails
             DeploymentType deploymentType,
             CreateOggDeploymentDetails oggData,
             CreateMaintenanceWindowDetails maintenanceWindow,
-            CreateMaintenanceConfigurationDetails maintenanceConfiguration) {
+            CreateMaintenanceConfigurationDetails maintenanceConfiguration,
+            CreateBackupScheduleDetails backupSchedule) {
         super();
         this.displayName = displayName;
         this.licenseModel = licenseModel;
@@ -87,6 +89,7 @@ public final class CreateDeploymentDetails
         this.oggData = oggData;
         this.maintenanceWindow = maintenanceWindow;
         this.maintenanceConfiguration = maintenanceConfiguration;
+        this.backupSchedule = backupSchedule;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -430,6 +433,15 @@ public final class CreateDeploymentDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("backupSchedule")
+        private CreateBackupScheduleDetails backupSchedule;
+
+        public Builder backupSchedule(CreateBackupScheduleDetails backupSchedule) {
+            this.backupSchedule = backupSchedule;
+            this.__explicitlySet__.add("backupSchedule");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -455,7 +467,8 @@ public final class CreateDeploymentDetails
                             this.deploymentType,
                             this.oggData,
                             this.maintenanceWindow,
-                            this.maintenanceConfiguration);
+                            this.maintenanceConfiguration,
+                            this.backupSchedule);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -523,6 +536,9 @@ public final class CreateDeploymentDetails
             }
             if (model.wasPropertyExplicitlySet("maintenanceConfiguration")) {
                 this.maintenanceConfiguration(model.getMaintenanceConfiguration());
+            }
+            if (model.wasPropertyExplicitlySet("backupSchedule")) {
+                this.backupSchedule(model.getBackupSchedule());
             }
             return this;
         }
@@ -831,6 +847,13 @@ public final class CreateDeploymentDetails
         return maintenanceConfiguration;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("backupSchedule")
+    private final CreateBackupScheduleDetails backupSchedule;
+
+    public CreateBackupScheduleDetails getBackupSchedule() {
+        return backupSchedule;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -867,6 +890,7 @@ public final class CreateDeploymentDetails
         sb.append(", maintenanceWindow=").append(String.valueOf(this.maintenanceWindow));
         sb.append(", maintenanceConfiguration=")
                 .append(String.valueOf(this.maintenanceConfiguration));
+        sb.append(", backupSchedule=").append(String.valueOf(this.backupSchedule));
         sb.append(")");
         return sb.toString();
     }
@@ -902,6 +926,7 @@ public final class CreateDeploymentDetails
                 && java.util.Objects.equals(this.maintenanceWindow, other.maintenanceWindow)
                 && java.util.Objects.equals(
                         this.maintenanceConfiguration, other.maintenanceConfiguration)
+                && java.util.Objects.equals(this.backupSchedule, other.backupSchedule)
                 && super.equals(other);
     }
 
@@ -953,6 +978,9 @@ public final class CreateDeploymentDetails
                         + (this.maintenanceConfiguration == null
                                 ? 43
                                 : this.maintenanceConfiguration.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.backupSchedule == null ? 43 : this.backupSchedule.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }
