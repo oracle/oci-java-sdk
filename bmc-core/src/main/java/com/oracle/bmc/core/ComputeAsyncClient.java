@@ -412,6 +412,86 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
     }
 
     @Override
+    public java.util.concurrent.Future<ChangeComputeGpuMemoryClusterCompartmentResponse>
+            changeComputeGpuMemoryClusterCompartment(
+                    ChangeComputeGpuMemoryClusterCompartmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeComputeGpuMemoryClusterCompartmentRequest,
+                                    ChangeComputeGpuMemoryClusterCompartmentResponse>
+                            handler) {
+
+        Validate.notBlank(
+                request.getComputeGpuMemoryClusterId(),
+                "computeGpuMemoryClusterId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeComputeGpuMemoryClusterCompartmentDetails(),
+                "changeComputeGpuMemoryClusterCompartmentDetails is required");
+
+        return clientCall(request, ChangeComputeGpuMemoryClusterCompartmentResponse::builder)
+                .logger(LOG, "changeComputeGpuMemoryClusterCompartment")
+                .serviceDetails(
+                        "Compute",
+                        "ChangeComputeGpuMemoryClusterCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeGpuMemoryCluster/ChangeComputeGpuMemoryClusterCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeComputeGpuMemoryClusterCompartmentRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("computeGpuMemoryClusters")
+                .appendPathParam(request.getComputeGpuMemoryClusterId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeComputeGpuMemoryClusterCompartmentResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ChangeComputeGpuMemoryFabricCompartmentResponse>
+            changeComputeGpuMemoryFabricCompartment(
+                    ChangeComputeGpuMemoryFabricCompartmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeComputeGpuMemoryFabricCompartmentRequest,
+                                    ChangeComputeGpuMemoryFabricCompartmentResponse>
+                            handler) {
+
+        Validate.notBlank(
+                request.getComputeGpuMemoryFabricId(),
+                "computeGpuMemoryFabricId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeComputeGpuMemoryFabricCompartmentDetails(),
+                "changeComputeGpuMemoryFabricCompartmentDetails is required");
+
+        return clientCall(request, ChangeComputeGpuMemoryFabricCompartmentResponse::builder)
+                .logger(LOG, "changeComputeGpuMemoryFabricCompartment")
+                .serviceDetails(
+                        "Compute",
+                        "ChangeComputeGpuMemoryFabricCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeGpuMemoryFabric/ChangeComputeGpuMemoryFabricCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeComputeGpuMemoryFabricCompartmentRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("computeGpuMemoryFabrics")
+                .appendPathParam(request.getComputeGpuMemoryFabricId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeComputeGpuMemoryFabricCompartmentResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<ChangeComputeImageCapabilitySchemaCompartmentResponse>
             changeComputeImageCapabilitySchemaCompartment(
                     ChangeComputeImageCapabilitySchemaCompartmentRequest request,
@@ -752,6 +832,46 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
     }
 
     @Override
+    public java.util.concurrent.Future<CreateComputeGpuMemoryClusterResponse>
+            createComputeGpuMemoryCluster(
+                    CreateComputeGpuMemoryClusterRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    CreateComputeGpuMemoryClusterRequest,
+                                    CreateComputeGpuMemoryClusterResponse>
+                            handler) {
+        Objects.requireNonNull(
+                request.getCreateComputeGpuMemoryClusterDetails(),
+                "createComputeGpuMemoryClusterDetails is required");
+
+        return clientCall(request, CreateComputeGpuMemoryClusterResponse::builder)
+                .logger(LOG, "createComputeGpuMemoryCluster")
+                .serviceDetails(
+                        "Compute",
+                        "CreateComputeGpuMemoryCluster",
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeGpuMemoryCluster/CreateComputeGpuMemoryCluster")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateComputeGpuMemoryClusterRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("computeGpuMemoryClusters")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.ComputeGpuMemoryCluster.class,
+                        CreateComputeGpuMemoryClusterResponse.Builder::computeGpuMemoryCluster)
+                .handleResponseHeaderString(
+                        "etag", CreateComputeGpuMemoryClusterResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        CreateComputeGpuMemoryClusterResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CreateComputeGpuMemoryClusterResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateComputeImageCapabilitySchemaResponse>
             createComputeImageCapabilitySchema(
                     CreateComputeImageCapabilitySchemaRequest request,
@@ -1017,6 +1137,42 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
                 .appendHeader("if-match", request.getIfMatch())
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteComputeClusterResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteComputeGpuMemoryClusterResponse>
+            deleteComputeGpuMemoryCluster(
+                    DeleteComputeGpuMemoryClusterRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteComputeGpuMemoryClusterRequest,
+                                    DeleteComputeGpuMemoryClusterResponse>
+                            handler) {
+
+        Validate.notBlank(
+                request.getComputeGpuMemoryClusterId(),
+                "computeGpuMemoryClusterId must not be blank");
+
+        return clientCall(request, DeleteComputeGpuMemoryClusterResponse::builder)
+                .logger(LOG, "deleteComputeGpuMemoryCluster")
+                .serviceDetails(
+                        "Compute",
+                        "DeleteComputeGpuMemoryCluster",
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeGpuMemoryCluster/DeleteComputeGpuMemoryCluster")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteComputeGpuMemoryClusterRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("computeGpuMemoryClusters")
+                .appendPathParam(request.getComputeGpuMemoryClusterId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        DeleteComputeGpuMemoryClusterResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeleteComputeGpuMemoryClusterResponse.Builder::opcWorkRequestId)
                 .callAsync(handler);
     }
 
@@ -1599,6 +1755,75 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
                 .handleResponseHeaderString(
                         "opc-request-id",
                         GetComputeGlobalImageCapabilitySchemaVersionResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetComputeGpuMemoryClusterResponse>
+            getComputeGpuMemoryCluster(
+                    GetComputeGpuMemoryClusterRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetComputeGpuMemoryClusterRequest,
+                                    GetComputeGpuMemoryClusterResponse>
+                            handler) {
+
+        Validate.notBlank(
+                request.getComputeGpuMemoryClusterId(),
+                "computeGpuMemoryClusterId must not be blank");
+
+        return clientCall(request, GetComputeGpuMemoryClusterResponse::builder)
+                .logger(LOG, "getComputeGpuMemoryCluster")
+                .serviceDetails(
+                        "Compute",
+                        "GetComputeGpuMemoryCluster",
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeGpuMemoryCluster/GetComputeGpuMemoryCluster")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetComputeGpuMemoryClusterRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("computeGpuMemoryClusters")
+                .appendPathParam(request.getComputeGpuMemoryClusterId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.core.model.ComputeGpuMemoryCluster.class,
+                        GetComputeGpuMemoryClusterResponse.Builder::computeGpuMemoryCluster)
+                .handleResponseHeaderString(
+                        "etag", GetComputeGpuMemoryClusterResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetComputeGpuMemoryClusterResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetComputeGpuMemoryFabricResponse> getComputeGpuMemoryFabric(
+            GetComputeGpuMemoryFabricRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetComputeGpuMemoryFabricRequest, GetComputeGpuMemoryFabricResponse>
+                    handler) {
+
+        Validate.notBlank(
+                request.getComputeGpuMemoryFabricId(),
+                "computeGpuMemoryFabricId must not be blank");
+
+        return clientCall(request, GetComputeGpuMemoryFabricResponse::builder)
+                .logger(LOG, "getComputeGpuMemoryFabric")
+                .serviceDetails(
+                        "Compute",
+                        "GetComputeGpuMemoryFabric",
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeGpuMemoryFabric/GetComputeGpuMemoryFabric")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetComputeGpuMemoryFabricRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("computeGpuMemoryFabrics")
+                .appendPathParam(request.getComputeGpuMemoryFabricId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.core.model.ComputeGpuMemoryFabric.class,
+                        GetComputeGpuMemoryFabricResponse.Builder::computeGpuMemoryFabric)
+                .handleResponseHeaderString("etag", GetComputeGpuMemoryFabricResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetComputeGpuMemoryFabricResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 
@@ -2713,6 +2938,146 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
     }
 
     @Override
+    public java.util.concurrent.Future<ListComputeGpuMemoryClusterInstancesResponse>
+            listComputeGpuMemoryClusterInstances(
+                    ListComputeGpuMemoryClusterInstancesRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListComputeGpuMemoryClusterInstancesRequest,
+                                    ListComputeGpuMemoryClusterInstancesResponse>
+                            handler) {
+
+        Validate.notBlank(
+                request.getComputeGpuMemoryClusterId(),
+                "computeGpuMemoryClusterId must not be blank");
+
+        return clientCall(request, ListComputeGpuMemoryClusterInstancesResponse::builder)
+                .logger(LOG, "listComputeGpuMemoryClusterInstances")
+                .serviceDetails(
+                        "Compute",
+                        "ListComputeGpuMemoryClusterInstances",
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeGpuMemoryClusterInstanceSummary/ListComputeGpuMemoryClusterInstances")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListComputeGpuMemoryClusterInstancesRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("computeGpuMemoryClusters")
+                .appendPathParam(request.getComputeGpuMemoryClusterId())
+                .appendPathParam("instances")
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendQueryParam("limit", request.getLimit())
+                .accept("application/json, application/x-json-stream")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.core.model.ComputeGpuMemoryClusterInstanceCollection.class,
+                        ListComputeGpuMemoryClusterInstancesResponse.Builder
+                                ::computeGpuMemoryClusterInstanceCollection)
+                .handleResponseHeaderString(
+                        "etag", ListComputeGpuMemoryClusterInstancesResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListComputeGpuMemoryClusterInstancesResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListComputeGpuMemoryClusterInstancesResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListComputeGpuMemoryClustersResponse>
+            listComputeGpuMemoryClusters(
+                    ListComputeGpuMemoryClustersRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListComputeGpuMemoryClustersRequest,
+                                    ListComputeGpuMemoryClustersResponse>
+                            handler) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListComputeGpuMemoryClustersResponse::builder)
+                .logger(LOG, "listComputeGpuMemoryClusters")
+                .serviceDetails(
+                        "Compute",
+                        "ListComputeGpuMemoryClusters",
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeGpuMemoryClusterCollection/ListComputeGpuMemoryClusters")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListComputeGpuMemoryClustersRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("computeGpuMemoryClusters")
+                .appendQueryParam(
+                        "computeGpuMemoryClusterId", request.getComputeGpuMemoryClusterId())
+                .appendQueryParam("availabilityDomain", request.getAvailabilityDomain())
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("computeClusterId", request.getComputeClusterId())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendQueryParam("limit", request.getLimit())
+                .accept("application/json, application/x-json-stream")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.core.model.ComputeGpuMemoryClusterCollection.class,
+                        ListComputeGpuMemoryClustersResponse.Builder
+                                ::computeGpuMemoryClusterCollection)
+                .handleResponseHeaderString(
+                        "etag", ListComputeGpuMemoryClustersResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListComputeGpuMemoryClustersResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListComputeGpuMemoryClustersResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListComputeGpuMemoryFabricsResponse>
+            listComputeGpuMemoryFabrics(
+                    ListComputeGpuMemoryFabricsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListComputeGpuMemoryFabricsRequest,
+                                    ListComputeGpuMemoryFabricsResponse>
+                            handler) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListComputeGpuMemoryFabricsResponse::builder)
+                .logger(LOG, "listComputeGpuMemoryFabrics")
+                .serviceDetails(
+                        "Compute",
+                        "ListComputeGpuMemoryFabrics",
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeGpuMemoryFabric/ListComputeGpuMemoryFabrics")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListComputeGpuMemoryFabricsRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("computeGpuMemoryFabrics")
+                .appendQueryParam("computeGpuMemoryFabricId", request.getComputeGpuMemoryFabricId())
+                .appendQueryParam("availabilityDomain", request.getAvailabilityDomain())
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("computeHpcIslandId", request.getComputeHpcIslandId())
+                .appendQueryParam("computeNetworkBlockId", request.getComputeNetworkBlockId())
+                .appendEnumQueryParam(
+                        "computeGpuMemoryFabricLifecycleState",
+                        request.getComputeGpuMemoryFabricLifecycleState())
+                .appendEnumQueryParam(
+                        "computeGpuMemoryFabricHealth", request.getComputeGpuMemoryFabricHealth())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json, application/x-json-stream")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.core.model.ComputeGpuMemoryFabricCollection.class,
+                        ListComputeGpuMemoryFabricsResponse.Builder
+                                ::computeGpuMemoryFabricCollection)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListComputeGpuMemoryFabricsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListComputeGpuMemoryFabricsResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<ListComputeImageCapabilitySchemasResponse>
             listComputeImageCapabilitySchemas(
                     ListComputeImageCapabilitySchemasRequest request,
@@ -3464,6 +3829,95 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
                 .handleResponseHeaderString("etag", UpdateComputeClusterResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateComputeClusterResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateComputeGpuMemoryClusterResponse>
+            updateComputeGpuMemoryCluster(
+                    UpdateComputeGpuMemoryClusterRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateComputeGpuMemoryClusterRequest,
+                                    UpdateComputeGpuMemoryClusterResponse>
+                            handler) {
+
+        Validate.notBlank(
+                request.getComputeGpuMemoryClusterId(),
+                "computeGpuMemoryClusterId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateComputeGpuMemoryClusterDetails(),
+                "updateComputeGpuMemoryClusterDetails is required");
+
+        return clientCall(request, UpdateComputeGpuMemoryClusterResponse::builder)
+                .logger(LOG, "updateComputeGpuMemoryCluster")
+                .serviceDetails(
+                        "Compute",
+                        "UpdateComputeGpuMemoryCluster",
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeGpuMemoryCluster/UpdateComputeGpuMemoryCluster")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateComputeGpuMemoryClusterRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("computeGpuMemoryClusters")
+                .appendPathParam(request.getComputeGpuMemoryClusterId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.ComputeGpuMemoryCluster.class,
+                        UpdateComputeGpuMemoryClusterResponse.Builder::computeGpuMemoryCluster)
+                .handleResponseHeaderString(
+                        "etag", UpdateComputeGpuMemoryClusterResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        UpdateComputeGpuMemoryClusterResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        UpdateComputeGpuMemoryClusterResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateComputeGpuMemoryFabricResponse>
+            updateComputeGpuMemoryFabric(
+                    UpdateComputeGpuMemoryFabricRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateComputeGpuMemoryFabricRequest,
+                                    UpdateComputeGpuMemoryFabricResponse>
+                            handler) {
+
+        Validate.notBlank(
+                request.getComputeGpuMemoryFabricId(),
+                "computeGpuMemoryFabricId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateComputeGpuMemoryFabricDetails(),
+                "updateComputeGpuMemoryFabricDetails is required");
+
+        return clientCall(request, UpdateComputeGpuMemoryFabricResponse::builder)
+                .logger(LOG, "updateComputeGpuMemoryFabric")
+                .serviceDetails(
+                        "Compute",
+                        "UpdateComputeGpuMemoryFabric",
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeGpuMemoryFabric/UpdateComputeGpuMemoryFabric")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateComputeGpuMemoryFabricRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("computeGpuMemoryFabrics")
+                .appendPathParam(request.getComputeGpuMemoryFabricId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.ComputeGpuMemoryFabric.class,
+                        UpdateComputeGpuMemoryFabricResponse.Builder::computeGpuMemoryFabric)
+                .handleResponseHeaderString(
+                        "etag", UpdateComputeGpuMemoryFabricResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        UpdateComputeGpuMemoryFabricResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 

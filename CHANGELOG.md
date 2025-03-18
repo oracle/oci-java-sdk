@@ -3,6 +3,18 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 3.61.0 - 2025-03-18
+### Added 
+- Support for Managed Services for Mac service 
+- Support for scheduling customer-initiated backups in the GoldenGate service 
+- Support for GPU memory clusters and fabrics in the Compute service   
+
+### Breaking Changes 
+- Method `public java.lang.String getIpAnycastId()` has been removed from the model `com.oracle.bmc.core.model.CreateByoipRangeDetails` in the Core service 
+- Method `public java.lang.String getMonitorIp()` has been removed from the model `com.oracle.bmc.core.model.CreateByoipRangeDetails` in the Core service 
+- Method `public java.lang.String getIpAnycastId()` has been removed from the model `com.oracle.bmc.core.model.UpdateByoipRangeDetails` in the Core service 
+- Method `public java.lang.String getMonitorIp()` has been removed from the model `com.oracle.bmc.core.model.UpdateByoipRangeDetails` in the Core service
+
 ## 3.60.0 - 2025-03-11
 ### Added 
 - Support for pipelines in the OpenSearch service 
