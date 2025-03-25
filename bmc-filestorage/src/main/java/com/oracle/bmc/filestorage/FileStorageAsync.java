@@ -454,6 +454,23 @@ public interface FileStorageAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Create a file system, user, or group quota rule given the `fileSystemId`, `principalId`, `principalType` and
+     * `isHardQuota` parameters.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateQuotaRuleResponse> createQuotaRule(
+            CreateQuotaRuleRequest request,
+            com.oracle.bmc.responses.AsyncHandler<CreateQuotaRuleRequest, CreateQuotaRuleResponse>
+                    handler);
+
+    /**
      * Creates a new replication in the specified compartment.
      * Replications are the primary resource that governs the policy of cross-region replication between source
      * and target file systems. Replications are associated with a secondary resource called a {@link ReplicationTarget}
@@ -599,6 +616,22 @@ public interface FileStorageAsync extends AutoCloseable {
             DeleteOutboundConnectorRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             DeleteOutboundConnectorRequest, DeleteOutboundConnectorResponse>
+                    handler);
+
+    /**
+     * Remove a file system, user, or group quota rule given the `fileSystemId` and `quotaRuleId` parameters.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteQuotaRuleResponse> deleteQuotaRule(
+            DeleteQuotaRuleRequest request,
+            com.oracle.bmc.responses.AsyncHandler<DeleteQuotaRuleRequest, DeleteQuotaRuleResponse>
                     handler);
 
     /**
@@ -778,6 +811,22 @@ public interface FileStorageAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Get a file system, user, or group quota rule given the `fileSystemId` and `quotaRuleId` parameters.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetQuotaRuleResponse> getQuotaRule(
+            GetQuotaRuleRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetQuotaRuleRequest, GetQuotaRuleResponse>
+                    handler);
+
+    /**
      * Gets the specified replication's information.
      *
      * @param request The request object containing the details to send
@@ -922,6 +971,22 @@ public interface FileStorageAsync extends AutoCloseable {
             ListOutboundConnectorsRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             ListOutboundConnectorsRequest, ListOutboundConnectorsResponse>
+                    handler);
+
+    /**
+     * List user or group usages and their quota rules by certain principal type.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListQuotaRulesResponse> listQuotaRules(
+            ListQuotaRulesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListQuotaRulesRequest, ListQuotaRulesResponse>
                     handler);
 
     /**
@@ -1136,6 +1201,24 @@ public interface FileStorageAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Enable or disable quota enforcement for the file system.
+     * If `areQuotaRulesEnabled` = `true`, then the quota enforcement will be enabled.
+     * If `areQuotaRulesEnabled` = `false`, then the quota enforcement will be disabled.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ToggleQuotaRulesResponse> toggleQuotaRules(
+            ToggleQuotaRulesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ToggleQuotaRulesRequest, ToggleQuotaRulesResponse>
+                    handler);
+
+    /**
      * This operation unpauses a paused file system snapshot policy and updates the lifecycle state of the file system snapshot policy from
      * INACTIVE to ACTIVE. By default, file system snapshot policies are in the ACTIVE state. When a file system snapshot policy is not paused, or in the ACTIVE state, file systems that are associated with the
      * policy will have snapshots created and deleted according to the schedules defined in the policy.
@@ -1253,6 +1336,22 @@ public interface FileStorageAsync extends AutoCloseable {
             UpdateOutboundConnectorRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             UpdateOutboundConnectorRequest, UpdateOutboundConnectorResponse>
+                    handler);
+
+    /**
+     * Edit a file system, user, or group quota rule given the `fileSystemId` and `quotaRuleId` parameters.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateQuotaRuleResponse> updateQuotaRule(
+            UpdateQuotaRuleRequest request,
+            com.oracle.bmc.responses.AsyncHandler<UpdateQuotaRuleRequest, UpdateQuotaRuleResponse>
                     handler);
 
     /**

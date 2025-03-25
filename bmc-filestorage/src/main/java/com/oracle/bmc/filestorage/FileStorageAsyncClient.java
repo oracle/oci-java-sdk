@@ -1429,6 +1429,58 @@ public class FileStorageAsyncClient implements FileStorageAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<CreateQuotaRuleResponse> createQuotaRule(
+            CreateQuotaRuleRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateQuotaRuleRequest, CreateQuotaRuleResponse>
+                    handler) {
+        LOG.trace("Called async createQuotaRule");
+        final CreateQuotaRuleRequest interceptedRequest =
+                CreateQuotaRuleConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateQuotaRuleConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FileStorage",
+                        "CreateQuotaRule",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/FileSystem/CreateQuotaRule");
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateQuotaRuleResponse>
+                transformer =
+                        CreateQuotaRuleConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<CreateQuotaRuleRequest, CreateQuotaRuleResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateQuotaRuleRequest, CreateQuotaRuleResponse>,
+                        java.util.concurrent.Future<CreateQuotaRuleResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateQuotaRuleDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateQuotaRuleRequest, CreateQuotaRuleResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateReplicationResponse> createReplication(
             CreateReplicationRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -1755,6 +1807,52 @@ public class FileStorageAsyncClient implements FileStorageAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     DeleteOutboundConnectorRequest, DeleteOutboundConnectorResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteQuotaRuleResponse> deleteQuotaRule(
+            DeleteQuotaRuleRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteQuotaRuleRequest, DeleteQuotaRuleResponse>
+                    handler) {
+        LOG.trace("Called async deleteQuotaRule");
+        final DeleteQuotaRuleRequest interceptedRequest =
+                DeleteQuotaRuleConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteQuotaRuleConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FileStorage",
+                        "DeleteQuotaRule",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/FileSystem/DeleteQuotaRule");
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteQuotaRuleResponse>
+                transformer =
+                        DeleteQuotaRuleConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<DeleteQuotaRuleRequest, DeleteQuotaRuleResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteQuotaRuleRequest, DeleteQuotaRuleResponse>,
+                        java.util.concurrent.Future<DeleteQuotaRuleResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteQuotaRuleRequest, DeleteQuotaRuleResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -2271,6 +2369,50 @@ public class FileStorageAsyncClient implements FileStorageAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<GetQuotaRuleResponse> getQuotaRule(
+            GetQuotaRuleRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<GetQuotaRuleRequest, GetQuotaRuleResponse>
+                    handler) {
+        LOG.trace("Called async getQuotaRule");
+        final GetQuotaRuleRequest interceptedRequest =
+                GetQuotaRuleConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetQuotaRuleConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FileStorage",
+                        "GetQuotaRule",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/FileSystem/GetQuotaRule");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetQuotaRuleResponse>
+                transformer =
+                        GetQuotaRuleConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<GetQuotaRuleRequest, GetQuotaRuleResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetQuotaRuleRequest, GetQuotaRuleResponse>,
+                        java.util.concurrent.Future<GetQuotaRuleResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetQuotaRuleRequest, GetQuotaRuleResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<GetReplicationResponse> getReplication(
             GetReplicationRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -2674,6 +2816,51 @@ public class FileStorageAsyncClient implements FileStorageAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ListOutboundConnectorsRequest, ListOutboundConnectorsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListQuotaRulesResponse> listQuotaRules(
+            ListQuotaRulesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListQuotaRulesRequest, ListQuotaRulesResponse>
+                    handler) {
+        LOG.trace("Called async listQuotaRules");
+        final ListQuotaRulesRequest interceptedRequest =
+                ListQuotaRulesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListQuotaRulesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FileStorage",
+                        "ListQuotaRules",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/FileSystem/ListQuotaRules");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListQuotaRulesResponse>
+                transformer =
+                        ListQuotaRulesConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<ListQuotaRulesRequest, ListQuotaRulesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListQuotaRulesRequest, ListQuotaRulesResponse>,
+                        java.util.concurrent.Future<ListQuotaRulesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListQuotaRulesRequest, ListQuotaRulesResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -3305,6 +3492,58 @@ public class FileStorageAsyncClient implements FileStorageAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ToggleQuotaRulesResponse> toggleQuotaRules(
+            ToggleQuotaRulesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ToggleQuotaRulesRequest, ToggleQuotaRulesResponse>
+                    handler) {
+        LOG.trace("Called async toggleQuotaRules");
+        final ToggleQuotaRulesRequest interceptedRequest =
+                ToggleQuotaRulesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ToggleQuotaRulesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FileStorage",
+                        "ToggleQuotaRules",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/FileSystem/ToggleQuotaRules");
+        final java.util.function.Function<javax.ws.rs.core.Response, ToggleQuotaRulesResponse>
+                transformer =
+                        ToggleQuotaRulesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<ToggleQuotaRulesRequest, ToggleQuotaRulesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ToggleQuotaRulesRequest, ToggleQuotaRulesResponse>,
+                        java.util.concurrent.Future<ToggleQuotaRulesResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getToggleQuotaRulesDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ToggleQuotaRulesRequest, ToggleQuotaRulesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<UnpauseFilesystemSnapshotPolicyResponse>
             unpauseFilesystemSnapshotPolicy(
                     UnpauseFilesystemSnapshotPolicyRequest request,
@@ -3657,6 +3896,57 @@ public class FileStorageAsyncClient implements FileStorageAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     UpdateOutboundConnectorRequest, UpdateOutboundConnectorResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateQuotaRuleResponse> updateQuotaRule(
+            UpdateQuotaRuleRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateQuotaRuleRequest, UpdateQuotaRuleResponse>
+                    handler) {
+        LOG.trace("Called async updateQuotaRule");
+        final UpdateQuotaRuleRequest interceptedRequest =
+                UpdateQuotaRuleConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateQuotaRuleConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FileStorage",
+                        "UpdateQuotaRule",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/FileSystem/UpdateQuotaRule");
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateQuotaRuleResponse>
+                transformer =
+                        UpdateQuotaRuleConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<UpdateQuotaRuleRequest, UpdateQuotaRuleResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateQuotaRuleRequest, UpdateQuotaRuleResponse>,
+                        java.util.concurrent.Future<UpdateQuotaRuleResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateQuotaRuleDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateQuotaRuleRequest, UpdateQuotaRuleResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

@@ -28,9 +28,14 @@ public final class CreateAgentEndpointDetails
         "description",
         "agentId",
         "contentModerationConfig",
+        "guardrailConfig",
+        "metadata",
+        "humanInputConfig",
+        "outputConfig",
         "shouldEnableTrace",
         "shouldEnableCitation",
         "shouldEnableSession",
+        "shouldEnableMultiLanguage",
         "sessionConfig",
         "compartmentId",
         "freeformTags",
@@ -41,9 +46,14 @@ public final class CreateAgentEndpointDetails
             String description,
             String agentId,
             ContentModerationConfig contentModerationConfig,
+            GuardrailConfig guardrailConfig,
+            java.util.Map<String, String> metadata,
+            HumanInputConfig humanInputConfig,
+            OutputConfig outputConfig,
             Boolean shouldEnableTrace,
             Boolean shouldEnableCitation,
             Boolean shouldEnableSession,
+            Boolean shouldEnableMultiLanguage,
             SessionConfig sessionConfig,
             String compartmentId,
             java.util.Map<String, String> freeformTags,
@@ -53,9 +63,14 @@ public final class CreateAgentEndpointDetails
         this.description = description;
         this.agentId = agentId;
         this.contentModerationConfig = contentModerationConfig;
+        this.guardrailConfig = guardrailConfig;
+        this.metadata = metadata;
+        this.humanInputConfig = humanInputConfig;
+        this.outputConfig = outputConfig;
         this.shouldEnableTrace = shouldEnableTrace;
         this.shouldEnableCitation = shouldEnableCitation;
         this.shouldEnableSession = shouldEnableSession;
+        this.shouldEnableMultiLanguage = shouldEnableMultiLanguage;
         this.sessionConfig = sessionConfig;
         this.compartmentId = compartmentId;
         this.freeformTags = freeformTags;
@@ -121,6 +136,49 @@ public final class CreateAgentEndpointDetails
             this.__explicitlySet__.add("contentModerationConfig");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("guardrailConfig")
+        private GuardrailConfig guardrailConfig;
+
+        public Builder guardrailConfig(GuardrailConfig guardrailConfig) {
+            this.guardrailConfig = guardrailConfig;
+            this.__explicitlySet__.add("guardrailConfig");
+            return this;
+        }
+        /**
+         * Key-value pairs to allow additional configurations.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("metadata")
+        private java.util.Map<String, String> metadata;
+
+        /**
+         * Key-value pairs to allow additional configurations.
+         * @param metadata the value to set
+         * @return this builder
+         **/
+        public Builder metadata(java.util.Map<String, String> metadata) {
+            this.metadata = metadata;
+            this.__explicitlySet__.add("metadata");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("humanInputConfig")
+        private HumanInputConfig humanInputConfig;
+
+        public Builder humanInputConfig(HumanInputConfig humanInputConfig) {
+            this.humanInputConfig = humanInputConfig;
+            this.__explicitlySet__.add("humanInputConfig");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("outputConfig")
+        private OutputConfig outputConfig;
+
+        public Builder outputConfig(OutputConfig outputConfig) {
+            this.outputConfig = outputConfig;
+            this.__explicitlySet__.add("outputConfig");
+            return this;
+        }
         /**
          * Whether to show traces in the chat result.
          **/
@@ -167,6 +225,22 @@ public final class CreateAgentEndpointDetails
         public Builder shouldEnableSession(Boolean shouldEnableSession) {
             this.shouldEnableSession = shouldEnableSession;
             this.__explicitlySet__.add("shouldEnableSession");
+            return this;
+        }
+        /**
+         * Whether to enable multi-language for chat.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("shouldEnableMultiLanguage")
+        private Boolean shouldEnableMultiLanguage;
+
+        /**
+         * Whether to enable multi-language for chat.
+         * @param shouldEnableMultiLanguage the value to set
+         * @return this builder
+         **/
+        public Builder shouldEnableMultiLanguage(Boolean shouldEnableMultiLanguage) {
+            this.shouldEnableMultiLanguage = shouldEnableMultiLanguage;
+            this.__explicitlySet__.add("shouldEnableMultiLanguage");
             return this;
         }
 
@@ -256,9 +330,14 @@ public final class CreateAgentEndpointDetails
                             this.description,
                             this.agentId,
                             this.contentModerationConfig,
+                            this.guardrailConfig,
+                            this.metadata,
+                            this.humanInputConfig,
+                            this.outputConfig,
                             this.shouldEnableTrace,
                             this.shouldEnableCitation,
                             this.shouldEnableSession,
+                            this.shouldEnableMultiLanguage,
                             this.sessionConfig,
                             this.compartmentId,
                             this.freeformTags,
@@ -283,6 +362,18 @@ public final class CreateAgentEndpointDetails
             if (model.wasPropertyExplicitlySet("contentModerationConfig")) {
                 this.contentModerationConfig(model.getContentModerationConfig());
             }
+            if (model.wasPropertyExplicitlySet("guardrailConfig")) {
+                this.guardrailConfig(model.getGuardrailConfig());
+            }
+            if (model.wasPropertyExplicitlySet("metadata")) {
+                this.metadata(model.getMetadata());
+            }
+            if (model.wasPropertyExplicitlySet("humanInputConfig")) {
+                this.humanInputConfig(model.getHumanInputConfig());
+            }
+            if (model.wasPropertyExplicitlySet("outputConfig")) {
+                this.outputConfig(model.getOutputConfig());
+            }
             if (model.wasPropertyExplicitlySet("shouldEnableTrace")) {
                 this.shouldEnableTrace(model.getShouldEnableTrace());
             }
@@ -291,6 +382,9 @@ public final class CreateAgentEndpointDetails
             }
             if (model.wasPropertyExplicitlySet("shouldEnableSession")) {
                 this.shouldEnableSession(model.getShouldEnableSession());
+            }
+            if (model.wasPropertyExplicitlySet("shouldEnableMultiLanguage")) {
+                this.shouldEnableMultiLanguage(model.getShouldEnableMultiLanguage());
             }
             if (model.wasPropertyExplicitlySet("sessionConfig")) {
                 this.sessionConfig(model.getSessionConfig());
@@ -368,6 +462,41 @@ public final class CreateAgentEndpointDetails
         return contentModerationConfig;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("guardrailConfig")
+    private final GuardrailConfig guardrailConfig;
+
+    public GuardrailConfig getGuardrailConfig() {
+        return guardrailConfig;
+    }
+
+    /**
+     * Key-value pairs to allow additional configurations.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("metadata")
+    private final java.util.Map<String, String> metadata;
+
+    /**
+     * Key-value pairs to allow additional configurations.
+     * @return the value
+     **/
+    public java.util.Map<String, String> getMetadata() {
+        return metadata;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("humanInputConfig")
+    private final HumanInputConfig humanInputConfig;
+
+    public HumanInputConfig getHumanInputConfig() {
+        return humanInputConfig;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("outputConfig")
+    private final OutputConfig outputConfig;
+
+    public OutputConfig getOutputConfig() {
+        return outputConfig;
+    }
+
     /**
      * Whether to show traces in the chat result.
      **/
@@ -408,6 +537,20 @@ public final class CreateAgentEndpointDetails
      **/
     public Boolean getShouldEnableSession() {
         return shouldEnableSession;
+    }
+
+    /**
+     * Whether to enable multi-language for chat.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("shouldEnableMultiLanguage")
+    private final Boolean shouldEnableMultiLanguage;
+
+    /**
+     * Whether to enable multi-language for chat.
+     * @return the value
+     **/
+    public Boolean getShouldEnableMultiLanguage() {
+        return shouldEnableMultiLanguage;
     }
 
     @com.fasterxml.jackson.annotation.JsonProperty("sessionConfig")
@@ -496,9 +639,15 @@ public final class CreateAgentEndpointDetails
         sb.append(", agentId=").append(String.valueOf(this.agentId));
         sb.append(", contentModerationConfig=")
                 .append(String.valueOf(this.contentModerationConfig));
+        sb.append(", guardrailConfig=").append(String.valueOf(this.guardrailConfig));
+        sb.append(", metadata=").append(String.valueOf(this.metadata));
+        sb.append(", humanInputConfig=").append(String.valueOf(this.humanInputConfig));
+        sb.append(", outputConfig=").append(String.valueOf(this.outputConfig));
         sb.append(", shouldEnableTrace=").append(String.valueOf(this.shouldEnableTrace));
         sb.append(", shouldEnableCitation=").append(String.valueOf(this.shouldEnableCitation));
         sb.append(", shouldEnableSession=").append(String.valueOf(this.shouldEnableSession));
+        sb.append(", shouldEnableMultiLanguage=")
+                .append(String.valueOf(this.shouldEnableMultiLanguage));
         sb.append(", sessionConfig=").append(String.valueOf(this.sessionConfig));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
@@ -522,9 +671,15 @@ public final class CreateAgentEndpointDetails
                 && java.util.Objects.equals(this.agentId, other.agentId)
                 && java.util.Objects.equals(
                         this.contentModerationConfig, other.contentModerationConfig)
+                && java.util.Objects.equals(this.guardrailConfig, other.guardrailConfig)
+                && java.util.Objects.equals(this.metadata, other.metadata)
+                && java.util.Objects.equals(this.humanInputConfig, other.humanInputConfig)
+                && java.util.Objects.equals(this.outputConfig, other.outputConfig)
                 && java.util.Objects.equals(this.shouldEnableTrace, other.shouldEnableTrace)
                 && java.util.Objects.equals(this.shouldEnableCitation, other.shouldEnableCitation)
                 && java.util.Objects.equals(this.shouldEnableSession, other.shouldEnableSession)
+                && java.util.Objects.equals(
+                        this.shouldEnableMultiLanguage, other.shouldEnableMultiLanguage)
                 && java.util.Objects.equals(this.sessionConfig, other.sessionConfig)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
@@ -546,6 +701,14 @@ public final class CreateAgentEndpointDetails
                                 : this.contentModerationConfig.hashCode());
         result =
                 (result * PRIME)
+                        + (this.guardrailConfig == null ? 43 : this.guardrailConfig.hashCode());
+        result = (result * PRIME) + (this.metadata == null ? 43 : this.metadata.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.humanInputConfig == null ? 43 : this.humanInputConfig.hashCode());
+        result = (result * PRIME) + (this.outputConfig == null ? 43 : this.outputConfig.hashCode());
+        result =
+                (result * PRIME)
                         + (this.shouldEnableTrace == null ? 43 : this.shouldEnableTrace.hashCode());
         result =
                 (result * PRIME)
@@ -557,6 +720,11 @@ public final class CreateAgentEndpointDetails
                         + (this.shouldEnableSession == null
                                 ? 43
                                 : this.shouldEnableSession.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.shouldEnableMultiLanguage == null
+                                ? 43
+                                : this.shouldEnableMultiLanguage.hashCode());
         result =
                 (result * PRIME)
                         + (this.sessionConfig == null ? 43 : this.sessionConfig.hashCode());

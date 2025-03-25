@@ -25,6 +25,7 @@ public final class MonitoredResourceTaskSummary
     @java.beans.ConstructorProperties({
         "id",
         "name",
+        "type",
         "taskDetails",
         "workRequestIds",
         "timeCreated",
@@ -37,6 +38,7 @@ public final class MonitoredResourceTaskSummary
     public MonitoredResourceTaskSummary(
             String id,
             String name,
+            String type,
             MonitoredResourceTaskDetails taskDetails,
             java.util.List<String> workRequestIds,
             java.util.Date timeCreated,
@@ -48,6 +50,7 @@ public final class MonitoredResourceTaskSummary
         super();
         this.id = id;
         this.name = name;
+        this.type = type;
         this.taskDetails = taskDetails;
         this.workRequestIds = workRequestIds;
         this.timeCreated = timeCreated;
@@ -92,6 +95,22 @@ public final class MonitoredResourceTaskSummary
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
+            return this;
+        }
+        /**
+         * Type of the task.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("type")
+        private String type;
+
+        /**
+         * Type of the task.
+         * @param type the value to set
+         * @return this builder
+         **/
+        public Builder type(String type) {
+            this.type = type;
+            this.__explicitlySet__.add("type");
             return this;
         }
 
@@ -247,6 +266,7 @@ public final class MonitoredResourceTaskSummary
                     new MonitoredResourceTaskSummary(
                             this.id,
                             this.name,
+                            this.type,
                             this.taskDetails,
                             this.workRequestIds,
                             this.timeCreated,
@@ -268,6 +288,9 @@ public final class MonitoredResourceTaskSummary
             }
             if (model.wasPropertyExplicitlySet("name")) {
                 this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("type")) {
+                this.type(model.getType());
             }
             if (model.wasPropertyExplicitlySet("taskDetails")) {
                 this.taskDetails(model.getTaskDetails());
@@ -336,6 +359,20 @@ public final class MonitoredResourceTaskSummary
      **/
     public String getName() {
         return name;
+    }
+
+    /**
+     * Type of the task.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("type")
+    private final String type;
+
+    /**
+     * Type of the task.
+     * @return the value
+     **/
+    public String getType() {
+        return type;
     }
 
     @com.fasterxml.jackson.annotation.JsonProperty("taskDetails")
@@ -481,6 +518,7 @@ public final class MonitoredResourceTaskSummary
         sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", name=").append(String.valueOf(this.name));
+        sb.append(", type=").append(String.valueOf(this.type));
         sb.append(", taskDetails=").append(String.valueOf(this.taskDetails));
         sb.append(", workRequestIds=").append(String.valueOf(this.workRequestIds));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
@@ -505,6 +543,7 @@ public final class MonitoredResourceTaskSummary
         MonitoredResourceTaskSummary other = (MonitoredResourceTaskSummary) o;
         return java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.type, other.type)
                 && java.util.Objects.equals(this.taskDetails, other.taskDetails)
                 && java.util.Objects.equals(this.workRequestIds, other.workRequestIds)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
@@ -522,6 +561,7 @@ public final class MonitoredResourceTaskSummary
         int result = 1;
         result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
         result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.type == null ? 43 : this.type.hashCode());
         result = (result * PRIME) + (this.taskDetails == null ? 43 : this.taskDetails.hashCode());
         result =
                 (result * PRIME)

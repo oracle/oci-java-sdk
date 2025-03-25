@@ -24,11 +24,22 @@ package com.oracle.bmc.database.model;
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class CreateBackupDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"databaseId", "displayName"})
-    public CreateBackupDetails(String databaseId, String displayName) {
+    @java.beans.ConstructorProperties({
+        "databaseId",
+        "displayName",
+        "retentionPeriodInDays",
+        "retentionPeriodInYears"
+    })
+    public CreateBackupDetails(
+            String databaseId,
+            String displayName,
+            Integer retentionPeriodInDays,
+            Integer retentionPeriodInYears) {
         super();
         this.databaseId = databaseId;
         this.displayName = displayName;
+        this.retentionPeriodInDays = retentionPeriodInDays;
+        this.retentionPeriodInYears = retentionPeriodInYears;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -65,12 +76,49 @@ public final class CreateBackupDetails extends com.oracle.bmc.http.internal.Expl
             this.__explicitlySet__.add("displayName");
             return this;
         }
+        /**
+         * The retention period of the long term backup in days.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("retentionPeriodInDays")
+        private Integer retentionPeriodInDays;
+
+        /**
+         * The retention period of the long term backup in days.
+         * @param retentionPeriodInDays the value to set
+         * @return this builder
+         **/
+        public Builder retentionPeriodInDays(Integer retentionPeriodInDays) {
+            this.retentionPeriodInDays = retentionPeriodInDays;
+            this.__explicitlySet__.add("retentionPeriodInDays");
+            return this;
+        }
+        /**
+         * The retention period of the long term backup in years.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("retentionPeriodInYears")
+        private Integer retentionPeriodInYears;
+
+        /**
+         * The retention period of the long term backup in years.
+         * @param retentionPeriodInYears the value to set
+         * @return this builder
+         **/
+        public Builder retentionPeriodInYears(Integer retentionPeriodInYears) {
+            this.retentionPeriodInYears = retentionPeriodInYears;
+            this.__explicitlySet__.add("retentionPeriodInYears");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateBackupDetails build() {
-            CreateBackupDetails model = new CreateBackupDetails(this.databaseId, this.displayName);
+            CreateBackupDetails model =
+                    new CreateBackupDetails(
+                            this.databaseId,
+                            this.displayName,
+                            this.retentionPeriodInDays,
+                            this.retentionPeriodInYears);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -84,6 +132,12 @@ public final class CreateBackupDetails extends com.oracle.bmc.http.internal.Expl
             }
             if (model.wasPropertyExplicitlySet("displayName")) {
                 this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("retentionPeriodInDays")) {
+                this.retentionPeriodInDays(model.getRetentionPeriodInDays());
+            }
+            if (model.wasPropertyExplicitlySet("retentionPeriodInYears")) {
+                this.retentionPeriodInYears(model.getRetentionPeriodInYears());
             }
             return this;
         }
@@ -128,6 +182,34 @@ public final class CreateBackupDetails extends com.oracle.bmc.http.internal.Expl
         return displayName;
     }
 
+    /**
+     * The retention period of the long term backup in days.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("retentionPeriodInDays")
+    private final Integer retentionPeriodInDays;
+
+    /**
+     * The retention period of the long term backup in days.
+     * @return the value
+     **/
+    public Integer getRetentionPeriodInDays() {
+        return retentionPeriodInDays;
+    }
+
+    /**
+     * The retention period of the long term backup in years.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("retentionPeriodInYears")
+    private final Integer retentionPeriodInYears;
+
+    /**
+     * The retention period of the long term backup in years.
+     * @return the value
+     **/
+    public Integer getRetentionPeriodInYears() {
+        return retentionPeriodInYears;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -144,6 +226,8 @@ public final class CreateBackupDetails extends com.oracle.bmc.http.internal.Expl
         sb.append("super=").append(super.toString());
         sb.append("databaseId=").append(String.valueOf(this.databaseId));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", retentionPeriodInDays=").append(String.valueOf(this.retentionPeriodInDays));
+        sb.append(", retentionPeriodInYears=").append(String.valueOf(this.retentionPeriodInYears));
         sb.append(")");
         return sb.toString();
     }
@@ -160,6 +244,9 @@ public final class CreateBackupDetails extends com.oracle.bmc.http.internal.Expl
         CreateBackupDetails other = (CreateBackupDetails) o;
         return java.util.Objects.equals(this.databaseId, other.databaseId)
                 && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.retentionPeriodInDays, other.retentionPeriodInDays)
+                && java.util.Objects.equals(
+                        this.retentionPeriodInYears, other.retentionPeriodInYears)
                 && super.equals(other);
     }
 
@@ -169,6 +256,16 @@ public final class CreateBackupDetails extends com.oracle.bmc.http.internal.Expl
         int result = 1;
         result = (result * PRIME) + (this.databaseId == null ? 43 : this.databaseId.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.retentionPeriodInDays == null
+                                ? 43
+                                : this.retentionPeriodInDays.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.retentionPeriodInYears == null
+                                ? 43
+                                : this.retentionPeriodInYears.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

@@ -23,6 +23,7 @@ public final class MaskDataDetails extends com.oracle.bmc.http.internal.Explicit
         "targetId",
         "isDecrypt",
         "isRerun",
+        "reRunFromStep",
         "tablespace",
         "isIgnoreErrorsEnabled",
         "seed",
@@ -38,6 +39,7 @@ public final class MaskDataDetails extends com.oracle.bmc.http.internal.Explicit
             String targetId,
             Boolean isDecrypt,
             Boolean isRerun,
+            ReRunFromStep reRunFromStep,
             String tablespace,
             Boolean isIgnoreErrorsEnabled,
             String seed,
@@ -52,6 +54,7 @@ public final class MaskDataDetails extends com.oracle.bmc.http.internal.Explicit
         this.targetId = targetId;
         this.isDecrypt = isDecrypt;
         this.isRerun = isRerun;
+        this.reRunFromStep = reRunFromStep;
         this.tablespace = tablespace;
         this.isIgnoreErrorsEnabled = isIgnoreErrorsEnabled;
         this.seed = seed;
@@ -132,6 +135,30 @@ public final class MaskDataDetails extends com.oracle.bmc.http.internal.Explicit
         public Builder isRerun(Boolean isRerun) {
             this.isRerun = isRerun;
             this.__explicitlySet__.add("isRerun");
+            return this;
+        }
+        /**
+         * Specifies the step from which masking needs to be rerun. This param will be used only when isRerun attribute is true.
+         * If PRE_MASKING_SCRIPT is passed, it will rerun the pre-masking script, followed by masking, and then the post-masking script.
+         * If POST_MASKING_SCRIPT is passed, it will rerun only the post-masking script.
+         * If this field is not set and isRerun is set to true, then it will default to the last failed step.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("reRunFromStep")
+        private ReRunFromStep reRunFromStep;
+
+        /**
+         * Specifies the step from which masking needs to be rerun. This param will be used only when isRerun attribute is true.
+         * If PRE_MASKING_SCRIPT is passed, it will rerun the pre-masking script, followed by masking, and then the post-masking script.
+         * If POST_MASKING_SCRIPT is passed, it will rerun only the post-masking script.
+         * If this field is not set and isRerun is set to true, then it will default to the last failed step.
+         *
+         * @param reRunFromStep the value to set
+         * @return this builder
+         **/
+        public Builder reRunFromStep(ReRunFromStep reRunFromStep) {
+            this.reRunFromStep = reRunFromStep;
+            this.__explicitlySet__.add("reRunFromStep");
             return this;
         }
         /**
@@ -372,6 +399,7 @@ public final class MaskDataDetails extends com.oracle.bmc.http.internal.Explicit
                             this.targetId,
                             this.isDecrypt,
                             this.isRerun,
+                            this.reRunFromStep,
                             this.tablespace,
                             this.isIgnoreErrorsEnabled,
                             this.seed,
@@ -398,6 +426,9 @@ public final class MaskDataDetails extends com.oracle.bmc.http.internal.Explicit
             }
             if (model.wasPropertyExplicitlySet("isRerun")) {
                 this.isRerun(model.getIsRerun());
+            }
+            if (model.wasPropertyExplicitlySet("reRunFromStep")) {
+                this.reRunFromStep(model.getReRunFromStep());
             }
             if (model.wasPropertyExplicitlySet("tablespace")) {
                 this.tablespace(model.getTablespace());
@@ -504,6 +535,67 @@ public final class MaskDataDetails extends com.oracle.bmc.http.internal.Explicit
      **/
     public Boolean getIsRerun() {
         return isRerun;
+    }
+
+    /**
+     * Specifies the step from which masking needs to be rerun. This param will be used only when isRerun attribute is true.
+     * If PRE_MASKING_SCRIPT is passed, it will rerun the pre-masking script, followed by masking, and then the post-masking script.
+     * If POST_MASKING_SCRIPT is passed, it will rerun only the post-masking script.
+     * If this field is not set and isRerun is set to true, then it will default to the last failed step.
+     *
+     **/
+    public enum ReRunFromStep {
+        PreMaskingScript("PRE_MASKING_SCRIPT"),
+        PostMaskingScript("POST_MASKING_SCRIPT"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, ReRunFromStep> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (ReRunFromStep v : ReRunFromStep.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        ReRunFromStep(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static ReRunFromStep create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid ReRunFromStep: " + key);
+        }
+    };
+    /**
+     * Specifies the step from which masking needs to be rerun. This param will be used only when isRerun attribute is true.
+     * If PRE_MASKING_SCRIPT is passed, it will rerun the pre-masking script, followed by masking, and then the post-masking script.
+     * If POST_MASKING_SCRIPT is passed, it will rerun only the post-masking script.
+     * If this field is not set and isRerun is set to true, then it will default to the last failed step.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("reRunFromStep")
+    private final ReRunFromStep reRunFromStep;
+
+    /**
+     * Specifies the step from which masking needs to be rerun. This param will be used only when isRerun attribute is true.
+     * If PRE_MASKING_SCRIPT is passed, it will rerun the pre-masking script, followed by masking, and then the post-masking script.
+     * If POST_MASKING_SCRIPT is passed, it will rerun only the post-masking script.
+     * If this field is not set and isRerun is set to true, then it will default to the last failed step.
+     *
+     * @return the value
+     **/
+    public ReRunFromStep getReRunFromStep() {
+        return reRunFromStep;
     }
 
     /**
@@ -731,6 +823,7 @@ public final class MaskDataDetails extends com.oracle.bmc.http.internal.Explicit
         sb.append("targetId=").append(String.valueOf(this.targetId));
         sb.append(", isDecrypt=").append(String.valueOf(this.isDecrypt));
         sb.append(", isRerun=").append(String.valueOf(this.isRerun));
+        sb.append(", reRunFromStep=").append(String.valueOf(this.reRunFromStep));
         sb.append(", tablespace=").append(String.valueOf(this.tablespace));
         sb.append(", isIgnoreErrorsEnabled=").append(String.valueOf(this.isIgnoreErrorsEnabled));
         sb.append(", seed=").append("<redacted>");
@@ -761,6 +854,7 @@ public final class MaskDataDetails extends com.oracle.bmc.http.internal.Explicit
         return java.util.Objects.equals(this.targetId, other.targetId)
                 && java.util.Objects.equals(this.isDecrypt, other.isDecrypt)
                 && java.util.Objects.equals(this.isRerun, other.isRerun)
+                && java.util.Objects.equals(this.reRunFromStep, other.reRunFromStep)
                 && java.util.Objects.equals(this.tablespace, other.tablespace)
                 && java.util.Objects.equals(this.isIgnoreErrorsEnabled, other.isIgnoreErrorsEnabled)
                 && java.util.Objects.equals(this.seed, other.seed)
@@ -784,6 +878,9 @@ public final class MaskDataDetails extends com.oracle.bmc.http.internal.Explicit
         result = (result * PRIME) + (this.targetId == null ? 43 : this.targetId.hashCode());
         result = (result * PRIME) + (this.isDecrypt == null ? 43 : this.isDecrypt.hashCode());
         result = (result * PRIME) + (this.isRerun == null ? 43 : this.isRerun.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.reRunFromStep == null ? 43 : this.reRunFromStep.hashCode());
         result = (result * PRIME) + (this.tablespace == null ? 43 : this.tablespace.hashCode());
         result =
                 (result * PRIME)

@@ -29,8 +29,16 @@ package com.oracle.bmc.stackmonitoring.model;
 )
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = OnboardConfigDetails.class,
+        name = "ONBOARD"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = LicenseEnterpriseExtensibilityConfigDetails.class,
         name = "LICENSE_ENTERPRISE_EXTENSIBILITY"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = ComputeAutoActivatePluginConfigDetails.class,
+        name = "COMPUTE_AUTO_ACTIVATE_PLUGIN"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = LicenseAutoAssignConfigDetails.class,
@@ -342,8 +350,10 @@ public class Config extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
      **/
     public enum ConfigType {
         AutoPromote("AUTO_PROMOTE"),
+        ComputeAutoActivatePlugin("COMPUTE_AUTO_ACTIVATE_PLUGIN"),
         LicenseAutoAssign("LICENSE_AUTO_ASSIGN"),
         LicenseEnterpriseExtensibility("LICENSE_ENTERPRISE_EXTENSIBILITY"),
+        Onboard("ONBOARD"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

@@ -378,7 +378,7 @@ public class DataScienceClient implements DataScience {
             LOG.warn(
                     com.oracle.bmc.http.ApacheUtils.getStreamWarningMessage(
                             "DataScienceClient",
-                            "getJobArtifactContent,getModelArtifactContent,getStepArtifactContent"));
+                            "getJobArtifactContent,getModelArtifactContent,getModelCustomMetadatumArtifactContent,getModelDefinedMetadatumArtifactContent,getStepArtifactContent"));
         }
     }
 
@@ -1616,6 +1616,168 @@ public class DataScienceClient implements DataScience {
     }
 
     @Override
+    public CreateModelCustomMetadatumArtifactResponse createModelCustomMetadatumArtifact(
+            CreateModelCustomMetadatumArtifactRequest request) {
+        LOG.trace("Called createModelCustomMetadatumArtifact");
+        try {
+            final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                    com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                            request.getRetryConfiguration(), retryConfiguration, false);
+            if (request.getRetryConfiguration() != null
+                    || retryConfiguration != null
+                    || shouldRetryBecauseOfWaiterConfiguration(retrier)
+                    || authenticationDetailsProvider
+                            instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+                request =
+                        com.oracle.bmc.retrier.Retriers.wrapBodyInputStreamIfNecessary(
+                                request, CreateModelCustomMetadatumArtifactRequest.builder());
+            }
+            final CreateModelCustomMetadatumArtifactRequest interceptedRequest =
+                    CreateModelCustomMetadatumArtifactConverter.interceptRequest(request);
+            com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                    CreateModelCustomMetadatumArtifactConverter.fromRequest(
+                            client, interceptedRequest);
+
+            ib.property(
+                    com.oracle.bmc.http.internal.AuthnClientFilter.SIGNING_STRATEGY_PROPERTY_NAME,
+                    com.oracle.bmc.http.signing.SigningStrategy.EXCLUDE_BODY);
+            com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+            com.oracle.bmc.ServiceDetails serviceDetails =
+                    new com.oracle.bmc.ServiceDetails(
+                            "DataScience",
+                            "CreateModelCustomMetadatumArtifact",
+                            ib.getRequestUri().toString(),
+                            "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Model/CreateModelCustomMetadatumArtifact");
+            java.util.function.Function<
+                            javax.ws.rs.core.Response, CreateModelCustomMetadatumArtifactResponse>
+                    transformer =
+                            CreateModelCustomMetadatumArtifactConverter.fromResponse(
+                                    java.util.Optional.of(serviceDetails));
+            return retrier.execute(
+                    interceptedRequest,
+                    retryRequest -> {
+                        final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                                new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                        authenticationDetailsProvider);
+                        return tokenRefreshRetrier.execute(
+                                retryRequest,
+                                retriedRequest -> {
+                                    try {
+                                        javax.ws.rs.core.Response response =
+                                                client.post(
+                                                        ib,
+                                                        retriedRequest
+                                                                .getModelCustomMetadatumArtifact(),
+                                                        retriedRequest);
+                                        return transformer.apply(response);
+                                    } catch (RuntimeException e) {
+                                        if (interceptedRequest.getRetryConfiguration() != null
+                                                || retryConfiguration != null
+                                                || shouldRetryBecauseOfWaiterConfiguration(retrier)
+                                                || (e instanceof com.oracle.bmc.model.BmcException
+                                                        && tokenRefreshRetrier
+                                                                .getRetryCondition()
+                                                                .shouldBeRetried(
+                                                                        (com.oracle.bmc.model
+                                                                                        .BmcException)
+                                                                                e))) {
+                                            com.oracle.bmc.retrier.Retriers.tryResetStreamForRetry(
+                                                    interceptedRequest
+                                                            .getModelCustomMetadatumArtifact(),
+                                                    true);
+                                        }
+                                        throw e; // rethrow
+                                    }
+                                });
+                    });
+        } finally {
+            com.oracle.bmc.io.internal.KeepOpenInputStream.closeStream(
+                    request.getModelCustomMetadatumArtifact());
+        }
+    }
+
+    @Override
+    public CreateModelDefinedMetadatumArtifactResponse createModelDefinedMetadatumArtifact(
+            CreateModelDefinedMetadatumArtifactRequest request) {
+        LOG.trace("Called createModelDefinedMetadatumArtifact");
+        try {
+            final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                    com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                            request.getRetryConfiguration(), retryConfiguration, false);
+            if (request.getRetryConfiguration() != null
+                    || retryConfiguration != null
+                    || shouldRetryBecauseOfWaiterConfiguration(retrier)
+                    || authenticationDetailsProvider
+                            instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+                request =
+                        com.oracle.bmc.retrier.Retriers.wrapBodyInputStreamIfNecessary(
+                                request, CreateModelDefinedMetadatumArtifactRequest.builder());
+            }
+            final CreateModelDefinedMetadatumArtifactRequest interceptedRequest =
+                    CreateModelDefinedMetadatumArtifactConverter.interceptRequest(request);
+            com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                    CreateModelDefinedMetadatumArtifactConverter.fromRequest(
+                            client, interceptedRequest);
+
+            ib.property(
+                    com.oracle.bmc.http.internal.AuthnClientFilter.SIGNING_STRATEGY_PROPERTY_NAME,
+                    com.oracle.bmc.http.signing.SigningStrategy.EXCLUDE_BODY);
+            com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+            com.oracle.bmc.ServiceDetails serviceDetails =
+                    new com.oracle.bmc.ServiceDetails(
+                            "DataScience",
+                            "CreateModelDefinedMetadatumArtifact",
+                            ib.getRequestUri().toString(),
+                            "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Model/CreateModelDefinedMetadatumArtifact");
+            java.util.function.Function<
+                            javax.ws.rs.core.Response, CreateModelDefinedMetadatumArtifactResponse>
+                    transformer =
+                            CreateModelDefinedMetadatumArtifactConverter.fromResponse(
+                                    java.util.Optional.of(serviceDetails));
+            return retrier.execute(
+                    interceptedRequest,
+                    retryRequest -> {
+                        final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                                new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                        authenticationDetailsProvider);
+                        return tokenRefreshRetrier.execute(
+                                retryRequest,
+                                retriedRequest -> {
+                                    try {
+                                        javax.ws.rs.core.Response response =
+                                                client.post(
+                                                        ib,
+                                                        retriedRequest
+                                                                .getModelDefinedMetadatumArtifact(),
+                                                        retriedRequest);
+                                        return transformer.apply(response);
+                                    } catch (RuntimeException e) {
+                                        if (interceptedRequest.getRetryConfiguration() != null
+                                                || retryConfiguration != null
+                                                || shouldRetryBecauseOfWaiterConfiguration(retrier)
+                                                || (e instanceof com.oracle.bmc.model.BmcException
+                                                        && tokenRefreshRetrier
+                                                                .getRetryCondition()
+                                                                .shouldBeRetried(
+                                                                        (com.oracle.bmc.model
+                                                                                        .BmcException)
+                                                                                e))) {
+                                            com.oracle.bmc.retrier.Retriers.tryResetStreamForRetry(
+                                                    interceptedRequest
+                                                            .getModelDefinedMetadatumArtifact(),
+                                                    true);
+                                        }
+                                        throw e; // rethrow
+                                    }
+                                });
+                    });
+        } finally {
+            com.oracle.bmc.io.internal.KeepOpenInputStream.closeStream(
+                    request.getModelDefinedMetadatumArtifact());
+        }
+    }
+
+    @Override
     public CreateModelDeploymentResponse createModelDeployment(
             CreateModelDeploymentRequest request) {
         LOG.trace("Called createModelDeployment");
@@ -2327,6 +2489,87 @@ public class DataScienceClient implements DataScience {
     }
 
     @Override
+    public DeleteModelCustomMetadatumArtifactResponse deleteModelCustomMetadatumArtifact(
+            DeleteModelCustomMetadatumArtifactRequest request) {
+        LOG.trace("Called deleteModelCustomMetadatumArtifact");
+        final DeleteModelCustomMetadatumArtifactRequest interceptedRequest =
+                DeleteModelCustomMetadatumArtifactConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteModelCustomMetadatumArtifactConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataScience",
+                        "DeleteModelCustomMetadatumArtifact",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Model/DeleteModelCustomMetadatumArtifact");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, DeleteModelCustomMetadatumArtifactResponse>
+                transformer =
+                        DeleteModelCustomMetadatumArtifactConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public DeleteModelDefinedMetadatumArtifactResponse deleteModelDefinedMetadatumArtifact(
+            DeleteModelDefinedMetadatumArtifactRequest request) {
+        LOG.trace("Called deleteModelDefinedMetadatumArtifact");
+        final DeleteModelDefinedMetadatumArtifactRequest interceptedRequest =
+                DeleteModelDefinedMetadatumArtifactConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteModelDefinedMetadatumArtifactConverter.fromRequest(
+                        client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataScience",
+                        "DeleteModelDefinedMetadatumArtifact",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Model/DeleteModelDefinedMetadatumArtifact");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, DeleteModelDefinedMetadatumArtifactResponse>
+                transformer =
+                        DeleteModelDefinedMetadatumArtifactConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public DeleteModelDeploymentResponse deleteModelDeployment(
             DeleteModelDeploymentRequest request) {
         LOG.trace("Called deleteModelDeployment");
@@ -2849,6 +3092,86 @@ public class DataScienceClient implements DataScience {
     }
 
     @Override
+    public GetModelCustomMetadatumArtifactContentResponse getModelCustomMetadatumArtifactContent(
+            GetModelCustomMetadatumArtifactContentRequest request) {
+        LOG.trace("Called getModelCustomMetadatumArtifactContent");
+        final GetModelCustomMetadatumArtifactContentRequest interceptedRequest =
+                GetModelCustomMetadatumArtifactContentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetModelCustomMetadatumArtifactContentConverter.fromRequest(
+                        client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataScience",
+                        "GetModelCustomMetadatumArtifactContent",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Model/GetModelCustomMetadatumArtifactContent");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, GetModelCustomMetadatumArtifactContentResponse>
+                transformer =
+                        GetModelCustomMetadatumArtifactContentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public GetModelDefinedMetadatumArtifactContentResponse getModelDefinedMetadatumArtifactContent(
+            GetModelDefinedMetadatumArtifactContentRequest request) {
+        LOG.trace("Called getModelDefinedMetadatumArtifactContent");
+        final GetModelDefinedMetadatumArtifactContentRequest interceptedRequest =
+                GetModelDefinedMetadatumArtifactContentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetModelDefinedMetadatumArtifactContentConverter.fromRequest(
+                        client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataScience",
+                        "GetModelDefinedMetadatumArtifactContent",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Model/GetModelDefinedMetadatumArtifactContent");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, GetModelDefinedMetadatumArtifactContentResponse>
+                transformer =
+                        GetModelDefinedMetadatumArtifactContentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public GetModelDeploymentResponse getModelDeployment(GetModelDeploymentRequest request) {
         LOG.trace("Called getModelDeployment");
         final GetModelDeploymentRequest interceptedRequest =
@@ -3271,6 +3594,86 @@ public class DataScienceClient implements DataScience {
         java.util.function.Function<javax.ws.rs.core.Response, HeadModelArtifactResponse>
                 transformer =
                         HeadModelArtifactConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.head(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public HeadModelCustomMetadatumArtifactResponse headModelCustomMetadatumArtifact(
+            HeadModelCustomMetadatumArtifactRequest request) {
+        LOG.trace("Called headModelCustomMetadatumArtifact");
+        final HeadModelCustomMetadatumArtifactRequest interceptedRequest =
+                HeadModelCustomMetadatumArtifactConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                HeadModelCustomMetadatumArtifactConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataScience",
+                        "HeadModelCustomMetadatumArtifact",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Model/HeadModelCustomMetadatumArtifact");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, HeadModelCustomMetadatumArtifactResponse>
+                transformer =
+                        HeadModelCustomMetadatumArtifactConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.head(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public HeadModelDefinedMetadatumArtifactResponse headModelDefinedMetadatumArtifact(
+            HeadModelDefinedMetadatumArtifactRequest request) {
+        LOG.trace("Called headModelDefinedMetadatumArtifact");
+        final HeadModelDefinedMetadatumArtifactRequest interceptedRequest =
+                HeadModelDefinedMetadatumArtifactConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                HeadModelDefinedMetadatumArtifactConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataScience",
+                        "HeadModelDefinedMetadatumArtifact",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Model/HeadModelDefinedMetadatumArtifact");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, HeadModelDefinedMetadatumArtifactResponse>
+                transformer =
+                        HeadModelDefinedMetadatumArtifactConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -4059,6 +4462,51 @@ public class DataScienceClient implements DataScience {
     }
 
     @Override
+    public RegisterModelArtifactReferenceResponse registerModelArtifactReference(
+            RegisterModelArtifactReferenceRequest request) {
+        LOG.trace("Called registerModelArtifactReference");
+        final RegisterModelArtifactReferenceRequest interceptedRequest =
+                RegisterModelArtifactReferenceConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RegisterModelArtifactReferenceConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataScience",
+                        "RegisterModelArtifactReference",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/RegisterModelArtifactReferenceDetails/RegisterModelArtifactReference");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, RegisterModelArtifactReferenceResponse>
+                transformer =
+                        RegisterModelArtifactReferenceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getRegisterModelArtifactReferenceDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public RestoreArchivedModelArtifactResponse restoreArchivedModelArtifact(
             RestoreArchivedModelArtifactRequest request) {
         LOG.trace("Called restoreArchivedModelArtifact");
@@ -4256,6 +4704,168 @@ public class DataScienceClient implements DataScience {
                                 return transformer.apply(response);
                             });
                 });
+    }
+
+    @Override
+    public UpdateModelCustomMetadatumArtifactResponse updateModelCustomMetadatumArtifact(
+            UpdateModelCustomMetadatumArtifactRequest request) {
+        LOG.trace("Called updateModelCustomMetadatumArtifact");
+        try {
+            final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                    com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                            request.getRetryConfiguration(), retryConfiguration, true);
+            if (request.getRetryConfiguration() != null
+                    || retryConfiguration != null
+                    || shouldRetryBecauseOfWaiterConfiguration(retrier)
+                    || authenticationDetailsProvider
+                            instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+                request =
+                        com.oracle.bmc.retrier.Retriers.wrapBodyInputStreamIfNecessary(
+                                request, UpdateModelCustomMetadatumArtifactRequest.builder());
+            }
+            final UpdateModelCustomMetadatumArtifactRequest interceptedRequest =
+                    UpdateModelCustomMetadatumArtifactConverter.interceptRequest(request);
+            com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                    UpdateModelCustomMetadatumArtifactConverter.fromRequest(
+                            client, interceptedRequest);
+
+            ib.property(
+                    com.oracle.bmc.http.internal.AuthnClientFilter.SIGNING_STRATEGY_PROPERTY_NAME,
+                    com.oracle.bmc.http.signing.SigningStrategy.EXCLUDE_BODY);
+            com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+            com.oracle.bmc.ServiceDetails serviceDetails =
+                    new com.oracle.bmc.ServiceDetails(
+                            "DataScience",
+                            "UpdateModelCustomMetadatumArtifact",
+                            ib.getRequestUri().toString(),
+                            "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Model/UpdateModelCustomMetadatumArtifact");
+            java.util.function.Function<
+                            javax.ws.rs.core.Response, UpdateModelCustomMetadatumArtifactResponse>
+                    transformer =
+                            UpdateModelCustomMetadatumArtifactConverter.fromResponse(
+                                    java.util.Optional.of(serviceDetails));
+            return retrier.execute(
+                    interceptedRequest,
+                    retryRequest -> {
+                        final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                                new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                        authenticationDetailsProvider);
+                        return tokenRefreshRetrier.execute(
+                                retryRequest,
+                                retriedRequest -> {
+                                    try {
+                                        javax.ws.rs.core.Response response =
+                                                client.put(
+                                                        ib,
+                                                        retriedRequest
+                                                                .getModelCustomMetadatumArtifact(),
+                                                        retriedRequest);
+                                        return transformer.apply(response);
+                                    } catch (RuntimeException e) {
+                                        if (interceptedRequest.getRetryConfiguration() != null
+                                                || retryConfiguration != null
+                                                || shouldRetryBecauseOfWaiterConfiguration(retrier)
+                                                || (e instanceof com.oracle.bmc.model.BmcException
+                                                        && tokenRefreshRetrier
+                                                                .getRetryCondition()
+                                                                .shouldBeRetried(
+                                                                        (com.oracle.bmc.model
+                                                                                        .BmcException)
+                                                                                e))) {
+                                            com.oracle.bmc.retrier.Retriers.tryResetStreamForRetry(
+                                                    interceptedRequest
+                                                            .getModelCustomMetadatumArtifact(),
+                                                    true);
+                                        }
+                                        throw e; // rethrow
+                                    }
+                                });
+                    });
+        } finally {
+            com.oracle.bmc.io.internal.KeepOpenInputStream.closeStream(
+                    request.getModelCustomMetadatumArtifact());
+        }
+    }
+
+    @Override
+    public UpdateModelDefinedMetadatumArtifactResponse updateModelDefinedMetadatumArtifact(
+            UpdateModelDefinedMetadatumArtifactRequest request) {
+        LOG.trace("Called updateModelDefinedMetadatumArtifact");
+        try {
+            final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                    com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                            request.getRetryConfiguration(), retryConfiguration, true);
+            if (request.getRetryConfiguration() != null
+                    || retryConfiguration != null
+                    || shouldRetryBecauseOfWaiterConfiguration(retrier)
+                    || authenticationDetailsProvider
+                            instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+                request =
+                        com.oracle.bmc.retrier.Retriers.wrapBodyInputStreamIfNecessary(
+                                request, UpdateModelDefinedMetadatumArtifactRequest.builder());
+            }
+            final UpdateModelDefinedMetadatumArtifactRequest interceptedRequest =
+                    UpdateModelDefinedMetadatumArtifactConverter.interceptRequest(request);
+            com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                    UpdateModelDefinedMetadatumArtifactConverter.fromRequest(
+                            client, interceptedRequest);
+
+            ib.property(
+                    com.oracle.bmc.http.internal.AuthnClientFilter.SIGNING_STRATEGY_PROPERTY_NAME,
+                    com.oracle.bmc.http.signing.SigningStrategy.EXCLUDE_BODY);
+            com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+            com.oracle.bmc.ServiceDetails serviceDetails =
+                    new com.oracle.bmc.ServiceDetails(
+                            "DataScience",
+                            "UpdateModelDefinedMetadatumArtifact",
+                            ib.getRequestUri().toString(),
+                            "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Model/UpdateModelDefinedMetadatumArtifact");
+            java.util.function.Function<
+                            javax.ws.rs.core.Response, UpdateModelDefinedMetadatumArtifactResponse>
+                    transformer =
+                            UpdateModelDefinedMetadatumArtifactConverter.fromResponse(
+                                    java.util.Optional.of(serviceDetails));
+            return retrier.execute(
+                    interceptedRequest,
+                    retryRequest -> {
+                        final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                                new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                        authenticationDetailsProvider);
+                        return tokenRefreshRetrier.execute(
+                                retryRequest,
+                                retriedRequest -> {
+                                    try {
+                                        javax.ws.rs.core.Response response =
+                                                client.put(
+                                                        ib,
+                                                        retriedRequest
+                                                                .getModelDefinedMetadatumArtifact(),
+                                                        retriedRequest);
+                                        return transformer.apply(response);
+                                    } catch (RuntimeException e) {
+                                        if (interceptedRequest.getRetryConfiguration() != null
+                                                || retryConfiguration != null
+                                                || shouldRetryBecauseOfWaiterConfiguration(retrier)
+                                                || (e instanceof com.oracle.bmc.model.BmcException
+                                                        && tokenRefreshRetrier
+                                                                .getRetryCondition()
+                                                                .shouldBeRetried(
+                                                                        (com.oracle.bmc.model
+                                                                                        .BmcException)
+                                                                                e))) {
+                                            com.oracle.bmc.retrier.Retriers.tryResetStreamForRetry(
+                                                    interceptedRequest
+                                                            .getModelDefinedMetadatumArtifact(),
+                                                    true);
+                                        }
+                                        throw e; // rethrow
+                                    }
+                                });
+                    });
+        } finally {
+            com.oracle.bmc.io.internal.KeepOpenInputStream.closeStream(
+                    request.getModelDefinedMetadatumArtifact());
+        }
     }
 
     @Override

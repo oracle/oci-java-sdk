@@ -28,9 +28,11 @@ public final class BackupSummary extends com.oracle.bmc.http.internal.Explicitly
         "lifecycleState",
         "lifecycleDetails",
         "sourceType",
+        "timeCreatedPrecise",
         "backupSize",
         "dbSystemId",
         "retentionPeriod",
+        "copyStatus",
         "freeformTags",
         "definedTags",
         "systemTags"
@@ -44,9 +46,11 @@ public final class BackupSummary extends com.oracle.bmc.http.internal.Explicitly
             Backup.LifecycleState lifecycleState,
             String lifecycleDetails,
             Backup.SourceType sourceType,
+            java.util.Date timeCreatedPrecise,
             Integer backupSize,
             String dbSystemId,
             Integer retentionPeriod,
+            java.util.List<BackupCopyStatusDetails> copyStatus,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags) {
@@ -59,9 +63,11 @@ public final class BackupSummary extends com.oracle.bmc.http.internal.Explicitly
         this.lifecycleState = lifecycleState;
         this.lifecycleDetails = lifecycleDetails;
         this.sourceType = sourceType;
+        this.timeCreatedPrecise = timeCreatedPrecise;
         this.backupSize = backupSize;
         this.dbSystemId = dbSystemId;
         this.retentionPeriod = retentionPeriod;
+        this.copyStatus = copyStatus;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.systemTags = systemTags;
@@ -214,6 +220,32 @@ public final class BackupSummary extends com.oracle.bmc.http.internal.Explicitly
             return this;
         }
         /**
+         * The date and time the backup was created.
+         * This is the time the actual point-in-time data snapshot was taken,
+         * expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+         * <p>
+         * Example: {@code 2016-08-25T21:10:29.600Z}
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("timeCreatedPrecise")
+        private java.util.Date timeCreatedPrecise;
+
+        /**
+         * The date and time the backup was created.
+         * This is the time the actual point-in-time data snapshot was taken,
+         * expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+         * <p>
+         * Example: {@code 2016-08-25T21:10:29.600Z}
+         *
+         * @param timeCreatedPrecise the value to set
+         * @return this builder
+         **/
+        public Builder timeCreatedPrecise(java.util.Date timeCreatedPrecise) {
+            this.timeCreatedPrecise = timeCreatedPrecise;
+            this.__explicitlySet__.add("timeCreatedPrecise");
+            return this;
+        }
+        /**
          * The size of the backup, in gigabytes.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("backupSize")
@@ -259,6 +291,22 @@ public final class BackupSummary extends com.oracle.bmc.http.internal.Explicitly
         public Builder retentionPeriod(Integer retentionPeriod) {
             this.retentionPeriod = retentionPeriod;
             this.__explicitlySet__.add("retentionPeriod");
+            return this;
+        }
+        /**
+         * List of status for Backup Copy
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("copyStatus")
+        private java.util.List<BackupCopyStatusDetails> copyStatus;
+
+        /**
+         * List of status for Backup Copy
+         * @param copyStatus the value to set
+         * @return this builder
+         **/
+        public Builder copyStatus(java.util.List<BackupCopyStatusDetails> copyStatus) {
+            this.copyStatus = copyStatus;
+            this.__explicitlySet__.add("copyStatus");
             return this;
         }
         /**
@@ -337,9 +385,11 @@ public final class BackupSummary extends com.oracle.bmc.http.internal.Explicitly
                             this.lifecycleState,
                             this.lifecycleDetails,
                             this.sourceType,
+                            this.timeCreatedPrecise,
                             this.backupSize,
                             this.dbSystemId,
                             this.retentionPeriod,
+                            this.copyStatus,
                             this.freeformTags,
                             this.definedTags,
                             this.systemTags);
@@ -375,6 +425,9 @@ public final class BackupSummary extends com.oracle.bmc.http.internal.Explicitly
             if (model.wasPropertyExplicitlySet("sourceType")) {
                 this.sourceType(model.getSourceType());
             }
+            if (model.wasPropertyExplicitlySet("timeCreatedPrecise")) {
+                this.timeCreatedPrecise(model.getTimeCreatedPrecise());
+            }
             if (model.wasPropertyExplicitlySet("backupSize")) {
                 this.backupSize(model.getBackupSize());
             }
@@ -383,6 +436,9 @@ public final class BackupSummary extends com.oracle.bmc.http.internal.Explicitly
             }
             if (model.wasPropertyExplicitlySet("retentionPeriod")) {
                 this.retentionPeriod(model.getRetentionPeriod());
+            }
+            if (model.wasPropertyExplicitlySet("copyStatus")) {
+                this.copyStatus(model.getCopyStatus());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -537,6 +593,30 @@ public final class BackupSummary extends com.oracle.bmc.http.internal.Explicitly
     }
 
     /**
+     * The date and time the backup was created.
+     * This is the time the actual point-in-time data snapshot was taken,
+     * expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+     * <p>
+     * Example: {@code 2016-08-25T21:10:29.600Z}
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("timeCreatedPrecise")
+    private final java.util.Date timeCreatedPrecise;
+
+    /**
+     * The date and time the backup was created.
+     * This is the time the actual point-in-time data snapshot was taken,
+     * expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+     * <p>
+     * Example: {@code 2016-08-25T21:10:29.600Z}
+     *
+     * @return the value
+     **/
+    public java.util.Date getTimeCreatedPrecise() {
+        return timeCreatedPrecise;
+    }
+
+    /**
      * The size of the backup, in gigabytes.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("backupSize")
@@ -576,6 +656,20 @@ public final class BackupSummary extends com.oracle.bmc.http.internal.Explicitly
      **/
     public Integer getRetentionPeriod() {
         return retentionPeriod;
+    }
+
+    /**
+     * List of status for Backup Copy
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("copyStatus")
+    private final java.util.List<BackupCopyStatusDetails> copyStatus;
+
+    /**
+     * List of status for Backup Copy
+     * @return the value
+     **/
+    public java.util.List<BackupCopyStatusDetails> getCopyStatus() {
+        return copyStatus;
     }
 
     /**
@@ -654,9 +748,11 @@ public final class BackupSummary extends com.oracle.bmc.http.internal.Explicitly
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
         sb.append(", sourceType=").append(String.valueOf(this.sourceType));
+        sb.append(", timeCreatedPrecise=").append(String.valueOf(this.timeCreatedPrecise));
         sb.append(", backupSize=").append(String.valueOf(this.backupSize));
         sb.append(", dbSystemId=").append(String.valueOf(this.dbSystemId));
         sb.append(", retentionPeriod=").append(String.valueOf(this.retentionPeriod));
+        sb.append(", copyStatus=").append(String.valueOf(this.copyStatus));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
@@ -682,9 +778,11 @@ public final class BackupSummary extends com.oracle.bmc.http.internal.Explicitly
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
                 && java.util.Objects.equals(this.sourceType, other.sourceType)
+                && java.util.Objects.equals(this.timeCreatedPrecise, other.timeCreatedPrecise)
                 && java.util.Objects.equals(this.backupSize, other.backupSize)
                 && java.util.Objects.equals(this.dbSystemId, other.dbSystemId)
                 && java.util.Objects.equals(this.retentionPeriod, other.retentionPeriod)
+                && java.util.Objects.equals(this.copyStatus, other.copyStatus)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
@@ -709,11 +807,17 @@ public final class BackupSummary extends com.oracle.bmc.http.internal.Explicitly
                 (result * PRIME)
                         + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
         result = (result * PRIME) + (this.sourceType == null ? 43 : this.sourceType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeCreatedPrecise == null
+                                ? 43
+                                : this.timeCreatedPrecise.hashCode());
         result = (result * PRIME) + (this.backupSize == null ? 43 : this.backupSize.hashCode());
         result = (result * PRIME) + (this.dbSystemId == null ? 43 : this.dbSystemId.hashCode());
         result =
                 (result * PRIME)
                         + (this.retentionPeriod == null ? 43 : this.retentionPeriod.hashCode());
+        result = (result * PRIME) + (this.copyStatus == null ? 43 : this.copyStatus.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());

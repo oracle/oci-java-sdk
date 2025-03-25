@@ -30,6 +30,7 @@ public final class ServiceConnector extends com.oracle.bmc.http.internal.Explici
         "timeCreated",
         "timeUpdated",
         "lifecycleState",
+        "lifecycleDetails",
         "lifecyleDetails",
         "source",
         "tasks",
@@ -46,6 +47,7 @@ public final class ServiceConnector extends com.oracle.bmc.http.internal.Explici
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
             LifecycleState lifecycleState,
+            String lifecycleDetails,
             String lifecyleDetails,
             SourceDetails source,
             java.util.List<TaskDetails> tasks,
@@ -61,6 +63,7 @@ public final class ServiceConnector extends com.oracle.bmc.http.internal.Explici
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
         this.lifecycleState = lifecycleState;
+        this.lifecycleDetails = lifecycleDetails;
         this.lifecyleDetails = lifecyleDetails;
         this.source = source;
         this.tasks = tasks;
@@ -214,10 +217,34 @@ public final class ServiceConnector extends com.oracle.bmc.http.internal.Explici
          * information for a resource in a {@code FAILED} state.
          *
          **/
+        @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
+        private String lifecycleDetails;
+
+        /**
+         * A message describing the current state in more detail.
+         * For example, the message might provide actionable
+         * information for a resource in a {@code FAILED} state.
+         *
+         * @param lifecycleDetails the value to set
+         * @return this builder
+         **/
+        public Builder lifecycleDetails(String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
+            this.__explicitlySet__.add("lifecycleDetails");
+            return this;
+        }
+        /**
+         * *Please note this property is deprecated and will be removed on January 27, 2026. Use {@code lifecycleDetails} instead.*
+         * A message describing the current state in more detail.
+         * For example, the message might provide actionable
+         * information for a resource in a {@code FAILED} state.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecyleDetails")
         private String lifecyleDetails;
 
         /**
+         * *Please note this property is deprecated and will be removed on January 27, 2026. Use {@code lifecycleDetails} instead.*
          * A message describing the current state in more detail.
          * For example, the message might provide actionable
          * information for a resource in a {@code FAILED} state.
@@ -343,6 +370,7 @@ public final class ServiceConnector extends com.oracle.bmc.http.internal.Explici
                             this.timeCreated,
                             this.timeUpdated,
                             this.lifecycleState,
+                            this.lifecycleDetails,
                             this.lifecyleDetails,
                             this.source,
                             this.tasks,
@@ -378,6 +406,9 @@ public final class ServiceConnector extends com.oracle.bmc.http.internal.Explici
             }
             if (model.wasPropertyExplicitlySet("lifecycleState")) {
                 this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleDetails")) {
+                this.lifecycleDetails(model.getLifecycleDetails());
             }
             if (model.wasPropertyExplicitlySet("lifecyleDetails")) {
                 this.lifecyleDetails(model.getLifecyleDetails());
@@ -543,10 +574,32 @@ public final class ServiceConnector extends com.oracle.bmc.http.internal.Explici
      * information for a resource in a {@code FAILED} state.
      *
      **/
+    @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
+    private final String lifecycleDetails;
+
+    /**
+     * A message describing the current state in more detail.
+     * For example, the message might provide actionable
+     * information for a resource in a {@code FAILED} state.
+     *
+     * @return the value
+     **/
+    public String getLifecycleDetails() {
+        return lifecycleDetails;
+    }
+
+    /**
+     * *Please note this property is deprecated and will be removed on January 27, 2026. Use {@code lifecycleDetails} instead.*
+     * A message describing the current state in more detail.
+     * For example, the message might provide actionable
+     * information for a resource in a {@code FAILED} state.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecyleDetails")
     private final String lifecyleDetails;
 
     /**
+     * *Please note this property is deprecated and will be removed on January 27, 2026. Use {@code lifecycleDetails} instead.*
      * A message describing the current state in more detail.
      * For example, the message might provide actionable
      * information for a resource in a {@code FAILED} state.
@@ -664,6 +717,7 @@ public final class ServiceConnector extends com.oracle.bmc.http.internal.Explici
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
         sb.append(", lifecyleDetails=").append(String.valueOf(this.lifecyleDetails));
         sb.append(", source=").append(String.valueOf(this.source));
         sb.append(", tasks=").append(String.valueOf(this.tasks));
@@ -692,6 +746,7 @@ public final class ServiceConnector extends com.oracle.bmc.http.internal.Explici
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
                 && java.util.Objects.equals(this.lifecyleDetails, other.lifecyleDetails)
                 && java.util.Objects.equals(this.source, other.source)
                 && java.util.Objects.equals(this.tasks, other.tasks)
@@ -717,6 +772,9 @@ public final class ServiceConnector extends com.oracle.bmc.http.internal.Explici
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
         result =
                 (result * PRIME)
                         + (this.lifecyleDetails == null ? 43 : this.lifecyleDetails.hashCode());

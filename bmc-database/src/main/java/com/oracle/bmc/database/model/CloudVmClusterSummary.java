@@ -62,6 +62,8 @@ public final class CloudVmClusterSummary
         "diskRedundancy",
         "scanIpIds",
         "vipIds",
+        "scanIpv6Ids",
+        "vipv6Ids",
         "scanDnsRecordId",
         "freeformTags",
         "definedTags",
@@ -75,6 +77,7 @@ public final class CloudVmClusterSummary
         "giSoftwareImageId",
         "fileSystemConfigurationDetails",
         "cloudAutomationUpdateDetails",
+        "vmClusterType",
         "computeModel"
     })
     public CloudVmClusterSummary(
@@ -116,6 +119,8 @@ public final class CloudVmClusterSummary
             DiskRedundancy diskRedundancy,
             java.util.List<String> scanIpIds,
             java.util.List<String> vipIds,
+            java.util.List<String> scanIpv6Ids,
+            java.util.List<String> vipv6Ids,
             String scanDnsRecordId,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
@@ -129,6 +134,7 @@ public final class CloudVmClusterSummary
             String giSoftwareImageId,
             java.util.List<FileSystemConfigurationDetail> fileSystemConfigurationDetails,
             CloudAutomationUpdateDetails cloudAutomationUpdateDetails,
+            VmClusterType vmClusterType,
             ComputeModel computeModel) {
         super();
         this.id = id;
@@ -169,6 +175,8 @@ public final class CloudVmClusterSummary
         this.diskRedundancy = diskRedundancy;
         this.scanIpIds = scanIpIds;
         this.vipIds = vipIds;
+        this.scanIpv6Ids = scanIpv6Ids;
+        this.vipv6Ids = vipv6Ids;
         this.scanDnsRecordId = scanDnsRecordId;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
@@ -182,6 +190,7 @@ public final class CloudVmClusterSummary
         this.giSoftwareImageId = giSoftwareImageId;
         this.fileSystemConfigurationDetails = fileSystemConfigurationDetails;
         this.cloudAutomationUpdateDetails = cloudAutomationUpdateDetails;
+        this.vmClusterType = vmClusterType;
         this.computeModel = computeModel;
     }
 
@@ -816,8 +825,8 @@ public final class CloudVmClusterSummary
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IP addresses associated with the cloud VM cluster.
-         * SCAN IP addresses are typically used for load balancing and are not assigned to any interface.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IPv4 addresses associated with the cloud VM cluster.
+         * SCAN IPv4 addresses are typically used for load balancing and are not assigned to any interface.
          * Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
          * <p>
          **Note:** For a single-node DB system, this list is empty.
@@ -827,8 +836,8 @@ public final class CloudVmClusterSummary
         private java.util.List<String> scanIpIds;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IP addresses associated with the cloud VM cluster.
-         * SCAN IP addresses are typically used for load balancing and are not assigned to any interface.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IPv4 addresses associated with the cloud VM cluster.
+         * SCAN IPv4 addresses are typically used for load balancing and are not assigned to any interface.
          * Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
          * <p>
          **Note:** For a single-node DB system, this list is empty.
@@ -842,8 +851,8 @@ public final class CloudVmClusterSummary
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) addresses associated with the cloud VM cluster.
-         * The Cluster Ready Services (CRS) creates and maintains one VIP address for each node in the Exadata Cloud Service instance to
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) IPv4 addresses associated with the cloud VM cluster.
+         * The Cluster Ready Services (CRS) creates and maintains one VIP IPv4 address for each node in the Exadata Cloud Service instance to
          * enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
          * <p>
          **Note:** For a single-node DB system, this list is empty.
@@ -853,8 +862,8 @@ public final class CloudVmClusterSummary
         private java.util.List<String> vipIds;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) addresses associated with the cloud VM cluster.
-         * The Cluster Ready Services (CRS) creates and maintains one VIP address for each node in the Exadata Cloud Service instance to
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) IPv4 addresses associated with the cloud VM cluster.
+         * The Cluster Ready Services (CRS) creates and maintains one VIP IPv4 address for each node in the Exadata Cloud Service instance to
          * enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
          * <p>
          **Note:** For a single-node DB system, this list is empty.
@@ -865,6 +874,58 @@ public final class CloudVmClusterSummary
         public Builder vipIds(java.util.List<String> vipIds) {
             this.vipIds = vipIds;
             this.__explicitlySet__.add("vipIds");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IPv6 addresses associated with the cloud VM cluster.
+         * SCAN IPv6 addresses are typically used for load balancing and are not assigned to any interface.
+         * Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
+         * <p>
+         **Note:** For a single-node DB system, this list is empty.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("scanIpv6Ids")
+        private java.util.List<String> scanIpv6Ids;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IPv6 addresses associated with the cloud VM cluster.
+         * SCAN IPv6 addresses are typically used for load balancing and are not assigned to any interface.
+         * Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
+         * <p>
+         **Note:** For a single-node DB system, this list is empty.
+         *
+         * @param scanIpv6Ids the value to set
+         * @return this builder
+         **/
+        public Builder scanIpv6Ids(java.util.List<String> scanIpv6Ids) {
+            this.scanIpv6Ids = scanIpv6Ids;
+            this.__explicitlySet__.add("scanIpv6Ids");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) IPv6 addresses associated with the cloud VM cluster.
+         * The Cluster Ready Services (CRS) creates and maintains one VIP IPv6 address for each node in the Exadata Cloud Service instance to
+         * enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
+         * <p>
+         **Note:** For a single-node DB system, this list is empty.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("vipv6Ids")
+        private java.util.List<String> vipv6Ids;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) IPv6 addresses associated with the cloud VM cluster.
+         * The Cluster Ready Services (CRS) creates and maintains one VIP IPv6 address for each node in the Exadata Cloud Service instance to
+         * enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
+         * <p>
+         **Note:** For a single-node DB system, this list is empty.
+         *
+         * @param vipv6Ids the value to set
+         * @return this builder
+         **/
+        public Builder vipv6Ids(java.util.List<String> vipv6Ids) {
+            this.vipv6Ids = vipv6Ids;
+            this.__explicitlySet__.add("vipv6Ids");
             return this;
         }
         /**
@@ -1094,6 +1155,22 @@ public final class CloudVmClusterSummary
             return this;
         }
         /**
+         * The vmcluster type for the VM cluster/Cloud VM cluster.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("vmClusterType")
+        private VmClusterType vmClusterType;
+
+        /**
+         * The vmcluster type for the VM cluster/Cloud VM cluster.
+         * @param vmClusterType the value to set
+         * @return this builder
+         **/
+        public Builder vmClusterType(VmClusterType vmClusterType) {
+            this.vmClusterType = vmClusterType;
+            this.__explicitlySet__.add("vmClusterType");
+            return this;
+        }
+        /**
          * The compute model of the Autonomous Database. This is required if using the {@code computeCount} parameter. If using {@code cpuCoreCount} then it is an error to specify {@code computeModel} to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("computeModel")
@@ -1154,6 +1231,8 @@ public final class CloudVmClusterSummary
                             this.diskRedundancy,
                             this.scanIpIds,
                             this.vipIds,
+                            this.scanIpv6Ids,
+                            this.vipv6Ids,
                             this.scanDnsRecordId,
                             this.freeformTags,
                             this.definedTags,
@@ -1167,6 +1246,7 @@ public final class CloudVmClusterSummary
                             this.giSoftwareImageId,
                             this.fileSystemConfigurationDetails,
                             this.cloudAutomationUpdateDetails,
+                            this.vmClusterType,
                             this.computeModel);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -1290,6 +1370,12 @@ public final class CloudVmClusterSummary
             if (model.wasPropertyExplicitlySet("vipIds")) {
                 this.vipIds(model.getVipIds());
             }
+            if (model.wasPropertyExplicitlySet("scanIpv6Ids")) {
+                this.scanIpv6Ids(model.getScanIpv6Ids());
+            }
+            if (model.wasPropertyExplicitlySet("vipv6Ids")) {
+                this.vipv6Ids(model.getVipv6Ids());
+            }
             if (model.wasPropertyExplicitlySet("scanDnsRecordId")) {
                 this.scanDnsRecordId(model.getScanDnsRecordId());
             }
@@ -1328,6 +1414,9 @@ public final class CloudVmClusterSummary
             }
             if (model.wasPropertyExplicitlySet("cloudAutomationUpdateDetails")) {
                 this.cloudAutomationUpdateDetails(model.getCloudAutomationUpdateDetails());
+            }
+            if (model.wasPropertyExplicitlySet("vmClusterType")) {
+                this.vmClusterType(model.getVmClusterType());
             }
             if (model.wasPropertyExplicitlySet("computeModel")) {
                 this.computeModel(model.getComputeModel());
@@ -2057,8 +2146,8 @@ public final class CloudVmClusterSummary
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IP addresses associated with the cloud VM cluster.
-     * SCAN IP addresses are typically used for load balancing and are not assigned to any interface.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IPv4 addresses associated with the cloud VM cluster.
+     * SCAN IPv4 addresses are typically used for load balancing and are not assigned to any interface.
      * Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
      * <p>
      **Note:** For a single-node DB system, this list is empty.
@@ -2068,8 +2157,8 @@ public final class CloudVmClusterSummary
     private final java.util.List<String> scanIpIds;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IP addresses associated with the cloud VM cluster.
-     * SCAN IP addresses are typically used for load balancing and are not assigned to any interface.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IPv4 addresses associated with the cloud VM cluster.
+     * SCAN IPv4 addresses are typically used for load balancing and are not assigned to any interface.
      * Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
      * <p>
      **Note:** For a single-node DB system, this list is empty.
@@ -2081,8 +2170,8 @@ public final class CloudVmClusterSummary
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) addresses associated with the cloud VM cluster.
-     * The Cluster Ready Services (CRS) creates and maintains one VIP address for each node in the Exadata Cloud Service instance to
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) IPv4 addresses associated with the cloud VM cluster.
+     * The Cluster Ready Services (CRS) creates and maintains one VIP IPv4 address for each node in the Exadata Cloud Service instance to
      * enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
      * <p>
      **Note:** For a single-node DB system, this list is empty.
@@ -2092,8 +2181,8 @@ public final class CloudVmClusterSummary
     private final java.util.List<String> vipIds;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) addresses associated with the cloud VM cluster.
-     * The Cluster Ready Services (CRS) creates and maintains one VIP address for each node in the Exadata Cloud Service instance to
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) IPv4 addresses associated with the cloud VM cluster.
+     * The Cluster Ready Services (CRS) creates and maintains one VIP IPv4 address for each node in the Exadata Cloud Service instance to
      * enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
      * <p>
      **Note:** For a single-node DB system, this list is empty.
@@ -2102,6 +2191,54 @@ public final class CloudVmClusterSummary
      **/
     public java.util.List<String> getVipIds() {
         return vipIds;
+    }
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IPv6 addresses associated with the cloud VM cluster.
+     * SCAN IPv6 addresses are typically used for load balancing and are not assigned to any interface.
+     * Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
+     * <p>
+     **Note:** For a single-node DB system, this list is empty.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("scanIpv6Ids")
+    private final java.util.List<String> scanIpv6Ids;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IPv6 addresses associated with the cloud VM cluster.
+     * SCAN IPv6 addresses are typically used for load balancing and are not assigned to any interface.
+     * Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
+     * <p>
+     **Note:** For a single-node DB system, this list is empty.
+     *
+     * @return the value
+     **/
+    public java.util.List<String> getScanIpv6Ids() {
+        return scanIpv6Ids;
+    }
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) IPv6 addresses associated with the cloud VM cluster.
+     * The Cluster Ready Services (CRS) creates and maintains one VIP IPv6 address for each node in the Exadata Cloud Service instance to
+     * enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
+     * <p>
+     **Note:** For a single-node DB system, this list is empty.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("vipv6Ids")
+    private final java.util.List<String> vipv6Ids;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) IPv6 addresses associated with the cloud VM cluster.
+     * The Cluster Ready Services (CRS) creates and maintains one VIP IPv6 address for each node in the Exadata Cloud Service instance to
+     * enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
+     * <p>
+     **Note:** For a single-node DB system, this list is empty.
+     *
+     * @return the value
+     **/
+    public java.util.List<String> getVipv6Ids() {
+        return vipv6Ids;
     }
 
     /**
@@ -2301,6 +2438,68 @@ public final class CloudVmClusterSummary
     }
 
     /**
+     * The vmcluster type for the VM cluster/Cloud VM cluster.
+     **/
+    public enum VmClusterType {
+        Regular("REGULAR"),
+        Developer("DEVELOPER"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(VmClusterType.class);
+
+        private final String value;
+        private static java.util.Map<String, VmClusterType> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (VmClusterType v : VmClusterType.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        VmClusterType(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static VmClusterType create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'VmClusterType', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * The vmcluster type for the VM cluster/Cloud VM cluster.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("vmClusterType")
+    private final VmClusterType vmClusterType;
+
+    /**
+     * The vmcluster type for the VM cluster/Cloud VM cluster.
+     * @return the value
+     **/
+    public VmClusterType getVmClusterType() {
+        return vmClusterType;
+    }
+
+    /**
      * The compute model of the Autonomous Database. This is required if using the {@code computeCount} parameter. If using {@code cpuCoreCount} then it is an error to specify {@code computeModel} to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
      **/
     public enum ComputeModel {
@@ -2417,6 +2616,8 @@ public final class CloudVmClusterSummary
         sb.append(", diskRedundancy=").append(String.valueOf(this.diskRedundancy));
         sb.append(", scanIpIds=").append(String.valueOf(this.scanIpIds));
         sb.append(", vipIds=").append(String.valueOf(this.vipIds));
+        sb.append(", scanIpv6Ids=").append(String.valueOf(this.scanIpv6Ids));
+        sb.append(", vipv6Ids=").append(String.valueOf(this.vipv6Ids));
         sb.append(", scanDnsRecordId=").append(String.valueOf(this.scanDnsRecordId));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
@@ -2432,6 +2633,7 @@ public final class CloudVmClusterSummary
                 .append(String.valueOf(this.fileSystemConfigurationDetails));
         sb.append(", cloudAutomationUpdateDetails=")
                 .append(String.valueOf(this.cloudAutomationUpdateDetails));
+        sb.append(", vmClusterType=").append(String.valueOf(this.vmClusterType));
         sb.append(", computeModel=").append(String.valueOf(this.computeModel));
         sb.append(")");
         return sb.toString();
@@ -2489,6 +2691,8 @@ public final class CloudVmClusterSummary
                 && java.util.Objects.equals(this.diskRedundancy, other.diskRedundancy)
                 && java.util.Objects.equals(this.scanIpIds, other.scanIpIds)
                 && java.util.Objects.equals(this.vipIds, other.vipIds)
+                && java.util.Objects.equals(this.scanIpv6Ids, other.scanIpv6Ids)
+                && java.util.Objects.equals(this.vipv6Ids, other.vipv6Ids)
                 && java.util.Objects.equals(this.scanDnsRecordId, other.scanDnsRecordId)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
@@ -2505,6 +2709,7 @@ public final class CloudVmClusterSummary
                         this.fileSystemConfigurationDetails, other.fileSystemConfigurationDetails)
                 && java.util.Objects.equals(
                         this.cloudAutomationUpdateDetails, other.cloudAutomationUpdateDetails)
+                && java.util.Objects.equals(this.vmClusterType, other.vmClusterType)
                 && java.util.Objects.equals(this.computeModel, other.computeModel)
                 && super.equals(other);
     }
@@ -2607,6 +2812,8 @@ public final class CloudVmClusterSummary
                         + (this.diskRedundancy == null ? 43 : this.diskRedundancy.hashCode());
         result = (result * PRIME) + (this.scanIpIds == null ? 43 : this.scanIpIds.hashCode());
         result = (result * PRIME) + (this.vipIds == null ? 43 : this.vipIds.hashCode());
+        result = (result * PRIME) + (this.scanIpv6Ids == null ? 43 : this.scanIpv6Ids.hashCode());
+        result = (result * PRIME) + (this.vipv6Ids == null ? 43 : this.vipv6Ids.hashCode());
         result =
                 (result * PRIME)
                         + (this.scanDnsRecordId == null ? 43 : this.scanDnsRecordId.hashCode());
@@ -2648,6 +2855,9 @@ public final class CloudVmClusterSummary
                         + (this.cloudAutomationUpdateDetails == null
                                 ? 43
                                 : this.cloudAutomationUpdateDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.vmClusterType == null ? 43 : this.vmClusterType.hashCode());
         result = (result * PRIME) + (this.computeModel == null ? 43 : this.computeModel.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;

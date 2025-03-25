@@ -20,11 +20,15 @@ package com.oracle.bmc.generativeaiagentruntime.model;
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class MessageContent extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"text", "citations"})
-    public MessageContent(String text, java.util.List<Citation> citations) {
+    @java.beans.ConstructorProperties({"text", "citations", "paragraphCitations"})
+    public MessageContent(
+            String text,
+            java.util.List<Citation> citations,
+            java.util.List<ParagraphCitation> paragraphCitations) {
         super();
         this.text = text;
         this.citations = citations;
+        this.paragraphCitations = paragraphCitations;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -61,12 +65,29 @@ public final class MessageContent extends com.oracle.bmc.http.internal.Explicitl
             this.__explicitlySet__.add("citations");
             return this;
         }
+        /**
+         * A list of citations used to generate the paragraphs of the agent message.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("paragraphCitations")
+        private java.util.List<ParagraphCitation> paragraphCitations;
+
+        /**
+         * A list of citations used to generate the paragraphs of the agent message.
+         * @param paragraphCitations the value to set
+         * @return this builder
+         **/
+        public Builder paragraphCitations(java.util.List<ParagraphCitation> paragraphCitations) {
+            this.paragraphCitations = paragraphCitations;
+            this.__explicitlySet__.add("paragraphCitations");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public MessageContent build() {
-            MessageContent model = new MessageContent(this.text, this.citations);
+            MessageContent model =
+                    new MessageContent(this.text, this.citations, this.paragraphCitations);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -80,6 +101,9 @@ public final class MessageContent extends com.oracle.bmc.http.internal.Explicitl
             }
             if (model.wasPropertyExplicitlySet("citations")) {
                 this.citations(model.getCitations());
+            }
+            if (model.wasPropertyExplicitlySet("paragraphCitations")) {
+                this.paragraphCitations(model.getParagraphCitations());
             }
             return this;
         }
@@ -124,6 +148,20 @@ public final class MessageContent extends com.oracle.bmc.http.internal.Explicitl
         return citations;
     }
 
+    /**
+     * A list of citations used to generate the paragraphs of the agent message.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("paragraphCitations")
+    private final java.util.List<ParagraphCitation> paragraphCitations;
+
+    /**
+     * A list of citations used to generate the paragraphs of the agent message.
+     * @return the value
+     **/
+    public java.util.List<ParagraphCitation> getParagraphCitations() {
+        return paragraphCitations;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -140,6 +178,7 @@ public final class MessageContent extends com.oracle.bmc.http.internal.Explicitl
         sb.append("super=").append(super.toString());
         sb.append("text=").append(String.valueOf(this.text));
         sb.append(", citations=").append(String.valueOf(this.citations));
+        sb.append(", paragraphCitations=").append(String.valueOf(this.paragraphCitations));
         sb.append(")");
         return sb.toString();
     }
@@ -156,6 +195,7 @@ public final class MessageContent extends com.oracle.bmc.http.internal.Explicitl
         MessageContent other = (MessageContent) o;
         return java.util.Objects.equals(this.text, other.text)
                 && java.util.Objects.equals(this.citations, other.citations)
+                && java.util.Objects.equals(this.paragraphCitations, other.paragraphCitations)
                 && super.equals(other);
     }
 
@@ -165,6 +205,11 @@ public final class MessageContent extends com.oracle.bmc.http.internal.Explicitl
         int result = 1;
         result = (result * PRIME) + (this.text == null ? 43 : this.text.hashCode());
         result = (result * PRIME) + (this.citations == null ? 43 : this.citations.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.paragraphCitations == null
+                                ? 43
+                                : this.paragraphCitations.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

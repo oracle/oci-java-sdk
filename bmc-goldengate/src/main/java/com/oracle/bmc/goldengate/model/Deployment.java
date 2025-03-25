@@ -63,6 +63,9 @@ public final class Deployment extends com.oracle.bmc.http.internal.ExplicitlySet
         "nextMaintenanceDescription",
         "maintenanceConfiguration",
         "timeOggVersionSupportedUntil",
+        "backupSchedule",
+        "timeLastBackupScheduled",
+        "timeNextBackupScheduled",
         "ingressIps"
     })
     public Deployment(
@@ -108,6 +111,9 @@ public final class Deployment extends com.oracle.bmc.http.internal.ExplicitlySet
             String nextMaintenanceDescription,
             MaintenanceConfiguration maintenanceConfiguration,
             java.util.Date timeOggVersionSupportedUntil,
+            BackupSchedule backupSchedule,
+            java.util.Date timeLastBackupScheduled,
+            java.util.Date timeNextBackupScheduled,
             java.util.List<IngressIpDetails> ingressIps) {
         super();
         this.id = id;
@@ -152,6 +158,9 @@ public final class Deployment extends com.oracle.bmc.http.internal.ExplicitlySet
         this.nextMaintenanceDescription = nextMaintenanceDescription;
         this.maintenanceConfiguration = maintenanceConfiguration;
         this.timeOggVersionSupportedUntil = timeOggVersionSupportedUntil;
+        this.backupSchedule = backupSchedule;
+        this.timeLastBackupScheduled = timeLastBackupScheduled;
+        this.timeNextBackupScheduled = timeNextBackupScheduled;
         this.ingressIps = ingressIps;
     }
 
@@ -937,6 +946,55 @@ public final class Deployment extends com.oracle.bmc.http.internal.ExplicitlySet
             this.__explicitlySet__.add("timeOggVersionSupportedUntil");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("backupSchedule")
+        private BackupSchedule backupSchedule;
+
+        public Builder backupSchedule(BackupSchedule backupSchedule) {
+            this.backupSchedule = backupSchedule;
+            this.__explicitlySet__.add("backupSchedule");
+            return this;
+        }
+        /**
+         * The timestamp of last deployment backup scheduled. The format is defined by
+         * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2024-10-25T18:19:29.600Z}.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("timeLastBackupScheduled")
+        private java.util.Date timeLastBackupScheduled;
+
+        /**
+         * The timestamp of last deployment backup scheduled. The format is defined by
+         * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2024-10-25T18:19:29.600Z}.
+         *
+         * @param timeLastBackupScheduled the value to set
+         * @return this builder
+         **/
+        public Builder timeLastBackupScheduled(java.util.Date timeLastBackupScheduled) {
+            this.timeLastBackupScheduled = timeLastBackupScheduled;
+            this.__explicitlySet__.add("timeLastBackupScheduled");
+            return this;
+        }
+        /**
+         * The timestamp of next deployment backup scheduled. The format is defined by
+         * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2024-10-26T20:19:29.600Z}.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("timeNextBackupScheduled")
+        private java.util.Date timeNextBackupScheduled;
+
+        /**
+         * The timestamp of next deployment backup scheduled. The format is defined by
+         * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2024-10-26T20:19:29.600Z}.
+         *
+         * @param timeNextBackupScheduled the value to set
+         * @return this builder
+         **/
+        public Builder timeNextBackupScheduled(java.util.Date timeNextBackupScheduled) {
+            this.timeNextBackupScheduled = timeNextBackupScheduled;
+            this.__explicitlySet__.add("timeNextBackupScheduled");
+            return this;
+        }
         /**
          * List of ingress IP addresses from where the GoldenGate deployment connects to this connection's privateIp.
          * Customers may optionally set up ingress security rules to restrict traffic from these IP addresses.
@@ -1006,6 +1064,9 @@ public final class Deployment extends com.oracle.bmc.http.internal.ExplicitlySet
                             this.nextMaintenanceDescription,
                             this.maintenanceConfiguration,
                             this.timeOggVersionSupportedUntil,
+                            this.backupSchedule,
+                            this.timeLastBackupScheduled,
+                            this.timeNextBackupScheduled,
                             this.ingressIps);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -1141,6 +1202,15 @@ public final class Deployment extends com.oracle.bmc.http.internal.ExplicitlySet
             }
             if (model.wasPropertyExplicitlySet("timeOggVersionSupportedUntil")) {
                 this.timeOggVersionSupportedUntil(model.getTimeOggVersionSupportedUntil());
+            }
+            if (model.wasPropertyExplicitlySet("backupSchedule")) {
+                this.backupSchedule(model.getBackupSchedule());
+            }
+            if (model.wasPropertyExplicitlySet("timeLastBackupScheduled")) {
+                this.timeLastBackupScheduled(model.getTimeLastBackupScheduled());
+            }
+            if (model.wasPropertyExplicitlySet("timeNextBackupScheduled")) {
+                this.timeNextBackupScheduled(model.getTimeNextBackupScheduled());
             }
             if (model.wasPropertyExplicitlySet("ingressIps")) {
                 this.ingressIps(model.getIngressIps());
@@ -1854,6 +1924,49 @@ public final class Deployment extends com.oracle.bmc.http.internal.ExplicitlySet
         return timeOggVersionSupportedUntil;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("backupSchedule")
+    private final BackupSchedule backupSchedule;
+
+    public BackupSchedule getBackupSchedule() {
+        return backupSchedule;
+    }
+
+    /**
+     * The timestamp of last deployment backup scheduled. The format is defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2024-10-25T18:19:29.600Z}.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("timeLastBackupScheduled")
+    private final java.util.Date timeLastBackupScheduled;
+
+    /**
+     * The timestamp of last deployment backup scheduled. The format is defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2024-10-25T18:19:29.600Z}.
+     *
+     * @return the value
+     **/
+    public java.util.Date getTimeLastBackupScheduled() {
+        return timeLastBackupScheduled;
+    }
+
+    /**
+     * The timestamp of next deployment backup scheduled. The format is defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2024-10-26T20:19:29.600Z}.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("timeNextBackupScheduled")
+    private final java.util.Date timeNextBackupScheduled;
+
+    /**
+     * The timestamp of next deployment backup scheduled. The format is defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2024-10-26T20:19:29.600Z}.
+     *
+     * @return the value
+     **/
+    public java.util.Date getTimeNextBackupScheduled() {
+        return timeNextBackupScheduled;
+    }
+
     /**
      * List of ingress IP addresses from where the GoldenGate deployment connects to this connection's privateIp.
      * Customers may optionally set up ingress security rules to restrict traffic from these IP addresses.
@@ -1935,6 +2048,11 @@ public final class Deployment extends com.oracle.bmc.http.internal.ExplicitlySet
                 .append(String.valueOf(this.maintenanceConfiguration));
         sb.append(", timeOggVersionSupportedUntil=")
                 .append(String.valueOf(this.timeOggVersionSupportedUntil));
+        sb.append(", backupSchedule=").append(String.valueOf(this.backupSchedule));
+        sb.append(", timeLastBackupScheduled=")
+                .append(String.valueOf(this.timeLastBackupScheduled));
+        sb.append(", timeNextBackupScheduled=")
+                .append(String.valueOf(this.timeNextBackupScheduled));
         sb.append(", ingressIps=").append(String.valueOf(this.ingressIps));
         sb.append(")");
         return sb.toString();
@@ -2000,6 +2118,11 @@ public final class Deployment extends com.oracle.bmc.http.internal.ExplicitlySet
                         this.maintenanceConfiguration, other.maintenanceConfiguration)
                 && java.util.Objects.equals(
                         this.timeOggVersionSupportedUntil, other.timeOggVersionSupportedUntil)
+                && java.util.Objects.equals(this.backupSchedule, other.backupSchedule)
+                && java.util.Objects.equals(
+                        this.timeLastBackupScheduled, other.timeLastBackupScheduled)
+                && java.util.Objects.equals(
+                        this.timeNextBackupScheduled, other.timeNextBackupScheduled)
                 && java.util.Objects.equals(this.ingressIps, other.ingressIps)
                 && super.equals(other);
     }
@@ -2122,6 +2245,19 @@ public final class Deployment extends com.oracle.bmc.http.internal.ExplicitlySet
                         + (this.timeOggVersionSupportedUntil == null
                                 ? 43
                                 : this.timeOggVersionSupportedUntil.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.backupSchedule == null ? 43 : this.backupSchedule.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeLastBackupScheduled == null
+                                ? 43
+                                : this.timeLastBackupScheduled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeNextBackupScheduled == null
+                                ? 43
+                                : this.timeNextBackupScheduled.hashCode());
         result = (result * PRIME) + (this.ingressIps == null ? 43 : this.ingressIps.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;

@@ -27,6 +27,7 @@ public final class DeploymentBackup extends com.oracle.bmc.http.internal.Explici
         "compartmentId",
         "displayName",
         "isAutomatic",
+        "backupSourceType",
         "lifecycleState",
         "lifecycleDetails",
         "timeOfBackup",
@@ -52,6 +53,7 @@ public final class DeploymentBackup extends com.oracle.bmc.http.internal.Explici
             String compartmentId,
             String displayName,
             Boolean isAutomatic,
+            BackupSourceType backupSourceType,
             LifecycleState lifecycleState,
             String lifecycleDetails,
             java.util.Date timeOfBackup,
@@ -76,6 +78,7 @@ public final class DeploymentBackup extends com.oracle.bmc.http.internal.Explici
         this.compartmentId = compartmentId;
         this.displayName = displayName;
         this.isAutomatic = isAutomatic;
+        this.backupSourceType = backupSourceType;
         this.lifecycleState = lifecycleState;
         this.lifecycleDetails = lifecycleDetails;
         this.timeOfBackup = timeOfBackup;
@@ -207,6 +210,24 @@ public final class DeploymentBackup extends com.oracle.bmc.http.internal.Explici
         public Builder isAutomatic(Boolean isAutomatic) {
             this.isAutomatic = isAutomatic;
             this.__explicitlySet__.add("isAutomatic");
+            return this;
+        }
+        /**
+         * Possible deployment backup source types.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("backupSourceType")
+        private BackupSourceType backupSourceType;
+
+        /**
+         * Possible deployment backup source types.
+         *
+         * @param backupSourceType the value to set
+         * @return this builder
+         **/
+        public Builder backupSourceType(BackupSourceType backupSourceType) {
+            this.backupSourceType = backupSourceType;
+            this.__explicitlySet__.add("backupSourceType");
             return this;
         }
         /**
@@ -547,6 +568,7 @@ public final class DeploymentBackup extends com.oracle.bmc.http.internal.Explici
                             this.compartmentId,
                             this.displayName,
                             this.isAutomatic,
+                            this.backupSourceType,
                             this.lifecycleState,
                             this.lifecycleDetails,
                             this.timeOfBackup,
@@ -589,6 +611,9 @@ public final class DeploymentBackup extends com.oracle.bmc.http.internal.Explici
             }
             if (model.wasPropertyExplicitlySet("isAutomatic")) {
                 this.isAutomatic(model.getIsAutomatic());
+            }
+            if (model.wasPropertyExplicitlySet("backupSourceType")) {
+                this.backupSourceType(model.getBackupSourceType());
             }
             if (model.wasPropertyExplicitlySet("lifecycleState")) {
                 this.lifecycleState(model.getLifecycleState());
@@ -754,6 +779,72 @@ public final class DeploymentBackup extends com.oracle.bmc.http.internal.Explici
      **/
     public Boolean getIsAutomatic() {
         return isAutomatic;
+    }
+
+    /**
+     * Possible deployment backup source types.
+     *
+     **/
+    public enum BackupSourceType {
+        Manual("MANUAL"),
+        Automatic("AUTOMATIC"),
+        Scheduled("SCHEDULED"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(BackupSourceType.class);
+
+        private final String value;
+        private static java.util.Map<String, BackupSourceType> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (BackupSourceType v : BackupSourceType.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        BackupSourceType(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static BackupSourceType create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'BackupSourceType', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * Possible deployment backup source types.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("backupSourceType")
+    private final BackupSourceType backupSourceType;
+
+    /**
+     * Possible deployment backup source types.
+     *
+     * @return the value
+     **/
+    public BackupSourceType getBackupSourceType() {
+        return backupSourceType;
     }
 
     /**
@@ -1066,6 +1157,7 @@ public final class DeploymentBackup extends com.oracle.bmc.http.internal.Explici
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", isAutomatic=").append(String.valueOf(this.isAutomatic));
+        sb.append(", backupSourceType=").append(String.valueOf(this.backupSourceType));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
         sb.append(", timeOfBackup=").append(String.valueOf(this.timeOfBackup));
@@ -1103,6 +1195,7 @@ public final class DeploymentBackup extends com.oracle.bmc.http.internal.Explici
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.isAutomatic, other.isAutomatic)
+                && java.util.Objects.equals(this.backupSourceType, other.backupSourceType)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
                 && java.util.Objects.equals(this.timeOfBackup, other.timeOfBackup)
@@ -1137,6 +1230,9 @@ public final class DeploymentBackup extends com.oracle.bmc.http.internal.Explici
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.isAutomatic == null ? 43 : this.isAutomatic.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.backupSourceType == null ? 43 : this.backupSourceType.hashCode());
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());

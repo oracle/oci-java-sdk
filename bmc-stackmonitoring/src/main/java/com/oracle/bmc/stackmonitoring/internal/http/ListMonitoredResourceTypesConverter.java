@@ -74,6 +74,22 @@ public class ListMonitoredResourceTypesConverter {
                                     request.getMetricNamespace()));
         }
 
+        if (request.getSourceType() != null) {
+            target =
+                    target.queryParam(
+                            "sourceType",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getSourceType().getValue()));
+        }
+
+        if (request.getResourceCategory() != null) {
+            target =
+                    target.queryParam(
+                            "resourceCategory",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getResourceCategory().getValue()));
+        }
+
         if (request.getSortBy() != null) {
             target =
                     target.queryParam(

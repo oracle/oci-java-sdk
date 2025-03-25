@@ -113,6 +113,31 @@ public class ListFindingsConverter {
                                     request.getTargetId()));
         }
 
+        if (request.getScimQuery() != null) {
+            target =
+                    target.queryParam(
+                            "scimQuery",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getScimQuery()));
+        }
+
+        if (request.getField() != null) {
+            target =
+                    com.oracle.bmc.util.internal.HttpUtils.encodeCollectionFormatQueryParam(
+                            target,
+                            "field",
+                            request.getField(),
+                            com.oracle.bmc.util.internal.CollectionFormatType.Multi);
+        }
+
+        if (request.getSortBy() != null) {
+            target =
+                    target.queryParam(
+                            "sortBy",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getSortBy().getValue()));
+        }
+
         if (request.getFindingKey() != null) {
             target =
                     target.queryParam(

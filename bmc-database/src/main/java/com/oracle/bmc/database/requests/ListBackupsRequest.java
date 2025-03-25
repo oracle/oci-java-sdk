@@ -106,6 +106,72 @@ public class ListBackupsRequest extends com.oracle.bmc.requests.BmcRequest<java.
     public ShapeFamily getShapeFamily() {
         return shapeFamily;
     }
+    /**
+     * A filter to return only resources that match the given database version.
+     */
+    private String version;
+
+    /**
+     * A filter to return only resources that match the given database version.
+     */
+    public String getVersion() {
+        return version;
+    }
+    /**
+     * A filter to return only backups that matches with the given type of Backup.
+     */
+    private String type;
+
+    /**
+     * A filter to return only backups that matches with the given type of Backup.
+     */
+    public String getType() {
+        return type;
+    }
+    /**
+     * A filter to return only resources that match the given lifecycle state exactly.
+     */
+    private com.oracle.bmc.database.model.BackupSummary.LifecycleState lifecycleState;
+
+    /**
+     * A filter to return only resources that match the given lifecycle state exactly.
+     */
+    public com.oracle.bmc.database.model.BackupSummary.LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
+    /**
+     * The start of date-time range of expiration for the long term backups to be fetched.
+     */
+    private java.util.Date timeExpiryScheduledGreaterThanOrEqualTo;
+
+    /**
+     * The start of date-time range of expiration for the long term backups to be fetched.
+     */
+    public java.util.Date getTimeExpiryScheduledGreaterThanOrEqualTo() {
+        return timeExpiryScheduledGreaterThanOrEqualTo;
+    }
+    /**
+     * The end of date-time range of expiration for the long term backups to be fetched.
+     */
+    private java.util.Date timeExpiryScheduledLessThan;
+
+    /**
+     * The end of date-time range of expiration for the long term backups to be fetched.
+     */
+    public java.util.Date getTimeExpiryScheduledLessThan() {
+        return timeExpiryScheduledLessThan;
+    }
+    /**
+     * A filter to return only resources that match the given backup destination type.
+     */
+    private String backupDestinationType;
+
+    /**
+     * A filter to return only resources that match the given backup destination type.
+     */
+    public String getBackupDestinationType() {
+        return backupDestinationType;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -190,6 +256,98 @@ public class ListBackupsRequest extends com.oracle.bmc.requests.BmcRequest<java.
         }
 
         /**
+         * A filter to return only resources that match the given database version.
+         */
+        private String version = null;
+
+        /**
+         * A filter to return only resources that match the given database version.
+         * @param version the value to set
+         * @return this builder instance
+         */
+        public Builder version(String version) {
+            this.version = version;
+            return this;
+        }
+
+        /**
+         * A filter to return only backups that matches with the given type of Backup.
+         */
+        private String type = null;
+
+        /**
+         * A filter to return only backups that matches with the given type of Backup.
+         * @param type the value to set
+         * @return this builder instance
+         */
+        public Builder type(String type) {
+            this.type = type;
+            return this;
+        }
+
+        /**
+         * A filter to return only resources that match the given lifecycle state exactly.
+         */
+        private com.oracle.bmc.database.model.BackupSummary.LifecycleState lifecycleState = null;
+
+        /**
+         * A filter to return only resources that match the given lifecycle state exactly.
+         * @param lifecycleState the value to set
+         * @return this builder instance
+         */
+        public Builder lifecycleState(
+                com.oracle.bmc.database.model.BackupSummary.LifecycleState lifecycleState) {
+            this.lifecycleState = lifecycleState;
+            return this;
+        }
+
+        /**
+         * The start of date-time range of expiration for the long term backups to be fetched.
+         */
+        private java.util.Date timeExpiryScheduledGreaterThanOrEqualTo = null;
+
+        /**
+         * The start of date-time range of expiration for the long term backups to be fetched.
+         * @param timeExpiryScheduledGreaterThanOrEqualTo the value to set
+         * @return this builder instance
+         */
+        public Builder timeExpiryScheduledGreaterThanOrEqualTo(
+                java.util.Date timeExpiryScheduledGreaterThanOrEqualTo) {
+            this.timeExpiryScheduledGreaterThanOrEqualTo = timeExpiryScheduledGreaterThanOrEqualTo;
+            return this;
+        }
+
+        /**
+         * The end of date-time range of expiration for the long term backups to be fetched.
+         */
+        private java.util.Date timeExpiryScheduledLessThan = null;
+
+        /**
+         * The end of date-time range of expiration for the long term backups to be fetched.
+         * @param timeExpiryScheduledLessThan the value to set
+         * @return this builder instance
+         */
+        public Builder timeExpiryScheduledLessThan(java.util.Date timeExpiryScheduledLessThan) {
+            this.timeExpiryScheduledLessThan = timeExpiryScheduledLessThan;
+            return this;
+        }
+
+        /**
+         * A filter to return only resources that match the given backup destination type.
+         */
+        private String backupDestinationType = null;
+
+        /**
+         * A filter to return only resources that match the given backup destination type.
+         * @param backupDestinationType the value to set
+         * @return this builder instance
+         */
+        public Builder backupDestinationType(String backupDestinationType) {
+            this.backupDestinationType = backupDestinationType;
+            return this;
+        }
+
+        /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
@@ -222,6 +380,12 @@ public class ListBackupsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             limit(o.getLimit());
             page(o.getPage());
             shapeFamily(o.getShapeFamily());
+            version(o.getVersion());
+            type(o.getType());
+            lifecycleState(o.getLifecycleState());
+            timeExpiryScheduledGreaterThanOrEqualTo(o.getTimeExpiryScheduledGreaterThanOrEqualTo());
+            timeExpiryScheduledLessThan(o.getTimeExpiryScheduledLessThan());
+            backupDestinationType(o.getBackupDestinationType());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -259,8 +423,15 @@ public class ListBackupsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             request.limit = limit;
             request.page = page;
             request.shapeFamily = shapeFamily;
+            request.version = version;
+            request.type = type;
+            request.lifecycleState = lifecycleState;
+            request.timeExpiryScheduledGreaterThanOrEqualTo =
+                    timeExpiryScheduledGreaterThanOrEqualTo;
+            request.timeExpiryScheduledLessThan = timeExpiryScheduledLessThan;
+            request.backupDestinationType = backupDestinationType;
             return request;
-            // new ListBackupsRequest(databaseId, compartmentId, limit, page, shapeFamily);
+            // new ListBackupsRequest(databaseId, compartmentId, limit, page, shapeFamily, version, type, lifecycleState, timeExpiryScheduledGreaterThanOrEqualTo, timeExpiryScheduledLessThan, backupDestinationType);
         }
     }
 
@@ -274,7 +445,13 @@ public class ListBackupsRequest extends com.oracle.bmc.requests.BmcRequest<java.
                 .compartmentId(compartmentId)
                 .limit(limit)
                 .page(page)
-                .shapeFamily(shapeFamily);
+                .shapeFamily(shapeFamily)
+                .version(version)
+                .type(type)
+                .lifecycleState(lifecycleState)
+                .timeExpiryScheduledGreaterThanOrEqualTo(timeExpiryScheduledGreaterThanOrEqualTo)
+                .timeExpiryScheduledLessThan(timeExpiryScheduledLessThan)
+                .backupDestinationType(backupDestinationType);
     }
 
     /**
@@ -295,6 +472,14 @@ public class ListBackupsRequest extends com.oracle.bmc.requests.BmcRequest<java.
         sb.append(",limit=").append(String.valueOf(this.limit));
         sb.append(",page=").append(String.valueOf(this.page));
         sb.append(",shapeFamily=").append(String.valueOf(this.shapeFamily));
+        sb.append(",version=").append(String.valueOf(this.version));
+        sb.append(",type=").append(String.valueOf(this.type));
+        sb.append(",lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(",timeExpiryScheduledGreaterThanOrEqualTo=")
+                .append(String.valueOf(this.timeExpiryScheduledGreaterThanOrEqualTo));
+        sb.append(",timeExpiryScheduledLessThan=")
+                .append(String.valueOf(this.timeExpiryScheduledLessThan));
+        sb.append(",backupDestinationType=").append(String.valueOf(this.backupDestinationType));
         sb.append(")");
         return sb.toString();
     }
@@ -314,7 +499,17 @@ public class ListBackupsRequest extends com.oracle.bmc.requests.BmcRequest<java.
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.limit, other.limit)
                 && java.util.Objects.equals(this.page, other.page)
-                && java.util.Objects.equals(this.shapeFamily, other.shapeFamily);
+                && java.util.Objects.equals(this.shapeFamily, other.shapeFamily)
+                && java.util.Objects.equals(this.version, other.version)
+                && java.util.Objects.equals(this.type, other.type)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(
+                        this.timeExpiryScheduledGreaterThanOrEqualTo,
+                        other.timeExpiryScheduledGreaterThanOrEqualTo)
+                && java.util.Objects.equals(
+                        this.timeExpiryScheduledLessThan, other.timeExpiryScheduledLessThan)
+                && java.util.Objects.equals(
+                        this.backupDestinationType, other.backupDestinationType);
     }
 
     @Override
@@ -328,6 +523,26 @@ public class ListBackupsRequest extends com.oracle.bmc.requests.BmcRequest<java.
         result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
         result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
         result = (result * PRIME) + (this.shapeFamily == null ? 43 : this.shapeFamily.hashCode());
+        result = (result * PRIME) + (this.version == null ? 43 : this.version.hashCode());
+        result = (result * PRIME) + (this.type == null ? 43 : this.type.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeExpiryScheduledGreaterThanOrEqualTo == null
+                                ? 43
+                                : this.timeExpiryScheduledGreaterThanOrEqualTo.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeExpiryScheduledLessThan == null
+                                ? 43
+                                : this.timeExpiryScheduledLessThan.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.backupDestinationType == null
+                                ? 43
+                                : this.backupDestinationType.hashCode());
         return result;
     }
 }

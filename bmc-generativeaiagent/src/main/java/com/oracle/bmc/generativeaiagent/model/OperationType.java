@@ -29,6 +29,10 @@ public enum OperationType {
     CreateTool("CREATE_TOOL"),
     UpdateTool("UPDATE_TOOL"),
     DeleteTool("DELETE_TOOL"),
+    CreateProvisionedCapacity("CREATE_PROVISIONED_CAPACITY"),
+    UpdateProvisionedCapacity("UPDATE_PROVISIONED_CAPACITY"),
+    DeleteProvisionedCapacity("DELETE_PROVISIONED_CAPACITY"),
+    MoveProvisionedCapacity("MOVE_PROVISIONED_CAPACITY"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

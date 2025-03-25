@@ -248,6 +248,65 @@ public interface ComputeAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Moves a compute GPU memory cluster into a different compartment. For information about moving resources between
+     * compartments, see [Moving Resources to a Different Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeComputeGpuMemoryClusterCompartmentResponse>
+            changeComputeGpuMemoryClusterCompartment(
+                    ChangeComputeGpuMemoryClusterCompartmentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeComputeGpuMemoryClusterCompartmentRequest,
+                                    ChangeComputeGpuMemoryClusterCompartmentResponse>
+                            handler);
+
+    /**
+     * Moves a compute GPU memory fabric into a different compartment. For information about moving resources between
+     * compartments, see [Moving Resources to a Different Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeComputeGpuMemoryFabricCompartmentResponse>
+            changeComputeGpuMemoryFabricCompartment(
+                    ChangeComputeGpuMemoryFabricCompartmentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeComputeGpuMemoryFabricCompartmentRequest,
+                                    ChangeComputeGpuMemoryFabricCompartmentResponse>
+                            handler);
+
+    /**
+     * Moves a compute host into a different compartment. For information about moving resources between
+     * compartments, see [Moving Resources to a Different Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeComputeHostCompartmentResponse> changeComputeHostCompartment(
+            ChangeComputeHostCompartmentRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ChangeComputeHostCompartmentRequest,
+                            ChangeComputeHostCompartmentResponse>
+                    handler);
+
+    /**
      * Moves a compute image capability schema into a different compartment within the same tenancy.
      * For information about moving resources between compartments, see
      *         [Moving Resources to a Different Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
@@ -443,6 +502,25 @@ public interface ComputeAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Create a compute GPU memory cluster instance on a specific compute GPU memory fabric
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateComputeGpuMemoryClusterResponse>
+            createComputeGpuMemoryCluster(
+                    CreateComputeGpuMemoryClusterRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    CreateComputeGpuMemoryClusterRequest,
+                                    CreateComputeGpuMemoryClusterResponse>
+                            handler);
+
+    /**
      * Creates compute image capability schema.
      *
      *
@@ -614,6 +692,24 @@ public interface ComputeAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             DeleteComputeClusterRequest, DeleteComputeClusterResponse>
                     handler);
+
+    /**
+     * Terminates and deletes the specified compute GPU memory cluster and underlying instances.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteComputeGpuMemoryClusterResponse>
+            deleteComputeGpuMemoryCluster(
+                    DeleteComputeGpuMemoryClusterRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteComputeGpuMemoryClusterRequest,
+                                    DeleteComputeGpuMemoryClusterResponse>
+                            handler);
 
     /**
      * Deletes the specified Compute Image Capability Schema
@@ -944,6 +1040,56 @@ public interface ComputeAsync extends AutoCloseable {
                                     GetComputeGlobalImageCapabilitySchemaVersionRequest,
                                     GetComputeGlobalImageCapabilitySchemaVersionResponse>
                             handler);
+
+    /**
+     * Gets information about the specified compute GPU memory cluster
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetComputeGpuMemoryClusterResponse> getComputeGpuMemoryCluster(
+            GetComputeGpuMemoryClusterRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetComputeGpuMemoryClusterRequest, GetComputeGpuMemoryClusterResponse>
+                    handler);
+
+    /**
+     * Gets information about the specified compute GPU memory fabric
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetComputeGpuMemoryFabricResponse> getComputeGpuMemoryFabric(
+            GetComputeGpuMemoryFabricRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetComputeGpuMemoryFabricRequest, GetComputeGpuMemoryFabricResponse>
+                    handler);
+
+    /**
+     * Gets information about the specified compute host
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetComputeHostResponse> getComputeHost(
+            GetComputeHostRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetComputeHostRequest, GetComputeHostResponse>
+                    handler);
 
     /**
      * Gets the specified Compute Image Capability Schema
@@ -1569,6 +1715,75 @@ public interface ComputeAsync extends AutoCloseable {
                             handler);
 
     /**
+     * List all of the GPU memory cluster instances.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListComputeGpuMemoryClusterInstancesResponse>
+            listComputeGpuMemoryClusterInstances(
+                    ListComputeGpuMemoryClusterInstancesRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListComputeGpuMemoryClusterInstancesRequest,
+                                    ListComputeGpuMemoryClusterInstancesResponse>
+                            handler);
+
+    /**
+     * List all of the compute GPU memory clusters.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListComputeGpuMemoryClustersResponse> listComputeGpuMemoryClusters(
+            ListComputeGpuMemoryClustersRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListComputeGpuMemoryClustersRequest,
+                            ListComputeGpuMemoryClustersResponse>
+                    handler);
+
+    /**
+     * Lists the compute GPU memory fabrics that match the specified criteria and compartmentId.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListComputeGpuMemoryFabricsResponse> listComputeGpuMemoryFabrics(
+            ListComputeGpuMemoryFabricsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListComputeGpuMemoryFabricsRequest, ListComputeGpuMemoryFabricsResponse>
+                    handler);
+
+    /**
+     * Generates a list of summary host details
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListComputeHostsResponse> listComputeHosts(
+            ListComputeHostsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListComputeHostsRequest, ListComputeHostsResponse>
+                    handler);
+
+    /**
      * Lists Compute Image Capability Schema in the specified compartment. You can also query by a specific imageId.
      *
      *
@@ -1963,6 +2178,60 @@ public interface ComputeAsync extends AutoCloseable {
             UpdateComputeClusterRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             UpdateComputeClusterRequest, UpdateComputeClusterResponse>
+                    handler);
+
+    /**
+     * Updates a compute gpu memory cluster resource.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateComputeGpuMemoryClusterResponse>
+            updateComputeGpuMemoryCluster(
+                    UpdateComputeGpuMemoryClusterRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateComputeGpuMemoryClusterRequest,
+                                    UpdateComputeGpuMemoryClusterResponse>
+                            handler);
+
+    /**
+     * Customer can update displayName and tags for compute GPU memory fabric record
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateComputeGpuMemoryFabricResponse> updateComputeGpuMemoryFabric(
+            UpdateComputeGpuMemoryFabricRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateComputeGpuMemoryFabricRequest,
+                            UpdateComputeGpuMemoryFabricResponse>
+                    handler);
+
+    /**
+     * Customer can update the some fields for ComputeHost record
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateComputeHostResponse> updateComputeHost(
+            UpdateComputeHostRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateComputeHostRequest, UpdateComputeHostResponse>
                     handler);
 
     /**

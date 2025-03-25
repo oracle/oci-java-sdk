@@ -32,7 +32,7 @@ public final class PluginSourceDetails extends SourceDetails {
     public static class Builder {
         /**
          * The name of the connector plugin. This name indicates the service to be called by the connector plugin. For example, {@code QueueSource} indicates the Queue service.
-         * To find names of connector plugins, list the plugin using (ListConnectorPlugin)[#/en/serviceconnectors/latest/ConnectorPluginSummary/ListConnectorPlugins].
+         * To find names of connector plugins, list the plugin using {@link #listConnectorPlugins(ListConnectorPluginsRequest) listConnectorPlugins}.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("pluginName")
@@ -40,7 +40,7 @@ public final class PluginSourceDetails extends SourceDetails {
 
         /**
          * The name of the connector plugin. This name indicates the service to be called by the connector plugin. For example, {@code QueueSource} indicates the Queue service.
-         * To find names of connector plugins, list the plugin using (ListConnectorPlugin)[#/en/serviceconnectors/latest/ConnectorPluginSummary/ListConnectorPlugins].
+         * To find names of connector plugins, list the plugin using {@link #listConnectorPlugins(ListConnectorPluginsRequest) listConnectorPlugins}.
          *
          * @param pluginName the value to set
          * @return this builder
@@ -53,7 +53,7 @@ public final class PluginSourceDetails extends SourceDetails {
         /**
          * The configuration map for the connector plugin. This map includes parameters specific to the connector plugin type.
          * For example, for {@code QueueSource}, the map lists the OCID of the selected queue.
-         * To find the parameters for a connector plugin, get the plugin using (GetConnectorPlugin)[#/en/serviceconnectors/latest/ConnectorPlugin/GetConnectorPlugin] and review its schema value.
+         * To find the parameters for a connector plugin, get the plugin using {@link #getConnectorPlugin(GetConnectorPluginRequest) getConnectorPlugin} and review its schema value.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("configMap")
@@ -62,7 +62,7 @@ public final class PluginSourceDetails extends SourceDetails {
         /**
          * The configuration map for the connector plugin. This map includes parameters specific to the connector plugin type.
          * For example, for {@code QueueSource}, the map lists the OCID of the selected queue.
-         * To find the parameters for a connector plugin, get the plugin using (GetConnectorPlugin)[#/en/serviceconnectors/latest/ConnectorPlugin/GetConnectorPlugin] and review its schema value.
+         * To find the parameters for a connector plugin, get the plugin using {@link #getConnectorPlugin(GetConnectorPluginRequest) getConnectorPlugin} and review its schema value.
          *
          * @param configMap the value to set
          * @return this builder
@@ -116,7 +116,7 @@ public final class PluginSourceDetails extends SourceDetails {
 
     /**
      * The name of the connector plugin. This name indicates the service to be called by the connector plugin. For example, {@code QueueSource} indicates the Queue service.
-     * To find names of connector plugins, list the plugin using (ListConnectorPlugin)[#/en/serviceconnectors/latest/ConnectorPluginSummary/ListConnectorPlugins].
+     * To find names of connector plugins, list the plugin using {@link #listConnectorPlugins(ListConnectorPluginsRequest) listConnectorPlugins}.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("pluginName")
@@ -124,7 +124,7 @@ public final class PluginSourceDetails extends SourceDetails {
 
     /**
      * The name of the connector plugin. This name indicates the service to be called by the connector plugin. For example, {@code QueueSource} indicates the Queue service.
-     * To find names of connector plugins, list the plugin using (ListConnectorPlugin)[#/en/serviceconnectors/latest/ConnectorPluginSummary/ListConnectorPlugins].
+     * To find names of connector plugins, list the plugin using {@link #listConnectorPlugins(ListConnectorPluginsRequest) listConnectorPlugins}.
      *
      * @return the value
      **/
@@ -135,7 +135,7 @@ public final class PluginSourceDetails extends SourceDetails {
     /**
      * The configuration map for the connector plugin. This map includes parameters specific to the connector plugin type.
      * For example, for {@code QueueSource}, the map lists the OCID of the selected queue.
-     * To find the parameters for a connector plugin, get the plugin using (GetConnectorPlugin)[#/en/serviceconnectors/latest/ConnectorPlugin/GetConnectorPlugin] and review its schema value.
+     * To find the parameters for a connector plugin, get the plugin using {@link #getConnectorPlugin(GetConnectorPluginRequest) getConnectorPlugin} and review its schema value.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("configMap")
@@ -144,7 +144,7 @@ public final class PluginSourceDetails extends SourceDetails {
     /**
      * The configuration map for the connector plugin. This map includes parameters specific to the connector plugin type.
      * For example, for {@code QueueSource}, the map lists the OCID of the selected queue.
-     * To find the parameters for a connector plugin, get the plugin using (GetConnectorPlugin)[#/en/serviceconnectors/latest/ConnectorPlugin/GetConnectorPlugin] and review its schema value.
+     * To find the parameters for a connector plugin, get the plugin using {@link #getConnectorPlugin(GetConnectorPluginRequest) getConnectorPlugin} and review its schema value.
      *
      * @return the value
      **/

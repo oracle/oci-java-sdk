@@ -50,7 +50,6 @@ public final class NotificationsTargetDetails extends TargetDetails {
         }
         /**
          * Whether to apply a simplified, user-friendly format to the message. Applies only when friendly formatting is supported by the connector source and the subscription protocol.
-         * <p>
          * Example: {@code true}
          *
          **/
@@ -59,7 +58,6 @@ public final class NotificationsTargetDetails extends TargetDetails {
 
         /**
          * Whether to apply a simplified, user-friendly format to the message. Applies only when friendly formatting is supported by the connector source and the subscription protocol.
-         * <p>
          * Example: {@code true}
          *
          * @param enableFormattedMessaging the value to set
@@ -131,7 +129,6 @@ public final class NotificationsTargetDetails extends TargetDetails {
 
     /**
      * Whether to apply a simplified, user-friendly format to the message. Applies only when friendly formatting is supported by the connector source and the subscription protocol.
-     * <p>
      * Example: {@code true}
      *
      **/
@@ -140,7 +137,6 @@ public final class NotificationsTargetDetails extends TargetDetails {
 
     /**
      * Whether to apply a simplified, user-friendly format to the message. Applies only when friendly formatting is supported by the connector source and the subscription protocol.
-     * <p>
      * Example: {@code true}
      *
      * @return the value

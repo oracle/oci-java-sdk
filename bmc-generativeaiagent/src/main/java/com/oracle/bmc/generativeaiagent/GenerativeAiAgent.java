@@ -191,6 +191,19 @@ public interface GenerativeAiAgent extends AutoCloseable {
     CreateKnowledgeBaseResponse createKnowledgeBase(CreateKnowledgeBaseRequest request);
 
     /**
+     * Creates a tool.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeaiagent/CreateToolExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateTool API.
+     */
+    CreateToolResponse createTool(CreateToolRequest request);
+
+    /**
      * Deletes an agent.
      *
      * @param request The request object containing the details to send
@@ -254,6 +267,19 @@ public interface GenerativeAiAgent extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeaiagent/DeleteKnowledgeBaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteKnowledgeBase API.
      */
     DeleteKnowledgeBaseResponse deleteKnowledgeBase(DeleteKnowledgeBaseRequest request);
+
+    /**
+     * Deletes a tool.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeaiagent/DeleteToolExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteTool API.
+     */
+    DeleteToolResponse deleteTool(DeleteToolRequest request);
 
     /**
      * Gets information about an agent.
@@ -335,6 +361,19 @@ public interface GenerativeAiAgent extends AutoCloseable {
     GetKnowledgeBaseResponse getKnowledgeBase(GetKnowledgeBaseRequest request);
 
     /**
+     * Gets information about a tool.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeaiagent/GetToolExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetTool API.
+     */
+    GetToolResponse getTool(GetToolRequest request);
+
+    /**
      * Gets the details of a work request.
      *
      * @param request The request object containing the details to send
@@ -411,6 +450,19 @@ public interface GenerativeAiAgent extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeaiagent/ListKnowledgeBasesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListKnowledgeBases API.
      */
     ListKnowledgeBasesResponse listKnowledgeBases(ListKnowledgeBasesRequest request);
+
+    /**
+     * Gets a list of tools.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeaiagent/ListToolsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListTools API.
+     */
+    ListToolsResponse listTools(ListToolsRequest request);
 
     /**
      * Lists the errors for a work request.
@@ -502,6 +554,19 @@ public interface GenerativeAiAgent extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeaiagent/UpdateKnowledgeBaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateKnowledgeBase API.
      */
     UpdateKnowledgeBaseResponse updateKnowledgeBase(UpdateKnowledgeBaseRequest request);
+
+    /**
+     * Updates a tool.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeaiagent/UpdateToolExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateTool API.
+     */
+    UpdateToolResponse updateTool(UpdateToolRequest request);
 
     /**
      * Gets the pre-configured waiters available for resources for this service.

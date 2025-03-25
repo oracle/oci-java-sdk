@@ -35,6 +35,15 @@ public final class MonthlyBackupPolicy extends BackupPolicy {
             this.__explicitlySet__.add("retentionDays");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("copyPolicy")
+        private BackupCopyPolicy copyPolicy;
+
+        public Builder copyPolicy(BackupCopyPolicy copyPolicy) {
+            this.copyPolicy = copyPolicy;
+            this.__explicitlySet__.add("copyPolicy");
+            return this;
+        }
         /**
          * Hour of the day when backup starts.
          **/
@@ -78,7 +87,10 @@ public final class MonthlyBackupPolicy extends BackupPolicy {
         public MonthlyBackupPolicy build() {
             MonthlyBackupPolicy model =
                     new MonthlyBackupPolicy(
-                            this.retentionDays, this.backupStart, this.daysOfTheMonth);
+                            this.retentionDays,
+                            this.copyPolicy,
+                            this.backupStart,
+                            this.daysOfTheMonth);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -89,6 +101,9 @@ public final class MonthlyBackupPolicy extends BackupPolicy {
         public Builder copy(MonthlyBackupPolicy model) {
             if (model.wasPropertyExplicitlySet("retentionDays")) {
                 this.retentionDays(model.getRetentionDays());
+            }
+            if (model.wasPropertyExplicitlySet("copyPolicy")) {
+                this.copyPolicy(model.getCopyPolicy());
             }
             if (model.wasPropertyExplicitlySet("backupStart")) {
                 this.backupStart(model.getBackupStart());
@@ -113,8 +128,11 @@ public final class MonthlyBackupPolicy extends BackupPolicy {
 
     @Deprecated
     public MonthlyBackupPolicy(
-            Integer retentionDays, String backupStart, java.util.List<Integer> daysOfTheMonth) {
-        super(retentionDays);
+            Integer retentionDays,
+            BackupCopyPolicy copyPolicy,
+            String backupStart,
+            java.util.List<Integer> daysOfTheMonth) {
+        super(retentionDays, copyPolicy);
         this.backupStart = backupStart;
         this.daysOfTheMonth = daysOfTheMonth;
     }

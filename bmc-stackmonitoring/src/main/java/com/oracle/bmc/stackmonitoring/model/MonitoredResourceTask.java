@@ -25,6 +25,7 @@ public final class MonitoredResourceTask
     @java.beans.ConstructorProperties({
         "id",
         "name",
+        "type",
         "compartmentId",
         "tenantId",
         "taskDetails",
@@ -39,6 +40,7 @@ public final class MonitoredResourceTask
     public MonitoredResourceTask(
             String id,
             String name,
+            String type,
             String compartmentId,
             String tenantId,
             MonitoredResourceTaskDetails taskDetails,
@@ -52,6 +54,7 @@ public final class MonitoredResourceTask
         super();
         this.id = id;
         this.name = name;
+        this.type = type;
         this.compartmentId = compartmentId;
         this.tenantId = tenantId;
         this.taskDetails = taskDetails;
@@ -96,6 +99,22 @@ public final class MonitoredResourceTask
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
+            return this;
+        }
+        /**
+         * Type of the task.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("type")
+        private String type;
+
+        /**
+         * Type of the task.
+         * @param type the value to set
+         * @return this builder
+         **/
+        public Builder type(String type) {
+            this.type = type;
+            this.__explicitlySet__.add("type");
             return this;
         }
         /**
@@ -287,6 +306,7 @@ public final class MonitoredResourceTask
                     new MonitoredResourceTask(
                             this.id,
                             this.name,
+                            this.type,
                             this.compartmentId,
                             this.tenantId,
                             this.taskDetails,
@@ -310,6 +330,9 @@ public final class MonitoredResourceTask
             }
             if (model.wasPropertyExplicitlySet("name")) {
                 this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("type")) {
+                this.type(model.getType());
             }
             if (model.wasPropertyExplicitlySet("compartmentId")) {
                 this.compartmentId(model.getCompartmentId());
@@ -382,6 +405,20 @@ public final class MonitoredResourceTask
      **/
     public String getName() {
         return name;
+    }
+
+    /**
+     * Type of the task.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("type")
+    private final String type;
+
+    /**
+     * Type of the task.
+     * @return the value
+     **/
+    public String getType() {
+        return type;
     }
 
     /**
@@ -559,6 +596,7 @@ public final class MonitoredResourceTask
         sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", name=").append(String.valueOf(this.name));
+        sb.append(", type=").append(String.valueOf(this.type));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", tenantId=").append(String.valueOf(this.tenantId));
         sb.append(", taskDetails=").append(String.valueOf(this.taskDetails));
@@ -585,6 +623,7 @@ public final class MonitoredResourceTask
         MonitoredResourceTask other = (MonitoredResourceTask) o;
         return java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.type, other.type)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.tenantId, other.tenantId)
                 && java.util.Objects.equals(this.taskDetails, other.taskDetails)
@@ -604,6 +643,7 @@ public final class MonitoredResourceTask
         int result = 1;
         result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
         result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.type == null ? 43 : this.type.hashCode());
         result =
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());

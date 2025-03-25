@@ -472,10 +472,7 @@ public class ApmSyntheticAsyncClient implements ApmSyntheticAsync {
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "ApmSynthetic",
-                        "AggregateNetworkData",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/AggregatedNetworkDataResult/AggregateNetworkData");
+                        "ApmSynthetic", "AggregateNetworkData", ib.getRequestUri().toString(), "");
         final java.util.function.Function<javax.ws.rs.core.Response, AggregateNetworkDataResponse>
                 transformer =
                         AggregateNetworkDataConverter.fromResponse(
@@ -530,7 +527,7 @@ public class ApmSyntheticAsyncClient implements ApmSyntheticAsync {
                         "ApmSynthetic",
                         "CreateDedicatedVantagePoint",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/DedicatedVantagePoint/CreateDedicatedVantagePoint");
+                        "");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, CreateDedicatedVantagePointResponse>
                 transformer =
@@ -581,10 +578,7 @@ public class ApmSyntheticAsyncClient implements ApmSyntheticAsync {
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "ApmSynthetic",
-                        "CreateMonitor",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/Monitor/CreateMonitor");
+                        "ApmSynthetic", "CreateMonitor", ib.getRequestUri().toString(), "");
         final java.util.function.Function<javax.ws.rs.core.Response, CreateMonitorResponse>
                 transformer =
                         CreateMonitorConverter.fromResponse(java.util.Optional.of(serviceDetails));
@@ -637,7 +631,7 @@ public class ApmSyntheticAsyncClient implements ApmSyntheticAsync {
                         "ApmSynthetic",
                         "CreateOnPremiseVantagePoint",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/OnPremiseVantagePoint/CreateOnPremiseVantagePoint");
+                        "");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, CreateOnPremiseVantagePointResponse>
                 transformer =
@@ -688,10 +682,7 @@ public class ApmSyntheticAsyncClient implements ApmSyntheticAsync {
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "ApmSynthetic",
-                        "CreateScript",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/Script/CreateScript");
+                        "ApmSynthetic", "CreateScript", ib.getRequestUri().toString(), "");
         final java.util.function.Function<javax.ws.rs.core.Response, CreateScriptResponse>
                 transformer =
                         CreateScriptConverter.fromResponse(java.util.Optional.of(serviceDetails));
@@ -738,10 +729,7 @@ public class ApmSyntheticAsyncClient implements ApmSyntheticAsync {
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "ApmSynthetic",
-                        "CreateWorker",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/Worker/CreateWorker");
+                        "ApmSynthetic", "CreateWorker", ib.getRequestUri().toString(), "");
         final java.util.function.Function<javax.ws.rs.core.Response, CreateWorkerResponse>
                 transformer =
                         CreateWorkerConverter.fromResponse(java.util.Optional.of(serviceDetails));
@@ -793,7 +781,7 @@ public class ApmSyntheticAsyncClient implements ApmSyntheticAsync {
                         "ApmSynthetic",
                         "DeleteDedicatedVantagePoint",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/DedicatedVantagePoint/DeleteDedicatedVantagePoint");
+                        "");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, DeleteDedicatedVantagePointResponse>
                 transformer =
@@ -838,10 +826,7 @@ public class ApmSyntheticAsyncClient implements ApmSyntheticAsync {
                 DeleteMonitorConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "ApmSynthetic",
-                        "DeleteMonitor",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/Monitor/DeleteMonitor");
+                        "ApmSynthetic", "DeleteMonitor", ib.getRequestUri().toString(), "");
         final java.util.function.Function<javax.ws.rs.core.Response, DeleteMonitorResponse>
                 transformer =
                         DeleteMonitorConverter.fromResponse(java.util.Optional.of(serviceDetails));
@@ -888,7 +873,7 @@ public class ApmSyntheticAsyncClient implements ApmSyntheticAsync {
                         "ApmSynthetic",
                         "DeleteOnPremiseVantagePoint",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/OnPremiseVantagePoint/DeleteOnPremiseVantagePoint");
+                        "");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, DeleteOnPremiseVantagePointResponse>
                 transformer =
@@ -933,10 +918,7 @@ public class ApmSyntheticAsyncClient implements ApmSyntheticAsync {
                 DeleteScriptConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "ApmSynthetic",
-                        "DeleteScript",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/Script/DeleteScript");
+                        "ApmSynthetic", "DeleteScript", ib.getRequestUri().toString(), "");
         final java.util.function.Function<javax.ws.rs.core.Response, DeleteScriptResponse>
                 transformer =
                         DeleteScriptConverter.fromResponse(java.util.Optional.of(serviceDetails));
@@ -977,10 +959,7 @@ public class ApmSyntheticAsyncClient implements ApmSyntheticAsync {
                 DeleteWorkerConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "ApmSynthetic",
-                        "DeleteWorker",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/Worker/DeleteWorker");
+                        "ApmSynthetic", "DeleteWorker", ib.getRequestUri().toString(), "");
         final java.util.function.Function<javax.ws.rs.core.Response, DeleteWorkerResponse>
                 transformer =
                         DeleteWorkerConverter.fromResponse(java.util.Optional.of(serviceDetails));
@@ -1025,7 +1004,7 @@ public class ApmSyntheticAsyncClient implements ApmSyntheticAsync {
                         "ApmSynthetic",
                         "GetDedicatedVantagePoint",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/DedicatedVantagePoint/GetDedicatedVantagePoint");
+                        "");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, GetDedicatedVantagePointResponse>
                 transformer =
@@ -1068,10 +1047,7 @@ public class ApmSyntheticAsyncClient implements ApmSyntheticAsync {
                 GetMonitorConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "ApmSynthetic",
-                        "GetMonitor",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/Monitor/GetMonitor");
+                        "ApmSynthetic", "GetMonitor", ib.getRequestUri().toString(), "");
         final java.util.function.Function<javax.ws.rs.core.Response, GetMonitorResponse>
                 transformer =
                         GetMonitorConverter.fromResponse(java.util.Optional.of(serviceDetails));
@@ -1113,10 +1089,7 @@ public class ApmSyntheticAsyncClient implements ApmSyntheticAsync {
                 GetMonitorResultConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "ApmSynthetic",
-                        "GetMonitorResult",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/MonitorResult/GetMonitorResult");
+                        "ApmSynthetic", "GetMonitorResult", ib.getRequestUri().toString(), "");
         final java.util.function.Function<javax.ws.rs.core.Response, GetMonitorResultResponse>
                 transformer =
                         GetMonitorResultConverter.fromResponse(
@@ -1162,7 +1135,7 @@ public class ApmSyntheticAsyncClient implements ApmSyntheticAsync {
                         "ApmSynthetic",
                         "GetOnPremiseVantagePoint",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/OnPremiseVantagePoint/GetOnPremiseVantagePoint");
+                        "");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, GetOnPremiseVantagePointResponse>
                 transformer =
@@ -1205,10 +1178,7 @@ public class ApmSyntheticAsyncClient implements ApmSyntheticAsync {
                 GetScriptConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "ApmSynthetic",
-                        "GetScript",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/Script/GetScript");
+                        "ApmSynthetic", "GetScript", ib.getRequestUri().toString(), "");
         final java.util.function.Function<javax.ws.rs.core.Response, GetScriptResponse>
                 transformer =
                         GetScriptConverter.fromResponse(java.util.Optional.of(serviceDetails));
@@ -1247,10 +1217,7 @@ public class ApmSyntheticAsyncClient implements ApmSyntheticAsync {
                 GetWorkerConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "ApmSynthetic",
-                        "GetWorker",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/Worker/GetWorker");
+                        "ApmSynthetic", "GetWorker", ib.getRequestUri().toString(), "");
         final java.util.function.Function<javax.ws.rs.core.Response, GetWorkerResponse>
                 transformer =
                         GetWorkerConverter.fromResponse(java.util.Optional.of(serviceDetails));
@@ -1296,7 +1263,7 @@ public class ApmSyntheticAsyncClient implements ApmSyntheticAsync {
                         "ApmSynthetic",
                         "ListDedicatedVantagePoints",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/DedicatedVantagePointCollection/ListDedicatedVantagePoints");
+                        "");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, ListDedicatedVantagePointsResponse>
                 transformer =
@@ -1341,10 +1308,7 @@ public class ApmSyntheticAsyncClient implements ApmSyntheticAsync {
                 ListMonitorsConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "ApmSynthetic",
-                        "ListMonitors",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/MonitorCollection/ListMonitors");
+                        "ApmSynthetic", "ListMonitors", ib.getRequestUri().toString(), "");
         final java.util.function.Function<javax.ws.rs.core.Response, ListMonitorsResponse>
                 transformer =
                         ListMonitorsConverter.fromResponse(java.util.Optional.of(serviceDetails));
@@ -1391,7 +1355,7 @@ public class ApmSyntheticAsyncClient implements ApmSyntheticAsync {
                         "ApmSynthetic",
                         "ListOnPremiseVantagePoints",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/OnPremiseVantagePointCollection/ListOnPremiseVantagePoints");
+                        "");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, ListOnPremiseVantagePointsResponse>
                 transformer =
@@ -1440,7 +1404,7 @@ public class ApmSyntheticAsyncClient implements ApmSyntheticAsync {
                         "ApmSynthetic",
                         "ListPublicVantagePoints",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/PublicVantagePointCollection/ListPublicVantagePoints");
+                        "");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, ListPublicVantagePointsResponse>
                 transformer =
@@ -1484,10 +1448,7 @@ public class ApmSyntheticAsyncClient implements ApmSyntheticAsync {
                 ListScriptsConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "ApmSynthetic",
-                        "ListScripts",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/ScriptCollection/ListScripts");
+                        "ApmSynthetic", "ListScripts", ib.getRequestUri().toString(), "");
         final java.util.function.Function<javax.ws.rs.core.Response, ListScriptsResponse>
                 transformer =
                         ListScriptsConverter.fromResponse(java.util.Optional.of(serviceDetails));
@@ -1528,10 +1489,7 @@ public class ApmSyntheticAsyncClient implements ApmSyntheticAsync {
                 ListWorkersConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "ApmSynthetic",
-                        "ListWorkers",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/WorkerCollection/ListWorkers");
+                        "ApmSynthetic", "ListWorkers", ib.getRequestUri().toString(), "");
         final java.util.function.Function<javax.ws.rs.core.Response, ListWorkersResponse>
                 transformer =
                         ListWorkersConverter.fromResponse(java.util.Optional.of(serviceDetails));
@@ -1578,7 +1536,7 @@ public class ApmSyntheticAsyncClient implements ApmSyntheticAsync {
                         "ApmSynthetic",
                         "UpdateDedicatedVantagePoint",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/DedicatedVantagePoint/UpdateDedicatedVantagePoint");
+                        "");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, UpdateDedicatedVantagePointResponse>
                 transformer =
@@ -1628,10 +1586,7 @@ public class ApmSyntheticAsyncClient implements ApmSyntheticAsync {
                 UpdateMonitorConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "ApmSynthetic",
-                        "UpdateMonitor",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/Monitor/UpdateMonitor");
+                        "ApmSynthetic", "UpdateMonitor", ib.getRequestUri().toString(), "");
         final java.util.function.Function<javax.ws.rs.core.Response, UpdateMonitorResponse>
                 transformer =
                         UpdateMonitorConverter.fromResponse(java.util.Optional.of(serviceDetails));
@@ -1683,7 +1638,7 @@ public class ApmSyntheticAsyncClient implements ApmSyntheticAsync {
                         "ApmSynthetic",
                         "UpdateOnPremiseVantagePoint",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/OnPremiseVantagePoint/UpdateOnPremiseVantagePoint");
+                        "");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, UpdateOnPremiseVantagePointResponse>
                 transformer =
@@ -1733,10 +1688,7 @@ public class ApmSyntheticAsyncClient implements ApmSyntheticAsync {
                 UpdateScriptConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "ApmSynthetic",
-                        "UpdateScript",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/Script/UpdateScript");
+                        "ApmSynthetic", "UpdateScript", ib.getRequestUri().toString(), "");
         final java.util.function.Function<javax.ws.rs.core.Response, UpdateScriptResponse>
                 transformer =
                         UpdateScriptConverter.fromResponse(java.util.Optional.of(serviceDetails));
@@ -1782,10 +1734,7 @@ public class ApmSyntheticAsyncClient implements ApmSyntheticAsync {
                 UpdateWorkerConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "ApmSynthetic",
-                        "UpdateWorker",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/Worker/UpdateWorker");
+                        "ApmSynthetic", "UpdateWorker", ib.getRequestUri().toString(), "");
         final java.util.function.Function<javax.ws.rs.core.Response, UpdateWorkerResponse>
                 transformer =
                         UpdateWorkerConverter.fromResponse(java.util.Optional.of(serviceDetails));

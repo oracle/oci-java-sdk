@@ -34,12 +34,14 @@ public final class FileSystemSummary extends com.oracle.bmc.http.internal.Explic
         "freeformTags",
         "definedTags",
         "systemTags",
+        "replicationSourceCount",
         "kmsKeyId",
         "sourceDetails",
         "isCloneParent",
         "isHydrated",
         "lifecycleDetails",
-        "cloneAttachStatus"
+        "cloneAttachStatus",
+        "quotaEnforcementState"
     })
     public FileSystemSummary(
             String availabilityDomain,
@@ -53,12 +55,14 @@ public final class FileSystemSummary extends com.oracle.bmc.http.internal.Explic
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags,
+            Integer replicationSourceCount,
             String kmsKeyId,
             SourceDetails sourceDetails,
             Boolean isCloneParent,
             Boolean isHydrated,
             String lifecycleDetails,
-            CloneAttachStatus cloneAttachStatus) {
+            CloneAttachStatus cloneAttachStatus,
+            QuotaEnforcementState quotaEnforcementState) {
         super();
         this.availabilityDomain = availabilityDomain;
         this.meteredBytes = meteredBytes;
@@ -71,12 +75,14 @@ public final class FileSystemSummary extends com.oracle.bmc.http.internal.Explic
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.systemTags = systemTags;
+        this.replicationSourceCount = replicationSourceCount;
         this.kmsKeyId = kmsKeyId;
         this.sourceDetails = sourceDetails;
         this.isCloneParent = isCloneParent;
         this.isHydrated = isHydrated;
         this.lifecycleDetails = lifecycleDetails;
         this.cloneAttachStatus = cloneAttachStatus;
+        this.quotaEnforcementState = quotaEnforcementState;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -309,6 +315,22 @@ public final class FileSystemSummary extends com.oracle.bmc.http.internal.Explic
             return this;
         }
         /**
+         * Specifies the total number of replications for which this file system is a source.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("replicationSourceCount")
+        private Integer replicationSourceCount;
+
+        /**
+         * Specifies the total number of replications for which this file system is a source.
+         * @param replicationSourceCount the value to set
+         * @return this builder
+         **/
+        public Builder replicationSourceCount(Integer replicationSourceCount) {
+            this.replicationSourceCount = replicationSourceCount;
+            this.__explicitlySet__.add("replicationSourceCount");
+            return this;
+        }
+        /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the KMS key used to encrypt the encryption keys associated with this file system.
          *
          **/
@@ -411,6 +433,22 @@ public final class FileSystemSummary extends com.oracle.bmc.http.internal.Explic
             this.__explicitlySet__.add("cloneAttachStatus");
             return this;
         }
+        /**
+         * Displays the state of enforcement of quota rules on the file system.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("quotaEnforcementState")
+        private QuotaEnforcementState quotaEnforcementState;
+
+        /**
+         * Displays the state of enforcement of quota rules on the file system.
+         * @param quotaEnforcementState the value to set
+         * @return this builder
+         **/
+        public Builder quotaEnforcementState(QuotaEnforcementState quotaEnforcementState) {
+            this.quotaEnforcementState = quotaEnforcementState;
+            this.__explicitlySet__.add("quotaEnforcementState");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -429,12 +467,14 @@ public final class FileSystemSummary extends com.oracle.bmc.http.internal.Explic
                             this.freeformTags,
                             this.definedTags,
                             this.systemTags,
+                            this.replicationSourceCount,
                             this.kmsKeyId,
                             this.sourceDetails,
                             this.isCloneParent,
                             this.isHydrated,
                             this.lifecycleDetails,
-                            this.cloneAttachStatus);
+                            this.cloneAttachStatus,
+                            this.quotaEnforcementState);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -476,6 +516,9 @@ public final class FileSystemSummary extends com.oracle.bmc.http.internal.Explic
             if (model.wasPropertyExplicitlySet("systemTags")) {
                 this.systemTags(model.getSystemTags());
             }
+            if (model.wasPropertyExplicitlySet("replicationSourceCount")) {
+                this.replicationSourceCount(model.getReplicationSourceCount());
+            }
             if (model.wasPropertyExplicitlySet("kmsKeyId")) {
                 this.kmsKeyId(model.getKmsKeyId());
             }
@@ -493,6 +536,9 @@ public final class FileSystemSummary extends com.oracle.bmc.http.internal.Explic
             }
             if (model.wasPropertyExplicitlySet("cloneAttachStatus")) {
                 this.cloneAttachStatus(model.getCloneAttachStatus());
+            }
+            if (model.wasPropertyExplicitlySet("quotaEnforcementState")) {
+                this.quotaEnforcementState(model.getQuotaEnforcementState());
             }
             return this;
         }
@@ -766,6 +812,20 @@ public final class FileSystemSummary extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
+     * Specifies the total number of replications for which this file system is a source.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("replicationSourceCount")
+    private final Integer replicationSourceCount;
+
+    /**
+     * Specifies the total number of replications for which this file system is a source.
+     * @return the value
+     **/
+    public Integer getReplicationSourceCount() {
+        return replicationSourceCount;
+    }
+
+    /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the KMS key used to encrypt the encryption keys associated with this file system.
      *
      **/
@@ -905,6 +965,72 @@ public final class FileSystemSummary extends com.oracle.bmc.http.internal.Explic
         return cloneAttachStatus;
     }
 
+    /**
+     * Displays the state of enforcement of quota rules on the file system.
+     **/
+    public enum QuotaEnforcementState {
+        Enabling("ENABLING"),
+        Enabled("ENABLED"),
+        Disabling("DISABLING"),
+        Disabled("DISABLED"),
+        Syncing("SYNCING"),
+        Failed("FAILED"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(QuotaEnforcementState.class);
+
+        private final String value;
+        private static java.util.Map<String, QuotaEnforcementState> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (QuotaEnforcementState v : QuotaEnforcementState.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        QuotaEnforcementState(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static QuotaEnforcementState create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'QuotaEnforcementState', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * Displays the state of enforcement of quota rules on the file system.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("quotaEnforcementState")
+    private final QuotaEnforcementState quotaEnforcementState;
+
+    /**
+     * Displays the state of enforcement of quota rules on the file system.
+     * @return the value
+     **/
+    public QuotaEnforcementState getQuotaEnforcementState() {
+        return quotaEnforcementState;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -930,12 +1056,14 @@ public final class FileSystemSummary extends com.oracle.bmc.http.internal.Explic
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
+        sb.append(", replicationSourceCount=").append(String.valueOf(this.replicationSourceCount));
         sb.append(", kmsKeyId=").append(String.valueOf(this.kmsKeyId));
         sb.append(", sourceDetails=").append(String.valueOf(this.sourceDetails));
         sb.append(", isCloneParent=").append(String.valueOf(this.isCloneParent));
         sb.append(", isHydrated=").append(String.valueOf(this.isHydrated));
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
         sb.append(", cloneAttachStatus=").append(String.valueOf(this.cloneAttachStatus));
+        sb.append(", quotaEnforcementState=").append(String.valueOf(this.quotaEnforcementState));
         sb.append(")");
         return sb.toString();
     }
@@ -961,12 +1089,15 @@ public final class FileSystemSummary extends com.oracle.bmc.http.internal.Explic
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
+                && java.util.Objects.equals(
+                        this.replicationSourceCount, other.replicationSourceCount)
                 && java.util.Objects.equals(this.kmsKeyId, other.kmsKeyId)
                 && java.util.Objects.equals(this.sourceDetails, other.sourceDetails)
                 && java.util.Objects.equals(this.isCloneParent, other.isCloneParent)
                 && java.util.Objects.equals(this.isHydrated, other.isHydrated)
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
                 && java.util.Objects.equals(this.cloneAttachStatus, other.cloneAttachStatus)
+                && java.util.Objects.equals(this.quotaEnforcementState, other.quotaEnforcementState)
                 && super.equals(other);
     }
 
@@ -993,6 +1124,11 @@ public final class FileSystemSummary extends com.oracle.bmc.http.internal.Explic
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.replicationSourceCount == null
+                                ? 43
+                                : this.replicationSourceCount.hashCode());
         result = (result * PRIME) + (this.kmsKeyId == null ? 43 : this.kmsKeyId.hashCode());
         result =
                 (result * PRIME)
@@ -1007,6 +1143,11 @@ public final class FileSystemSummary extends com.oracle.bmc.http.internal.Explic
         result =
                 (result * PRIME)
                         + (this.cloneAttachStatus == null ? 43 : this.cloneAttachStatus.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.quotaEnforcementState == null
+                                ? 43
+                                : this.quotaEnforcementState.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

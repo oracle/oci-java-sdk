@@ -66,7 +66,9 @@ public final class ExadbVmCluster extends com.oracle.bmc.http.internal.Explicitl
         "snapshotFileSystemStorage",
         "totalFileSystemStorage",
         "exascaleDbStorageVaultId",
-        "memorySizeInGBs"
+        "memorySizeInGBs",
+        "clusterPlacementGroupId",
+        "subscriptionId"
     })
     public ExadbVmCluster(
             ExadataIormConfig iormConfigCache,
@@ -114,7 +116,9 @@ public final class ExadbVmCluster extends com.oracle.bmc.http.internal.Explicitl
             ExadbVmClusterStorageDetails snapshotFileSystemStorage,
             ExadbVmClusterStorageDetails totalFileSystemStorage,
             String exascaleDbStorageVaultId,
-            Integer memorySizeInGBs) {
+            Integer memorySizeInGBs,
+            String clusterPlacementGroupId,
+            String subscriptionId) {
         super();
         this.iormConfigCache = iormConfigCache;
         this.id = id;
@@ -162,6 +166,8 @@ public final class ExadbVmCluster extends com.oracle.bmc.http.internal.Explicitl
         this.totalFileSystemStorage = totalFileSystemStorage;
         this.exascaleDbStorageVaultId = exascaleDbStorageVaultId;
         this.memorySizeInGBs = memorySizeInGBs;
+        this.clusterPlacementGroupId = clusterPlacementGroupId;
+        this.subscriptionId = subscriptionId;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -542,10 +548,8 @@ public final class ExadbVmCluster extends com.oracle.bmc.http.internal.Explicitl
         /**
          * Grid Setup will be done using this grid image id.
          * <p>
-         * The grid image id can be extracted from
-         * 1. Obtain the supported major versions using API /20160918/giVersions?compartmentId=<compartmentId>&shape=EXADB_XS&availabilityDomain=<AD name>
-         * 2. Replace {version} with one of the supported major versions and obtain the supported minor versions using
-         * API /20160918/giVersions/{version}/minorVersions?compartmentId=<compartmentId>&shapeFamily=EXADB_XS&availabilityDomain=<AD name>
+         * The grid image ID can be obtained using the API /20160918/giVersions/{majorVersion}/minorVersions?compartmentId=<compartmentId>&shapeFamily=EXADB_XS&availabilityDomain=<AD name>.
+         * The list of supported major versions can be obtained using the API /20160918/giVersions?compartmentId=<compartmentId>&shape=ExaDbXS&availabilityDomain=<AD name>
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("gridImageId")
@@ -554,10 +558,8 @@ public final class ExadbVmCluster extends com.oracle.bmc.http.internal.Explicitl
         /**
          * Grid Setup will be done using this grid image id.
          * <p>
-         * The grid image id can be extracted from
-         * 1. Obtain the supported major versions using API /20160918/giVersions?compartmentId=<compartmentId>&shape=EXADB_XS&availabilityDomain=<AD name>
-         * 2. Replace {version} with one of the supported major versions and obtain the supported minor versions using
-         * API /20160918/giVersions/{version}/minorVersions?compartmentId=<compartmentId>&shapeFamily=EXADB_XS&availabilityDomain=<AD name>
+         * The grid image ID can be obtained using the API /20160918/giVersions/{majorVersion}/minorVersions?compartmentId=<compartmentId>&shapeFamily=EXADB_XS&availabilityDomain=<AD name>.
+         * The list of supported major versions can be obtained using the API /20160918/giVersions?compartmentId=<compartmentId>&shape=ExaDbXS&availabilityDomain=<AD name>
          *
          * @param gridImageId the value to set
          * @return this builder
@@ -982,6 +984,38 @@ public final class ExadbVmCluster extends com.oracle.bmc.http.internal.Explicitl
             this.__explicitlySet__.add("memorySizeInGBs");
             return this;
         }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("clusterPlacementGroupId")
+        private String clusterPlacementGroupId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+         * @param clusterPlacementGroupId the value to set
+         * @return this builder
+         **/
+        public Builder clusterPlacementGroupId(String clusterPlacementGroupId) {
+            this.clusterPlacementGroupId = clusterPlacementGroupId;
+            this.__explicitlySet__.add("clusterPlacementGroupId");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
+        private String subscriptionId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+         * @param subscriptionId the value to set
+         * @return this builder
+         **/
+        public Builder subscriptionId(String subscriptionId) {
+            this.subscriptionId = subscriptionId;
+            this.__explicitlySet__.add("subscriptionId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -1034,7 +1068,9 @@ public final class ExadbVmCluster extends com.oracle.bmc.http.internal.Explicitl
                             this.snapshotFileSystemStorage,
                             this.totalFileSystemStorage,
                             this.exascaleDbStorageVaultId,
-                            this.memorySizeInGBs);
+                            this.memorySizeInGBs,
+                            this.clusterPlacementGroupId,
+                            this.subscriptionId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -1180,6 +1216,12 @@ public final class ExadbVmCluster extends com.oracle.bmc.http.internal.Explicitl
             }
             if (model.wasPropertyExplicitlySet("memorySizeInGBs")) {
                 this.memorySizeInGBs(model.getMemorySizeInGBs());
+            }
+            if (model.wasPropertyExplicitlySet("clusterPlacementGroupId")) {
+                this.clusterPlacementGroupId(model.getClusterPlacementGroupId());
+            }
+            if (model.wasPropertyExplicitlySet("subscriptionId")) {
+                this.subscriptionId(model.getSubscriptionId());
             }
             return this;
         }
@@ -1583,10 +1625,8 @@ public final class ExadbVmCluster extends com.oracle.bmc.http.internal.Explicitl
     /**
      * Grid Setup will be done using this grid image id.
      * <p>
-     * The grid image id can be extracted from
-     * 1. Obtain the supported major versions using API /20160918/giVersions?compartmentId=<compartmentId>&shape=EXADB_XS&availabilityDomain=<AD name>
-     * 2. Replace {version} with one of the supported major versions and obtain the supported minor versions using
-     * API /20160918/giVersions/{version}/minorVersions?compartmentId=<compartmentId>&shapeFamily=EXADB_XS&availabilityDomain=<AD name>
+     * The grid image ID can be obtained using the API /20160918/giVersions/{majorVersion}/minorVersions?compartmentId=<compartmentId>&shapeFamily=EXADB_XS&availabilityDomain=<AD name>.
+     * The list of supported major versions can be obtained using the API /20160918/giVersions?compartmentId=<compartmentId>&shape=ExaDbXS&availabilityDomain=<AD name>
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("gridImageId")
@@ -1595,10 +1635,8 @@ public final class ExadbVmCluster extends com.oracle.bmc.http.internal.Explicitl
     /**
      * Grid Setup will be done using this grid image id.
      * <p>
-     * The grid image id can be extracted from
-     * 1. Obtain the supported major versions using API /20160918/giVersions?compartmentId=<compartmentId>&shape=EXADB_XS&availabilityDomain=<AD name>
-     * 2. Replace {version} with one of the supported major versions and obtain the supported minor versions using
-     * API /20160918/giVersions/{version}/minorVersions?compartmentId=<compartmentId>&shapeFamily=EXADB_XS&availabilityDomain=<AD name>
+     * The grid image ID can be obtained using the API /20160918/giVersions/{majorVersion}/minorVersions?compartmentId=<compartmentId>&shapeFamily=EXADB_XS&availabilityDomain=<AD name>.
+     * The list of supported major versions can be obtained using the API /20160918/giVersions?compartmentId=<compartmentId>&shape=ExaDbXS&availabilityDomain=<AD name>
      *
      * @return the value
      **/
@@ -2067,6 +2105,34 @@ public final class ExadbVmCluster extends com.oracle.bmc.http.internal.Explicitl
         return memorySizeInGBs;
     }
 
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("clusterPlacementGroupId")
+    private final String clusterPlacementGroupId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+     * @return the value
+     **/
+    public String getClusterPlacementGroupId() {
+        return clusterPlacementGroupId;
+    }
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
+    private final String subscriptionId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+     * @return the value
+     **/
+    public String getSubscriptionId() {
+        return subscriptionId;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -2130,6 +2196,9 @@ public final class ExadbVmCluster extends com.oracle.bmc.http.internal.Explicitl
         sb.append(", exascaleDbStorageVaultId=")
                 .append(String.valueOf(this.exascaleDbStorageVaultId));
         sb.append(", memorySizeInGBs=").append(String.valueOf(this.memorySizeInGBs));
+        sb.append(", clusterPlacementGroupId=")
+                .append(String.valueOf(this.clusterPlacementGroupId));
+        sb.append(", subscriptionId=").append(String.valueOf(this.subscriptionId));
         sb.append(")");
         return sb.toString();
     }
@@ -2195,6 +2264,9 @@ public final class ExadbVmCluster extends com.oracle.bmc.http.internal.Explicitl
                 && java.util.Objects.equals(
                         this.exascaleDbStorageVaultId, other.exascaleDbStorageVaultId)
                 && java.util.Objects.equals(this.memorySizeInGBs, other.memorySizeInGBs)
+                && java.util.Objects.equals(
+                        this.clusterPlacementGroupId, other.clusterPlacementGroupId)
+                && java.util.Objects.equals(this.subscriptionId, other.subscriptionId)
                 && super.equals(other);
     }
 
@@ -2318,6 +2390,14 @@ public final class ExadbVmCluster extends com.oracle.bmc.http.internal.Explicitl
         result =
                 (result * PRIME)
                         + (this.memorySizeInGBs == null ? 43 : this.memorySizeInGBs.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.clusterPlacementGroupId == null
+                                ? 43
+                                : this.clusterPlacementGroupId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.subscriptionId == null ? 43 : this.subscriptionId.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

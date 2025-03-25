@@ -29,6 +29,7 @@ public final class ModelVersionSet extends com.oracle.bmc.http.internal.Explicit
         "timeCreated",
         "timeUpdated",
         "createdBy",
+        "category",
         "freeformTags",
         "definedTags",
         "systemTags"
@@ -43,6 +44,7 @@ public final class ModelVersionSet extends com.oracle.bmc.http.internal.Explicit
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
             String createdBy,
+            ModelVersionSetCategory category,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags) {
@@ -56,6 +58,7 @@ public final class ModelVersionSet extends com.oracle.bmc.http.internal.Explicit
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
         this.createdBy = createdBy;
+        this.category = category;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.systemTags = systemTags;
@@ -216,6 +219,22 @@ public final class ModelVersionSet extends com.oracle.bmc.http.internal.Explicit
             return this;
         }
         /**
+         * The category of the model version set.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("category")
+        private ModelVersionSetCategory category;
+
+        /**
+         * The category of the model version set.
+         * @param category the value to set
+         * @return this builder
+         **/
+        public Builder category(ModelVersionSetCategory category) {
+            this.category = category;
+            this.__explicitlySet__.add("category");
+            return this;
+        }
+        /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * Example: {@code {"Department": "Finance"}}
          *
@@ -292,6 +311,7 @@ public final class ModelVersionSet extends com.oracle.bmc.http.internal.Explicit
                             this.timeCreated,
                             this.timeUpdated,
                             this.createdBy,
+                            this.category,
                             this.freeformTags,
                             this.definedTags,
                             this.systemTags);
@@ -329,6 +349,9 @@ public final class ModelVersionSet extends com.oracle.bmc.http.internal.Explicit
             }
             if (model.wasPropertyExplicitlySet("createdBy")) {
                 this.createdBy(model.getCreatedBy());
+            }
+            if (model.wasPropertyExplicitlySet("category")) {
+                this.category(model.getCategory());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -489,6 +512,20 @@ public final class ModelVersionSet extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
+     * The category of the model version set.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("category")
+    private final ModelVersionSetCategory category;
+
+    /**
+     * The category of the model version set.
+     * @return the value
+     **/
+    public ModelVersionSetCategory getCategory() {
+        return category;
+    }
+
+    /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * Example: {@code {"Department": "Finance"}}
      *
@@ -565,6 +602,7 @@ public final class ModelVersionSet extends com.oracle.bmc.http.internal.Explicit
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", createdBy=").append(String.valueOf(this.createdBy));
+        sb.append(", category=").append(String.valueOf(this.category));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
@@ -591,6 +629,7 @@ public final class ModelVersionSet extends com.oracle.bmc.http.internal.Explicit
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.createdBy, other.createdBy)
+                && java.util.Objects.equals(this.category, other.category)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
@@ -614,6 +653,7 @@ public final class ModelVersionSet extends com.oracle.bmc.http.internal.Explicit
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
         result = (result * PRIME) + (this.createdBy == null ? 43 : this.createdBy.hashCode());
+        result = (result * PRIME) + (this.category == null ? 43 : this.category.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());

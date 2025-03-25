@@ -3,6 +3,67 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 2.82.0 - 2025-03-25
+### Added 
+- Support for pipelines in the OpenSearch service 
+- Support for uploading and downloading the model metadata artifacts in the Data Science service 
+- Support for model references via native API in the Data Science service 
+- Support for scheduling cross-region database backups in the HeatWave service 
+- Support for specifying backup retention days for manual cross-region backups in the HeatWave service 
+- Support for IPv6 addresses for dedicated infrastructure in the Database service 
+- Support for NewDev edition for the development community in the Database service 
+- Support for grouping sensitive types across the tenancies and reuse of groups in the discovery workflow in the Data Safe service 
+- Support for generating custom assessment reports in the Data Safe service 
+- Support for user quotas on file system resources in the File Storage service 
+- Support for long term retention backups in the Autonomous Recovery service 
+- Support for Cross Region Replication(CRR) in the PostgreSQL service 
+- Support for subscriptions and cluster placement groups on exascale infrastructure in the Database service 
+- Support for multiple standby databases for autonomous dataguard associations in the Database service 
+- Support for major version upgrade of clusters in the OpenSearch service 
+- Support for Customer Service Identifier(CSI) number in list assigned subscriptions response in the Organizations service 
+- Support for Managed Services for Mac service 
+- Support for scheduling customer-initiated backups in the GoldenGate service 
+- Support for GPU memory clusters and fabrics in the Compute service 
+- Support for agent platforms and Retrieval Augmented Generation (RAG) agents in the Generative AI Agent service 
+- Support for knowledge based metadata summaries in the Generative AI Agent service 
+- Support for create and update operations on onboard configurations in the Stack Monitoring service 
+- Support for automatic activation of the management agents on compute instance launch in the Stack Monitoring service 
+- Support for importing collectd resources in the Stack Monitoring service 
+- Support for updating the handler configurations for collected resources in Stack Monitoring service 
+- Support for monitored resource types based on source type and resource category in the Stack Monitoring service 
+- Support for adding tags in maintenance windows in the Stack Monitoring service 
+- Support for host API feature in the Compute service   
+
+### Fixed 
+- Java 8 incompatibility introduced in the previous release: NoSuchMethodError for ByteBuffer.flip()   
+
+### Breaking Changes 
+- Method public java.lang.String getOpcRetryToken() has been removed from com.oracle.bmc.tenantmanagercontrolplane.responses.CreateSubscriptionMappingResponse in the Organizations service 
+- Method public java.lang.Integer getMaxMemoryGB() has been removed from the model com.oracle.bmc.opensearch.model.CreateOpensearchClusterPipelineDetails in the OpenSearch service 
+- Method public java.lang.Integer getMaxOcpuCount() has been removed from the model com.oracle.bmc.opensearch.model.CreateOpensearchClusterPipelineDetails in the OpenSearch service 
+- Method public java.lang.Integer getMinMemoryGB() has been removed from the model com.oracle.bmc.opensearch.model.CreateOpensearchClusterPipelineDetails in the OpenSearch service 
+- Method public java.lang.Integer getMinOcpuCount() has been removed from the model com.oracle.bmc.opensearch.model.CreateOpensearchClusterPipelineDetails in the OpenSearch service 
+- Method public java.util.Map getSystemTags() has been removed from the model com.oracle.bmc.opensearch.model.CreateOpensearchClusterPipelineDetails in the OpenSearch service 
+- Method public java.lang.Integer getMaxMemoryGB() has been removed from the model com.oracle.bmc.opensearch.model.OpensearchClusterPipeline in the OpenSearch service 
+- Method public java.lang.Integer getMaxOcpuCount() has been removed from the model com.oracle.bmc.opensearch.model.OpensearchClusterPipeline in the OpenSearch service 
+- Method public java.lang.Integer getMinMemoryGB() has been removed from the model com.oracle.bmc.opensearch.model.OpensearchClusterPipeline in the OpenSearch service 
+- Method public java.lang.Integer getMinOcpuCount() has been removed from the model com.oracle.bmc.opensearch.model.OpensearchClusterPipeline in the OpenSearch service 
+- Method public java.lang.Integer getMaxMemoryGB() has been removed from the model com.oracle.bmc.opensearch.model.OpensearchClusterPipelineSummary in the OpenSearch service 
+- Method public java.lang.Integer getMaxOcpuCount() has been removed from the model com.oracle.bmc.opensearch.model.OpensearchClusterPipelineSummary in the OpenSearch service 
+- Method public java.lang.Integer getMinMemoryGB() has been removed from the model com.oracle.bmc.opensearch.model.OpensearchClusterPipelineSummary in the OpenSearch service 
+- Method public java.lang.Integer getMinOcpuCount() has been removed from the model com.oracle.bmc.opensearch.model.OpensearchClusterPipelineSummary in the OpenSearch service 
+- Class com.oracle.bmc.opensearch.model.OpensearchPipelineValidationResponse has been removed from the OpenSearch service 
+- Class com.oracle.bmc.opensearch.model.PipelineValidationErrorDetails has been removed from the OpenSearch service 
+- Method public java.lang.Integer getMaxMemoryGB() has been removed from the model com.oracle.bmc.opensearch.model.UpdateOpensearchClusterPipelineDetails in the OpenSearch service 
+- Method public java.lang.Integer getMaxOcpuCount() has been removed from the model com.oracle.bmc.opensearch.model.UpdateOpensearchClusterPipelineDetails in the OpenSearch service 
+- Method public java.lang.Integer getMinMemoryGB() has been removed from the model com.oracle.bmc.opensearch.model.UpdateOpensearchClusterPipelineDetails in the OpenSearch service 
+- Method public java.lang.Integer getMinOcpuCount() has been removed from the model com.oracle.bmc.opensearch.model.UpdateOpensearchClusterPipelineDetails in the OpenSearch service 
+- Class com.oracle.bmc.opensearch.model.ValidateOpensearchPipelineDetails has been removed from the OpenSearch service 
+- Method public java.lang.String getIpAnycastId() has been removed from the model com.oracle.bmc.core.model.CreateByoipRangeDetails in the Core service 
+- Method public java.lang.String getMonitorIp() has been removed from the model com.oracle.bmc.core.model.CreateByoipRangeDetails in the Core service 
+- Method public java.lang.String getIpAnycastId() has been removed from the model com.oracle.bmc.core.model.UpdateByoipRangeDetails in the Core service 
+- Method public java.lang.String getMonitorIp() has been removed from the model com.oracle.bmc.core.model.UpdateByoipRangeDetails in the Core service
+
 ## 2.81.0 - 2025-02-25
 ### Added 
 - Support for backup retention locks on autonomous database create and update operations in the Database service 

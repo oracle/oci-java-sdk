@@ -40,6 +40,7 @@ public final class MaintenanceRunSummary
         "maintenanceSubtype",
         "isDstFileUpdateEnabled",
         "peerMaintenanceRunId",
+        "peerMaintenanceRunIds",
         "patchingMode",
         "patchFailureCount",
         "targetDbServerVersion",
@@ -74,6 +75,7 @@ public final class MaintenanceRunSummary
             MaintenanceSubtype maintenanceSubtype,
             Boolean isDstFileUpdateEnabled,
             String peerMaintenanceRunId,
+            java.util.List<String> peerMaintenanceRunIds,
             PatchingMode patchingMode,
             Integer patchFailureCount,
             String targetDbServerVersion,
@@ -107,6 +109,7 @@ public final class MaintenanceRunSummary
         this.maintenanceSubtype = maintenanceSubtype;
         this.isDstFileUpdateEnabled = isDstFileUpdateEnabled;
         this.peerMaintenanceRunId = peerMaintenanceRunId;
+        this.peerMaintenanceRunIds = peerMaintenanceRunIds;
         this.patchingMode = patchingMode;
         this.patchFailureCount = patchFailureCount;
         this.targetDbServerVersion = targetDbServerVersion;
@@ -383,6 +386,22 @@ public final class MaintenanceRunSummary
         public Builder peerMaintenanceRunId(String peerMaintenanceRunId) {
             this.peerMaintenanceRunId = peerMaintenanceRunId;
             this.__explicitlySet__.add("peerMaintenanceRunId");
+            return this;
+        }
+        /**
+         * The list of OCIDs for the maintenance runs associated with their Autonomous Data Guard peer container databases.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("peerMaintenanceRunIds")
+        private java.util.List<String> peerMaintenanceRunIds;
+
+        /**
+         * The list of OCIDs for the maintenance runs associated with their Autonomous Data Guard peer container databases.
+         * @param peerMaintenanceRunIds the value to set
+         * @return this builder
+         **/
+        public Builder peerMaintenanceRunIds(java.util.List<String> peerMaintenanceRunIds) {
+            this.peerMaintenanceRunIds = peerMaintenanceRunIds;
+            this.__explicitlySet__.add("peerMaintenanceRunIds");
             return this;
         }
         /**
@@ -668,6 +687,7 @@ public final class MaintenanceRunSummary
                             this.maintenanceSubtype,
                             this.isDstFileUpdateEnabled,
                             this.peerMaintenanceRunId,
+                            this.peerMaintenanceRunIds,
                             this.patchingMode,
                             this.patchFailureCount,
                             this.targetDbServerVersion,
@@ -739,6 +759,9 @@ public final class MaintenanceRunSummary
             }
             if (model.wasPropertyExplicitlySet("peerMaintenanceRunId")) {
                 this.peerMaintenanceRunId(model.getPeerMaintenanceRunId());
+            }
+            if (model.wasPropertyExplicitlySet("peerMaintenanceRunIds")) {
+                this.peerMaintenanceRunIds(model.getPeerMaintenanceRunIds());
             }
             if (model.wasPropertyExplicitlySet("patchingMode")) {
                 this.patchingMode(model.getPatchingMode());
@@ -1244,6 +1267,20 @@ public final class MaintenanceRunSummary
     }
 
     /**
+     * The list of OCIDs for the maintenance runs associated with their Autonomous Data Guard peer container databases.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("peerMaintenanceRunIds")
+    private final java.util.List<String> peerMaintenanceRunIds;
+
+    /**
+     * The list of OCIDs for the maintenance runs associated with their Autonomous Data Guard peer container databases.
+     * @return the value
+     **/
+    public java.util.List<String> getPeerMaintenanceRunIds() {
+        return peerMaintenanceRunIds;
+    }
+
+    /**
      * Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
      * <p>
      *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
@@ -1600,6 +1637,7 @@ public final class MaintenanceRunSummary
         sb.append(", maintenanceSubtype=").append(String.valueOf(this.maintenanceSubtype));
         sb.append(", isDstFileUpdateEnabled=").append(String.valueOf(this.isDstFileUpdateEnabled));
         sb.append(", peerMaintenanceRunId=").append(String.valueOf(this.peerMaintenanceRunId));
+        sb.append(", peerMaintenanceRunIds=").append(String.valueOf(this.peerMaintenanceRunIds));
         sb.append(", patchingMode=").append(String.valueOf(this.patchingMode));
         sb.append(", patchFailureCount=").append(String.valueOf(this.patchFailureCount));
         sb.append(", targetDbServerVersion=").append(String.valueOf(this.targetDbServerVersion));
@@ -1655,6 +1693,7 @@ public final class MaintenanceRunSummary
                 && java.util.Objects.equals(
                         this.isDstFileUpdateEnabled, other.isDstFileUpdateEnabled)
                 && java.util.Objects.equals(this.peerMaintenanceRunId, other.peerMaintenanceRunId)
+                && java.util.Objects.equals(this.peerMaintenanceRunIds, other.peerMaintenanceRunIds)
                 && java.util.Objects.equals(this.patchingMode, other.patchingMode)
                 && java.util.Objects.equals(this.patchFailureCount, other.patchFailureCount)
                 && java.util.Objects.equals(this.targetDbServerVersion, other.targetDbServerVersion)
@@ -1732,6 +1771,11 @@ public final class MaintenanceRunSummary
                         + (this.peerMaintenanceRunId == null
                                 ? 43
                                 : this.peerMaintenanceRunId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.peerMaintenanceRunIds == null
+                                ? 43
+                                : this.peerMaintenanceRunIds.hashCode());
         result = (result * PRIME) + (this.patchingMode == null ? 43 : this.patchingMode.hashCode());
         result =
                 (result * PRIME)

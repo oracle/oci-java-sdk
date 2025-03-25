@@ -39,6 +39,7 @@ public enum WorkRequestOperationType {
     ScheduleMove("SCHEDULE_MOVE"),
     ScheduleActivate("SCHEDULE_ACTIVATE"),
     ScheduleDeactivate("SCHEDULE_DEACTIVATE"),
+    RegisterModelArtifact("REGISTER_MODEL_ARTIFACT"),
     RestoreArchivedModel("RESTORE_ARCHIVED_MODEL"),
 
     /**

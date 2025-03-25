@@ -28,20 +28,23 @@ public final class CreateApplicationVipDetails
         "dbNodeId",
         "cloudVmClusterId",
         "subnetId",
-        "ipAddress"
+        "ipAddress",
+        "ipv6Address"
     })
     public CreateApplicationVipDetails(
             String hostnameLabel,
             String dbNodeId,
             String cloudVmClusterId,
             String subnetId,
-            String ipAddress) {
+            String ipAddress,
+            String ipv6Address) {
         super();
         this.hostnameLabel = hostnameLabel;
         this.dbNodeId = dbNodeId;
         this.cloudVmClusterId = cloudVmClusterId;
         this.subnetId = subnetId;
         this.ipAddress = ipAddress;
+        this.ipv6Address = ipv6Address;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -111,19 +114,35 @@ public final class CreateApplicationVipDetails
             return this;
         }
         /**
-         * The application virtual IP (VIP) address.
+         * The application virtual IP (VIP) IPv4 address.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("ipAddress")
         private String ipAddress;
 
         /**
-         * The application virtual IP (VIP) address.
+         * The application virtual IP (VIP) IPv4 address.
          * @param ipAddress the value to set
          * @return this builder
          **/
         public Builder ipAddress(String ipAddress) {
             this.ipAddress = ipAddress;
             this.__explicitlySet__.add("ipAddress");
+            return this;
+        }
+        /**
+         * The application virtual IP (VIP) IPv6 address.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("ipv6Address")
+        private String ipv6Address;
+
+        /**
+         * The application virtual IP (VIP) IPv6 address.
+         * @param ipv6Address the value to set
+         * @return this builder
+         **/
+        public Builder ipv6Address(String ipv6Address) {
+            this.ipv6Address = ipv6Address;
+            this.__explicitlySet__.add("ipv6Address");
             return this;
         }
 
@@ -137,7 +156,8 @@ public final class CreateApplicationVipDetails
                             this.dbNodeId,
                             this.cloudVmClusterId,
                             this.subnetId,
-                            this.ipAddress);
+                            this.ipAddress,
+                            this.ipv6Address);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -160,6 +180,9 @@ public final class CreateApplicationVipDetails
             }
             if (model.wasPropertyExplicitlySet("ipAddress")) {
                 this.ipAddress(model.getIpAddress());
+            }
+            if (model.wasPropertyExplicitlySet("ipv6Address")) {
+                this.ipv6Address(model.getIpv6Address());
             }
             return this;
         }
@@ -233,17 +256,31 @@ public final class CreateApplicationVipDetails
     }
 
     /**
-     * The application virtual IP (VIP) address.
+     * The application virtual IP (VIP) IPv4 address.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ipAddress")
     private final String ipAddress;
 
     /**
-     * The application virtual IP (VIP) address.
+     * The application virtual IP (VIP) IPv4 address.
      * @return the value
      **/
     public String getIpAddress() {
         return ipAddress;
+    }
+
+    /**
+     * The application virtual IP (VIP) IPv6 address.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("ipv6Address")
+    private final String ipv6Address;
+
+    /**
+     * The application virtual IP (VIP) IPv6 address.
+     * @return the value
+     **/
+    public String getIpv6Address() {
+        return ipv6Address;
     }
 
     @Override
@@ -265,6 +302,7 @@ public final class CreateApplicationVipDetails
         sb.append(", cloudVmClusterId=").append(String.valueOf(this.cloudVmClusterId));
         sb.append(", subnetId=").append(String.valueOf(this.subnetId));
         sb.append(", ipAddress=").append(String.valueOf(this.ipAddress));
+        sb.append(", ipv6Address=").append(String.valueOf(this.ipv6Address));
         sb.append(")");
         return sb.toString();
     }
@@ -284,6 +322,7 @@ public final class CreateApplicationVipDetails
                 && java.util.Objects.equals(this.cloudVmClusterId, other.cloudVmClusterId)
                 && java.util.Objects.equals(this.subnetId, other.subnetId)
                 && java.util.Objects.equals(this.ipAddress, other.ipAddress)
+                && java.util.Objects.equals(this.ipv6Address, other.ipv6Address)
                 && super.equals(other);
     }
 
@@ -300,6 +339,7 @@ public final class CreateApplicationVipDetails
                         + (this.cloudVmClusterId == null ? 43 : this.cloudVmClusterId.hashCode());
         result = (result * PRIME) + (this.subnetId == null ? 43 : this.subnetId.hashCode());
         result = (result * PRIME) + (this.ipAddress == null ? 43 : this.ipAddress.hashCode());
+        result = (result * PRIME) + (this.ipv6Address == null ? 43 : this.ipv6Address.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

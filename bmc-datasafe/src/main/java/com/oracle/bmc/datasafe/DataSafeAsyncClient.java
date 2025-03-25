@@ -2304,6 +2304,66 @@ public class DataSafeAsyncClient implements DataSafeAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ChangeSensitiveTypeGroupCompartmentResponse>
+            changeSensitiveTypeGroupCompartment(
+                    ChangeSensitiveTypeGroupCompartmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeSensitiveTypeGroupCompartmentRequest,
+                                    ChangeSensitiveTypeGroupCompartmentResponse>
+                            handler) {
+        LOG.trace("Called async changeSensitiveTypeGroupCompartment");
+        final ChangeSensitiveTypeGroupCompartmentRequest interceptedRequest =
+                ChangeSensitiveTypeGroupCompartmentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeSensitiveTypeGroupCompartmentConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "ChangeSensitiveTypeGroupCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SensitiveTypeGroup/ChangeSensitiveTypeGroupCompartment");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ChangeSensitiveTypeGroupCompartmentResponse>
+                transformer =
+                        ChangeSensitiveTypeGroupCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ChangeSensitiveTypeGroupCompartmentRequest,
+                        ChangeSensitiveTypeGroupCompartmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ChangeSensitiveTypeGroupCompartmentRequest,
+                                ChangeSensitiveTypeGroupCompartmentResponse>,
+                        java.util.concurrent.Future<ChangeSensitiveTypeGroupCompartmentResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeSensitiveTypeGroupCompartmentDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ChangeSensitiveTypeGroupCompartmentRequest,
+                    ChangeSensitiveTypeGroupCompartmentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ChangeSensitiveTypesExportCompartmentResponse>
             changeSensitiveTypesExportCompartment(
                     ChangeSensitiveTypesExportCompartmentRequest request,
@@ -3687,6 +3747,60 @@ public class DataSafeAsyncClient implements DataSafeAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<CreateSensitiveTypeGroupResponse> createSensitiveTypeGroup(
+            CreateSensitiveTypeGroupRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateSensitiveTypeGroupRequest, CreateSensitiveTypeGroupResponse>
+                    handler) {
+        LOG.trace("Called async createSensitiveTypeGroup");
+        final CreateSensitiveTypeGroupRequest interceptedRequest =
+                CreateSensitiveTypeGroupConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateSensitiveTypeGroupConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "CreateSensitiveTypeGroup",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SensitiveTypeGroup/CreateSensitiveTypeGroup");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, CreateSensitiveTypeGroupResponse>
+                transformer =
+                        CreateSensitiveTypeGroupConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        CreateSensitiveTypeGroupRequest, CreateSensitiveTypeGroupResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateSensitiveTypeGroupRequest, CreateSensitiveTypeGroupResponse>,
+                        java.util.concurrent.Future<CreateSensitiveTypeGroupResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateSensitiveTypeGroupDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateSensitiveTypeGroupRequest, CreateSensitiveTypeGroupResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateSensitiveTypesExportResponse>
             createSensitiveTypesExport(
                     CreateSensitiveTypesExportRequest request,
@@ -4544,6 +4658,53 @@ public class DataSafeAsyncClient implements DataSafeAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteMaskingReportResponse> deleteMaskingReport(
+            DeleteMaskingReportRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteMaskingReportRequest, DeleteMaskingReportResponse>
+                    handler) {
+        LOG.trace("Called async deleteMaskingReport");
+        final DeleteMaskingReportRequest interceptedRequest =
+                DeleteMaskingReportConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteMaskingReportConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "DeleteMaskingReport",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/MaskingReport/DeleteMaskingReport");
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteMaskingReportResponse>
+                transformer =
+                        DeleteMaskingReportConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        DeleteMaskingReportRequest, DeleteMaskingReportResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteMaskingReportRequest, DeleteMaskingReportResponse>,
+                        java.util.concurrent.Future<DeleteMaskingReportResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteMaskingReportRequest, DeleteMaskingReportResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteOnPremConnectorResponse> deleteOnPremConnector(
             DeleteOnPremConnectorRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -4965,6 +5126,54 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     DeleteSensitiveTypeRequest, DeleteSensitiveTypeResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteSensitiveTypeGroupResponse> deleteSensitiveTypeGroup(
+            DeleteSensitiveTypeGroupRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteSensitiveTypeGroupRequest, DeleteSensitiveTypeGroupResponse>
+                    handler) {
+        LOG.trace("Called async deleteSensitiveTypeGroup");
+        final DeleteSensitiveTypeGroupRequest interceptedRequest =
+                DeleteSensitiveTypeGroupConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteSensitiveTypeGroupConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "DeleteSensitiveTypeGroup",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SensitiveTypeGroup/DeleteSensitiveTypeGroup");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, DeleteSensitiveTypeGroupResponse>
+                transformer =
+                        DeleteSensitiveTypeGroupConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        DeleteSensitiveTypeGroupRequest, DeleteSensitiveTypeGroupResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteSensitiveTypeGroupRequest, DeleteSensitiveTypeGroupResponse>,
+                        java.util.concurrent.Future<DeleteSensitiveTypeGroupResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteSensitiveTypeGroupRequest, DeleteSensitiveTypeGroupResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -8328,6 +8537,53 @@ public class DataSafeAsyncClient implements DataSafeAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<GetSensitiveTypeGroupResponse> getSensitiveTypeGroup(
+            GetSensitiveTypeGroupRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetSensitiveTypeGroupRequest, GetSensitiveTypeGroupResponse>
+                    handler) {
+        LOG.trace("Called async getSensitiveTypeGroup");
+        final GetSensitiveTypeGroupRequest interceptedRequest =
+                GetSensitiveTypeGroupConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetSensitiveTypeGroupConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "GetSensitiveTypeGroup",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SensitiveTypeGroup/GetSensitiveTypeGroup");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetSensitiveTypeGroupResponse>
+                transformer =
+                        GetSensitiveTypeGroupConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetSensitiveTypeGroupRequest, GetSensitiveTypeGroupResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetSensitiveTypeGroupRequest, GetSensitiveTypeGroupResponse>,
+                        java.util.concurrent.Future<GetSensitiveTypeGroupResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetSensitiveTypeGroupRequest, GetSensitiveTypeGroupResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<GetSensitiveTypesExportResponse> getSensitiveTypesExport(
             GetSensitiveTypesExportRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -10090,6 +10346,55 @@ public class DataSafeAsyncClient implements DataSafeAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ListGroupedSensitiveTypesResponse> listGroupedSensitiveTypes(
+            ListGroupedSensitiveTypesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListGroupedSensitiveTypesRequest, ListGroupedSensitiveTypesResponse>
+                    handler) {
+        LOG.trace("Called async listGroupedSensitiveTypes");
+        final ListGroupedSensitiveTypesRequest interceptedRequest =
+                ListGroupedSensitiveTypesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListGroupedSensitiveTypesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "ListGroupedSensitiveTypes",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SensitiveTypeGroup/ListGroupedSensitiveTypes");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListGroupedSensitiveTypesResponse>
+                transformer =
+                        ListGroupedSensitiveTypesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListGroupedSensitiveTypesRequest, ListGroupedSensitiveTypesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListGroupedSensitiveTypesRequest,
+                                ListGroupedSensitiveTypesResponse>,
+                        java.util.concurrent.Future<ListGroupedSensitiveTypesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListGroupedSensitiveTypesRequest, ListGroupedSensitiveTypesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ListLibraryMaskingFormatsResponse> listLibraryMaskingFormats(
             ListLibraryMaskingFormatsRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -10265,6 +10570,52 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ListMaskingColumnsRequest, ListMaskingColumnsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListMaskingErrorsResponse> listMaskingErrors(
+            ListMaskingErrorsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListMaskingErrorsRequest, ListMaskingErrorsResponse>
+                    handler) {
+        LOG.trace("Called async listMaskingErrors");
+        final ListMaskingErrorsRequest interceptedRequest =
+                ListMaskingErrorsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListMaskingErrorsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "ListMaskingErrors",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/MaskingErrorSummary/ListMaskingErrors");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListMaskingErrorsResponse>
+                transformer =
+                        ListMaskingErrorsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<ListMaskingErrorsRequest, ListMaskingErrorsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListMaskingErrorsRequest, ListMaskingErrorsResponse>,
+                        java.util.concurrent.Future<ListMaskingErrorsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListMaskingErrorsRequest, ListMaskingErrorsResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -11533,6 +11884,57 @@ public class DataSafeAsyncClient implements DataSafeAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ListSensitiveColumnAnalyticsResponse>
+            listSensitiveColumnAnalytics(
+                    ListSensitiveColumnAnalyticsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListSensitiveColumnAnalyticsRequest,
+                                    ListSensitiveColumnAnalyticsResponse>
+                            handler) {
+        LOG.trace("Called async listSensitiveColumnAnalytics");
+        final ListSensitiveColumnAnalyticsRequest interceptedRequest =
+                ListSensitiveColumnAnalyticsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListSensitiveColumnAnalyticsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "ListSensitiveColumnAnalytics",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SensitiveDataModel/ListSensitiveColumnAnalytics");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListSensitiveColumnAnalyticsResponse>
+                transformer =
+                        ListSensitiveColumnAnalyticsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListSensitiveColumnAnalyticsRequest, ListSensitiveColumnAnalyticsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListSensitiveColumnAnalyticsRequest,
+                                ListSensitiveColumnAnalyticsResponse>,
+                        java.util.concurrent.Future<ListSensitiveColumnAnalyticsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListSensitiveColumnAnalyticsRequest, ListSensitiveColumnAnalyticsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ListSensitiveColumnsResponse> listSensitiveColumns(
             ListSensitiveColumnsRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -11763,6 +12165,54 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ListSensitiveSchemasRequest, ListSensitiveSchemasResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSensitiveTypeGroupsResponse> listSensitiveTypeGroups(
+            ListSensitiveTypeGroupsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListSensitiveTypeGroupsRequest, ListSensitiveTypeGroupsResponse>
+                    handler) {
+        LOG.trace("Called async listSensitiveTypeGroups");
+        final ListSensitiveTypeGroupsRequest interceptedRequest =
+                ListSensitiveTypeGroupsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListSensitiveTypeGroupsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "ListSensitiveTypeGroups",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SensitiveTypeGroupSummary/ListSensitiveTypeGroups");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListSensitiveTypeGroupsResponse>
+                transformer =
+                        ListSensitiveTypeGroupsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListSensitiveTypeGroupsRequest, ListSensitiveTypeGroupsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListSensitiveTypeGroupsRequest, ListSensitiveTypeGroupsResponse>,
+                        java.util.concurrent.Future<ListSensitiveTypeGroupsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListSensitiveTypeGroupsRequest, ListSensitiveTypeGroupsResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -12800,6 +13250,7 @@ public class DataSafeAsyncClient implements DataSafeAsync {
         final MaskDataRequest interceptedRequest = MaskDataConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 MaskDataConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "DataSafe",
@@ -12980,6 +13431,62 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     PatchDiscoveryJobResultsRequest, PatchDiscoveryJobResultsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<PatchGroupedSensitiveTypesResponse>
+            patchGroupedSensitiveTypes(
+                    PatchGroupedSensitiveTypesRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    PatchGroupedSensitiveTypesRequest,
+                                    PatchGroupedSensitiveTypesResponse>
+                            handler) {
+        LOG.trace("Called async patchGroupedSensitiveTypes");
+        final PatchGroupedSensitiveTypesRequest interceptedRequest =
+                PatchGroupedSensitiveTypesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                PatchGroupedSensitiveTypesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "PatchGroupedSensitiveTypes",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SensitiveTypeGroup/PatchGroupedSensitiveTypes");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, PatchGroupedSensitiveTypesResponse>
+                transformer =
+                        PatchGroupedSensitiveTypesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        PatchGroupedSensitiveTypesRequest, PatchGroupedSensitiveTypesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                PatchGroupedSensitiveTypesRequest,
+                                PatchGroupedSensitiveTypesResponse>,
+                        java.util.concurrent.Future<PatchGroupedSensitiveTypesResponse>>
+                futureSupplier =
+                        client.patchFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getPatchGroupedSensitiveTypesDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    PatchGroupedSensitiveTypesRequest, PatchGroupedSensitiveTypesResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -15656,6 +16163,59 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     UpdateSensitiveTypeRequest, UpdateSensitiveTypeResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateSensitiveTypeGroupResponse> updateSensitiveTypeGroup(
+            UpdateSensitiveTypeGroupRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateSensitiveTypeGroupRequest, UpdateSensitiveTypeGroupResponse>
+                    handler) {
+        LOG.trace("Called async updateSensitiveTypeGroup");
+        final UpdateSensitiveTypeGroupRequest interceptedRequest =
+                UpdateSensitiveTypeGroupConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateSensitiveTypeGroupConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "UpdateSensitiveTypeGroup",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SensitiveTypeGroup/UpdateSensitiveTypeGroup");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, UpdateSensitiveTypeGroupResponse>
+                transformer =
+                        UpdateSensitiveTypeGroupConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateSensitiveTypeGroupRequest, UpdateSensitiveTypeGroupResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateSensitiveTypeGroupRequest, UpdateSensitiveTypeGroupResponse>,
+                        java.util.concurrent.Future<UpdateSensitiveTypeGroupResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateSensitiveTypeGroupDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateSensitiveTypeGroupRequest, UpdateSensitiveTypeGroupResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

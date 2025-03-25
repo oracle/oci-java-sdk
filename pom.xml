@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.oracle.oci.sdk</groupId>
   <artifactId>oci-java-sdk</artifactId>
-  <version>2.81.0</version>
+  <version>2.82.0</version>
   <packaging>pom</packaging>
   <name>Oracle Cloud Infrastructure SDK</name>
   <description>This project contains the SDK used for Oracle Cloud Infrastructure</description>
@@ -120,7 +120,8 @@
                     <replace dir="src/main/java" token="{{DOC_SERVER_URL}}" value="https://docs.oracle.com/iaas" />
                     <replace dir="src/main/java" token="https://docs.cloud.oracle.com/iaas" value="https://docs.oracle.com/iaas" />
                     <replace dir="src/main/java" token="https://docs.cloud.oracle.com" value="https://docs.oracle.com/iaas" />
-                    <replace dir="src/main/java" token="https://docs.us-phoenix-1.oraclecloud.com" value="https://docs.oracle.com/iaas" />              </target>
+                    <replace dir="src/main/java" token="https://docs.us-phoenix-1.oraclecloud.com" value="https://docs.oracle.com/iaas" />
+                  </target>
                   <failOnError>false</failOnError>
                 </configuration>
                 <goals>
@@ -871,6 +872,7 @@
     <module>bmc-securityattribute</module>
     <module>bmc-zpr</module>
     <module>bmc-dblm</module>
+    <module>bmc-mngdmac</module>
     <module>bmc-full</module>
     <module>bmc-shaded</module>
   </modules>

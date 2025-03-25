@@ -956,6 +956,187 @@ public class ComputeAsyncClient implements ComputeAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ChangeComputeGpuMemoryClusterCompartmentResponse>
+            changeComputeGpuMemoryClusterCompartment(
+                    ChangeComputeGpuMemoryClusterCompartmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeComputeGpuMemoryClusterCompartmentRequest,
+                                    ChangeComputeGpuMemoryClusterCompartmentResponse>
+                            handler) {
+        LOG.trace("Called async changeComputeGpuMemoryClusterCompartment");
+        final ChangeComputeGpuMemoryClusterCompartmentRequest interceptedRequest =
+                ChangeComputeGpuMemoryClusterCompartmentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeComputeGpuMemoryClusterCompartmentConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Compute",
+                        "ChangeComputeGpuMemoryClusterCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeGpuMemoryCluster/ChangeComputeGpuMemoryClusterCompartment");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ChangeComputeGpuMemoryClusterCompartmentResponse>
+                transformer =
+                        ChangeComputeGpuMemoryClusterCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ChangeComputeGpuMemoryClusterCompartmentRequest,
+                        ChangeComputeGpuMemoryClusterCompartmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ChangeComputeGpuMemoryClusterCompartmentRequest,
+                                ChangeComputeGpuMemoryClusterCompartmentResponse>,
+                        java.util.concurrent.Future<
+                                ChangeComputeGpuMemoryClusterCompartmentResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest
+                                        .getChangeComputeGpuMemoryClusterCompartmentDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ChangeComputeGpuMemoryClusterCompartmentRequest,
+                    ChangeComputeGpuMemoryClusterCompartmentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ChangeComputeGpuMemoryFabricCompartmentResponse>
+            changeComputeGpuMemoryFabricCompartment(
+                    ChangeComputeGpuMemoryFabricCompartmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeComputeGpuMemoryFabricCompartmentRequest,
+                                    ChangeComputeGpuMemoryFabricCompartmentResponse>
+                            handler) {
+        LOG.trace("Called async changeComputeGpuMemoryFabricCompartment");
+        final ChangeComputeGpuMemoryFabricCompartmentRequest interceptedRequest =
+                ChangeComputeGpuMemoryFabricCompartmentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeComputeGpuMemoryFabricCompartmentConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Compute",
+                        "ChangeComputeGpuMemoryFabricCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeGpuMemoryFabric/ChangeComputeGpuMemoryFabricCompartment");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ChangeComputeGpuMemoryFabricCompartmentResponse>
+                transformer =
+                        ChangeComputeGpuMemoryFabricCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ChangeComputeGpuMemoryFabricCompartmentRequest,
+                        ChangeComputeGpuMemoryFabricCompartmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ChangeComputeGpuMemoryFabricCompartmentRequest,
+                                ChangeComputeGpuMemoryFabricCompartmentResponse>,
+                        java.util.concurrent.Future<
+                                ChangeComputeGpuMemoryFabricCompartmentResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest
+                                        .getChangeComputeGpuMemoryFabricCompartmentDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ChangeComputeGpuMemoryFabricCompartmentRequest,
+                    ChangeComputeGpuMemoryFabricCompartmentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ChangeComputeHostCompartmentResponse>
+            changeComputeHostCompartment(
+                    ChangeComputeHostCompartmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeComputeHostCompartmentRequest,
+                                    ChangeComputeHostCompartmentResponse>
+                            handler) {
+        LOG.trace("Called async changeComputeHostCompartment");
+        final ChangeComputeHostCompartmentRequest interceptedRequest =
+                ChangeComputeHostCompartmentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeComputeHostCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Compute",
+                        "ChangeComputeHostCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeHost/ChangeComputeHostCompartment");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ChangeComputeHostCompartmentResponse>
+                transformer =
+                        ChangeComputeHostCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ChangeComputeHostCompartmentRequest, ChangeComputeHostCompartmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ChangeComputeHostCompartmentRequest,
+                                ChangeComputeHostCompartmentResponse>,
+                        java.util.concurrent.Future<ChangeComputeHostCompartmentResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeComputeHostCompartmentDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ChangeComputeHostCompartmentRequest, ChangeComputeHostCompartmentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ChangeComputeImageCapabilitySchemaCompartmentResponse>
             changeComputeImageCapabilitySchemaCompartment(
                     ChangeComputeImageCapabilitySchemaCompartmentRequest request,
@@ -1469,6 +1650,63 @@ public class ComputeAsyncClient implements ComputeAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<CreateComputeGpuMemoryClusterResponse>
+            createComputeGpuMemoryCluster(
+                    CreateComputeGpuMemoryClusterRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    CreateComputeGpuMemoryClusterRequest,
+                                    CreateComputeGpuMemoryClusterResponse>
+                            handler) {
+        LOG.trace("Called async createComputeGpuMemoryCluster");
+        final CreateComputeGpuMemoryClusterRequest interceptedRequest =
+                CreateComputeGpuMemoryClusterConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateComputeGpuMemoryClusterConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Compute",
+                        "CreateComputeGpuMemoryCluster",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeGpuMemoryCluster/CreateComputeGpuMemoryCluster");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, CreateComputeGpuMemoryClusterResponse>
+                transformer =
+                        CreateComputeGpuMemoryClusterConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        CreateComputeGpuMemoryClusterRequest, CreateComputeGpuMemoryClusterResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateComputeGpuMemoryClusterRequest,
+                                CreateComputeGpuMemoryClusterResponse>,
+                        java.util.concurrent.Future<CreateComputeGpuMemoryClusterResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateComputeGpuMemoryClusterDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateComputeGpuMemoryClusterRequest, CreateComputeGpuMemoryClusterResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateComputeImageCapabilitySchemaResponse>
             createComputeImageCapabilitySchema(
                     CreateComputeImageCapabilitySchemaRequest request,
@@ -1879,6 +2117,57 @@ public class ComputeAsyncClient implements ComputeAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     DeleteComputeClusterRequest, DeleteComputeClusterResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteComputeGpuMemoryClusterResponse>
+            deleteComputeGpuMemoryCluster(
+                    DeleteComputeGpuMemoryClusterRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteComputeGpuMemoryClusterRequest,
+                                    DeleteComputeGpuMemoryClusterResponse>
+                            handler) {
+        LOG.trace("Called async deleteComputeGpuMemoryCluster");
+        final DeleteComputeGpuMemoryClusterRequest interceptedRequest =
+                DeleteComputeGpuMemoryClusterConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteComputeGpuMemoryClusterConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Compute",
+                        "DeleteComputeGpuMemoryCluster",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeGpuMemoryCluster/DeleteComputeGpuMemoryCluster");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, DeleteComputeGpuMemoryClusterResponse>
+                transformer =
+                        DeleteComputeGpuMemoryClusterConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        DeleteComputeGpuMemoryClusterRequest, DeleteComputeGpuMemoryClusterResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteComputeGpuMemoryClusterRequest,
+                                DeleteComputeGpuMemoryClusterResponse>,
+                        java.util.concurrent.Future<DeleteComputeGpuMemoryClusterResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteComputeGpuMemoryClusterRequest, DeleteComputeGpuMemoryClusterResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -2759,6 +3048,151 @@ public class ComputeAsyncClient implements ComputeAsync {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     GetComputeGlobalImageCapabilitySchemaVersionRequest,
                     GetComputeGlobalImageCapabilitySchemaVersionResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetComputeGpuMemoryClusterResponse>
+            getComputeGpuMemoryCluster(
+                    GetComputeGpuMemoryClusterRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetComputeGpuMemoryClusterRequest,
+                                    GetComputeGpuMemoryClusterResponse>
+                            handler) {
+        LOG.trace("Called async getComputeGpuMemoryCluster");
+        final GetComputeGpuMemoryClusterRequest interceptedRequest =
+                GetComputeGpuMemoryClusterConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetComputeGpuMemoryClusterConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Compute",
+                        "GetComputeGpuMemoryCluster",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeGpuMemoryCluster/GetComputeGpuMemoryCluster");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, GetComputeGpuMemoryClusterResponse>
+                transformer =
+                        GetComputeGpuMemoryClusterConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetComputeGpuMemoryClusterRequest, GetComputeGpuMemoryClusterResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetComputeGpuMemoryClusterRequest,
+                                GetComputeGpuMemoryClusterResponse>,
+                        java.util.concurrent.Future<GetComputeGpuMemoryClusterResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetComputeGpuMemoryClusterRequest, GetComputeGpuMemoryClusterResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetComputeGpuMemoryFabricResponse> getComputeGpuMemoryFabric(
+            GetComputeGpuMemoryFabricRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetComputeGpuMemoryFabricRequest, GetComputeGpuMemoryFabricResponse>
+                    handler) {
+        LOG.trace("Called async getComputeGpuMemoryFabric");
+        final GetComputeGpuMemoryFabricRequest interceptedRequest =
+                GetComputeGpuMemoryFabricConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetComputeGpuMemoryFabricConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Compute",
+                        "GetComputeGpuMemoryFabric",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeGpuMemoryFabric/GetComputeGpuMemoryFabric");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, GetComputeGpuMemoryFabricResponse>
+                transformer =
+                        GetComputeGpuMemoryFabricConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetComputeGpuMemoryFabricRequest, GetComputeGpuMemoryFabricResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetComputeGpuMemoryFabricRequest,
+                                GetComputeGpuMemoryFabricResponse>,
+                        java.util.concurrent.Future<GetComputeGpuMemoryFabricResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetComputeGpuMemoryFabricRequest, GetComputeGpuMemoryFabricResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetComputeHostResponse> getComputeHost(
+            GetComputeHostRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetComputeHostRequest, GetComputeHostResponse>
+                    handler) {
+        LOG.trace("Called async getComputeHost");
+        final GetComputeHostRequest interceptedRequest =
+                GetComputeHostConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetComputeHostConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Compute",
+                        "GetComputeHost",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeHost/GetComputeHost");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetComputeHostResponse>
+                transformer =
+                        GetComputeHostConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<GetComputeHostRequest, GetComputeHostResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetComputeHostRequest, GetComputeHostResponse>,
+                        java.util.concurrent.Future<GetComputeHostResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetComputeHostRequest, GetComputeHostResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -4294,6 +4728,208 @@ public class ComputeAsyncClient implements ComputeAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ListComputeGpuMemoryClusterInstancesResponse>
+            listComputeGpuMemoryClusterInstances(
+                    ListComputeGpuMemoryClusterInstancesRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListComputeGpuMemoryClusterInstancesRequest,
+                                    ListComputeGpuMemoryClusterInstancesResponse>
+                            handler) {
+        LOG.trace("Called async listComputeGpuMemoryClusterInstances");
+        final ListComputeGpuMemoryClusterInstancesRequest interceptedRequest =
+                ListComputeGpuMemoryClusterInstancesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListComputeGpuMemoryClusterInstancesConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Compute",
+                        "ListComputeGpuMemoryClusterInstances",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeGpuMemoryClusterInstanceSummary/ListComputeGpuMemoryClusterInstances");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListComputeGpuMemoryClusterInstancesResponse>
+                transformer =
+                        ListComputeGpuMemoryClusterInstancesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListComputeGpuMemoryClusterInstancesRequest,
+                        ListComputeGpuMemoryClusterInstancesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListComputeGpuMemoryClusterInstancesRequest,
+                                ListComputeGpuMemoryClusterInstancesResponse>,
+                        java.util.concurrent.Future<ListComputeGpuMemoryClusterInstancesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListComputeGpuMemoryClusterInstancesRequest,
+                    ListComputeGpuMemoryClusterInstancesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListComputeGpuMemoryClustersResponse>
+            listComputeGpuMemoryClusters(
+                    ListComputeGpuMemoryClustersRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListComputeGpuMemoryClustersRequest,
+                                    ListComputeGpuMemoryClustersResponse>
+                            handler) {
+        LOG.trace("Called async listComputeGpuMemoryClusters");
+        final ListComputeGpuMemoryClustersRequest interceptedRequest =
+                ListComputeGpuMemoryClustersConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListComputeGpuMemoryClustersConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Compute",
+                        "ListComputeGpuMemoryClusters",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeGpuMemoryClusterCollection/ListComputeGpuMemoryClusters");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListComputeGpuMemoryClustersResponse>
+                transformer =
+                        ListComputeGpuMemoryClustersConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListComputeGpuMemoryClustersRequest, ListComputeGpuMemoryClustersResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListComputeGpuMemoryClustersRequest,
+                                ListComputeGpuMemoryClustersResponse>,
+                        java.util.concurrent.Future<ListComputeGpuMemoryClustersResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListComputeGpuMemoryClustersRequest, ListComputeGpuMemoryClustersResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListComputeGpuMemoryFabricsResponse>
+            listComputeGpuMemoryFabrics(
+                    ListComputeGpuMemoryFabricsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListComputeGpuMemoryFabricsRequest,
+                                    ListComputeGpuMemoryFabricsResponse>
+                            handler) {
+        LOG.trace("Called async listComputeGpuMemoryFabrics");
+        final ListComputeGpuMemoryFabricsRequest interceptedRequest =
+                ListComputeGpuMemoryFabricsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListComputeGpuMemoryFabricsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Compute",
+                        "ListComputeGpuMemoryFabrics",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeGpuMemoryFabric/ListComputeGpuMemoryFabrics");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListComputeGpuMemoryFabricsResponse>
+                transformer =
+                        ListComputeGpuMemoryFabricsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListComputeGpuMemoryFabricsRequest, ListComputeGpuMemoryFabricsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListComputeGpuMemoryFabricsRequest,
+                                ListComputeGpuMemoryFabricsResponse>,
+                        java.util.concurrent.Future<ListComputeGpuMemoryFabricsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListComputeGpuMemoryFabricsRequest, ListComputeGpuMemoryFabricsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListComputeHostsResponse> listComputeHosts(
+            ListComputeHostsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListComputeHostsRequest, ListComputeHostsResponse>
+                    handler) {
+        LOG.trace("Called async listComputeHosts");
+        final ListComputeHostsRequest interceptedRequest =
+                ListComputeHostsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListComputeHostsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Compute",
+                        "ListComputeHosts",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeHost/ListComputeHosts");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListComputeHostsResponse>
+                transformer =
+                        ListComputeHostsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<ListComputeHostsRequest, ListComputeHostsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListComputeHostsRequest, ListComputeHostsResponse>,
+                        java.util.concurrent.Future<ListComputeHostsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListComputeHostsRequest, ListComputeHostsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ListComputeImageCapabilitySchemasResponse>
             listComputeImageCapabilitySchemas(
                     ListComputeImageCapabilitySchemasRequest request,
@@ -5271,6 +5907,171 @@ public class ComputeAsyncClient implements ComputeAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     UpdateComputeClusterRequest, UpdateComputeClusterResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateComputeGpuMemoryClusterResponse>
+            updateComputeGpuMemoryCluster(
+                    UpdateComputeGpuMemoryClusterRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateComputeGpuMemoryClusterRequest,
+                                    UpdateComputeGpuMemoryClusterResponse>
+                            handler) {
+        LOG.trace("Called async updateComputeGpuMemoryCluster");
+        final UpdateComputeGpuMemoryClusterRequest interceptedRequest =
+                UpdateComputeGpuMemoryClusterConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateComputeGpuMemoryClusterConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Compute",
+                        "UpdateComputeGpuMemoryCluster",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeGpuMemoryCluster/UpdateComputeGpuMemoryCluster");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, UpdateComputeGpuMemoryClusterResponse>
+                transformer =
+                        UpdateComputeGpuMemoryClusterConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateComputeGpuMemoryClusterRequest, UpdateComputeGpuMemoryClusterResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateComputeGpuMemoryClusterRequest,
+                                UpdateComputeGpuMemoryClusterResponse>,
+                        java.util.concurrent.Future<UpdateComputeGpuMemoryClusterResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateComputeGpuMemoryClusterDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateComputeGpuMemoryClusterRequest, UpdateComputeGpuMemoryClusterResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateComputeGpuMemoryFabricResponse>
+            updateComputeGpuMemoryFabric(
+                    UpdateComputeGpuMemoryFabricRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateComputeGpuMemoryFabricRequest,
+                                    UpdateComputeGpuMemoryFabricResponse>
+                            handler) {
+        LOG.trace("Called async updateComputeGpuMemoryFabric");
+        final UpdateComputeGpuMemoryFabricRequest interceptedRequest =
+                UpdateComputeGpuMemoryFabricConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateComputeGpuMemoryFabricConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Compute",
+                        "UpdateComputeGpuMemoryFabric",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeGpuMemoryFabric/UpdateComputeGpuMemoryFabric");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, UpdateComputeGpuMemoryFabricResponse>
+                transformer =
+                        UpdateComputeGpuMemoryFabricConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateComputeGpuMemoryFabricRequest, UpdateComputeGpuMemoryFabricResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateComputeGpuMemoryFabricRequest,
+                                UpdateComputeGpuMemoryFabricResponse>,
+                        java.util.concurrent.Future<UpdateComputeGpuMemoryFabricResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateComputeGpuMemoryFabricDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateComputeGpuMemoryFabricRequest, UpdateComputeGpuMemoryFabricResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateComputeHostResponse> updateComputeHost(
+            UpdateComputeHostRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateComputeHostRequest, UpdateComputeHostResponse>
+                    handler) {
+        LOG.trace("Called async updateComputeHost");
+        final UpdateComputeHostRequest interceptedRequest =
+                UpdateComputeHostConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateComputeHostConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Compute",
+                        "UpdateComputeHost",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeHost/UpdateComputeHost");
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateComputeHostResponse>
+                transformer =
+                        UpdateComputeHostConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<UpdateComputeHostRequest, UpdateComputeHostResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateComputeHostRequest, UpdateComputeHostResponse>,
+                        java.util.concurrent.Future<UpdateComputeHostResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateComputeHostDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateComputeHostRequest, UpdateComputeHostResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

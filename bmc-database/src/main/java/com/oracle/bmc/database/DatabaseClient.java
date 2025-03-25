@@ -601,6 +601,52 @@ public class DatabaseClient implements Database {
     }
 
     @Override
+    public AddStandbyAutonomousContainerDatabaseResponse addStandbyAutonomousContainerDatabase(
+            AddStandbyAutonomousContainerDatabaseRequest request) {
+        LOG.trace("Called addStandbyAutonomousContainerDatabase");
+        final AddStandbyAutonomousContainerDatabaseRequest interceptedRequest =
+                AddStandbyAutonomousContainerDatabaseConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                AddStandbyAutonomousContainerDatabaseConverter.fromRequest(
+                        client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "AddStandbyAutonomousContainerDatabase",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousContainerDatabase/AddStandbyAutonomousContainerDatabase");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, AddStandbyAutonomousContainerDatabaseResponse>
+                transformer =
+                        AddStandbyAutonomousContainerDatabaseConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getAddStandbyAutonomousContainerDatabaseDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public AddStorageCapacityCloudExadataInfrastructureResponse
             addStorageCapacityCloudExadataInfrastructure(
                     AddStorageCapacityCloudExadataInfrastructureRequest request) {
@@ -1808,6 +1854,51 @@ public class DatabaseClient implements Database {
     }
 
     @Override
+    public ChangeExadbVmClusterSubscriptionResponse changeExadbVmClusterSubscription(
+            ChangeExadbVmClusterSubscriptionRequest request) {
+        LOG.trace("Called changeExadbVmClusterSubscription");
+        final ChangeExadbVmClusterSubscriptionRequest interceptedRequest =
+                ChangeExadbVmClusterSubscriptionConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeExadbVmClusterSubscriptionConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ChangeExadbVmClusterSubscription",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExadbVmCluster/ChangeExadbVmClusterSubscription");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, ChangeExadbVmClusterSubscriptionResponse>
+                transformer =
+                        ChangeExadbVmClusterSubscriptionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getChangeExadbVmClusterSubscriptionDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public ChangeExascaleDbStorageVaultCompartmentResponse changeExascaleDbStorageVaultCompartment(
             ChangeExascaleDbStorageVaultCompartmentRequest request) {
         LOG.trace("Called changeExascaleDbStorageVaultCompartment");
@@ -1847,6 +1938,53 @@ public class DatabaseClient implements Database {
                                                 ib,
                                                 retriedRequest
                                                         .getChangeExascaleDbStorageVaultCompartmentDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ChangeExascaleDbStorageVaultSubscriptionResponse
+            changeExascaleDbStorageVaultSubscription(
+                    ChangeExascaleDbStorageVaultSubscriptionRequest request) {
+        LOG.trace("Called changeExascaleDbStorageVaultSubscription");
+        final ChangeExascaleDbStorageVaultSubscriptionRequest interceptedRequest =
+                ChangeExascaleDbStorageVaultSubscriptionConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeExascaleDbStorageVaultSubscriptionConverter.fromRequest(
+                        client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ChangeExascaleDbStorageVaultSubscription",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExascaleDbStorageVault/ChangeExascaleDbStorageVaultSubscription");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, ChangeExascaleDbStorageVaultSubscriptionResponse>
+                transformer =
+                        ChangeExascaleDbStorageVaultSubscriptionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getChangeExascaleDbStorageVaultSubscriptionDetails(),
                                                 retriedRequest);
                                 return transformer.apply(response);
                             });
@@ -2515,6 +2653,54 @@ public class DatabaseClient implements Database {
                             retriedRequest -> {
                                 javax.ws.rs.core.Response response =
                                         client.post(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ConvertStandbyAutonomousContainerDatabaseResponse
+            convertStandbyAutonomousContainerDatabase(
+                    ConvertStandbyAutonomousContainerDatabaseRequest request) {
+        LOG.trace("Called convertStandbyAutonomousContainerDatabase");
+        final ConvertStandbyAutonomousContainerDatabaseRequest interceptedRequest =
+                ConvertStandbyAutonomousContainerDatabaseConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ConvertStandbyAutonomousContainerDatabaseConverter.fromRequest(
+                        client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ConvertStandbyAutonomousContainerDatabase",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousContainerDatabase/ConvertStandbyAutonomousContainerDatabase");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response,
+                        ConvertStandbyAutonomousContainerDatabaseResponse>
+                transformer =
+                        ConvertStandbyAutonomousContainerDatabaseConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getConvertStandbyAutonomousContainerDatabaseDetails(),
+                                                retriedRequest);
                                 return transformer.apply(response);
                             });
                 });
@@ -6330,6 +6516,53 @@ public class DatabaseClient implements Database {
     }
 
     @Override
+    public EditAutonomousContainerDatabaseDataguardResponse
+            editAutonomousContainerDatabaseDataguard(
+                    EditAutonomousContainerDatabaseDataguardRequest request) {
+        LOG.trace("Called editAutonomousContainerDatabaseDataguard");
+        final EditAutonomousContainerDatabaseDataguardRequest interceptedRequest =
+                EditAutonomousContainerDatabaseDataguardConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                EditAutonomousContainerDatabaseDataguardConverter.fromRequest(
+                        client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "EditAutonomousContainerDatabaseDataguard",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousContainerDatabase/EditAutonomousContainerDatabaseDataguard");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, EditAutonomousContainerDatabaseDataguardResponse>
+                transformer =
+                        EditAutonomousContainerDatabaseDataguardConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getEditAutonomousContainerDatabaseDataguardDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public EnableAutonomousDatabaseManagementResponse enableAutonomousDatabaseManagement(
             EnableAutonomousDatabaseManagementRequest request) {
         LOG.trace("Called enableAutonomousDatabaseManagement");
@@ -6913,6 +7146,49 @@ public class DatabaseClient implements Database {
         java.util.function.Function<javax.ws.rs.core.Response, FailOverAutonomousDatabaseResponse>
                 transformer =
                         FailOverAutonomousDatabaseConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public FailoverAutonomousContainerDatabaseDataguardResponse
+            failoverAutonomousContainerDatabaseDataguard(
+                    FailoverAutonomousContainerDatabaseDataguardRequest request) {
+        LOG.trace("Called failoverAutonomousContainerDatabaseDataguard");
+        final FailoverAutonomousContainerDatabaseDataguardRequest interceptedRequest =
+                FailoverAutonomousContainerDatabaseDataguardConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                FailoverAutonomousContainerDatabaseDataguardConverter.fromRequest(
+                        client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "FailoverAutonomousContainerDatabaseDataguard",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousContainerDatabase/FailoverAutonomousContainerDatabaseDataguard");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response,
+                        FailoverAutonomousContainerDatabaseDataguardResponse>
+                transformer =
+                        FailoverAutonomousContainerDatabaseDataguardConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -13091,6 +13367,50 @@ public class DatabaseClient implements Database {
     }
 
     @Override
+    public MigrateAutonomousContainerDatabaseDataguardAssociationResponse
+            migrateAutonomousContainerDatabaseDataguardAssociation(
+                    MigrateAutonomousContainerDatabaseDataguardAssociationRequest request) {
+        LOG.trace("Called migrateAutonomousContainerDatabaseDataguardAssociation");
+        final MigrateAutonomousContainerDatabaseDataguardAssociationRequest interceptedRequest =
+                MigrateAutonomousContainerDatabaseDataguardAssociationConverter.interceptRequest(
+                        request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                MigrateAutonomousContainerDatabaseDataguardAssociationConverter.fromRequest(
+                        client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "MigrateAutonomousContainerDatabaseDataguardAssociation",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousContainerDatabaseDataguardAssociation/MigrateAutonomousContainerDatabaseDataguardAssociation");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response,
+                        MigrateAutonomousContainerDatabaseDataguardAssociationResponse>
+                transformer =
+                        MigrateAutonomousContainerDatabaseDataguardAssociationConverter
+                                .fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public MigrateDataGuardAssociationToMultiDataGuardsResponse
             migrateDataGuardAssociationToMultiDataGuards(
                     MigrateDataGuardAssociationToMultiDataGuardsRequest request) {
@@ -13429,6 +13749,49 @@ public class DatabaseClient implements Database {
                                                 retriedRequest
                                                         .getRegisterAutonomousDatabaseDataSafeDetails(),
                                                 retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ReinstateAutonomousContainerDatabaseDataguardResponse
+            reinstateAutonomousContainerDatabaseDataguard(
+                    ReinstateAutonomousContainerDatabaseDataguardRequest request) {
+        LOG.trace("Called reinstateAutonomousContainerDatabaseDataguard");
+        final ReinstateAutonomousContainerDatabaseDataguardRequest interceptedRequest =
+                ReinstateAutonomousContainerDatabaseDataguardConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ReinstateAutonomousContainerDatabaseDataguardConverter.fromRequest(
+                        client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ReinstateAutonomousContainerDatabaseDataguard",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousContainerDatabase/ReinstateAutonomousContainerDatabaseDataguard");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response,
+                        ReinstateAutonomousContainerDatabaseDataguardResponse>
+                transformer =
+                        ReinstateAutonomousContainerDatabaseDataguardConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(ib, retriedRequest);
                                 return transformer.apply(response);
                             });
                 });
@@ -14913,6 +15276,49 @@ public class DatabaseClient implements Database {
     }
 
     @Override
+    public SwitchoverAutonomousContainerDatabaseDataguardResponse
+            switchoverAutonomousContainerDatabaseDataguard(
+                    SwitchoverAutonomousContainerDatabaseDataguardRequest request) {
+        LOG.trace("Called switchoverAutonomousContainerDatabaseDataguard");
+        final SwitchoverAutonomousContainerDatabaseDataguardRequest interceptedRequest =
+                SwitchoverAutonomousContainerDatabaseDataguardConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                SwitchoverAutonomousContainerDatabaseDataguardConverter.fromRequest(
+                        client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "SwitchoverAutonomousContainerDatabaseDataguard",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousContainerDatabase/SwitchoverAutonomousContainerDatabaseDataguard");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response,
+                        SwitchoverAutonomousContainerDatabaseDataguardResponse>
+                transformer =
+                        SwitchoverAutonomousContainerDatabaseDataguardConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public SwitchoverAutonomousContainerDatabaseDataguardAssociationResponse
             switchoverAutonomousContainerDatabaseDataguardAssociation(
                     SwitchoverAutonomousContainerDatabaseDataguardAssociationRequest request) {
@@ -15555,6 +15961,45 @@ public class DatabaseClient implements Database {
                                                 ib,
                                                 retriedRequest
                                                         .getUpdateAutonomousVmClusterDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public UpdateBackupResponse updateBackup(UpdateBackupRequest request) {
+        LOG.trace("Called updateBackup");
+        final UpdateBackupRequest interceptedRequest =
+                UpdateBackupConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateBackupConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "UpdateBackup",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/Backup/UpdateBackup");
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateBackupResponse> transformer =
+                UpdateBackupConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest.getUpdateBackupDetails(),
                                                 retriedRequest);
                                 return transformer.apply(response);
                             });

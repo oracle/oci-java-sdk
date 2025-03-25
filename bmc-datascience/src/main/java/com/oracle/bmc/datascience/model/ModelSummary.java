@@ -32,6 +32,8 @@ public final class ModelSummary extends com.oracle.bmc.http.internal.ExplicitlyS
         "modelVersionSetName",
         "versionId",
         "versionLabel",
+        "category",
+        "isModelByReference",
         "freeformTags",
         "definedTags"
     })
@@ -48,6 +50,8 @@ public final class ModelSummary extends com.oracle.bmc.http.internal.ExplicitlyS
             String modelVersionSetName,
             Long versionId,
             String versionLabel,
+            ModelCategory category,
+            Boolean isModelByReference,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
@@ -63,6 +67,8 @@ public final class ModelSummary extends com.oracle.bmc.http.internal.ExplicitlyS
         this.modelVersionSetName = modelVersionSetName;
         this.versionId = versionId;
         this.versionLabel = versionLabel;
+        this.category = category;
+        this.isModelByReference = isModelByReference;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
     }
@@ -266,6 +272,38 @@ public final class ModelSummary extends com.oracle.bmc.http.internal.ExplicitlyS
             return this;
         }
         /**
+         * The category of the model.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("category")
+        private ModelCategory category;
+
+        /**
+         * The category of the model.
+         * @param category the value to set
+         * @return this builder
+         **/
+        public Builder category(ModelCategory category) {
+            this.category = category;
+            this.__explicitlySet__.add("category");
+            return this;
+        }
+        /**
+         * Identifier to indicate whether a model artifact resides in the Service Tenancy or Customer Tenancy.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isModelByReference")
+        private Boolean isModelByReference;
+
+        /**
+         * Identifier to indicate whether a model artifact resides in the Service Tenancy or Customer Tenancy.
+         * @param isModelByReference the value to set
+         * @return this builder
+         **/
+        public Builder isModelByReference(Boolean isModelByReference) {
+            this.isModelByReference = isModelByReference;
+            this.__explicitlySet__.add("isModelByReference");
+            return this;
+        }
+        /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * Example: {@code {"Department": "Finance"}}
          *
@@ -325,6 +363,8 @@ public final class ModelSummary extends com.oracle.bmc.http.internal.ExplicitlyS
                             this.modelVersionSetName,
                             this.versionId,
                             this.versionLabel,
+                            this.category,
+                            this.isModelByReference,
                             this.freeformTags,
                             this.definedTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -370,6 +410,12 @@ public final class ModelSummary extends com.oracle.bmc.http.internal.ExplicitlyS
             }
             if (model.wasPropertyExplicitlySet("versionLabel")) {
                 this.versionLabel(model.getVersionLabel());
+            }
+            if (model.wasPropertyExplicitlySet("category")) {
+                this.category(model.getCategory());
+            }
+            if (model.wasPropertyExplicitlySet("isModelByReference")) {
+                this.isModelByReference(model.getIsModelByReference());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -565,6 +611,34 @@ public final class ModelSummary extends com.oracle.bmc.http.internal.ExplicitlyS
     }
 
     /**
+     * The category of the model.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("category")
+    private final ModelCategory category;
+
+    /**
+     * The category of the model.
+     * @return the value
+     **/
+    public ModelCategory getCategory() {
+        return category;
+    }
+
+    /**
+     * Identifier to indicate whether a model artifact resides in the Service Tenancy or Customer Tenancy.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isModelByReference")
+    private final Boolean isModelByReference;
+
+    /**
+     * Identifier to indicate whether a model artifact resides in the Service Tenancy or Customer Tenancy.
+     * @return the value
+     **/
+    public Boolean getIsModelByReference() {
+        return isModelByReference;
+    }
+
+    /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * Example: {@code {"Department": "Finance"}}
      *
@@ -626,6 +700,8 @@ public final class ModelSummary extends com.oracle.bmc.http.internal.ExplicitlyS
         sb.append(", modelVersionSetName=").append(String.valueOf(this.modelVersionSetName));
         sb.append(", versionId=").append(String.valueOf(this.versionId));
         sb.append(", versionLabel=").append(String.valueOf(this.versionLabel));
+        sb.append(", category=").append(String.valueOf(this.category));
+        sb.append(", isModelByReference=").append(String.valueOf(this.isModelByReference));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
@@ -654,6 +730,8 @@ public final class ModelSummary extends com.oracle.bmc.http.internal.ExplicitlyS
                 && java.util.Objects.equals(this.modelVersionSetName, other.modelVersionSetName)
                 && java.util.Objects.equals(this.versionId, other.versionId)
                 && java.util.Objects.equals(this.versionLabel, other.versionLabel)
+                && java.util.Objects.equals(this.category, other.category)
+                && java.util.Objects.equals(this.isModelByReference, other.isModelByReference)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
@@ -687,6 +765,12 @@ public final class ModelSummary extends com.oracle.bmc.http.internal.ExplicitlyS
                                 : this.modelVersionSetName.hashCode());
         result = (result * PRIME) + (this.versionId == null ? 43 : this.versionId.hashCode());
         result = (result * PRIME) + (this.versionLabel == null ? 43 : this.versionLabel.hashCode());
+        result = (result * PRIME) + (this.category == null ? 43 : this.category.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isModelByReference == null
+                                ? 43
+                                : this.isModelByReference.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();

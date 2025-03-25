@@ -31,6 +31,7 @@ public final class UpdateSensitiveDataModelDetails
         "schemasForDiscovery",
         "tablesForDiscovery",
         "sensitiveTypeIdsForDiscovery",
+        "sensitiveTypeGroupIdsForDiscovery",
         "isSampleDataCollectionEnabled",
         "isAppDefinedRelationDiscoveryEnabled",
         "freeformTags",
@@ -44,6 +45,7 @@ public final class UpdateSensitiveDataModelDetails
             java.util.List<String> schemasForDiscovery,
             java.util.List<TablesForDiscovery> tablesForDiscovery,
             java.util.List<String> sensitiveTypeIdsForDiscovery,
+            java.util.List<String> sensitiveTypeGroupIdsForDiscovery,
             Boolean isSampleDataCollectionEnabled,
             Boolean isAppDefinedRelationDiscoveryEnabled,
             java.util.Map<String, String> freeformTags,
@@ -56,6 +58,7 @@ public final class UpdateSensitiveDataModelDetails
         this.schemasForDiscovery = schemasForDiscovery;
         this.tablesForDiscovery = tablesForDiscovery;
         this.sensitiveTypeIdsForDiscovery = sensitiveTypeIdsForDiscovery;
+        this.sensitiveTypeGroupIdsForDiscovery = sensitiveTypeGroupIdsForDiscovery;
         this.isSampleDataCollectionEnabled = isSampleDataCollectionEnabled;
         this.isAppDefinedRelationDiscoveryEnabled = isAppDefinedRelationDiscoveryEnabled;
         this.freeformTags = freeformTags;
@@ -194,6 +197,25 @@ public final class UpdateSensitiveDataModelDetails
             return this;
         }
         /**
+         * The OCIDs of the sensitive type groups to be used by data discovery jobs.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("sensitiveTypeGroupIdsForDiscovery")
+        private java.util.List<String> sensitiveTypeGroupIdsForDiscovery;
+
+        /**
+         * The OCIDs of the sensitive type groups to be used by data discovery jobs.
+         *
+         * @param sensitiveTypeGroupIdsForDiscovery the value to set
+         * @return this builder
+         **/
+        public Builder sensitiveTypeGroupIdsForDiscovery(
+                java.util.List<String> sensitiveTypeGroupIdsForDiscovery) {
+            this.sensitiveTypeGroupIdsForDiscovery = sensitiveTypeGroupIdsForDiscovery;
+            this.__explicitlySet__.add("sensitiveTypeGroupIdsForDiscovery");
+            return this;
+        }
+        /**
          * Indicates if data discovery jobs should collect and store sample data values for the discovered columns.
          * Sample data helps review the discovered columns and ensure that they actually contain sensitive data.
          * As it collects original data from the target database, it's disabled by default and should be used only
@@ -305,6 +327,7 @@ public final class UpdateSensitiveDataModelDetails
                             this.schemasForDiscovery,
                             this.tablesForDiscovery,
                             this.sensitiveTypeIdsForDiscovery,
+                            this.sensitiveTypeGroupIdsForDiscovery,
                             this.isSampleDataCollectionEnabled,
                             this.isAppDefinedRelationDiscoveryEnabled,
                             this.freeformTags,
@@ -337,6 +360,10 @@ public final class UpdateSensitiveDataModelDetails
             }
             if (model.wasPropertyExplicitlySet("sensitiveTypeIdsForDiscovery")) {
                 this.sensitiveTypeIdsForDiscovery(model.getSensitiveTypeIdsForDiscovery());
+            }
+            if (model.wasPropertyExplicitlySet("sensitiveTypeGroupIdsForDiscovery")) {
+                this.sensitiveTypeGroupIdsForDiscovery(
+                        model.getSensitiveTypeGroupIdsForDiscovery());
             }
             if (model.wasPropertyExplicitlySet("isSampleDataCollectionEnabled")) {
                 this.isSampleDataCollectionEnabled(model.getIsSampleDataCollectionEnabled());
@@ -481,6 +508,22 @@ public final class UpdateSensitiveDataModelDetails
     }
 
     /**
+     * The OCIDs of the sensitive type groups to be used by data discovery jobs.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("sensitiveTypeGroupIdsForDiscovery")
+    private final java.util.List<String> sensitiveTypeGroupIdsForDiscovery;
+
+    /**
+     * The OCIDs of the sensitive type groups to be used by data discovery jobs.
+     *
+     * @return the value
+     **/
+    public java.util.List<String> getSensitiveTypeGroupIdsForDiscovery() {
+        return sensitiveTypeGroupIdsForDiscovery;
+    }
+
+    /**
      * Indicates if data discovery jobs should collect and store sample data values for the discovered columns.
      * Sample data helps review the discovered columns and ensure that they actually contain sensitive data.
      * As it collects original data from the target database, it's disabled by default and should be used only
@@ -590,6 +633,8 @@ public final class UpdateSensitiveDataModelDetails
         sb.append(", tablesForDiscovery=").append(String.valueOf(this.tablesForDiscovery));
         sb.append(", sensitiveTypeIdsForDiscovery=")
                 .append(String.valueOf(this.sensitiveTypeIdsForDiscovery));
+        sb.append(", sensitiveTypeGroupIdsForDiscovery=")
+                .append(String.valueOf(this.sensitiveTypeGroupIdsForDiscovery));
         sb.append(", isSampleDataCollectionEnabled=")
                 .append(String.valueOf(this.isSampleDataCollectionEnabled));
         sb.append(", isAppDefinedRelationDiscoveryEnabled=")
@@ -618,6 +663,9 @@ public final class UpdateSensitiveDataModelDetails
                 && java.util.Objects.equals(this.tablesForDiscovery, other.tablesForDiscovery)
                 && java.util.Objects.equals(
                         this.sensitiveTypeIdsForDiscovery, other.sensitiveTypeIdsForDiscovery)
+                && java.util.Objects.equals(
+                        this.sensitiveTypeGroupIdsForDiscovery,
+                        other.sensitiveTypeGroupIdsForDiscovery)
                 && java.util.Objects.equals(
                         this.isSampleDataCollectionEnabled, other.isSampleDataCollectionEnabled)
                 && java.util.Objects.equals(
@@ -651,6 +699,11 @@ public final class UpdateSensitiveDataModelDetails
                         + (this.sensitiveTypeIdsForDiscovery == null
                                 ? 43
                                 : this.sensitiveTypeIdsForDiscovery.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.sensitiveTypeGroupIdsForDiscovery == null
+                                ? 43
+                                : this.sensitiveTypeGroupIdsForDiscovery.hashCode());
         result =
                 (result * PRIME)
                         + (this.isSampleDataCollectionEnabled == null

@@ -33,6 +33,8 @@ public final class ImportOciTelemetryResourcesTaskDetails extends MonitoredResou
          * Possible values:
          *   * OCI_TELEMETRY_NATIVE      - The metrics are pushed to telemetry from OCI Native Services.
          *   * OCI_TELEMETRY_PROMETHEUS  - The metrics are pushed to telemetry from Prometheus.
+         *   * OCI_TELEMETRY_TELEGRAF    - The metrics are pushed to telemetry from Telegraf receiver.
+         *   * OCI_TELEMETRY_COLLECTD    - The metrics are pushed to telemetry from CollectD receiver.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("source")
@@ -43,6 +45,8 @@ public final class ImportOciTelemetryResourcesTaskDetails extends MonitoredResou
          * Possible values:
          *   * OCI_TELEMETRY_NATIVE      - The metrics are pushed to telemetry from OCI Native Services.
          *   * OCI_TELEMETRY_PROMETHEUS  - The metrics are pushed to telemetry from Prometheus.
+         *   * OCI_TELEMETRY_TELEGRAF    - The metrics are pushed to telemetry from Telegraf receiver.
+         *   * OCI_TELEMETRY_COLLECTD    - The metrics are pushed to telemetry from CollectD receiver.
          *
          * @param source the value to set
          * @return this builder
@@ -277,7 +281,7 @@ public final class ImportOciTelemetryResourcesTaskDetails extends MonitoredResou
          * List of metrics to be used to calculate the availability of the resource.
          * Resource is considered to be up if at least one of the specified metrics is available for
          * the resource during the specified interval using the property
-         * 'availabilityProxyMetricCollectionIntervalInSeconds'.
+         * 'availabilityProxyMetricCollectionInterval'.
          * If no metrics are specified, availability will not be calculated for the resource.
          *
          **/
@@ -288,7 +292,7 @@ public final class ImportOciTelemetryResourcesTaskDetails extends MonitoredResou
          * List of metrics to be used to calculate the availability of the resource.
          * Resource is considered to be up if at least one of the specified metrics is available for
          * the resource during the specified interval using the property
-         * 'availabilityProxyMetricCollectionIntervalInSeconds'.
+         * 'availabilityProxyMetricCollectionInterval'.
          * If no metrics are specified, availability will not be calculated for the resource.
          *
          * @param availabilityProxyMetrics the value to set
@@ -447,11 +451,15 @@ public final class ImportOciTelemetryResourcesTaskDetails extends MonitoredResou
      * Possible values:
      *   * OCI_TELEMETRY_NATIVE      - The metrics are pushed to telemetry from OCI Native Services.
      *   * OCI_TELEMETRY_PROMETHEUS  - The metrics are pushed to telemetry from Prometheus.
+     *   * OCI_TELEMETRY_TELEGRAF    - The metrics are pushed to telemetry from Telegraf receiver.
+     *   * OCI_TELEMETRY_COLLECTD    - The metrics are pushed to telemetry from CollectD receiver.
      *
      **/
     public enum Source {
         OciTelemetryNative("OCI_TELEMETRY_NATIVE"),
         OciTelemetryPrometheus("OCI_TELEMETRY_PROMETHEUS"),
+        OciTelemetryTelegraf("OCI_TELEMETRY_TELEGRAF"),
+        OciTelemetryCollectd("OCI_TELEMETRY_COLLECTD"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this
@@ -498,6 +506,8 @@ public final class ImportOciTelemetryResourcesTaskDetails extends MonitoredResou
      * Possible values:
      *   * OCI_TELEMETRY_NATIVE      - The metrics are pushed to telemetry from OCI Native Services.
      *   * OCI_TELEMETRY_PROMETHEUS  - The metrics are pushed to telemetry from Prometheus.
+     *   * OCI_TELEMETRY_TELEGRAF    - The metrics are pushed to telemetry from Telegraf receiver.
+     *   * OCI_TELEMETRY_COLLECTD    - The metrics are pushed to telemetry from CollectD receiver.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("source")
@@ -508,6 +518,8 @@ public final class ImportOciTelemetryResourcesTaskDetails extends MonitoredResou
      * Possible values:
      *   * OCI_TELEMETRY_NATIVE      - The metrics are pushed to telemetry from OCI Native Services.
      *   * OCI_TELEMETRY_PROMETHEUS  - The metrics are pushed to telemetry from Prometheus.
+     *   * OCI_TELEMETRY_TELEGRAF    - The metrics are pushed to telemetry from Telegraf receiver.
+     *   * OCI_TELEMETRY_COLLECTD    - The metrics are pushed to telemetry from CollectD receiver.
      *
      * @return the value
      **/
@@ -717,7 +729,7 @@ public final class ImportOciTelemetryResourcesTaskDetails extends MonitoredResou
      * List of metrics to be used to calculate the availability of the resource.
      * Resource is considered to be up if at least one of the specified metrics is available for
      * the resource during the specified interval using the property
-     * 'availabilityProxyMetricCollectionIntervalInSeconds'.
+     * 'availabilityProxyMetricCollectionInterval'.
      * If no metrics are specified, availability will not be calculated for the resource.
      *
      **/
@@ -728,7 +740,7 @@ public final class ImportOciTelemetryResourcesTaskDetails extends MonitoredResou
      * List of metrics to be used to calculate the availability of the resource.
      * Resource is considered to be up if at least one of the specified metrics is available for
      * the resource during the specified interval using the property
-     * 'availabilityProxyMetricCollectionIntervalInSeconds'.
+     * 'availabilityProxyMetricCollectionInterval'.
      * If no metrics are specified, availability will not be calculated for the resource.
      *
      * @return the value

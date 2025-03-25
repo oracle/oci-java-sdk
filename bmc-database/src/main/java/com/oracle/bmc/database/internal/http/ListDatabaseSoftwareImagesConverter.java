@@ -113,6 +113,14 @@ public class ListDatabaseSoftwareImagesConverter {
                                     request.getPatchSetGreaterThanOrEqualTo()));
         }
 
+        if (request.getDbSystemId() != null) {
+            target =
+                    target.queryParam(
+                            "dbSystemId",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getDbSystemId()));
+        }
+
         if (request.getIsUpgradeSupported() != null) {
             target =
                     target.queryParam(

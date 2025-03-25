@@ -34,11 +34,20 @@ public final class NoneBackupPolicy extends BackupPolicy {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("copyPolicy")
+        private BackupCopyPolicy copyPolicy;
+
+        public Builder copyPolicy(BackupCopyPolicy copyPolicy) {
+            this.copyPolicy = copyPolicy;
+            this.__explicitlySet__.add("copyPolicy");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public NoneBackupPolicy build() {
-            NoneBackupPolicy model = new NoneBackupPolicy(this.retentionDays);
+            NoneBackupPolicy model = new NoneBackupPolicy(this.retentionDays, this.copyPolicy);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -49,6 +58,9 @@ public final class NoneBackupPolicy extends BackupPolicy {
         public Builder copy(NoneBackupPolicy model) {
             if (model.wasPropertyExplicitlySet("retentionDays")) {
                 this.retentionDays(model.getRetentionDays());
+            }
+            if (model.wasPropertyExplicitlySet("copyPolicy")) {
+                this.copyPolicy(model.getCopyPolicy());
             }
             return this;
         }
@@ -66,8 +78,8 @@ public final class NoneBackupPolicy extends BackupPolicy {
     }
 
     @Deprecated
-    public NoneBackupPolicy(Integer retentionDays) {
-        super(retentionDays);
+    public NoneBackupPolicy(Integer retentionDays, BackupCopyPolicy copyPolicy) {
+        super(retentionDays, copyPolicy);
     }
 
     @Override
