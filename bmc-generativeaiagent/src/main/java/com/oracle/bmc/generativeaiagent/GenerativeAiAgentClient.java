@@ -462,6 +462,39 @@ public class GenerativeAiAgentClient extends com.oracle.bmc.http.internal.BaseSy
     }
 
     @Override
+    public CreateToolResponse createTool(CreateToolRequest request) {
+        Objects.requireNonNull(request.getCreateToolDetails(), "createToolDetails is required");
+
+        return clientCall(request, CreateToolResponse::builder)
+                .logger(LOG, "createTool")
+                .serviceDetails(
+                        "GenerativeAiAgent",
+                        "CreateTool",
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai-agents/20240531/Tool/CreateTool")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateToolRequest::builder)
+                .basePath("/20240531")
+                .appendPathParam("tools")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.generativeaiagent.model.Tool.class,
+                        CreateToolResponse.Builder::tool)
+                .handleResponseHeaderString("location", CreateToolResponse.Builder::location)
+                .handleResponseHeaderString(
+                        "content-location", CreateToolResponse.Builder::contentLocation)
+                .handleResponseHeaderString("etag", CreateToolResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", CreateToolResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateToolResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public DeleteAgentResponse deleteAgent(DeleteAgentRequest request) {
 
         Validate.notBlank(request.getAgentId(), "agentId must not be blank");
@@ -597,6 +630,33 @@ public class GenerativeAiAgentClient extends com.oracle.bmc.http.internal.BaseSy
                         DeleteKnowledgeBaseResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteKnowledgeBaseResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public DeleteToolResponse deleteTool(DeleteToolRequest request) {
+
+        Validate.notBlank(request.getToolId(), "toolId must not be blank");
+
+        return clientCall(request, DeleteToolResponse::builder)
+                .logger(LOG, "deleteTool")
+                .serviceDetails(
+                        "GenerativeAiAgent",
+                        "DeleteTool",
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai-agents/20240531/Tool/DeleteTool")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteToolRequest::builder)
+                .basePath("/20240531")
+                .appendPathParam("tools")
+                .appendPathParam(request.getToolId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleResponseHeaderString(
+                        "opc-work-request-id", DeleteToolResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteToolResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -768,6 +828,33 @@ public class GenerativeAiAgentClient extends com.oracle.bmc.http.internal.BaseSy
                 .handleResponseHeaderString("etag", GetKnowledgeBaseResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetKnowledgeBaseResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GetToolResponse getTool(GetToolRequest request) {
+
+        Validate.notBlank(request.getToolId(), "toolId must not be blank");
+
+        return clientCall(request, GetToolResponse::builder)
+                .logger(LOG, "getTool")
+                .serviceDetails(
+                        "GenerativeAiAgent",
+                        "GetTool",
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai-agents/20240531/Tool/GetTool")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetToolRequest::builder)
+                .basePath("/20240531")
+                .appendPathParam("tools")
+                .appendPathParam(request.getToolId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.generativeaiagent.model.Tool.class,
+                        GetToolResponse.Builder::tool)
+                .handleResponseHeaderString("etag", GetToolResponse.Builder::etag)
+                .handleResponseHeaderString("opc-request-id", GetToolResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -967,6 +1054,39 @@ public class GenerativeAiAgentClient extends com.oracle.bmc.http.internal.BaseSy
                         "opc-request-id", ListKnowledgeBasesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListKnowledgeBasesResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public ListToolsResponse listTools(ListToolsRequest request) {
+
+        return clientCall(request, ListToolsResponse::builder)
+                .logger(LOG, "listTools")
+                .serviceDetails(
+                        "GenerativeAiAgent",
+                        "ListTools",
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai-agents/20240531/Tool/ListTools")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListToolsRequest::builder)
+                .basePath("/20240531")
+                .appendPathParam("tools")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("agentId", request.getAgentId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.generativeaiagent.model.ToolCollection.class,
+                        ListToolsResponse.Builder::toolCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListToolsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("opc-next-page", ListToolsResponse.Builder::opcNextPage)
                 .callSync();
     }
 
@@ -1191,6 +1311,35 @@ public class GenerativeAiAgentClient extends com.oracle.bmc.http.internal.BaseSy
                         UpdateKnowledgeBaseResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateKnowledgeBaseResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public UpdateToolResponse updateTool(UpdateToolRequest request) {
+
+        Validate.notBlank(request.getToolId(), "toolId must not be blank");
+        Objects.requireNonNull(request.getUpdateToolDetails(), "updateToolDetails is required");
+
+        return clientCall(request, UpdateToolResponse::builder)
+                .logger(LOG, "updateTool")
+                .serviceDetails(
+                        "GenerativeAiAgent",
+                        "UpdateTool",
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai-agents/20240531/Tool/UpdateTool")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateToolRequest::builder)
+                .basePath("/20240531")
+                .appendPathParam("tools")
+                .appendPathParam(request.getToolId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id", UpdateToolResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateToolResponse.Builder::opcRequestId)
                 .callSync();
     }
 

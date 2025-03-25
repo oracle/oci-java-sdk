@@ -45,7 +45,8 @@ public enum ResponseErrorBmcExceptionFactory
                 serviceDetails,
                 errorResponse.getOriginalMessage(),
                 errorResponse.getOriginalMessageTemplate(),
-                errorResponse.getMessageArguments());
+                errorResponse.getMessageArguments(),
+                errorResponse.getAdditionalProperties());
     }
 
     @Override

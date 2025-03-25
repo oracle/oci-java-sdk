@@ -48,18 +48,12 @@ public final class MonitoringTargetDetails extends TargetDetails {
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /**
-         * The namespace of the metric.
-         *
-         * <p>Example: {@code oci_computeagent}
-         */
+        /** The namespace of the metric. Example: {@code oci_computeagent} */
         @com.fasterxml.jackson.annotation.JsonProperty("metricNamespace")
         private String metricNamespace;
 
         /**
-         * The namespace of the metric.
-         *
-         * <p>Example: {@code oci_computeagent}
+         * The namespace of the metric. Example: {@code oci_computeagent}
          *
          * @param metricNamespace the value to set
          * @return this builder
@@ -69,18 +63,12 @@ public final class MonitoringTargetDetails extends TargetDetails {
             this.__explicitlySet__.add("metricNamespace");
             return this;
         }
-        /**
-         * The name of the metric.
-         *
-         * <p>Example: {@code CpuUtilization}
-         */
+        /** The name of the metric. Example: {@code CpuUtilization} */
         @com.fasterxml.jackson.annotation.JsonProperty("metric")
         private String metric;
 
         /**
-         * The name of the metric.
-         *
-         * <p>Example: {@code CpuUtilization}
+         * The name of the metric. Example: {@code CpuUtilization}
          *
          * @param metric the value to set
          * @return this builder
@@ -176,18 +164,12 @@ public final class MonitoringTargetDetails extends TargetDetails {
         return compartmentId;
     }
 
-    /**
-     * The namespace of the metric.
-     *
-     * <p>Example: {@code oci_computeagent}
-     */
+    /** The namespace of the metric. Example: {@code oci_computeagent} */
     @com.fasterxml.jackson.annotation.JsonProperty("metricNamespace")
     private final String metricNamespace;
 
     /**
-     * The namespace of the metric.
-     *
-     * <p>Example: {@code oci_computeagent}
+     * The namespace of the metric. Example: {@code oci_computeagent}
      *
      * @return the value
      */
@@ -195,18 +177,12 @@ public final class MonitoringTargetDetails extends TargetDetails {
         return metricNamespace;
     }
 
-    /**
-     * The name of the metric.
-     *
-     * <p>Example: {@code CpuUtilization}
-     */
+    /** The name of the metric. Example: {@code CpuUtilization} */
     @com.fasterxml.jackson.annotation.JsonProperty("metric")
     private final String metric;
 
     /**
-     * The name of the metric.
-     *
-     * <p>Example: {@code CpuUtilization}
+     * The name of the metric. Example: {@code CpuUtilization}
      *
      * @return the value
      */

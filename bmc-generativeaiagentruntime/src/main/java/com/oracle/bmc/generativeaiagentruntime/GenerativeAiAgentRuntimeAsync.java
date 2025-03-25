@@ -146,6 +146,22 @@ public interface GenerativeAiAgentRuntimeAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<GetSessionRequest, GetSessionResponse> handler);
 
     /**
+     * Returns metadata of provided knowledgeBase. Return available metadata with information of
+     * field names, their types, supported operations, and possible values.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<RetrieveMetadataResponse> retrieveMetadata(
+            RetrieveMetadataRequest request,
+            com.oracle.bmc.responses.AsyncHandler<RetrieveMetadataRequest, RetrieveMetadataResponse>
+                    handler);
+
+    /**
      * Update session metadata, including but not limited to description, tags.
      *
      * @param request The request object containing the details to send

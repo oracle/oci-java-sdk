@@ -26,8 +26,14 @@ package com.oracle.bmc.stackmonitoring.model;
             value = CreateLicenseAutoAssignConfigDetails.class,
             name = "LICENSE_AUTO_ASSIGN"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = CreateOnboardConfigDetails.class,
+            name = "ONBOARD"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = CreateAutoPromoteConfigDetails.class,
             name = "AUTO_PROMOTE"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = CreateComputeAutoActivatePluginConfigDetails.class,
+            name = "COMPUTE_AUTO_ACTIVATE_PLUGIN"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = CreateLicenseEnterpriseExtensibilityConfigDetails.class,
             name = "LICENSE_ENTERPRISE_EXTENSIBILITY")

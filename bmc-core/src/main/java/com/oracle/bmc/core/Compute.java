@@ -281,6 +281,25 @@ public interface Compute extends AutoCloseable {
             ChangeComputeGpuMemoryFabricCompartmentRequest request);
 
     /**
+     * Moves a compute host into a different compartment. For information about moving resources
+     * between compartments, see [Moving Resources to a Different
+     * Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ChangeComputeHostCompartmentExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ChangeComputeHostCompartment API.
+     */
+    ChangeComputeHostCompartmentResponse changeComputeHostCompartment(
+            ChangeComputeHostCompartmentRequest request);
+
+    /**
      * Moves a compute image capability schema into a different compartment within the same tenancy.
      * For information about moving resources between compartments, see [Moving Resources to a
      * Different
@@ -1041,6 +1060,21 @@ public interface Compute extends AutoCloseable {
             GetComputeGpuMemoryFabricRequest request);
 
     /**
+     * Gets information about the specified compute host
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetComputeHostExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetComputeHost API.
+     */
+    GetComputeHostResponse getComputeHost(GetComputeHostRequest request);
+
+    /**
      * Gets the specified Compute Image Capability Schema
      *
      * @param request The request object containing the details to send
@@ -1706,6 +1740,22 @@ public interface Compute extends AutoCloseable {
             ListComputeGpuMemoryFabricsRequest request);
 
     /**
+     * Generates a list of summary host details
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListComputeHostsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListComputeHosts
+     *     API.
+     */
+    ListComputeHostsResponse listComputeHosts(ListComputeHostsRequest request);
+
+    /**
      * Lists Compute Image Capability Schema in the specified compartment. You can also query by a
      * specific imageId.
      *
@@ -2130,6 +2180,22 @@ public interface Compute extends AutoCloseable {
      */
     UpdateComputeGpuMemoryFabricResponse updateComputeGpuMemoryFabric(
             UpdateComputeGpuMemoryFabricRequest request);
+
+    /**
+     * Customer can update the some fields for ComputeHost record
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateComputeHostExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateComputeHost
+     *     API.
+     */
+    UpdateComputeHostResponse updateComputeHost(UpdateComputeHostRequest request);
 
     /**
      * Updates the specified Compute Image Capability Schema

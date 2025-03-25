@@ -1974,6 +1974,8 @@ public class StackMonitoringClient extends com.oracle.bmc.http.internal.BaseSync
                 .appendEnumQueryParam("status", request.getStatus())
                 .appendQueryParam("isExcludeSystemTypes", request.getIsExcludeSystemTypes())
                 .appendQueryParam("metricNamespace", request.getMetricNamespace())
+                .appendEnumQueryParam("sourceType", request.getSourceType())
+                .appendEnumQueryParam("resourceCategory", request.getResourceCategory())
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .appendQueryParam("limit", request.getLimit())

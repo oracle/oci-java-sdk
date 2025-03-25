@@ -10,6 +10,7 @@ public enum ResourceCategory implements com.oracle.bmc.http.internal.BmcEnum {
     Application("APPLICATION"),
     Database("DATABASE"),
     Middleware("MIDDLEWARE"),
+    Infrastructure("INFRASTRUCTURE"),
     Unknown("UNKNOWN"),
 
     /**

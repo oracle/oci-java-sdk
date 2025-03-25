@@ -21,7 +21,7 @@ public class GenerativeAiAgentRuntimeClient extends com.oracle.bmc.http.internal
                     .serviceName("GENERATIVEAIAGENTRUNTIME")
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate(
-                            "https://genai-agent-service.{region}.oci.{secondLevelDomain}")
+                            "https://agent-runtime.generativeai.{region}.oci.{secondLevelDomain}")
                     .build();
 
     private static final org.slf4j.Logger LOG =
@@ -210,6 +210,42 @@ public class GenerativeAiAgentRuntimeClient extends com.oracle.bmc.http.internal
                 .handleResponseHeaderString("etag", GetSessionResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetSessionResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public RetrieveMetadataResponse retrieveMetadata(RetrieveMetadataRequest request) {
+
+        Validate.notBlank(request.getKnowledgeBaseId(), "knowledgeBaseId must not be blank");
+        Objects.requireNonNull(
+                request.getRetrieveMetadataDetails(), "retrieveMetadataDetails is required");
+
+        return clientCall(request, RetrieveMetadataResponse::builder)
+                .logger(LOG, "retrieveMetadata")
+                .serviceDetails(
+                        "GenerativeAiAgentRuntime",
+                        "RetrieveMetadata",
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai-agents-client/20240531/KnowledgeBaseMetadataSummary/RetrieveMetadata")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RetrieveMetadataRequest::builder)
+                .basePath("/20240531")
+                .appendPathParam("knowledgeBases")
+                .appendPathParam(request.getKnowledgeBaseId())
+                .appendPathParam("actions")
+                .appendPathParam("retrieveMetadata")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBodyList(
+                        com.oracle.bmc.generativeaiagentruntime.model.KnowledgeBaseMetadataSummary
+                                .class,
+                        RetrieveMetadataResponse.Builder::items)
+                .handleResponseHeaderString("etag", RetrieveMetadataResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", RetrieveMetadataResponse.Builder::opcRequestId)
                 .callSync();
     }
 

@@ -63,12 +63,12 @@ public final class ObjectStoragePrefix
             this.__explicitlySet__.add("bucketName");
             return this;
         }
-        /** The name of the object (file) or prefix (folder). */
+        /** The prefix of file object(s) or folder prefix. */
         @com.fasterxml.jackson.annotation.JsonProperty("prefix")
         private String prefix;
 
         /**
-         * The name of the object (file) or prefix (folder).
+         * The prefix of file object(s) or folder prefix.
          *
          * @param prefix the value to set
          * @return this builder
@@ -141,12 +141,12 @@ public final class ObjectStoragePrefix
         return bucketName;
     }
 
-    /** The name of the object (file) or prefix (folder). */
+    /** The prefix of file object(s) or folder prefix. */
     @com.fasterxml.jackson.annotation.JsonProperty("prefix")
     private final String prefix;
 
     /**
-     * The name of the object (file) or prefix (folder).
+     * The prefix of file object(s) or folder prefix.
      *
      * @return the value
      */

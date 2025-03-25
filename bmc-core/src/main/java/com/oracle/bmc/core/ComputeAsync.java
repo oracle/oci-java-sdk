@@ -283,6 +283,25 @@ public interface ComputeAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Moves a compute host into a different compartment. For information about moving resources
+     * between compartments, see [Moving Resources to a Different
+     * Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeComputeHostCompartmentResponse> changeComputeHostCompartment(
+            ChangeComputeHostCompartmentRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ChangeComputeHostCompartmentRequest,
+                            ChangeComputeHostCompartmentResponse>
+                    handler);
+
+    /**
      * Moves a compute image capability schema into a different compartment within the same tenancy.
      * For information about moving resources between compartments, see [Moving Resources to a
      * Different
@@ -1052,6 +1071,21 @@ public interface ComputeAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Gets information about the specified compute host
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetComputeHostResponse> getComputeHost(
+            GetComputeHostRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetComputeHostRequest, GetComputeHostResponse>
+                    handler);
+
+    /**
      * Gets the specified Compute Image Capability Schema
      *
      * @param request The request object containing the details to send
@@ -1719,6 +1753,21 @@ public interface ComputeAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Generates a list of summary host details
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListComputeHostsResponse> listComputeHosts(
+            ListComputeHostsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListComputeHostsRequest, ListComputeHostsResponse>
+                    handler);
+
+    /**
      * Lists Compute Image Capability Schema in the specified compartment. You can also query by a
      * specific imageId.
      *
@@ -2149,6 +2198,22 @@ public interface ComputeAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             UpdateComputeGpuMemoryFabricRequest,
                             UpdateComputeGpuMemoryFabricResponse>
+                    handler);
+
+    /**
+     * Customer can update the some fields for ComputeHost record
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateComputeHostResponse> updateComputeHost(
+            UpdateComputeHostRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateComputeHostRequest, UpdateComputeHostResponse>
                     handler);
 
     /**

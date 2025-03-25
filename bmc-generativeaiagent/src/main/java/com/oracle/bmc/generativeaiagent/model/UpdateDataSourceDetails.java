@@ -27,6 +27,7 @@ public final class UpdateDataSourceDetails
         "displayName",
         "description",
         "dataSourceConfig",
+        "metadata",
         "freeformTags",
         "definedTags"
     })
@@ -34,12 +35,14 @@ public final class UpdateDataSourceDetails
             String displayName,
             String description,
             DataSourceConfig dataSourceConfig,
+            java.util.Map<String, String> metadata,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
         this.displayName = displayName;
         this.description = description;
         this.dataSourceConfig = dataSourceConfig;
+        this.metadata = metadata;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
     }
@@ -87,6 +90,21 @@ public final class UpdateDataSourceDetails
         public Builder dataSourceConfig(DataSourceConfig dataSourceConfig) {
             this.dataSourceConfig = dataSourceConfig;
             this.__explicitlySet__.add("dataSourceConfig");
+            return this;
+        }
+        /** Key-value pairs to allow additional configurations. */
+        @com.fasterxml.jackson.annotation.JsonProperty("metadata")
+        private java.util.Map<String, String> metadata;
+
+        /**
+         * Key-value pairs to allow additional configurations.
+         *
+         * @param metadata the value to set
+         * @return this builder
+         */
+        public Builder metadata(java.util.Map<String, String> metadata) {
+            this.metadata = metadata;
+            this.__explicitlySet__.add("metadata");
             return this;
         }
         /**
@@ -150,6 +168,7 @@ public final class UpdateDataSourceDetails
                             this.displayName,
                             this.description,
                             this.dataSourceConfig,
+                            this.metadata,
                             this.freeformTags,
                             this.definedTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -168,6 +187,9 @@ public final class UpdateDataSourceDetails
             }
             if (model.wasPropertyExplicitlySet("dataSourceConfig")) {
                 this.dataSourceConfig(model.getDataSourceConfig());
+            }
+            if (model.wasPropertyExplicitlySet("metadata")) {
+                this.metadata(model.getMetadata());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -223,6 +245,19 @@ public final class UpdateDataSourceDetails
 
     public DataSourceConfig getDataSourceConfig() {
         return dataSourceConfig;
+    }
+
+    /** Key-value pairs to allow additional configurations. */
+    @com.fasterxml.jackson.annotation.JsonProperty("metadata")
+    private final java.util.Map<String, String> metadata;
+
+    /**
+     * Key-value pairs to allow additional configurations.
+     *
+     * @return the value
+     */
+    public java.util.Map<String, String> getMetadata() {
+        return metadata;
     }
 
     /**
@@ -289,6 +324,7 @@ public final class UpdateDataSourceDetails
         sb.append("displayName=").append(String.valueOf(this.displayName));
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", dataSourceConfig=").append(String.valueOf(this.dataSourceConfig));
+        sb.append(", metadata=").append(String.valueOf(this.metadata));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
@@ -308,6 +344,7 @@ public final class UpdateDataSourceDetails
         return java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.dataSourceConfig, other.dataSourceConfig)
+                && java.util.Objects.equals(this.metadata, other.metadata)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
@@ -322,6 +359,7 @@ public final class UpdateDataSourceDetails
         result =
                 (result * PRIME)
                         + (this.dataSourceConfig == null ? 43 : this.dataSourceConfig.hashCode());
+        result = (result * PRIME) + (this.metadata == null ? 43 : this.metadata.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();

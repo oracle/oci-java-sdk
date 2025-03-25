@@ -9,6 +9,7 @@ import com.oracle.bmc.InternalSdk;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
+import com.fasterxml.jackson.annotation.JsonAnySetter;
 
 /**
  * A {@code BmcException} exception is thrown in response to failures from a REST endpoint. It
@@ -35,6 +36,7 @@ public class ResponseHelper {
         private final String originalMessage;
         private final String originalMessageTemplate;
         private final Map<String, String> messageArguments;
+        private final Map<String, String> additionalProperties = new HashMap<>();
 
         public static class Builder {
             private String code;
@@ -114,6 +116,11 @@ public class ResponseHelper {
             this.messageArguments = messageArguments;
         }
 
+        @JsonAnySetter
+        public void setAdditionalProperties(String key, Object value) {
+            this.additionalProperties.put(key, value.toString());
+        }
+
         public static ResponseHelper.ErrorCodeAndMessage.Builder builder() {
             return new ResponseHelper.ErrorCodeAndMessage.Builder();
         }
@@ -136,6 +143,10 @@ public class ResponseHelper {
 
         public Map<String, String> getMessageArguments() {
             return this.messageArguments;
+        }
+
+        public Map<String, String> getAdditionalProperties() {
+            return this.additionalProperties;
         }
 
         @java.lang.Override
@@ -162,6 +173,9 @@ public class ResponseHelper {
             final java.lang.Object this$messageArguments = this.getMessageArguments();
             final java.lang.Object other$messageArguments = other.getMessageArguments();
             if (!Objects.equals(this$messageArguments, other$messageArguments)) return false;
+            final java.lang.Object this$additionalProperties = this.getAdditionalProperties();
+            final java.lang.Object additionalProperties = other.getAdditionalProperties();
+            if (!Objects.equals(additionalProperties, additionalProperties)) return false;
             return true;
         }
 
@@ -185,6 +199,12 @@ public class ResponseHelper {
             result =
                     result * PRIME
                             + ($messageArguments == null ? 43 : $messageArguments.hashCode());
+            final java.lang.Object $additionalProperties = this.getAdditionalProperties();
+            result =
+                    result * PRIME
+                            + ($additionalProperties == null
+                                    ? 43
+                                    : $additionalProperties.hashCode());
             return result;
         }
 
@@ -200,6 +220,8 @@ public class ResponseHelper {
                     + this.getOriginalMessageTemplate()
                     + ", messageArguments="
                     + this.getMessageArguments()
+                    + ", additionalProperties="
+                    + this.getAdditionalProperties()
                     + ")";
         }
     }
